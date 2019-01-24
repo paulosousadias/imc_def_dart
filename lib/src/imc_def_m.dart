@@ -615,7 +615,7 @@ abstract class LogBookControl extends ImcMessage implements Built<LogBookControl
 
   /// Argument, currently used only for 'REPLY'.
   @ImcField("Messages", "msg", ImcType.typeMessageList)
-  List<ImcMessage> get msg;
+  List<LogBookEntry> get msg;
 }
 
 /// Replay Control class
@@ -780,7 +780,7 @@ abstract class VerticalProfile extends ImcMessage implements Built<VerticalProfi
   int get numSamples;
 
   @ImcField("Samples", "samples", ImcType.typeMessageList)
-  List<ImcMessage> get samples;
+  List<ProfileSample> get samples;
 
   /// Latitude where the profile was calculated.
   @ImcField("Latitude", "lat", ImcType.typeFp64, units: "rad")
@@ -1223,7 +1223,7 @@ abstract class HistoricData extends ImcMessage implements Built<HistoricData, Hi
   double get base_time;
 
   @ImcField("Data", "data", ImcType.typeMessageList)
-  List<ImcMessage> get data;
+  List<RemoteData> get data;
 }
 
 /// Compressed Historic Data Series class
@@ -1314,7 +1314,7 @@ abstract class HistoricDataQuery extends ImcMessage implements Built<HistoricDat
   int get max_size;
 
   @ImcField("Data", "data", ImcType.typeMessage)
-  ImcMessage get data;
+  HistoricData get data;
 }
 
 /// Remote Command class
@@ -1495,7 +1495,7 @@ abstract class LblConfig extends ImcMessage implements Built<LblConfig, LblConfi
 
   /// A list of LBL beacon configuration messages.
   @ImcField("Beacons", "beacons", ImcType.typeMessageList)
-  List<ImcMessage> get beacons;
+  List<LblBeacon> get beacons;
 }
 
 /// Acoustic Message class
@@ -1981,11 +1981,11 @@ abstract class Distance extends ImcMessage implements Built<Distance, DistanceBu
 
   /// Device Location in the system.
   @ImcField("Location", "location", ImcType.typeMessageList)
-  List<ImcMessage> get location;
+  List<DeviceState> get location;
 
   /// Beam configuration of the device.
   @ImcField("Beam Configuration", "beam_config", ImcType.typeMessageList)
-  List<ImcMessage> get beam_config;
+  List<BeamConfig> get beam_config;
 
   /// Measured distance.
   @ImcField("Measured Distance", "value", ImcType.typeFp32, units: "m")
@@ -2308,7 +2308,7 @@ abstract class SonarData extends ImcMessage implements Built<SonarData, SonarDat
 
   /// Beam configuration of the device.
   @ImcField("Beam Configuration", "beam_config", ImcType.typeMessageList)
-  List<ImcMessage> get beam_config;
+  List<BeamConfig> get beam_config;
 
   /// Data acquired by the measurement.
   @ImcField("Data", "data", ImcType.typeRawdata)
@@ -2744,7 +2744,7 @@ abstract class ExternalNavData extends ImcMessage implements Built<ExternalNavDa
 
   /// External Navigation Data.
   @ImcField("Estimated State", "state", ImcType.typeMessage)
-  ImcMessage get state;
+  EstimatedState get state;
 
   /// The type of external navigation data
   @ImcField("Nav Data Type", "type", ImcType.typeUInt8)
@@ -3560,7 +3560,7 @@ abstract class LblEstimate extends ImcMessage implements Built<LblEstimate, LblE
 
   /// LBL Beacon configuration estimate.
   @ImcField("LBL Beacon Configuration", "beacon", ImcType.typeMessage)
-  ImcMessage get beacon;
+  LblBeacon get beacon;
 
   /// The North position offset of the NED field with respect to origin.
   @ImcField("North position", "x", ImcType.typeFp32, units: "m")
@@ -4422,7 +4422,7 @@ abstract class LowLevelControl extends Maneuver implements Built<LowLevelControl
   /// Control command: can be of type DesiredZ, DesiredHeading,
   /// DesiredRoll, DesiredPitch, DesiredSpeed, DesiredThrottle or DesiredPath.
   @ImcField("Control", "control", ImcType.typeMessage)
-  ImcMessage get control;
+  ControlCommand get control;
 
   /// Duration of the control.
   @ImcField("Duration", "duration", ImcType.typeUInt16, units: "s")
@@ -4550,7 +4550,7 @@ abstract class FollowPath extends Maneuver implements Built<FollowPath, FollowPa
 
   /// List of PathPoint messages, encoding the path points.
   @ImcField("Path Points", "points", ImcType.typeMessageList)
-  List<ImcMessage> get points;
+  List<PathPoint> get points;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -4808,7 +4808,7 @@ abstract class FollowTrajectory extends Maneuver implements Built<FollowTrajecto
 
   /// List of trajectory points.
   @ImcField("Trajectory Points", "points", ImcType.typeMessageList)
-  List<ImcMessage> get points;
+  List<TrajectoryPoint> get points;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -4911,11 +4911,11 @@ abstract class VehicleFormation extends Maneuver implements Built<VehicleFormati
 
   /// List of trajectory points.
   @ImcField("Trajectory Points", "points", ImcType.typeMessageList)
-  List<ImcMessage> get points;
+  List<TrajectoryPoint> get points;
 
   /// List of formation participants.
   @ImcField("Formation Participants", "participants", ImcType.typeMessageList)
-  List<ImcMessage> get participants;
+  List<VehicleFormationParticipant> get participants;
 
   /// Optional start time hint for vehicle formation.
   @ImcField("Start Time", "start_time", ImcType.typeFp64, units: "s")
@@ -5131,7 +5131,7 @@ abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaB
 
   /// Message list of type PolygonVertex.
   @ImcField("Polygon", "polygon", ImcType.typeMessageList)
-  List<ImcMessage> get polygon;
+  List<PolygonVertex> get polygon;
 
   /// Additional parameters to be used by the controller.
   @ImcField("CustomParameters", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -5258,7 +5258,7 @@ abstract class FormationParameters extends ImcMessage implements Built<Formation
 
   /// List of formation participants.
   @ImcField("Formation Participants", "participants", ImcType.typeMessageList)
-  List<ImcMessage> get participants;
+  List<VehicleFormationParticipant> get participants;
 
   /// Custom settings for the formation configuration.
   @ImcField("Custom settings for formation", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -5393,10 +5393,10 @@ abstract class Reference extends ImcMessage implements Built<Reference, Referenc
   ReferenceBitfieldFlags get flags;
 
   @ImcField("Speed Reference", "speed", ImcType.typeMessage)
-  ImcMessage get speed;
+  DesiredSpeed get speed;
 
   @ImcField("Z Reference", "z", ImcType.typeMessage)
-  ImcMessage get z;
+  DesiredZ get z;
 
   @ImcField("Latitude Reference", "lat", ImcType.typeFp64)
   double get lat;
@@ -5429,7 +5429,7 @@ abstract class FollowRefState extends ImcMessage implements Built<FollowRefState
 
   /// Reference currently being followed.
   @ImcField("Reference", "reference", ImcType.typeMessage)
-  ImcMessage get reference;
+  Reference get reference;
 
   @ImcField("State", "state", ImcType.typeUInt8)
   FollowRefStateEnumState get state;
@@ -5546,7 +5546,7 @@ abstract class FormationMonitor extends ImcMessage implements Built<FormationMon
 
   /// List of RelativeState messages, encoding the inter-vehicle formation state.
   @ImcField("Relative State", "rel_state", ImcType.typeMessageList)
-  List<ImcMessage> get rel_state;
+  List<RelativeState> get rel_state;
 }
 
 /// Relative State class
@@ -5745,7 +5745,7 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 
   /// List of formation participants.
   @ImcField("Formation Participants", "participants", ImcType.typeMessageList)
-  List<ImcMessage> get participants;
+  List<VehicleFormationParticipant> get participants;
 
   /// Maximum absolute bank allowed for the formation leader.
   @ImcField("Formation Leader Bank Limit", "leader_bank_lim", ImcType.typeFp32, units: "rad")
@@ -6245,7 +6245,7 @@ abstract class AutonomousSection extends Maneuver implements Built<AutonomousSec
 
   /// The boundaries of the admissable area for this autonomous section.
   @ImcField("Area Limits", "area_limits", ImcType.typeMessageList)
-  List<ImcMessage> get area_limits;
+  List<PolygonVertex> get area_limits;
 
   /// The name of the controlling agent that will be allowed to guide the vehicle during the AutononousSection.
   @ImcField("Controller", "controller", ImcType.typePlaintext)
@@ -6544,7 +6544,7 @@ abstract class VehicleCommand extends ImcMessage implements Built<VehicleCommand
 
   /// Maneuver to be executed (for 'EXEC_MANEUVER' command)
   @ImcField("Maneuver", "maneuver", ImcType.typeMessage)
-  ImcMessage get maneuver;
+  Maneuver get maneuver;
 
   /// Amount of time to calibrate
   @ImcField("Calibration Time", "calib_time", ImcType.typeUInt16, units: "s")
@@ -7115,7 +7115,7 @@ abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecifi
 
   /// Plan variables.
   @ImcField("Plan Variables", "variables", ImcType.typeMessageList)
-  List<ImcMessage> get variables;
+  List<PlanVariable> get variables;
 
   /// Indicates the id of the starting maneuver for this plan.
   @ImcField("Starting maneuver", "start_man_id", ImcType.typePlaintext)
@@ -7123,11 +7123,11 @@ abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecifi
 
   /// List of maneuver specifications.
   @ImcField("Maneuvers", "maneuvers", ImcType.typeMessageList)
-  List<ImcMessage> get maneuvers;
+  List<PlanManeuver> get maneuvers;
 
   /// List of maneuver specifications.
   @ImcField("Transitions", "transitions", ImcType.typeMessageList)
-  List<ImcMessage> get transitions;
+  List<PlanTransition> get transitions;
 
   /// Contains an optionally defined 'MessageList' for actions fired
   /// on plan activation.
@@ -7156,7 +7156,7 @@ abstract class PlanManeuver extends ImcMessage implements Built<PlanManeuver, Pl
 
   /// The maneuver specification.
   @ImcField("Maneuver Specification", "data", ImcType.typeMessage)
-  ImcMessage get data;
+  Maneuver get data;
 
   /// Contains an optionally defined 'MessageList' for actions fired
   /// on plan activation.
@@ -7220,7 +7220,7 @@ abstract class EmergencyControl extends ImcMessage implements Built<EmergencyCon
   EmergencyControlEnumCommand get command;
 
   @ImcField("Plan Specification", "plan", ImcType.typeMessage)
-  ImcMessage get plan;
+  PlanSpecification get plan;
 }
 
 /// Emergency Control State class
@@ -7330,7 +7330,7 @@ abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, Plan
 
   /// Individual information for plans.
   @ImcField("Plan info", "plans_info", ImcType.typeMessageList)
-  List<ImcMessage> get plans_info;
+  List<PlanDBInformation> get plans_info;
 }
 
 /// Plan DB Information class
@@ -7762,7 +7762,7 @@ abstract class Map extends ImcMessage implements Built<Map, MapBuilder> {
 
   /// A list of map features.
   @ImcField("Features", "features", ImcType.typeMessageList)
-  List<ImcMessage> get features;
+  List<MapFeature> get features;
 }
 
 /// Map Feature class
@@ -7797,7 +7797,7 @@ abstract class MapFeature extends ImcMessage implements Built<MapFeature, MapFea
 
   /// The enclosing feature definition.
   @ImcField("Feature", "feature", ImcType.typeMessageList)
-  List<ImcMessage> get feature;
+  List<MapPoint> get feature;
 }
 
 /// MapPoint class
@@ -7856,7 +7856,7 @@ abstract class VehicleLinks extends ImcMessage implements Built<VehicleLinks, Ve
 
   /// A list of Announce messages with last announces heard
   @ImcField("Active Links", "links", ImcType.typeMessageList)
-  List<ImcMessage> get links;
+  List<Announce> get links;
 }
 
 /// TREX Observation class
@@ -7920,7 +7920,7 @@ abstract class TrexOperation extends ImcMessage implements Built<TrexOperation, 
 
   /// Goal / observation to post, if applicable (OP == POST_GOAL || OP == POST_TOKEN)
   @ImcField("Token", "token", ImcType.typeMessage)
-  ImcMessage get token;
+  TrexToken get token;
 }
 
 /// TREX Attribute class
@@ -7964,7 +7964,7 @@ abstract class TrexToken extends ImcMessage implements Built<TrexToken, TrexToke
   String get predicate;
 
   @ImcField("Attributes", "attributes", ImcType.typeMessageList)
-  List<ImcMessage> get attributes;
+  List<TrexAttribute> get attributes;
 }
 
 /// TREX Plan class
@@ -7980,7 +7980,7 @@ abstract class TrexPlan extends ImcMessage implements Built<TrexPlan, TrexPlanBu
   String get reactor;
 
   @ImcField("Tokens", "tokens", ImcType.typeMessageList)
-  List<ImcMessage> get tokens;
+  List<TrexToken> get tokens;
 }
 
 /// Event class
@@ -8148,7 +8148,7 @@ abstract class EntityParameters extends ImcMessage implements Built<EntityParame
 
   /// List of parameters.
   @ImcField("Parameters", "params", ImcType.typeMessageList)
-  List<ImcMessage> get params;
+  List<EntityParameter> get params;
 }
 
 /// QueryEntityParameters class
@@ -8183,7 +8183,7 @@ abstract class SetEntityParameters extends ImcMessage implements Built<SetEntity
   String get name;
 
   @ImcField("Parameters", "params", ImcType.typeMessageList)
-  List<ImcMessage> get params;
+  List<EntityParameter> get params;
 }
 
 /// SaveEntityParameters class
@@ -8569,7 +8569,7 @@ abstract class FormationEvaluation extends ImcMessage implements Built<Formation
 
   /// Formation controller paramenters during the evaluation period.
   @ImcField("Formation Control Parameters", "ControlParams", ImcType.typeMessage)
-  ImcMessage get ControlParams;
+  FormationControlParams get ControlParams;
 }
 
 /// SOI Waypoint class
@@ -8607,7 +8607,7 @@ abstract class SoiPlan extends ImcMessage implements Built<SoiPlan, SoiPlanBuild
   int get plan_id;
 
   @ImcField("Waypoints", "waypoints", ImcType.typeMessageList)
-  List<ImcMessage> get waypoints;
+  List<SoiWaypoint> get waypoints;
 }
 
 /// SOI Command class
@@ -8629,7 +8629,7 @@ abstract class SoiCommand extends ImcMessage implements Built<SoiCommand, SoiCom
   String get settings;
 
   @ImcField("Plan", "plan", ImcType.typeMessage)
-  ImcMessage get plan;
+  SoiPlan get plan;
 
   @ImcField("Extra Information", "info", ImcType.typePlaintext)
   String get info;
@@ -9092,7 +9092,7 @@ abstract class UsblConfig extends ImcMessage implements Built<UsblConfig, UsblCo
 
   /// A list of USBL modem configuration messages.
   @ImcField("Modems", "modems", ImcType.typeMessageList)
-  List<ImcMessage> get modems;
+  List<UsblModem> get modems;
 }
 
 /// Dissolved Organic Matter class

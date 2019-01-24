@@ -493,11 +493,11 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
       break;
     case "message":
       typeImc = "ImcType.typeMessage";
-      dartType = "ImcMessage";
+      dartType = field.getAttribute("message-type") ?? "ImcMessage";
       break;
     case "message-list":
       typeImc = "ImcType.typeMessageList";
-      dartType = "List<ImcMessage>";
+      dartType = "List<${field.getAttribute("message-type") ?? "ImcMessage"}>";
       break;
     default:
       break;
@@ -672,7 +672,7 @@ main(List<String> args) async {
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
   sinks[_idxMsg]
-      .write('const String MD5_SUM = "${imcDigest}";\n');
+      .write('const String MD5_SUM = "$imcDigest";\n');
 
   sinks[_idxMsg].write('\n');
 

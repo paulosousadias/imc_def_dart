@@ -2869,7 +2869,7 @@ class _$UASimulation extends UASimulation {
   @override
   final int speed;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$UASimulation([void updates(UASimulationBuilder b)]) =>
       (new UASimulationBuilder()..update(updates)).build();
@@ -2967,9 +2967,9 @@ class UASimulationBuilder implements Builder<UASimulation, UASimulationBuilder> 
   int get speed => _$this._speed;
   set speed(int speed) => _$this._speed = speed;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   UASimulationBuilder();
 
@@ -3865,7 +3865,7 @@ class _$LogBookControl extends LogBookControl {
   @override
   final double htime;
   @override
-  final List<ImcMessage> msg;
+  final List<LogBookEntry> msg;
 
   factory _$LogBookControl([void updates(LogBookControlBuilder b)]) =>
       (new LogBookControlBuilder()..update(updates)).build();
@@ -3963,9 +3963,9 @@ class LogBookControlBuilder implements Builder<LogBookControl, LogBookControlBui
   double get htime => _$this._htime;
   set htime(double htime) => _$this._htime = htime;
 
-  List<ImcMessage> _msg;
-  List<ImcMessage> get msg => _$this._msg;
-  set msg(List<ImcMessage> msg) => _$this._msg = msg;
+  List<LogBookEntry> _msg;
+  List<LogBookEntry> get msg => _$this._msg;
+  set msg(List<LogBookEntry> msg) => _$this._msg = msg;
 
   LogBookControlBuilder();
 
@@ -4725,7 +4725,7 @@ class _$HistoricSonarData extends HistoricSonarData {
   @override
   final HistoricSonarDataEnumEncoding encoding;
   @override
-  final String sonar_data;
+  final List<int> sonar_data;
 
   factory _$HistoricSonarData([void updates(HistoricSonarDataBuilder b)]) =>
       (new HistoricSonarDataBuilder()..update(updates)).build();
@@ -4855,9 +4855,9 @@ class HistoricSonarDataBuilder implements Builder<HistoricSonarData, HistoricSon
   HistoricSonarDataEnumEncoding get encoding => _$this._encoding;
   set encoding(HistoricSonarDataEnumEncoding encoding) => _$this._encoding = encoding;
 
-  String _sonar_data;
-  String get sonar_data => _$this._sonar_data;
-  set sonar_data(String sonar_data) => _$this._sonar_data = sonar_data;
+  List<int> _sonar_data;
+  List<int> get sonar_data => _$this._sonar_data;
+  set sonar_data(List<int> sonar_data) => _$this._sonar_data = sonar_data;
 
   HistoricSonarDataBuilder();
 
@@ -5089,7 +5089,7 @@ class _$VerticalProfile extends VerticalProfile {
   @override
   final int numSamples;
   @override
-  final List<ImcMessage> samples;
+  final List<ProfileSample> samples;
   @override
   final double lat;
   @override
@@ -5199,9 +5199,9 @@ class VerticalProfileBuilder implements Builder<VerticalProfile, VerticalProfile
   int get numSamples => _$this._numSamples;
   set numSamples(int numSamples) => _$this._numSamples = numSamples;
 
-  List<ImcMessage> _samples;
-  List<ImcMessage> get samples => _$this._samples;
-  set samples(List<ImcMessage> samples) => _$this._samples = samples;
+  List<ProfileSample> _samples;
+  List<ProfileSample> get samples => _$this._samples;
+  set samples(List<ProfileSample> samples) => _$this._samples = samples;
 
   double _lat;
   double get lat => _$this._lat;
@@ -6543,7 +6543,7 @@ class _$SmsTx extends SmsTx {
   @override
   final int timeout;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$SmsTx([void updates(SmsTxBuilder b)]) =>
       (new SmsTxBuilder()..update(updates)).build();
@@ -6649,9 +6649,9 @@ class SmsTxBuilder implements Builder<SmsTx, SmsTxBuilder> {
   int get timeout => _$this._timeout;
   set timeout(int timeout) => _$this._timeout = timeout;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   SmsTxBuilder();
 
@@ -6719,7 +6719,7 @@ class _$SmsRx extends SmsRx {
   @override
   final String source;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$SmsRx([void updates(SmsRxBuilder b)]) =>
       (new SmsRxBuilder()..update(updates)).build();
@@ -6809,9 +6809,9 @@ class SmsRxBuilder implements Builder<SmsRx, SmsRxBuilder> {
   String get source => _$this._source;
   set source(String source) => _$this._source = source;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   SmsRxBuilder();
 
@@ -7205,7 +7205,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
   @override
   final double lon;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$IridiumMsgRx([void updates(IridiumMsgRxBuilder b)]) =>
       (new IridiumMsgRxBuilder()..update(updates)).build();
@@ -7319,9 +7319,9 @@ class IridiumMsgRxBuilder implements Builder<IridiumMsgRx, IridiumMsgRxBuilder> 
   double get lon => _$this._lon;
   set lon(double lon) => _$this._lon = lon;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   IridiumMsgRxBuilder();
 
@@ -7395,7 +7395,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
   @override
   final String destination;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$IridiumMsgTx([void updates(IridiumMsgTxBuilder b)]) =>
       (new IridiumMsgTxBuilder()..update(updates)).build();
@@ -7501,9 +7501,9 @@ class IridiumMsgTxBuilder implements Builder<IridiumMsgTx, IridiumMsgTxBuilder> 
   String get destination => _$this._destination;
   set destination(String destination) => _$this._destination = destination;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   IridiumMsgTxBuilder();
 
@@ -8379,7 +8379,7 @@ class _$HistoricData extends HistoricData {
   @override
   final double base_time;
   @override
-  final List<ImcMessage> data;
+  final List<RemoteData> data;
 
   factory _$HistoricData([void updates(HistoricDataBuilder b)]) =>
       (new HistoricDataBuilder()..update(updates)).build();
@@ -8485,9 +8485,9 @@ class HistoricDataBuilder implements Builder<HistoricData, HistoricDataBuilder> 
   double get base_time => _$this._base_time;
   set base_time(double base_time) => _$this._base_time = base_time;
 
-  List<ImcMessage> _data;
-  List<ImcMessage> get data => _$this._data;
-  set data(List<ImcMessage> data) => _$this._data = data;
+  List<RemoteData> _data;
+  List<RemoteData> get data => _$this._data;
+  set data(List<RemoteData> data) => _$this._data = data;
 
   HistoricDataBuilder();
 
@@ -8559,7 +8559,7 @@ class _$CompressedHistory extends CompressedHistory {
   @override
   final double base_time;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$CompressedHistory([void updates(CompressedHistoryBuilder b)]) =>
       (new CompressedHistoryBuilder()..update(updates)).build();
@@ -8665,9 +8665,9 @@ class CompressedHistoryBuilder implements Builder<CompressedHistory, CompressedH
   double get base_time => _$this._base_time;
   set base_time(double base_time) => _$this._base_time = base_time;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   CompressedHistoryBuilder();
 
@@ -8955,7 +8955,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
   @override
   final int max_size;
   @override
-  final ImcMessage data;
+  final HistoricData data;
 
   factory _$HistoricDataQuery([void updates(HistoricDataQueryBuilder b)]) =>
       (new HistoricDataQueryBuilder()..update(updates)).build();
@@ -9061,9 +9061,9 @@ class HistoricDataQueryBuilder implements Builder<HistoricDataQuery, HistoricDat
   int get max_size => _$this._max_size;
   set max_size(int max_size) => _$this._max_size = max_size;
 
-  ImcMessage _data;
-  ImcMessage get data => _$this._data;
-  set data(ImcMessage data) => _$this._data = data;
+  HistoricData _data;
+  HistoricData get data => _$this._data;
+  set data(HistoricData data) => _$this._data = data;
 
   HistoricDataQueryBuilder();
 
@@ -9505,7 +9505,7 @@ class _$TelemetryMsg extends TelemetryMsg {
   @override
   final TelemetryMsgEnumStatus status;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$TelemetryMsg([void updates(TelemetryMsgBuilder b)]) =>
       (new TelemetryMsgBuilder()..update(updates)).build();
@@ -9651,9 +9651,9 @@ class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder> 
   TelemetryMsgEnumStatus get status => _$this._status;
   set status(TelemetryMsgEnumStatus status) => _$this._status = status;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   TelemetryMsgBuilder();
 
@@ -10103,7 +10103,7 @@ class _$LblConfig extends LblConfig {
   @override
   final LblConfigEnumOp op;
   @override
-  final List<ImcMessage> beacons;
+  final List<LblBeacon> beacons;
 
   factory _$LblConfig([void updates(LblConfigBuilder b)]) =>
       (new LblConfigBuilder()..update(updates)).build();
@@ -10193,9 +10193,9 @@ class LblConfigBuilder implements Builder<LblConfig, LblConfigBuilder> {
   LblConfigEnumOp get op => _$this._op;
   set op(LblConfigEnumOp op) => _$this._op = op;
 
-  List<ImcMessage> _beacons;
-  List<ImcMessage> get beacons => _$this._beacons;
-  set beacons(List<ImcMessage> beacons) => _$this._beacons = beacons;
+  List<LblBeacon> _beacons;
+  List<LblBeacon> get beacons => _$this._beacons;
+  set beacons(List<LblBeacon> beacons) => _$this._beacons = beacons;
 
   LblConfigBuilder();
 
@@ -13247,9 +13247,9 @@ class _$Distance extends Distance {
   @override
   final DistanceEnumValidity validity;
   @override
-  final List<ImcMessage> location;
+  final List<DeviceState> location;
   @override
-  final List<ImcMessage> beam_config;
+  final List<BeamConfig> beam_config;
   @override
   final double value;
 
@@ -13349,13 +13349,13 @@ class DistanceBuilder implements Builder<Distance, DistanceBuilder> {
   DistanceEnumValidity get validity => _$this._validity;
   set validity(DistanceEnumValidity validity) => _$this._validity = validity;
 
-  List<ImcMessage> _location;
-  List<ImcMessage> get location => _$this._location;
-  set location(List<ImcMessage> location) => _$this._location = location;
+  List<DeviceState> _location;
+  List<DeviceState> get location => _$this._location;
+  set location(List<DeviceState> location) => _$this._location = location;
 
-  List<ImcMessage> _beam_config;
-  List<ImcMessage> get beam_config => _$this._beam_config;
-  set beam_config(List<ImcMessage> beam_config) => _$this._beam_config = beam_config;
+  List<BeamConfig> _beam_config;
+  List<BeamConfig> get beam_config => _$this._beam_config;
+  set beam_config(List<BeamConfig> beam_config) => _$this._beam_config = beam_config;
 
   double _value;
   double get value => _$this._value;
@@ -15033,7 +15033,7 @@ class _$DevDataBinary extends DevDataBinary {
   final int dstEnt;
 
   @override
-  final String value;
+  final List<int> value;
 
   factory _$DevDataBinary([void updates(DevDataBinaryBuilder b)]) =>
       (new DevDataBinaryBuilder()..update(updates)).build();
@@ -15115,9 +15115,9 @@ class DevDataBinaryBuilder implements Builder<DevDataBinary, DevDataBinaryBuilde
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _value;
-  String get value => _$this._value;
-  set value(String value) => _$this._value = value;
+  List<int> _value;
+  List<int> get value => _$this._value;
+  set value(List<int> value) => _$this._value = value;
 
   DevDataBinaryBuilder();
 
@@ -15333,9 +15333,9 @@ class _$SonarData extends SonarData {
   @override
   final double scale_factor;
   @override
-  final List<ImcMessage> beam_config;
+  final List<BeamConfig> beam_config;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$SonarData([void updates(SonarDataBuilder b)]) =>
       (new SonarDataBuilder()..update(updates)).build();
@@ -15469,13 +15469,13 @@ class SonarDataBuilder implements Builder<SonarData, SonarDataBuilder> {
   double get scale_factor => _$this._scale_factor;
   set scale_factor(double scale_factor) => _$this._scale_factor = scale_factor;
 
-  List<ImcMessage> _beam_config;
-  List<ImcMessage> get beam_config => _$this._beam_config;
-  set beam_config(List<ImcMessage> beam_config) => _$this._beam_config = beam_config;
+  List<BeamConfig> _beam_config;
+  List<BeamConfig> get beam_config => _$this._beam_config;
+  set beam_config(List<BeamConfig> beam_config) => _$this._beam_config = beam_config;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   SonarDataBuilder();
 
@@ -18429,7 +18429,7 @@ class _$ExternalNavData extends ExternalNavData {
   final int dstEnt;
 
   @override
-  final ImcMessage state;
+  final EstimatedState state;
   @override
   final ExternalNavDataEnumType type;
 
@@ -18517,9 +18517,9 @@ class ExternalNavDataBuilder implements Builder<ExternalNavData, ExternalNavData
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  ImcMessage _state;
-  ImcMessage get state => _$this._state;
-  set state(ImcMessage state) => _$this._state = state;
+  EstimatedState _state;
+  EstimatedState get state => _$this._state;
+  set state(EstimatedState state) => _$this._state = state;
 
   ExternalNavDataEnumType _type;
   ExternalNavDataEnumType get type => _$this._type;
@@ -23841,7 +23841,7 @@ class _$LblEstimate extends LblEstimate {
   final int dstEnt;
 
   @override
-  final ImcMessage beacon;
+  final LblBeacon beacon;
   @override
   final double x;
   @override
@@ -23953,9 +23953,9 @@ class LblEstimateBuilder implements Builder<LblEstimate, LblEstimateBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  ImcMessage _beacon;
-  ImcMessage get beacon => _$this._beacon;
-  set beacon(ImcMessage beacon) => _$this._beacon = beacon;
+  LblBeacon _beacon;
+  LblBeacon get beacon => _$this._beacon;
+  set beacon(LblBeacon beacon) => _$this._beacon = beacon;
 
   double _x;
   double get x => _$this._x;
@@ -28653,7 +28653,7 @@ class _$LowLevelControl extends LowLevelControl {
   final int dstEnt;
 
   @override
-  final ImcMessage control;
+  final ControlCommand control;
   @override
   final int duration;
   @override
@@ -28747,9 +28747,9 @@ class LowLevelControlBuilder implements Builder<LowLevelControl, LowLevelControl
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  ImcMessage _control;
-  ImcMessage get control => _$this._control;
-  set control(ImcMessage control) => _$this._control = control;
+  ControlCommand _control;
+  ControlCommand get control => _$this._control;
+  set control(ControlCommand control) => _$this._control = control;
 
   int _duration;
   int get duration => _$this._duration;
@@ -29159,7 +29159,7 @@ class _$FollowPath extends FollowPath {
   @override
   final SpeedUnitsEnum speed_units;
   @override
-  final List<ImcMessage> points;
+  final List<PathPoint> points;
   @override
   final String custom;
 
@@ -29303,9 +29303,9 @@ class FollowPathBuilder implements Builder<FollowPath, FollowPathBuilder> {
   SpeedUnitsEnum get speed_units => _$this._speed_units;
   set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
 
-  List<ImcMessage> _points;
-  List<ImcMessage> get points => _$this._points;
-  set points(List<ImcMessage> points) => _$this._points = points;
+  List<PathPoint> _points;
+  List<PathPoint> get points => _$this._points;
+  set points(List<PathPoint> points) => _$this._points = points;
 
   String _custom;
   String get custom => _$this._custom;
@@ -30467,7 +30467,7 @@ class _$FollowTrajectory extends FollowTrajectory {
   @override
   final SpeedUnitsEnum speed_units;
   @override
-  final List<ImcMessage> points;
+  final List<TrajectoryPoint> points;
   @override
   final String custom;
 
@@ -30611,9 +30611,9 @@ class FollowTrajectoryBuilder implements Builder<FollowTrajectory, FollowTraject
   SpeedUnitsEnum get speed_units => _$this._speed_units;
   set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
 
-  List<ImcMessage> _points;
-  List<ImcMessage> get points => _$this._points;
-  set points(List<ImcMessage> points) => _$this._points = points;
+  List<TrajectoryPoint> _points;
+  List<TrajectoryPoint> get points => _$this._points;
+  set points(List<TrajectoryPoint> points) => _$this._points = points;
 
   String _custom;
   String get custom => _$this._custom;
@@ -31053,9 +31053,9 @@ class _$VehicleFormation extends VehicleFormation {
   @override
   final SpeedUnitsEnum speed_units;
   @override
-  final List<ImcMessage> points;
+  final List<TrajectoryPoint> points;
   @override
-  final List<ImcMessage> participants;
+  final List<VehicleFormationParticipant> participants;
   @override
   final double start_time;
   @override
@@ -31201,13 +31201,13 @@ class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormat
   SpeedUnitsEnum get speed_units => _$this._speed_units;
   set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
 
-  List<ImcMessage> _points;
-  List<ImcMessage> get points => _$this._points;
-  set points(List<ImcMessage> points) => _$this._points = points;
+  List<TrajectoryPoint> _points;
+  List<TrajectoryPoint> get points => _$this._points;
+  set points(List<TrajectoryPoint> points) => _$this._points = points;
 
-  List<ImcMessage> _participants;
-  List<ImcMessage> get participants => _$this._participants;
-  set participants(List<ImcMessage> participants) => _$this._participants = participants;
+  List<VehicleFormationParticipant> _participants;
+  List<VehicleFormationParticipant> get participants => _$this._participants;
+  set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
 
   double _start_time;
   double get start_time => _$this._start_time;
@@ -32385,7 +32385,7 @@ class _$CoverArea extends CoverArea {
   @override
   final SpeedUnitsEnum speed_units;
   @override
-  final List<ImcMessage> polygon;
+  final List<PolygonVertex> polygon;
   @override
   final String custom;
 
@@ -32521,9 +32521,9 @@ class CoverAreaBuilder implements Builder<CoverArea, CoverAreaBuilder> {
   SpeedUnitsEnum get speed_units => _$this._speed_units;
   set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
 
-  List<ImcMessage> _polygon;
-  List<ImcMessage> get polygon => _$this._polygon;
-  set polygon(List<ImcMessage> polygon) => _$this._polygon = polygon;
+  List<PolygonVertex> _polygon;
+  List<PolygonVertex> get polygon => _$this._polygon;
+  set polygon(List<PolygonVertex> polygon) => _$this._polygon = polygon;
 
   String _custom;
   String get custom => _$this._custom;
@@ -33049,7 +33049,7 @@ class _$FormationParameters extends FormationParameters {
   @override
   final FormationParametersEnumReference_frame reference_frame;
   @override
-  final List<ImcMessage> participants;
+  final List<VehicleFormationParticipant> participants;
   @override
   final String custom;
 
@@ -33153,9 +33153,9 @@ class FormationParametersBuilder implements Builder<FormationParameters, Formati
   FormationParametersEnumReference_frame get reference_frame => _$this._reference_frame;
   set reference_frame(FormationParametersEnumReference_frame reference_frame) => _$this._reference_frame = reference_frame;
 
-  List<ImcMessage> _participants;
-  List<ImcMessage> get participants => _$this._participants;
-  set participants(List<ImcMessage> participants) => _$this._participants = participants;
+  List<VehicleFormationParticipant> _participants;
+  List<VehicleFormationParticipant> get participants => _$this._participants;
+  set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
 
   String _custom;
   String get custom => _$this._custom;
@@ -33719,9 +33719,9 @@ class _$Reference extends Reference {
   @override
   final ReferenceBitfieldFlags flags;
   @override
-  final ImcMessage speed;
+  final DesiredSpeed speed;
   @override
-  final ImcMessage z;
+  final DesiredZ z;
   @override
   final double lat;
   @override
@@ -33833,13 +33833,13 @@ class ReferenceBuilder implements Builder<Reference, ReferenceBuilder> {
   ReferenceBitfieldFlags get flags => _$this._flags;
   set flags(ReferenceBitfieldFlags flags) => _$this._flags = flags;
 
-  ImcMessage _speed;
-  ImcMessage get speed => _$this._speed;
-  set speed(ImcMessage speed) => _$this._speed = speed;
+  DesiredSpeed _speed;
+  DesiredSpeed get speed => _$this._speed;
+  set speed(DesiredSpeed speed) => _$this._speed = speed;
 
-  ImcMessage _z;
-  ImcMessage get z => _$this._z;
-  set z(ImcMessage z) => _$this._z = z;
+  DesiredZ _z;
+  DesiredZ get z => _$this._z;
+  set z(DesiredZ z) => _$this._z = z;
 
   double _lat;
   double get lat => _$this._lat;
@@ -33925,7 +33925,7 @@ class _$FollowRefState extends FollowRefState {
   @override
   final int control_ent;
   @override
-  final ImcMessage reference;
+  final Reference reference;
   @override
   final FollowRefStateEnumState state;
   @override
@@ -34035,9 +34035,9 @@ class FollowRefStateBuilder implements Builder<FollowRefState, FollowRefStateBui
   int get control_ent => _$this._control_ent;
   set control_ent(int control_ent) => _$this._control_ent = control_ent;
 
-  ImcMessage _reference;
-  ImcMessage get reference => _$this._reference;
-  set reference(ImcMessage reference) => _$this._reference = reference;
+  Reference _reference;
+  Reference get reference => _$this._reference;
+  set reference(Reference reference) => _$this._reference = reference;
 
   FollowRefStateEnumState _state;
   FollowRefStateEnumState get state => _$this._state;
@@ -34149,7 +34149,7 @@ class _$FormationMonitor extends FormationMonitor {
   @override
   final double ss_z;
   @override
-  final List<ImcMessage> rel_state;
+  final List<RelativeState> rel_state;
 
   factory _$FormationMonitor([void updates(FormationMonitorBuilder b)]) =>
       (new FormationMonitorBuilder()..update(updates)).build();
@@ -34375,9 +34375,9 @@ class FormationMonitorBuilder implements Builder<FormationMonitor, FormationMoni
   double get ss_z => _$this._ss_z;
   set ss_z(double ss_z) => _$this._ss_z = ss_z;
 
-  List<ImcMessage> _rel_state;
-  List<ImcMessage> get rel_state => _$this._rel_state;
-  set rel_state(List<ImcMessage> rel_state) => _$this._rel_state = rel_state;
+  List<RelativeState> _rel_state;
+  List<RelativeState> get rel_state => _$this._rel_state;
+  set rel_state(List<RelativeState> rel_state) => _$this._rel_state = rel_state;
 
   FormationMonitorBuilder();
 
@@ -35063,7 +35063,7 @@ class _$Formation extends Formation {
   @override
   final FormationEnumReference_frame reference_frame;
   @override
-  final List<ImcMessage> participants;
+  final List<VehicleFormationParticipant> participants;
   @override
   final double leader_bank_lim;
   @override
@@ -35279,9 +35279,9 @@ class FormationBuilder implements Builder<Formation, FormationBuilder> {
   FormationEnumReference_frame get reference_frame => _$this._reference_frame;
   set reference_frame(FormationEnumReference_frame reference_frame) => _$this._reference_frame = reference_frame;
 
-  List<ImcMessage> _participants;
-  List<ImcMessage> get participants => _$this._participants;
-  set participants(List<ImcMessage> participants) => _$this._participants = participants;
+  List<VehicleFormationParticipant> _participants;
+  List<VehicleFormationParticipant> get participants => _$this._participants;
+  set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
 
   double _leader_bank_lim;
   double get leader_bank_lim => _$this._leader_bank_lim;
@@ -37345,7 +37345,7 @@ class _$AutonomousSection extends AutonomousSection {
   @override
   final double time_limit;
   @override
-  final List<ImcMessage> area_limits;
+  final List<PolygonVertex> area_limits;
   @override
   final String controller;
   @override
@@ -37503,9 +37503,9 @@ class AutonomousSectionBuilder implements Builder<AutonomousSection, AutonomousS
   double get time_limit => _$this._time_limit;
   set time_limit(double time_limit) => _$this._time_limit = time_limit;
 
-  List<ImcMessage> _area_limits;
-  List<ImcMessage> get area_limits => _$this._area_limits;
-  set area_limits(List<ImcMessage> area_limits) => _$this._area_limits = area_limits;
+  List<PolygonVertex> _area_limits;
+  List<PolygonVertex> get area_limits => _$this._area_limits;
+  set area_limits(List<PolygonVertex> area_limits) => _$this._area_limits = area_limits;
 
   String _controller;
   String get controller => _$this._controller;
@@ -38823,7 +38823,7 @@ class _$VehicleCommand extends VehicleCommand {
   @override
   final VehicleCommandEnumCommand command;
   @override
-  final ImcMessage maneuver;
+  final Maneuver maneuver;
   @override
   final int calib_time;
   @override
@@ -38941,9 +38941,9 @@ class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBui
   VehicleCommandEnumCommand get command => _$this._command;
   set command(VehicleCommandEnumCommand command) => _$this._command = command;
 
-  ImcMessage _maneuver;
-  ImcMessage get maneuver => _$this._maneuver;
-  set maneuver(ImcMessage maneuver) => _$this._maneuver = maneuver;
+  Maneuver _maneuver;
+  Maneuver get maneuver => _$this._maneuver;
+  set maneuver(Maneuver maneuver) => _$this._maneuver = maneuver;
 
   int _calib_time;
   int get calib_time => _$this._calib_time;
@@ -41459,7 +41459,7 @@ class _$TransmissionRequest extends TransmissionRequest {
   @override
   final String txt_data;
   @override
-  final String raw_data;
+  final List<int> raw_data;
 
   factory _$TransmissionRequest([void updates(TransmissionRequestBuilder b)]) =>
       (new TransmissionRequestBuilder()..update(updates)).build();
@@ -41597,9 +41597,9 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
   String get txt_data => _$this._txt_data;
   set txt_data(String txt_data) => _$this._txt_data = txt_data;
 
-  String _raw_data;
-  String get raw_data => _$this._raw_data;
-  set raw_data(String raw_data) => _$this._raw_data = raw_data;
+  List<int> _raw_data;
+  List<int> get raw_data => _$this._raw_data;
+  set raw_data(List<int> raw_data) => _$this._raw_data = raw_data;
 
   TransmissionRequestBuilder();
 
@@ -42615,13 +42615,13 @@ class _$PlanSpecification extends PlanSpecification {
   @override
   final String vnamespace;
   @override
-  final List<ImcMessage> variables;
+  final List<PlanVariable> variables;
   @override
   final String start_man_id;
   @override
-  final List<ImcMessage> maneuvers;
+  final List<PlanManeuver> maneuvers;
   @override
-  final List<ImcMessage> transitions;
+  final List<PlanTransition> transitions;
   @override
   final List<ImcMessage> start_actions;
   @override
@@ -42751,21 +42751,21 @@ class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecifi
   String get vnamespace => _$this._vnamespace;
   set vnamespace(String vnamespace) => _$this._vnamespace = vnamespace;
 
-  List<ImcMessage> _variables;
-  List<ImcMessage> get variables => _$this._variables;
-  set variables(List<ImcMessage> variables) => _$this._variables = variables;
+  List<PlanVariable> _variables;
+  List<PlanVariable> get variables => _$this._variables;
+  set variables(List<PlanVariable> variables) => _$this._variables = variables;
 
   String _start_man_id;
   String get start_man_id => _$this._start_man_id;
   set start_man_id(String start_man_id) => _$this._start_man_id = start_man_id;
 
-  List<ImcMessage> _maneuvers;
-  List<ImcMessage> get maneuvers => _$this._maneuvers;
-  set maneuvers(List<ImcMessage> maneuvers) => _$this._maneuvers = maneuvers;
+  List<PlanManeuver> _maneuvers;
+  List<PlanManeuver> get maneuvers => _$this._maneuvers;
+  set maneuvers(List<PlanManeuver> maneuvers) => _$this._maneuvers = maneuvers;
 
-  List<ImcMessage> _transitions;
-  List<ImcMessage> get transitions => _$this._transitions;
-  set transitions(List<ImcMessage> transitions) => _$this._transitions = transitions;
+  List<PlanTransition> _transitions;
+  List<PlanTransition> get transitions => _$this._transitions;
+  set transitions(List<PlanTransition> transitions) => _$this._transitions = transitions;
 
   List<ImcMessage> _start_actions;
   List<ImcMessage> get start_actions => _$this._start_actions;
@@ -42851,7 +42851,7 @@ class _$PlanManeuver extends PlanManeuver {
   @override
   final String maneuver_id;
   @override
-  final ImcMessage data;
+  final Maneuver data;
   @override
   final List<ImcMessage> start_actions;
   @override
@@ -42953,9 +42953,9 @@ class PlanManeuverBuilder implements Builder<PlanManeuver, PlanManeuverBuilder> 
   String get maneuver_id => _$this._maneuver_id;
   set maneuver_id(String maneuver_id) => _$this._maneuver_id = maneuver_id;
 
-  ImcMessage _data;
-  ImcMessage get data => _$this._data;
-  set data(ImcMessage data) => _$this._data = data;
+  Maneuver _data;
+  Maneuver get data => _$this._data;
+  set data(Maneuver data) => _$this._data = data;
 
   List<ImcMessage> _start_actions;
   List<ImcMessage> get start_actions => _$this._start_actions;
@@ -43211,7 +43211,7 @@ class _$EmergencyControl extends EmergencyControl {
   @override
   final EmergencyControlEnumCommand command;
   @override
-  final ImcMessage plan;
+  final PlanSpecification plan;
 
   factory _$EmergencyControl([void updates(EmergencyControlBuilder b)]) =>
       (new EmergencyControlBuilder()..update(updates)).build();
@@ -43301,9 +43301,9 @@ class EmergencyControlBuilder implements Builder<EmergencyControl, EmergencyCont
   EmergencyControlEnumCommand get command => _$this._command;
   set command(EmergencyControlEnumCommand command) => _$this._command = command;
 
-  ImcMessage _plan;
-  ImcMessage get plan => _$this._plan;
-  set plan(ImcMessage plan) => _$this._plan = plan;
+  PlanSpecification _plan;
+  PlanSpecification get plan => _$this._plan;
+  set plan(PlanSpecification plan) => _$this._plan = plan;
 
   EmergencyControlBuilder();
 
@@ -43747,9 +43747,9 @@ class _$PlanDBState extends PlanDBState {
   @override
   final String change_sname;
   @override
-  final String md5;
+  final List<int> md5;
   @override
-  final List<ImcMessage> plans_info;
+  final List<PlanDBInformation> plans_info;
 
   factory _$PlanDBState([void updates(PlanDBStateBuilder b)]) =>
       (new PlanDBStateBuilder()..update(updates)).build();
@@ -43875,13 +43875,13 @@ class PlanDBStateBuilder implements Builder<PlanDBState, PlanDBStateBuilder> {
   String get change_sname => _$this._change_sname;
   set change_sname(String change_sname) => _$this._change_sname = change_sname;
 
-  String _md5;
-  String get md5 => _$this._md5;
-  set md5(String md5) => _$this._md5 = md5;
+  List<int> _md5;
+  List<int> get md5 => _$this._md5;
+  set md5(List<int> md5) => _$this._md5 = md5;
 
-  List<ImcMessage> _plans_info;
-  List<ImcMessage> get plans_info => _$this._plans_info;
-  set plans_info(List<ImcMessage> plans_info) => _$this._plans_info = plans_info;
+  List<PlanDBInformation> _plans_info;
+  List<PlanDBInformation> get plans_info => _$this._plans_info;
+  set plans_info(List<PlanDBInformation> plans_info) => _$this._plans_info = plans_info;
 
   PlanDBStateBuilder();
 
@@ -43963,7 +43963,7 @@ class _$PlanDBInformation extends PlanDBInformation {
   @override
   final String change_sname;
   @override
-  final String md5;
+  final List<int> md5;
 
   factory _$PlanDBInformation([void updates(PlanDBInformationBuilder b)]) =>
       (new PlanDBInformationBuilder()..update(updates)).build();
@@ -44085,9 +44085,9 @@ class PlanDBInformationBuilder implements Builder<PlanDBInformation, PlanDBInfor
   String get change_sname => _$this._change_sname;
   set change_sname(String change_sname) => _$this._change_sname = change_sname;
 
-  String _md5;
-  String get md5 => _$this._md5;
-  set md5(String md5) => _$this._md5 = md5;
+  List<int> _md5;
+  List<int> get md5 => _$this._md5;
+  set md5(List<int> md5) => _$this._md5 = md5;
 
   PlanDBInformationBuilder();
 
@@ -46007,7 +46007,7 @@ class _$Map extends Map {
   @override
   final String id;
   @override
-  final List<ImcMessage> features;
+  final List<MapFeature> features;
 
   factory _$Map([void updates(MapBuilder b)]) =>
       (new MapBuilder()..update(updates)).build();
@@ -46097,9 +46097,9 @@ class MapBuilder implements Builder<Map, MapBuilder> {
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  List<ImcMessage> _features;
-  List<ImcMessage> get features => _$this._features;
-  set features(List<ImcMessage> features) => _$this._features = features;
+  List<MapFeature> _features;
+  List<MapFeature> get features => _$this._features;
+  set features(List<MapFeature> features) => _$this._features = features;
 
   MapBuilder();
 
@@ -46171,7 +46171,7 @@ class _$MapFeature extends MapFeature {
   @override
   final int rgb_blue;
   @override
-  final List<ImcMessage> feature;
+  final List<MapPoint> feature;
 
   factory _$MapFeature([void updates(MapFeatureBuilder b)]) =>
       (new MapFeatureBuilder()..update(updates)).build();
@@ -46293,9 +46293,9 @@ class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder> {
   int get rgb_blue => _$this._rgb_blue;
   set rgb_blue(int rgb_blue) => _$this._rgb_blue = rgb_blue;
 
-  List<ImcMessage> _feature;
-  List<ImcMessage> get feature => _$this._feature;
-  set feature(List<ImcMessage> feature) => _$this._feature = feature;
+  List<MapPoint> _feature;
+  List<MapPoint> get feature => _$this._feature;
+  set feature(List<MapPoint> feature) => _$this._feature = feature;
 
   MapFeatureBuilder();
 
@@ -46703,7 +46703,7 @@ class _$VehicleLinks extends VehicleLinks {
   @override
   final String localname;
   @override
-  final List<ImcMessage> links;
+  final List<Announce> links;
 
   factory _$VehicleLinks([void updates(VehicleLinksBuilder b)]) =>
       (new VehicleLinksBuilder()..update(updates)).build();
@@ -46793,9 +46793,9 @@ class VehicleLinksBuilder implements Builder<VehicleLinks, VehicleLinksBuilder> 
   String get localname => _$this._localname;
   set localname(String localname) => _$this._localname = localname;
 
-  List<ImcMessage> _links;
-  List<ImcMessage> get links => _$this._links;
-  set links(List<ImcMessage> links) => _$this._links = links;
+  List<Announce> _links;
+  List<Announce> get links => _$this._links;
+  set links(List<Announce> links) => _$this._links = links;
 
   VehicleLinksBuilder();
 
@@ -47197,7 +47197,7 @@ class _$TrexOperation extends TrexOperation {
   @override
   final String goal_id;
   @override
-  final ImcMessage token;
+  final TrexToken token;
 
   factory _$TrexOperation([void updates(TrexOperationBuilder b)]) =>
       (new TrexOperationBuilder()..update(updates)).build();
@@ -47295,9 +47295,9 @@ class TrexOperationBuilder implements Builder<TrexOperation, TrexOperationBuilde
   String get goal_id => _$this._goal_id;
   set goal_id(String goal_id) => _$this._goal_id = goal_id;
 
-  ImcMessage _token;
-  ImcMessage get token => _$this._token;
-  set token(ImcMessage token) => _$this._token = token;
+  TrexToken _token;
+  TrexToken get token => _$this._token;
+  set token(TrexToken token) => _$this._token = token;
 
   TrexOperationBuilder();
 
@@ -47545,7 +47545,7 @@ class _$TrexToken extends TrexToken {
   @override
   final String predicate;
   @override
-  final List<ImcMessage> attributes;
+  final List<TrexAttribute> attributes;
 
   factory _$TrexToken([void updates(TrexTokenBuilder b)]) =>
       (new TrexTokenBuilder()..update(updates)).build();
@@ -47643,9 +47643,9 @@ class TrexTokenBuilder implements Builder<TrexToken, TrexTokenBuilder> {
   String get predicate => _$this._predicate;
   set predicate(String predicate) => _$this._predicate = predicate;
 
-  List<ImcMessage> _attributes;
-  List<ImcMessage> get attributes => _$this._attributes;
-  set attributes(List<ImcMessage> attributes) => _$this._attributes = attributes;
+  List<TrexAttribute> _attributes;
+  List<TrexAttribute> get attributes => _$this._attributes;
+  set attributes(List<TrexAttribute> attributes) => _$this._attributes = attributes;
 
   TrexTokenBuilder();
 
@@ -47711,7 +47711,7 @@ class _$TrexPlan extends TrexPlan {
   @override
   final String reactor;
   @override
-  final List<ImcMessage> tokens;
+  final List<TrexToken> tokens;
 
   factory _$TrexPlan([void updates(TrexPlanBuilder b)]) =>
       (new TrexPlanBuilder()..update(updates)).build();
@@ -47801,9 +47801,9 @@ class TrexPlanBuilder implements Builder<TrexPlan, TrexPlanBuilder> {
   String get reactor => _$this._reactor;
   set reactor(String reactor) => _$this._reactor = reactor;
 
-  List<ImcMessage> _tokens;
-  List<ImcMessage> get tokens => _$this._tokens;
-  set tokens(List<ImcMessage> tokens) => _$this._tokens = tokens;
+  List<TrexToken> _tokens;
+  List<TrexToken> get tokens => _$this._tokens;
+  set tokens(List<TrexToken> tokens) => _$this._tokens = tokens;
 
   TrexPlanBuilder();
 
@@ -48023,7 +48023,7 @@ class _$CompressedImage extends CompressedImage {
   @override
   final int frameid;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$CompressedImage([void updates(CompressedImageBuilder b)]) =>
       (new CompressedImageBuilder()..update(updates)).build();
@@ -48113,9 +48113,9 @@ class CompressedImageBuilder implements Builder<CompressedImage, CompressedImage
   int get frameid => _$this._frameid;
   set frameid(int frameid) => _$this._frameid = frameid;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   CompressedImageBuilder();
 
@@ -48923,7 +48923,7 @@ class _$EntityParameters extends EntityParameters {
   @override
   final String name;
   @override
-  final List<ImcMessage> params;
+  final List<EntityParameter> params;
 
   factory _$EntityParameters([void updates(EntityParametersBuilder b)]) =>
       (new EntityParametersBuilder()..update(updates)).build();
@@ -49013,9 +49013,9 @@ class EntityParametersBuilder implements Builder<EntityParameters, EntityParamet
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
 
-  List<ImcMessage> _params;
-  List<ImcMessage> get params => _$this._params;
-  set params(List<ImcMessage> params) => _$this._params = params;
+  List<EntityParameter> _params;
+  List<EntityParameter> get params => _$this._params;
+  set params(List<EntityParameter> params) => _$this._params = params;
 
   EntityParametersBuilder();
 
@@ -49247,7 +49247,7 @@ class _$SetEntityParameters extends SetEntityParameters {
   @override
   final String name;
   @override
-  final List<ImcMessage> params;
+  final List<EntityParameter> params;
 
   factory _$SetEntityParameters([void updates(SetEntityParametersBuilder b)]) =>
       (new SetEntityParametersBuilder()..update(updates)).build();
@@ -49337,9 +49337,9 @@ class SetEntityParametersBuilder implements Builder<SetEntityParameters, SetEnti
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
 
-  List<ImcMessage> _params;
-  List<ImcMessage> get params => _$this._params;
-  set params(List<ImcMessage> params) => _$this._params = params;
+  List<EntityParameter> _params;
+  List<EntityParameter> get params => _$this._params;
+  set params(List<EntityParameter> params) => _$this._params = params;
 
   SetEntityParametersBuilder();
 
@@ -50739,7 +50739,7 @@ class _$UamTxFrame extends UamTxFrame {
   @override
   final UamTxFrameBitfieldFlags flags;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$UamTxFrame([void updates(UamTxFrameBuilder b)]) =>
       (new UamTxFrameBuilder()..update(updates)).build();
@@ -50845,9 +50845,9 @@ class UamTxFrameBuilder implements Builder<UamTxFrame, UamTxFrameBuilder> {
   UamTxFrameBitfieldFlags get flags => _$this._flags;
   set flags(UamTxFrameBitfieldFlags flags) => _$this._flags = flags;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   UamTxFrameBuilder();
 
@@ -50919,7 +50919,7 @@ class _$UamRxFrame extends UamRxFrame {
   @override
   final UamRxFrameBitfieldFlags flags;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$UamRxFrame([void updates(UamRxFrameBuilder b)]) =>
       (new UamRxFrameBuilder()..update(updates)).build();
@@ -51025,9 +51025,9 @@ class UamRxFrameBuilder implements Builder<UamRxFrame, UamRxFrameBuilder> {
   UamRxFrameBitfieldFlags get flags => _$this._flags;
   set flags(UamRxFrameBitfieldFlags flags) => _$this._flags = flags;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   UamRxFrameBuilder();
 
@@ -52079,7 +52079,7 @@ class _$FormationEvaluation extends FormationEvaluation {
   @override
   final double time;
   @override
-  final ImcMessage ControlParams;
+  final FormationControlParams ControlParams;
 
   factory _$FormationEvaluation([void updates(FormationEvaluationBuilder b)]) =>
       (new FormationEvaluationBuilder()..update(updates)).build();
@@ -52217,9 +52217,9 @@ class FormationEvaluationBuilder implements Builder<FormationEvaluation, Formati
   double get time => _$this._time;
   set time(double time) => _$this._time = time;
 
-  ImcMessage _ControlParams;
-  ImcMessage get ControlParams => _$this._ControlParams;
-  set ControlParams(ImcMessage ControlParams) => _$this._ControlParams = ControlParams;
+  FormationControlParams _ControlParams;
+  FormationControlParams get ControlParams => _$this._ControlParams;
+  set ControlParams(FormationControlParams ControlParams) => _$this._ControlParams = ControlParams;
 
   FormationEvaluationBuilder();
 
@@ -52475,7 +52475,7 @@ class _$SoiPlan extends SoiPlan {
   @override
   final int plan_id;
   @override
-  final List<ImcMessage> waypoints;
+  final List<SoiWaypoint> waypoints;
 
   factory _$SoiPlan([void updates(SoiPlanBuilder b)]) =>
       (new SoiPlanBuilder()..update(updates)).build();
@@ -52565,9 +52565,9 @@ class SoiPlanBuilder implements Builder<SoiPlan, SoiPlanBuilder> {
   int get plan_id => _$this._plan_id;
   set plan_id(int plan_id) => _$this._plan_id = plan_id;
 
-  List<ImcMessage> _waypoints;
-  List<ImcMessage> get waypoints => _$this._waypoints;
-  set waypoints(List<ImcMessage> waypoints) => _$this._waypoints = waypoints;
+  List<SoiWaypoint> _waypoints;
+  List<SoiWaypoint> get waypoints => _$this._waypoints;
+  set waypoints(List<SoiWaypoint> waypoints) => _$this._waypoints = waypoints;
 
   SoiPlanBuilder();
 
@@ -52635,7 +52635,7 @@ class _$SoiCommand extends SoiCommand {
   @override
   final String settings;
   @override
-  final ImcMessage plan;
+  final SoiPlan plan;
   @override
   final String info;
 
@@ -52747,9 +52747,9 @@ class SoiCommandBuilder implements Builder<SoiCommand, SoiCommandBuilder> {
   String get settings => _$this._settings;
   set settings(String settings) => _$this._settings = settings;
 
-  ImcMessage _plan;
-  ImcMessage get plan => _$this._plan;
-  set plan(ImcMessage plan) => _$this._plan = plan;
+  SoiPlan _plan;
+  SoiPlan get plan => _$this._plan;
+  set plan(SoiPlan plan) => _$this._plan = plan;
 
   String _info;
   String get info => _$this._info;
@@ -53007,7 +53007,7 @@ class _$MessagePart extends MessagePart {
   @override
   final int num_frags;
   @override
-  final String data;
+  final List<int> data;
 
   factory _$MessagePart([void updates(MessagePartBuilder b)]) =>
       (new MessagePartBuilder()..update(updates)).build();
@@ -53113,9 +53113,9 @@ class MessagePartBuilder implements Builder<MessagePart, MessagePartBuilder> {
   int get num_frags => _$this._num_frags;
   set num_frags(int num_frags) => _$this._num_frags = num_frags;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
 
   MessagePartBuilder();
 
@@ -53183,7 +53183,7 @@ class _$NeptusBlob extends NeptusBlob {
   @override
   final String content_type;
   @override
-  final String content;
+  final List<int> content;
 
   factory _$NeptusBlob([void updates(NeptusBlobBuilder b)]) =>
       (new NeptusBlobBuilder()..update(updates)).build();
@@ -53273,9 +53273,9 @@ class NeptusBlobBuilder implements Builder<NeptusBlob, NeptusBlobBuilder> {
   String get content_type => _$this._content_type;
   set content_type(String content_type) => _$this._content_type = content_type;
 
-  String _content;
-  String get content => _$this._content;
-  set content(String content) => _$this._content = content;
+  List<int> _content;
+  List<int> get content => _$this._content;
+  set content(List<int> content) => _$this._content = content;
 
   NeptusBlobBuilder();
 
@@ -54011,7 +54011,7 @@ class _$ParametersXml extends ParametersXml {
   @override
   final String locale;
   @override
-  final String config;
+  final List<int> config;
 
   factory _$ParametersXml([void updates(ParametersXmlBuilder b)]) =>
       (new ParametersXmlBuilder()..update(updates)).build();
@@ -54101,9 +54101,9 @@ class ParametersXmlBuilder implements Builder<ParametersXml, ParametersXmlBuilde
   String get locale => _$this._locale;
   set locale(String locale) => _$this._locale = locale;
 
-  String _config;
-  String get config => _$this._config;
-  set config(String config) => _$this._config = config;
+  List<int> _config;
+  List<int> get config => _$this._config;
+  set config(List<int> config) => _$this._config = config;
 
   ParametersXmlBuilder();
 
@@ -55739,7 +55739,7 @@ class _$UsblConfig extends UsblConfig {
   @override
   final UsblConfigEnumOp op;
   @override
-  final List<ImcMessage> modems;
+  final List<UsblModem> modems;
 
   factory _$UsblConfig([void updates(UsblConfigBuilder b)]) =>
       (new UsblConfigBuilder()..update(updates)).build();
@@ -55829,9 +55829,9 @@ class UsblConfigBuilder implements Builder<UsblConfig, UsblConfigBuilder> {
   UsblConfigEnumOp get op => _$this._op;
   set op(UsblConfigEnumOp op) => _$this._op = op;
 
-  List<ImcMessage> _modems;
-  List<ImcMessage> get modems => _$this._modems;
-  set modems(List<ImcMessage> modems) => _$this._modems = modems;
+  List<UsblModem> _modems;
+  List<UsblModem> get modems => _$this._modems;
+  set modems(List<UsblModem> modems) => _$this._modems = modems;
 
   UsblConfigBuilder();
 
