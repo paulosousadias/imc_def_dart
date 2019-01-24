@@ -485,7 +485,7 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
       break;
     case "rawdata":
       typeImc = "ImcType.typeRawdata";
-      dartType = "String";
+      dartType = "List<int>";
       break;
     case "plaintext":
       typeImc = "ImcType.typePlaintext";

@@ -480,7 +480,7 @@ abstract class UASimulation extends ImcMessage implements Built<UASimulation, UA
 
   /// Data for transmission requests.
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// Dynamics Simulation Parameters class
@@ -741,7 +741,7 @@ abstract class HistoricSonarData extends ImcMessage implements Built<HistoricSon
 
   /// Sonar data encoded as in 'encoding'.
   @ImcField("SonarData", "sonar_data", ImcType.typeRawdata)
-  String get sonar_data;
+  List<int> get sonar_data;
 }
 
 /// Historic Event class
@@ -979,7 +979,7 @@ abstract class SmsTx extends ImcMessage implements Built<SmsTx, SmsTxBuilder> {
 
   /// Message data.
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// SMS Receive class
@@ -998,7 +998,7 @@ abstract class SmsRx extends ImcMessage implements Built<SmsRx, SmsRxBuilder> {
 
   /// Message data.
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// SMS State class
@@ -1066,7 +1066,7 @@ abstract class IridiumMsgRx extends ImcMessage implements Built<IridiumMsgRx, Ir
 
   /// Message data.
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// Transmit Iridium Message class
@@ -1092,7 +1092,7 @@ abstract class IridiumMsgTx extends ImcMessage implements Built<IridiumMsgTx, Ir
 
   /// Message data.
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// Iridium Transmission Status class
@@ -1251,7 +1251,7 @@ abstract class CompressedHistory extends ImcMessage implements Built<CompressedH
 
   /// A message-list of HistoricSample messages compressed with GZip algorithm.
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// Historic Data Sample class
@@ -1414,7 +1414,7 @@ abstract class TelemetryMsg extends ImcMessage implements Built<TelemetryMsg, Te
   TelemetryMsgEnumStatus get status;
 
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// LBL Range class
@@ -2177,7 +2177,7 @@ abstract class DevDataBinary extends ImcMessage implements Built<DevDataBinary, 
 
   /// Raw binary data as extracted directly from the device.
   @ImcField("Value", "value", ImcType.typeRawdata)
-  String get value;
+  List<int> get value;
 }
 
 /// Force class
@@ -2312,7 +2312,7 @@ abstract class SonarData extends ImcMessage implements Built<SonarData, SonarDat
 
   /// Data acquired by the measurement.
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// Pulse class
@@ -6975,7 +6975,7 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
 
   /// Data to be transmitted if selected *data_mode* is *RAW*.
   @ImcField("Raw Data", "raw_data", ImcType.typeRawdata)
-  String get raw_data;
+  List<int> get raw_data;
 }
 
 /// Transmission Status class
@@ -7326,7 +7326,7 @@ abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, Plan
   /// over the stream formed by the MD5 of all plans, ordered by
   /// plan id, in compliance with RFC 1321.
   @ImcField("MD5", "md5", ImcType.typeRawdata)
-  String get md5;
+  List<int> get md5;
 
   /// Individual information for plans.
   @ImcField("Plan info", "plans_info", ImcType.typeMessageList)
@@ -7367,7 +7367,7 @@ abstract class PlanDBInformation extends ImcMessage implements Built<PlanDBInfor
   /// message payload of the 'PlanSpecification', in compliance with
   /// RFC 1321.
   @ImcField("MD5", "md5", ImcType.typeRawdata)
-  String get md5;
+  List<int> get md5;
 }
 
 /// Plan Control class
@@ -8016,7 +8016,7 @@ abstract class CompressedImage extends ImcMessage implements Built<CompressedIma
   int get frameid;
 
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// Image Transmission Settings class
@@ -8348,7 +8348,7 @@ abstract class UamTxFrame extends ImcMessage implements Built<UamTxFrame, UamTxF
   UamTxFrameBitfieldFlags get flags;
 
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// UamRxFrame class
@@ -8370,7 +8370,7 @@ abstract class UamRxFrame extends ImcMessage implements Built<UamRxFrame, UamRxF
   UamRxFrameBitfieldFlags get flags;
 
   @ImcField("Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// UamTxStatus class
@@ -8676,7 +8676,7 @@ abstract class MessagePart extends ImcMessage implements Built<MessagePart, Mess
   int get num_frags;
 
   @ImcField("Fragment Data", "data", ImcType.typeRawdata)
-  String get data;
+  List<int> get data;
 }
 
 /// Neptus Blob class
@@ -8692,7 +8692,7 @@ abstract class NeptusBlob extends ImcMessage implements Built<NeptusBlob, Neptus
   String get content_type;
 
   @ImcField("Content", "content", ImcType.typeRawdata)
-  String get content;
+  List<int> get content;
 }
 
 /// Aborted class
@@ -8807,7 +8807,7 @@ abstract class ParametersXml extends ImcMessage implements Built<ParametersXml, 
 
   /// The parameters XML file compressed using the GNU zip (gzip) format.
   @ImcField("Configuration Data", "config", ImcType.typeRawdata)
-  String get config;
+  List<int> get config;
 }
 
 /// Get Parameters XML class
