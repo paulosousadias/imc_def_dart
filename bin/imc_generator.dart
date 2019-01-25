@@ -662,6 +662,10 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   });
   sink.write('''\n};\n''');
 
+  sink.write('''\nfinal messagesBuilders = <String, Builder>{''');
+  msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Builder(),"));
+  sink.write('''\n};\n''');
+
 }
 
 /// This code grnerate the IMC relate classes to work with IMC.
