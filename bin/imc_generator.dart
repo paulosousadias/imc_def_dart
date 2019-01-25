@@ -100,6 +100,10 @@ String _toSentenceCase(String s) => "${s[0].toUpperCase()}${s.substring(1)}";
 
 String _replaceMiddleUnderscoreLetterWithUpercaseLetter(String s) => s.split(new RegExp(r'_')).reduce((t1, t2) => t1 + _toSentenceCase(t2));
 
+String _convertToFieldName(String s) => _replaceMiddleUnderscoreLetterWithUpercaseLetter("${s[0].toLowerCase()}${s.substring(1)}");
+
+String _convertToClassName(String s) => _replaceMiddleUnderscoreLetterWithUpercaseLetter(_toSentenceCase(s));
+
 /// Adds 'v' prefix if is a reserved word or starts with numbers
 String _accountForReservedName(String s) {
   if (_reservedWords.contains(s.trim())) return "${s}Val";
@@ -199,7 +203,7 @@ _writeMessageImmutable(
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
 
-    var fStr = '''\n  @override\n  final $dartType $abbrev;''';
+    var fStr = '''\n  @override\n  final $dartType ${_convertToFieldName(abbrev)};''';
     sink.write('$fStr');
   });
 
@@ -217,7 +221,7 @@ _writeMessageImmutable(
 
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
-    var fStr = ''',\n      this.$abbrev''';
+    var fStr = ''',\n      this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
 
@@ -254,10 +258,10 @@ _writeMessageImmutable(
 
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
-    var fStr = ''' &&\n        $abbrev == this.$abbrev''';
+    var fStr = ''' &&\n        ${_convertToFieldName(abbrev)} == this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
 
-    hashElements.add("$abbrev.hashCode");
+    hashElements.add("${_convertToFieldName(abbrev)}.hashCode");
   });
 
   var hashStr = "";
@@ -293,7 +297,7 @@ _writeMessageImmutable(
 
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
-    var fStr = '''\n          ..add('$abbrev', $abbrev)''';
+    var fStr = '''\n          ..add('${_convertToFieldName(abbrev)}', ${_convertToFieldName(abbrev)})''';
     sink.write('$fStr');
   });
 
@@ -342,9 +346,9 @@ _writeMessageBuilder(
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
 
-    var fStr = '''\n  $dartType _$abbrev;
-  $dartType get $abbrev => _\$this._$abbrev;
-  set $abbrev($dartType $abbrev) => _\$this._$abbrev = $abbrev;\n''';
+    var fStr = '''\n  $dartType _${_convertToFieldName(abbrev)};
+  $dartType get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
+  set ${_convertToFieldName(abbrev)}($dartType ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -362,7 +366,7 @@ _writeMessageBuilder(
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
 
-    var fStr = '''      _$abbrev = _\$v.$abbrev;\n''';
+    var fStr = '''      _${_convertToFieldName(abbrev)} = _\$v.${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -399,7 +403,7 @@ _writeMessageBuilder(
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
 
-    var fStr = ''',\n            $abbrev: $abbrev''';
+    var fStr = ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
 
@@ -435,7 +439,7 @@ _writeMessageField(xml.XmlElement field, xml.XmlElement message, List<IOSink> si
       unitsStr = unit == null ? "" : ', units: "$unit"';
   }
   var str = '''  @ImcField("$name", "$abbrev", $typeImc$unitsStr)
-  $dartType get $abbrev;
+  $dartType get ${_convertToFieldName(abbrev)};
 ''';
 
   sinks[_idxMsg].write('\n');
@@ -535,7 +539,7 @@ _getTypeForEnumLike(
   }
   // Local def
   var msgAbbrev = message.getAttribute("abbrev");
-  return "$msgAbbrev$sufix${_toSentenceCase(_replaceMiddleUnderscoreLetterWithUpercaseLetter(fieldAbbrev))}";
+  return "$msgAbbrev$sufix${_convertToClassName(fieldAbbrev)}";
 }
 
 /// Writes the global enum like code classes.
@@ -548,7 +552,7 @@ _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
     default:
       sufix = unit;
   }
-  var eName = "${_toSentenceCase(_replaceMiddleUnderscoreLetterWithUpercaseLetter(def.getAttribute("abbrev")))}$sufix";
+  var eName = "${_convertToClassName(def.getAttribute("abbrev"))}$sufix";
 
   // So writting global enums like
   _writeEnumLikeWorker(eName, def, unit, sink);

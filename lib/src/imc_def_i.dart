@@ -327,9 +327,9 @@ class _$EntityInfo extends EntityInfo {
   @override
   final String component;
   @override
-  final int act_time;
+  final int actTime;
   @override
-  final int deact_time;
+  final int deactTime;
 
   factory _$EntityInfo([void updates(EntityInfoBuilder b)]) =>
       (new EntityInfoBuilder()..update(updates)).build();
@@ -343,8 +343,8 @@ class _$EntityInfo extends EntityInfo {
       this.id,
       this.label,
       this.component,
-      this.act_time,
-      this.deact_time})
+      this.actTime,
+      this.deactTime})
       : super._();
 
   @override
@@ -366,8 +366,8 @@ class _$EntityInfo extends EntityInfo {
         id == this.id &&
         label == this.label &&
         component == this.component &&
-        act_time == this.act_time &&
-        deact_time == this.deact_time;
+        actTime == this.actTime &&
+        deactTime == this.deactTime;
   }
 
   @override
@@ -381,8 +381,8 @@ class _$EntityInfo extends EntityInfo {
         id.hashCode), 
         label.hashCode), 
         component.hashCode), 
-        act_time.hashCode), 
-        deact_time.hashCode));
+        actTime.hashCode), 
+        deactTime.hashCode));
   }
 
   @override
@@ -396,8 +396,8 @@ class _$EntityInfo extends EntityInfo {
           ..add('id', id)
           ..add('label', label)
           ..add('component', component)
-          ..add('act_time', act_time)
-          ..add('deact_time', deact_time))
+          ..add('actTime', actTime)
+          ..add('deactTime', deactTime))
         .toString();
   }
 }
@@ -439,13 +439,13 @@ class EntityInfoBuilder implements Builder<EntityInfo, EntityInfoBuilder> {
   String get component => _$this._component;
   set component(String component) => _$this._component = component;
 
-  int _act_time;
-  int get act_time => _$this._act_time;
-  set act_time(int act_time) => _$this._act_time = act_time;
+  int _actTime;
+  int get actTime => _$this._actTime;
+  set actTime(int actTime) => _$this._actTime = actTime;
 
-  int _deact_time;
-  int get deact_time => _$this._deact_time;
-  set deact_time(int deact_time) => _$this._deact_time = deact_time;
+  int _deactTime;
+  int get deactTime => _$this._deactTime;
+  set deactTime(int deactTime) => _$this._deactTime = deactTime;
 
   EntityInfoBuilder();
 
@@ -459,8 +459,8 @@ class EntityInfoBuilder implements Builder<EntityInfo, EntityInfoBuilder> {
       _id = _$v.id;
       _label = _$v.label;
       _component = _$v.component;
-      _act_time = _$v.act_time;
-      _deact_time = _$v.deact_time;
+      _actTime = _$v.actTime;
+      _deactTime = _$v.deactTime;
       _$v = null;
     }
     return this;
@@ -491,8 +491,8 @@ class EntityInfoBuilder implements Builder<EntityInfo, EntityInfoBuilder> {
             id: id,
             label: label,
             component: component,
-            act_time: act_time,
-            deact_time: deact_time);
+            actTime: actTime,
+            deactTime: deactTime);
     replace(_$result);
     return _$result;
   }
@@ -959,7 +959,7 @@ class _$TransportBindings extends TransportBindings {
   @override
   final String consumer;
   @override
-  final int message_id;
+  final int messageId;
 
   factory _$TransportBindings([void updates(TransportBindingsBuilder b)]) =>
       (new TransportBindingsBuilder()..update(updates)).build();
@@ -971,7 +971,7 @@ class _$TransportBindings extends TransportBindings {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.consumer,
-      this.message_id})
+      this.messageId})
       : super._();
 
   @override
@@ -991,7 +991,7 @@ class _$TransportBindings extends TransportBindings {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         consumer == this.consumer &&
-        message_id == this.message_id;
+        messageId == this.messageId;
   }
 
   @override
@@ -1003,7 +1003,7 @@ class _$TransportBindings extends TransportBindings {
         dst.hashCode), 
         dstEnt.hashCode), 
         consumer.hashCode), 
-        message_id.hashCode));
+        messageId.hashCode));
   }
 
   @override
@@ -1015,7 +1015,7 @@ class _$TransportBindings extends TransportBindings {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('consumer', consumer)
-          ..add('message_id', message_id))
+          ..add('messageId', messageId))
         .toString();
   }
 }
@@ -1049,9 +1049,9 @@ class TransportBindingsBuilder implements Builder<TransportBindings, TransportBi
   String get consumer => _$this._consumer;
   set consumer(String consumer) => _$this._consumer = consumer;
 
-  int _message_id;
-  int get message_id => _$this._message_id;
-  set message_id(int message_id) => _$this._message_id = message_id;
+  int _messageId;
+  int get messageId => _$this._messageId;
+  set messageId(int messageId) => _$this._messageId = messageId;
 
   TransportBindingsBuilder();
 
@@ -1063,7 +1063,7 @@ class TransportBindingsBuilder implements Builder<TransportBindings, TransportBi
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _consumer = _$v.consumer;
-      _message_id = _$v.message_id;
+      _messageId = _$v.messageId;
       _$v = null;
     }
     return this;
@@ -1092,7 +1092,7 @@ class TransportBindingsBuilder implements Builder<TransportBindings, TransportBi
             dst: dst,
             dstEnt: dstEnt,
             consumer: consumer,
-            message_id: message_id);
+            messageId: messageId);
     replace(_$result);
     return _$result;
   }
@@ -1401,9 +1401,9 @@ class _$DevCalibrationState extends DevCalibrationState {
   final int dstEnt;
 
   @override
-  final int total_steps;
+  final int totalSteps;
   @override
-  final int step_number;
+  final int stepNumber;
   @override
   final String step;
   @override
@@ -1418,8 +1418,8 @@ class _$DevCalibrationState extends DevCalibrationState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.total_steps,
-      this.step_number,
+      this.totalSteps,
+      this.stepNumber,
       this.step,
       this.flags})
       : super._();
@@ -1440,8 +1440,8 @@ class _$DevCalibrationState extends DevCalibrationState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        total_steps == this.total_steps &&
-        step_number == this.step_number &&
+        totalSteps == this.totalSteps &&
+        stepNumber == this.stepNumber &&
         step == this.step &&
         flags == this.flags;
   }
@@ -1454,8 +1454,8 @@ class _$DevCalibrationState extends DevCalibrationState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        total_steps.hashCode), 
-        step_number.hashCode), 
+        totalSteps.hashCode), 
+        stepNumber.hashCode), 
         step.hashCode), 
         flags.hashCode));
   }
@@ -1468,8 +1468,8 @@ class _$DevCalibrationState extends DevCalibrationState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('total_steps', total_steps)
-          ..add('step_number', step_number)
+          ..add('totalSteps', totalSteps)
+          ..add('stepNumber', stepNumber)
           ..add('step', step)
           ..add('flags', flags))
         .toString();
@@ -1501,13 +1501,13 @@ class DevCalibrationStateBuilder implements Builder<DevCalibrationState, DevCali
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _total_steps;
-  int get total_steps => _$this._total_steps;
-  set total_steps(int total_steps) => _$this._total_steps = total_steps;
+  int _totalSteps;
+  int get totalSteps => _$this._totalSteps;
+  set totalSteps(int totalSteps) => _$this._totalSteps = totalSteps;
 
-  int _step_number;
-  int get step_number => _$this._step_number;
-  set step_number(int step_number) => _$this._step_number = step_number;
+  int _stepNumber;
+  int get stepNumber => _$this._stepNumber;
+  set stepNumber(int stepNumber) => _$this._stepNumber = stepNumber;
 
   String _step;
   String get step => _$this._step;
@@ -1526,8 +1526,8 @@ class DevCalibrationStateBuilder implements Builder<DevCalibrationState, DevCali
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _total_steps = _$v.total_steps;
-      _step_number = _$v.step_number;
+      _totalSteps = _$v.totalSteps;
+      _stepNumber = _$v.stepNumber;
       _step = _$v.step;
       _flags = _$v.flags;
       _$v = null;
@@ -1557,8 +1557,8 @@ class DevCalibrationStateBuilder implements Builder<DevCalibrationState, DevCali
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            total_steps: total_steps,
-            step_number: step_number,
+            totalSteps: totalSteps,
+            stepNumber: stepNumber,
             step: step,
             flags: flags);
     replace(_$result);
@@ -1871,39 +1871,39 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
   @override
   final VehicleOperationalLimitsEnumOp op;
   @override
-  final double speed_min;
+  final double speedMin;
   @override
-  final double speed_max;
+  final double speedMax;
   @override
-  final double long_accel;
+  final double longAccel;
   @override
-  final double alt_max_msl;
+  final double altMaxMsl;
   @override
-  final double dive_fraction_max;
+  final double diveFractionMax;
   @override
-  final double climb_fraction_max;
+  final double climbFractionMax;
   @override
-  final double bank_max;
+  final double bankMax;
   @override
-  final double p_max;
+  final double pMax;
   @override
-  final double pitch_min;
+  final double pitchMin;
   @override
-  final double pitch_max;
+  final double pitchMax;
   @override
-  final double q_max;
+  final double qMax;
   @override
-  final double g_min;
+  final double gMin;
   @override
-  final double g_max;
+  final double gMax;
   @override
-  final double g_lat_max;
+  final double gLatMax;
   @override
-  final double rpm_min;
+  final double rpmMin;
   @override
-  final double rpm_max;
+  final double rpmMax;
   @override
-  final double rpm_rate_max;
+  final double rpmRateMax;
 
   factory _$VehicleOperationalLimits([void updates(VehicleOperationalLimitsBuilder b)]) =>
       (new VehicleOperationalLimitsBuilder()..update(updates)).build();
@@ -1915,23 +1915,23 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.op,
-      this.speed_min,
-      this.speed_max,
-      this.long_accel,
-      this.alt_max_msl,
-      this.dive_fraction_max,
-      this.climb_fraction_max,
-      this.bank_max,
-      this.p_max,
-      this.pitch_min,
-      this.pitch_max,
-      this.q_max,
-      this.g_min,
-      this.g_max,
-      this.g_lat_max,
-      this.rpm_min,
-      this.rpm_max,
-      this.rpm_rate_max})
+      this.speedMin,
+      this.speedMax,
+      this.longAccel,
+      this.altMaxMsl,
+      this.diveFractionMax,
+      this.climbFractionMax,
+      this.bankMax,
+      this.pMax,
+      this.pitchMin,
+      this.pitchMax,
+      this.qMax,
+      this.gMin,
+      this.gMax,
+      this.gLatMax,
+      this.rpmMin,
+      this.rpmMax,
+      this.rpmRateMax})
       : super._();
 
   @override
@@ -1951,23 +1951,23 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == this.op &&
-        speed_min == this.speed_min &&
-        speed_max == this.speed_max &&
-        long_accel == this.long_accel &&
-        alt_max_msl == this.alt_max_msl &&
-        dive_fraction_max == this.dive_fraction_max &&
-        climb_fraction_max == this.climb_fraction_max &&
-        bank_max == this.bank_max &&
-        p_max == this.p_max &&
-        pitch_min == this.pitch_min &&
-        pitch_max == this.pitch_max &&
-        q_max == this.q_max &&
-        g_min == this.g_min &&
-        g_max == this.g_max &&
-        g_lat_max == this.g_lat_max &&
-        rpm_min == this.rpm_min &&
-        rpm_max == this.rpm_max &&
-        rpm_rate_max == this.rpm_rate_max;
+        speedMin == this.speedMin &&
+        speedMax == this.speedMax &&
+        longAccel == this.longAccel &&
+        altMaxMsl == this.altMaxMsl &&
+        diveFractionMax == this.diveFractionMax &&
+        climbFractionMax == this.climbFractionMax &&
+        bankMax == this.bankMax &&
+        pMax == this.pMax &&
+        pitchMin == this.pitchMin &&
+        pitchMax == this.pitchMax &&
+        qMax == this.qMax &&
+        gMin == this.gMin &&
+        gMax == this.gMax &&
+        gLatMax == this.gLatMax &&
+        rpmMin == this.rpmMin &&
+        rpmMax == this.rpmMax &&
+        rpmRateMax == this.rpmRateMax;
   }
 
   @override
@@ -1979,23 +1979,23 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
         dst.hashCode), 
         dstEnt.hashCode), 
         op.hashCode), 
-        speed_min.hashCode), 
-        speed_max.hashCode), 
-        long_accel.hashCode), 
-        alt_max_msl.hashCode), 
-        dive_fraction_max.hashCode), 
-        climb_fraction_max.hashCode), 
-        bank_max.hashCode), 
-        p_max.hashCode), 
-        pitch_min.hashCode), 
-        pitch_max.hashCode), 
-        q_max.hashCode), 
-        g_min.hashCode), 
-        g_max.hashCode), 
-        g_lat_max.hashCode), 
-        rpm_min.hashCode), 
-        rpm_max.hashCode), 
-        rpm_rate_max.hashCode));
+        speedMin.hashCode), 
+        speedMax.hashCode), 
+        longAccel.hashCode), 
+        altMaxMsl.hashCode), 
+        diveFractionMax.hashCode), 
+        climbFractionMax.hashCode), 
+        bankMax.hashCode), 
+        pMax.hashCode), 
+        pitchMin.hashCode), 
+        pitchMax.hashCode), 
+        qMax.hashCode), 
+        gMin.hashCode), 
+        gMax.hashCode), 
+        gLatMax.hashCode), 
+        rpmMin.hashCode), 
+        rpmMax.hashCode), 
+        rpmRateMax.hashCode));
   }
 
   @override
@@ -2007,23 +2007,23 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('op', op)
-          ..add('speed_min', speed_min)
-          ..add('speed_max', speed_max)
-          ..add('long_accel', long_accel)
-          ..add('alt_max_msl', alt_max_msl)
-          ..add('dive_fraction_max', dive_fraction_max)
-          ..add('climb_fraction_max', climb_fraction_max)
-          ..add('bank_max', bank_max)
-          ..add('p_max', p_max)
-          ..add('pitch_min', pitch_min)
-          ..add('pitch_max', pitch_max)
-          ..add('q_max', q_max)
-          ..add('g_min', g_min)
-          ..add('g_max', g_max)
-          ..add('g_lat_max', g_lat_max)
-          ..add('rpm_min', rpm_min)
-          ..add('rpm_max', rpm_max)
-          ..add('rpm_rate_max', rpm_rate_max))
+          ..add('speedMin', speedMin)
+          ..add('speedMax', speedMax)
+          ..add('longAccel', longAccel)
+          ..add('altMaxMsl', altMaxMsl)
+          ..add('diveFractionMax', diveFractionMax)
+          ..add('climbFractionMax', climbFractionMax)
+          ..add('bankMax', bankMax)
+          ..add('pMax', pMax)
+          ..add('pitchMin', pitchMin)
+          ..add('pitchMax', pitchMax)
+          ..add('qMax', qMax)
+          ..add('gMin', gMin)
+          ..add('gMax', gMax)
+          ..add('gLatMax', gLatMax)
+          ..add('rpmMin', rpmMin)
+          ..add('rpmMax', rpmMax)
+          ..add('rpmRateMax', rpmRateMax))
         .toString();
   }
 }
@@ -2057,73 +2057,73 @@ class VehicleOperationalLimitsBuilder implements Builder<VehicleOperationalLimit
   VehicleOperationalLimitsEnumOp get op => _$this._op;
   set op(VehicleOperationalLimitsEnumOp op) => _$this._op = op;
 
-  double _speed_min;
-  double get speed_min => _$this._speed_min;
-  set speed_min(double speed_min) => _$this._speed_min = speed_min;
+  double _speedMin;
+  double get speedMin => _$this._speedMin;
+  set speedMin(double speedMin) => _$this._speedMin = speedMin;
 
-  double _speed_max;
-  double get speed_max => _$this._speed_max;
-  set speed_max(double speed_max) => _$this._speed_max = speed_max;
+  double _speedMax;
+  double get speedMax => _$this._speedMax;
+  set speedMax(double speedMax) => _$this._speedMax = speedMax;
 
-  double _long_accel;
-  double get long_accel => _$this._long_accel;
-  set long_accel(double long_accel) => _$this._long_accel = long_accel;
+  double _longAccel;
+  double get longAccel => _$this._longAccel;
+  set longAccel(double longAccel) => _$this._longAccel = longAccel;
 
-  double _alt_max_msl;
-  double get alt_max_msl => _$this._alt_max_msl;
-  set alt_max_msl(double alt_max_msl) => _$this._alt_max_msl = alt_max_msl;
+  double _altMaxMsl;
+  double get altMaxMsl => _$this._altMaxMsl;
+  set altMaxMsl(double altMaxMsl) => _$this._altMaxMsl = altMaxMsl;
 
-  double _dive_fraction_max;
-  double get dive_fraction_max => _$this._dive_fraction_max;
-  set dive_fraction_max(double dive_fraction_max) => _$this._dive_fraction_max = dive_fraction_max;
+  double _diveFractionMax;
+  double get diveFractionMax => _$this._diveFractionMax;
+  set diveFractionMax(double diveFractionMax) => _$this._diveFractionMax = diveFractionMax;
 
-  double _climb_fraction_max;
-  double get climb_fraction_max => _$this._climb_fraction_max;
-  set climb_fraction_max(double climb_fraction_max) => _$this._climb_fraction_max = climb_fraction_max;
+  double _climbFractionMax;
+  double get climbFractionMax => _$this._climbFractionMax;
+  set climbFractionMax(double climbFractionMax) => _$this._climbFractionMax = climbFractionMax;
 
-  double _bank_max;
-  double get bank_max => _$this._bank_max;
-  set bank_max(double bank_max) => _$this._bank_max = bank_max;
+  double _bankMax;
+  double get bankMax => _$this._bankMax;
+  set bankMax(double bankMax) => _$this._bankMax = bankMax;
 
-  double _p_max;
-  double get p_max => _$this._p_max;
-  set p_max(double p_max) => _$this._p_max = p_max;
+  double _pMax;
+  double get pMax => _$this._pMax;
+  set pMax(double pMax) => _$this._pMax = pMax;
 
-  double _pitch_min;
-  double get pitch_min => _$this._pitch_min;
-  set pitch_min(double pitch_min) => _$this._pitch_min = pitch_min;
+  double _pitchMin;
+  double get pitchMin => _$this._pitchMin;
+  set pitchMin(double pitchMin) => _$this._pitchMin = pitchMin;
 
-  double _pitch_max;
-  double get pitch_max => _$this._pitch_max;
-  set pitch_max(double pitch_max) => _$this._pitch_max = pitch_max;
+  double _pitchMax;
+  double get pitchMax => _$this._pitchMax;
+  set pitchMax(double pitchMax) => _$this._pitchMax = pitchMax;
 
-  double _q_max;
-  double get q_max => _$this._q_max;
-  set q_max(double q_max) => _$this._q_max = q_max;
+  double _qMax;
+  double get qMax => _$this._qMax;
+  set qMax(double qMax) => _$this._qMax = qMax;
 
-  double _g_min;
-  double get g_min => _$this._g_min;
-  set g_min(double g_min) => _$this._g_min = g_min;
+  double _gMin;
+  double get gMin => _$this._gMin;
+  set gMin(double gMin) => _$this._gMin = gMin;
 
-  double _g_max;
-  double get g_max => _$this._g_max;
-  set g_max(double g_max) => _$this._g_max = g_max;
+  double _gMax;
+  double get gMax => _$this._gMax;
+  set gMax(double gMax) => _$this._gMax = gMax;
 
-  double _g_lat_max;
-  double get g_lat_max => _$this._g_lat_max;
-  set g_lat_max(double g_lat_max) => _$this._g_lat_max = g_lat_max;
+  double _gLatMax;
+  double get gLatMax => _$this._gLatMax;
+  set gLatMax(double gLatMax) => _$this._gLatMax = gLatMax;
 
-  double _rpm_min;
-  double get rpm_min => _$this._rpm_min;
-  set rpm_min(double rpm_min) => _$this._rpm_min = rpm_min;
+  double _rpmMin;
+  double get rpmMin => _$this._rpmMin;
+  set rpmMin(double rpmMin) => _$this._rpmMin = rpmMin;
 
-  double _rpm_max;
-  double get rpm_max => _$this._rpm_max;
-  set rpm_max(double rpm_max) => _$this._rpm_max = rpm_max;
+  double _rpmMax;
+  double get rpmMax => _$this._rpmMax;
+  set rpmMax(double rpmMax) => _$this._rpmMax = rpmMax;
 
-  double _rpm_rate_max;
-  double get rpm_rate_max => _$this._rpm_rate_max;
-  set rpm_rate_max(double rpm_rate_max) => _$this._rpm_rate_max = rpm_rate_max;
+  double _rpmRateMax;
+  double get rpmRateMax => _$this._rpmRateMax;
+  set rpmRateMax(double rpmRateMax) => _$this._rpmRateMax = rpmRateMax;
 
   VehicleOperationalLimitsBuilder();
 
@@ -2135,23 +2135,23 @@ class VehicleOperationalLimitsBuilder implements Builder<VehicleOperationalLimit
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _op = _$v.op;
-      _speed_min = _$v.speed_min;
-      _speed_max = _$v.speed_max;
-      _long_accel = _$v.long_accel;
-      _alt_max_msl = _$v.alt_max_msl;
-      _dive_fraction_max = _$v.dive_fraction_max;
-      _climb_fraction_max = _$v.climb_fraction_max;
-      _bank_max = _$v.bank_max;
-      _p_max = _$v.p_max;
-      _pitch_min = _$v.pitch_min;
-      _pitch_max = _$v.pitch_max;
-      _q_max = _$v.q_max;
-      _g_min = _$v.g_min;
-      _g_max = _$v.g_max;
-      _g_lat_max = _$v.g_lat_max;
-      _rpm_min = _$v.rpm_min;
-      _rpm_max = _$v.rpm_max;
-      _rpm_rate_max = _$v.rpm_rate_max;
+      _speedMin = _$v.speedMin;
+      _speedMax = _$v.speedMax;
+      _longAccel = _$v.longAccel;
+      _altMaxMsl = _$v.altMaxMsl;
+      _diveFractionMax = _$v.diveFractionMax;
+      _climbFractionMax = _$v.climbFractionMax;
+      _bankMax = _$v.bankMax;
+      _pMax = _$v.pMax;
+      _pitchMin = _$v.pitchMin;
+      _pitchMax = _$v.pitchMax;
+      _qMax = _$v.qMax;
+      _gMin = _$v.gMin;
+      _gMax = _$v.gMax;
+      _gLatMax = _$v.gLatMax;
+      _rpmMin = _$v.rpmMin;
+      _rpmMax = _$v.rpmMax;
+      _rpmRateMax = _$v.rpmRateMax;
       _$v = null;
     }
     return this;
@@ -2180,23 +2180,23 @@ class VehicleOperationalLimitsBuilder implements Builder<VehicleOperationalLimit
             dst: dst,
             dstEnt: dstEnt,
             op: op,
-            speed_min: speed_min,
-            speed_max: speed_max,
-            long_accel: long_accel,
-            alt_max_msl: alt_max_msl,
-            dive_fraction_max: dive_fraction_max,
-            climb_fraction_max: climb_fraction_max,
-            bank_max: bank_max,
-            p_max: p_max,
-            pitch_min: pitch_min,
-            pitch_max: pitch_max,
-            q_max: q_max,
-            g_min: g_min,
-            g_max: g_max,
-            g_lat_max: g_lat_max,
-            rpm_min: rpm_min,
-            rpm_max: rpm_max,
-            rpm_rate_max: rpm_rate_max);
+            speedMin: speedMin,
+            speedMax: speedMax,
+            longAccel: longAccel,
+            altMaxMsl: altMaxMsl,
+            diveFractionMax: diveFractionMax,
+            climbFractionMax: climbFractionMax,
+            bankMax: bankMax,
+            pMax: pMax,
+            pitchMin: pitchMin,
+            pitchMax: pitchMax,
+            qMax: qMax,
+            gMin: gMin,
+            gMax: gMax,
+            gLatMax: gLatMax,
+            rpmMin: rpmMin,
+            rpmMax: rpmMax,
+            rpmRateMax: rpmRateMax);
     replace(_$result);
     return _$result;
   }
@@ -3035,9 +3035,9 @@ class _$DynamicsSimParam extends DynamicsSimParam {
   @override
   final DynamicsSimParamEnumOp op;
   @override
-  final double tas2acc_pgain;
+  final double tas2accPgain;
   @override
-  final double bank2p_pgain;
+  final double bank2pPgain;
 
   factory _$DynamicsSimParam([void updates(DynamicsSimParamBuilder b)]) =>
       (new DynamicsSimParamBuilder()..update(updates)).build();
@@ -3049,8 +3049,8 @@ class _$DynamicsSimParam extends DynamicsSimParam {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.op,
-      this.tas2acc_pgain,
-      this.bank2p_pgain})
+      this.tas2accPgain,
+      this.bank2pPgain})
       : super._();
 
   @override
@@ -3070,8 +3070,8 @@ class _$DynamicsSimParam extends DynamicsSimParam {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == this.op &&
-        tas2acc_pgain == this.tas2acc_pgain &&
-        bank2p_pgain == this.bank2p_pgain;
+        tas2accPgain == this.tas2accPgain &&
+        bank2pPgain == this.bank2pPgain;
   }
 
   @override
@@ -3083,8 +3083,8 @@ class _$DynamicsSimParam extends DynamicsSimParam {
         dst.hashCode), 
         dstEnt.hashCode), 
         op.hashCode), 
-        tas2acc_pgain.hashCode), 
-        bank2p_pgain.hashCode));
+        tas2accPgain.hashCode), 
+        bank2pPgain.hashCode));
   }
 
   @override
@@ -3096,8 +3096,8 @@ class _$DynamicsSimParam extends DynamicsSimParam {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('op', op)
-          ..add('tas2acc_pgain', tas2acc_pgain)
-          ..add('bank2p_pgain', bank2p_pgain))
+          ..add('tas2accPgain', tas2accPgain)
+          ..add('bank2pPgain', bank2pPgain))
         .toString();
   }
 }
@@ -3131,13 +3131,13 @@ class DynamicsSimParamBuilder implements Builder<DynamicsSimParam, DynamicsSimPa
   DynamicsSimParamEnumOp get op => _$this._op;
   set op(DynamicsSimParamEnumOp op) => _$this._op = op;
 
-  double _tas2acc_pgain;
-  double get tas2acc_pgain => _$this._tas2acc_pgain;
-  set tas2acc_pgain(double tas2acc_pgain) => _$this._tas2acc_pgain = tas2acc_pgain;
+  double _tas2accPgain;
+  double get tas2accPgain => _$this._tas2accPgain;
+  set tas2accPgain(double tas2accPgain) => _$this._tas2accPgain = tas2accPgain;
 
-  double _bank2p_pgain;
-  double get bank2p_pgain => _$this._bank2p_pgain;
-  set bank2p_pgain(double bank2p_pgain) => _$this._bank2p_pgain = bank2p_pgain;
+  double _bank2pPgain;
+  double get bank2pPgain => _$this._bank2pPgain;
+  set bank2pPgain(double bank2pPgain) => _$this._bank2pPgain = bank2pPgain;
 
   DynamicsSimParamBuilder();
 
@@ -3149,8 +3149,8 @@ class DynamicsSimParamBuilder implements Builder<DynamicsSimParam, DynamicsSimPa
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _op = _$v.op;
-      _tas2acc_pgain = _$v.tas2acc_pgain;
-      _bank2p_pgain = _$v.bank2p_pgain;
+      _tas2accPgain = _$v.tas2accPgain;
+      _bank2pPgain = _$v.bank2pPgain;
       _$v = null;
     }
     return this;
@@ -3179,8 +3179,8 @@ class DynamicsSimParamBuilder implements Builder<DynamicsSimParam, DynamicsSimPa
             dst: dst,
             dstEnt: dstEnt,
             op: op,
-            tas2acc_pgain: tas2acc_pgain,
-            bank2p_pgain: bank2p_pgain);
+            tas2accPgain: tas2accPgain,
+            bank2pPgain: bank2pPgain);
     replace(_$result);
     return _$result;
   }
@@ -4725,7 +4725,7 @@ class _$HistoricSonarData extends HistoricSonarData {
   @override
   final HistoricSonarDataEnumEncoding encoding;
   @override
-  final List<int> sonar_data;
+  final List<int> sonarData;
 
   factory _$HistoricSonarData([void updates(HistoricSonarDataBuilder b)]) =>
       (new HistoricSonarDataBuilder()..update(updates)).build();
@@ -4742,7 +4742,7 @@ class _$HistoricSonarData extends HistoricSonarData {
       this.bearing,
       this.pxl,
       this.encoding,
-      this.sonar_data})
+      this.sonarData})
       : super._();
 
   @override
@@ -4767,7 +4767,7 @@ class _$HistoricSonarData extends HistoricSonarData {
         bearing == this.bearing &&
         pxl == this.pxl &&
         encoding == this.encoding &&
-        sonar_data == this.sonar_data;
+        sonarData == this.sonarData;
   }
 
   @override
@@ -4784,7 +4784,7 @@ class _$HistoricSonarData extends HistoricSonarData {
         bearing.hashCode), 
         pxl.hashCode), 
         encoding.hashCode), 
-        sonar_data.hashCode));
+        sonarData.hashCode));
   }
 
   @override
@@ -4801,7 +4801,7 @@ class _$HistoricSonarData extends HistoricSonarData {
           ..add('bearing', bearing)
           ..add('pxl', pxl)
           ..add('encoding', encoding)
-          ..add('sonar_data', sonar_data))
+          ..add('sonarData', sonarData))
         .toString();
   }
 }
@@ -4855,9 +4855,9 @@ class HistoricSonarDataBuilder implements Builder<HistoricSonarData, HistoricSon
   HistoricSonarDataEnumEncoding get encoding => _$this._encoding;
   set encoding(HistoricSonarDataEnumEncoding encoding) => _$this._encoding = encoding;
 
-  List<int> _sonar_data;
-  List<int> get sonar_data => _$this._sonar_data;
-  set sonar_data(List<int> sonar_data) => _$this._sonar_data = sonar_data;
+  List<int> _sonarData;
+  List<int> get sonarData => _$this._sonarData;
+  set sonarData(List<int> sonarData) => _$this._sonarData = sonarData;
 
   HistoricSonarDataBuilder();
 
@@ -4874,7 +4874,7 @@ class HistoricSonarDataBuilder implements Builder<HistoricSonarData, HistoricSon
       _bearing = _$v.bearing;
       _pxl = _$v.pxl;
       _encoding = _$v.encoding;
-      _sonar_data = _$v.sonar_data;
+      _sonarData = _$v.sonarData;
       _$v = null;
     }
     return this;
@@ -4908,7 +4908,7 @@ class HistoricSonarDataBuilder implements Builder<HistoricSonarData, HistoricSon
             bearing: bearing,
             pxl: pxl,
             encoding: encoding,
-            sonar_data: sonar_data);
+            sonarData: sonarData);
     replace(_$result);
     return _$result;
   }
@@ -5565,9 +5565,9 @@ class _$Announce extends Announce {
   final int dstEnt;
 
   @override
-  final String sys_name;
+  final String sysName;
   @override
-  final SystemTypeEnum sys_type;
+  final SystemTypeEnum sysType;
   @override
   final int owner;
   @override
@@ -5588,8 +5588,8 @@ class _$Announce extends Announce {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.sys_name,
-      this.sys_type,
+      this.sysName,
+      this.sysType,
       this.owner,
       this.lat,
       this.lon,
@@ -5613,8 +5613,8 @@ class _$Announce extends Announce {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sys_name == this.sys_name &&
-        sys_type == this.sys_type &&
+        sysName == this.sysName &&
+        sysType == this.sysType &&
         owner == this.owner &&
         lat == this.lat &&
         lon == this.lon &&
@@ -5630,8 +5630,8 @@ class _$Announce extends Announce {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        sys_name.hashCode), 
-        sys_type.hashCode), 
+        sysName.hashCode), 
+        sysType.hashCode), 
         owner.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
@@ -5647,8 +5647,8 @@ class _$Announce extends Announce {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('sys_name', sys_name)
-          ..add('sys_type', sys_type)
+          ..add('sysName', sysName)
+          ..add('sysType', sysType)
           ..add('owner', owner)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -5683,13 +5683,13 @@ class AnnounceBuilder implements Builder<Announce, AnnounceBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _sys_name;
-  String get sys_name => _$this._sys_name;
-  set sys_name(String sys_name) => _$this._sys_name = sys_name;
+  String _sysName;
+  String get sysName => _$this._sysName;
+  set sysName(String sysName) => _$this._sysName = sysName;
 
-  SystemTypeEnum _sys_type;
-  SystemTypeEnum get sys_type => _$this._sys_type;
-  set sys_type(SystemTypeEnum sys_type) => _$this._sys_type = sys_type;
+  SystemTypeEnum _sysType;
+  SystemTypeEnum get sysType => _$this._sysType;
+  set sysType(SystemTypeEnum sysType) => _$this._sysType = sysType;
 
   int _owner;
   int get owner => _$this._owner;
@@ -5720,8 +5720,8 @@ class AnnounceBuilder implements Builder<Announce, AnnounceBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _sys_name = _$v.sys_name;
-      _sys_type = _$v.sys_type;
+      _sysName = _$v.sysName;
+      _sysType = _$v.sysType;
       _owner = _$v.owner;
       _lat = _$v.lat;
       _lon = _$v.lon;
@@ -5754,8 +5754,8 @@ class AnnounceBuilder implements Builder<Announce, AnnounceBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            sys_name: sys_name,
-            sys_type: sys_type,
+            sysName: sysName,
+            sysType: sysType,
             owner: owner,
             lat: lat,
             lon: lon,
@@ -5783,7 +5783,7 @@ class _$AnnounceService extends AnnounceService {
   @override
   final String service;
   @override
-  final AnnounceServiceBitfieldServiceType service_type;
+  final AnnounceServiceBitfieldServiceType serviceType;
 
   factory _$AnnounceService([void updates(AnnounceServiceBuilder b)]) =>
       (new AnnounceServiceBuilder()..update(updates)).build();
@@ -5795,7 +5795,7 @@ class _$AnnounceService extends AnnounceService {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.service,
-      this.service_type})
+      this.serviceType})
       : super._();
 
   @override
@@ -5815,7 +5815,7 @@ class _$AnnounceService extends AnnounceService {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         service == this.service &&
-        service_type == this.service_type;
+        serviceType == this.serviceType;
   }
 
   @override
@@ -5827,7 +5827,7 @@ class _$AnnounceService extends AnnounceService {
         dst.hashCode), 
         dstEnt.hashCode), 
         service.hashCode), 
-        service_type.hashCode));
+        serviceType.hashCode));
   }
 
   @override
@@ -5839,7 +5839,7 @@ class _$AnnounceService extends AnnounceService {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('service', service)
-          ..add('service_type', service_type))
+          ..add('serviceType', serviceType))
         .toString();
   }
 }
@@ -5873,9 +5873,9 @@ class AnnounceServiceBuilder implements Builder<AnnounceService, AnnounceService
   String get service => _$this._service;
   set service(String service) => _$this._service = service;
 
-  AnnounceServiceBitfieldServiceType _service_type;
-  AnnounceServiceBitfieldServiceType get service_type => _$this._service_type;
-  set service_type(AnnounceServiceBitfieldServiceType service_type) => _$this._service_type = service_type;
+  AnnounceServiceBitfieldServiceType _serviceType;
+  AnnounceServiceBitfieldServiceType get serviceType => _$this._serviceType;
+  set serviceType(AnnounceServiceBitfieldServiceType serviceType) => _$this._serviceType = serviceType;
 
   AnnounceServiceBuilder();
 
@@ -5887,7 +5887,7 @@ class AnnounceServiceBuilder implements Builder<AnnounceService, AnnounceService
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _service = _$v.service;
-      _service_type = _$v.service_type;
+      _serviceType = _$v.serviceType;
       _$v = null;
     }
     return this;
@@ -5916,7 +5916,7 @@ class AnnounceServiceBuilder implements Builder<AnnounceService, AnnounceService
             dst: dst,
             dstEnt: dstEnt,
             service: service,
-            service_type: service_type);
+            serviceType: serviceType);
     replace(_$result);
     return _$result;
   }
@@ -7389,7 +7389,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
   final int dstEnt;
 
   @override
-  final int req_id;
+  final int reqId;
   @override
   final int ttl;
   @override
@@ -7406,7 +7406,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.req_id,
+      this.reqId,
       this.ttl,
       this.destination,
       this.data})
@@ -7428,7 +7428,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        req_id == this.req_id &&
+        reqId == this.reqId &&
         ttl == this.ttl &&
         destination == this.destination &&
         data == this.data;
@@ -7442,7 +7442,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        req_id.hashCode), 
+        reqId.hashCode), 
         ttl.hashCode), 
         destination.hashCode), 
         data.hashCode));
@@ -7456,7 +7456,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('req_id', req_id)
+          ..add('reqId', reqId)
           ..add('ttl', ttl)
           ..add('destination', destination)
           ..add('data', data))
@@ -7489,9 +7489,9 @@ class IridiumMsgTxBuilder implements Builder<IridiumMsgTx, IridiumMsgTxBuilder> 
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
   int _ttl;
   int get ttl => _$this._ttl;
@@ -7514,7 +7514,7 @@ class IridiumMsgTxBuilder implements Builder<IridiumMsgTx, IridiumMsgTxBuilder> 
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _req_id = _$v.req_id;
+      _reqId = _$v.reqId;
       _ttl = _$v.ttl;
       _destination = _$v.destination;
       _data = _$v.data;
@@ -7545,7 +7545,7 @@ class IridiumMsgTxBuilder implements Builder<IridiumMsgTx, IridiumMsgTxBuilder> 
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            req_id: req_id,
+            reqId: reqId,
             ttl: ttl,
             destination: destination,
             data: data);
@@ -7569,7 +7569,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
   final int dstEnt;
 
   @override
-  final int req_id;
+  final int reqId;
   @override
   final IridiumTxStatusEnumStatus status;
   @override
@@ -7584,7 +7584,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.req_id,
+      this.reqId,
       this.status,
       this.text})
       : super._();
@@ -7605,7 +7605,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        req_id == this.req_id &&
+        reqId == this.reqId &&
         status == this.status &&
         text == this.text;
   }
@@ -7618,7 +7618,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        req_id.hashCode), 
+        reqId.hashCode), 
         status.hashCode), 
         text.hashCode));
   }
@@ -7631,7 +7631,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('req_id', req_id)
+          ..add('reqId', reqId)
           ..add('status', status)
           ..add('text', text))
         .toString();
@@ -7663,9 +7663,9 @@ class IridiumTxStatusBuilder implements Builder<IridiumTxStatus, IridiumTxStatus
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
   IridiumTxStatusEnumStatus _status;
   IridiumTxStatusEnumStatus get status => _$this._status;
@@ -7684,7 +7684,7 @@ class IridiumTxStatusBuilder implements Builder<IridiumTxStatus, IridiumTxStatus
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _req_id = _$v.req_id;
+      _reqId = _$v.reqId;
       _status = _$v.status;
       _text = _$v.text;
       _$v = null;
@@ -7714,7 +7714,7 @@ class IridiumTxStatusBuilder implements Builder<IridiumTxStatus, IridiumTxStatus
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            req_id: req_id,
+            reqId: reqId,
             status: status,
             text: text);
     replace(_$result);
@@ -7737,7 +7737,7 @@ class _$GroupMembershipState extends GroupMembershipState {
   final int dstEnt;
 
   @override
-  final String group_name;
+  final String groupName;
   @override
   final int links;
 
@@ -7750,7 +7750,7 @@ class _$GroupMembershipState extends GroupMembershipState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.group_name,
+      this.groupName,
       this.links})
       : super._();
 
@@ -7770,7 +7770,7 @@ class _$GroupMembershipState extends GroupMembershipState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        group_name == this.group_name &&
+        groupName == this.groupName &&
         links == this.links;
   }
 
@@ -7782,7 +7782,7 @@ class _$GroupMembershipState extends GroupMembershipState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        group_name.hashCode), 
+        groupName.hashCode), 
         links.hashCode));
   }
 
@@ -7794,7 +7794,7 @@ class _$GroupMembershipState extends GroupMembershipState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('group_name', group_name)
+          ..add('groupName', groupName)
           ..add('links', links))
         .toString();
   }
@@ -7825,9 +7825,9 @@ class GroupMembershipStateBuilder implements Builder<GroupMembershipState, Group
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _group_name;
-  String get group_name => _$this._group_name;
-  set group_name(String group_name) => _$this._group_name = group_name;
+  String _groupName;
+  String get groupName => _$this._groupName;
+  set groupName(String groupName) => _$this._groupName = groupName;
 
   int _links;
   int get links => _$this._links;
@@ -7842,7 +7842,7 @@ class GroupMembershipStateBuilder implements Builder<GroupMembershipState, Group
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _group_name = _$v.group_name;
+      _groupName = _$v.groupName;
       _links = _$v.links;
       _$v = null;
     }
@@ -7871,7 +7871,7 @@ class GroupMembershipStateBuilder implements Builder<GroupMembershipState, Group
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            group_name: group_name,
+            groupName: groupName,
             links: links);
     replace(_$result);
     return _$result;
@@ -7893,11 +7893,11 @@ class _$SystemGroup extends SystemGroup {
   final int dstEnt;
 
   @override
-  final String GroupName;
+  final String groupName;
   @override
-  final SystemGroupEnumAction Action;
+  final SystemGroupEnumAction action;
   @override
-  final String GroupList;
+  final String groupList;
 
   factory _$SystemGroup([void updates(SystemGroupBuilder b)]) =>
       (new SystemGroupBuilder()..update(updates)).build();
@@ -7908,9 +7908,9 @@ class _$SystemGroup extends SystemGroup {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.GroupName,
-      this.Action,
-      this.GroupList})
+      this.groupName,
+      this.action,
+      this.groupList})
       : super._();
 
   @override
@@ -7929,9 +7929,9 @@ class _$SystemGroup extends SystemGroup {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        GroupName == this.GroupName &&
-        Action == this.Action &&
-        GroupList == this.GroupList;
+        groupName == this.groupName &&
+        action == this.action &&
+        groupList == this.groupList;
   }
 
   @override
@@ -7942,9 +7942,9 @@ class _$SystemGroup extends SystemGroup {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        GroupName.hashCode), 
-        Action.hashCode), 
-        GroupList.hashCode));
+        groupName.hashCode), 
+        action.hashCode), 
+        groupList.hashCode));
   }
 
   @override
@@ -7955,9 +7955,9 @@ class _$SystemGroup extends SystemGroup {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('GroupName', GroupName)
-          ..add('Action', Action)
-          ..add('GroupList', GroupList))
+          ..add('groupName', groupName)
+          ..add('action', action)
+          ..add('groupList', groupList))
         .toString();
   }
 }
@@ -7987,17 +7987,17 @@ class SystemGroupBuilder implements Builder<SystemGroup, SystemGroupBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _GroupName;
-  String get GroupName => _$this._GroupName;
-  set GroupName(String GroupName) => _$this._GroupName = GroupName;
+  String _groupName;
+  String get groupName => _$this._groupName;
+  set groupName(String groupName) => _$this._groupName = groupName;
 
-  SystemGroupEnumAction _Action;
-  SystemGroupEnumAction get Action => _$this._Action;
-  set Action(SystemGroupEnumAction Action) => _$this._Action = Action;
+  SystemGroupEnumAction _action;
+  SystemGroupEnumAction get action => _$this._action;
+  set action(SystemGroupEnumAction action) => _$this._action = action;
 
-  String _GroupList;
-  String get GroupList => _$this._GroupList;
-  set GroupList(String GroupList) => _$this._GroupList = GroupList;
+  String _groupList;
+  String get groupList => _$this._groupList;
+  set groupList(String groupList) => _$this._groupList = groupList;
 
   SystemGroupBuilder();
 
@@ -8008,9 +8008,9 @@ class SystemGroupBuilder implements Builder<SystemGroup, SystemGroupBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _GroupName = _$v.GroupName;
-      _Action = _$v.Action;
-      _GroupList = _$v.GroupList;
+      _groupName = _$v.groupName;
+      _action = _$v.action;
+      _groupList = _$v.groupList;
       _$v = null;
     }
     return this;
@@ -8038,9 +8038,9 @@ class SystemGroupBuilder implements Builder<SystemGroup, SystemGroupBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            GroupName: GroupName,
-            Action: Action,
-            GroupList: GroupList);
+            groupName: groupName,
+            action: action,
+            groupList: groupList);
     replace(_$result);
     return _$result;
   }
@@ -8063,7 +8063,7 @@ class _$LinkLatency extends LinkLatency {
   @override
   final double value;
   @override
-  final int sys_src;
+  final int sysSrc;
 
   factory _$LinkLatency([void updates(LinkLatencyBuilder b)]) =>
       (new LinkLatencyBuilder()..update(updates)).build();
@@ -8075,7 +8075,7 @@ class _$LinkLatency extends LinkLatency {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.value,
-      this.sys_src})
+      this.sysSrc})
       : super._();
 
   @override
@@ -8095,7 +8095,7 @@ class _$LinkLatency extends LinkLatency {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         value == this.value &&
-        sys_src == this.sys_src;
+        sysSrc == this.sysSrc;
   }
 
   @override
@@ -8107,7 +8107,7 @@ class _$LinkLatency extends LinkLatency {
         dst.hashCode), 
         dstEnt.hashCode), 
         value.hashCode), 
-        sys_src.hashCode));
+        sysSrc.hashCode));
   }
 
   @override
@@ -8119,7 +8119,7 @@ class _$LinkLatency extends LinkLatency {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('value', value)
-          ..add('sys_src', sys_src))
+          ..add('sysSrc', sysSrc))
         .toString();
   }
 }
@@ -8153,9 +8153,9 @@ class LinkLatencyBuilder implements Builder<LinkLatency, LinkLatencyBuilder> {
   double get value => _$this._value;
   set value(double value) => _$this._value = value;
 
-  int _sys_src;
-  int get sys_src => _$this._sys_src;
-  set sys_src(int sys_src) => _$this._sys_src = sys_src;
+  int _sysSrc;
+  int get sysSrc => _$this._sysSrc;
+  set sysSrc(int sysSrc) => _$this._sysSrc = sysSrc;
 
   LinkLatencyBuilder();
 
@@ -8167,7 +8167,7 @@ class LinkLatencyBuilder implements Builder<LinkLatency, LinkLatencyBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _value = _$v.value;
-      _sys_src = _$v.sys_src;
+      _sysSrc = _$v.sysSrc;
       _$v = null;
     }
     return this;
@@ -8196,7 +8196,7 @@ class LinkLatencyBuilder implements Builder<LinkLatency, LinkLatencyBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             value: value,
-            sys_src: sys_src);
+            sysSrc: sysSrc);
     replace(_$result);
     return _$result;
   }
@@ -8373,11 +8373,11 @@ class _$HistoricData extends HistoricData {
   final int dstEnt;
 
   @override
-  final double base_lat;
+  final double baseLat;
   @override
-  final double base_lon;
+  final double baseLon;
   @override
-  final double base_time;
+  final double baseTime;
   @override
   final List<RemoteData> data;
 
@@ -8390,9 +8390,9 @@ class _$HistoricData extends HistoricData {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.base_lat,
-      this.base_lon,
-      this.base_time,
+      this.baseLat,
+      this.baseLon,
+      this.baseTime,
       this.data})
       : super._();
 
@@ -8412,9 +8412,9 @@ class _$HistoricData extends HistoricData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        base_lat == this.base_lat &&
-        base_lon == this.base_lon &&
-        base_time == this.base_time &&
+        baseLat == this.baseLat &&
+        baseLon == this.baseLon &&
+        baseTime == this.baseTime &&
         data == this.data;
   }
 
@@ -8426,9 +8426,9 @@ class _$HistoricData extends HistoricData {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        base_lat.hashCode), 
-        base_lon.hashCode), 
-        base_time.hashCode), 
+        baseLat.hashCode), 
+        baseLon.hashCode), 
+        baseTime.hashCode), 
         data.hashCode));
   }
 
@@ -8440,9 +8440,9 @@ class _$HistoricData extends HistoricData {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('base_lat', base_lat)
-          ..add('base_lon', base_lon)
-          ..add('base_time', base_time)
+          ..add('baseLat', baseLat)
+          ..add('baseLon', baseLon)
+          ..add('baseTime', baseTime)
           ..add('data', data))
         .toString();
   }
@@ -8473,17 +8473,17 @@ class HistoricDataBuilder implements Builder<HistoricData, HistoricDataBuilder> 
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _base_lat;
-  double get base_lat => _$this._base_lat;
-  set base_lat(double base_lat) => _$this._base_lat = base_lat;
+  double _baseLat;
+  double get baseLat => _$this._baseLat;
+  set baseLat(double baseLat) => _$this._baseLat = baseLat;
 
-  double _base_lon;
-  double get base_lon => _$this._base_lon;
-  set base_lon(double base_lon) => _$this._base_lon = base_lon;
+  double _baseLon;
+  double get baseLon => _$this._baseLon;
+  set baseLon(double baseLon) => _$this._baseLon = baseLon;
 
-  double _base_time;
-  double get base_time => _$this._base_time;
-  set base_time(double base_time) => _$this._base_time = base_time;
+  double _baseTime;
+  double get baseTime => _$this._baseTime;
+  set baseTime(double baseTime) => _$this._baseTime = baseTime;
 
   List<RemoteData> _data;
   List<RemoteData> get data => _$this._data;
@@ -8498,9 +8498,9 @@ class HistoricDataBuilder implements Builder<HistoricData, HistoricDataBuilder> 
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _base_lat = _$v.base_lat;
-      _base_lon = _$v.base_lon;
-      _base_time = _$v.base_time;
+      _baseLat = _$v.baseLat;
+      _baseLon = _$v.baseLon;
+      _baseTime = _$v.baseTime;
       _data = _$v.data;
       _$v = null;
     }
@@ -8529,9 +8529,9 @@ class HistoricDataBuilder implements Builder<HistoricData, HistoricDataBuilder> 
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            base_lat: base_lat,
-            base_lon: base_lon,
-            base_time: base_time,
+            baseLat: baseLat,
+            baseLon: baseLon,
+            baseTime: baseTime,
             data: data);
     replace(_$result);
     return _$result;
@@ -8553,11 +8553,11 @@ class _$CompressedHistory extends CompressedHistory {
   final int dstEnt;
 
   @override
-  final double base_lat;
+  final double baseLat;
   @override
-  final double base_lon;
+  final double baseLon;
   @override
-  final double base_time;
+  final double baseTime;
   @override
   final List<int> data;
 
@@ -8570,9 +8570,9 @@ class _$CompressedHistory extends CompressedHistory {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.base_lat,
-      this.base_lon,
-      this.base_time,
+      this.baseLat,
+      this.baseLon,
+      this.baseTime,
       this.data})
       : super._();
 
@@ -8592,9 +8592,9 @@ class _$CompressedHistory extends CompressedHistory {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        base_lat == this.base_lat &&
-        base_lon == this.base_lon &&
-        base_time == this.base_time &&
+        baseLat == this.baseLat &&
+        baseLon == this.baseLon &&
+        baseTime == this.baseTime &&
         data == this.data;
   }
 
@@ -8606,9 +8606,9 @@ class _$CompressedHistory extends CompressedHistory {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        base_lat.hashCode), 
-        base_lon.hashCode), 
-        base_time.hashCode), 
+        baseLat.hashCode), 
+        baseLon.hashCode), 
+        baseTime.hashCode), 
         data.hashCode));
   }
 
@@ -8620,9 +8620,9 @@ class _$CompressedHistory extends CompressedHistory {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('base_lat', base_lat)
-          ..add('base_lon', base_lon)
-          ..add('base_time', base_time)
+          ..add('baseLat', baseLat)
+          ..add('baseLon', baseLon)
+          ..add('baseTime', baseTime)
           ..add('data', data))
         .toString();
   }
@@ -8653,17 +8653,17 @@ class CompressedHistoryBuilder implements Builder<CompressedHistory, CompressedH
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _base_lat;
-  double get base_lat => _$this._base_lat;
-  set base_lat(double base_lat) => _$this._base_lat = base_lat;
+  double _baseLat;
+  double get baseLat => _$this._baseLat;
+  set baseLat(double baseLat) => _$this._baseLat = baseLat;
 
-  double _base_lon;
-  double get base_lon => _$this._base_lon;
-  set base_lon(double base_lon) => _$this._base_lon = base_lon;
+  double _baseLon;
+  double get baseLon => _$this._baseLon;
+  set baseLon(double baseLon) => _$this._baseLon = baseLon;
 
-  double _base_time;
-  double get base_time => _$this._base_time;
-  set base_time(double base_time) => _$this._base_time = base_time;
+  double _baseTime;
+  double get baseTime => _$this._baseTime;
+  set baseTime(double baseTime) => _$this._baseTime = baseTime;
 
   List<int> _data;
   List<int> get data => _$this._data;
@@ -8678,9 +8678,9 @@ class CompressedHistoryBuilder implements Builder<CompressedHistory, CompressedH
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _base_lat = _$v.base_lat;
-      _base_lon = _$v.base_lon;
-      _base_time = _$v.base_time;
+      _baseLat = _$v.baseLat;
+      _baseLon = _$v.baseLon;
+      _baseTime = _$v.baseTime;
       _data = _$v.data;
       _$v = null;
     }
@@ -8709,9 +8709,9 @@ class CompressedHistoryBuilder implements Builder<CompressedHistory, CompressedH
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            base_lat: base_lat,
-            base_lon: base_lon,
-            base_time: base_time,
+            baseLat: baseLat,
+            baseLon: baseLon,
+            baseTime: baseTime,
             data: data);
     replace(_$result);
     return _$result;
@@ -8733,7 +8733,7 @@ class _$HistoricSample extends HistoricSample {
   final int dstEnt;
 
   @override
-  final int sys_id;
+  final int sysId;
   @override
   final int priority;
   @override
@@ -8756,7 +8756,7 @@ class _$HistoricSample extends HistoricSample {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.sys_id,
+      this.sysId,
       this.priority,
       this.x,
       this.y,
@@ -8781,7 +8781,7 @@ class _$HistoricSample extends HistoricSample {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sys_id == this.sys_id &&
+        sysId == this.sysId &&
         priority == this.priority &&
         x == this.x &&
         y == this.y &&
@@ -8798,7 +8798,7 @@ class _$HistoricSample extends HistoricSample {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        sys_id.hashCode), 
+        sysId.hashCode), 
         priority.hashCode), 
         x.hashCode), 
         y.hashCode), 
@@ -8815,7 +8815,7 @@ class _$HistoricSample extends HistoricSample {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('sys_id', sys_id)
+          ..add('sysId', sysId)
           ..add('priority', priority)
           ..add('x', x)
           ..add('y', y)
@@ -8851,9 +8851,9 @@ class HistoricSampleBuilder implements Builder<HistoricSample, HistoricSampleBui
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _sys_id;
-  int get sys_id => _$this._sys_id;
-  set sys_id(int sys_id) => _$this._sys_id = sys_id;
+  int _sysId;
+  int get sysId => _$this._sysId;
+  set sysId(int sysId) => _$this._sysId = sysId;
 
   int _priority;
   int get priority => _$this._priority;
@@ -8888,7 +8888,7 @@ class HistoricSampleBuilder implements Builder<HistoricSample, HistoricSampleBui
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _sys_id = _$v.sys_id;
+      _sysId = _$v.sysId;
       _priority = _$v.priority;
       _x = _$v.x;
       _y = _$v.y;
@@ -8922,7 +8922,7 @@ class HistoricSampleBuilder implements Builder<HistoricSample, HistoricSampleBui
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            sys_id: sys_id,
+            sysId: sysId,
             priority: priority,
             x: x,
             y: y,
@@ -8949,11 +8949,11 @@ class _$HistoricDataQuery extends HistoricDataQuery {
   final int dstEnt;
 
   @override
-  final int req_id;
+  final int reqId;
   @override
   final HistoricDataQueryEnumType type;
   @override
-  final int max_size;
+  final int maxSize;
   @override
   final HistoricData data;
 
@@ -8966,9 +8966,9 @@ class _$HistoricDataQuery extends HistoricDataQuery {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.req_id,
+      this.reqId,
       this.type,
-      this.max_size,
+      this.maxSize,
       this.data})
       : super._();
 
@@ -8988,9 +8988,9 @@ class _$HistoricDataQuery extends HistoricDataQuery {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        req_id == this.req_id &&
+        reqId == this.reqId &&
         type == this.type &&
-        max_size == this.max_size &&
+        maxSize == this.maxSize &&
         data == this.data;
   }
 
@@ -9002,9 +9002,9 @@ class _$HistoricDataQuery extends HistoricDataQuery {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        req_id.hashCode), 
+        reqId.hashCode), 
         type.hashCode), 
-        max_size.hashCode), 
+        maxSize.hashCode), 
         data.hashCode));
   }
 
@@ -9016,9 +9016,9 @@ class _$HistoricDataQuery extends HistoricDataQuery {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('req_id', req_id)
+          ..add('reqId', reqId)
           ..add('type', type)
-          ..add('max_size', max_size)
+          ..add('maxSize', maxSize)
           ..add('data', data))
         .toString();
   }
@@ -9049,17 +9049,17 @@ class HistoricDataQueryBuilder implements Builder<HistoricDataQuery, HistoricDat
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
   HistoricDataQueryEnumType _type;
   HistoricDataQueryEnumType get type => _$this._type;
   set type(HistoricDataQueryEnumType type) => _$this._type = type;
 
-  int _max_size;
-  int get max_size => _$this._max_size;
-  set max_size(int max_size) => _$this._max_size = max_size;
+  int _maxSize;
+  int get maxSize => _$this._maxSize;
+  set maxSize(int maxSize) => _$this._maxSize = maxSize;
 
   HistoricData _data;
   HistoricData get data => _$this._data;
@@ -9074,9 +9074,9 @@ class HistoricDataQueryBuilder implements Builder<HistoricDataQuery, HistoricDat
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _req_id = _$v.req_id;
+      _reqId = _$v.reqId;
       _type = _$v.type;
-      _max_size = _$v.max_size;
+      _maxSize = _$v.maxSize;
       _data = _$v.data;
       _$v = null;
     }
@@ -9105,9 +9105,9 @@ class HistoricDataQueryBuilder implements Builder<HistoricDataQuery, HistoricDat
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            req_id: req_id,
+            reqId: reqId,
             type: type,
-            max_size: max_size,
+            maxSize: maxSize,
             data: data);
     replace(_$result);
     return _$result;
@@ -9129,7 +9129,7 @@ class _$RemoteCommand extends RemoteCommand {
   final int dstEnt;
 
   @override
-  final int original_source;
+  final int originalSource;
   @override
   final int destination;
   @override
@@ -9146,7 +9146,7 @@ class _$RemoteCommand extends RemoteCommand {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.original_source,
+      this.originalSource,
       this.destination,
       this.timeout,
       this.cmd})
@@ -9168,7 +9168,7 @@ class _$RemoteCommand extends RemoteCommand {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        original_source == this.original_source &&
+        originalSource == this.originalSource &&
         destination == this.destination &&
         timeout == this.timeout &&
         cmd == this.cmd;
@@ -9182,7 +9182,7 @@ class _$RemoteCommand extends RemoteCommand {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        original_source.hashCode), 
+        originalSource.hashCode), 
         destination.hashCode), 
         timeout.hashCode), 
         cmd.hashCode));
@@ -9196,7 +9196,7 @@ class _$RemoteCommand extends RemoteCommand {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('original_source', original_source)
+          ..add('originalSource', originalSource)
           ..add('destination', destination)
           ..add('timeout', timeout)
           ..add('cmd', cmd))
@@ -9229,9 +9229,9 @@ class RemoteCommandBuilder implements Builder<RemoteCommand, RemoteCommandBuilde
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _original_source;
-  int get original_source => _$this._original_source;
-  set original_source(int original_source) => _$this._original_source = original_source;
+  int _originalSource;
+  int get originalSource => _$this._originalSource;
+  set originalSource(int originalSource) => _$this._originalSource = originalSource;
 
   int _destination;
   int get destination => _$this._destination;
@@ -9254,7 +9254,7 @@ class RemoteCommandBuilder implements Builder<RemoteCommand, RemoteCommandBuilde
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _original_source = _$v.original_source;
+      _originalSource = _$v.originalSource;
       _destination = _$v.destination;
       _timeout = _$v.timeout;
       _cmd = _$v.cmd;
@@ -9285,7 +9285,7 @@ class RemoteCommandBuilder implements Builder<RemoteCommand, RemoteCommandBuilde
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            original_source: original_source,
+            originalSource: originalSource,
             destination: destination,
             timeout: timeout,
             cmd: cmd);
@@ -9311,7 +9311,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
   @override
   final CommSystemsQueryBitfieldType type;
   @override
-  final CommSystemsQueryBitfieldCommInterface comm_interface;
+  final CommSystemsQueryBitfieldCommInterface commInterface;
   @override
   final CommSystemsQueryEnumModel model;
   @override
@@ -9327,7 +9327,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.type,
-      this.comm_interface,
+      this.commInterface,
       this.model,
       this.list})
       : super._();
@@ -9349,7 +9349,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         type == this.type &&
-        comm_interface == this.comm_interface &&
+        commInterface == this.commInterface &&
         model == this.model &&
         list == this.list;
   }
@@ -9363,7 +9363,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
         dst.hashCode), 
         dstEnt.hashCode), 
         type.hashCode), 
-        comm_interface.hashCode), 
+        commInterface.hashCode), 
         model.hashCode), 
         list.hashCode));
   }
@@ -9377,7 +9377,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('type', type)
-          ..add('comm_interface', comm_interface)
+          ..add('commInterface', commInterface)
           ..add('model', model)
           ..add('list', list))
         .toString();
@@ -9413,9 +9413,9 @@ class CommSystemsQueryBuilder implements Builder<CommSystemsQuery, CommSystemsQu
   CommSystemsQueryBitfieldType get type => _$this._type;
   set type(CommSystemsQueryBitfieldType type) => _$this._type = type;
 
-  CommSystemsQueryBitfieldCommInterface _comm_interface;
-  CommSystemsQueryBitfieldCommInterface get comm_interface => _$this._comm_interface;
-  set comm_interface(CommSystemsQueryBitfieldCommInterface comm_interface) => _$this._comm_interface = comm_interface;
+  CommSystemsQueryBitfieldCommInterface _commInterface;
+  CommSystemsQueryBitfieldCommInterface get commInterface => _$this._commInterface;
+  set commInterface(CommSystemsQueryBitfieldCommInterface commInterface) => _$this._commInterface = commInterface;
 
   CommSystemsQueryEnumModel _model;
   CommSystemsQueryEnumModel get model => _$this._model;
@@ -9435,7 +9435,7 @@ class CommSystemsQueryBuilder implements Builder<CommSystemsQuery, CommSystemsQu
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
-      _comm_interface = _$v.comm_interface;
+      _commInterface = _$v.commInterface;
       _model = _$v.model;
       _list = _$v.list;
       _$v = null;
@@ -9466,7 +9466,7 @@ class CommSystemsQueryBuilder implements Builder<CommSystemsQuery, CommSystemsQu
             dst: dst,
             dstEnt: dstEnt,
             type: type,
-            comm_interface: comm_interface,
+            commInterface: commInterface,
             model: model,
             list: list);
     replace(_$result);
@@ -9491,7 +9491,7 @@ class _$TelemetryMsg extends TelemetryMsg {
   @override
   final TelemetryMsgEnumType type;
   @override
-  final int req_id;
+  final int reqId;
   @override
   final int ttl;
   @override
@@ -9499,7 +9499,7 @@ class _$TelemetryMsg extends TelemetryMsg {
   @override
   final String destination;
   @override
-  final String Source;
+  final String source;
   @override
   final TelemetryMsgBitfieldAcknowledge acknowledge;
   @override
@@ -9517,11 +9517,11 @@ class _$TelemetryMsg extends TelemetryMsg {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.type,
-      this.req_id,
+      this.reqId,
       this.ttl,
       this.code,
       this.destination,
-      this.Source,
+      this.source,
       this.acknowledge,
       this.status,
       this.data})
@@ -9544,11 +9544,11 @@ class _$TelemetryMsg extends TelemetryMsg {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         type == this.type &&
-        req_id == this.req_id &&
+        reqId == this.reqId &&
         ttl == this.ttl &&
         code == this.code &&
         destination == this.destination &&
-        Source == this.Source &&
+        source == this.source &&
         acknowledge == this.acknowledge &&
         status == this.status &&
         data == this.data;
@@ -9563,11 +9563,11 @@ class _$TelemetryMsg extends TelemetryMsg {
         dst.hashCode), 
         dstEnt.hashCode), 
         type.hashCode), 
-        req_id.hashCode), 
+        reqId.hashCode), 
         ttl.hashCode), 
         code.hashCode), 
         destination.hashCode), 
-        Source.hashCode), 
+        source.hashCode), 
         acknowledge.hashCode), 
         status.hashCode), 
         data.hashCode));
@@ -9582,11 +9582,11 @@ class _$TelemetryMsg extends TelemetryMsg {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('type', type)
-          ..add('req_id', req_id)
+          ..add('reqId', reqId)
           ..add('ttl', ttl)
           ..add('code', code)
           ..add('destination', destination)
-          ..add('Source', Source)
+          ..add('source', source)
           ..add('acknowledge', acknowledge)
           ..add('status', status)
           ..add('data', data))
@@ -9623,9 +9623,9 @@ class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder> 
   TelemetryMsgEnumType get type => _$this._type;
   set type(TelemetryMsgEnumType type) => _$this._type = type;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
   int _ttl;
   int get ttl => _$this._ttl;
@@ -9639,9 +9639,9 @@ class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder> 
   String get destination => _$this._destination;
   set destination(String destination) => _$this._destination = destination;
 
-  String _Source;
-  String get Source => _$this._Source;
-  set Source(String Source) => _$this._Source = Source;
+  String _source;
+  String get source => _$this._source;
+  set source(String source) => _$this._source = source;
 
   TelemetryMsgBitfieldAcknowledge _acknowledge;
   TelemetryMsgBitfieldAcknowledge get acknowledge => _$this._acknowledge;
@@ -9665,11 +9665,11 @@ class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder> 
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
-      _req_id = _$v.req_id;
+      _reqId = _$v.reqId;
       _ttl = _$v.ttl;
       _code = _$v.code;
       _destination = _$v.destination;
-      _Source = _$v.Source;
+      _source = _$v.source;
       _acknowledge = _$v.acknowledge;
       _status = _$v.status;
       _data = _$v.data;
@@ -9701,11 +9701,11 @@ class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder> 
             dst: dst,
             dstEnt: dstEnt,
             type: type,
-            req_id: req_id,
+            reqId: reqId,
             ttl: ttl,
             code: code,
             destination: destination,
-            Source: Source,
+            source: source,
             acknowledge: acknowledge,
             status: status,
             data: data);
@@ -9893,11 +9893,11 @@ class _$LblBeacon extends LblBeacon {
   @override
   final double depth;
   @override
-  final int query_channel;
+  final int queryChannel;
   @override
-  final int reply_channel;
+  final int replyChannel;
   @override
-  final int transponder_delay;
+  final int transponderDelay;
 
   factory _$LblBeacon([void updates(LblBeaconBuilder b)]) =>
       (new LblBeaconBuilder()..update(updates)).build();
@@ -9912,9 +9912,9 @@ class _$LblBeacon extends LblBeacon {
       this.lat,
       this.lon,
       this.depth,
-      this.query_channel,
-      this.reply_channel,
-      this.transponder_delay})
+      this.queryChannel,
+      this.replyChannel,
+      this.transponderDelay})
       : super._();
 
   @override
@@ -9937,9 +9937,9 @@ class _$LblBeacon extends LblBeacon {
         lat == this.lat &&
         lon == this.lon &&
         depth == this.depth &&
-        query_channel == this.query_channel &&
-        reply_channel == this.reply_channel &&
-        transponder_delay == this.transponder_delay;
+        queryChannel == this.queryChannel &&
+        replyChannel == this.replyChannel &&
+        transponderDelay == this.transponderDelay;
   }
 
   @override
@@ -9954,9 +9954,9 @@ class _$LblBeacon extends LblBeacon {
         lat.hashCode), 
         lon.hashCode), 
         depth.hashCode), 
-        query_channel.hashCode), 
-        reply_channel.hashCode), 
-        transponder_delay.hashCode));
+        queryChannel.hashCode), 
+        replyChannel.hashCode), 
+        transponderDelay.hashCode));
   }
 
   @override
@@ -9971,9 +9971,9 @@ class _$LblBeacon extends LblBeacon {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('depth', depth)
-          ..add('query_channel', query_channel)
-          ..add('reply_channel', reply_channel)
-          ..add('transponder_delay', transponder_delay))
+          ..add('queryChannel', queryChannel)
+          ..add('replyChannel', replyChannel)
+          ..add('transponderDelay', transponderDelay))
         .toString();
   }
 }
@@ -10019,17 +10019,17 @@ class LblBeaconBuilder implements Builder<LblBeacon, LblBeaconBuilder> {
   double get depth => _$this._depth;
   set depth(double depth) => _$this._depth = depth;
 
-  int _query_channel;
-  int get query_channel => _$this._query_channel;
-  set query_channel(int query_channel) => _$this._query_channel = query_channel;
+  int _queryChannel;
+  int get queryChannel => _$this._queryChannel;
+  set queryChannel(int queryChannel) => _$this._queryChannel = queryChannel;
 
-  int _reply_channel;
-  int get reply_channel => _$this._reply_channel;
-  set reply_channel(int reply_channel) => _$this._reply_channel = reply_channel;
+  int _replyChannel;
+  int get replyChannel => _$this._replyChannel;
+  set replyChannel(int replyChannel) => _$this._replyChannel = replyChannel;
 
-  int _transponder_delay;
-  int get transponder_delay => _$this._transponder_delay;
-  set transponder_delay(int transponder_delay) => _$this._transponder_delay = transponder_delay;
+  int _transponderDelay;
+  int get transponderDelay => _$this._transponderDelay;
+  set transponderDelay(int transponderDelay) => _$this._transponderDelay = transponderDelay;
 
   LblBeaconBuilder();
 
@@ -10044,9 +10044,9 @@ class LblBeaconBuilder implements Builder<LblBeacon, LblBeaconBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _depth = _$v.depth;
-      _query_channel = _$v.query_channel;
-      _reply_channel = _$v.reply_channel;
-      _transponder_delay = _$v.transponder_delay;
+      _queryChannel = _$v.queryChannel;
+      _replyChannel = _$v.replyChannel;
+      _transponderDelay = _$v.transponderDelay;
       _$v = null;
     }
     return this;
@@ -10078,9 +10078,9 @@ class LblBeaconBuilder implements Builder<LblBeacon, LblBeaconBuilder> {
             lat: lat,
             lon: lon,
             depth: depth,
-            query_channel: query_channel,
-            reply_channel: reply_channel,
-            transponder_delay: transponder_delay);
+            queryChannel: queryChannel,
+            replyChannel: replyChannel,
+            transponderDelay: transponderDelay);
     replace(_$result);
     return _$result;
   }
@@ -11461,13 +11461,13 @@ class _$GpsFix extends GpsFix {
   @override
   final GpsFixEnumType type;
   @override
-  final int utc_year;
+  final int utcYear;
   @override
-  final int utc_month;
+  final int utcMonth;
   @override
-  final int utc_day;
+  final int utcDay;
   @override
-  final double utc_time;
+  final double utcTime;
   @override
   final double lat;
   @override
@@ -11500,10 +11500,10 @@ class _$GpsFix extends GpsFix {
       this.dstEnt: ImcEntityId.nullId,
       this.validity,
       this.type,
-      this.utc_year,
-      this.utc_month,
-      this.utc_day,
-      this.utc_time,
+      this.utcYear,
+      this.utcMonth,
+      this.utcDay,
+      this.utcTime,
       this.lat,
       this.lon,
       this.height,
@@ -11534,10 +11534,10 @@ class _$GpsFix extends GpsFix {
         dstEnt == other.dstEnt &&
         validity == this.validity &&
         type == this.type &&
-        utc_year == this.utc_year &&
-        utc_month == this.utc_month &&
-        utc_day == this.utc_day &&
-        utc_time == this.utc_time &&
+        utcYear == this.utcYear &&
+        utcMonth == this.utcMonth &&
+        utcDay == this.utcDay &&
+        utcTime == this.utcTime &&
         lat == this.lat &&
         lon == this.lon &&
         height == this.height &&
@@ -11560,10 +11560,10 @@ class _$GpsFix extends GpsFix {
         dstEnt.hashCode), 
         validity.hashCode), 
         type.hashCode), 
-        utc_year.hashCode), 
-        utc_month.hashCode), 
-        utc_day.hashCode), 
-        utc_time.hashCode), 
+        utcYear.hashCode), 
+        utcMonth.hashCode), 
+        utcDay.hashCode), 
+        utcTime.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
         height.hashCode), 
@@ -11586,10 +11586,10 @@ class _$GpsFix extends GpsFix {
           ..add('dstEnt', dstEnt)
           ..add('validity', validity)
           ..add('type', type)
-          ..add('utc_year', utc_year)
-          ..add('utc_month', utc_month)
-          ..add('utc_day', utc_day)
-          ..add('utc_time', utc_time)
+          ..add('utcYear', utcYear)
+          ..add('utcMonth', utcMonth)
+          ..add('utcDay', utcDay)
+          ..add('utcTime', utcTime)
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('height', height)
@@ -11637,21 +11637,21 @@ class GpsFixBuilder implements Builder<GpsFix, GpsFixBuilder> {
   GpsFixEnumType get type => _$this._type;
   set type(GpsFixEnumType type) => _$this._type = type;
 
-  int _utc_year;
-  int get utc_year => _$this._utc_year;
-  set utc_year(int utc_year) => _$this._utc_year = utc_year;
+  int _utcYear;
+  int get utcYear => _$this._utcYear;
+  set utcYear(int utcYear) => _$this._utcYear = utcYear;
 
-  int _utc_month;
-  int get utc_month => _$this._utc_month;
-  set utc_month(int utc_month) => _$this._utc_month = utc_month;
+  int _utcMonth;
+  int get utcMonth => _$this._utcMonth;
+  set utcMonth(int utcMonth) => _$this._utcMonth = utcMonth;
 
-  int _utc_day;
-  int get utc_day => _$this._utc_day;
-  set utc_day(int utc_day) => _$this._utc_day = utc_day;
+  int _utcDay;
+  int get utcDay => _$this._utcDay;
+  set utcDay(int utcDay) => _$this._utcDay = utcDay;
 
-  double _utc_time;
-  double get utc_time => _$this._utc_time;
-  set utc_time(double utc_time) => _$this._utc_time = utc_time;
+  double _utcTime;
+  double get utcTime => _$this._utcTime;
+  set utcTime(double utcTime) => _$this._utcTime = utcTime;
 
   double _lat;
   double get lat => _$this._lat;
@@ -11704,10 +11704,10 @@ class GpsFixBuilder implements Builder<GpsFix, GpsFixBuilder> {
       _dstEnt = _$v.dstEnt;
       _validity = _$v.validity;
       _type = _$v.type;
-      _utc_year = _$v.utc_year;
-      _utc_month = _$v.utc_month;
-      _utc_day = _$v.utc_day;
-      _utc_time = _$v.utc_time;
+      _utcYear = _$v.utcYear;
+      _utcMonth = _$v.utcMonth;
+      _utcDay = _$v.utcDay;
+      _utcTime = _$v.utcTime;
       _lat = _$v.lat;
       _lon = _$v.lon;
       _height = _$v.height;
@@ -11747,10 +11747,10 @@ class GpsFixBuilder implements Builder<GpsFix, GpsFixBuilder> {
             dstEnt: dstEnt,
             validity: validity,
             type: type,
-            utc_year: utc_year,
-            utc_month: utc_month,
-            utc_day: utc_day,
-            utc_time: utc_time,
+            utcYear: utcYear,
+            utcMonth: utcMonth,
+            utcDay: utcDay,
+            utcTime: utcTime,
             lat: lat,
             lon: lon,
             height: height,
@@ -11789,7 +11789,7 @@ class _$EulerAngles extends EulerAngles {
   @override
   final double psi;
   @override
-  final double psi_magnetic;
+  final double psiMagnetic;
 
   factory _$EulerAngles([void updates(EulerAnglesBuilder b)]) =>
       (new EulerAnglesBuilder()..update(updates)).build();
@@ -11804,7 +11804,7 @@ class _$EulerAngles extends EulerAngles {
       this.phi,
       this.theta,
       this.psi,
-      this.psi_magnetic})
+      this.psiMagnetic})
       : super._();
 
   @override
@@ -11827,7 +11827,7 @@ class _$EulerAngles extends EulerAngles {
         phi == this.phi &&
         theta == this.theta &&
         psi == this.psi &&
-        psi_magnetic == this.psi_magnetic;
+        psiMagnetic == this.psiMagnetic;
   }
 
   @override
@@ -11842,7 +11842,7 @@ class _$EulerAngles extends EulerAngles {
         phi.hashCode), 
         theta.hashCode), 
         psi.hashCode), 
-        psi_magnetic.hashCode));
+        psiMagnetic.hashCode));
   }
 
   @override
@@ -11857,7 +11857,7 @@ class _$EulerAngles extends EulerAngles {
           ..add('phi', phi)
           ..add('theta', theta)
           ..add('psi', psi)
-          ..add('psi_magnetic', psi_magnetic))
+          ..add('psiMagnetic', psiMagnetic))
         .toString();
   }
 }
@@ -11903,9 +11903,9 @@ class EulerAnglesBuilder implements Builder<EulerAngles, EulerAnglesBuilder> {
   double get psi => _$this._psi;
   set psi(double psi) => _$this._psi = psi;
 
-  double _psi_magnetic;
-  double get psi_magnetic => _$this._psi_magnetic;
-  set psi_magnetic(double psi_magnetic) => _$this._psi_magnetic = psi_magnetic;
+  double _psiMagnetic;
+  double get psiMagnetic => _$this._psiMagnetic;
+  set psiMagnetic(double psiMagnetic) => _$this._psiMagnetic = psiMagnetic;
 
   EulerAnglesBuilder();
 
@@ -11920,7 +11920,7 @@ class EulerAnglesBuilder implements Builder<EulerAngles, EulerAnglesBuilder> {
       _phi = _$v.phi;
       _theta = _$v.theta;
       _psi = _$v.psi;
-      _psi_magnetic = _$v.psi_magnetic;
+      _psiMagnetic = _$v.psiMagnetic;
       _$v = null;
     }
     return this;
@@ -11952,7 +11952,7 @@ class EulerAnglesBuilder implements Builder<EulerAngles, EulerAnglesBuilder> {
             phi: phi,
             theta: theta,
             psi: psi,
-            psi_magnetic: psi_magnetic);
+            psiMagnetic: psiMagnetic);
     replace(_$result);
     return _$result;
   }
@@ -13249,7 +13249,7 @@ class _$Distance extends Distance {
   @override
   final List<DeviceState> location;
   @override
-  final List<BeamConfig> beam_config;
+  final List<BeamConfig> beamConfig;
   @override
   final double value;
 
@@ -13264,7 +13264,7 @@ class _$Distance extends Distance {
       this.dstEnt: ImcEntityId.nullId,
       this.validity,
       this.location,
-      this.beam_config,
+      this.beamConfig,
       this.value})
       : super._();
 
@@ -13286,7 +13286,7 @@ class _$Distance extends Distance {
         dstEnt == other.dstEnt &&
         validity == this.validity &&
         location == this.location &&
-        beam_config == this.beam_config &&
+        beamConfig == this.beamConfig &&
         value == this.value;
   }
 
@@ -13300,7 +13300,7 @@ class _$Distance extends Distance {
         dstEnt.hashCode), 
         validity.hashCode), 
         location.hashCode), 
-        beam_config.hashCode), 
+        beamConfig.hashCode), 
         value.hashCode));
   }
 
@@ -13314,7 +13314,7 @@ class _$Distance extends Distance {
           ..add('dstEnt', dstEnt)
           ..add('validity', validity)
           ..add('location', location)
-          ..add('beam_config', beam_config)
+          ..add('beamConfig', beamConfig)
           ..add('value', value))
         .toString();
   }
@@ -13353,9 +13353,9 @@ class DistanceBuilder implements Builder<Distance, DistanceBuilder> {
   List<DeviceState> get location => _$this._location;
   set location(List<DeviceState> location) => _$this._location = location;
 
-  List<BeamConfig> _beam_config;
-  List<BeamConfig> get beam_config => _$this._beam_config;
-  set beam_config(List<BeamConfig> beam_config) => _$this._beam_config = beam_config;
+  List<BeamConfig> _beamConfig;
+  List<BeamConfig> get beamConfig => _$this._beamConfig;
+  set beamConfig(List<BeamConfig> beamConfig) => _$this._beamConfig = beamConfig;
 
   double _value;
   double get value => _$this._value;
@@ -13372,7 +13372,7 @@ class DistanceBuilder implements Builder<Distance, DistanceBuilder> {
       _dstEnt = _$v.dstEnt;
       _validity = _$v.validity;
       _location = _$v.location;
-      _beam_config = _$v.beam_config;
+      _beamConfig = _$v.beamConfig;
       _value = _$v.value;
       _$v = null;
     }
@@ -13403,7 +13403,7 @@ class DistanceBuilder implements Builder<Distance, DistanceBuilder> {
             dstEnt: dstEnt,
             validity: validity,
             location: location,
-            beam_config: beam_config,
+            beamConfig: beamConfig,
             value: value);
     replace(_$result);
     return _$result;
@@ -15325,15 +15325,15 @@ class _$SonarData extends SonarData {
   @override
   final int frequency;
   @override
-  final int min_range;
+  final int minRange;
   @override
-  final int max_range;
+  final int maxRange;
   @override
-  final int bits_per_point;
+  final int bitsPerPoint;
   @override
-  final double scale_factor;
+  final double scaleFactor;
   @override
-  final List<BeamConfig> beam_config;
+  final List<BeamConfig> beamConfig;
   @override
   final List<int> data;
 
@@ -15348,11 +15348,11 @@ class _$SonarData extends SonarData {
       this.dstEnt: ImcEntityId.nullId,
       this.type,
       this.frequency,
-      this.min_range,
-      this.max_range,
-      this.bits_per_point,
-      this.scale_factor,
-      this.beam_config,
+      this.minRange,
+      this.maxRange,
+      this.bitsPerPoint,
+      this.scaleFactor,
+      this.beamConfig,
       this.data})
       : super._();
 
@@ -15374,11 +15374,11 @@ class _$SonarData extends SonarData {
         dstEnt == other.dstEnt &&
         type == this.type &&
         frequency == this.frequency &&
-        min_range == this.min_range &&
-        max_range == this.max_range &&
-        bits_per_point == this.bits_per_point &&
-        scale_factor == this.scale_factor &&
-        beam_config == this.beam_config &&
+        minRange == this.minRange &&
+        maxRange == this.maxRange &&
+        bitsPerPoint == this.bitsPerPoint &&
+        scaleFactor == this.scaleFactor &&
+        beamConfig == this.beamConfig &&
         data == this.data;
   }
 
@@ -15392,11 +15392,11 @@ class _$SonarData extends SonarData {
         dstEnt.hashCode), 
         type.hashCode), 
         frequency.hashCode), 
-        min_range.hashCode), 
-        max_range.hashCode), 
-        bits_per_point.hashCode), 
-        scale_factor.hashCode), 
-        beam_config.hashCode), 
+        minRange.hashCode), 
+        maxRange.hashCode), 
+        bitsPerPoint.hashCode), 
+        scaleFactor.hashCode), 
+        beamConfig.hashCode), 
         data.hashCode));
   }
 
@@ -15410,11 +15410,11 @@ class _$SonarData extends SonarData {
           ..add('dstEnt', dstEnt)
           ..add('type', type)
           ..add('frequency', frequency)
-          ..add('min_range', min_range)
-          ..add('max_range', max_range)
-          ..add('bits_per_point', bits_per_point)
-          ..add('scale_factor', scale_factor)
-          ..add('beam_config', beam_config)
+          ..add('minRange', minRange)
+          ..add('maxRange', maxRange)
+          ..add('bitsPerPoint', bitsPerPoint)
+          ..add('scaleFactor', scaleFactor)
+          ..add('beamConfig', beamConfig)
           ..add('data', data))
         .toString();
   }
@@ -15453,25 +15453,25 @@ class SonarDataBuilder implements Builder<SonarData, SonarDataBuilder> {
   int get frequency => _$this._frequency;
   set frequency(int frequency) => _$this._frequency = frequency;
 
-  int _min_range;
-  int get min_range => _$this._min_range;
-  set min_range(int min_range) => _$this._min_range = min_range;
+  int _minRange;
+  int get minRange => _$this._minRange;
+  set minRange(int minRange) => _$this._minRange = minRange;
 
-  int _max_range;
-  int get max_range => _$this._max_range;
-  set max_range(int max_range) => _$this._max_range = max_range;
+  int _maxRange;
+  int get maxRange => _$this._maxRange;
+  set maxRange(int maxRange) => _$this._maxRange = maxRange;
 
-  int _bits_per_point;
-  int get bits_per_point => _$this._bits_per_point;
-  set bits_per_point(int bits_per_point) => _$this._bits_per_point = bits_per_point;
+  int _bitsPerPoint;
+  int get bitsPerPoint => _$this._bitsPerPoint;
+  set bitsPerPoint(int bitsPerPoint) => _$this._bitsPerPoint = bitsPerPoint;
 
-  double _scale_factor;
-  double get scale_factor => _$this._scale_factor;
-  set scale_factor(double scale_factor) => _$this._scale_factor = scale_factor;
+  double _scaleFactor;
+  double get scaleFactor => _$this._scaleFactor;
+  set scaleFactor(double scaleFactor) => _$this._scaleFactor = scaleFactor;
 
-  List<BeamConfig> _beam_config;
-  List<BeamConfig> get beam_config => _$this._beam_config;
-  set beam_config(List<BeamConfig> beam_config) => _$this._beam_config = beam_config;
+  List<BeamConfig> _beamConfig;
+  List<BeamConfig> get beamConfig => _$this._beamConfig;
+  set beamConfig(List<BeamConfig> beamConfig) => _$this._beamConfig = beamConfig;
 
   List<int> _data;
   List<int> get data => _$this._data;
@@ -15488,11 +15488,11 @@ class SonarDataBuilder implements Builder<SonarData, SonarDataBuilder> {
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
       _frequency = _$v.frequency;
-      _min_range = _$v.min_range;
-      _max_range = _$v.max_range;
-      _bits_per_point = _$v.bits_per_point;
-      _scale_factor = _$v.scale_factor;
-      _beam_config = _$v.beam_config;
+      _minRange = _$v.minRange;
+      _maxRange = _$v.maxRange;
+      _bitsPerPoint = _$v.bitsPerPoint;
+      _scaleFactor = _$v.scaleFactor;
+      _beamConfig = _$v.beamConfig;
       _data = _$v.data;
       _$v = null;
     }
@@ -15523,11 +15523,11 @@ class SonarDataBuilder implements Builder<SonarData, SonarDataBuilder> {
             dstEnt: dstEnt,
             type: type,
             frequency: frequency,
-            min_range: min_range,
-            max_range: max_range,
-            bits_per_point: bits_per_point,
-            scale_factor: scale_factor,
-            beam_config: beam_config,
+            minRange: minRange,
+            maxRange: maxRange,
+            bitsPerPoint: bitsPerPoint,
+            scaleFactor: scaleFactor,
+            beamConfig: beamConfig,
             data: data);
     replace(_$result);
     return _$result;
@@ -15999,19 +15999,19 @@ class _$GpsNavData extends GpsNavData {
   @override
   final double lon;
   @override
-  final double height_ell;
+  final double heightEll;
   @override
-  final double height_sea;
+  final double heightSea;
   @override
   final double hacc;
   @override
   final double vacc;
   @override
-  final double vel_n;
+  final double velN;
   @override
-  final double vel_e;
+  final double velE;
   @override
-  final double vel_d;
+  final double velD;
   @override
   final double speed;
   @override
@@ -16035,13 +16035,13 @@ class _$GpsNavData extends GpsNavData {
       this.itow,
       this.lat,
       this.lon,
-      this.height_ell,
-      this.height_sea,
+      this.heightEll,
+      this.heightSea,
       this.hacc,
       this.vacc,
-      this.vel_n,
-      this.vel_e,
-      this.vel_d,
+      this.velN,
+      this.velE,
+      this.velD,
       this.speed,
       this.gspeed,
       this.heading,
@@ -16068,13 +16068,13 @@ class _$GpsNavData extends GpsNavData {
         itow == this.itow &&
         lat == this.lat &&
         lon == this.lon &&
-        height_ell == this.height_ell &&
-        height_sea == this.height_sea &&
+        heightEll == this.heightEll &&
+        heightSea == this.heightSea &&
         hacc == this.hacc &&
         vacc == this.vacc &&
-        vel_n == this.vel_n &&
-        vel_e == this.vel_e &&
-        vel_d == this.vel_d &&
+        velN == this.velN &&
+        velE == this.velE &&
+        velD == this.velD &&
         speed == this.speed &&
         gspeed == this.gspeed &&
         heading == this.heading &&
@@ -16093,13 +16093,13 @@ class _$GpsNavData extends GpsNavData {
         itow.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
-        height_ell.hashCode), 
-        height_sea.hashCode), 
+        heightEll.hashCode), 
+        heightSea.hashCode), 
         hacc.hashCode), 
         vacc.hashCode), 
-        vel_n.hashCode), 
-        vel_e.hashCode), 
-        vel_d.hashCode), 
+        velN.hashCode), 
+        velE.hashCode), 
+        velD.hashCode), 
         speed.hashCode), 
         gspeed.hashCode), 
         heading.hashCode), 
@@ -16118,13 +16118,13 @@ class _$GpsNavData extends GpsNavData {
           ..add('itow', itow)
           ..add('lat', lat)
           ..add('lon', lon)
-          ..add('height_ell', height_ell)
-          ..add('height_sea', height_sea)
+          ..add('heightEll', heightEll)
+          ..add('heightSea', heightSea)
           ..add('hacc', hacc)
           ..add('vacc', vacc)
-          ..add('vel_n', vel_n)
-          ..add('vel_e', vel_e)
-          ..add('vel_d', vel_d)
+          ..add('velN', velN)
+          ..add('velE', velE)
+          ..add('velD', velD)
           ..add('speed', speed)
           ..add('gspeed', gspeed)
           ..add('heading', heading)
@@ -16171,13 +16171,13 @@ class GpsNavDataBuilder implements Builder<GpsNavData, GpsNavDataBuilder> {
   double get lon => _$this._lon;
   set lon(double lon) => _$this._lon = lon;
 
-  double _height_ell;
-  double get height_ell => _$this._height_ell;
-  set height_ell(double height_ell) => _$this._height_ell = height_ell;
+  double _heightEll;
+  double get heightEll => _$this._heightEll;
+  set heightEll(double heightEll) => _$this._heightEll = heightEll;
 
-  double _height_sea;
-  double get height_sea => _$this._height_sea;
-  set height_sea(double height_sea) => _$this._height_sea = height_sea;
+  double _heightSea;
+  double get heightSea => _$this._heightSea;
+  set heightSea(double heightSea) => _$this._heightSea = heightSea;
 
   double _hacc;
   double get hacc => _$this._hacc;
@@ -16187,17 +16187,17 @@ class GpsNavDataBuilder implements Builder<GpsNavData, GpsNavDataBuilder> {
   double get vacc => _$this._vacc;
   set vacc(double vacc) => _$this._vacc = vacc;
 
-  double _vel_n;
-  double get vel_n => _$this._vel_n;
-  set vel_n(double vel_n) => _$this._vel_n = vel_n;
+  double _velN;
+  double get velN => _$this._velN;
+  set velN(double velN) => _$this._velN = velN;
 
-  double _vel_e;
-  double get vel_e => _$this._vel_e;
-  set vel_e(double vel_e) => _$this._vel_e = vel_e;
+  double _velE;
+  double get velE => _$this._velE;
+  set velE(double velE) => _$this._velE = velE;
 
-  double _vel_d;
-  double get vel_d => _$this._vel_d;
-  set vel_d(double vel_d) => _$this._vel_d = vel_d;
+  double _velD;
+  double get velD => _$this._velD;
+  set velD(double velD) => _$this._velD = velD;
 
   double _speed;
   double get speed => _$this._speed;
@@ -16231,13 +16231,13 @@ class GpsNavDataBuilder implements Builder<GpsNavData, GpsNavDataBuilder> {
       _itow = _$v.itow;
       _lat = _$v.lat;
       _lon = _$v.lon;
-      _height_ell = _$v.height_ell;
-      _height_sea = _$v.height_sea;
+      _heightEll = _$v.heightEll;
+      _heightSea = _$v.heightSea;
       _hacc = _$v.hacc;
       _vacc = _$v.vacc;
-      _vel_n = _$v.vel_n;
-      _vel_e = _$v.vel_e;
-      _vel_d = _$v.vel_d;
+      _velN = _$v.velN;
+      _velE = _$v.velE;
+      _velD = _$v.velD;
       _speed = _$v.speed;
       _gspeed = _$v.gspeed;
       _heading = _$v.heading;
@@ -16273,13 +16273,13 @@ class GpsNavDataBuilder implements Builder<GpsNavData, GpsNavDataBuilder> {
             itow: itow,
             lat: lat,
             lon: lon,
-            height_ell: height_ell,
-            height_sea: height_sea,
+            heightEll: heightEll,
+            heightSea: heightSea,
             hacc: hacc,
             vacc: vacc,
-            vel_n: vel_n,
-            vel_e: vel_e,
-            vel_d: vel_d,
+            velN: velN,
+            velE: velE,
+            velD: velD,
             speed: speed,
             gspeed: gspeed,
             heading: heading,
@@ -16665,9 +16665,9 @@ class _$BeamConfig extends BeamConfig {
   final int dstEnt;
 
   @override
-  final double beam_width;
+  final double beamWidth;
   @override
-  final double beam_height;
+  final double beamHeight;
 
   factory _$BeamConfig([void updates(BeamConfigBuilder b)]) =>
       (new BeamConfigBuilder()..update(updates)).build();
@@ -16678,8 +16678,8 @@ class _$BeamConfig extends BeamConfig {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.beam_width,
-      this.beam_height})
+      this.beamWidth,
+      this.beamHeight})
       : super._();
 
   @override
@@ -16698,8 +16698,8 @@ class _$BeamConfig extends BeamConfig {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        beam_width == this.beam_width &&
-        beam_height == this.beam_height;
+        beamWidth == this.beamWidth &&
+        beamHeight == this.beamHeight;
   }
 
   @override
@@ -16710,8 +16710,8 @@ class _$BeamConfig extends BeamConfig {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        beam_width.hashCode), 
-        beam_height.hashCode));
+        beamWidth.hashCode), 
+        beamHeight.hashCode));
   }
 
   @override
@@ -16722,8 +16722,8 @@ class _$BeamConfig extends BeamConfig {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('beam_width', beam_width)
-          ..add('beam_height', beam_height))
+          ..add('beamWidth', beamWidth)
+          ..add('beamHeight', beamHeight))
         .toString();
   }
 }
@@ -16753,13 +16753,13 @@ class BeamConfigBuilder implements Builder<BeamConfig, BeamConfigBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _beam_width;
-  double get beam_width => _$this._beam_width;
-  set beam_width(double beam_width) => _$this._beam_width = beam_width;
+  double _beamWidth;
+  double get beamWidth => _$this._beamWidth;
+  set beamWidth(double beamWidth) => _$this._beamWidth = beamWidth;
 
-  double _beam_height;
-  double get beam_height => _$this._beam_height;
-  set beam_height(double beam_height) => _$this._beam_height = beam_height;
+  double _beamHeight;
+  double get beamHeight => _$this._beamHeight;
+  set beamHeight(double beamHeight) => _$this._beamHeight = beamHeight;
 
   BeamConfigBuilder();
 
@@ -16770,8 +16770,8 @@ class BeamConfigBuilder implements Builder<BeamConfig, BeamConfigBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _beam_width = _$v.beam_width;
-      _beam_height = _$v.beam_height;
+      _beamWidth = _$v.beamWidth;
+      _beamHeight = _$v.beamHeight;
       _$v = null;
     }
     return this;
@@ -16799,8 +16799,8 @@ class BeamConfigBuilder implements Builder<BeamConfig, BeamConfigBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            beam_width: beam_width,
-            beam_height: beam_height);
+            beamWidth: beamWidth,
+            beamHeight: beamHeight);
     replace(_$result);
     return _$result;
   }
@@ -18123,11 +18123,11 @@ class _$GpsFixRtk extends GpsFixRtk {
   @override
   final int tow;
   @override
-  final double base_lat;
+  final double baseLat;
   @override
-  final double base_lon;
+  final double baseLon;
   @override
-  final double base_height;
+  final double baseHeight;
   @override
   final double n;
   @override
@@ -18135,17 +18135,17 @@ class _$GpsFixRtk extends GpsFixRtk {
   @override
   final double d;
   @override
-  final double v_n;
+  final double vN;
   @override
-  final double v_e;
+  final double vE;
   @override
-  final double v_d;
+  final double vD;
   @override
   final int satellites;
   @override
-  final int iar_hyp;
+  final int iarHyp;
   @override
-  final double iar_ratio;
+  final double iarRatio;
 
   factory _$GpsFixRtk([void updates(GpsFixRtkBuilder b)]) =>
       (new GpsFixRtkBuilder()..update(updates)).build();
@@ -18159,18 +18159,18 @@ class _$GpsFixRtk extends GpsFixRtk {
       this.validity,
       this.type,
       this.tow,
-      this.base_lat,
-      this.base_lon,
-      this.base_height,
+      this.baseLat,
+      this.baseLon,
+      this.baseHeight,
       this.n,
       this.e,
       this.d,
-      this.v_n,
-      this.v_e,
-      this.v_d,
+      this.vN,
+      this.vE,
+      this.vD,
       this.satellites,
-      this.iar_hyp,
-      this.iar_ratio})
+      this.iarHyp,
+      this.iarRatio})
       : super._();
 
   @override
@@ -18192,18 +18192,18 @@ class _$GpsFixRtk extends GpsFixRtk {
         validity == this.validity &&
         type == this.type &&
         tow == this.tow &&
-        base_lat == this.base_lat &&
-        base_lon == this.base_lon &&
-        base_height == this.base_height &&
+        baseLat == this.baseLat &&
+        baseLon == this.baseLon &&
+        baseHeight == this.baseHeight &&
         n == this.n &&
         e == this.e &&
         d == this.d &&
-        v_n == this.v_n &&
-        v_e == this.v_e &&
-        v_d == this.v_d &&
+        vN == this.vN &&
+        vE == this.vE &&
+        vD == this.vD &&
         satellites == this.satellites &&
-        iar_hyp == this.iar_hyp &&
-        iar_ratio == this.iar_ratio;
+        iarHyp == this.iarHyp &&
+        iarRatio == this.iarRatio;
   }
 
   @override
@@ -18217,18 +18217,18 @@ class _$GpsFixRtk extends GpsFixRtk {
         validity.hashCode), 
         type.hashCode), 
         tow.hashCode), 
-        base_lat.hashCode), 
-        base_lon.hashCode), 
-        base_height.hashCode), 
+        baseLat.hashCode), 
+        baseLon.hashCode), 
+        baseHeight.hashCode), 
         n.hashCode), 
         e.hashCode), 
         d.hashCode), 
-        v_n.hashCode), 
-        v_e.hashCode), 
-        v_d.hashCode), 
+        vN.hashCode), 
+        vE.hashCode), 
+        vD.hashCode), 
         satellites.hashCode), 
-        iar_hyp.hashCode), 
-        iar_ratio.hashCode));
+        iarHyp.hashCode), 
+        iarRatio.hashCode));
   }
 
   @override
@@ -18242,18 +18242,18 @@ class _$GpsFixRtk extends GpsFixRtk {
           ..add('validity', validity)
           ..add('type', type)
           ..add('tow', tow)
-          ..add('base_lat', base_lat)
-          ..add('base_lon', base_lon)
-          ..add('base_height', base_height)
+          ..add('baseLat', baseLat)
+          ..add('baseLon', baseLon)
+          ..add('baseHeight', baseHeight)
           ..add('n', n)
           ..add('e', e)
           ..add('d', d)
-          ..add('v_n', v_n)
-          ..add('v_e', v_e)
-          ..add('v_d', v_d)
+          ..add('vN', vN)
+          ..add('vE', vE)
+          ..add('vD', vD)
           ..add('satellites', satellites)
-          ..add('iar_hyp', iar_hyp)
-          ..add('iar_ratio', iar_ratio))
+          ..add('iarHyp', iarHyp)
+          ..add('iarRatio', iarRatio))
         .toString();
   }
 }
@@ -18295,17 +18295,17 @@ class GpsFixRtkBuilder implements Builder<GpsFixRtk, GpsFixRtkBuilder> {
   int get tow => _$this._tow;
   set tow(int tow) => _$this._tow = tow;
 
-  double _base_lat;
-  double get base_lat => _$this._base_lat;
-  set base_lat(double base_lat) => _$this._base_lat = base_lat;
+  double _baseLat;
+  double get baseLat => _$this._baseLat;
+  set baseLat(double baseLat) => _$this._baseLat = baseLat;
 
-  double _base_lon;
-  double get base_lon => _$this._base_lon;
-  set base_lon(double base_lon) => _$this._base_lon = base_lon;
+  double _baseLon;
+  double get baseLon => _$this._baseLon;
+  set baseLon(double baseLon) => _$this._baseLon = baseLon;
 
-  double _base_height;
-  double get base_height => _$this._base_height;
-  set base_height(double base_height) => _$this._base_height = base_height;
+  double _baseHeight;
+  double get baseHeight => _$this._baseHeight;
+  set baseHeight(double baseHeight) => _$this._baseHeight = baseHeight;
 
   double _n;
   double get n => _$this._n;
@@ -18319,29 +18319,29 @@ class GpsFixRtkBuilder implements Builder<GpsFixRtk, GpsFixRtkBuilder> {
   double get d => _$this._d;
   set d(double d) => _$this._d = d;
 
-  double _v_n;
-  double get v_n => _$this._v_n;
-  set v_n(double v_n) => _$this._v_n = v_n;
+  double _vN;
+  double get vN => _$this._vN;
+  set vN(double vN) => _$this._vN = vN;
 
-  double _v_e;
-  double get v_e => _$this._v_e;
-  set v_e(double v_e) => _$this._v_e = v_e;
+  double _vE;
+  double get vE => _$this._vE;
+  set vE(double vE) => _$this._vE = vE;
 
-  double _v_d;
-  double get v_d => _$this._v_d;
-  set v_d(double v_d) => _$this._v_d = v_d;
+  double _vD;
+  double get vD => _$this._vD;
+  set vD(double vD) => _$this._vD = vD;
 
   int _satellites;
   int get satellites => _$this._satellites;
   set satellites(int satellites) => _$this._satellites = satellites;
 
-  int _iar_hyp;
-  int get iar_hyp => _$this._iar_hyp;
-  set iar_hyp(int iar_hyp) => _$this._iar_hyp = iar_hyp;
+  int _iarHyp;
+  int get iarHyp => _$this._iarHyp;
+  set iarHyp(int iarHyp) => _$this._iarHyp = iarHyp;
 
-  double _iar_ratio;
-  double get iar_ratio => _$this._iar_ratio;
-  set iar_ratio(double iar_ratio) => _$this._iar_ratio = iar_ratio;
+  double _iarRatio;
+  double get iarRatio => _$this._iarRatio;
+  set iarRatio(double iarRatio) => _$this._iarRatio = iarRatio;
 
   GpsFixRtkBuilder();
 
@@ -18355,18 +18355,18 @@ class GpsFixRtkBuilder implements Builder<GpsFixRtk, GpsFixRtkBuilder> {
       _validity = _$v.validity;
       _type = _$v.type;
       _tow = _$v.tow;
-      _base_lat = _$v.base_lat;
-      _base_lon = _$v.base_lon;
-      _base_height = _$v.base_height;
+      _baseLat = _$v.baseLat;
+      _baseLon = _$v.baseLon;
+      _baseHeight = _$v.baseHeight;
       _n = _$v.n;
       _e = _$v.e;
       _d = _$v.d;
-      _v_n = _$v.v_n;
-      _v_e = _$v.v_e;
-      _v_d = _$v.v_d;
+      _vN = _$v.vN;
+      _vE = _$v.vE;
+      _vD = _$v.vD;
       _satellites = _$v.satellites;
-      _iar_hyp = _$v.iar_hyp;
-      _iar_ratio = _$v.iar_ratio;
+      _iarHyp = _$v.iarHyp;
+      _iarRatio = _$v.iarRatio;
       _$v = null;
     }
     return this;
@@ -18397,18 +18397,18 @@ class GpsFixRtkBuilder implements Builder<GpsFixRtk, GpsFixRtkBuilder> {
             validity: validity,
             type: type,
             tow: tow,
-            base_lat: base_lat,
-            base_lon: base_lon,
-            base_height: base_height,
+            baseLat: baseLat,
+            baseLon: baseLon,
+            baseHeight: baseHeight,
             n: n,
             e: e,
             d: d,
-            v_n: v_n,
-            v_e: v_e,
-            v_d: v_d,
+            vN: vN,
+            vE: vE,
+            vD: vD,
             satellites: satellites,
-            iar_hyp: iar_hyp,
-            iar_ratio: iar_ratio);
+            iarHyp: iarHyp,
+            iarRatio: iarRatio);
     replace(_$result);
     return _$result;
   }
@@ -20555,9 +20555,9 @@ class _$PowerOperation extends PowerOperation {
   @override
   final PowerOperationEnumOp op;
   @override
-  final double time_remain;
+  final double timeRemain;
   @override
-  final double sched_time;
+  final double schedTime;
 
   factory _$PowerOperation([void updates(PowerOperationBuilder b)]) =>
       (new PowerOperationBuilder()..update(updates)).build();
@@ -20569,8 +20569,8 @@ class _$PowerOperation extends PowerOperation {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.op,
-      this.time_remain,
-      this.sched_time})
+      this.timeRemain,
+      this.schedTime})
       : super._();
 
   @override
@@ -20590,8 +20590,8 @@ class _$PowerOperation extends PowerOperation {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == this.op &&
-        time_remain == this.time_remain &&
-        sched_time == this.sched_time;
+        timeRemain == this.timeRemain &&
+        schedTime == this.schedTime;
   }
 
   @override
@@ -20603,8 +20603,8 @@ class _$PowerOperation extends PowerOperation {
         dst.hashCode), 
         dstEnt.hashCode), 
         op.hashCode), 
-        time_remain.hashCode), 
-        sched_time.hashCode));
+        timeRemain.hashCode), 
+        schedTime.hashCode));
   }
 
   @override
@@ -20616,8 +20616,8 @@ class _$PowerOperation extends PowerOperation {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('op', op)
-          ..add('time_remain', time_remain)
-          ..add('sched_time', sched_time))
+          ..add('timeRemain', timeRemain)
+          ..add('schedTime', schedTime))
         .toString();
   }
 }
@@ -20651,13 +20651,13 @@ class PowerOperationBuilder implements Builder<PowerOperation, PowerOperationBui
   PowerOperationEnumOp get op => _$this._op;
   set op(PowerOperationEnumOp op) => _$this._op = op;
 
-  double _time_remain;
-  double get time_remain => _$this._time_remain;
-  set time_remain(double time_remain) => _$this._time_remain = time_remain;
+  double _timeRemain;
+  double get timeRemain => _$this._timeRemain;
+  set timeRemain(double timeRemain) => _$this._timeRemain = timeRemain;
 
-  double _sched_time;
-  double get sched_time => _$this._sched_time;
-  set sched_time(double sched_time) => _$this._sched_time = sched_time;
+  double _schedTime;
+  double get schedTime => _$this._schedTime;
+  set schedTime(double schedTime) => _$this._schedTime = schedTime;
 
   PowerOperationBuilder();
 
@@ -20669,8 +20669,8 @@ class PowerOperationBuilder implements Builder<PowerOperation, PowerOperationBui
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _op = _$v.op;
-      _time_remain = _$v.time_remain;
-      _sched_time = _$v.sched_time;
+      _timeRemain = _$v.timeRemain;
+      _schedTime = _$v.schedTime;
       _$v = null;
     }
     return this;
@@ -20699,8 +20699,8 @@ class PowerOperationBuilder implements Builder<PowerOperation, PowerOperationBui
             dst: dst,
             dstEnt: dstEnt,
             op: op,
-            time_remain: time_remain,
-            sched_time: sched_time);
+            timeRemain: timeRemain,
+            schedTime: schedTime);
     replace(_$result);
     return _$result;
   }
@@ -20725,7 +20725,7 @@ class _$PowerChannelControl extends PowerChannelControl {
   @override
   final PowerChannelControlEnumOp op;
   @override
-  final double sched_time;
+  final double schedTime;
 
   factory _$PowerChannelControl([void updates(PowerChannelControlBuilder b)]) =>
       (new PowerChannelControlBuilder()..update(updates)).build();
@@ -20738,7 +20738,7 @@ class _$PowerChannelControl extends PowerChannelControl {
       this.dstEnt: ImcEntityId.nullId,
       this.name,
       this.op,
-      this.sched_time})
+      this.schedTime})
       : super._();
 
   @override
@@ -20759,7 +20759,7 @@ class _$PowerChannelControl extends PowerChannelControl {
         dstEnt == other.dstEnt &&
         name == this.name &&
         op == this.op &&
-        sched_time == this.sched_time;
+        schedTime == this.schedTime;
   }
 
   @override
@@ -20772,7 +20772,7 @@ class _$PowerChannelControl extends PowerChannelControl {
         dstEnt.hashCode), 
         name.hashCode), 
         op.hashCode), 
-        sched_time.hashCode));
+        schedTime.hashCode));
   }
 
   @override
@@ -20785,7 +20785,7 @@ class _$PowerChannelControl extends PowerChannelControl {
           ..add('dstEnt', dstEnt)
           ..add('name', name)
           ..add('op', op)
-          ..add('sched_time', sched_time))
+          ..add('schedTime', schedTime))
         .toString();
   }
 }
@@ -20823,9 +20823,9 @@ class PowerChannelControlBuilder implements Builder<PowerChannelControl, PowerCh
   PowerChannelControlEnumOp get op => _$this._op;
   set op(PowerChannelControlEnumOp op) => _$this._op = op;
 
-  double _sched_time;
-  double get sched_time => _$this._sched_time;
-  set sched_time(double sched_time) => _$this._sched_time = sched_time;
+  double _schedTime;
+  double get schedTime => _$this._schedTime;
+  set schedTime(double schedTime) => _$this._schedTime = schedTime;
 
   PowerChannelControlBuilder();
 
@@ -20838,7 +20838,7 @@ class PowerChannelControlBuilder implements Builder<PowerChannelControl, PowerCh
       _dstEnt = _$v.dstEnt;
       _name = _$v.name;
       _op = _$v.op;
-      _sched_time = _$v.sched_time;
+      _schedTime = _$v.schedTime;
       _$v = null;
     }
     return this;
@@ -20868,7 +20868,7 @@ class PowerChannelControlBuilder implements Builder<PowerChannelControl, PowerCh
             dstEnt: dstEnt,
             name: name,
             op: op,
-            sched_time: sched_time);
+            schedTime: schedTime);
     replace(_$result);
     return _$result;
   }
@@ -21637,7 +21637,7 @@ class _$SetPWM extends SetPWM {
   @override
   final int period;
   @override
-  final int duty_cycle;
+  final int dutyCycle;
 
   factory _$SetPWM([void updates(SetPWMBuilder b)]) =>
       (new SetPWMBuilder()..update(updates)).build();
@@ -21650,7 +21650,7 @@ class _$SetPWM extends SetPWM {
       this.dstEnt: ImcEntityId.nullId,
       this.id,
       this.period,
-      this.duty_cycle})
+      this.dutyCycle})
       : super._();
 
   @override
@@ -21671,7 +21671,7 @@ class _$SetPWM extends SetPWM {
         dstEnt == other.dstEnt &&
         id == this.id &&
         period == this.period &&
-        duty_cycle == this.duty_cycle;
+        dutyCycle == this.dutyCycle;
   }
 
   @override
@@ -21684,7 +21684,7 @@ class _$SetPWM extends SetPWM {
         dstEnt.hashCode), 
         id.hashCode), 
         period.hashCode), 
-        duty_cycle.hashCode));
+        dutyCycle.hashCode));
   }
 
   @override
@@ -21697,7 +21697,7 @@ class _$SetPWM extends SetPWM {
           ..add('dstEnt', dstEnt)
           ..add('id', id)
           ..add('period', period)
-          ..add('duty_cycle', duty_cycle))
+          ..add('dutyCycle', dutyCycle))
         .toString();
   }
 }
@@ -21735,9 +21735,9 @@ class SetPWMBuilder implements Builder<SetPWM, SetPWMBuilder> {
   int get period => _$this._period;
   set period(int period) => _$this._period = period;
 
-  int _duty_cycle;
-  int get duty_cycle => _$this._duty_cycle;
-  set duty_cycle(int duty_cycle) => _$this._duty_cycle = duty_cycle;
+  int _dutyCycle;
+  int get dutyCycle => _$this._dutyCycle;
+  set dutyCycle(int dutyCycle) => _$this._dutyCycle = dutyCycle;
 
   SetPWMBuilder();
 
@@ -21750,7 +21750,7 @@ class SetPWMBuilder implements Builder<SetPWM, SetPWMBuilder> {
       _dstEnt = _$v.dstEnt;
       _id = _$v.id;
       _period = _$v.period;
-      _duty_cycle = _$v.duty_cycle;
+      _dutyCycle = _$v.dutyCycle;
       _$v = null;
     }
     return this;
@@ -21780,7 +21780,7 @@ class SetPWMBuilder implements Builder<SetPWM, SetPWMBuilder> {
             dstEnt: dstEnt,
             id: id,
             period: period,
-            duty_cycle: duty_cycle);
+            dutyCycle: dutyCycle);
     replace(_$result);
     return _$result;
   }
@@ -21805,7 +21805,7 @@ class _$PWM extends PWM {
   @override
   final int period;
   @override
-  final int duty_cycle;
+  final int dutyCycle;
 
   factory _$PWM([void updates(PWMBuilder b)]) =>
       (new PWMBuilder()..update(updates)).build();
@@ -21818,7 +21818,7 @@ class _$PWM extends PWM {
       this.dstEnt: ImcEntityId.nullId,
       this.id,
       this.period,
-      this.duty_cycle})
+      this.dutyCycle})
       : super._();
 
   @override
@@ -21839,7 +21839,7 @@ class _$PWM extends PWM {
         dstEnt == other.dstEnt &&
         id == this.id &&
         period == this.period &&
-        duty_cycle == this.duty_cycle;
+        dutyCycle == this.dutyCycle;
   }
 
   @override
@@ -21852,7 +21852,7 @@ class _$PWM extends PWM {
         dstEnt.hashCode), 
         id.hashCode), 
         period.hashCode), 
-        duty_cycle.hashCode));
+        dutyCycle.hashCode));
   }
 
   @override
@@ -21865,7 +21865,7 @@ class _$PWM extends PWM {
           ..add('dstEnt', dstEnt)
           ..add('id', id)
           ..add('period', period)
-          ..add('duty_cycle', duty_cycle))
+          ..add('dutyCycle', dutyCycle))
         .toString();
   }
 }
@@ -21903,9 +21903,9 @@ class PWMBuilder implements Builder<PWM, PWMBuilder> {
   int get period => _$this._period;
   set period(int period) => _$this._period = period;
 
-  int _duty_cycle;
-  int get duty_cycle => _$this._duty_cycle;
-  set duty_cycle(int duty_cycle) => _$this._duty_cycle = duty_cycle;
+  int _dutyCycle;
+  int get dutyCycle => _$this._dutyCycle;
+  set dutyCycle(int dutyCycle) => _$this._dutyCycle = dutyCycle;
 
   PWMBuilder();
 
@@ -21918,7 +21918,7 @@ class PWMBuilder implements Builder<PWM, PWMBuilder> {
       _dstEnt = _$v.dstEnt;
       _id = _$v.id;
       _period = _$v.period;
-      _duty_cycle = _$v.duty_cycle;
+      _dutyCycle = _$v.dutyCycle;
       _$v = null;
     }
     return this;
@@ -21948,7 +21948,7 @@ class PWMBuilder implements Builder<PWM, PWMBuilder> {
             dstEnt: dstEnt,
             id: id,
             period: period,
-            duty_cycle: duty_cycle);
+            dutyCycle: dutyCycle);
     replace(_$result);
     return _$result;
   }
@@ -22821,9 +22821,9 @@ class _$NavigationUncertainty extends NavigationUncertainty {
   @override
   final double w;
   @override
-  final double bias_psi;
+  final double biasPsi;
   @override
-  final double bias_r;
+  final double biasR;
 
   factory _$NavigationUncertainty([void updates(NavigationUncertaintyBuilder b)]) =>
       (new NavigationUncertaintyBuilder()..update(updates)).build();
@@ -22846,8 +22846,8 @@ class _$NavigationUncertainty extends NavigationUncertainty {
       this.u,
       this.v,
       this.w,
-      this.bias_psi,
-      this.bias_r})
+      this.biasPsi,
+      this.biasR})
       : super._();
 
   @override
@@ -22878,8 +22878,8 @@ class _$NavigationUncertainty extends NavigationUncertainty {
         u == this.u &&
         v == this.v &&
         w == this.w &&
-        bias_psi == this.bias_psi &&
-        bias_r == this.bias_r;
+        biasPsi == this.biasPsi &&
+        biasR == this.biasR;
   }
 
   @override
@@ -22902,8 +22902,8 @@ class _$NavigationUncertainty extends NavigationUncertainty {
         u.hashCode), 
         v.hashCode), 
         w.hashCode), 
-        bias_psi.hashCode), 
-        bias_r.hashCode));
+        biasPsi.hashCode), 
+        biasR.hashCode));
   }
 
   @override
@@ -22926,8 +22926,8 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           ..add('u', u)
           ..add('v', v)
           ..add('w', w)
-          ..add('bias_psi', bias_psi)
-          ..add('bias_r', bias_r))
+          ..add('biasPsi', biasPsi)
+          ..add('biasR', biasR))
         .toString();
   }
 }
@@ -23005,13 +23005,13 @@ class NavigationUncertaintyBuilder implements Builder<NavigationUncertainty, Nav
   double get w => _$this._w;
   set w(double w) => _$this._w = w;
 
-  double _bias_psi;
-  double get bias_psi => _$this._bias_psi;
-  set bias_psi(double bias_psi) => _$this._bias_psi = bias_psi;
+  double _biasPsi;
+  double get biasPsi => _$this._biasPsi;
+  set biasPsi(double biasPsi) => _$this._biasPsi = biasPsi;
 
-  double _bias_r;
-  double get bias_r => _$this._bias_r;
-  set bias_r(double bias_r) => _$this._bias_r = bias_r;
+  double _biasR;
+  double get biasR => _$this._biasR;
+  set biasR(double biasR) => _$this._biasR = biasR;
 
   NavigationUncertaintyBuilder();
 
@@ -23034,8 +23034,8 @@ class NavigationUncertaintyBuilder implements Builder<NavigationUncertainty, Nav
       _u = _$v.u;
       _v = _$v.v;
       _w = _$v.w;
-      _bias_psi = _$v.bias_psi;
-      _bias_r = _$v.bias_r;
+      _biasPsi = _$v.biasPsi;
+      _biasR = _$v.biasR;
       _$v = null;
     }
     return this;
@@ -23075,8 +23075,8 @@ class NavigationUncertaintyBuilder implements Builder<NavigationUncertainty, Nav
             u: u,
             v: v,
             w: w,
-            bias_psi: bias_psi,
-            bias_r: bias_r);
+            biasPsi: biasPsi,
+            biasR: biasR);
     replace(_$result);
     return _$result;
   }
@@ -23097,23 +23097,23 @@ class _$NavigationData extends NavigationData {
   final int dstEnt;
 
   @override
-  final double bias_psi;
+  final double biasPsi;
   @override
-  final double bias_r;
+  final double biasR;
   @override
   final double cog;
   @override
   final double cyaw;
   @override
-  final double lbl_rej_level;
+  final double lblRejLevel;
   @override
-  final double gps_rej_level;
+  final double gpsRejLevel;
   @override
-  final double custom_x;
+  final double customX;
   @override
-  final double custom_y;
+  final double customY;
   @override
-  final double custom_z;
+  final double customZ;
 
   factory _$NavigationData([void updates(NavigationDataBuilder b)]) =>
       (new NavigationDataBuilder()..update(updates)).build();
@@ -23124,15 +23124,15 @@ class _$NavigationData extends NavigationData {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.bias_psi,
-      this.bias_r,
+      this.biasPsi,
+      this.biasR,
       this.cog,
       this.cyaw,
-      this.lbl_rej_level,
-      this.gps_rej_level,
-      this.custom_x,
-      this.custom_y,
-      this.custom_z})
+      this.lblRejLevel,
+      this.gpsRejLevel,
+      this.customX,
+      this.customY,
+      this.customZ})
       : super._();
 
   @override
@@ -23151,15 +23151,15 @@ class _$NavigationData extends NavigationData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        bias_psi == this.bias_psi &&
-        bias_r == this.bias_r &&
+        biasPsi == this.biasPsi &&
+        biasR == this.biasR &&
         cog == this.cog &&
         cyaw == this.cyaw &&
-        lbl_rej_level == this.lbl_rej_level &&
-        gps_rej_level == this.gps_rej_level &&
-        custom_x == this.custom_x &&
-        custom_y == this.custom_y &&
-        custom_z == this.custom_z;
+        lblRejLevel == this.lblRejLevel &&
+        gpsRejLevel == this.gpsRejLevel &&
+        customX == this.customX &&
+        customY == this.customY &&
+        customZ == this.customZ;
   }
 
   @override
@@ -23170,15 +23170,15 @@ class _$NavigationData extends NavigationData {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        bias_psi.hashCode), 
-        bias_r.hashCode), 
+        biasPsi.hashCode), 
+        biasR.hashCode), 
         cog.hashCode), 
         cyaw.hashCode), 
-        lbl_rej_level.hashCode), 
-        gps_rej_level.hashCode), 
-        custom_x.hashCode), 
-        custom_y.hashCode), 
-        custom_z.hashCode));
+        lblRejLevel.hashCode), 
+        gpsRejLevel.hashCode), 
+        customX.hashCode), 
+        customY.hashCode), 
+        customZ.hashCode));
   }
 
   @override
@@ -23189,15 +23189,15 @@ class _$NavigationData extends NavigationData {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('bias_psi', bias_psi)
-          ..add('bias_r', bias_r)
+          ..add('biasPsi', biasPsi)
+          ..add('biasR', biasR)
           ..add('cog', cog)
           ..add('cyaw', cyaw)
-          ..add('lbl_rej_level', lbl_rej_level)
-          ..add('gps_rej_level', gps_rej_level)
-          ..add('custom_x', custom_x)
-          ..add('custom_y', custom_y)
-          ..add('custom_z', custom_z))
+          ..add('lblRejLevel', lblRejLevel)
+          ..add('gpsRejLevel', gpsRejLevel)
+          ..add('customX', customX)
+          ..add('customY', customY)
+          ..add('customZ', customZ))
         .toString();
   }
 }
@@ -23227,13 +23227,13 @@ class NavigationDataBuilder implements Builder<NavigationData, NavigationDataBui
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _bias_psi;
-  double get bias_psi => _$this._bias_psi;
-  set bias_psi(double bias_psi) => _$this._bias_psi = bias_psi;
+  double _biasPsi;
+  double get biasPsi => _$this._biasPsi;
+  set biasPsi(double biasPsi) => _$this._biasPsi = biasPsi;
 
-  double _bias_r;
-  double get bias_r => _$this._bias_r;
-  set bias_r(double bias_r) => _$this._bias_r = bias_r;
+  double _biasR;
+  double get biasR => _$this._biasR;
+  set biasR(double biasR) => _$this._biasR = biasR;
 
   double _cog;
   double get cog => _$this._cog;
@@ -23243,25 +23243,25 @@ class NavigationDataBuilder implements Builder<NavigationData, NavigationDataBui
   double get cyaw => _$this._cyaw;
   set cyaw(double cyaw) => _$this._cyaw = cyaw;
 
-  double _lbl_rej_level;
-  double get lbl_rej_level => _$this._lbl_rej_level;
-  set lbl_rej_level(double lbl_rej_level) => _$this._lbl_rej_level = lbl_rej_level;
+  double _lblRejLevel;
+  double get lblRejLevel => _$this._lblRejLevel;
+  set lblRejLevel(double lblRejLevel) => _$this._lblRejLevel = lblRejLevel;
 
-  double _gps_rej_level;
-  double get gps_rej_level => _$this._gps_rej_level;
-  set gps_rej_level(double gps_rej_level) => _$this._gps_rej_level = gps_rej_level;
+  double _gpsRejLevel;
+  double get gpsRejLevel => _$this._gpsRejLevel;
+  set gpsRejLevel(double gpsRejLevel) => _$this._gpsRejLevel = gpsRejLevel;
 
-  double _custom_x;
-  double get custom_x => _$this._custom_x;
-  set custom_x(double custom_x) => _$this._custom_x = custom_x;
+  double _customX;
+  double get customX => _$this._customX;
+  set customX(double customX) => _$this._customX = customX;
 
-  double _custom_y;
-  double get custom_y => _$this._custom_y;
-  set custom_y(double custom_y) => _$this._custom_y = custom_y;
+  double _customY;
+  double get customY => _$this._customY;
+  set customY(double customY) => _$this._customY = customY;
 
-  double _custom_z;
-  double get custom_z => _$this._custom_z;
-  set custom_z(double custom_z) => _$this._custom_z = custom_z;
+  double _customZ;
+  double get customZ => _$this._customZ;
+  set customZ(double customZ) => _$this._customZ = customZ;
 
   NavigationDataBuilder();
 
@@ -23272,15 +23272,15 @@ class NavigationDataBuilder implements Builder<NavigationData, NavigationDataBui
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _bias_psi = _$v.bias_psi;
-      _bias_r = _$v.bias_r;
+      _biasPsi = _$v.biasPsi;
+      _biasR = _$v.biasR;
       _cog = _$v.cog;
       _cyaw = _$v.cyaw;
-      _lbl_rej_level = _$v.lbl_rej_level;
-      _gps_rej_level = _$v.gps_rej_level;
-      _custom_x = _$v.custom_x;
-      _custom_y = _$v.custom_y;
-      _custom_z = _$v.custom_z;
+      _lblRejLevel = _$v.lblRejLevel;
+      _gpsRejLevel = _$v.gpsRejLevel;
+      _customX = _$v.customX;
+      _customY = _$v.customY;
+      _customZ = _$v.customZ;
       _$v = null;
     }
     return this;
@@ -23308,15 +23308,15 @@ class NavigationDataBuilder implements Builder<NavigationData, NavigationDataBui
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            bias_psi: bias_psi,
-            bias_r: bias_r,
+            biasPsi: biasPsi,
+            biasR: biasR,
             cog: cog,
             cyaw: cyaw,
-            lbl_rej_level: lbl_rej_level,
-            gps_rej_level: gps_rej_level,
-            custom_x: custom_x,
-            custom_y: custom_y,
-            custom_z: custom_z);
+            lblRejLevel: lblRejLevel,
+            gpsRejLevel: gpsRejLevel,
+            customX: customX,
+            customY: customY,
+            customZ: customZ);
     replace(_$result);
     return _$result;
   }
@@ -23337,7 +23337,7 @@ class _$GpsFixRejection extends GpsFixRejection {
   final int dstEnt;
 
   @override
-  final double utc_time;
+  final double utcTime;
   @override
   final GpsFixRejectionEnumReason reason;
 
@@ -23350,7 +23350,7 @@ class _$GpsFixRejection extends GpsFixRejection {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.utc_time,
+      this.utcTime,
       this.reason})
       : super._();
 
@@ -23370,7 +23370,7 @@ class _$GpsFixRejection extends GpsFixRejection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        utc_time == this.utc_time &&
+        utcTime == this.utcTime &&
         reason == this.reason;
   }
 
@@ -23382,7 +23382,7 @@ class _$GpsFixRejection extends GpsFixRejection {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        utc_time.hashCode), 
+        utcTime.hashCode), 
         reason.hashCode));
   }
 
@@ -23394,7 +23394,7 @@ class _$GpsFixRejection extends GpsFixRejection {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('utc_time', utc_time)
+          ..add('utcTime', utcTime)
           ..add('reason', reason))
         .toString();
   }
@@ -23425,9 +23425,9 @@ class GpsFixRejectionBuilder implements Builder<GpsFixRejection, GpsFixRejection
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _utc_time;
-  double get utc_time => _$this._utc_time;
-  set utc_time(double utc_time) => _$this._utc_time = utc_time;
+  double _utcTime;
+  double get utcTime => _$this._utcTime;
+  set utcTime(double utcTime) => _$this._utcTime = utcTime;
 
   GpsFixRejectionEnumReason _reason;
   GpsFixRejectionEnumReason get reason => _$this._reason;
@@ -23442,7 +23442,7 @@ class GpsFixRejectionBuilder implements Builder<GpsFixRejection, GpsFixRejection
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _utc_time = _$v.utc_time;
+      _utcTime = _$v.utcTime;
       _reason = _$v.reason;
       _$v = null;
     }
@@ -23471,7 +23471,7 @@ class GpsFixRejectionBuilder implements Builder<GpsFixRejection, GpsFixRejection
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            utc_time: utc_time,
+            utcTime: utcTime,
             reason: reason);
     replace(_$result);
     return _$result;
@@ -23847,9 +23847,9 @@ class _$LblEstimate extends LblEstimate {
   @override
   final double y;
   @override
-  final double var_x;
+  final double varX;
   @override
-  final double var_y;
+  final double varY;
   @override
   final double distance;
 
@@ -23865,8 +23865,8 @@ class _$LblEstimate extends LblEstimate {
       this.beacon,
       this.x,
       this.y,
-      this.var_x,
-      this.var_y,
+      this.varX,
+      this.varY,
       this.distance})
       : super._();
 
@@ -23889,8 +23889,8 @@ class _$LblEstimate extends LblEstimate {
         beacon == this.beacon &&
         x == this.x &&
         y == this.y &&
-        var_x == this.var_x &&
-        var_y == this.var_y &&
+        varX == this.varX &&
+        varY == this.varY &&
         distance == this.distance;
   }
 
@@ -23905,8 +23905,8 @@ class _$LblEstimate extends LblEstimate {
         beacon.hashCode), 
         x.hashCode), 
         y.hashCode), 
-        var_x.hashCode), 
-        var_y.hashCode), 
+        varX.hashCode), 
+        varY.hashCode), 
         distance.hashCode));
   }
 
@@ -23921,8 +23921,8 @@ class _$LblEstimate extends LblEstimate {
           ..add('beacon', beacon)
           ..add('x', x)
           ..add('y', y)
-          ..add('var_x', var_x)
-          ..add('var_y', var_y)
+          ..add('varX', varX)
+          ..add('varY', varY)
           ..add('distance', distance))
         .toString();
   }
@@ -23965,13 +23965,13 @@ class LblEstimateBuilder implements Builder<LblEstimate, LblEstimateBuilder> {
   double get y => _$this._y;
   set y(double y) => _$this._y = y;
 
-  double _var_x;
-  double get var_x => _$this._var_x;
-  set var_x(double var_x) => _$this._var_x = var_x;
+  double _varX;
+  double get varX => _$this._varX;
+  set varX(double varX) => _$this._varX = varX;
 
-  double _var_y;
-  double get var_y => _$this._var_y;
-  set var_y(double var_y) => _$this._var_y = var_y;
+  double _varY;
+  double get varY => _$this._varY;
+  set varY(double varY) => _$this._varY = varY;
 
   double _distance;
   double get distance => _$this._distance;
@@ -23989,8 +23989,8 @@ class LblEstimateBuilder implements Builder<LblEstimate, LblEstimateBuilder> {
       _beacon = _$v.beacon;
       _x = _$v.x;
       _y = _$v.y;
-      _var_x = _$v.var_x;
-      _var_y = _$v.var_y;
+      _varX = _$v.varX;
+      _varY = _$v.varY;
       _distance = _$v.distance;
       _$v = null;
     }
@@ -24022,8 +24022,8 @@ class LblEstimateBuilder implements Builder<LblEstimate, LblEstimateBuilder> {
             beacon: beacon,
             x: x,
             y: y,
-            var_x: var_x,
-            var_y: var_y,
+            varX: varX,
+            varY: varY,
             distance: distance);
     replace(_$result);
     return _$result;
@@ -24671,7 +24671,7 @@ class _$DesiredZ extends DesiredZ {
   @override
   final double value;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
 
   factory _$DesiredZ([void updates(DesiredZBuilder b)]) =>
       (new DesiredZBuilder()..update(updates)).build();
@@ -24683,7 +24683,7 @@ class _$DesiredZ extends DesiredZ {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.value,
-      this.z_units})
+      this.zUnits})
       : super._();
 
   @override
@@ -24703,7 +24703,7 @@ class _$DesiredZ extends DesiredZ {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         value == this.value &&
-        z_units == this.z_units;
+        zUnits == this.zUnits;
   }
 
   @override
@@ -24715,7 +24715,7 @@ class _$DesiredZ extends DesiredZ {
         dst.hashCode), 
         dstEnt.hashCode), 
         value.hashCode), 
-        z_units.hashCode));
+        zUnits.hashCode));
   }
 
   @override
@@ -24727,7 +24727,7 @@ class _$DesiredZ extends DesiredZ {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('value', value)
-          ..add('z_units', z_units))
+          ..add('zUnits', zUnits))
         .toString();
   }
 }
@@ -24761,9 +24761,9 @@ class DesiredZBuilder implements Builder<DesiredZ, DesiredZBuilder> {
   double get value => _$this._value;
   set value(double value) => _$this._value = value;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   DesiredZBuilder();
 
@@ -24775,7 +24775,7 @@ class DesiredZBuilder implements Builder<DesiredZ, DesiredZBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _value = _$v.value;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _$v = null;
     }
     return this;
@@ -24804,7 +24804,7 @@ class DesiredZBuilder implements Builder<DesiredZ, DesiredZBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             value: value,
-            z_units: z_units);
+            zUnits: zUnits);
     replace(_$result);
     return _$result;
   }
@@ -24827,7 +24827,7 @@ class _$DesiredSpeed extends DesiredSpeed {
   @override
   final double value;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
 
   factory _$DesiredSpeed([void updates(DesiredSpeedBuilder b)]) =>
       (new DesiredSpeedBuilder()..update(updates)).build();
@@ -24839,7 +24839,7 @@ class _$DesiredSpeed extends DesiredSpeed {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.value,
-      this.speed_units})
+      this.speedUnits})
       : super._();
 
   @override
@@ -24859,7 +24859,7 @@ class _$DesiredSpeed extends DesiredSpeed {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         value == this.value &&
-        speed_units == this.speed_units;
+        speedUnits == this.speedUnits;
   }
 
   @override
@@ -24871,7 +24871,7 @@ class _$DesiredSpeed extends DesiredSpeed {
         dst.hashCode), 
         dstEnt.hashCode), 
         value.hashCode), 
-        speed_units.hashCode));
+        speedUnits.hashCode));
   }
 
   @override
@@ -24883,7 +24883,7 @@ class _$DesiredSpeed extends DesiredSpeed {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('value', value)
-          ..add('speed_units', speed_units))
+          ..add('speedUnits', speedUnits))
         .toString();
   }
 }
@@ -24917,9 +24917,9 @@ class DesiredSpeedBuilder implements Builder<DesiredSpeed, DesiredSpeedBuilder> 
   double get value => _$this._value;
   set value(double value) => _$this._value = value;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   DesiredSpeedBuilder();
 
@@ -24931,7 +24931,7 @@ class DesiredSpeedBuilder implements Builder<DesiredSpeed, DesiredSpeedBuilder> 
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _value = _$v.value;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _$v = null;
     }
     return this;
@@ -24960,7 +24960,7 @@ class DesiredSpeedBuilder implements Builder<DesiredSpeed, DesiredSpeedBuilder> 
             dst: dst,
             dstEnt: dstEnt,
             value: value,
-            speed_units: speed_units);
+            speedUnits: speedUnits);
     replace(_$result);
     return _$result;
   }
@@ -25413,27 +25413,27 @@ class _$DesiredPath extends DesiredPath {
   final int dstEnt;
 
   @override
-  final int path_ref;
+  final int pathRef;
   @override
-  final double start_lat;
+  final double startLat;
   @override
-  final double start_lon;
+  final double startLon;
   @override
-  final double start_z;
+  final double startZ;
   @override
-  final ZUnitsEnum start_z_units;
+  final ZUnitsEnum startZUnits;
   @override
-  final double end_lat;
+  final double endLat;
   @override
-  final double end_lon;
+  final double endLon;
   @override
-  final double end_z;
+  final double endZ;
   @override
-  final ZUnitsEnum end_z_units;
+  final ZUnitsEnum endZUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double lradius;
   @override
@@ -25448,17 +25448,17 @@ class _$DesiredPath extends DesiredPath {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.path_ref,
-      this.start_lat,
-      this.start_lon,
-      this.start_z,
-      this.start_z_units,
-      this.end_lat,
-      this.end_lon,
-      this.end_z,
-      this.end_z_units,
+      this.pathRef,
+      this.startLat,
+      this.startLon,
+      this.startZ,
+      this.startZUnits,
+      this.endLat,
+      this.endLon,
+      this.endZ,
+      this.endZUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.lradius,
       this.flags})
       : super._();
@@ -25479,17 +25479,17 @@ class _$DesiredPath extends DesiredPath {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        path_ref == this.path_ref &&
-        start_lat == this.start_lat &&
-        start_lon == this.start_lon &&
-        start_z == this.start_z &&
-        start_z_units == this.start_z_units &&
-        end_lat == this.end_lat &&
-        end_lon == this.end_lon &&
-        end_z == this.end_z &&
-        end_z_units == this.end_z_units &&
+        pathRef == this.pathRef &&
+        startLat == this.startLat &&
+        startLon == this.startLon &&
+        startZ == this.startZ &&
+        startZUnits == this.startZUnits &&
+        endLat == this.endLat &&
+        endLon == this.endLon &&
+        endZ == this.endZ &&
+        endZUnits == this.endZUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         lradius == this.lradius &&
         flags == this.flags;
   }
@@ -25502,17 +25502,17 @@ class _$DesiredPath extends DesiredPath {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        path_ref.hashCode), 
-        start_lat.hashCode), 
-        start_lon.hashCode), 
-        start_z.hashCode), 
-        start_z_units.hashCode), 
-        end_lat.hashCode), 
-        end_lon.hashCode), 
-        end_z.hashCode), 
-        end_z_units.hashCode), 
+        pathRef.hashCode), 
+        startLat.hashCode), 
+        startLon.hashCode), 
+        startZ.hashCode), 
+        startZUnits.hashCode), 
+        endLat.hashCode), 
+        endLon.hashCode), 
+        endZ.hashCode), 
+        endZUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         lradius.hashCode), 
         flags.hashCode));
   }
@@ -25525,17 +25525,17 @@ class _$DesiredPath extends DesiredPath {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('path_ref', path_ref)
-          ..add('start_lat', start_lat)
-          ..add('start_lon', start_lon)
-          ..add('start_z', start_z)
-          ..add('start_z_units', start_z_units)
-          ..add('end_lat', end_lat)
-          ..add('end_lon', end_lon)
-          ..add('end_z', end_z)
-          ..add('end_z_units', end_z_units)
+          ..add('pathRef', pathRef)
+          ..add('startLat', startLat)
+          ..add('startLon', startLon)
+          ..add('startZ', startZ)
+          ..add('startZUnits', startZUnits)
+          ..add('endLat', endLat)
+          ..add('endLon', endLon)
+          ..add('endZ', endZ)
+          ..add('endZUnits', endZUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('lradius', lradius)
           ..add('flags', flags))
         .toString();
@@ -25567,49 +25567,49 @@ class DesiredPathBuilder implements Builder<DesiredPath, DesiredPathBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _path_ref;
-  int get path_ref => _$this._path_ref;
-  set path_ref(int path_ref) => _$this._path_ref = path_ref;
+  int _pathRef;
+  int get pathRef => _$this._pathRef;
+  set pathRef(int pathRef) => _$this._pathRef = pathRef;
 
-  double _start_lat;
-  double get start_lat => _$this._start_lat;
-  set start_lat(double start_lat) => _$this._start_lat = start_lat;
+  double _startLat;
+  double get startLat => _$this._startLat;
+  set startLat(double startLat) => _$this._startLat = startLat;
 
-  double _start_lon;
-  double get start_lon => _$this._start_lon;
-  set start_lon(double start_lon) => _$this._start_lon = start_lon;
+  double _startLon;
+  double get startLon => _$this._startLon;
+  set startLon(double startLon) => _$this._startLon = startLon;
 
-  double _start_z;
-  double get start_z => _$this._start_z;
-  set start_z(double start_z) => _$this._start_z = start_z;
+  double _startZ;
+  double get startZ => _$this._startZ;
+  set startZ(double startZ) => _$this._startZ = startZ;
 
-  ZUnitsEnum _start_z_units;
-  ZUnitsEnum get start_z_units => _$this._start_z_units;
-  set start_z_units(ZUnitsEnum start_z_units) => _$this._start_z_units = start_z_units;
+  ZUnitsEnum _startZUnits;
+  ZUnitsEnum get startZUnits => _$this._startZUnits;
+  set startZUnits(ZUnitsEnum startZUnits) => _$this._startZUnits = startZUnits;
 
-  double _end_lat;
-  double get end_lat => _$this._end_lat;
-  set end_lat(double end_lat) => _$this._end_lat = end_lat;
+  double _endLat;
+  double get endLat => _$this._endLat;
+  set endLat(double endLat) => _$this._endLat = endLat;
 
-  double _end_lon;
-  double get end_lon => _$this._end_lon;
-  set end_lon(double end_lon) => _$this._end_lon = end_lon;
+  double _endLon;
+  double get endLon => _$this._endLon;
+  set endLon(double endLon) => _$this._endLon = endLon;
 
-  double _end_z;
-  double get end_z => _$this._end_z;
-  set end_z(double end_z) => _$this._end_z = end_z;
+  double _endZ;
+  double get endZ => _$this._endZ;
+  set endZ(double endZ) => _$this._endZ = endZ;
 
-  ZUnitsEnum _end_z_units;
-  ZUnitsEnum get end_z_units => _$this._end_z_units;
-  set end_z_units(ZUnitsEnum end_z_units) => _$this._end_z_units = end_z_units;
+  ZUnitsEnum _endZUnits;
+  ZUnitsEnum get endZUnits => _$this._endZUnits;
+  set endZUnits(ZUnitsEnum endZUnits) => _$this._endZUnits = endZUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _lradius;
   double get lradius => _$this._lradius;
@@ -25628,17 +25628,17 @@ class DesiredPathBuilder implements Builder<DesiredPath, DesiredPathBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _path_ref = _$v.path_ref;
-      _start_lat = _$v.start_lat;
-      _start_lon = _$v.start_lon;
-      _start_z = _$v.start_z;
-      _start_z_units = _$v.start_z_units;
-      _end_lat = _$v.end_lat;
-      _end_lon = _$v.end_lon;
-      _end_z = _$v.end_z;
-      _end_z_units = _$v.end_z_units;
+      _pathRef = _$v.pathRef;
+      _startLat = _$v.startLat;
+      _startLon = _$v.startLon;
+      _startZ = _$v.startZ;
+      _startZUnits = _$v.startZUnits;
+      _endLat = _$v.endLat;
+      _endLon = _$v.endLon;
+      _endZ = _$v.endZ;
+      _endZUnits = _$v.endZUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _lradius = _$v.lradius;
       _flags = _$v.flags;
       _$v = null;
@@ -25668,17 +25668,17 @@ class DesiredPathBuilder implements Builder<DesiredPath, DesiredPathBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            path_ref: path_ref,
-            start_lat: start_lat,
-            start_lon: start_lon,
-            start_z: start_z,
-            start_z_units: start_z_units,
-            end_lat: end_lat,
-            end_lon: end_lon,
-            end_z: end_z,
-            end_z_units: end_z_units,
+            pathRef: pathRef,
+            startLat: startLat,
+            startLon: startLon,
+            startZ: startZ,
+            startZUnits: startZUnits,
+            endLat: endLat,
+            endLon: endLon,
+            endZ: endZ,
+            endZUnits: endZUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             lradius: lradius,
             flags: flags);
     replace(_$result);
@@ -26277,23 +26277,23 @@ class _$PathControlState extends PathControlState {
   final int dstEnt;
 
   @override
-  final int path_ref;
+  final int pathRef;
   @override
-  final double start_lat;
+  final double startLat;
   @override
-  final double start_lon;
+  final double startLon;
   @override
-  final double start_z;
+  final double startZ;
   @override
-  final ZUnitsEnum start_z_units;
+  final ZUnitsEnum startZUnits;
   @override
-  final double end_lat;
+  final double endLat;
   @override
-  final double end_lon;
+  final double endLon;
   @override
-  final double end_z;
+  final double endZ;
   @override
-  final ZUnitsEnum end_z_units;
+  final ZUnitsEnum endZUnits;
   @override
   final double lradius;
   @override
@@ -26311,7 +26311,7 @@ class _$PathControlState extends PathControlState {
   @override
   final double vz;
   @override
-  final double course_error;
+  final double courseError;
   @override
   final int eta;
 
@@ -26324,15 +26324,15 @@ class _$PathControlState extends PathControlState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.path_ref,
-      this.start_lat,
-      this.start_lon,
-      this.start_z,
-      this.start_z_units,
-      this.end_lat,
-      this.end_lon,
-      this.end_z,
-      this.end_z_units,
+      this.pathRef,
+      this.startLat,
+      this.startLon,
+      this.startZ,
+      this.startZUnits,
+      this.endLat,
+      this.endLon,
+      this.endZ,
+      this.endZUnits,
       this.lradius,
       this.flags,
       this.x,
@@ -26341,7 +26341,7 @@ class _$PathControlState extends PathControlState {
       this.vx,
       this.vy,
       this.vz,
-      this.course_error,
+      this.courseError,
       this.eta})
       : super._();
 
@@ -26361,15 +26361,15 @@ class _$PathControlState extends PathControlState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        path_ref == this.path_ref &&
-        start_lat == this.start_lat &&
-        start_lon == this.start_lon &&
-        start_z == this.start_z &&
-        start_z_units == this.start_z_units &&
-        end_lat == this.end_lat &&
-        end_lon == this.end_lon &&
-        end_z == this.end_z &&
-        end_z_units == this.end_z_units &&
+        pathRef == this.pathRef &&
+        startLat == this.startLat &&
+        startLon == this.startLon &&
+        startZ == this.startZ &&
+        startZUnits == this.startZUnits &&
+        endLat == this.endLat &&
+        endLon == this.endLon &&
+        endZ == this.endZ &&
+        endZUnits == this.endZUnits &&
         lradius == this.lradius &&
         flags == this.flags &&
         x == this.x &&
@@ -26378,7 +26378,7 @@ class _$PathControlState extends PathControlState {
         vx == this.vx &&
         vy == this.vy &&
         vz == this.vz &&
-        course_error == this.course_error &&
+        courseError == this.courseError &&
         eta == this.eta;
   }
 
@@ -26390,15 +26390,15 @@ class _$PathControlState extends PathControlState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        path_ref.hashCode), 
-        start_lat.hashCode), 
-        start_lon.hashCode), 
-        start_z.hashCode), 
-        start_z_units.hashCode), 
-        end_lat.hashCode), 
-        end_lon.hashCode), 
-        end_z.hashCode), 
-        end_z_units.hashCode), 
+        pathRef.hashCode), 
+        startLat.hashCode), 
+        startLon.hashCode), 
+        startZ.hashCode), 
+        startZUnits.hashCode), 
+        endLat.hashCode), 
+        endLon.hashCode), 
+        endZ.hashCode), 
+        endZUnits.hashCode), 
         lradius.hashCode), 
         flags.hashCode), 
         x.hashCode), 
@@ -26407,7 +26407,7 @@ class _$PathControlState extends PathControlState {
         vx.hashCode), 
         vy.hashCode), 
         vz.hashCode), 
-        course_error.hashCode), 
+        courseError.hashCode), 
         eta.hashCode));
   }
 
@@ -26419,15 +26419,15 @@ class _$PathControlState extends PathControlState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('path_ref', path_ref)
-          ..add('start_lat', start_lat)
-          ..add('start_lon', start_lon)
-          ..add('start_z', start_z)
-          ..add('start_z_units', start_z_units)
-          ..add('end_lat', end_lat)
-          ..add('end_lon', end_lon)
-          ..add('end_z', end_z)
-          ..add('end_z_units', end_z_units)
+          ..add('pathRef', pathRef)
+          ..add('startLat', startLat)
+          ..add('startLon', startLon)
+          ..add('startZ', startZ)
+          ..add('startZUnits', startZUnits)
+          ..add('endLat', endLat)
+          ..add('endLon', endLon)
+          ..add('endZ', endZ)
+          ..add('endZUnits', endZUnits)
           ..add('lradius', lradius)
           ..add('flags', flags)
           ..add('x', x)
@@ -26436,7 +26436,7 @@ class _$PathControlState extends PathControlState {
           ..add('vx', vx)
           ..add('vy', vy)
           ..add('vz', vz)
-          ..add('course_error', course_error)
+          ..add('courseError', courseError)
           ..add('eta', eta))
         .toString();
   }
@@ -26467,41 +26467,41 @@ class PathControlStateBuilder implements Builder<PathControlState, PathControlSt
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _path_ref;
-  int get path_ref => _$this._path_ref;
-  set path_ref(int path_ref) => _$this._path_ref = path_ref;
+  int _pathRef;
+  int get pathRef => _$this._pathRef;
+  set pathRef(int pathRef) => _$this._pathRef = pathRef;
 
-  double _start_lat;
-  double get start_lat => _$this._start_lat;
-  set start_lat(double start_lat) => _$this._start_lat = start_lat;
+  double _startLat;
+  double get startLat => _$this._startLat;
+  set startLat(double startLat) => _$this._startLat = startLat;
 
-  double _start_lon;
-  double get start_lon => _$this._start_lon;
-  set start_lon(double start_lon) => _$this._start_lon = start_lon;
+  double _startLon;
+  double get startLon => _$this._startLon;
+  set startLon(double startLon) => _$this._startLon = startLon;
 
-  double _start_z;
-  double get start_z => _$this._start_z;
-  set start_z(double start_z) => _$this._start_z = start_z;
+  double _startZ;
+  double get startZ => _$this._startZ;
+  set startZ(double startZ) => _$this._startZ = startZ;
 
-  ZUnitsEnum _start_z_units;
-  ZUnitsEnum get start_z_units => _$this._start_z_units;
-  set start_z_units(ZUnitsEnum start_z_units) => _$this._start_z_units = start_z_units;
+  ZUnitsEnum _startZUnits;
+  ZUnitsEnum get startZUnits => _$this._startZUnits;
+  set startZUnits(ZUnitsEnum startZUnits) => _$this._startZUnits = startZUnits;
 
-  double _end_lat;
-  double get end_lat => _$this._end_lat;
-  set end_lat(double end_lat) => _$this._end_lat = end_lat;
+  double _endLat;
+  double get endLat => _$this._endLat;
+  set endLat(double endLat) => _$this._endLat = endLat;
 
-  double _end_lon;
-  double get end_lon => _$this._end_lon;
-  set end_lon(double end_lon) => _$this._end_lon = end_lon;
+  double _endLon;
+  double get endLon => _$this._endLon;
+  set endLon(double endLon) => _$this._endLon = endLon;
 
-  double _end_z;
-  double get end_z => _$this._end_z;
-  set end_z(double end_z) => _$this._end_z = end_z;
+  double _endZ;
+  double get endZ => _$this._endZ;
+  set endZ(double endZ) => _$this._endZ = endZ;
 
-  ZUnitsEnum _end_z_units;
-  ZUnitsEnum get end_z_units => _$this._end_z_units;
-  set end_z_units(ZUnitsEnum end_z_units) => _$this._end_z_units = end_z_units;
+  ZUnitsEnum _endZUnits;
+  ZUnitsEnum get endZUnits => _$this._endZUnits;
+  set endZUnits(ZUnitsEnum endZUnits) => _$this._endZUnits = endZUnits;
 
   double _lradius;
   double get lradius => _$this._lradius;
@@ -26535,9 +26535,9 @@ class PathControlStateBuilder implements Builder<PathControlState, PathControlSt
   double get vz => _$this._vz;
   set vz(double vz) => _$this._vz = vz;
 
-  double _course_error;
-  double get course_error => _$this._course_error;
-  set course_error(double course_error) => _$this._course_error = course_error;
+  double _courseError;
+  double get courseError => _$this._courseError;
+  set courseError(double courseError) => _$this._courseError = courseError;
 
   int _eta;
   int get eta => _$this._eta;
@@ -26552,15 +26552,15 @@ class PathControlStateBuilder implements Builder<PathControlState, PathControlSt
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _path_ref = _$v.path_ref;
-      _start_lat = _$v.start_lat;
-      _start_lon = _$v.start_lon;
-      _start_z = _$v.start_z;
-      _start_z_units = _$v.start_z_units;
-      _end_lat = _$v.end_lat;
-      _end_lon = _$v.end_lon;
-      _end_z = _$v.end_z;
-      _end_z_units = _$v.end_z_units;
+      _pathRef = _$v.pathRef;
+      _startLat = _$v.startLat;
+      _startLon = _$v.startLon;
+      _startZ = _$v.startZ;
+      _startZUnits = _$v.startZUnits;
+      _endLat = _$v.endLat;
+      _endLon = _$v.endLon;
+      _endZ = _$v.endZ;
+      _endZUnits = _$v.endZUnits;
       _lradius = _$v.lradius;
       _flags = _$v.flags;
       _x = _$v.x;
@@ -26569,7 +26569,7 @@ class PathControlStateBuilder implements Builder<PathControlState, PathControlSt
       _vx = _$v.vx;
       _vy = _$v.vy;
       _vz = _$v.vz;
-      _course_error = _$v.course_error;
+      _courseError = _$v.courseError;
       _eta = _$v.eta;
       _$v = null;
     }
@@ -26598,15 +26598,15 @@ class PathControlStateBuilder implements Builder<PathControlState, PathControlSt
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            path_ref: path_ref,
-            start_lat: start_lat,
-            start_lon: start_lon,
-            start_z: start_z,
-            start_z_units: start_z_units,
-            end_lat: end_lat,
-            end_lon: end_lon,
-            end_z: end_z,
-            end_z_units: end_z_units,
+            pathRef: pathRef,
+            startLat: startLat,
+            startLon: startLon,
+            startZ: startZ,
+            startZUnits: startZUnits,
+            endLat: endLat,
+            endLon: endLon,
+            endZ: endZ,
+            endZUnits: endZUnits,
             lradius: lradius,
             flags: flags,
             x: x,
@@ -26615,7 +26615,7 @@ class PathControlStateBuilder implements Builder<PathControlState, PathControlSt
             vx: vx,
             vy: vy,
             vz: vz,
-            course_error: course_error,
+            courseError: courseError,
             eta: eta);
     replace(_$result);
     return _$result;
@@ -27533,11 +27533,11 @@ class _$Goto extends Goto {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double roll;
   @override
@@ -27560,9 +27560,9 @@ class _$Goto extends Goto {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.roll,
       this.pitch,
       this.yaw,
@@ -27589,9 +27589,9 @@ class _$Goto extends Goto {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         roll == this.roll &&
         pitch == this.pitch &&
         yaw == this.yaw &&
@@ -27610,9 +27610,9 @@ class _$Goto extends Goto {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         roll.hashCode), 
         pitch.hashCode), 
         yaw.hashCode), 
@@ -27631,9 +27631,9 @@ class _$Goto extends Goto {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('roll', roll)
           ..add('pitch', pitch)
           ..add('yaw', yaw)
@@ -27683,17 +27683,17 @@ class GotoBuilder implements Builder<Goto, GotoBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _roll;
   double get roll => _$this._roll;
@@ -27724,9 +27724,9 @@ class GotoBuilder implements Builder<Goto, GotoBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _roll = _$v.roll;
       _pitch = _$v.pitch;
       _yaw = _$v.yaw;
@@ -27762,9 +27762,9 @@ class GotoBuilder implements Builder<Goto, GotoBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             roll: roll,
             pitch: pitch,
             yaw: yaw,
@@ -27797,11 +27797,11 @@ class _$PopUp extends PopUp {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final int duration;
   @override
@@ -27824,9 +27824,9 @@ class _$PopUp extends PopUp {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.duration,
       this.radius,
       this.flags,
@@ -27853,9 +27853,9 @@ class _$PopUp extends PopUp {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         duration == this.duration &&
         radius == this.radius &&
         flags == this.flags &&
@@ -27874,9 +27874,9 @@ class _$PopUp extends PopUp {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         duration.hashCode), 
         radius.hashCode), 
         flags.hashCode), 
@@ -27895,9 +27895,9 @@ class _$PopUp extends PopUp {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('duration', duration)
           ..add('radius', radius)
           ..add('flags', flags)
@@ -27947,17 +27947,17 @@ class PopUpBuilder implements Builder<PopUp, PopUpBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   int _duration;
   int get duration => _$this._duration;
@@ -27988,9 +27988,9 @@ class PopUpBuilder implements Builder<PopUp, PopUpBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _duration = _$v.duration;
       _radius = _$v.radius;
       _flags = _$v.flags;
@@ -28026,9 +28026,9 @@ class PopUpBuilder implements Builder<PopUp, PopUpBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             duration: duration,
             radius: radius,
             flags: flags,
@@ -28205,13 +28205,13 @@ class _$Loiter extends Loiter {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final int duration;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final LoiterEnumType type;
   @override
@@ -28238,10 +28238,10 @@ class _$Loiter extends Loiter {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.duration,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.type,
       this.radius,
       this.length,
@@ -28270,10 +28270,10 @@ class _$Loiter extends Loiter {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         duration == this.duration &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         type == this.type &&
         radius == this.radius &&
         length == this.length &&
@@ -28294,10 +28294,10 @@ class _$Loiter extends Loiter {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         duration.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         type.hashCode), 
         radius.hashCode), 
         length.hashCode), 
@@ -28318,10 +28318,10 @@ class _$Loiter extends Loiter {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('duration', duration)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('type', type)
           ..add('radius', radius)
           ..add('length', length)
@@ -28373,9 +28373,9 @@ class LoiterBuilder implements Builder<Loiter, LoiterBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   int _duration;
   int get duration => _$this._duration;
@@ -28385,9 +28385,9 @@ class LoiterBuilder implements Builder<Loiter, LoiterBuilder> {
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   LoiterEnumType _type;
   LoiterEnumType get type => _$this._type;
@@ -28426,10 +28426,10 @@ class LoiterBuilder implements Builder<Loiter, LoiterBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _duration = _$v.duration;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _type = _$v.type;
       _radius = _$v.radius;
       _length = _$v.length;
@@ -28467,10 +28467,10 @@ class LoiterBuilder implements Builder<Loiter, LoiterBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             duration: duration,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             type: type,
             radius: radius,
             length: length,
@@ -28829,15 +28829,15 @@ class _$Rows extends Rows {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double bearing;
   @override
-  final double cross_angle;
+  final double crossAngle;
   @override
   final double width;
   @override
@@ -28866,11 +28866,11 @@ class _$Rows extends Rows {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.bearing,
-      this.cross_angle,
+      this.crossAngle,
       this.width,
       this.length,
       this.hstep,
@@ -28900,11 +28900,11 @@ class _$Rows extends Rows {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         bearing == this.bearing &&
-        cross_angle == this.cross_angle &&
+        crossAngle == this.crossAngle &&
         width == this.width &&
         length == this.length &&
         hstep == this.hstep &&
@@ -28926,11 +28926,11 @@ class _$Rows extends Rows {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         bearing.hashCode), 
-        cross_angle.hashCode), 
+        crossAngle.hashCode), 
         width.hashCode), 
         length.hashCode), 
         hstep.hashCode), 
@@ -28952,11 +28952,11 @@ class _$Rows extends Rows {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('bearing', bearing)
-          ..add('cross_angle', cross_angle)
+          ..add('crossAngle', crossAngle)
           ..add('width', width)
           ..add('length', length)
           ..add('hstep', hstep)
@@ -29009,25 +29009,25 @@ class RowsBuilder implements Builder<Rows, RowsBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _bearing;
   double get bearing => _$this._bearing;
   set bearing(double bearing) => _$this._bearing = bearing;
 
-  double _cross_angle;
-  double get cross_angle => _$this._cross_angle;
-  set cross_angle(double cross_angle) => _$this._cross_angle = cross_angle;
+  double _crossAngle;
+  double get crossAngle => _$this._crossAngle;
+  set crossAngle(double crossAngle) => _$this._crossAngle = crossAngle;
 
   double _width;
   double get width => _$this._width;
@@ -29070,11 +29070,11 @@ class RowsBuilder implements Builder<Rows, RowsBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _bearing = _$v.bearing;
-      _cross_angle = _$v.cross_angle;
+      _crossAngle = _$v.crossAngle;
       _width = _$v.width;
       _length = _$v.length;
       _hstep = _$v.hstep;
@@ -29113,11 +29113,11 @@ class RowsBuilder implements Builder<Rows, RowsBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             bearing: bearing,
-            cross_angle: cross_angle,
+            crossAngle: crossAngle,
             width: width,
             length: length,
             hstep: hstep,
@@ -29153,11 +29153,11 @@ class _$FollowPath extends FollowPath {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final List<PathPoint> points;
   @override
@@ -29176,9 +29176,9 @@ class _$FollowPath extends FollowPath {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.points,
       this.custom})
       : super._();
@@ -29203,9 +29203,9 @@ class _$FollowPath extends FollowPath {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         points == this.points &&
         custom == this.custom;
   }
@@ -29222,9 +29222,9 @@ class _$FollowPath extends FollowPath {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         points.hashCode), 
         custom.hashCode));
   }
@@ -29241,9 +29241,9 @@ class _$FollowPath extends FollowPath {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('points', points)
           ..add('custom', custom))
         .toString();
@@ -29291,17 +29291,17 @@ class FollowPathBuilder implements Builder<FollowPath, FollowPathBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   List<PathPoint> _points;
   List<PathPoint> get points => _$this._points;
@@ -29324,9 +29324,9 @@ class FollowPathBuilder implements Builder<FollowPath, FollowPathBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _points = _$v.points;
       _custom = _$v.custom;
       _$v = null;
@@ -29360,9 +29360,9 @@ class FollowPathBuilder implements Builder<FollowPath, FollowPathBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             points: points,
             custom: custom);
     replace(_$result);
@@ -29561,7 +29561,7 @@ class _$YoYo extends YoYo {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double amplitude;
   @override
@@ -29569,7 +29569,7 @@ class _$YoYo extends YoYo {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final String custom;
 
@@ -29586,11 +29586,11 @@ class _$YoYo extends YoYo {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.amplitude,
       this.pitch,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.custom})
       : super._();
 
@@ -29614,11 +29614,11 @@ class _$YoYo extends YoYo {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         amplitude == this.amplitude &&
         pitch == this.pitch &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         custom == this.custom;
   }
 
@@ -29634,11 +29634,11 @@ class _$YoYo extends YoYo {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         amplitude.hashCode), 
         pitch.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         custom.hashCode));
   }
 
@@ -29654,11 +29654,11 @@ class _$YoYo extends YoYo {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('amplitude', amplitude)
           ..add('pitch', pitch)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('custom', custom))
         .toString();
   }
@@ -29705,9 +29705,9 @@ class YoYoBuilder implements Builder<YoYo, YoYoBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _amplitude;
   double get amplitude => _$this._amplitude;
@@ -29721,9 +29721,9 @@ class YoYoBuilder implements Builder<YoYo, YoYoBuilder> {
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   String _custom;
   String get custom => _$this._custom;
@@ -29742,11 +29742,11 @@ class YoYoBuilder implements Builder<YoYo, YoYoBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _amplitude = _$v.amplitude;
       _pitch = _$v.pitch;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -29779,11 +29779,11 @@ class YoYoBuilder implements Builder<YoYo, YoYoBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             amplitude: amplitude,
             pitch: pitch,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -29943,7 +29943,7 @@ class _$StationKeeping extends StationKeeping {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double radius;
   @override
@@ -29951,7 +29951,7 @@ class _$StationKeeping extends StationKeeping {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final String custom;
 
@@ -29967,11 +29967,11 @@ class _$StationKeeping extends StationKeeping {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.radius,
       this.duration,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.custom})
       : super._();
 
@@ -29994,11 +29994,11 @@ class _$StationKeeping extends StationKeeping {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         radius == this.radius &&
         duration == this.duration &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         custom == this.custom;
   }
 
@@ -30013,11 +30013,11 @@ class _$StationKeeping extends StationKeeping {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         radius.hashCode), 
         duration.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         custom.hashCode));
   }
 
@@ -30032,11 +30032,11 @@ class _$StationKeeping extends StationKeeping {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('radius', radius)
           ..add('duration', duration)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('custom', custom))
         .toString();
   }
@@ -30079,9 +30079,9 @@ class StationKeepingBuilder implements Builder<StationKeeping, StationKeepingBui
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _radius;
   double get radius => _$this._radius;
@@ -30095,9 +30095,9 @@ class StationKeepingBuilder implements Builder<StationKeeping, StationKeepingBui
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   String _custom;
   String get custom => _$this._custom;
@@ -30115,11 +30115,11 @@ class StationKeepingBuilder implements Builder<StationKeeping, StationKeepingBui
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _radius = _$v.radius;
       _duration = _$v.duration;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -30151,11 +30151,11 @@ class StationKeepingBuilder implements Builder<StationKeeping, StationKeepingBui
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             radius: radius,
             duration: duration,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -30185,19 +30185,19 @@ class _$Elevator extends Elevator {
   @override
   final double lon;
   @override
-  final double start_z;
+  final double startZ;
   @override
-  final ZUnitsEnum start_z_units;
+  final ZUnitsEnum startZUnits;
   @override
-  final double end_z;
+  final double endZ;
   @override
-  final ZUnitsEnum end_z_units;
+  final ZUnitsEnum endZUnits;
   @override
   final double radius;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final String custom;
 
@@ -30214,13 +30214,13 @@ class _$Elevator extends Elevator {
       this.flags,
       this.lat,
       this.lon,
-      this.start_z,
-      this.start_z_units,
-      this.end_z,
-      this.end_z_units,
+      this.startZ,
+      this.startZUnits,
+      this.endZ,
+      this.endZUnits,
       this.radius,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.custom})
       : super._();
 
@@ -30244,13 +30244,13 @@ class _$Elevator extends Elevator {
         flags == this.flags &&
         lat == this.lat &&
         lon == this.lon &&
-        start_z == this.start_z &&
-        start_z_units == this.start_z_units &&
-        end_z == this.end_z &&
-        end_z_units == this.end_z_units &&
+        startZ == this.startZ &&
+        startZUnits == this.startZUnits &&
+        endZ == this.endZ &&
+        endZUnits == this.endZUnits &&
         radius == this.radius &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         custom == this.custom;
   }
 
@@ -30266,13 +30266,13 @@ class _$Elevator extends Elevator {
         flags.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
-        start_z.hashCode), 
-        start_z_units.hashCode), 
-        end_z.hashCode), 
-        end_z_units.hashCode), 
+        startZ.hashCode), 
+        startZUnits.hashCode), 
+        endZ.hashCode), 
+        endZUnits.hashCode), 
         radius.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         custom.hashCode));
   }
 
@@ -30288,13 +30288,13 @@ class _$Elevator extends Elevator {
           ..add('flags', flags)
           ..add('lat', lat)
           ..add('lon', lon)
-          ..add('start_z', start_z)
-          ..add('start_z_units', start_z_units)
-          ..add('end_z', end_z)
-          ..add('end_z_units', end_z_units)
+          ..add('startZ', startZ)
+          ..add('startZUnits', startZUnits)
+          ..add('endZ', endZ)
+          ..add('endZUnits', endZUnits)
           ..add('radius', radius)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('custom', custom))
         .toString();
   }
@@ -30341,21 +30341,21 @@ class ElevatorBuilder implements Builder<Elevator, ElevatorBuilder> {
   double get lon => _$this._lon;
   set lon(double lon) => _$this._lon = lon;
 
-  double _start_z;
-  double get start_z => _$this._start_z;
-  set start_z(double start_z) => _$this._start_z = start_z;
+  double _startZ;
+  double get startZ => _$this._startZ;
+  set startZ(double startZ) => _$this._startZ = startZ;
 
-  ZUnitsEnum _start_z_units;
-  ZUnitsEnum get start_z_units => _$this._start_z_units;
-  set start_z_units(ZUnitsEnum start_z_units) => _$this._start_z_units = start_z_units;
+  ZUnitsEnum _startZUnits;
+  ZUnitsEnum get startZUnits => _$this._startZUnits;
+  set startZUnits(ZUnitsEnum startZUnits) => _$this._startZUnits = startZUnits;
 
-  double _end_z;
-  double get end_z => _$this._end_z;
-  set end_z(double end_z) => _$this._end_z = end_z;
+  double _endZ;
+  double get endZ => _$this._endZ;
+  set endZ(double endZ) => _$this._endZ = endZ;
 
-  ZUnitsEnum _end_z_units;
-  ZUnitsEnum get end_z_units => _$this._end_z_units;
-  set end_z_units(ZUnitsEnum end_z_units) => _$this._end_z_units = end_z_units;
+  ZUnitsEnum _endZUnits;
+  ZUnitsEnum get endZUnits => _$this._endZUnits;
+  set endZUnits(ZUnitsEnum endZUnits) => _$this._endZUnits = endZUnits;
 
   double _radius;
   double get radius => _$this._radius;
@@ -30365,9 +30365,9 @@ class ElevatorBuilder implements Builder<Elevator, ElevatorBuilder> {
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   String _custom;
   String get custom => _$this._custom;
@@ -30386,13 +30386,13 @@ class ElevatorBuilder implements Builder<Elevator, ElevatorBuilder> {
       _flags = _$v.flags;
       _lat = _$v.lat;
       _lon = _$v.lon;
-      _start_z = _$v.start_z;
-      _start_z_units = _$v.start_z_units;
-      _end_z = _$v.end_z;
-      _end_z_units = _$v.end_z_units;
+      _startZ = _$v.startZ;
+      _startZUnits = _$v.startZUnits;
+      _endZ = _$v.endZ;
+      _endZUnits = _$v.endZUnits;
       _radius = _$v.radius;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -30425,13 +30425,13 @@ class ElevatorBuilder implements Builder<Elevator, ElevatorBuilder> {
             flags: flags,
             lat: lat,
             lon: lon,
-            start_z: start_z,
-            start_z_units: start_z_units,
-            end_z: end_z,
-            end_z_units: end_z_units,
+            startZ: startZ,
+            startZUnits: startZUnits,
+            endZ: endZ,
+            endZUnits: endZUnits,
             radius: radius,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -30461,11 +30461,11 @@ class _$FollowTrajectory extends FollowTrajectory {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final List<TrajectoryPoint> points;
   @override
@@ -30484,9 +30484,9 @@ class _$FollowTrajectory extends FollowTrajectory {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.points,
       this.custom})
       : super._();
@@ -30511,9 +30511,9 @@ class _$FollowTrajectory extends FollowTrajectory {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         points == this.points &&
         custom == this.custom;
   }
@@ -30530,9 +30530,9 @@ class _$FollowTrajectory extends FollowTrajectory {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         points.hashCode), 
         custom.hashCode));
   }
@@ -30549,9 +30549,9 @@ class _$FollowTrajectory extends FollowTrajectory {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('points', points)
           ..add('custom', custom))
         .toString();
@@ -30599,17 +30599,17 @@ class FollowTrajectoryBuilder implements Builder<FollowTrajectory, FollowTraject
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   List<TrajectoryPoint> _points;
   List<TrajectoryPoint> get points => _$this._points;
@@ -30632,9 +30632,9 @@ class FollowTrajectoryBuilder implements Builder<FollowTrajectory, FollowTraject
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _points = _$v.points;
       _custom = _$v.custom;
       _$v = null;
@@ -30668,9 +30668,9 @@ class FollowTrajectoryBuilder implements Builder<FollowTrajectory, FollowTraject
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             points: points,
             custom: custom);
     replace(_$result);
@@ -31047,17 +31047,17 @@ class _$VehicleFormation extends VehicleFormation {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final List<TrajectoryPoint> points;
   @override
   final List<VehicleFormationParticipant> participants;
   @override
-  final double start_time;
+  final double startTime;
   @override
   final String custom;
 
@@ -31073,12 +31073,12 @@ class _$VehicleFormation extends VehicleFormation {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.points,
       this.participants,
-      this.start_time,
+      this.startTime,
       this.custom})
       : super._();
 
@@ -31101,12 +31101,12 @@ class _$VehicleFormation extends VehicleFormation {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         points == this.points &&
         participants == this.participants &&
-        start_time == this.start_time &&
+        startTime == this.startTime &&
         custom == this.custom;
   }
 
@@ -31121,12 +31121,12 @@ class _$VehicleFormation extends VehicleFormation {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         points.hashCode), 
         participants.hashCode), 
-        start_time.hashCode), 
+        startTime.hashCode), 
         custom.hashCode));
   }
 
@@ -31141,12 +31141,12 @@ class _$VehicleFormation extends VehicleFormation {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('points', points)
           ..add('participants', participants)
-          ..add('start_time', start_time)
+          ..add('startTime', startTime)
           ..add('custom', custom))
         .toString();
   }
@@ -31189,17 +31189,17 @@ class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormat
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   List<TrajectoryPoint> _points;
   List<TrajectoryPoint> get points => _$this._points;
@@ -31209,9 +31209,9 @@ class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormat
   List<VehicleFormationParticipant> get participants => _$this._participants;
   set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
 
-  double _start_time;
-  double get start_time => _$this._start_time;
-  set start_time(double start_time) => _$this._start_time = start_time;
+  double _startTime;
+  double get startTime => _$this._startTime;
+  set startTime(double startTime) => _$this._startTime = startTime;
 
   String _custom;
   String get custom => _$this._custom;
@@ -31229,12 +31229,12 @@ class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormat
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _points = _$v.points;
       _participants = _$v.participants;
-      _start_time = _$v.start_time;
+      _startTime = _$v.startTime;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -31266,12 +31266,12 @@ class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormat
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             points: points,
             participants: participants,
-            start_time: start_time,
+            startTime: startTime,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -31295,11 +31295,11 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
   @override
   final int vid;
   @override
-  final double off_x;
+  final double offX;
   @override
-  final double off_y;
+  final double offY;
   @override
-  final double off_z;
+  final double offZ;
 
   factory _$VehicleFormationParticipant([void updates(VehicleFormationParticipantBuilder b)]) =>
       (new VehicleFormationParticipantBuilder()..update(updates)).build();
@@ -31311,9 +31311,9 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.vid,
-      this.off_x,
-      this.off_y,
-      this.off_z})
+      this.offX,
+      this.offY,
+      this.offZ})
       : super._();
 
   @override
@@ -31333,9 +31333,9 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         vid == this.vid &&
-        off_x == this.off_x &&
-        off_y == this.off_y &&
-        off_z == this.off_z;
+        offX == this.offX &&
+        offY == this.offY &&
+        offZ == this.offZ;
   }
 
   @override
@@ -31347,9 +31347,9 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
         dst.hashCode), 
         dstEnt.hashCode), 
         vid.hashCode), 
-        off_x.hashCode), 
-        off_y.hashCode), 
-        off_z.hashCode));
+        offX.hashCode), 
+        offY.hashCode), 
+        offZ.hashCode));
   }
 
   @override
@@ -31361,9 +31361,9 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('vid', vid)
-          ..add('off_x', off_x)
-          ..add('off_y', off_y)
-          ..add('off_z', off_z))
+          ..add('offX', offX)
+          ..add('offY', offY)
+          ..add('offZ', offZ))
         .toString();
   }
 }
@@ -31397,17 +31397,17 @@ class VehicleFormationParticipantBuilder implements Builder<VehicleFormationPart
   int get vid => _$this._vid;
   set vid(int vid) => _$this._vid = vid;
 
-  double _off_x;
-  double get off_x => _$this._off_x;
-  set off_x(double off_x) => _$this._off_x = off_x;
+  double _offX;
+  double get offX => _$this._offX;
+  set offX(double offX) => _$this._offX = offX;
 
-  double _off_y;
-  double get off_y => _$this._off_y;
-  set off_y(double off_y) => _$this._off_y = off_y;
+  double _offY;
+  double get offY => _$this._offY;
+  set offY(double offY) => _$this._offY = offY;
 
-  double _off_z;
-  double get off_z => _$this._off_z;
-  set off_z(double off_z) => _$this._off_z = off_z;
+  double _offZ;
+  double get offZ => _$this._offZ;
+  set offZ(double offZ) => _$this._offZ = offZ;
 
   VehicleFormationParticipantBuilder();
 
@@ -31419,9 +31419,9 @@ class VehicleFormationParticipantBuilder implements Builder<VehicleFormationPart
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _vid = _$v.vid;
-      _off_x = _$v.off_x;
-      _off_y = _$v.off_y;
-      _off_z = _$v.off_z;
+      _offX = _$v.offX;
+      _offY = _$v.offY;
+      _offZ = _$v.offZ;
       _$v = null;
     }
     return this;
@@ -31450,9 +31450,9 @@ class VehicleFormationParticipantBuilder implements Builder<VehicleFormationPart
             dst: dst,
             dstEnt: dstEnt,
             vid: vid,
-            off_x: off_x,
-            off_y: off_y,
-            off_z: off_z);
+            offX: offX,
+            offY: offY,
+            offZ: offZ);
     replace(_$result);
     return _$result;
   }
@@ -31923,7 +31923,7 @@ class _$FollowSystem extends FollowSystem {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double x;
   @override
@@ -31931,7 +31931,7 @@ class _$FollowSystem extends FollowSystem {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
 
   factory _$FollowSystem([void updates(FollowSystemBuilder b)]) =>
       (new FollowSystemBuilder()..update(updates)).build();
@@ -31945,11 +31945,11 @@ class _$FollowSystem extends FollowSystem {
       this.system,
       this.duration,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.x,
       this.y,
       this.z,
-      this.z_units})
+      this.zUnits})
       : super._();
 
   @override
@@ -31971,11 +31971,11 @@ class _$FollowSystem extends FollowSystem {
         system == this.system &&
         duration == this.duration &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         x == this.x &&
         y == this.y &&
         z == this.z &&
-        z_units == this.z_units;
+        zUnits == this.zUnits;
   }
 
   @override
@@ -31989,11 +31989,11 @@ class _$FollowSystem extends FollowSystem {
         system.hashCode), 
         duration.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         x.hashCode), 
         y.hashCode), 
         z.hashCode), 
-        z_units.hashCode));
+        zUnits.hashCode));
   }
 
   @override
@@ -32007,11 +32007,11 @@ class _$FollowSystem extends FollowSystem {
           ..add('system', system)
           ..add('duration', duration)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('x', x)
           ..add('y', y)
           ..add('z', z)
-          ..add('z_units', z_units))
+          ..add('zUnits', zUnits))
         .toString();
   }
 }
@@ -32053,9 +32053,9 @@ class FollowSystemBuilder implements Builder<FollowSystem, FollowSystemBuilder> 
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _x;
   double get x => _$this._x;
@@ -32069,9 +32069,9 @@ class FollowSystemBuilder implements Builder<FollowSystem, FollowSystemBuilder> 
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   FollowSystemBuilder();
 
@@ -32085,11 +32085,11 @@ class FollowSystemBuilder implements Builder<FollowSystem, FollowSystemBuilder> 
       _system = _$v.system;
       _duration = _$v.duration;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _x = _$v.x;
       _y = _$v.y;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _$v = null;
     }
     return this;
@@ -32120,11 +32120,11 @@ class FollowSystemBuilder implements Builder<FollowSystem, FollowSystemBuilder> 
             system: system,
             duration: duration,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             x: x,
             y: y,
             z: z,
-            z_units: z_units);
+            zUnits: zUnits);
     replace(_$result);
     return _$result;
   }
@@ -32151,15 +32151,15 @@ class _$CommsRelay extends CommsRelay {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final int duration;
   @override
-  final int sys_a;
+  final int sysA;
   @override
-  final int sys_b;
+  final int sysB;
   @override
-  final double move_threshold;
+  final double moveThreshold;
 
   factory _$CommsRelay([void updates(CommsRelayBuilder b)]) =>
       (new CommsRelayBuilder()..update(updates)).build();
@@ -32173,11 +32173,11 @@ class _$CommsRelay extends CommsRelay {
       this.lat,
       this.lon,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.duration,
-      this.sys_a,
-      this.sys_b,
-      this.move_threshold})
+      this.sysA,
+      this.sysB,
+      this.moveThreshold})
       : super._();
 
   @override
@@ -32199,11 +32199,11 @@ class _$CommsRelay extends CommsRelay {
         lat == this.lat &&
         lon == this.lon &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         duration == this.duration &&
-        sys_a == this.sys_a &&
-        sys_b == this.sys_b &&
-        move_threshold == this.move_threshold;
+        sysA == this.sysA &&
+        sysB == this.sysB &&
+        moveThreshold == this.moveThreshold;
   }
 
   @override
@@ -32217,11 +32217,11 @@ class _$CommsRelay extends CommsRelay {
         lat.hashCode), 
         lon.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         duration.hashCode), 
-        sys_a.hashCode), 
-        sys_b.hashCode), 
-        move_threshold.hashCode));
+        sysA.hashCode), 
+        sysB.hashCode), 
+        moveThreshold.hashCode));
   }
 
   @override
@@ -32235,11 +32235,11 @@ class _$CommsRelay extends CommsRelay {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('duration', duration)
-          ..add('sys_a', sys_a)
-          ..add('sys_b', sys_b)
-          ..add('move_threshold', move_threshold))
+          ..add('sysA', sysA)
+          ..add('sysB', sysB)
+          ..add('moveThreshold', moveThreshold))
         .toString();
   }
 }
@@ -32281,25 +32281,25 @@ class CommsRelayBuilder implements Builder<CommsRelay, CommsRelayBuilder> {
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   int _duration;
   int get duration => _$this._duration;
   set duration(int duration) => _$this._duration = duration;
 
-  int _sys_a;
-  int get sys_a => _$this._sys_a;
-  set sys_a(int sys_a) => _$this._sys_a = sys_a;
+  int _sysA;
+  int get sysA => _$this._sysA;
+  set sysA(int sysA) => _$this._sysA = sysA;
 
-  int _sys_b;
-  int get sys_b => _$this._sys_b;
-  set sys_b(int sys_b) => _$this._sys_b = sys_b;
+  int _sysB;
+  int get sysB => _$this._sysB;
+  set sysB(int sysB) => _$this._sysB = sysB;
 
-  double _move_threshold;
-  double get move_threshold => _$this._move_threshold;
-  set move_threshold(double move_threshold) => _$this._move_threshold = move_threshold;
+  double _moveThreshold;
+  double get moveThreshold => _$this._moveThreshold;
+  set moveThreshold(double moveThreshold) => _$this._moveThreshold = moveThreshold;
 
   CommsRelayBuilder();
 
@@ -32313,11 +32313,11 @@ class CommsRelayBuilder implements Builder<CommsRelay, CommsRelayBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _duration = _$v.duration;
-      _sys_a = _$v.sys_a;
-      _sys_b = _$v.sys_b;
-      _move_threshold = _$v.move_threshold;
+      _sysA = _$v.sysA;
+      _sysB = _$v.sysB;
+      _moveThreshold = _$v.moveThreshold;
       _$v = null;
     }
     return this;
@@ -32348,11 +32348,11 @@ class CommsRelayBuilder implements Builder<CommsRelay, CommsRelayBuilder> {
             lat: lat,
             lon: lon,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             duration: duration,
-            sys_a: sys_a,
-            sys_b: sys_b,
-            move_threshold: move_threshold);
+            sysA: sysA,
+            sysB: sysB,
+            moveThreshold: moveThreshold);
     replace(_$result);
     return _$result;
   }
@@ -32379,11 +32379,11 @@ class _$CoverArea extends CoverArea {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final List<PolygonVertex> polygon;
   @override
@@ -32401,9 +32401,9 @@ class _$CoverArea extends CoverArea {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.polygon,
       this.custom})
       : super._();
@@ -32427,9 +32427,9 @@ class _$CoverArea extends CoverArea {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         polygon == this.polygon &&
         custom == this.custom;
   }
@@ -32445,9 +32445,9 @@ class _$CoverArea extends CoverArea {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         polygon.hashCode), 
         custom.hashCode));
   }
@@ -32463,9 +32463,9 @@ class _$CoverArea extends CoverArea {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('polygon', polygon)
           ..add('custom', custom))
         .toString();
@@ -32509,17 +32509,17 @@ class CoverAreaBuilder implements Builder<CoverArea, CoverAreaBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   List<PolygonVertex> _polygon;
   List<PolygonVertex> get polygon => _$this._polygon;
@@ -32541,9 +32541,9 @@ class CoverAreaBuilder implements Builder<CoverArea, CoverAreaBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _polygon = _$v.polygon;
       _custom = _$v.custom;
       _$v = null;
@@ -32576,9 +32576,9 @@ class CoverAreaBuilder implements Builder<CoverArea, CoverAreaBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             polygon: polygon,
             custom: custom);
     replace(_$result);
@@ -32765,7 +32765,7 @@ class _$CompassCalibration extends CompassCalibration {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double pitch;
   @override
@@ -32775,7 +32775,7 @@ class _$CompassCalibration extends CompassCalibration {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double radius;
   @override
@@ -32796,12 +32796,12 @@ class _$CompassCalibration extends CompassCalibration {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.pitch,
       this.amplitude,
       this.duration,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.radius,
       this.direction,
       this.custom})
@@ -32827,12 +32827,12 @@ class _$CompassCalibration extends CompassCalibration {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         pitch == this.pitch &&
         amplitude == this.amplitude &&
         duration == this.duration &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         radius == this.radius &&
         direction == this.direction &&
         custom == this.custom;
@@ -32850,12 +32850,12 @@ class _$CompassCalibration extends CompassCalibration {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         pitch.hashCode), 
         amplitude.hashCode), 
         duration.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         radius.hashCode), 
         direction.hashCode), 
         custom.hashCode));
@@ -32873,12 +32873,12 @@ class _$CompassCalibration extends CompassCalibration {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('pitch', pitch)
           ..add('amplitude', amplitude)
           ..add('duration', duration)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('radius', radius)
           ..add('direction', direction)
           ..add('custom', custom))
@@ -32927,9 +32927,9 @@ class CompassCalibrationBuilder implements Builder<CompassCalibration, CompassCa
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _pitch;
   double get pitch => _$this._pitch;
@@ -32947,9 +32947,9 @@ class CompassCalibrationBuilder implements Builder<CompassCalibration, CompassCa
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _radius;
   double get radius => _$this._radius;
@@ -32976,12 +32976,12 @@ class CompassCalibrationBuilder implements Builder<CompassCalibration, CompassCa
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _pitch = _$v.pitch;
       _amplitude = _$v.amplitude;
       _duration = _$v.duration;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _radius = _$v.radius;
       _direction = _$v.direction;
       _custom = _$v.custom;
@@ -33016,12 +33016,12 @@ class CompassCalibrationBuilder implements Builder<CompassCalibration, CompassCa
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             pitch: pitch,
             amplitude: amplitude,
             duration: duration,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             radius: radius,
             direction: direction,
             custom: custom);
@@ -33045,9 +33045,9 @@ class _$FormationParameters extends FormationParameters {
   final int dstEnt;
 
   @override
-  final String formation_name;
+  final String formationName;
   @override
-  final FormationParametersEnumReferenceFrame reference_frame;
+  final FormationParametersEnumReferenceFrame referenceFrame;
   @override
   final List<VehicleFormationParticipant> participants;
   @override
@@ -33062,8 +33062,8 @@ class _$FormationParameters extends FormationParameters {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.formation_name,
-      this.reference_frame,
+      this.formationName,
+      this.referenceFrame,
       this.participants,
       this.custom})
       : super._();
@@ -33084,8 +33084,8 @@ class _$FormationParameters extends FormationParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        formation_name == this.formation_name &&
-        reference_frame == this.reference_frame &&
+        formationName == this.formationName &&
+        referenceFrame == this.referenceFrame &&
         participants == this.participants &&
         custom == this.custom;
   }
@@ -33098,8 +33098,8 @@ class _$FormationParameters extends FormationParameters {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        formation_name.hashCode), 
-        reference_frame.hashCode), 
+        formationName.hashCode), 
+        referenceFrame.hashCode), 
         participants.hashCode), 
         custom.hashCode));
   }
@@ -33112,8 +33112,8 @@ class _$FormationParameters extends FormationParameters {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('formation_name', formation_name)
-          ..add('reference_frame', reference_frame)
+          ..add('formationName', formationName)
+          ..add('referenceFrame', referenceFrame)
           ..add('participants', participants)
           ..add('custom', custom))
         .toString();
@@ -33145,13 +33145,13 @@ class FormationParametersBuilder implements Builder<FormationParameters, Formati
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _formation_name;
-  String get formation_name => _$this._formation_name;
-  set formation_name(String formation_name) => _$this._formation_name = formation_name;
+  String _formationName;
+  String get formationName => _$this._formationName;
+  set formationName(String formationName) => _$this._formationName = formationName;
 
-  FormationParametersEnumReferenceFrame _reference_frame;
-  FormationParametersEnumReferenceFrame get reference_frame => _$this._reference_frame;
-  set reference_frame(FormationParametersEnumReferenceFrame reference_frame) => _$this._reference_frame = reference_frame;
+  FormationParametersEnumReferenceFrame _referenceFrame;
+  FormationParametersEnumReferenceFrame get referenceFrame => _$this._referenceFrame;
+  set referenceFrame(FormationParametersEnumReferenceFrame referenceFrame) => _$this._referenceFrame = referenceFrame;
 
   List<VehicleFormationParticipant> _participants;
   List<VehicleFormationParticipant> get participants => _$this._participants;
@@ -33170,8 +33170,8 @@ class FormationParametersBuilder implements Builder<FormationParameters, Formati
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _formation_name = _$v.formation_name;
-      _reference_frame = _$v.reference_frame;
+      _formationName = _$v.formationName;
+      _referenceFrame = _$v.referenceFrame;
       _participants = _$v.participants;
       _custom = _$v.custom;
       _$v = null;
@@ -33201,8 +33201,8 @@ class FormationParametersBuilder implements Builder<FormationParameters, Formati
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            formation_name: formation_name,
-            reference_frame: reference_frame,
+            formationName: formationName,
+            referenceFrame: referenceFrame,
             participants: participants,
             custom: custom);
     replace(_$result);
@@ -33225,31 +33225,31 @@ class _$FormationPlanExecution extends FormationPlanExecution {
   final int dstEnt;
 
   @override
-  final String group_name;
+  final String groupName;
   @override
-  final String formation_name;
+  final String formationName;
   @override
-  final String plan_id;
+  final String planId;
   @override
   final String description;
   @override
-  final double leader_speed;
+  final double leaderSpeed;
   @override
-  final double leader_bank_lim;
+  final double leaderBankLim;
   @override
-  final double pos_sim_err_lim;
+  final double posSimErrLim;
   @override
-  final double pos_sim_err_wrn;
+  final double posSimErrWrn;
   @override
-  final int pos_sim_err_timeout;
+  final int posSimErrTimeout;
   @override
-  final double converg_max;
+  final double convergMax;
   @override
-  final int converg_timeout;
+  final int convergTimeout;
   @override
-  final int comms_timeout;
+  final int commsTimeout;
   @override
-  final double turb_lim;
+  final double turbLim;
   @override
   final String custom;
 
@@ -33262,19 +33262,19 @@ class _$FormationPlanExecution extends FormationPlanExecution {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.group_name,
-      this.formation_name,
-      this.plan_id,
+      this.groupName,
+      this.formationName,
+      this.planId,
       this.description,
-      this.leader_speed,
-      this.leader_bank_lim,
-      this.pos_sim_err_lim,
-      this.pos_sim_err_wrn,
-      this.pos_sim_err_timeout,
-      this.converg_max,
-      this.converg_timeout,
-      this.comms_timeout,
-      this.turb_lim,
+      this.leaderSpeed,
+      this.leaderBankLim,
+      this.posSimErrLim,
+      this.posSimErrWrn,
+      this.posSimErrTimeout,
+      this.convergMax,
+      this.convergTimeout,
+      this.commsTimeout,
+      this.turbLim,
       this.custom})
       : super._();
 
@@ -33294,19 +33294,19 @@ class _$FormationPlanExecution extends FormationPlanExecution {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        group_name == this.group_name &&
-        formation_name == this.formation_name &&
-        plan_id == this.plan_id &&
+        groupName == this.groupName &&
+        formationName == this.formationName &&
+        planId == this.planId &&
         description == this.description &&
-        leader_speed == this.leader_speed &&
-        leader_bank_lim == this.leader_bank_lim &&
-        pos_sim_err_lim == this.pos_sim_err_lim &&
-        pos_sim_err_wrn == this.pos_sim_err_wrn &&
-        pos_sim_err_timeout == this.pos_sim_err_timeout &&
-        converg_max == this.converg_max &&
-        converg_timeout == this.converg_timeout &&
-        comms_timeout == this.comms_timeout &&
-        turb_lim == this.turb_lim &&
+        leaderSpeed == this.leaderSpeed &&
+        leaderBankLim == this.leaderBankLim &&
+        posSimErrLim == this.posSimErrLim &&
+        posSimErrWrn == this.posSimErrWrn &&
+        posSimErrTimeout == this.posSimErrTimeout &&
+        convergMax == this.convergMax &&
+        convergTimeout == this.convergTimeout &&
+        commsTimeout == this.commsTimeout &&
+        turbLim == this.turbLim &&
         custom == this.custom;
   }
 
@@ -33318,19 +33318,19 @@ class _$FormationPlanExecution extends FormationPlanExecution {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        group_name.hashCode), 
-        formation_name.hashCode), 
-        plan_id.hashCode), 
+        groupName.hashCode), 
+        formationName.hashCode), 
+        planId.hashCode), 
         description.hashCode), 
-        leader_speed.hashCode), 
-        leader_bank_lim.hashCode), 
-        pos_sim_err_lim.hashCode), 
-        pos_sim_err_wrn.hashCode), 
-        pos_sim_err_timeout.hashCode), 
-        converg_max.hashCode), 
-        converg_timeout.hashCode), 
-        comms_timeout.hashCode), 
-        turb_lim.hashCode), 
+        leaderSpeed.hashCode), 
+        leaderBankLim.hashCode), 
+        posSimErrLim.hashCode), 
+        posSimErrWrn.hashCode), 
+        posSimErrTimeout.hashCode), 
+        convergMax.hashCode), 
+        convergTimeout.hashCode), 
+        commsTimeout.hashCode), 
+        turbLim.hashCode), 
         custom.hashCode));
   }
 
@@ -33342,19 +33342,19 @@ class _$FormationPlanExecution extends FormationPlanExecution {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('group_name', group_name)
-          ..add('formation_name', formation_name)
-          ..add('plan_id', plan_id)
+          ..add('groupName', groupName)
+          ..add('formationName', formationName)
+          ..add('planId', planId)
           ..add('description', description)
-          ..add('leader_speed', leader_speed)
-          ..add('leader_bank_lim', leader_bank_lim)
-          ..add('pos_sim_err_lim', pos_sim_err_lim)
-          ..add('pos_sim_err_wrn', pos_sim_err_wrn)
-          ..add('pos_sim_err_timeout', pos_sim_err_timeout)
-          ..add('converg_max', converg_max)
-          ..add('converg_timeout', converg_timeout)
-          ..add('comms_timeout', comms_timeout)
-          ..add('turb_lim', turb_lim)
+          ..add('leaderSpeed', leaderSpeed)
+          ..add('leaderBankLim', leaderBankLim)
+          ..add('posSimErrLim', posSimErrLim)
+          ..add('posSimErrWrn', posSimErrWrn)
+          ..add('posSimErrTimeout', posSimErrTimeout)
+          ..add('convergMax', convergMax)
+          ..add('convergTimeout', convergTimeout)
+          ..add('commsTimeout', commsTimeout)
+          ..add('turbLim', turbLim)
           ..add('custom', custom))
         .toString();
   }
@@ -33385,57 +33385,57 @@ class FormationPlanExecutionBuilder implements Builder<FormationPlanExecution, F
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _group_name;
-  String get group_name => _$this._group_name;
-  set group_name(String group_name) => _$this._group_name = group_name;
+  String _groupName;
+  String get groupName => _$this._groupName;
+  set groupName(String groupName) => _$this._groupName = groupName;
 
-  String _formation_name;
-  String get formation_name => _$this._formation_name;
-  set formation_name(String formation_name) => _$this._formation_name = formation_name;
+  String _formationName;
+  String get formationName => _$this._formationName;
+  set formationName(String formationName) => _$this._formationName = formationName;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
   String _description;
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
-  double _leader_speed;
-  double get leader_speed => _$this._leader_speed;
-  set leader_speed(double leader_speed) => _$this._leader_speed = leader_speed;
+  double _leaderSpeed;
+  double get leaderSpeed => _$this._leaderSpeed;
+  set leaderSpeed(double leaderSpeed) => _$this._leaderSpeed = leaderSpeed;
 
-  double _leader_bank_lim;
-  double get leader_bank_lim => _$this._leader_bank_lim;
-  set leader_bank_lim(double leader_bank_lim) => _$this._leader_bank_lim = leader_bank_lim;
+  double _leaderBankLim;
+  double get leaderBankLim => _$this._leaderBankLim;
+  set leaderBankLim(double leaderBankLim) => _$this._leaderBankLim = leaderBankLim;
 
-  double _pos_sim_err_lim;
-  double get pos_sim_err_lim => _$this._pos_sim_err_lim;
-  set pos_sim_err_lim(double pos_sim_err_lim) => _$this._pos_sim_err_lim = pos_sim_err_lim;
+  double _posSimErrLim;
+  double get posSimErrLim => _$this._posSimErrLim;
+  set posSimErrLim(double posSimErrLim) => _$this._posSimErrLim = posSimErrLim;
 
-  double _pos_sim_err_wrn;
-  double get pos_sim_err_wrn => _$this._pos_sim_err_wrn;
-  set pos_sim_err_wrn(double pos_sim_err_wrn) => _$this._pos_sim_err_wrn = pos_sim_err_wrn;
+  double _posSimErrWrn;
+  double get posSimErrWrn => _$this._posSimErrWrn;
+  set posSimErrWrn(double posSimErrWrn) => _$this._posSimErrWrn = posSimErrWrn;
 
-  int _pos_sim_err_timeout;
-  int get pos_sim_err_timeout => _$this._pos_sim_err_timeout;
-  set pos_sim_err_timeout(int pos_sim_err_timeout) => _$this._pos_sim_err_timeout = pos_sim_err_timeout;
+  int _posSimErrTimeout;
+  int get posSimErrTimeout => _$this._posSimErrTimeout;
+  set posSimErrTimeout(int posSimErrTimeout) => _$this._posSimErrTimeout = posSimErrTimeout;
 
-  double _converg_max;
-  double get converg_max => _$this._converg_max;
-  set converg_max(double converg_max) => _$this._converg_max = converg_max;
+  double _convergMax;
+  double get convergMax => _$this._convergMax;
+  set convergMax(double convergMax) => _$this._convergMax = convergMax;
 
-  int _converg_timeout;
-  int get converg_timeout => _$this._converg_timeout;
-  set converg_timeout(int converg_timeout) => _$this._converg_timeout = converg_timeout;
+  int _convergTimeout;
+  int get convergTimeout => _$this._convergTimeout;
+  set convergTimeout(int convergTimeout) => _$this._convergTimeout = convergTimeout;
 
-  int _comms_timeout;
-  int get comms_timeout => _$this._comms_timeout;
-  set comms_timeout(int comms_timeout) => _$this._comms_timeout = comms_timeout;
+  int _commsTimeout;
+  int get commsTimeout => _$this._commsTimeout;
+  set commsTimeout(int commsTimeout) => _$this._commsTimeout = commsTimeout;
 
-  double _turb_lim;
-  double get turb_lim => _$this._turb_lim;
-  set turb_lim(double turb_lim) => _$this._turb_lim = turb_lim;
+  double _turbLim;
+  double get turbLim => _$this._turbLim;
+  set turbLim(double turbLim) => _$this._turbLim = turbLim;
 
   String _custom;
   String get custom => _$this._custom;
@@ -33450,19 +33450,19 @@ class FormationPlanExecutionBuilder implements Builder<FormationPlanExecution, F
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _group_name = _$v.group_name;
-      _formation_name = _$v.formation_name;
-      _plan_id = _$v.plan_id;
+      _groupName = _$v.groupName;
+      _formationName = _$v.formationName;
+      _planId = _$v.planId;
       _description = _$v.description;
-      _leader_speed = _$v.leader_speed;
-      _leader_bank_lim = _$v.leader_bank_lim;
-      _pos_sim_err_lim = _$v.pos_sim_err_lim;
-      _pos_sim_err_wrn = _$v.pos_sim_err_wrn;
-      _pos_sim_err_timeout = _$v.pos_sim_err_timeout;
-      _converg_max = _$v.converg_max;
-      _converg_timeout = _$v.converg_timeout;
-      _comms_timeout = _$v.comms_timeout;
-      _turb_lim = _$v.turb_lim;
+      _leaderSpeed = _$v.leaderSpeed;
+      _leaderBankLim = _$v.leaderBankLim;
+      _posSimErrLim = _$v.posSimErrLim;
+      _posSimErrWrn = _$v.posSimErrWrn;
+      _posSimErrTimeout = _$v.posSimErrTimeout;
+      _convergMax = _$v.convergMax;
+      _convergTimeout = _$v.convergTimeout;
+      _commsTimeout = _$v.commsTimeout;
+      _turbLim = _$v.turbLim;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -33491,19 +33491,19 @@ class FormationPlanExecutionBuilder implements Builder<FormationPlanExecution, F
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            group_name: group_name,
-            formation_name: formation_name,
-            plan_id: plan_id,
+            groupName: groupName,
+            formationName: formationName,
+            planId: planId,
             description: description,
-            leader_speed: leader_speed,
-            leader_bank_lim: leader_bank_lim,
-            pos_sim_err_lim: pos_sim_err_lim,
-            pos_sim_err_wrn: pos_sim_err_wrn,
-            pos_sim_err_timeout: pos_sim_err_timeout,
-            converg_max: converg_max,
-            converg_timeout: converg_timeout,
-            comms_timeout: comms_timeout,
-            turb_lim: turb_lim,
+            leaderSpeed: leaderSpeed,
+            leaderBankLim: leaderBankLim,
+            posSimErrLim: posSimErrLim,
+            posSimErrWrn: posSimErrWrn,
+            posSimErrTimeout: posSimErrTimeout,
+            convergMax: convergMax,
+            convergTimeout: convergTimeout,
+            commsTimeout: commsTimeout,
+            turbLim: turbLim,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -33525,15 +33525,15 @@ class _$FollowReference extends FollowReference {
   final int dstEnt;
 
   @override
-  final int control_src;
+  final int controlSrc;
   @override
-  final int control_ent;
+  final int controlEnt;
   @override
   final double timeout;
   @override
-  final double loiter_radius;
+  final double loiterRadius;
   @override
-  final double altitude_interval;
+  final double altitudeInterval;
 
   factory _$FollowReference([void updates(FollowReferenceBuilder b)]) =>
       (new FollowReferenceBuilder()..update(updates)).build();
@@ -33544,11 +33544,11 @@ class _$FollowReference extends FollowReference {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.control_src,
-      this.control_ent,
+      this.controlSrc,
+      this.controlEnt,
       this.timeout,
-      this.loiter_radius,
-      this.altitude_interval})
+      this.loiterRadius,
+      this.altitudeInterval})
       : super._();
 
   @override
@@ -33567,11 +33567,11 @@ class _$FollowReference extends FollowReference {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        control_src == this.control_src &&
-        control_ent == this.control_ent &&
+        controlSrc == this.controlSrc &&
+        controlEnt == this.controlEnt &&
         timeout == this.timeout &&
-        loiter_radius == this.loiter_radius &&
-        altitude_interval == this.altitude_interval;
+        loiterRadius == this.loiterRadius &&
+        altitudeInterval == this.altitudeInterval;
   }
 
   @override
@@ -33582,11 +33582,11 @@ class _$FollowReference extends FollowReference {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        control_src.hashCode), 
-        control_ent.hashCode), 
+        controlSrc.hashCode), 
+        controlEnt.hashCode), 
         timeout.hashCode), 
-        loiter_radius.hashCode), 
-        altitude_interval.hashCode));
+        loiterRadius.hashCode), 
+        altitudeInterval.hashCode));
   }
 
   @override
@@ -33597,11 +33597,11 @@ class _$FollowReference extends FollowReference {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('control_src', control_src)
-          ..add('control_ent', control_ent)
+          ..add('controlSrc', controlSrc)
+          ..add('controlEnt', controlEnt)
           ..add('timeout', timeout)
-          ..add('loiter_radius', loiter_radius)
-          ..add('altitude_interval', altitude_interval))
+          ..add('loiterRadius', loiterRadius)
+          ..add('altitudeInterval', altitudeInterval))
         .toString();
   }
 }
@@ -33631,25 +33631,25 @@ class FollowReferenceBuilder implements Builder<FollowReference, FollowReference
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _control_src;
-  int get control_src => _$this._control_src;
-  set control_src(int control_src) => _$this._control_src = control_src;
+  int _controlSrc;
+  int get controlSrc => _$this._controlSrc;
+  set controlSrc(int controlSrc) => _$this._controlSrc = controlSrc;
 
-  int _control_ent;
-  int get control_ent => _$this._control_ent;
-  set control_ent(int control_ent) => _$this._control_ent = control_ent;
+  int _controlEnt;
+  int get controlEnt => _$this._controlEnt;
+  set controlEnt(int controlEnt) => _$this._controlEnt = controlEnt;
 
   double _timeout;
   double get timeout => _$this._timeout;
   set timeout(double timeout) => _$this._timeout = timeout;
 
-  double _loiter_radius;
-  double get loiter_radius => _$this._loiter_radius;
-  set loiter_radius(double loiter_radius) => _$this._loiter_radius = loiter_radius;
+  double _loiterRadius;
+  double get loiterRadius => _$this._loiterRadius;
+  set loiterRadius(double loiterRadius) => _$this._loiterRadius = loiterRadius;
 
-  double _altitude_interval;
-  double get altitude_interval => _$this._altitude_interval;
-  set altitude_interval(double altitude_interval) => _$this._altitude_interval = altitude_interval;
+  double _altitudeInterval;
+  double get altitudeInterval => _$this._altitudeInterval;
+  set altitudeInterval(double altitudeInterval) => _$this._altitudeInterval = altitudeInterval;
 
   FollowReferenceBuilder();
 
@@ -33660,11 +33660,11 @@ class FollowReferenceBuilder implements Builder<FollowReference, FollowReference
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _control_src = _$v.control_src;
-      _control_ent = _$v.control_ent;
+      _controlSrc = _$v.controlSrc;
+      _controlEnt = _$v.controlEnt;
       _timeout = _$v.timeout;
-      _loiter_radius = _$v.loiter_radius;
-      _altitude_interval = _$v.altitude_interval;
+      _loiterRadius = _$v.loiterRadius;
+      _altitudeInterval = _$v.altitudeInterval;
       _$v = null;
     }
     return this;
@@ -33692,11 +33692,11 @@ class FollowReferenceBuilder implements Builder<FollowReference, FollowReference
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            control_src: control_src,
-            control_ent: control_ent,
+            controlSrc: controlSrc,
+            controlEnt: controlEnt,
             timeout: timeout,
-            loiter_radius: loiter_radius,
-            altitude_interval: altitude_interval);
+            loiterRadius: loiterRadius,
+            altitudeInterval: altitudeInterval);
     replace(_$result);
     return _$result;
   }
@@ -33921,9 +33921,9 @@ class _$FollowRefState extends FollowRefState {
   final int dstEnt;
 
   @override
-  final int control_src;
+  final int controlSrc;
   @override
-  final int control_ent;
+  final int controlEnt;
   @override
   final Reference reference;
   @override
@@ -33940,8 +33940,8 @@ class _$FollowRefState extends FollowRefState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.control_src,
-      this.control_ent,
+      this.controlSrc,
+      this.controlEnt,
       this.reference,
       this.state,
       this.proximity})
@@ -33963,8 +33963,8 @@ class _$FollowRefState extends FollowRefState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        control_src == this.control_src &&
-        control_ent == this.control_ent &&
+        controlSrc == this.controlSrc &&
+        controlEnt == this.controlEnt &&
         reference == this.reference &&
         state == this.state &&
         proximity == this.proximity;
@@ -33978,8 +33978,8 @@ class _$FollowRefState extends FollowRefState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        control_src.hashCode), 
-        control_ent.hashCode), 
+        controlSrc.hashCode), 
+        controlEnt.hashCode), 
         reference.hashCode), 
         state.hashCode), 
         proximity.hashCode));
@@ -33993,8 +33993,8 @@ class _$FollowRefState extends FollowRefState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('control_src', control_src)
-          ..add('control_ent', control_ent)
+          ..add('controlSrc', controlSrc)
+          ..add('controlEnt', controlEnt)
           ..add('reference', reference)
           ..add('state', state)
           ..add('proximity', proximity))
@@ -34027,13 +34027,13 @@ class FollowRefStateBuilder implements Builder<FollowRefState, FollowRefStateBui
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _control_src;
-  int get control_src => _$this._control_src;
-  set control_src(int control_src) => _$this._control_src = control_src;
+  int _controlSrc;
+  int get controlSrc => _$this._controlSrc;
+  set controlSrc(int controlSrc) => _$this._controlSrc = controlSrc;
 
-  int _control_ent;
-  int get control_ent => _$this._control_ent;
-  set control_ent(int control_ent) => _$this._control_ent = control_ent;
+  int _controlEnt;
+  int get controlEnt => _$this._controlEnt;
+  set controlEnt(int controlEnt) => _$this._controlEnt = controlEnt;
 
   Reference _reference;
   Reference get reference => _$this._reference;
@@ -34056,8 +34056,8 @@ class FollowRefStateBuilder implements Builder<FollowRefState, FollowRefStateBui
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _control_src = _$v.control_src;
-      _control_ent = _$v.control_ent;
+      _controlSrc = _$v.controlSrc;
+      _controlEnt = _$v.controlEnt;
       _reference = _$v.reference;
       _state = _$v.state;
       _proximity = _$v.proximity;
@@ -34088,8 +34088,8 @@ class FollowRefStateBuilder implements Builder<FollowRefState, FollowRefStateBui
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            control_src: control_src,
-            control_ent: control_ent,
+            controlSrc: controlSrc,
+            controlEnt: controlEnt,
             reference: reference,
             state: state,
             proximity: proximity);
@@ -34113,43 +34113,43 @@ class _$FormationMonitor extends FormationMonitor {
   final int dstEnt;
 
   @override
-  final double ax_cmd;
+  final double axCmd;
   @override
-  final double ay_cmd;
+  final double ayCmd;
   @override
-  final double az_cmd;
+  final double azCmd;
   @override
-  final double ax_des;
+  final double axDes;
   @override
-  final double ay_des;
+  final double ayDes;
   @override
-  final double az_des;
+  final double azDes;
   @override
-  final double virt_err_x;
+  final double virtErrX;
   @override
-  final double virt_err_y;
+  final double virtErrY;
   @override
-  final double virt_err_z;
+  final double virtErrZ;
   @override
-  final double surf_fdbk_x;
+  final double surfFdbkX;
   @override
-  final double surf_fdbk_y;
+  final double surfFdbkY;
   @override
-  final double surf_fdbk_z;
+  final double surfFdbkZ;
   @override
-  final double surf_unkn_x;
+  final double surfUnknX;
   @override
-  final double surf_unkn_y;
+  final double surfUnknY;
   @override
-  final double surf_unkn_z;
+  final double surfUnknZ;
   @override
-  final double ss_x;
+  final double ssX;
   @override
-  final double ss_y;
+  final double ssY;
   @override
-  final double ss_z;
+  final double ssZ;
   @override
-  final List<RelativeState> rel_state;
+  final List<RelativeState> relState;
 
   factory _$FormationMonitor([void updates(FormationMonitorBuilder b)]) =>
       (new FormationMonitorBuilder()..update(updates)).build();
@@ -34160,25 +34160,25 @@ class _$FormationMonitor extends FormationMonitor {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.ax_cmd,
-      this.ay_cmd,
-      this.az_cmd,
-      this.ax_des,
-      this.ay_des,
-      this.az_des,
-      this.virt_err_x,
-      this.virt_err_y,
-      this.virt_err_z,
-      this.surf_fdbk_x,
-      this.surf_fdbk_y,
-      this.surf_fdbk_z,
-      this.surf_unkn_x,
-      this.surf_unkn_y,
-      this.surf_unkn_z,
-      this.ss_x,
-      this.ss_y,
-      this.ss_z,
-      this.rel_state})
+      this.axCmd,
+      this.ayCmd,
+      this.azCmd,
+      this.axDes,
+      this.ayDes,
+      this.azDes,
+      this.virtErrX,
+      this.virtErrY,
+      this.virtErrZ,
+      this.surfFdbkX,
+      this.surfFdbkY,
+      this.surfFdbkZ,
+      this.surfUnknX,
+      this.surfUnknY,
+      this.surfUnknZ,
+      this.ssX,
+      this.ssY,
+      this.ssZ,
+      this.relState})
       : super._();
 
   @override
@@ -34197,25 +34197,25 @@ class _$FormationMonitor extends FormationMonitor {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        ax_cmd == this.ax_cmd &&
-        ay_cmd == this.ay_cmd &&
-        az_cmd == this.az_cmd &&
-        ax_des == this.ax_des &&
-        ay_des == this.ay_des &&
-        az_des == this.az_des &&
-        virt_err_x == this.virt_err_x &&
-        virt_err_y == this.virt_err_y &&
-        virt_err_z == this.virt_err_z &&
-        surf_fdbk_x == this.surf_fdbk_x &&
-        surf_fdbk_y == this.surf_fdbk_y &&
-        surf_fdbk_z == this.surf_fdbk_z &&
-        surf_unkn_x == this.surf_unkn_x &&
-        surf_unkn_y == this.surf_unkn_y &&
-        surf_unkn_z == this.surf_unkn_z &&
-        ss_x == this.ss_x &&
-        ss_y == this.ss_y &&
-        ss_z == this.ss_z &&
-        rel_state == this.rel_state;
+        axCmd == this.axCmd &&
+        ayCmd == this.ayCmd &&
+        azCmd == this.azCmd &&
+        axDes == this.axDes &&
+        ayDes == this.ayDes &&
+        azDes == this.azDes &&
+        virtErrX == this.virtErrX &&
+        virtErrY == this.virtErrY &&
+        virtErrZ == this.virtErrZ &&
+        surfFdbkX == this.surfFdbkX &&
+        surfFdbkY == this.surfFdbkY &&
+        surfFdbkZ == this.surfFdbkZ &&
+        surfUnknX == this.surfUnknX &&
+        surfUnknY == this.surfUnknY &&
+        surfUnknZ == this.surfUnknZ &&
+        ssX == this.ssX &&
+        ssY == this.ssY &&
+        ssZ == this.ssZ &&
+        relState == this.relState;
   }
 
   @override
@@ -34226,25 +34226,25 @@ class _$FormationMonitor extends FormationMonitor {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        ax_cmd.hashCode), 
-        ay_cmd.hashCode), 
-        az_cmd.hashCode), 
-        ax_des.hashCode), 
-        ay_des.hashCode), 
-        az_des.hashCode), 
-        virt_err_x.hashCode), 
-        virt_err_y.hashCode), 
-        virt_err_z.hashCode), 
-        surf_fdbk_x.hashCode), 
-        surf_fdbk_y.hashCode), 
-        surf_fdbk_z.hashCode), 
-        surf_unkn_x.hashCode), 
-        surf_unkn_y.hashCode), 
-        surf_unkn_z.hashCode), 
-        ss_x.hashCode), 
-        ss_y.hashCode), 
-        ss_z.hashCode), 
-        rel_state.hashCode));
+        axCmd.hashCode), 
+        ayCmd.hashCode), 
+        azCmd.hashCode), 
+        axDes.hashCode), 
+        ayDes.hashCode), 
+        azDes.hashCode), 
+        virtErrX.hashCode), 
+        virtErrY.hashCode), 
+        virtErrZ.hashCode), 
+        surfFdbkX.hashCode), 
+        surfFdbkY.hashCode), 
+        surfFdbkZ.hashCode), 
+        surfUnknX.hashCode), 
+        surfUnknY.hashCode), 
+        surfUnknZ.hashCode), 
+        ssX.hashCode), 
+        ssY.hashCode), 
+        ssZ.hashCode), 
+        relState.hashCode));
   }
 
   @override
@@ -34255,25 +34255,25 @@ class _$FormationMonitor extends FormationMonitor {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('ax_cmd', ax_cmd)
-          ..add('ay_cmd', ay_cmd)
-          ..add('az_cmd', az_cmd)
-          ..add('ax_des', ax_des)
-          ..add('ay_des', ay_des)
-          ..add('az_des', az_des)
-          ..add('virt_err_x', virt_err_x)
-          ..add('virt_err_y', virt_err_y)
-          ..add('virt_err_z', virt_err_z)
-          ..add('surf_fdbk_x', surf_fdbk_x)
-          ..add('surf_fdbk_y', surf_fdbk_y)
-          ..add('surf_fdbk_z', surf_fdbk_z)
-          ..add('surf_unkn_x', surf_unkn_x)
-          ..add('surf_unkn_y', surf_unkn_y)
-          ..add('surf_unkn_z', surf_unkn_z)
-          ..add('ss_x', ss_x)
-          ..add('ss_y', ss_y)
-          ..add('ss_z', ss_z)
-          ..add('rel_state', rel_state))
+          ..add('axCmd', axCmd)
+          ..add('ayCmd', ayCmd)
+          ..add('azCmd', azCmd)
+          ..add('axDes', axDes)
+          ..add('ayDes', ayDes)
+          ..add('azDes', azDes)
+          ..add('virtErrX', virtErrX)
+          ..add('virtErrY', virtErrY)
+          ..add('virtErrZ', virtErrZ)
+          ..add('surfFdbkX', surfFdbkX)
+          ..add('surfFdbkY', surfFdbkY)
+          ..add('surfFdbkZ', surfFdbkZ)
+          ..add('surfUnknX', surfUnknX)
+          ..add('surfUnknY', surfUnknY)
+          ..add('surfUnknZ', surfUnknZ)
+          ..add('ssX', ssX)
+          ..add('ssY', ssY)
+          ..add('ssZ', ssZ)
+          ..add('relState', relState))
         .toString();
   }
 }
@@ -34303,81 +34303,81 @@ class FormationMonitorBuilder implements Builder<FormationMonitor, FormationMoni
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _ax_cmd;
-  double get ax_cmd => _$this._ax_cmd;
-  set ax_cmd(double ax_cmd) => _$this._ax_cmd = ax_cmd;
+  double _axCmd;
+  double get axCmd => _$this._axCmd;
+  set axCmd(double axCmd) => _$this._axCmd = axCmd;
 
-  double _ay_cmd;
-  double get ay_cmd => _$this._ay_cmd;
-  set ay_cmd(double ay_cmd) => _$this._ay_cmd = ay_cmd;
+  double _ayCmd;
+  double get ayCmd => _$this._ayCmd;
+  set ayCmd(double ayCmd) => _$this._ayCmd = ayCmd;
 
-  double _az_cmd;
-  double get az_cmd => _$this._az_cmd;
-  set az_cmd(double az_cmd) => _$this._az_cmd = az_cmd;
+  double _azCmd;
+  double get azCmd => _$this._azCmd;
+  set azCmd(double azCmd) => _$this._azCmd = azCmd;
 
-  double _ax_des;
-  double get ax_des => _$this._ax_des;
-  set ax_des(double ax_des) => _$this._ax_des = ax_des;
+  double _axDes;
+  double get axDes => _$this._axDes;
+  set axDes(double axDes) => _$this._axDes = axDes;
 
-  double _ay_des;
-  double get ay_des => _$this._ay_des;
-  set ay_des(double ay_des) => _$this._ay_des = ay_des;
+  double _ayDes;
+  double get ayDes => _$this._ayDes;
+  set ayDes(double ayDes) => _$this._ayDes = ayDes;
 
-  double _az_des;
-  double get az_des => _$this._az_des;
-  set az_des(double az_des) => _$this._az_des = az_des;
+  double _azDes;
+  double get azDes => _$this._azDes;
+  set azDes(double azDes) => _$this._azDes = azDes;
 
-  double _virt_err_x;
-  double get virt_err_x => _$this._virt_err_x;
-  set virt_err_x(double virt_err_x) => _$this._virt_err_x = virt_err_x;
+  double _virtErrX;
+  double get virtErrX => _$this._virtErrX;
+  set virtErrX(double virtErrX) => _$this._virtErrX = virtErrX;
 
-  double _virt_err_y;
-  double get virt_err_y => _$this._virt_err_y;
-  set virt_err_y(double virt_err_y) => _$this._virt_err_y = virt_err_y;
+  double _virtErrY;
+  double get virtErrY => _$this._virtErrY;
+  set virtErrY(double virtErrY) => _$this._virtErrY = virtErrY;
 
-  double _virt_err_z;
-  double get virt_err_z => _$this._virt_err_z;
-  set virt_err_z(double virt_err_z) => _$this._virt_err_z = virt_err_z;
+  double _virtErrZ;
+  double get virtErrZ => _$this._virtErrZ;
+  set virtErrZ(double virtErrZ) => _$this._virtErrZ = virtErrZ;
 
-  double _surf_fdbk_x;
-  double get surf_fdbk_x => _$this._surf_fdbk_x;
-  set surf_fdbk_x(double surf_fdbk_x) => _$this._surf_fdbk_x = surf_fdbk_x;
+  double _surfFdbkX;
+  double get surfFdbkX => _$this._surfFdbkX;
+  set surfFdbkX(double surfFdbkX) => _$this._surfFdbkX = surfFdbkX;
 
-  double _surf_fdbk_y;
-  double get surf_fdbk_y => _$this._surf_fdbk_y;
-  set surf_fdbk_y(double surf_fdbk_y) => _$this._surf_fdbk_y = surf_fdbk_y;
+  double _surfFdbkY;
+  double get surfFdbkY => _$this._surfFdbkY;
+  set surfFdbkY(double surfFdbkY) => _$this._surfFdbkY = surfFdbkY;
 
-  double _surf_fdbk_z;
-  double get surf_fdbk_z => _$this._surf_fdbk_z;
-  set surf_fdbk_z(double surf_fdbk_z) => _$this._surf_fdbk_z = surf_fdbk_z;
+  double _surfFdbkZ;
+  double get surfFdbkZ => _$this._surfFdbkZ;
+  set surfFdbkZ(double surfFdbkZ) => _$this._surfFdbkZ = surfFdbkZ;
 
-  double _surf_unkn_x;
-  double get surf_unkn_x => _$this._surf_unkn_x;
-  set surf_unkn_x(double surf_unkn_x) => _$this._surf_unkn_x = surf_unkn_x;
+  double _surfUnknX;
+  double get surfUnknX => _$this._surfUnknX;
+  set surfUnknX(double surfUnknX) => _$this._surfUnknX = surfUnknX;
 
-  double _surf_unkn_y;
-  double get surf_unkn_y => _$this._surf_unkn_y;
-  set surf_unkn_y(double surf_unkn_y) => _$this._surf_unkn_y = surf_unkn_y;
+  double _surfUnknY;
+  double get surfUnknY => _$this._surfUnknY;
+  set surfUnknY(double surfUnknY) => _$this._surfUnknY = surfUnknY;
 
-  double _surf_unkn_z;
-  double get surf_unkn_z => _$this._surf_unkn_z;
-  set surf_unkn_z(double surf_unkn_z) => _$this._surf_unkn_z = surf_unkn_z;
+  double _surfUnknZ;
+  double get surfUnknZ => _$this._surfUnknZ;
+  set surfUnknZ(double surfUnknZ) => _$this._surfUnknZ = surfUnknZ;
 
-  double _ss_x;
-  double get ss_x => _$this._ss_x;
-  set ss_x(double ss_x) => _$this._ss_x = ss_x;
+  double _ssX;
+  double get ssX => _$this._ssX;
+  set ssX(double ssX) => _$this._ssX = ssX;
 
-  double _ss_y;
-  double get ss_y => _$this._ss_y;
-  set ss_y(double ss_y) => _$this._ss_y = ss_y;
+  double _ssY;
+  double get ssY => _$this._ssY;
+  set ssY(double ssY) => _$this._ssY = ssY;
 
-  double _ss_z;
-  double get ss_z => _$this._ss_z;
-  set ss_z(double ss_z) => _$this._ss_z = ss_z;
+  double _ssZ;
+  double get ssZ => _$this._ssZ;
+  set ssZ(double ssZ) => _$this._ssZ = ssZ;
 
-  List<RelativeState> _rel_state;
-  List<RelativeState> get rel_state => _$this._rel_state;
-  set rel_state(List<RelativeState> rel_state) => _$this._rel_state = rel_state;
+  List<RelativeState> _relState;
+  List<RelativeState> get relState => _$this._relState;
+  set relState(List<RelativeState> relState) => _$this._relState = relState;
 
   FormationMonitorBuilder();
 
@@ -34388,25 +34388,25 @@ class FormationMonitorBuilder implements Builder<FormationMonitor, FormationMoni
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _ax_cmd = _$v.ax_cmd;
-      _ay_cmd = _$v.ay_cmd;
-      _az_cmd = _$v.az_cmd;
-      _ax_des = _$v.ax_des;
-      _ay_des = _$v.ay_des;
-      _az_des = _$v.az_des;
-      _virt_err_x = _$v.virt_err_x;
-      _virt_err_y = _$v.virt_err_y;
-      _virt_err_z = _$v.virt_err_z;
-      _surf_fdbk_x = _$v.surf_fdbk_x;
-      _surf_fdbk_y = _$v.surf_fdbk_y;
-      _surf_fdbk_z = _$v.surf_fdbk_z;
-      _surf_unkn_x = _$v.surf_unkn_x;
-      _surf_unkn_y = _$v.surf_unkn_y;
-      _surf_unkn_z = _$v.surf_unkn_z;
-      _ss_x = _$v.ss_x;
-      _ss_y = _$v.ss_y;
-      _ss_z = _$v.ss_z;
-      _rel_state = _$v.rel_state;
+      _axCmd = _$v.axCmd;
+      _ayCmd = _$v.ayCmd;
+      _azCmd = _$v.azCmd;
+      _axDes = _$v.axDes;
+      _ayDes = _$v.ayDes;
+      _azDes = _$v.azDes;
+      _virtErrX = _$v.virtErrX;
+      _virtErrY = _$v.virtErrY;
+      _virtErrZ = _$v.virtErrZ;
+      _surfFdbkX = _$v.surfFdbkX;
+      _surfFdbkY = _$v.surfFdbkY;
+      _surfFdbkZ = _$v.surfFdbkZ;
+      _surfUnknX = _$v.surfUnknX;
+      _surfUnknY = _$v.surfUnknY;
+      _surfUnknZ = _$v.surfUnknZ;
+      _ssX = _$v.ssX;
+      _ssY = _$v.ssY;
+      _ssZ = _$v.ssZ;
+      _relState = _$v.relState;
       _$v = null;
     }
     return this;
@@ -34434,25 +34434,25 @@ class FormationMonitorBuilder implements Builder<FormationMonitor, FormationMoni
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            ax_cmd: ax_cmd,
-            ay_cmd: ay_cmd,
-            az_cmd: az_cmd,
-            ax_des: ax_des,
-            ay_des: ay_des,
-            az_des: az_des,
-            virt_err_x: virt_err_x,
-            virt_err_y: virt_err_y,
-            virt_err_z: virt_err_z,
-            surf_fdbk_x: surf_fdbk_x,
-            surf_fdbk_y: surf_fdbk_y,
-            surf_fdbk_z: surf_fdbk_z,
-            surf_unkn_x: surf_unkn_x,
-            surf_unkn_y: surf_unkn_y,
-            surf_unkn_z: surf_unkn_z,
-            ss_x: ss_x,
-            ss_y: ss_y,
-            ss_z: ss_z,
-            rel_state: rel_state);
+            axCmd: axCmd,
+            ayCmd: ayCmd,
+            azCmd: azCmd,
+            axDes: axDes,
+            ayDes: ayDes,
+            azDes: azDes,
+            virtErrX: virtErrX,
+            virtErrY: virtErrY,
+            virtErrZ: virtErrZ,
+            surfFdbkX: surfFdbkX,
+            surfFdbkY: surfFdbkY,
+            surfFdbkZ: surfFdbkZ,
+            surfUnknX: surfUnknX,
+            surfUnknY: surfUnknY,
+            surfUnknZ: surfUnknZ,
+            ssX: ssX,
+            ssY: ssY,
+            ssZ: ssZ,
+            relState: relState);
     replace(_$result);
     return _$result;
   }
@@ -34473,49 +34473,49 @@ class _$RelativeState extends RelativeState {
   final int dstEnt;
 
   @override
-  final String s_id;
+  final String sId;
   @override
   final double dist;
   @override
   final double err;
   @override
-  final double ctrl_imp;
+  final double ctrlImp;
   @override
-  final double rel_dir_x;
+  final double relDirX;
   @override
-  final double rel_dir_y;
+  final double relDirY;
   @override
-  final double rel_dir_z;
+  final double relDirZ;
   @override
-  final double err_x;
+  final double errX;
   @override
-  final double err_y;
+  final double errY;
   @override
-  final double err_z;
+  final double errZ;
   @override
-  final double rf_err_x;
+  final double rfErrX;
   @override
-  final double rf_err_y;
+  final double rfErrY;
   @override
-  final double rf_err_z;
+  final double rfErrZ;
   @override
-  final double rf_err_vx;
+  final double rfErrVx;
   @override
-  final double rf_err_vy;
+  final double rfErrVy;
   @override
-  final double rf_err_vz;
+  final double rfErrVz;
   @override
-  final double ss_x;
+  final double ssX;
   @override
-  final double ss_y;
+  final double ssY;
   @override
-  final double ss_z;
+  final double ssZ;
   @override
-  final double virt_err_x;
+  final double virtErrX;
   @override
-  final double virt_err_y;
+  final double virtErrY;
   @override
-  final double virt_err_z;
+  final double virtErrZ;
 
   factory _$RelativeState([void updates(RelativeStateBuilder b)]) =>
       (new RelativeStateBuilder()..update(updates)).build();
@@ -34526,28 +34526,28 @@ class _$RelativeState extends RelativeState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.s_id,
+      this.sId,
       this.dist,
       this.err,
-      this.ctrl_imp,
-      this.rel_dir_x,
-      this.rel_dir_y,
-      this.rel_dir_z,
-      this.err_x,
-      this.err_y,
-      this.err_z,
-      this.rf_err_x,
-      this.rf_err_y,
-      this.rf_err_z,
-      this.rf_err_vx,
-      this.rf_err_vy,
-      this.rf_err_vz,
-      this.ss_x,
-      this.ss_y,
-      this.ss_z,
-      this.virt_err_x,
-      this.virt_err_y,
-      this.virt_err_z})
+      this.ctrlImp,
+      this.relDirX,
+      this.relDirY,
+      this.relDirZ,
+      this.errX,
+      this.errY,
+      this.errZ,
+      this.rfErrX,
+      this.rfErrY,
+      this.rfErrZ,
+      this.rfErrVx,
+      this.rfErrVy,
+      this.rfErrVz,
+      this.ssX,
+      this.ssY,
+      this.ssZ,
+      this.virtErrX,
+      this.virtErrY,
+      this.virtErrZ})
       : super._();
 
   @override
@@ -34566,28 +34566,28 @@ class _$RelativeState extends RelativeState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        s_id == this.s_id &&
+        sId == this.sId &&
         dist == this.dist &&
         err == this.err &&
-        ctrl_imp == this.ctrl_imp &&
-        rel_dir_x == this.rel_dir_x &&
-        rel_dir_y == this.rel_dir_y &&
-        rel_dir_z == this.rel_dir_z &&
-        err_x == this.err_x &&
-        err_y == this.err_y &&
-        err_z == this.err_z &&
-        rf_err_x == this.rf_err_x &&
-        rf_err_y == this.rf_err_y &&
-        rf_err_z == this.rf_err_z &&
-        rf_err_vx == this.rf_err_vx &&
-        rf_err_vy == this.rf_err_vy &&
-        rf_err_vz == this.rf_err_vz &&
-        ss_x == this.ss_x &&
-        ss_y == this.ss_y &&
-        ss_z == this.ss_z &&
-        virt_err_x == this.virt_err_x &&
-        virt_err_y == this.virt_err_y &&
-        virt_err_z == this.virt_err_z;
+        ctrlImp == this.ctrlImp &&
+        relDirX == this.relDirX &&
+        relDirY == this.relDirY &&
+        relDirZ == this.relDirZ &&
+        errX == this.errX &&
+        errY == this.errY &&
+        errZ == this.errZ &&
+        rfErrX == this.rfErrX &&
+        rfErrY == this.rfErrY &&
+        rfErrZ == this.rfErrZ &&
+        rfErrVx == this.rfErrVx &&
+        rfErrVy == this.rfErrVy &&
+        rfErrVz == this.rfErrVz &&
+        ssX == this.ssX &&
+        ssY == this.ssY &&
+        ssZ == this.ssZ &&
+        virtErrX == this.virtErrX &&
+        virtErrY == this.virtErrY &&
+        virtErrZ == this.virtErrZ;
   }
 
   @override
@@ -34598,28 +34598,28 @@ class _$RelativeState extends RelativeState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        s_id.hashCode), 
+        sId.hashCode), 
         dist.hashCode), 
         err.hashCode), 
-        ctrl_imp.hashCode), 
-        rel_dir_x.hashCode), 
-        rel_dir_y.hashCode), 
-        rel_dir_z.hashCode), 
-        err_x.hashCode), 
-        err_y.hashCode), 
-        err_z.hashCode), 
-        rf_err_x.hashCode), 
-        rf_err_y.hashCode), 
-        rf_err_z.hashCode), 
-        rf_err_vx.hashCode), 
-        rf_err_vy.hashCode), 
-        rf_err_vz.hashCode), 
-        ss_x.hashCode), 
-        ss_y.hashCode), 
-        ss_z.hashCode), 
-        virt_err_x.hashCode), 
-        virt_err_y.hashCode), 
-        virt_err_z.hashCode));
+        ctrlImp.hashCode), 
+        relDirX.hashCode), 
+        relDirY.hashCode), 
+        relDirZ.hashCode), 
+        errX.hashCode), 
+        errY.hashCode), 
+        errZ.hashCode), 
+        rfErrX.hashCode), 
+        rfErrY.hashCode), 
+        rfErrZ.hashCode), 
+        rfErrVx.hashCode), 
+        rfErrVy.hashCode), 
+        rfErrVz.hashCode), 
+        ssX.hashCode), 
+        ssY.hashCode), 
+        ssZ.hashCode), 
+        virtErrX.hashCode), 
+        virtErrY.hashCode), 
+        virtErrZ.hashCode));
   }
 
   @override
@@ -34630,28 +34630,28 @@ class _$RelativeState extends RelativeState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('s_id', s_id)
+          ..add('sId', sId)
           ..add('dist', dist)
           ..add('err', err)
-          ..add('ctrl_imp', ctrl_imp)
-          ..add('rel_dir_x', rel_dir_x)
-          ..add('rel_dir_y', rel_dir_y)
-          ..add('rel_dir_z', rel_dir_z)
-          ..add('err_x', err_x)
-          ..add('err_y', err_y)
-          ..add('err_z', err_z)
-          ..add('rf_err_x', rf_err_x)
-          ..add('rf_err_y', rf_err_y)
-          ..add('rf_err_z', rf_err_z)
-          ..add('rf_err_vx', rf_err_vx)
-          ..add('rf_err_vy', rf_err_vy)
-          ..add('rf_err_vz', rf_err_vz)
-          ..add('ss_x', ss_x)
-          ..add('ss_y', ss_y)
-          ..add('ss_z', ss_z)
-          ..add('virt_err_x', virt_err_x)
-          ..add('virt_err_y', virt_err_y)
-          ..add('virt_err_z', virt_err_z))
+          ..add('ctrlImp', ctrlImp)
+          ..add('relDirX', relDirX)
+          ..add('relDirY', relDirY)
+          ..add('relDirZ', relDirZ)
+          ..add('errX', errX)
+          ..add('errY', errY)
+          ..add('errZ', errZ)
+          ..add('rfErrX', rfErrX)
+          ..add('rfErrY', rfErrY)
+          ..add('rfErrZ', rfErrZ)
+          ..add('rfErrVx', rfErrVx)
+          ..add('rfErrVy', rfErrVy)
+          ..add('rfErrVz', rfErrVz)
+          ..add('ssX', ssX)
+          ..add('ssY', ssY)
+          ..add('ssZ', ssZ)
+          ..add('virtErrX', virtErrX)
+          ..add('virtErrY', virtErrY)
+          ..add('virtErrZ', virtErrZ))
         .toString();
   }
 }
@@ -34681,9 +34681,9 @@ class RelativeStateBuilder implements Builder<RelativeState, RelativeStateBuilde
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _s_id;
-  String get s_id => _$this._s_id;
-  set s_id(String s_id) => _$this._s_id = s_id;
+  String _sId;
+  String get sId => _$this._sId;
+  set sId(String sId) => _$this._sId = sId;
 
   double _dist;
   double get dist => _$this._dist;
@@ -34693,81 +34693,81 @@ class RelativeStateBuilder implements Builder<RelativeState, RelativeStateBuilde
   double get err => _$this._err;
   set err(double err) => _$this._err = err;
 
-  double _ctrl_imp;
-  double get ctrl_imp => _$this._ctrl_imp;
-  set ctrl_imp(double ctrl_imp) => _$this._ctrl_imp = ctrl_imp;
+  double _ctrlImp;
+  double get ctrlImp => _$this._ctrlImp;
+  set ctrlImp(double ctrlImp) => _$this._ctrlImp = ctrlImp;
 
-  double _rel_dir_x;
-  double get rel_dir_x => _$this._rel_dir_x;
-  set rel_dir_x(double rel_dir_x) => _$this._rel_dir_x = rel_dir_x;
+  double _relDirX;
+  double get relDirX => _$this._relDirX;
+  set relDirX(double relDirX) => _$this._relDirX = relDirX;
 
-  double _rel_dir_y;
-  double get rel_dir_y => _$this._rel_dir_y;
-  set rel_dir_y(double rel_dir_y) => _$this._rel_dir_y = rel_dir_y;
+  double _relDirY;
+  double get relDirY => _$this._relDirY;
+  set relDirY(double relDirY) => _$this._relDirY = relDirY;
 
-  double _rel_dir_z;
-  double get rel_dir_z => _$this._rel_dir_z;
-  set rel_dir_z(double rel_dir_z) => _$this._rel_dir_z = rel_dir_z;
+  double _relDirZ;
+  double get relDirZ => _$this._relDirZ;
+  set relDirZ(double relDirZ) => _$this._relDirZ = relDirZ;
 
-  double _err_x;
-  double get err_x => _$this._err_x;
-  set err_x(double err_x) => _$this._err_x = err_x;
+  double _errX;
+  double get errX => _$this._errX;
+  set errX(double errX) => _$this._errX = errX;
 
-  double _err_y;
-  double get err_y => _$this._err_y;
-  set err_y(double err_y) => _$this._err_y = err_y;
+  double _errY;
+  double get errY => _$this._errY;
+  set errY(double errY) => _$this._errY = errY;
 
-  double _err_z;
-  double get err_z => _$this._err_z;
-  set err_z(double err_z) => _$this._err_z = err_z;
+  double _errZ;
+  double get errZ => _$this._errZ;
+  set errZ(double errZ) => _$this._errZ = errZ;
 
-  double _rf_err_x;
-  double get rf_err_x => _$this._rf_err_x;
-  set rf_err_x(double rf_err_x) => _$this._rf_err_x = rf_err_x;
+  double _rfErrX;
+  double get rfErrX => _$this._rfErrX;
+  set rfErrX(double rfErrX) => _$this._rfErrX = rfErrX;
 
-  double _rf_err_y;
-  double get rf_err_y => _$this._rf_err_y;
-  set rf_err_y(double rf_err_y) => _$this._rf_err_y = rf_err_y;
+  double _rfErrY;
+  double get rfErrY => _$this._rfErrY;
+  set rfErrY(double rfErrY) => _$this._rfErrY = rfErrY;
 
-  double _rf_err_z;
-  double get rf_err_z => _$this._rf_err_z;
-  set rf_err_z(double rf_err_z) => _$this._rf_err_z = rf_err_z;
+  double _rfErrZ;
+  double get rfErrZ => _$this._rfErrZ;
+  set rfErrZ(double rfErrZ) => _$this._rfErrZ = rfErrZ;
 
-  double _rf_err_vx;
-  double get rf_err_vx => _$this._rf_err_vx;
-  set rf_err_vx(double rf_err_vx) => _$this._rf_err_vx = rf_err_vx;
+  double _rfErrVx;
+  double get rfErrVx => _$this._rfErrVx;
+  set rfErrVx(double rfErrVx) => _$this._rfErrVx = rfErrVx;
 
-  double _rf_err_vy;
-  double get rf_err_vy => _$this._rf_err_vy;
-  set rf_err_vy(double rf_err_vy) => _$this._rf_err_vy = rf_err_vy;
+  double _rfErrVy;
+  double get rfErrVy => _$this._rfErrVy;
+  set rfErrVy(double rfErrVy) => _$this._rfErrVy = rfErrVy;
 
-  double _rf_err_vz;
-  double get rf_err_vz => _$this._rf_err_vz;
-  set rf_err_vz(double rf_err_vz) => _$this._rf_err_vz = rf_err_vz;
+  double _rfErrVz;
+  double get rfErrVz => _$this._rfErrVz;
+  set rfErrVz(double rfErrVz) => _$this._rfErrVz = rfErrVz;
 
-  double _ss_x;
-  double get ss_x => _$this._ss_x;
-  set ss_x(double ss_x) => _$this._ss_x = ss_x;
+  double _ssX;
+  double get ssX => _$this._ssX;
+  set ssX(double ssX) => _$this._ssX = ssX;
 
-  double _ss_y;
-  double get ss_y => _$this._ss_y;
-  set ss_y(double ss_y) => _$this._ss_y = ss_y;
+  double _ssY;
+  double get ssY => _$this._ssY;
+  set ssY(double ssY) => _$this._ssY = ssY;
 
-  double _ss_z;
-  double get ss_z => _$this._ss_z;
-  set ss_z(double ss_z) => _$this._ss_z = ss_z;
+  double _ssZ;
+  double get ssZ => _$this._ssZ;
+  set ssZ(double ssZ) => _$this._ssZ = ssZ;
 
-  double _virt_err_x;
-  double get virt_err_x => _$this._virt_err_x;
-  set virt_err_x(double virt_err_x) => _$this._virt_err_x = virt_err_x;
+  double _virtErrX;
+  double get virtErrX => _$this._virtErrX;
+  set virtErrX(double virtErrX) => _$this._virtErrX = virtErrX;
 
-  double _virt_err_y;
-  double get virt_err_y => _$this._virt_err_y;
-  set virt_err_y(double virt_err_y) => _$this._virt_err_y = virt_err_y;
+  double _virtErrY;
+  double get virtErrY => _$this._virtErrY;
+  set virtErrY(double virtErrY) => _$this._virtErrY = virtErrY;
 
-  double _virt_err_z;
-  double get virt_err_z => _$this._virt_err_z;
-  set virt_err_z(double virt_err_z) => _$this._virt_err_z = virt_err_z;
+  double _virtErrZ;
+  double get virtErrZ => _$this._virtErrZ;
+  set virtErrZ(double virtErrZ) => _$this._virtErrZ = virtErrZ;
 
   RelativeStateBuilder();
 
@@ -34778,28 +34778,28 @@ class RelativeStateBuilder implements Builder<RelativeState, RelativeStateBuilde
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _s_id = _$v.s_id;
+      _sId = _$v.sId;
       _dist = _$v.dist;
       _err = _$v.err;
-      _ctrl_imp = _$v.ctrl_imp;
-      _rel_dir_x = _$v.rel_dir_x;
-      _rel_dir_y = _$v.rel_dir_y;
-      _rel_dir_z = _$v.rel_dir_z;
-      _err_x = _$v.err_x;
-      _err_y = _$v.err_y;
-      _err_z = _$v.err_z;
-      _rf_err_x = _$v.rf_err_x;
-      _rf_err_y = _$v.rf_err_y;
-      _rf_err_z = _$v.rf_err_z;
-      _rf_err_vx = _$v.rf_err_vx;
-      _rf_err_vy = _$v.rf_err_vy;
-      _rf_err_vz = _$v.rf_err_vz;
-      _ss_x = _$v.ss_x;
-      _ss_y = _$v.ss_y;
-      _ss_z = _$v.ss_z;
-      _virt_err_x = _$v.virt_err_x;
-      _virt_err_y = _$v.virt_err_y;
-      _virt_err_z = _$v.virt_err_z;
+      _ctrlImp = _$v.ctrlImp;
+      _relDirX = _$v.relDirX;
+      _relDirY = _$v.relDirY;
+      _relDirZ = _$v.relDirZ;
+      _errX = _$v.errX;
+      _errY = _$v.errY;
+      _errZ = _$v.errZ;
+      _rfErrX = _$v.rfErrX;
+      _rfErrY = _$v.rfErrY;
+      _rfErrZ = _$v.rfErrZ;
+      _rfErrVx = _$v.rfErrVx;
+      _rfErrVy = _$v.rfErrVy;
+      _rfErrVz = _$v.rfErrVz;
+      _ssX = _$v.ssX;
+      _ssY = _$v.ssY;
+      _ssZ = _$v.ssZ;
+      _virtErrX = _$v.virtErrX;
+      _virtErrY = _$v.virtErrY;
+      _virtErrZ = _$v.virtErrZ;
       _$v = null;
     }
     return this;
@@ -34827,28 +34827,28 @@ class RelativeStateBuilder implements Builder<RelativeState, RelativeStateBuilde
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            s_id: s_id,
+            sId: sId,
             dist: dist,
             err: err,
-            ctrl_imp: ctrl_imp,
-            rel_dir_x: rel_dir_x,
-            rel_dir_y: rel_dir_y,
-            rel_dir_z: rel_dir_z,
-            err_x: err_x,
-            err_y: err_y,
-            err_z: err_z,
-            rf_err_x: rf_err_x,
-            rf_err_y: rf_err_y,
-            rf_err_z: rf_err_z,
-            rf_err_vx: rf_err_vx,
-            rf_err_vy: rf_err_vy,
-            rf_err_vz: rf_err_vz,
-            ss_x: ss_x,
-            ss_y: ss_y,
-            ss_z: ss_z,
-            virt_err_x: virt_err_x,
-            virt_err_y: virt_err_y,
-            virt_err_z: virt_err_z);
+            ctrlImp: ctrlImp,
+            relDirX: relDirX,
+            relDirY: relDirY,
+            relDirZ: relDirZ,
+            errX: errX,
+            errY: errY,
+            errZ: errZ,
+            rfErrX: rfErrX,
+            rfErrY: rfErrY,
+            rfErrZ: rfErrZ,
+            rfErrVx: rfErrVx,
+            rfErrVy: rfErrVy,
+            rfErrVz: rfErrVz,
+            ssX: ssX,
+            ssY: ssY,
+            ssZ: ssZ,
+            virtErrX: virtErrX,
+            virtErrY: virtErrY,
+            virtErrZ: virtErrZ);
     replace(_$result);
     return _$result;
   }
@@ -35049,45 +35049,45 @@ class _$Formation extends Formation {
   final int dstEnt;
 
   @override
-  final String formation_name;
+  final String formationName;
   @override
   final FormationEnumType type;
   @override
   final FormationEnumOp op;
   @override
-  final String group_name;
+  final String groupName;
   @override
-  final String plan_id;
+  final String planId;
   @override
   final String description;
   @override
-  final FormationEnumReferenceFrame reference_frame;
+  final FormationEnumReferenceFrame referenceFrame;
   @override
   final List<VehicleFormationParticipant> participants;
   @override
-  final double leader_bank_lim;
+  final double leaderBankLim;
   @override
-  final double leader_speed_min;
+  final double leaderSpeedMin;
   @override
-  final double leader_speed_max;
+  final double leaderSpeedMax;
   @override
-  final double leader_alt_min;
+  final double leaderAltMin;
   @override
-  final double leader_alt_max;
+  final double leaderAltMax;
   @override
-  final double pos_sim_err_lim;
+  final double posSimErrLim;
   @override
-  final double pos_sim_err_wrn;
+  final double posSimErrWrn;
   @override
-  final int pos_sim_err_timeout;
+  final int posSimErrTimeout;
   @override
-  final double converg_max;
+  final double convergMax;
   @override
-  final int converg_timeout;
+  final int convergTimeout;
   @override
-  final int comms_timeout;
+  final int commsTimeout;
   @override
-  final double turb_lim;
+  final double turbLim;
   @override
   final String custom;
 
@@ -35100,26 +35100,26 @@ class _$Formation extends Formation {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.formation_name,
+      this.formationName,
       this.type,
       this.op,
-      this.group_name,
-      this.plan_id,
+      this.groupName,
+      this.planId,
       this.description,
-      this.reference_frame,
+      this.referenceFrame,
       this.participants,
-      this.leader_bank_lim,
-      this.leader_speed_min,
-      this.leader_speed_max,
-      this.leader_alt_min,
-      this.leader_alt_max,
-      this.pos_sim_err_lim,
-      this.pos_sim_err_wrn,
-      this.pos_sim_err_timeout,
-      this.converg_max,
-      this.converg_timeout,
-      this.comms_timeout,
-      this.turb_lim,
+      this.leaderBankLim,
+      this.leaderSpeedMin,
+      this.leaderSpeedMax,
+      this.leaderAltMin,
+      this.leaderAltMax,
+      this.posSimErrLim,
+      this.posSimErrWrn,
+      this.posSimErrTimeout,
+      this.convergMax,
+      this.convergTimeout,
+      this.commsTimeout,
+      this.turbLim,
       this.custom})
       : super._();
 
@@ -35139,26 +35139,26 @@ class _$Formation extends Formation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        formation_name == this.formation_name &&
+        formationName == this.formationName &&
         type == this.type &&
         op == this.op &&
-        group_name == this.group_name &&
-        plan_id == this.plan_id &&
+        groupName == this.groupName &&
+        planId == this.planId &&
         description == this.description &&
-        reference_frame == this.reference_frame &&
+        referenceFrame == this.referenceFrame &&
         participants == this.participants &&
-        leader_bank_lim == this.leader_bank_lim &&
-        leader_speed_min == this.leader_speed_min &&
-        leader_speed_max == this.leader_speed_max &&
-        leader_alt_min == this.leader_alt_min &&
-        leader_alt_max == this.leader_alt_max &&
-        pos_sim_err_lim == this.pos_sim_err_lim &&
-        pos_sim_err_wrn == this.pos_sim_err_wrn &&
-        pos_sim_err_timeout == this.pos_sim_err_timeout &&
-        converg_max == this.converg_max &&
-        converg_timeout == this.converg_timeout &&
-        comms_timeout == this.comms_timeout &&
-        turb_lim == this.turb_lim &&
+        leaderBankLim == this.leaderBankLim &&
+        leaderSpeedMin == this.leaderSpeedMin &&
+        leaderSpeedMax == this.leaderSpeedMax &&
+        leaderAltMin == this.leaderAltMin &&
+        leaderAltMax == this.leaderAltMax &&
+        posSimErrLim == this.posSimErrLim &&
+        posSimErrWrn == this.posSimErrWrn &&
+        posSimErrTimeout == this.posSimErrTimeout &&
+        convergMax == this.convergMax &&
+        convergTimeout == this.convergTimeout &&
+        commsTimeout == this.commsTimeout &&
+        turbLim == this.turbLim &&
         custom == this.custom;
   }
 
@@ -35170,26 +35170,26 @@ class _$Formation extends Formation {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        formation_name.hashCode), 
+        formationName.hashCode), 
         type.hashCode), 
         op.hashCode), 
-        group_name.hashCode), 
-        plan_id.hashCode), 
+        groupName.hashCode), 
+        planId.hashCode), 
         description.hashCode), 
-        reference_frame.hashCode), 
+        referenceFrame.hashCode), 
         participants.hashCode), 
-        leader_bank_lim.hashCode), 
-        leader_speed_min.hashCode), 
-        leader_speed_max.hashCode), 
-        leader_alt_min.hashCode), 
-        leader_alt_max.hashCode), 
-        pos_sim_err_lim.hashCode), 
-        pos_sim_err_wrn.hashCode), 
-        pos_sim_err_timeout.hashCode), 
-        converg_max.hashCode), 
-        converg_timeout.hashCode), 
-        comms_timeout.hashCode), 
-        turb_lim.hashCode), 
+        leaderBankLim.hashCode), 
+        leaderSpeedMin.hashCode), 
+        leaderSpeedMax.hashCode), 
+        leaderAltMin.hashCode), 
+        leaderAltMax.hashCode), 
+        posSimErrLim.hashCode), 
+        posSimErrWrn.hashCode), 
+        posSimErrTimeout.hashCode), 
+        convergMax.hashCode), 
+        convergTimeout.hashCode), 
+        commsTimeout.hashCode), 
+        turbLim.hashCode), 
         custom.hashCode));
   }
 
@@ -35201,26 +35201,26 @@ class _$Formation extends Formation {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('formation_name', formation_name)
+          ..add('formationName', formationName)
           ..add('type', type)
           ..add('op', op)
-          ..add('group_name', group_name)
-          ..add('plan_id', plan_id)
+          ..add('groupName', groupName)
+          ..add('planId', planId)
           ..add('description', description)
-          ..add('reference_frame', reference_frame)
+          ..add('referenceFrame', referenceFrame)
           ..add('participants', participants)
-          ..add('leader_bank_lim', leader_bank_lim)
-          ..add('leader_speed_min', leader_speed_min)
-          ..add('leader_speed_max', leader_speed_max)
-          ..add('leader_alt_min', leader_alt_min)
-          ..add('leader_alt_max', leader_alt_max)
-          ..add('pos_sim_err_lim', pos_sim_err_lim)
-          ..add('pos_sim_err_wrn', pos_sim_err_wrn)
-          ..add('pos_sim_err_timeout', pos_sim_err_timeout)
-          ..add('converg_max', converg_max)
-          ..add('converg_timeout', converg_timeout)
-          ..add('comms_timeout', comms_timeout)
-          ..add('turb_lim', turb_lim)
+          ..add('leaderBankLim', leaderBankLim)
+          ..add('leaderSpeedMin', leaderSpeedMin)
+          ..add('leaderSpeedMax', leaderSpeedMax)
+          ..add('leaderAltMin', leaderAltMin)
+          ..add('leaderAltMax', leaderAltMax)
+          ..add('posSimErrLim', posSimErrLim)
+          ..add('posSimErrWrn', posSimErrWrn)
+          ..add('posSimErrTimeout', posSimErrTimeout)
+          ..add('convergMax', convergMax)
+          ..add('convergTimeout', convergTimeout)
+          ..add('commsTimeout', commsTimeout)
+          ..add('turbLim', turbLim)
           ..add('custom', custom))
         .toString();
   }
@@ -35251,9 +35251,9 @@ class FormationBuilder implements Builder<Formation, FormationBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _formation_name;
-  String get formation_name => _$this._formation_name;
-  set formation_name(String formation_name) => _$this._formation_name = formation_name;
+  String _formationName;
+  String get formationName => _$this._formationName;
+  set formationName(String formationName) => _$this._formationName = formationName;
 
   FormationEnumType _type;
   FormationEnumType get type => _$this._type;
@@ -35263,73 +35263,73 @@ class FormationBuilder implements Builder<Formation, FormationBuilder> {
   FormationEnumOp get op => _$this._op;
   set op(FormationEnumOp op) => _$this._op = op;
 
-  String _group_name;
-  String get group_name => _$this._group_name;
-  set group_name(String group_name) => _$this._group_name = group_name;
+  String _groupName;
+  String get groupName => _$this._groupName;
+  set groupName(String groupName) => _$this._groupName = groupName;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
   String _description;
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
-  FormationEnumReferenceFrame _reference_frame;
-  FormationEnumReferenceFrame get reference_frame => _$this._reference_frame;
-  set reference_frame(FormationEnumReferenceFrame reference_frame) => _$this._reference_frame = reference_frame;
+  FormationEnumReferenceFrame _referenceFrame;
+  FormationEnumReferenceFrame get referenceFrame => _$this._referenceFrame;
+  set referenceFrame(FormationEnumReferenceFrame referenceFrame) => _$this._referenceFrame = referenceFrame;
 
   List<VehicleFormationParticipant> _participants;
   List<VehicleFormationParticipant> get participants => _$this._participants;
   set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
 
-  double _leader_bank_lim;
-  double get leader_bank_lim => _$this._leader_bank_lim;
-  set leader_bank_lim(double leader_bank_lim) => _$this._leader_bank_lim = leader_bank_lim;
+  double _leaderBankLim;
+  double get leaderBankLim => _$this._leaderBankLim;
+  set leaderBankLim(double leaderBankLim) => _$this._leaderBankLim = leaderBankLim;
 
-  double _leader_speed_min;
-  double get leader_speed_min => _$this._leader_speed_min;
-  set leader_speed_min(double leader_speed_min) => _$this._leader_speed_min = leader_speed_min;
+  double _leaderSpeedMin;
+  double get leaderSpeedMin => _$this._leaderSpeedMin;
+  set leaderSpeedMin(double leaderSpeedMin) => _$this._leaderSpeedMin = leaderSpeedMin;
 
-  double _leader_speed_max;
-  double get leader_speed_max => _$this._leader_speed_max;
-  set leader_speed_max(double leader_speed_max) => _$this._leader_speed_max = leader_speed_max;
+  double _leaderSpeedMax;
+  double get leaderSpeedMax => _$this._leaderSpeedMax;
+  set leaderSpeedMax(double leaderSpeedMax) => _$this._leaderSpeedMax = leaderSpeedMax;
 
-  double _leader_alt_min;
-  double get leader_alt_min => _$this._leader_alt_min;
-  set leader_alt_min(double leader_alt_min) => _$this._leader_alt_min = leader_alt_min;
+  double _leaderAltMin;
+  double get leaderAltMin => _$this._leaderAltMin;
+  set leaderAltMin(double leaderAltMin) => _$this._leaderAltMin = leaderAltMin;
 
-  double _leader_alt_max;
-  double get leader_alt_max => _$this._leader_alt_max;
-  set leader_alt_max(double leader_alt_max) => _$this._leader_alt_max = leader_alt_max;
+  double _leaderAltMax;
+  double get leaderAltMax => _$this._leaderAltMax;
+  set leaderAltMax(double leaderAltMax) => _$this._leaderAltMax = leaderAltMax;
 
-  double _pos_sim_err_lim;
-  double get pos_sim_err_lim => _$this._pos_sim_err_lim;
-  set pos_sim_err_lim(double pos_sim_err_lim) => _$this._pos_sim_err_lim = pos_sim_err_lim;
+  double _posSimErrLim;
+  double get posSimErrLim => _$this._posSimErrLim;
+  set posSimErrLim(double posSimErrLim) => _$this._posSimErrLim = posSimErrLim;
 
-  double _pos_sim_err_wrn;
-  double get pos_sim_err_wrn => _$this._pos_sim_err_wrn;
-  set pos_sim_err_wrn(double pos_sim_err_wrn) => _$this._pos_sim_err_wrn = pos_sim_err_wrn;
+  double _posSimErrWrn;
+  double get posSimErrWrn => _$this._posSimErrWrn;
+  set posSimErrWrn(double posSimErrWrn) => _$this._posSimErrWrn = posSimErrWrn;
 
-  int _pos_sim_err_timeout;
-  int get pos_sim_err_timeout => _$this._pos_sim_err_timeout;
-  set pos_sim_err_timeout(int pos_sim_err_timeout) => _$this._pos_sim_err_timeout = pos_sim_err_timeout;
+  int _posSimErrTimeout;
+  int get posSimErrTimeout => _$this._posSimErrTimeout;
+  set posSimErrTimeout(int posSimErrTimeout) => _$this._posSimErrTimeout = posSimErrTimeout;
 
-  double _converg_max;
-  double get converg_max => _$this._converg_max;
-  set converg_max(double converg_max) => _$this._converg_max = converg_max;
+  double _convergMax;
+  double get convergMax => _$this._convergMax;
+  set convergMax(double convergMax) => _$this._convergMax = convergMax;
 
-  int _converg_timeout;
-  int get converg_timeout => _$this._converg_timeout;
-  set converg_timeout(int converg_timeout) => _$this._converg_timeout = converg_timeout;
+  int _convergTimeout;
+  int get convergTimeout => _$this._convergTimeout;
+  set convergTimeout(int convergTimeout) => _$this._convergTimeout = convergTimeout;
 
-  int _comms_timeout;
-  int get comms_timeout => _$this._comms_timeout;
-  set comms_timeout(int comms_timeout) => _$this._comms_timeout = comms_timeout;
+  int _commsTimeout;
+  int get commsTimeout => _$this._commsTimeout;
+  set commsTimeout(int commsTimeout) => _$this._commsTimeout = commsTimeout;
 
-  double _turb_lim;
-  double get turb_lim => _$this._turb_lim;
-  set turb_lim(double turb_lim) => _$this._turb_lim = turb_lim;
+  double _turbLim;
+  double get turbLim => _$this._turbLim;
+  set turbLim(double turbLim) => _$this._turbLim = turbLim;
 
   String _custom;
   String get custom => _$this._custom;
@@ -35344,26 +35344,26 @@ class FormationBuilder implements Builder<Formation, FormationBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _formation_name = _$v.formation_name;
+      _formationName = _$v.formationName;
       _type = _$v.type;
       _op = _$v.op;
-      _group_name = _$v.group_name;
-      _plan_id = _$v.plan_id;
+      _groupName = _$v.groupName;
+      _planId = _$v.planId;
       _description = _$v.description;
-      _reference_frame = _$v.reference_frame;
+      _referenceFrame = _$v.referenceFrame;
       _participants = _$v.participants;
-      _leader_bank_lim = _$v.leader_bank_lim;
-      _leader_speed_min = _$v.leader_speed_min;
-      _leader_speed_max = _$v.leader_speed_max;
-      _leader_alt_min = _$v.leader_alt_min;
-      _leader_alt_max = _$v.leader_alt_max;
-      _pos_sim_err_lim = _$v.pos_sim_err_lim;
-      _pos_sim_err_wrn = _$v.pos_sim_err_wrn;
-      _pos_sim_err_timeout = _$v.pos_sim_err_timeout;
-      _converg_max = _$v.converg_max;
-      _converg_timeout = _$v.converg_timeout;
-      _comms_timeout = _$v.comms_timeout;
-      _turb_lim = _$v.turb_lim;
+      _leaderBankLim = _$v.leaderBankLim;
+      _leaderSpeedMin = _$v.leaderSpeedMin;
+      _leaderSpeedMax = _$v.leaderSpeedMax;
+      _leaderAltMin = _$v.leaderAltMin;
+      _leaderAltMax = _$v.leaderAltMax;
+      _posSimErrLim = _$v.posSimErrLim;
+      _posSimErrWrn = _$v.posSimErrWrn;
+      _posSimErrTimeout = _$v.posSimErrTimeout;
+      _convergMax = _$v.convergMax;
+      _convergTimeout = _$v.convergTimeout;
+      _commsTimeout = _$v.commsTimeout;
+      _turbLim = _$v.turbLim;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -35392,26 +35392,26 @@ class FormationBuilder implements Builder<Formation, FormationBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            formation_name: formation_name,
+            formationName: formationName,
             type: type,
             op: op,
-            group_name: group_name,
-            plan_id: plan_id,
+            groupName: groupName,
+            planId: planId,
             description: description,
-            reference_frame: reference_frame,
+            referenceFrame: referenceFrame,
             participants: participants,
-            leader_bank_lim: leader_bank_lim,
-            leader_speed_min: leader_speed_min,
-            leader_speed_max: leader_speed_max,
-            leader_alt_min: leader_alt_min,
-            leader_alt_max: leader_alt_max,
-            pos_sim_err_lim: pos_sim_err_lim,
-            pos_sim_err_wrn: pos_sim_err_wrn,
-            pos_sim_err_timeout: pos_sim_err_timeout,
-            converg_max: converg_max,
-            converg_timeout: converg_timeout,
-            comms_timeout: comms_timeout,
-            turb_lim: turb_lim,
+            leaderBankLim: leaderBankLim,
+            leaderSpeedMin: leaderSpeedMin,
+            leaderSpeedMax: leaderSpeedMax,
+            leaderAltMin: leaderAltMin,
+            leaderAltMax: leaderAltMax,
+            posSimErrLim: posSimErrLim,
+            posSimErrWrn: posSimErrWrn,
+            posSimErrTimeout: posSimErrTimeout,
+            convergMax: convergMax,
+            convergTimeout: convergTimeout,
+            commsTimeout: commsTimeout,
+            turbLim: turbLim,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -35441,11 +35441,11 @@ class _$Launch extends Launch {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final String custom;
 
@@ -35462,9 +35462,9 @@ class _$Launch extends Launch {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.custom})
       : super._();
 
@@ -35488,9 +35488,9 @@ class _$Launch extends Launch {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         custom == this.custom;
   }
 
@@ -35506,9 +35506,9 @@ class _$Launch extends Launch {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         custom.hashCode));
   }
 
@@ -35524,9 +35524,9 @@ class _$Launch extends Launch {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('custom', custom))
         .toString();
   }
@@ -35573,17 +35573,17 @@ class LaunchBuilder implements Builder<Launch, LaunchBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   String _custom;
   String get custom => _$this._custom;
@@ -35602,9 +35602,9 @@ class LaunchBuilder implements Builder<Launch, LaunchBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -35637,9 +35637,9 @@ class LaunchBuilder implements Builder<Launch, LaunchBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -35669,11 +35669,11 @@ class _$Drop extends Drop {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final String custom;
 
@@ -35690,9 +35690,9 @@ class _$Drop extends Drop {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.custom})
       : super._();
 
@@ -35716,9 +35716,9 @@ class _$Drop extends Drop {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         custom == this.custom;
   }
 
@@ -35734,9 +35734,9 @@ class _$Drop extends Drop {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         custom.hashCode));
   }
 
@@ -35752,9 +35752,9 @@ class _$Drop extends Drop {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('custom', custom))
         .toString();
   }
@@ -35801,17 +35801,17 @@ class DropBuilder implements Builder<Drop, DropBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   String _custom;
   String get custom => _$this._custom;
@@ -35830,9 +35830,9 @@ class DropBuilder implements Builder<Drop, DropBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -35865,9 +35865,9 @@ class DropBuilder implements Builder<Drop, DropBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -35889,7 +35889,7 @@ class _$ScheduledGoto extends ScheduledGoto {
   final int dstEnt;
 
   @override
-  final double arrival_time;
+  final double arrivalTime;
   @override
   final double lat;
   @override
@@ -35897,11 +35897,11 @@ class _$ScheduledGoto extends ScheduledGoto {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
-  final double travel_z;
+  final double travelZ;
   @override
-  final ZUnitsEnum travel_z_units;
+  final ZUnitsEnum travelZUnits;
   @override
   final ScheduledGotoEnumDelayed delayed;
 
@@ -35914,13 +35914,13 @@ class _$ScheduledGoto extends ScheduledGoto {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.arrival_time,
+      this.arrivalTime,
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
-      this.travel_z,
-      this.travel_z_units,
+      this.zUnits,
+      this.travelZ,
+      this.travelZUnits,
       this.delayed})
       : super._();
 
@@ -35940,13 +35940,13 @@ class _$ScheduledGoto extends ScheduledGoto {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        arrival_time == this.arrival_time &&
+        arrivalTime == this.arrivalTime &&
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
-        travel_z == this.travel_z &&
-        travel_z_units == this.travel_z_units &&
+        zUnits == this.zUnits &&
+        travelZ == this.travelZ &&
+        travelZUnits == this.travelZUnits &&
         delayed == this.delayed;
   }
 
@@ -35958,13 +35958,13 @@ class _$ScheduledGoto extends ScheduledGoto {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        arrival_time.hashCode), 
+        arrivalTime.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
-        travel_z.hashCode), 
-        travel_z_units.hashCode), 
+        zUnits.hashCode), 
+        travelZ.hashCode), 
+        travelZUnits.hashCode), 
         delayed.hashCode));
   }
 
@@ -35976,13 +35976,13 @@ class _$ScheduledGoto extends ScheduledGoto {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('arrival_time', arrival_time)
+          ..add('arrivalTime', arrivalTime)
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
-          ..add('travel_z', travel_z)
-          ..add('travel_z_units', travel_z_units)
+          ..add('zUnits', zUnits)
+          ..add('travelZ', travelZ)
+          ..add('travelZUnits', travelZUnits)
           ..add('delayed', delayed))
         .toString();
   }
@@ -36013,9 +36013,9 @@ class ScheduledGotoBuilder implements Builder<ScheduledGoto, ScheduledGotoBuilde
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _arrival_time;
-  double get arrival_time => _$this._arrival_time;
-  set arrival_time(double arrival_time) => _$this._arrival_time = arrival_time;
+  double _arrivalTime;
+  double get arrivalTime => _$this._arrivalTime;
+  set arrivalTime(double arrivalTime) => _$this._arrivalTime = arrivalTime;
 
   double _lat;
   double get lat => _$this._lat;
@@ -36029,17 +36029,17 @@ class ScheduledGotoBuilder implements Builder<ScheduledGoto, ScheduledGotoBuilde
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
-  double _travel_z;
-  double get travel_z => _$this._travel_z;
-  set travel_z(double travel_z) => _$this._travel_z = travel_z;
+  double _travelZ;
+  double get travelZ => _$this._travelZ;
+  set travelZ(double travelZ) => _$this._travelZ = travelZ;
 
-  ZUnitsEnum _travel_z_units;
-  ZUnitsEnum get travel_z_units => _$this._travel_z_units;
-  set travel_z_units(ZUnitsEnum travel_z_units) => _$this._travel_z_units = travel_z_units;
+  ZUnitsEnum _travelZUnits;
+  ZUnitsEnum get travelZUnits => _$this._travelZUnits;
+  set travelZUnits(ZUnitsEnum travelZUnits) => _$this._travelZUnits = travelZUnits;
 
   ScheduledGotoEnumDelayed _delayed;
   ScheduledGotoEnumDelayed get delayed => _$this._delayed;
@@ -36054,13 +36054,13 @@ class ScheduledGotoBuilder implements Builder<ScheduledGoto, ScheduledGotoBuilde
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _arrival_time = _$v.arrival_time;
+      _arrivalTime = _$v.arrivalTime;
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
-      _travel_z = _$v.travel_z;
-      _travel_z_units = _$v.travel_z_units;
+      _zUnits = _$v.zUnits;
+      _travelZ = _$v.travelZ;
+      _travelZUnits = _$v.travelZUnits;
       _delayed = _$v.delayed;
       _$v = null;
     }
@@ -36089,13 +36089,13 @@ class ScheduledGotoBuilder implements Builder<ScheduledGoto, ScheduledGotoBuilde
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            arrival_time: arrival_time,
+            arrivalTime: arrivalTime,
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
-            travel_z: travel_z,
-            travel_z_units: travel_z_units,
+            zUnits: zUnits,
+            travelZ: travelZ,
+            travelZUnits: travelZUnits,
             delayed: delayed);
     replace(_$result);
     return _$result;
@@ -36123,15 +36123,15 @@ class _$RowsCoverage extends RowsCoverage {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double bearing;
   @override
-  final double cross_angle;
+  final double crossAngle;
   @override
   final double width;
   @override
@@ -36161,11 +36161,11 @@ class _$RowsCoverage extends RowsCoverage {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.bearing,
-      this.cross_angle,
+      this.crossAngle,
       this.width,
       this.length,
       this.coff,
@@ -36195,11 +36195,11 @@ class _$RowsCoverage extends RowsCoverage {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         bearing == this.bearing &&
-        cross_angle == this.cross_angle &&
+        crossAngle == this.crossAngle &&
         width == this.width &&
         length == this.length &&
         coff == this.coff &&
@@ -36221,11 +36221,11 @@ class _$RowsCoverage extends RowsCoverage {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         bearing.hashCode), 
-        cross_angle.hashCode), 
+        crossAngle.hashCode), 
         width.hashCode), 
         length.hashCode), 
         coff.hashCode), 
@@ -36247,11 +36247,11 @@ class _$RowsCoverage extends RowsCoverage {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('bearing', bearing)
-          ..add('cross_angle', cross_angle)
+          ..add('crossAngle', crossAngle)
           ..add('width', width)
           ..add('length', length)
           ..add('coff', coff)
@@ -36301,25 +36301,25 @@ class RowsCoverageBuilder implements Builder<RowsCoverage, RowsCoverageBuilder> 
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _bearing;
   double get bearing => _$this._bearing;
   set bearing(double bearing) => _$this._bearing = bearing;
 
-  double _cross_angle;
-  double get cross_angle => _$this._cross_angle;
-  set cross_angle(double cross_angle) => _$this._cross_angle = cross_angle;
+  double _crossAngle;
+  double get crossAngle => _$this._crossAngle;
+  set crossAngle(double crossAngle) => _$this._crossAngle = crossAngle;
 
   double _width;
   double get width => _$this._width;
@@ -36365,11 +36365,11 @@ class RowsCoverageBuilder implements Builder<RowsCoverage, RowsCoverageBuilder> 
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _bearing = _$v.bearing;
-      _cross_angle = _$v.cross_angle;
+      _crossAngle = _$v.crossAngle;
       _width = _$v.width;
       _length = _$v.length;
       _coff = _$v.coff;
@@ -36408,11 +36408,11 @@ class RowsCoverageBuilder implements Builder<RowsCoverage, RowsCoverageBuilder> 
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             bearing: bearing,
-            cross_angle: cross_angle,
+            crossAngle: crossAngle,
             width: width,
             length: length,
             coff: coff,
@@ -36449,11 +36449,11 @@ class _$Sample extends Sample {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final BooleanEnum syringe0;
   @override
@@ -36476,9 +36476,9 @@ class _$Sample extends Sample {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.syringe0,
       this.syringe1,
       this.syringe2,
@@ -36505,9 +36505,9 @@ class _$Sample extends Sample {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         syringe0 == this.syringe0 &&
         syringe1 == this.syringe1 &&
         syringe2 == this.syringe2 &&
@@ -36526,9 +36526,9 @@ class _$Sample extends Sample {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         syringe0.hashCode), 
         syringe1.hashCode), 
         syringe2.hashCode), 
@@ -36547,9 +36547,9 @@ class _$Sample extends Sample {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('syringe0', syringe0)
           ..add('syringe1', syringe1)
           ..add('syringe2', syringe2)
@@ -36599,17 +36599,17 @@ class SampleBuilder implements Builder<Sample, SampleBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   BooleanEnum _syringe0;
   BooleanEnum get syringe0 => _$this._syringe0;
@@ -36640,9 +36640,9 @@ class SampleBuilder implements Builder<Sample, SampleBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _syringe0 = _$v.syringe0;
       _syringe1 = _$v.syringe1;
       _syringe2 = _$v.syringe2;
@@ -36678,9 +36678,9 @@ class SampleBuilder implements Builder<Sample, SampleBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             syringe0: syringe0,
             syringe1: syringe1,
             syringe2: syringe2,
@@ -36843,13 +36843,13 @@ class _$Takeoff extends Takeoff {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double takeoff_pitch;
+  final double takeoffPitch;
   @override
   final String custom;
 
@@ -36865,10 +36865,10 @@ class _$Takeoff extends Takeoff {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
-      this.takeoff_pitch,
+      this.speedUnits,
+      this.takeoffPitch,
       this.custom})
       : super._();
 
@@ -36891,10 +36891,10 @@ class _$Takeoff extends Takeoff {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
-        takeoff_pitch == this.takeoff_pitch &&
+        speedUnits == this.speedUnits &&
+        takeoffPitch == this.takeoffPitch &&
         custom == this.custom;
   }
 
@@ -36909,10 +36909,10 @@ class _$Takeoff extends Takeoff {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
-        takeoff_pitch.hashCode), 
+        speedUnits.hashCode), 
+        takeoffPitch.hashCode), 
         custom.hashCode));
   }
 
@@ -36927,10 +36927,10 @@ class _$Takeoff extends Takeoff {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
-          ..add('takeoff_pitch', takeoff_pitch)
+          ..add('speedUnits', speedUnits)
+          ..add('takeoffPitch', takeoffPitch)
           ..add('custom', custom))
         .toString();
   }
@@ -36973,21 +36973,21 @@ class TakeoffBuilder implements Builder<Takeoff, TakeoffBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
-  double _takeoff_pitch;
-  double get takeoff_pitch => _$this._takeoff_pitch;
-  set takeoff_pitch(double takeoff_pitch) => _$this._takeoff_pitch = takeoff_pitch;
+  double _takeoffPitch;
+  double get takeoffPitch => _$this._takeoffPitch;
+  set takeoffPitch(double takeoffPitch) => _$this._takeoffPitch = takeoffPitch;
 
   String _custom;
   String get custom => _$this._custom;
@@ -37005,10 +37005,10 @@ class TakeoffBuilder implements Builder<Takeoff, TakeoffBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
-      _takeoff_pitch = _$v.takeoff_pitch;
+      _speedUnits = _$v.speedUnits;
+      _takeoffPitch = _$v.takeoffPitch;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -37040,10 +37040,10 @@ class TakeoffBuilder implements Builder<Takeoff, TakeoffBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
-            takeoff_pitch: takeoff_pitch,
+            speedUnits: speedUnits,
+            takeoffPitch: takeoffPitch,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -37071,19 +37071,19 @@ class _$Land extends Land {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double abort_z;
+  final double abortZ;
   @override
   final double bearing;
   @override
-  final int glide_slope;
+  final int glideSlope;
   @override
-  final double glide_slope_alt;
+  final double glideSlopeAlt;
   @override
   final String custom;
 
@@ -37099,13 +37099,13 @@ class _$Land extends Land {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
-      this.abort_z,
+      this.speedUnits,
+      this.abortZ,
       this.bearing,
-      this.glide_slope,
-      this.glide_slope_alt,
+      this.glideSlope,
+      this.glideSlopeAlt,
       this.custom})
       : super._();
 
@@ -37128,13 +37128,13 @@ class _$Land extends Land {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
-        abort_z == this.abort_z &&
+        speedUnits == this.speedUnits &&
+        abortZ == this.abortZ &&
         bearing == this.bearing &&
-        glide_slope == this.glide_slope &&
-        glide_slope_alt == this.glide_slope_alt &&
+        glideSlope == this.glideSlope &&
+        glideSlopeAlt == this.glideSlopeAlt &&
         custom == this.custom;
   }
 
@@ -37149,13 +37149,13 @@ class _$Land extends Land {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
-        abort_z.hashCode), 
+        speedUnits.hashCode), 
+        abortZ.hashCode), 
         bearing.hashCode), 
-        glide_slope.hashCode), 
-        glide_slope_alt.hashCode), 
+        glideSlope.hashCode), 
+        glideSlopeAlt.hashCode), 
         custom.hashCode));
   }
 
@@ -37170,13 +37170,13 @@ class _$Land extends Land {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
-          ..add('abort_z', abort_z)
+          ..add('speedUnits', speedUnits)
+          ..add('abortZ', abortZ)
           ..add('bearing', bearing)
-          ..add('glide_slope', glide_slope)
-          ..add('glide_slope_alt', glide_slope_alt)
+          ..add('glideSlope', glideSlope)
+          ..add('glideSlopeAlt', glideSlopeAlt)
           ..add('custom', custom))
         .toString();
   }
@@ -37219,33 +37219,33 @@ class LandBuilder implements Builder<Land, LandBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
-  double _abort_z;
-  double get abort_z => _$this._abort_z;
-  set abort_z(double abort_z) => _$this._abort_z = abort_z;
+  double _abortZ;
+  double get abortZ => _$this._abortZ;
+  set abortZ(double abortZ) => _$this._abortZ = abortZ;
 
   double _bearing;
   double get bearing => _$this._bearing;
   set bearing(double bearing) => _$this._bearing = bearing;
 
-  int _glide_slope;
-  int get glide_slope => _$this._glide_slope;
-  set glide_slope(int glide_slope) => _$this._glide_slope = glide_slope;
+  int _glideSlope;
+  int get glideSlope => _$this._glideSlope;
+  set glideSlope(int glideSlope) => _$this._glideSlope = glideSlope;
 
-  double _glide_slope_alt;
-  double get glide_slope_alt => _$this._glide_slope_alt;
-  set glide_slope_alt(double glide_slope_alt) => _$this._glide_slope_alt = glide_slope_alt;
+  double _glideSlopeAlt;
+  double get glideSlopeAlt => _$this._glideSlopeAlt;
+  set glideSlopeAlt(double glideSlopeAlt) => _$this._glideSlopeAlt = glideSlopeAlt;
 
   String _custom;
   String get custom => _$this._custom;
@@ -37263,13 +37263,13 @@ class LandBuilder implements Builder<Land, LandBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
-      _abort_z = _$v.abort_z;
+      _speedUnits = _$v.speedUnits;
+      _abortZ = _$v.abortZ;
       _bearing = _$v.bearing;
-      _glide_slope = _$v.glide_slope;
-      _glide_slope_alt = _$v.glide_slope_alt;
+      _glideSlope = _$v.glideSlope;
+      _glideSlopeAlt = _$v.glideSlopeAlt;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -37301,13 +37301,13 @@ class LandBuilder implements Builder<Land, LandBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
-            abort_z: abort_z,
+            speedUnits: speedUnits,
+            abortZ: abortZ,
             bearing: bearing,
-            glide_slope: glide_slope,
-            glide_slope_alt: glide_slope_alt,
+            glideSlope: glideSlope,
+            glideSlopeAlt: glideSlopeAlt,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -37335,17 +37335,17 @@ class _$AutonomousSection extends AutonomousSection {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final AutonomousSectionBitfieldLimits limits;
   @override
-  final double max_depth;
+  final double maxDepth;
   @override
-  final double min_alt;
+  final double minAlt;
   @override
-  final double time_limit;
+  final double timeLimit;
   @override
-  final List<PolygonVertex> area_limits;
+  final List<PolygonVertex> areaLimits;
   @override
   final String controller;
   @override
@@ -37363,12 +37363,12 @@ class _$AutonomousSection extends AutonomousSection {
       this.lat,
       this.lon,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.limits,
-      this.max_depth,
-      this.min_alt,
-      this.time_limit,
-      this.area_limits,
+      this.maxDepth,
+      this.minAlt,
+      this.timeLimit,
+      this.areaLimits,
       this.controller,
       this.custom})
       : super._();
@@ -37392,12 +37392,12 @@ class _$AutonomousSection extends AutonomousSection {
         lat == this.lat &&
         lon == this.lon &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         limits == this.limits &&
-        max_depth == this.max_depth &&
-        min_alt == this.min_alt &&
-        time_limit == this.time_limit &&
-        area_limits == this.area_limits &&
+        maxDepth == this.maxDepth &&
+        minAlt == this.minAlt &&
+        timeLimit == this.timeLimit &&
+        areaLimits == this.areaLimits &&
         controller == this.controller &&
         custom == this.custom;
   }
@@ -37413,12 +37413,12 @@ class _$AutonomousSection extends AutonomousSection {
         lat.hashCode), 
         lon.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         limits.hashCode), 
-        max_depth.hashCode), 
-        min_alt.hashCode), 
-        time_limit.hashCode), 
-        area_limits.hashCode), 
+        maxDepth.hashCode), 
+        minAlt.hashCode), 
+        timeLimit.hashCode), 
+        areaLimits.hashCode), 
         controller.hashCode), 
         custom.hashCode));
   }
@@ -37434,12 +37434,12 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('limits', limits)
-          ..add('max_depth', max_depth)
-          ..add('min_alt', min_alt)
-          ..add('time_limit', time_limit)
-          ..add('area_limits', area_limits)
+          ..add('maxDepth', maxDepth)
+          ..add('minAlt', minAlt)
+          ..add('timeLimit', timeLimit)
+          ..add('areaLimits', areaLimits)
           ..add('controller', controller)
           ..add('custom', custom))
         .toString();
@@ -37483,29 +37483,29 @@ class AutonomousSectionBuilder implements Builder<AutonomousSection, AutonomousS
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   AutonomousSectionBitfieldLimits _limits;
   AutonomousSectionBitfieldLimits get limits => _$this._limits;
   set limits(AutonomousSectionBitfieldLimits limits) => _$this._limits = limits;
 
-  double _max_depth;
-  double get max_depth => _$this._max_depth;
-  set max_depth(double max_depth) => _$this._max_depth = max_depth;
+  double _maxDepth;
+  double get maxDepth => _$this._maxDepth;
+  set maxDepth(double maxDepth) => _$this._maxDepth = maxDepth;
 
-  double _min_alt;
-  double get min_alt => _$this._min_alt;
-  set min_alt(double min_alt) => _$this._min_alt = min_alt;
+  double _minAlt;
+  double get minAlt => _$this._minAlt;
+  set minAlt(double minAlt) => _$this._minAlt = minAlt;
 
-  double _time_limit;
-  double get time_limit => _$this._time_limit;
-  set time_limit(double time_limit) => _$this._time_limit = time_limit;
+  double _timeLimit;
+  double get timeLimit => _$this._timeLimit;
+  set timeLimit(double timeLimit) => _$this._timeLimit = timeLimit;
 
-  List<PolygonVertex> _area_limits;
-  List<PolygonVertex> get area_limits => _$this._area_limits;
-  set area_limits(List<PolygonVertex> area_limits) => _$this._area_limits = area_limits;
+  List<PolygonVertex> _areaLimits;
+  List<PolygonVertex> get areaLimits => _$this._areaLimits;
+  set areaLimits(List<PolygonVertex> areaLimits) => _$this._areaLimits = areaLimits;
 
   String _controller;
   String get controller => _$this._controller;
@@ -37527,12 +37527,12 @@ class AutonomousSectionBuilder implements Builder<AutonomousSection, AutonomousS
       _lat = _$v.lat;
       _lon = _$v.lon;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _limits = _$v.limits;
-      _max_depth = _$v.max_depth;
-      _min_alt = _$v.min_alt;
-      _time_limit = _$v.time_limit;
-      _area_limits = _$v.area_limits;
+      _maxDepth = _$v.maxDepth;
+      _minAlt = _$v.minAlt;
+      _timeLimit = _$v.timeLimit;
+      _areaLimits = _$v.areaLimits;
       _controller = _$v.controller;
       _custom = _$v.custom;
       _$v = null;
@@ -37565,12 +37565,12 @@ class AutonomousSectionBuilder implements Builder<AutonomousSection, AutonomousS
             lat: lat,
             lon: lon,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             limits: limits,
-            max_depth: max_depth,
-            min_alt: min_alt,
-            time_limit: time_limit,
-            area_limits: area_limits,
+            maxDepth: maxDepth,
+            minAlt: minAlt,
+            timeLimit: timeLimit,
+            areaLimits: areaLimits,
             controller: controller,
             custom: custom);
     replace(_$result);
@@ -37595,9 +37595,9 @@ class _$FollowPoint extends FollowPoint {
   @override
   final String target;
   @override
-  final double max_speed;
+  final double maxSpeed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double lat;
   @override
@@ -37605,7 +37605,7 @@ class _$FollowPoint extends FollowPoint {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final String custom;
 
@@ -37619,12 +37619,12 @@ class _$FollowPoint extends FollowPoint {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.target,
-      this.max_speed,
-      this.speed_units,
+      this.maxSpeed,
+      this.speedUnits,
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.custom})
       : super._();
 
@@ -37645,12 +37645,12 @@ class _$FollowPoint extends FollowPoint {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == this.target &&
-        max_speed == this.max_speed &&
-        speed_units == this.speed_units &&
+        maxSpeed == this.maxSpeed &&
+        speedUnits == this.speedUnits &&
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         custom == this.custom;
   }
 
@@ -37663,12 +37663,12 @@ class _$FollowPoint extends FollowPoint {
         dst.hashCode), 
         dstEnt.hashCode), 
         target.hashCode), 
-        max_speed.hashCode), 
-        speed_units.hashCode), 
+        maxSpeed.hashCode), 
+        speedUnits.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         custom.hashCode));
   }
 
@@ -37681,12 +37681,12 @@ class _$FollowPoint extends FollowPoint {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('target', target)
-          ..add('max_speed', max_speed)
-          ..add('speed_units', speed_units)
+          ..add('maxSpeed', maxSpeed)
+          ..add('speedUnits', speedUnits)
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('custom', custom))
         .toString();
   }
@@ -37721,13 +37721,13 @@ class FollowPointBuilder implements Builder<FollowPoint, FollowPointBuilder> {
   String get target => _$this._target;
   set target(String target) => _$this._target = target;
 
-  double _max_speed;
-  double get max_speed => _$this._max_speed;
-  set max_speed(double max_speed) => _$this._max_speed = max_speed;
+  double _maxSpeed;
+  double get maxSpeed => _$this._maxSpeed;
+  set maxSpeed(double maxSpeed) => _$this._maxSpeed = maxSpeed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _lat;
   double get lat => _$this._lat;
@@ -37741,9 +37741,9 @@ class FollowPointBuilder implements Builder<FollowPoint, FollowPointBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   String _custom;
   String get custom => _$this._custom;
@@ -37759,12 +37759,12 @@ class FollowPointBuilder implements Builder<FollowPoint, FollowPointBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _target = _$v.target;
-      _max_speed = _$v.max_speed;
-      _speed_units = _$v.speed_units;
+      _maxSpeed = _$v.maxSpeed;
+      _speedUnits = _$v.speedUnits;
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -37794,12 +37794,12 @@ class FollowPointBuilder implements Builder<FollowPoint, FollowPointBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             target: target,
-            max_speed: max_speed,
-            speed_units: speed_units,
+            maxSpeed: maxSpeed,
+            speedUnits: speedUnits,
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -37829,7 +37829,7 @@ class _$Alignment extends Alignment {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final String custom;
 
@@ -37846,7 +37846,7 @@ class _$Alignment extends Alignment {
       this.lat,
       this.lon,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.custom})
       : super._();
 
@@ -37870,7 +37870,7 @@ class _$Alignment extends Alignment {
         lat == this.lat &&
         lon == this.lon &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         custom == this.custom;
   }
 
@@ -37886,7 +37886,7 @@ class _$Alignment extends Alignment {
         lat.hashCode), 
         lon.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         custom.hashCode));
   }
 
@@ -37902,7 +37902,7 @@ class _$Alignment extends Alignment {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('custom', custom))
         .toString();
   }
@@ -37949,9 +37949,9 @@ class AlignmentBuilder implements Builder<Alignment, AlignmentBuilder> {
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   String _custom;
   String get custom => _$this._custom;
@@ -37970,7 +37970,7 @@ class AlignmentBuilder implements Builder<Alignment, AlignmentBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _custom = _$v.custom;
       _$v = null;
     }
@@ -38003,7 +38003,7 @@ class AlignmentBuilder implements Builder<Alignment, AlignmentBuilder> {
             lat: lat,
             lon: lon,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             custom: custom);
     replace(_$result);
     return _$result;
@@ -38031,7 +38031,7 @@ class _$StationKeepingExtended extends StationKeepingExtended {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double radius;
   @override
@@ -38039,11 +38039,11 @@ class _$StationKeepingExtended extends StationKeepingExtended {
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final int popup_period;
+  final int popupPeriod;
   @override
-  final int popup_duration;
+  final int popupDuration;
   @override
   final StationKeepingExtendedBitfieldFlags flags;
   @override
@@ -38061,13 +38061,13 @@ class _$StationKeepingExtended extends StationKeepingExtended {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.radius,
       this.duration,
       this.speed,
-      this.speed_units,
-      this.popup_period,
-      this.popup_duration,
+      this.speedUnits,
+      this.popupPeriod,
+      this.popupDuration,
       this.flags,
       this.custom})
       : super._();
@@ -38091,13 +38091,13 @@ class _$StationKeepingExtended extends StationKeepingExtended {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         radius == this.radius &&
         duration == this.duration &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
-        popup_period == this.popup_period &&
-        popup_duration == this.popup_duration &&
+        speedUnits == this.speedUnits &&
+        popupPeriod == this.popupPeriod &&
+        popupDuration == this.popupDuration &&
         flags == this.flags &&
         custom == this.custom;
   }
@@ -38113,13 +38113,13 @@ class _$StationKeepingExtended extends StationKeepingExtended {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         radius.hashCode), 
         duration.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
-        popup_period.hashCode), 
-        popup_duration.hashCode), 
+        speedUnits.hashCode), 
+        popupPeriod.hashCode), 
+        popupDuration.hashCode), 
         flags.hashCode), 
         custom.hashCode));
   }
@@ -38135,13 +38135,13 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('radius', radius)
           ..add('duration', duration)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
-          ..add('popup_period', popup_period)
-          ..add('popup_duration', popup_duration)
+          ..add('speedUnits', speedUnits)
+          ..add('popupPeriod', popupPeriod)
+          ..add('popupDuration', popupDuration)
           ..add('flags', flags)
           ..add('custom', custom))
         .toString();
@@ -38185,9 +38185,9 @@ class StationKeepingExtendedBuilder implements Builder<StationKeepingExtended, S
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _radius;
   double get radius => _$this._radius;
@@ -38201,17 +38201,17 @@ class StationKeepingExtendedBuilder implements Builder<StationKeepingExtended, S
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
-  int _popup_period;
-  int get popup_period => _$this._popup_period;
-  set popup_period(int popup_period) => _$this._popup_period = popup_period;
+  int _popupPeriod;
+  int get popupPeriod => _$this._popupPeriod;
+  set popupPeriod(int popupPeriod) => _$this._popupPeriod = popupPeriod;
 
-  int _popup_duration;
-  int get popup_duration => _$this._popup_duration;
-  set popup_duration(int popup_duration) => _$this._popup_duration = popup_duration;
+  int _popupDuration;
+  int get popupDuration => _$this._popupDuration;
+  set popupDuration(int popupDuration) => _$this._popupDuration = popupDuration;
 
   StationKeepingExtendedBitfieldFlags _flags;
   StationKeepingExtendedBitfieldFlags get flags => _$this._flags;
@@ -38233,13 +38233,13 @@ class StationKeepingExtendedBuilder implements Builder<StationKeepingExtended, S
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _radius = _$v.radius;
       _duration = _$v.duration;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
-      _popup_period = _$v.popup_period;
-      _popup_duration = _$v.popup_duration;
+      _speedUnits = _$v.speedUnits;
+      _popupPeriod = _$v.popupPeriod;
+      _popupDuration = _$v.popupDuration;
       _flags = _$v.flags;
       _custom = _$v.custom;
       _$v = null;
@@ -38272,13 +38272,13 @@ class StationKeepingExtendedBuilder implements Builder<StationKeepingExtended, S
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             radius: radius,
             duration: duration,
             speed: speed,
-            speed_units: speed_units,
-            popup_period: popup_period,
-            popup_duration: popup_duration,
+            speedUnits: speedUnits,
+            popupPeriod: popupPeriod,
+            popupDuration: popupDuration,
             flags: flags,
             custom: custom);
     replace(_$result);
@@ -38309,11 +38309,11 @@ class _$Magnetometer extends Magnetometer {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double speed;
   @override
-  final SpeedUnitsEnum speed_units;
+  final SpeedUnitsEnum speedUnits;
   @override
   final double bearing;
   @override
@@ -38336,9 +38336,9 @@ class _$Magnetometer extends Magnetometer {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.speed,
-      this.speed_units,
+      this.speedUnits,
       this.bearing,
       this.width,
       this.direction,
@@ -38365,9 +38365,9 @@ class _$Magnetometer extends Magnetometer {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         speed == this.speed &&
-        speed_units == this.speed_units &&
+        speedUnits == this.speedUnits &&
         bearing == this.bearing &&
         width == this.width &&
         direction == this.direction &&
@@ -38386,9 +38386,9 @@ class _$Magnetometer extends Magnetometer {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         speed.hashCode), 
-        speed_units.hashCode), 
+        speedUnits.hashCode), 
         bearing.hashCode), 
         width.hashCode), 
         direction.hashCode), 
@@ -38407,9 +38407,9 @@ class _$Magnetometer extends Magnetometer {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('speed', speed)
-          ..add('speed_units', speed_units)
+          ..add('speedUnits', speedUnits)
           ..add('bearing', bearing)
           ..add('width', width)
           ..add('direction', direction)
@@ -38459,17 +38459,17 @@ class MagnetometerBuilder implements Builder<Magnetometer, MagnetometerBuilder> 
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _speed;
   double get speed => _$this._speed;
   set speed(double speed) => _$this._speed = speed;
 
-  SpeedUnitsEnum _speed_units;
-  SpeedUnitsEnum get speed_units => _$this._speed_units;
-  set speed_units(SpeedUnitsEnum speed_units) => _$this._speed_units = speed_units;
+  SpeedUnitsEnum _speedUnits;
+  SpeedUnitsEnum get speedUnits => _$this._speedUnits;
+  set speedUnits(SpeedUnitsEnum speedUnits) => _$this._speedUnits = speedUnits;
 
   double _bearing;
   double get bearing => _$this._bearing;
@@ -38500,9 +38500,9 @@ class MagnetometerBuilder implements Builder<Magnetometer, MagnetometerBuilder> 
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _speed = _$v.speed;
-      _speed_units = _$v.speed_units;
+      _speedUnits = _$v.speedUnits;
       _bearing = _$v.bearing;
       _width = _$v.width;
       _direction = _$v.direction;
@@ -38538,9 +38538,9 @@ class MagnetometerBuilder implements Builder<Magnetometer, MagnetometerBuilder> 
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             speed: speed,
-            speed_units: speed_units,
+            speedUnits: speedUnits,
             bearing: bearing,
             width: width,
             direction: direction,
@@ -38565,25 +38565,25 @@ class _$VehicleState extends VehicleState {
   final int dstEnt;
 
   @override
-  final VehicleStateEnumOpMode op_mode;
+  final VehicleStateEnumOpMode opMode;
   @override
-  final int error_count;
+  final int errorCount;
   @override
-  final String error_ents;
+  final String errorEnts;
   @override
-  final int maneuver_type;
+  final int maneuverType;
   @override
-  final double maneuver_stime;
+  final double maneuverStime;
   @override
-  final int maneuver_eta;
+  final int maneuverEta;
   @override
-  final CLoopsMaskBitfield control_loops;
+  final CLoopsMaskBitfield controlLoops;
   @override
   final VehicleStateBitfieldFlags flags;
   @override
-  final String last_error;
+  final String lastError;
   @override
-  final double last_error_time;
+  final double lastErrorTime;
 
   factory _$VehicleState([void updates(VehicleStateBuilder b)]) =>
       (new VehicleStateBuilder()..update(updates)).build();
@@ -38594,16 +38594,16 @@ class _$VehicleState extends VehicleState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.op_mode,
-      this.error_count,
-      this.error_ents,
-      this.maneuver_type,
-      this.maneuver_stime,
-      this.maneuver_eta,
-      this.control_loops,
+      this.opMode,
+      this.errorCount,
+      this.errorEnts,
+      this.maneuverType,
+      this.maneuverStime,
+      this.maneuverEta,
+      this.controlLoops,
       this.flags,
-      this.last_error,
-      this.last_error_time})
+      this.lastError,
+      this.lastErrorTime})
       : super._();
 
   @override
@@ -38622,16 +38622,16 @@ class _$VehicleState extends VehicleState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op_mode == this.op_mode &&
-        error_count == this.error_count &&
-        error_ents == this.error_ents &&
-        maneuver_type == this.maneuver_type &&
-        maneuver_stime == this.maneuver_stime &&
-        maneuver_eta == this.maneuver_eta &&
-        control_loops == this.control_loops &&
+        opMode == this.opMode &&
+        errorCount == this.errorCount &&
+        errorEnts == this.errorEnts &&
+        maneuverType == this.maneuverType &&
+        maneuverStime == this.maneuverStime &&
+        maneuverEta == this.maneuverEta &&
+        controlLoops == this.controlLoops &&
         flags == this.flags &&
-        last_error == this.last_error &&
-        last_error_time == this.last_error_time;
+        lastError == this.lastError &&
+        lastErrorTime == this.lastErrorTime;
   }
 
   @override
@@ -38642,16 +38642,16 @@ class _$VehicleState extends VehicleState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        op_mode.hashCode), 
-        error_count.hashCode), 
-        error_ents.hashCode), 
-        maneuver_type.hashCode), 
-        maneuver_stime.hashCode), 
-        maneuver_eta.hashCode), 
-        control_loops.hashCode), 
+        opMode.hashCode), 
+        errorCount.hashCode), 
+        errorEnts.hashCode), 
+        maneuverType.hashCode), 
+        maneuverStime.hashCode), 
+        maneuverEta.hashCode), 
+        controlLoops.hashCode), 
         flags.hashCode), 
-        last_error.hashCode), 
-        last_error_time.hashCode));
+        lastError.hashCode), 
+        lastErrorTime.hashCode));
   }
 
   @override
@@ -38662,16 +38662,16 @@ class _$VehicleState extends VehicleState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('op_mode', op_mode)
-          ..add('error_count', error_count)
-          ..add('error_ents', error_ents)
-          ..add('maneuver_type', maneuver_type)
-          ..add('maneuver_stime', maneuver_stime)
-          ..add('maneuver_eta', maneuver_eta)
-          ..add('control_loops', control_loops)
+          ..add('opMode', opMode)
+          ..add('errorCount', errorCount)
+          ..add('errorEnts', errorEnts)
+          ..add('maneuverType', maneuverType)
+          ..add('maneuverStime', maneuverStime)
+          ..add('maneuverEta', maneuverEta)
+          ..add('controlLoops', controlLoops)
           ..add('flags', flags)
-          ..add('last_error', last_error)
-          ..add('last_error_time', last_error_time))
+          ..add('lastError', lastError)
+          ..add('lastErrorTime', lastErrorTime))
         .toString();
   }
 }
@@ -38701,45 +38701,45 @@ class VehicleStateBuilder implements Builder<VehicleState, VehicleStateBuilder> 
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  VehicleStateEnumOpMode _op_mode;
-  VehicleStateEnumOpMode get op_mode => _$this._op_mode;
-  set op_mode(VehicleStateEnumOpMode op_mode) => _$this._op_mode = op_mode;
+  VehicleStateEnumOpMode _opMode;
+  VehicleStateEnumOpMode get opMode => _$this._opMode;
+  set opMode(VehicleStateEnumOpMode opMode) => _$this._opMode = opMode;
 
-  int _error_count;
-  int get error_count => _$this._error_count;
-  set error_count(int error_count) => _$this._error_count = error_count;
+  int _errorCount;
+  int get errorCount => _$this._errorCount;
+  set errorCount(int errorCount) => _$this._errorCount = errorCount;
 
-  String _error_ents;
-  String get error_ents => _$this._error_ents;
-  set error_ents(String error_ents) => _$this._error_ents = error_ents;
+  String _errorEnts;
+  String get errorEnts => _$this._errorEnts;
+  set errorEnts(String errorEnts) => _$this._errorEnts = errorEnts;
 
-  int _maneuver_type;
-  int get maneuver_type => _$this._maneuver_type;
-  set maneuver_type(int maneuver_type) => _$this._maneuver_type = maneuver_type;
+  int _maneuverType;
+  int get maneuverType => _$this._maneuverType;
+  set maneuverType(int maneuverType) => _$this._maneuverType = maneuverType;
 
-  double _maneuver_stime;
-  double get maneuver_stime => _$this._maneuver_stime;
-  set maneuver_stime(double maneuver_stime) => _$this._maneuver_stime = maneuver_stime;
+  double _maneuverStime;
+  double get maneuverStime => _$this._maneuverStime;
+  set maneuverStime(double maneuverStime) => _$this._maneuverStime = maneuverStime;
 
-  int _maneuver_eta;
-  int get maneuver_eta => _$this._maneuver_eta;
-  set maneuver_eta(int maneuver_eta) => _$this._maneuver_eta = maneuver_eta;
+  int _maneuverEta;
+  int get maneuverEta => _$this._maneuverEta;
+  set maneuverEta(int maneuverEta) => _$this._maneuverEta = maneuverEta;
 
-  CLoopsMaskBitfield _control_loops;
-  CLoopsMaskBitfield get control_loops => _$this._control_loops;
-  set control_loops(CLoopsMaskBitfield control_loops) => _$this._control_loops = control_loops;
+  CLoopsMaskBitfield _controlLoops;
+  CLoopsMaskBitfield get controlLoops => _$this._controlLoops;
+  set controlLoops(CLoopsMaskBitfield controlLoops) => _$this._controlLoops = controlLoops;
 
   VehicleStateBitfieldFlags _flags;
   VehicleStateBitfieldFlags get flags => _$this._flags;
   set flags(VehicleStateBitfieldFlags flags) => _$this._flags = flags;
 
-  String _last_error;
-  String get last_error => _$this._last_error;
-  set last_error(String last_error) => _$this._last_error = last_error;
+  String _lastError;
+  String get lastError => _$this._lastError;
+  set lastError(String lastError) => _$this._lastError = lastError;
 
-  double _last_error_time;
-  double get last_error_time => _$this._last_error_time;
-  set last_error_time(double last_error_time) => _$this._last_error_time = last_error_time;
+  double _lastErrorTime;
+  double get lastErrorTime => _$this._lastErrorTime;
+  set lastErrorTime(double lastErrorTime) => _$this._lastErrorTime = lastErrorTime;
 
   VehicleStateBuilder();
 
@@ -38750,16 +38750,16 @@ class VehicleStateBuilder implements Builder<VehicleState, VehicleStateBuilder> 
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _op_mode = _$v.op_mode;
-      _error_count = _$v.error_count;
-      _error_ents = _$v.error_ents;
-      _maneuver_type = _$v.maneuver_type;
-      _maneuver_stime = _$v.maneuver_stime;
-      _maneuver_eta = _$v.maneuver_eta;
-      _control_loops = _$v.control_loops;
+      _opMode = _$v.opMode;
+      _errorCount = _$v.errorCount;
+      _errorEnts = _$v.errorEnts;
+      _maneuverType = _$v.maneuverType;
+      _maneuverStime = _$v.maneuverStime;
+      _maneuverEta = _$v.maneuverEta;
+      _controlLoops = _$v.controlLoops;
       _flags = _$v.flags;
-      _last_error = _$v.last_error;
-      _last_error_time = _$v.last_error_time;
+      _lastError = _$v.lastError;
+      _lastErrorTime = _$v.lastErrorTime;
       _$v = null;
     }
     return this;
@@ -38787,16 +38787,16 @@ class VehicleStateBuilder implements Builder<VehicleState, VehicleStateBuilder> 
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            op_mode: op_mode,
-            error_count: error_count,
-            error_ents: error_ents,
-            maneuver_type: maneuver_type,
-            maneuver_stime: maneuver_stime,
-            maneuver_eta: maneuver_eta,
-            control_loops: control_loops,
+            opMode: opMode,
+            errorCount: errorCount,
+            errorEnts: errorEnts,
+            maneuverType: maneuverType,
+            maneuverStime: maneuverStime,
+            maneuverEta: maneuverEta,
+            controlLoops: controlLoops,
             flags: flags,
-            last_error: last_error,
-            last_error_time: last_error_time);
+            lastError: lastError,
+            lastErrorTime: lastErrorTime);
     replace(_$result);
     return _$result;
   }
@@ -38819,13 +38819,13 @@ class _$VehicleCommand extends VehicleCommand {
   @override
   final VehicleCommandEnumType type;
   @override
-  final int request_id;
+  final int requestId;
   @override
   final VehicleCommandEnumCommand command;
   @override
   final Maneuver maneuver;
   @override
-  final int calib_time;
+  final int calibTime;
   @override
   final String info;
 
@@ -38839,10 +38839,10 @@ class _$VehicleCommand extends VehicleCommand {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.type,
-      this.request_id,
+      this.requestId,
       this.command,
       this.maneuver,
-      this.calib_time,
+      this.calibTime,
       this.info})
       : super._();
 
@@ -38863,10 +38863,10 @@ class _$VehicleCommand extends VehicleCommand {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         type == this.type &&
-        request_id == this.request_id &&
+        requestId == this.requestId &&
         command == this.command &&
         maneuver == this.maneuver &&
-        calib_time == this.calib_time &&
+        calibTime == this.calibTime &&
         info == this.info;
   }
 
@@ -38879,10 +38879,10 @@ class _$VehicleCommand extends VehicleCommand {
         dst.hashCode), 
         dstEnt.hashCode), 
         type.hashCode), 
-        request_id.hashCode), 
+        requestId.hashCode), 
         command.hashCode), 
         maneuver.hashCode), 
-        calib_time.hashCode), 
+        calibTime.hashCode), 
         info.hashCode));
   }
 
@@ -38895,10 +38895,10 @@ class _$VehicleCommand extends VehicleCommand {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('type', type)
-          ..add('request_id', request_id)
+          ..add('requestId', requestId)
           ..add('command', command)
           ..add('maneuver', maneuver)
-          ..add('calib_time', calib_time)
+          ..add('calibTime', calibTime)
           ..add('info', info))
         .toString();
   }
@@ -38933,9 +38933,9 @@ class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBui
   VehicleCommandEnumType get type => _$this._type;
   set type(VehicleCommandEnumType type) => _$this._type = type;
 
-  int _request_id;
-  int get request_id => _$this._request_id;
-  set request_id(int request_id) => _$this._request_id = request_id;
+  int _requestId;
+  int get requestId => _$this._requestId;
+  set requestId(int requestId) => _$this._requestId = requestId;
 
   VehicleCommandEnumCommand _command;
   VehicleCommandEnumCommand get command => _$this._command;
@@ -38945,9 +38945,9 @@ class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBui
   Maneuver get maneuver => _$this._maneuver;
   set maneuver(Maneuver maneuver) => _$this._maneuver = maneuver;
 
-  int _calib_time;
-  int get calib_time => _$this._calib_time;
-  set calib_time(int calib_time) => _$this._calib_time = calib_time;
+  int _calibTime;
+  int get calibTime => _$this._calibTime;
+  set calibTime(int calibTime) => _$this._calibTime = calibTime;
 
   String _info;
   String get info => _$this._info;
@@ -38963,10 +38963,10 @@ class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBui
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
-      _request_id = _$v.request_id;
+      _requestId = _$v.requestId;
       _command = _$v.command;
       _maneuver = _$v.maneuver;
-      _calib_time = _$v.calib_time;
+      _calibTime = _$v.calibTime;
       _info = _$v.info;
       _$v = null;
     }
@@ -38996,10 +38996,10 @@ class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBui
             dst: dst,
             dstEnt: dstEnt,
             type: type,
-            request_id: request_id,
+            requestId: requestId,
             command: command,
             maneuver: maneuver,
-            calib_time: calib_time,
+            calibTime: calibTime,
             info: info);
     replace(_$result);
     return _$result;
@@ -39189,9 +39189,9 @@ class _$EntityMonitoringState extends EntityMonitoringState {
   @override
   final String cnames;
   @override
-  final String last_error;
+  final String lastError;
   @override
-  final double last_error_time;
+  final double lastErrorTime;
 
   factory _$EntityMonitoringState([void updates(EntityMonitoringStateBuilder b)]) =>
       (new EntityMonitoringStateBuilder()..update(updates)).build();
@@ -39208,8 +39208,8 @@ class _$EntityMonitoringState extends EntityMonitoringState {
       this.enames,
       this.ccount,
       this.cnames,
-      this.last_error,
-      this.last_error_time})
+      this.lastError,
+      this.lastErrorTime})
       : super._();
 
   @override
@@ -39234,8 +39234,8 @@ class _$EntityMonitoringState extends EntityMonitoringState {
         enames == this.enames &&
         ccount == this.ccount &&
         cnames == this.cnames &&
-        last_error == this.last_error &&
-        last_error_time == this.last_error_time;
+        lastError == this.lastError &&
+        lastErrorTime == this.lastErrorTime;
   }
 
   @override
@@ -39252,8 +39252,8 @@ class _$EntityMonitoringState extends EntityMonitoringState {
         enames.hashCode), 
         ccount.hashCode), 
         cnames.hashCode), 
-        last_error.hashCode), 
-        last_error_time.hashCode));
+        lastError.hashCode), 
+        lastErrorTime.hashCode));
   }
 
   @override
@@ -39270,8 +39270,8 @@ class _$EntityMonitoringState extends EntityMonitoringState {
           ..add('enames', enames)
           ..add('ccount', ccount)
           ..add('cnames', cnames)
-          ..add('last_error', last_error)
-          ..add('last_error_time', last_error_time))
+          ..add('lastError', lastError)
+          ..add('lastErrorTime', lastErrorTime))
         .toString();
   }
 }
@@ -39325,13 +39325,13 @@ class EntityMonitoringStateBuilder implements Builder<EntityMonitoringState, Ent
   String get cnames => _$this._cnames;
   set cnames(String cnames) => _$this._cnames = cnames;
 
-  String _last_error;
-  String get last_error => _$this._last_error;
-  set last_error(String last_error) => _$this._last_error = last_error;
+  String _lastError;
+  String get lastError => _$this._lastError;
+  set lastError(String lastError) => _$this._lastError = lastError;
 
-  double _last_error_time;
-  double get last_error_time => _$this._last_error_time;
-  set last_error_time(double last_error_time) => _$this._last_error_time = last_error_time;
+  double _lastErrorTime;
+  double get lastErrorTime => _$this._lastErrorTime;
+  set lastErrorTime(double lastErrorTime) => _$this._lastErrorTime = lastErrorTime;
 
   EntityMonitoringStateBuilder();
 
@@ -39348,8 +39348,8 @@ class EntityMonitoringStateBuilder implements Builder<EntityMonitoringState, Ent
       _enames = _$v.enames;
       _ccount = _$v.ccount;
       _cnames = _$v.cnames;
-      _last_error = _$v.last_error;
-      _last_error_time = _$v.last_error_time;
+      _lastError = _$v.lastError;
+      _lastErrorTime = _$v.lastErrorTime;
       _$v = null;
     }
     return this;
@@ -39383,8 +39383,8 @@ class EntityMonitoringStateBuilder implements Builder<EntityMonitoringState, Ent
             enames: enames,
             ccount: ccount,
             cnames: cnames,
-            last_error: last_error,
-            last_error_time: last_error_time);
+            lastError: lastError,
+            lastErrorTime: lastErrorTime);
     replace(_$result);
     return _$result;
   }
@@ -39407,17 +39407,17 @@ class _$OperationalLimits extends OperationalLimits {
   @override
   final OpLimitsMaskBitfield mask;
   @override
-  final double max_depth;
+  final double maxDepth;
   @override
-  final double min_altitude;
+  final double minAltitude;
   @override
-  final double max_altitude;
+  final double maxAltitude;
   @override
-  final double min_speed;
+  final double minSpeed;
   @override
-  final double max_speed;
+  final double maxSpeed;
   @override
-  final double max_vrate;
+  final double maxVrate;
   @override
   final double lat;
   @override
@@ -39439,12 +39439,12 @@ class _$OperationalLimits extends OperationalLimits {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.mask,
-      this.max_depth,
-      this.min_altitude,
-      this.max_altitude,
-      this.min_speed,
-      this.max_speed,
-      this.max_vrate,
+      this.maxDepth,
+      this.minAltitude,
+      this.maxAltitude,
+      this.minSpeed,
+      this.maxSpeed,
+      this.maxVrate,
       this.lat,
       this.lon,
       this.orientation,
@@ -39469,12 +39469,12 @@ class _$OperationalLimits extends OperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         mask == this.mask &&
-        max_depth == this.max_depth &&
-        min_altitude == this.min_altitude &&
-        max_altitude == this.max_altitude &&
-        min_speed == this.min_speed &&
-        max_speed == this.max_speed &&
-        max_vrate == this.max_vrate &&
+        maxDepth == this.maxDepth &&
+        minAltitude == this.minAltitude &&
+        maxAltitude == this.maxAltitude &&
+        minSpeed == this.minSpeed &&
+        maxSpeed == this.maxSpeed &&
+        maxVrate == this.maxVrate &&
         lat == this.lat &&
         lon == this.lon &&
         orientation == this.orientation &&
@@ -39491,12 +39491,12 @@ class _$OperationalLimits extends OperationalLimits {
         dst.hashCode), 
         dstEnt.hashCode), 
         mask.hashCode), 
-        max_depth.hashCode), 
-        min_altitude.hashCode), 
-        max_altitude.hashCode), 
-        min_speed.hashCode), 
-        max_speed.hashCode), 
-        max_vrate.hashCode), 
+        maxDepth.hashCode), 
+        minAltitude.hashCode), 
+        maxAltitude.hashCode), 
+        minSpeed.hashCode), 
+        maxSpeed.hashCode), 
+        maxVrate.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
         orientation.hashCode), 
@@ -39513,12 +39513,12 @@ class _$OperationalLimits extends OperationalLimits {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('mask', mask)
-          ..add('max_depth', max_depth)
-          ..add('min_altitude', min_altitude)
-          ..add('max_altitude', max_altitude)
-          ..add('min_speed', min_speed)
-          ..add('max_speed', max_speed)
-          ..add('max_vrate', max_vrate)
+          ..add('maxDepth', maxDepth)
+          ..add('minAltitude', minAltitude)
+          ..add('maxAltitude', maxAltitude)
+          ..add('minSpeed', minSpeed)
+          ..add('maxSpeed', maxSpeed)
+          ..add('maxVrate', maxVrate)
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('orientation', orientation)
@@ -39557,29 +39557,29 @@ class OperationalLimitsBuilder implements Builder<OperationalLimits, Operational
   OpLimitsMaskBitfield get mask => _$this._mask;
   set mask(OpLimitsMaskBitfield mask) => _$this._mask = mask;
 
-  double _max_depth;
-  double get max_depth => _$this._max_depth;
-  set max_depth(double max_depth) => _$this._max_depth = max_depth;
+  double _maxDepth;
+  double get maxDepth => _$this._maxDepth;
+  set maxDepth(double maxDepth) => _$this._maxDepth = maxDepth;
 
-  double _min_altitude;
-  double get min_altitude => _$this._min_altitude;
-  set min_altitude(double min_altitude) => _$this._min_altitude = min_altitude;
+  double _minAltitude;
+  double get minAltitude => _$this._minAltitude;
+  set minAltitude(double minAltitude) => _$this._minAltitude = minAltitude;
 
-  double _max_altitude;
-  double get max_altitude => _$this._max_altitude;
-  set max_altitude(double max_altitude) => _$this._max_altitude = max_altitude;
+  double _maxAltitude;
+  double get maxAltitude => _$this._maxAltitude;
+  set maxAltitude(double maxAltitude) => _$this._maxAltitude = maxAltitude;
 
-  double _min_speed;
-  double get min_speed => _$this._min_speed;
-  set min_speed(double min_speed) => _$this._min_speed = min_speed;
+  double _minSpeed;
+  double get minSpeed => _$this._minSpeed;
+  set minSpeed(double minSpeed) => _$this._minSpeed = minSpeed;
 
-  double _max_speed;
-  double get max_speed => _$this._max_speed;
-  set max_speed(double max_speed) => _$this._max_speed = max_speed;
+  double _maxSpeed;
+  double get maxSpeed => _$this._maxSpeed;
+  set maxSpeed(double maxSpeed) => _$this._maxSpeed = maxSpeed;
 
-  double _max_vrate;
-  double get max_vrate => _$this._max_vrate;
-  set max_vrate(double max_vrate) => _$this._max_vrate = max_vrate;
+  double _maxVrate;
+  double get maxVrate => _$this._maxVrate;
+  set maxVrate(double maxVrate) => _$this._maxVrate = maxVrate;
 
   double _lat;
   double get lat => _$this._lat;
@@ -39611,12 +39611,12 @@ class OperationalLimitsBuilder implements Builder<OperationalLimits, Operational
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _mask = _$v.mask;
-      _max_depth = _$v.max_depth;
-      _min_altitude = _$v.min_altitude;
-      _max_altitude = _$v.max_altitude;
-      _min_speed = _$v.min_speed;
-      _max_speed = _$v.max_speed;
-      _max_vrate = _$v.max_vrate;
+      _maxDepth = _$v.maxDepth;
+      _minAltitude = _$v.minAltitude;
+      _maxAltitude = _$v.maxAltitude;
+      _minSpeed = _$v.minSpeed;
+      _maxSpeed = _$v.maxSpeed;
+      _maxVrate = _$v.maxVrate;
       _lat = _$v.lat;
       _lon = _$v.lon;
       _orientation = _$v.orientation;
@@ -39650,12 +39650,12 @@ class OperationalLimitsBuilder implements Builder<OperationalLimits, Operational
             dst: dst,
             dstEnt: dstEnt,
             mask: mask,
-            max_depth: max_depth,
-            min_altitude: min_altitude,
-            max_altitude: max_altitude,
-            min_speed: min_speed,
-            max_speed: max_speed,
-            max_vrate: max_vrate,
+            maxDepth: maxDepth,
+            minAltitude: minAltitude,
+            maxAltitude: maxAltitude,
+            minSpeed: minSpeed,
+            maxSpeed: maxSpeed,
+            maxVrate: maxVrate,
             lat: lat,
             lon: lon,
             orientation: orientation,
@@ -39961,7 +39961,7 @@ class _$ControlLoops extends ControlLoops {
   @override
   final CLoopsMaskBitfield mask;
   @override
-  final int scope_ref;
+  final int scopeRef;
 
   factory _$ControlLoops([void updates(ControlLoopsBuilder b)]) =>
       (new ControlLoopsBuilder()..update(updates)).build();
@@ -39974,7 +39974,7 @@ class _$ControlLoops extends ControlLoops {
       this.dstEnt: ImcEntityId.nullId,
       this.enable,
       this.mask,
-      this.scope_ref})
+      this.scopeRef})
       : super._();
 
   @override
@@ -39995,7 +39995,7 @@ class _$ControlLoops extends ControlLoops {
         dstEnt == other.dstEnt &&
         enable == this.enable &&
         mask == this.mask &&
-        scope_ref == this.scope_ref;
+        scopeRef == this.scopeRef;
   }
 
   @override
@@ -40008,7 +40008,7 @@ class _$ControlLoops extends ControlLoops {
         dstEnt.hashCode), 
         enable.hashCode), 
         mask.hashCode), 
-        scope_ref.hashCode));
+        scopeRef.hashCode));
   }
 
   @override
@@ -40021,7 +40021,7 @@ class _$ControlLoops extends ControlLoops {
           ..add('dstEnt', dstEnt)
           ..add('enable', enable)
           ..add('mask', mask)
-          ..add('scope_ref', scope_ref))
+          ..add('scopeRef', scopeRef))
         .toString();
   }
 }
@@ -40059,9 +40059,9 @@ class ControlLoopsBuilder implements Builder<ControlLoops, ControlLoopsBuilder> 
   CLoopsMaskBitfield get mask => _$this._mask;
   set mask(CLoopsMaskBitfield mask) => _$this._mask = mask;
 
-  int _scope_ref;
-  int get scope_ref => _$this._scope_ref;
-  set scope_ref(int scope_ref) => _$this._scope_ref = scope_ref;
+  int _scopeRef;
+  int get scopeRef => _$this._scopeRef;
+  set scopeRef(int scopeRef) => _$this._scopeRef = scopeRef;
 
   ControlLoopsBuilder();
 
@@ -40074,7 +40074,7 @@ class ControlLoopsBuilder implements Builder<ControlLoops, ControlLoopsBuilder> 
       _dstEnt = _$v.dstEnt;
       _enable = _$v.enable;
       _mask = _$v.mask;
-      _scope_ref = _$v.scope_ref;
+      _scopeRef = _$v.scopeRef;
       _$v = null;
     }
     return this;
@@ -40104,7 +40104,7 @@ class ControlLoopsBuilder implements Builder<ControlLoops, ControlLoopsBuilder> 
             dstEnt: dstEnt,
             enable: enable,
             mask: mask,
-            scope_ref: scope_ref);
+            scopeRef: scopeRef);
     replace(_$result);
     return _$result;
   }
@@ -40425,17 +40425,17 @@ class _$FormState extends FormState {
   final int dstEnt;
 
   @override
-  final double PosSimErr;
+  final double posSimErr;
   @override
-  final double Converg;
+  final double converg;
   @override
-  final double Turbulence;
+  final double turbulence;
   @override
-  final FormStateEnumPosSimMon PosSimMon;
+  final FormStateEnumPosSimMon posSimMon;
   @override
-  final FormStateEnumCommMon CommMon;
+  final FormStateEnumCommMon commMon;
   @override
-  final FormStateEnumConvergMon ConvergMon;
+  final FormStateEnumConvergMon convergMon;
 
   factory _$FormState([void updates(FormStateBuilder b)]) =>
       (new FormStateBuilder()..update(updates)).build();
@@ -40446,12 +40446,12 @@ class _$FormState extends FormState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.PosSimErr,
-      this.Converg,
-      this.Turbulence,
-      this.PosSimMon,
-      this.CommMon,
-      this.ConvergMon})
+      this.posSimErr,
+      this.converg,
+      this.turbulence,
+      this.posSimMon,
+      this.commMon,
+      this.convergMon})
       : super._();
 
   @override
@@ -40470,12 +40470,12 @@ class _$FormState extends FormState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        PosSimErr == this.PosSimErr &&
-        Converg == this.Converg &&
-        Turbulence == this.Turbulence &&
-        PosSimMon == this.PosSimMon &&
-        CommMon == this.CommMon &&
-        ConvergMon == this.ConvergMon;
+        posSimErr == this.posSimErr &&
+        converg == this.converg &&
+        turbulence == this.turbulence &&
+        posSimMon == this.posSimMon &&
+        commMon == this.commMon &&
+        convergMon == this.convergMon;
   }
 
   @override
@@ -40486,12 +40486,12 @@ class _$FormState extends FormState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        PosSimErr.hashCode), 
-        Converg.hashCode), 
-        Turbulence.hashCode), 
-        PosSimMon.hashCode), 
-        CommMon.hashCode), 
-        ConvergMon.hashCode));
+        posSimErr.hashCode), 
+        converg.hashCode), 
+        turbulence.hashCode), 
+        posSimMon.hashCode), 
+        commMon.hashCode), 
+        convergMon.hashCode));
   }
 
   @override
@@ -40502,12 +40502,12 @@ class _$FormState extends FormState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('PosSimErr', PosSimErr)
-          ..add('Converg', Converg)
-          ..add('Turbulence', Turbulence)
-          ..add('PosSimMon', PosSimMon)
-          ..add('CommMon', CommMon)
-          ..add('ConvergMon', ConvergMon))
+          ..add('posSimErr', posSimErr)
+          ..add('converg', converg)
+          ..add('turbulence', turbulence)
+          ..add('posSimMon', posSimMon)
+          ..add('commMon', commMon)
+          ..add('convergMon', convergMon))
         .toString();
   }
 }
@@ -40537,29 +40537,29 @@ class FormStateBuilder implements Builder<FormState, FormStateBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _PosSimErr;
-  double get PosSimErr => _$this._PosSimErr;
-  set PosSimErr(double PosSimErr) => _$this._PosSimErr = PosSimErr;
+  double _posSimErr;
+  double get posSimErr => _$this._posSimErr;
+  set posSimErr(double posSimErr) => _$this._posSimErr = posSimErr;
 
-  double _Converg;
-  double get Converg => _$this._Converg;
-  set Converg(double Converg) => _$this._Converg = Converg;
+  double _converg;
+  double get converg => _$this._converg;
+  set converg(double converg) => _$this._converg = converg;
 
-  double _Turbulence;
-  double get Turbulence => _$this._Turbulence;
-  set Turbulence(double Turbulence) => _$this._Turbulence = Turbulence;
+  double _turbulence;
+  double get turbulence => _$this._turbulence;
+  set turbulence(double turbulence) => _$this._turbulence = turbulence;
 
-  FormStateEnumPosSimMon _PosSimMon;
-  FormStateEnumPosSimMon get PosSimMon => _$this._PosSimMon;
-  set PosSimMon(FormStateEnumPosSimMon PosSimMon) => _$this._PosSimMon = PosSimMon;
+  FormStateEnumPosSimMon _posSimMon;
+  FormStateEnumPosSimMon get posSimMon => _$this._posSimMon;
+  set posSimMon(FormStateEnumPosSimMon posSimMon) => _$this._posSimMon = posSimMon;
 
-  FormStateEnumCommMon _CommMon;
-  FormStateEnumCommMon get CommMon => _$this._CommMon;
-  set CommMon(FormStateEnumCommMon CommMon) => _$this._CommMon = CommMon;
+  FormStateEnumCommMon _commMon;
+  FormStateEnumCommMon get commMon => _$this._commMon;
+  set commMon(FormStateEnumCommMon commMon) => _$this._commMon = commMon;
 
-  FormStateEnumConvergMon _ConvergMon;
-  FormStateEnumConvergMon get ConvergMon => _$this._ConvergMon;
-  set ConvergMon(FormStateEnumConvergMon ConvergMon) => _$this._ConvergMon = ConvergMon;
+  FormStateEnumConvergMon _convergMon;
+  FormStateEnumConvergMon get convergMon => _$this._convergMon;
+  set convergMon(FormStateEnumConvergMon convergMon) => _$this._convergMon = convergMon;
 
   FormStateBuilder();
 
@@ -40570,12 +40570,12 @@ class FormStateBuilder implements Builder<FormState, FormStateBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _PosSimErr = _$v.PosSimErr;
-      _Converg = _$v.Converg;
-      _Turbulence = _$v.Turbulence;
-      _PosSimMon = _$v.PosSimMon;
-      _CommMon = _$v.CommMon;
-      _ConvergMon = _$v.ConvergMon;
+      _posSimErr = _$v.posSimErr;
+      _converg = _$v.converg;
+      _turbulence = _$v.turbulence;
+      _posSimMon = _$v.posSimMon;
+      _commMon = _$v.commMon;
+      _convergMon = _$v.convergMon;
       _$v = null;
     }
     return this;
@@ -40603,12 +40603,12 @@ class FormStateBuilder implements Builder<FormState, FormStateBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            PosSimErr: PosSimErr,
-            Converg: Converg,
-            Turbulence: Turbulence,
-            PosSimMon: PosSimMon,
-            CommMon: CommMon,
-            ConvergMon: ConvergMon);
+            posSimErr: posSimErr,
+            converg: converg,
+            turbulence: turbulence,
+            posSimMon: posSimMon,
+            commMon: commMon,
+            convergMon: convergMon);
     replace(_$result);
     return _$result;
   }
@@ -40789,17 +40789,17 @@ class _$FormationState extends FormationState {
   @override
   final FormationStateEnumOp op;
   @override
-  final double PosSimErr;
+  final double posSimErr;
   @override
-  final double Converg;
+  final double converg;
   @override
-  final double Turbulence;
+  final double turbulence;
   @override
-  final FormationStateEnumPosSimMon PosSimMon;
+  final FormationStateEnumPosSimMon posSimMon;
   @override
-  final FormationStateEnumCommMon CommMon;
+  final FormationStateEnumCommMon commMon;
   @override
-  final FormationStateEnumConvergMon ConvergMon;
+  final FormationStateEnumConvergMon convergMon;
 
   factory _$FormationState([void updates(FormationStateBuilder b)]) =>
       (new FormationStateBuilder()..update(updates)).build();
@@ -40812,12 +40812,12 @@ class _$FormationState extends FormationState {
       this.dstEnt: ImcEntityId.nullId,
       this.type,
       this.op,
-      this.PosSimErr,
-      this.Converg,
-      this.Turbulence,
-      this.PosSimMon,
-      this.CommMon,
-      this.ConvergMon})
+      this.posSimErr,
+      this.converg,
+      this.turbulence,
+      this.posSimMon,
+      this.commMon,
+      this.convergMon})
       : super._();
 
   @override
@@ -40838,12 +40838,12 @@ class _$FormationState extends FormationState {
         dstEnt == other.dstEnt &&
         type == this.type &&
         op == this.op &&
-        PosSimErr == this.PosSimErr &&
-        Converg == this.Converg &&
-        Turbulence == this.Turbulence &&
-        PosSimMon == this.PosSimMon &&
-        CommMon == this.CommMon &&
-        ConvergMon == this.ConvergMon;
+        posSimErr == this.posSimErr &&
+        converg == this.converg &&
+        turbulence == this.turbulence &&
+        posSimMon == this.posSimMon &&
+        commMon == this.commMon &&
+        convergMon == this.convergMon;
   }
 
   @override
@@ -40856,12 +40856,12 @@ class _$FormationState extends FormationState {
         dstEnt.hashCode), 
         type.hashCode), 
         op.hashCode), 
-        PosSimErr.hashCode), 
-        Converg.hashCode), 
-        Turbulence.hashCode), 
-        PosSimMon.hashCode), 
-        CommMon.hashCode), 
-        ConvergMon.hashCode));
+        posSimErr.hashCode), 
+        converg.hashCode), 
+        turbulence.hashCode), 
+        posSimMon.hashCode), 
+        commMon.hashCode), 
+        convergMon.hashCode));
   }
 
   @override
@@ -40874,12 +40874,12 @@ class _$FormationState extends FormationState {
           ..add('dstEnt', dstEnt)
           ..add('type', type)
           ..add('op', op)
-          ..add('PosSimErr', PosSimErr)
-          ..add('Converg', Converg)
-          ..add('Turbulence', Turbulence)
-          ..add('PosSimMon', PosSimMon)
-          ..add('CommMon', CommMon)
-          ..add('ConvergMon', ConvergMon))
+          ..add('posSimErr', posSimErr)
+          ..add('converg', converg)
+          ..add('turbulence', turbulence)
+          ..add('posSimMon', posSimMon)
+          ..add('commMon', commMon)
+          ..add('convergMon', convergMon))
         .toString();
   }
 }
@@ -40917,29 +40917,29 @@ class FormationStateBuilder implements Builder<FormationState, FormationStateBui
   FormationStateEnumOp get op => _$this._op;
   set op(FormationStateEnumOp op) => _$this._op = op;
 
-  double _PosSimErr;
-  double get PosSimErr => _$this._PosSimErr;
-  set PosSimErr(double PosSimErr) => _$this._PosSimErr = PosSimErr;
+  double _posSimErr;
+  double get posSimErr => _$this._posSimErr;
+  set posSimErr(double posSimErr) => _$this._posSimErr = posSimErr;
 
-  double _Converg;
-  double get Converg => _$this._Converg;
-  set Converg(double Converg) => _$this._Converg = Converg;
+  double _converg;
+  double get converg => _$this._converg;
+  set converg(double converg) => _$this._converg = converg;
 
-  double _Turbulence;
-  double get Turbulence => _$this._Turbulence;
-  set Turbulence(double Turbulence) => _$this._Turbulence = Turbulence;
+  double _turbulence;
+  double get turbulence => _$this._turbulence;
+  set turbulence(double turbulence) => _$this._turbulence = turbulence;
 
-  FormationStateEnumPosSimMon _PosSimMon;
-  FormationStateEnumPosSimMon get PosSimMon => _$this._PosSimMon;
-  set PosSimMon(FormationStateEnumPosSimMon PosSimMon) => _$this._PosSimMon = PosSimMon;
+  FormationStateEnumPosSimMon _posSimMon;
+  FormationStateEnumPosSimMon get posSimMon => _$this._posSimMon;
+  set posSimMon(FormationStateEnumPosSimMon posSimMon) => _$this._posSimMon = posSimMon;
 
-  FormationStateEnumCommMon _CommMon;
-  FormationStateEnumCommMon get CommMon => _$this._CommMon;
-  set CommMon(FormationStateEnumCommMon CommMon) => _$this._CommMon = CommMon;
+  FormationStateEnumCommMon _commMon;
+  FormationStateEnumCommMon get commMon => _$this._commMon;
+  set commMon(FormationStateEnumCommMon commMon) => _$this._commMon = commMon;
 
-  FormationStateEnumConvergMon _ConvergMon;
-  FormationStateEnumConvergMon get ConvergMon => _$this._ConvergMon;
-  set ConvergMon(FormationStateEnumConvergMon ConvergMon) => _$this._ConvergMon = ConvergMon;
+  FormationStateEnumConvergMon _convergMon;
+  FormationStateEnumConvergMon get convergMon => _$this._convergMon;
+  set convergMon(FormationStateEnumConvergMon convergMon) => _$this._convergMon = convergMon;
 
   FormationStateBuilder();
 
@@ -40952,12 +40952,12 @@ class FormationStateBuilder implements Builder<FormationState, FormationStateBui
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
       _op = _$v.op;
-      _PosSimErr = _$v.PosSimErr;
-      _Converg = _$v.Converg;
-      _Turbulence = _$v.Turbulence;
-      _PosSimMon = _$v.PosSimMon;
-      _CommMon = _$v.CommMon;
-      _ConvergMon = _$v.ConvergMon;
+      _posSimErr = _$v.posSimErr;
+      _converg = _$v.converg;
+      _turbulence = _$v.turbulence;
+      _posSimMon = _$v.posSimMon;
+      _commMon = _$v.commMon;
+      _convergMon = _$v.convergMon;
       _$v = null;
     }
     return this;
@@ -40987,12 +40987,12 @@ class FormationStateBuilder implements Builder<FormationState, FormationStateBui
             dstEnt: dstEnt,
             type: type,
             op: op,
-            PosSimErr: PosSimErr,
-            Converg: Converg,
-            Turbulence: Turbulence,
-            PosSimMon: PosSimMon,
-            CommMon: CommMon,
-            ConvergMon: ConvergMon);
+            posSimErr: posSimErr,
+            converg: converg,
+            turbulence: turbulence,
+            posSimMon: posSimMon,
+            commMon: commMon,
+            convergMon: convergMon);
     replace(_$result);
     return _$result;
   }
@@ -41015,11 +41015,11 @@ class _$ReportControl extends ReportControl {
   @override
   final ReportControlEnumOp op;
   @override
-  final ReportControlBitfieldCommInterface comm_interface;
+  final ReportControlBitfieldCommInterface commInterface;
   @override
   final int period;
   @override
-  final String sys_dst;
+  final String sysDst;
 
   factory _$ReportControl([void updates(ReportControlBuilder b)]) =>
       (new ReportControlBuilder()..update(updates)).build();
@@ -41031,9 +41031,9 @@ class _$ReportControl extends ReportControl {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.op,
-      this.comm_interface,
+      this.commInterface,
       this.period,
-      this.sys_dst})
+      this.sysDst})
       : super._();
 
   @override
@@ -41053,9 +41053,9 @@ class _$ReportControl extends ReportControl {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == this.op &&
-        comm_interface == this.comm_interface &&
+        commInterface == this.commInterface &&
         period == this.period &&
-        sys_dst == this.sys_dst;
+        sysDst == this.sysDst;
   }
 
   @override
@@ -41067,9 +41067,9 @@ class _$ReportControl extends ReportControl {
         dst.hashCode), 
         dstEnt.hashCode), 
         op.hashCode), 
-        comm_interface.hashCode), 
+        commInterface.hashCode), 
         period.hashCode), 
-        sys_dst.hashCode));
+        sysDst.hashCode));
   }
 
   @override
@@ -41081,9 +41081,9 @@ class _$ReportControl extends ReportControl {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('op', op)
-          ..add('comm_interface', comm_interface)
+          ..add('commInterface', commInterface)
           ..add('period', period)
-          ..add('sys_dst', sys_dst))
+          ..add('sysDst', sysDst))
         .toString();
   }
 }
@@ -41117,17 +41117,17 @@ class ReportControlBuilder implements Builder<ReportControl, ReportControlBuilde
   ReportControlEnumOp get op => _$this._op;
   set op(ReportControlEnumOp op) => _$this._op = op;
 
-  ReportControlBitfieldCommInterface _comm_interface;
-  ReportControlBitfieldCommInterface get comm_interface => _$this._comm_interface;
-  set comm_interface(ReportControlBitfieldCommInterface comm_interface) => _$this._comm_interface = comm_interface;
+  ReportControlBitfieldCommInterface _commInterface;
+  ReportControlBitfieldCommInterface get commInterface => _$this._commInterface;
+  set commInterface(ReportControlBitfieldCommInterface commInterface) => _$this._commInterface = commInterface;
 
   int _period;
   int get period => _$this._period;
   set period(int period) => _$this._period = period;
 
-  String _sys_dst;
-  String get sys_dst => _$this._sys_dst;
-  set sys_dst(String sys_dst) => _$this._sys_dst = sys_dst;
+  String _sysDst;
+  String get sysDst => _$this._sysDst;
+  set sysDst(String sysDst) => _$this._sysDst = sysDst;
 
   ReportControlBuilder();
 
@@ -41139,9 +41139,9 @@ class ReportControlBuilder implements Builder<ReportControl, ReportControlBuilde
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _op = _$v.op;
-      _comm_interface = _$v.comm_interface;
+      _commInterface = _$v.commInterface;
       _period = _$v.period;
-      _sys_dst = _$v.sys_dst;
+      _sysDst = _$v.sysDst;
       _$v = null;
     }
     return this;
@@ -41170,9 +41170,9 @@ class ReportControlBuilder implements Builder<ReportControl, ReportControlBuilde
             dst: dst,
             dstEnt: dstEnt,
             op: op,
-            comm_interface: comm_interface,
+            commInterface: commInterface,
             period: period,
-            sys_dst: sys_dst);
+            sysDst: sysDst);
     replace(_$result);
     return _$result;
   }
@@ -41209,9 +41209,9 @@ class _$StateReport extends StateReport {
   @override
   final int fuel;
   @override
-  final int exec_state;
+  final int execState;
   @override
-  final int plan_checksum;
+  final int planChecksum;
 
   factory _$StateReport([void updates(StateReportBuilder b)]) =>
       (new StateReportBuilder()..update(updates)).build();
@@ -41230,8 +41230,8 @@ class _$StateReport extends StateReport {
       this.heading,
       this.speed,
       this.fuel,
-      this.exec_state,
-      this.plan_checksum})
+      this.execState,
+      this.planChecksum})
       : super._();
 
   @override
@@ -41258,8 +41258,8 @@ class _$StateReport extends StateReport {
         heading == this.heading &&
         speed == this.speed &&
         fuel == this.fuel &&
-        exec_state == this.exec_state &&
-        plan_checksum == this.plan_checksum;
+        execState == this.execState &&
+        planChecksum == this.planChecksum;
   }
 
   @override
@@ -41278,8 +41278,8 @@ class _$StateReport extends StateReport {
         heading.hashCode), 
         speed.hashCode), 
         fuel.hashCode), 
-        exec_state.hashCode), 
-        plan_checksum.hashCode));
+        execState.hashCode), 
+        planChecksum.hashCode));
   }
 
   @override
@@ -41298,8 +41298,8 @@ class _$StateReport extends StateReport {
           ..add('heading', heading)
           ..add('speed', speed)
           ..add('fuel', fuel)
-          ..add('exec_state', exec_state)
-          ..add('plan_checksum', plan_checksum))
+          ..add('execState', execState)
+          ..add('planChecksum', planChecksum))
         .toString();
   }
 }
@@ -41361,13 +41361,13 @@ class StateReportBuilder implements Builder<StateReport, StateReportBuilder> {
   int get fuel => _$this._fuel;
   set fuel(int fuel) => _$this._fuel = fuel;
 
-  int _exec_state;
-  int get exec_state => _$this._exec_state;
-  set exec_state(int exec_state) => _$this._exec_state = exec_state;
+  int _execState;
+  int get execState => _$this._execState;
+  set execState(int execState) => _$this._execState = execState;
 
-  int _plan_checksum;
-  int get plan_checksum => _$this._plan_checksum;
-  set plan_checksum(int plan_checksum) => _$this._plan_checksum = plan_checksum;
+  int _planChecksum;
+  int get planChecksum => _$this._planChecksum;
+  set planChecksum(int planChecksum) => _$this._planChecksum = planChecksum;
 
   StateReportBuilder();
 
@@ -41386,8 +41386,8 @@ class StateReportBuilder implements Builder<StateReport, StateReportBuilder> {
       _heading = _$v.heading;
       _speed = _$v.speed;
       _fuel = _$v.fuel;
-      _exec_state = _$v.exec_state;
-      _plan_checksum = _$v.plan_checksum;
+      _execState = _$v.execState;
+      _planChecksum = _$v.planChecksum;
       _$v = null;
     }
     return this;
@@ -41423,8 +41423,8 @@ class StateReportBuilder implements Builder<StateReport, StateReportBuilder> {
             heading: heading,
             speed: speed,
             fuel: fuel,
-            exec_state: exec_state,
-            plan_checksum: plan_checksum);
+            execState: execState,
+            planChecksum: planChecksum);
     replace(_$result);
     return _$result;
   }
@@ -41445,21 +41445,21 @@ class _$TransmissionRequest extends TransmissionRequest {
   final int dstEnt;
 
   @override
-  final int req_id;
+  final int reqId;
   @override
-  final TransmissionRequestEnumCommMean comm_mean;
+  final TransmissionRequestEnumCommMean commMean;
   @override
   final String destination;
   @override
   final double deadline;
   @override
-  final TransmissionRequestEnumDataMode data_mode;
+  final TransmissionRequestEnumDataMode dataMode;
   @override
-  final ImcMessage msg_data;
+  final ImcMessage msgData;
   @override
-  final String txt_data;
+  final String txtData;
   @override
-  final List<int> raw_data;
+  final List<int> rawData;
 
   factory _$TransmissionRequest([void updates(TransmissionRequestBuilder b)]) =>
       (new TransmissionRequestBuilder()..update(updates)).build();
@@ -41470,14 +41470,14 @@ class _$TransmissionRequest extends TransmissionRequest {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.req_id,
-      this.comm_mean,
+      this.reqId,
+      this.commMean,
       this.destination,
       this.deadline,
-      this.data_mode,
-      this.msg_data,
-      this.txt_data,
-      this.raw_data})
+      this.dataMode,
+      this.msgData,
+      this.txtData,
+      this.rawData})
       : super._();
 
   @override
@@ -41496,14 +41496,14 @@ class _$TransmissionRequest extends TransmissionRequest {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        req_id == this.req_id &&
-        comm_mean == this.comm_mean &&
+        reqId == this.reqId &&
+        commMean == this.commMean &&
         destination == this.destination &&
         deadline == this.deadline &&
-        data_mode == this.data_mode &&
-        msg_data == this.msg_data &&
-        txt_data == this.txt_data &&
-        raw_data == this.raw_data;
+        dataMode == this.dataMode &&
+        msgData == this.msgData &&
+        txtData == this.txtData &&
+        rawData == this.rawData;
   }
 
   @override
@@ -41514,14 +41514,14 @@ class _$TransmissionRequest extends TransmissionRequest {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        req_id.hashCode), 
-        comm_mean.hashCode), 
+        reqId.hashCode), 
+        commMean.hashCode), 
         destination.hashCode), 
         deadline.hashCode), 
-        data_mode.hashCode), 
-        msg_data.hashCode), 
-        txt_data.hashCode), 
-        raw_data.hashCode));
+        dataMode.hashCode), 
+        msgData.hashCode), 
+        txtData.hashCode), 
+        rawData.hashCode));
   }
 
   @override
@@ -41532,14 +41532,14 @@ class _$TransmissionRequest extends TransmissionRequest {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('req_id', req_id)
-          ..add('comm_mean', comm_mean)
+          ..add('reqId', reqId)
+          ..add('commMean', commMean)
           ..add('destination', destination)
           ..add('deadline', deadline)
-          ..add('data_mode', data_mode)
-          ..add('msg_data', msg_data)
-          ..add('txt_data', txt_data)
-          ..add('raw_data', raw_data))
+          ..add('dataMode', dataMode)
+          ..add('msgData', msgData)
+          ..add('txtData', txtData)
+          ..add('rawData', rawData))
         .toString();
   }
 }
@@ -41569,13 +41569,13 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
-  TransmissionRequestEnumCommMean _comm_mean;
-  TransmissionRequestEnumCommMean get comm_mean => _$this._comm_mean;
-  set comm_mean(TransmissionRequestEnumCommMean comm_mean) => _$this._comm_mean = comm_mean;
+  TransmissionRequestEnumCommMean _commMean;
+  TransmissionRequestEnumCommMean get commMean => _$this._commMean;
+  set commMean(TransmissionRequestEnumCommMean commMean) => _$this._commMean = commMean;
 
   String _destination;
   String get destination => _$this._destination;
@@ -41585,21 +41585,21 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
   double get deadline => _$this._deadline;
   set deadline(double deadline) => _$this._deadline = deadline;
 
-  TransmissionRequestEnumDataMode _data_mode;
-  TransmissionRequestEnumDataMode get data_mode => _$this._data_mode;
-  set data_mode(TransmissionRequestEnumDataMode data_mode) => _$this._data_mode = data_mode;
+  TransmissionRequestEnumDataMode _dataMode;
+  TransmissionRequestEnumDataMode get dataMode => _$this._dataMode;
+  set dataMode(TransmissionRequestEnumDataMode dataMode) => _$this._dataMode = dataMode;
 
-  ImcMessage _msg_data;
-  ImcMessage get msg_data => _$this._msg_data;
-  set msg_data(ImcMessage msg_data) => _$this._msg_data = msg_data;
+  ImcMessage _msgData;
+  ImcMessage get msgData => _$this._msgData;
+  set msgData(ImcMessage msgData) => _$this._msgData = msgData;
 
-  String _txt_data;
-  String get txt_data => _$this._txt_data;
-  set txt_data(String txt_data) => _$this._txt_data = txt_data;
+  String _txtData;
+  String get txtData => _$this._txtData;
+  set txtData(String txtData) => _$this._txtData = txtData;
 
-  List<int> _raw_data;
-  List<int> get raw_data => _$this._raw_data;
-  set raw_data(List<int> raw_data) => _$this._raw_data = raw_data;
+  List<int> _rawData;
+  List<int> get rawData => _$this._rawData;
+  set rawData(List<int> rawData) => _$this._rawData = rawData;
 
   TransmissionRequestBuilder();
 
@@ -41610,14 +41610,14 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _req_id = _$v.req_id;
-      _comm_mean = _$v.comm_mean;
+      _reqId = _$v.reqId;
+      _commMean = _$v.commMean;
       _destination = _$v.destination;
       _deadline = _$v.deadline;
-      _data_mode = _$v.data_mode;
-      _msg_data = _$v.msg_data;
-      _txt_data = _$v.txt_data;
-      _raw_data = _$v.raw_data;
+      _dataMode = _$v.dataMode;
+      _msgData = _$v.msgData;
+      _txtData = _$v.txtData;
+      _rawData = _$v.rawData;
       _$v = null;
     }
     return this;
@@ -41645,14 +41645,14 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            req_id: req_id,
-            comm_mean: comm_mean,
+            reqId: reqId,
+            commMean: commMean,
             destination: destination,
             deadline: deadline,
-            data_mode: data_mode,
-            msg_data: msg_data,
-            txt_data: txt_data,
-            raw_data: raw_data);
+            dataMode: dataMode,
+            msgData: msgData,
+            txtData: txtData,
+            rawData: rawData);
     replace(_$result);
     return _$result;
   }
@@ -41673,7 +41673,7 @@ class _$TransmissionStatus extends TransmissionStatus {
   final int dstEnt;
 
   @override
-  final int req_id;
+  final int reqId;
   @override
   final TransmissionStatusEnumStatus status;
   @override
@@ -41688,7 +41688,7 @@ class _$TransmissionStatus extends TransmissionStatus {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.req_id,
+      this.reqId,
       this.status,
       this.info})
       : super._();
@@ -41709,7 +41709,7 @@ class _$TransmissionStatus extends TransmissionStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        req_id == this.req_id &&
+        reqId == this.reqId &&
         status == this.status &&
         info == this.info;
   }
@@ -41722,7 +41722,7 @@ class _$TransmissionStatus extends TransmissionStatus {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        req_id.hashCode), 
+        reqId.hashCode), 
         status.hashCode), 
         info.hashCode));
   }
@@ -41735,7 +41735,7 @@ class _$TransmissionStatus extends TransmissionStatus {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('req_id', req_id)
+          ..add('reqId', reqId)
           ..add('status', status)
           ..add('info', info))
         .toString();
@@ -41767,9 +41767,9 @@ class TransmissionStatusBuilder implements Builder<TransmissionStatus, Transmiss
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
   TransmissionStatusEnumStatus _status;
   TransmissionStatusEnumStatus get status => _$this._status;
@@ -41788,7 +41788,7 @@ class TransmissionStatusBuilder implements Builder<TransmissionStatus, Transmiss
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _req_id = _$v.req_id;
+      _reqId = _$v.reqId;
       _status = _$v.status;
       _info = _$v.info;
       _$v = null;
@@ -41818,7 +41818,7 @@ class TransmissionStatusBuilder implements Builder<TransmissionStatus, Transmiss
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            req_id: req_id,
+            reqId: reqId,
             status: status,
             info: info);
     replace(_$result);
@@ -41841,13 +41841,13 @@ class _$SmsRequest extends SmsRequest {
   final int dstEnt;
 
   @override
-  final int req_id;
+  final int reqId;
   @override
   final String destination;
   @override
   final double timeout;
   @override
-  final String sms_text;
+  final String smsText;
 
   factory _$SmsRequest([void updates(SmsRequestBuilder b)]) =>
       (new SmsRequestBuilder()..update(updates)).build();
@@ -41858,10 +41858,10 @@ class _$SmsRequest extends SmsRequest {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.req_id,
+      this.reqId,
       this.destination,
       this.timeout,
-      this.sms_text})
+      this.smsText})
       : super._();
 
   @override
@@ -41880,10 +41880,10 @@ class _$SmsRequest extends SmsRequest {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        req_id == this.req_id &&
+        reqId == this.reqId &&
         destination == this.destination &&
         timeout == this.timeout &&
-        sms_text == this.sms_text;
+        smsText == this.smsText;
   }
 
   @override
@@ -41894,10 +41894,10 @@ class _$SmsRequest extends SmsRequest {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        req_id.hashCode), 
+        reqId.hashCode), 
         destination.hashCode), 
         timeout.hashCode), 
-        sms_text.hashCode));
+        smsText.hashCode));
   }
 
   @override
@@ -41908,10 +41908,10 @@ class _$SmsRequest extends SmsRequest {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('req_id', req_id)
+          ..add('reqId', reqId)
           ..add('destination', destination)
           ..add('timeout', timeout)
-          ..add('sms_text', sms_text))
+          ..add('smsText', smsText))
         .toString();
   }
 }
@@ -41941,9 +41941,9 @@ class SmsRequestBuilder implements Builder<SmsRequest, SmsRequestBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
   String _destination;
   String get destination => _$this._destination;
@@ -41953,9 +41953,9 @@ class SmsRequestBuilder implements Builder<SmsRequest, SmsRequestBuilder> {
   double get timeout => _$this._timeout;
   set timeout(double timeout) => _$this._timeout = timeout;
 
-  String _sms_text;
-  String get sms_text => _$this._sms_text;
-  set sms_text(String sms_text) => _$this._sms_text = sms_text;
+  String _smsText;
+  String get smsText => _$this._smsText;
+  set smsText(String smsText) => _$this._smsText = smsText;
 
   SmsRequestBuilder();
 
@@ -41966,10 +41966,10 @@ class SmsRequestBuilder implements Builder<SmsRequest, SmsRequestBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _req_id = _$v.req_id;
+      _reqId = _$v.reqId;
       _destination = _$v.destination;
       _timeout = _$v.timeout;
-      _sms_text = _$v.sms_text;
+      _smsText = _$v.smsText;
       _$v = null;
     }
     return this;
@@ -41997,10 +41997,10 @@ class SmsRequestBuilder implements Builder<SmsRequest, SmsRequestBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            req_id: req_id,
+            reqId: reqId,
             destination: destination,
             timeout: timeout,
-            sms_text: sms_text);
+            smsText: smsText);
     replace(_$result);
     return _$result;
   }
@@ -42021,7 +42021,7 @@ class _$SmsStatus extends SmsStatus {
   final int dstEnt;
 
   @override
-  final int req_id;
+  final int reqId;
   @override
   final SmsStatusEnumStatus status;
   @override
@@ -42036,7 +42036,7 @@ class _$SmsStatus extends SmsStatus {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.req_id,
+      this.reqId,
       this.status,
       this.info})
       : super._();
@@ -42057,7 +42057,7 @@ class _$SmsStatus extends SmsStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        req_id == this.req_id &&
+        reqId == this.reqId &&
         status == this.status &&
         info == this.info;
   }
@@ -42070,7 +42070,7 @@ class _$SmsStatus extends SmsStatus {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        req_id.hashCode), 
+        reqId.hashCode), 
         status.hashCode), 
         info.hashCode));
   }
@@ -42083,7 +42083,7 @@ class _$SmsStatus extends SmsStatus {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('req_id', req_id)
+          ..add('reqId', reqId)
           ..add('status', status)
           ..add('info', info))
         .toString();
@@ -42115,9 +42115,9 @@ class SmsStatusBuilder implements Builder<SmsStatus, SmsStatusBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _req_id;
-  int get req_id => _$this._req_id;
-  set req_id(int req_id) => _$this._req_id = req_id;
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
 
   SmsStatusEnumStatus _status;
   SmsStatusEnumStatus get status => _$this._status;
@@ -42136,7 +42136,7 @@ class SmsStatusBuilder implements Builder<SmsStatus, SmsStatusBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _req_id = _$v.req_id;
+      _reqId = _$v.reqId;
       _status = _$v.status;
       _info = _$v.info;
       _$v = null;
@@ -42166,7 +42166,7 @@ class SmsStatusBuilder implements Builder<SmsStatus, SmsStatusBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            req_id: req_id,
+            reqId: reqId,
             status: status,
             info: info);
     replace(_$result);
@@ -42609,7 +42609,7 @@ class _$PlanSpecification extends PlanSpecification {
   final int dstEnt;
 
   @override
-  final String plan_id;
+  final String planId;
   @override
   final String description;
   @override
@@ -42617,15 +42617,15 @@ class _$PlanSpecification extends PlanSpecification {
   @override
   final List<PlanVariable> variables;
   @override
-  final String start_man_id;
+  final String startManId;
   @override
   final List<PlanManeuver> maneuvers;
   @override
   final List<PlanTransition> transitions;
   @override
-  final List<ImcMessage> start_actions;
+  final List<ImcMessage> startActions;
   @override
-  final List<ImcMessage> end_actions;
+  final List<ImcMessage> endActions;
 
   factory _$PlanSpecification([void updates(PlanSpecificationBuilder b)]) =>
       (new PlanSpecificationBuilder()..update(updates)).build();
@@ -42636,15 +42636,15 @@ class _$PlanSpecification extends PlanSpecification {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.plan_id,
+      this.planId,
       this.description,
       this.vnamespace,
       this.variables,
-      this.start_man_id,
+      this.startManId,
       this.maneuvers,
       this.transitions,
-      this.start_actions,
-      this.end_actions})
+      this.startActions,
+      this.endActions})
       : super._();
 
   @override
@@ -42663,15 +42663,15 @@ class _$PlanSpecification extends PlanSpecification {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        plan_id == this.plan_id &&
+        planId == this.planId &&
         description == this.description &&
         vnamespace == this.vnamespace &&
         variables == this.variables &&
-        start_man_id == this.start_man_id &&
+        startManId == this.startManId &&
         maneuvers == this.maneuvers &&
         transitions == this.transitions &&
-        start_actions == this.start_actions &&
-        end_actions == this.end_actions;
+        startActions == this.startActions &&
+        endActions == this.endActions;
   }
 
   @override
@@ -42682,15 +42682,15 @@ class _$PlanSpecification extends PlanSpecification {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        plan_id.hashCode), 
+        planId.hashCode), 
         description.hashCode), 
         vnamespace.hashCode), 
         variables.hashCode), 
-        start_man_id.hashCode), 
+        startManId.hashCode), 
         maneuvers.hashCode), 
         transitions.hashCode), 
-        start_actions.hashCode), 
-        end_actions.hashCode));
+        startActions.hashCode), 
+        endActions.hashCode));
   }
 
   @override
@@ -42701,15 +42701,15 @@ class _$PlanSpecification extends PlanSpecification {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('plan_id', plan_id)
+          ..add('planId', planId)
           ..add('description', description)
           ..add('vnamespace', vnamespace)
           ..add('variables', variables)
-          ..add('start_man_id', start_man_id)
+          ..add('startManId', startManId)
           ..add('maneuvers', maneuvers)
           ..add('transitions', transitions)
-          ..add('start_actions', start_actions)
-          ..add('end_actions', end_actions))
+          ..add('startActions', startActions)
+          ..add('endActions', endActions))
         .toString();
   }
 }
@@ -42739,9 +42739,9 @@ class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecifi
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
   String _description;
   String get description => _$this._description;
@@ -42755,9 +42755,9 @@ class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecifi
   List<PlanVariable> get variables => _$this._variables;
   set variables(List<PlanVariable> variables) => _$this._variables = variables;
 
-  String _start_man_id;
-  String get start_man_id => _$this._start_man_id;
-  set start_man_id(String start_man_id) => _$this._start_man_id = start_man_id;
+  String _startManId;
+  String get startManId => _$this._startManId;
+  set startManId(String startManId) => _$this._startManId = startManId;
 
   List<PlanManeuver> _maneuvers;
   List<PlanManeuver> get maneuvers => _$this._maneuvers;
@@ -42767,13 +42767,13 @@ class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecifi
   List<PlanTransition> get transitions => _$this._transitions;
   set transitions(List<PlanTransition> transitions) => _$this._transitions = transitions;
 
-  List<ImcMessage> _start_actions;
-  List<ImcMessage> get start_actions => _$this._start_actions;
-  set start_actions(List<ImcMessage> start_actions) => _$this._start_actions = start_actions;
+  List<ImcMessage> _startActions;
+  List<ImcMessage> get startActions => _$this._startActions;
+  set startActions(List<ImcMessage> startActions) => _$this._startActions = startActions;
 
-  List<ImcMessage> _end_actions;
-  List<ImcMessage> get end_actions => _$this._end_actions;
-  set end_actions(List<ImcMessage> end_actions) => _$this._end_actions = end_actions;
+  List<ImcMessage> _endActions;
+  List<ImcMessage> get endActions => _$this._endActions;
+  set endActions(List<ImcMessage> endActions) => _$this._endActions = endActions;
 
   PlanSpecificationBuilder();
 
@@ -42784,15 +42784,15 @@ class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecifi
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _plan_id = _$v.plan_id;
+      _planId = _$v.planId;
       _description = _$v.description;
       _vnamespace = _$v.vnamespace;
       _variables = _$v.variables;
-      _start_man_id = _$v.start_man_id;
+      _startManId = _$v.startManId;
       _maneuvers = _$v.maneuvers;
       _transitions = _$v.transitions;
-      _start_actions = _$v.start_actions;
-      _end_actions = _$v.end_actions;
+      _startActions = _$v.startActions;
+      _endActions = _$v.endActions;
       _$v = null;
     }
     return this;
@@ -42820,15 +42820,15 @@ class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecifi
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            plan_id: plan_id,
+            planId: planId,
             description: description,
             vnamespace: vnamespace,
             variables: variables,
-            start_man_id: start_man_id,
+            startManId: startManId,
             maneuvers: maneuvers,
             transitions: transitions,
-            start_actions: start_actions,
-            end_actions: end_actions);
+            startActions: startActions,
+            endActions: endActions);
     replace(_$result);
     return _$result;
   }
@@ -42849,13 +42849,13 @@ class _$PlanManeuver extends PlanManeuver {
   final int dstEnt;
 
   @override
-  final String maneuver_id;
+  final String maneuverId;
   @override
   final Maneuver data;
   @override
-  final List<ImcMessage> start_actions;
+  final List<ImcMessage> startActions;
   @override
-  final List<ImcMessage> end_actions;
+  final List<ImcMessage> endActions;
 
   factory _$PlanManeuver([void updates(PlanManeuverBuilder b)]) =>
       (new PlanManeuverBuilder()..update(updates)).build();
@@ -42866,10 +42866,10 @@ class _$PlanManeuver extends PlanManeuver {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.maneuver_id,
+      this.maneuverId,
       this.data,
-      this.start_actions,
-      this.end_actions})
+      this.startActions,
+      this.endActions})
       : super._();
 
   @override
@@ -42888,10 +42888,10 @@ class _$PlanManeuver extends PlanManeuver {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        maneuver_id == this.maneuver_id &&
+        maneuverId == this.maneuverId &&
         data == this.data &&
-        start_actions == this.start_actions &&
-        end_actions == this.end_actions;
+        startActions == this.startActions &&
+        endActions == this.endActions;
   }
 
   @override
@@ -42902,10 +42902,10 @@ class _$PlanManeuver extends PlanManeuver {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        maneuver_id.hashCode), 
+        maneuverId.hashCode), 
         data.hashCode), 
-        start_actions.hashCode), 
-        end_actions.hashCode));
+        startActions.hashCode), 
+        endActions.hashCode));
   }
 
   @override
@@ -42916,10 +42916,10 @@ class _$PlanManeuver extends PlanManeuver {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('maneuver_id', maneuver_id)
+          ..add('maneuverId', maneuverId)
           ..add('data', data)
-          ..add('start_actions', start_actions)
-          ..add('end_actions', end_actions))
+          ..add('startActions', startActions)
+          ..add('endActions', endActions))
         .toString();
   }
 }
@@ -42949,21 +42949,21 @@ class PlanManeuverBuilder implements Builder<PlanManeuver, PlanManeuverBuilder> 
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _maneuver_id;
-  String get maneuver_id => _$this._maneuver_id;
-  set maneuver_id(String maneuver_id) => _$this._maneuver_id = maneuver_id;
+  String _maneuverId;
+  String get maneuverId => _$this._maneuverId;
+  set maneuverId(String maneuverId) => _$this._maneuverId = maneuverId;
 
   Maneuver _data;
   Maneuver get data => _$this._data;
   set data(Maneuver data) => _$this._data = data;
 
-  List<ImcMessage> _start_actions;
-  List<ImcMessage> get start_actions => _$this._start_actions;
-  set start_actions(List<ImcMessage> start_actions) => _$this._start_actions = start_actions;
+  List<ImcMessage> _startActions;
+  List<ImcMessage> get startActions => _$this._startActions;
+  set startActions(List<ImcMessage> startActions) => _$this._startActions = startActions;
 
-  List<ImcMessage> _end_actions;
-  List<ImcMessage> get end_actions => _$this._end_actions;
-  set end_actions(List<ImcMessage> end_actions) => _$this._end_actions = end_actions;
+  List<ImcMessage> _endActions;
+  List<ImcMessage> get endActions => _$this._endActions;
+  set endActions(List<ImcMessage> endActions) => _$this._endActions = endActions;
 
   PlanManeuverBuilder();
 
@@ -42974,10 +42974,10 @@ class PlanManeuverBuilder implements Builder<PlanManeuver, PlanManeuverBuilder> 
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _maneuver_id = _$v.maneuver_id;
+      _maneuverId = _$v.maneuverId;
       _data = _$v.data;
-      _start_actions = _$v.start_actions;
-      _end_actions = _$v.end_actions;
+      _startActions = _$v.startActions;
+      _endActions = _$v.endActions;
       _$v = null;
     }
     return this;
@@ -43005,10 +43005,10 @@ class PlanManeuverBuilder implements Builder<PlanManeuver, PlanManeuverBuilder> 
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            maneuver_id: maneuver_id,
+            maneuverId: maneuverId,
             data: data,
-            start_actions: start_actions,
-            end_actions: end_actions);
+            startActions: startActions,
+            endActions: endActions);
     replace(_$result);
     return _$result;
   }
@@ -43029,9 +43029,9 @@ class _$PlanTransition extends PlanTransition {
   final int dstEnt;
 
   @override
-  final String source_man;
+  final String sourceMan;
   @override
-  final String dest_man;
+  final String destMan;
   @override
   final String conditions;
   @override
@@ -43046,8 +43046,8 @@ class _$PlanTransition extends PlanTransition {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.source_man,
-      this.dest_man,
+      this.sourceMan,
+      this.destMan,
       this.conditions,
       this.actions})
       : super._();
@@ -43068,8 +43068,8 @@ class _$PlanTransition extends PlanTransition {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        source_man == this.source_man &&
-        dest_man == this.dest_man &&
+        sourceMan == this.sourceMan &&
+        destMan == this.destMan &&
         conditions == this.conditions &&
         actions == this.actions;
   }
@@ -43082,8 +43082,8 @@ class _$PlanTransition extends PlanTransition {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        source_man.hashCode), 
-        dest_man.hashCode), 
+        sourceMan.hashCode), 
+        destMan.hashCode), 
         conditions.hashCode), 
         actions.hashCode));
   }
@@ -43096,8 +43096,8 @@ class _$PlanTransition extends PlanTransition {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('source_man', source_man)
-          ..add('dest_man', dest_man)
+          ..add('sourceMan', sourceMan)
+          ..add('destMan', destMan)
           ..add('conditions', conditions)
           ..add('actions', actions))
         .toString();
@@ -43129,13 +43129,13 @@ class PlanTransitionBuilder implements Builder<PlanTransition, PlanTransitionBui
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _source_man;
-  String get source_man => _$this._source_man;
-  set source_man(String source_man) => _$this._source_man = source_man;
+  String _sourceMan;
+  String get sourceMan => _$this._sourceMan;
+  set sourceMan(String sourceMan) => _$this._sourceMan = sourceMan;
 
-  String _dest_man;
-  String get dest_man => _$this._dest_man;
-  set dest_man(String dest_man) => _$this._dest_man = dest_man;
+  String _destMan;
+  String get destMan => _$this._destMan;
+  set destMan(String destMan) => _$this._destMan = destMan;
 
   String _conditions;
   String get conditions => _$this._conditions;
@@ -43154,8 +43154,8 @@ class PlanTransitionBuilder implements Builder<PlanTransition, PlanTransitionBui
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _source_man = _$v.source_man;
-      _dest_man = _$v.dest_man;
+      _sourceMan = _$v.sourceMan;
+      _destMan = _$v.destMan;
       _conditions = _$v.conditions;
       _actions = _$v.actions;
       _$v = null;
@@ -43185,8 +43185,8 @@ class PlanTransitionBuilder implements Builder<PlanTransition, PlanTransitionBui
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            source_man: source_man,
-            dest_man: dest_man,
+            sourceMan: sourceMan,
+            destMan: destMan,
             conditions: conditions,
             actions: actions);
     replace(_$result);
@@ -43367,9 +43367,9 @@ class _$EmergencyControlState extends EmergencyControlState {
   @override
   final EmergencyControlStateEnumState state;
   @override
-  final String plan_id;
+  final String planId;
   @override
-  final int comm_level;
+  final int commLevel;
 
   factory _$EmergencyControlState([void updates(EmergencyControlStateBuilder b)]) =>
       (new EmergencyControlStateBuilder()..update(updates)).build();
@@ -43381,8 +43381,8 @@ class _$EmergencyControlState extends EmergencyControlState {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.state,
-      this.plan_id,
-      this.comm_level})
+      this.planId,
+      this.commLevel})
       : super._();
 
   @override
@@ -43402,8 +43402,8 @@ class _$EmergencyControlState extends EmergencyControlState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         state == this.state &&
-        plan_id == this.plan_id &&
-        comm_level == this.comm_level;
+        planId == this.planId &&
+        commLevel == this.commLevel;
   }
 
   @override
@@ -43415,8 +43415,8 @@ class _$EmergencyControlState extends EmergencyControlState {
         dst.hashCode), 
         dstEnt.hashCode), 
         state.hashCode), 
-        plan_id.hashCode), 
-        comm_level.hashCode));
+        planId.hashCode), 
+        commLevel.hashCode));
   }
 
   @override
@@ -43428,8 +43428,8 @@ class _$EmergencyControlState extends EmergencyControlState {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('state', state)
-          ..add('plan_id', plan_id)
-          ..add('comm_level', comm_level))
+          ..add('planId', planId)
+          ..add('commLevel', commLevel))
         .toString();
   }
 }
@@ -43463,13 +43463,13 @@ class EmergencyControlStateBuilder implements Builder<EmergencyControlState, Eme
   EmergencyControlStateEnumState get state => _$this._state;
   set state(EmergencyControlStateEnumState state) => _$this._state = state;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
-  int _comm_level;
-  int get comm_level => _$this._comm_level;
-  set comm_level(int comm_level) => _$this._comm_level = comm_level;
+  int _commLevel;
+  int get commLevel => _$this._commLevel;
+  set commLevel(int commLevel) => _$this._commLevel = commLevel;
 
   EmergencyControlStateBuilder();
 
@@ -43481,8 +43481,8 @@ class EmergencyControlStateBuilder implements Builder<EmergencyControlState, Eme
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _state = _$v.state;
-      _plan_id = _$v.plan_id;
-      _comm_level = _$v.comm_level;
+      _planId = _$v.planId;
+      _commLevel = _$v.commLevel;
       _$v = null;
     }
     return this;
@@ -43511,8 +43511,8 @@ class EmergencyControlStateBuilder implements Builder<EmergencyControlState, Eme
             dst: dst,
             dstEnt: dstEnt,
             state: state,
-            plan_id: plan_id,
-            comm_level: comm_level);
+            planId: planId,
+            commLevel: commLevel);
     replace(_$result);
     return _$result;
   }
@@ -43537,9 +43537,9 @@ class _$PlanDB extends PlanDB {
   @override
   final PlanDBEnumOp op;
   @override
-  final int request_id;
+  final int requestId;
   @override
-  final String plan_id;
+  final String planId;
   @override
   final ImcMessage arg;
   @override
@@ -43556,8 +43556,8 @@ class _$PlanDB extends PlanDB {
       this.dstEnt: ImcEntityId.nullId,
       this.type,
       this.op,
-      this.request_id,
-      this.plan_id,
+      this.requestId,
+      this.planId,
       this.arg,
       this.info})
       : super._();
@@ -43580,8 +43580,8 @@ class _$PlanDB extends PlanDB {
         dstEnt == other.dstEnt &&
         type == this.type &&
         op == this.op &&
-        request_id == this.request_id &&
-        plan_id == this.plan_id &&
+        requestId == this.requestId &&
+        planId == this.planId &&
         arg == this.arg &&
         info == this.info;
   }
@@ -43596,8 +43596,8 @@ class _$PlanDB extends PlanDB {
         dstEnt.hashCode), 
         type.hashCode), 
         op.hashCode), 
-        request_id.hashCode), 
-        plan_id.hashCode), 
+        requestId.hashCode), 
+        planId.hashCode), 
         arg.hashCode), 
         info.hashCode));
   }
@@ -43612,8 +43612,8 @@ class _$PlanDB extends PlanDB {
           ..add('dstEnt', dstEnt)
           ..add('type', type)
           ..add('op', op)
-          ..add('request_id', request_id)
-          ..add('plan_id', plan_id)
+          ..add('requestId', requestId)
+          ..add('planId', planId)
           ..add('arg', arg)
           ..add('info', info))
         .toString();
@@ -43653,13 +43653,13 @@ class PlanDBBuilder implements Builder<PlanDB, PlanDBBuilder> {
   PlanDBEnumOp get op => _$this._op;
   set op(PlanDBEnumOp op) => _$this._op = op;
 
-  int _request_id;
-  int get request_id => _$this._request_id;
-  set request_id(int request_id) => _$this._request_id = request_id;
+  int _requestId;
+  int get requestId => _$this._requestId;
+  set requestId(int requestId) => _$this._requestId = requestId;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
   ImcMessage _arg;
   ImcMessage get arg => _$this._arg;
@@ -43680,8 +43680,8 @@ class PlanDBBuilder implements Builder<PlanDB, PlanDBBuilder> {
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
       _op = _$v.op;
-      _request_id = _$v.request_id;
-      _plan_id = _$v.plan_id;
+      _requestId = _$v.requestId;
+      _planId = _$v.planId;
       _arg = _$v.arg;
       _info = _$v.info;
       _$v = null;
@@ -43713,8 +43713,8 @@ class PlanDBBuilder implements Builder<PlanDB, PlanDBBuilder> {
             dstEnt: dstEnt,
             type: type,
             op: op,
-            request_id: request_id,
-            plan_id: plan_id,
+            requestId: requestId,
+            planId: planId,
             arg: arg,
             info: info);
     replace(_$result);
@@ -43737,19 +43737,19 @@ class _$PlanDBState extends PlanDBState {
   final int dstEnt;
 
   @override
-  final int plan_count;
+  final int planCount;
   @override
-  final int plan_size;
+  final int planSize;
   @override
-  final double change_time;
+  final double changeTime;
   @override
-  final int change_sid;
+  final int changeSid;
   @override
-  final String change_sname;
+  final String changeSname;
   @override
   final List<int> md5;
   @override
-  final List<PlanDBInformation> plans_info;
+  final List<PlanDBInformation> plansInfo;
 
   factory _$PlanDBState([void updates(PlanDBStateBuilder b)]) =>
       (new PlanDBStateBuilder()..update(updates)).build();
@@ -43760,13 +43760,13 @@ class _$PlanDBState extends PlanDBState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.plan_count,
-      this.plan_size,
-      this.change_time,
-      this.change_sid,
-      this.change_sname,
+      this.planCount,
+      this.planSize,
+      this.changeTime,
+      this.changeSid,
+      this.changeSname,
       this.md5,
-      this.plans_info})
+      this.plansInfo})
       : super._();
 
   @override
@@ -43785,13 +43785,13 @@ class _$PlanDBState extends PlanDBState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        plan_count == this.plan_count &&
-        plan_size == this.plan_size &&
-        change_time == this.change_time &&
-        change_sid == this.change_sid &&
-        change_sname == this.change_sname &&
+        planCount == this.planCount &&
+        planSize == this.planSize &&
+        changeTime == this.changeTime &&
+        changeSid == this.changeSid &&
+        changeSname == this.changeSname &&
         md5 == this.md5 &&
-        plans_info == this.plans_info;
+        plansInfo == this.plansInfo;
   }
 
   @override
@@ -43802,13 +43802,13 @@ class _$PlanDBState extends PlanDBState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        plan_count.hashCode), 
-        plan_size.hashCode), 
-        change_time.hashCode), 
-        change_sid.hashCode), 
-        change_sname.hashCode), 
+        planCount.hashCode), 
+        planSize.hashCode), 
+        changeTime.hashCode), 
+        changeSid.hashCode), 
+        changeSname.hashCode), 
         md5.hashCode), 
-        plans_info.hashCode));
+        plansInfo.hashCode));
   }
 
   @override
@@ -43819,13 +43819,13 @@ class _$PlanDBState extends PlanDBState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('plan_count', plan_count)
-          ..add('plan_size', plan_size)
-          ..add('change_time', change_time)
-          ..add('change_sid', change_sid)
-          ..add('change_sname', change_sname)
+          ..add('planCount', planCount)
+          ..add('planSize', planSize)
+          ..add('changeTime', changeTime)
+          ..add('changeSid', changeSid)
+          ..add('changeSname', changeSname)
           ..add('md5', md5)
-          ..add('plans_info', plans_info))
+          ..add('plansInfo', plansInfo))
         .toString();
   }
 }
@@ -43855,33 +43855,33 @@ class PlanDBStateBuilder implements Builder<PlanDBState, PlanDBStateBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _plan_count;
-  int get plan_count => _$this._plan_count;
-  set plan_count(int plan_count) => _$this._plan_count = plan_count;
+  int _planCount;
+  int get planCount => _$this._planCount;
+  set planCount(int planCount) => _$this._planCount = planCount;
 
-  int _plan_size;
-  int get plan_size => _$this._plan_size;
-  set plan_size(int plan_size) => _$this._plan_size = plan_size;
+  int _planSize;
+  int get planSize => _$this._planSize;
+  set planSize(int planSize) => _$this._planSize = planSize;
 
-  double _change_time;
-  double get change_time => _$this._change_time;
-  set change_time(double change_time) => _$this._change_time = change_time;
+  double _changeTime;
+  double get changeTime => _$this._changeTime;
+  set changeTime(double changeTime) => _$this._changeTime = changeTime;
 
-  int _change_sid;
-  int get change_sid => _$this._change_sid;
-  set change_sid(int change_sid) => _$this._change_sid = change_sid;
+  int _changeSid;
+  int get changeSid => _$this._changeSid;
+  set changeSid(int changeSid) => _$this._changeSid = changeSid;
 
-  String _change_sname;
-  String get change_sname => _$this._change_sname;
-  set change_sname(String change_sname) => _$this._change_sname = change_sname;
+  String _changeSname;
+  String get changeSname => _$this._changeSname;
+  set changeSname(String changeSname) => _$this._changeSname = changeSname;
 
   List<int> _md5;
   List<int> get md5 => _$this._md5;
   set md5(List<int> md5) => _$this._md5 = md5;
 
-  List<PlanDBInformation> _plans_info;
-  List<PlanDBInformation> get plans_info => _$this._plans_info;
-  set plans_info(List<PlanDBInformation> plans_info) => _$this._plans_info = plans_info;
+  List<PlanDBInformation> _plansInfo;
+  List<PlanDBInformation> get plansInfo => _$this._plansInfo;
+  set plansInfo(List<PlanDBInformation> plansInfo) => _$this._plansInfo = plansInfo;
 
   PlanDBStateBuilder();
 
@@ -43892,13 +43892,13 @@ class PlanDBStateBuilder implements Builder<PlanDBState, PlanDBStateBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _plan_count = _$v.plan_count;
-      _plan_size = _$v.plan_size;
-      _change_time = _$v.change_time;
-      _change_sid = _$v.change_sid;
-      _change_sname = _$v.change_sname;
+      _planCount = _$v.planCount;
+      _planSize = _$v.planSize;
+      _changeTime = _$v.changeTime;
+      _changeSid = _$v.changeSid;
+      _changeSname = _$v.changeSname;
       _md5 = _$v.md5;
-      _plans_info = _$v.plans_info;
+      _plansInfo = _$v.plansInfo;
       _$v = null;
     }
     return this;
@@ -43926,13 +43926,13 @@ class PlanDBStateBuilder implements Builder<PlanDBState, PlanDBStateBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            plan_count: plan_count,
-            plan_size: plan_size,
-            change_time: change_time,
-            change_sid: change_sid,
-            change_sname: change_sname,
+            planCount: planCount,
+            planSize: planSize,
+            changeTime: changeTime,
+            changeSid: changeSid,
+            changeSname: changeSname,
             md5: md5,
-            plans_info: plans_info);
+            plansInfo: plansInfo);
     replace(_$result);
     return _$result;
   }
@@ -43953,15 +43953,15 @@ class _$PlanDBInformation extends PlanDBInformation {
   final int dstEnt;
 
   @override
-  final String plan_id;
+  final String planId;
   @override
-  final int plan_size;
+  final int planSize;
   @override
-  final double change_time;
+  final double changeTime;
   @override
-  final int change_sid;
+  final int changeSid;
   @override
-  final String change_sname;
+  final String changeSname;
   @override
   final List<int> md5;
 
@@ -43974,11 +43974,11 @@ class _$PlanDBInformation extends PlanDBInformation {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.plan_id,
-      this.plan_size,
-      this.change_time,
-      this.change_sid,
-      this.change_sname,
+      this.planId,
+      this.planSize,
+      this.changeTime,
+      this.changeSid,
+      this.changeSname,
       this.md5})
       : super._();
 
@@ -43998,11 +43998,11 @@ class _$PlanDBInformation extends PlanDBInformation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        plan_id == this.plan_id &&
-        plan_size == this.plan_size &&
-        change_time == this.change_time &&
-        change_sid == this.change_sid &&
-        change_sname == this.change_sname &&
+        planId == this.planId &&
+        planSize == this.planSize &&
+        changeTime == this.changeTime &&
+        changeSid == this.changeSid &&
+        changeSname == this.changeSname &&
         md5 == this.md5;
   }
 
@@ -44014,11 +44014,11 @@ class _$PlanDBInformation extends PlanDBInformation {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        plan_id.hashCode), 
-        plan_size.hashCode), 
-        change_time.hashCode), 
-        change_sid.hashCode), 
-        change_sname.hashCode), 
+        planId.hashCode), 
+        planSize.hashCode), 
+        changeTime.hashCode), 
+        changeSid.hashCode), 
+        changeSname.hashCode), 
         md5.hashCode));
   }
 
@@ -44030,11 +44030,11 @@ class _$PlanDBInformation extends PlanDBInformation {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('plan_id', plan_id)
-          ..add('plan_size', plan_size)
-          ..add('change_time', change_time)
-          ..add('change_sid', change_sid)
-          ..add('change_sname', change_sname)
+          ..add('planId', planId)
+          ..add('planSize', planSize)
+          ..add('changeTime', changeTime)
+          ..add('changeSid', changeSid)
+          ..add('changeSname', changeSname)
           ..add('md5', md5))
         .toString();
   }
@@ -44065,25 +44065,25 @@ class PlanDBInformationBuilder implements Builder<PlanDBInformation, PlanDBInfor
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
-  int _plan_size;
-  int get plan_size => _$this._plan_size;
-  set plan_size(int plan_size) => _$this._plan_size = plan_size;
+  int _planSize;
+  int get planSize => _$this._planSize;
+  set planSize(int planSize) => _$this._planSize = planSize;
 
-  double _change_time;
-  double get change_time => _$this._change_time;
-  set change_time(double change_time) => _$this._change_time = change_time;
+  double _changeTime;
+  double get changeTime => _$this._changeTime;
+  set changeTime(double changeTime) => _$this._changeTime = changeTime;
 
-  int _change_sid;
-  int get change_sid => _$this._change_sid;
-  set change_sid(int change_sid) => _$this._change_sid = change_sid;
+  int _changeSid;
+  int get changeSid => _$this._changeSid;
+  set changeSid(int changeSid) => _$this._changeSid = changeSid;
 
-  String _change_sname;
-  String get change_sname => _$this._change_sname;
-  set change_sname(String change_sname) => _$this._change_sname = change_sname;
+  String _changeSname;
+  String get changeSname => _$this._changeSname;
+  set changeSname(String changeSname) => _$this._changeSname = changeSname;
 
   List<int> _md5;
   List<int> get md5 => _$this._md5;
@@ -44098,11 +44098,11 @@ class PlanDBInformationBuilder implements Builder<PlanDBInformation, PlanDBInfor
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _plan_id = _$v.plan_id;
-      _plan_size = _$v.plan_size;
-      _change_time = _$v.change_time;
-      _change_sid = _$v.change_sid;
-      _change_sname = _$v.change_sname;
+      _planId = _$v.planId;
+      _planSize = _$v.planSize;
+      _changeTime = _$v.changeTime;
+      _changeSid = _$v.changeSid;
+      _changeSname = _$v.changeSname;
       _md5 = _$v.md5;
       _$v = null;
     }
@@ -44131,11 +44131,11 @@ class PlanDBInformationBuilder implements Builder<PlanDBInformation, PlanDBInfor
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            plan_id: plan_id,
-            plan_size: plan_size,
-            change_time: change_time,
-            change_sid: change_sid,
-            change_sname: change_sname,
+            planId: planId,
+            planSize: planSize,
+            changeTime: changeTime,
+            changeSid: changeSid,
+            changeSname: changeSname,
             md5: md5);
     replace(_$result);
     return _$result;
@@ -44161,9 +44161,9 @@ class _$PlanControl extends PlanControl {
   @override
   final PlanControlEnumOp op;
   @override
-  final int request_id;
+  final int requestId;
   @override
-  final String plan_id;
+  final String planId;
   @override
   final PlanControlBitfieldFlags flags;
   @override
@@ -44182,8 +44182,8 @@ class _$PlanControl extends PlanControl {
       this.dstEnt: ImcEntityId.nullId,
       this.type,
       this.op,
-      this.request_id,
-      this.plan_id,
+      this.requestId,
+      this.planId,
       this.flags,
       this.arg,
       this.info})
@@ -44207,8 +44207,8 @@ class _$PlanControl extends PlanControl {
         dstEnt == other.dstEnt &&
         type == this.type &&
         op == this.op &&
-        request_id == this.request_id &&
-        plan_id == this.plan_id &&
+        requestId == this.requestId &&
+        planId == this.planId &&
         flags == this.flags &&
         arg == this.arg &&
         info == this.info;
@@ -44224,8 +44224,8 @@ class _$PlanControl extends PlanControl {
         dstEnt.hashCode), 
         type.hashCode), 
         op.hashCode), 
-        request_id.hashCode), 
-        plan_id.hashCode), 
+        requestId.hashCode), 
+        planId.hashCode), 
         flags.hashCode), 
         arg.hashCode), 
         info.hashCode));
@@ -44241,8 +44241,8 @@ class _$PlanControl extends PlanControl {
           ..add('dstEnt', dstEnt)
           ..add('type', type)
           ..add('op', op)
-          ..add('request_id', request_id)
-          ..add('plan_id', plan_id)
+          ..add('requestId', requestId)
+          ..add('planId', planId)
           ..add('flags', flags)
           ..add('arg', arg)
           ..add('info', info))
@@ -44283,13 +44283,13 @@ class PlanControlBuilder implements Builder<PlanControl, PlanControlBuilder> {
   PlanControlEnumOp get op => _$this._op;
   set op(PlanControlEnumOp op) => _$this._op = op;
 
-  int _request_id;
-  int get request_id => _$this._request_id;
-  set request_id(int request_id) => _$this._request_id = request_id;
+  int _requestId;
+  int get requestId => _$this._requestId;
+  set requestId(int requestId) => _$this._requestId = requestId;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
   PlanControlBitfieldFlags _flags;
   PlanControlBitfieldFlags get flags => _$this._flags;
@@ -44314,8 +44314,8 @@ class PlanControlBuilder implements Builder<PlanControl, PlanControlBuilder> {
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
       _op = _$v.op;
-      _request_id = _$v.request_id;
-      _plan_id = _$v.plan_id;
+      _requestId = _$v.requestId;
+      _planId = _$v.planId;
       _flags = _$v.flags;
       _arg = _$v.arg;
       _info = _$v.info;
@@ -44348,8 +44348,8 @@ class PlanControlBuilder implements Builder<PlanControl, PlanControlBuilder> {
             dstEnt: dstEnt,
             type: type,
             op: op,
-            request_id: request_id,
-            plan_id: plan_id,
+            requestId: requestId,
+            planId: planId,
             flags: flags,
             arg: arg,
             info: info);
@@ -44375,19 +44375,19 @@ class _$PlanControlState extends PlanControlState {
   @override
   final PlanControlStateEnumState state;
   @override
-  final String plan_id;
+  final String planId;
   @override
-  final int plan_eta;
+  final int planEta;
   @override
-  final double plan_progress;
+  final double planProgress;
   @override
-  final String man_id;
+  final String manId;
   @override
-  final int man_type;
+  final int manType;
   @override
-  final int man_eta;
+  final int manEta;
   @override
-  final PlanControlStateEnumLastOutcome last_outcome;
+  final PlanControlStateEnumLastOutcome lastOutcome;
 
   factory _$PlanControlState([void updates(PlanControlStateBuilder b)]) =>
       (new PlanControlStateBuilder()..update(updates)).build();
@@ -44399,13 +44399,13 @@ class _$PlanControlState extends PlanControlState {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.state,
-      this.plan_id,
-      this.plan_eta,
-      this.plan_progress,
-      this.man_id,
-      this.man_type,
-      this.man_eta,
-      this.last_outcome})
+      this.planId,
+      this.planEta,
+      this.planProgress,
+      this.manId,
+      this.manType,
+      this.manEta,
+      this.lastOutcome})
       : super._();
 
   @override
@@ -44425,13 +44425,13 @@ class _$PlanControlState extends PlanControlState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         state == this.state &&
-        plan_id == this.plan_id &&
-        plan_eta == this.plan_eta &&
-        plan_progress == this.plan_progress &&
-        man_id == this.man_id &&
-        man_type == this.man_type &&
-        man_eta == this.man_eta &&
-        last_outcome == this.last_outcome;
+        planId == this.planId &&
+        planEta == this.planEta &&
+        planProgress == this.planProgress &&
+        manId == this.manId &&
+        manType == this.manType &&
+        manEta == this.manEta &&
+        lastOutcome == this.lastOutcome;
   }
 
   @override
@@ -44443,13 +44443,13 @@ class _$PlanControlState extends PlanControlState {
         dst.hashCode), 
         dstEnt.hashCode), 
         state.hashCode), 
-        plan_id.hashCode), 
-        plan_eta.hashCode), 
-        plan_progress.hashCode), 
-        man_id.hashCode), 
-        man_type.hashCode), 
-        man_eta.hashCode), 
-        last_outcome.hashCode));
+        planId.hashCode), 
+        planEta.hashCode), 
+        planProgress.hashCode), 
+        manId.hashCode), 
+        manType.hashCode), 
+        manEta.hashCode), 
+        lastOutcome.hashCode));
   }
 
   @override
@@ -44461,13 +44461,13 @@ class _$PlanControlState extends PlanControlState {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('state', state)
-          ..add('plan_id', plan_id)
-          ..add('plan_eta', plan_eta)
-          ..add('plan_progress', plan_progress)
-          ..add('man_id', man_id)
-          ..add('man_type', man_type)
-          ..add('man_eta', man_eta)
-          ..add('last_outcome', last_outcome))
+          ..add('planId', planId)
+          ..add('planEta', planEta)
+          ..add('planProgress', planProgress)
+          ..add('manId', manId)
+          ..add('manType', manType)
+          ..add('manEta', manEta)
+          ..add('lastOutcome', lastOutcome))
         .toString();
   }
 }
@@ -44501,33 +44501,33 @@ class PlanControlStateBuilder implements Builder<PlanControlState, PlanControlSt
   PlanControlStateEnumState get state => _$this._state;
   set state(PlanControlStateEnumState state) => _$this._state = state;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
-  int _plan_eta;
-  int get plan_eta => _$this._plan_eta;
-  set plan_eta(int plan_eta) => _$this._plan_eta = plan_eta;
+  int _planEta;
+  int get planEta => _$this._planEta;
+  set planEta(int planEta) => _$this._planEta = planEta;
 
-  double _plan_progress;
-  double get plan_progress => _$this._plan_progress;
-  set plan_progress(double plan_progress) => _$this._plan_progress = plan_progress;
+  double _planProgress;
+  double get planProgress => _$this._planProgress;
+  set planProgress(double planProgress) => _$this._planProgress = planProgress;
 
-  String _man_id;
-  String get man_id => _$this._man_id;
-  set man_id(String man_id) => _$this._man_id = man_id;
+  String _manId;
+  String get manId => _$this._manId;
+  set manId(String manId) => _$this._manId = manId;
 
-  int _man_type;
-  int get man_type => _$this._man_type;
-  set man_type(int man_type) => _$this._man_type = man_type;
+  int _manType;
+  int get manType => _$this._manType;
+  set manType(int manType) => _$this._manType = manType;
 
-  int _man_eta;
-  int get man_eta => _$this._man_eta;
-  set man_eta(int man_eta) => _$this._man_eta = man_eta;
+  int _manEta;
+  int get manEta => _$this._manEta;
+  set manEta(int manEta) => _$this._manEta = manEta;
 
-  PlanControlStateEnumLastOutcome _last_outcome;
-  PlanControlStateEnumLastOutcome get last_outcome => _$this._last_outcome;
-  set last_outcome(PlanControlStateEnumLastOutcome last_outcome) => _$this._last_outcome = last_outcome;
+  PlanControlStateEnumLastOutcome _lastOutcome;
+  PlanControlStateEnumLastOutcome get lastOutcome => _$this._lastOutcome;
+  set lastOutcome(PlanControlStateEnumLastOutcome lastOutcome) => _$this._lastOutcome = lastOutcome;
 
   PlanControlStateBuilder();
 
@@ -44539,13 +44539,13 @@ class PlanControlStateBuilder implements Builder<PlanControlState, PlanControlSt
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _state = _$v.state;
-      _plan_id = _$v.plan_id;
-      _plan_eta = _$v.plan_eta;
-      _plan_progress = _$v.plan_progress;
-      _man_id = _$v.man_id;
-      _man_type = _$v.man_type;
-      _man_eta = _$v.man_eta;
-      _last_outcome = _$v.last_outcome;
+      _planId = _$v.planId;
+      _planEta = _$v.planEta;
+      _planProgress = _$v.planProgress;
+      _manId = _$v.manId;
+      _manType = _$v.manType;
+      _manEta = _$v.manEta;
+      _lastOutcome = _$v.lastOutcome;
       _$v = null;
     }
     return this;
@@ -44574,13 +44574,13 @@ class PlanControlStateBuilder implements Builder<PlanControlState, PlanControlSt
             dst: dst,
             dstEnt: dstEnt,
             state: state,
-            plan_id: plan_id,
-            plan_eta: plan_eta,
-            plan_progress: plan_progress,
-            man_id: man_id,
-            man_type: man_type,
-            man_eta: man_eta,
-            last_outcome: last_outcome);
+            planId: planId,
+            planEta: planEta,
+            planProgress: planProgress,
+            manId: manId,
+            manType: manType,
+            manEta: manEta,
+            lastOutcome: lastOutcome);
     replace(_$result);
     return _$result;
   }
@@ -44785,7 +44785,7 @@ class _$PlanGeneration extends PlanGeneration {
   @override
   final PlanGenerationEnumOp op;
   @override
-  final String plan_id;
+  final String planId;
   @override
   final String params;
 
@@ -44800,7 +44800,7 @@ class _$PlanGeneration extends PlanGeneration {
       this.dstEnt: ImcEntityId.nullId,
       this.cmd,
       this.op,
-      this.plan_id,
+      this.planId,
       this.params})
       : super._();
 
@@ -44822,7 +44822,7 @@ class _$PlanGeneration extends PlanGeneration {
         dstEnt == other.dstEnt &&
         cmd == this.cmd &&
         op == this.op &&
-        plan_id == this.plan_id &&
+        planId == this.planId &&
         params == this.params;
   }
 
@@ -44836,7 +44836,7 @@ class _$PlanGeneration extends PlanGeneration {
         dstEnt.hashCode), 
         cmd.hashCode), 
         op.hashCode), 
-        plan_id.hashCode), 
+        planId.hashCode), 
         params.hashCode));
   }
 
@@ -44850,7 +44850,7 @@ class _$PlanGeneration extends PlanGeneration {
           ..add('dstEnt', dstEnt)
           ..add('cmd', cmd)
           ..add('op', op)
-          ..add('plan_id', plan_id)
+          ..add('planId', planId)
           ..add('params', params))
         .toString();
   }
@@ -44889,9 +44889,9 @@ class PlanGenerationBuilder implements Builder<PlanGeneration, PlanGenerationBui
   PlanGenerationEnumOp get op => _$this._op;
   set op(PlanGenerationEnumOp op) => _$this._op = op;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
   String _params;
   String get params => _$this._params;
@@ -44908,7 +44908,7 @@ class PlanGenerationBuilder implements Builder<PlanGeneration, PlanGenerationBui
       _dstEnt = _$v.dstEnt;
       _cmd = _$v.cmd;
       _op = _$v.op;
-      _plan_id = _$v.plan_id;
+      _planId = _$v.planId;
       _params = _$v.params;
       _$v = null;
     }
@@ -44939,7 +44939,7 @@ class PlanGenerationBuilder implements Builder<PlanGeneration, PlanGenerationBui
             dstEnt: dstEnt,
             cmd: cmd,
             op: op,
-            plan_id: plan_id,
+            planId: planId,
             params: params);
     replace(_$result);
     return _$result;
@@ -44961,7 +44961,7 @@ class _$LeaderState extends LeaderState {
   final int dstEnt;
 
   @override
-  final String group_name;
+  final String groupName;
   @override
   final LeaderStateEnumOp op;
   @override
@@ -45010,7 +45010,7 @@ class _$LeaderState extends LeaderState {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.group_name,
+      this.groupName,
       this.op,
       this.lat,
       this.lon,
@@ -45048,7 +45048,7 @@ class _$LeaderState extends LeaderState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        group_name == this.group_name &&
+        groupName == this.groupName &&
         op == this.op &&
         lat == this.lat &&
         lon == this.lon &&
@@ -45078,7 +45078,7 @@ class _$LeaderState extends LeaderState {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        group_name.hashCode), 
+        groupName.hashCode), 
         op.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
@@ -45108,7 +45108,7 @@ class _$LeaderState extends LeaderState {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('group_name', group_name)
+          ..add('groupName', groupName)
           ..add('op', op)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -45157,9 +45157,9 @@ class LeaderStateBuilder implements Builder<LeaderState, LeaderStateBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _group_name;
-  String get group_name => _$this._group_name;
-  set group_name(String group_name) => _$this._group_name = group_name;
+  String _groupName;
+  String get groupName => _$this._groupName;
+  set groupName(String groupName) => _$this._groupName = groupName;
 
   LeaderStateEnumOp _op;
   LeaderStateEnumOp get op => _$this._op;
@@ -45246,7 +45246,7 @@ class LeaderStateBuilder implements Builder<LeaderState, LeaderStateBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _group_name = _$v.group_name;
+      _groupName = _$v.groupName;
       _op = _$v.op;
       _lat = _$v.lat;
       _lon = _$v.lon;
@@ -45293,7 +45293,7 @@ class LeaderStateBuilder implements Builder<LeaderState, LeaderStateBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            group_name: group_name,
+            groupName: groupName,
             op: op,
             lat: lat,
             lon: lon,
@@ -45333,7 +45333,7 @@ class _$PlanStatistics extends PlanStatistics {
   final int dstEnt;
 
   @override
-  final String plan_id;
+  final String planId;
   @override
   final PlanStatisticsEnumType type;
   @override
@@ -45356,7 +45356,7 @@ class _$PlanStatistics extends PlanStatistics {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.plan_id,
+      this.planId,
       this.type,
       this.properties,
       this.durations,
@@ -45381,7 +45381,7 @@ class _$PlanStatistics extends PlanStatistics {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        plan_id == this.plan_id &&
+        planId == this.planId &&
         type == this.type &&
         properties == this.properties &&
         durations == this.durations &&
@@ -45398,7 +45398,7 @@ class _$PlanStatistics extends PlanStatistics {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        plan_id.hashCode), 
+        planId.hashCode), 
         type.hashCode), 
         properties.hashCode), 
         durations.hashCode), 
@@ -45415,7 +45415,7 @@ class _$PlanStatistics extends PlanStatistics {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('plan_id', plan_id)
+          ..add('planId', planId)
           ..add('type', type)
           ..add('properties', properties)
           ..add('durations', durations)
@@ -45451,9 +45451,9 @@ class PlanStatisticsBuilder implements Builder<PlanStatistics, PlanStatisticsBui
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _plan_id;
-  String get plan_id => _$this._plan_id;
-  set plan_id(String plan_id) => _$this._plan_id = plan_id;
+  String _planId;
+  String get planId => _$this._planId;
+  set planId(String planId) => _$this._planId = planId;
 
   PlanStatisticsEnumType _type;
   PlanStatisticsEnumType get type => _$this._type;
@@ -45488,7 +45488,7 @@ class PlanStatisticsBuilder implements Builder<PlanStatistics, PlanStatisticsBui
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _plan_id = _$v.plan_id;
+      _planId = _$v.planId;
       _type = _$v.type;
       _properties = _$v.properties;
       _durations = _$v.durations;
@@ -45522,7 +45522,7 @@ class PlanStatisticsBuilder implements Builder<PlanStatistics, PlanStatisticsBui
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            plan_id: plan_id,
+            planId: planId,
             type: type,
             properties: properties,
             durations: durations,
@@ -45561,11 +45561,11 @@ class _$ReportedState extends ReportedState {
   @override
   final double yaw;
   @override
-  final double rcp_time;
+  final double rcpTime;
   @override
   final String sid;
   @override
-  final ReportedStateEnumSType s_type;
+  final ReportedStateEnumSType sType;
 
   factory _$ReportedState([void updates(ReportedStateBuilder b)]) =>
       (new ReportedStateBuilder()..update(updates)).build();
@@ -45582,9 +45582,9 @@ class _$ReportedState extends ReportedState {
       this.roll,
       this.pitch,
       this.yaw,
-      this.rcp_time,
+      this.rcpTime,
       this.sid,
-      this.s_type})
+      this.sType})
       : super._();
 
   @override
@@ -45609,9 +45609,9 @@ class _$ReportedState extends ReportedState {
         roll == this.roll &&
         pitch == this.pitch &&
         yaw == this.yaw &&
-        rcp_time == this.rcp_time &&
+        rcpTime == this.rcpTime &&
         sid == this.sid &&
-        s_type == this.s_type;
+        sType == this.sType;
   }
 
   @override
@@ -45628,9 +45628,9 @@ class _$ReportedState extends ReportedState {
         roll.hashCode), 
         pitch.hashCode), 
         yaw.hashCode), 
-        rcp_time.hashCode), 
+        rcpTime.hashCode), 
         sid.hashCode), 
-        s_type.hashCode));
+        sType.hashCode));
   }
 
   @override
@@ -45647,9 +45647,9 @@ class _$ReportedState extends ReportedState {
           ..add('roll', roll)
           ..add('pitch', pitch)
           ..add('yaw', yaw)
-          ..add('rcp_time', rcp_time)
+          ..add('rcpTime', rcpTime)
           ..add('sid', sid)
-          ..add('s_type', s_type))
+          ..add('sType', sType))
         .toString();
   }
 }
@@ -45703,17 +45703,17 @@ class ReportedStateBuilder implements Builder<ReportedState, ReportedStateBuilde
   double get yaw => _$this._yaw;
   set yaw(double yaw) => _$this._yaw = yaw;
 
-  double _rcp_time;
-  double get rcp_time => _$this._rcp_time;
-  set rcp_time(double rcp_time) => _$this._rcp_time = rcp_time;
+  double _rcpTime;
+  double get rcpTime => _$this._rcpTime;
+  set rcpTime(double rcpTime) => _$this._rcpTime = rcpTime;
 
   String _sid;
   String get sid => _$this._sid;
   set sid(String sid) => _$this._sid = sid;
 
-  ReportedStateEnumSType _s_type;
-  ReportedStateEnumSType get s_type => _$this._s_type;
-  set s_type(ReportedStateEnumSType s_type) => _$this._s_type = s_type;
+  ReportedStateEnumSType _sType;
+  ReportedStateEnumSType get sType => _$this._sType;
+  set sType(ReportedStateEnumSType sType) => _$this._sType = sType;
 
   ReportedStateBuilder();
 
@@ -45730,9 +45730,9 @@ class ReportedStateBuilder implements Builder<ReportedState, ReportedStateBuilde
       _roll = _$v.roll;
       _pitch = _$v.pitch;
       _yaw = _$v.yaw;
-      _rcp_time = _$v.rcp_time;
+      _rcpTime = _$v.rcpTime;
       _sid = _$v.sid;
-      _s_type = _$v.s_type;
+      _sType = _$v.sType;
       _$v = null;
     }
     return this;
@@ -45766,9 +45766,9 @@ class ReportedStateBuilder implements Builder<ReportedState, ReportedStateBuilde
             roll: roll,
             pitch: pitch,
             yaw: yaw,
-            rcp_time: rcp_time,
+            rcpTime: rcpTime,
             sid: sid,
-            s_type: s_type);
+            sType: sType);
     replace(_$result);
     return _$result;
   }
@@ -45791,7 +45791,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
   @override
   final String id;
   @override
-  final String sensor_class;
+  final String sensorClass;
   @override
   final double lat;
   @override
@@ -45813,7 +45813,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.id,
-      this.sensor_class,
+      this.sensorClass,
       this.lat,
       this.lon,
       this.alt,
@@ -45838,7 +45838,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == this.id &&
-        sensor_class == this.sensor_class &&
+        sensorClass == this.sensorClass &&
         lat == this.lat &&
         lon == this.lon &&
         alt == this.alt &&
@@ -45855,7 +45855,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
         dst.hashCode), 
         dstEnt.hashCode), 
         id.hashCode), 
-        sensor_class.hashCode), 
+        sensorClass.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
         alt.hashCode), 
@@ -45872,7 +45872,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('id', id)
-          ..add('sensor_class', sensor_class)
+          ..add('sensorClass', sensorClass)
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('alt', alt)
@@ -45911,9 +45911,9 @@ class RemoteSensorInfoBuilder implements Builder<RemoteSensorInfo, RemoteSensorI
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _sensor_class;
-  String get sensor_class => _$this._sensor_class;
-  set sensor_class(String sensor_class) => _$this._sensor_class = sensor_class;
+  String _sensorClass;
+  String get sensorClass => _$this._sensorClass;
+  set sensorClass(String sensorClass) => _$this._sensorClass = sensorClass;
 
   double _lat;
   double get lat => _$this._lat;
@@ -45945,7 +45945,7 @@ class RemoteSensorInfoBuilder implements Builder<RemoteSensorInfo, RemoteSensorI
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _id = _$v.id;
-      _sensor_class = _$v.sensor_class;
+      _sensorClass = _$v.sensorClass;
       _lat = _$v.lat;
       _lon = _$v.lon;
       _alt = _$v.alt;
@@ -45979,7 +45979,7 @@ class RemoteSensorInfoBuilder implements Builder<RemoteSensorInfo, RemoteSensorI
             dst: dst,
             dstEnt: dstEnt,
             id: id,
-            sensor_class: sensor_class,
+            sensorClass: sensorClass,
             lat: lat,
             lon: lon,
             alt: alt,
@@ -46163,13 +46163,13 @@ class _$MapFeature extends MapFeature {
   @override
   final String id;
   @override
-  final MapFeatureEnumFeatureType feature_type;
+  final MapFeatureEnumFeatureType featureType;
   @override
-  final int rgb_red;
+  final int rgbRed;
   @override
-  final int rgb_green;
+  final int rgbGreen;
   @override
-  final int rgb_blue;
+  final int rgbBlue;
   @override
   final List<MapPoint> feature;
 
@@ -46183,10 +46183,10 @@ class _$MapFeature extends MapFeature {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.id,
-      this.feature_type,
-      this.rgb_red,
-      this.rgb_green,
-      this.rgb_blue,
+      this.featureType,
+      this.rgbRed,
+      this.rgbGreen,
+      this.rgbBlue,
       this.feature})
       : super._();
 
@@ -46207,10 +46207,10 @@ class _$MapFeature extends MapFeature {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == this.id &&
-        feature_type == this.feature_type &&
-        rgb_red == this.rgb_red &&
-        rgb_green == this.rgb_green &&
-        rgb_blue == this.rgb_blue &&
+        featureType == this.featureType &&
+        rgbRed == this.rgbRed &&
+        rgbGreen == this.rgbGreen &&
+        rgbBlue == this.rgbBlue &&
         feature == this.feature;
   }
 
@@ -46223,10 +46223,10 @@ class _$MapFeature extends MapFeature {
         dst.hashCode), 
         dstEnt.hashCode), 
         id.hashCode), 
-        feature_type.hashCode), 
-        rgb_red.hashCode), 
-        rgb_green.hashCode), 
-        rgb_blue.hashCode), 
+        featureType.hashCode), 
+        rgbRed.hashCode), 
+        rgbGreen.hashCode), 
+        rgbBlue.hashCode), 
         feature.hashCode));
   }
 
@@ -46239,10 +46239,10 @@ class _$MapFeature extends MapFeature {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('id', id)
-          ..add('feature_type', feature_type)
-          ..add('rgb_red', rgb_red)
-          ..add('rgb_green', rgb_green)
-          ..add('rgb_blue', rgb_blue)
+          ..add('featureType', featureType)
+          ..add('rgbRed', rgbRed)
+          ..add('rgbGreen', rgbGreen)
+          ..add('rgbBlue', rgbBlue)
           ..add('feature', feature))
         .toString();
   }
@@ -46277,21 +46277,21 @@ class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder> {
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  MapFeatureEnumFeatureType _feature_type;
-  MapFeatureEnumFeatureType get feature_type => _$this._feature_type;
-  set feature_type(MapFeatureEnumFeatureType feature_type) => _$this._feature_type = feature_type;
+  MapFeatureEnumFeatureType _featureType;
+  MapFeatureEnumFeatureType get featureType => _$this._featureType;
+  set featureType(MapFeatureEnumFeatureType featureType) => _$this._featureType = featureType;
 
-  int _rgb_red;
-  int get rgb_red => _$this._rgb_red;
-  set rgb_red(int rgb_red) => _$this._rgb_red = rgb_red;
+  int _rgbRed;
+  int get rgbRed => _$this._rgbRed;
+  set rgbRed(int rgbRed) => _$this._rgbRed = rgbRed;
 
-  int _rgb_green;
-  int get rgb_green => _$this._rgb_green;
-  set rgb_green(int rgb_green) => _$this._rgb_green = rgb_green;
+  int _rgbGreen;
+  int get rgbGreen => _$this._rgbGreen;
+  set rgbGreen(int rgbGreen) => _$this._rgbGreen = rgbGreen;
 
-  int _rgb_blue;
-  int get rgb_blue => _$this._rgb_blue;
-  set rgb_blue(int rgb_blue) => _$this._rgb_blue = rgb_blue;
+  int _rgbBlue;
+  int get rgbBlue => _$this._rgbBlue;
+  set rgbBlue(int rgbBlue) => _$this._rgbBlue = rgbBlue;
 
   List<MapPoint> _feature;
   List<MapPoint> get feature => _$this._feature;
@@ -46307,10 +46307,10 @@ class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _id = _$v.id;
-      _feature_type = _$v.feature_type;
-      _rgb_red = _$v.rgb_red;
-      _rgb_green = _$v.rgb_green;
-      _rgb_blue = _$v.rgb_blue;
+      _featureType = _$v.featureType;
+      _rgbRed = _$v.rgbRed;
+      _rgbGreen = _$v.rgbGreen;
+      _rgbBlue = _$v.rgbBlue;
       _feature = _$v.feature;
       _$v = null;
     }
@@ -46340,10 +46340,10 @@ class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             id: id,
-            feature_type: feature_type,
-            rgb_red: rgb_red,
-            rgb_green: rgb_green,
-            rgb_blue: rgb_blue,
+            featureType: featureType,
+            rgbRed: rgbRed,
+            rgbGreen: rgbGreen,
+            rgbBlue: rgbBlue,
             feature: feature);
     replace(_$result);
     return _$result;
@@ -47027,9 +47027,9 @@ class _$TrexCommand extends TrexCommand {
   @override
   final TrexCommandEnumCommand command;
   @override
-  final String goal_id;
+  final String goalId;
   @override
-  final String goal_xml;
+  final String goalXml;
 
   factory _$TrexCommand([void updates(TrexCommandBuilder b)]) =>
       (new TrexCommandBuilder()..update(updates)).build();
@@ -47041,8 +47041,8 @@ class _$TrexCommand extends TrexCommand {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.command,
-      this.goal_id,
-      this.goal_xml})
+      this.goalId,
+      this.goalXml})
       : super._();
 
   @override
@@ -47062,8 +47062,8 @@ class _$TrexCommand extends TrexCommand {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         command == this.command &&
-        goal_id == this.goal_id &&
-        goal_xml == this.goal_xml;
+        goalId == this.goalId &&
+        goalXml == this.goalXml;
   }
 
   @override
@@ -47075,8 +47075,8 @@ class _$TrexCommand extends TrexCommand {
         dst.hashCode), 
         dstEnt.hashCode), 
         command.hashCode), 
-        goal_id.hashCode), 
-        goal_xml.hashCode));
+        goalId.hashCode), 
+        goalXml.hashCode));
   }
 
   @override
@@ -47088,8 +47088,8 @@ class _$TrexCommand extends TrexCommand {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('command', command)
-          ..add('goal_id', goal_id)
-          ..add('goal_xml', goal_xml))
+          ..add('goalId', goalId)
+          ..add('goalXml', goalXml))
         .toString();
   }
 }
@@ -47123,13 +47123,13 @@ class TrexCommandBuilder implements Builder<TrexCommand, TrexCommandBuilder> {
   TrexCommandEnumCommand get command => _$this._command;
   set command(TrexCommandEnumCommand command) => _$this._command = command;
 
-  String _goal_id;
-  String get goal_id => _$this._goal_id;
-  set goal_id(String goal_id) => _$this._goal_id = goal_id;
+  String _goalId;
+  String get goalId => _$this._goalId;
+  set goalId(String goalId) => _$this._goalId = goalId;
 
-  String _goal_xml;
-  String get goal_xml => _$this._goal_xml;
-  set goal_xml(String goal_xml) => _$this._goal_xml = goal_xml;
+  String _goalXml;
+  String get goalXml => _$this._goalXml;
+  set goalXml(String goalXml) => _$this._goalXml = goalXml;
 
   TrexCommandBuilder();
 
@@ -47141,8 +47141,8 @@ class TrexCommandBuilder implements Builder<TrexCommand, TrexCommandBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _command = _$v.command;
-      _goal_id = _$v.goal_id;
-      _goal_xml = _$v.goal_xml;
+      _goalId = _$v.goalId;
+      _goalXml = _$v.goalXml;
       _$v = null;
     }
     return this;
@@ -47171,8 +47171,8 @@ class TrexCommandBuilder implements Builder<TrexCommand, TrexCommandBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             command: command,
-            goal_id: goal_id,
-            goal_xml: goal_xml);
+            goalId: goalId,
+            goalXml: goalXml);
     replace(_$result);
     return _$result;
   }
@@ -47195,7 +47195,7 @@ class _$TrexOperation extends TrexOperation {
   @override
   final TrexOperationEnumOp op;
   @override
-  final String goal_id;
+  final String goalId;
   @override
   final TrexToken token;
 
@@ -47209,7 +47209,7 @@ class _$TrexOperation extends TrexOperation {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.op,
-      this.goal_id,
+      this.goalId,
       this.token})
       : super._();
 
@@ -47230,7 +47230,7 @@ class _$TrexOperation extends TrexOperation {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == this.op &&
-        goal_id == this.goal_id &&
+        goalId == this.goalId &&
         token == this.token;
   }
 
@@ -47243,7 +47243,7 @@ class _$TrexOperation extends TrexOperation {
         dst.hashCode), 
         dstEnt.hashCode), 
         op.hashCode), 
-        goal_id.hashCode), 
+        goalId.hashCode), 
         token.hashCode));
   }
 
@@ -47256,7 +47256,7 @@ class _$TrexOperation extends TrexOperation {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('op', op)
-          ..add('goal_id', goal_id)
+          ..add('goalId', goalId)
           ..add('token', token))
         .toString();
   }
@@ -47291,9 +47291,9 @@ class TrexOperationBuilder implements Builder<TrexOperation, TrexOperationBuilde
   TrexOperationEnumOp get op => _$this._op;
   set op(TrexOperationEnumOp op) => _$this._op = op;
 
-  String _goal_id;
-  String get goal_id => _$this._goal_id;
-  set goal_id(String goal_id) => _$this._goal_id = goal_id;
+  String _goalId;
+  String get goalId => _$this._goalId;
+  set goalId(String goalId) => _$this._goalId = goalId;
 
   TrexToken _token;
   TrexToken get token => _$this._token;
@@ -47309,7 +47309,7 @@ class TrexOperationBuilder implements Builder<TrexOperation, TrexOperationBuilde
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _op = _$v.op;
-      _goal_id = _$v.goal_id;
+      _goalId = _$v.goalId;
       _token = _$v.token;
       _$v = null;
     }
@@ -47339,7 +47339,7 @@ class TrexOperationBuilder implements Builder<TrexOperation, TrexOperationBuilde
             dst: dst,
             dstEnt: dstEnt,
             op: op,
-            goal_id: goal_id,
+            goalId: goalId,
             token: token);
     replace(_$result);
     return _$result;
@@ -47363,7 +47363,7 @@ class _$TrexAttribute extends TrexAttribute {
   @override
   final String name;
   @override
-  final TrexAttributeEnumAttrType attr_type;
+  final TrexAttributeEnumAttrType attrType;
   @override
   final String min;
   @override
@@ -47379,7 +47379,7 @@ class _$TrexAttribute extends TrexAttribute {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.name,
-      this.attr_type,
+      this.attrType,
       this.min,
       this.max})
       : super._();
@@ -47401,7 +47401,7 @@ class _$TrexAttribute extends TrexAttribute {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         name == this.name &&
-        attr_type == this.attr_type &&
+        attrType == this.attrType &&
         min == this.min &&
         max == this.max;
   }
@@ -47415,7 +47415,7 @@ class _$TrexAttribute extends TrexAttribute {
         dst.hashCode), 
         dstEnt.hashCode), 
         name.hashCode), 
-        attr_type.hashCode), 
+        attrType.hashCode), 
         min.hashCode), 
         max.hashCode));
   }
@@ -47429,7 +47429,7 @@ class _$TrexAttribute extends TrexAttribute {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('name', name)
-          ..add('attr_type', attr_type)
+          ..add('attrType', attrType)
           ..add('min', min)
           ..add('max', max))
         .toString();
@@ -47465,9 +47465,9 @@ class TrexAttributeBuilder implements Builder<TrexAttribute, TrexAttributeBuilde
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
 
-  TrexAttributeEnumAttrType _attr_type;
-  TrexAttributeEnumAttrType get attr_type => _$this._attr_type;
-  set attr_type(TrexAttributeEnumAttrType attr_type) => _$this._attr_type = attr_type;
+  TrexAttributeEnumAttrType _attrType;
+  TrexAttributeEnumAttrType get attrType => _$this._attrType;
+  set attrType(TrexAttributeEnumAttrType attrType) => _$this._attrType = attrType;
 
   String _min;
   String get min => _$this._min;
@@ -47487,7 +47487,7 @@ class TrexAttributeBuilder implements Builder<TrexAttribute, TrexAttributeBuilde
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _name = _$v.name;
-      _attr_type = _$v.attr_type;
+      _attrType = _$v.attrType;
       _min = _$v.min;
       _max = _$v.max;
       _$v = null;
@@ -47518,7 +47518,7 @@ class TrexAttributeBuilder implements Builder<TrexAttribute, TrexAttributeBuilde
             dst: dst,
             dstEnt: dstEnt,
             name: name,
-            attr_type: attr_type,
+            attrType: attrType,
             min: min,
             max: max);
     replace(_$result);
@@ -48557,7 +48557,7 @@ class _$Target extends Target {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double cog;
   @override
@@ -48576,7 +48576,7 @@ class _$Target extends Target {
       this.lat,
       this.lon,
       this.z,
-      this.z_units,
+      this.zUnits,
       this.cog,
       this.sog})
       : super._();
@@ -48601,7 +48601,7 @@ class _$Target extends Target {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         cog == this.cog &&
         sog == this.sog;
   }
@@ -48618,7 +48618,7 @@ class _$Target extends Target {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         cog.hashCode), 
         sog.hashCode));
   }
@@ -48635,7 +48635,7 @@ class _$Target extends Target {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('cog', cog)
           ..add('sog', sog))
         .toString();
@@ -48683,9 +48683,9 @@ class TargetBuilder implements Builder<Target, TargetBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _cog;
   double get cog => _$this._cog;
@@ -48708,7 +48708,7 @@ class TargetBuilder implements Builder<Target, TargetBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _cog = _$v.cog;
       _sog = _$v.sog;
       _$v = null;
@@ -48742,7 +48742,7 @@ class TargetBuilder implements Builder<Target, TargetBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units,
+            zUnits: zUnits,
             cog: cog,
             sog: sog);
     replace(_$result);
@@ -50735,7 +50735,7 @@ class _$UamTxFrame extends UamTxFrame {
   @override
   final int seq;
   @override
-  final String sys_dst;
+  final String sysDst;
   @override
   final UamTxFrameBitfieldFlags flags;
   @override
@@ -50751,7 +50751,7 @@ class _$UamTxFrame extends UamTxFrame {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.seq,
-      this.sys_dst,
+      this.sysDst,
       this.flags,
       this.data})
       : super._();
@@ -50773,7 +50773,7 @@ class _$UamTxFrame extends UamTxFrame {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         seq == this.seq &&
-        sys_dst == this.sys_dst &&
+        sysDst == this.sysDst &&
         flags == this.flags &&
         data == this.data;
   }
@@ -50787,7 +50787,7 @@ class _$UamTxFrame extends UamTxFrame {
         dst.hashCode), 
         dstEnt.hashCode), 
         seq.hashCode), 
-        sys_dst.hashCode), 
+        sysDst.hashCode), 
         flags.hashCode), 
         data.hashCode));
   }
@@ -50801,7 +50801,7 @@ class _$UamTxFrame extends UamTxFrame {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('seq', seq)
-          ..add('sys_dst', sys_dst)
+          ..add('sysDst', sysDst)
           ..add('flags', flags)
           ..add('data', data))
         .toString();
@@ -50837,9 +50837,9 @@ class UamTxFrameBuilder implements Builder<UamTxFrame, UamTxFrameBuilder> {
   int get seq => _$this._seq;
   set seq(int seq) => _$this._seq = seq;
 
-  String _sys_dst;
-  String get sys_dst => _$this._sys_dst;
-  set sys_dst(String sys_dst) => _$this._sys_dst = sys_dst;
+  String _sysDst;
+  String get sysDst => _$this._sysDst;
+  set sysDst(String sysDst) => _$this._sysDst = sysDst;
 
   UamTxFrameBitfieldFlags _flags;
   UamTxFrameBitfieldFlags get flags => _$this._flags;
@@ -50859,7 +50859,7 @@ class UamTxFrameBuilder implements Builder<UamTxFrame, UamTxFrameBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _seq = _$v.seq;
-      _sys_dst = _$v.sys_dst;
+      _sysDst = _$v.sysDst;
       _flags = _$v.flags;
       _data = _$v.data;
       _$v = null;
@@ -50890,7 +50890,7 @@ class UamTxFrameBuilder implements Builder<UamTxFrame, UamTxFrameBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             seq: seq,
-            sys_dst: sys_dst,
+            sysDst: sysDst,
             flags: flags,
             data: data);
     replace(_$result);
@@ -50913,9 +50913,9 @@ class _$UamRxFrame extends UamRxFrame {
   final int dstEnt;
 
   @override
-  final String sys_src;
+  final String sysSrc;
   @override
-  final String sys_dst;
+  final String sysDst;
   @override
   final UamRxFrameBitfieldFlags flags;
   @override
@@ -50930,8 +50930,8 @@ class _$UamRxFrame extends UamRxFrame {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.sys_src,
-      this.sys_dst,
+      this.sysSrc,
+      this.sysDst,
       this.flags,
       this.data})
       : super._();
@@ -50952,8 +50952,8 @@ class _$UamRxFrame extends UamRxFrame {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sys_src == this.sys_src &&
-        sys_dst == this.sys_dst &&
+        sysSrc == this.sysSrc &&
+        sysDst == this.sysDst &&
         flags == this.flags &&
         data == this.data;
   }
@@ -50966,8 +50966,8 @@ class _$UamRxFrame extends UamRxFrame {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        sys_src.hashCode), 
-        sys_dst.hashCode), 
+        sysSrc.hashCode), 
+        sysDst.hashCode), 
         flags.hashCode), 
         data.hashCode));
   }
@@ -50980,8 +50980,8 @@ class _$UamRxFrame extends UamRxFrame {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('sys_src', sys_src)
-          ..add('sys_dst', sys_dst)
+          ..add('sysSrc', sysSrc)
+          ..add('sysDst', sysDst)
           ..add('flags', flags)
           ..add('data', data))
         .toString();
@@ -51013,13 +51013,13 @@ class UamRxFrameBuilder implements Builder<UamRxFrame, UamRxFrameBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _sys_src;
-  String get sys_src => _$this._sys_src;
-  set sys_src(String sys_src) => _$this._sys_src = sys_src;
+  String _sysSrc;
+  String get sysSrc => _$this._sysSrc;
+  set sysSrc(String sysSrc) => _$this._sysSrc = sysSrc;
 
-  String _sys_dst;
-  String get sys_dst => _$this._sys_dst;
-  set sys_dst(String sys_dst) => _$this._sys_dst = sys_dst;
+  String _sysDst;
+  String get sysDst => _$this._sysDst;
+  set sysDst(String sysDst) => _$this._sysDst = sysDst;
 
   UamRxFrameBitfieldFlags _flags;
   UamRxFrameBitfieldFlags get flags => _$this._flags;
@@ -51038,8 +51038,8 @@ class UamRxFrameBuilder implements Builder<UamRxFrame, UamRxFrameBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _sys_src = _$v.sys_src;
-      _sys_dst = _$v.sys_dst;
+      _sysSrc = _$v.sysSrc;
+      _sysDst = _$v.sysDst;
       _flags = _$v.flags;
       _data = _$v.data;
       _$v = null;
@@ -51069,8 +51069,8 @@ class UamRxFrameBuilder implements Builder<UamRxFrame, UamRxFrameBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            sys_src: sys_src,
-            sys_dst: sys_dst,
+            sysSrc: sysSrc,
+            sysDst: sysDst,
             flags: flags,
             data: data);
     replace(_$result);
@@ -51429,17 +51429,17 @@ class _$FormCtrlParam extends FormCtrlParam {
   final int dstEnt;
 
   @override
-  final FormCtrlParamEnumAction Action;
+  final FormCtrlParamEnumAction action;
   @override
-  final double LonGain;
+  final double lonGain;
   @override
-  final double LatGain;
+  final double latGain;
   @override
-  final int BondThick;
+  final int bondThick;
   @override
-  final double LeadGain;
+  final double leadGain;
   @override
-  final double DeconflGain;
+  final double deconflGain;
 
   factory _$FormCtrlParam([void updates(FormCtrlParamBuilder b)]) =>
       (new FormCtrlParamBuilder()..update(updates)).build();
@@ -51450,12 +51450,12 @@ class _$FormCtrlParam extends FormCtrlParam {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.Action,
-      this.LonGain,
-      this.LatGain,
-      this.BondThick,
-      this.LeadGain,
-      this.DeconflGain})
+      this.action,
+      this.lonGain,
+      this.latGain,
+      this.bondThick,
+      this.leadGain,
+      this.deconflGain})
       : super._();
 
   @override
@@ -51474,12 +51474,12 @@ class _$FormCtrlParam extends FormCtrlParam {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        Action == this.Action &&
-        LonGain == this.LonGain &&
-        LatGain == this.LatGain &&
-        BondThick == this.BondThick &&
-        LeadGain == this.LeadGain &&
-        DeconflGain == this.DeconflGain;
+        action == this.action &&
+        lonGain == this.lonGain &&
+        latGain == this.latGain &&
+        bondThick == this.bondThick &&
+        leadGain == this.leadGain &&
+        deconflGain == this.deconflGain;
   }
 
   @override
@@ -51490,12 +51490,12 @@ class _$FormCtrlParam extends FormCtrlParam {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        Action.hashCode), 
-        LonGain.hashCode), 
-        LatGain.hashCode), 
-        BondThick.hashCode), 
-        LeadGain.hashCode), 
-        DeconflGain.hashCode));
+        action.hashCode), 
+        lonGain.hashCode), 
+        latGain.hashCode), 
+        bondThick.hashCode), 
+        leadGain.hashCode), 
+        deconflGain.hashCode));
   }
 
   @override
@@ -51506,12 +51506,12 @@ class _$FormCtrlParam extends FormCtrlParam {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('Action', Action)
-          ..add('LonGain', LonGain)
-          ..add('LatGain', LatGain)
-          ..add('BondThick', BondThick)
-          ..add('LeadGain', LeadGain)
-          ..add('DeconflGain', DeconflGain))
+          ..add('action', action)
+          ..add('lonGain', lonGain)
+          ..add('latGain', latGain)
+          ..add('bondThick', bondThick)
+          ..add('leadGain', leadGain)
+          ..add('deconflGain', deconflGain))
         .toString();
   }
 }
@@ -51541,29 +51541,29 @@ class FormCtrlParamBuilder implements Builder<FormCtrlParam, FormCtrlParamBuilde
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  FormCtrlParamEnumAction _Action;
-  FormCtrlParamEnumAction get Action => _$this._Action;
-  set Action(FormCtrlParamEnumAction Action) => _$this._Action = Action;
+  FormCtrlParamEnumAction _action;
+  FormCtrlParamEnumAction get action => _$this._action;
+  set action(FormCtrlParamEnumAction action) => _$this._action = action;
 
-  double _LonGain;
-  double get LonGain => _$this._LonGain;
-  set LonGain(double LonGain) => _$this._LonGain = LonGain;
+  double _lonGain;
+  double get lonGain => _$this._lonGain;
+  set lonGain(double lonGain) => _$this._lonGain = lonGain;
 
-  double _LatGain;
-  double get LatGain => _$this._LatGain;
-  set LatGain(double LatGain) => _$this._LatGain = LatGain;
+  double _latGain;
+  double get latGain => _$this._latGain;
+  set latGain(double latGain) => _$this._latGain = latGain;
 
-  int _BondThick;
-  int get BondThick => _$this._BondThick;
-  set BondThick(int BondThick) => _$this._BondThick = BondThick;
+  int _bondThick;
+  int get bondThick => _$this._bondThick;
+  set bondThick(int bondThick) => _$this._bondThick = bondThick;
 
-  double _LeadGain;
-  double get LeadGain => _$this._LeadGain;
-  set LeadGain(double LeadGain) => _$this._LeadGain = LeadGain;
+  double _leadGain;
+  double get leadGain => _$this._leadGain;
+  set leadGain(double leadGain) => _$this._leadGain = leadGain;
 
-  double _DeconflGain;
-  double get DeconflGain => _$this._DeconflGain;
-  set DeconflGain(double DeconflGain) => _$this._DeconflGain = DeconflGain;
+  double _deconflGain;
+  double get deconflGain => _$this._deconflGain;
+  set deconflGain(double deconflGain) => _$this._deconflGain = deconflGain;
 
   FormCtrlParamBuilder();
 
@@ -51574,12 +51574,12 @@ class FormCtrlParamBuilder implements Builder<FormCtrlParam, FormCtrlParamBuilde
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _Action = _$v.Action;
-      _LonGain = _$v.LonGain;
-      _LatGain = _$v.LatGain;
-      _BondThick = _$v.BondThick;
-      _LeadGain = _$v.LeadGain;
-      _DeconflGain = _$v.DeconflGain;
+      _action = _$v.action;
+      _lonGain = _$v.lonGain;
+      _latGain = _$v.latGain;
+      _bondThick = _$v.bondThick;
+      _leadGain = _$v.leadGain;
+      _deconflGain = _$v.deconflGain;
       _$v = null;
     }
     return this;
@@ -51607,12 +51607,12 @@ class FormCtrlParamBuilder implements Builder<FormCtrlParam, FormCtrlParamBuilde
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            Action: Action,
-            LonGain: LonGain,
-            LatGain: LatGain,
-            BondThick: BondThick,
-            LeadGain: LeadGain,
-            DeconflGain: DeconflGain);
+            action: action,
+            lonGain: lonGain,
+            latGain: latGain,
+            bondThick: bondThick,
+            leadGain: leadGain,
+            deconflGain: deconflGain);
     replace(_$result);
     return _$result;
   }
@@ -51633,11 +51633,11 @@ class _$FormationEval extends FormationEval {
   final int dstEnt;
 
   @override
-  final double err_mean;
+  final double errMean;
   @override
-  final double dist_min_abs;
+  final double distMinAbs;
   @override
-  final double dist_min_mean;
+  final double distMinMean;
 
   factory _$FormationEval([void updates(FormationEvalBuilder b)]) =>
       (new FormationEvalBuilder()..update(updates)).build();
@@ -51648,9 +51648,9 @@ class _$FormationEval extends FormationEval {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.err_mean,
-      this.dist_min_abs,
-      this.dist_min_mean})
+      this.errMean,
+      this.distMinAbs,
+      this.distMinMean})
       : super._();
 
   @override
@@ -51669,9 +51669,9 @@ class _$FormationEval extends FormationEval {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        err_mean == this.err_mean &&
-        dist_min_abs == this.dist_min_abs &&
-        dist_min_mean == this.dist_min_mean;
+        errMean == this.errMean &&
+        distMinAbs == this.distMinAbs &&
+        distMinMean == this.distMinMean;
   }
 
   @override
@@ -51682,9 +51682,9 @@ class _$FormationEval extends FormationEval {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        err_mean.hashCode), 
-        dist_min_abs.hashCode), 
-        dist_min_mean.hashCode));
+        errMean.hashCode), 
+        distMinAbs.hashCode), 
+        distMinMean.hashCode));
   }
 
   @override
@@ -51695,9 +51695,9 @@ class _$FormationEval extends FormationEval {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('err_mean', err_mean)
-          ..add('dist_min_abs', dist_min_abs)
-          ..add('dist_min_mean', dist_min_mean))
+          ..add('errMean', errMean)
+          ..add('distMinAbs', distMinAbs)
+          ..add('distMinMean', distMinMean))
         .toString();
   }
 }
@@ -51727,17 +51727,17 @@ class FormationEvalBuilder implements Builder<FormationEval, FormationEvalBuilde
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _err_mean;
-  double get err_mean => _$this._err_mean;
-  set err_mean(double err_mean) => _$this._err_mean = err_mean;
+  double _errMean;
+  double get errMean => _$this._errMean;
+  set errMean(double errMean) => _$this._errMean = errMean;
 
-  double _dist_min_abs;
-  double get dist_min_abs => _$this._dist_min_abs;
-  set dist_min_abs(double dist_min_abs) => _$this._dist_min_abs = dist_min_abs;
+  double _distMinAbs;
+  double get distMinAbs => _$this._distMinAbs;
+  set distMinAbs(double distMinAbs) => _$this._distMinAbs = distMinAbs;
 
-  double _dist_min_mean;
-  double get dist_min_mean => _$this._dist_min_mean;
-  set dist_min_mean(double dist_min_mean) => _$this._dist_min_mean = dist_min_mean;
+  double _distMinMean;
+  double get distMinMean => _$this._distMinMean;
+  set distMinMean(double distMinMean) => _$this._distMinMean = distMinMean;
 
   FormationEvalBuilder();
 
@@ -51748,9 +51748,9 @@ class FormationEvalBuilder implements Builder<FormationEval, FormationEvalBuilde
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _err_mean = _$v.err_mean;
-      _dist_min_abs = _$v.dist_min_abs;
-      _dist_min_mean = _$v.dist_min_mean;
+      _errMean = _$v.errMean;
+      _distMinAbs = _$v.distMinAbs;
+      _distMinMean = _$v.distMinMean;
       _$v = null;
     }
     return this;
@@ -51778,9 +51778,9 @@ class FormationEvalBuilder implements Builder<FormationEval, FormationEvalBuilde
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            err_mean: err_mean,
-            dist_min_abs: dist_min_abs,
-            dist_min_mean: dist_min_mean);
+            errMean: errMean,
+            distMinAbs: distMinAbs,
+            distMinMean: distMinMean);
     replace(_$result);
     return _$result;
   }
@@ -51801,27 +51801,27 @@ class _$FormationControlParams extends FormationControlParams {
   final int dstEnt;
 
   @override
-  final FormationControlParamsEnumAction Action;
+  final FormationControlParamsEnumAction action;
   @override
-  final double lon_gain;
+  final double lonGain;
   @override
-  final double lat_gain;
+  final double latGain;
   @override
-  final double bond_thick;
+  final double bondThick;
   @override
-  final double lead_gain;
+  final double leadGain;
   @override
-  final double deconfl_gain;
+  final double deconflGain;
   @override
-  final double accel_switch_gain;
+  final double accelSwitchGain;
   @override
-  final double safe_dist;
+  final double safeDist;
   @override
-  final double deconflict_offset;
+  final double deconflictOffset;
   @override
-  final double accel_safe_margin;
+  final double accelSafeMargin;
   @override
-  final double accel_lim_x;
+  final double accelLimX;
 
   factory _$FormationControlParams([void updates(FormationControlParamsBuilder b)]) =>
       (new FormationControlParamsBuilder()..update(updates)).build();
@@ -51832,17 +51832,17 @@ class _$FormationControlParams extends FormationControlParams {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.Action,
-      this.lon_gain,
-      this.lat_gain,
-      this.bond_thick,
-      this.lead_gain,
-      this.deconfl_gain,
-      this.accel_switch_gain,
-      this.safe_dist,
-      this.deconflict_offset,
-      this.accel_safe_margin,
-      this.accel_lim_x})
+      this.action,
+      this.lonGain,
+      this.latGain,
+      this.bondThick,
+      this.leadGain,
+      this.deconflGain,
+      this.accelSwitchGain,
+      this.safeDist,
+      this.deconflictOffset,
+      this.accelSafeMargin,
+      this.accelLimX})
       : super._();
 
   @override
@@ -51861,17 +51861,17 @@ class _$FormationControlParams extends FormationControlParams {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        Action == this.Action &&
-        lon_gain == this.lon_gain &&
-        lat_gain == this.lat_gain &&
-        bond_thick == this.bond_thick &&
-        lead_gain == this.lead_gain &&
-        deconfl_gain == this.deconfl_gain &&
-        accel_switch_gain == this.accel_switch_gain &&
-        safe_dist == this.safe_dist &&
-        deconflict_offset == this.deconflict_offset &&
-        accel_safe_margin == this.accel_safe_margin &&
-        accel_lim_x == this.accel_lim_x;
+        action == this.action &&
+        lonGain == this.lonGain &&
+        latGain == this.latGain &&
+        bondThick == this.bondThick &&
+        leadGain == this.leadGain &&
+        deconflGain == this.deconflGain &&
+        accelSwitchGain == this.accelSwitchGain &&
+        safeDist == this.safeDist &&
+        deconflictOffset == this.deconflictOffset &&
+        accelSafeMargin == this.accelSafeMargin &&
+        accelLimX == this.accelLimX;
   }
 
   @override
@@ -51882,17 +51882,17 @@ class _$FormationControlParams extends FormationControlParams {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        Action.hashCode), 
-        lon_gain.hashCode), 
-        lat_gain.hashCode), 
-        bond_thick.hashCode), 
-        lead_gain.hashCode), 
-        deconfl_gain.hashCode), 
-        accel_switch_gain.hashCode), 
-        safe_dist.hashCode), 
-        deconflict_offset.hashCode), 
-        accel_safe_margin.hashCode), 
-        accel_lim_x.hashCode));
+        action.hashCode), 
+        lonGain.hashCode), 
+        latGain.hashCode), 
+        bondThick.hashCode), 
+        leadGain.hashCode), 
+        deconflGain.hashCode), 
+        accelSwitchGain.hashCode), 
+        safeDist.hashCode), 
+        deconflictOffset.hashCode), 
+        accelSafeMargin.hashCode), 
+        accelLimX.hashCode));
   }
 
   @override
@@ -51903,17 +51903,17 @@ class _$FormationControlParams extends FormationControlParams {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('Action', Action)
-          ..add('lon_gain', lon_gain)
-          ..add('lat_gain', lat_gain)
-          ..add('bond_thick', bond_thick)
-          ..add('lead_gain', lead_gain)
-          ..add('deconfl_gain', deconfl_gain)
-          ..add('accel_switch_gain', accel_switch_gain)
-          ..add('safe_dist', safe_dist)
-          ..add('deconflict_offset', deconflict_offset)
-          ..add('accel_safe_margin', accel_safe_margin)
-          ..add('accel_lim_x', accel_lim_x))
+          ..add('action', action)
+          ..add('lonGain', lonGain)
+          ..add('latGain', latGain)
+          ..add('bondThick', bondThick)
+          ..add('leadGain', leadGain)
+          ..add('deconflGain', deconflGain)
+          ..add('accelSwitchGain', accelSwitchGain)
+          ..add('safeDist', safeDist)
+          ..add('deconflictOffset', deconflictOffset)
+          ..add('accelSafeMargin', accelSafeMargin)
+          ..add('accelLimX', accelLimX))
         .toString();
   }
 }
@@ -51943,49 +51943,49 @@ class FormationControlParamsBuilder implements Builder<FormationControlParams, F
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  FormationControlParamsEnumAction _Action;
-  FormationControlParamsEnumAction get Action => _$this._Action;
-  set Action(FormationControlParamsEnumAction Action) => _$this._Action = Action;
+  FormationControlParamsEnumAction _action;
+  FormationControlParamsEnumAction get action => _$this._action;
+  set action(FormationControlParamsEnumAction action) => _$this._action = action;
 
-  double _lon_gain;
-  double get lon_gain => _$this._lon_gain;
-  set lon_gain(double lon_gain) => _$this._lon_gain = lon_gain;
+  double _lonGain;
+  double get lonGain => _$this._lonGain;
+  set lonGain(double lonGain) => _$this._lonGain = lonGain;
 
-  double _lat_gain;
-  double get lat_gain => _$this._lat_gain;
-  set lat_gain(double lat_gain) => _$this._lat_gain = lat_gain;
+  double _latGain;
+  double get latGain => _$this._latGain;
+  set latGain(double latGain) => _$this._latGain = latGain;
 
-  double _bond_thick;
-  double get bond_thick => _$this._bond_thick;
-  set bond_thick(double bond_thick) => _$this._bond_thick = bond_thick;
+  double _bondThick;
+  double get bondThick => _$this._bondThick;
+  set bondThick(double bondThick) => _$this._bondThick = bondThick;
 
-  double _lead_gain;
-  double get lead_gain => _$this._lead_gain;
-  set lead_gain(double lead_gain) => _$this._lead_gain = lead_gain;
+  double _leadGain;
+  double get leadGain => _$this._leadGain;
+  set leadGain(double leadGain) => _$this._leadGain = leadGain;
 
-  double _deconfl_gain;
-  double get deconfl_gain => _$this._deconfl_gain;
-  set deconfl_gain(double deconfl_gain) => _$this._deconfl_gain = deconfl_gain;
+  double _deconflGain;
+  double get deconflGain => _$this._deconflGain;
+  set deconflGain(double deconflGain) => _$this._deconflGain = deconflGain;
 
-  double _accel_switch_gain;
-  double get accel_switch_gain => _$this._accel_switch_gain;
-  set accel_switch_gain(double accel_switch_gain) => _$this._accel_switch_gain = accel_switch_gain;
+  double _accelSwitchGain;
+  double get accelSwitchGain => _$this._accelSwitchGain;
+  set accelSwitchGain(double accelSwitchGain) => _$this._accelSwitchGain = accelSwitchGain;
 
-  double _safe_dist;
-  double get safe_dist => _$this._safe_dist;
-  set safe_dist(double safe_dist) => _$this._safe_dist = safe_dist;
+  double _safeDist;
+  double get safeDist => _$this._safeDist;
+  set safeDist(double safeDist) => _$this._safeDist = safeDist;
 
-  double _deconflict_offset;
-  double get deconflict_offset => _$this._deconflict_offset;
-  set deconflict_offset(double deconflict_offset) => _$this._deconflict_offset = deconflict_offset;
+  double _deconflictOffset;
+  double get deconflictOffset => _$this._deconflictOffset;
+  set deconflictOffset(double deconflictOffset) => _$this._deconflictOffset = deconflictOffset;
 
-  double _accel_safe_margin;
-  double get accel_safe_margin => _$this._accel_safe_margin;
-  set accel_safe_margin(double accel_safe_margin) => _$this._accel_safe_margin = accel_safe_margin;
+  double _accelSafeMargin;
+  double get accelSafeMargin => _$this._accelSafeMargin;
+  set accelSafeMargin(double accelSafeMargin) => _$this._accelSafeMargin = accelSafeMargin;
 
-  double _accel_lim_x;
-  double get accel_lim_x => _$this._accel_lim_x;
-  set accel_lim_x(double accel_lim_x) => _$this._accel_lim_x = accel_lim_x;
+  double _accelLimX;
+  double get accelLimX => _$this._accelLimX;
+  set accelLimX(double accelLimX) => _$this._accelLimX = accelLimX;
 
   FormationControlParamsBuilder();
 
@@ -51996,17 +51996,17 @@ class FormationControlParamsBuilder implements Builder<FormationControlParams, F
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _Action = _$v.Action;
-      _lon_gain = _$v.lon_gain;
-      _lat_gain = _$v.lat_gain;
-      _bond_thick = _$v.bond_thick;
-      _lead_gain = _$v.lead_gain;
-      _deconfl_gain = _$v.deconfl_gain;
-      _accel_switch_gain = _$v.accel_switch_gain;
-      _safe_dist = _$v.safe_dist;
-      _deconflict_offset = _$v.deconflict_offset;
-      _accel_safe_margin = _$v.accel_safe_margin;
-      _accel_lim_x = _$v.accel_lim_x;
+      _action = _$v.action;
+      _lonGain = _$v.lonGain;
+      _latGain = _$v.latGain;
+      _bondThick = _$v.bondThick;
+      _leadGain = _$v.leadGain;
+      _deconflGain = _$v.deconflGain;
+      _accelSwitchGain = _$v.accelSwitchGain;
+      _safeDist = _$v.safeDist;
+      _deconflictOffset = _$v.deconflictOffset;
+      _accelSafeMargin = _$v.accelSafeMargin;
+      _accelLimX = _$v.accelLimX;
       _$v = null;
     }
     return this;
@@ -52034,17 +52034,17 @@ class FormationControlParamsBuilder implements Builder<FormationControlParams, F
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            Action: Action,
-            lon_gain: lon_gain,
-            lat_gain: lat_gain,
-            bond_thick: bond_thick,
-            lead_gain: lead_gain,
-            deconfl_gain: deconfl_gain,
-            accel_switch_gain: accel_switch_gain,
-            safe_dist: safe_dist,
-            deconflict_offset: deconflict_offset,
-            accel_safe_margin: accel_safe_margin,
-            accel_lim_x: accel_lim_x);
+            action: action,
+            lonGain: lonGain,
+            latGain: latGain,
+            bondThick: bondThick,
+            leadGain: leadGain,
+            deconflGain: deconflGain,
+            accelSwitchGain: accelSwitchGain,
+            safeDist: safeDist,
+            deconflictOffset: deconflictOffset,
+            accelSafeMargin: accelSafeMargin,
+            accelLimX: accelLimX);
     replace(_$result);
     return _$result;
   }
@@ -52069,17 +52069,17 @@ class _$FormationEvaluation extends FormationEvaluation {
   @override
   final FormationEvaluationEnumOp op;
   @override
-  final double err_mean;
+  final double errMean;
   @override
-  final double dist_min_abs;
+  final double distMinAbs;
   @override
-  final double dist_min_mean;
+  final double distMinMean;
   @override
-  final double roll_rate_mean;
+  final double rollRateMean;
   @override
   final double time;
   @override
-  final FormationControlParams ControlParams;
+  final FormationControlParams controlParams;
 
   factory _$FormationEvaluation([void updates(FormationEvaluationBuilder b)]) =>
       (new FormationEvaluationBuilder()..update(updates)).build();
@@ -52092,12 +52092,12 @@ class _$FormationEvaluation extends FormationEvaluation {
       this.dstEnt: ImcEntityId.nullId,
       this.type,
       this.op,
-      this.err_mean,
-      this.dist_min_abs,
-      this.dist_min_mean,
-      this.roll_rate_mean,
+      this.errMean,
+      this.distMinAbs,
+      this.distMinMean,
+      this.rollRateMean,
       this.time,
-      this.ControlParams})
+      this.controlParams})
       : super._();
 
   @override
@@ -52118,12 +52118,12 @@ class _$FormationEvaluation extends FormationEvaluation {
         dstEnt == other.dstEnt &&
         type == this.type &&
         op == this.op &&
-        err_mean == this.err_mean &&
-        dist_min_abs == this.dist_min_abs &&
-        dist_min_mean == this.dist_min_mean &&
-        roll_rate_mean == this.roll_rate_mean &&
+        errMean == this.errMean &&
+        distMinAbs == this.distMinAbs &&
+        distMinMean == this.distMinMean &&
+        rollRateMean == this.rollRateMean &&
         time == this.time &&
-        ControlParams == this.ControlParams;
+        controlParams == this.controlParams;
   }
 
   @override
@@ -52136,12 +52136,12 @@ class _$FormationEvaluation extends FormationEvaluation {
         dstEnt.hashCode), 
         type.hashCode), 
         op.hashCode), 
-        err_mean.hashCode), 
-        dist_min_abs.hashCode), 
-        dist_min_mean.hashCode), 
-        roll_rate_mean.hashCode), 
+        errMean.hashCode), 
+        distMinAbs.hashCode), 
+        distMinMean.hashCode), 
+        rollRateMean.hashCode), 
         time.hashCode), 
-        ControlParams.hashCode));
+        controlParams.hashCode));
   }
 
   @override
@@ -52154,12 +52154,12 @@ class _$FormationEvaluation extends FormationEvaluation {
           ..add('dstEnt', dstEnt)
           ..add('type', type)
           ..add('op', op)
-          ..add('err_mean', err_mean)
-          ..add('dist_min_abs', dist_min_abs)
-          ..add('dist_min_mean', dist_min_mean)
-          ..add('roll_rate_mean', roll_rate_mean)
+          ..add('errMean', errMean)
+          ..add('distMinAbs', distMinAbs)
+          ..add('distMinMean', distMinMean)
+          ..add('rollRateMean', rollRateMean)
           ..add('time', time)
-          ..add('ControlParams', ControlParams))
+          ..add('controlParams', controlParams))
         .toString();
   }
 }
@@ -52197,29 +52197,29 @@ class FormationEvaluationBuilder implements Builder<FormationEvaluation, Formati
   FormationEvaluationEnumOp get op => _$this._op;
   set op(FormationEvaluationEnumOp op) => _$this._op = op;
 
-  double _err_mean;
-  double get err_mean => _$this._err_mean;
-  set err_mean(double err_mean) => _$this._err_mean = err_mean;
+  double _errMean;
+  double get errMean => _$this._errMean;
+  set errMean(double errMean) => _$this._errMean = errMean;
 
-  double _dist_min_abs;
-  double get dist_min_abs => _$this._dist_min_abs;
-  set dist_min_abs(double dist_min_abs) => _$this._dist_min_abs = dist_min_abs;
+  double _distMinAbs;
+  double get distMinAbs => _$this._distMinAbs;
+  set distMinAbs(double distMinAbs) => _$this._distMinAbs = distMinAbs;
 
-  double _dist_min_mean;
-  double get dist_min_mean => _$this._dist_min_mean;
-  set dist_min_mean(double dist_min_mean) => _$this._dist_min_mean = dist_min_mean;
+  double _distMinMean;
+  double get distMinMean => _$this._distMinMean;
+  set distMinMean(double distMinMean) => _$this._distMinMean = distMinMean;
 
-  double _roll_rate_mean;
-  double get roll_rate_mean => _$this._roll_rate_mean;
-  set roll_rate_mean(double roll_rate_mean) => _$this._roll_rate_mean = roll_rate_mean;
+  double _rollRateMean;
+  double get rollRateMean => _$this._rollRateMean;
+  set rollRateMean(double rollRateMean) => _$this._rollRateMean = rollRateMean;
 
   double _time;
   double get time => _$this._time;
   set time(double time) => _$this._time = time;
 
-  FormationControlParams _ControlParams;
-  FormationControlParams get ControlParams => _$this._ControlParams;
-  set ControlParams(FormationControlParams ControlParams) => _$this._ControlParams = ControlParams;
+  FormationControlParams _controlParams;
+  FormationControlParams get controlParams => _$this._controlParams;
+  set controlParams(FormationControlParams controlParams) => _$this._controlParams = controlParams;
 
   FormationEvaluationBuilder();
 
@@ -52232,12 +52232,12 @@ class FormationEvaluationBuilder implements Builder<FormationEvaluation, Formati
       _dstEnt = _$v.dstEnt;
       _type = _$v.type;
       _op = _$v.op;
-      _err_mean = _$v.err_mean;
-      _dist_min_abs = _$v.dist_min_abs;
-      _dist_min_mean = _$v.dist_min_mean;
-      _roll_rate_mean = _$v.roll_rate_mean;
+      _errMean = _$v.errMean;
+      _distMinAbs = _$v.distMinAbs;
+      _distMinMean = _$v.distMinMean;
+      _rollRateMean = _$v.rollRateMean;
       _time = _$v.time;
-      _ControlParams = _$v.ControlParams;
+      _controlParams = _$v.controlParams;
       _$v = null;
     }
     return this;
@@ -52267,12 +52267,12 @@ class FormationEvaluationBuilder implements Builder<FormationEvaluation, Formati
             dstEnt: dstEnt,
             type: type,
             op: op,
-            err_mean: err_mean,
-            dist_min_abs: dist_min_abs,
-            dist_min_mean: dist_min_mean,
-            roll_rate_mean: roll_rate_mean,
+            errMean: errMean,
+            distMinAbs: distMinAbs,
+            distMinMean: distMinMean,
+            rollRateMean: rollRateMean,
             time: time,
-            ControlParams: ControlParams);
+            controlParams: controlParams);
     replace(_$result);
     return _$result;
   }
@@ -52473,7 +52473,7 @@ class _$SoiPlan extends SoiPlan {
   final int dstEnt;
 
   @override
-  final int plan_id;
+  final int planId;
   @override
   final List<SoiWaypoint> waypoints;
 
@@ -52486,7 +52486,7 @@ class _$SoiPlan extends SoiPlan {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.plan_id,
+      this.planId,
       this.waypoints})
       : super._();
 
@@ -52506,7 +52506,7 @@ class _$SoiPlan extends SoiPlan {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        plan_id == this.plan_id &&
+        planId == this.planId &&
         waypoints == this.waypoints;
   }
 
@@ -52518,7 +52518,7 @@ class _$SoiPlan extends SoiPlan {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        plan_id.hashCode), 
+        planId.hashCode), 
         waypoints.hashCode));
   }
 
@@ -52530,7 +52530,7 @@ class _$SoiPlan extends SoiPlan {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('plan_id', plan_id)
+          ..add('planId', planId)
           ..add('waypoints', waypoints))
         .toString();
   }
@@ -52561,9 +52561,9 @@ class SoiPlanBuilder implements Builder<SoiPlan, SoiPlanBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  int _plan_id;
-  int get plan_id => _$this._plan_id;
-  set plan_id(int plan_id) => _$this._plan_id = plan_id;
+  int _planId;
+  int get planId => _$this._planId;
+  set planId(int planId) => _$this._planId = planId;
 
   List<SoiWaypoint> _waypoints;
   List<SoiWaypoint> get waypoints => _$this._waypoints;
@@ -52578,7 +52578,7 @@ class SoiPlanBuilder implements Builder<SoiPlan, SoiPlanBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _plan_id = _$v.plan_id;
+      _planId = _$v.planId;
       _waypoints = _$v.waypoints;
       _$v = null;
     }
@@ -52607,7 +52607,7 @@ class SoiPlanBuilder implements Builder<SoiPlan, SoiPlanBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            plan_id: plan_id,
+            planId: planId,
             waypoints: waypoints);
     replace(_$result);
     return _$result;
@@ -52823,11 +52823,11 @@ class _$SoiState extends SoiState {
   @override
   final SoiStateEnumState state;
   @override
-  final int plan_id;
+  final int planId;
   @override
-  final int wpt_id;
+  final int wptId;
   @override
-  final int settings_chk;
+  final int settingsChk;
 
   factory _$SoiState([void updates(SoiStateBuilder b)]) =>
       (new SoiStateBuilder()..update(updates)).build();
@@ -52839,9 +52839,9 @@ class _$SoiState extends SoiState {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.state,
-      this.plan_id,
-      this.wpt_id,
-      this.settings_chk})
+      this.planId,
+      this.wptId,
+      this.settingsChk})
       : super._();
 
   @override
@@ -52861,9 +52861,9 @@ class _$SoiState extends SoiState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         state == this.state &&
-        plan_id == this.plan_id &&
-        wpt_id == this.wpt_id &&
-        settings_chk == this.settings_chk;
+        planId == this.planId &&
+        wptId == this.wptId &&
+        settingsChk == this.settingsChk;
   }
 
   @override
@@ -52875,9 +52875,9 @@ class _$SoiState extends SoiState {
         dst.hashCode), 
         dstEnt.hashCode), 
         state.hashCode), 
-        plan_id.hashCode), 
-        wpt_id.hashCode), 
-        settings_chk.hashCode));
+        planId.hashCode), 
+        wptId.hashCode), 
+        settingsChk.hashCode));
   }
 
   @override
@@ -52889,9 +52889,9 @@ class _$SoiState extends SoiState {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('state', state)
-          ..add('plan_id', plan_id)
-          ..add('wpt_id', wpt_id)
-          ..add('settings_chk', settings_chk))
+          ..add('planId', planId)
+          ..add('wptId', wptId)
+          ..add('settingsChk', settingsChk))
         .toString();
   }
 }
@@ -52925,17 +52925,17 @@ class SoiStateBuilder implements Builder<SoiState, SoiStateBuilder> {
   SoiStateEnumState get state => _$this._state;
   set state(SoiStateEnumState state) => _$this._state = state;
 
-  int _plan_id;
-  int get plan_id => _$this._plan_id;
-  set plan_id(int plan_id) => _$this._plan_id = plan_id;
+  int _planId;
+  int get planId => _$this._planId;
+  set planId(int planId) => _$this._planId = planId;
 
-  int _wpt_id;
-  int get wpt_id => _$this._wpt_id;
-  set wpt_id(int wpt_id) => _$this._wpt_id = wpt_id;
+  int _wptId;
+  int get wptId => _$this._wptId;
+  set wptId(int wptId) => _$this._wptId = wptId;
 
-  int _settings_chk;
-  int get settings_chk => _$this._settings_chk;
-  set settings_chk(int settings_chk) => _$this._settings_chk = settings_chk;
+  int _settingsChk;
+  int get settingsChk => _$this._settingsChk;
+  set settingsChk(int settingsChk) => _$this._settingsChk = settingsChk;
 
   SoiStateBuilder();
 
@@ -52947,9 +52947,9 @@ class SoiStateBuilder implements Builder<SoiState, SoiStateBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _state = _$v.state;
-      _plan_id = _$v.plan_id;
-      _wpt_id = _$v.wpt_id;
-      _settings_chk = _$v.settings_chk;
+      _planId = _$v.planId;
+      _wptId = _$v.wptId;
+      _settingsChk = _$v.settingsChk;
       _$v = null;
     }
     return this;
@@ -52978,9 +52978,9 @@ class SoiStateBuilder implements Builder<SoiState, SoiStateBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             state: state,
-            plan_id: plan_id,
-            wpt_id: wpt_id,
-            settings_chk: settings_chk);
+            planId: planId,
+            wptId: wptId,
+            settingsChk: settingsChk);
     replace(_$result);
     return _$result;
   }
@@ -53003,9 +53003,9 @@ class _$MessagePart extends MessagePart {
   @override
   final int uid;
   @override
-  final int frag_number;
+  final int fragNumber;
   @override
-  final int num_frags;
+  final int numFrags;
   @override
   final List<int> data;
 
@@ -53019,8 +53019,8 @@ class _$MessagePart extends MessagePart {
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
       this.uid,
-      this.frag_number,
-      this.num_frags,
+      this.fragNumber,
+      this.numFrags,
       this.data})
       : super._();
 
@@ -53041,8 +53041,8 @@ class _$MessagePart extends MessagePart {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         uid == this.uid &&
-        frag_number == this.frag_number &&
-        num_frags == this.num_frags &&
+        fragNumber == this.fragNumber &&
+        numFrags == this.numFrags &&
         data == this.data;
   }
 
@@ -53055,8 +53055,8 @@ class _$MessagePart extends MessagePart {
         dst.hashCode), 
         dstEnt.hashCode), 
         uid.hashCode), 
-        frag_number.hashCode), 
-        num_frags.hashCode), 
+        fragNumber.hashCode), 
+        numFrags.hashCode), 
         data.hashCode));
   }
 
@@ -53069,8 +53069,8 @@ class _$MessagePart extends MessagePart {
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
           ..add('uid', uid)
-          ..add('frag_number', frag_number)
-          ..add('num_frags', num_frags)
+          ..add('fragNumber', fragNumber)
+          ..add('numFrags', numFrags)
           ..add('data', data))
         .toString();
   }
@@ -53105,13 +53105,13 @@ class MessagePartBuilder implements Builder<MessagePart, MessagePartBuilder> {
   int get uid => _$this._uid;
   set uid(int uid) => _$this._uid = uid;
 
-  int _frag_number;
-  int get frag_number => _$this._frag_number;
-  set frag_number(int frag_number) => _$this._frag_number = frag_number;
+  int _fragNumber;
+  int get fragNumber => _$this._fragNumber;
+  set fragNumber(int fragNumber) => _$this._fragNumber = fragNumber;
 
-  int _num_frags;
-  int get num_frags => _$this._num_frags;
-  set num_frags(int num_frags) => _$this._num_frags = num_frags;
+  int _numFrags;
+  int get numFrags => _$this._numFrags;
+  set numFrags(int numFrags) => _$this._numFrags = numFrags;
 
   List<int> _data;
   List<int> get data => _$this._data;
@@ -53127,8 +53127,8 @@ class MessagePartBuilder implements Builder<MessagePart, MessagePartBuilder> {
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
       _uid = _$v.uid;
-      _frag_number = _$v.frag_number;
-      _num_frags = _$v.num_frags;
+      _fragNumber = _$v.fragNumber;
+      _numFrags = _$v.numFrags;
       _data = _$v.data;
       _$v = null;
     }
@@ -53158,8 +53158,8 @@ class MessagePartBuilder implements Builder<MessagePart, MessagePartBuilder> {
             dst: dst,
             dstEnt: dstEnt,
             uid: uid,
-            frag_number: frag_number,
-            num_frags: num_frags,
+            fragNumber: fragNumber,
+            numFrags: numFrags,
             data: data);
     replace(_$result);
     return _$result;
@@ -53181,7 +53181,7 @@ class _$NeptusBlob extends NeptusBlob {
   final int dstEnt;
 
   @override
-  final String content_type;
+  final String contentType;
   @override
   final List<int> content;
 
@@ -53194,7 +53194,7 @@ class _$NeptusBlob extends NeptusBlob {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.content_type,
+      this.contentType,
       this.content})
       : super._();
 
@@ -53214,7 +53214,7 @@ class _$NeptusBlob extends NeptusBlob {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        content_type == this.content_type &&
+        contentType == this.contentType &&
         content == this.content;
   }
 
@@ -53226,7 +53226,7 @@ class _$NeptusBlob extends NeptusBlob {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        content_type.hashCode), 
+        contentType.hashCode), 
         content.hashCode));
   }
 
@@ -53238,7 +53238,7 @@ class _$NeptusBlob extends NeptusBlob {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('content_type', content_type)
+          ..add('contentType', contentType)
           ..add('content', content))
         .toString();
   }
@@ -53269,9 +53269,9 @@ class NeptusBlobBuilder implements Builder<NeptusBlob, NeptusBlobBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  String _content_type;
-  String get content_type => _$this._content_type;
-  set content_type(String content_type) => _$this._content_type = content_type;
+  String _contentType;
+  String get contentType => _$this._contentType;
+  set contentType(String contentType) => _$this._contentType = contentType;
 
   List<int> _content;
   List<int> get content => _$this._content;
@@ -53286,7 +53286,7 @@ class NeptusBlobBuilder implements Builder<NeptusBlob, NeptusBlobBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _content_type = _$v.content_type;
+      _contentType = _$v.contentType;
       _content = _$v.content;
       _$v = null;
     }
@@ -53315,7 +53315,7 @@ class NeptusBlobBuilder implements Builder<NeptusBlob, NeptusBlobBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            content_type: content_type,
+            contentType: contentType,
             content: content);
     replace(_$result);
     return _$result;
@@ -53823,7 +53823,7 @@ class _$UsblFix extends UsblFix {
   @override
   final double lon;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double z;
 
@@ -53839,7 +53839,7 @@ class _$UsblFix extends UsblFix {
       this.target,
       this.lat,
       this.lon,
-      this.z_units,
+      this.zUnits,
       this.z})
       : super._();
 
@@ -53862,7 +53862,7 @@ class _$UsblFix extends UsblFix {
         target == this.target &&
         lat == this.lat &&
         lon == this.lon &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         z == this.z;
   }
 
@@ -53877,7 +53877,7 @@ class _$UsblFix extends UsblFix {
         target.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         z.hashCode));
   }
 
@@ -53892,7 +53892,7 @@ class _$UsblFix extends UsblFix {
           ..add('target', target)
           ..add('lat', lat)
           ..add('lon', lon)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('z', z))
         .toString();
   }
@@ -53935,9 +53935,9 @@ class UsblFixBuilder implements Builder<UsblFix, UsblFixBuilder> {
   double get lon => _$this._lon;
   set lon(double lon) => _$this._lon = lon;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _z;
   double get z => _$this._z;
@@ -53955,7 +53955,7 @@ class UsblFixBuilder implements Builder<UsblFix, UsblFixBuilder> {
       _target = _$v.target;
       _lat = _$v.lat;
       _lon = _$v.lon;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _z = _$v.z;
       _$v = null;
     }
@@ -53987,7 +53987,7 @@ class UsblFixBuilder implements Builder<UsblFix, UsblFixBuilder> {
             target: target,
             lat: lat,
             lon: lon,
-            z_units: z_units,
+            zUnits: zUnits,
             z: z);
     replace(_$result);
     return _$result;
@@ -55347,7 +55347,7 @@ class _$UsblFixExtended extends UsblFixExtended {
   @override
   final double lon;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
   @override
   final double z;
   @override
@@ -55365,7 +55365,7 @@ class _$UsblFixExtended extends UsblFixExtended {
       this.target,
       this.lat,
       this.lon,
-      this.z_units,
+      this.zUnits,
       this.z,
       this.accuracy})
       : super._();
@@ -55389,7 +55389,7 @@ class _$UsblFixExtended extends UsblFixExtended {
         target == this.target &&
         lat == this.lat &&
         lon == this.lon &&
-        z_units == this.z_units &&
+        zUnits == this.zUnits &&
         z == this.z &&
         accuracy == this.accuracy;
   }
@@ -55405,7 +55405,7 @@ class _$UsblFixExtended extends UsblFixExtended {
         target.hashCode), 
         lat.hashCode), 
         lon.hashCode), 
-        z_units.hashCode), 
+        zUnits.hashCode), 
         z.hashCode), 
         accuracy.hashCode));
   }
@@ -55421,7 +55421,7 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('target', target)
           ..add('lat', lat)
           ..add('lon', lon)
-          ..add('z_units', z_units)
+          ..add('zUnits', zUnits)
           ..add('z', z)
           ..add('accuracy', accuracy))
         .toString();
@@ -55465,9 +55465,9 @@ class UsblFixExtendedBuilder implements Builder<UsblFixExtended, UsblFixExtended
   double get lon => _$this._lon;
   set lon(double lon) => _$this._lon = lon;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   double _z;
   double get z => _$this._z;
@@ -55489,7 +55489,7 @@ class UsblFixExtendedBuilder implements Builder<UsblFixExtended, UsblFixExtended
       _target = _$v.target;
       _lat = _$v.lat;
       _lon = _$v.lon;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _z = _$v.z;
       _accuracy = _$v.accuracy;
       _$v = null;
@@ -55522,7 +55522,7 @@ class UsblFixExtendedBuilder implements Builder<UsblFixExtended, UsblFixExtended
             target: target,
             lat: lat,
             lon: lon,
-            z_units: z_units,
+            zUnits: zUnits,
             z: z,
             accuracy: accuracy);
     replace(_$result);
@@ -55553,7 +55553,7 @@ class _$UsblModem extends UsblModem {
   @override
   final double z;
   @override
-  final ZUnitsEnum z_units;
+  final ZUnitsEnum zUnits;
 
   factory _$UsblModem([void updates(UsblModemBuilder b)]) =>
       (new UsblModemBuilder()..update(updates)).build();
@@ -55568,7 +55568,7 @@ class _$UsblModem extends UsblModem {
       this.lat,
       this.lon,
       this.z,
-      this.z_units})
+      this.zUnits})
       : super._();
 
   @override
@@ -55591,7 +55591,7 @@ class _$UsblModem extends UsblModem {
         lat == this.lat &&
         lon == this.lon &&
         z == this.z &&
-        z_units == this.z_units;
+        zUnits == this.zUnits;
   }
 
   @override
@@ -55606,7 +55606,7 @@ class _$UsblModem extends UsblModem {
         lat.hashCode), 
         lon.hashCode), 
         z.hashCode), 
-        z_units.hashCode));
+        zUnits.hashCode));
   }
 
   @override
@@ -55621,7 +55621,7 @@ class _$UsblModem extends UsblModem {
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
-          ..add('z_units', z_units))
+          ..add('zUnits', zUnits))
         .toString();
   }
 }
@@ -55667,9 +55667,9 @@ class UsblModemBuilder implements Builder<UsblModem, UsblModemBuilder> {
   double get z => _$this._z;
   set z(double z) => _$this._z = z;
 
-  ZUnitsEnum _z_units;
-  ZUnitsEnum get z_units => _$this._z_units;
-  set z_units(ZUnitsEnum z_units) => _$this._z_units = z_units;
+  ZUnitsEnum _zUnits;
+  ZUnitsEnum get zUnits => _$this._zUnits;
+  set zUnits(ZUnitsEnum zUnits) => _$this._zUnits = zUnits;
 
   UsblModemBuilder();
 
@@ -55684,7 +55684,7 @@ class UsblModemBuilder implements Builder<UsblModem, UsblModemBuilder> {
       _lat = _$v.lat;
       _lon = _$v.lon;
       _z = _$v.z;
-      _z_units = _$v.z_units;
+      _zUnits = _$v.zUnits;
       _$v = null;
     }
     return this;
@@ -55716,7 +55716,7 @@ class UsblModemBuilder implements Builder<UsblModem, UsblModemBuilder> {
             lat: lat,
             lon: lon,
             z: z,
-            z_units: z_units);
+            zUnits: zUnits);
     replace(_$result);
     return _$result;
   }
@@ -56193,37 +56193,37 @@ class _$Tachograph extends Tachograph {
   final int dstEnt;
 
   @override
-  final double timestamp_last_service;
+  final double timestampLastService;
   @override
-  final double time_next_service;
+  final double timeNextService;
   @override
-  final double time_motor_next_service;
+  final double timeMotorNextService;
   @override
-  final double time_idle_ground;
+  final double timeIdleGround;
   @override
-  final double time_idle_air;
+  final double timeIdleAir;
   @override
-  final double time_idle_water;
+  final double timeIdleWater;
   @override
-  final double time_idle_underwater;
+  final double timeIdleUnderwater;
   @override
-  final double time_idle_unknown;
+  final double timeIdleUnknown;
   @override
-  final double time_motor_ground;
+  final double timeMotorGround;
   @override
-  final double time_motor_air;
+  final double timeMotorAir;
   @override
-  final double time_motor_water;
+  final double timeMotorWater;
   @override
-  final double time_motor_underwater;
+  final double timeMotorUnderwater;
   @override
-  final double time_motor_unknown;
+  final double timeMotorUnknown;
   @override
-  final int rpm_min;
+  final int rpmMin;
   @override
-  final int rpm_max;
+  final int rpmMax;
   @override
-  final double depth_max;
+  final double depthMax;
 
   factory _$Tachograph([void updates(TachographBuilder b)]) =>
       (new TachographBuilder()..update(updates)).build();
@@ -56234,22 +56234,22 @@ class _$Tachograph extends Tachograph {
       this.srcEnt: ImcEntityId.nullId,
       this.dst: ImcId.nullId,
       this.dstEnt: ImcEntityId.nullId,
-      this.timestamp_last_service,
-      this.time_next_service,
-      this.time_motor_next_service,
-      this.time_idle_ground,
-      this.time_idle_air,
-      this.time_idle_water,
-      this.time_idle_underwater,
-      this.time_idle_unknown,
-      this.time_motor_ground,
-      this.time_motor_air,
-      this.time_motor_water,
-      this.time_motor_underwater,
-      this.time_motor_unknown,
-      this.rpm_min,
-      this.rpm_max,
-      this.depth_max})
+      this.timestampLastService,
+      this.timeNextService,
+      this.timeMotorNextService,
+      this.timeIdleGround,
+      this.timeIdleAir,
+      this.timeIdleWater,
+      this.timeIdleUnderwater,
+      this.timeIdleUnknown,
+      this.timeMotorGround,
+      this.timeMotorAir,
+      this.timeMotorWater,
+      this.timeMotorUnderwater,
+      this.timeMotorUnknown,
+      this.rpmMin,
+      this.rpmMax,
+      this.depthMax})
       : super._();
 
   @override
@@ -56268,22 +56268,22 @@ class _$Tachograph extends Tachograph {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timestamp_last_service == this.timestamp_last_service &&
-        time_next_service == this.time_next_service &&
-        time_motor_next_service == this.time_motor_next_service &&
-        time_idle_ground == this.time_idle_ground &&
-        time_idle_air == this.time_idle_air &&
-        time_idle_water == this.time_idle_water &&
-        time_idle_underwater == this.time_idle_underwater &&
-        time_idle_unknown == this.time_idle_unknown &&
-        time_motor_ground == this.time_motor_ground &&
-        time_motor_air == this.time_motor_air &&
-        time_motor_water == this.time_motor_water &&
-        time_motor_underwater == this.time_motor_underwater &&
-        time_motor_unknown == this.time_motor_unknown &&
-        rpm_min == this.rpm_min &&
-        rpm_max == this.rpm_max &&
-        depth_max == this.depth_max;
+        timestampLastService == this.timestampLastService &&
+        timeNextService == this.timeNextService &&
+        timeMotorNextService == this.timeMotorNextService &&
+        timeIdleGround == this.timeIdleGround &&
+        timeIdleAir == this.timeIdleAir &&
+        timeIdleWater == this.timeIdleWater &&
+        timeIdleUnderwater == this.timeIdleUnderwater &&
+        timeIdleUnknown == this.timeIdleUnknown &&
+        timeMotorGround == this.timeMotorGround &&
+        timeMotorAir == this.timeMotorAir &&
+        timeMotorWater == this.timeMotorWater &&
+        timeMotorUnderwater == this.timeMotorUnderwater &&
+        timeMotorUnknown == this.timeMotorUnknown &&
+        rpmMin == this.rpmMin &&
+        rpmMax == this.rpmMax &&
+        depthMax == this.depthMax;
   }
 
   @override
@@ -56294,22 +56294,22 @@ class _$Tachograph extends Tachograph {
         srcEnt.hashCode), 
         dst.hashCode), 
         dstEnt.hashCode), 
-        timestamp_last_service.hashCode), 
-        time_next_service.hashCode), 
-        time_motor_next_service.hashCode), 
-        time_idle_ground.hashCode), 
-        time_idle_air.hashCode), 
-        time_idle_water.hashCode), 
-        time_idle_underwater.hashCode), 
-        time_idle_unknown.hashCode), 
-        time_motor_ground.hashCode), 
-        time_motor_air.hashCode), 
-        time_motor_water.hashCode), 
-        time_motor_underwater.hashCode), 
-        time_motor_unknown.hashCode), 
-        rpm_min.hashCode), 
-        rpm_max.hashCode), 
-        depth_max.hashCode));
+        timestampLastService.hashCode), 
+        timeNextService.hashCode), 
+        timeMotorNextService.hashCode), 
+        timeIdleGround.hashCode), 
+        timeIdleAir.hashCode), 
+        timeIdleWater.hashCode), 
+        timeIdleUnderwater.hashCode), 
+        timeIdleUnknown.hashCode), 
+        timeMotorGround.hashCode), 
+        timeMotorAir.hashCode), 
+        timeMotorWater.hashCode), 
+        timeMotorUnderwater.hashCode), 
+        timeMotorUnknown.hashCode), 
+        rpmMin.hashCode), 
+        rpmMax.hashCode), 
+        depthMax.hashCode));
   }
 
   @override
@@ -56320,22 +56320,22 @@ class _$Tachograph extends Tachograph {
           ..add('srcEnt', srcEnt)
           ..add('dst', dst)
           ..add('dstEnt', dstEnt)
-          ..add('timestamp_last_service', timestamp_last_service)
-          ..add('time_next_service', time_next_service)
-          ..add('time_motor_next_service', time_motor_next_service)
-          ..add('time_idle_ground', time_idle_ground)
-          ..add('time_idle_air', time_idle_air)
-          ..add('time_idle_water', time_idle_water)
-          ..add('time_idle_underwater', time_idle_underwater)
-          ..add('time_idle_unknown', time_idle_unknown)
-          ..add('time_motor_ground', time_motor_ground)
-          ..add('time_motor_air', time_motor_air)
-          ..add('time_motor_water', time_motor_water)
-          ..add('time_motor_underwater', time_motor_underwater)
-          ..add('time_motor_unknown', time_motor_unknown)
-          ..add('rpm_min', rpm_min)
-          ..add('rpm_max', rpm_max)
-          ..add('depth_max', depth_max))
+          ..add('timestampLastService', timestampLastService)
+          ..add('timeNextService', timeNextService)
+          ..add('timeMotorNextService', timeMotorNextService)
+          ..add('timeIdleGround', timeIdleGround)
+          ..add('timeIdleAir', timeIdleAir)
+          ..add('timeIdleWater', timeIdleWater)
+          ..add('timeIdleUnderwater', timeIdleUnderwater)
+          ..add('timeIdleUnknown', timeIdleUnknown)
+          ..add('timeMotorGround', timeMotorGround)
+          ..add('timeMotorAir', timeMotorAir)
+          ..add('timeMotorWater', timeMotorWater)
+          ..add('timeMotorUnderwater', timeMotorUnderwater)
+          ..add('timeMotorUnknown', timeMotorUnknown)
+          ..add('rpmMin', rpmMin)
+          ..add('rpmMax', rpmMax)
+          ..add('depthMax', depthMax))
         .toString();
   }
 }
@@ -56365,69 +56365,69 @@ class TachographBuilder implements Builder<Tachograph, TachographBuilder> {
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  double _timestamp_last_service;
-  double get timestamp_last_service => _$this._timestamp_last_service;
-  set timestamp_last_service(double timestamp_last_service) => _$this._timestamp_last_service = timestamp_last_service;
+  double _timestampLastService;
+  double get timestampLastService => _$this._timestampLastService;
+  set timestampLastService(double timestampLastService) => _$this._timestampLastService = timestampLastService;
 
-  double _time_next_service;
-  double get time_next_service => _$this._time_next_service;
-  set time_next_service(double time_next_service) => _$this._time_next_service = time_next_service;
+  double _timeNextService;
+  double get timeNextService => _$this._timeNextService;
+  set timeNextService(double timeNextService) => _$this._timeNextService = timeNextService;
 
-  double _time_motor_next_service;
-  double get time_motor_next_service => _$this._time_motor_next_service;
-  set time_motor_next_service(double time_motor_next_service) => _$this._time_motor_next_service = time_motor_next_service;
+  double _timeMotorNextService;
+  double get timeMotorNextService => _$this._timeMotorNextService;
+  set timeMotorNextService(double timeMotorNextService) => _$this._timeMotorNextService = timeMotorNextService;
 
-  double _time_idle_ground;
-  double get time_idle_ground => _$this._time_idle_ground;
-  set time_idle_ground(double time_idle_ground) => _$this._time_idle_ground = time_idle_ground;
+  double _timeIdleGround;
+  double get timeIdleGround => _$this._timeIdleGround;
+  set timeIdleGround(double timeIdleGround) => _$this._timeIdleGround = timeIdleGround;
 
-  double _time_idle_air;
-  double get time_idle_air => _$this._time_idle_air;
-  set time_idle_air(double time_idle_air) => _$this._time_idle_air = time_idle_air;
+  double _timeIdleAir;
+  double get timeIdleAir => _$this._timeIdleAir;
+  set timeIdleAir(double timeIdleAir) => _$this._timeIdleAir = timeIdleAir;
 
-  double _time_idle_water;
-  double get time_idle_water => _$this._time_idle_water;
-  set time_idle_water(double time_idle_water) => _$this._time_idle_water = time_idle_water;
+  double _timeIdleWater;
+  double get timeIdleWater => _$this._timeIdleWater;
+  set timeIdleWater(double timeIdleWater) => _$this._timeIdleWater = timeIdleWater;
 
-  double _time_idle_underwater;
-  double get time_idle_underwater => _$this._time_idle_underwater;
-  set time_idle_underwater(double time_idle_underwater) => _$this._time_idle_underwater = time_idle_underwater;
+  double _timeIdleUnderwater;
+  double get timeIdleUnderwater => _$this._timeIdleUnderwater;
+  set timeIdleUnderwater(double timeIdleUnderwater) => _$this._timeIdleUnderwater = timeIdleUnderwater;
 
-  double _time_idle_unknown;
-  double get time_idle_unknown => _$this._time_idle_unknown;
-  set time_idle_unknown(double time_idle_unknown) => _$this._time_idle_unknown = time_idle_unknown;
+  double _timeIdleUnknown;
+  double get timeIdleUnknown => _$this._timeIdleUnknown;
+  set timeIdleUnknown(double timeIdleUnknown) => _$this._timeIdleUnknown = timeIdleUnknown;
 
-  double _time_motor_ground;
-  double get time_motor_ground => _$this._time_motor_ground;
-  set time_motor_ground(double time_motor_ground) => _$this._time_motor_ground = time_motor_ground;
+  double _timeMotorGround;
+  double get timeMotorGround => _$this._timeMotorGround;
+  set timeMotorGround(double timeMotorGround) => _$this._timeMotorGround = timeMotorGround;
 
-  double _time_motor_air;
-  double get time_motor_air => _$this._time_motor_air;
-  set time_motor_air(double time_motor_air) => _$this._time_motor_air = time_motor_air;
+  double _timeMotorAir;
+  double get timeMotorAir => _$this._timeMotorAir;
+  set timeMotorAir(double timeMotorAir) => _$this._timeMotorAir = timeMotorAir;
 
-  double _time_motor_water;
-  double get time_motor_water => _$this._time_motor_water;
-  set time_motor_water(double time_motor_water) => _$this._time_motor_water = time_motor_water;
+  double _timeMotorWater;
+  double get timeMotorWater => _$this._timeMotorWater;
+  set timeMotorWater(double timeMotorWater) => _$this._timeMotorWater = timeMotorWater;
 
-  double _time_motor_underwater;
-  double get time_motor_underwater => _$this._time_motor_underwater;
-  set time_motor_underwater(double time_motor_underwater) => _$this._time_motor_underwater = time_motor_underwater;
+  double _timeMotorUnderwater;
+  double get timeMotorUnderwater => _$this._timeMotorUnderwater;
+  set timeMotorUnderwater(double timeMotorUnderwater) => _$this._timeMotorUnderwater = timeMotorUnderwater;
 
-  double _time_motor_unknown;
-  double get time_motor_unknown => _$this._time_motor_unknown;
-  set time_motor_unknown(double time_motor_unknown) => _$this._time_motor_unknown = time_motor_unknown;
+  double _timeMotorUnknown;
+  double get timeMotorUnknown => _$this._timeMotorUnknown;
+  set timeMotorUnknown(double timeMotorUnknown) => _$this._timeMotorUnknown = timeMotorUnknown;
 
-  int _rpm_min;
-  int get rpm_min => _$this._rpm_min;
-  set rpm_min(int rpm_min) => _$this._rpm_min = rpm_min;
+  int _rpmMin;
+  int get rpmMin => _$this._rpmMin;
+  set rpmMin(int rpmMin) => _$this._rpmMin = rpmMin;
 
-  int _rpm_max;
-  int get rpm_max => _$this._rpm_max;
-  set rpm_max(int rpm_max) => _$this._rpm_max = rpm_max;
+  int _rpmMax;
+  int get rpmMax => _$this._rpmMax;
+  set rpmMax(int rpmMax) => _$this._rpmMax = rpmMax;
 
-  double _depth_max;
-  double get depth_max => _$this._depth_max;
-  set depth_max(double depth_max) => _$this._depth_max = depth_max;
+  double _depthMax;
+  double get depthMax => _$this._depthMax;
+  set depthMax(double depthMax) => _$this._depthMax = depthMax;
 
   TachographBuilder();
 
@@ -56438,22 +56438,22 @@ class TachographBuilder implements Builder<Tachograph, TachographBuilder> {
       _srcEnt = _$v.srcEnt;
       _dst = _$v.dst;
       _dstEnt = _$v.dstEnt;
-      _timestamp_last_service = _$v.timestamp_last_service;
-      _time_next_service = _$v.time_next_service;
-      _time_motor_next_service = _$v.time_motor_next_service;
-      _time_idle_ground = _$v.time_idle_ground;
-      _time_idle_air = _$v.time_idle_air;
-      _time_idle_water = _$v.time_idle_water;
-      _time_idle_underwater = _$v.time_idle_underwater;
-      _time_idle_unknown = _$v.time_idle_unknown;
-      _time_motor_ground = _$v.time_motor_ground;
-      _time_motor_air = _$v.time_motor_air;
-      _time_motor_water = _$v.time_motor_water;
-      _time_motor_underwater = _$v.time_motor_underwater;
-      _time_motor_unknown = _$v.time_motor_unknown;
-      _rpm_min = _$v.rpm_min;
-      _rpm_max = _$v.rpm_max;
-      _depth_max = _$v.depth_max;
+      _timestampLastService = _$v.timestampLastService;
+      _timeNextService = _$v.timeNextService;
+      _timeMotorNextService = _$v.timeMotorNextService;
+      _timeIdleGround = _$v.timeIdleGround;
+      _timeIdleAir = _$v.timeIdleAir;
+      _timeIdleWater = _$v.timeIdleWater;
+      _timeIdleUnderwater = _$v.timeIdleUnderwater;
+      _timeIdleUnknown = _$v.timeIdleUnknown;
+      _timeMotorGround = _$v.timeMotorGround;
+      _timeMotorAir = _$v.timeMotorAir;
+      _timeMotorWater = _$v.timeMotorWater;
+      _timeMotorUnderwater = _$v.timeMotorUnderwater;
+      _timeMotorUnknown = _$v.timeMotorUnknown;
+      _rpmMin = _$v.rpmMin;
+      _rpmMax = _$v.rpmMax;
+      _depthMax = _$v.depthMax;
       _$v = null;
     }
     return this;
@@ -56481,22 +56481,22 @@ class TachographBuilder implements Builder<Tachograph, TachographBuilder> {
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt,
-            timestamp_last_service: timestamp_last_service,
-            time_next_service: time_next_service,
-            time_motor_next_service: time_motor_next_service,
-            time_idle_ground: time_idle_ground,
-            time_idle_air: time_idle_air,
-            time_idle_water: time_idle_water,
-            time_idle_underwater: time_idle_underwater,
-            time_idle_unknown: time_idle_unknown,
-            time_motor_ground: time_motor_ground,
-            time_motor_air: time_motor_air,
-            time_motor_water: time_motor_water,
-            time_motor_underwater: time_motor_underwater,
-            time_motor_unknown: time_motor_unknown,
-            rpm_min: rpm_min,
-            rpm_max: rpm_max,
-            depth_max: depth_max);
+            timestampLastService: timestampLastService,
+            timeNextService: timeNextService,
+            timeMotorNextService: timeMotorNextService,
+            timeIdleGround: timeIdleGround,
+            timeIdleAir: timeIdleAir,
+            timeIdleWater: timeIdleWater,
+            timeIdleUnderwater: timeIdleUnderwater,
+            timeIdleUnknown: timeIdleUnknown,
+            timeMotorGround: timeMotorGround,
+            timeMotorAir: timeMotorAir,
+            timeMotorWater: timeMotorWater,
+            timeMotorUnderwater: timeMotorUnderwater,
+            timeMotorUnknown: timeMotorUnknown,
+            rpmMin: rpmMin,
+            rpmMax: rpmMax,
+            depthMax: depthMax);
     replace(_$result);
     return _$result;
   }

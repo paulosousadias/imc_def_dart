@@ -86,11 +86,11 @@ abstract class EntityInfo extends ImcMessage implements Built<EntityInfo, Entity
 
   /// Amount of time needed to properly activate the entity.
   @ImcField("Activation Time", "act_time", ImcType.typeUInt16, units: "s")
-  int get act_time;
+  int get actTime;
 
   /// Amount of time needed to properly deactivate the entity.
   @ImcField("Deactivation Time", "deact_time", ImcType.typeUInt16, units: "s")
-  int get deact_time;
+  int get deactTime;
 }
 
 /// Query Entity Information class
@@ -161,7 +161,7 @@ abstract class TransportBindings extends ImcMessage implements Built<TransportBi
 
   /// The id of the message to be listened to.
   @ImcField("Message Identifier", "message_id", ImcType.typeUInt16)
-  int get message_id;
+  int get messageId;
 }
 
 /// Restart System class
@@ -207,11 +207,11 @@ abstract class DevCalibrationState extends ImcMessage implements Built<DevCalibr
 
   /// Total number of steps of the calibration procedure.
   @ImcField("Total Steps", "total_steps", ImcType.typeUInt8)
-  int get total_steps;
+  int get totalSteps;
 
   /// Number of the current step being performed.
   @ImcField("Current Step Number", "step_number", ImcType.typeUInt8)
-  int get step_number;
+  int get stepNumber;
 
   /// Human-readable description of the current step.
   @ImcField("Description", "step", ImcType.typePlaintext)
@@ -271,75 +271,75 @@ abstract class VehicleOperationalLimits extends ImcMessage implements Built<Vehi
   /// Minimum operation speed.
   /// For aircraft this is equal or larger then the stall speed.
   @ImcField("Minimum speed", "speed_min", ImcType.typeFp32, units: "m/s")
-  double get speed_min;
+  double get speedMin;
 
   /// Maximum operation speed.
   /// For aircraft this is limited by the engine power or structural contrains.
   @ImcField("Maximum speed", "speed_max", ImcType.typeFp32, units: "m/s")
-  double get speed_max;
+  double get speedMax;
 
   /// Maximum longitudinal acceleration.
   @ImcField("Longitudinal maximum acceleration", "long_accel", ImcType.typeFp32, units: "m/s/s")
-  double get long_accel;
+  double get longAccel;
 
   /// Maximum altitude above mean-sea-level.
   @ImcField("Maximum MSL altitude", "alt_max_msl", ImcType.typeFp32, units: "m")
-  double get alt_max_msl;
+  double get altMaxMsl;
 
   /// Maximum dive rate (negative vertical speed) as a fraction of the longitudinal speed.
   @ImcField("Maximum Dive Rate Speed Fraction", "dive_fraction_max", ImcType.typeFp32)
-  double get dive_fraction_max;
+  double get diveFractionMax;
 
   /// Maximum climb rate (positive vertical speed) as a fraction of the longitudinal speed.
   @ImcField("Maximum Climb Rate Speed Fraction", "climb_fraction_max", ImcType.typeFp32)
-  double get climb_fraction_max;
+  double get climbFractionMax;
 
   /// Limit to the bank angle (roll; angle over the xx body-axis).
   @ImcField("Bank limit", "bank_max", ImcType.typeFp32, units: "rad")
-  double get bank_max;
+  double get bankMax;
 
   /// Limit to the bank angular rate (roll; angle over the xx body-axis).
   @ImcField("Bank rate limit", "p_max", ImcType.typeFp32, units: "rad/s")
-  double get p_max;
+  double get pMax;
 
   /// Minimum pitch angle (angle over the xx body-axis).
   @ImcField("Minimum pitch angle", "pitch_min", ImcType.typeFp32, units: "rad")
-  double get pitch_min;
+  double get pitchMin;
 
   /// Maximum pitch angle (angle over the xx body-axis).
   @ImcField("Maximum pitch angle", "pitch_max", ImcType.typeFp32, units: "rad")
-  double get pitch_max;
+  double get pitchMax;
 
   /// Maximum pitch angular rate (angle over the xx body-axis).
   @ImcField("Maximum pitch rate", "q_max", ImcType.typeFp32, units: "rad/s")
-  double get q_max;
+  double get qMax;
 
   /// Minimum load factor, i.e., maximum positive acceleration in the zz body-axis
   /// as a factor of the gravity acceleration at mean-sea-level.
   @ImcField("Minimum load factor", "g_min", ImcType.typeFp32, units: "g")
-  double get g_min;
+  double get gMin;
 
   /// Maximum load factor, i.e., maximum negative acceleration in the zz body-axis
   /// as a factor of the gravity acceleration at mean-sea-level.
   @ImcField("Maximum load factor", "g_max", ImcType.typeFp32, units: "g")
-  double get g_max;
+  double get gMax;
 
   /// Maximum lateral load factor, i.e., maximum acceleration in the yy body-axis
   /// as a factor of the gravity acceleration at mean-sea-level.
   @ImcField("Maximum lateral load factor", "g_lat_max", ImcType.typeFp32, units: "g")
-  double get g_lat_max;
+  double get gLatMax;
 
   /// Minimum motor RPMs.
   @ImcField("Minimum RPMs", "rpm_min", ImcType.typeFp32, units: "rpm")
-  double get rpm_min;
+  double get rpmMin;
 
   /// Maximum motor RPMs.
   @ImcField("Maximum RPMs", "rpm_max", ImcType.typeFp32, units: "rpm")
-  double get rpm_max;
+  double get rpmMax;
 
   /// Maximum motor RPMs' rate of change.
   @ImcField("Maximum RPM rate", "rpm_rate_max", ImcType.typeFp32, units: "rpm/s")
-  double get rpm_rate_max;
+  double get rpmRateMax;
 }
 
 /// Message List class
@@ -499,11 +499,11 @@ abstract class DynamicsSimParam extends ImcMessage implements Built<DynamicsSimP
 
   /// Proportional gain from the TAS (True Airspeed) error to the longitudinal acceleration.
   @ImcField("TAS to Longitudinal Acceleration Gain", "tas2acc_pgain", ImcType.typeFp32)
-  double get tas2acc_pgain;
+  double get tas2accPgain;
 
   /// Proportional gain from the bank angle error to the bank angular rate.
   @ImcField("Bank to Bank Rate Gain", "bank2p_pgain", ImcType.typeFp32)
-  double get bank2p_pgain;
+  double get bank2pPgain;
 }
 
 /// Storage Usage class
@@ -741,7 +741,7 @@ abstract class HistoricSonarData extends ImcMessage implements Built<HistoricSon
 
   /// Sonar data encoded as in 'encoding'.
   @ImcField("SonarData", "sonar_data", ImcType.typeRawdata)
-  List<int> get sonar_data;
+  List<int> get sonarData;
 }
 
 /// Historic Event class
@@ -833,11 +833,11 @@ abstract class Announce extends ImcMessage implements Built<Announce, AnnounceBu
 
   /// System name.
   @ImcField("System Name", "sys_name", ImcType.typePlaintext)
-  String get sys_name;
+  String get sysName;
 
   /// System type.
   @ImcField("System Type", "sys_type", ImcType.typeUInt8)
-  SystemTypeEnum get sys_type;
+  SystemTypeEnum get sysType;
 
   /// The owner IMC system ID.
   @ImcField("Control Owner", "owner", ImcType.typeUInt16)
@@ -881,7 +881,7 @@ abstract class AnnounceService extends ImcMessage implements Built<AnnounceServi
   /// Informs about the availability of the service on internal and
   /// external networks.
   @ImcField("ServiceType", "service_type", ImcType.typeUInt8)
-  AnnounceServiceBitfieldServiceType get service_type;
+  AnnounceServiceBitfieldServiceType get serviceType;
 }
 
 /// Receive Signal Strength Information class
@@ -1080,7 +1080,7 @@ abstract class IridiumMsgTx extends ImcMessage implements Built<IridiumMsgTx, Ir
 
   /// The request identifier used to receive transmission updates.
   @ImcField("Request Identifier", "req_id", ImcType.typeUInt16)
-  int get req_id;
+  int get reqId;
 
   /// Time, in seconds, after which there will be no more atempts to transmit the message.
   @ImcField("Time to live", "ttl", ImcType.typeUInt16, units: "s")
@@ -1106,7 +1106,7 @@ abstract class IridiumTxStatus extends ImcMessage implements Built<IridiumTxStat
 
   /// The request identifier used to receive transmission updates
   @ImcField("Request Identifier", "req_id", ImcType.typeUInt16)
-  int get req_id;
+  int get reqId;
 
   @ImcField("Status Code", "status", ImcType.typeUInt8)
   IridiumTxStatusEnumStatus get status;
@@ -1127,7 +1127,7 @@ abstract class GroupMembershipState extends ImcMessage implements Built<GroupMem
 
   /// Name of the group of systems.
   @ImcField("Group Name", "group_name", ImcType.typePlaintext)
-  String get group_name;
+  String get groupName;
 
   /// Communication link assertion for each group member.
   /// One bit to assert each system communication link state.
@@ -1147,15 +1147,15 @@ abstract class SystemGroup extends ImcMessage implements Built<SystemGroup, Syst
 
   /// Name of the group of systems.
   @ImcField("Group Name", "GroupName", ImcType.typePlaintext)
-  String get GroupName;
+  String get groupName;
 
   /// Actions on the group list.
   @ImcField("Group List Action", "Action", ImcType.typeUInt8)
-  SystemGroupEnumAction get Action;
+  SystemGroupEnumAction get action;
 
   /// List of names of system in the group, separated by commas.
   @ImcField("Systems Name List", "GroupList", ImcType.typePlaintext)
-  String get GroupList;
+  String get groupList;
 }
 
 /// Link Latency class
@@ -1175,7 +1175,7 @@ abstract class LinkLatency extends ImcMessage implements Built<LinkLatency, Link
 
   /// ID of system that was the source of the communication package.
   @ImcField("Communications Source System ID", "sys_src", ImcType.typeUInt16)
-  int get sys_src;
+  int get sysSrc;
 }
 
 /// Extended Receive Signal Strength Information class
@@ -1212,15 +1212,15 @@ abstract class HistoricData extends ImcMessage implements Built<HistoricData, Hi
 
   /// All data sent inside this message will have offsets relative to this latitude.
   @ImcField("Base Latitude", "base_lat", ImcType.typeFp32, units: "°")
-  double get base_lat;
+  double get baseLat;
 
   /// All data sent inside this message will have offsets relative to this longitude.
   @ImcField("Base Longitude", "base_lon", ImcType.typeFp32, units: "°")
-  double get base_lon;
+  double get baseLon;
 
   /// All data sent inside this message will use this time as the origin (0).
   @ImcField("Base Timestamp", "base_time", ImcType.typeFp32, units: "s")
-  double get base_time;
+  double get baseTime;
 
   @ImcField("Data", "data", ImcType.typeMessageList)
   List<RemoteData> get data;
@@ -1239,15 +1239,15 @@ abstract class CompressedHistory extends ImcMessage implements Built<CompressedH
 
   /// All data sent inside this message will have offsets relative to this latitude.
   @ImcField("Base Latitude", "base_lat", ImcType.typeFp32, units: "°")
-  double get base_lat;
+  double get baseLat;
 
   /// All data sent inside this message will have offsets relative to this longitude.
   @ImcField("Base Longitude", "base_lon", ImcType.typeFp32, units: "°")
-  double get base_lon;
+  double get baseLon;
 
   /// All data sent inside this message will use this time as the origin (0).
   @ImcField("Base Timestamp", "base_time", ImcType.typeFp32, units: "s")
-  double get base_time;
+  double get baseTime;
 
   /// A message-list of HistoricSample messages compressed with GZip algorithm.
   @ImcField("Data", "data", ImcType.typeRawdata)
@@ -1265,7 +1265,7 @@ abstract class HistoricSample extends RemoteData implements Built<HistoricSample
 
   /// The IMC identifier of the system that produced this sample.
   @ImcField("Original System Id", "sys_id", ImcType.typeUInt16)
-  int get sys_id;
+  int get sysId;
 
   /// The priority for this data sample. Default priority is 0. Samples with
   /// higher priorities will *always* be transmitted before samples with lower
@@ -1305,13 +1305,13 @@ abstract class HistoricDataQuery extends ImcMessage implements Built<HistoricDat
   String get abbrev => "HistoricDataQuery";
 
   @ImcField("Request Id", "req_id", ImcType.typeUInt16)
-  int get req_id;
+  int get reqId;
 
   @ImcField("Request Type", "type", ImcType.typeUInt8)
   HistoricDataQueryEnumType get type;
 
   @ImcField("Maximum Size", "max_size", ImcType.typeUInt16)
-  int get max_size;
+  int get maxSize;
 
   @ImcField("Data", "data", ImcType.typeMessage)
   HistoricData get data;
@@ -1330,7 +1330,7 @@ abstract class RemoteCommand extends RemoteData implements Built<RemoteCommand, 
 
   /// IMC id of the original sender.
   @ImcField("Original Source", "original_source", ImcType.typeUInt16)
-  int get original_source;
+  int get originalSource;
 
   /// IMC id of the recipient.
   @ImcField("Destination", "destination", ImcType.typeUInt16)
@@ -1361,7 +1361,7 @@ abstract class CommSystemsQuery extends ImcMessage implements Built<CommSystemsQ
 
   /// Communication interface to be used for reports.
   @ImcField("Communication Interface", "comm_interface", ImcType.typeUInt16)
-  CommSystemsQueryBitfieldCommInterface get comm_interface;
+  CommSystemsQueryBitfieldCommInterface get commInterface;
 
   @ImcField("Model", "model", ImcType.typeUInt16)
   CommSystemsQueryEnumModel get model;
@@ -1387,7 +1387,7 @@ abstract class TelemetryMsg extends ImcMessage implements Built<TelemetryMsg, Te
 
   /// The request identifier used to receive transmission updates.
   @ImcField("Request Identifier", "req_id", ImcType.typeUint32)
-  int get req_id;
+  int get reqId;
 
   /// Time, in seconds, which will be considered a non-transmitted message.
   @ImcField("Time to live", "ttl", ImcType.typeUInt16, units: "s")
@@ -1403,7 +1403,7 @@ abstract class TelemetryMsg extends ImcMessage implements Built<TelemetryMsg, Te
 
   /// The unique identifier of this message's destination (e.g. lauv-xtreme-2, manta-0).
   @ImcField("Source Identifier", "Source", ImcType.typePlaintext)
-  String get Source;
+  String get source;
 
   /// Type of telemetry transmissions.
   @ImcField("Acknowledge", "acknowledge", ImcType.typeUInt8)
@@ -1468,15 +1468,15 @@ abstract class LblBeacon extends ImcMessage implements Built<LblBeacon, LblBeaco
 
   /// Interrogation channel.
   @ImcField("Interrogation channel", "query_channel", ImcType.typeUInt8)
-  int get query_channel;
+  int get queryChannel;
 
   /// Reply channel.
   @ImcField("Reply channel", "reply_channel", ImcType.typeUInt8)
-  int get reply_channel;
+  int get replyChannel;
 
   /// Transponder delay.
   @ImcField("Transponder delay", "transponder_delay", ImcType.typeUInt8, units: "ms")
-  int get transponder_delay;
+  int get transponderDelay;
 }
 
 /// LBL Configuration class
@@ -1671,19 +1671,19 @@ abstract class GpsFix extends ImcMessage implements Built<GpsFix, GpsFixBuilder>
 
   /// UTC year.
   @ImcField("UTC Year", "utc_year", ImcType.typeUInt16)
-  int get utc_year;
+  int get utcYear;
 
   /// UTC month.
   @ImcField("UTC Month", "utc_month", ImcType.typeUInt8)
-  int get utc_month;
+  int get utcMonth;
 
   /// UTC day.
   @ImcField("UTC Day", "utc_day", ImcType.typeUInt8)
-  int get utc_day;
+  int get utcDay;
 
   /// UTC time of the GPS fix measured in seconds since 00:00:00 (midnight).
   @ImcField("UTC Time of Fix", "utc_time", ImcType.typeFp32, units: "s")
-  double get utc_time;
+  double get utcTime;
 
   /// WGS-84 Latitude coordinate.
   @ImcField("Latitude WGS-84", "lat", ImcType.typeFp64, units: "rad")
@@ -1762,7 +1762,7 @@ abstract class EulerAngles extends ImcMessage implements Built<EulerAngles, Eule
   /// the sensor cannot measure the magnetic heading, this field
   /// will have the same value as Yaw (True).
   @ImcField("Yaw Angle (Magnetic)", "psi_magnetic", ImcType.typeFp64, units: "rad")
-  double get psi_magnetic;
+  double get psiMagnetic;
 }
 
 /// Euler Angles Delta class
@@ -1985,7 +1985,7 @@ abstract class Distance extends ImcMessage implements Built<Distance, DistanceBu
 
   /// Beam configuration of the device.
   @ImcField("Beam Configuration", "beam_config", ImcType.typeMessageList)
-  List<BeamConfig> get beam_config;
+  List<BeamConfig> get beamConfig;
 
   /// Measured distance.
   @ImcField("Measured Distance", "value", ImcType.typeFp32, units: "m")
@@ -2291,24 +2291,24 @@ abstract class SonarData extends ImcMessage implements Built<SonarData, SonarDat
 
   /// Minimum range.
   @ImcField("Minimum Range", "min_range", ImcType.typeUInt16, units: "m")
-  int get min_range;
+  int get minRange;
 
   /// Maximum range.
   @ImcField("Maximum Range", "max_range", ImcType.typeUInt16, units: "m")
-  int get max_range;
+  int get maxRange;
 
   /// Size of the data unit. (Should be multiple of 8)
   @ImcField("Bits Per Data Point", "bits_per_point", ImcType.typeUInt8, units: "bit")
-  int get bits_per_point;
+  int get bitsPerPoint;
 
   /// Scaling factor used to multiply each data unit to restore the
   /// original floating point value.
   @ImcField("Scaling Factor", "scale_factor", ImcType.typeFp32)
-  double get scale_factor;
+  double get scaleFactor;
 
   /// Beam configuration of the device.
   @ImcField("Beam Configuration", "beam_config", ImcType.typeMessageList)
-  List<BeamConfig> get beam_config;
+  List<BeamConfig> get beamConfig;
 
   /// Data acquired by the measurement.
   @ImcField("Data", "data", ImcType.typeRawdata)
@@ -2390,11 +2390,11 @@ abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNav
 
   /// Height Above Ellipsoid.
   @ImcField("Height above ellipsoid", "height_ell", ImcType.typeFp32, units: "m")
-  double get height_ell;
+  double get heightEll;
 
   /// Height Above Sea Level.
   @ImcField("Height above sea level", "height_sea", ImcType.typeFp32, units: "m")
-  double get height_sea;
+  double get heightSea;
 
   /// Horizontal Accuracy Estimate.
   @ImcField("Horizontal Accuracy Estimate", "hacc", ImcType.typeFp32, units: "m")
@@ -2406,15 +2406,15 @@ abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNav
 
   /// NED North Velocity.
   @ImcField("NED North Velocity", "vel_n", ImcType.typeFp32, units: "m/s")
-  double get vel_n;
+  double get velN;
 
   /// NED East Velocity.
   @ImcField("NED East Velocity", "vel_e", ImcType.typeFp32, units: "m/s")
-  double get vel_e;
+  double get velE;
 
   /// NED Down Velocity.
   @ImcField("NED Down Velocity", "vel_d", ImcType.typeFp32, units: "m/s")
-  double get vel_d;
+  double get velD;
 
   /// NED Down Velocity.
   @ImcField("Speed (3D)", "speed", ImcType.typeFp32, units: "m/s")
@@ -2504,12 +2504,12 @@ abstract class BeamConfig extends ImcMessage implements Built<BeamConfig, BeamCo
   /// Beam width of the instrument. A negative number denotes that
   /// this information is not available or is not applicable.
   @ImcField("Beam Width", "beam_width", ImcType.typeFp32, units: "rad")
-  double get beam_width;
+  double get beamWidth;
 
   /// Beam height of the instrument. A negative number denotes that
   /// this information is not available or is not applicable.
   @ImcField("Beam Height", "beam_height", ImcType.typeFp32, units: "rad")
-  double get beam_height;
+  double get beamHeight;
 }
 
 /// Data Sanity class
@@ -2671,15 +2671,15 @@ abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRt
 
   /// WGS-84 Latitude coordinate of the base.
   @ImcField("Base Latitude WGS-84", "base_lat", ImcType.typeFp64, units: "rad")
-  double get base_lat;
+  double get baseLat;
 
   /// WGS-84 Longitude coordinate of the base.
   @ImcField("Base Longitude WGS-84", "base_lon", ImcType.typeFp64, units: "rad")
-  double get base_lon;
+  double get baseLon;
 
   /// Height above WGS-84 ellipsoid of the base.
   @ImcField("Base Height above WGS-84 ellipsoid", "base_height", ImcType.typeFp32, units: "m")
-  double get base_height;
+  double get baseHeight;
 
   /// Baseline North coordinate.
   @ImcField("Position North", "n", ImcType.typeFp32, units: "m")
@@ -2695,15 +2695,15 @@ abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRt
 
   /// Velocity North coordinate.
   @ImcField("Velocity North", "v_n", ImcType.typeFp32, units: "m/s")
-  double get v_n;
+  double get vN;
 
   /// Velocity East coordinate.
   @ImcField("Velocity East", "v_e", ImcType.typeFp32, units: "m/s")
-  double get v_e;
+  double get vE;
 
   /// Velocity Down coordinate.
   @ImcField("Velocity Down", "v_d", ImcType.typeFp32, units: "m/s")
-  double get v_d;
+  double get vD;
 
   /// Number of satellites used in solution.
   @ImcField("Number of Satellites", "satellites", ImcType.typeUInt8)
@@ -2711,11 +2711,11 @@ abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRt
 
   /// Number of hypotheses in the Integer Ambiguity Resolution (smaller is better).
   @ImcField("IAR Hypotheses", "iar_hyp", ImcType.typeUInt16)
-  int get iar_hyp;
+  int get iarHyp;
 
   /// Quality ratio of Integer Ambiguity Resolution (bigger is better).
   @ImcField("IAR Ratio", "iar_ratio", ImcType.typeFp32)
-  double get iar_ratio;
+  double get iarRatio;
 }
 
 /// External Navigation Data class
@@ -3001,11 +3001,11 @@ abstract class PowerOperation extends ImcMessage implements Built<PowerOperation
 
   /// Time remaining to complete operation.
   @ImcField("Time Remaining", "time_remain", ImcType.typeFp32, units: "s")
-  double get time_remain;
+  double get timeRemain;
 
   /// Scheduled time of operation.
   @ImcField("Scheduled Time", "sched_time", ImcType.typeFp64, units: "s")
-  double get sched_time;
+  double get schedTime;
 }
 
 /// Power Channel Control class
@@ -3028,7 +3028,7 @@ abstract class PowerChannelControl extends ImcMessage implements Built<PowerChan
 
   /// Scheduled time of operation.
   @ImcField("Scheduled Time", "sched_time", ImcType.typeFp64, units: "s")
-  double get sched_time;
+  double get schedTime;
 }
 
 /// Query Power Channel State class
@@ -3139,7 +3139,7 @@ abstract class SetPWM extends ImcMessage implements Built<SetPWM, SetPWMBuilder>
   /// The active time of the PWM signal. The duty cycle value must
   /// be less or equal to the period.
   @ImcField("Duty Cycle", "duty_cycle", ImcType.typeUint32, units: "µs")
-  int get duty_cycle;
+  int get dutyCycle;
 }
 
 /// PWM class
@@ -3164,7 +3164,7 @@ abstract class PWM extends ImcMessage implements Built<PWM, PWMBuilder> {
   /// The active time of the PWM signal. The duty cycle value is
   /// less or equal to the period.
   @ImcField("Duty Cycle", "duty_cycle", ImcType.typeUint32, units: "µs")
-  int get duty_cycle;
+  int get dutyCycle;
 }
 
 /// Estimated State class
@@ -3398,11 +3398,11 @@ abstract class NavigationUncertainty extends ImcMessage implements Built<Navigat
 
   /// The psi Euler angle bias variance from the vehicle's sensed attitude.
   @ImcField("Variance - Yaw Bias", "bias_psi", ImcType.typeFp32, units: "rad")
-  double get bias_psi;
+  double get biasPsi;
 
   /// The angular velocity over body-fixed zz axis bias variance from sensor.
   @ImcField("Variance - Gyro. Yaw Rate Bias", "bias_r", ImcType.typeFp32, units: "rad/s")
-  double get bias_r;
+  double get biasR;
 }
 
 /// Navigation Data class
@@ -3420,11 +3420,11 @@ abstract class NavigationData extends ImcMessage implements Built<NavigationData
 
   /// The psi Euler angle bias from the vehicle's sensed attitude.
   @ImcField("Yaw Bias", "bias_psi", ImcType.typeFp32, units: "rad")
-  double get bias_psi;
+  double get biasPsi;
 
   /// The angular velocity over body-fixed zz axis bias from sensor.
   @ImcField("Gyro. Yaw Rate Bias", "bias_r", ImcType.typeFp32, units: "rad/s")
-  double get bias_r;
+  double get biasR;
 
   /// Course over ground given by NED ground velocity vectors.
   @ImcField("Course Over Ground", "cog", ImcType.typeFp32, units: "rad")
@@ -3436,23 +3436,23 @@ abstract class NavigationData extends ImcMessage implements Built<NavigationData
 
   /// GPS rejection filter level.
   @ImcField("GPS Rejection Filter Level", "lbl_rej_level", ImcType.typeFp32)
-  double get lbl_rej_level;
+  double get lblRejLevel;
 
   /// LBL rejection filter level.
   @ImcField("LBL Rejection Filter Level", "gps_rej_level", ImcType.typeFp32)
-  double get gps_rej_level;
+  double get gpsRejLevel;
 
   /// Custom variable.
   @ImcField("Variance - Custom Variable X", "custom_x", ImcType.typeFp32)
-  double get custom_x;
+  double get customX;
 
   /// Custom variable.
   @ImcField("Variance - Custom Variable Y", "custom_y", ImcType.typeFp32)
-  double get custom_y;
+  double get customY;
 
   /// Custom variable.
   @ImcField("Variance - Custom Variable Z", "custom_z", ImcType.typeFp32)
-  double get custom_z;
+  double get customZ;
 }
 
 /// GPS Fix Rejection class
@@ -3467,7 +3467,7 @@ abstract class GpsFixRejection extends ImcMessage implements Built<GpsFixRejecti
   /// UTC time of the rejected GPS fix measured in seconds since
   /// 00:00:00 (midnight).
   @ImcField("UTC Time of Fix", "utc_time", ImcType.typeFp32, units: "s")
-  double get utc_time;
+  double get utcTime;
 
   /// Reason for rejection.
   @ImcField("Reason", "reason", ImcType.typeUInt8)
@@ -3573,12 +3573,12 @@ abstract class LblEstimate extends ImcMessage implements Built<LblEstimate, LblE
   /// The North offset variance of the North/East/Down
   /// field with respect to LLH.
   @ImcField("North position variance", "var_x", ImcType.typeFp32, units: "m")
-  double get var_x;
+  double get varX;
 
   /// The East offset variance of the North/East/Down
   /// field with respect to LLH.
   @ImcField("East position variance", "var_y", ImcType.typeFp32, units: "m")
-  double get var_y;
+  double get varY;
 
   /// Distance between current LBL Beacon position and filter estimation.
   @ImcField("Distance", "distance", ImcType.typeFp32, units: "m")
@@ -3679,7 +3679,7 @@ abstract class DesiredZ extends ControlCommand implements Built<DesiredZ, Desire
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 }
 
 /// Desired Speed class
@@ -3699,7 +3699,7 @@ abstract class DesiredSpeed extends ControlCommand implements Built<DesiredSpeed
 
   /// Indicates the units used for the speed value.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 }
 
 /// Desired Roll class
@@ -3789,44 +3789,44 @@ abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, 
   /// Should be set to an always increasing reference at the time of dispatching this message.
   /// Lower level path controllers must inherit the same path reference sent by maneuver.
   @ImcField("Path Reference", "path_ref", ImcType.typeUint32)
-  int get path_ref;
+  int get pathRef;
 
   /// WGS-84 latitude of start point. This will be ignored unless
   /// the 'START' flag is set.
   @ImcField("Start Point -- Latitude WGS-84", "start_lat", ImcType.typeFp64, units: "rad")
-  double get start_lat;
+  double get startLat;
 
   /// WGS-84 longitude of start point. This will be ignored unless
   /// the 'START' flag is set.
   @ImcField("Start Point -- WGS-84 Longitude", "start_lon", ImcType.typeFp64, units: "rad")
-  double get start_lon;
+  double get startLon;
 
   /// Altitude or depth of start point. This parameter will be
   /// ignored if the 'NO_Z' flag is set, or if the 'START' flag is
   /// not set.
   @ImcField("Start Point -- Z Reference", "start_z", ImcType.typeFp32, units: "m")
-  double get start_z;
+  double get startZ;
 
   /// Units of the start point's z reference.
   @ImcField("Start Point -- Z Units", "start_z_units", ImcType.typeUInt8)
-  ZUnitsEnum get start_z_units;
+  ZUnitsEnum get startZUnits;
 
   /// WGS-84 latitude of end point.
   @ImcField("End Point -- WGS84 Latitude", "end_lat", ImcType.typeFp64, units: "rad")
-  double get end_lat;
+  double get endLat;
 
   /// WGS-84 longitude of end point.
   @ImcField("End Point -- WGS-84 Longitude", "end_lon", ImcType.typeFp64, units: "rad")
-  double get end_lon;
+  double get endLon;
 
   /// Depth or altitude for the end point. This parameter will be
   /// ignored if the 'NO_Z' flag is set.
   @ImcField("End Point -- Z Reference", "end_z", ImcType.typeFp32, units: "m")
-  double get end_z;
+  double get endZ;
 
   /// Units of the end point's z reference.
   @ImcField("End Point -- Z Units", "end_z_units", ImcType.typeUInt8)
-  ZUnitsEnum get end_z_units;
+  ZUnitsEnum get endZUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -3834,7 +3834,7 @@ abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, 
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Radius for loitering at end point. Specify less or equal to 0
   /// for no loitering.
@@ -3955,42 +3955,42 @@ abstract class PathControlState extends ImcMessage implements Built<PathControlS
   /// PathControlState message refers to.
   /// Path reference should only be set by a maneuver, not by path controllers.
   @ImcField("Path Reference", "path_ref", ImcType.typeUint32)
-  int get path_ref;
+  int get pathRef;
 
   /// WGS-84 latitude of start point.
   @ImcField("Start Point -- Latitude WGS-84", "start_lat", ImcType.typeFp64, units: "rad")
-  double get start_lat;
+  double get startLat;
 
   /// WGS-84 longitude of start point.
   @ImcField("Start Point -- WGS-84 Longitude", "start_lon", ImcType.typeFp64, units: "rad")
-  double get start_lon;
+  double get startLon;
 
   /// Altitude or depth of start point. This parameter will be
   /// ignored if the 'NO_Z' flag is set, or if the 'START' flag is
   /// not set.
   @ImcField("Start Point -- Z Reference", "start_z", ImcType.typeFp32, units: "m")
-  double get start_z;
+  double get startZ;
 
   /// Units of the start point's z reference.
   @ImcField("Start Point -- Z Units", "start_z_units", ImcType.typeUInt8)
-  ZUnitsEnum get start_z_units;
+  ZUnitsEnum get startZUnits;
 
   /// WGS-84 latitude of end point.
   @ImcField("End Point -- Latitude WGS-84", "end_lat", ImcType.typeFp64, units: "rad")
-  double get end_lat;
+  double get endLat;
 
   /// WGS-84 longitude of end point.
   @ImcField("End Point -- WGS-84 Longitude", "end_lon", ImcType.typeFp64, units: "rad")
-  double get end_lon;
+  double get endLon;
 
   /// Depth or altitude for the end point. This parameter should be
   /// ignored if the 'NO_Z' flag is set.
   @ImcField("End Point -- Z Reference", "end_z", ImcType.typeFp32, units: "m")
-  double get end_z;
+  double get endZ;
 
   /// Units of the end point's z reference.
   @ImcField("End Point -- Z Units", "end_z_units", ImcType.typeUInt8)
-  ZUnitsEnum get end_z_units;
+  ZUnitsEnum get endZUnits;
 
   /// Radius for loitering at end point.
   /// Will be 0 if no loitering is active.
@@ -4027,7 +4027,7 @@ abstract class PathControlState extends ImcMessage implements Built<PathControlS
 
   /// Course error value.
   @ImcField("Course Error", "course_error", ImcType.typeFp32, units: "rad")
-  double get course_error;
+  double get courseError;
 
   /// Estimated time to reach target waypoint. The value will be
   /// 65535 if the time is unknown or undefined, and 0 when
@@ -4206,7 +4206,7 @@ abstract class Goto extends Maneuver implements Built<Goto, GotoBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -4214,7 +4214,7 @@ abstract class Goto extends Maneuver implements Built<Goto, GotoBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// The phi Euler angle in which the vehicle should set its
   /// attitude. Use '-1' for this field to be
@@ -4271,7 +4271,7 @@ abstract class PopUp extends Maneuver implements Built<PopUp, PopUpBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -4279,7 +4279,7 @@ abstract class PopUp extends Maneuver implements Built<PopUp, PopUpBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// The duration of this maneuver at surface level.
   /// Only used if flag WAIT_AT_SURFACE is on.
@@ -4347,7 +4347,7 @@ abstract class Loiter extends Maneuver implements Built<Loiter, LoiterBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// The duration of this maneuver. Use '0' for unlimited duration
   /// time.
@@ -4360,7 +4360,7 @@ abstract class Loiter extends Maneuver implements Built<Loiter, LoiterBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Loiter maneuver type.
   @ImcField("Loiter Type", "type", ImcType.typeUInt8)
@@ -4462,7 +4462,7 @@ abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -4470,7 +4470,7 @@ abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Rows bearing angle.
   @ImcField("Bearing", "bearing", ImcType.typeFp64, units: "rad")
@@ -4478,7 +4478,7 @@ abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
 
   /// Rows cross angle reference.
   @ImcField("Cross Angle", "cross_angle", ImcType.typeFp64, units: "rad")
-  double get cross_angle;
+  double get crossAngle;
 
   /// Width of the maneuver.
   @ImcField("Width", "width", ImcType.typeFp32, units: "m")
@@ -4538,7 +4538,7 @@ abstract class FollowPath extends Maneuver implements Built<FollowPath, FollowPa
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -4546,7 +4546,7 @@ abstract class FollowPath extends Maneuver implements Built<FollowPath, FollowPa
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// List of PathPoint messages, encoding the path points.
   @ImcField("Path Points", "points", ImcType.typeMessageList)
@@ -4614,7 +4614,7 @@ abstract class YoYo extends Maneuver implements Built<YoYo, YoYoBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Amplitude.
   @ImcField("Amplitude", "amplitude", ImcType.typeFp32, units: "m")
@@ -4630,7 +4630,7 @@ abstract class YoYo extends Maneuver implements Built<YoYo, YoYoBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -4675,7 +4675,7 @@ abstract class StationKeeping extends Maneuver implements Built<StationKeeping, 
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Radius.
   @ImcField("Radius", "radius", ImcType.typeFp32, units: "m")
@@ -4692,7 +4692,7 @@ abstract class StationKeeping extends Maneuver implements Built<StationKeeping, 
 
   /// Indicates the units used for the speed value.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -4734,20 +4734,20 @@ abstract class Elevator extends Maneuver implements Built<Elevator, ElevatorBuil
   /// ignored if the 'NO_Z' flag is set, or if the 'START' flag is
   /// not set.
   @ImcField("Start Point -- Z Reference", "start_z", ImcType.typeFp32, units: "m")
-  double get start_z;
+  double get startZ;
 
   /// Units of the start point's z reference.
   @ImcField("Start Point -- Z Units", "start_z_units", ImcType.typeUInt8)
-  ZUnitsEnum get start_z_units;
+  ZUnitsEnum get startZUnits;
 
   /// Depth or altitude for the end point.  This parameter will be
   /// ignored if the 'NO_Z' flag is set.
   @ImcField("End Point -- Z Reference", "end_z", ImcType.typeFp32, units: "m")
-  double get end_z;
+  double get endZ;
 
   /// Units of the end point's z reference.
   @ImcField("End Point -- Z Units", "end_z_units", ImcType.typeUInt8)
-  ZUnitsEnum get end_z_units;
+  ZUnitsEnum get endZUnits;
 
   /// Radius for use in ascent/descent. If 0 the controller to
   /// should use a custom control strategy.
@@ -4760,7 +4760,7 @@ abstract class Elevator extends Maneuver implements Built<Elevator, ElevatorBuil
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -4796,7 +4796,7 @@ abstract class FollowTrajectory extends Maneuver implements Built<FollowTrajecto
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -4804,7 +4804,7 @@ abstract class FollowTrajectory extends Maneuver implements Built<FollowTrajecto
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// List of trajectory points.
   @ImcField("Trajectory Points", "points", ImcType.typeMessageList)
@@ -4899,7 +4899,7 @@ abstract class VehicleFormation extends Maneuver implements Built<VehicleFormati
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Reference speed.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -4907,7 +4907,7 @@ abstract class VehicleFormation extends Maneuver implements Built<VehicleFormati
 
   /// Reference speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// List of trajectory points.
   @ImcField("Trajectory Points", "points", ImcType.typeMessageList)
@@ -4919,7 +4919,7 @@ abstract class VehicleFormation extends Maneuver implements Built<VehicleFormati
 
   /// Optional start time hint for vehicle formation.
   @ImcField("Start Time", "start_time", ImcType.typeFp64, units: "s")
-  double get start_time;
+  double get startTime;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -4942,15 +4942,15 @@ abstract class VehicleFormationParticipant extends ImcMessage implements Built<V
 
   /// Distance that the system must respect along the xx axis.
   @ImcField("Formation offset -- Along-track", "off_x", ImcType.typeFp32, units: "m")
-  double get off_x;
+  double get offX;
 
   /// Distance that the system must respect along the yy axis.
   @ImcField("Formation offset -- Cross-track", "off_y", ImcType.typeFp32, units: "m")
-  double get off_y;
+  double get offY;
 
   /// Distance that the system must respect along the zz axis.
   @ImcField("Formation offset -- Depth/Altitude", "off_z", ImcType.typeFp32, units: "m")
-  double get off_z;
+  double get offZ;
 }
 
 /// Stop Maneuver class
@@ -5028,7 +5028,7 @@ abstract class FollowSystem extends ImcMessage implements Built<FollowSystem, Fo
 
   /// Reference speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Along-track offset.
   @ImcField("Offset -- X", "x", ImcType.typeFp32)
@@ -5045,7 +5045,7 @@ abstract class FollowSystem extends ImcMessage implements Built<FollowSystem, Fo
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 }
 
 /// Communications Relay class
@@ -5073,7 +5073,7 @@ abstract class CommsRelay extends Maneuver implements Built<CommsRelay, CommsRel
 
   /// Reference speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Duration of maneuver, 0 for unlimited duration.
   @ImcField("Duration", "duration", ImcType.typeUInt16, units: "s")
@@ -5081,16 +5081,16 @@ abstract class CommsRelay extends Maneuver implements Built<CommsRelay, CommsRel
 
   /// The IMC id of the system A.
   @ImcField("System A", "sys_a", ImcType.typeUInt16)
-  int get sys_a;
+  int get sysA;
 
   /// The IMC id of the system B.
   @ImcField("System B", "sys_b", ImcType.typeUInt16)
-  int get sys_b;
+  int get sysB;
 
   /// Move only if the distance to the target is bigger than this
   /// threshold.
   @ImcField("Move threshold", "move_threshold", ImcType.typeFp32, units: "m")
-  double get move_threshold;
+  double get moveThreshold;
 }
 
 /// Cover Area class
@@ -5119,7 +5119,7 @@ abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaB
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Reference speed.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -5127,7 +5127,7 @@ abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaB
 
   /// Reference speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Message list of type PolygonVertex.
   @ImcField("Polygon", "polygon", ImcType.typeMessageList)
@@ -5190,7 +5190,7 @@ abstract class CompassCalibration extends Maneuver implements Built<CompassCalib
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Pitch angle used to perform the maneuver.
   @ImcField("Pitch", "pitch", ImcType.typeFp32, units: "rad")
@@ -5210,7 +5210,7 @@ abstract class CompassCalibration extends Maneuver implements Built<CompassCalib
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Radius of the maneuver.
   @ImcField("Radius", "radius", ImcType.typeFp32, units: "m")
@@ -5250,11 +5250,11 @@ abstract class FormationParameters extends ImcMessage implements Built<Formation
 
   /// Name of the formation configuration.
   @ImcField("Formation Name", "formation_name", ImcType.typePlaintext)
-  String get formation_name;
+  String get formationName;
 
   /// Formation reference frame
   @ImcField("Formation Reference Frame", "reference_frame", ImcType.typeUInt8)
-  FormationParametersEnumReferenceFrame get reference_frame;
+  FormationParametersEnumReferenceFrame get referenceFrame;
 
   /// List of formation participants.
   @ImcField("Formation Participants", "participants", ImcType.typeMessageList)
@@ -5284,16 +5284,16 @@ abstract class FormationPlanExecution extends Maneuver implements Built<Formatio
 
   /// Target group for the formation plan.
   @ImcField("Target Group Name", "group_name", ImcType.typePlaintext)
-  String get group_name;
+  String get groupName;
 
   /// Name of the formation configuration.
   @ImcField("Formation Name", "formation_name", ImcType.typePlaintext)
-  String get formation_name;
+  String get formationName;
 
   /// The flight plan's identifier.
   /// Flight plan defined to be tracked by the formation leader.
   @ImcField("Formation Plan ID", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// Verbose text description of plan.
   @ImcField("Plan Description", "description", ImcType.typePlaintext)
@@ -5301,41 +5301,41 @@ abstract class FormationPlanExecution extends Maneuver implements Built<Formatio
 
   /// Formation leader flight airspeed during the plan tracking.
   @ImcField("Formation Leader Flight Airspeed", "leader_speed", ImcType.typeFp32, units: "m/s")
-  double get leader_speed;
+  double get leaderSpeed;
 
   /// Formation leader flight bank limit during the plan tracking.
   @ImcField("Formation leader flight bank limit", "leader_bank_lim", ImcType.typeFp32, units: "m/s")
-  double get leader_bank_lim;
+  double get leaderBankLim;
 
   /// Limit for the position mismatch between real and simulated position, before a maneuver abort is asserted.
   @ImcField("Position mismatch limit", "pos_sim_err_lim", ImcType.typeFp32, units: "m")
-  double get pos_sim_err_lim;
+  double get posSimErrLim;
 
   /// Warning threshold for the position mismatch between real and simulated position.
   /// Above this threshold a time-out limit is evaluated to assert a maneuver abort state.
   @ImcField("Position mismatch threshold", "pos_sim_err_wrn", ImcType.typeFp32, units: "m")
-  double get pos_sim_err_wrn;
+  double get posSimErrWrn;
 
   /// The amount of time the maneuver is allowed to run after the position mismatch threshold is surpassed.
   @ImcField("Position mismatch time-out", "pos_sim_err_timeout", ImcType.typeUInt16, units: "s")
-  int get pos_sim_err_timeout;
+  int get posSimErrTimeout;
 
   /// Threshold for the convergence measure, above which a time-out limit
   /// is evaluated to assert a maneuver abort state.
   @ImcField("Convergence threshold", "converg_max", ImcType.typeFp32, units: "m")
-  double get converg_max;
+  double get convergMax;
 
   /// The amount of time the maneuver is allowed to run after the convergence threshold is surpassed.
   @ImcField("Convergence time-out", "converg_timeout", ImcType.typeUInt16, units: "s")
-  int get converg_timeout;
+  int get convergTimeout;
 
   /// The amount of time the maneuver is allowed to run without any update on the other formation vehicles states.
   @ImcField("Communications time-out", "comms_timeout", ImcType.typeUInt16, units: "s")
-  int get comms_timeout;
+  int get commsTimeout;
 
   /// Turbulence limit above which a maneuver abort is asserted.
   @ImcField("Turbulence limit", "turb_lim", ImcType.typeFp32, units: "m/s")
-  double get turb_lim;
+  double get turbLim;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -5355,12 +5355,12 @@ abstract class FollowReference extends Maneuver implements Built<FollowReference
   /// The IMC identifier of the source system that is allowed to provide references to this maneuver.
   /// If the value ''0xFFFF'' is used, any system is allowed to command references.
   @ImcField("Controlling Source", "control_src", ImcType.typeUInt16)
-  int get control_src;
+  int get controlSrc;
 
   /// The entity identifier of the entity that is allowed to provide references to this maneuver.
   /// If the value ''0xFF'' is used, any entity is allowed to command references.
   @ImcField("Controlling Entity", "control_ent", ImcType.typeUInt8)
-  int get control_ent;
+  int get controlEnt;
 
   /// The ammount of time, in seconds, after which the maneuver will be terminated if no reference has
   /// been received. In other words, the controlling entity should send reference updates in shorter periods than
@@ -5371,13 +5371,13 @@ abstract class FollowReference extends Maneuver implements Built<FollowReference
   /// Whenever an intended reference is achieved, this maneuver will maintain the vehicle in vaticiny of that
   /// location. The loiter radius is used to define the radius of this (xy) area.
   @ImcField("Loiter Radius", "loiter_radius", ImcType.typeFp32)
-  double get loiter_radius;
+  double get loiterRadius;
 
   /// Similarly to Loiter Radius, this field is used to define the "z" distance considered to be inside the vacitiny of
   /// the target location. An AUV may, for instance, be floating until it more than z units above the current reference,
   /// in which case it actively changes its position in order to achieve the desired depth / altitude.
   @ImcField("Altitude Interval", "altitude_interval", ImcType.typeFp32)
-  double get altitude_interval;
+  double get altitudeInterval;
 }
 
 /// Reference To Follow class
@@ -5420,12 +5420,12 @@ abstract class FollowRefState extends ImcMessage implements Built<FollowRefState
   /// The IMC identifier of the source system that is allowed to control the vehicle.
   /// If the value ''0xFFFF'' is used, any system is allowed to command references.
   @ImcField("Controlling Source", "control_src", ImcType.typeUInt16)
-  int get control_src;
+  int get controlSrc;
 
   /// The entity identifier of the entity that is allowed to control the vehicle.
   /// If the value ''0xFF'' is used, any entity is allowed to command references.
   @ImcField("Controlling Entity", "control_ent", ImcType.typeUInt8)
-  int get control_ent;
+  int get controlEnt;
 
   /// Reference currently being followed.
   @ImcField("Reference", "reference", ImcType.typeMessage)
@@ -5452,101 +5452,101 @@ abstract class FormationMonitor extends ImcMessage implements Built<FormationMon
   /// On the vehicle directional reference frame.
   /// Constrained by the vehicle operational limits.
   @ImcField("Commanded X Acceleration (North)", "ax_cmd", ImcType.typeFp32)
-  double get ax_cmd;
+  double get axCmd;
 
   /// Commanded acceleration computed by the formation controller: eastward direction.
   /// On the vehicle directional reference frame.
   /// Constrained by the vehicle operational limits.
   @ImcField("Commanded Y Acceleration (East)", "ay_cmd", ImcType.typeFp32)
-  double get ay_cmd;
+  double get ayCmd;
 
   /// Commanded acceleration computed by the formation controller: downward direction.
   /// On the vehicle directional reference frame.
   /// Constrained by the vehicle operational limits.
   @ImcField("Commanded Z Acceleration (Down)", "az_cmd", ImcType.typeFp32)
-  double get az_cmd;
+  double get azCmd;
 
   /// Desired acceleration computed by the formation controller: northward direction.
   /// On the fixed reference frame.
   @ImcField("Desired X Acceleration (North)", "ax_des", ImcType.typeFp32)
-  double get ax_des;
+  double get axDes;
 
   /// Desired acceleration computed by the formation controller: eastward direction.
   /// On the fixed reference frame.
   @ImcField("Desired Y Acceleration (East)", "ay_des", ImcType.typeFp32)
-  double get ay_des;
+  double get ayDes;
 
   /// Desired acceleration computed by the formation controller: downward direction.
   /// On the fixed reference frame.
   @ImcField("Desired Z Acceleration (Down)", "az_des", ImcType.typeFp32)
-  double get az_des;
+  double get azDes;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined virtual error: northward direction.
   /// On the fixed reference frame.
   @ImcField("X Virtual Error (North)", "virt_err_x", ImcType.typeFp32)
-  double get virt_err_x;
+  double get virtErrX;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined virtual error: eastward direction.
   /// On the fixed reference frame.
   @ImcField("Y Virtual Error (East)", "virt_err_y", ImcType.typeFp32)
-  double get virt_err_y;
+  double get virtErrY;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined virtual error: downward direction.
   /// On the fixed reference frame.
   @ImcField("Z Virtual Error (Down)", "virt_err_z", ImcType.typeFp32)
-  double get virt_err_z;
+  double get virtErrZ;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined sliding surface feedback: northward direction.
   /// On the fixed reference frame.
   @ImcField("X Sliding Surface Feedback (North)", "surf_fdbk_x", ImcType.typeFp32)
-  double get surf_fdbk_x;
+  double get surfFdbkX;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined sliding surface feedback: eastward direction.
   /// On the fixed reference frame.
   @ImcField("Y Sliding Surface Feedback (East)", "surf_fdbk_y", ImcType.typeFp32)
-  double get surf_fdbk_y;
+  double get surfFdbkY;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined sliding surface feedback: downward direction.
   /// On the fixed reference frame.
   @ImcField("Z Sliding Surface Feedback (Down)", "surf_fdbk_z", ImcType.typeFp32)
-  double get surf_fdbk_z;
+  double get surfFdbkZ;
 
   /// Components of the vehicle desired acceleration.
   /// Dynamics uncertainty compensation: northward direction.
   @ImcField("X Uncertainty Compensation (North)", "surf_unkn_x", ImcType.typeFp32)
-  double get surf_unkn_x;
+  double get surfUnknX;
 
   /// Components of the vehicle desired acceleration.
   /// Dynamics uncertainty compensation: eastward direction.
   @ImcField("Y Uncertainty Compensation (East)", "surf_unkn_y", ImcType.typeFp32)
-  double get surf_unkn_y;
+  double get surfUnknY;
 
   /// Components of the vehicle desired acceleration.
   /// Dynamics uncertainty compensation: downward direction.
   @ImcField("Z Uncertainty Compensation (Down)", "surf_unkn_z", ImcType.typeFp32)
-  double get surf_unkn_z;
+  double get surfUnknZ;
 
   /// Combined deviation from convergence (sliding surface): North component.
   @ImcField("X Convergence Deviation (North)", "ss_x", ImcType.typeFp32)
-  double get ss_x;
+  double get ssX;
 
   /// Combined deviation from convergence (sliding surface): East component.
   @ImcField("Y Convergence Deviation (East)", "ss_y", ImcType.typeFp32)
-  double get ss_y;
+  double get ssY;
 
   /// Combined deviation from convergence (sliding surface): Down component.
   @ImcField("Z Convergence Deviation (Down)", "ss_z", ImcType.typeFp32)
-  double get ss_z;
+  double get ssZ;
 
   /// List of RelativeState messages, encoding the inter-vehicle formation state.
   @ImcField("Relative State", "rel_state", ImcType.typeMessageList)
-  List<RelativeState> get rel_state;
+  List<RelativeState> get relState;
 }
 
 /// Relative State class
@@ -5561,7 +5561,7 @@ abstract class RelativeState extends ImcMessage implements Built<RelativeState, 
 
   /// The identifier of the vehicle whose relative state is being reported.
   @ImcField("System Identifier", "s_id", ImcType.typePlaintext)
-  String get s_id;
+  String get sId;
 
   /// Distance between vehicles.
   @ImcField("Distance", "dist", ImcType.typeFp32)
@@ -5573,82 +5573,82 @@ abstract class RelativeState extends ImcMessage implements Built<RelativeState, 
 
   /// Weight in the computation of the desired acceleration.
   @ImcField("Control Importance", "ctrl_imp", ImcType.typeFp32)
-  double get ctrl_imp;
+  double get ctrlImp;
 
   /// Inter-vehicle direction vector: North component.
   @ImcField("Relative Direction X (North)", "rel_dir_x", ImcType.typeFp32)
-  double get rel_dir_x;
+  double get relDirX;
 
   /// Inter-vehicle direction vector: East component.
   @ImcField("Relative Direction Y (East)", "rel_dir_y", ImcType.typeFp32)
-  double get rel_dir_y;
+  double get relDirY;
 
   /// Inter-vehicle direction vector: Down component.
   @ImcField("Relative Direction Z (Down)", "rel_dir_z", ImcType.typeFp32)
-  double get rel_dir_z;
+  double get relDirZ;
 
   /// Relative position error: North component.
   @ImcField("X Position Error (North)", "err_x", ImcType.typeFp32)
-  double get err_x;
+  double get errX;
 
   /// Relative position error: East component.
   @ImcField("Y Position Error (East)", "err_y", ImcType.typeFp32)
-  double get err_y;
+  double get errY;
 
   /// Relative position error: Down component.
   @ImcField("Z Position Error (Down)", "err_z", ImcType.typeFp32)
-  double get err_z;
+  double get errZ;
 
   /// Relative position error: X component on the inter-vehicle reference frame.
   @ImcField("X Position Error In Relative Frame (North)", "rf_err_x", ImcType.typeFp32)
-  double get rf_err_x;
+  double get rfErrX;
 
   /// Relative position error: Y component on the inter-vehicle reference frame.
   @ImcField("Y Position Error In Relative Frame (East)", "rf_err_y", ImcType.typeFp32)
-  double get rf_err_y;
+  double get rfErrY;
 
   /// Relative position error: Z component on the inter-vehicle reference frame.
   @ImcField("Z Position Error In Relative Frame (Down)", "rf_err_z", ImcType.typeFp32)
-  double get rf_err_z;
+  double get rfErrZ;
 
   /// Relative veloctity error: X component in the inter-vehicle reference frame.
   @ImcField("X Velocity Error In Relative Frame (North)", "rf_err_vx", ImcType.typeFp32)
-  double get rf_err_vx;
+  double get rfErrVx;
 
   /// Relative velocity error: Y component on the inter-vehicle reference frame.
   @ImcField("Y Velocity Error In Relative Frame (East)", "rf_err_vy", ImcType.typeFp32)
-  double get rf_err_vy;
+  double get rfErrVy;
 
   /// Relative velocity error: Z component on the inter-vehicle reference frame.
   @ImcField("Z Velocity Error In Relative Frame (Down)", "rf_err_vz", ImcType.typeFp32)
-  double get rf_err_vz;
+  double get rfErrVz;
 
   /// Deviation from convergence (sliding surface): X component on the inter-vehicle reference frame.
   @ImcField("X Convergence Deviation (North)", "ss_x", ImcType.typeFp32)
-  double get ss_x;
+  double get ssX;
 
   /// Deviation from convergence (sliding surface): Y component on the inter-vehicle reference frame.
   @ImcField("Y Convergence Deviation (East)", "ss_y", ImcType.typeFp32)
-  double get ss_y;
+  double get ssY;
 
   /// Deviation from convergence (sliding surface): Z component on the inter-vehicle reference frame.
   @ImcField("Z Convergence Deviation (Down)", "ss_z", ImcType.typeFp32)
-  double get ss_z;
+  double get ssZ;
 
   /// Components of the vehicle desired acceleration.
   /// Relative virtual error: northward direction.
   @ImcField("X Virtual Error (North)", "virt_err_x", ImcType.typeFp32)
-  double get virt_err_x;
+  double get virtErrX;
 
   /// Components of the vehicle desired acceleration.
   /// Relative virtual error: eastward direction.
   @ImcField("Y Virtual Error (East)", "virt_err_y", ImcType.typeFp32)
-  double get virt_err_y;
+  double get virtErrY;
 
   /// Components of the vehicle desired acceleration.
   /// Relative virtual error: downward direction.
   @ImcField("Z Virtual Error (Down)", "virt_err_z", ImcType.typeFp32)
-  double get virt_err_z;
+  double get virtErrZ;
 }
 
 /// Dislodge Maneuver class
@@ -5716,7 +5716,7 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 
   /// Name of the formation configuration.
   @ImcField("Formation Name", "formation_name", ImcType.typePlaintext)
-  String get formation_name;
+  String get formationName;
 
   /// Indicates if the message is a request, or a reply to a previous request.
   @ImcField("Type", "type", ImcType.typeUInt8)
@@ -5728,12 +5728,12 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 
   /// Target group for the formation plan.
   @ImcField("Target Group Name", "group_name", ImcType.typePlaintext)
-  String get group_name;
+  String get groupName;
 
   /// The flight plan's identifier.
   /// Flight plan defined to be tracked by the formation leader.
   @ImcField("Formation Plan ID", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// Verbose text description of plan.
   @ImcField("Plan Description", "description", ImcType.typePlaintext)
@@ -5741,7 +5741,7 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 
   /// Formation reference frame
   @ImcField("Formation Reference Frame", "reference_frame", ImcType.typeUInt8)
-  FormationEnumReferenceFrame get reference_frame;
+  FormationEnumReferenceFrame get referenceFrame;
 
   /// List of formation participants.
   @ImcField("Formation Participants", "participants", ImcType.typeMessageList)
@@ -5749,53 +5749,53 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 
   /// Maximum absolute bank allowed for the formation leader.
   @ImcField("Formation Leader Bank Limit", "leader_bank_lim", ImcType.typeFp32, units: "rad")
-  double get leader_bank_lim;
+  double get leaderBankLim;
 
   /// Minimum speed allowed for the formation leader flight.
   @ImcField("Formation Leader Minimum Speed", "leader_speed_min", ImcType.typeFp32, units: "m/s")
-  double get leader_speed_min;
+  double get leaderSpeedMin;
 
   /// Maximum speed allowed for the formation leader flight.
   @ImcField("Formation Leader Maximum Speed", "leader_speed_max", ImcType.typeFp32, units: "m/s")
-  double get leader_speed_max;
+  double get leaderSpeedMax;
 
   /// Minimum altitude allowed for the formation leader flight.
   @ImcField("Formation Leader Minimum Altitude", "leader_alt_min", ImcType.typeFp32, units: "m")
-  double get leader_alt_min;
+  double get leaderAltMin;
 
   /// Maximum altitude allowed for the formation leader flight.
   @ImcField("Formation Leader Maximum Altitude", "leader_alt_max", ImcType.typeFp32, units: "m")
-  double get leader_alt_max;
+  double get leaderAltMax;
 
   /// Limit for the position mismatch between real and simulated position, before a maneuver abort is asserted.
   @ImcField("Position mismatch limit", "pos_sim_err_lim", ImcType.typeFp32, units: "m")
-  double get pos_sim_err_lim;
+  double get posSimErrLim;
 
   /// Warning threshold for the position mismatch between real and simulated position.
   /// Above this threshold a time-out limit is evaluated to assert a maneuver abort state.
   @ImcField("Position mismatch threshold", "pos_sim_err_wrn", ImcType.typeFp32, units: "m")
-  double get pos_sim_err_wrn;
+  double get posSimErrWrn;
 
   /// The amount of time the maneuver is allowed to run after the position mismatch threshold is surpassed.
   @ImcField("Position mismatch time-out", "pos_sim_err_timeout", ImcType.typeUInt16, units: "s")
-  int get pos_sim_err_timeout;
+  int get posSimErrTimeout;
 
   /// Threshold for the convergence measure, above which a time-out limit
   /// is evaluated to assert a maneuver abort state.
   @ImcField("Convergence threshold", "converg_max", ImcType.typeFp32, units: "m")
-  double get converg_max;
+  double get convergMax;
 
   /// The amount of time the maneuver is allowed to run after the convergence threshold is surpassed.
   @ImcField("Convergence time-out", "converg_timeout", ImcType.typeUInt16, units: "s")
-  int get converg_timeout;
+  int get convergTimeout;
 
   /// The amount of time the maneuver is allowed to run without any update on the other formation vehicles states.
   @ImcField("Communications time-out", "comms_timeout", ImcType.typeUInt16, units: "s")
-  int get comms_timeout;
+  int get commsTimeout;
 
   /// Turbulence limit above which a maneuver abort is asserted.
   @ImcField("Turbulence limit", "turb_lim", ImcType.typeFp32, units: "m/s")
-  double get turb_lim;
+  double get turbLim;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -5837,7 +5837,7 @@ abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -5845,7 +5845,7 @@ abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -5886,7 +5886,7 @@ abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -5894,7 +5894,7 @@ abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -5916,7 +5916,7 @@ abstract class ScheduledGoto extends Maneuver implements Built<ScheduledGoto, Sc
 
   /// Unix timestamp, in seconds, for the arrival at the destination.
   @ImcField("Time of arrival", "arrival_time", ImcType.typeFp64, units: "s")
-  double get arrival_time;
+  double get arrivalTime;
 
   /// WGS-84 Latitude of target waypoint.
   @ImcField("Destination Latitude WGS-84", "lat", ImcType.typeFp64, units: "rad")
@@ -5933,15 +5933,15 @@ abstract class ScheduledGoto extends Maneuver implements Built<ScheduledGoto, Sc
 
   /// Units of the destination z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Z reference to use while travelling to the destination.
   @ImcField("Travel Z Reference", "travel_z", ImcType.typeFp32, units: "m")
-  double get travel_z;
+  double get travelZ;
 
   /// Z reference units to use while travelling to the destination.
   @ImcField("Travel Z Units", "travel_z_units", ImcType.typeUInt8)
-  ZUnitsEnum get travel_z_units;
+  ZUnitsEnum get travelZUnits;
 
   /// What to do if the vehicle fails to arrive before or at the requested time.
   @ImcField("Delayed Behavior", "delayed", ImcType.typeUInt8)
@@ -5973,7 +5973,7 @@ abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, Rows
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -5981,7 +5981,7 @@ abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, Rows
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Rows bearing angle.
   @ImcField("Bearing", "bearing", ImcType.typeFp64, units: "rad")
@@ -5989,7 +5989,7 @@ abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, Rows
 
   /// Rows cross angle reference.
   @ImcField("Cross Angle", "cross_angle", ImcType.typeFp64, units: "rad")
-  double get cross_angle;
+  double get crossAngle;
 
   /// Width of the maneuver.
   @ImcField("Width", "width", ImcType.typeFp32, units: "m")
@@ -6058,7 +6058,7 @@ abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -6066,7 +6066,7 @@ abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// True when sampling with servo 0.
   @ImcField("Syringe0", "syringe0", ImcType.typeUInt8)
@@ -6125,7 +6125,7 @@ abstract class Takeoff extends Maneuver implements Built<Takeoff, TakeoffBuilder
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -6133,11 +6133,11 @@ abstract class Takeoff extends Maneuver implements Built<Takeoff, TakeoffBuilder
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Minimum pitch angle during automatic takeoff.
   @ImcField("Pitch Angle", "takeoff_pitch", ImcType.typeFp32, units: "rad")
-  double get takeoff_pitch;
+  double get takeoffPitch;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -6169,7 +6169,7 @@ abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
 
   /// Units of the z reference and abort z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -6177,11 +6177,11 @@ abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Abort altitude or height. If landing is aborted while executing, the UAV will maintain its course and attempt to climb to the abort z reference.
   @ImcField("Abort Z Reference", "abort_z", ImcType.typeFp32, units: "m")
-  double get abort_z;
+  double get abortZ;
 
   /// Land bearing angle.
   @ImcField("Bearing", "bearing", ImcType.typeFp64, units: "rad")
@@ -6189,11 +6189,11 @@ abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
 
   /// Ratio of the distance from the last waypoint to the landing point (touchdown) and the height difference between them.
   @ImcField("Glide Slope", "glide_slope", ImcType.typeUInt8, units: "%")
-  int get glide_slope;
+  int get glideSlope;
 
   /// Height difference between the last waypoint to the landing point (touchdown).
   @ImcField("Glide Slope Altitude", "glide_slope_alt", ImcType.typeFp32, units: "m")
-  double get glide_slope_alt;
+  double get glideSlopeAlt;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -6226,26 +6226,26 @@ abstract class AutonomousSection extends Maneuver implements Built<AutonomousSec
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   @ImcField("Enforced Limits", "limits", ImcType.typeUInt8)
   AutonomousSectionBitfieldLimits get limits;
 
   /// Maximum depth the autonomous controller is allowed to drive to.
   @ImcField("Maximum depth", "max_depth", ImcType.typeFp64, units: "m")
-  double get max_depth;
+  double get maxDepth;
 
   /// Minimum altitude the autonomous controller is allowed to drive to.
   @ImcField("Minimum altitude", "min_alt", ImcType.typeFp64, units: "m")
-  double get min_alt;
+  double get minAlt;
 
   /// The time after which this maneuver should be stopped (if still active and TIMEOUT is enforced).
   @ImcField("Time Limit", "time_limit", ImcType.typeFp64, units: "s")
-  double get time_limit;
+  double get timeLimit;
 
   /// The boundaries of the admissable area for this autonomous section.
   @ImcField("Area Limits", "area_limits", ImcType.typeMessageList)
-  List<PolygonVertex> get area_limits;
+  List<PolygonVertex> get areaLimits;
 
   /// The name of the controlling agent that will be allowed to guide the vehicle during the AutononousSection.
   @ImcField("Controller", "controller", ImcType.typePlaintext)
@@ -6272,11 +6272,11 @@ abstract class FollowPoint extends Maneuver implements Built<FollowPoint, Follow
 
   /// Use this speed when travelling from afar.
   @ImcField("Maximum Speed", "max_speed", ImcType.typeFp32, units: "m/s")
-  double get max_speed;
+  double get maxSpeed;
 
   /// Indicates the units used for the maximum speed value.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// WGS-84 Latitude of maneuver in the map. Ignored during execution.
   @ImcField("Latitude WGS-84", "lat", ImcType.typeFp64, units: "rad")
@@ -6292,7 +6292,7 @@ abstract class FollowPoint extends Maneuver implements Built<FollowPoint, Follow
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -6329,7 +6329,7 @@ abstract class Alignment extends Maneuver implements Built<Alignment, AlignmentB
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
   @ImcField("Custom settings for maneuver", "custom", ImcType.typePlaintext, units: "TupleList")
@@ -6365,7 +6365,7 @@ abstract class StationKeepingExtended extends Maneuver implements Built<StationK
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Radius.
   @ImcField("Radius", "radius", ImcType.typeFp32, units: "m")
@@ -6382,17 +6382,17 @@ abstract class StationKeepingExtended extends Maneuver implements Built<StationK
 
   /// Indicates the units used for the speed value.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// The period at which the vehicle will popup to report its position.
   /// Only used if flag KEEP_SAFE is on.
   @ImcField("PopUp Period", "popup_period", ImcType.typeUInt16, units: "s")
-  int get popup_period;
+  int get popupPeriod;
 
   /// The duration of the station keeping at surface level when it pops up.
   /// Only used if flag KEEP_SAFE is on.
   @ImcField("PopUp Duration", "popup_duration", ImcType.typeUInt16, units: "s")
-  int get popup_duration;
+  int get popupDuration;
 
   /// Flags of the maneuver.
   @ImcField("Flags", "flags", ImcType.typeUInt8)
@@ -6433,7 +6433,7 @@ abstract class Magnetometer extends Maneuver implements Built<Magnetometer, Magn
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Maneuver speed reference.
   @ImcField("Speed", "speed", ImcType.typeFp32)
@@ -6441,7 +6441,7 @@ abstract class Magnetometer extends Maneuver implements Built<Magnetometer, Magn
 
   /// Speed units.
   @ImcField("Speed Units", "speed_units", ImcType.typeUInt8)
-  SpeedUnitsEnum get speed_units;
+  SpeedUnitsEnum get speedUnits;
 
   /// Rows bearing angle.
   @ImcField("Bearing", "bearing", ImcType.typeFp64, units: "rad")
@@ -6478,47 +6478,47 @@ abstract class VehicleState extends ImcMessage implements Built<VehicleState, Ve
 
   /// The overall operation mode.
   @ImcField("Operation Mode", "op_mode", ImcType.typeUInt8)
-  VehicleStateEnumOpMode get op_mode;
+  VehicleStateEnumOpMode get opMode;
 
   /// Error count for monitored entitites.
   @ImcField("Errors -- Count", "error_count", ImcType.typeUInt8)
-  int get error_count;
+  int get errorCount;
 
   /// The monitored entities with error conditions. This is a comma
   /// separated list of entity names.
   @ImcField("Errors -- Entities", "error_ents", ImcType.typePlaintext)
-  String get error_ents;
+  String get errorEnts;
 
   /// Type of maneuver being executed, when in MANEUVER mode. The
   /// value is the IMC serialization ID of the corresponding
   /// maneuver.
   @ImcField("Maneuver -- Type", "maneuver_type", ImcType.typeUInt16)
-  int get maneuver_type;
+  int get maneuverType;
 
   /// Start time of maneuver being executed (Epoch time), when in
   /// MANEUVER mode.
   @ImcField("Maneuver -- Start Time", "maneuver_stime", ImcType.typeFp64, units: "s")
-  double get maneuver_stime;
+  double get maneuverStime;
 
   /// Estimated time for maneuver completion. The value will be
   /// 65535 if the time is unknown or undefined.
   @ImcField("Maneuver -- ETA", "maneuver_eta", ImcType.typeUInt16, units: "s")
-  int get maneuver_eta;
+  int get maneuverEta;
 
   /// Enabled control loops.
   @ImcField("Control Loops", "control_loops", ImcType.typeUint32)
-  CLoopsMaskBitfield get control_loops;
+  CLoopsMaskBitfield get controlLoops;
 
   @ImcField("Flags", "flags", ImcType.typeUInt8)
   VehicleStateBitfieldFlags get flags;
 
   /// Description of last error.
   @ImcField("Last Error -- Description", "last_error", ImcType.typePlaintext)
-  String get last_error;
+  String get lastError;
 
   /// Time of last error (Epoch time).
   @ImcField("Last Error -- Time", "last_error_time", ImcType.typeFp64, units: "s")
-  double get last_error_time;
+  double get lastErrorTime;
 }
 
 /// Vehicle Command class
@@ -6536,7 +6536,7 @@ abstract class VehicleCommand extends ImcMessage implements Built<VehicleCommand
 
   /// Request ID
   @ImcField("Request ID", "request_id", ImcType.typeUInt16)
-  int get request_id;
+  int get requestId;
 
   /// The type of command/action to be performed
   @ImcField("Command", "command", ImcType.typeUInt8)
@@ -6548,7 +6548,7 @@ abstract class VehicleCommand extends ImcMessage implements Built<VehicleCommand
 
   /// Amount of time to calibrate
   @ImcField("Calibration Time", "calib_time", ImcType.typeUInt16, units: "s")
-  int get calib_time;
+  int get calibTime;
 
   /// Complementary human-readable information for replies.
   @ImcField("Info", "info", ImcType.typePlaintext)
@@ -6610,11 +6610,11 @@ abstract class EntityMonitoringState extends ImcMessage implements Built<EntityM
 
   /// Description of last error.
   @ImcField("Last Error -- Description", "last_error", ImcType.typePlaintext)
-  String get last_error;
+  String get lastError;
 
   /// Time of last error (Epoch time).
   @ImcField("Last Error -- Time", "last_error_time", ImcType.typeFp64, units: "s")
-  double get last_error_time;
+  double get lastErrorTime;
 }
 
 /// Operational Limits class
@@ -6631,22 +6631,22 @@ abstract class OperationalLimits extends ImcMessage implements Built<Operational
   OpLimitsMaskBitfield get mask;
 
   @ImcField("Maximum Depth", "max_depth", ImcType.typeFp32, units: "m")
-  double get max_depth;
+  double get maxDepth;
 
   @ImcField("Minimum Altitude", "min_altitude", ImcType.typeFp32, units: "m")
-  double get min_altitude;
+  double get minAltitude;
 
   @ImcField("Maximum Altitude", "max_altitude", ImcType.typeFp32, units: "m")
-  double get max_altitude;
+  double get maxAltitude;
 
   @ImcField("Minimum Speed", "min_speed", ImcType.typeFp32, units: "m/s")
-  double get min_speed;
+  double get minSpeed;
 
   @ImcField("Maximum Speed", "max_speed", ImcType.typeFp32, units: "m/s")
-  double get max_speed;
+  double get maxSpeed;
 
   @ImcField("Maximum Vertical Rate", "max_vrate", ImcType.typeFp32, units: "m/s")
-  double get max_vrate;
+  double get maxVrate;
 
   @ImcField("Area -- WGS-84 Latitude", "lat", ImcType.typeFp64, units: "rad")
   double get lat;
@@ -6713,7 +6713,7 @@ abstract class ControlLoops extends ImcMessage implements Built<ControlLoops, Co
   /// Lower level controllers must inherit the same scope reference sent by maneuver.
   /// This same scope reference must be sent down to lower control layers.
   @ImcField("Scope Time Reference", "scope_ref", ImcType.typeUint32)
-  int get scope_ref;
+  int get scopeRef;
 }
 
 /// Vehicle Medium class
@@ -6762,28 +6762,28 @@ abstract class FormState extends ImcMessage implements Built<FormState, FormStat
 
   /// Mismatch between the real and the simulated aircraft position.
   @ImcField("Position Mismatch", "PosSimErr", ImcType.typeFp32, units: "m")
-  double get PosSimErr;
+  double get posSimErr;
 
   /// Convergence evalution variable.
   /// Value indicates the position error to which the system is converging, tacking into account the aircraft current position error and velocity.
   @ImcField("Convergence", "Converg", ImcType.typeFp32, units: "m")
-  double get Converg;
+  double get converg;
 
   /// Evaluation of the stream turbulence level, through the stream acceleration.
   @ImcField("Stream Turbulence", "Turbulence", ImcType.typeFp32, units: "m/s/s")
-  double get Turbulence;
+  double get turbulence;
 
   /// Position mismatch monitoring flag.
   @ImcField("Position Mismatch Monitor", "PosSimMon", ImcType.typeUInt8)
-  FormStateEnumPosSimMon get PosSimMon;
+  FormStateEnumPosSimMon get posSimMon;
 
   /// Communications monitoring flag.
   @ImcField("Communications Monitor", "CommMon", ImcType.typeUInt8)
-  FormStateEnumCommMon get CommMon;
+  FormStateEnumCommMon get commMon;
 
   /// Convergence monitoring flag.
   @ImcField("Convergence", "ConvergMon", ImcType.typeUInt8)
-  FormStateEnumConvergMon get ConvergMon;
+  FormStateEnumConvergMon get convergMon;
 }
 
 /// Autopilot Mode class
@@ -6825,28 +6825,28 @@ abstract class FormationState extends ImcMessage implements Built<FormationState
 
   /// Mismatch between the real and the simulated aircraft position.
   @ImcField("Position Mismatch", "PosSimErr", ImcType.typeFp32, units: "m")
-  double get PosSimErr;
+  double get posSimErr;
 
   /// Convergence evalution variable.
   /// Value indicates the position error to which the system is converging, tacking into account the aircraft current position error and velocity.
   @ImcField("Convergence", "Converg", ImcType.typeFp32, units: "m")
-  double get Converg;
+  double get converg;
 
   /// Evaluation of the stream turbulence level, through the stream acceleration.
   @ImcField("Stream Turbulence", "Turbulence", ImcType.typeFp32, units: "m/s/s")
-  double get Turbulence;
+  double get turbulence;
 
   /// Position mismatch monitoring flag.
   @ImcField("Position Mismatch Monitor", "PosSimMon", ImcType.typeUInt8)
-  FormationStateEnumPosSimMon get PosSimMon;
+  FormationStateEnumPosSimMon get posSimMon;
 
   /// Communications monitoring flag.
   @ImcField("Communications Monitor", "CommMon", ImcType.typeUInt8)
-  FormationStateEnumCommMon get CommMon;
+  FormationStateEnumCommMon get commMon;
 
   /// Convergence monitoring flag.
   @ImcField("Convergence", "ConvergMon", ImcType.typeUInt8)
-  FormationStateEnumConvergMon get ConvergMon;
+  FormationStateEnumConvergMon get convergMon;
 }
 
 /// Report Control class
@@ -6865,7 +6865,7 @@ abstract class ReportControl extends ImcMessage implements Built<ReportControl, 
 
   /// Communication interface to be used for reports.
   @ImcField("Communication Interface", "comm_interface", ImcType.typeUInt8)
-  ReportControlBitfieldCommInterface get comm_interface;
+  ReportControlBitfieldCommInterface get commInterface;
 
   /// Desired periodicity for scheduled reports.
   @ImcField("Period", "period", ImcType.typeUInt16, units: "s")
@@ -6874,7 +6874,7 @@ abstract class ReportControl extends ImcMessage implements Built<ReportControl, 
   /// Destination Address to be filled where applicable. It should be
   /// interpreted differently depending on communication interface.
   @ImcField("Destination System", "sys_dst", ImcType.typePlaintext)
-  String get sys_dst;
+  String get sysDst;
 }
 
 /// State Report class
@@ -6928,11 +6928,11 @@ abstract class StateReport extends ImcMessage implements Built<StateReport, Stat
   /// * *-3* means Calibration mode
   /// * *-4* means Error mode
   @ImcField("Execution State", "exec_state", ImcType.typeInt8, units: "%")
-  int get exec_state;
+  int get execState;
 
   /// Checksum of the plan being executed.
   @ImcField("Plan Checksum", "plan_checksum", ImcType.typeUInt16)
-  int get plan_checksum;
+  int get planChecksum;
 }
 
 /// Transmission Request class
@@ -6947,11 +6947,11 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
 
   /// The unique identifier for this request.
   @ImcField("Request Identifier", "req_id", ImcType.typeUInt16)
-  int get req_id;
+  int get reqId;
 
   /// Communication mean to be used to transfer these data.
   @ImcField("Communication Mean", "comm_mean", ImcType.typeUInt8)
-  TransmissionRequestEnumCommMean get comm_mean;
+  TransmissionRequestEnumCommMean get commMean;
 
   /// The name of the system where to send this message.
   @ImcField("Destination System", "destination", ImcType.typePlaintext)
@@ -6963,19 +6963,19 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
 
   /// Type of data to be transmitted.
   @ImcField("Data Mode", "data_mode", ImcType.typeUInt8)
-  TransmissionRequestEnumDataMode get data_mode;
+  TransmissionRequestEnumDataMode get dataMode;
 
   /// Data to be transmitted if selected *data_mode* is *INLINEMSG*.
   @ImcField("Message Data", "msg_data", ImcType.typeMessage)
-  ImcMessage get msg_data;
+  ImcMessage get msgData;
 
   /// Data to be transmitted if selected *data_mode* is *TEXT*.
   @ImcField("Text Data", "txt_data", ImcType.typePlaintext)
-  String get txt_data;
+  String get txtData;
 
   /// Data to be transmitted if selected *data_mode* is *RAW*.
   @ImcField("Raw Data", "raw_data", ImcType.typeRawdata)
-  List<int> get raw_data;
+  List<int> get rawData;
 }
 
 /// Transmission Status class
@@ -6989,7 +6989,7 @@ abstract class TransmissionStatus extends ImcMessage implements Built<Transmissi
   String get abbrev => "TransmissionStatus";
 
   @ImcField("Request Identifier", "req_id", ImcType.typeUInt16)
-  int get req_id;
+  int get reqId;
 
   @ImcField("Status", "status", ImcType.typeUInt8)
   TransmissionStatusEnumStatus get status;
@@ -7009,7 +7009,7 @@ abstract class SmsRequest extends ImcMessage implements Built<SmsRequest, SmsReq
   String get abbrev => "SmsRequest";
 
   @ImcField("Request Identifier", "req_id", ImcType.typeUInt16)
-  int get req_id;
+  int get reqId;
 
   /// Recipient identifier (number or name).
   @ImcField("Destination", "destination", ImcType.typePlaintext)
@@ -7020,7 +7020,7 @@ abstract class SmsRequest extends ImcMessage implements Built<SmsRequest, SmsReq
   double get timeout;
 
   @ImcField("SMS Text", "sms_text", ImcType.typePlaintext)
-  String get sms_text;
+  String get smsText;
 }
 
 /// SMS Transmission Status class
@@ -7034,7 +7034,7 @@ abstract class SmsStatus extends ImcMessage implements Built<SmsStatus, SmsStatu
   String get abbrev => "SmsStatus";
 
   @ImcField("Request Identifier", "req_id", ImcType.typeUInt16)
-  int get req_id;
+  int get reqId;
 
   @ImcField("Status", "status", ImcType.typeUInt8)
   SmsStatusEnumStatus get status;
@@ -7103,7 +7103,7 @@ abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecifi
 
   /// The plan's identifier.
   @ImcField("Plan ID", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// Verbose text description of plan.
   @ImcField("Plan Description", "description", ImcType.typePlaintext)
@@ -7119,7 +7119,7 @@ abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecifi
 
   /// Indicates the id of the starting maneuver for this plan.
   @ImcField("Starting maneuver", "start_man_id", ImcType.typePlaintext)
-  String get start_man_id;
+  String get startManId;
 
   /// List of maneuver specifications.
   @ImcField("Maneuvers", "maneuvers", ImcType.typeMessageList)
@@ -7132,12 +7132,12 @@ abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecifi
   /// Contains an optionally defined 'MessageList' for actions fired
   /// on plan activation.
   @ImcField("Start Actions", "start_actions", ImcType.typeMessageList)
-  List<ImcMessage> get start_actions;
+  List<ImcMessage> get startActions;
 
   /// Contains an optionally defined 'MessageList' for actions fired
   /// on plan termination.
   @ImcField("End Actions", "end_actions", ImcType.typeMessageList)
-  List<ImcMessage> get end_actions;
+  List<ImcMessage> get endActions;
 }
 
 /// Plan Maneuver class
@@ -7152,7 +7152,7 @@ abstract class PlanManeuver extends ImcMessage implements Built<PlanManeuver, Pl
 
   /// The maneuver ID.
   @ImcField("Maneuver ID", "maneuver_id", ImcType.typePlaintext)
-  String get maneuver_id;
+  String get maneuverId;
 
   /// The maneuver specification.
   @ImcField("Maneuver Specification", "data", ImcType.typeMessage)
@@ -7161,12 +7161,12 @@ abstract class PlanManeuver extends ImcMessage implements Built<PlanManeuver, Pl
   /// Contains an optionally defined 'MessageList' for actions fired
   /// on plan activation.
   @ImcField("Start Actions", "start_actions", ImcType.typeMessageList)
-  List<ImcMessage> get start_actions;
+  List<ImcMessage> get startActions;
 
   /// Contains an optionally defined 'MessageList' for actions fired
   /// on plan termination.
   @ImcField("End Actions", "end_actions", ImcType.typeMessageList)
-  List<ImcMessage> get end_actions;
+  List<ImcMessage> get endActions;
 }
 
 /// Plan Transition class
@@ -7186,7 +7186,7 @@ abstract class PlanTransition extends ImcMessage implements Built<PlanTransition
   /// Comma separated list of maneuver IDs, or the special value '.'
   /// to identify a global plan transition.
   @ImcField("Source", "source_man", ImcType.typePlaintext)
-  String get source_man;
+  String get sourceMan;
 
   /// Target maneuver name.
   /// If it equals the special value '_done_' then plan should
@@ -7194,7 +7194,7 @@ abstract class PlanTransition extends ImcMessage implements Built<PlanTransition
   /// If it equals the special value '_error_' then the plan should
   /// terminate with an error status.
   @ImcField("Destination Maneuver Name", "dest_man", ImcType.typePlaintext)
-  String get dest_man;
+  String get destMan;
 
   /// Comma separated list of conditions for transition. Each
   /// condition identifier corresponds to a known predicate which is
@@ -7236,10 +7236,10 @@ abstract class EmergencyControlState extends ImcMessage implements Built<Emergen
   EmergencyControlStateEnumState get state;
 
   @ImcField("Plan Id", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   @ImcField("Communications Level", "comm_level", ImcType.typeUInt8, units: "%")
-  int get comm_level;
+  int get commLevel;
 }
 
 /// Plan DB class
@@ -7274,11 +7274,11 @@ abstract class PlanDB extends ImcMessage implements Built<PlanDB, PlanDBBuilder>
   /// e.g. using sequence counters, to annotate requests and
   /// appropriately identify replies
   @ImcField("Request ID", "request_id", ImcType.typeUInt16)
-  int get request_id;
+  int get requestId;
 
   /// Plan identifier for the operation, if one is required.
   @ImcField("Plan ID", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// Request or reply argument.
   @ImcField("Argument", "arg", ImcType.typeMessage)
@@ -7303,24 +7303,24 @@ abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, Plan
 
   /// Number of stored plans.
   @ImcField("Plan -- Count", "plan_count", ImcType.typeUInt16)
-  int get plan_count;
+  int get planCount;
 
   /// Size of all plans.The value equals the sum of the IMC payload
   /// sizes for 'PlanSpecification' stored in the DB.
   @ImcField("Plan -- Size of all plans", "plan_size", ImcType.typeUint32)
-  int get plan_size;
+  int get planSize;
 
   /// Time of last change (Epoch time).
   @ImcField("Last Change -- Time", "change_time", ImcType.typeFp64, units: "s")
-  double get change_time;
+  double get changeTime;
 
   /// IMC address for source of last DB change.
   @ImcField("Last Change -- Source Address", "change_sid", ImcType.typeUInt16)
-  int get change_sid;
+  int get changeSid;
 
   /// IMC node name for source of last DB change.
   @ImcField("Last Change -- Source Name", "change_sname", ImcType.typePlaintext)
-  String get change_sname;
+  String get changeSname;
 
   /// MD5 database verification code. The MD5 hash sum is computed
   /// over the stream formed by the MD5 of all plans, ordered by
@@ -7330,7 +7330,7 @@ abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, Plan
 
   /// Individual information for plans.
   @ImcField("Plan info", "plans_info", ImcType.typeMessageList)
-  List<PlanDBInformation> get plans_info;
+  List<PlanDBInformation> get plansInfo;
 }
 
 /// Plan DB Information class
@@ -7344,24 +7344,24 @@ abstract class PlanDBInformation extends ImcMessage implements Built<PlanDBInfor
 
   /// Plan identifier.
   @ImcField("Plan ID", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// Plan size. The value equals the IMC message payload of the
   /// associated 'PlanSpecification' message in bytes.
   @ImcField("Plan Size", "plan_size", ImcType.typeUInt16)
-  int get plan_size;
+  int get planSize;
 
   /// Time of last change to the plan (Epoch time).
   @ImcField("Last Changed -- Time", "change_time", ImcType.typeFp64)
-  double get change_time;
+  double get changeTime;
 
   /// IMC address for source of last change to the plan.
   @ImcField("Last Change -- Source Address", "change_sid", ImcType.typeUInt16)
-  int get change_sid;
+  int get changeSid;
 
   /// IMC node name for source of last change to the plan.
   @ImcField("Last Change -- Source Name", "change_sname", ImcType.typePlaintext)
-  String get change_sname;
+  String get changeSname;
 
   /// MD5 plan verification code. The value is calculated over the
   /// message payload of the 'PlanSpecification', in compliance with
@@ -7395,12 +7395,12 @@ abstract class PlanControl extends ImcMessage implements Built<PlanControl, Plan
   /// sequence counters.  to annotate requests and appropriately
   /// identify replies.
   @ImcField("Request ID", "request_id", ImcType.typeUInt16)
-  int get request_id;
+  int get requestId;
 
   /// The identifier for the plan to be stopped / started / loaded /
   /// retrieved according to the command requested (*op* field).
   @ImcField("Plan Identifier", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   @ImcField("Flags", "flags", ImcType.typeUInt16)
   PlanControlBitfieldFlags get flags;
@@ -7431,35 +7431,35 @@ abstract class PlanControlState extends ImcMessage implements Built<PlanControlS
 
   /// Identifier of plan currently loaded.
   @ImcField("Plan -- ID", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// Current plan estimated time to completion.
   /// The value will be -1 if the time is unknown or undefined.
   @ImcField("Plan -- ETA", "plan_eta", ImcType.typeInt32, units: "s")
-  int get plan_eta;
+  int get planEta;
 
   /// Current plan estimated progress in percent.
   /// The value will be negative if unknown or undefined.
   @ImcField("Plan -- Progress", "plan_progress", ImcType.typeFp32, units: "%")
-  double get plan_progress;
+  double get planProgress;
 
   /// Current node ID, when executing a plan.
   @ImcField("Maneuver -- ID", "man_id", ImcType.typePlaintext)
-  String get man_id;
+  String get manId;
 
   /// Type of maneuver being executed (IMC serialization id),
   /// when executing a plan.
   @ImcField("Maneuver -- Type", "man_type", ImcType.typeUInt16)
-  int get man_type;
+  int get manType;
 
   /// Current node estimated time to completion, when executing a plan.
   /// The value will be -1 if the time is unknown or undefined.
   @ImcField("Maneuver -- ETA", "man_eta", ImcType.typeInt32, units: "s")
-  int get man_eta;
+  int get manEta;
 
   /// Outcome of the last executed plan.
   @ImcField("Last Plan Outcome", "last_outcome", ImcType.typeUInt8)
-  PlanControlStateEnumLastOutcome get last_outcome;
+  PlanControlStateEnumLastOutcome get lastOutcome;
 }
 
 /// Plan Variable class
@@ -7504,7 +7504,7 @@ abstract class PlanGeneration extends ImcMessage implements Built<PlanGeneration
 
   /// The name of the plan to be generated.
   @ImcField("Plan Identifier", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// An optional list of parameters to be used by the plan
   /// generation module.
@@ -7544,7 +7544,7 @@ abstract class LeaderState extends ImcMessage implements Built<LeaderState, Lead
 
   /// Name for the formation group.
   @ImcField("Group Name", "group_name", ImcType.typePlaintext)
-  String get group_name;
+  String get groupName;
 
   /// Action on the formation leader state variables
   @ImcField("Action on the leader state", "op", ImcType.typeUInt8)
@@ -7637,7 +7637,7 @@ abstract class PlanStatistics extends ImcMessage implements Built<PlanStatistics
 
   /// The name of the plan to be generated.
   @ImcField("Plan Identifier", "plan_id", ImcType.typePlaintext)
-  String get plan_id;
+  String get planId;
 
   /// Type of plan statistics, if they are launched before, during or after the plan execution.
   @ImcField("Type", "type", ImcType.typeUInt8)
@@ -7701,7 +7701,7 @@ abstract class ReportedState extends ImcMessage implements Built<ReportedState, 
   /// Coordinated Time (UCT) in seconds since Jan 1, 1970 using IEEE
   /// double precision floating point numbers.
   @ImcField("Reception Time", "rcp_time", ImcType.typeFp64, units: "s")
-  double get rcp_time;
+  double get rcpTime;
 
   /// The id of the system whose position is being reported (it can be a vehicle's id, a boat name, etc)
   @ImcField("System Identifier", "sid", ImcType.typePlaintext)
@@ -7709,7 +7709,7 @@ abstract class ReportedState extends ImcMessage implements Built<ReportedState, 
 
   /// How the position was received/calculated
   @ImcField("Source Type", "s_type", ImcType.typeUInt8)
-  ReportedStateEnumSType get s_type;
+  ReportedStateEnumSType get sType;
 }
 
 /// Remote Sensor Info class
@@ -7728,7 +7728,7 @@ abstract class RemoteSensorInfo extends ImcMessage implements Built<RemoteSensor
 
   /// The class of a sensor tells the type of sensor originating this message. It will determine how the sensor is to be shown and (optionally) how the custom data (tuplelist) is to be interpreted.
   @ImcField("Class", "sensor_class", ImcType.typePlaintext)
-  String get sensor_class;
+  String get sensorClass;
 
   @ImcField("Latitude", "lat", ImcType.typeFp64, units: "rad")
   double get lat;
@@ -7781,19 +7781,19 @@ abstract class MapFeature extends ImcMessage implements Built<MapFeature, MapFea
 
   /// The type of feature
   @ImcField("FeatureType", "feature_type", ImcType.typeUInt8)
-  MapFeatureEnumFeatureType get feature_type;
+  MapFeatureEnumFeatureType get featureType;
 
   /// The red component of the color for this point
   @ImcField("RedComponent", "rgb_red", ImcType.typeUInt8)
-  int get rgb_red;
+  int get rgbRed;
 
   /// The green component of the color for this point
   @ImcField("GreenComponent", "rgb_green", ImcType.typeUInt8)
-  int get rgb_green;
+  int get rgbGreen;
 
   /// The blue component of the color for this point
   @ImcField("BlueComponent", "rgb_blue", ImcType.typeUInt8)
-  int get rgb_blue;
+  int get rgbBlue;
 
   /// The enclosing feature definition.
   @ImcField("Feature", "feature", ImcType.typeMessageList)
@@ -7894,11 +7894,11 @@ abstract class TrexCommand extends ImcMessage implements Built<TrexCommand, Trex
 
   /// The id of the goal, if applicable (OP == POST_GOAL || OP == RECALL_GOAL)
   @ImcField("Goal Id", "goal_id", ImcType.typePlaintext)
-  String get goal_id;
+  String get goalId;
 
   /// The goal encoded as XML, if applicable (OP == POST_GOAL)
   @ImcField("Goal XML", "goal_xml", ImcType.typePlaintext)
-  String get goal_xml;
+  String get goalXml;
 }
 
 /// TREX Operation class
@@ -7916,7 +7916,7 @@ abstract class TrexOperation extends ImcMessage implements Built<TrexOperation, 
 
   /// The id of the goal, if applicable (OP == POST_GOAL || OP == RECALL_GOAL)
   @ImcField("Goal Id", "goal_id", ImcType.typePlaintext)
-  String get goal_id;
+  String get goalId;
 
   /// Goal / observation to post, if applicable (OP == POST_GOAL || OP == POST_TOKEN)
   @ImcField("Token", "token", ImcType.typeMessage)
@@ -7937,7 +7937,7 @@ abstract class TrexAttribute extends ImcMessage implements Built<TrexAttribute, 
   String get name;
 
   @ImcField("Attribute type", "attr_type", ImcType.typeUInt8)
-  TrexAttributeEnumAttrType get attr_type;
+  TrexAttributeEnumAttrType get attrType;
 
   /// Lower bound of this interval. Empty text means no bound.
   @ImcField("Minimum", "min", ImcType.typePlaintext)
@@ -8102,7 +8102,7 @@ abstract class Target extends ImcMessage implements Built<Target, TargetBuilder>
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Course Over Ground (true).
   @ImcField("Course Over Ground", "cog", ImcType.typeFp32, units: "rad")
@@ -8342,7 +8342,7 @@ abstract class UamTxFrame extends ImcMessage implements Built<UamTxFrame, UamTxF
   int get seq;
 
   @ImcField("Destination System", "sys_dst", ImcType.typePlaintext)
-  String get sys_dst;
+  String get sysDst;
 
   @ImcField("Flags", "flags", ImcType.typeUInt8)
   UamTxFrameBitfieldFlags get flags;
@@ -8361,10 +8361,10 @@ abstract class UamRxFrame extends ImcMessage implements Built<UamRxFrame, UamRxF
   String get abbrev => "UamRxFrame";
 
   @ImcField("Source System", "sys_src", ImcType.typePlaintext)
-  String get sys_src;
+  String get sysSrc;
 
   @ImcField("Destination System", "sys_dst", ImcType.typePlaintext)
-  String get sys_dst;
+  String get sysDst;
 
   @ImcField("Flags", "flags", ImcType.typeUInt8)
   UamRxFrameBitfieldFlags get flags;
@@ -8423,29 +8423,29 @@ abstract class FormCtrlParam extends ImcMessage implements Built<FormCtrlParam, 
 
   /// Action on the vehicle formation control parameters.
   @ImcField("Action", "Action", ImcType.typeUInt8)
-  FormCtrlParamEnumAction get Action;
+  FormCtrlParamEnumAction get action;
 
   /// Trajectory gain over the vehicle longitudinal direction.
   @ImcField("Longitudinal Gain", "LonGain", ImcType.typeFp32)
-  double get LonGain;
+  double get lonGain;
 
   /// Trajectory gain over the vehicle lateral direction.
   @ImcField("Lateral Gain", "LatGain", ImcType.typeFp32)
-  double get LatGain;
+  double get latGain;
 
   /// Control sliding surface boundary layer thickness.
   @ImcField("Boundary Layer Thickness", "BondThick", ImcType.typeUint32)
-  int get BondThick;
+  int get bondThick;
 
   /// Formation shape gain (absolute vehicle position tracking).
   /// Leader control importance gain (relative to the sum of every other formation vehicle).
   @ImcField("Leader Gain", "LeadGain", ImcType.typeFp32)
-  double get LeadGain;
+  double get leadGain;
 
   /// Collision avoidance and formation shape gain (position tracking relative to the other formation vehicles).
   /// Individual vehicle importance gain (relative to the leader), when the relative position or the velocity state indicate higher probability of collision.
   @ImcField("Deconfliction Gain", "DeconflGain", ImcType.typeFp32)
-  double get DeconflGain;
+  double get deconflGain;
 }
 
 /// Formation Evaluation Data class
@@ -8460,15 +8460,15 @@ abstract class FormationEval extends ImcMessage implements Built<FormationEval, 
 
   /// Mean position error relative to the formation reference.
   @ImcField("Mean position error", "err_mean", ImcType.typeFp32)
-  double get err_mean;
+  double get errMean;
 
   /// Overall minimum distance to any other vehicle in the formation.
   @ImcField("Absolute minimum distance", "dist_min_abs", ImcType.typeFp32)
-  double get dist_min_abs;
+  double get distMinAbs;
 
   /// Mean minimum distance to any other vehicle in the formation.
   @ImcField("Mean minimum distance", "dist_min_mean", ImcType.typeFp32)
-  double get dist_min_mean;
+  double get distMinMean;
 }
 
 /// Formation Control Parameters class
@@ -8484,49 +8484,49 @@ abstract class FormationControlParams extends ImcMessage implements Built<Format
 
   /// Action on the vehicle formation control parameters.
   @ImcField("Action", "Action", ImcType.typeUInt8)
-  FormationControlParamsEnumAction get Action;
+  FormationControlParamsEnumAction get action;
 
   /// Trajectory gain over the vehicle longitudinal direction.
   @ImcField("Longitudinal Gain", "lon_gain", ImcType.typeFp32)
-  double get lon_gain;
+  double get lonGain;
 
   /// Trajectory gain over the vehicle lateral direction.
   @ImcField("Lateral Gain", "lat_gain", ImcType.typeFp32)
-  double get lat_gain;
+  double get latGain;
 
   /// Control sliding surface boundary layer thickness.
   @ImcField("Boundary Layer Thickness", "bond_thick", ImcType.typeFp32)
-  double get bond_thick;
+  double get bondThick;
 
   /// Formation shape gain (absolute vehicle position tracking).
   /// Leader control importance gain (relative to the sum of every other formation vehicle).
   @ImcField("Leader Gain", "lead_gain", ImcType.typeFp32)
-  double get lead_gain;
+  double get leadGain;
 
   /// Collision avoidance and formation shape gain (position tracking relative to the other formation vehicles).
   /// Individual vehicle importance gain (relative to the leader), when the relative position or the velocity state indicate higher probability of collision.
   @ImcField("Deconfliction Gain", "deconfl_gain", ImcType.typeFp32)
-  double get deconfl_gain;
+  double get deconflGain;
 
   /// Switch gain to compensate the worst case of the wind flow acceleration.
   @ImcField("Acceleration Switch Gain", "accel_switch_gain", ImcType.typeFp32)
-  double get accel_switch_gain;
+  double get accelSwitchGain;
 
   /// Inter-vehicle safety distance.
   @ImcField("Safety Distance", "safe_dist", ImcType.typeFp32)
-  double get safe_dist;
+  double get safeDist;
 
   /// Distance offset which defines the buffer area beyond the safety distace.
   @ImcField("Deconfliction Offset", "deconflict_offset", ImcType.typeFp32)
-  double get deconflict_offset;
+  double get deconflictOffset;
 
   /// Safety margin to compensate for possible shortfalls from the predicted maximum acceleration that a vehicle can generate.
   @ImcField("Acceleration Safety Margin", "accel_safe_margin", ImcType.typeFp32)
-  double get accel_safe_margin;
+  double get accelSafeMargin;
 
   /// Maximum predicted longitudinal acceleration a vehicle can generate.
   @ImcField("Maximum Longitudinal Acceleration", "accel_lim_x", ImcType.typeFp32)
-  double get accel_lim_x;
+  double get accelLimX;
 }
 
 /// Formation Evaluation Data class
@@ -8549,19 +8549,19 @@ abstract class FormationEvaluation extends ImcMessage implements Built<Formation
 
   /// Mean position error relative to the formation reference.
   @ImcField("Mean Position Error", "err_mean", ImcType.typeFp32)
-  double get err_mean;
+  double get errMean;
 
   /// Overall minimum distance to any other vehicle in the formation.
   @ImcField("Absolute Minimum Distance", "dist_min_abs", ImcType.typeFp32)
-  double get dist_min_abs;
+  double get distMinAbs;
 
   /// Mean minimum distance to any other vehicle in the formation.
   @ImcField("Mean Minimum Distance", "dist_min_mean", ImcType.typeFp32)
-  double get dist_min_mean;
+  double get distMinMean;
 
   /// Mean minimum distance to any other vehicle in the formation.
   @ImcField("Mean Roll Rate", "roll_rate_mean", ImcType.typeFp32)
-  double get roll_rate_mean;
+  double get rollRateMean;
 
   /// Period over which the evaluation data is averaged.
   @ImcField("Evaluation Time", "time", ImcType.typeFp32)
@@ -8569,7 +8569,7 @@ abstract class FormationEvaluation extends ImcMessage implements Built<Formation
 
   /// Formation controller paramenters during the evaluation period.
   @ImcField("Formation Control Parameters", "ControlParams", ImcType.typeMessage)
-  FormationControlParams get ControlParams;
+  FormationControlParams get controlParams;
 }
 
 /// SOI Waypoint class
@@ -8604,7 +8604,7 @@ abstract class SoiPlan extends ImcMessage implements Built<SoiPlan, SoiPlanBuild
   String get abbrev => "SoiPlan";
 
   @ImcField("Plan Identifier", "plan_id", ImcType.typeUInt16)
-  int get plan_id;
+  int get planId;
 
   @ImcField("Waypoints", "waypoints", ImcType.typeMessageList)
   List<SoiWaypoint> get waypoints;
@@ -8648,13 +8648,13 @@ abstract class SoiState extends ImcMessage implements Built<SoiState, SoiStateBu
   SoiStateEnumState get state;
 
   @ImcField("Plan Identifier", "plan_id", ImcType.typeUInt16)
-  int get plan_id;
+  int get planId;
 
   @ImcField("Waypoint Identifier", "wpt_id", ImcType.typeUInt8)
-  int get wpt_id;
+  int get wptId;
 
   @ImcField("Settings Checksum", "settings_chk", ImcType.typeUInt16)
-  int get settings_chk;
+  int get settingsChk;
 }
 
 /// Message Fragment class
@@ -8670,10 +8670,10 @@ abstract class MessagePart extends ImcMessage implements Built<MessagePart, Mess
   int get uid;
 
   @ImcField("Fragment Number", "frag_number", ImcType.typeUInt8)
-  int get frag_number;
+  int get fragNumber;
 
   @ImcField("Total Number of fragments", "num_frags", ImcType.typeUInt8)
-  int get num_frags;
+  int get numFrags;
 
   @ImcField("Fragment Data", "data", ImcType.typeRawdata)
   List<int> get data;
@@ -8689,7 +8689,7 @@ abstract class NeptusBlob extends ImcMessage implements Built<NeptusBlob, Neptus
   String get abbrev => "NeptusBlob";
 
   @ImcField("ContentType", "content_type", ImcType.typePlaintext)
-  String get content_type;
+  String get contentType;
 
   @ImcField("Content", "content", ImcType.typeRawdata)
   List<int> get content;
@@ -8783,7 +8783,7 @@ abstract class UsblFix extends ImcMessage implements Built<UsblFix, UsblFixBuild
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Target reference in the z axis. Use z_units to specify
   /// whether z represents depth, altitude or other.
@@ -9032,7 +9032,7 @@ abstract class UsblFixExtended extends ImcMessage implements Built<UsblFixExtend
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 
   /// Target reference in the z axis. Use z_units to specify
   /// whether z represents depth, altitude or other.
@@ -9073,7 +9073,7 @@ abstract class UsblModem extends ImcMessage implements Built<UsblModem, UsblMode
 
   /// Units of the z reference.
   @ImcField("Z Units", "z_units", ImcType.typeUInt8)
-  ZUnitsEnum get z_units;
+  ZUnitsEnum get zUnits;
 }
 
 /// USBL Configuration class
@@ -9145,67 +9145,67 @@ abstract class Tachograph extends ImcMessage implements Built<Tachograph, Tachog
   /// seconds is represented in Universal Coordinated Time (UCT) in
   /// seconds since Jan 1, 1970.
   @ImcField("Last Service Timestamp", "timestamp_last_service", ImcType.typeFp64, units: "s")
-  double get timestamp_last_service;
+  double get timestampLastService;
 
   /// Amount of time until the next recommended service.
   @ImcField("Time - Next Service", "time_next_service", ImcType.typeFp32, units: "s")
-  double get time_next_service;
+  double get timeNextService;
 
   /// Amount of time the motor can run until the next recommended service.
   @ImcField("Time Motor - Next Service", "time_motor_next_service", ImcType.typeFp32, units: "s")
-  double get time_motor_next_service;
+  double get timeMotorNextService;
 
   /// Amount of time the system spent idle on the ground.
   @ImcField("Time Idle - Ground", "time_idle_ground", ImcType.typeFp32, units: "s")
-  double get time_idle_ground;
+  double get timeIdleGround;
 
   /// Amount of time the system spent idle in the air.
   @ImcField("Time Idle - Air", "time_idle_air", ImcType.typeFp32, units: "s")
-  double get time_idle_air;
+  double get timeIdleAir;
 
   /// Amount of time the system spent idle on the water (not submerged).
   @ImcField("Time Idle - Water", "time_idle_water", ImcType.typeFp32, units: "s")
-  double get time_idle_water;
+  double get timeIdleWater;
 
   /// Amount of time the system spent idle underwater.
   @ImcField("Time Idle - Underwater", "time_idle_underwater", ImcType.typeFp32, units: "s")
-  double get time_idle_underwater;
+  double get timeIdleUnderwater;
 
   /// Amount of time the system spent idle in an unknown medium.
   @ImcField("Time Idle - Unknown", "time_idle_unknown", ImcType.typeFp32, units: "s")
-  double get time_idle_unknown;
+  double get timeIdleUnknown;
 
   /// Amount of time the system spent on the ground with the motor running.
   @ImcField("Time Motor - Ground", "time_motor_ground", ImcType.typeFp32, units: "s")
-  double get time_motor_ground;
+  double get timeMotorGround;
 
   /// Amount of time the system spent in the air with the motor running.
   @ImcField("Time Motor - Air", "time_motor_air", ImcType.typeFp32, units: "s")
-  double get time_motor_air;
+  double get timeMotorAir;
 
   /// Amount of time the system spent on the water (not submerged) with the motor running.
   @ImcField("Time Motor - Water", "time_motor_water", ImcType.typeFp32, units: "s")
-  double get time_motor_water;
+  double get timeMotorWater;
 
   /// Amount of time the system spent underwater with the motor running.
   @ImcField("Time Motor - Underwater", "time_motor_underwater", ImcType.typeFp32, units: "s")
-  double get time_motor_underwater;
+  double get timeMotorUnderwater;
 
   /// Amount of time the system spent in an unknown medium with the motor running.
   @ImcField("Time Motor - Unknown", "time_motor_unknown", ImcType.typeFp32, units: "s")
-  double get time_motor_unknown;
+  double get timeMotorUnknown;
 
   /// The minimum recorded RPM value.
   @ImcField("Recorded RPMs - Minimum", "rpm_min", ImcType.typeInt16, units: "rpm")
-  int get rpm_min;
+  int get rpmMin;
 
   /// The maximum recorded RPM value.
   @ImcField("Recorded RPMs - Maximum", "rpm_max", ImcType.typeInt16, units: "rpm")
-  int get rpm_max;
+  int get rpmMax;
 
   /// The maximum recorded depth value.
   @ImcField("Recorded Depth - Maximum", "depth_max", ImcType.typeFp32, units: "m")
-  double get depth_max;
+  double get depthMax;
 }
 
 /// APM Status class
