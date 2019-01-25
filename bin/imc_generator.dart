@@ -16,7 +16,7 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 // IMC Code Generator
 // **************************************************************************
 
-part of 'imc_def.dart';
+part of 'imc_def_gen.dart';
 
 ''';
 

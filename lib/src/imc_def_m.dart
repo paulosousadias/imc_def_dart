@@ -4,7 +4,7 @@
 // IMC Code Generator
 // **************************************************************************
 
-part of 'imc_def.dart';
+part of 'imc_def_gen.dart';
 
 const String VERSION = "5.4.11";
 const int SYNC_NUMBER = 0xFE54;

@@ -2,6 +2,6 @@
 // All rights reserved. Use of this source code is governed by a Apache License v2.0 
 // license that can be found in the LICENSE file.
 
-library imc_def;
+library imc_def_base;
 
-export 'src/imc_def_gen.dart';
+export 'src/imc_def_base.dart';

@@ -4,7 +4,7 @@
 // IMC Code Generator
 // **************************************************************************
 
-part of 'imc_def.dart';
+part of 'imc_def_gen.dart';
 
 /// Entity State immutable class
 ///

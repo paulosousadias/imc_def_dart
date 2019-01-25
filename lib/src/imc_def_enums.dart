@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a Apache License v2.0 
 // license that can be found in the LICENSE file.
 
-part of 'imc_def.dart';
+part of 'imc_def_base.dart';
 
 class ImcId {
   static const announce = 0x0000;

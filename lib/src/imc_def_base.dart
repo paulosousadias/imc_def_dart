@@ -2,13 +2,9 @@
 // All rights reserved. Use of this source code is governed by a Apache License v2.0 
 // license that can be found in the LICENSE file.
 
-import 'package:built_value/built_value.dart';
+// import 'package:built_value/built_value.dart';
 
 part 'imc_def_enums.dart';
-part 'imc_def_e.dart';
-part 'imc_def_el.dart';
-part 'imc_def_m.dart';
-part 'imc_def_i.dart';
 
 // abstract class ImcMessage implements Built<ImcMessage, ImcMessageBuilder> {
 //   // final int _sync = 0xFE54;
@@ -97,8 +93,8 @@ class ImcField {
       this.units = ""});
 }
 
-abstract class ImcMessage {
-  int get sync => SYNC_NUMBER;
+abstract class Message {
+  int get sync;
   int get msgId;
   // int get size => serializeFields().length;
   DateTime get timestamp;
