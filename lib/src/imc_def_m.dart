@@ -10,6 +10,13 @@ const String VERSION = "5.4.11";
 const int SYNC_NUMBER = 0xFE54;
 const String MD5_SUM = "cdc4c6dfe2baed8395138f0b1b8e1910";
 
+/// The base IMCMessage
+///
+abstract class ImcMessage extends Message {
+  @override
+  int get sync => SYNC_NUMBER;
+}
+
 /// Maneuver message group class
 ///
 abstract class Maneuver extends ImcMessage {

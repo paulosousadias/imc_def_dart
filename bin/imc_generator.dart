@@ -682,6 +682,16 @@ main(List<String> args) async {
 
   sinks[_idxMsg].write('\n');
 
+  sinks[_idxMsg].write('''/// The base IMCMessage
+///
+abstract class ImcMessage extends Message {
+  @override
+  int get sync => SYNC_NUMBER;
+}
+''');
+
+  sinks[_idxMsg].write('\n');
+
   // Writting message-groups
   msgElm.findElements("message-groups").forEach((mg) => mg
       .findElements("message-group")
