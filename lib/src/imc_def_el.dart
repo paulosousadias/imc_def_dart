@@ -4,6 +4,7 @@
 // IMC Code Generator
 // **************************************************************************
 
+
 part of 'imc_def_gen.dart';
 
 /// State of entity.

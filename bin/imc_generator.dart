@@ -16,14 +16,29 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 // IMC Code Generator
 // **************************************************************************
 
+''';
+
+const _header_gen = '''$_header
+import 'package:built_value/built_value.dart';
+import 'package:imc_def/imc_def_base.dart';
+
+part 'imc_def_e.dart';
+part 'imc_def_el.dart';
+part 'imc_def_m.dart';
+part 'imc_def_i.dart';
+
+''';
+
+const _header_gen_parts = '''$_header
 part of 'imc_def_gen.dart';
 
 ''';
 
-const _idxMsg = 0;
-const _idxBuilders = 1;
-const _idxEnums = 2;
-const _idxLocEnum = 3;
+const _idxGen = 0;
+const _idxMsg = 1;
+const _idxBuilders = 2;
+const _idxEnums = 3;
+const _idxLocEnum = 4;
 
 /// A list of reserved words to not se on enums liks
 const _reservedWords = <String>[
@@ -628,6 +643,27 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
   sink.write(bodyEnd);
 }
 
+void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
+  sink.write('''const messagesToIds = {''');
+  msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("id")},"));
+  sink.write('''\n};\n''');
+
+  sink.write('''\nconst idsToMessages = {''');
+  msgElm.findElements("message").forEach((m) => sink.write("\n  ${m.getAttribute("id")}: '${m.getAttribute("abbrev")}',"));
+  sink.write('''\n};\n''');
+
+  sink.write('''\nconst messageGroups = {''');
+  msgElm.findElements("message-groups").forEach((mg) {
+    mg.findElements("message-group").forEach((m) {
+      sink.write("\n  '${m.getAttribute("abbrev")}': [");
+      m.findElements("message-type").forEach((mt) => sink.write("\n      '${mt.getAttribute("abbrev")}',"));
+      sink.write('''\n    ],'''); 
+    });
+  });
+  sink.write('''\n};\n''');
+
+}
+
 /// This code grnerate the IMC relate classes to work with IMC.
 /// The following are NOT generated:
 ///  - imc_def.dart (the only one you need to import in your code)
@@ -646,6 +682,7 @@ main(List<String> args) async {
 
   var document = xml.parse(imcXml);
 
+  var fxGen = new File('lib/src/imc_def_gen.dart');
   var fxMessages = new File('lib/src/imc_def_m.dart');
   var fxBuilders = new File('lib/src/imc_def_i.dart');
   var fxEnums = new File('lib/src/imc_def_e.dart');
@@ -657,17 +694,19 @@ main(List<String> args) async {
   var imcDigest = md5.convert(imcAsBytes);
   print("Hash $imcDigest");
 
+  var sinkGen = fxGen.openWrite();
   var sinkMessages = fxMessages.openWrite();
   var sinkBuilders = fxBuilders.openWrite();
   var sinkEnums = fxEnums.openWrite();
   var sinkLEnums = fxLEnums.openWrite();
 
-  var sinks = <IOSink>[sinkMessages, sinkBuilders, sinkEnums, sinkLEnums];
+  var sinks = <IOSink>[sinkGen, sinkMessages, sinkBuilders, sinkEnums, sinkLEnums];
 
-  sinkMessages.write('$_header');
-  sinkBuilders.write('$_header');
-  sinkEnums.write('$_header');
-  sinkLEnums.write('$_header');
+  sinkGen.write('$_header_gen');
+  sinkMessages.write('$_header_gen_parts');
+  sinkBuilders.write('$_header_gen_parts');
+  sinkEnums.write('$_header_gen_parts');
+  sinkLEnums.write('$_header_gen_parts');
 
   var msgElm = document.findElements("messages").first;
   sinks[_idxMsg]
@@ -708,7 +747,11 @@ abstract class ImcMessage extends Message {
       .findElements("def")
       .forEach((m) => _writeGlobalEnumLike(m, "Bitfield", sinks[_idxEnums])));
 
+
+  _writeMsgList(msgElm, sinks[_idxGen]);
+
   // Close the IOSink to free system resources.
+  sinkGen.close();
   sinkMessages.close();
   sinkBuilders.close();
   sinkEnums.close();
