@@ -321,17 +321,17 @@ class VerticalProfileEnumParameter extends EnumType {
 
 /// Informs about the availability of the service on internal and
 /// external networks.
-class AnnounceServiceBitfieldService_type extends BitfieldType {
-  static const externalVal = const AnnounceServiceBitfieldService_type._(0x01);
-  static const local = const AnnounceServiceBitfieldService_type._(0x02);
+class AnnounceServiceBitfieldServiceType extends BitfieldType {
+  static const externalVal = const AnnounceServiceBitfieldServiceType._(0x01);
+  static const local = const AnnounceServiceBitfieldServiceType._(0x02);
 
   static get values => [externalVal, local];
 
-  const AnnounceServiceBitfieldService_type._(int value) : super(value);
+  const AnnounceServiceBitfieldServiceType._(int value) : super(value);
 
-  static AnnounceServiceBitfieldService_type fromBits(
-          List<AnnounceServiceBitfieldService_type> bits) =>
-      bits.reduce((b1, b2) => AnnounceServiceBitfieldService_type._(b1.value | b2.value));
+  static AnnounceServiceBitfieldServiceType fromBits(
+          List<AnnounceServiceBitfieldServiceType> bits) =>
+      bits.reduce((b1, b2) => AnnounceServiceBitfieldServiceType._(b1.value | b2.value));
 }
 
 /// Current state of an SMS transaction.
@@ -408,26 +408,26 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
 }
 
 /// Communication interface to be used for reports.
-class CommSystemsQueryBitfieldComm_interface extends BitfieldType {
+class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
   /// Use acoustic communications
-  static const acoustic = const CommSystemsQueryBitfieldComm_interface._(0x01);
+  static const acoustic = const CommSystemsQueryBitfieldCommInterface._(0x01);
   /// Use satellite communications
-  static const satellite = const CommSystemsQueryBitfieldComm_interface._(0x02);
+  static const satellite = const CommSystemsQueryBitfieldCommInterface._(0x02);
   /// Use Global System for Mobile Communications
-  static const gsm = const CommSystemsQueryBitfieldComm_interface._(0x04);
+  static const gsm = const CommSystemsQueryBitfieldCommInterface._(0x04);
   /// Use mobile networks
-  static const mobile = const CommSystemsQueryBitfieldComm_interface._(0x08);
+  static const mobile = const CommSystemsQueryBitfieldCommInterface._(0x08);
   /// Use Radio telemetry
-  static const radio = const CommSystemsQueryBitfieldComm_interface._(0x10);
+  static const radio = const CommSystemsQueryBitfieldCommInterface._(0x10);
 
   static get values => [acoustic, satellite, gsm, mobile, 
       radio];
 
-  const CommSystemsQueryBitfieldComm_interface._(int value) : super(value);
+  const CommSystemsQueryBitfieldCommInterface._(int value) : super(value);
 
-  static CommSystemsQueryBitfieldComm_interface fromBits(
-          List<CommSystemsQueryBitfieldComm_interface> bits) =>
-      bits.reduce((b1, b2) => CommSystemsQueryBitfieldComm_interface._(b1.value | b2.value));
+  static CommSystemsQueryBitfieldCommInterface fromBits(
+          List<CommSystemsQueryBitfieldCommInterface> bits) =>
+      bits.reduce((b1, b2) => CommSystemsQueryBitfieldCommInterface._(b1.value | b2.value));
 }
 
 class CommSystemsQueryEnumModel extends EnumType {
@@ -1231,14 +1231,14 @@ class CompassCalibrationEnumDirection extends EnumType {
 }
 
 /// Formation reference frame
-class FormationParametersEnumReference_frame extends EnumType {
-  static const earth_fixed = const FormationParametersEnumReference_frame._(0);
-  static const path_fixed = const FormationParametersEnumReference_frame._(1);
-  static const path_curved = const FormationParametersEnumReference_frame._(2);
+class FormationParametersEnumReferenceFrame extends EnumType {
+  static const earth_fixed = const FormationParametersEnumReferenceFrame._(0);
+  static const path_fixed = const FormationParametersEnumReferenceFrame._(1);
+  static const path_curved = const FormationParametersEnumReferenceFrame._(2);
 
   static get values => [earth_fixed, path_fixed, path_curved];
 
-  const FormationParametersEnumReference_frame._(int value) : super(value);
+  const FormationParametersEnumReferenceFrame._(int value) : super(value);
 }
 
 class ReferenceBitfieldFlags extends BitfieldType {
@@ -1332,14 +1332,14 @@ class FormationEnumOp extends EnumType {
 }
 
 /// Formation reference frame
-class FormationEnumReference_frame extends EnumType {
-  static const earth_fixed = const FormationEnumReference_frame._(0);
-  static const path_fixed = const FormationEnumReference_frame._(1);
-  static const path_curved = const FormationEnumReference_frame._(2);
+class FormationEnumReferenceFrame extends EnumType {
+  static const earth_fixed = const FormationEnumReferenceFrame._(0);
+  static const path_fixed = const FormationEnumReferenceFrame._(1);
+  static const path_curved = const FormationEnumReferenceFrame._(2);
 
   static get values => [earth_fixed, path_fixed, path_curved];
 
-  const FormationEnumReference_frame._(int value) : super(value);
+  const FormationEnumReferenceFrame._(int value) : super(value);
 }
 
 /// What to do if the vehicle fails to arrive before or at the requested time.
@@ -1416,24 +1416,24 @@ class MagnetometerEnumDirection extends EnumType {
 }
 
 /// The overall operation mode.
-class VehicleStateEnumOp_mode extends EnumType {
+class VehicleStateEnumOpMode extends EnumType {
   /// Ready to service requests.
-  static const service = const VehicleStateEnumOp_mode._(0);
+  static const service = const VehicleStateEnumOpMode._(0);
   /// Ongoing vehicle calibration.
-  static const calibration = const VehicleStateEnumOp_mode._(1);
+  static const calibration = const VehicleStateEnumOpMode._(1);
   /// Errors are set.
-  static const error = const VehicleStateEnumOp_mode._(2);
+  static const error = const VehicleStateEnumOpMode._(2);
   /// A maneuver is executing.
-  static const maneuver = const VehicleStateEnumOp_mode._(3);
+  static const maneuver = const VehicleStateEnumOpMode._(3);
   /// External control is active.
-  static const externalVal = const VehicleStateEnumOp_mode._(4);
+  static const externalVal = const VehicleStateEnumOpMode._(4);
   /// Booting system.
-  static const boot = const VehicleStateEnumOp_mode._(5);
+  static const boot = const VehicleStateEnumOpMode._(5);
 
   static get values => [service, calibration, error, maneuver, 
       externalVal, boot];
 
-  const VehicleStateEnumOp_mode._(int value) : super(value);
+  const VehicleStateEnumOpMode._(int value) : super(value);
 }
 
 class VehicleStateBitfieldFlags extends BitfieldType {
@@ -1674,49 +1674,49 @@ class ReportControlEnumOp extends EnumType {
 }
 
 /// Communication interface to be used for reports.
-class ReportControlBitfieldComm_interface extends BitfieldType {
+class ReportControlBitfieldCommInterface extends BitfieldType {
   /// Use acoustic communications
-  static const acoustic = const ReportControlBitfieldComm_interface._(0x01);
+  static const acoustic = const ReportControlBitfieldCommInterface._(0x01);
   /// Use satellite communications
-  static const satellite = const ReportControlBitfieldComm_interface._(0x02);
+  static const satellite = const ReportControlBitfieldCommInterface._(0x02);
   /// Use Global System for Mobile Communications
-  static const gsm = const ReportControlBitfieldComm_interface._(0x04);
+  static const gsm = const ReportControlBitfieldCommInterface._(0x04);
   /// Use mobile networks
-  static const mobile = const ReportControlBitfieldComm_interface._(0x08);
+  static const mobile = const ReportControlBitfieldCommInterface._(0x08);
   /// Use Radio telemetry
-  static const radio = const ReportControlBitfieldComm_interface._(0x10);
+  static const radio = const ReportControlBitfieldCommInterface._(0x10);
 
   static get values => [acoustic, satellite, gsm, mobile, 
       radio];
 
-  const ReportControlBitfieldComm_interface._(int value) : super(value);
+  const ReportControlBitfieldCommInterface._(int value) : super(value);
 
-  static ReportControlBitfieldComm_interface fromBits(
-          List<ReportControlBitfieldComm_interface> bits) =>
-      bits.reduce((b1, b2) => ReportControlBitfieldComm_interface._(b1.value | b2.value));
+  static ReportControlBitfieldCommInterface fromBits(
+          List<ReportControlBitfieldCommInterface> bits) =>
+      bits.reduce((b1, b2) => ReportControlBitfieldCommInterface._(b1.value | b2.value));
 }
 
 /// Communication mean to be used to transfer these data.
-class TransmissionRequestEnumComm_mean extends EnumType {
-  static const wifi = const TransmissionRequestEnumComm_mean._(0);
-  static const acoustic = const TransmissionRequestEnumComm_mean._(1);
-  static const satellite = const TransmissionRequestEnumComm_mean._(2);
-  static const gsm = const TransmissionRequestEnumComm_mean._(3);
+class TransmissionRequestEnumCommMean extends EnumType {
+  static const wifi = const TransmissionRequestEnumCommMean._(0);
+  static const acoustic = const TransmissionRequestEnumCommMean._(1);
+  static const satellite = const TransmissionRequestEnumCommMean._(2);
+  static const gsm = const TransmissionRequestEnumCommMean._(3);
 
   static get values => [wifi, acoustic, satellite, gsm];
 
-  const TransmissionRequestEnumComm_mean._(int value) : super(value);
+  const TransmissionRequestEnumCommMean._(int value) : super(value);
 }
 
 /// Type of data to be transmitted.
-class TransmissionRequestEnumData_mode extends EnumType {
-  static const inlinemsg = const TransmissionRequestEnumData_mode._(0);
-  static const text = const TransmissionRequestEnumData_mode._(1);
-  static const raw = const TransmissionRequestEnumData_mode._(2);
+class TransmissionRequestEnumDataMode extends EnumType {
+  static const inlinemsg = const TransmissionRequestEnumDataMode._(0);
+  static const text = const TransmissionRequestEnumDataMode._(1);
+  static const raw = const TransmissionRequestEnumDataMode._(2);
 
   static get values => [inlinemsg, text, raw];
 
-  const TransmissionRequestEnumData_mode._(int value) : super(value);
+  const TransmissionRequestEnumDataMode._(int value) : super(value);
 }
 
 class TransmissionStatusEnumStatus extends EnumType {
@@ -1939,17 +1939,17 @@ class PlanControlStateEnumState extends EnumType {
 }
 
 /// Outcome of the last executed plan.
-class PlanControlStateEnumLast_outcome extends EnumType {
+class PlanControlStateEnumLastOutcome extends EnumType {
   /// Unknown or not filled.
-  static const none = const PlanControlStateEnumLast_outcome._(0);
+  static const none = const PlanControlStateEnumLastOutcome._(0);
   /// Last plan execution was successful.
-  static const success = const PlanControlStateEnumLast_outcome._(1);
+  static const success = const PlanControlStateEnumLastOutcome._(1);
   /// Last plan execution was a failure.
-  static const failure = const PlanControlStateEnumLast_outcome._(2);
+  static const failure = const PlanControlStateEnumLastOutcome._(2);
 
   static get values => [none, success, failure];
 
-  const PlanControlStateEnumLast_outcome._(int value) : super(value);
+  const PlanControlStateEnumLastOutcome._(int value) : super(value);
 }
 
 class PlanVariableEnumType extends EnumType {
@@ -2044,40 +2044,40 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
 }
 
 /// How the position was received/calculated
-class ReportedStateEnumS_type extends EnumType {
-  static const wi_fi = const ReportedStateEnumS_type._(0);
-  static const tracker = const ReportedStateEnumS_type._(1);
-  static const sms = const ReportedStateEnumS_type._(2);
-  static const acoustic_modem = const ReportedStateEnumS_type._(3);
-  static const unknown = const ReportedStateEnumS_type._(254);
+class ReportedStateEnumSType extends EnumType {
+  static const wi_fi = const ReportedStateEnumSType._(0);
+  static const tracker = const ReportedStateEnumSType._(1);
+  static const sms = const ReportedStateEnumSType._(2);
+  static const acoustic_modem = const ReportedStateEnumSType._(3);
+  static const unknown = const ReportedStateEnumSType._(254);
 
   static get values => [wi_fi, tracker, sms, acoustic_modem, 
       unknown];
 
-  const ReportedStateEnumS_type._(int value) : super(value);
+  const ReportedStateEnumSType._(int value) : super(value);
 }
 
 /// The type of feature
-class MapFeatureEnumFeature_type extends EnumType {
+class MapFeatureEnumFeatureType extends EnumType {
   /// These features should appear as a point with a label in the map
-  static const poi = const MapFeatureEnumFeature_type._(0);
+  static const poi = const MapFeatureEnumFeatureType._(0);
   /// These features should be represented as a filled polygon (no label)
-  static const filledpoly = const MapFeatureEnumFeature_type._(1);
+  static const filledpoly = const MapFeatureEnumFeatureType._(1);
   /// These features should be represented as a countoured closed polygon (no fill and no label)
-  static const contouredpoly = const MapFeatureEnumFeature_type._(2);
+  static const contouredpoly = const MapFeatureEnumFeatureType._(2);
   /// These features should be represented as an open polygon (no label)
-  static const line = const MapFeatureEnumFeature_type._(3);
+  static const line = const MapFeatureEnumFeatureType._(3);
   /// A transponder location in the map
-  static const transponder = const MapFeatureEnumFeature_type._(4);
+  static const transponder = const MapFeatureEnumFeatureType._(4);
   /// Intended vehicle's starting location
-  static const startloc = const MapFeatureEnumFeature_type._(5);
+  static const startloc = const MapFeatureEnumFeatureType._(5);
   /// The offsets reference for this map
-  static const homeref = const MapFeatureEnumFeature_type._(6);
+  static const homeref = const MapFeatureEnumFeatureType._(6);
 
   static get values => [poi, filledpoly, contouredpoly, line, 
       transponder, startloc, homeref];
 
-  const MapFeatureEnumFeature_type._(int value) : super(value);
+  const MapFeatureEnumFeatureType._(int value) : super(value);
 }
 
 class CcuEventEnumType extends EnumType {
@@ -2124,17 +2124,17 @@ class TrexOperationEnumOp extends EnumType {
   const TrexOperationEnumOp._(int value) : super(value);
 }
 
-class TrexAttributeEnumAttr_type extends EnumType {
-  static const boolVal = const TrexAttributeEnumAttr_type._(1);
-  static const intVal = const TrexAttributeEnumAttr_type._(2);
-  static const float = const TrexAttributeEnumAttr_type._(3);
-  static const string = const TrexAttributeEnumAttr_type._(4);
-  static const enumVal = const TrexAttributeEnumAttr_type._(5);
+class TrexAttributeEnumAttrType extends EnumType {
+  static const boolVal = const TrexAttributeEnumAttrType._(1);
+  static const intVal = const TrexAttributeEnumAttrType._(2);
+  static const float = const TrexAttributeEnumAttrType._(3);
+  static const string = const TrexAttributeEnumAttrType._(4);
+  static const enumVal = const TrexAttributeEnumAttrType._(5);
 
   static get values => [boolVal, intVal, float, string, 
       enumVal];
 
-  const TrexAttributeEnumAttr_type._(int value) : super(value);
+  const TrexAttributeEnumAttrType._(int value) : super(value);
 }
 
 class SessionStatusEnumStatus extends EnumType {

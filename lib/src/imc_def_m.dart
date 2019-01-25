@@ -881,7 +881,7 @@ abstract class AnnounceService extends ImcMessage implements Built<AnnounceServi
   /// Informs about the availability of the service on internal and
   /// external networks.
   @ImcField("ServiceType", "service_type", ImcType.typeUInt8)
-  AnnounceServiceBitfieldService_type get service_type;
+  AnnounceServiceBitfieldServiceType get service_type;
 }
 
 /// Receive Signal Strength Information class
@@ -1361,7 +1361,7 @@ abstract class CommSystemsQuery extends ImcMessage implements Built<CommSystemsQ
 
   /// Communication interface to be used for reports.
   @ImcField("Communication Interface", "comm_interface", ImcType.typeUInt16)
-  CommSystemsQueryBitfieldComm_interface get comm_interface;
+  CommSystemsQueryBitfieldCommInterface get comm_interface;
 
   @ImcField("Model", "model", ImcType.typeUInt16)
   CommSystemsQueryEnumModel get model;
@@ -5254,7 +5254,7 @@ abstract class FormationParameters extends ImcMessage implements Built<Formation
 
   /// Formation reference frame
   @ImcField("Formation Reference Frame", "reference_frame", ImcType.typeUInt8)
-  FormationParametersEnumReference_frame get reference_frame;
+  FormationParametersEnumReferenceFrame get reference_frame;
 
   /// List of formation participants.
   @ImcField("Formation Participants", "participants", ImcType.typeMessageList)
@@ -5741,7 +5741,7 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 
   /// Formation reference frame
   @ImcField("Formation Reference Frame", "reference_frame", ImcType.typeUInt8)
-  FormationEnumReference_frame get reference_frame;
+  FormationEnumReferenceFrame get reference_frame;
 
   /// List of formation participants.
   @ImcField("Formation Participants", "participants", ImcType.typeMessageList)
@@ -6478,7 +6478,7 @@ abstract class VehicleState extends ImcMessage implements Built<VehicleState, Ve
 
   /// The overall operation mode.
   @ImcField("Operation Mode", "op_mode", ImcType.typeUInt8)
-  VehicleStateEnumOp_mode get op_mode;
+  VehicleStateEnumOpMode get op_mode;
 
   /// Error count for monitored entitites.
   @ImcField("Errors -- Count", "error_count", ImcType.typeUInt8)
@@ -6865,7 +6865,7 @@ abstract class ReportControl extends ImcMessage implements Built<ReportControl, 
 
   /// Communication interface to be used for reports.
   @ImcField("Communication Interface", "comm_interface", ImcType.typeUInt8)
-  ReportControlBitfieldComm_interface get comm_interface;
+  ReportControlBitfieldCommInterface get comm_interface;
 
   /// Desired periodicity for scheduled reports.
   @ImcField("Period", "period", ImcType.typeUInt16, units: "s")
@@ -6951,7 +6951,7 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
 
   /// Communication mean to be used to transfer these data.
   @ImcField("Communication Mean", "comm_mean", ImcType.typeUInt8)
-  TransmissionRequestEnumComm_mean get comm_mean;
+  TransmissionRequestEnumCommMean get comm_mean;
 
   /// The name of the system where to send this message.
   @ImcField("Destination System", "destination", ImcType.typePlaintext)
@@ -6963,7 +6963,7 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
 
   /// Type of data to be transmitted.
   @ImcField("Data Mode", "data_mode", ImcType.typeUInt8)
-  TransmissionRequestEnumData_mode get data_mode;
+  TransmissionRequestEnumDataMode get data_mode;
 
   /// Data to be transmitted if selected *data_mode* is *INLINEMSG*.
   @ImcField("Message Data", "msg_data", ImcType.typeMessage)
@@ -7459,7 +7459,7 @@ abstract class PlanControlState extends ImcMessage implements Built<PlanControlS
 
   /// Outcome of the last executed plan.
   @ImcField("Last Plan Outcome", "last_outcome", ImcType.typeUInt8)
-  PlanControlStateEnumLast_outcome get last_outcome;
+  PlanControlStateEnumLastOutcome get last_outcome;
 }
 
 /// Plan Variable class
@@ -7709,7 +7709,7 @@ abstract class ReportedState extends ImcMessage implements Built<ReportedState, 
 
   /// How the position was received/calculated
   @ImcField("Source Type", "s_type", ImcType.typeUInt8)
-  ReportedStateEnumS_type get s_type;
+  ReportedStateEnumSType get s_type;
 }
 
 /// Remote Sensor Info class
@@ -7781,7 +7781,7 @@ abstract class MapFeature extends ImcMessage implements Built<MapFeature, MapFea
 
   /// The type of feature
   @ImcField("FeatureType", "feature_type", ImcType.typeUInt8)
-  MapFeatureEnumFeature_type get feature_type;
+  MapFeatureEnumFeatureType get feature_type;
 
   /// The red component of the color for this point
   @ImcField("RedComponent", "rgb_red", ImcType.typeUInt8)
@@ -7937,7 +7937,7 @@ abstract class TrexAttribute extends ImcMessage implements Built<TrexAttribute, 
   String get name;
 
   @ImcField("Attribute type", "attr_type", ImcType.typeUInt8)
-  TrexAttributeEnumAttr_type get attr_type;
+  TrexAttributeEnumAttrType get attr_type;
 
   /// Lower bound of this interval. Empty text means no bound.
   @ImcField("Minimum", "min", ImcType.typePlaintext)

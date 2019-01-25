@@ -98,6 +98,8 @@ var _messagesGroups = Map<String, String>();
 
 String _toSentenceCase(String s) => "${s[0].toUpperCase()}${s.substring(1)}";
 
+String _replaceMiddleUnderscoreLetterWithUpercaseLetter(String s) => s.split(new RegExp(r'_')).reduce((t1, t2) => t1 + _toSentenceCase(t2));
+
 /// Adds 'v' prefix if is a reserved word or starts with numbers
 String _accountForReservedName(String s) {
   if (_reservedWords.contains(s.trim())) return "${s}Val";
@@ -533,7 +535,7 @@ _getTypeForEnumLike(
   }
   // Local def
   var msgAbbrev = message.getAttribute("abbrev");
-  return "$msgAbbrev$sufix${_toSentenceCase(fieldAbbrev)}";
+  return "$msgAbbrev$sufix${_toSentenceCase(_replaceMiddleUnderscoreLetterWithUpercaseLetter(fieldAbbrev))}";
 }
 
 /// Writes the global enum like code classes.
@@ -546,7 +548,7 @@ _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
     default:
       sufix = unit;
   }
-  var eName = "${_toSentenceCase(def.getAttribute("abbrev"))}$sufix";
+  var eName = "${_toSentenceCase(_replaceMiddleUnderscoreLetterWithUpercaseLetter(def.getAttribute("abbrev")))}$sufix";
 
   // So writting global enums like
   _writeEnumLikeWorker(eName, def, unit, sink);

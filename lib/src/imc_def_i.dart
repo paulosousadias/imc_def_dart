@@ -5783,7 +5783,7 @@ class _$AnnounceService extends AnnounceService {
   @override
   final String service;
   @override
-  final AnnounceServiceBitfieldService_type service_type;
+  final AnnounceServiceBitfieldServiceType service_type;
 
   factory _$AnnounceService([void updates(AnnounceServiceBuilder b)]) =>
       (new AnnounceServiceBuilder()..update(updates)).build();
@@ -5873,9 +5873,9 @@ class AnnounceServiceBuilder implements Builder<AnnounceService, AnnounceService
   String get service => _$this._service;
   set service(String service) => _$this._service = service;
 
-  AnnounceServiceBitfieldService_type _service_type;
-  AnnounceServiceBitfieldService_type get service_type => _$this._service_type;
-  set service_type(AnnounceServiceBitfieldService_type service_type) => _$this._service_type = service_type;
+  AnnounceServiceBitfieldServiceType _service_type;
+  AnnounceServiceBitfieldServiceType get service_type => _$this._service_type;
+  set service_type(AnnounceServiceBitfieldServiceType service_type) => _$this._service_type = service_type;
 
   AnnounceServiceBuilder();
 
@@ -9311,7 +9311,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
   @override
   final CommSystemsQueryBitfieldType type;
   @override
-  final CommSystemsQueryBitfieldComm_interface comm_interface;
+  final CommSystemsQueryBitfieldCommInterface comm_interface;
   @override
   final CommSystemsQueryEnumModel model;
   @override
@@ -9413,9 +9413,9 @@ class CommSystemsQueryBuilder implements Builder<CommSystemsQuery, CommSystemsQu
   CommSystemsQueryBitfieldType get type => _$this._type;
   set type(CommSystemsQueryBitfieldType type) => _$this._type = type;
 
-  CommSystemsQueryBitfieldComm_interface _comm_interface;
-  CommSystemsQueryBitfieldComm_interface get comm_interface => _$this._comm_interface;
-  set comm_interface(CommSystemsQueryBitfieldComm_interface comm_interface) => _$this._comm_interface = comm_interface;
+  CommSystemsQueryBitfieldCommInterface _comm_interface;
+  CommSystemsQueryBitfieldCommInterface get comm_interface => _$this._comm_interface;
+  set comm_interface(CommSystemsQueryBitfieldCommInterface comm_interface) => _$this._comm_interface = comm_interface;
 
   CommSystemsQueryEnumModel _model;
   CommSystemsQueryEnumModel get model => _$this._model;
@@ -33047,7 +33047,7 @@ class _$FormationParameters extends FormationParameters {
   @override
   final String formation_name;
   @override
-  final FormationParametersEnumReference_frame reference_frame;
+  final FormationParametersEnumReferenceFrame reference_frame;
   @override
   final List<VehicleFormationParticipant> participants;
   @override
@@ -33149,9 +33149,9 @@ class FormationParametersBuilder implements Builder<FormationParameters, Formati
   String get formation_name => _$this._formation_name;
   set formation_name(String formation_name) => _$this._formation_name = formation_name;
 
-  FormationParametersEnumReference_frame _reference_frame;
-  FormationParametersEnumReference_frame get reference_frame => _$this._reference_frame;
-  set reference_frame(FormationParametersEnumReference_frame reference_frame) => _$this._reference_frame = reference_frame;
+  FormationParametersEnumReferenceFrame _reference_frame;
+  FormationParametersEnumReferenceFrame get reference_frame => _$this._reference_frame;
+  set reference_frame(FormationParametersEnumReferenceFrame reference_frame) => _$this._reference_frame = reference_frame;
 
   List<VehicleFormationParticipant> _participants;
   List<VehicleFormationParticipant> get participants => _$this._participants;
@@ -35061,7 +35061,7 @@ class _$Formation extends Formation {
   @override
   final String description;
   @override
-  final FormationEnumReference_frame reference_frame;
+  final FormationEnumReferenceFrame reference_frame;
   @override
   final List<VehicleFormationParticipant> participants;
   @override
@@ -35275,9 +35275,9 @@ class FormationBuilder implements Builder<Formation, FormationBuilder> {
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
-  FormationEnumReference_frame _reference_frame;
-  FormationEnumReference_frame get reference_frame => _$this._reference_frame;
-  set reference_frame(FormationEnumReference_frame reference_frame) => _$this._reference_frame = reference_frame;
+  FormationEnumReferenceFrame _reference_frame;
+  FormationEnumReferenceFrame get reference_frame => _$this._reference_frame;
+  set reference_frame(FormationEnumReferenceFrame reference_frame) => _$this._reference_frame = reference_frame;
 
   List<VehicleFormationParticipant> _participants;
   List<VehicleFormationParticipant> get participants => _$this._participants;
@@ -38565,7 +38565,7 @@ class _$VehicleState extends VehicleState {
   final int dstEnt;
 
   @override
-  final VehicleStateEnumOp_mode op_mode;
+  final VehicleStateEnumOpMode op_mode;
   @override
   final int error_count;
   @override
@@ -38701,9 +38701,9 @@ class VehicleStateBuilder implements Builder<VehicleState, VehicleStateBuilder> 
   int get dstEnt => _$this._dstEnt;
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
-  VehicleStateEnumOp_mode _op_mode;
-  VehicleStateEnumOp_mode get op_mode => _$this._op_mode;
-  set op_mode(VehicleStateEnumOp_mode op_mode) => _$this._op_mode = op_mode;
+  VehicleStateEnumOpMode _op_mode;
+  VehicleStateEnumOpMode get op_mode => _$this._op_mode;
+  set op_mode(VehicleStateEnumOpMode op_mode) => _$this._op_mode = op_mode;
 
   int _error_count;
   int get error_count => _$this._error_count;
@@ -41015,7 +41015,7 @@ class _$ReportControl extends ReportControl {
   @override
   final ReportControlEnumOp op;
   @override
-  final ReportControlBitfieldComm_interface comm_interface;
+  final ReportControlBitfieldCommInterface comm_interface;
   @override
   final int period;
   @override
@@ -41117,9 +41117,9 @@ class ReportControlBuilder implements Builder<ReportControl, ReportControlBuilde
   ReportControlEnumOp get op => _$this._op;
   set op(ReportControlEnumOp op) => _$this._op = op;
 
-  ReportControlBitfieldComm_interface _comm_interface;
-  ReportControlBitfieldComm_interface get comm_interface => _$this._comm_interface;
-  set comm_interface(ReportControlBitfieldComm_interface comm_interface) => _$this._comm_interface = comm_interface;
+  ReportControlBitfieldCommInterface _comm_interface;
+  ReportControlBitfieldCommInterface get comm_interface => _$this._comm_interface;
+  set comm_interface(ReportControlBitfieldCommInterface comm_interface) => _$this._comm_interface = comm_interface;
 
   int _period;
   int get period => _$this._period;
@@ -41447,13 +41447,13 @@ class _$TransmissionRequest extends TransmissionRequest {
   @override
   final int req_id;
   @override
-  final TransmissionRequestEnumComm_mean comm_mean;
+  final TransmissionRequestEnumCommMean comm_mean;
   @override
   final String destination;
   @override
   final double deadline;
   @override
-  final TransmissionRequestEnumData_mode data_mode;
+  final TransmissionRequestEnumDataMode data_mode;
   @override
   final ImcMessage msg_data;
   @override
@@ -41573,9 +41573,9 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
   int get req_id => _$this._req_id;
   set req_id(int req_id) => _$this._req_id = req_id;
 
-  TransmissionRequestEnumComm_mean _comm_mean;
-  TransmissionRequestEnumComm_mean get comm_mean => _$this._comm_mean;
-  set comm_mean(TransmissionRequestEnumComm_mean comm_mean) => _$this._comm_mean = comm_mean;
+  TransmissionRequestEnumCommMean _comm_mean;
+  TransmissionRequestEnumCommMean get comm_mean => _$this._comm_mean;
+  set comm_mean(TransmissionRequestEnumCommMean comm_mean) => _$this._comm_mean = comm_mean;
 
   String _destination;
   String get destination => _$this._destination;
@@ -41585,9 +41585,9 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
   double get deadline => _$this._deadline;
   set deadline(double deadline) => _$this._deadline = deadline;
 
-  TransmissionRequestEnumData_mode _data_mode;
-  TransmissionRequestEnumData_mode get data_mode => _$this._data_mode;
-  set data_mode(TransmissionRequestEnumData_mode data_mode) => _$this._data_mode = data_mode;
+  TransmissionRequestEnumDataMode _data_mode;
+  TransmissionRequestEnumDataMode get data_mode => _$this._data_mode;
+  set data_mode(TransmissionRequestEnumDataMode data_mode) => _$this._data_mode = data_mode;
 
   ImcMessage _msg_data;
   ImcMessage get msg_data => _$this._msg_data;
@@ -44387,7 +44387,7 @@ class _$PlanControlState extends PlanControlState {
   @override
   final int man_eta;
   @override
-  final PlanControlStateEnumLast_outcome last_outcome;
+  final PlanControlStateEnumLastOutcome last_outcome;
 
   factory _$PlanControlState([void updates(PlanControlStateBuilder b)]) =>
       (new PlanControlStateBuilder()..update(updates)).build();
@@ -44525,9 +44525,9 @@ class PlanControlStateBuilder implements Builder<PlanControlState, PlanControlSt
   int get man_eta => _$this._man_eta;
   set man_eta(int man_eta) => _$this._man_eta = man_eta;
 
-  PlanControlStateEnumLast_outcome _last_outcome;
-  PlanControlStateEnumLast_outcome get last_outcome => _$this._last_outcome;
-  set last_outcome(PlanControlStateEnumLast_outcome last_outcome) => _$this._last_outcome = last_outcome;
+  PlanControlStateEnumLastOutcome _last_outcome;
+  PlanControlStateEnumLastOutcome get last_outcome => _$this._last_outcome;
+  set last_outcome(PlanControlStateEnumLastOutcome last_outcome) => _$this._last_outcome = last_outcome;
 
   PlanControlStateBuilder();
 
@@ -45565,7 +45565,7 @@ class _$ReportedState extends ReportedState {
   @override
   final String sid;
   @override
-  final ReportedStateEnumS_type s_type;
+  final ReportedStateEnumSType s_type;
 
   factory _$ReportedState([void updates(ReportedStateBuilder b)]) =>
       (new ReportedStateBuilder()..update(updates)).build();
@@ -45711,9 +45711,9 @@ class ReportedStateBuilder implements Builder<ReportedState, ReportedStateBuilde
   String get sid => _$this._sid;
   set sid(String sid) => _$this._sid = sid;
 
-  ReportedStateEnumS_type _s_type;
-  ReportedStateEnumS_type get s_type => _$this._s_type;
-  set s_type(ReportedStateEnumS_type s_type) => _$this._s_type = s_type;
+  ReportedStateEnumSType _s_type;
+  ReportedStateEnumSType get s_type => _$this._s_type;
+  set s_type(ReportedStateEnumSType s_type) => _$this._s_type = s_type;
 
   ReportedStateBuilder();
 
@@ -46163,7 +46163,7 @@ class _$MapFeature extends MapFeature {
   @override
   final String id;
   @override
-  final MapFeatureEnumFeature_type feature_type;
+  final MapFeatureEnumFeatureType feature_type;
   @override
   final int rgb_red;
   @override
@@ -46277,9 +46277,9 @@ class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder> {
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  MapFeatureEnumFeature_type _feature_type;
-  MapFeatureEnumFeature_type get feature_type => _$this._feature_type;
-  set feature_type(MapFeatureEnumFeature_type feature_type) => _$this._feature_type = feature_type;
+  MapFeatureEnumFeatureType _feature_type;
+  MapFeatureEnumFeatureType get feature_type => _$this._feature_type;
+  set feature_type(MapFeatureEnumFeatureType feature_type) => _$this._feature_type = feature_type;
 
   int _rgb_red;
   int get rgb_red => _$this._rgb_red;
@@ -47363,7 +47363,7 @@ class _$TrexAttribute extends TrexAttribute {
   @override
   final String name;
   @override
-  final TrexAttributeEnumAttr_type attr_type;
+  final TrexAttributeEnumAttrType attr_type;
   @override
   final String min;
   @override
@@ -47465,9 +47465,9 @@ class TrexAttributeBuilder implements Builder<TrexAttribute, TrexAttributeBuilde
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
 
-  TrexAttributeEnumAttr_type _attr_type;
-  TrexAttributeEnumAttr_type get attr_type => _$this._attr_type;
-  set attr_type(TrexAttributeEnumAttr_type attr_type) => _$this._attr_type = attr_type;
+  TrexAttributeEnumAttrType _attr_type;
+  TrexAttributeEnumAttrType get attr_type => _$this._attr_type;
+  set attr_type(TrexAttributeEnumAttrType attr_type) => _$this._attr_type = attr_type;
 
   String _min;
   String get min => _$this._min;
