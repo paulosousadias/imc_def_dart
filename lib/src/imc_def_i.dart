@@ -66,24 +66,24 @@ class _$EntityState extends EntityState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode), 
-        flags.hashCode), 
-        description.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode), 
+        flags?.hashCode), 
+        description?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EntityState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state)
           ..add('flags', flags)
           ..add('description', description))
@@ -162,14 +162,14 @@ class EntityStateBuilder implements Builder<EntityState, EntityStateBuilder> {
   _$EntityState build() {
     final _$result = _$v ??
         new _$EntityState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state,
-            flags: flags,
-            description: description);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? EntityStateEnumState(0),
+            flags: flags ?? EntityStateBitfieldFlags(0),
+            description: description ?? '');
     replace(_$result);
     return _$result;
   }
@@ -222,21 +222,21 @@ class _$QueryEntityState extends QueryEntityState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('QueryEntityState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -297,11 +297,11 @@ class QueryEntityStateBuilder implements Builder<QueryEntityState, QueryEntitySt
   _$QueryEntityState build() {
     final _$result = _$v ??
         new _$QueryEntityState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -374,26 +374,26 @@ class _$EntityInfo extends EntityInfo {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        label.hashCode), 
-        component.hashCode), 
-        actTime.hashCode), 
-        deactTime.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        label?.hashCode), 
+        component?.hashCode), 
+        actTime?.hashCode), 
+        deactTime?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EntityInfo')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('label', label)
           ..add('component', component)
@@ -484,16 +484,16 @@ class EntityInfoBuilder implements Builder<EntityInfo, EntityInfoBuilder> {
   _$EntityInfo build() {
     final _$result = _$v ??
         new _$EntityInfo._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            label: label,
-            component: component,
-            actTime: actTime,
-            deactTime: deactTime);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            label: label ?? '',
+            component: component ?? '',
+            actTime: actTime ?? 0,
+            deactTime: deactTime ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -550,22 +550,22 @@ class _$QueryEntityInfo extends QueryEntityInfo {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('QueryEntityInfo')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id))
         .toString();
   }
@@ -632,12 +632,12 @@ class QueryEntityInfoBuilder implements Builder<QueryEntityInfo, QueryEntityInfo
   _$QueryEntityInfo build() {
     final _$result = _$v ??
         new _$QueryEntityInfo._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -698,23 +698,23 @@ class _$EntityList extends EntityList {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        list.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        list?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EntityList')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('list', list))
         .toString();
@@ -787,13 +787,13 @@ class EntityListBuilder implements Builder<EntityList, EntityListBuilder> {
   _$EntityList build() {
     final _$result = _$v ??
         new _$EntityList._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            list: list);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? EntityListEnumOp(0),
+            list: list ?? '');
     replace(_$result);
     return _$result;
   }
@@ -850,22 +850,22 @@ class _$CpuUsage extends CpuUsage {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CpuUsage')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -932,12 +932,12 @@ class CpuUsageBuilder implements Builder<CpuUsage, CpuUsageBuilder> {
   _$CpuUsage build() {
     final _$result = _$v ??
         new _$CpuUsage._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -998,23 +998,23 @@ class _$TransportBindings extends TransportBindings {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        consumer.hashCode), 
-        messageId.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        consumer?.hashCode), 
+        messageId?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TransportBindings')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('consumer', consumer)
           ..add('messageId', messageId))
         .toString();
@@ -1087,13 +1087,13 @@ class TransportBindingsBuilder implements Builder<TransportBindings, TransportBi
   _$TransportBindings build() {
     final _$result = _$v ??
         new _$TransportBindings._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            consumer: consumer,
-            messageId: messageId);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            consumer: consumer ?? '',
+            messageId: messageId ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -1150,22 +1150,22 @@ class _$RestartSystem extends RestartSystem {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RestartSystem')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type))
         .toString();
   }
@@ -1232,12 +1232,12 @@ class RestartSystemBuilder implements Builder<RestartSystem, RestartSystemBuilde
   _$RestartSystem build() {
     final _$result = _$v ??
         new _$RestartSystem._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? RestartSystemEnumType(0));
     replace(_$result);
     return _$result;
   }
@@ -1294,22 +1294,22 @@ class _$DevCalibrationControl extends DevCalibrationControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DevCalibrationControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op))
         .toString();
   }
@@ -1376,12 +1376,12 @@ class DevCalibrationControlBuilder implements Builder<DevCalibrationControl, Dev
   _$DevCalibrationControl build() {
     final _$result = _$v ??
         new _$DevCalibrationControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? DevCalibrationControlEnumOp(0));
     replace(_$result);
     return _$result;
   }
@@ -1450,25 +1450,25 @@ class _$DevCalibrationState extends DevCalibrationState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        totalSteps.hashCode), 
-        stepNumber.hashCode), 
-        step.hashCode), 
-        flags.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        totalSteps?.hashCode), 
+        stepNumber?.hashCode), 
+        step?.hashCode), 
+        flags?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DevCalibrationState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('totalSteps', totalSteps)
           ..add('stepNumber', stepNumber)
           ..add('step', step)
@@ -1553,15 +1553,15 @@ class DevCalibrationStateBuilder implements Builder<DevCalibrationState, DevCali
   _$DevCalibrationState build() {
     final _$result = _$v ??
         new _$DevCalibrationState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            totalSteps: totalSteps,
-            stepNumber: stepNumber,
-            step: step,
-            flags: flags);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            totalSteps: totalSteps ?? 0,
+            stepNumber: stepNumber ?? 0,
+            step: step ?? '',
+            flags: flags ?? DevCalibrationStateBitfieldFlags(0));
     replace(_$result);
     return _$result;
   }
@@ -1622,23 +1622,23 @@ class _$EntityActivationState extends EntityActivationState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode), 
-        error.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode), 
+        error?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EntityActivationState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state)
           ..add('error', error))
         .toString();
@@ -1711,13 +1711,13 @@ class EntityActivationStateBuilder implements Builder<EntityActivationState, Ent
   _$EntityActivationState build() {
     final _$result = _$v ??
         new _$EntityActivationState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state,
-            error: error);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? EntityActivationStateEnumState(0),
+            error: error ?? '');
     replace(_$result);
     return _$result;
   }
@@ -1770,21 +1770,21 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('QueryEntityActivationState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -1845,11 +1845,11 @@ class QueryEntityActivationStateBuilder implements Builder<QueryEntityActivation
   _$QueryEntityActivationState build() {
     final _$result = _$v ??
         new _$QueryEntityActivationState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -1974,39 +1974,39 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        speedMin.hashCode), 
-        speedMax.hashCode), 
-        longAccel.hashCode), 
-        altMaxMsl.hashCode), 
-        diveFractionMax.hashCode), 
-        climbFractionMax.hashCode), 
-        bankMax.hashCode), 
-        pMax.hashCode), 
-        pitchMin.hashCode), 
-        pitchMax.hashCode), 
-        qMax.hashCode), 
-        gMin.hashCode), 
-        gMax.hashCode), 
-        gLatMax.hashCode), 
-        rpmMin.hashCode), 
-        rpmMax.hashCode), 
-        rpmRateMax.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        speedMin?.hashCode), 
+        speedMax?.hashCode), 
+        longAccel?.hashCode), 
+        altMaxMsl?.hashCode), 
+        diveFractionMax?.hashCode), 
+        climbFractionMax?.hashCode), 
+        bankMax?.hashCode), 
+        pMax?.hashCode), 
+        pitchMin?.hashCode), 
+        pitchMax?.hashCode), 
+        qMax?.hashCode), 
+        gMin?.hashCode), 
+        gMax?.hashCode), 
+        gLatMax?.hashCode), 
+        rpmMin?.hashCode), 
+        rpmMax?.hashCode), 
+        rpmRateMax?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VehicleOperationalLimits')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('speedMin', speedMin)
           ..add('speedMax', speedMax)
@@ -2175,29 +2175,29 @@ class VehicleOperationalLimitsBuilder implements Builder<VehicleOperationalLimit
   _$VehicleOperationalLimits build() {
     final _$result = _$v ??
         new _$VehicleOperationalLimits._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            speedMin: speedMin,
-            speedMax: speedMax,
-            longAccel: longAccel,
-            altMaxMsl: altMaxMsl,
-            diveFractionMax: diveFractionMax,
-            climbFractionMax: climbFractionMax,
-            bankMax: bankMax,
-            pMax: pMax,
-            pitchMin: pitchMin,
-            pitchMax: pitchMax,
-            qMax: qMax,
-            gMin: gMin,
-            gMax: gMax,
-            gLatMax: gLatMax,
-            rpmMin: rpmMin,
-            rpmMax: rpmMax,
-            rpmRateMax: rpmRateMax);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? VehicleOperationalLimitsEnumOp(0),
+            speedMin: speedMin ?? 0,
+            speedMax: speedMax ?? 0,
+            longAccel: longAccel ?? 0,
+            altMaxMsl: altMaxMsl ?? 0,
+            diveFractionMax: diveFractionMax ?? 0,
+            climbFractionMax: climbFractionMax ?? 0,
+            bankMax: bankMax ?? 0,
+            pMax: pMax ?? 0,
+            pitchMin: pitchMin ?? 0,
+            pitchMax: pitchMax ?? 0,
+            qMax: qMax ?? 0,
+            gMin: gMin ?? 0,
+            gMax: gMax ?? 0,
+            gLatMax: gLatMax ?? 0,
+            rpmMin: rpmMin ?? 0,
+            rpmMax: rpmMax ?? 0,
+            rpmRateMax: rpmRateMax ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -2254,22 +2254,22 @@ class _$MsgList extends MsgList {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        msgs.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        msgs?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('MsgList')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('msgs', msgs))
         .toString();
   }
@@ -2336,12 +2336,12 @@ class MsgListBuilder implements Builder<MsgList, MsgListBuilder> {
   _$MsgList build() {
     final _$result = _$v ??
         new _$MsgList._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            msgs: msgs);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            msgs: msgs ?? List<ImcMessage>(0));
     replace(_$result);
     return _$result;
   }
@@ -2466,39 +2466,39 @@ class _$SimulatedState extends SimulatedState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        height.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode), 
-        u.hashCode), 
-        v.hashCode), 
-        w.hashCode), 
-        p.hashCode), 
-        q.hashCode), 
-        r.hashCode), 
-        svx.hashCode), 
-        svy.hashCode), 
-        svz.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        height?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode), 
+        u?.hashCode), 
+        v?.hashCode), 
+        w?.hashCode), 
+        p?.hashCode), 
+        q?.hashCode), 
+        r?.hashCode), 
+        svx?.hashCode), 
+        svy?.hashCode), 
+        svz?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SimulatedState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('height', height)
@@ -2667,29 +2667,29 @@ class SimulatedStateBuilder implements Builder<SimulatedState, SimulatedStateBui
   _$SimulatedState build() {
     final _$result = _$v ??
         new _$SimulatedState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            height: height,
-            x: x,
-            y: y,
-            z: z,
-            phi: phi,
-            theta: theta,
-            psi: psi,
-            u: u,
-            v: v,
-            w: w,
-            p: p,
-            q: q,
-            r: r,
-            svx: svx,
-            svy: svy,
-            svz: svz);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            height: height ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0,
+            u: u ?? 0,
+            v: v ?? 0,
+            w: w ?? 0,
+            p: p ?? 0,
+            q: q ?? 0,
+            r: r ?? 0,
+            svx: svx ?? 0,
+            svy: svy ?? 0,
+            svz: svz ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -2750,23 +2750,23 @@ class _$LeakSimulation extends LeakSimulation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        entities.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        entities?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LeakSimulation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('entities', entities))
         .toString();
@@ -2839,13 +2839,13 @@ class LeakSimulationBuilder implements Builder<LeakSimulation, LeakSimulationBui
   _$LeakSimulation build() {
     final _$result = _$v ??
         new _$LeakSimulation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            entities: entities);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? LeakSimulationEnumOp(0),
+            entities: entities ?? '');
     replace(_$result);
     return _$result;
   }
@@ -2910,24 +2910,24 @@ class _$UASimulation extends UASimulation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        speed.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        speed?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UASimulation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('speed', speed)
           ..add('data', data))
@@ -3006,14 +3006,14 @@ class UASimulationBuilder implements Builder<UASimulation, UASimulationBuilder> 
   _$UASimulation build() {
     final _$result = _$v ??
         new _$UASimulation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            speed: speed,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? UASimulationEnumType(0),
+            speed: speed ?? 0,
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -3078,24 +3078,24 @@ class _$DynamicsSimParam extends DynamicsSimParam {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        tas2accPgain.hashCode), 
-        bank2pPgain.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        tas2accPgain?.hashCode), 
+        bank2pPgain?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DynamicsSimParam')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('tas2accPgain', tas2accPgain)
           ..add('bank2pPgain', bank2pPgain))
@@ -3174,14 +3174,14 @@ class DynamicsSimParamBuilder implements Builder<DynamicsSimParam, DynamicsSimPa
   _$DynamicsSimParam build() {
     final _$result = _$v ??
         new _$DynamicsSimParam._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            tas2accPgain: tas2accPgain,
-            bank2pPgain: bank2pPgain);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? DynamicsSimParamEnumOp(0),
+            tas2accPgain: tas2accPgain ?? 0,
+            bank2pPgain: bank2pPgain ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -3242,23 +3242,23 @@ class _$StorageUsage extends StorageUsage {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        available.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        available?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('StorageUsage')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('available', available)
           ..add('value', value))
         .toString();
@@ -3331,13 +3331,13 @@ class StorageUsageBuilder implements Builder<StorageUsage, StorageUsageBuilder> 
   _$StorageUsage build() {
     final _$result = _$v ??
         new _$StorageUsage._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            available: available,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            available: available ?? 0,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -3402,24 +3402,24 @@ class _$CacheControl extends CacheControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        snapshot.hashCode), 
-        message.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        snapshot?.hashCode), 
+        message?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CacheControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('snapshot', snapshot)
           ..add('message', message))
@@ -3498,13 +3498,13 @@ class CacheControlBuilder implements Builder<CacheControl, CacheControlBuilder> 
   _$CacheControl build() {
     final _$result = _$v ??
         new _$CacheControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            snapshot: snapshot,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? CacheControlEnumOp(0),
+            snapshot: snapshot ?? '',
             message: message);
     replace(_$result);
     return _$result;
@@ -3566,23 +3566,23 @@ class _$LoggingControl extends LoggingControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        name.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        name?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LoggingControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('name', name))
         .toString();
@@ -3655,13 +3655,13 @@ class LoggingControlBuilder implements Builder<LoggingControl, LoggingControlBui
   _$LoggingControl build() {
     final _$result = _$v ??
         new _$LoggingControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            name: name);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? LoggingControlEnumOp(0),
+            name: name ?? '');
     replace(_$result);
     return _$result;
   }
@@ -3730,25 +3730,25 @@ class _$LogBookEntry extends LogBookEntry {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        htime.hashCode), 
-        context.hashCode), 
-        text.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        htime?.hashCode), 
+        context?.hashCode), 
+        text?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LogBookEntry')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('htime', htime)
           ..add('context', context)
@@ -3833,15 +3833,15 @@ class LogBookEntryBuilder implements Builder<LogBookEntry, LogBookEntryBuilder> 
   _$LogBookEntry build() {
     final _$result = _$v ??
         new _$LogBookEntry._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            htime: htime,
-            context: context,
-            text: text);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? LogBookEntryEnumType(0),
+            htime: htime ?? 0,
+            context: context ?? '',
+            text: text ?? '');
     replace(_$result);
     return _$result;
   }
@@ -3906,24 +3906,24 @@ class _$LogBookControl extends LogBookControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        command.hashCode), 
-        htime.hashCode), 
-        msg.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        command?.hashCode), 
+        htime?.hashCode), 
+        msg?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LogBookControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('command', command)
           ..add('htime', htime)
           ..add('msg', msg))
@@ -4002,14 +4002,14 @@ class LogBookControlBuilder implements Builder<LogBookControl, LogBookControlBui
   _$LogBookControl build() {
     final _$result = _$v ??
         new _$LogBookControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            command: command,
-            htime: htime,
-            msg: msg);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            command: command ?? LogBookControlEnumCommand(0),
+            htime: htime ?? 0,
+            msg: msg ?? List<LogBookEntry>(0));
     replace(_$result);
     return _$result;
   }
@@ -4070,23 +4070,23 @@ class _$ReplayControl extends ReplayControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        file.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        file?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ReplayControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('file', file))
         .toString();
@@ -4159,13 +4159,13 @@ class ReplayControlBuilder implements Builder<ReplayControl, ReplayControlBuilde
   _$ReplayControl build() {
     final _$result = _$v ??
         new _$ReplayControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            file: file);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? ReplayControlEnumOp(0),
+            file: file ?? '');
     replace(_$result);
     return _$result;
   }
@@ -4230,24 +4230,24 @@ class _$ClockControl extends ClockControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        clock.hashCode), 
-        tz.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        clock?.hashCode), 
+        tz?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ClockControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('clock', clock)
           ..add('tz', tz))
@@ -4326,14 +4326,14 @@ class ClockControlBuilder implements Builder<ClockControl, ClockControlBuilder> 
   _$ClockControl build() {
     final _$result = _$v ??
         new _$ClockControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            clock: clock,
-            tz: tz);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? ClockControlEnumOp(0),
+            clock: clock ?? 0,
+            tz: tz ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -4398,24 +4398,24 @@ class _$HistoricCTD extends HistoricCTD {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        conductivity.hashCode), 
-        temperature.hashCode), 
-        depth.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        conductivity?.hashCode), 
+        temperature?.hashCode), 
+        depth?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('HistoricCTD')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('conductivity', conductivity)
           ..add('temperature', temperature)
           ..add('depth', depth))
@@ -4494,14 +4494,14 @@ class HistoricCTDBuilder implements Builder<HistoricCTD, HistoricCTDBuilder> {
   _$HistoricCTD build() {
     final _$result = _$v ??
         new _$HistoricCTD._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            conductivity: conductivity,
-            temperature: temperature,
-            depth: depth);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            conductivity: conductivity ?? 0,
+            temperature: temperature ?? 0,
+            depth: depth ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -4574,26 +4574,26 @@ class _$HistoricTelemetry extends HistoricTelemetry {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        altitude.hashCode), 
-        roll.hashCode), 
-        pitch.hashCode), 
-        yaw.hashCode), 
-        speed.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        altitude?.hashCode), 
+        roll?.hashCode), 
+        pitch?.hashCode), 
+        yaw?.hashCode), 
+        speed?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('HistoricTelemetry')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('altitude', altitude)
           ..add('roll', roll)
           ..add('pitch', pitch)
@@ -4684,16 +4684,16 @@ class HistoricTelemetryBuilder implements Builder<HistoricTelemetry, HistoricTel
   _$HistoricTelemetry build() {
     final _$result = _$v ??
         new _$HistoricTelemetry._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            altitude: altitude,
-            roll: roll,
-            pitch: pitch,
-            yaw: yaw,
-            speed: speed);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            altitude: altitude ?? 0,
+            roll: roll ?? 0,
+            pitch: pitch ?? 0,
+            yaw: yaw ?? 0,
+            speed: speed ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -4774,28 +4774,28 @@ class _$HistoricSonarData extends HistoricSonarData {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        altitude.hashCode), 
-        width.hashCode), 
-        length.hashCode), 
-        bearing.hashCode), 
-        pxl.hashCode), 
-        encoding.hashCode), 
-        sonarData.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        altitude?.hashCode), 
+        width?.hashCode), 
+        length?.hashCode), 
+        bearing?.hashCode), 
+        pxl?.hashCode), 
+        encoding?.hashCode), 
+        sonarData?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('HistoricSonarData')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('altitude', altitude)
           ..add('width', width)
           ..add('length', length)
@@ -4898,18 +4898,18 @@ class HistoricSonarDataBuilder implements Builder<HistoricSonarData, HistoricSon
   _$HistoricSonarData build() {
     final _$result = _$v ??
         new _$HistoricSonarData._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            altitude: altitude,
-            width: width,
-            length: length,
-            bearing: bearing,
-            pxl: pxl,
-            encoding: encoding,
-            sonarData: sonarData);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            altitude: altitude ?? 0,
+            width: width ?? 0,
+            length: length ?? 0,
+            bearing: bearing ?? 0,
+            pxl: pxl ?? 0,
+            encoding: encoding ?? HistoricSonarDataEnumEncoding(0),
+            sonarData: sonarData ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -4970,23 +4970,23 @@ class _$HistoricEvent extends HistoricEvent {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        text.hashCode), 
-        type.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        text?.hashCode), 
+        type?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('HistoricEvent')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('text', text)
           ..add('type', type))
         .toString();
@@ -5059,13 +5059,13 @@ class HistoricEventBuilder implements Builder<HistoricEvent, HistoricEventBuilde
   _$HistoricEvent build() {
     final _$result = _$v ??
         new _$HistoricEvent._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            text: text,
-            type: type);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            text: text ?? '',
+            type: type ?? HistoricEventEnumType(0));
     replace(_$result);
     return _$result;
   }
@@ -5138,26 +5138,26 @@ class _$VerticalProfile extends VerticalProfile {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        parameter.hashCode), 
-        numSamples.hashCode), 
-        samples.hashCode), 
-        lat.hashCode), 
-        lon.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        parameter?.hashCode), 
+        numSamples?.hashCode), 
+        samples?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VerticalProfile')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('parameter', parameter)
           ..add('numSamples', numSamples)
           ..add('samples', samples)
@@ -5248,16 +5248,16 @@ class VerticalProfileBuilder implements Builder<VerticalProfile, VerticalProfile
   _$VerticalProfile build() {
     final _$result = _$v ??
         new _$VerticalProfile._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            parameter: parameter,
-            numSamples: numSamples,
-            samples: samples,
-            lat: lat,
-            lon: lon);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            parameter: parameter ?? VerticalProfileEnumParameter(0),
+            numSamples: numSamples ?? 0,
+            samples: samples ?? List<ProfileSample>(0),
+            lat: lat ?? 0,
+            lon: lon ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -5318,23 +5318,23 @@ class _$ProfileSample extends ProfileSample {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        depth.hashCode), 
-        avg.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        depth?.hashCode), 
+        avg?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ProfileSample')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('depth', depth)
           ..add('avg', avg))
         .toString();
@@ -5407,13 +5407,13 @@ class ProfileSampleBuilder implements Builder<ProfileSample, ProfileSampleBuilde
   _$ProfileSample build() {
     final _$result = _$v ??
         new _$ProfileSample._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            depth: depth,
-            avg: avg);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            depth: depth ?? 0,
+            avg: avg ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -5466,21 +5466,21 @@ class _$Heartbeat extends Heartbeat {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Heartbeat')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -5541,11 +5541,11 @@ class HeartbeatBuilder implements Builder<Heartbeat, HeartbeatBuilder> {
   _$Heartbeat build() {
     final _$result = _$v ??
         new _$Heartbeat._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -5626,28 +5626,28 @@ class _$Announce extends Announce {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sysName.hashCode), 
-        sysType.hashCode), 
-        owner.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        height.hashCode), 
-        services.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sysName?.hashCode), 
+        sysType?.hashCode), 
+        owner?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        height?.hashCode), 
+        services?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Announce')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sysName', sysName)
           ..add('sysType', sysType)
           ..add('owner', owner)
@@ -5750,18 +5750,18 @@ class AnnounceBuilder implements Builder<Announce, AnnounceBuilder> {
   _$Announce build() {
     final _$result = _$v ??
         new _$Announce._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sysName: sysName,
-            sysType: sysType,
-            owner: owner,
-            lat: lat,
-            lon: lon,
-            height: height,
-            services: services);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sysName: sysName ?? '',
+            sysType: sysType ?? SystemTypeEnum(0),
+            owner: owner ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            height: height ?? 0,
+            services: services ?? '');
     replace(_$result);
     return _$result;
   }
@@ -5822,23 +5822,23 @@ class _$AnnounceService extends AnnounceService {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        service.hashCode), 
-        serviceType.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        service?.hashCode), 
+        serviceType?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AnnounceService')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('service', service)
           ..add('serviceType', serviceType))
         .toString();
@@ -5911,13 +5911,13 @@ class AnnounceServiceBuilder implements Builder<AnnounceService, AnnounceService
   _$AnnounceService build() {
     final _$result = _$v ??
         new _$AnnounceService._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            service: service,
-            serviceType: serviceType);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            service: service ?? '',
+            serviceType: serviceType ?? AnnounceServiceBitfieldServiceType(0));
     replace(_$result);
     return _$result;
   }
@@ -5974,22 +5974,22 @@ class _$RSSI extends RSSI {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RSSI')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -6056,12 +6056,12 @@ class RSSIBuilder implements Builder<RSSI, RSSIBuilder> {
   _$RSSI build() {
     final _$result = _$v ??
         new _$RSSI._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -6118,22 +6118,22 @@ class _$VSWR extends VSWR {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VSWR')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -6200,12 +6200,12 @@ class VSWRBuilder implements Builder<VSWR, VSWRBuilder> {
   _$VSWR build() {
     final _$result = _$v ??
         new _$VSWR._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -6262,22 +6262,22 @@ class _$LinkLevel extends LinkLevel {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LinkLevel')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -6344,12 +6344,12 @@ class LinkLevelBuilder implements Builder<LinkLevel, LinkLevelBuilder> {
   _$LinkLevel build() {
     final _$result = _$v ??
         new _$LinkLevel._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -6414,24 +6414,24 @@ class _$Sms extends Sms {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        number.hashCode), 
-        timeout.hashCode), 
-        contents.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        number?.hashCode), 
+        timeout?.hashCode), 
+        contents?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Sms')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('number', number)
           ..add('timeout', timeout)
           ..add('contents', contents))
@@ -6510,14 +6510,14 @@ class SmsBuilder implements Builder<Sms, SmsBuilder> {
   _$Sms build() {
     final _$result = _$v ??
         new _$Sms._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            number: number,
-            timeout: timeout,
-            contents: contents);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            number: number ?? '',
+            timeout: timeout ?? 0,
+            contents: contents ?? '');
     replace(_$result);
     return _$result;
   }
@@ -6586,25 +6586,25 @@ class _$SmsTx extends SmsTx {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        seq.hashCode), 
-        destination.hashCode), 
-        timeout.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        seq?.hashCode), 
+        destination?.hashCode), 
+        timeout?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SmsTx')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('seq', seq)
           ..add('destination', destination)
           ..add('timeout', timeout)
@@ -6689,15 +6689,15 @@ class SmsTxBuilder implements Builder<SmsTx, SmsTxBuilder> {
   _$SmsTx build() {
     final _$result = _$v ??
         new _$SmsTx._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            seq: seq,
-            destination: destination,
-            timeout: timeout,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            seq: seq ?? 0,
+            destination: destination ?? '',
+            timeout: timeout ?? 0,
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -6758,23 +6758,23 @@ class _$SmsRx extends SmsRx {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        source.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        source?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SmsRx')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('source', source)
           ..add('data', data))
         .toString();
@@ -6847,13 +6847,13 @@ class SmsRxBuilder implements Builder<SmsRx, SmsRxBuilder> {
   _$SmsRx build() {
     final _$result = _$v ??
         new _$SmsRx._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            source: source,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            source: source ?? '',
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -6918,24 +6918,24 @@ class _$SmsState extends SmsState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        seq.hashCode), 
-        state.hashCode), 
-        error.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        seq?.hashCode), 
+        state?.hashCode), 
+        error?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SmsState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('seq', seq)
           ..add('state', state)
           ..add('error', error))
@@ -7014,14 +7014,14 @@ class SmsStateBuilder implements Builder<SmsState, SmsStateBuilder> {
   _$SmsState build() {
     final _$result = _$v ??
         new _$SmsState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            seq: seq,
-            state: state,
-            error: error);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            seq: seq ?? 0,
+            state: state ?? SmsStateEnumState(0),
+            error: error ?? '');
     replace(_$result);
     return _$result;
   }
@@ -7082,23 +7082,23 @@ class _$TextMessage extends TextMessage {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        origin.hashCode), 
-        text.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        origin?.hashCode), 
+        text?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TextMessage')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('origin', origin)
           ..add('text', text))
         .toString();
@@ -7171,13 +7171,13 @@ class TextMessageBuilder implements Builder<TextMessage, TextMessageBuilder> {
   _$TextMessage build() {
     final _$result = _$v ??
         new _$TextMessage._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            origin: origin,
-            text: text);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            origin: origin ?? '',
+            text: text ?? '');
     replace(_$result);
     return _$result;
   }
@@ -7250,26 +7250,26 @@ class _$IridiumMsgRx extends IridiumMsgRx {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        origin.hashCode), 
-        htime.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        origin?.hashCode), 
+        htime?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('IridiumMsgRx')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('origin', origin)
           ..add('htime', htime)
           ..add('lat', lat)
@@ -7360,16 +7360,16 @@ class IridiumMsgRxBuilder implements Builder<IridiumMsgRx, IridiumMsgRxBuilder> 
   _$IridiumMsgRx build() {
     final _$result = _$v ??
         new _$IridiumMsgRx._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            origin: origin,
-            htime: htime,
-            lat: lat,
-            lon: lon,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            origin: origin ?? '',
+            htime: htime ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -7438,25 +7438,25 @@ class _$IridiumMsgTx extends IridiumMsgTx {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reqId.hashCode), 
-        ttl.hashCode), 
-        destination.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reqId?.hashCode), 
+        ttl?.hashCode), 
+        destination?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('IridiumMsgTx')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', reqId)
           ..add('ttl', ttl)
           ..add('destination', destination)
@@ -7541,15 +7541,15 @@ class IridiumMsgTxBuilder implements Builder<IridiumMsgTx, IridiumMsgTxBuilder> 
   _$IridiumMsgTx build() {
     final _$result = _$v ??
         new _$IridiumMsgTx._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reqId: reqId,
-            ttl: ttl,
-            destination: destination,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            ttl: ttl ?? 0,
+            destination: destination ?? '',
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -7614,24 +7614,24 @@ class _$IridiumTxStatus extends IridiumTxStatus {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reqId.hashCode), 
-        status.hashCode), 
-        text.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reqId?.hashCode), 
+        status?.hashCode), 
+        text?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('IridiumTxStatus')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', reqId)
           ..add('status', status)
           ..add('text', text))
@@ -7710,14 +7710,14 @@ class IridiumTxStatusBuilder implements Builder<IridiumTxStatus, IridiumTxStatus
   _$IridiumTxStatus build() {
     final _$result = _$v ??
         new _$IridiumTxStatus._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reqId: reqId,
-            status: status,
-            text: text);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            status: status ?? IridiumTxStatusEnumStatus(0),
+            text: text ?? '');
     replace(_$result);
     return _$result;
   }
@@ -7778,23 +7778,23 @@ class _$GroupMembershipState extends GroupMembershipState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        groupName.hashCode), 
-        links.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        groupName?.hashCode), 
+        links?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GroupMembershipState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('groupName', groupName)
           ..add('links', links))
         .toString();
@@ -7867,13 +7867,13 @@ class GroupMembershipStateBuilder implements Builder<GroupMembershipState, Group
   _$GroupMembershipState build() {
     final _$result = _$v ??
         new _$GroupMembershipState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            groupName: groupName,
-            links: links);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            groupName: groupName ?? '',
+            links: links ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -7938,24 +7938,24 @@ class _$SystemGroup extends SystemGroup {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        groupName.hashCode), 
-        action.hashCode), 
-        groupList.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        groupName?.hashCode), 
+        action?.hashCode), 
+        groupList?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SystemGroup')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('groupName', groupName)
           ..add('action', action)
           ..add('groupList', groupList))
@@ -8034,14 +8034,14 @@ class SystemGroupBuilder implements Builder<SystemGroup, SystemGroupBuilder> {
   _$SystemGroup build() {
     final _$result = _$v ??
         new _$SystemGroup._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            groupName: groupName,
-            action: action,
-            groupList: groupList);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            groupName: groupName ?? '',
+            action: action ?? SystemGroupEnumAction(0),
+            groupList: groupList ?? '');
     replace(_$result);
     return _$result;
   }
@@ -8102,23 +8102,23 @@ class _$LinkLatency extends LinkLatency {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode), 
-        sysSrc.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode), 
+        sysSrc?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LinkLatency')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value)
           ..add('sysSrc', sysSrc))
         .toString();
@@ -8191,13 +8191,13 @@ class LinkLatencyBuilder implements Builder<LinkLatency, LinkLatencyBuilder> {
   _$LinkLatency build() {
     final _$result = _$v ??
         new _$LinkLatency._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value,
-            sysSrc: sysSrc);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0,
+            sysSrc: sysSrc ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -8258,23 +8258,23 @@ class _$ExtendedRSSI extends ExtendedRSSI {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode), 
-        units.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode), 
+        units?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ExtendedRSSI')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value)
           ..add('units', units))
         .toString();
@@ -8347,13 +8347,13 @@ class ExtendedRSSIBuilder implements Builder<ExtendedRSSI, ExtendedRSSIBuilder> 
   _$ExtendedRSSI build() {
     final _$result = _$v ??
         new _$ExtendedRSSI._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value,
-            units: units);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0,
+            units: units ?? RSSIUnitsEnum(0));
     replace(_$result);
     return _$result;
   }
@@ -8422,25 +8422,25 @@ class _$HistoricData extends HistoricData {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        baseLat.hashCode), 
-        baseLon.hashCode), 
-        baseTime.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        baseLat?.hashCode), 
+        baseLon?.hashCode), 
+        baseTime?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('HistoricData')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('baseLat', baseLat)
           ..add('baseLon', baseLon)
           ..add('baseTime', baseTime)
@@ -8525,15 +8525,15 @@ class HistoricDataBuilder implements Builder<HistoricData, HistoricDataBuilder> 
   _$HistoricData build() {
     final _$result = _$v ??
         new _$HistoricData._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            baseLat: baseLat,
-            baseLon: baseLon,
-            baseTime: baseTime,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            baseLat: baseLat ?? 0,
+            baseLon: baseLon ?? 0,
+            baseTime: baseTime ?? 0,
+            data: data ?? List<RemoteData>(0));
     replace(_$result);
     return _$result;
   }
@@ -8602,25 +8602,25 @@ class _$CompressedHistory extends CompressedHistory {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        baseLat.hashCode), 
-        baseLon.hashCode), 
-        baseTime.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        baseLat?.hashCode), 
+        baseLon?.hashCode), 
+        baseTime?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CompressedHistory')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('baseLat', baseLat)
           ..add('baseLon', baseLon)
           ..add('baseTime', baseTime)
@@ -8705,15 +8705,15 @@ class CompressedHistoryBuilder implements Builder<CompressedHistory, CompressedH
   _$CompressedHistory build() {
     final _$result = _$v ??
         new _$CompressedHistory._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            baseLat: baseLat,
-            baseLon: baseLon,
-            baseTime: baseTime,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            baseLat: baseLat ?? 0,
+            baseLon: baseLon ?? 0,
+            baseTime: baseTime ?? 0,
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -8794,28 +8794,28 @@ class _$HistoricSample extends HistoricSample {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sysId.hashCode), 
-        priority.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        t.hashCode), 
-        sample.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sysId?.hashCode), 
+        priority?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        t?.hashCode), 
+        sample?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('HistoricSample')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sysId', sysId)
           ..add('priority', priority)
           ..add('x', x)
@@ -8918,17 +8918,17 @@ class HistoricSampleBuilder implements Builder<HistoricSample, HistoricSampleBui
   _$HistoricSample build() {
     final _$result = _$v ??
         new _$HistoricSample._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sysId: sysId,
-            priority: priority,
-            x: x,
-            y: y,
-            z: z,
-            t: t,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sysId: sysId ?? 0,
+            priority: priority ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            t: t ?? 0,
             sample: sample);
     replace(_$result);
     return _$result;
@@ -8998,25 +8998,25 @@ class _$HistoricDataQuery extends HistoricDataQuery {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reqId.hashCode), 
-        type.hashCode), 
-        maxSize.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reqId?.hashCode), 
+        type?.hashCode), 
+        maxSize?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('HistoricDataQuery')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', reqId)
           ..add('type', type)
           ..add('maxSize', maxSize)
@@ -9101,14 +9101,14 @@ class HistoricDataQueryBuilder implements Builder<HistoricDataQuery, HistoricDat
   _$HistoricDataQuery build() {
     final _$result = _$v ??
         new _$HistoricDataQuery._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reqId: reqId,
-            type: type,
-            maxSize: maxSize,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            type: type ?? HistoricDataQueryEnumType(0),
+            maxSize: maxSize ?? 0,
             data: data);
     replace(_$result);
     return _$result;
@@ -9178,25 +9178,25 @@ class _$RemoteCommand extends RemoteCommand {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        originalSource.hashCode), 
-        destination.hashCode), 
-        timeout.hashCode), 
-        cmd.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        originalSource?.hashCode), 
+        destination?.hashCode), 
+        timeout?.hashCode), 
+        cmd?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RemoteCommand')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('originalSource', originalSource)
           ..add('destination', destination)
           ..add('timeout', timeout)
@@ -9281,14 +9281,14 @@ class RemoteCommandBuilder implements Builder<RemoteCommand, RemoteCommandBuilde
   _$RemoteCommand build() {
     final _$result = _$v ??
         new _$RemoteCommand._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            originalSource: originalSource,
-            destination: destination,
-            timeout: timeout,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            originalSource: originalSource ?? 0,
+            destination: destination ?? 0,
+            timeout: timeout ?? 0,
             cmd: cmd);
     replace(_$result);
     return _$result;
@@ -9358,25 +9358,25 @@ class _$CommSystemsQuery extends CommSystemsQuery {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        commInterface.hashCode), 
-        model.hashCode), 
-        list.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        commInterface?.hashCode), 
+        model?.hashCode), 
+        list?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CommSystemsQuery')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('commInterface', commInterface)
           ..add('model', model)
@@ -9461,15 +9461,15 @@ class CommSystemsQueryBuilder implements Builder<CommSystemsQuery, CommSystemsQu
   _$CommSystemsQuery build() {
     final _$result = _$v ??
         new _$CommSystemsQuery._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            commInterface: commInterface,
-            model: model,
-            list: list);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? CommSystemsQueryBitfieldType(0),
+            commInterface: commInterface ?? CommSystemsQueryBitfieldCommInterface(0),
+            model: model ?? CommSystemsQueryEnumModel(0),
+            list: list ?? '');
     replace(_$result);
     return _$result;
   }
@@ -9558,30 +9558,30 @@ class _$TelemetryMsg extends TelemetryMsg {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        reqId.hashCode), 
-        ttl.hashCode), 
-        code.hashCode), 
-        destination.hashCode), 
-        source.hashCode), 
-        acknowledge.hashCode), 
-        status.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        reqId?.hashCode), 
+        ttl?.hashCode), 
+        code?.hashCode), 
+        destination?.hashCode), 
+        source?.hashCode), 
+        acknowledge?.hashCode), 
+        status?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TelemetryMsg')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('reqId', reqId)
           ..add('ttl', ttl)
@@ -9696,20 +9696,20 @@ class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder> 
   _$TelemetryMsg build() {
     final _$result = _$v ??
         new _$TelemetryMsg._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            reqId: reqId,
-            ttl: ttl,
-            code: code,
-            destination: destination,
-            source: source,
-            acknowledge: acknowledge,
-            status: status,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? TelemetryMsgEnumType(0),
+            reqId: reqId ?? 0,
+            ttl: ttl ?? 0,
+            code: code ?? TelemetryMsgEnumCode(0),
+            destination: destination ?? '',
+            source: source ?? '',
+            acknowledge: acknowledge ?? TelemetryMsgBitfieldAcknowledge(0),
+            status: status ?? TelemetryMsgEnumStatus(0),
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -9770,23 +9770,23 @@ class _$LblRange extends LblRange {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        range.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        range?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LblRange')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('range', range))
         .toString();
@@ -9859,13 +9859,13 @@ class LblRangeBuilder implements Builder<LblRange, LblRangeBuilder> {
   _$LblRange build() {
     final _$result = _$v ??
         new _$LblRange._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            range: range);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            range: range ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -9946,28 +9946,28 @@ class _$LblBeacon extends LblBeacon {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        beacon.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        depth.hashCode), 
-        queryChannel.hashCode), 
-        replyChannel.hashCode), 
-        transponderDelay.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        beacon?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        depth?.hashCode), 
+        queryChannel?.hashCode), 
+        replyChannel?.hashCode), 
+        transponderDelay?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LblBeacon')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('beacon', beacon)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -10070,18 +10070,18 @@ class LblBeaconBuilder implements Builder<LblBeacon, LblBeaconBuilder> {
   _$LblBeacon build() {
     final _$result = _$v ??
         new _$LblBeacon._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            beacon: beacon,
-            lat: lat,
-            lon: lon,
-            depth: depth,
-            queryChannel: queryChannel,
-            replyChannel: replyChannel,
-            transponderDelay: transponderDelay);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            beacon: beacon ?? '',
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            depth: depth ?? 0,
+            queryChannel: queryChannel ?? 0,
+            replyChannel: replyChannel ?? 0,
+            transponderDelay: transponderDelay ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -10142,23 +10142,23 @@ class _$LblConfig extends LblConfig {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        beacons.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        beacons?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LblConfig')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('beacons', beacons))
         .toString();
@@ -10231,13 +10231,13 @@ class LblConfigBuilder implements Builder<LblConfig, LblConfigBuilder> {
   _$LblConfig build() {
     final _$result = _$v ??
         new _$LblConfig._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            beacons: beacons);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? LblConfigEnumOp(0),
+            beacons: beacons ?? List<LblBeacon>(0));
     replace(_$result);
     return _$result;
   }
@@ -10294,22 +10294,22 @@ class _$AcousticMessage extends AcousticMessage {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        message.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        message?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AcousticMessage')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('message', message))
         .toString();
   }
@@ -10376,11 +10376,11 @@ class AcousticMessageBuilder implements Builder<AcousticMessage, AcousticMessage
   _$AcousticMessage build() {
     final _$result = _$v ??
         new _$AcousticMessage._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
             message: message);
     replace(_$result);
     return _$result;
@@ -10450,25 +10450,25 @@ class _$AcousticOperation extends AcousticOperation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        system.hashCode), 
-        range.hashCode), 
-        msg.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        system?.hashCode), 
+        range?.hashCode), 
+        msg?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AcousticOperation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('system', system)
           ..add('range', range)
@@ -10553,14 +10553,14 @@ class AcousticOperationBuilder implements Builder<AcousticOperation, AcousticOpe
   _$AcousticOperation build() {
     final _$result = _$v ??
         new _$AcousticOperation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            system: system,
-            range: range,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? AcousticOperationEnumOp(0),
+            system: system ?? '',
+            range: range ?? 0,
             msg: msg);
     replace(_$result);
     return _$result;
@@ -10614,21 +10614,21 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AcousticSystemsQuery')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -10689,11 +10689,11 @@ class AcousticSystemsQueryBuilder implements Builder<AcousticSystemsQuery, Acous
   _$AcousticSystemsQuery build() {
     final _$result = _$v ??
         new _$AcousticSystemsQuery._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -10750,22 +10750,22 @@ class _$AcousticSystems extends AcousticSystems {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        list.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        list?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AcousticSystems')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('list', list))
         .toString();
   }
@@ -10832,12 +10832,12 @@ class AcousticSystemsBuilder implements Builder<AcousticSystems, AcousticSystems
   _$AcousticSystems build() {
     final _$result = _$v ??
         new _$AcousticSystems._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            list: list);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            list: list ?? '');
     replace(_$result);
     return _$result;
   }
@@ -10902,24 +10902,24 @@ class _$AcousticLink extends AcousticLink {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        peer.hashCode), 
-        rssi.hashCode), 
-        integrity.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        peer?.hashCode), 
+        rssi?.hashCode), 
+        integrity?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AcousticLink')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('peer', peer)
           ..add('rssi', rssi)
           ..add('integrity', integrity))
@@ -10998,14 +10998,14 @@ class AcousticLinkBuilder implements Builder<AcousticLink, AcousticLinkBuilder> 
   _$AcousticLink build() {
     final _$result = _$v ??
         new _$AcousticLink._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            peer: peer,
-            rssi: rssi,
-            integrity: integrity);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            peer: peer ?? '',
+            rssi: rssi ?? 0,
+            integrity: integrity ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -11062,22 +11062,22 @@ class _$Rpm extends Rpm {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Rpm')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -11144,12 +11144,12 @@ class RpmBuilder implements Builder<Rpm, RpmBuilder> {
   _$Rpm build() {
     final _$result = _$v ??
         new _$Rpm._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -11206,22 +11206,22 @@ class _$Voltage extends Voltage {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Voltage')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -11288,12 +11288,12 @@ class VoltageBuilder implements Builder<Voltage, VoltageBuilder> {
   _$Voltage build() {
     final _$result = _$v ??
         new _$Voltage._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -11350,22 +11350,22 @@ class _$Current extends Current {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Current')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -11432,12 +11432,12 @@ class CurrentBuilder implements Builder<Current, CurrentBuilder> {
   _$Current build() {
     final _$result = _$v ??
         new _$Current._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -11554,37 +11554,37 @@ class _$GpsFix extends GpsFix {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        validity.hashCode), 
-        type.hashCode), 
-        utcYear.hashCode), 
-        utcMonth.hashCode), 
-        utcDay.hashCode), 
-        utcTime.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        height.hashCode), 
-        satellites.hashCode), 
-        cog.hashCode), 
-        sog.hashCode), 
-        hdop.hashCode), 
-        vdop.hashCode), 
-        hacc.hashCode), 
-        vacc.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        validity?.hashCode), 
+        type?.hashCode), 
+        utcYear?.hashCode), 
+        utcMonth?.hashCode), 
+        utcDay?.hashCode), 
+        utcTime?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        height?.hashCode), 
+        satellites?.hashCode), 
+        cog?.hashCode), 
+        sog?.hashCode), 
+        hdop?.hashCode), 
+        vdop?.hashCode), 
+        hacc?.hashCode), 
+        vacc?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GpsFix')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('validity', validity)
           ..add('type', type)
           ..add('utcYear', utcYear)
@@ -11741,27 +11741,27 @@ class GpsFixBuilder implements Builder<GpsFix, GpsFixBuilder> {
   _$GpsFix build() {
     final _$result = _$v ??
         new _$GpsFix._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            validity: validity,
-            type: type,
-            utcYear: utcYear,
-            utcMonth: utcMonth,
-            utcDay: utcDay,
-            utcTime: utcTime,
-            lat: lat,
-            lon: lon,
-            height: height,
-            satellites: satellites,
-            cog: cog,
-            sog: sog,
-            hdop: hdop,
-            vdop: vdop,
-            hacc: hacc,
-            vacc: vacc);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            validity: validity ?? GpsFixBitfieldValidity(0),
+            type: type ?? GpsFixEnumType(0),
+            utcYear: utcYear ?? 0,
+            utcMonth: utcMonth ?? 0,
+            utcDay: utcDay ?? 0,
+            utcTime: utcTime ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            height: height ?? 0,
+            satellites: satellites ?? 0,
+            cog: cog ?? 0,
+            sog: sog ?? 0,
+            hdop: hdop ?? 0,
+            vdop: vdop ?? 0,
+            hacc: hacc ?? 0,
+            vacc: vacc ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -11834,26 +11834,26 @@ class _$EulerAngles extends EulerAngles {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        time.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode), 
-        psiMagnetic.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        time?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode), 
+        psiMagnetic?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EulerAngles')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', time)
           ..add('phi', phi)
           ..add('theta', theta)
@@ -11944,16 +11944,16 @@ class EulerAnglesBuilder implements Builder<EulerAngles, EulerAnglesBuilder> {
   _$EulerAngles build() {
     final _$result = _$v ??
         new _$EulerAngles._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            time: time,
-            phi: phi,
-            theta: theta,
-            psi: psi,
-            psiMagnetic: psiMagnetic);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            time: time ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0,
+            psiMagnetic: psiMagnetic ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -12026,26 +12026,26 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        time.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        timestep.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        time?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        timestep?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EulerAnglesDelta')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', time)
           ..add('x', x)
           ..add('y', y)
@@ -12136,16 +12136,16 @@ class EulerAnglesDeltaBuilder implements Builder<EulerAnglesDelta, EulerAnglesDe
   _$EulerAnglesDelta build() {
     final _$result = _$v ??
         new _$EulerAnglesDelta._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            time: time,
-            x: x,
-            y: y,
-            z: z,
-            timestep: timestep);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            time: time ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            timestep: timestep ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -12214,25 +12214,25 @@ class _$AngularVelocity extends AngularVelocity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        time.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        time?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AngularVelocity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', time)
           ..add('x', x)
           ..add('y', y)
@@ -12317,15 +12317,15 @@ class AngularVelocityBuilder implements Builder<AngularVelocity, AngularVelocity
   _$AngularVelocity build() {
     final _$result = _$v ??
         new _$AngularVelocity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            time: time,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            time: time ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -12394,25 +12394,25 @@ class _$Acceleration extends Acceleration {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        time.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        time?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Acceleration')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', time)
           ..add('x', x)
           ..add('y', y)
@@ -12497,15 +12497,15 @@ class AccelerationBuilder implements Builder<Acceleration, AccelerationBuilder> 
   _$Acceleration build() {
     final _$result = _$v ??
         new _$Acceleration._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            time: time,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            time: time ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -12574,25 +12574,25 @@ class _$MagneticField extends MagneticField {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        time.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        time?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('MagneticField')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', time)
           ..add('x', x)
           ..add('y', y)
@@ -12677,15 +12677,15 @@ class MagneticFieldBuilder implements Builder<MagneticField, MagneticFieldBuilde
   _$MagneticField build() {
     final _$result = _$v ??
         new _$MagneticField._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            time: time,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            time: time ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -12754,25 +12754,25 @@ class _$GroundVelocity extends GroundVelocity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        validity.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        validity?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GroundVelocity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('validity', validity)
           ..add('x', x)
           ..add('y', y)
@@ -12857,15 +12857,15 @@ class GroundVelocityBuilder implements Builder<GroundVelocity, GroundVelocityBui
   _$GroundVelocity build() {
     final _$result = _$v ??
         new _$GroundVelocity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            validity: validity,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            validity: validity ?? GroundVelocityBitfieldValidity(0),
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -12934,25 +12934,25 @@ class _$WaterVelocity extends WaterVelocity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        validity.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        validity?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('WaterVelocity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('validity', validity)
           ..add('x', x)
           ..add('y', y)
@@ -13037,15 +13037,15 @@ class WaterVelocityBuilder implements Builder<WaterVelocity, WaterVelocityBuilde
   _$WaterVelocity build() {
     final _$result = _$v ??
         new _$WaterVelocity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            validity: validity,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            validity: validity ?? WaterVelocityBitfieldValidity(0),
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -13114,25 +13114,25 @@ class _$VelocityDelta extends VelocityDelta {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        time.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        time?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VelocityDelta')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', time)
           ..add('x', x)
           ..add('y', y)
@@ -13217,15 +13217,15 @@ class VelocityDeltaBuilder implements Builder<VelocityDelta, VelocityDeltaBuilde
   _$VelocityDelta build() {
     final _$result = _$v ??
         new _$VelocityDelta._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            time: time,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            time: time ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -13294,25 +13294,25 @@ class _$Distance extends Distance {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        validity.hashCode), 
-        location.hashCode), 
-        beamConfig.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        validity?.hashCode), 
+        location?.hashCode), 
+        beamConfig?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Distance')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('validity', validity)
           ..add('location', location)
           ..add('beamConfig', beamConfig)
@@ -13397,15 +13397,15 @@ class DistanceBuilder implements Builder<Distance, DistanceBuilder> {
   _$Distance build() {
     final _$result = _$v ??
         new _$Distance._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            validity: validity,
-            location: location,
-            beamConfig: beamConfig,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            validity: validity ?? DistanceEnumValidity(0),
+            location: location ?? List<DeviceState>(0),
+            beamConfig: beamConfig ?? List<BeamConfig>(0),
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -13462,22 +13462,22 @@ class _$Temperature extends Temperature {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Temperature')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -13544,12 +13544,12 @@ class TemperatureBuilder implements Builder<Temperature, TemperatureBuilder> {
   _$Temperature build() {
     final _$result = _$v ??
         new _$Temperature._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -13606,22 +13606,22 @@ class _$Pressure extends Pressure {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Pressure')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -13688,12 +13688,12 @@ class PressureBuilder implements Builder<Pressure, PressureBuilder> {
   _$Pressure build() {
     final _$result = _$v ??
         new _$Pressure._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -13750,22 +13750,22 @@ class _$Depth extends Depth {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Depth')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -13832,12 +13832,12 @@ class DepthBuilder implements Builder<Depth, DepthBuilder> {
   _$Depth build() {
     final _$result = _$v ??
         new _$Depth._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -13894,22 +13894,22 @@ class _$DepthOffset extends DepthOffset {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DepthOffset')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -13976,12 +13976,12 @@ class DepthOffsetBuilder implements Builder<DepthOffset, DepthOffsetBuilder> {
   _$DepthOffset build() {
     final _$result = _$v ??
         new _$DepthOffset._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -14038,22 +14038,22 @@ class _$SoundSpeed extends SoundSpeed {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SoundSpeed')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -14120,12 +14120,12 @@ class SoundSpeedBuilder implements Builder<SoundSpeed, SoundSpeedBuilder> {
   _$SoundSpeed build() {
     final _$result = _$v ??
         new _$SoundSpeed._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -14182,22 +14182,22 @@ class _$WaterDensity extends WaterDensity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('WaterDensity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -14264,12 +14264,12 @@ class WaterDensityBuilder implements Builder<WaterDensity, WaterDensityBuilder> 
   _$WaterDensity build() {
     final _$result = _$v ??
         new _$WaterDensity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -14326,22 +14326,22 @@ class _$Conductivity extends Conductivity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Conductivity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -14408,12 +14408,12 @@ class ConductivityBuilder implements Builder<Conductivity, ConductivityBuilder> 
   _$Conductivity build() {
     final _$result = _$v ??
         new _$Conductivity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -14470,22 +14470,22 @@ class _$Salinity extends Salinity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Salinity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -14552,12 +14552,12 @@ class SalinityBuilder implements Builder<Salinity, SalinityBuilder> {
   _$Salinity build() {
     final _$result = _$v ??
         new _$Salinity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -14622,24 +14622,24 @@ class _$WindSpeed extends WindSpeed {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        direction.hashCode), 
-        speed.hashCode), 
-        turbulence.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        direction?.hashCode), 
+        speed?.hashCode), 
+        turbulence?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('WindSpeed')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('direction', direction)
           ..add('speed', speed)
           ..add('turbulence', turbulence))
@@ -14718,14 +14718,14 @@ class WindSpeedBuilder implements Builder<WindSpeed, WindSpeedBuilder> {
   _$WindSpeed build() {
     final _$result = _$v ??
         new _$WindSpeed._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            direction: direction,
-            speed: speed,
-            turbulence: turbulence);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            direction: direction ?? 0,
+            speed: speed ?? 0,
+            turbulence: turbulence ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -14782,22 +14782,22 @@ class _$RelativeHumidity extends RelativeHumidity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RelativeHumidity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -14864,12 +14864,12 @@ class RelativeHumidityBuilder implements Builder<RelativeHumidity, RelativeHumid
   _$RelativeHumidity build() {
     final _$result = _$v ??
         new _$RelativeHumidity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -14926,22 +14926,22 @@ class _$DevDataText extends DevDataText {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DevDataText')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -15008,12 +15008,12 @@ class DevDataTextBuilder implements Builder<DevDataText, DevDataTextBuilder> {
   _$DevDataText build() {
     final _$result = _$v ??
         new _$DevDataText._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? '');
     replace(_$result);
     return _$result;
   }
@@ -15070,22 +15070,22 @@ class _$DevDataBinary extends DevDataBinary {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DevDataBinary')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -15152,12 +15152,12 @@ class DevDataBinaryBuilder implements Builder<DevDataBinary, DevDataBinaryBuilde
   _$DevDataBinary build() {
     final _$result = _$v ??
         new _$DevDataBinary._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -15214,22 +15214,22 @@ class _$Force extends Force {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Force')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -15296,12 +15296,12 @@ class ForceBuilder implements Builder<Force, ForceBuilder> {
   _$Force build() {
     final _$result = _$v ??
         new _$Force._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -15386,29 +15386,29 @@ class _$SonarData extends SonarData {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        frequency.hashCode), 
-        minRange.hashCode), 
-        maxRange.hashCode), 
-        bitsPerPoint.hashCode), 
-        scaleFactor.hashCode), 
-        beamConfig.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        frequency?.hashCode), 
+        minRange?.hashCode), 
+        maxRange?.hashCode), 
+        bitsPerPoint?.hashCode), 
+        scaleFactor?.hashCode), 
+        beamConfig?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SonarData')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('frequency', frequency)
           ..add('minRange', minRange)
@@ -15517,19 +15517,19 @@ class SonarDataBuilder implements Builder<SonarData, SonarDataBuilder> {
   _$SonarData build() {
     final _$result = _$v ??
         new _$SonarData._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            frequency: frequency,
-            minRange: minRange,
-            maxRange: maxRange,
-            bitsPerPoint: bitsPerPoint,
-            scaleFactor: scaleFactor,
-            beamConfig: beamConfig,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? SonarDataEnumType(0),
+            frequency: frequency ?? 0,
+            minRange: minRange ?? 0,
+            maxRange: maxRange ?? 0,
+            bitsPerPoint: bitsPerPoint ?? 0,
+            scaleFactor: scaleFactor ?? 0,
+            beamConfig: beamConfig ?? List<BeamConfig>(0),
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -15582,21 +15582,21 @@ class _$Pulse extends Pulse {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Pulse')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -15657,11 +15657,11 @@ class PulseBuilder implements Builder<Pulse, PulseBuilder> {
   _$Pulse build() {
     final _$result = _$v ??
         new _$Pulse._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -15718,22 +15718,22 @@ class _$PulseDetectionControl extends PulseDetectionControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PulseDetectionControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op))
         .toString();
   }
@@ -15800,12 +15800,12 @@ class PulseDetectionControlBuilder implements Builder<PulseDetectionControl, Pul
   _$PulseDetectionControl build() {
     final _$result = _$v ??
         new _$PulseDetectionControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? PulseDetectionControlEnumOp(0));
     replace(_$result);
     return _$result;
   }
@@ -15870,24 +15870,24 @@ class _$FuelLevel extends FuelLevel {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode), 
-        confidence.hashCode), 
-        opmodes.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode), 
+        confidence?.hashCode), 
+        opmodes?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FuelLevel')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value)
           ..add('confidence', confidence)
           ..add('opmodes', opmodes))
@@ -15966,14 +15966,14 @@ class FuelLevelBuilder implements Builder<FuelLevel, FuelLevelBuilder> {
   _$FuelLevel build() {
     final _$result = _$v ??
         new _$FuelLevel._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value,
-            confidence: confidence,
-            opmodes: opmodes);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0,
+            confidence: confidence ?? 0,
+            opmodes: opmodes ?? '');
     replace(_$result);
     return _$result;
   }
@@ -16086,36 +16086,36 @@ class _$GpsNavData extends GpsNavData {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        itow.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        heightEll.hashCode), 
-        heightSea.hashCode), 
-        hacc.hashCode), 
-        vacc.hashCode), 
-        velN.hashCode), 
-        velE.hashCode), 
-        velD.hashCode), 
-        speed.hashCode), 
-        gspeed.hashCode), 
-        heading.hashCode), 
-        sacc.hashCode), 
-        cacc.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        itow?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        heightEll?.hashCode), 
+        heightSea?.hashCode), 
+        hacc?.hashCode), 
+        vacc?.hashCode), 
+        velN?.hashCode), 
+        velE?.hashCode), 
+        velD?.hashCode), 
+        speed?.hashCode), 
+        gspeed?.hashCode), 
+        heading?.hashCode), 
+        sacc?.hashCode), 
+        cacc?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GpsNavData')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('itow', itow)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -16266,26 +16266,26 @@ class GpsNavDataBuilder implements Builder<GpsNavData, GpsNavDataBuilder> {
   _$GpsNavData build() {
     final _$result = _$v ??
         new _$GpsNavData._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            itow: itow,
-            lat: lat,
-            lon: lon,
-            heightEll: heightEll,
-            heightSea: heightSea,
-            hacc: hacc,
-            vacc: vacc,
-            velN: velN,
-            velE: velE,
-            velD: velD,
-            speed: speed,
-            gspeed: gspeed,
-            heading: heading,
-            sacc: sacc,
-            cacc: cacc);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            itow: itow ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            heightEll: heightEll ?? 0,
+            heightSea: heightSea ?? 0,
+            hacc: hacc ?? 0,
+            vacc: vacc ?? 0,
+            velN: velN ?? 0,
+            velE: velE ?? 0,
+            velD: velD ?? 0,
+            speed: speed ?? 0,
+            gspeed: gspeed ?? 0,
+            heading: heading ?? 0,
+            sacc: sacc ?? 0,
+            cacc: cacc ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -16346,23 +16346,23 @@ class _$ServoPosition extends ServoPosition {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ServoPosition')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('value', value))
         .toString();
@@ -16435,13 +16435,13 @@ class ServoPositionBuilder implements Builder<ServoPosition, ServoPositionBuilde
   _$ServoPosition build() {
     final _$result = _$v ??
         new _$ServoPosition._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -16518,27 +16518,27 @@ class _$DeviceState extends DeviceState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DeviceState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z)
@@ -16635,17 +16635,17 @@ class DeviceStateBuilder implements Builder<DeviceState, DeviceStateBuilder> {
   _$DeviceState build() {
     final _$result = _$v ??
         new _$DeviceState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z,
-            phi: phi,
-            theta: theta,
-            psi: psi);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -16706,23 +16706,23 @@ class _$BeamConfig extends BeamConfig {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        beamWidth.hashCode), 
-        beamHeight.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        beamWidth?.hashCode), 
+        beamHeight?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('BeamConfig')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('beamWidth', beamWidth)
           ..add('beamHeight', beamHeight))
         .toString();
@@ -16795,13 +16795,13 @@ class BeamConfigBuilder implements Builder<BeamConfig, BeamConfigBuilder> {
   _$BeamConfig build() {
     final _$result = _$v ??
         new _$BeamConfig._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            beamWidth: beamWidth,
-            beamHeight: beamHeight);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            beamWidth: beamWidth ?? 0,
+            beamHeight: beamHeight ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -16858,22 +16858,22 @@ class _$DataSanity extends DataSanity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sane.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sane?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DataSanity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sane', sane))
         .toString();
   }
@@ -16940,12 +16940,12 @@ class DataSanityBuilder implements Builder<DataSanity, DataSanityBuilder> {
   _$DataSanity build() {
     final _$result = _$v ??
         new _$DataSanity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sane: sane);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sane: sane ?? DataSanityEnumSane(0));
     replace(_$result);
     return _$result;
   }
@@ -17002,22 +17002,22 @@ class _$RhodamineDye extends RhodamineDye {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RhodamineDye')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -17084,12 +17084,12 @@ class RhodamineDyeBuilder implements Builder<RhodamineDye, RhodamineDyeBuilder> 
   _$RhodamineDye build() {
     final _$result = _$v ??
         new _$RhodamineDye._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -17146,22 +17146,22 @@ class _$CrudeOil extends CrudeOil {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CrudeOil')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -17228,12 +17228,12 @@ class CrudeOilBuilder implements Builder<CrudeOil, CrudeOilBuilder> {
   _$CrudeOil build() {
     final _$result = _$v ??
         new _$CrudeOil._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -17290,22 +17290,22 @@ class _$FineOil extends FineOil {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FineOil')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -17372,12 +17372,12 @@ class FineOilBuilder implements Builder<FineOil, FineOilBuilder> {
   _$FineOil build() {
     final _$result = _$v ??
         new _$FineOil._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -17434,22 +17434,22 @@ class _$Turbidity extends Turbidity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Turbidity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -17516,12 +17516,12 @@ class TurbidityBuilder implements Builder<Turbidity, TurbidityBuilder> {
   _$Turbidity build() {
     final _$result = _$v ??
         new _$Turbidity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -17578,22 +17578,22 @@ class _$Chlorophyll extends Chlorophyll {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Chlorophyll')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -17660,12 +17660,12 @@ class ChlorophyllBuilder implements Builder<Chlorophyll, ChlorophyllBuilder> {
   _$Chlorophyll build() {
     final _$result = _$v ??
         new _$Chlorophyll._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -17722,22 +17722,22 @@ class _$Fluorescein extends Fluorescein {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Fluorescein')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -17804,12 +17804,12 @@ class FluoresceinBuilder implements Builder<Fluorescein, FluoresceinBuilder> {
   _$Fluorescein build() {
     final _$result = _$v ??
         new _$Fluorescein._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -17866,22 +17866,22 @@ class _$Phycocyanin extends Phycocyanin {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Phycocyanin')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -17948,12 +17948,12 @@ class PhycocyaninBuilder implements Builder<Phycocyanin, PhycocyaninBuilder> {
   _$Phycocyanin build() {
     final _$result = _$v ??
         new _$Phycocyanin._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -18010,22 +18010,22 @@ class _$Phycoerythrin extends Phycoerythrin {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Phycoerythrin')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -18092,12 +18092,12 @@ class PhycoerythrinBuilder implements Builder<Phycoerythrin, PhycoerythrinBuilde
   _$Phycoerythrin build() {
     final _$result = _$v ??
         new _$Phycoerythrin._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -18210,36 +18210,36 @@ class _$GpsFixRtk extends GpsFixRtk {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        validity.hashCode), 
-        type.hashCode), 
-        tow.hashCode), 
-        baseLat.hashCode), 
-        baseLon.hashCode), 
-        baseHeight.hashCode), 
-        n.hashCode), 
-        e.hashCode), 
-        d.hashCode), 
-        vN.hashCode), 
-        vE.hashCode), 
-        vD.hashCode), 
-        satellites.hashCode), 
-        iarHyp.hashCode), 
-        iarRatio.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        validity?.hashCode), 
+        type?.hashCode), 
+        tow?.hashCode), 
+        baseLat?.hashCode), 
+        baseLon?.hashCode), 
+        baseHeight?.hashCode), 
+        n?.hashCode), 
+        e?.hashCode), 
+        d?.hashCode), 
+        vN?.hashCode), 
+        vE?.hashCode), 
+        vD?.hashCode), 
+        satellites?.hashCode), 
+        iarHyp?.hashCode), 
+        iarRatio?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GpsFixRtk')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('validity', validity)
           ..add('type', type)
           ..add('tow', tow)
@@ -18390,26 +18390,26 @@ class GpsFixRtkBuilder implements Builder<GpsFixRtk, GpsFixRtkBuilder> {
   _$GpsFixRtk build() {
     final _$result = _$v ??
         new _$GpsFixRtk._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            validity: validity,
-            type: type,
-            tow: tow,
-            baseLat: baseLat,
-            baseLon: baseLon,
-            baseHeight: baseHeight,
-            n: n,
-            e: e,
-            d: d,
-            vN: vN,
-            vE: vE,
-            vD: vD,
-            satellites: satellites,
-            iarHyp: iarHyp,
-            iarRatio: iarRatio);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            validity: validity ?? GpsFixRtkBitfieldValidity(0),
+            type: type ?? GpsFixRtkEnumType(0),
+            tow: tow ?? 0,
+            baseLat: baseLat ?? 0,
+            baseLon: baseLon ?? 0,
+            baseHeight: baseHeight ?? 0,
+            n: n ?? 0,
+            e: e ?? 0,
+            d: d ?? 0,
+            vN: vN ?? 0,
+            vE: vE ?? 0,
+            vD: vD ?? 0,
+            satellites: satellites ?? 0,
+            iarHyp: iarHyp ?? 0,
+            iarRatio: iarRatio ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -18470,23 +18470,23 @@ class _$ExternalNavData extends ExternalNavData {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode), 
-        type.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode), 
+        type?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ExternalNavData')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state)
           ..add('type', type))
         .toString();
@@ -18559,13 +18559,13 @@ class ExternalNavDataBuilder implements Builder<ExternalNavData, ExternalNavData
   _$ExternalNavData build() {
     final _$result = _$v ??
         new _$ExternalNavData._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
             state: state,
-            type: type);
+            type: type ?? ExternalNavDataEnumType(0));
     replace(_$result);
     return _$result;
   }
@@ -18622,22 +18622,22 @@ class _$DissolvedOxygen extends DissolvedOxygen {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DissolvedOxygen')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -18704,12 +18704,12 @@ class DissolvedOxygenBuilder implements Builder<DissolvedOxygen, DissolvedOxygen
   _$DissolvedOxygen build() {
     final _$result = _$v ??
         new _$DissolvedOxygen._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -18766,22 +18766,22 @@ class _$AirSaturation extends AirSaturation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AirSaturation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -18848,12 +18848,12 @@ class AirSaturationBuilder implements Builder<AirSaturation, AirSaturationBuilde
   _$AirSaturation build() {
     final _$result = _$v ??
         new _$AirSaturation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -18910,22 +18910,22 @@ class _$Throttle extends Throttle {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Throttle')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -18992,12 +18992,12 @@ class ThrottleBuilder implements Builder<Throttle, ThrottleBuilder> {
   _$Throttle build() {
     final _$result = _$v ??
         new _$Throttle._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -19054,22 +19054,22 @@ class _$PH extends PH {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PH')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -19136,12 +19136,12 @@ class PHBuilder implements Builder<PH, PHBuilder> {
   _$PH build() {
     final _$result = _$v ??
         new _$PH._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -19198,22 +19198,22 @@ class _$Redox extends Redox {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Redox')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -19280,12 +19280,12 @@ class RedoxBuilder implements Builder<Redox, RedoxBuilder> {
   _$Redox build() {
     final _$result = _$v ??
         new _$Redox._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -19350,24 +19350,24 @@ class _$CameraZoom extends CameraZoom {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        zoom.hashCode), 
-        action.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        zoom?.hashCode), 
+        action?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CameraZoom')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('zoom', zoom)
           ..add('action', action))
@@ -19446,14 +19446,14 @@ class CameraZoomBuilder implements Builder<CameraZoom, CameraZoomBuilder> {
   _$CameraZoom build() {
     final _$result = _$v ??
         new _$CameraZoom._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            zoom: zoom,
-            action: action);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            zoom: zoom ?? 0,
+            action: action ?? CameraZoomEnumAction(0));
     replace(_$result);
     return _$result;
   }
@@ -19514,23 +19514,23 @@ class _$SetThrusterActuation extends SetThrusterActuation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SetThrusterActuation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('value', value))
         .toString();
@@ -19603,13 +19603,13 @@ class SetThrusterActuationBuilder implements Builder<SetThrusterActuation, SetTh
   _$SetThrusterActuation build() {
     final _$result = _$v ??
         new _$SetThrusterActuation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -19670,23 +19670,23 @@ class _$SetServoPosition extends SetServoPosition {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SetServoPosition')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('value', value))
         .toString();
@@ -19759,13 +19759,13 @@ class SetServoPositionBuilder implements Builder<SetServoPosition, SetServoPosit
   _$SetServoPosition build() {
     final _$result = _$v ??
         new _$SetServoPosition._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -19826,23 +19826,23 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        angle.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        angle?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SetControlSurfaceDeflection')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('angle', angle))
         .toString();
@@ -19915,13 +19915,13 @@ class SetControlSurfaceDeflectionBuilder implements Builder<SetControlSurfaceDef
   _$SetControlSurfaceDeflection build() {
     final _$result = _$v ??
         new _$SetControlSurfaceDeflection._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            angle: angle);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            angle: angle ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -19982,23 +19982,23 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        actions.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        actions?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RemoteActionsRequest')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('actions', actions))
         .toString();
@@ -20071,13 +20071,13 @@ class RemoteActionsRequestBuilder implements Builder<RemoteActionsRequest, Remot
   _$RemoteActionsRequest build() {
     final _$result = _$v ??
         new _$RemoteActionsRequest._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            actions: actions);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? RemoteActionsRequestEnumOp(0),
+            actions: actions ?? '');
     replace(_$result);
     return _$result;
   }
@@ -20134,22 +20134,22 @@ class _$RemoteActions extends RemoteActions {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        actions.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        actions?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RemoteActions')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('actions', actions))
         .toString();
   }
@@ -20216,12 +20216,12 @@ class RemoteActionsBuilder implements Builder<RemoteActions, RemoteActionsBuilde
   _$RemoteActions build() {
     final _$result = _$v ??
         new _$RemoteActions._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            actions: actions);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            actions: actions ?? '');
     replace(_$result);
     return _$result;
   }
@@ -20282,23 +20282,23 @@ class _$ButtonEvent extends ButtonEvent {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        button.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        button?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ButtonEvent')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('button', button)
           ..add('value', value))
         .toString();
@@ -20371,13 +20371,13 @@ class ButtonEventBuilder implements Builder<ButtonEvent, ButtonEventBuilder> {
   _$ButtonEvent build() {
     final _$result = _$v ??
         new _$ButtonEvent._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            button: button,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            button: button ?? 0,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -20438,23 +20438,23 @@ class _$LcdControl extends LcdControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        text.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        text?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LcdControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('text', text))
         .toString();
@@ -20527,13 +20527,13 @@ class LcdControlBuilder implements Builder<LcdControl, LcdControlBuilder> {
   _$LcdControl build() {
     final _$result = _$v ??
         new _$LcdControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            text: text);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? LcdControlEnumOp(0),
+            text: text ?? '');
     replace(_$result);
     return _$result;
   }
@@ -20598,24 +20598,24 @@ class _$PowerOperation extends PowerOperation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        timeRemain.hashCode), 
-        schedTime.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        timeRemain?.hashCode), 
+        schedTime?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PowerOperation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('timeRemain', timeRemain)
           ..add('schedTime', schedTime))
@@ -20694,14 +20694,14 @@ class PowerOperationBuilder implements Builder<PowerOperation, PowerOperationBui
   _$PowerOperation build() {
     final _$result = _$v ??
         new _$PowerOperation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            timeRemain: timeRemain,
-            schedTime: schedTime);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? PowerOperationEnumOp(0),
+            timeRemain: timeRemain ?? 0,
+            schedTime: schedTime ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -20766,24 +20766,24 @@ class _$PowerChannelControl extends PowerChannelControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        op.hashCode), 
-        schedTime.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        op?.hashCode), 
+        schedTime?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PowerChannelControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('op', op)
           ..add('schedTime', schedTime))
@@ -20862,14 +20862,14 @@ class PowerChannelControlBuilder implements Builder<PowerChannelControl, PowerCh
   _$PowerChannelControl build() {
     final _$result = _$v ??
         new _$PowerChannelControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            op: op,
-            schedTime: schedTime);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            op: op ?? PowerChannelControlEnumOp(0),
+            schedTime: schedTime ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -20922,21 +20922,21 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('QueryPowerChannelState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -20997,11 +20997,11 @@ class QueryPowerChannelStateBuilder implements Builder<QueryPowerChannelState, Q
   _$QueryPowerChannelState build() {
     final _$result = _$v ??
         new _$QueryPowerChannelState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -21062,23 +21062,23 @@ class _$PowerChannelState extends PowerChannelState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        state.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        state?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PowerChannelState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('state', state))
         .toString();
@@ -21151,13 +21151,13 @@ class PowerChannelStateBuilder implements Builder<PowerChannelState, PowerChanne
   _$PowerChannelState build() {
     final _$result = _$v ??
         new _$PowerChannelState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            state: state);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            state: state ?? PowerChannelStateEnumState(0));
     replace(_$result);
     return _$result;
   }
@@ -21218,23 +21218,23 @@ class _$LedBrightness extends LedBrightness {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LedBrightness')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('value', value))
         .toString();
@@ -21307,13 +21307,13 @@ class LedBrightnessBuilder implements Builder<LedBrightness, LedBrightnessBuilde
   _$LedBrightness build() {
     final _$result = _$v ??
         new _$LedBrightness._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -21370,22 +21370,22 @@ class _$QueryLedBrightness extends QueryLedBrightness {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('QueryLedBrightness')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name))
         .toString();
   }
@@ -21452,12 +21452,12 @@ class QueryLedBrightnessBuilder implements Builder<QueryLedBrightness, QueryLedB
   _$QueryLedBrightness build() {
     final _$result = _$v ??
         new _$QueryLedBrightness._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '');
     replace(_$result);
     return _$result;
   }
@@ -21518,23 +21518,23 @@ class _$SetLedBrightness extends SetLedBrightness {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SetLedBrightness')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('value', value))
         .toString();
@@ -21607,13 +21607,13 @@ class SetLedBrightnessBuilder implements Builder<SetLedBrightness, SetLedBrightn
   _$SetLedBrightness build() {
     final _$result = _$v ??
         new _$SetLedBrightness._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -21678,24 +21678,24 @@ class _$SetPWM extends SetPWM {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        period.hashCode), 
-        dutyCycle.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        period?.hashCode), 
+        dutyCycle?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SetPWM')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('period', period)
           ..add('dutyCycle', dutyCycle))
@@ -21774,14 +21774,14 @@ class SetPWMBuilder implements Builder<SetPWM, SetPWMBuilder> {
   _$SetPWM build() {
     final _$result = _$v ??
         new _$SetPWM._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            period: period,
-            dutyCycle: dutyCycle);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            period: period ?? 0,
+            dutyCycle: dutyCycle ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -21846,24 +21846,24 @@ class _$PWM extends PWM {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        period.hashCode), 
-        dutyCycle.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        period?.hashCode), 
+        dutyCycle?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PWM')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('period', period)
           ..add('dutyCycle', dutyCycle))
@@ -21942,14 +21942,14 @@ class PWMBuilder implements Builder<PWM, PWMBuilder> {
   _$PWM build() {
     final _$result = _$v ??
         new _$PWM._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            period: period,
-            dutyCycle: dutyCycle);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            period: period ?? 0,
+            dutyCycle: dutyCycle ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -22082,41 +22082,41 @@ class _$EstimatedState extends EstimatedState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        height.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode), 
-        u.hashCode), 
-        v.hashCode), 
-        w.hashCode), 
-        vx.hashCode), 
-        vy.hashCode), 
-        vz.hashCode), 
-        p.hashCode), 
-        q.hashCode), 
-        r.hashCode), 
-        depth.hashCode), 
-        alt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        height?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode), 
+        u?.hashCode), 
+        v?.hashCode), 
+        w?.hashCode), 
+        vx?.hashCode), 
+        vy?.hashCode), 
+        vz?.hashCode), 
+        p?.hashCode), 
+        q?.hashCode), 
+        r?.hashCode), 
+        depth?.hashCode), 
+        alt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EstimatedState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('height', height)
@@ -22297,31 +22297,31 @@ class EstimatedStateBuilder implements Builder<EstimatedState, EstimatedStateBui
   _$EstimatedState build() {
     final _$result = _$v ??
         new _$EstimatedState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            height: height,
-            x: x,
-            y: y,
-            z: z,
-            phi: phi,
-            theta: theta,
-            psi: psi,
-            u: u,
-            v: v,
-            w: w,
-            vx: vx,
-            vy: vy,
-            vz: vz,
-            p: p,
-            q: q,
-            r: r,
-            depth: depth,
-            alt: alt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            height: height ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0,
+            u: u ?? 0,
+            v: v ?? 0,
+            w: w ?? 0,
+            vx: vx ?? 0,
+            vy: vy ?? 0,
+            vz: vz ?? 0,
+            p: p ?? 0,
+            q: q ?? 0,
+            r: r ?? 0,
+            depth: depth ?? 0,
+            alt: alt ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -22386,24 +22386,24 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EstimatedStreamVelocity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z))
@@ -22482,14 +22482,14 @@ class EstimatedStreamVelocityBuilder implements Builder<EstimatedStreamVelocity,
   _$EstimatedStreamVelocity build() {
     final _$result = _$v ??
         new _$EstimatedStreamVelocity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -22546,22 +22546,22 @@ class _$IndicatedSpeed extends IndicatedSpeed {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('IndicatedSpeed')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -22628,12 +22628,12 @@ class IndicatedSpeedBuilder implements Builder<IndicatedSpeed, IndicatedSpeedBui
   _$IndicatedSpeed build() {
     final _$result = _$v ??
         new _$IndicatedSpeed._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -22690,22 +22690,22 @@ class _$TrueSpeed extends TrueSpeed {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrueSpeed')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -22772,12 +22772,12 @@ class TrueSpeedBuilder implements Builder<TrueSpeed, TrueSpeedBuilder> {
   _$TrueSpeed build() {
     final _$result = _$v ??
         new _$TrueSpeed._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -22886,35 +22886,35 @@ class _$NavigationUncertainty extends NavigationUncertainty {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode), 
-        p.hashCode), 
-        q.hashCode), 
-        r.hashCode), 
-        u.hashCode), 
-        v.hashCode), 
-        w.hashCode), 
-        biasPsi.hashCode), 
-        biasR.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode), 
+        p?.hashCode), 
+        q?.hashCode), 
+        r?.hashCode), 
+        u?.hashCode), 
+        v?.hashCode), 
+        w?.hashCode), 
+        biasPsi?.hashCode), 
+        biasR?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('NavigationUncertainty')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z)
@@ -23059,25 +23059,25 @@ class NavigationUncertaintyBuilder implements Builder<NavigationUncertainty, Nav
   _$NavigationUncertainty build() {
     final _$result = _$v ??
         new _$NavigationUncertainty._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z,
-            phi: phi,
-            theta: theta,
-            psi: psi,
-            p: p,
-            q: q,
-            r: r,
-            u: u,
-            v: v,
-            w: w,
-            biasPsi: biasPsi,
-            biasR: biasR);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0,
+            p: p ?? 0,
+            q: q ?? 0,
+            r: r ?? 0,
+            u: u ?? 0,
+            v: v ?? 0,
+            w: w ?? 0,
+            biasPsi: biasPsi ?? 0,
+            biasR: biasR ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -23166,30 +23166,30 @@ class _$NavigationData extends NavigationData {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        biasPsi.hashCode), 
-        biasR.hashCode), 
-        cog.hashCode), 
-        cyaw.hashCode), 
-        lblRejLevel.hashCode), 
-        gpsRejLevel.hashCode), 
-        customX.hashCode), 
-        customY.hashCode), 
-        customZ.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        biasPsi?.hashCode), 
+        biasR?.hashCode), 
+        cog?.hashCode), 
+        cyaw?.hashCode), 
+        lblRejLevel?.hashCode), 
+        gpsRejLevel?.hashCode), 
+        customX?.hashCode), 
+        customY?.hashCode), 
+        customZ?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('NavigationData')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('biasPsi', biasPsi)
           ..add('biasR', biasR)
           ..add('cog', cog)
@@ -23304,20 +23304,20 @@ class NavigationDataBuilder implements Builder<NavigationData, NavigationDataBui
   _$NavigationData build() {
     final _$result = _$v ??
         new _$NavigationData._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            biasPsi: biasPsi,
-            biasR: biasR,
-            cog: cog,
-            cyaw: cyaw,
-            lblRejLevel: lblRejLevel,
-            gpsRejLevel: gpsRejLevel,
-            customX: customX,
-            customY: customY,
-            customZ: customZ);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            biasPsi: biasPsi ?? 0,
+            biasR: biasR ?? 0,
+            cog: cog ?? 0,
+            cyaw: cyaw ?? 0,
+            lblRejLevel: lblRejLevel ?? 0,
+            gpsRejLevel: gpsRejLevel ?? 0,
+            customX: customX ?? 0,
+            customY: customY ?? 0,
+            customZ: customZ ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -23378,23 +23378,23 @@ class _$GpsFixRejection extends GpsFixRejection {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        utcTime.hashCode), 
-        reason.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        utcTime?.hashCode), 
+        reason?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GpsFixRejection')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('utcTime', utcTime)
           ..add('reason', reason))
         .toString();
@@ -23467,13 +23467,13 @@ class GpsFixRejectionBuilder implements Builder<GpsFixRejection, GpsFixRejection
   _$GpsFixRejection build() {
     final _$result = _$v ??
         new _$GpsFixRejection._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            utcTime: utcTime,
-            reason: reason);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            utcTime: utcTime ?? 0,
+            reason: reason ?? GpsFixRejectionEnumReason(0));
     replace(_$result);
     return _$result;
   }
@@ -23538,24 +23538,24 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        range.hashCode), 
-        acceptance.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        range?.hashCode), 
+        acceptance?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LblRangeAcceptance')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('range', range)
           ..add('acceptance', acceptance))
@@ -23634,14 +23634,14 @@ class LblRangeAcceptanceBuilder implements Builder<LblRangeAcceptance, LblRangeA
   _$LblRangeAcceptance build() {
     final _$result = _$v ??
         new _$LblRangeAcceptance._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            range: range,
-            acceptance: acceptance);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? 0,
+            range: range ?? 0,
+            acceptance: acceptance ?? LblRangeAcceptanceEnumAcceptance(0));
     replace(_$result);
     return _$result;
   }
@@ -23710,25 +23710,25 @@ class _$DvlRejection extends DvlRejection {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        reason.hashCode), 
-        value.hashCode), 
-        timestep.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        reason?.hashCode), 
+        value?.hashCode), 
+        timestep?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DvlRejection')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('reason', reason)
           ..add('value', value)
@@ -23813,15 +23813,15 @@ class DvlRejectionBuilder implements Builder<DvlRejection, DvlRejectionBuilder> 
   _$DvlRejection build() {
     final _$result = _$v ??
         new _$DvlRejection._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            reason: reason,
-            value: value,
-            timestep: timestep);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? DvlRejectionBitfieldType(0),
+            reason: reason ?? DvlRejectionEnumReason(0),
+            value: value ?? 0,
+            timestep: timestep ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -23898,27 +23898,27 @@ class _$LblEstimate extends LblEstimate {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        beacon.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        varX.hashCode), 
-        varY.hashCode), 
-        distance.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        beacon?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        varX?.hashCode), 
+        varY?.hashCode), 
+        distance?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LblEstimate')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('beacon', beacon)
           ..add('x', x)
           ..add('y', y)
@@ -24015,17 +24015,17 @@ class LblEstimateBuilder implements Builder<LblEstimate, LblEstimateBuilder> {
   _$LblEstimate build() {
     final _$result = _$v ??
         new _$LblEstimate._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
             beacon: beacon,
-            x: x,
-            y: y,
-            varX: varX,
-            varY: varY,
-            distance: distance);
+            x: x ?? 0,
+            y: y ?? 0,
+            varX: varX ?? 0,
+            varY: varY ?? 0,
+            distance: distance ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -24082,22 +24082,22 @@ class _$AlignmentState extends AlignmentState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AlignmentState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state))
         .toString();
   }
@@ -24164,12 +24164,12 @@ class AlignmentStateBuilder implements Builder<AlignmentState, AlignmentStateBui
   _$AlignmentState build() {
     final _$result = _$v ??
         new _$AlignmentState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? AlignmentStateEnumState(0));
     replace(_$result);
     return _$result;
   }
@@ -24234,24 +24234,24 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GroupStreamVelocity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z))
@@ -24330,14 +24330,14 @@ class GroupStreamVelocityBuilder implements Builder<GroupStreamVelocity, GroupSt
   _$GroupStreamVelocity build() {
     final _$result = _$v ??
         new _$GroupStreamVelocity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -24402,24 +24402,24 @@ class _$Airflow extends Airflow {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        va.hashCode), 
-        aoa.hashCode), 
-        ssa.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        va?.hashCode), 
+        aoa?.hashCode), 
+        ssa?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Airflow')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('va', va)
           ..add('aoa', aoa)
           ..add('ssa', ssa))
@@ -24498,14 +24498,14 @@ class AirflowBuilder implements Builder<Airflow, AirflowBuilder> {
   _$Airflow build() {
     final _$result = _$v ??
         new _$Airflow._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            va: va,
-            aoa: aoa,
-            ssa: ssa);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            va: va ?? 0,
+            aoa: aoa ?? 0,
+            ssa: ssa ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -24562,22 +24562,22 @@ class _$DesiredHeading extends DesiredHeading {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredHeading')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -24644,12 +24644,12 @@ class DesiredHeadingBuilder implements Builder<DesiredHeading, DesiredHeadingBui
   _$DesiredHeading build() {
     final _$result = _$v ??
         new _$DesiredHeading._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -24710,23 +24710,23 @@ class _$DesiredZ extends DesiredZ {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode), 
-        zUnits.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode), 
+        zUnits?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredZ')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value)
           ..add('zUnits', zUnits))
         .toString();
@@ -24799,13 +24799,13 @@ class DesiredZBuilder implements Builder<DesiredZ, DesiredZBuilder> {
   _$DesiredZ build() {
     final _$result = _$v ??
         new _$DesiredZ._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value,
-            zUnits: zUnits);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0));
     replace(_$result);
     return _$result;
   }
@@ -24866,23 +24866,23 @@ class _$DesiredSpeed extends DesiredSpeed {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode), 
-        speedUnits.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode), 
+        speedUnits?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredSpeed')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value)
           ..add('speedUnits', speedUnits))
         .toString();
@@ -24955,13 +24955,13 @@ class DesiredSpeedBuilder implements Builder<DesiredSpeed, DesiredSpeedBuilder> 
   _$DesiredSpeed build() {
     final _$result = _$v ??
         new _$DesiredSpeed._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value,
-            speedUnits: speedUnits);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0));
     replace(_$result);
     return _$result;
   }
@@ -25018,22 +25018,22 @@ class _$DesiredRoll extends DesiredRoll {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredRoll')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -25100,12 +25100,12 @@ class DesiredRollBuilder implements Builder<DesiredRoll, DesiredRollBuilder> {
   _$DesiredRoll build() {
     final _$result = _$v ??
         new _$DesiredRoll._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -25162,22 +25162,22 @@ class _$DesiredPitch extends DesiredPitch {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredPitch')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -25244,12 +25244,12 @@ class DesiredPitchBuilder implements Builder<DesiredPitch, DesiredPitchBuilder> 
   _$DesiredPitch build() {
     final _$result = _$v ??
         new _$DesiredPitch._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -25306,22 +25306,22 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredVerticalRate')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -25388,12 +25388,12 @@ class DesiredVerticalRateBuilder implements Builder<DesiredVerticalRate, Desired
   _$DesiredVerticalRate build() {
     final _$result = _$v ??
         new _$DesiredVerticalRate._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -25498,34 +25498,34 @@ class _$DesiredPath extends DesiredPath {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        pathRef.hashCode), 
-        startLat.hashCode), 
-        startLon.hashCode), 
-        startZ.hashCode), 
-        startZUnits.hashCode), 
-        endLat.hashCode), 
-        endLon.hashCode), 
-        endZ.hashCode), 
-        endZUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        lradius.hashCode), 
-        flags.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        pathRef?.hashCode), 
+        startLat?.hashCode), 
+        startLon?.hashCode), 
+        startZ?.hashCode), 
+        startZUnits?.hashCode), 
+        endLat?.hashCode), 
+        endLon?.hashCode), 
+        endZ?.hashCode), 
+        endZUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        lradius?.hashCode), 
+        flags?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredPath')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('pathRef', pathRef)
           ..add('startLat', startLat)
           ..add('startLon', startLon)
@@ -25664,24 +25664,24 @@ class DesiredPathBuilder implements Builder<DesiredPath, DesiredPathBuilder> {
   _$DesiredPath build() {
     final _$result = _$v ??
         new _$DesiredPath._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            pathRef: pathRef,
-            startLat: startLat,
-            startLon: startLon,
-            startZ: startZ,
-            startZUnits: startZUnits,
-            endLat: endLat,
-            endLon: endLon,
-            endZ: endZ,
-            endZUnits: endZUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            lradius: lradius,
-            flags: flags);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            pathRef: pathRef ?? 0,
+            startLat: startLat ?? 0,
+            startLon: startLon ?? 0,
+            startZ: startZ ?? 0,
+            startZUnits: startZUnits ?? ZUnitsEnum(0),
+            endLat: endLat ?? 0,
+            endLon: endLon ?? 0,
+            endZ: endZ ?? 0,
+            endZUnits: endZUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            lradius: lradius ?? 0,
+            flags: flags ?? DesiredPathBitfieldFlags(0));
     replace(_$result);
     return _$result;
   }
@@ -25762,28 +25762,28 @@ class _$DesiredControl extends DesiredControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        k.hashCode), 
-        m.hashCode), 
-        n.hashCode), 
-        flags.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        k?.hashCode), 
+        m?.hashCode), 
+        n?.hashCode), 
+        flags?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z)
@@ -25886,18 +25886,18 @@ class DesiredControlBuilder implements Builder<DesiredControl, DesiredControlBui
   _$DesiredControl build() {
     final _$result = _$v ??
         new _$DesiredControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z,
-            k: k,
-            m: m,
-            n: n,
-            flags: flags);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            k: k ?? 0,
+            m: m ?? 0,
+            n: n ?? 0,
+            flags: flags ?? DesiredControlBitfieldFlags(0));
     replace(_$result);
     return _$result;
   }
@@ -25954,22 +25954,22 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredHeadingRate')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -26036,12 +26036,12 @@ class DesiredHeadingRateBuilder implements Builder<DesiredHeadingRate, DesiredHe
   _$DesiredHeadingRate build() {
     final _$result = _$v ??
         new _$DesiredHeadingRate._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -26122,28 +26122,28 @@ class _$DesiredVelocity extends DesiredVelocity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        u.hashCode), 
-        v.hashCode), 
-        w.hashCode), 
-        p.hashCode), 
-        q.hashCode), 
-        r.hashCode), 
-        flags.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        u?.hashCode), 
+        v?.hashCode), 
+        w?.hashCode), 
+        p?.hashCode), 
+        q?.hashCode), 
+        r?.hashCode), 
+        flags?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredVelocity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('u', u)
           ..add('v', v)
           ..add('w', w)
@@ -26246,18 +26246,18 @@ class DesiredVelocityBuilder implements Builder<DesiredVelocity, DesiredVelocity
   _$DesiredVelocity build() {
     final _$result = _$v ??
         new _$DesiredVelocity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            u: u,
-            v: v,
-            w: w,
-            p: p,
-            q: q,
-            r: r,
-            flags: flags);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            u: u ?? 0,
+            v: v ?? 0,
+            w: w ?? 0,
+            p: p ?? 0,
+            q: q ?? 0,
+            r: r ?? 0,
+            flags: flags ?? DesiredVelocityBitfieldFlags(0));
     replace(_$result);
     return _$result;
   }
@@ -26386,40 +26386,40 @@ class _$PathControlState extends PathControlState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        pathRef.hashCode), 
-        startLat.hashCode), 
-        startLon.hashCode), 
-        startZ.hashCode), 
-        startZUnits.hashCode), 
-        endLat.hashCode), 
-        endLon.hashCode), 
-        endZ.hashCode), 
-        endZUnits.hashCode), 
-        lradius.hashCode), 
-        flags.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        vx.hashCode), 
-        vy.hashCode), 
-        vz.hashCode), 
-        courseError.hashCode), 
-        eta.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        pathRef?.hashCode), 
+        startLat?.hashCode), 
+        startLon?.hashCode), 
+        startZ?.hashCode), 
+        startZUnits?.hashCode), 
+        endLat?.hashCode), 
+        endLon?.hashCode), 
+        endZ?.hashCode), 
+        endZUnits?.hashCode), 
+        lradius?.hashCode), 
+        flags?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        vx?.hashCode), 
+        vy?.hashCode), 
+        vz?.hashCode), 
+        courseError?.hashCode), 
+        eta?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PathControlState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('pathRef', pathRef)
           ..add('startLat', startLat)
           ..add('startLon', startLon)
@@ -26594,30 +26594,30 @@ class PathControlStateBuilder implements Builder<PathControlState, PathControlSt
   _$PathControlState build() {
     final _$result = _$v ??
         new _$PathControlState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            pathRef: pathRef,
-            startLat: startLat,
-            startLon: startLon,
-            startZ: startZ,
-            startZUnits: startZUnits,
-            endLat: endLat,
-            endLon: endLon,
-            endZ: endZ,
-            endZUnits: endZUnits,
-            lradius: lradius,
-            flags: flags,
-            x: x,
-            y: y,
-            z: z,
-            vx: vx,
-            vy: vy,
-            vz: vz,
-            courseError: courseError,
-            eta: eta);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            pathRef: pathRef ?? 0,
+            startLat: startLat ?? 0,
+            startLon: startLon ?? 0,
+            startZ: startZ ?? 0,
+            startZUnits: startZUnits ?? ZUnitsEnum(0),
+            endLat: endLat ?? 0,
+            endLon: endLon ?? 0,
+            endZ: endZ ?? 0,
+            endZUnits: endZUnits ?? ZUnitsEnum(0),
+            lradius: lradius ?? 0,
+            flags: flags ?? PathControlStateBitfieldFlags(0),
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            vx: vx ?? 0,
+            vy: vy ?? 0,
+            vz: vz ?? 0,
+            courseError: courseError ?? 0,
+            eta: eta ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -26682,24 +26682,24 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        k.hashCode), 
-        m.hashCode), 
-        n.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        k?.hashCode), 
+        m?.hashCode), 
+        n?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AllocatedControlTorques')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('k', k)
           ..add('m', m)
           ..add('n', n))
@@ -26778,14 +26778,14 @@ class AllocatedControlTorquesBuilder implements Builder<AllocatedControlTorques,
   _$AllocatedControlTorques build() {
     final _$result = _$v ??
         new _$AllocatedControlTorques._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            k: k,
-            m: m,
-            n: n);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            k: k ?? 0,
+            m: m ?? 0,
+            n: n ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -26854,25 +26854,25 @@ class _$ControlParcel extends ControlParcel {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        p.hashCode), 
-        i.hashCode), 
-        d.hashCode), 
-        a.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        p?.hashCode), 
+        i?.hashCode), 
+        d?.hashCode), 
+        a?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ControlParcel')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('p', p)
           ..add('i', i)
           ..add('d', d)
@@ -26957,15 +26957,15 @@ class ControlParcelBuilder implements Builder<ControlParcel, ControlParcelBuilde
   _$ControlParcel build() {
     final _$result = _$v ??
         new _$ControlParcel._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            p: p,
-            i: i,
-            d: d,
-            a: a);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            p: p ?? 0,
+            i: i ?? 0,
+            d: d ?? 0,
+            a: a ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -27022,22 +27022,22 @@ class _$Brake extends Brake {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Brake')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op))
         .toString();
   }
@@ -27104,12 +27104,12 @@ class BrakeBuilder implements Builder<Brake, BrakeBuilder> {
   _$Brake build() {
     final _$result = _$v ??
         new _$Brake._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? BrakeEnumOp(0));
     replace(_$result);
     return _$result;
   }
@@ -27202,31 +27202,31 @@ class _$DesiredLinearState extends DesiredLinearState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        vx.hashCode), 
-        vy.hashCode), 
-        vz.hashCode), 
-        ax.hashCode), 
-        ay.hashCode), 
-        az.hashCode), 
-        flags.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        vx?.hashCode), 
+        vy?.hashCode), 
+        vz?.hashCode), 
+        ax?.hashCode), 
+        ay?.hashCode), 
+        az?.hashCode), 
+        flags?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredLinearState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z)
@@ -27347,21 +27347,21 @@ class DesiredLinearStateBuilder implements Builder<DesiredLinearState, DesiredLi
   _$DesiredLinearState build() {
     final _$result = _$v ??
         new _$DesiredLinearState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z,
-            vx: vx,
-            vy: vy,
-            vz: vz,
-            ax: ax,
-            ay: ay,
-            az: az,
-            flags: flags);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            vx: vx ?? 0,
+            vy: vy ?? 0,
+            vz: vz ?? 0,
+            ax: ax ?? 0,
+            ay: ay ?? 0,
+            az: az ?? 0,
+            flags: flags ?? DesiredLinearStateBitfieldFlags(0));
     replace(_$result);
     return _$result;
   }
@@ -27418,22 +27418,22 @@ class _$DesiredThrottle extends DesiredThrottle {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DesiredThrottle')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -27500,12 +27500,12 @@ class DesiredThrottleBuilder implements Builder<DesiredThrottle, DesiredThrottle
   _$DesiredThrottle build() {
     final _$result = _$v ??
         new _$DesiredThrottle._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -27602,32 +27602,32 @@ class _$Goto extends Goto {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        roll.hashCode), 
-        pitch.hashCode), 
-        yaw.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        roll?.hashCode), 
+        pitch?.hashCode), 
+        yaw?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Goto')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -27754,22 +27754,22 @@ class GotoBuilder implements Builder<Goto, GotoBuilder> {
   _$Goto build() {
     final _$result = _$v ??
         new _$Goto._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            roll: roll,
-            pitch: pitch,
-            yaw: yaw,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            roll: roll ?? 0,
+            pitch: pitch ?? 0,
+            yaw: yaw ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -27866,32 +27866,32 @@ class _$PopUp extends PopUp {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        duration.hashCode), 
-        radius.hashCode), 
-        flags.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        duration?.hashCode), 
+        radius?.hashCode), 
+        flags?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PopUp')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -28018,22 +28018,22 @@ class PopUpBuilder implements Builder<PopUp, PopUpBuilder> {
   _$PopUp build() {
     final _$result = _$v ??
         new _$PopUp._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            duration: duration,
-            radius: radius,
-            flags: flags,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            duration: duration ?? 0,
+            radius: radius ?? 0,
+            flags: flags ?? PopUpBitfieldFlags(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -28090,22 +28090,22 @@ class _$Teleoperation extends Teleoperation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Teleoperation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('custom', custom))
         .toString();
   }
@@ -28172,12 +28172,12 @@ class TeleoperationBuilder implements Builder<Teleoperation, TeleoperationBuilde
   _$Teleoperation build() {
     final _$result = _$v ??
         new _$Teleoperation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -28286,35 +28286,35 @@ class _$Loiter extends Loiter {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        duration.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        type.hashCode), 
-        radius.hashCode), 
-        length.hashCode), 
-        bearing.hashCode), 
-        direction.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        duration?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        type?.hashCode), 
+        radius?.hashCode), 
+        length?.hashCode), 
+        bearing?.hashCode), 
+        direction?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Loiter')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -28459,25 +28459,25 @@ class LoiterBuilder implements Builder<Loiter, LoiterBuilder> {
   _$Loiter build() {
     final _$result = _$v ??
         new _$Loiter._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            duration: duration,
-            speed: speed,
-            speedUnits: speedUnits,
-            type: type,
-            radius: radius,
-            length: length,
-            bearing: bearing,
-            direction: direction,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            duration: duration ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            type: type ?? LoiterEnumType(0),
+            radius: radius ?? 0,
+            length: length ?? 0,
+            bearing: bearing ?? 0,
+            direction: direction ?? LoiterEnumDirection(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -28538,23 +28538,23 @@ class _$IdleManeuver extends IdleManeuver {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        duration.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        duration?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('IdleManeuver')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('duration', duration)
           ..add('custom', custom))
         .toString();
@@ -28627,13 +28627,13 @@ class IdleManeuverBuilder implements Builder<IdleManeuver, IdleManeuverBuilder> 
   _$IdleManeuver build() {
     final _$result = _$v ??
         new _$IdleManeuver._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            duration: duration,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            duration: duration ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -28698,24 +28698,24 @@ class _$LowLevelControl extends LowLevelControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        control.hashCode), 
-        duration.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        control?.hashCode), 
+        duration?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LowLevelControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('control', control)
           ..add('duration', duration)
           ..add('custom', custom))
@@ -28794,14 +28794,14 @@ class LowLevelControlBuilder implements Builder<LowLevelControl, LowLevelControl
   _$LowLevelControl build() {
     final _$result = _$v ??
         new _$LowLevelControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
             control: control,
-            duration: duration,
-            custom: custom);
+            duration: duration ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -28918,37 +28918,37 @@ class _$Rows extends Rows {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        bearing.hashCode), 
-        crossAngle.hashCode), 
-        width.hashCode), 
-        length.hashCode), 
-        hstep.hashCode), 
-        coff.hashCode), 
-        alternation.hashCode), 
-        flags.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        bearing?.hashCode), 
+        crossAngle?.hashCode), 
+        width?.hashCode), 
+        length?.hashCode), 
+        hstep?.hashCode), 
+        coff?.hashCode), 
+        alternation?.hashCode), 
+        flags?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Rows')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -29105,27 +29105,27 @@ class RowsBuilder implements Builder<Rows, RowsBuilder> {
   _$Rows build() {
     final _$result = _$v ??
         new _$Rows._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            bearing: bearing,
-            crossAngle: crossAngle,
-            width: width,
-            length: length,
-            hstep: hstep,
-            coff: coff,
-            alternation: alternation,
-            flags: flags,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            bearing: bearing ?? 0,
+            crossAngle: crossAngle ?? 0,
+            width: width ?? 0,
+            length: length ?? 0,
+            hstep: hstep ?? 30,
+            coff: coff ?? 0,
+            alternation: alternation ?? 50,
+            flags: flags ?? RowsBitfieldFlags(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -29214,30 +29214,30 @@ class _$FollowPath extends FollowPath {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        points.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        points?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FollowPath')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -29352,20 +29352,20 @@ class FollowPathBuilder implements Builder<FollowPath, FollowPathBuilder> {
   _$FollowPath build() {
     final _$result = _$v ??
         new _$FollowPath._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            points: points,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            points: points ?? List<PathPoint>(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -29430,24 +29430,24 @@ class _$PathPoint extends PathPoint {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PathPoint')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z))
@@ -29526,14 +29526,14 @@ class PathPointBuilder implements Builder<PathPoint, PathPointBuilder> {
   _$PathPoint build() {
     final _$result = _$v ??
         new _$PathPoint._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -29626,31 +29626,31 @@ class _$YoYo extends YoYo {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        amplitude.hashCode), 
-        pitch.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        amplitude?.hashCode), 
+        pitch?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('YoYo')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -29771,21 +29771,21 @@ class YoYoBuilder implements Builder<YoYo, YoYoBuilder> {
   _$YoYo build() {
     final _$result = _$v ??
         new _$YoYo._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            amplitude: amplitude,
-            pitch: pitch,
-            speed: speed,
-            speedUnits: speedUnits,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            amplitude: amplitude ?? 0,
+            pitch: pitch ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -29838,21 +29838,21 @@ class _$TeleoperationDone extends TeleoperationDone {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TeleoperationDone')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -29913,11 +29913,11 @@ class TeleoperationDoneBuilder implements Builder<TeleoperationDone, Teleoperati
   _$TeleoperationDone build() {
     final _$result = _$v ??
         new _$TeleoperationDone._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -30006,30 +30006,30 @@ class _$StationKeeping extends StationKeeping {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        radius.hashCode), 
-        duration.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        radius?.hashCode), 
+        duration?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('StationKeeping')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
@@ -30144,20 +30144,20 @@ class StationKeepingBuilder implements Builder<StationKeeping, StationKeepingBui
   _$StationKeeping build() {
     final _$result = _$v ??
         new _$StationKeeping._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            radius: radius,
-            duration: duration,
-            speed: speed,
-            speedUnits: speedUnits,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            radius: radius ?? 0,
+            duration: duration ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -30258,33 +30258,33 @@ class _$Elevator extends Elevator {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        flags.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        startZ.hashCode), 
-        startZUnits.hashCode), 
-        endZ.hashCode), 
-        endZUnits.hashCode), 
-        radius.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        flags?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        startZ?.hashCode), 
+        startZUnits?.hashCode), 
+        endZ?.hashCode), 
+        endZUnits?.hashCode), 
+        radius?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Elevator')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('flags', flags)
           ..add('lat', lat)
@@ -30417,23 +30417,23 @@ class ElevatorBuilder implements Builder<Elevator, ElevatorBuilder> {
   _$Elevator build() {
     final _$result = _$v ??
         new _$Elevator._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            flags: flags,
-            lat: lat,
-            lon: lon,
-            startZ: startZ,
-            startZUnits: startZUnits,
-            endZ: endZ,
-            endZUnits: endZUnits,
-            radius: radius,
-            speed: speed,
-            speedUnits: speedUnits,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            flags: flags ?? ElevatorBitfieldFlags(0),
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            startZ: startZ ?? 0,
+            startZUnits: startZUnits ?? ZUnitsEnum(0),
+            endZ: endZ ?? 0,
+            endZUnits: endZUnits ?? ZUnitsEnum(0),
+            radius: radius ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -30522,30 +30522,30 @@ class _$FollowTrajectory extends FollowTrajectory {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        points.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        points?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FollowTrajectory')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -30660,20 +30660,20 @@ class FollowTrajectoryBuilder implements Builder<FollowTrajectory, FollowTraject
   _$FollowTrajectory build() {
     final _$result = _$v ??
         new _$FollowTrajectory._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            points: points,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            points: points ?? List<TrajectoryPoint>(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -30742,25 +30742,25 @@ class _$TrajectoryPoint extends TrajectoryPoint {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        t.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        t?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrajectoryPoint')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('x', x)
           ..add('y', y)
           ..add('z', z)
@@ -30845,15 +30845,15 @@ class TrajectoryPointBuilder implements Builder<TrajectoryPoint, TrajectoryPoint
   _$TrajectoryPoint build() {
     final _$result = _$v ??
         new _$TrajectoryPoint._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            x: x,
-            y: y,
-            z: z,
-            t: t);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            t: t ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -30918,24 +30918,24 @@ class _$CustomManeuver extends CustomManeuver {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        name.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        name?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CustomManeuver')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('name', name)
           ..add('custom', custom))
@@ -31014,14 +31014,14 @@ class CustomManeuverBuilder implements Builder<CustomManeuver, CustomManeuverBui
   _$CustomManeuver build() {
     final _$result = _$v ??
         new _$CustomManeuver._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            name: name,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            name: name ?? '',
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -31114,31 +31114,31 @@ class _$VehicleFormation extends VehicleFormation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        points.hashCode), 
-        participants.hashCode), 
-        startTime.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        points?.hashCode), 
+        participants?.hashCode), 
+        startTime?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VehicleFormation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
@@ -31259,21 +31259,21 @@ class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormat
   _$VehicleFormation build() {
     final _$result = _$v ??
         new _$VehicleFormation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            points: points,
-            participants: participants,
-            startTime: startTime,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            points: points ?? List<TrajectoryPoint>(0),
+            participants: participants ?? List<VehicleFormationParticipant>(0),
+            startTime: startTime ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -31342,25 +31342,25 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        vid.hashCode), 
-        offX.hashCode), 
-        offY.hashCode), 
-        offZ.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        vid?.hashCode), 
+        offX?.hashCode), 
+        offY?.hashCode), 
+        offZ?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VehicleFormationParticipant')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('vid', vid)
           ..add('offX', offX)
           ..add('offY', offY)
@@ -31445,15 +31445,15 @@ class VehicleFormationParticipantBuilder implements Builder<VehicleFormationPart
   _$VehicleFormationParticipant build() {
     final _$result = _$v ??
         new _$VehicleFormationParticipant._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            vid: vid,
-            offX: offX,
-            offY: offY,
-            offZ: offZ);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            vid: vid ?? 0,
+            offX: offX ?? 0,
+            offY: offY ?? 0,
+            offZ: offZ ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -31506,21 +31506,21 @@ class _$StopManeuver extends StopManeuver {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('StopManeuver')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -31581,11 +31581,11 @@ class StopManeuverBuilder implements Builder<StopManeuver, StopManeuverBuilder> 
   _$StopManeuver build() {
     final _$result = _$v ??
         new _$StopManeuver._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -31642,22 +31642,22 @@ class _$RegisterManeuver extends RegisterManeuver {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        mid.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        mid?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RegisterManeuver')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('mid', mid))
         .toString();
   }
@@ -31724,12 +31724,12 @@ class RegisterManeuverBuilder implements Builder<RegisterManeuver, RegisterManeu
   _$RegisterManeuver build() {
     final _$result = _$v ??
         new _$RegisterManeuver._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            mid: mid);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            mid: mid ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -31794,24 +31794,24 @@ class _$ManeuverControlState extends ManeuverControlState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode), 
-        eta.hashCode), 
-        info.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode), 
+        eta?.hashCode), 
+        info?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ManeuverControlState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state)
           ..add('eta', eta)
           ..add('info', info))
@@ -31890,14 +31890,14 @@ class ManeuverControlStateBuilder implements Builder<ManeuverControlState, Maneu
   _$ManeuverControlState build() {
     final _$result = _$v ??
         new _$ManeuverControlState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state,
-            eta: eta,
-            info: info);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? ManeuverControlStateEnumState(0),
+            eta: eta ?? 0,
+            info: info ?? '');
     replace(_$result);
     return _$result;
   }
@@ -31982,29 +31982,29 @@ class _$FollowSystem extends FollowSystem {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        system.hashCode), 
-        duration.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        system?.hashCode), 
+        duration?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FollowSystem')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('system', system)
           ..add('duration', duration)
           ..add('speed', speed)
@@ -32113,19 +32113,19 @@ class FollowSystemBuilder implements Builder<FollowSystem, FollowSystemBuilder> 
   _$FollowSystem build() {
     final _$result = _$v ??
         new _$FollowSystem._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            system: system,
-            duration: duration,
-            speed: speed,
-            speedUnits: speedUnits,
-            x: x,
-            y: y,
-            z: z,
-            zUnits: zUnits);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            system: system ?? 0,
+            duration: duration ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0));
     replace(_$result);
     return _$result;
   }
@@ -32210,29 +32210,29 @@ class _$CommsRelay extends CommsRelay {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        duration.hashCode), 
-        sysA.hashCode), 
-        sysB.hashCode), 
-        moveThreshold.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        duration?.hashCode), 
+        sysA?.hashCode), 
+        sysB?.hashCode), 
+        moveThreshold?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CommsRelay')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('speed', speed)
@@ -32341,19 +32341,19 @@ class CommsRelayBuilder implements Builder<CommsRelay, CommsRelayBuilder> {
   _$CommsRelay build() {
     final _$result = _$v ??
         new _$CommsRelay._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            speed: speed,
-            speedUnits: speedUnits,
-            duration: duration,
-            sysA: sysA,
-            sysB: sysB,
-            moveThreshold: moveThreshold);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            duration: duration ?? 0,
+            sysA: sysA ?? 0,
+            sysB: sysB ?? 0,
+            moveThreshold: moveThreshold ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -32438,29 +32438,29 @@ class _$CoverArea extends CoverArea {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        polygon.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        polygon?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CoverArea')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
@@ -32569,19 +32569,19 @@ class CoverAreaBuilder implements Builder<CoverArea, CoverAreaBuilder> {
   _$CoverArea build() {
     final _$result = _$v ??
         new _$CoverArea._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            polygon: polygon,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            polygon: polygon ?? List<PolygonVertex>(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -32642,23 +32642,23 @@ class _$PolygonVertex extends PolygonVertex {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PolygonVertex')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon))
         .toString();
@@ -32731,13 +32731,13 @@ class PolygonVertexBuilder implements Builder<PolygonVertex, PolygonVertexBuilde
   _$PolygonVertex build() {
     final _$result = _$v ??
         new _$PolygonVertex._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -32842,34 +32842,34 @@ class _$CompassCalibration extends CompassCalibration {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        pitch.hashCode), 
-        amplitude.hashCode), 
-        duration.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        radius.hashCode), 
-        direction.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        pitch?.hashCode), 
+        amplitude?.hashCode), 
+        duration?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        radius?.hashCode), 
+        direction?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CompassCalibration')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -33008,24 +33008,24 @@ class CompassCalibrationBuilder implements Builder<CompassCalibration, CompassCa
   _$CompassCalibration build() {
     final _$result = _$v ??
         new _$CompassCalibration._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            pitch: pitch,
-            amplitude: amplitude,
-            duration: duration,
-            speed: speed,
-            speedUnits: speedUnits,
-            radius: radius,
-            direction: direction,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            pitch: pitch ?? 0,
+            amplitude: amplitude ?? 0,
+            duration: duration ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            radius: radius ?? 0,
+            direction: direction ?? CompassCalibrationEnumDirection(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -33094,25 +33094,25 @@ class _$FormationParameters extends FormationParameters {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        formationName.hashCode), 
-        referenceFrame.hashCode), 
-        participants.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        formationName?.hashCode), 
+        referenceFrame?.hashCode), 
+        participants?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormationParameters')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('formationName', formationName)
           ..add('referenceFrame', referenceFrame)
           ..add('participants', participants)
@@ -33197,15 +33197,15 @@ class FormationParametersBuilder implements Builder<FormationParameters, Formati
   _$FormationParameters build() {
     final _$result = _$v ??
         new _$FormationParameters._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            formationName: formationName,
-            referenceFrame: referenceFrame,
-            participants: participants,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            formationName: formationName ?? '',
+            referenceFrame: referenceFrame ?? FormationParametersEnumReferenceFrame(0),
+            participants: participants ?? List<VehicleFormationParticipant>(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -33314,35 +33314,35 @@ class _$FormationPlanExecution extends FormationPlanExecution {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        groupName.hashCode), 
-        formationName.hashCode), 
-        planId.hashCode), 
-        description.hashCode), 
-        leaderSpeed.hashCode), 
-        leaderBankLim.hashCode), 
-        posSimErrLim.hashCode), 
-        posSimErrWrn.hashCode), 
-        posSimErrTimeout.hashCode), 
-        convergMax.hashCode), 
-        convergTimeout.hashCode), 
-        commsTimeout.hashCode), 
-        turbLim.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        groupName?.hashCode), 
+        formationName?.hashCode), 
+        planId?.hashCode), 
+        description?.hashCode), 
+        leaderSpeed?.hashCode), 
+        leaderBankLim?.hashCode), 
+        posSimErrLim?.hashCode), 
+        posSimErrWrn?.hashCode), 
+        posSimErrTimeout?.hashCode), 
+        convergMax?.hashCode), 
+        convergTimeout?.hashCode), 
+        commsTimeout?.hashCode), 
+        turbLim?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormationPlanExecution')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('groupName', groupName)
           ..add('formationName', formationName)
           ..add('planId', planId)
@@ -33487,25 +33487,25 @@ class FormationPlanExecutionBuilder implements Builder<FormationPlanExecution, F
   _$FormationPlanExecution build() {
     final _$result = _$v ??
         new _$FormationPlanExecution._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            groupName: groupName,
-            formationName: formationName,
-            planId: planId,
-            description: description,
-            leaderSpeed: leaderSpeed,
-            leaderBankLim: leaderBankLim,
-            posSimErrLim: posSimErrLim,
-            posSimErrWrn: posSimErrWrn,
-            posSimErrTimeout: posSimErrTimeout,
-            convergMax: convergMax,
-            convergTimeout: convergTimeout,
-            commsTimeout: commsTimeout,
-            turbLim: turbLim,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            groupName: groupName ?? '',
+            formationName: formationName ?? '',
+            planId: planId ?? '',
+            description: description ?? '',
+            leaderSpeed: leaderSpeed ?? 0,
+            leaderBankLim: leaderBankLim ?? 0,
+            posSimErrLim: posSimErrLim ?? 0,
+            posSimErrWrn: posSimErrWrn ?? 0,
+            posSimErrTimeout: posSimErrTimeout ?? 0,
+            convergMax: convergMax ?? 0,
+            convergTimeout: convergTimeout ?? 0,
+            commsTimeout: commsTimeout ?? 0,
+            turbLim: turbLim ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -33578,26 +33578,26 @@ class _$FollowReference extends FollowReference {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        controlSrc.hashCode), 
-        controlEnt.hashCode), 
-        timeout.hashCode), 
-        loiterRadius.hashCode), 
-        altitudeInterval.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        controlSrc?.hashCode), 
+        controlEnt?.hashCode), 
+        timeout?.hashCode), 
+        loiterRadius?.hashCode), 
+        altitudeInterval?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FollowReference')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('controlSrc', controlSrc)
           ..add('controlEnt', controlEnt)
           ..add('timeout', timeout)
@@ -33688,16 +33688,16 @@ class FollowReferenceBuilder implements Builder<FollowReference, FollowReference
   _$FollowReference build() {
     final _$result = _$v ??
         new _$FollowReference._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            controlSrc: controlSrc,
-            controlEnt: controlEnt,
-            timeout: timeout,
-            loiterRadius: loiterRadius,
-            altitudeInterval: altitudeInterval);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            controlSrc: controlSrc ?? 0,
+            controlEnt: controlEnt ?? 0,
+            timeout: timeout ?? 0,
+            loiterRadius: loiterRadius ?? 0,
+            altitudeInterval: altitudeInterval ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -33774,27 +33774,27 @@ class _$Reference extends Reference {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        flags.hashCode), 
-        speed.hashCode), 
-        z.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        radius.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        flags?.hashCode), 
+        speed?.hashCode), 
+        z?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        radius?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Reference')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('flags', flags)
           ..add('speed', speed)
           ..add('z', z)
@@ -33891,17 +33891,17 @@ class ReferenceBuilder implements Builder<Reference, ReferenceBuilder> {
   _$Reference build() {
     final _$result = _$v ??
         new _$Reference._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            flags: flags,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            flags: flags ?? ReferenceBitfieldFlags(0),
             speed: speed,
             z: z,
-            lat: lat,
-            lon: lon,
-            radius: radius);
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            radius: radius ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -33974,26 +33974,26 @@ class _$FollowRefState extends FollowRefState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        controlSrc.hashCode), 
-        controlEnt.hashCode), 
-        reference.hashCode), 
-        state.hashCode), 
-        proximity.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        controlSrc?.hashCode), 
+        controlEnt?.hashCode), 
+        reference?.hashCode), 
+        state?.hashCode), 
+        proximity?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FollowRefState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('controlSrc', controlSrc)
           ..add('controlEnt', controlEnt)
           ..add('reference', reference)
@@ -34084,16 +34084,16 @@ class FollowRefStateBuilder implements Builder<FollowRefState, FollowRefStateBui
   _$FollowRefState build() {
     final _$result = _$v ??
         new _$FollowRefState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            controlSrc: controlSrc,
-            controlEnt: controlEnt,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            controlSrc: controlSrc ?? 0,
+            controlEnt: controlEnt ?? 0,
             reference: reference,
-            state: state,
-            proximity: proximity);
+            state: state ?? FollowRefStateEnumState(0),
+            proximity: proximity ?? FollowRefStateBitfieldProximity(0));
     replace(_$result);
     return _$result;
   }
@@ -34222,40 +34222,40 @@ class _$FormationMonitor extends FormationMonitor {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        axCmd.hashCode), 
-        ayCmd.hashCode), 
-        azCmd.hashCode), 
-        axDes.hashCode), 
-        ayDes.hashCode), 
-        azDes.hashCode), 
-        virtErrX.hashCode), 
-        virtErrY.hashCode), 
-        virtErrZ.hashCode), 
-        surfFdbkX.hashCode), 
-        surfFdbkY.hashCode), 
-        surfFdbkZ.hashCode), 
-        surfUnknX.hashCode), 
-        surfUnknY.hashCode), 
-        surfUnknZ.hashCode), 
-        ssX.hashCode), 
-        ssY.hashCode), 
-        ssZ.hashCode), 
-        relState.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        axCmd?.hashCode), 
+        ayCmd?.hashCode), 
+        azCmd?.hashCode), 
+        axDes?.hashCode), 
+        ayDes?.hashCode), 
+        azDes?.hashCode), 
+        virtErrX?.hashCode), 
+        virtErrY?.hashCode), 
+        virtErrZ?.hashCode), 
+        surfFdbkX?.hashCode), 
+        surfFdbkY?.hashCode), 
+        surfFdbkZ?.hashCode), 
+        surfUnknX?.hashCode), 
+        surfUnknY?.hashCode), 
+        surfUnknZ?.hashCode), 
+        ssX?.hashCode), 
+        ssY?.hashCode), 
+        ssZ?.hashCode), 
+        relState?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormationMonitor')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('axCmd', axCmd)
           ..add('ayCmd', ayCmd)
           ..add('azCmd', azCmd)
@@ -34430,30 +34430,30 @@ class FormationMonitorBuilder implements Builder<FormationMonitor, FormationMoni
   _$FormationMonitor build() {
     final _$result = _$v ??
         new _$FormationMonitor._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            axCmd: axCmd,
-            ayCmd: ayCmd,
-            azCmd: azCmd,
-            axDes: axDes,
-            ayDes: ayDes,
-            azDes: azDes,
-            virtErrX: virtErrX,
-            virtErrY: virtErrY,
-            virtErrZ: virtErrZ,
-            surfFdbkX: surfFdbkX,
-            surfFdbkY: surfFdbkY,
-            surfFdbkZ: surfFdbkZ,
-            surfUnknX: surfUnknX,
-            surfUnknY: surfUnknY,
-            surfUnknZ: surfUnknZ,
-            ssX: ssX,
-            ssY: ssY,
-            ssZ: ssZ,
-            relState: relState);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            axCmd: axCmd ?? 0,
+            ayCmd: ayCmd ?? 0,
+            azCmd: azCmd ?? 0,
+            axDes: axDes ?? 0,
+            ayDes: ayDes ?? 0,
+            azDes: azDes ?? 0,
+            virtErrX: virtErrX ?? 0,
+            virtErrY: virtErrY ?? 0,
+            virtErrZ: virtErrZ ?? 0,
+            surfFdbkX: surfFdbkX ?? 0,
+            surfFdbkY: surfFdbkY ?? 0,
+            surfFdbkZ: surfFdbkZ ?? 0,
+            surfUnknX: surfUnknX ?? 0,
+            surfUnknY: surfUnknY ?? 0,
+            surfUnknZ: surfUnknZ ?? 0,
+            ssX: ssX ?? 0,
+            ssY: ssY ?? 0,
+            ssZ: ssZ ?? 0,
+            relState: relState ?? List<RelativeState>(0));
     replace(_$result);
     return _$result;
   }
@@ -34594,43 +34594,43 @@ class _$RelativeState extends RelativeState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sId.hashCode), 
-        dist.hashCode), 
-        err.hashCode), 
-        ctrlImp.hashCode), 
-        relDirX.hashCode), 
-        relDirY.hashCode), 
-        relDirZ.hashCode), 
-        errX.hashCode), 
-        errY.hashCode), 
-        errZ.hashCode), 
-        rfErrX.hashCode), 
-        rfErrY.hashCode), 
-        rfErrZ.hashCode), 
-        rfErrVx.hashCode), 
-        rfErrVy.hashCode), 
-        rfErrVz.hashCode), 
-        ssX.hashCode), 
-        ssY.hashCode), 
-        ssZ.hashCode), 
-        virtErrX.hashCode), 
-        virtErrY.hashCode), 
-        virtErrZ.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sId?.hashCode), 
+        dist?.hashCode), 
+        err?.hashCode), 
+        ctrlImp?.hashCode), 
+        relDirX?.hashCode), 
+        relDirY?.hashCode), 
+        relDirZ?.hashCode), 
+        errX?.hashCode), 
+        errY?.hashCode), 
+        errZ?.hashCode), 
+        rfErrX?.hashCode), 
+        rfErrY?.hashCode), 
+        rfErrZ?.hashCode), 
+        rfErrVx?.hashCode), 
+        rfErrVy?.hashCode), 
+        rfErrVz?.hashCode), 
+        ssX?.hashCode), 
+        ssY?.hashCode), 
+        ssZ?.hashCode), 
+        virtErrX?.hashCode), 
+        virtErrY?.hashCode), 
+        virtErrZ?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RelativeState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sId', sId)
           ..add('dist', dist)
           ..add('err', err)
@@ -34823,33 +34823,33 @@ class RelativeStateBuilder implements Builder<RelativeState, RelativeStateBuilde
   _$RelativeState build() {
     final _$result = _$v ??
         new _$RelativeState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sId: sId,
-            dist: dist,
-            err: err,
-            ctrlImp: ctrlImp,
-            relDirX: relDirX,
-            relDirY: relDirY,
-            relDirZ: relDirZ,
-            errX: errX,
-            errY: errY,
-            errZ: errZ,
-            rfErrX: rfErrX,
-            rfErrY: rfErrY,
-            rfErrZ: rfErrZ,
-            rfErrVx: rfErrVx,
-            rfErrVy: rfErrVy,
-            rfErrVz: rfErrVz,
-            ssX: ssX,
-            ssY: ssY,
-            ssZ: ssZ,
-            virtErrX: virtErrX,
-            virtErrY: virtErrY,
-            virtErrZ: virtErrZ);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sId: sId ?? '',
+            dist: dist ?? 0,
+            err: err ?? 0,
+            ctrlImp: ctrlImp ?? 0,
+            relDirX: relDirX ?? 0,
+            relDirY: relDirY ?? 0,
+            relDirZ: relDirZ ?? 0,
+            errX: errX ?? 0,
+            errY: errY ?? 0,
+            errZ: errZ ?? 0,
+            rfErrX: rfErrX ?? 0,
+            rfErrY: rfErrY ?? 0,
+            rfErrZ: rfErrZ ?? 0,
+            rfErrVx: rfErrVx ?? 0,
+            rfErrVy: rfErrVy ?? 0,
+            rfErrVz: rfErrVz ?? 0,
+            ssX: ssX ?? 0,
+            ssY: ssY ?? 0,
+            ssZ: ssZ ?? 0,
+            virtErrX: virtErrX ?? 0,
+            virtErrY: virtErrY ?? 0,
+            virtErrZ: virtErrZ ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -34918,25 +34918,25 @@ class _$Dislodge extends Dislodge {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        rpm.hashCode), 
-        direction.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        rpm?.hashCode), 
+        direction?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Dislodge')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('rpm', rpm)
           ..add('direction', direction)
@@ -35021,15 +35021,15 @@ class DislodgeBuilder implements Builder<Dislodge, DislodgeBuilder> {
   _$Dislodge build() {
     final _$result = _$v ??
         new _$Dislodge._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            rpm: rpm,
-            direction: direction,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            rpm: rpm ?? 0,
+            direction: direction ?? DislodgeEnumDirection(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -35166,42 +35166,42 @@ class _$Formation extends Formation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        formationName.hashCode), 
-        type.hashCode), 
-        op.hashCode), 
-        groupName.hashCode), 
-        planId.hashCode), 
-        description.hashCode), 
-        referenceFrame.hashCode), 
-        participants.hashCode), 
-        leaderBankLim.hashCode), 
-        leaderSpeedMin.hashCode), 
-        leaderSpeedMax.hashCode), 
-        leaderAltMin.hashCode), 
-        leaderAltMax.hashCode), 
-        posSimErrLim.hashCode), 
-        posSimErrWrn.hashCode), 
-        posSimErrTimeout.hashCode), 
-        convergMax.hashCode), 
-        convergTimeout.hashCode), 
-        commsTimeout.hashCode), 
-        turbLim.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        formationName?.hashCode), 
+        type?.hashCode), 
+        op?.hashCode), 
+        groupName?.hashCode), 
+        planId?.hashCode), 
+        description?.hashCode), 
+        referenceFrame?.hashCode), 
+        participants?.hashCode), 
+        leaderBankLim?.hashCode), 
+        leaderSpeedMin?.hashCode), 
+        leaderSpeedMax?.hashCode), 
+        leaderAltMin?.hashCode), 
+        leaderAltMax?.hashCode), 
+        posSimErrLim?.hashCode), 
+        posSimErrWrn?.hashCode), 
+        posSimErrTimeout?.hashCode), 
+        convergMax?.hashCode), 
+        convergTimeout?.hashCode), 
+        commsTimeout?.hashCode), 
+        turbLim?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Formation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('formationName', formationName)
           ..add('type', type)
           ..add('op', op)
@@ -35388,32 +35388,32 @@ class FormationBuilder implements Builder<Formation, FormationBuilder> {
   _$Formation build() {
     final _$result = _$v ??
         new _$Formation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            formationName: formationName,
-            type: type,
-            op: op,
-            groupName: groupName,
-            planId: planId,
-            description: description,
-            referenceFrame: referenceFrame,
-            participants: participants,
-            leaderBankLim: leaderBankLim,
-            leaderSpeedMin: leaderSpeedMin,
-            leaderSpeedMax: leaderSpeedMax,
-            leaderAltMin: leaderAltMin,
-            leaderAltMax: leaderAltMax,
-            posSimErrLim: posSimErrLim,
-            posSimErrWrn: posSimErrWrn,
-            posSimErrTimeout: posSimErrTimeout,
-            convergMax: convergMax,
-            convergTimeout: convergTimeout,
-            commsTimeout: commsTimeout,
-            turbLim: turbLim,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            formationName: formationName ?? '',
+            type: type ?? FormationEnumType(0),
+            op: op ?? FormationEnumOp(0),
+            groupName: groupName ?? '',
+            planId: planId ?? '',
+            description: description ?? '',
+            referenceFrame: referenceFrame ?? FormationEnumReferenceFrame(0),
+            participants: participants ?? List<VehicleFormationParticipant>(0),
+            leaderBankLim: leaderBankLim ?? 0,
+            leaderSpeedMin: leaderSpeedMin ?? 0,
+            leaderSpeedMax: leaderSpeedMax ?? 0,
+            leaderAltMin: leaderAltMin ?? 0,
+            leaderAltMax: leaderAltMax ?? 0,
+            posSimErrLim: posSimErrLim ?? 0,
+            posSimErrWrn: posSimErrWrn ?? 0,
+            posSimErrTimeout: posSimErrTimeout ?? 0,
+            convergMax: convergMax ?? 0,
+            convergTimeout: convergTimeout ?? 0,
+            commsTimeout: commsTimeout ?? 0,
+            turbLim: turbLim ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -35498,29 +35498,29 @@ class _$Launch extends Launch {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Launch')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -35629,19 +35629,19 @@ class LaunchBuilder implements Builder<Launch, LaunchBuilder> {
   _$Launch build() {
     final _$result = _$v ??
         new _$Launch._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -35726,29 +35726,29 @@ class _$Drop extends Drop {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Drop')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -35857,19 +35857,19 @@ class DropBuilder implements Builder<Drop, DropBuilder> {
   _$Drop build() {
     final _$result = _$v ??
         new _$Drop._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -35954,29 +35954,29 @@ class _$ScheduledGoto extends ScheduledGoto {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        arrivalTime.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        travelZ.hashCode), 
-        travelZUnits.hashCode), 
-        delayed.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        arrivalTime?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        travelZ?.hashCode), 
+        travelZUnits?.hashCode), 
+        delayed?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ScheduledGoto')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('arrivalTime', arrivalTime)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -36085,19 +36085,19 @@ class ScheduledGotoBuilder implements Builder<ScheduledGoto, ScheduledGotoBuilde
   _$ScheduledGoto build() {
     final _$result = _$v ??
         new _$ScheduledGoto._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            arrivalTime: arrivalTime,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            travelZ: travelZ,
-            travelZUnits: travelZUnits,
-            delayed: delayed);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            arrivalTime: arrivalTime ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            travelZ: travelZ ?? 0,
+            travelZUnits: travelZUnits ?? ZUnitsEnum(0),
+            delayed: delayed ?? ScheduledGotoEnumDelayed(0));
     replace(_$result);
     return _$result;
   }
@@ -36214,37 +36214,37 @@ class _$RowsCoverage extends RowsCoverage {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        bearing.hashCode), 
-        crossAngle.hashCode), 
-        width.hashCode), 
-        length.hashCode), 
-        coff.hashCode), 
-        angAperture.hashCode), 
-        range.hashCode), 
-        overlap.hashCode), 
-        flags.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        bearing?.hashCode), 
+        crossAngle?.hashCode), 
+        width?.hashCode), 
+        length?.hashCode), 
+        coff?.hashCode), 
+        angAperture?.hashCode), 
+        range?.hashCode), 
+        overlap?.hashCode), 
+        flags?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RowsCoverage')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
@@ -36401,27 +36401,27 @@ class RowsCoverageBuilder implements Builder<RowsCoverage, RowsCoverageBuilder> 
   _$RowsCoverage build() {
     final _$result = _$v ??
         new _$RowsCoverage._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            bearing: bearing,
-            crossAngle: crossAngle,
-            width: width,
-            length: length,
-            coff: coff,
-            angAperture: angAperture,
-            range: range,
-            overlap: overlap,
-            flags: flags,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            bearing: bearing ?? 0,
+            crossAngle: crossAngle ?? 0,
+            width: width ?? 0,
+            length: length ?? 0,
+            coff: coff ?? 0,
+            angAperture: angAperture ?? 2.094395,
+            range: range ?? 0,
+            overlap: overlap ?? 10,
+            flags: flags ?? RowsCoverageBitfieldFlags(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -36518,32 +36518,32 @@ class _$Sample extends Sample {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        syringe0.hashCode), 
-        syringe1.hashCode), 
-        syringe2.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        syringe0?.hashCode), 
+        syringe1?.hashCode), 
+        syringe2?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Sample')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -36670,22 +36670,22 @@ class SampleBuilder implements Builder<Sample, SampleBuilder> {
   _$Sample build() {
     final _$result = _$v ??
         new _$Sample._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            syringe0: syringe0,
-            syringe1: syringe1,
-            syringe2: syringe2,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            syringe0: syringe0 ?? BooleanEnum(0),
+            syringe1: syringe1 ?? BooleanEnum(0),
+            syringe2: syringe2 ?? BooleanEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -36738,21 +36738,21 @@ class _$ImageTracking extends ImageTracking {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ImageTracking')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -36813,11 +36813,11 @@ class ImageTrackingBuilder implements Builder<ImageTracking, ImageTrackingBuilde
   _$ImageTracking build() {
     final _$result = _$v ??
         new _$ImageTracking._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -36902,29 +36902,29 @@ class _$Takeoff extends Takeoff {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        takeoffPitch.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        takeoffPitch?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Takeoff')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
@@ -37033,19 +37033,19 @@ class TakeoffBuilder implements Builder<Takeoff, TakeoffBuilder> {
   _$Takeoff build() {
     final _$result = _$v ??
         new _$Takeoff._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            takeoffPitch: takeoffPitch,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            takeoffPitch: takeoffPitch ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -37142,32 +37142,32 @@ class _$Land extends Land {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        abortZ.hashCode), 
-        bearing.hashCode), 
-        glideSlope.hashCode), 
-        glideSlopeAlt.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        abortZ?.hashCode), 
+        bearing?.hashCode), 
+        glideSlope?.hashCode), 
+        glideSlopeAlt?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Land')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
@@ -37294,22 +37294,22 @@ class LandBuilder implements Builder<Land, LandBuilder> {
   _$Land build() {
     final _$result = _$v ??
         new _$Land._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            abortZ: abortZ,
-            bearing: bearing,
-            glideSlope: glideSlope,
-            glideSlopeAlt: glideSlopeAlt,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            abortZ: abortZ ?? 0,
+            bearing: bearing ?? 0,
+            glideSlope: glideSlope ?? 0,
+            glideSlopeAlt: glideSlopeAlt ?? 0,
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -37406,32 +37406,32 @@ class _$AutonomousSection extends AutonomousSection {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        limits.hashCode), 
-        maxDepth.hashCode), 
-        minAlt.hashCode), 
-        timeLimit.hashCode), 
-        areaLimits.hashCode), 
-        controller.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        limits?.hashCode), 
+        maxDepth?.hashCode), 
+        minAlt?.hashCode), 
+        timeLimit?.hashCode), 
+        areaLimits?.hashCode), 
+        controller?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AutonomousSection')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('speed', speed)
@@ -37558,22 +37558,22 @@ class AutonomousSectionBuilder implements Builder<AutonomousSection, AutonomousS
   _$AutonomousSection build() {
     final _$result = _$v ??
         new _$AutonomousSection._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            speed: speed,
-            speedUnits: speedUnits,
-            limits: limits,
-            maxDepth: maxDepth,
-            minAlt: minAlt,
-            timeLimit: timeLimit,
-            areaLimits: areaLimits,
-            controller: controller,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            limits: limits ?? AutonomousSectionBitfieldLimits(0),
+            maxDepth: maxDepth ?? 0,
+            minAlt: minAlt ?? 0,
+            timeLimit: timeLimit ?? 0,
+            areaLimits: areaLimits ?? List<PolygonVertex>(0),
+            controller: controller ?? '',
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -37658,29 +37658,29 @@ class _$FollowPoint extends FollowPoint {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        target.hashCode), 
-        maxSpeed.hashCode), 
-        speedUnits.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        target?.hashCode), 
+        maxSpeed?.hashCode), 
+        speedUnits?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FollowPoint')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', target)
           ..add('maxSpeed', maxSpeed)
           ..add('speedUnits', speedUnits)
@@ -37789,19 +37789,19 @@ class FollowPointBuilder implements Builder<FollowPoint, FollowPointBuilder> {
   _$FollowPoint build() {
     final _$result = _$v ??
         new _$FollowPoint._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            target: target,
-            maxSpeed: maxSpeed,
-            speedUnits: speedUnits,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            target: target ?? '',
+            maxSpeed: maxSpeed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -37878,27 +37878,27 @@ class _$Alignment extends Alignment {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Alignment')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -37995,17 +37995,17 @@ class AlignmentBuilder implements Builder<Alignment, AlignmentBuilder> {
   _$Alignment build() {
     final _$result = _$v ??
         new _$Alignment._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            speed: speed,
-            speedUnits: speedUnits,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -38106,33 +38106,33 @@ class _$StationKeepingExtended extends StationKeepingExtended {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        radius.hashCode), 
-        duration.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        popupPeriod.hashCode), 
-        popupDuration.hashCode), 
-        flags.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        radius?.hashCode), 
+        duration?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        popupPeriod?.hashCode), 
+        popupDuration?.hashCode), 
+        flags?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('StationKeepingExtended')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('z', z)
@@ -38265,23 +38265,23 @@ class StationKeepingExtendedBuilder implements Builder<StationKeepingExtended, S
   _$StationKeepingExtended build() {
     final _$result = _$v ??
         new _$StationKeepingExtended._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            radius: radius,
-            duration: duration,
-            speed: speed,
-            speedUnits: speedUnits,
-            popupPeriod: popupPeriod,
-            popupDuration: popupDuration,
-            flags: flags,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            radius: radius ?? 0,
+            duration: duration ?? 0,
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            popupPeriod: popupPeriod ?? 0,
+            popupDuration: popupDuration ?? 0,
+            flags: flags ?? StationKeepingExtendedBitfieldFlags(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -38378,32 +38378,32 @@ class _$Magnetometer extends Magnetometer {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        speed.hashCode), 
-        speedUnits.hashCode), 
-        bearing.hashCode), 
-        width.hashCode), 
-        direction.hashCode), 
-        custom.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        speed?.hashCode), 
+        speedUnits?.hashCode), 
+        bearing?.hashCode), 
+        width?.hashCode), 
+        direction?.hashCode), 
+        custom?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Magnetometer')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -38530,22 +38530,22 @@ class MagnetometerBuilder implements Builder<Magnetometer, MagnetometerBuilder> 
   _$Magnetometer build() {
     final _$result = _$v ??
         new _$Magnetometer._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            speed: speed,
-            speedUnits: speedUnits,
-            bearing: bearing,
-            width: width,
-            direction: direction,
-            custom: custom);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            speed: speed ?? 0,
+            speedUnits: speedUnits ?? SpeedUnitsEnum(0),
+            bearing: bearing ?? 0,
+            width: width ?? 0,
+            direction: direction ?? MagnetometerEnumDirection(0),
+            custom: custom ?? '');
     replace(_$result);
     return _$result;
   }
@@ -38638,31 +38638,31 @@ class _$VehicleState extends VehicleState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        opMode.hashCode), 
-        errorCount.hashCode), 
-        errorEnts.hashCode), 
-        maneuverType.hashCode), 
-        maneuverStime.hashCode), 
-        maneuverEta.hashCode), 
-        controlLoops.hashCode), 
-        flags.hashCode), 
-        lastError.hashCode), 
-        lastErrorTime.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        opMode?.hashCode), 
+        errorCount?.hashCode), 
+        errorEnts?.hashCode), 
+        maneuverType?.hashCode), 
+        maneuverStime?.hashCode), 
+        maneuverEta?.hashCode), 
+        controlLoops?.hashCode), 
+        flags?.hashCode), 
+        lastError?.hashCode), 
+        lastErrorTime?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VehicleState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('opMode', opMode)
           ..add('errorCount', errorCount)
           ..add('errorEnts', errorEnts)
@@ -38783,21 +38783,21 @@ class VehicleStateBuilder implements Builder<VehicleState, VehicleStateBuilder> 
   _$VehicleState build() {
     final _$result = _$v ??
         new _$VehicleState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            opMode: opMode,
-            errorCount: errorCount,
-            errorEnts: errorEnts,
-            maneuverType: maneuverType,
-            maneuverStime: maneuverStime,
-            maneuverEta: maneuverEta,
-            controlLoops: controlLoops,
-            flags: flags,
-            lastError: lastError,
-            lastErrorTime: lastErrorTime);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            opMode: opMode ?? VehicleStateEnumOpMode(0),
+            errorCount: errorCount ?? 0,
+            errorEnts: errorEnts ?? '',
+            maneuverType: maneuverType ?? 0,
+            maneuverStime: maneuverStime ?? 0,
+            maneuverEta: maneuverEta ?? 0,
+            controlLoops: controlLoops ?? CLoopsMaskBitfield(0),
+            flags: flags ?? VehicleStateBitfieldFlags(0),
+            lastError: lastError ?? '',
+            lastErrorTime: lastErrorTime ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -38874,27 +38874,27 @@ class _$VehicleCommand extends VehicleCommand {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        requestId.hashCode), 
-        command.hashCode), 
-        maneuver.hashCode), 
-        calibTime.hashCode), 
-        info.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        requestId?.hashCode), 
+        command?.hashCode), 
+        maneuver?.hashCode), 
+        calibTime?.hashCode), 
+        info?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VehicleCommand')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('requestId', requestId)
           ..add('command', command)
@@ -38991,17 +38991,17 @@ class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBui
   _$VehicleCommand build() {
     final _$result = _$v ??
         new _$VehicleCommand._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            requestId: requestId,
-            command: command,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? VehicleCommandEnumType(0),
+            requestId: requestId ?? 0,
+            command: command ?? VehicleCommandEnumCommand(0),
             maneuver: maneuver,
-            calibTime: calibTime,
-            info: info);
+            calibTime: calibTime ?? 0,
+            info: info ?? '');
     replace(_$result);
     return _$result;
   }
@@ -39062,23 +39062,23 @@ class _$MonitorEntityState extends MonitorEntityState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        command.hashCode), 
-        entities.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        command?.hashCode), 
+        entities?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('MonitorEntityState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('command', command)
           ..add('entities', entities))
         .toString();
@@ -39151,13 +39151,13 @@ class MonitorEntityStateBuilder implements Builder<MonitorEntityState, MonitorEn
   _$MonitorEntityState build() {
     final _$result = _$v ??
         new _$MonitorEntityState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            command: command,
-            entities: entities);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            command: command ?? MonitorEntityStateEnumCommand(0),
+            entities: entities ?? '');
     replace(_$result);
     return _$result;
   }
@@ -39242,29 +39242,29 @@ class _$EntityMonitoringState extends EntityMonitoringState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        mcount.hashCode), 
-        mnames.hashCode), 
-        ecount.hashCode), 
-        enames.hashCode), 
-        ccount.hashCode), 
-        cnames.hashCode), 
-        lastError.hashCode), 
-        lastErrorTime.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        mcount?.hashCode), 
+        mnames?.hashCode), 
+        ecount?.hashCode), 
+        enames?.hashCode), 
+        ccount?.hashCode), 
+        cnames?.hashCode), 
+        lastError?.hashCode), 
+        lastErrorTime?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EntityMonitoringState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('mcount', mcount)
           ..add('mnames', mnames)
           ..add('ecount', ecount)
@@ -39373,19 +39373,19 @@ class EntityMonitoringStateBuilder implements Builder<EntityMonitoringState, Ent
   _$EntityMonitoringState build() {
     final _$result = _$v ??
         new _$EntityMonitoringState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            mcount: mcount,
-            mnames: mnames,
-            ecount: ecount,
-            enames: enames,
-            ccount: ccount,
-            cnames: cnames,
-            lastError: lastError,
-            lastErrorTime: lastErrorTime);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            mcount: mcount ?? 0,
+            mnames: mnames ?? '',
+            ecount: ecount ?? 0,
+            enames: enames ?? '',
+            ccount: ccount ?? 0,
+            cnames: cnames ?? '',
+            lastError: lastError ?? '',
+            lastErrorTime: lastErrorTime ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -39486,33 +39486,33 @@ class _$OperationalLimits extends OperationalLimits {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        mask.hashCode), 
-        maxDepth.hashCode), 
-        minAltitude.hashCode), 
-        maxAltitude.hashCode), 
-        minSpeed.hashCode), 
-        maxSpeed.hashCode), 
-        maxVrate.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        orientation.hashCode), 
-        width.hashCode), 
-        length.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        mask?.hashCode), 
+        maxDepth?.hashCode), 
+        minAltitude?.hashCode), 
+        maxAltitude?.hashCode), 
+        minSpeed?.hashCode), 
+        maxSpeed?.hashCode), 
+        maxVrate?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        orientation?.hashCode), 
+        width?.hashCode), 
+        length?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('OperationalLimits')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('mask', mask)
           ..add('maxDepth', maxDepth)
           ..add('minAltitude', minAltitude)
@@ -39645,23 +39645,23 @@ class OperationalLimitsBuilder implements Builder<OperationalLimits, Operational
   _$OperationalLimits build() {
     final _$result = _$v ??
         new _$OperationalLimits._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            mask: mask,
-            maxDepth: maxDepth,
-            minAltitude: minAltitude,
-            maxAltitude: maxAltitude,
-            minSpeed: minSpeed,
-            maxSpeed: maxSpeed,
-            maxVrate: maxVrate,
-            lat: lat,
-            lon: lon,
-            orientation: orientation,
-            width: width,
-            length: length);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            mask: mask ?? OpLimitsMaskBitfield(0),
+            maxDepth: maxDepth ?? 0,
+            minAltitude: minAltitude ?? 0,
+            maxAltitude: maxAltitude ?? 0,
+            minSpeed: minSpeed ?? 0,
+            maxSpeed: maxSpeed ?? 0,
+            maxVrate: maxVrate ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            orientation: orientation ?? 0,
+            width: width ?? 0,
+            length: length ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -39714,21 +39714,21 @@ class _$GetOperationalLimits extends GetOperationalLimits {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GetOperationalLimits')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -39789,11 +39789,11 @@ class GetOperationalLimitsBuilder implements Builder<GetOperationalLimits, GetOp
   _$GetOperationalLimits build() {
     final _$result = _$v ??
         new _$GetOperationalLimits._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -39850,22 +39850,22 @@ class _$Calibration extends Calibration {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        duration.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        duration?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Calibration')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('duration', duration))
         .toString();
   }
@@ -39932,12 +39932,12 @@ class CalibrationBuilder implements Builder<Calibration, CalibrationBuilder> {
   _$Calibration build() {
     final _$result = _$v ??
         new _$Calibration._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            duration: duration);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            duration: duration ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -40002,24 +40002,24 @@ class _$ControlLoops extends ControlLoops {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        enable.hashCode), 
-        mask.hashCode), 
-        scopeRef.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        enable?.hashCode), 
+        mask?.hashCode), 
+        scopeRef?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ControlLoops')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('enable', enable)
           ..add('mask', mask)
           ..add('scopeRef', scopeRef))
@@ -40098,14 +40098,14 @@ class ControlLoopsBuilder implements Builder<ControlLoops, ControlLoopsBuilder> 
   _$ControlLoops build() {
     final _$result = _$v ??
         new _$ControlLoops._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            enable: enable,
-            mask: mask,
-            scopeRef: scopeRef);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            enable: enable ?? ControlLoopsEnumEnable(0),
+            mask: mask ?? CLoopsMaskBitfield(0),
+            scopeRef: scopeRef ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -40162,22 +40162,22 @@ class _$VehicleMedium extends VehicleMedium {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        medium.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        medium?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VehicleMedium')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('medium', medium))
         .toString();
   }
@@ -40244,12 +40244,12 @@ class VehicleMediumBuilder implements Builder<VehicleMedium, VehicleMediumBuilde
   _$VehicleMedium build() {
     final _$result = _$v ??
         new _$VehicleMedium._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            medium: medium);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            medium: medium ?? VehicleMediumEnumMedium(0));
     replace(_$result);
     return _$result;
   }
@@ -40310,23 +40310,23 @@ class _$Collision extends Collision {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode), 
-        type.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode), 
+        type?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Collision')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value)
           ..add('type', type))
         .toString();
@@ -40399,13 +40399,13 @@ class CollisionBuilder implements Builder<Collision, CollisionBuilder> {
   _$Collision build() {
     final _$result = _$v ??
         new _$Collision._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value,
-            type: type);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0,
+            type: type ?? CollisionBitfieldType(0));
     replace(_$result);
     return _$result;
   }
@@ -40482,27 +40482,27 @@ class _$FormState extends FormState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        posSimErr.hashCode), 
-        converg.hashCode), 
-        turbulence.hashCode), 
-        posSimMon.hashCode), 
-        commMon.hashCode), 
-        convergMon.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        posSimErr?.hashCode), 
+        converg?.hashCode), 
+        turbulence?.hashCode), 
+        posSimMon?.hashCode), 
+        commMon?.hashCode), 
+        convergMon?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('posSimErr', posSimErr)
           ..add('converg', converg)
           ..add('turbulence', turbulence)
@@ -40599,17 +40599,17 @@ class FormStateBuilder implements Builder<FormState, FormStateBuilder> {
   _$FormState build() {
     final _$result = _$v ??
         new _$FormState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            posSimErr: posSimErr,
-            converg: converg,
-            turbulence: turbulence,
-            posSimMon: posSimMon,
-            commMon: commMon,
-            convergMon: convergMon);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            posSimErr: posSimErr ?? 0,
+            converg: converg ?? 0,
+            turbulence: turbulence ?? 0,
+            posSimMon: posSimMon ?? FormStateEnumPosSimMon(0),
+            commMon: commMon ?? FormStateEnumCommMon(0),
+            convergMon: convergMon ?? FormStateEnumConvergMon(0));
     replace(_$result);
     return _$result;
   }
@@ -40670,23 +40670,23 @@ class _$AutopilotMode extends AutopilotMode {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        autonomy.hashCode), 
-        mode.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        autonomy?.hashCode), 
+        mode?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AutopilotMode')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('autonomy', autonomy)
           ..add('mode', mode))
         .toString();
@@ -40759,13 +40759,13 @@ class AutopilotModeBuilder implements Builder<AutopilotMode, AutopilotModeBuilde
   _$AutopilotMode build() {
     final _$result = _$v ??
         new _$AutopilotMode._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            autonomy: autonomy,
-            mode: mode);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            autonomy: autonomy ?? AutopilotModeEnumAutonomy(0),
+            mode: mode ?? '');
     replace(_$result);
     return _$result;
   }
@@ -40850,29 +40850,29 @@ class _$FormationState extends FormationState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        op.hashCode), 
-        posSimErr.hashCode), 
-        converg.hashCode), 
-        turbulence.hashCode), 
-        posSimMon.hashCode), 
-        commMon.hashCode), 
-        convergMon.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        op?.hashCode), 
+        posSimErr?.hashCode), 
+        converg?.hashCode), 
+        turbulence?.hashCode), 
+        posSimMon?.hashCode), 
+        commMon?.hashCode), 
+        convergMon?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormationState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('op', op)
           ..add('posSimErr', posSimErr)
@@ -40981,19 +40981,19 @@ class FormationStateBuilder implements Builder<FormationState, FormationStateBui
   _$FormationState build() {
     final _$result = _$v ??
         new _$FormationState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            op: op,
-            posSimErr: posSimErr,
-            converg: converg,
-            turbulence: turbulence,
-            posSimMon: posSimMon,
-            commMon: commMon,
-            convergMon: convergMon);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? FormationStateEnumType(0),
+            op: op ?? FormationStateEnumOp(0),
+            posSimErr: posSimErr ?? 0,
+            converg: converg ?? 0,
+            turbulence: turbulence ?? 0,
+            posSimMon: posSimMon ?? FormationStateEnumPosSimMon(0),
+            commMon: commMon ?? FormationStateEnumCommMon(0),
+            convergMon: convergMon ?? FormationStateEnumConvergMon(0));
     replace(_$result);
     return _$result;
   }
@@ -41062,25 +41062,25 @@ class _$ReportControl extends ReportControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        commInterface.hashCode), 
-        period.hashCode), 
-        sysDst.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        commInterface?.hashCode), 
+        period?.hashCode), 
+        sysDst?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ReportControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('commInterface', commInterface)
           ..add('period', period)
@@ -41165,15 +41165,15 @@ class ReportControlBuilder implements Builder<ReportControl, ReportControlBuilde
   _$ReportControl build() {
     final _$result = _$v ??
         new _$ReportControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            commInterface: commInterface,
-            period: period,
-            sysDst: sysDst);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? ReportControlEnumOp(0),
+            commInterface: commInterface ?? ReportControlBitfieldCommInterface(0),
+            period: period ?? 0,
+            sysDst: sysDst ?? '');
     replace(_$result);
     return _$result;
   }
@@ -41266,31 +41266,31 @@ class _$StateReport extends StateReport {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        stime.hashCode), 
-        latitude.hashCode), 
-        longitude.hashCode), 
-        altitude.hashCode), 
-        depth.hashCode), 
-        heading.hashCode), 
-        speed.hashCode), 
-        fuel.hashCode), 
-        execState.hashCode), 
-        planChecksum.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        stime?.hashCode), 
+        latitude?.hashCode), 
+        longitude?.hashCode), 
+        altitude?.hashCode), 
+        depth?.hashCode), 
+        heading?.hashCode), 
+        speed?.hashCode), 
+        fuel?.hashCode), 
+        execState?.hashCode), 
+        planChecksum?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('StateReport')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('stime', stime)
           ..add('latitude', latitude)
           ..add('longitude', longitude)
@@ -41411,21 +41411,21 @@ class StateReportBuilder implements Builder<StateReport, StateReportBuilder> {
   _$StateReport build() {
     final _$result = _$v ??
         new _$StateReport._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            stime: stime,
-            latitude: latitude,
-            longitude: longitude,
-            altitude: altitude,
-            depth: depth,
-            heading: heading,
-            speed: speed,
-            fuel: fuel,
-            execState: execState,
-            planChecksum: planChecksum);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            stime: stime ?? 0,
+            latitude: latitude ?? 0,
+            longitude: longitude ?? 0,
+            altitude: altitude ?? 0,
+            depth: depth ?? 0,
+            heading: heading ?? 0,
+            speed: speed ?? 0,
+            fuel: fuel ?? 0,
+            execState: execState ?? 0,
+            planChecksum: planChecksum ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -41510,29 +41510,29 @@ class _$TransmissionRequest extends TransmissionRequest {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reqId.hashCode), 
-        commMean.hashCode), 
-        destination.hashCode), 
-        deadline.hashCode), 
-        dataMode.hashCode), 
-        msgData.hashCode), 
-        txtData.hashCode), 
-        rawData.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reqId?.hashCode), 
+        commMean?.hashCode), 
+        destination?.hashCode), 
+        deadline?.hashCode), 
+        dataMode?.hashCode), 
+        msgData?.hashCode), 
+        txtData?.hashCode), 
+        rawData?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TransmissionRequest')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', reqId)
           ..add('commMean', commMean)
           ..add('destination', destination)
@@ -41641,19 +41641,19 @@ class TransmissionRequestBuilder implements Builder<TransmissionRequest, Transmi
   _$TransmissionRequest build() {
     final _$result = _$v ??
         new _$TransmissionRequest._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reqId: reqId,
-            commMean: commMean,
-            destination: destination,
-            deadline: deadline,
-            dataMode: dataMode,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            commMean: commMean ?? TransmissionRequestEnumCommMean(0),
+            destination: destination ?? '',
+            deadline: deadline ?? 0,
+            dataMode: dataMode ?? TransmissionRequestEnumDataMode(0),
             msgData: msgData,
-            txtData: txtData,
-            rawData: rawData);
+            txtData: txtData ?? '',
+            rawData: rawData ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -41718,24 +41718,24 @@ class _$TransmissionStatus extends TransmissionStatus {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reqId.hashCode), 
-        status.hashCode), 
-        info.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reqId?.hashCode), 
+        status?.hashCode), 
+        info?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TransmissionStatus')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', reqId)
           ..add('status', status)
           ..add('info', info))
@@ -41814,14 +41814,14 @@ class TransmissionStatusBuilder implements Builder<TransmissionStatus, Transmiss
   _$TransmissionStatus build() {
     final _$result = _$v ??
         new _$TransmissionStatus._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reqId: reqId,
-            status: status,
-            info: info);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            status: status ?? TransmissionStatusEnumStatus(0),
+            info: info ?? '');
     replace(_$result);
     return _$result;
   }
@@ -41890,25 +41890,25 @@ class _$SmsRequest extends SmsRequest {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reqId.hashCode), 
-        destination.hashCode), 
-        timeout.hashCode), 
-        smsText.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reqId?.hashCode), 
+        destination?.hashCode), 
+        timeout?.hashCode), 
+        smsText?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SmsRequest')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', reqId)
           ..add('destination', destination)
           ..add('timeout', timeout)
@@ -41993,15 +41993,15 @@ class SmsRequestBuilder implements Builder<SmsRequest, SmsRequestBuilder> {
   _$SmsRequest build() {
     final _$result = _$v ??
         new _$SmsRequest._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reqId: reqId,
-            destination: destination,
-            timeout: timeout,
-            smsText: smsText);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            destination: destination ?? '',
+            timeout: timeout ?? 0,
+            smsText: smsText ?? '');
     replace(_$result);
     return _$result;
   }
@@ -42066,24 +42066,24 @@ class _$SmsStatus extends SmsStatus {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reqId.hashCode), 
-        status.hashCode), 
-        info.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reqId?.hashCode), 
+        status?.hashCode), 
+        info?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SmsStatus')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', reqId)
           ..add('status', status)
           ..add('info', info))
@@ -42162,14 +42162,14 @@ class SmsStatusBuilder implements Builder<SmsStatus, SmsStatusBuilder> {
   _$SmsStatus build() {
     final _$result = _$v ??
         new _$SmsStatus._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reqId: reqId,
-            status: status,
-            info: info);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            status: status ?? SmsStatusEnumStatus(0),
+            info: info ?? '');
     replace(_$result);
     return _$result;
   }
@@ -42226,22 +42226,22 @@ class _$VtolState extends VtolState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VtolState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state))
         .toString();
   }
@@ -42308,12 +42308,12 @@ class VtolStateBuilder implements Builder<VtolState, VtolStateBuilder> {
   _$VtolState build() {
     final _$result = _$v ??
         new _$VtolState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? VtolStateEnumState(0));
     replace(_$result);
     return _$result;
   }
@@ -42370,22 +42370,22 @@ class _$ArmingState extends ArmingState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ArmingState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state))
         .toString();
   }
@@ -42452,12 +42452,12 @@ class ArmingStateBuilder implements Builder<ArmingState, ArmingStateBuilder> {
   _$ArmingState build() {
     final _$result = _$v ??
         new _$ArmingState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? ArmingStateEnumState(0));
     replace(_$result);
     return _$result;
   }
@@ -42510,21 +42510,21 @@ class _$Abort extends Abort {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Abort')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -42585,11 +42585,11 @@ class AbortBuilder implements Builder<Abort, AbortBuilder> {
   _$Abort build() {
     final _$result = _$v ??
         new _$Abort._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -42678,30 +42678,30 @@ class _$PlanSpecification extends PlanSpecification {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        planId.hashCode), 
-        description.hashCode), 
-        vnamespace.hashCode), 
-        variables.hashCode), 
-        startManId.hashCode), 
-        maneuvers.hashCode), 
-        transitions.hashCode), 
-        startActions.hashCode), 
-        endActions.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        planId?.hashCode), 
+        description?.hashCode), 
+        vnamespace?.hashCode), 
+        variables?.hashCode), 
+        startManId?.hashCode), 
+        maneuvers?.hashCode), 
+        transitions?.hashCode), 
+        startActions?.hashCode), 
+        endActions?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanSpecification')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('planId', planId)
           ..add('description', description)
           ..add('vnamespace', vnamespace)
@@ -42816,20 +42816,20 @@ class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecifi
   _$PlanSpecification build() {
     final _$result = _$v ??
         new _$PlanSpecification._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            planId: planId,
-            description: description,
-            vnamespace: vnamespace,
-            variables: variables,
-            startManId: startManId,
-            maneuvers: maneuvers,
-            transitions: transitions,
-            startActions: startActions,
-            endActions: endActions);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            planId: planId ?? '',
+            description: description ?? '',
+            vnamespace: vnamespace ?? '',
+            variables: variables ?? List<PlanVariable>(0),
+            startManId: startManId ?? '',
+            maneuvers: maneuvers ?? List<PlanManeuver>(0),
+            transitions: transitions ?? List<PlanTransition>(0),
+            startActions: startActions ?? List<ImcMessage>(0),
+            endActions: endActions ?? List<ImcMessage>(0));
     replace(_$result);
     return _$result;
   }
@@ -42898,25 +42898,25 @@ class _$PlanManeuver extends PlanManeuver {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        maneuverId.hashCode), 
-        data.hashCode), 
-        startActions.hashCode), 
-        endActions.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        maneuverId?.hashCode), 
+        data?.hashCode), 
+        startActions?.hashCode), 
+        endActions?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanManeuver')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('maneuverId', maneuverId)
           ..add('data', data)
           ..add('startActions', startActions)
@@ -43001,15 +43001,15 @@ class PlanManeuverBuilder implements Builder<PlanManeuver, PlanManeuverBuilder> 
   _$PlanManeuver build() {
     final _$result = _$v ??
         new _$PlanManeuver._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            maneuverId: maneuverId,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            maneuverId: maneuverId ?? '',
             data: data,
-            startActions: startActions,
-            endActions: endActions);
+            startActions: startActions ?? List<ImcMessage>(0),
+            endActions: endActions ?? List<ImcMessage>(0));
     replace(_$result);
     return _$result;
   }
@@ -43078,25 +43078,25 @@ class _$PlanTransition extends PlanTransition {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sourceMan.hashCode), 
-        destMan.hashCode), 
-        conditions.hashCode), 
-        actions.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sourceMan?.hashCode), 
+        destMan?.hashCode), 
+        conditions?.hashCode), 
+        actions?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanTransition')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sourceMan', sourceMan)
           ..add('destMan', destMan)
           ..add('conditions', conditions)
@@ -43181,15 +43181,15 @@ class PlanTransitionBuilder implements Builder<PlanTransition, PlanTransitionBui
   _$PlanTransition build() {
     final _$result = _$v ??
         new _$PlanTransition._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sourceMan: sourceMan,
-            destMan: destMan,
-            conditions: conditions,
-            actions: actions);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sourceMan: sourceMan ?? '',
+            destMan: destMan ?? '',
+            conditions: conditions ?? '',
+            actions: actions ?? List<ImcMessage>(0));
     replace(_$result);
     return _$result;
   }
@@ -43250,23 +43250,23 @@ class _$EmergencyControl extends EmergencyControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        command.hashCode), 
-        plan.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        command?.hashCode), 
+        plan?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EmergencyControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('command', command)
           ..add('plan', plan))
         .toString();
@@ -43339,12 +43339,12 @@ class EmergencyControlBuilder implements Builder<EmergencyControl, EmergencyCont
   _$EmergencyControl build() {
     final _$result = _$v ??
         new _$EmergencyControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            command: command,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            command: command ?? EmergencyControlEnumCommand(0),
             plan: plan);
     replace(_$result);
     return _$result;
@@ -43410,24 +43410,24 @@ class _$EmergencyControlState extends EmergencyControlState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode), 
-        planId.hashCode), 
-        commLevel.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode), 
+        planId?.hashCode), 
+        commLevel?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EmergencyControlState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state)
           ..add('planId', planId)
           ..add('commLevel', commLevel))
@@ -43506,14 +43506,14 @@ class EmergencyControlStateBuilder implements Builder<EmergencyControlState, Eme
   _$EmergencyControlState build() {
     final _$result = _$v ??
         new _$EmergencyControlState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state,
-            planId: planId,
-            commLevel: commLevel);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? EmergencyControlStateEnumState(0),
+            planId: planId ?? '',
+            commLevel: commLevel ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -43590,27 +43590,27 @@ class _$PlanDB extends PlanDB {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        op.hashCode), 
-        requestId.hashCode), 
-        planId.hashCode), 
-        arg.hashCode), 
-        info.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        op?.hashCode), 
+        requestId?.hashCode), 
+        planId?.hashCode), 
+        arg?.hashCode), 
+        info?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanDB')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('op', op)
           ..add('requestId', requestId)
@@ -43707,17 +43707,17 @@ class PlanDBBuilder implements Builder<PlanDB, PlanDBBuilder> {
   _$PlanDB build() {
     final _$result = _$v ??
         new _$PlanDB._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            op: op,
-            requestId: requestId,
-            planId: planId,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? PlanDBEnumType(0),
+            op: op ?? PlanDBEnumOp(0),
+            requestId: requestId ?? 0,
+            planId: planId ?? '',
             arg: arg,
-            info: info);
+            info: info ?? '');
     replace(_$result);
     return _$result;
   }
@@ -43798,28 +43798,28 @@ class _$PlanDBState extends PlanDBState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        planCount.hashCode), 
-        planSize.hashCode), 
-        changeTime.hashCode), 
-        changeSid.hashCode), 
-        changeSname.hashCode), 
-        md5.hashCode), 
-        plansInfo.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        planCount?.hashCode), 
+        planSize?.hashCode), 
+        changeTime?.hashCode), 
+        changeSid?.hashCode), 
+        changeSname?.hashCode), 
+        md5?.hashCode), 
+        plansInfo?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanDBState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('planCount', planCount)
           ..add('planSize', planSize)
           ..add('changeTime', changeTime)
@@ -43922,18 +43922,18 @@ class PlanDBStateBuilder implements Builder<PlanDBState, PlanDBStateBuilder> {
   _$PlanDBState build() {
     final _$result = _$v ??
         new _$PlanDBState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            planCount: planCount,
-            planSize: planSize,
-            changeTime: changeTime,
-            changeSid: changeSid,
-            changeSname: changeSname,
-            md5: md5,
-            plansInfo: plansInfo);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            planCount: planCount ?? 0,
+            planSize: planSize ?? 0,
+            changeTime: changeTime ?? 0,
+            changeSid: changeSid ?? 0,
+            changeSname: changeSname ?? '',
+            md5: md5 ?? List<int>(0),
+            plansInfo: plansInfo ?? List<PlanDBInformation>(0));
     replace(_$result);
     return _$result;
   }
@@ -44010,27 +44010,27 @@ class _$PlanDBInformation extends PlanDBInformation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        planId.hashCode), 
-        planSize.hashCode), 
-        changeTime.hashCode), 
-        changeSid.hashCode), 
-        changeSname.hashCode), 
-        md5.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        planId?.hashCode), 
+        planSize?.hashCode), 
+        changeTime?.hashCode), 
+        changeSid?.hashCode), 
+        changeSname?.hashCode), 
+        md5?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanDBInformation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('planId', planId)
           ..add('planSize', planSize)
           ..add('changeTime', changeTime)
@@ -44127,17 +44127,17 @@ class PlanDBInformationBuilder implements Builder<PlanDBInformation, PlanDBInfor
   _$PlanDBInformation build() {
     final _$result = _$v ??
         new _$PlanDBInformation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            planId: planId,
-            planSize: planSize,
-            changeTime: changeTime,
-            changeSid: changeSid,
-            changeSname: changeSname,
-            md5: md5);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            planId: planId ?? '',
+            planSize: planSize ?? 0,
+            changeTime: changeTime ?? 0,
+            changeSid: changeSid ?? 0,
+            changeSname: changeSname ?? '',
+            md5: md5 ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -44218,28 +44218,28 @@ class _$PlanControl extends PlanControl {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        op.hashCode), 
-        requestId.hashCode), 
-        planId.hashCode), 
-        flags.hashCode), 
-        arg.hashCode), 
-        info.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        op?.hashCode), 
+        requestId?.hashCode), 
+        planId?.hashCode), 
+        flags?.hashCode), 
+        arg?.hashCode), 
+        info?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanControl')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('op', op)
           ..add('requestId', requestId)
@@ -44342,18 +44342,18 @@ class PlanControlBuilder implements Builder<PlanControl, PlanControlBuilder> {
   _$PlanControl build() {
     final _$result = _$v ??
         new _$PlanControl._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            op: op,
-            requestId: requestId,
-            planId: planId,
-            flags: flags,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? PlanControlEnumType(0),
+            op: op ?? PlanControlEnumOp(0),
+            requestId: requestId ?? 0,
+            planId: planId ?? '',
+            flags: flags ?? PlanControlBitfieldFlags(0),
             arg: arg,
-            info: info);
+            info: info ?? '');
     replace(_$result);
     return _$result;
   }
@@ -44438,29 +44438,29 @@ class _$PlanControlState extends PlanControlState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode), 
-        planId.hashCode), 
-        planEta.hashCode), 
-        planProgress.hashCode), 
-        manId.hashCode), 
-        manType.hashCode), 
-        manEta.hashCode), 
-        lastOutcome.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode), 
+        planId?.hashCode), 
+        planEta?.hashCode), 
+        planProgress?.hashCode), 
+        manId?.hashCode), 
+        manType?.hashCode), 
+        manEta?.hashCode), 
+        lastOutcome?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanControlState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state)
           ..add('planId', planId)
           ..add('planEta', planEta)
@@ -44569,19 +44569,19 @@ class PlanControlStateBuilder implements Builder<PlanControlState, PlanControlSt
   _$PlanControlState build() {
     final _$result = _$v ??
         new _$PlanControlState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state,
-            planId: planId,
-            planEta: planEta,
-            planProgress: planProgress,
-            manId: manId,
-            manType: manType,
-            manEta: manEta,
-            lastOutcome: lastOutcome);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? PlanControlStateEnumState(0),
+            planId: planId ?? '',
+            planEta: planEta ?? 0,
+            planProgress: planProgress ?? 0,
+            manId: manId ?? '',
+            manType: manType ?? 0,
+            manEta: manEta ?? 0,
+            lastOutcome: lastOutcome ?? PlanControlStateEnumLastOutcome(0));
     replace(_$result);
     return _$result;
   }
@@ -44650,25 +44650,25 @@ class _$PlanVariable extends PlanVariable {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        value.hashCode), 
-        type.hashCode), 
-        access.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        value?.hashCode), 
+        type?.hashCode), 
+        access?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanVariable')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('value', value)
           ..add('type', type)
@@ -44753,15 +44753,15 @@ class PlanVariableBuilder implements Builder<PlanVariable, PlanVariableBuilder> 
   _$PlanVariable build() {
     final _$result = _$v ??
         new _$PlanVariable._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            value: value,
-            type: type,
-            access: access);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            value: value ?? '',
+            type: type ?? PlanVariableEnumType(0),
+            access: access ?? PlanVariableEnumAccess(0));
     replace(_$result);
     return _$result;
   }
@@ -44830,25 +44830,25 @@ class _$PlanGeneration extends PlanGeneration {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        cmd.hashCode), 
-        op.hashCode), 
-        planId.hashCode), 
-        params.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        cmd?.hashCode), 
+        op?.hashCode), 
+        planId?.hashCode), 
+        params?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanGeneration')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('cmd', cmd)
           ..add('op', op)
           ..add('planId', planId)
@@ -44933,15 +44933,15 @@ class PlanGenerationBuilder implements Builder<PlanGeneration, PlanGenerationBui
   _$PlanGeneration build() {
     final _$result = _$v ??
         new _$PlanGeneration._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            cmd: cmd,
-            op: op,
-            planId: planId,
-            params: params);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            cmd: cmd ?? PlanGenerationEnumCmd(0),
+            op: op ?? PlanGenerationEnumOp(0),
+            planId: planId ?? '',
+            params: params ?? '');
     replace(_$result);
     return _$result;
   }
@@ -45074,41 +45074,41 @@ class _$LeaderState extends LeaderState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        groupName.hashCode), 
-        op.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        height.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode), 
-        vx.hashCode), 
-        vy.hashCode), 
-        vz.hashCode), 
-        p.hashCode), 
-        q.hashCode), 
-        r.hashCode), 
-        svx.hashCode), 
-        svy.hashCode), 
-        svz.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        groupName?.hashCode), 
+        op?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        height?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode), 
+        vx?.hashCode), 
+        vy?.hashCode), 
+        vz?.hashCode), 
+        p?.hashCode), 
+        q?.hashCode), 
+        r?.hashCode), 
+        svx?.hashCode), 
+        svy?.hashCode), 
+        svz?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('LeaderState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('groupName', groupName)
           ..add('op', op)
           ..add('lat', lat)
@@ -45289,31 +45289,31 @@ class LeaderStateBuilder implements Builder<LeaderState, LeaderStateBuilder> {
   _$LeaderState build() {
     final _$result = _$v ??
         new _$LeaderState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            groupName: groupName,
-            op: op,
-            lat: lat,
-            lon: lon,
-            height: height,
-            x: x,
-            y: y,
-            z: z,
-            phi: phi,
-            theta: theta,
-            psi: psi,
-            vx: vx,
-            vy: vy,
-            vz: vz,
-            p: p,
-            q: q,
-            r: r,
-            svx: svx,
-            svy: svy,
-            svz: svz);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            groupName: groupName ?? '',
+            op: op ?? LeaderStateEnumOp(0),
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            height: height ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0,
+            vx: vx ?? 0,
+            vy: vy ?? 0,
+            vz: vz ?? 0,
+            p: p ?? 0,
+            q: q ?? 0,
+            r: r ?? 0,
+            svx: svx ?? 0,
+            svy: svy ?? 0,
+            svz: svz ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -45394,28 +45394,28 @@ class _$PlanStatistics extends PlanStatistics {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        planId.hashCode), 
-        type.hashCode), 
-        properties.hashCode), 
-        durations.hashCode), 
-        distances.hashCode), 
-        actions.hashCode), 
-        fuel.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        planId?.hashCode), 
+        type?.hashCode), 
+        properties?.hashCode), 
+        durations?.hashCode), 
+        distances?.hashCode), 
+        actions?.hashCode), 
+        fuel?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PlanStatistics')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('planId', planId)
           ..add('type', type)
           ..add('properties', properties)
@@ -45518,18 +45518,18 @@ class PlanStatisticsBuilder implements Builder<PlanStatistics, PlanStatisticsBui
   _$PlanStatistics build() {
     final _$result = _$v ??
         new _$PlanStatistics._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            planId: planId,
-            type: type,
-            properties: properties,
-            durations: durations,
-            distances: distances,
-            actions: actions,
-            fuel: fuel);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            planId: planId ?? '',
+            type: type ?? PlanStatisticsEnumType(0),
+            properties: properties ?? PlanStatisticsBitfieldProperties(0),
+            durations: durations ?? '',
+            distances: distances ?? '',
+            actions: actions ?? '',
+            fuel: fuel ?? '');
     replace(_$result);
     return _$result;
   }
@@ -45618,30 +45618,30 @@ class _$ReportedState extends ReportedState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        depth.hashCode), 
-        roll.hashCode), 
-        pitch.hashCode), 
-        yaw.hashCode), 
-        rcpTime.hashCode), 
-        sid.hashCode), 
-        sType.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        depth?.hashCode), 
+        roll?.hashCode), 
+        pitch?.hashCode), 
+        yaw?.hashCode), 
+        rcpTime?.hashCode), 
+        sid?.hashCode), 
+        sType?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ReportedState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('depth', depth)
@@ -45756,20 +45756,20 @@ class ReportedStateBuilder implements Builder<ReportedState, ReportedStateBuilde
   _$ReportedState build() {
     final _$result = _$v ??
         new _$ReportedState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            depth: depth,
-            roll: roll,
-            pitch: pitch,
-            yaw: yaw,
-            rcpTime: rcpTime,
-            sid: sid,
-            sType: sType);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            depth: depth ?? 0,
+            roll: roll ?? 0,
+            pitch: pitch ?? 0,
+            yaw: yaw ?? 0,
+            rcpTime: rcpTime ?? 0,
+            sid: sid ?? '',
+            sType: sType ?? ReportedStateEnumSType(0));
     replace(_$result);
     return _$result;
   }
@@ -45850,28 +45850,28 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        sensorClass.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        alt.hashCode), 
-        heading.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        sensorClass?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        alt?.hashCode), 
+        heading?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RemoteSensorInfo')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('sensorClass', sensorClass)
           ..add('lat', lat)
@@ -45974,18 +45974,18 @@ class RemoteSensorInfoBuilder implements Builder<RemoteSensorInfo, RemoteSensorI
   _$RemoteSensorInfo build() {
     final _$result = _$v ??
         new _$RemoteSensorInfo._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            sensorClass: sensorClass,
-            lat: lat,
-            lon: lon,
-            alt: alt,
-            heading: heading,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? '',
+            sensorClass: sensorClass ?? '',
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            alt: alt ?? 0,
+            heading: heading ?? 0,
+            data: data ?? '');
     replace(_$result);
     return _$result;
   }
@@ -46046,23 +46046,23 @@ class _$Map extends Map {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        features.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        features?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Map')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('features', features))
         .toString();
@@ -46135,13 +46135,13 @@ class MapBuilder implements Builder<Map, MapBuilder> {
   _$Map build() {
     final _$result = _$v ??
         new _$Map._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            features: features);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? '',
+            features: features ?? List<MapFeature>(0));
     replace(_$result);
     return _$result;
   }
@@ -46218,27 +46218,27 @@ class _$MapFeature extends MapFeature {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        id.hashCode), 
-        featureType.hashCode), 
-        rgbRed.hashCode), 
-        rgbGreen.hashCode), 
-        rgbBlue.hashCode), 
-        feature.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        id?.hashCode), 
+        featureType?.hashCode), 
+        rgbRed?.hashCode), 
+        rgbGreen?.hashCode), 
+        rgbBlue?.hashCode), 
+        feature?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('MapFeature')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', id)
           ..add('featureType', featureType)
           ..add('rgbRed', rgbRed)
@@ -46335,17 +46335,17 @@ class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder> {
   _$MapFeature build() {
     final _$result = _$v ??
         new _$MapFeature._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            id: id,
-            featureType: featureType,
-            rgbRed: rgbRed,
-            rgbGreen: rgbGreen,
-            rgbBlue: rgbBlue,
-            feature: feature);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            id: id ?? '',
+            featureType: featureType ?? MapFeatureEnumFeatureType(0),
+            rgbRed: rgbRed ?? 0,
+            rgbGreen: rgbGreen ?? 0,
+            rgbBlue: rgbBlue ?? 0,
+            feature: feature ?? List<MapPoint>(0));
     replace(_$result);
     return _$result;
   }
@@ -46410,24 +46410,24 @@ class _$MapPoint extends MapPoint {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        alt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        alt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('MapPoint')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('alt', alt))
@@ -46506,14 +46506,14 @@ class MapPointBuilder implements Builder<MapPoint, MapPointBuilder> {
   _$MapPoint build() {
     final _$result = _$v ??
         new _$MapPoint._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            alt: alt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            alt: alt ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -46578,24 +46578,24 @@ class _$CcuEvent extends CcuEvent {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        id.hashCode), 
-        arg.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        id?.hashCode), 
+        arg?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CcuEvent')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('id', id)
           ..add('arg', arg))
@@ -46674,13 +46674,13 @@ class CcuEventBuilder implements Builder<CcuEvent, CcuEventBuilder> {
   _$CcuEvent build() {
     final _$result = _$v ??
         new _$CcuEvent._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            id: id,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? CcuEventEnumType(0),
+            id: id ?? '',
             arg: arg);
     replace(_$result);
     return _$result;
@@ -46742,23 +46742,23 @@ class _$VehicleLinks extends VehicleLinks {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        localname.hashCode), 
-        links.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        localname?.hashCode), 
+        links?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('VehicleLinks')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('localname', localname)
           ..add('links', links))
         .toString();
@@ -46831,13 +46831,13 @@ class VehicleLinksBuilder implements Builder<VehicleLinks, VehicleLinksBuilder> 
   _$VehicleLinks build() {
     final _$result = _$v ??
         new _$VehicleLinks._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            localname: localname,
-            links: links);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            localname: localname ?? '',
+            links: links ?? List<Announce>(0));
     replace(_$result);
     return _$result;
   }
@@ -46902,24 +46902,24 @@ class _$TrexObservation extends TrexObservation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeline.hashCode), 
-        predicate.hashCode), 
-        attributes.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeline?.hashCode), 
+        predicate?.hashCode), 
+        attributes?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrexObservation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeline', timeline)
           ..add('predicate', predicate)
           ..add('attributes', attributes))
@@ -46998,14 +46998,14 @@ class TrexObservationBuilder implements Builder<TrexObservation, TrexObservation
   _$TrexObservation build() {
     final _$result = _$v ??
         new _$TrexObservation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeline: timeline,
-            predicate: predicate,
-            attributes: attributes);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeline: timeline ?? '',
+            predicate: predicate ?? '',
+            attributes: attributes ?? '');
     replace(_$result);
     return _$result;
   }
@@ -47070,24 +47070,24 @@ class _$TrexCommand extends TrexCommand {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        command.hashCode), 
-        goalId.hashCode), 
-        goalXml.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        command?.hashCode), 
+        goalId?.hashCode), 
+        goalXml?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrexCommand')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('command', command)
           ..add('goalId', goalId)
           ..add('goalXml', goalXml))
@@ -47166,14 +47166,14 @@ class TrexCommandBuilder implements Builder<TrexCommand, TrexCommandBuilder> {
   _$TrexCommand build() {
     final _$result = _$v ??
         new _$TrexCommand._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            command: command,
-            goalId: goalId,
-            goalXml: goalXml);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            command: command ?? TrexCommandEnumCommand(0),
+            goalId: goalId ?? '',
+            goalXml: goalXml ?? '');
     replace(_$result);
     return _$result;
   }
@@ -47238,24 +47238,24 @@ class _$TrexOperation extends TrexOperation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        goalId.hashCode), 
-        token.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        goalId?.hashCode), 
+        token?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrexOperation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('goalId', goalId)
           ..add('token', token))
@@ -47334,13 +47334,13 @@ class TrexOperationBuilder implements Builder<TrexOperation, TrexOperationBuilde
   _$TrexOperation build() {
     final _$result = _$v ??
         new _$TrexOperation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            goalId: goalId,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? TrexOperationEnumOp(0),
+            goalId: goalId ?? '',
             token: token);
     replace(_$result);
     return _$result;
@@ -47410,25 +47410,25 @@ class _$TrexAttribute extends TrexAttribute {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        attrType.hashCode), 
-        min.hashCode), 
-        max.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        attrType?.hashCode), 
+        min?.hashCode), 
+        max?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrexAttribute')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('attrType', attrType)
           ..add('min', min)
@@ -47513,15 +47513,15 @@ class TrexAttributeBuilder implements Builder<TrexAttribute, TrexAttributeBuilde
   _$TrexAttribute build() {
     final _$result = _$v ??
         new _$TrexAttribute._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            attrType: attrType,
-            min: min,
-            max: max);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            attrType: attrType ?? TrexAttributeEnumAttrType(0),
+            min: min ?? '',
+            max: max ?? '');
     replace(_$result);
     return _$result;
   }
@@ -47586,24 +47586,24 @@ class _$TrexToken extends TrexToken {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeline.hashCode), 
-        predicate.hashCode), 
-        attributes.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeline?.hashCode), 
+        predicate?.hashCode), 
+        attributes?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrexToken')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeline', timeline)
           ..add('predicate', predicate)
           ..add('attributes', attributes))
@@ -47682,14 +47682,14 @@ class TrexTokenBuilder implements Builder<TrexToken, TrexTokenBuilder> {
   _$TrexToken build() {
     final _$result = _$v ??
         new _$TrexToken._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeline: timeline,
-            predicate: predicate,
-            attributes: attributes);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeline: timeline ?? '',
+            predicate: predicate ?? '',
+            attributes: attributes ?? List<TrexAttribute>(0));
     replace(_$result);
     return _$result;
   }
@@ -47750,23 +47750,23 @@ class _$TrexPlan extends TrexPlan {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        reactor.hashCode), 
-        tokens.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        reactor?.hashCode), 
+        tokens?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TrexPlan')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reactor', reactor)
           ..add('tokens', tokens))
         .toString();
@@ -47839,13 +47839,13 @@ class TrexPlanBuilder implements Builder<TrexPlan, TrexPlanBuilder> {
   _$TrexPlan build() {
     final _$result = _$v ??
         new _$TrexPlan._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            reactor: reactor,
-            tokens: tokens);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reactor: reactor ?? '',
+            tokens: tokens ?? List<TrexToken>(0));
     replace(_$result);
     return _$result;
   }
@@ -47906,23 +47906,23 @@ class _$Event extends Event {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        topic.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        topic?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Event')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('topic', topic)
           ..add('data', data))
         .toString();
@@ -47995,13 +47995,13 @@ class EventBuilder implements Builder<Event, EventBuilder> {
   _$Event build() {
     final _$result = _$v ??
         new _$Event._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            topic: topic,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            topic: topic ?? '',
+            data: data ?? '');
     replace(_$result);
     return _$result;
   }
@@ -48062,23 +48062,23 @@ class _$CompressedImage extends CompressedImage {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        frameid.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        frameid?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CompressedImage')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('frameid', frameid)
           ..add('data', data))
         .toString();
@@ -48151,13 +48151,13 @@ class CompressedImageBuilder implements Builder<CompressedImage, CompressedImage
   _$CompressedImage build() {
     final _$result = _$v ??
         new _$CompressedImage._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            frameid: frameid,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            frameid: frameid ?? 0,
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -48226,25 +48226,25 @@ class _$ImageTxSettings extends ImageTxSettings {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        fps.hashCode), 
-        quality.hashCode), 
-        reps.hashCode), 
-        tsize.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        fps?.hashCode), 
+        quality?.hashCode), 
+        reps?.hashCode), 
+        tsize?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ImageTxSettings')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('fps', fps)
           ..add('quality', quality)
           ..add('reps', reps)
@@ -48329,15 +48329,15 @@ class ImageTxSettingsBuilder implements Builder<ImageTxSettings, ImageTxSettings
   _$ImageTxSettings build() {
     final _$result = _$v ??
         new _$ImageTxSettings._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            fps: fps,
-            quality: quality,
-            reps: reps,
-            tsize: tsize);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            fps: fps ?? 0,
+            quality: quality ?? 0,
+            reps: reps ?? 0,
+            tsize: tsize ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -48410,26 +48410,26 @@ class _$RemoteState extends RemoteState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        depth.hashCode), 
-        speed.hashCode), 
-        psi.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        depth?.hashCode), 
+        speed?.hashCode), 
+        psi?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('RemoteState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('depth', depth)
@@ -48520,16 +48520,16 @@ class RemoteStateBuilder implements Builder<RemoteState, RemoteStateBuilder> {
   _$RemoteState build() {
     final _$result = _$v ??
         new _$RemoteState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            depth: depth,
-            speed: speed,
-            psi: psi);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            depth: depth ?? 0,
+            speed: speed ?? 0,
+            psi: psi ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -48610,28 +48610,28 @@ class _$Target extends Target {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        label.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode), 
-        cog.hashCode), 
-        sog.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        label?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode), 
+        cog?.hashCode), 
+        sog?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Target')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('label', label)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -48734,18 +48734,18 @@ class TargetBuilder implements Builder<Target, TargetBuilder> {
   _$Target build() {
     final _$result = _$v ??
         new _$Target._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            label: label,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits,
-            cog: cog,
-            sog: sog);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            label: label ?? '',
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            cog: cog ?? 0,
+            sog: sog ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -48806,23 +48806,23 @@ class _$EntityParameter extends EntityParameter {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EntityParameter')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('value', value))
         .toString();
@@ -48895,13 +48895,13 @@ class EntityParameterBuilder implements Builder<EntityParameter, EntityParameter
   _$EntityParameter build() {
     final _$result = _$v ??
         new _$EntityParameter._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            value: value ?? '');
     replace(_$result);
     return _$result;
   }
@@ -48962,23 +48962,23 @@ class _$EntityParameters extends EntityParameters {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        params.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        params?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EntityParameters')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('params', params))
         .toString();
@@ -49051,13 +49051,13 @@ class EntityParametersBuilder implements Builder<EntityParameters, EntityParamet
   _$EntityParameters build() {
     final _$result = _$v ??
         new _$EntityParameters._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            params: params);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            params: params ?? List<EntityParameter>(0));
     replace(_$result);
     return _$result;
   }
@@ -49122,24 +49122,24 @@ class _$QueryEntityParameters extends QueryEntityParameters {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        visibility.hashCode), 
-        scope.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        visibility?.hashCode), 
+        scope?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('QueryEntityParameters')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('visibility', visibility)
           ..add('scope', scope))
@@ -49218,14 +49218,14 @@ class QueryEntityParametersBuilder implements Builder<QueryEntityParameters, Que
   _$QueryEntityParameters build() {
     final _$result = _$v ??
         new _$QueryEntityParameters._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            visibility: visibility,
-            scope: scope);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            visibility: visibility ?? '',
+            scope: scope ?? '');
     replace(_$result);
     return _$result;
   }
@@ -49286,23 +49286,23 @@ class _$SetEntityParameters extends SetEntityParameters {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        params.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        params?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SetEntityParameters')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('params', params))
         .toString();
@@ -49375,13 +49375,13 @@ class SetEntityParametersBuilder implements Builder<SetEntityParameters, SetEnti
   _$SetEntityParameters build() {
     final _$result = _$v ??
         new _$SetEntityParameters._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            params: params);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            params: params ?? List<EntityParameter>(0));
     replace(_$result);
     return _$result;
   }
@@ -49438,22 +49438,22 @@ class _$SaveEntityParameters extends SaveEntityParameters {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SaveEntityParameters')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name))
         .toString();
   }
@@ -49520,12 +49520,12 @@ class SaveEntityParametersBuilder implements Builder<SaveEntityParameters, SaveE
   _$SaveEntityParameters build() {
     final _$result = _$v ??
         new _$SaveEntityParameters._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '');
     replace(_$result);
     return _$result;
   }
@@ -49582,22 +49582,22 @@ class _$CreateSession extends CreateSession {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timeout.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timeout?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CreateSession')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', timeout))
         .toString();
   }
@@ -49664,12 +49664,12 @@ class CreateSessionBuilder implements Builder<CreateSession, CreateSessionBuilde
   _$CreateSession build() {
     final _$result = _$v ??
         new _$CreateSession._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timeout: timeout);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timeout: timeout ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -49726,22 +49726,22 @@ class _$CloseSession extends CloseSession {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sessid.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sessid?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('CloseSession')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sessid', sessid))
         .toString();
   }
@@ -49808,12 +49808,12 @@ class CloseSessionBuilder implements Builder<CloseSession, CloseSessionBuilder> 
   _$CloseSession build() {
     final _$result = _$v ??
         new _$CloseSession._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sessid: sessid);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sessid: sessid ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -49874,23 +49874,23 @@ class _$SessionSubscription extends SessionSubscription {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sessid.hashCode), 
-        messages.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sessid?.hashCode), 
+        messages?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SessionSubscription')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sessid', sessid)
           ..add('messages', messages))
         .toString();
@@ -49963,13 +49963,13 @@ class SessionSubscriptionBuilder implements Builder<SessionSubscription, Session
   _$SessionSubscription build() {
     final _$result = _$v ??
         new _$SessionSubscription._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sessid: sessid,
-            messages: messages);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sessid: sessid ?? 0,
+            messages: messages ?? '');
     replace(_$result);
     return _$result;
   }
@@ -50026,22 +50026,22 @@ class _$SessionKeepAlive extends SessionKeepAlive {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sessid.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sessid?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SessionKeepAlive')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sessid', sessid))
         .toString();
   }
@@ -50108,12 +50108,12 @@ class SessionKeepAliveBuilder implements Builder<SessionKeepAlive, SessionKeepAl
   _$SessionKeepAlive build() {
     final _$result = _$v ??
         new _$SessionKeepAlive._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sessid: sessid);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sessid: sessid ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -50174,23 +50174,23 @@ class _$SessionStatus extends SessionStatus {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sessid.hashCode), 
-        status.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sessid?.hashCode), 
+        status?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SessionStatus')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sessid', sessid)
           ..add('status', status))
         .toString();
@@ -50263,13 +50263,13 @@ class SessionStatusBuilder implements Builder<SessionStatus, SessionStatusBuilde
   _$SessionStatus build() {
     final _$result = _$v ??
         new _$SessionStatus._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sessid: sessid,
-            status: status);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sessid: sessid ?? 0,
+            status: status ?? SessionStatusEnumStatus(0));
     replace(_$result);
     return _$result;
   }
@@ -50326,22 +50326,22 @@ class _$PushEntityParameters extends PushEntityParameters {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PushEntityParameters')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name))
         .toString();
   }
@@ -50408,12 +50408,12 @@ class PushEntityParametersBuilder implements Builder<PushEntityParameters, PushE
   _$PushEntityParameters build() {
     final _$result = _$v ??
         new _$PushEntityParameters._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '');
     replace(_$result);
     return _$result;
   }
@@ -50470,22 +50470,22 @@ class _$PopEntityParameters extends PopEntityParameters {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('PopEntityParameters')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name))
         .toString();
   }
@@ -50552,12 +50552,12 @@ class PopEntityParametersBuilder implements Builder<PopEntityParameters, PopEnti
   _$PopEntityParameters build() {
     final _$result = _$v ??
         new _$PopEntityParameters._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '');
     replace(_$result);
     return _$result;
   }
@@ -50618,23 +50618,23 @@ class _$IoEvent extends IoEvent {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        error.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        error?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('IoEvent')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('error', error))
         .toString();
@@ -50707,13 +50707,13 @@ class IoEventBuilder implements Builder<IoEvent, IoEventBuilder> {
   _$IoEvent build() {
     final _$result = _$v ??
         new _$IoEvent._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            error: error);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? IoEventEnumType(0),
+            error: error ?? '');
     replace(_$result);
     return _$result;
   }
@@ -50782,25 +50782,25 @@ class _$UamTxFrame extends UamTxFrame {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        seq.hashCode), 
-        sysDst.hashCode), 
-        flags.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        seq?.hashCode), 
+        sysDst?.hashCode), 
+        flags?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UamTxFrame')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('seq', seq)
           ..add('sysDst', sysDst)
           ..add('flags', flags)
@@ -50885,15 +50885,15 @@ class UamTxFrameBuilder implements Builder<UamTxFrame, UamTxFrameBuilder> {
   _$UamTxFrame build() {
     final _$result = _$v ??
         new _$UamTxFrame._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            seq: seq,
-            sysDst: sysDst,
-            flags: flags,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            seq: seq ?? 0,
+            sysDst: sysDst ?? '',
+            flags: flags ?? UamTxFrameBitfieldFlags(0),
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -50962,25 +50962,25 @@ class _$UamRxFrame extends UamRxFrame {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        sysSrc.hashCode), 
-        sysDst.hashCode), 
-        flags.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        sysSrc?.hashCode), 
+        sysDst?.hashCode), 
+        flags?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UamRxFrame')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('sysSrc', sysSrc)
           ..add('sysDst', sysDst)
           ..add('flags', flags)
@@ -51065,15 +51065,15 @@ class UamRxFrameBuilder implements Builder<UamRxFrame, UamRxFrameBuilder> {
   _$UamRxFrame build() {
     final _$result = _$v ??
         new _$UamRxFrame._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            sysSrc: sysSrc,
-            sysDst: sysDst,
-            flags: flags,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            sysSrc: sysSrc ?? '',
+            sysDst: sysDst ?? '',
+            flags: flags ?? UamRxFrameBitfieldFlags(0),
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -51138,24 +51138,24 @@ class _$UamTxStatus extends UamTxStatus {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        seq.hashCode), 
-        value.hashCode), 
-        error.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        seq?.hashCode), 
+        value?.hashCode), 
+        error?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UamTxStatus')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('seq', seq)
           ..add('value', value)
           ..add('error', error))
@@ -51234,14 +51234,14 @@ class UamTxStatusBuilder implements Builder<UamTxStatus, UamTxStatusBuilder> {
   _$UamTxStatus build() {
     final _$result = _$v ??
         new _$UamTxStatus._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            seq: seq,
-            value: value,
-            error: error);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            seq: seq ?? 0,
+            value: value ?? UamTxStatusEnumValue(0),
+            error: error ?? '');
     replace(_$result);
     return _$result;
   }
@@ -51306,24 +51306,24 @@ class _$UamRxRange extends UamRxRange {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        seq.hashCode), 
-        sys.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        seq?.hashCode), 
+        sys?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UamRxRange')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('seq', seq)
           ..add('sys', sys)
           ..add('value', value))
@@ -51402,14 +51402,14 @@ class UamRxRangeBuilder implements Builder<UamRxRange, UamRxRangeBuilder> {
   _$UamRxRange build() {
     final _$result = _$v ??
         new _$UamRxRange._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            seq: seq,
-            sys: sys,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            seq: seq ?? 0,
+            sys: sys ?? '',
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -51486,27 +51486,27 @@ class _$FormCtrlParam extends FormCtrlParam {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        action.hashCode), 
-        lonGain.hashCode), 
-        latGain.hashCode), 
-        bondThick.hashCode), 
-        leadGain.hashCode), 
-        deconflGain.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        action?.hashCode), 
+        lonGain?.hashCode), 
+        latGain?.hashCode), 
+        bondThick?.hashCode), 
+        leadGain?.hashCode), 
+        deconflGain?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormCtrlParam')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('action', action)
           ..add('lonGain', lonGain)
           ..add('latGain', latGain)
@@ -51603,17 +51603,17 @@ class FormCtrlParamBuilder implements Builder<FormCtrlParam, FormCtrlParamBuilde
   _$FormCtrlParam build() {
     final _$result = _$v ??
         new _$FormCtrlParam._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            action: action,
-            lonGain: lonGain,
-            latGain: latGain,
-            bondThick: bondThick,
-            leadGain: leadGain,
-            deconflGain: deconflGain);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            action: action ?? FormCtrlParamEnumAction(0),
+            lonGain: lonGain ?? 0,
+            latGain: latGain ?? 0,
+            bondThick: bondThick ?? 0,
+            leadGain: leadGain ?? 0,
+            deconflGain: deconflGain ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -51678,24 +51678,24 @@ class _$FormationEval extends FormationEval {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        errMean.hashCode), 
-        distMinAbs.hashCode), 
-        distMinMean.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        errMean?.hashCode), 
+        distMinAbs?.hashCode), 
+        distMinMean?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormationEval')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('errMean', errMean)
           ..add('distMinAbs', distMinAbs)
           ..add('distMinMean', distMinMean))
@@ -51774,14 +51774,14 @@ class FormationEvalBuilder implements Builder<FormationEval, FormationEvalBuilde
   _$FormationEval build() {
     final _$result = _$v ??
         new _$FormationEval._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            errMean: errMean,
-            distMinAbs: distMinAbs,
-            distMinMean: distMinMean);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            errMean: errMean ?? 0,
+            distMinAbs: distMinAbs ?? 0,
+            distMinMean: distMinMean ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -51878,32 +51878,32 @@ class _$FormationControlParams extends FormationControlParams {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        action.hashCode), 
-        lonGain.hashCode), 
-        latGain.hashCode), 
-        bondThick.hashCode), 
-        leadGain.hashCode), 
-        deconflGain.hashCode), 
-        accelSwitchGain.hashCode), 
-        safeDist.hashCode), 
-        deconflictOffset.hashCode), 
-        accelSafeMargin.hashCode), 
-        accelLimX.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        action?.hashCode), 
+        lonGain?.hashCode), 
+        latGain?.hashCode), 
+        bondThick?.hashCode), 
+        leadGain?.hashCode), 
+        deconflGain?.hashCode), 
+        accelSwitchGain?.hashCode), 
+        safeDist?.hashCode), 
+        deconflictOffset?.hashCode), 
+        accelSafeMargin?.hashCode), 
+        accelLimX?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormationControlParams')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('action', action)
           ..add('lonGain', lonGain)
           ..add('latGain', latGain)
@@ -52030,22 +52030,22 @@ class FormationControlParamsBuilder implements Builder<FormationControlParams, F
   _$FormationControlParams build() {
     final _$result = _$v ??
         new _$FormationControlParams._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            action: action,
-            lonGain: lonGain,
-            latGain: latGain,
-            bondThick: bondThick,
-            leadGain: leadGain,
-            deconflGain: deconflGain,
-            accelSwitchGain: accelSwitchGain,
-            safeDist: safeDist,
-            deconflictOffset: deconflictOffset,
-            accelSafeMargin: accelSafeMargin,
-            accelLimX: accelLimX);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            action: action ?? FormationControlParamsEnumAction(0),
+            lonGain: lonGain ?? 0,
+            latGain: latGain ?? 0,
+            bondThick: bondThick ?? 0,
+            leadGain: leadGain ?? 0,
+            deconflGain: deconflGain ?? 0,
+            accelSwitchGain: accelSwitchGain ?? 0,
+            safeDist: safeDist ?? 0,
+            deconflictOffset: deconflictOffset ?? 0,
+            accelSafeMargin: accelSafeMargin ?? 0,
+            accelLimX: accelLimX ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -52130,29 +52130,29 @@ class _$FormationEvaluation extends FormationEvaluation {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        op.hashCode), 
-        errMean.hashCode), 
-        distMinAbs.hashCode), 
-        distMinMean.hashCode), 
-        rollRateMean.hashCode), 
-        time.hashCode), 
-        controlParams.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        op?.hashCode), 
+        errMean?.hashCode), 
+        distMinAbs?.hashCode), 
+        distMinMean?.hashCode), 
+        rollRateMean?.hashCode), 
+        time?.hashCode), 
+        controlParams?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('FormationEvaluation')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('op', op)
           ..add('errMean', errMean)
@@ -52261,18 +52261,18 @@ class FormationEvaluationBuilder implements Builder<FormationEvaluation, Formati
   _$FormationEvaluation build() {
     final _$result = _$v ??
         new _$FormationEvaluation._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            op: op,
-            errMean: errMean,
-            distMinAbs: distMinAbs,
-            distMinMean: distMinMean,
-            rollRateMean: rollRateMean,
-            time: time,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? FormationEvaluationEnumType(0),
+            op: op ?? FormationEvaluationEnumOp(0),
+            errMean: errMean ?? 0,
+            distMinAbs: distMinAbs ?? 0,
+            distMinMean: distMinMean ?? 0,
+            rollRateMean: rollRateMean ?? 0,
+            time: time ?? 0,
             controlParams: controlParams);
     replace(_$result);
     return _$result;
@@ -52342,25 +52342,25 @@ class _$SoiWaypoint extends SoiWaypoint {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        eta.hashCode), 
-        duration.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        eta?.hashCode), 
+        duration?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SoiWaypoint')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('lat', lat)
           ..add('lon', lon)
           ..add('eta', eta)
@@ -52445,15 +52445,15 @@ class SoiWaypointBuilder implements Builder<SoiWaypoint, SoiWaypointBuilder> {
   _$SoiWaypoint build() {
     final _$result = _$v ??
         new _$SoiWaypoint._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            lat: lat,
-            lon: lon,
-            eta: eta,
-            duration: duration);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            eta: eta ?? 0,
+            duration: duration ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -52514,23 +52514,23 @@ class _$SoiPlan extends SoiPlan {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        planId.hashCode), 
-        waypoints.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        planId?.hashCode), 
+        waypoints?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SoiPlan')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('planId', planId)
           ..add('waypoints', waypoints))
         .toString();
@@ -52603,13 +52603,13 @@ class SoiPlanBuilder implements Builder<SoiPlan, SoiPlanBuilder> {
   _$SoiPlan build() {
     final _$result = _$v ??
         new _$SoiPlan._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            planId: planId,
-            waypoints: waypoints);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            planId: planId ?? 0,
+            waypoints: waypoints ?? List<SoiWaypoint>(0));
     replace(_$result);
     return _$result;
   }
@@ -52682,26 +52682,26 @@ class _$SoiCommand extends SoiCommand {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        type.hashCode), 
-        command.hashCode), 
-        settings.hashCode), 
-        plan.hashCode), 
-        info.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        type?.hashCode), 
+        command?.hashCode), 
+        settings?.hashCode), 
+        plan?.hashCode), 
+        info?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SoiCommand')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('type', type)
           ..add('command', command)
           ..add('settings', settings)
@@ -52792,16 +52792,16 @@ class SoiCommandBuilder implements Builder<SoiCommand, SoiCommandBuilder> {
   _$SoiCommand build() {
     final _$result = _$v ??
         new _$SoiCommand._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            type: type,
-            command: command,
-            settings: settings,
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            type: type ?? SoiCommandEnumType(0),
+            command: command ?? SoiCommandEnumCommand(0),
+            settings: settings ?? '',
             plan: plan,
-            info: info);
+            info: info ?? '');
     replace(_$result);
     return _$result;
   }
@@ -52870,25 +52870,25 @@ class _$SoiState extends SoiState {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        state.hashCode), 
-        planId.hashCode), 
-        wptId.hashCode), 
-        settingsChk.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        state?.hashCode), 
+        planId?.hashCode), 
+        wptId?.hashCode), 
+        settingsChk?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SoiState')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('state', state)
           ..add('planId', planId)
           ..add('wptId', wptId)
@@ -52973,15 +52973,15 @@ class SoiStateBuilder implements Builder<SoiState, SoiStateBuilder> {
   _$SoiState build() {
     final _$result = _$v ??
         new _$SoiState._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            state: state,
-            planId: planId,
-            wptId: wptId,
-            settingsChk: settingsChk);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            state: state ?? SoiStateEnumState(0),
+            planId: planId ?? 0,
+            wptId: wptId ?? 0,
+            settingsChk: settingsChk ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -53050,25 +53050,25 @@ class _$MessagePart extends MessagePart {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        uid.hashCode), 
-        fragNumber.hashCode), 
-        numFrags.hashCode), 
-        data.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        uid?.hashCode), 
+        fragNumber?.hashCode), 
+        numFrags?.hashCode), 
+        data?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('MessagePart')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('uid', uid)
           ..add('fragNumber', fragNumber)
           ..add('numFrags', numFrags)
@@ -53153,15 +53153,15 @@ class MessagePartBuilder implements Builder<MessagePart, MessagePartBuilder> {
   _$MessagePart build() {
     final _$result = _$v ??
         new _$MessagePart._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            uid: uid,
-            fragNumber: fragNumber,
-            numFrags: numFrags,
-            data: data);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            uid: uid ?? 0,
+            fragNumber: fragNumber ?? 0,
+            numFrags: numFrags ?? 0,
+            data: data ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -53222,23 +53222,23 @@ class _$NeptusBlob extends NeptusBlob {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        contentType.hashCode), 
-        content.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        contentType?.hashCode), 
+        content?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('NeptusBlob')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('contentType', contentType)
           ..add('content', content))
         .toString();
@@ -53311,13 +53311,13 @@ class NeptusBlobBuilder implements Builder<NeptusBlob, NeptusBlobBuilder> {
   _$NeptusBlob build() {
     final _$result = _$v ??
         new _$NeptusBlob._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            contentType: contentType,
-            content: content);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            contentType: contentType ?? '',
+            content: content ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -53370,21 +53370,21 @@ class _$Aborted extends Aborted {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Aborted')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -53445,11 +53445,11 @@ class AbortedBuilder implements Builder<Aborted, AbortedBuilder> {
   _$Aborted build() {
     final _$result = _$v ??
         new _$Aborted._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -53514,24 +53514,24 @@ class _$UsblAngles extends UsblAngles {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        target.hashCode), 
-        bearing.hashCode), 
-        elevation.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        target?.hashCode), 
+        bearing?.hashCode), 
+        elevation?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblAngles')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', target)
           ..add('bearing', bearing)
           ..add('elevation', elevation))
@@ -53610,14 +53610,14 @@ class UsblAnglesBuilder implements Builder<UsblAngles, UsblAnglesBuilder> {
   _$UsblAngles build() {
     final _$result = _$v ??
         new _$UsblAngles._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            target: target,
-            bearing: bearing,
-            elevation: elevation);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            target: target ?? 0,
+            bearing: bearing ?? 0,
+            elevation: elevation ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -53686,25 +53686,25 @@ class _$UsblPosition extends UsblPosition {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        target.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        target?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblPosition')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', target)
           ..add('x', x)
           ..add('y', y)
@@ -53789,15 +53789,15 @@ class UsblPositionBuilder implements Builder<UsblPosition, UsblPositionBuilder> 
   _$UsblPosition build() {
     final _$result = _$v ??
         new _$UsblPosition._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            target: target,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            target: target ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -53870,26 +53870,26 @@ class _$UsblFix extends UsblFix {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        target.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        zUnits.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        target?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        zUnits?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblFix')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', target)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -53980,16 +53980,16 @@ class UsblFixBuilder implements Builder<UsblFix, UsblFixBuilder> {
   _$UsblFix build() {
     final _$result = _$v ??
         new _$UsblFix._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            target: target,
-            lat: lat,
-            lon: lon,
-            zUnits: zUnits,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            target: target ?? 0,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -54050,23 +54050,23 @@ class _$ParametersXml extends ParametersXml {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        locale.hashCode), 
-        config.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        locale?.hashCode), 
+        config?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ParametersXml')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('locale', locale)
           ..add('config', config))
         .toString();
@@ -54139,13 +54139,13 @@ class ParametersXmlBuilder implements Builder<ParametersXml, ParametersXmlBuilde
   _$ParametersXml build() {
     final _$result = _$v ??
         new _$ParametersXml._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            locale: locale,
-            config: config);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            locale: locale ?? '',
+            config: config ?? List<int>(0));
     replace(_$result);
     return _$result;
   }
@@ -54198,21 +54198,21 @@ class _$GetParametersXml extends GetParametersXml {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GetParametersXml')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt))
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
         .toString();
   }
 }
@@ -54273,11 +54273,11 @@ class GetParametersXmlBuilder implements Builder<GetParametersXml, GetParameters
   _$GetParametersXml build() {
     final _$result = _$v ??
         new _$GetParametersXml._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -54342,24 +54342,24 @@ class _$SetImageCoords extends SetImageCoords {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        camId.hashCode), 
-        x.hashCode), 
-        y.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        camId?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SetImageCoords')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('camId', camId)
           ..add('x', x)
           ..add('y', y))
@@ -54438,14 +54438,14 @@ class SetImageCoordsBuilder implements Builder<SetImageCoords, SetImageCoordsBui
   _$SetImageCoords build() {
     final _$result = _$v ??
         new _$SetImageCoords._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            camId: camId,
-            x: x,
-            y: y);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            camId: camId ?? 0,
+            x: x ?? 0,
+            y: y ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -54510,24 +54510,24 @@ class _$GetImageCoords extends GetImageCoords {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        camId.hashCode), 
-        x.hashCode), 
-        y.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        camId?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GetImageCoords')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('camId', camId)
           ..add('x', x)
           ..add('y', y))
@@ -54606,14 +54606,14 @@ class GetImageCoordsBuilder implements Builder<GetImageCoords, GetImageCoordsBui
   _$GetImageCoords build() {
     final _$result = _$v ??
         new _$GetImageCoords._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            camId: camId,
-            x: x,
-            y: y);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            camId: camId ?? 0,
+            x: x ?? 0,
+            y: y ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -54690,27 +54690,27 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        tracking.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        tracking?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('GetWorldCoordinates')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('tracking', tracking)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -54807,17 +54807,17 @@ class GetWorldCoordinatesBuilder implements Builder<GetWorldCoordinates, GetWorl
   _$GetWorldCoordinates build() {
     final _$result = _$v ??
         new _$GetWorldCoordinates._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            tracking: tracking,
-            lat: lat,
-            lon: lon,
-            x: x,
-            y: y,
-            z: z);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            tracking: tracking ?? BooleanEnum(0),
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -54906,30 +54906,30 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        target.hashCode), 
-        lbearing.hashCode), 
-        lelevation.hashCode), 
-        bearing.hashCode), 
-        elevation.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode), 
-        accuracy.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        target?.hashCode), 
+        lbearing?.hashCode), 
+        lelevation?.hashCode), 
+        bearing?.hashCode), 
+        elevation?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode), 
+        accuracy?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblAnglesExtended')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', target)
           ..add('lbearing', lbearing)
           ..add('lelevation', lelevation)
@@ -55044,20 +55044,20 @@ class UsblAnglesExtendedBuilder implements Builder<UsblAnglesExtended, UsblAngle
   _$UsblAnglesExtended build() {
     final _$result = _$v ??
         new _$UsblAnglesExtended._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            target: target,
-            lbearing: lbearing,
-            lelevation: lelevation,
-            bearing: bearing,
-            elevation: elevation,
-            phi: phi,
-            theta: theta,
-            psi: psi,
-            accuracy: accuracy);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            target: target ?? '',
+            lbearing: lbearing ?? 0,
+            lelevation: lelevation ?? 0,
+            bearing: bearing ?? 0,
+            elevation: elevation ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0,
+            accuracy: accuracy ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -55154,32 +55154,32 @@ class _$UsblPositionExtended extends UsblPositionExtended {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        target.hashCode), 
-        x.hashCode), 
-        y.hashCode), 
-        z.hashCode), 
-        n.hashCode), 
-        e.hashCode), 
-        d.hashCode), 
-        phi.hashCode), 
-        theta.hashCode), 
-        psi.hashCode), 
-        accuracy.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        target?.hashCode), 
+        x?.hashCode), 
+        y?.hashCode), 
+        z?.hashCode), 
+        n?.hashCode), 
+        e?.hashCode), 
+        d?.hashCode), 
+        phi?.hashCode), 
+        theta?.hashCode), 
+        psi?.hashCode), 
+        accuracy?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblPositionExtended')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', target)
           ..add('x', x)
           ..add('y', y)
@@ -55306,22 +55306,22 @@ class UsblPositionExtendedBuilder implements Builder<UsblPositionExtended, UsblP
   _$UsblPositionExtended build() {
     final _$result = _$v ??
         new _$UsblPositionExtended._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            target: target,
-            x: x,
-            y: y,
-            z: z,
-            n: n,
-            e: e,
-            d: d,
-            phi: phi,
-            theta: theta,
-            psi: psi,
-            accuracy: accuracy);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            target: target ?? '',
+            x: x ?? 0,
+            y: y ?? 0,
+            z: z ?? 0,
+            n: n ?? 0,
+            e: e ?? 0,
+            d: d ?? 0,
+            phi: phi ?? 0,
+            theta: theta ?? 0,
+            psi: psi ?? 0,
+            accuracy: accuracy ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -55398,27 +55398,27 @@ class _$UsblFixExtended extends UsblFixExtended {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        target.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        zUnits.hashCode), 
-        z.hashCode), 
-        accuracy.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        target?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        zUnits?.hashCode), 
+        z?.hashCode), 
+        accuracy?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblFixExtended')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', target)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -55515,17 +55515,17 @@ class UsblFixExtendedBuilder implements Builder<UsblFixExtended, UsblFixExtended
   _$UsblFixExtended build() {
     final _$result = _$v ??
         new _$UsblFixExtended._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            target: target,
-            lat: lat,
-            lon: lon,
-            zUnits: zUnits,
-            z: z,
-            accuracy: accuracy);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            target: target ?? '',
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0),
+            z: z ?? 0,
+            accuracy: accuracy ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -55598,26 +55598,26 @@ class _$UsblModem extends UsblModem {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        name.hashCode), 
-        lat.hashCode), 
-        lon.hashCode), 
-        z.hashCode), 
-        zUnits.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        name?.hashCode), 
+        lat?.hashCode), 
+        lon?.hashCode), 
+        z?.hashCode), 
+        zUnits?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblModem')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', name)
           ..add('lat', lat)
           ..add('lon', lon)
@@ -55708,16 +55708,16 @@ class UsblModemBuilder implements Builder<UsblModem, UsblModemBuilder> {
   _$UsblModem build() {
     final _$result = _$v ??
         new _$UsblModem._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            name: name,
-            lat: lat,
-            lon: lon,
-            z: z,
-            zUnits: zUnits);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            name: name ?? '',
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            z: z ?? 0,
+            zUnits: zUnits ?? ZUnitsEnum(0));
     replace(_$result);
     return _$result;
   }
@@ -55778,23 +55778,23 @@ class _$UsblConfig extends UsblConfig {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        op.hashCode), 
-        modems.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        op?.hashCode), 
+        modems?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UsblConfig')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('op', op)
           ..add('modems', modems))
         .toString();
@@ -55867,13 +55867,13 @@ class UsblConfigBuilder implements Builder<UsblConfig, UsblConfigBuilder> {
   _$UsblConfig build() {
     final _$result = _$v ??
         new _$UsblConfig._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            modems: modems);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? UsblConfigEnumOp(0),
+            modems: modems ?? List<UsblModem>(0));
     replace(_$result);
     return _$result;
   }
@@ -55934,23 +55934,23 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode), 
-        type.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode), 
+        type?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DissolvedOrganicMatter')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value)
           ..add('type', type))
         .toString();
@@ -56023,13 +56023,13 @@ class DissolvedOrganicMatterBuilder implements Builder<DissolvedOrganicMatter, D
   _$DissolvedOrganicMatter build() {
     final _$result = _$v ??
         new _$DissolvedOrganicMatter._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value,
-            type: type);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0,
+            type: type ?? DissolvedOrganicMatterEnumType(0));
     replace(_$result);
     return _$result;
   }
@@ -56086,22 +56086,22 @@ class _$OpticalBackscatter extends OpticalBackscatter {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('OpticalBackscatter')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -56168,12 +56168,12 @@ class OpticalBackscatterBuilder implements Builder<OpticalBackscatter, OpticalBa
   _$OpticalBackscatter build() {
     final _$result = _$v ??
         new _$OpticalBackscatter._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -56290,37 +56290,37 @@ class _$Tachograph extends Tachograph {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        timestampLastService.hashCode), 
-        timeNextService.hashCode), 
-        timeMotorNextService.hashCode), 
-        timeIdleGround.hashCode), 
-        timeIdleAir.hashCode), 
-        timeIdleWater.hashCode), 
-        timeIdleUnderwater.hashCode), 
-        timeIdleUnknown.hashCode), 
-        timeMotorGround.hashCode), 
-        timeMotorAir.hashCode), 
-        timeMotorWater.hashCode), 
-        timeMotorUnderwater.hashCode), 
-        timeMotorUnknown.hashCode), 
-        rpmMin.hashCode), 
-        rpmMax.hashCode), 
-        depthMax.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        timestampLastService?.hashCode), 
+        timeNextService?.hashCode), 
+        timeMotorNextService?.hashCode), 
+        timeIdleGround?.hashCode), 
+        timeIdleAir?.hashCode), 
+        timeIdleWater?.hashCode), 
+        timeIdleUnderwater?.hashCode), 
+        timeIdleUnknown?.hashCode), 
+        timeMotorGround?.hashCode), 
+        timeMotorAir?.hashCode), 
+        timeMotorWater?.hashCode), 
+        timeMotorUnderwater?.hashCode), 
+        timeMotorUnknown?.hashCode), 
+        rpmMin?.hashCode), 
+        rpmMax?.hashCode), 
+        depthMax?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Tachograph')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timestampLastService', timestampLastService)
           ..add('timeNextService', timeNextService)
           ..add('timeMotorNextService', timeMotorNextService)
@@ -56477,27 +56477,27 @@ class TachographBuilder implements Builder<Tachograph, TachographBuilder> {
   _$Tachograph build() {
     final _$result = _$v ??
         new _$Tachograph._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            timestampLastService: timestampLastService,
-            timeNextService: timeNextService,
-            timeMotorNextService: timeMotorNextService,
-            timeIdleGround: timeIdleGround,
-            timeIdleAir: timeIdleAir,
-            timeIdleWater: timeIdleWater,
-            timeIdleUnderwater: timeIdleUnderwater,
-            timeIdleUnknown: timeIdleUnknown,
-            timeMotorGround: timeMotorGround,
-            timeMotorAir: timeMotorAir,
-            timeMotorWater: timeMotorWater,
-            timeMotorUnderwater: timeMotorUnderwater,
-            timeMotorUnknown: timeMotorUnknown,
-            rpmMin: rpmMin,
-            rpmMax: rpmMax,
-            depthMax: depthMax);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            timestampLastService: timestampLastService ?? 0,
+            timeNextService: timeNextService ?? 0,
+            timeMotorNextService: timeMotorNextService ?? 0,
+            timeIdleGround: timeIdleGround ?? 0,
+            timeIdleAir: timeIdleAir ?? 0,
+            timeIdleWater: timeIdleWater ?? 0,
+            timeIdleUnderwater: timeIdleUnderwater ?? 0,
+            timeIdleUnknown: timeIdleUnknown ?? 0,
+            timeMotorGround: timeMotorGround ?? 0,
+            timeMotorAir: timeMotorAir ?? 0,
+            timeMotorWater: timeMotorWater ?? 0,
+            timeMotorUnderwater: timeMotorUnderwater ?? 0,
+            timeMotorUnknown: timeMotorUnknown ?? 0,
+            rpmMin: rpmMin ?? 0,
+            rpmMax: rpmMax ?? 0,
+            depthMax: depthMax ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -56558,23 +56558,23 @@ class _$ApmStatus extends ApmStatus {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        severity.hashCode), 
-        text.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        severity?.hashCode), 
+        text?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('ApmStatus')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('severity', severity)
           ..add('text', text))
         .toString();
@@ -56647,13 +56647,13 @@ class ApmStatusBuilder implements Builder<ApmStatus, ApmStatusBuilder> {
   _$ApmStatus build() {
     final _$result = _$v ??
         new _$ApmStatus._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            severity: severity,
-            text: text);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            severity: severity ?? ApmStatusEnumSeverity(0),
+            text: text ?? '');
     replace(_$result);
     return _$result;
   }
@@ -56718,24 +56718,24 @@ class _$SadcReadings extends SadcReadings {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        channel.hashCode), 
-        value.hashCode), 
-        gain.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        channel?.hashCode), 
+        value?.hashCode), 
+        gain?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('SadcReadings')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('channel', channel)
           ..add('value', value)
           ..add('gain', gain))
@@ -56814,14 +56814,14 @@ class SadcReadingsBuilder implements Builder<SadcReadings, SadcReadingsBuilder> 
   _$SadcReadings build() {
     final _$result = _$v ??
         new _$SadcReadings._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            channel: channel,
-            value: value,
-            gain: gain);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            channel: channel ?? 0,
+            value: value ?? 0,
+            gain: gain ?? SadcReadingsEnumGain(0));
     replace(_$result);
     return _$result;
   }
@@ -56938,37 +56938,37 @@ class _$DmsDetection extends DmsDetection {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        ch01.hashCode), 
-        ch02.hashCode), 
-        ch03.hashCode), 
-        ch04.hashCode), 
-        ch05.hashCode), 
-        ch06.hashCode), 
-        ch07.hashCode), 
-        ch08.hashCode), 
-        ch09.hashCode), 
-        ch10.hashCode), 
-        ch11.hashCode), 
-        ch12.hashCode), 
-        ch13.hashCode), 
-        ch14.hashCode), 
-        ch15.hashCode), 
-        ch16.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        ch01?.hashCode), 
+        ch02?.hashCode), 
+        ch03?.hashCode), 
+        ch04?.hashCode), 
+        ch05?.hashCode), 
+        ch06?.hashCode), 
+        ch07?.hashCode), 
+        ch08?.hashCode), 
+        ch09?.hashCode), 
+        ch10?.hashCode), 
+        ch11?.hashCode), 
+        ch12?.hashCode), 
+        ch13?.hashCode), 
+        ch14?.hashCode), 
+        ch15?.hashCode), 
+        ch16?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('DmsDetection')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('ch01', ch01)
           ..add('ch02', ch02)
           ..add('ch03', ch03)
@@ -57125,27 +57125,27 @@ class DmsDetectionBuilder implements Builder<DmsDetection, DmsDetectionBuilder> 
   _$DmsDetection build() {
     final _$result = _$v ??
         new _$DmsDetection._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            ch01: ch01,
-            ch02: ch02,
-            ch03: ch03,
-            ch04: ch04,
-            ch05: ch05,
-            ch06: ch06,
-            ch07: ch07,
-            ch08: ch08,
-            ch09: ch09,
-            ch10: ch10,
-            ch11: ch11,
-            ch12: ch12,
-            ch13: ch13,
-            ch14: ch14,
-            ch15: ch15,
-            ch16: ch16);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            ch01: ch01 ?? 0,
+            ch02: ch02 ?? 0,
+            ch03: ch03 ?? 0,
+            ch04: ch04 ?? 0,
+            ch05: ch05 ?? 0,
+            ch06: ch06 ?? 0,
+            ch07: ch07 ?? 0,
+            ch08: ch08 ?? 0,
+            ch09: ch09 ?? 0,
+            ch10: ch10 ?? 0,
+            ch11: ch11 ?? 0,
+            ch12: ch12 ?? 0,
+            ch13: ch13 ?? 0,
+            ch14: ch14 ?? 0,
+            ch15: ch15 ?? 0,
+            ch16: ch16 ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -57202,22 +57202,22 @@ class _$TotalMagIntensity extends TotalMagIntensity {
   @override
   int get hashCode {
     return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp.hashCode), 
-        src.hashCode), 
-        srcEnt.hashCode), 
-        dst.hashCode), 
-        dstEnt.hashCode), 
-        value.hashCode));
+        timestamp?.hashCode), 
+        src?.hashCode), 
+        srcEnt?.hashCode), 
+        dst?.hashCode), 
+        dstEnt?.hashCode), 
+        value?.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TotalMagIntensity')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('value', value))
         .toString();
   }
@@ -57284,12 +57284,12 @@ class TotalMagIntensityBuilder implements Builder<TotalMagIntensity, TotalMagInt
   _$TotalMagIntensity build() {
     final _$result = _$v ??
         new _$TotalMagIntensity._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            value: value);
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            value: value ?? 0);
     replace(_$result);
     return _$result;
   }

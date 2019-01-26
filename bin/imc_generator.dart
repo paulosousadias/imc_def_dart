@@ -264,11 +264,11 @@ _writeMessageImmutable(
   var hashElements = List<String>();
   hashElements.addAll([
     "0",
-    "timestamp.hashCode",
-    "src.hashCode",
-    "srcEnt.hashCode",
-    "dst.hashCode",
-    "dstEnt.hashCode"
+    "timestamp?.hashCode",
+    "src?.hashCode",
+    "srcEnt?.hashCode",
+    "dst?.hashCode",
+    "dstEnt?.hashCode"
   ]);
 
   m.findElements("field").forEach((f) {
@@ -276,7 +276,7 @@ _writeMessageImmutable(
     var fStr = ''' &&\n        ${_convertToFieldName(abbrev)} == this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
 
-    hashElements.add("${_convertToFieldName(abbrev)}.hashCode");
+    hashElements.add("${_convertToFieldName(abbrev)}?.hashCode");
   });
 
   var hashStr = "";
@@ -304,10 +304,10 @@ _writeMessageImmutable(
   String toString() {
     return (newBuiltValueToStringHelper('$abbrev')
           ..add('timestamp', timestamp)
-          ..add('src', src)
-          ..add('srcEnt', srcEnt)
-          ..add('dst', dst)
-          ..add('dstEnt', dstEnt)''';
+          ..add('src', "0x\${src?.toRadixString(16)} (\${src ?? '-'})")
+          ..add('srcEnt', "0x\${srcEnt?.toRadixString(16)} (\${srcEnt ?? '-'})")
+          ..add('dst', "0x\${dst?.toRadixString(16)} (\${dst ?? '-'})")
+          ..add('dstEnt', "0x\${dstEnt?.toRadixString(16)} (\${dstEnt ?? '-'})")''';
   sink.write('$msgStringImmutableClass5');
 
   m.findElements("field").forEach((f) {
@@ -408,17 +408,22 @@ _writeMessageBuilder(
   _\$$abbrev build() {
     final _\$result = _\$v ??
         new _\$$abbrev._(
-            timestamp: timestamp,
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt''';
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId''';
   sink.write('$msgStringImmutableBuilder2');
 
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
+    var type = f.getAttribute("type");
+    var unit = f.getAttribute("unit");
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
 
-    var fStr = ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}''';
+    var ifNullVal = typesData[2] == null ? "" : " ?? ${typesData[2]}";
+
+    var fStr = ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}$ifNullVal''';
     sink.write('$fStr');
   });
 
@@ -462,55 +467,67 @@ _writeMessageField(xml.XmlElement field, xml.XmlElement message, List<IOSink> si
   sinks[_idxMsg].write('$str');
 }
 
-/// Returns the field [imc related type, type for dart].
+/// Returns the field [imc related type, type for dart, null if no default value].
 List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
     xml.XmlElement field, xml.XmlElement message) {
   var typeImc;
   var dartType;
+  var defaultVal;
   switch (type) {
     case "uint8_t":
       typeImc = "ImcType.typeUInt8";
       dartType = "int";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "uint16_t":
       typeImc = "ImcType.typeUInt16";
       dartType = "int";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "uint32_t":
       typeImc = "ImcType.typeUint32";
       dartType = "int";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "int8_t":
       typeImc = "ImcType.typeInt8";
       dartType = "int";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "int16_t":
       typeImc = "ImcType.typeInt16";
       dartType = "int";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "int32_t":
       typeImc = "ImcType.typeInt32";
       dartType = "int";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "int64_t":
       typeImc = "ImcType.typeInt64";
       dartType = "int";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "fp32_t":
       typeImc = "ImcType.typeFp32";
       dartType = "double";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "fp64_t":
       typeImc = "ImcType.typeFp64";
       dartType = "double";
+      defaultVal = field.getAttribute("value") ?? "0";
       break;
     case "rawdata":
       typeImc = "ImcType.typeRawdata";
       dartType = "List<int>";
+      defaultVal = "List<int>(0)";
       break;
     case "plaintext":
       typeImc = "ImcType.typePlaintext";
       dartType = "String";
+      defaultVal = field.getAttribute("value") ?? "''";
       break;
     case "message":
       typeImc = "ImcType.typeMessage";
@@ -519,6 +536,7 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
     case "message-list":
       typeImc = "ImcType.typeMessageList";
       dartType = "List<${field.getAttribute("message-type") ?? "ImcMessage"}>";
+      defaultVal = "List<${field.getAttribute("message-type") ?? "ImcMessage"}>(0)";
       break;
     default:
       break;
@@ -528,12 +546,13 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
     case "Enumerated":
     case "Bitfield":
       dartType = _getTypeForEnumLike(abbrev, field, message, unit);
+      defaultVal = "${dartType}(${defaultVal ?? '0'})";
       break;
     default:
       break;
   }
 
-  return [typeImc, dartType];
+  return [typeImc, dartType, defaultVal];
 }
 
 /// Gets the name of the type for the enum like class.
@@ -611,7 +630,7 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
   field.findElements("value").forEach((f) {
     var vName = _accountForReservedName(f.getAttribute("abbrev").toLowerCase());
     var vVal = f.getAttribute("id");
-    var bodyV = '''  static const $vName = const $eName._($vVal);
+    var bodyV = '''  static const $vName = const $eName($vVal);
 ''';
     _writeDescription(sink, f, level: 1);
     sink.write(bodyV);
@@ -619,7 +638,7 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
 
   var body2 = '''\n  static get values => [$eList];
 
-  const $eName._(int value) : super(value);
+  const $eName(int value) : super(value);
 ''';
   sink.write(body2);
 
@@ -628,7 +647,7 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
     case "Bitfield":
       bodyBitfield = '''\n  static $eName fromBits(
           List<$eName> bits) =>
-      bits.reduce((b1, b2) => $eName._(b1.value | b2.value));
+      bits.reduce((b1, b2) => $eName(b1.value | b2.value));
 ''';
       break;
     default:

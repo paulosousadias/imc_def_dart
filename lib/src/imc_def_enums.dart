@@ -24,6 +24,9 @@ abstract class EnumType {
   final int value;
 
   const EnumType(this.value);
+
+  @override
+  String toString() => "E$value";
 }
 
 abstract class BitfieldType {
@@ -33,6 +36,9 @@ abstract class BitfieldType {
 
   const BitfieldType(this.value);
   // static BitfieldType fromBits(List<BitfieldType>bits) => BitfieldType(bits.reduce((b1, b2) => b1.value & b2.value));
+
+  @override
+  String toString() => "B0x${value.toRadixString(16)} ($value)";
 }
 
 

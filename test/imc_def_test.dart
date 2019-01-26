@@ -14,6 +14,7 @@ void main() {
       print((b.build() as imc.ImcMessage).toString());
     });
     
+    print("0x${16.toRadixString(16)}");
   });
   
 }
