@@ -118,7 +118,7 @@ Endian getEndianess(ByteData byteData, [int offset = 0]) {
 }
 
 void writePayloadSize(ByteData byteData, int payloadSize) {
-  byteData.setUint16(4, payloadSize);
+  byteData.setUint16(4, payloadSize, endian_ser);
 }
 
 int serializeHeader(ImcMessage message, ByteData byteData) {

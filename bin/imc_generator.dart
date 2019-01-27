@@ -483,6 +483,85 @@ _writeMessageSerializer(
 ''';
   sink.write('$serClassStart');
 
+  m.findElements("field").forEach((f) {
+    var abbrev = f.getAttribute("abbrev");
+    var type = f.getAttribute("type");
+    var unit = f.getAttribute("unit");
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+    var dartType = typesData[1];
+
+    var enumLike = "";
+    switch (unit) {
+      case "Enumerated":
+      case "Bitfield":
+        enumLike = ".value";
+        break;
+      default:
+        break;
+    }
+
+    var fieldName = _convertToFieldName(abbrev);
+    sink.write('    // field $fieldName\n');
+    var fStr = '';
+    switch (type) {
+      case "uint8_t":
+        fStr = '''    byteData.setUint8(byteOffset, message.$fieldName$enumLike);\n''';
+        fStr += '    byteOffset += 1;\n';
+        break;
+      case "uint16_t":
+        fStr = '''    byteData.setUint16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 2;\n';
+        break;
+      case "uint32_t":
+        fStr = '''    byteData.setUint32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 4;\n';
+        break;
+      case "uint64_t":
+        fStr = '''    byteData.setUint64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 8;\n';
+        break;
+      case "int8_t":
+        fStr = '''    byteData.setInt8(byteOffset, message.$fieldName$enumLike);\n''';
+        fStr += '    byteOffset += 1;\n';
+        break;
+      case "int16_t":
+        fStr = '''    byteData.setInt16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 2;\n';
+        break;
+      case "int32_t":
+        fStr = '''    byteData.setInt32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 4;\n';
+        break;
+      case "int64_t":
+        fStr = '''    byteData.setInt64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 8;\n';
+        break;
+      case "fp32_t":
+        fStr = '''    byteData.setFloat32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 4;\n';
+        break;
+      case "fp64_t":
+        fStr = '''    byteData.setFloat64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 8;\n';
+        break;
+      case "rawdata":
+        fStr = '''    var ${fieldName}SSize = message.$fieldName.length;\n''';
+        fStr += '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 2;\n';
+        fStr += '    message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+        break;
+      case "plaintext":
+        break;
+      case "message":
+        break;
+      case "message-list":
+        break;
+      default:
+        break;
+    }
+    sink.write('$fStr');
+  });
+
   var serClass1 = '''    // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -519,6 +598,90 @@ _writeMessageSerializer(
     // Payload
 ''';
   sink.write('$serClass1');
+
+  m.findElements("field").forEach((f) {
+    var abbrev = f.getAttribute("abbrev");
+    var type = f.getAttribute("type");
+    var unit = f.getAttribute("unit");
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+    var dartType = typesData[1];
+
+    var enumLike = "";
+    var enumLikeE = "";
+    switch (unit) {
+      case "Enumerated":
+      case "Bitfield":
+        enumLike = "imc.$dartType(";
+        enumLikeE = ")";
+        break;
+      default:
+        break;
+    }
+
+    var fieldName = _convertToFieldName(abbrev);
+    sink.write('    // field $fieldName\n');
+    var fStr = '';
+    switch (type) {
+      case "uint8_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint8(byteOffset)$enumLikeE;\n''';
+        fStr += '    byteOffset += 1;\n';
+        break;
+      case "uint16_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint16(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 2;\n';
+        break;
+      case "uint32_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint32(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 4;\n';
+        break;
+      case "uint64_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint64(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 8;\n';
+        break;
+      case "int8_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt8(byteOffset)$enumLikeE;\n''';
+        fStr += '    byteOffset += 1;\n';
+        break;
+      case "int16_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt16(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 2;\n';
+        break;
+      case "int32_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt32(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 4;\n';
+        break;
+      case "int64_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt64(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 8;\n';
+        break;
+      case "fp32_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat32(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 4;\n';
+        break;
+      case "fp64_t":
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat64(byteOffset, endianess)$enumLikeE;\n''';
+        fStr += '    byteOffset += 8;\n';
+        break;
+      case "rawdata":
+        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianess);\n''';
+        fStr += '    byteOffset += 2;\n';
+        fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
+        fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
+        fStr += '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
+        fStr += '    }\n';
+        fStr += '    builder.$fieldName = ${fieldName}DData;\n';
+        break;
+      case "plaintext":
+        break;
+      case "message":
+        break;
+      case "message-list":
+        break;
+      default:
+        break;
+    }
+    sink.write('$fStr');
+  });
 
   var serClassEnd = '''
     // End payload
