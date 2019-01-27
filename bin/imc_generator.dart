@@ -487,7 +487,8 @@ _writeMessageSerializer(
 
     var payloadSize = byteOffset - headerSize;
     imc.writePayloadSize(byteData, payloadSize);
-    byteOffset = imc.calcAndAddFooter(byteData, byteOffset);
+    imc.calcAndAddFooter(byteData, 0, headerSize + payloadSize);
+    byteOffset += 2;
     return byteData.buffer.asByteData(0, byteOffset);
   }
   
@@ -509,6 +510,11 @@ _writeMessageSerializer(
     var builder = imc.${abbrev}Builder();
     var payloadSize = imc.deserializeHeader(builder, byteData, endianess, offset);
     byteOffset = offset + imc.header_size;
+
+    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var readCrc = imc.getCrcFooter(byteData, offset + imc.header_size + payloadSize, endianess);
+    if (calcCrc != readCrc)
+      return null;
 
     // Payload
 ''';

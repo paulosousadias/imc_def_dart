@@ -23,7 +23,6 @@ void main() {
 
   });
   test('serialize test', () {
-  
     imc.messagesBuilders.forEach((n, b) {
       (b as imc.ImcBuilderHeaderPart)
           ..src = 0x4001
@@ -62,4 +61,23 @@ void main() {
     expect(msg == msgD, true);
     print("Match? ${msg == msgD}");
   });
+
+  test('serialize crc test', () {
+    imc.Abort msg = (imc.AbortBuilder()
+        ..src = 0x4001
+        ..timestamp = DateTime.utc(1970)
+      ).build();
+    var ser = imc.AbortSerializer();
+    var dataSer = ser.serialize(msg);
+    dataSer.setUint16(dataSer.lengthInBytes - 2, 0);
+    var bufferSer = dataSer.buffer;
+    var serData = bufferSer.asUint8List(dataSer.offsetInBytes, dataSer.lengthInBytes);
+    var bytesSerStr = "[";
+    serData.forEach((b) {bytesSerStr +="0x${b.toRadixString(16)}, ";});
+    bytesSerStr += "]";
+    print("msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr");
+    var msgD = ser.deserialize(serData);
+    expect(msgD, null);
+  });
+
 }
