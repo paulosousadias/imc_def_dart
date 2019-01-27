@@ -547,7 +547,7 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
     case "Enumerated":
     case "Bitfield":
       dartType = _getTypeForEnumLike(abbrev, field, message, unit);
-      defaultVal = "${dartType}(${defaultVal ?? '0'})";
+      defaultVal = "$dartType(${defaultVal ?? '0'})";
       break;
     default:
       break;
