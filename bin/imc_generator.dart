@@ -182,9 +182,10 @@ _writeMessageClass(String name, String abbrev, String msgId, xml.XmlElement m,
 
   var msgStringClass =
       '''abstract class $abbrev extends $extentionClass implements Built<$abbrev, ${abbrev}Builder> {
+  static const static_id = $msgId;
   $abbrev._();
   @override
-  int get msgId => $msgId;
+  int get msgId => static_id;
   @override
   String get abbrev => "$abbrev";
 ''';
@@ -739,6 +740,12 @@ main(List<String> args) async {
   var syncElm = headerElm.findElements("field").first;
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
+  
+  var sNmbr = int.parse(syncElm.getAttribute("value"));
+  int rSNmbr = ((sNmbr & 0xFF) << 8 | sNmbr >> 8);
+  sinks[_idxMsg]
+      .write('const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
+  
   sinks[_idxMsg]
       .write('const String MD5_SUM = "$imcDigest";\n');
 

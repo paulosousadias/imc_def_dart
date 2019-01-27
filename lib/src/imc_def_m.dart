@@ -9,6 +9,7 @@ part of 'imc_def_gen.dart';
 
 const String VERSION = "5.4.11";
 const int SYNC_NUMBER = 0xFE54;
+const int SYNC_NUMBER_REVERSED = 0x54FE;
 const String MD5_SUM = "cdc4c6dfe2baed8395138f0b1b8e1910";
 
 /// The base IMCMessage
@@ -38,9 +39,10 @@ abstract class RemoteData extends ImcMessage {
 /// State reported by an entity in the vehicle. The source entity is
 /// identified in the message header.
 abstract class EntityState extends ImcMessage implements Built<EntityState, EntityStateBuilder> {
+  static const static_id = 1;
   EntityState._();
   @override
-  int get msgId => 1;
+  int get msgId => static_id;
   @override
   String get abbrev => "EntityState";
 
@@ -62,9 +64,10 @@ abstract class EntityState extends ImcMessage implements Built<EntityState, Enti
 /// Request entities to report their state. Entities should respond
 /// by issuing an appropriate EntityState message.
 abstract class QueryEntityState extends ImcMessage implements Built<QueryEntityState, QueryEntityStateBuilder> {
+  static const static_id = 2;
   QueryEntityState._();
   @override
-  int get msgId => 2;
+  int get msgId => static_id;
   @override
   String get abbrev => "QueryEntityState";
 }
@@ -73,9 +76,10 @@ abstract class QueryEntityState extends ImcMessage implements Built<QueryEntityS
 ///
 /// This message describes an entity.
 abstract class EntityInfo extends ImcMessage implements Built<EntityInfo, EntityInfoBuilder> {
+  static const static_id = 3;
   EntityInfo._();
   @override
-  int get msgId => 3;
+  int get msgId => static_id;
   @override
   String get abbrev => "EntityInfo";
 
@@ -107,9 +111,10 @@ abstract class EntityInfo extends ImcMessage implements Built<EntityInfo, Entity
 /// system shall reply with an EntityInfo message with the details
 /// of that entity.
 abstract class QueryEntityInfo extends ImcMessage implements Built<QueryEntityInfo, QueryEntityInfoBuilder> {
+  static const static_id = 4;
   QueryEntityInfo._();
   @override
-  int get msgId => 4;
+  int get msgId => static_id;
   @override
   String get abbrev => "QueryEntityInfo";
 
@@ -123,9 +128,10 @@ abstract class QueryEntityInfo extends ImcMessage implements Built<QueryEntityIn
 /// This message describes the names and identification numbers of
 /// all entities in the system.
 abstract class EntityList extends ImcMessage implements Built<EntityList, EntityListBuilder> {
+  static const static_id = 5;
   EntityList._();
   @override
-  int get msgId => 5;
+  int get msgId => static_id;
   @override
   String get abbrev => "EntityList";
 
@@ -142,9 +148,10 @@ abstract class EntityList extends ImcMessage implements Built<EntityList, Entity
 ///
 /// Report of software CPU usage.
 abstract class CpuUsage extends ImcMessage implements Built<CpuUsage, CpuUsageBuilder> {
+  static const static_id = 7;
   CpuUsage._();
   @override
-  int get msgId => 7;
+  int get msgId => static_id;
   @override
   String get abbrev => "CpuUsage";
 
@@ -157,9 +164,10 @@ abstract class CpuUsage extends ImcMessage implements Built<CpuUsage, CpuUsageBu
 ///
 /// Message generated when tasks bind to messages.
 abstract class TransportBindings extends ImcMessage implements Built<TransportBindings, TransportBindingsBuilder> {
+  static const static_id = 8;
   TransportBindings._();
   @override
-  int get msgId => 8;
+  int get msgId => static_id;
   @override
   String get abbrev => "TransportBindings";
 
@@ -176,9 +184,10 @@ abstract class TransportBindings extends ImcMessage implements Built<TransportBi
 ///
 /// Request the destination system to restart itself.
 abstract class RestartSystem extends ImcMessage implements Built<RestartSystem, RestartSystemBuilder> {
+  static const static_id = 9;
   RestartSystem._();
   @override
-  int get msgId => 9;
+  int get msgId => static_id;
   @override
   String get abbrev => "RestartSystem";
 
@@ -192,9 +201,10 @@ abstract class RestartSystem extends ImcMessage implements Built<RestartSystem, 
 /// device. The destination device is selected using the destination
 /// entity identification number.
 abstract class DevCalibrationControl extends ImcMessage implements Built<DevCalibrationControl, DevCalibrationControlBuilder> {
+  static const static_id = 12;
   DevCalibrationControl._();
   @override
-  int get msgId => 12;
+  int get msgId => static_id;
   @override
   String get abbrev => "DevCalibrationControl";
 
@@ -207,9 +217,10 @@ abstract class DevCalibrationControl extends ImcMessage implements Built<DevCali
 ///
 /// State of the calibration procedure.
 abstract class DevCalibrationState extends ImcMessage implements Built<DevCalibrationState, DevCalibrationStateBuilder> {
+  static const static_id = 13;
   DevCalibrationState._();
   @override
-  int get msgId => 13;
+  int get msgId => static_id;
   @override
   String get abbrev => "DevCalibrationState";
 
@@ -234,9 +245,10 @@ abstract class DevCalibrationState extends ImcMessage implements Built<DevCalibr
 ///
 /// State of entity activation/deactivation.
 abstract class EntityActivationState extends ImcMessage implements Built<EntityActivationState, EntityActivationStateBuilder> {
+  static const static_id = 14;
   EntityActivationState._();
   @override
-  int get msgId => 14;
+  int get msgId => static_id;
   @override
   String get abbrev => "EntityActivationState";
 
@@ -254,9 +266,10 @@ abstract class EntityActivationState extends ImcMessage implements Built<EntityA
 /// Query the activation/deactivation state of an entity. The
 /// recipient shall reply with an EntityActivationState message.
 abstract class QueryEntityActivationState extends ImcMessage implements Built<QueryEntityActivationState, QueryEntityActivationStateBuilder> {
+  static const static_id = 15;
   QueryEntityActivationState._();
   @override
-  int get msgId => 15;
+  int get msgId => static_id;
   @override
   String get abbrev => "QueryEntityActivationState";
 }
@@ -266,9 +279,10 @@ abstract class QueryEntityActivationState extends ImcMessage implements Built<Qu
 /// Vehicle opertional limits.
 /// For aircraft this should represent the flight envelope and the dynamic contraints.
 abstract class VehicleOperationalLimits extends ImcMessage implements Built<VehicleOperationalLimits, VehicleOperationalLimitsBuilder> {
+  static const static_id = 16;
   VehicleOperationalLimits._();
   @override
-  int get msgId => 16;
+  int get msgId => static_id;
   @override
   String get abbrev => "VehicleOperationalLimits";
 
@@ -353,9 +367,10 @@ abstract class VehicleOperationalLimits extends ImcMessage implements Built<Vehi
 /// Message List class
 ///
 abstract class MsgList extends ImcMessage implements Built<MsgList, MsgListBuilder> {
+  static const static_id = 20;
   MsgList._();
   @override
-  int get msgId => 20;
+  int get msgId => static_id;
   @override
   String get abbrev => "MsgList";
 
@@ -369,9 +384,10 @@ abstract class MsgList extends ImcMessage implements Built<MsgList, MsgListBuild
 /// state attempts to provide a realistic state interpretation of operating
 /// various kinds of vehicles.
 abstract class SimulatedState extends ImcMessage implements Built<SimulatedState, SimulatedStateBuilder> {
+  static const static_id = 50;
   SimulatedState._();
   @override
-  int get msgId => 50;
+  int get msgId => static_id;
   @override
   String get abbrev => "SimulatedState";
 
@@ -452,9 +468,10 @@ abstract class SimulatedState extends ImcMessage implements Built<SimulatedState
 ///
 /// Simulate leak behavior.
 abstract class LeakSimulation extends ImcMessage implements Built<LeakSimulation, LeakSimulationBuilder> {
+  static const static_id = 51;
   LeakSimulation._();
   @override
-  int get msgId => 51;
+  int get msgId => static_id;
   @override
   String get abbrev => "LeakSimulation";
 
@@ -472,9 +489,10 @@ abstract class LeakSimulation extends ImcMessage implements Built<LeakSimulation
 ///
 /// Underwater acoustics simulation request.
 abstract class UASimulation extends ImcMessage implements Built<UASimulation, UASimulationBuilder> {
+  static const static_id = 52;
   UASimulation._();
   @override
-  int get msgId => 52;
+  int get msgId => static_id;
   @override
   String get abbrev => "UASimulation";
 
@@ -495,9 +513,10 @@ abstract class UASimulation extends ImcMessage implements Built<UASimulation, UA
 ///
 /// Vehicle dynamics parameters for 3DOF, 4DOF or 5DOF simulations.
 abstract class DynamicsSimParam extends ImcMessage implements Built<DynamicsSimParam, DynamicsSimParamBuilder> {
+  static const static_id = 53;
   DynamicsSimParam._();
   @override
-  int get msgId => 53;
+  int get msgId => static_id;
   @override
   String get abbrev => "DynamicsSimParam";
 
@@ -518,9 +537,10 @@ abstract class DynamicsSimParam extends ImcMessage implements Built<DynamicsSimP
 ///
 /// Report of storage usage.
 abstract class StorageUsage extends ImcMessage implements Built<StorageUsage, StorageUsageBuilder> {
+  static const static_id = 100;
   StorageUsage._();
   @override
-  int get msgId => 100;
+  int get msgId => static_id;
   @override
   String get abbrev => "StorageUsage";
 
@@ -537,9 +557,10 @@ abstract class StorageUsage extends ImcMessage implements Built<StorageUsage, St
 ///
 /// Control caching of messages to persistent storage.
 abstract class CacheControl extends ImcMessage implements Built<CacheControl, CacheControlBuilder> {
+  static const static_id = 101;
   CacheControl._();
   @override
-  int get msgId => 101;
+  int get msgId => static_id;
   @override
   String get abbrev => "CacheControl";
 
@@ -560,9 +581,10 @@ abstract class CacheControl extends ImcMessage implements Built<CacheControl, Ca
 ///
 /// Control logging of messages to persistent storage.
 abstract class LoggingControl extends ImcMessage implements Built<LoggingControl, LoggingControlBuilder> {
+  static const static_id = 102;
   LoggingControl._();
   @override
-  int get msgId => 102;
+  int get msgId => static_id;
   @override
   String get abbrev => "LoggingControl";
 
@@ -580,9 +602,10 @@ abstract class LoggingControl extends ImcMessage implements Built<LoggingControl
 ///
 /// Human readable message reporting an event of interest.
 abstract class LogBookEntry extends ImcMessage implements Built<LogBookEntry, LogBookEntryBuilder> {
+  static const static_id = 103;
   LogBookEntry._();
   @override
-  int get msgId => 103;
+  int get msgId => static_id;
   @override
   String get abbrev => "LogBookEntry";
 
@@ -607,9 +630,10 @@ abstract class LogBookEntry extends ImcMessage implements Built<LogBookEntry, Lo
 ///
 /// Control history log.
 abstract class LogBookControl extends ImcMessage implements Built<LogBookControl, LogBookControlBuilder> {
+  static const static_id = 104;
   LogBookControl._();
   @override
-  int get msgId => 104;
+  int get msgId => static_id;
   @override
   String get abbrev => "LogBookControl";
 
@@ -630,9 +654,10 @@ abstract class LogBookControl extends ImcMessage implements Built<LogBookControl
 ///
 /// Control replay of LSF logged data.
 abstract class ReplayControl extends ImcMessage implements Built<ReplayControl, ReplayControlBuilder> {
+  static const static_id = 105;
   ReplayControl._();
   @override
-  int get msgId => 105;
+  int get msgId => static_id;
   @override
   String get abbrev => "ReplayControl";
 
@@ -649,9 +674,10 @@ abstract class ReplayControl extends ImcMessage implements Built<ReplayControl, 
 ///
 /// Clock control.
 abstract class ClockControl extends ImcMessage implements Built<ClockControl, ClockControlBuilder> {
+  static const static_id = 106;
   ClockControl._();
   @override
-  int get msgId => 106;
+  int get msgId => static_id;
   @override
   String get abbrev => "ClockControl";
 
@@ -672,9 +698,10 @@ abstract class ClockControl extends ImcMessage implements Built<ClockControl, Cl
 ///
 /// This message is used to store historic (transmitted afterwards) CTD data .
 abstract class HistoricCTD extends ImcMessage implements Built<HistoricCTD, HistoricCTDBuilder> {
+  static const static_id = 107;
   HistoricCTD._();
   @override
-  int get msgId => 107;
+  int get msgId => static_id;
   @override
   String get abbrev => "HistoricCTD";
 
@@ -692,9 +719,10 @@ abstract class HistoricCTD extends ImcMessage implements Built<HistoricCTD, Hist
 ///
 /// This message is used to store historic (transmitted afterwards) telemetry information.
 abstract class HistoricTelemetry extends ImcMessage implements Built<HistoricTelemetry, HistoricTelemetryBuilder> {
+  static const static_id = 108;
   HistoricTelemetry._();
   @override
-  int get msgId => 108;
+  int get msgId => static_id;
   @override
   String get abbrev => "HistoricTelemetry";
 
@@ -721,9 +749,10 @@ abstract class HistoricTelemetry extends ImcMessage implements Built<HistoricTel
 ///
 /// This message is used to store historic (transmitted afterwards) sonar data.
 abstract class HistoricSonarData extends ImcMessage implements Built<HistoricSonarData, HistoricSonarDataBuilder> {
+  static const static_id = 109;
   HistoricSonarData._();
   @override
-  int get msgId => 109;
+  int get msgId => static_id;
   @override
   String get abbrev => "HistoricSonarData";
 
@@ -756,9 +785,10 @@ abstract class HistoricSonarData extends ImcMessage implements Built<HistoricSon
 ///
 /// This message is used to store historic event log entries.
 abstract class HistoricEvent extends ImcMessage implements Built<HistoricEvent, HistoricEventBuilder> {
+  static const static_id = 110;
   HistoricEvent._();
   @override
-  int get msgId => 110;
+  int get msgId => static_id;
   @override
   String get abbrev => "HistoricEvent";
 
@@ -774,9 +804,10 @@ abstract class HistoricEvent extends ImcMessage implements Built<HistoricEvent, 
 ///
 /// This message is used to store historic profiles for water parameters: Temperature, Salinity, Chlorophyll...
 abstract class VerticalProfile extends ImcMessage implements Built<VerticalProfile, VerticalProfileBuilder> {
+  static const static_id = 111;
   VerticalProfile._();
   @override
-  int get msgId => 111;
+  int get msgId => static_id;
   @override
   String get abbrev => "VerticalProfile";
 
@@ -803,9 +834,10 @@ abstract class VerticalProfile extends ImcMessage implements Built<VerticalProfi
 ///
 /// Samples to calculate a vertical profile.
 abstract class ProfileSample extends ImcMessage implements Built<ProfileSample, ProfileSampleBuilder> {
+  static const static_id = 112;
   ProfileSample._();
   @override
-  int get msgId => 112;
+  int get msgId => static_id;
   @override
   String get abbrev => "ProfileSample";
 
@@ -822,9 +854,10 @@ abstract class ProfileSample extends ImcMessage implements Built<ProfileSample, 
 /// sending entity's system is running normally and communications
 /// are alive.
 abstract class Heartbeat extends ImcMessage implements Built<Heartbeat, HeartbeatBuilder> {
+  static const static_id = 150;
   Heartbeat._();
   @override
-  int get msgId => 150;
+  int get msgId => static_id;
   @override
   String get abbrev => "Heartbeat";
 }
@@ -833,9 +866,10 @@ abstract class Heartbeat extends ImcMessage implements Built<Heartbeat, Heartbea
 ///
 /// A system description that is to be broadcasted to other systems.
 abstract class Announce extends ImcMessage implements Built<Announce, AnnounceBuilder> {
+  static const static_id = 151;
   Announce._();
   @override
-  int get msgId => 151;
+  int get msgId => static_id;
   @override
   String get abbrev => "Announce";
 
@@ -876,9 +910,10 @@ abstract class Announce extends ImcMessage implements Built<Announce, AnnounceBu
 ///
 /// Announcement about the existence of a service.
 abstract class AnnounceService extends ImcMessage implements Built<AnnounceService, AnnounceServiceBuilder> {
+  static const static_id = 152;
   AnnounceService._();
   @override
-  int get msgId => 152;
+  int get msgId => static_id;
   @override
   String get abbrev => "AnnounceService";
 
@@ -897,9 +932,10 @@ abstract class AnnounceService extends ImcMessage implements Built<AnnounceServi
 /// Measure of the RSSI by a networking device.
 /// Indicates the gain or loss in the signal strength due to the transmission and reception equipment and the transmission medium and distance.
 abstract class RSSI extends ImcMessage implements Built<RSSI, RSSIBuilder> {
+  static const static_id = 153;
   RSSI._();
   @override
-  int get msgId => 153;
+  int get msgId => static_id;
   @override
   String get abbrev => "RSSI";
 
@@ -912,9 +948,10 @@ abstract class RSSI extends ImcMessage implements Built<RSSI, RSSIBuilder> {
 ///
 /// Measure of the VSWR by a networking device.
 abstract class VSWR extends ImcMessage implements Built<VSWR, VSWRBuilder> {
+  static const static_id = 154;
   VSWR._();
   @override
-  int get msgId => 154;
+  int get msgId => static_id;
   @override
   String get abbrev => "VSWR";
 
@@ -929,9 +966,10 @@ abstract class VSWR extends ImcMessage implements Built<VSWR, VSWRBuilder> {
 /// correspond to the acknowledgment ratio of a link. But,
 /// generally, the measure is link-dependent.
 abstract class LinkLevel extends ImcMessage implements Built<LinkLevel, LinkLevelBuilder> {
+  static const static_id = 155;
   LinkLevel._();
   @override
-  int get msgId => 155;
+  int get msgId => static_id;
   @override
   String get abbrev => "LinkLevel";
 
@@ -944,9 +982,10 @@ abstract class LinkLevel extends ImcMessage implements Built<LinkLevel, LinkLeve
 ///
 /// Send a SMS message.
 abstract class Sms extends ImcMessage implements Built<Sms, SmsBuilder> {
+  static const static_id = 156;
   Sms._();
   @override
-  int get msgId => 156;
+  int get msgId => static_id;
   @override
   String get abbrev => "Sms";
 
@@ -967,9 +1006,10 @@ abstract class Sms extends ImcMessage implements Built<Sms, SmsBuilder> {
 ///
 /// Request to send SMS.
 abstract class SmsTx extends ImcMessage implements Built<SmsTx, SmsTxBuilder> {
+  static const static_id = 157;
   SmsTx._();
   @override
-  int get msgId => 157;
+  int get msgId => static_id;
   @override
   String get abbrev => "SmsTx";
 
@@ -994,9 +1034,10 @@ abstract class SmsTx extends ImcMessage implements Built<SmsTx, SmsTxBuilder> {
 ///
 /// Received SMS data.
 abstract class SmsRx extends ImcMessage implements Built<SmsRx, SmsRxBuilder> {
+  static const static_id = 158;
   SmsRx._();
   @override
-  int get msgId => 158;
+  int get msgId => static_id;
   @override
   String get abbrev => "SmsRx";
 
@@ -1012,9 +1053,10 @@ abstract class SmsRx extends ImcMessage implements Built<SmsRx, SmsRxBuilder> {
 /// SMS State class
 ///
 abstract class SmsState extends ImcMessage implements Built<SmsState, SmsStateBuilder> {
+  static const static_id = 159;
   SmsState._();
   @override
-  int get msgId => 159;
+  int get msgId => static_id;
   @override
   String get abbrev => "SmsState";
 
@@ -1034,9 +1076,10 @@ abstract class SmsState extends ImcMessage implements Built<SmsState, SmsStateBu
 ///
 /// A text message has been received.
 abstract class TextMessage extends ImcMessage implements Built<TextMessage, TextMessageBuilder> {
+  static const static_id = 160;
   TextMessage._();
   @override
-  int get msgId => 160;
+  int get msgId => static_id;
   @override
   String get abbrev => "TextMessage";
 
@@ -1052,9 +1095,10 @@ abstract class TextMessage extends ImcMessage implements Built<TextMessage, Text
 /// Received Iridium Message class
 ///
 abstract class IridiumMsgRx extends ImcMessage implements Built<IridiumMsgRx, IridiumMsgRxBuilder> {
+  static const static_id = 170;
   IridiumMsgRx._();
   @override
-  int get msgId => 170;
+  int get msgId => static_id;
   @override
   String get abbrev => "IridiumMsgRx";
 
@@ -1080,9 +1124,10 @@ abstract class IridiumMsgRx extends ImcMessage implements Built<IridiumMsgRx, Ir
 /// Transmit Iridium Message class
 ///
 abstract class IridiumMsgTx extends ImcMessage implements Built<IridiumMsgTx, IridiumMsgTxBuilder> {
+  static const static_id = 171;
   IridiumMsgTx._();
   @override
-  int get msgId => 171;
+  int get msgId => static_id;
   @override
   String get abbrev => "IridiumMsgTx";
 
@@ -1106,9 +1151,10 @@ abstract class IridiumMsgTx extends ImcMessage implements Built<IridiumMsgTx, Ir
 /// Iridium Transmission Status class
 ///
 abstract class IridiumTxStatus extends ImcMessage implements Built<IridiumTxStatus, IridiumTxStatusBuilder> {
+  static const static_id = 172;
   IridiumTxStatus._();
   @override
-  int get msgId => 172;
+  int get msgId => static_id;
   @override
   String get abbrev => "IridiumTxStatus";
 
@@ -1127,9 +1173,10 @@ abstract class IridiumTxStatus extends ImcMessage implements Built<IridiumTxStat
 ///
 /// Group communication link assertion.
 abstract class GroupMembershipState extends ImcMessage implements Built<GroupMembershipState, GroupMembershipStateBuilder> {
+  static const static_id = 180;
   GroupMembershipState._();
   @override
-  int get msgId => 180;
+  int get msgId => static_id;
   @override
   String get abbrev => "GroupMembershipState";
 
@@ -1147,9 +1194,10 @@ abstract class GroupMembershipState extends ImcMessage implements Built<GroupMem
 ///
 /// Group of systems configuration.
 abstract class SystemGroup extends ImcMessage implements Built<SystemGroup, SystemGroupBuilder> {
+  static const static_id = 181;
   SystemGroup._();
   @override
-  int get msgId => 181;
+  int get msgId => static_id;
   @override
   String get abbrev => "SystemGroup";
 
@@ -1170,9 +1218,10 @@ abstract class SystemGroup extends ImcMessage implements Built<SystemGroup, Syst
 ///
 /// Communications latency between two systems.
 abstract class LinkLatency extends ImcMessage implements Built<LinkLatency, LinkLatencyBuilder> {
+  static const static_id = 182;
   LinkLatency._();
   @override
-  int get msgId => 182;
+  int get msgId => static_id;
   @override
   String get abbrev => "LinkLatency";
 
@@ -1192,9 +1241,10 @@ abstract class LinkLatency extends ImcMessage implements Built<LinkLatency, Link
 /// Indicates the gain or loss in the signal strenght due to the transmission
 /// and reception equipment and the transmission medium and distance.
 abstract class ExtendedRSSI extends ImcMessage implements Built<ExtendedRSSI, ExtendedRSSIBuilder> {
+  static const static_id = 183;
   ExtendedRSSI._();
   @override
-  int get msgId => 183;
+  int get msgId => static_id;
   @override
   String get abbrev => "ExtendedRSSI";
 
@@ -1212,9 +1262,10 @@ abstract class ExtendedRSSI extends ImcMessage implements Built<ExtendedRSSI, Ex
 /// This message holds a list of inline data samples produced by one or more vehicles in the past.
 /// It is used to transfer data over disruption tolerant networks.
 abstract class HistoricData extends ImcMessage implements Built<HistoricData, HistoricDataBuilder> {
+  static const static_id = 184;
   HistoricData._();
   @override
-  int get msgId => 184;
+  int get msgId => static_id;
   @override
   String get abbrev => "HistoricData";
 
@@ -1239,9 +1290,10 @@ abstract class HistoricData extends ImcMessage implements Built<HistoricData, Hi
 /// This message holds a list of inline data samples produced by one or more vehicles in the past.
 /// It is used to transfer data over disruption tolerant networks.
 abstract class CompressedHistory extends ImcMessage implements Built<CompressedHistory, CompressedHistoryBuilder> {
+  static const static_id = 185;
   CompressedHistory._();
   @override
-  int get msgId => 185;
+  int get msgId => static_id;
   @override
   String get abbrev => "CompressedHistory";
 
@@ -1265,9 +1317,10 @@ abstract class CompressedHistory extends ImcMessage implements Built<CompressedH
 /// Historic Data Sample class
 ///
 abstract class HistoricSample extends RemoteData implements Built<HistoricSample, HistoricSampleBuilder> {
+  static const static_id = 186;
   HistoricSample._();
   @override
-  int get msgId => 186;
+  int get msgId => static_id;
   @override
   String get abbrev => "HistoricSample";
 
@@ -1306,9 +1359,10 @@ abstract class HistoricSample extends RemoteData implements Built<HistoricSample
 /// Historic Data Query class
 ///
 abstract class HistoricDataQuery extends ImcMessage implements Built<HistoricDataQuery, HistoricDataQueryBuilder> {
+  static const static_id = 187;
   HistoricDataQuery._();
   @override
-  int get msgId => 187;
+  int get msgId => static_id;
   @override
   String get abbrev => "HistoricDataQuery";
 
@@ -1330,9 +1384,10 @@ abstract class HistoricDataQuery extends ImcMessage implements Built<HistoricDat
 /// Command to remote system. If a system receives a RemoteCommand and it isn't the intended recipient, then it should
 /// resend it.
 abstract class RemoteCommand extends RemoteData implements Built<RemoteCommand, RemoteCommandBuilder> {
+  static const static_id = 188;
   RemoteCommand._();
   @override
-  int get msgId => 188;
+  int get msgId => static_id;
   @override
   String get abbrev => "RemoteCommand";
 
@@ -1358,9 +1413,10 @@ abstract class RemoteCommand extends RemoteData implements Built<RemoteCommand, 
 ///
 /// Presence of Communication Interfaces query.
 abstract class CommSystemsQuery extends ImcMessage implements Built<CommSystemsQuery, CommSystemsQueryBuilder> {
+  static const static_id = 189;
   CommSystemsQuery._();
   @override
-  int get msgId => 189;
+  int get msgId => static_id;
   @override
   String get abbrev => "CommSystemsQuery";
 
@@ -1383,9 +1439,10 @@ abstract class CommSystemsQuery extends ImcMessage implements Built<CommSystemsQ
 ///
 /// Message to handle telemetry transmissions.
 abstract class TelemetryMsg extends ImcMessage implements Built<TelemetryMsg, TelemetryMsgBuilder> {
+  static const static_id = 190;
   TelemetryMsg._();
   @override
-  int get msgId => 190;
+  int get msgId => static_id;
   @override
   String get abbrev => "TelemetryMsg";
 
@@ -1432,9 +1489,10 @@ abstract class TelemetryMsg extends ImcMessage implements Built<TelemetryMsg, Te
 /// transponders. The message fields are used to identify the range
 /// value and the transponder name.
 abstract class LblRange extends ImcMessage implements Built<LblRange, LblRangeBuilder> {
+  static const static_id = 200;
   LblRange._();
   @override
-  int get msgId => 200;
+  int get msgId => static_id;
   @override
   String get abbrev => "LblRange";
 
@@ -1452,9 +1510,10 @@ abstract class LblRange extends ImcMessage implements Built<LblRange, LblRangeBu
 ///
 /// Position and configuration of an LBL transponder (beacon).
 abstract class LblBeacon extends ImcMessage implements Built<LblBeacon, LblBeaconBuilder> {
+  static const static_id = 202;
   LblBeacon._();
   @override
-  int get msgId => 202;
+  int get msgId => static_id;
   @override
   String get abbrev => "LblBeacon";
 
@@ -1491,9 +1550,10 @@ abstract class LblBeacon extends ImcMessage implements Built<LblBeacon, LblBeaco
 ///
 /// Long Base Line configuration.
 abstract class LblConfig extends ImcMessage implements Built<LblConfig, LblConfigBuilder> {
+  static const static_id = 203;
   LblConfig._();
   @override
-  int get msgId => 203;
+  int get msgId => static_id;
   @override
   String get abbrev => "LblConfig";
 
@@ -1510,9 +1570,10 @@ abstract class LblConfig extends ImcMessage implements Built<LblConfig, LblConfi
 ///
 /// Send an acoustic message.
 abstract class AcousticMessage extends ImcMessage implements Built<AcousticMessage, AcousticMessageBuilder> {
+  static const static_id = 206;
   AcousticMessage._();
   @override
-  int get msgId => 206;
+  int get msgId => static_id;
   @override
   String get abbrev => "AcousticMessage";
 
@@ -1525,9 +1586,10 @@ abstract class AcousticMessage extends ImcMessage implements Built<AcousticMessa
 ///
 /// Acoustic operation.
 abstract class AcousticOperation extends ImcMessage implements Built<AcousticOperation, AcousticOperationBuilder> {
+  static const static_id = 211;
   AcousticOperation._();
   @override
-  int get msgId => 211;
+  int get msgId => static_id;
   @override
   String get abbrev => "AcousticOperation";
 
@@ -1556,9 +1618,10 @@ abstract class AcousticOperation extends ImcMessage implements Built<AcousticOpe
 /// recipient of this message shall reply with an AcousticSystems
 /// message.
 abstract class AcousticSystemsQuery extends ImcMessage implements Built<AcousticSystemsQuery, AcousticSystemsQueryBuilder> {
+  static const static_id = 212;
   AcousticSystemsQuery._();
   @override
-  int get msgId => 212;
+  int get msgId => static_id;
   @override
   String get abbrev => "AcousticSystemsQuery";
 }
@@ -1569,9 +1632,10 @@ abstract class AcousticSystemsQuery extends ImcMessage implements Built<Acoustic
 /// and lists all known underwater acoustic systems (modems, narrow
 /// band transponders, etc).
 abstract class AcousticSystems extends ImcMessage implements Built<AcousticSystems, AcousticSystemsBuilder> {
+  static const static_id = 213;
   AcousticSystems._();
   @override
-  int get msgId => 213;
+  int get msgId => static_id;
   @override
   String get abbrev => "AcousticSystems";
 
@@ -1585,9 +1649,10 @@ abstract class AcousticSystems extends ImcMessage implements Built<AcousticSyste
 /// This message is used to report the perceived link quality to other
 /// acoustic peers.
 abstract class AcousticLink extends ImcMessage implements Built<AcousticLink, AcousticLinkBuilder> {
+  static const static_id = 214;
   AcousticLink._();
   @override
-  int get msgId => 214;
+  int get msgId => static_id;
   @override
   String get abbrev => "AcousticLink";
 
@@ -1616,9 +1681,10 @@ abstract class AcousticLink extends ImcMessage implements Built<AcousticLink, Ac
 ///
 /// Number of revolutions per minute.
 abstract class Rpm extends ImcMessage implements Built<Rpm, RpmBuilder> {
+  static const static_id = 250;
   Rpm._();
   @override
-  int get msgId => 250;
+  int get msgId => static_id;
   @override
   String get abbrev => "Rpm";
 
@@ -1631,9 +1697,10 @@ abstract class Rpm extends ImcMessage implements Built<Rpm, RpmBuilder> {
 ///
 /// Report of electrical voltage.
 abstract class Voltage extends ImcMessage implements Built<Voltage, VoltageBuilder> {
+  static const static_id = 251;
   Voltage._();
   @override
-  int get msgId => 251;
+  int get msgId => static_id;
   @override
   String get abbrev => "Voltage";
 
@@ -1647,9 +1714,10 @@ abstract class Voltage extends ImcMessage implements Built<Voltage, VoltageBuild
 ///
 /// Report of electrical current.
 abstract class Current extends ImcMessage implements Built<Current, CurrentBuilder> {
+  static const static_id = 252;
   Current._();
   @override
-  int get msgId => 252;
+  int get msgId => static_id;
   @override
   String get abbrev => "Current";
 
@@ -1663,9 +1731,10 @@ abstract class Current extends ImcMessage implements Built<Current, CurrentBuild
 ///
 /// Report of a GPS fix.
 abstract class GpsFix extends ImcMessage implements Built<GpsFix, GpsFixBuilder> {
+  static const static_id = 253;
   GpsFix._();
   @override
-  int get msgId => 253;
+  int get msgId => static_id;
   @override
   String get abbrev => "GpsFix";
 
@@ -1740,9 +1809,10 @@ abstract class GpsFix extends ImcMessage implements Built<GpsFix, GpsFixBuilder>
 /// Report of spatial orientation according to SNAME's notation
 /// (1950).
 abstract class EulerAngles extends ImcMessage implements Built<EulerAngles, EulerAnglesBuilder> {
+  static const static_id = 254;
   EulerAngles._();
   @override
-  int get msgId => 254;
+  int get msgId => static_id;
   @override
   String get abbrev => "EulerAngles";
 
@@ -1777,9 +1847,10 @@ abstract class EulerAngles extends ImcMessage implements Built<EulerAngles, Eule
 ///
 /// Component of incremetal orientation vector over a period of time.
 abstract class EulerAnglesDelta extends ImcMessage implements Built<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
+  static const static_id = 255;
   EulerAnglesDelta._();
   @override
-  int get msgId => 255;
+  int get msgId => static_id;
   @override
   String get abbrev => "EulerAnglesDelta";
 
@@ -1809,9 +1880,10 @@ abstract class EulerAnglesDelta extends ImcMessage implements Built<EulerAnglesD
 /// Vector quantifying the direction and magnitude of the measured
 /// angular velocity that a device is exposed to.
 abstract class AngularVelocity extends ImcMessage implements Built<AngularVelocity, AngularVelocityBuilder> {
+  static const static_id = 256;
   AngularVelocity._();
   @override
-  int get msgId => 256;
+  int get msgId => static_id;
   @override
   String get abbrev => "AngularVelocity";
 
@@ -1837,9 +1909,10 @@ abstract class AngularVelocity extends ImcMessage implements Built<AngularVeloci
 /// Vector quantifying the direction and magnitude of the measured
 /// acceleration that a device is exposed to.
 abstract class Acceleration extends ImcMessage implements Built<Acceleration, AccelerationBuilder> {
+  static const static_id = 257;
   Acceleration._();
   @override
-  int get msgId => 257;
+  int get msgId => static_id;
   @override
   String get abbrev => "Acceleration";
 
@@ -1865,9 +1938,10 @@ abstract class Acceleration extends ImcMessage implements Built<Acceleration, Ac
 /// Vector quantifying the direction and magnitude of the measured
 /// magnetic field that a device is exposed to.
 abstract class MagneticField extends ImcMessage implements Built<MagneticField, MagneticFieldBuilder> {
+  static const static_id = 258;
   MagneticField._();
   @override
-  int get msgId => 258;
+  int get msgId => static_id;
   @override
   String get abbrev => "MagneticField";
 
@@ -1893,9 +1967,10 @@ abstract class MagneticField extends ImcMessage implements Built<MagneticField, 
 /// Vector quantifying the direction and magnitude of the measured
 /// velocity relative to the ground that a device is exposed to.
 abstract class GroundVelocity extends ImcMessage implements Built<GroundVelocity, GroundVelocityBuilder> {
+  static const static_id = 259;
   GroundVelocity._();
   @override
-  int get msgId => 259;
+  int get msgId => static_id;
   @override
   String get abbrev => "GroundVelocity";
 
@@ -1922,9 +1997,10 @@ abstract class GroundVelocity extends ImcMessage implements Built<GroundVelocity
 /// Vector quantifying the direction and magnitude of the measured
 /// velocity relative to the water that a device is exposed to.
 abstract class WaterVelocity extends ImcMessage implements Built<WaterVelocity, WaterVelocityBuilder> {
+  static const static_id = 260;
   WaterVelocity._();
   @override
-  int get msgId => 260;
+  int get msgId => static_id;
   @override
   String get abbrev => "WaterVelocity";
 
@@ -1950,9 +2026,10 @@ abstract class WaterVelocity extends ImcMessage implements Built<WaterVelocity, 
 ///
 /// Component of incremetal velocity vector.
 abstract class VelocityDelta extends ImcMessage implements Built<VelocityDelta, VelocityDeltaBuilder> {
+  static const static_id = 261;
   VelocityDelta._();
   @override
-  int get msgId => 261;
+  int get msgId => static_id;
   @override
   String get abbrev => "VelocityDelta";
 
@@ -1977,9 +2054,10 @@ abstract class VelocityDelta extends ImcMessage implements Built<VelocityDelta, 
 ///
 /// Distance measurement detected by the device.
 abstract class Distance extends ImcMessage implements Built<Distance, DistanceBuilder> {
+  static const static_id = 262;
   Distance._();
   @override
-  int get msgId => 262;
+  int get msgId => static_id;
   @override
   String get abbrev => "Distance";
 
@@ -2004,9 +2082,10 @@ abstract class Distance extends ImcMessage implements Built<Distance, DistanceBu
 ///
 /// Report of temperature.
 abstract class Temperature extends ImcMessage implements Built<Temperature, TemperatureBuilder> {
+  static const static_id = 263;
   Temperature._();
   @override
-  int get msgId => 263;
+  int get msgId => static_id;
   @override
   String get abbrev => "Temperature";
 
@@ -2019,9 +2098,10 @@ abstract class Temperature extends ImcMessage implements Built<Temperature, Temp
 ///
 /// Report of external pressure.
 abstract class Pressure extends ImcMessage implements Built<Pressure, PressureBuilder> {
+  static const static_id = 264;
   Pressure._();
   @override
-  int get msgId => 264;
+  int get msgId => static_id;
   @override
   String get abbrev => "Pressure";
 
@@ -2034,9 +2114,10 @@ abstract class Pressure extends ImcMessage implements Built<Pressure, PressureBu
 ///
 /// Depth report.
 abstract class Depth extends ImcMessage implements Built<Depth, DepthBuilder> {
+  static const static_id = 265;
   Depth._();
   @override
-  int get msgId => 265;
+  int get msgId => static_id;
   @override
   String get abbrev => "Depth";
 
@@ -2049,9 +2130,10 @@ abstract class Depth extends ImcMessage implements Built<Depth, DepthBuilder> {
 ///
 /// Report of Depth Offset.
 abstract class DepthOffset extends ImcMessage implements Built<DepthOffset, DepthOffsetBuilder> {
+  static const static_id = 266;
   DepthOffset._();
   @override
-  int get msgId => 266;
+  int get msgId => static_id;
   @override
   String get abbrev => "DepthOffset";
 
@@ -2064,9 +2146,10 @@ abstract class DepthOffset extends ImcMessage implements Built<DepthOffset, Dept
 ///
 /// Sound Speed report.
 abstract class SoundSpeed extends ImcMessage implements Built<SoundSpeed, SoundSpeedBuilder> {
+  static const static_id = 267;
   SoundSpeed._();
   @override
-  int get msgId => 267;
+  int get msgId => static_id;
   @override
   String get abbrev => "SoundSpeed";
 
@@ -2079,9 +2162,10 @@ abstract class SoundSpeed extends ImcMessage implements Built<SoundSpeed, SoundS
 ///
 /// Water Density report.
 abstract class WaterDensity extends ImcMessage implements Built<WaterDensity, WaterDensityBuilder> {
+  static const static_id = 268;
   WaterDensity._();
   @override
-  int get msgId => 268;
+  int get msgId => static_id;
   @override
   String get abbrev => "WaterDensity";
 
@@ -2094,9 +2178,10 @@ abstract class WaterDensity extends ImcMessage implements Built<WaterDensity, Wa
 ///
 /// Report of conductivity.
 abstract class Conductivity extends ImcMessage implements Built<Conductivity, ConductivityBuilder> {
+  static const static_id = 269;
   Conductivity._();
   @override
-  int get msgId => 269;
+  int get msgId => static_id;
   @override
   String get abbrev => "Conductivity";
 
@@ -2109,9 +2194,10 @@ abstract class Conductivity extends ImcMessage implements Built<Conductivity, Co
 ///
 /// Report of salinity.
 abstract class Salinity extends ImcMessage implements Built<Salinity, SalinityBuilder> {
+  static const static_id = 270;
   Salinity._();
   @override
-  int get msgId => 270;
+  int get msgId => static_id;
   @override
   String get abbrev => "Salinity";
 
@@ -2124,9 +2210,10 @@ abstract class Salinity extends ImcMessage implements Built<Salinity, SalinityBu
 ///
 /// Measurement of wind speed.
 abstract class WindSpeed extends ImcMessage implements Built<WindSpeed, WindSpeedBuilder> {
+  static const static_id = 271;
   WindSpeed._();
   @override
-  int get msgId => 271;
+  int get msgId => static_id;
   @override
   String get abbrev => "WindSpeed";
 
@@ -2147,9 +2234,10 @@ abstract class WindSpeed extends ImcMessage implements Built<WindSpeed, WindSpee
 ///
 /// Measurement of relative humidity.
 abstract class RelativeHumidity extends ImcMessage implements Built<RelativeHumidity, RelativeHumidityBuilder> {
+  static const static_id = 272;
   RelativeHumidity._();
   @override
-  int get msgId => 272;
+  int get msgId => static_id;
   @override
   String get abbrev => "RelativeHumidity";
 
@@ -2162,9 +2250,10 @@ abstract class RelativeHumidity extends ImcMessage implements Built<RelativeHumi
 ///
 /// Verbatim representation of device data in plain text format.
 abstract class DevDataText extends ImcMessage implements Built<DevDataText, DevDataTextBuilder> {
+  static const static_id = 273;
   DevDataText._();
   @override
-  int get msgId => 273;
+  int get msgId => static_id;
   @override
   String get abbrev => "DevDataText";
 
@@ -2177,9 +2266,10 @@ abstract class DevDataText extends ImcMessage implements Built<DevDataText, DevD
 ///
 /// Verbatim representation of device data in binary format.
 abstract class DevDataBinary extends ImcMessage implements Built<DevDataBinary, DevDataBinaryBuilder> {
+  static const static_id = 274;
   DevDataBinary._();
   @override
-  int get msgId => 274;
+  int get msgId => static_id;
   @override
   String get abbrev => "DevDataBinary";
 
@@ -2192,9 +2282,10 @@ abstract class DevDataBinary extends ImcMessage implements Built<DevDataBinary, 
 ///
 /// Force measurement.
 abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
+  static const static_id = 275;
   Force._();
   @override
-  int get msgId => 275;
+  int get msgId => static_id;
   @override
   String get abbrev => "Force";
 
@@ -2283,9 +2374,10 @@ abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
 /// 
 /// **Common:**
 abstract class SonarData extends ImcMessage implements Built<SonarData, SonarDataBuilder> {
+  static const static_id = 276;
   SonarData._();
   @override
-  int get msgId => 276;
+  int get msgId => static_id;
   @override
   String get abbrev => "SonarData";
 
@@ -2327,9 +2419,10 @@ abstract class SonarData extends ImcMessage implements Built<SonarData, SonarDat
 ///
 /// Hardware pulse detection.
 abstract class Pulse extends ImcMessage implements Built<Pulse, PulseBuilder> {
+  static const static_id = 277;
   Pulse._();
   @override
-  int get msgId => 277;
+  int get msgId => static_id;
   @override
   String get abbrev => "Pulse";
 }
@@ -2338,9 +2431,10 @@ abstract class Pulse extends ImcMessage implements Built<Pulse, PulseBuilder> {
 ///
 /// Control of hardware pulse detection.
 abstract class PulseDetectionControl extends ImcMessage implements Built<PulseDetectionControl, PulseDetectionControlBuilder> {
+  static const static_id = 278;
   PulseDetectionControl._();
   @override
-  int get msgId => 278;
+  int get msgId => static_id;
   @override
   String get abbrev => "PulseDetectionControl";
 
@@ -2353,9 +2447,10 @@ abstract class PulseDetectionControl extends ImcMessage implements Built<PulseDe
 ///
 /// Report of fuel level.
 abstract class FuelLevel extends ImcMessage implements Built<FuelLevel, FuelLevelBuilder> {
+  static const static_id = 279;
   FuelLevel._();
   @override
-  int get msgId => 279;
+  int get msgId => static_id;
   @override
   String get abbrev => "FuelLevel";
 
@@ -2378,9 +2473,10 @@ abstract class FuelLevel extends ImcMessage implements Built<FuelLevel, FuelLeve
 ///
 /// Report of GPS navigation data.
 abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNavDataBuilder> {
+  static const static_id = 280;
   GpsNavData._();
   @override
-  int get msgId => 280;
+  int get msgId => static_id;
   @override
   String get abbrev => "GpsNavData";
 
@@ -2449,9 +2545,10 @@ abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNav
 ///
 /// Actual position of a servo.
 abstract class ServoPosition extends ImcMessage implements Built<ServoPosition, ServoPositionBuilder> {
+  static const static_id = 281;
   ServoPosition._();
   @override
-  int get msgId => 281;
+  int get msgId => static_id;
   @override
   String get abbrev => "ServoPosition";
 
@@ -2468,9 +2565,10 @@ abstract class ServoPosition extends ImcMessage implements Built<ServoPosition, 
 ///
 /// Location of a specific device in the system infrastructure.
 abstract class DeviceState extends ImcMessage implements Built<DeviceState, DeviceStateBuilder> {
+  static const static_id = 282;
   DeviceState._();
   @override
-  int get msgId => 282;
+  int get msgId => static_id;
   @override
   String get abbrev => "DeviceState";
 
@@ -2503,9 +2601,10 @@ abstract class DeviceState extends ImcMessage implements Built<DeviceState, Devi
 ///
 /// Beam configuration of the device.
 abstract class BeamConfig extends ImcMessage implements Built<BeamConfig, BeamConfigBuilder> {
+  static const static_id = 283;
   BeamConfig._();
   @override
-  int get msgId => 283;
+  int get msgId => static_id;
   @override
   String get abbrev => "BeamConfig";
 
@@ -2524,9 +2623,10 @@ abstract class BeamConfig extends ImcMessage implements Built<BeamConfig, BeamCo
 ///
 /// Report sanity or lack of it in the data output by a sensor.
 abstract class DataSanity extends ImcMessage implements Built<DataSanity, DataSanityBuilder> {
+  static const static_id = 284;
   DataSanity._();
   @override
-  int get msgId => 284;
+  int get msgId => static_id;
   @override
   String get abbrev => "DataSanity";
 
@@ -2539,9 +2639,10 @@ abstract class DataSanity extends ImcMessage implements Built<DataSanity, DataSa
 ///
 /// Rhodamine Dye measurement.
 abstract class RhodamineDye extends ImcMessage implements Built<RhodamineDye, RhodamineDyeBuilder> {
+  static const static_id = 285;
   RhodamineDye._();
   @override
-  int get msgId => 285;
+  int get msgId => static_id;
   @override
   String get abbrev => "RhodamineDye";
 
@@ -2554,9 +2655,10 @@ abstract class RhodamineDye extends ImcMessage implements Built<RhodamineDye, Rh
 ///
 /// Crude oil measurement.
 abstract class CrudeOil extends ImcMessage implements Built<CrudeOil, CrudeOilBuilder> {
+  static const static_id = 286;
   CrudeOil._();
   @override
-  int get msgId => 286;
+  int get msgId => static_id;
   @override
   String get abbrev => "CrudeOil";
 
@@ -2569,9 +2671,10 @@ abstract class CrudeOil extends ImcMessage implements Built<CrudeOil, CrudeOilBu
 ///
 /// Fine oil measurement.
 abstract class FineOil extends ImcMessage implements Built<FineOil, FineOilBuilder> {
+  static const static_id = 287;
   FineOil._();
   @override
-  int get msgId => 287;
+  int get msgId => static_id;
   @override
   String get abbrev => "FineOil";
 
@@ -2584,9 +2687,10 @@ abstract class FineOil extends ImcMessage implements Built<FineOil, FineOilBuild
 ///
 /// Turbidity measurement.
 abstract class Turbidity extends ImcMessage implements Built<Turbidity, TurbidityBuilder> {
+  static const static_id = 288;
   Turbidity._();
   @override
-  int get msgId => 288;
+  int get msgId => static_id;
   @override
   String get abbrev => "Turbidity";
 
@@ -2599,9 +2703,10 @@ abstract class Turbidity extends ImcMessage implements Built<Turbidity, Turbidit
 ///
 /// Chlorophyll measurement.
 abstract class Chlorophyll extends ImcMessage implements Built<Chlorophyll, ChlorophyllBuilder> {
+  static const static_id = 289;
   Chlorophyll._();
   @override
-  int get msgId => 289;
+  int get msgId => static_id;
   @override
   String get abbrev => "Chlorophyll";
 
@@ -2614,9 +2719,10 @@ abstract class Chlorophyll extends ImcMessage implements Built<Chlorophyll, Chlo
 ///
 /// Fluorescein measurement.
 abstract class Fluorescein extends ImcMessage implements Built<Fluorescein, FluoresceinBuilder> {
+  static const static_id = 290;
   Fluorescein._();
   @override
-  int get msgId => 290;
+  int get msgId => static_id;
   @override
   String get abbrev => "Fluorescein";
 
@@ -2629,9 +2735,10 @@ abstract class Fluorescein extends ImcMessage implements Built<Fluorescein, Fluo
 ///
 /// Phycocyanin measurement.
 abstract class Phycocyanin extends ImcMessage implements Built<Phycocyanin, PhycocyaninBuilder> {
+  static const static_id = 291;
   Phycocyanin._();
   @override
-  int get msgId => 291;
+  int get msgId => static_id;
   @override
   String get abbrev => "Phycocyanin";
 
@@ -2644,9 +2751,10 @@ abstract class Phycocyanin extends ImcMessage implements Built<Phycocyanin, Phyc
 ///
 /// Phycoerythrin measurement.
 abstract class Phycoerythrin extends ImcMessage implements Built<Phycoerythrin, PhycoerythrinBuilder> {
+  static const static_id = 292;
   Phycoerythrin._();
   @override
-  int get msgId => 292;
+  int get msgId => static_id;
   @override
   String get abbrev => "Phycoerythrin";
 
@@ -2659,9 +2767,10 @@ abstract class Phycoerythrin extends ImcMessage implements Built<Phycoerythrin, 
 ///
 /// Report of an RTK-GPS fix.
 abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRtkBuilder> {
+  static const static_id = 293;
   GpsFixRtk._();
   @override
-  int get msgId => 293;
+  int get msgId => static_id;
   @override
   String get abbrev => "GpsFixRtk";
 
@@ -2744,9 +2853,10 @@ abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRt
 /// full state estimation, or only concerns attitude or
 /// position/velocity.
 abstract class ExternalNavData extends ImcMessage implements Built<ExternalNavData, ExternalNavDataBuilder> {
+  static const static_id = 294;
   ExternalNavData._();
   @override
-  int get msgId => 294;
+  int get msgId => static_id;
   @override
   String get abbrev => "ExternalNavData";
 
@@ -2763,9 +2873,10 @@ abstract class ExternalNavData extends ImcMessage implements Built<ExternalNavDa
 ///
 /// Dissolved Oxygen measurement.
 abstract class DissolvedOxygen extends ImcMessage implements Built<DissolvedOxygen, DissolvedOxygenBuilder> {
+  static const static_id = 295;
   DissolvedOxygen._();
   @override
-  int get msgId => 295;
+  int get msgId => static_id;
   @override
   String get abbrev => "DissolvedOxygen";
 
@@ -2778,9 +2889,10 @@ abstract class DissolvedOxygen extends ImcMessage implements Built<DissolvedOxyg
 ///
 /// Air Saturation measurement.
 abstract class AirSaturation extends ImcMessage implements Built<AirSaturation, AirSaturationBuilder> {
+  static const static_id = 296;
   AirSaturation._();
   @override
-  int get msgId => 296;
+  int get msgId => static_id;
   @override
   String get abbrev => "AirSaturation";
 
@@ -2793,9 +2905,10 @@ abstract class AirSaturation extends ImcMessage implements Built<AirSaturation, 
 ///
 /// Throttle e.g. for Plane/Copter .
 abstract class Throttle extends ImcMessage implements Built<Throttle, ThrottleBuilder> {
+  static const static_id = 297;
   Throttle._();
   @override
-  int get msgId => 297;
+  int get msgId => static_id;
   @override
   String get abbrev => "Throttle";
 
@@ -2808,9 +2921,10 @@ abstract class Throttle extends ImcMessage implements Built<Throttle, ThrottleBu
 ///
 /// Report of pH.
 abstract class PH extends ImcMessage implements Built<PH, PHBuilder> {
+  static const static_id = 298;
   PH._();
   @override
-  int get msgId => 298;
+  int get msgId => static_id;
   @override
   String get abbrev => "PH";
 
@@ -2823,9 +2937,10 @@ abstract class PH extends ImcMessage implements Built<PH, PHBuilder> {
 ///
 /// Report of Redox Potential.
 abstract class Redox extends ImcMessage implements Built<Redox, RedoxBuilder> {
+  static const static_id = 299;
   Redox._();
   @override
-  int get msgId => 299;
+  int get msgId => static_id;
   @override
   String get abbrev => "Redox";
 
@@ -2838,9 +2953,10 @@ abstract class Redox extends ImcMessage implements Built<Redox, RedoxBuilder> {
 ///
 /// Camera Zoom.
 abstract class CameraZoom extends ImcMessage implements Built<CameraZoom, CameraZoomBuilder> {
+  static const static_id = 300;
   CameraZoom._();
   @override
-  int get msgId => 300;
+  int get msgId => static_id;
   @override
   String get abbrev => "CameraZoom";
 
@@ -2861,9 +2977,10 @@ abstract class CameraZoom extends ImcMessage implements Built<CameraZoom, Camera
 ///
 /// Actuate directly on a thruster.
 abstract class SetThrusterActuation extends ImcMessage implements Built<SetThrusterActuation, SetThrusterActuationBuilder> {
+  static const static_id = 301;
   SetThrusterActuation._();
   @override
-  int get msgId => 301;
+  int get msgId => static_id;
   @override
   String get abbrev => "SetThrusterActuation";
 
@@ -2880,9 +2997,10 @@ abstract class SetThrusterActuation extends ImcMessage implements Built<SetThrus
 ///
 /// Set the position of a servo.
 abstract class SetServoPosition extends ImcMessage implements Built<SetServoPosition, SetServoPositionBuilder> {
+  static const static_id = 302;
   SetServoPosition._();
   @override
-  int get msgId => 302;
+  int get msgId => static_id;
   @override
   String get abbrev => "SetServoPosition";
 
@@ -2899,9 +3017,10 @@ abstract class SetServoPosition extends ImcMessage implements Built<SetServoPosi
 ///
 /// Set the deflection angle of a control surface.
 abstract class SetControlSurfaceDeflection extends ImcMessage implements Built<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder> {
+  static const static_id = 303;
   SetControlSurfaceDeflection._();
   @override
-  int get msgId => 303;
+  int get msgId => static_id;
   @override
   String get abbrev => "SetControlSurfaceDeflection";
 
@@ -2923,9 +3042,10 @@ abstract class SetControlSurfaceDeflection extends ImcMessage implements Built<S
 /// (operation=REPORT). The type of action can be Axis, Hat or
 /// Button.
 abstract class RemoteActionsRequest extends ImcMessage implements Built<RemoteActionsRequest, RemoteActionsRequestBuilder> {
+  static const static_id = 304;
   RemoteActionsRequest._();
   @override
-  int get msgId => 304;
+  int get msgId => static_id;
   @override
   String get abbrev => "RemoteActionsRequest";
 
@@ -2944,9 +3064,10 @@ abstract class RemoteActionsRequest extends ImcMessage implements Built<RemoteAc
 /// each remote action. If the action is not on the list the assumed
 /// value is 0.
 abstract class RemoteActions extends ImcMessage implements Built<RemoteActions, RemoteActionsBuilder> {
+  static const static_id = 305;
   RemoteActions._();
   @override
-  int get msgId => 305;
+  int get msgId => static_id;
   @override
   String get abbrev => "RemoteActions";
 
@@ -2959,9 +3080,10 @@ abstract class RemoteActions extends ImcMessage implements Built<RemoteActions, 
 ///
 /// Event of a specific hardware button.
 abstract class ButtonEvent extends ImcMessage implements Built<ButtonEvent, ButtonEventBuilder> {
+  static const static_id = 306;
   ButtonEvent._();
   @override
-  int get msgId => 306;
+  int get msgId => static_id;
   @override
   String get abbrev => "ButtonEvent";
 
@@ -2978,9 +3100,10 @@ abstract class ButtonEvent extends ImcMessage implements Built<ButtonEvent, Butt
 ///
 /// Control LCD.
 abstract class LcdControl extends ImcMessage implements Built<LcdControl, LcdControlBuilder> {
+  static const static_id = 307;
   LcdControl._();
   @override
-  int get msgId => 307;
+  int get msgId => static_id;
   @override
   String get abbrev => "LcdControl";
 
@@ -2997,9 +3120,10 @@ abstract class LcdControl extends ImcMessage implements Built<LcdControl, LcdCon
 ///
 /// This message allows controlling the system's power lines.
 abstract class PowerOperation extends ImcMessage implements Built<PowerOperation, PowerOperationBuilder> {
+  static const static_id = 308;
   PowerOperation._();
   @override
-  int get msgId => 308;
+  int get msgId => static_id;
   @override
   String get abbrev => "PowerOperation";
 
@@ -3020,9 +3144,10 @@ abstract class PowerOperation extends ImcMessage implements Built<PowerOperation
 ///
 /// This message allows controlling power channels.
 abstract class PowerChannelControl extends ImcMessage implements Built<PowerChannelControl, PowerChannelControlBuilder> {
+  static const static_id = 309;
   PowerChannelControl._();
   @override
-  int get msgId => 309;
+  int get msgId => static_id;
   @override
   String get abbrev => "PowerChannelControl";
 
@@ -3043,9 +3168,10 @@ abstract class PowerChannelControl extends ImcMessage implements Built<PowerChan
 ///
 /// Request the state of power channels.
 abstract class QueryPowerChannelState extends ImcMessage implements Built<QueryPowerChannelState, QueryPowerChannelStateBuilder> {
+  static const static_id = 310;
   QueryPowerChannelState._();
   @override
-  int get msgId => 310;
+  int get msgId => static_id;
   @override
   String get abbrev => "QueryPowerChannelState";
 }
@@ -3054,9 +3180,10 @@ abstract class QueryPowerChannelState extends ImcMessage implements Built<QueryP
 ///
 /// Message conveying the state of a power channel.
 abstract class PowerChannelState extends ImcMessage implements Built<PowerChannelState, PowerChannelStateBuilder> {
+  static const static_id = 311;
   PowerChannelState._();
   @override
-  int get msgId => 311;
+  int get msgId => static_id;
   @override
   String get abbrev => "PowerChannelState";
 
@@ -3073,9 +3200,10 @@ abstract class PowerChannelState extends ImcMessage implements Built<PowerChanne
 ///
 /// Brightness value of an LED (Light-Emitting Diode).
 abstract class LedBrightness extends ImcMessage implements Built<LedBrightness, LedBrightnessBuilder> {
+  static const static_id = 312;
   LedBrightness._();
   @override
-  int get msgId => 312;
+  int get msgId => static_id;
   @override
   String get abbrev => "LedBrightness";
 
@@ -3093,9 +3221,10 @@ abstract class LedBrightness extends ImcMessage implements Built<LedBrightness, 
 /// Query the brightness of an LED (Light-Emitting Diode). The
 /// recipient of this message shall reply with 'LedBrightness'.
 abstract class QueryLedBrightness extends ImcMessage implements Built<QueryLedBrightness, QueryLedBrightnessBuilder> {
+  static const static_id = 313;
   QueryLedBrightness._();
   @override
-  int get msgId => 313;
+  int get msgId => static_id;
   @override
   String get abbrev => "QueryLedBrightness";
 
@@ -3110,9 +3239,10 @@ abstract class QueryLedBrightness extends ImcMessage implements Built<QueryLedBr
 /// recipient of this message shall set the intensity of the LED to
 /// the desired 'value' and reply with 'LedBrightness'.
 abstract class SetLedBrightness extends ImcMessage implements Built<SetLedBrightness, SetLedBrightnessBuilder> {
+  static const static_id = 314;
   SetLedBrightness._();
   @override
-  int get msgId => 314;
+  int get msgId => static_id;
   @override
   String get abbrev => "SetLedBrightness";
 
@@ -3129,9 +3259,10 @@ abstract class SetLedBrightness extends ImcMessage implements Built<SetLedBright
 ///
 /// Set properties of a PWM signal channel.
 abstract class SetPWM extends ImcMessage implements Built<SetPWM, SetPWMBuilder> {
+  static const static_id = 315;
   SetPWM._();
   @override
-  int get msgId => 315;
+  int get msgId => static_id;
   @override
   String get abbrev => "SetPWM";
 
@@ -3154,9 +3285,10 @@ abstract class SetPWM extends ImcMessage implements Built<SetPWM, SetPWMBuilder>
 ///
 /// Properties of a PWM signal channel.
 abstract class PWM extends ImcMessage implements Built<PWM, PWMBuilder> {
+  static const static_id = 316;
   PWM._();
   @override
-  int get msgId => 316;
+  int get msgId => static_id;
   @override
   String get abbrev => "PWM";
 
@@ -3198,9 +3330,10 @@ abstract class PWM extends ImcMessage implements Built<PWM, PWMBuilder> {
 /// 
 /// Euler angles
 abstract class EstimatedState extends ImcMessage implements Built<EstimatedState, EstimatedStateBuilder> {
+  static const static_id = 350;
   EstimatedState._();
   @override
-  int get msgId => 350;
+  int get msgId => static_id;
   @override
   String get abbrev => "EstimatedState";
 
@@ -3294,9 +3427,10 @@ abstract class EstimatedState extends ImcMessage implements Built<EstimatedState
 /// The estimated stream velocity, typically for water or air
 /// streams.
 abstract class EstimatedStreamVelocity extends ImcMessage implements Built<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder> {
+  static const static_id = 351;
   EstimatedStreamVelocity._();
   @override
-  int get msgId => 351;
+  int get msgId => static_id;
   @override
   String get abbrev => "EstimatedStreamVelocity";
 
@@ -3317,9 +3451,10 @@ abstract class EstimatedStreamVelocity extends ImcMessage implements Built<Estim
 ///
 /// Speed measured by the navigation filter.
 abstract class IndicatedSpeed extends ImcMessage implements Built<IndicatedSpeed, IndicatedSpeedBuilder> {
+  static const static_id = 352;
   IndicatedSpeed._();
   @override
-  int get msgId => 352;
+  int get msgId => static_id;
   @override
   String get abbrev => "IndicatedSpeed";
 
@@ -3331,9 +3466,10 @@ abstract class IndicatedSpeed extends ImcMessage implements Built<IndicatedSpeed
 ///
 /// Ground true speed.
 abstract class TrueSpeed extends ImcMessage implements Built<TrueSpeed, TrueSpeedBuilder> {
+  static const static_id = 353;
   TrueSpeed._();
   @override
-  int get msgId => 353;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrueSpeed";
 
@@ -3347,9 +3483,10 @@ abstract class TrueSpeed extends ImcMessage implements Built<TrueSpeed, TrueSpee
 /// This is usually given by the output of the state
 /// covariance matrix of an Extended Kalman Filter.
 abstract class NavigationUncertainty extends ImcMessage implements Built<NavigationUncertainty, NavigationUncertaintyBuilder> {
+  static const static_id = 354;
   NavigationUncertainty._();
   @override
-  int get msgId => 354;
+  int get msgId => static_id;
   @override
   String get abbrev => "NavigationUncertainty";
 
@@ -3420,9 +3557,10 @@ abstract class NavigationUncertainty extends ImcMessage implements Built<Navigat
 /// part of the vehicle estimated state but
 /// that the user may refer for more information.
 abstract class NavigationData extends ImcMessage implements Built<NavigationData, NavigationDataBuilder> {
+  static const static_id = 355;
   NavigationData._();
   @override
-  int get msgId => 355;
+  int get msgId => static_id;
   @override
   String get abbrev => "NavigationData";
 
@@ -3466,9 +3604,10 @@ abstract class NavigationData extends ImcMessage implements Built<NavigationData
 /// GPS Fix Rejection class
 ///
 abstract class GpsFixRejection extends ImcMessage implements Built<GpsFixRejection, GpsFixRejectionBuilder> {
+  static const static_id = 356;
   GpsFixRejection._();
   @override
-  int get msgId => 356;
+  int get msgId => static_id;
   @override
   String get abbrev => "GpsFixRejection";
 
@@ -3491,9 +3630,10 @@ abstract class GpsFixRejection extends ImcMessage implements Built<GpsFixRejecti
 /// acceptance field that indicates whether a LBL range was accepted
 /// or rejected, and if rejected, the reason why.
 abstract class LblRangeAcceptance extends ImcMessage implements Built<LblRangeAcceptance, LblRangeAcceptanceBuilder> {
+  static const static_id = 357;
   LblRangeAcceptance._();
   @override
-  int get msgId => 357;
+  int get msgId => static_id;
   @override
   String get abbrev => "LblRangeAcceptance";
 
@@ -3517,9 +3657,10 @@ abstract class LblRangeAcceptance extends ImcMessage implements Built<LblRangeAc
 /// notifies that a new measurement was locally rejected by the
 /// navigation filter.
 abstract class DvlRejection extends ImcMessage implements Built<DvlRejection, DvlRejectionBuilder> {
+  static const static_id = 358;
   DvlRejection._();
   @override
-  int get msgId => 358;
+  int get msgId => static_id;
   @override
   String get abbrev => "DvlRejection";
 
@@ -3560,9 +3701,10 @@ abstract class DvlRejection extends ImcMessage implements Built<DvlRejection, Dv
 ///
 /// LBL Beacon position estimate.
 abstract class LblEstimate extends ImcMessage implements Built<LblEstimate, LblEstimateBuilder> {
+  static const static_id = 360;
   LblEstimate._();
   @override
-  int get msgId => 360;
+  int get msgId => static_id;
   @override
   String get abbrev => "LblEstimate";
 
@@ -3597,9 +3739,10 @@ abstract class LblEstimate extends ImcMessage implements Built<LblEstimate, LblE
 ///
 /// This message notifies the vehicle is ready for dead-reckoning missions.
 abstract class AlignmentState extends ImcMessage implements Built<AlignmentState, AlignmentStateBuilder> {
+  static const static_id = 361;
   AlignmentState._();
   @override
-  int get msgId => 361;
+  int get msgId => static_id;
   @override
   String get abbrev => "AlignmentState";
 
@@ -3613,9 +3756,10 @@ abstract class AlignmentState extends ImcMessage implements Built<AlignmentState
 /// The stream velocity estimated by a group of systems.
 /// Typically for water or air streams.
 abstract class GroupStreamVelocity extends ImcMessage implements Built<GroupStreamVelocity, GroupStreamVelocityBuilder> {
+  static const static_id = 362;
   GroupStreamVelocity._();
   @override
-  int get msgId => 362;
+  int get msgId => static_id;
   @override
   String get abbrev => "GroupStreamVelocity";
 
@@ -3636,9 +3780,10 @@ abstract class GroupStreamVelocity extends ImcMessage implements Built<GroupStre
 ///
 /// Airspeed along with airflow angles.
 abstract class Airflow extends ImcMessage implements Built<Airflow, AirflowBuilder> {
+  static const static_id = 363;
   Airflow._();
   @override
-  int get msgId => 363;
+  int get msgId => static_id;
   @override
   String get abbrev => "Airflow";
 
@@ -3659,9 +3804,10 @@ abstract class Airflow extends ImcMessage implements Built<Airflow, AirflowBuild
 ///
 /// Desired Heading angle reference value for the control layer.
 abstract class DesiredHeading extends ControlCommand implements Built<DesiredHeading, DesiredHeadingBuilder> {
+  static const static_id = 400;
   DesiredHeading._();
   @override
-  int get msgId => 400;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredHeading";
 
@@ -3675,9 +3821,10 @@ abstract class DesiredHeading extends ControlCommand implements Built<DesiredHea
 ///
 /// Desired Z reference value for the control layer.
 abstract class DesiredZ extends ControlCommand implements Built<DesiredZ, DesiredZBuilder> {
+  static const static_id = 401;
   DesiredZ._();
   @override
-  int get msgId => 401;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredZ";
 
@@ -3694,9 +3841,10 @@ abstract class DesiredZ extends ControlCommand implements Built<DesiredZ, Desire
 ///
 /// Desired Speed reference value for the control layer.
 abstract class DesiredSpeed extends ControlCommand implements Built<DesiredSpeed, DesiredSpeedBuilder> {
+  static const static_id = 402;
   DesiredSpeed._();
   @override
-  int get msgId => 402;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredSpeed";
 
@@ -3714,9 +3862,10 @@ abstract class DesiredSpeed extends ControlCommand implements Built<DesiredSpeed
 ///
 /// Desired Roll angle reference value for the control layer.
 abstract class DesiredRoll extends ControlCommand implements Built<DesiredRoll, DesiredRollBuilder> {
+  static const static_id = 403;
   DesiredRoll._();
   @override
-  int get msgId => 403;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredRoll";
 
@@ -3729,9 +3878,10 @@ abstract class DesiredRoll extends ControlCommand implements Built<DesiredRoll, 
 ///
 /// Desired Pitch angle reference value for the control layer.
 abstract class DesiredPitch extends ControlCommand implements Built<DesiredPitch, DesiredPitchBuilder> {
+  static const static_id = 404;
   DesiredPitch._();
   @override
-  int get msgId => 404;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredPitch";
 
@@ -3744,9 +3894,10 @@ abstract class DesiredPitch extends ControlCommand implements Built<DesiredPitch
 ///
 /// Desired Vertical Rate speed reference value for the control layer.
 abstract class DesiredVerticalRate extends ImcMessage implements Built<DesiredVerticalRate, DesiredVerticalRateBuilder> {
+  static const static_id = 405;
   DesiredVerticalRate._();
   @override
-  int get msgId => 405;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredVerticalRate";
 
@@ -3786,9 +3937,10 @@ abstract class DesiredVerticalRate extends ImcMessage implements Built<DesiredVe
 /// radius ('lradius'), duration ('lduration'), and clockwise or
 /// counter-clockwise direction ('CCLOCKW' flag).
 abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, DesiredPathBuilder> {
+  static const static_id = 406;
   DesiredPath._();
   @override
-  int get msgId => 406;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredPath";
 
@@ -3859,9 +4011,10 @@ abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, 
 /// Set the desired virtual forces and torques to be applied to the
 /// vehicle.
 abstract class DesiredControl extends ImcMessage implements Built<DesiredControl, DesiredControlBuilder> {
+  static const static_id = 407;
   DesiredControl._();
   @override
-  int get msgId => 407;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredControl";
 
@@ -3898,9 +4051,10 @@ abstract class DesiredControl extends ImcMessage implements Built<DesiredControl
 ///
 /// Desired Heading Rate speed reference value for the control layer.
 abstract class DesiredHeadingRate extends ImcMessage implements Built<DesiredHeadingRate, DesiredHeadingRateBuilder> {
+  static const static_id = 408;
   DesiredHeadingRate._();
   @override
-  int get msgId => 408;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredHeadingRate";
 
@@ -3914,9 +4068,10 @@ abstract class DesiredHeadingRate extends ImcMessage implements Built<DesiredHea
 ///
 /// Desired value for each linear and angular speeds.
 abstract class DesiredVelocity extends ImcMessage implements Built<DesiredVelocity, DesiredVelocityBuilder> {
+  static const static_id = 409;
   DesiredVelocity._();
   @override
-  int get msgId => 409;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredVelocity";
 
@@ -3953,9 +4108,10 @@ abstract class DesiredVelocity extends ImcMessage implements Built<DesiredVeloci
 ///
 /// Path control state issued by Path Controller.
 abstract class PathControlState extends ImcMessage implements Built<PathControlState, PathControlStateBuilder> {
+  static const static_id = 410;
   PathControlState._();
   @override
-  int get msgId => 410;
+  int get msgId => static_id;
   @override
   String get abbrev => "PathControlState";
 
@@ -4048,9 +4204,10 @@ abstract class PathControlState extends ImcMessage implements Built<PathControlS
 ///
 /// Control torques allocated to the actuators.
 abstract class AllocatedControlTorques extends ImcMessage implements Built<AllocatedControlTorques, AllocatedControlTorquesBuilder> {
+  static const static_id = 411;
   AllocatedControlTorques._();
   @override
-  int get msgId => 411;
+  int get msgId => static_id;
   @override
   String get abbrev => "AllocatedControlTorques";
 
@@ -4071,9 +4228,10 @@ abstract class AllocatedControlTorques extends ImcMessage implements Built<Alloc
 ///
 /// Report of PID control parcels.
 abstract class ControlParcel extends ImcMessage implements Built<ControlParcel, ControlParcelBuilder> {
+  static const static_id = 412;
   ControlParcel._();
   @override
-  int get msgId => 412;
+  int get msgId => static_id;
   @override
   String get abbrev => "ControlParcel";
 
@@ -4098,9 +4256,10 @@ abstract class ControlParcel extends ImcMessage implements Built<ControlParcel, 
 ///
 /// Brake the vehicle in some way, i. e., reduce forward speed.
 abstract class Brake extends ImcMessage implements Built<Brake, BrakeBuilder> {
+  static const static_id = 413;
   Brake._();
   @override
-  int get msgId => 413;
+  int get msgId => static_id;
   @override
   String get abbrev => "Brake";
 
@@ -4113,9 +4272,10 @@ abstract class Brake extends ImcMessage implements Built<Brake, BrakeBuilder> {
 ///
 /// Position, velocity and acceleration setpoints in NED
 abstract class DesiredLinearState extends ImcMessage implements Built<DesiredLinearState, DesiredLinearStateBuilder> {
+  static const static_id = 414;
   DesiredLinearState._();
   @override
-  int get msgId => 414;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredLinearState";
 
@@ -4164,9 +4324,10 @@ abstract class DesiredLinearState extends ImcMessage implements Built<DesiredLin
 ///
 /// Desired throttle e.g. for Plane in FBWA-mode.
 abstract class DesiredThrottle extends ControlCommand implements Built<DesiredThrottle, DesiredThrottleBuilder> {
+  static const static_id = 415;
   DesiredThrottle._();
   @override
-  int get msgId => 415;
+  int get msgId => static_id;
   @override
   String get abbrev => "DesiredThrottle";
 
@@ -4189,9 +4350,10 @@ abstract class DesiredThrottle extends ControlCommand implements Built<DesiredTh
 /// not be considered by all maneuver controllers in charge
 /// of the execution of this type of maneuver.
 abstract class Goto extends Maneuver implements Built<Goto, GotoBuilder> {
+  static const static_id = 450;
   Goto._();
   @override
-  int get msgId => 450;
+  int get msgId => static_id;
   @override
   String get abbrev => "Goto";
 
@@ -4252,9 +4414,10 @@ abstract class Goto extends Maneuver implements Built<Goto, GotoBuilder> {
 /// The Pop Up maneuver makes the vehicle come to the surface at a
 /// specific waypoint. This maneuver is restricted to underwater vehicles.
 abstract class PopUp extends Maneuver implements Built<PopUp, PopUpBuilder> {
+  static const static_id = 451;
   PopUp._();
   @override
-  int get msgId => 451;
+  int get msgId => static_id;
   @override
   String get abbrev => "PopUp";
 
@@ -4313,9 +4476,10 @@ abstract class PopUp extends Maneuver implements Built<PopUp, PopUpBuilder> {
 /// The Teleoperation Maneuver lets the vehicle be controlled by an
 /// external human operator.
 abstract class Teleoperation extends Maneuver implements Built<Teleoperation, TeleoperationBuilder> {
+  static const static_id = 452;
   Teleoperation._();
   @override
-  int get msgId => 452;
+  int get msgId => static_id;
   @override
   String get abbrev => "Teleoperation";
 
@@ -4329,9 +4493,10 @@ abstract class Teleoperation extends Maneuver implements Built<Teleoperation, Te
 /// The Loiter maneuver makes the vehicle circle around a specific
 /// waypoint with fixed depth reference.
 abstract class Loiter extends Maneuver implements Built<Loiter, LoiterBuilder> {
+  static const static_id = 453;
   Loiter._();
   @override
-  int get msgId => 453;
+  int get msgId => static_id;
   @override
   String get abbrev => "Loiter";
 
@@ -4399,9 +4564,10 @@ abstract class Loiter extends Maneuver implements Built<Loiter, LoiterBuilder> {
 ///
 /// Causes the vehicle to stay idle for some time.
 abstract class IdleManeuver extends Maneuver implements Built<IdleManeuver, IdleManeuverBuilder> {
+  static const static_id = 454;
   IdleManeuver._();
   @override
-  int get msgId => 454;
+  int get msgId => static_id;
   @override
   String get abbrev => "IdleManeuver";
 
@@ -4421,9 +4587,10 @@ abstract class IdleManeuver extends Maneuver implements Built<IdleManeuver, Idle
 /// reference to a controller of the vehicle and then optionally
 /// lingers for some time.
 abstract class LowLevelControl extends Maneuver implements Built<LowLevelControl, LowLevelControlBuilder> {
+  static const static_id = 455;
   LowLevelControl._();
   @override
-  int get msgId => 455;
+  int get msgId => static_id;
   @override
   String get abbrev => "LowLevelControl";
 
@@ -4445,9 +4612,10 @@ abstract class LowLevelControl extends Maneuver implements Built<LowLevelControl
 ///
 /// Rows maneuver (i.e: lawn mower type maneuver)
 abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
+  static const static_id = 456;
   Rows._();
   @override
-  int get msgId => 456;
+  int get msgId => static_id;
   @override
   String get abbrev => "Rows";
 
@@ -4521,9 +4689,10 @@ abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
 ///
 /// Maneuver constituted by a list of Path Points.
 abstract class FollowPath extends Maneuver implements Built<FollowPath, FollowPathBuilder> {
+  static const static_id = 457;
   FollowPath._();
   @override
-  int get msgId => 457;
+  int get msgId => static_id;
   @override
   String get abbrev => "FollowPath";
 
@@ -4569,9 +4738,10 @@ abstract class FollowPath extends Maneuver implements Built<FollowPath, FollowPa
 ///
 /// Waypoint coordinate of a Follow Path maneuver.
 abstract class PathPoint extends ImcMessage implements Built<PathPoint, PathPointBuilder> {
+  static const static_id = 458;
   PathPoint._();
   @override
-  int get msgId => 458;
+  int get msgId => static_id;
   @override
   String get abbrev => "PathPoint";
 
@@ -4597,9 +4767,10 @@ abstract class PathPoint extends ImcMessage implements Built<PathPoint, PathPoin
 /// target waypoint in which depth/altitude varies along the way
 /// between two values with a desired pitch angle.
 abstract class YoYo extends Maneuver implements Built<YoYo, YoYoBuilder> {
+  static const static_id = 459;
   YoYo._();
   @override
-  int get msgId => 459;
+  int get msgId => static_id;
   @override
   String get abbrev => "YoYo";
 
@@ -4649,9 +4820,10 @@ abstract class YoYo extends Maneuver implements Built<YoYo, YoYoBuilder> {
 ///
 /// Notification of completion of a Teleoperation maneuver.
 abstract class TeleoperationDone extends ImcMessage implements Built<TeleoperationDone, TeleoperationDoneBuilder> {
+  static const static_id = 460;
   TeleoperationDone._();
   @override
-  int get msgId => 460;
+  int get msgId => static_id;
   @override
   String get abbrev => "TeleoperationDone";
 }
@@ -4662,9 +4834,10 @@ abstract class TeleoperationDone extends ImcMessage implements Built<Teleoperati
 /// and then enter a given circular perimeter around a waypoint coordinate
 /// for a certain amount of time.
 abstract class StationKeeping extends Maneuver implements Built<StationKeeping, StationKeepingBuilder> {
+  static const static_id = 461;
   StationKeeping._();
   @override
-  int get msgId => 461;
+  int get msgId => static_id;
   @override
   String get abbrev => "StationKeeping";
 
@@ -4714,9 +4887,10 @@ abstract class StationKeeping extends Maneuver implements Built<StationKeeping, 
 /// descend to another target altitude/depth. The ascent/descent
 /// slope and radius can also be optionally specified.
 abstract class Elevator extends Maneuver implements Built<Elevator, ElevatorBuilder> {
+  static const static_id = 462;
   Elevator._();
   @override
-  int get msgId => 462;
+  int get msgId => static_id;
   @override
   String get abbrev => "Elevator";
 
@@ -4779,9 +4953,10 @@ abstract class Elevator extends Maneuver implements Built<Elevator, ElevatorBuil
 ///
 /// Maneuver constituted by a list of Trajectory Points.
 abstract class FollowTrajectory extends Maneuver implements Built<FollowTrajectory, FollowTrajectoryBuilder> {
+  static const static_id = 463;
   FollowTrajectory._();
   @override
-  int get msgId => 463;
+  int get msgId => static_id;
   @override
   String get abbrev => "FollowTrajectory";
 
@@ -4827,9 +5002,10 @@ abstract class FollowTrajectory extends Maneuver implements Built<FollowTrajecto
 ///
 /// Waypoint coordinate of a Follow Trajectory maneuver.
 abstract class TrajectoryPoint extends ImcMessage implements Built<TrajectoryPoint, TrajectoryPointBuilder> {
+  static const static_id = 464;
   TrajectoryPoint._();
   @override
-  int get msgId => 464;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrajectoryPoint";
 
@@ -4860,9 +5036,10 @@ abstract class TrajectoryPoint extends ImcMessage implements Built<TrajectoryPoi
 /// settings of the maneuver are just its id, timeout and other
 /// settings encoded as a tuple list.
 abstract class CustomManeuver extends Maneuver implements Built<CustomManeuver, CustomManeuverBuilder> {
+  static const static_id = 465;
   CustomManeuver._();
   @override
-  int get msgId => 465;
+  int get msgId => static_id;
   @override
   String get abbrev => "CustomManeuver";
 
@@ -4886,9 +5063,10 @@ abstract class CustomManeuver extends Maneuver implements Built<CustomManeuver, 
 ///
 /// Coordinate maneuver using two or more cooperating systems.
 abstract class VehicleFormation extends Maneuver implements Built<VehicleFormation, VehicleFormationBuilder> {
+  static const static_id = 466;
   VehicleFormation._();
   @override
-  int get msgId => 466;
+  int get msgId => static_id;
   @override
   String get abbrev => "VehicleFormation";
 
@@ -4938,9 +5116,10 @@ abstract class VehicleFormation extends Maneuver implements Built<VehicleFormati
 ///
 /// Definition of a vehicle participant in a VehicleFormation maneuver.
 abstract class VehicleFormationParticipant extends ImcMessage implements Built<VehicleFormationParticipant, VehicleFormationParticipantBuilder> {
+  static const static_id = 467;
   VehicleFormationParticipant._();
   @override
-  int get msgId => 467;
+  int get msgId => static_id;
   @override
   String get abbrev => "VehicleFormationParticipant";
 
@@ -4965,9 +5144,10 @@ abstract class VehicleFormationParticipant extends ImcMessage implements Built<V
 ///
 /// Command used to stop currently executing maneuver.
 abstract class StopManeuver extends ImcMessage implements Built<StopManeuver, StopManeuverBuilder> {
+  static const static_id = 468;
   StopManeuver._();
   @override
-  int get msgId => 468;
+  int get msgId => static_id;
   @override
   String get abbrev => "StopManeuver";
 }
@@ -4977,9 +5157,10 @@ abstract class StopManeuver extends ImcMessage implements Built<StopManeuver, St
 /// Command used to indicate maneuver can be executed in the
 /// vehicle.
 abstract class RegisterManeuver extends ImcMessage implements Built<RegisterManeuver, RegisterManeuverBuilder> {
+  static const static_id = 469;
   RegisterManeuver._();
   @override
-  int get msgId => 469;
+  int get msgId => static_id;
   @override
   String get abbrev => "RegisterManeuver";
 
@@ -4992,9 +5173,10 @@ abstract class RegisterManeuver extends ImcMessage implements Built<RegisterMane
 ///
 /// Maneuver control state.
 abstract class ManeuverControlState extends ImcMessage implements Built<ManeuverControlState, ManeuverControlStateBuilder> {
+  static const static_id = 470;
   ManeuverControlState._();
   @override
-  int get msgId => 470;
+  int get msgId => static_id;
   @override
   String get abbrev => "ManeuverControlState";
 
@@ -5016,9 +5198,10 @@ abstract class ManeuverControlState extends ImcMessage implements Built<Maneuver
 ///
 /// System-following maneuver.
 abstract class FollowSystem extends ImcMessage implements Built<FollowSystem, FollowSystemBuilder> {
+  static const static_id = 471;
   FollowSystem._();
   @override
-  int get msgId => 471;
+  int get msgId => static_id;
   @override
   String get abbrev => "FollowSystem";
 
@@ -5061,9 +5244,10 @@ abstract class FollowSystem extends ImcMessage implements Built<FollowSystem, Fo
 /// In this maneuver, a vehicle drives to the center of two other
 /// systems (a, b) in order to be used as a communications relay.
 abstract class CommsRelay extends Maneuver implements Built<CommsRelay, CommsRelayBuilder> {
+  static const static_id = 472;
   CommsRelay._();
   @override
-  int get msgId => 472;
+  int get msgId => static_id;
   @override
   String get abbrev => "CommsRelay";
 
@@ -5106,9 +5290,10 @@ abstract class CommsRelay extends Maneuver implements Built<CommsRelay, CommsRel
 /// Given a polygonal area, generates trajectories to cover the
 /// area.
 abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaBuilder> {
+  static const static_id = 473;
   CoverArea._();
   @override
-  int get msgId => 473;
+  int get msgId => static_id;
   @override
   String get abbrev => "CoverArea";
 
@@ -5151,9 +5336,10 @@ abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaB
 /// This message is used to store the various polygon vertices for
 /// CoverArea maneuvers.
 abstract class PolygonVertex extends ImcMessage implements Built<PolygonVertex, PolygonVertexBuilder> {
+  static const static_id = 474;
   PolygonVertex._();
   @override
-  int get msgId => 474;
+  int get msgId => static_id;
   @override
   String get abbrev => "PolygonVertex";
 
@@ -5172,9 +5358,10 @@ abstract class PolygonVertex extends ImcMessage implements Built<PolygonVertex, 
 /// The vehicle cirlcles around a specific waypoint with a variable Z
 /// reference between a minimum and maximum value.
 abstract class CompassCalibration extends Maneuver implements Built<CompassCalibration, CompassCalibrationBuilder> {
+  static const static_id = 475;
   CompassCalibration._();
   @override
-  int get msgId => 475;
+  int get msgId => static_id;
   @override
   String get abbrev => "CompassCalibration";
 
@@ -5250,9 +5437,10 @@ abstract class CompassCalibration extends Maneuver implements Built<CompassCalib
 /// An offset in the yy axis results in an offset of the vehicle path line relative to the
 /// formation center path line.
 abstract class FormationParameters extends ImcMessage implements Built<FormationParameters, FormationParametersBuilder> {
+  static const static_id = 476;
   FormationParameters._();
   @override
-  int get msgId => 476;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormationParameters";
 
@@ -5284,9 +5472,10 @@ abstract class FormationParameters extends ImcMessage implements Built<Formation
 /// - Path contrains (virtual leader bank limit)
 /// - Supervision settings
 abstract class FormationPlanExecution extends Maneuver implements Built<FormationPlanExecution, FormationPlanExecutionBuilder> {
+  static const static_id = 477;
   FormationPlanExecution._();
   @override
-  int get msgId => 477;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormationPlanExecution";
 
@@ -5354,9 +5543,10 @@ abstract class FormationPlanExecution extends Maneuver implements Built<Formatio
 ///
 /// This maneuver follows a reference given by an external entity.
 abstract class FollowReference extends Maneuver implements Built<FollowReference, FollowReferenceBuilder> {
+  static const static_id = 478;
   FollowReference._();
   @override
-  int get msgId => 478;
+  int get msgId => static_id;
   @override
   String get abbrev => "FollowReference";
 
@@ -5391,9 +5581,10 @@ abstract class FollowReference extends Maneuver implements Built<FollowReference
 /// Reference To Follow class
 ///
 abstract class Reference extends ImcMessage implements Built<Reference, ReferenceBuilder> {
+  static const static_id = 479;
   Reference._();
   @override
-  int get msgId => 479;
+  int get msgId => static_id;
   @override
   String get abbrev => "Reference";
 
@@ -5419,9 +5610,10 @@ abstract class Reference extends ImcMessage implements Built<Reference, Referenc
 /// Follow Reference State class
 ///
 abstract class FollowRefState extends ImcMessage implements Built<FollowRefState, FollowRefStateBuilder> {
+  static const static_id = 480;
   FollowRefState._();
   @override
-  int get msgId => 480;
+  int get msgId => static_id;
   @override
   String get abbrev => "FollowRefState";
 
@@ -5450,9 +5642,10 @@ abstract class FollowRefState extends ImcMessage implements Built<FollowRefState
 ///
 /// Monitoring variables for the formation state and performance.
 abstract class FormationMonitor extends ImcMessage implements Built<FormationMonitor, FormationMonitorBuilder> {
+  static const static_id = 481;
   FormationMonitor._();
   @override
-  int get msgId => 481;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormationMonitor";
 
@@ -5561,9 +5754,10 @@ abstract class FormationMonitor extends ImcMessage implements Built<FormationMon
 ///
 /// Inter-vehicle formation state.
 abstract class RelativeState extends ImcMessage implements Built<RelativeState, RelativeStateBuilder> {
+  static const static_id = 482;
   RelativeState._();
   @override
-  int get msgId => 482;
+  int get msgId => static_id;
   @override
   String get abbrev => "RelativeState";
 
@@ -5669,9 +5863,10 @@ abstract class RelativeState extends ImcMessage implements Built<RelativeState, 
 /// and a flag specifying whether the thrust burst should be attempted
 /// forward, backward or auto (letting the vehicle decide).
 abstract class Dislodge extends Maneuver implements Built<Dislodge, DislodgeBuilder> {
+  static const static_id = 483;
   Dislodge._();
   @override
-  int get msgId => 483;
+  int get msgId => static_id;
   @override
   String get abbrev => "Dislodge";
 
@@ -5716,9 +5911,10 @@ abstract class Dislodge extends Maneuver implements Built<Dislodge, DislodgeBuil
 /// An offset in the yy axis results in an offset of the vehicle path line relative to the
 /// formation center path line.
 abstract class Formation extends ImcMessage implements Built<Formation, FormationBuilder> {
+  static const static_id = 484;
   Formation._();
   @override
-  int get msgId => 484;
+  int get msgId => static_id;
   @override
   String get abbrev => "Formation";
 
@@ -5820,9 +6016,10 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 /// Mandatory parameters defined for a "Launch" are
 /// timeout, speed and speed units.
 abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
+  static const static_id = 485;
   Launch._();
   @override
-  int get msgId => 485;
+  int get msgId => static_id;
   @override
   String get abbrev => "Launch";
 
@@ -5869,9 +6066,10 @@ abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
 /// Mandatory parameters defined for a "Goto" are
 /// timeout, speed and speed units.
 abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
+  static const static_id = 486;
   Drop._();
   @override
-  int get msgId => 486;
+  int get msgId => static_id;
   @override
   String get abbrev => "Drop";
 
@@ -5916,9 +6114,10 @@ abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
 /// 
 /// The vehicle's speed will vary according to environment conditions and/or maneuver start time.
 abstract class ScheduledGoto extends Maneuver implements Built<ScheduledGoto, ScheduledGotoBuilder> {
+  static const static_id = 487;
   ScheduledGoto._();
   @override
-  int get msgId => 487;
+  int get msgId => static_id;
   @override
   String get abbrev => "ScheduledGoto";
 
@@ -5960,9 +6159,10 @@ abstract class ScheduledGoto extends Maneuver implements Built<ScheduledGoto, Sc
 ///
 /// Rows coverage (i.e: lawn mower type maneuver) but with adaptive cover
 abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, RowsCoverageBuilder> {
+  static const static_id = 488;
   RowsCoverage._();
   @override
-  int get msgId => 488;
+  int get msgId => static_id;
   @override
   String get abbrev => "RowsCoverage";
 
@@ -6041,9 +6241,10 @@ abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, Rows
 /// Mandatory parameters defined for a "Goto" are
 /// timeout, speed and speed units.
 abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
+  static const static_id = 489;
   Sample._();
   @override
-  int get msgId => 489;
+  int get msgId => static_id;
   @override
   String get abbrev => "Sample";
 
@@ -6098,9 +6299,10 @@ abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
 /// A "ImageTracking" is a maneuver specifying a particular heading to the
 /// detected object.
 abstract class ImageTracking extends Maneuver implements Built<ImageTracking, ImageTrackingBuilder> {
+  static const static_id = 490;
   ImageTracking._();
   @override
-  int get msgId => 490;
+  int get msgId => static_id;
   @override
   String get abbrev => "ImageTracking";
 }
@@ -6113,9 +6315,10 @@ abstract class ImageTracking extends Maneuver implements Built<ImageTracking, Im
 /// Takeoff direction is set from the direction the plane is pointing when the auto takeoff command is started.
 /// It will remain that way until the vehicle reaches the target z reference. After that it will go to the target waypoint.
 abstract class Takeoff extends Maneuver implements Built<Takeoff, TakeoffBuilder> {
+  static const static_id = 491;
   Takeoff._();
   @override
-  int get msgId => 491;
+  int get msgId => static_id;
   @override
   String get abbrev => "Takeoff";
 
@@ -6157,9 +6360,10 @@ abstract class Takeoff extends Maneuver implements Built<Takeoff, TakeoffBuilder
 /// Automatic landing on the ground, for UAVs.
 /// This maneuver specifies the target touchdown location and sets the final approach based on the maneuver bearing and glide slope parameters.
 abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
+  static const static_id = 492;
   Land._();
   @override
-  int get msgId => 492;
+  int get msgId => static_id;
   @override
   String get abbrev => "Land";
 
@@ -6214,9 +6418,10 @@ abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
 /// of time or until it relinquishes control using (ManeuverDone). The external controller is allowed to
 /// drive the vehicle only inside the specified boundaries.
 abstract class AutonomousSection extends Maneuver implements Built<AutonomousSection, AutonomousSectionBuilder> {
+  static const static_id = 493;
   AutonomousSection._();
   @override
-  int get msgId => 493;
+  int get msgId => static_id;
   @override
   String get abbrev => "AutonomousSection";
 
@@ -6268,9 +6473,10 @@ abstract class AutonomousSection extends Maneuver implements Built<AutonomousSec
 ///
 /// This maneuver behaves by following a point.
 abstract class FollowPoint extends Maneuver implements Built<FollowPoint, FollowPointBuilder> {
+  static const static_id = 494;
   FollowPoint._();
   @override
-  int get msgId => 494;
+  int get msgId => static_id;
   @override
   String get abbrev => "FollowPoint";
 
@@ -6313,9 +6519,10 @@ abstract class FollowPoint extends Maneuver implements Built<FollowPoint, Follow
 /// target waypoint intended to control activation of an IMU/INS in order
 /// to start aligning navigation for more precise dead reckoning operation.
 abstract class Alignment extends Maneuver implements Built<Alignment, AlignmentBuilder> {
+  static const static_id = 495;
   Alignment._();
   @override
-  int get msgId => 495;
+  int get msgId => static_id;
   @override
   String get abbrev => "Alignment";
 
@@ -6352,9 +6559,10 @@ abstract class Alignment extends Maneuver implements Built<Alignment, AlignmentB
 /// 'Keep Safe', which allows for the vehicle to hold position underwater and popup periodically
 /// to communicate.
 abstract class StationKeepingExtended extends Maneuver implements Built<StationKeepingExtended, StationKeepingExtendedBuilder> {
+  static const static_id = 496;
   StationKeepingExtended._();
   @override
-  int get msgId => 496;
+  int get msgId => static_id;
   @override
   String get abbrev => "StationKeepingExtended";
 
@@ -6416,9 +6624,10 @@ abstract class StationKeepingExtended extends Maneuver implements Built<StationK
 /// Magnetometer calibration maneuver (i.e: one square pattern
 /// in one direction, a second square in the opposite direction)
 abstract class Magnetometer extends Maneuver implements Built<Magnetometer, MagnetometerBuilder> {
+  static const static_id = 499;
   Magnetometer._();
   @override
-  int get msgId => 499;
+  int get msgId => static_id;
   @override
   String get abbrev => "Magnetometer";
 
@@ -6478,9 +6687,10 @@ abstract class Magnetometer extends Maneuver implements Built<Magnetometer, Magn
 /// - Current maneuver execution.
 /// - Active control loops.
 abstract class VehicleState extends ImcMessage implements Built<VehicleState, VehicleStateBuilder> {
+  static const static_id = 500;
   VehicleState._();
   @override
-  int get msgId => 500;
+  int get msgId => static_id;
   @override
   String get abbrev => "VehicleState";
 
@@ -6533,9 +6743,10 @@ abstract class VehicleState extends ImcMessage implements Built<VehicleState, Ve
 ///
 /// Vehicle command.
 abstract class VehicleCommand extends ImcMessage implements Built<VehicleCommand, VehicleCommandBuilder> {
+  static const static_id = 501;
   VehicleCommand._();
   @override
-  int get msgId => 501;
+  int get msgId => static_id;
   @override
   String get abbrev => "VehicleCommand";
 
@@ -6567,9 +6778,10 @@ abstract class VehicleCommand extends ImcMessage implements Built<VehicleCommand
 ///
 /// Controls monitoring of entity states in the vehicle.
 abstract class MonitorEntityState extends ImcMessage implements Built<MonitorEntityState, MonitorEntityStateBuilder> {
+  static const static_id = 502;
   MonitorEntityState._();
   @override
-  int get msgId => 502;
+  int get msgId => static_id;
   @override
   String get abbrev => "MonitorEntityState";
 
@@ -6585,9 +6797,10 @@ abstract class MonitorEntityState extends ImcMessage implements Built<MonitorEnt
 /// Entity Monitoring State class
 ///
 abstract class EntityMonitoringState extends ImcMessage implements Built<EntityMonitoringState, EntityMonitoringStateBuilder> {
+  static const static_id = 503;
   EntityMonitoringState._();
   @override
-  int get msgId => 503;
+  int get msgId => static_id;
   @override
   String get abbrev => "EntityMonitoringState";
 
@@ -6629,9 +6842,10 @@ abstract class EntityMonitoringState extends ImcMessage implements Built<EntityM
 ///
 /// Definition of operational limits.
 abstract class OperationalLimits extends ImcMessage implements Built<OperationalLimits, OperationalLimitsBuilder> {
+  static const static_id = 504;
   OperationalLimits._();
   @override
-  int get msgId => 504;
+  int get msgId => static_id;
   @override
   String get abbrev => "OperationalLimits";
 
@@ -6676,9 +6890,10 @@ abstract class OperationalLimits extends ImcMessage implements Built<Operational
 ///
 /// Command to obtain the operational limits in use by the vehicle.
 abstract class GetOperationalLimits extends ImcMessage implements Built<GetOperationalLimits, GetOperationalLimitsBuilder> {
+  static const static_id = 505;
   GetOperationalLimits._();
   @override
-  int get msgId => 505;
+  int get msgId => static_id;
   @override
   String get abbrev => "GetOperationalLimits";
 }
@@ -6687,9 +6902,10 @@ abstract class GetOperationalLimits extends ImcMessage implements Built<GetOpera
 ///
 /// Initiate overall calibration of a vehicle.
 abstract class Calibration extends ImcMessage implements Built<Calibration, CalibrationBuilder> {
+  static const static_id = 506;
   Calibration._();
   @override
-  int get msgId => 506;
+  int get msgId => static_id;
   @override
   String get abbrev => "Calibration";
 
@@ -6702,9 +6918,10 @@ abstract class Calibration extends ImcMessage implements Built<Calibration, Cali
 ///
 /// Enable or disable control loops.
 abstract class ControlLoops extends ImcMessage implements Built<ControlLoops, ControlLoopsBuilder> {
+  static const static_id = 507;
   ControlLoops._();
   @override
-  int get msgId => 507;
+  int get msgId => static_id;
   @override
   String get abbrev => "ControlLoops";
 
@@ -6728,9 +6945,10 @@ abstract class ControlLoops extends ImcMessage implements Built<ControlLoops, Co
 ///
 /// Detect current vehicle medium.
 abstract class VehicleMedium extends ImcMessage implements Built<VehicleMedium, VehicleMediumBuilder> {
+  static const static_id = 508;
   VehicleMedium._();
   @override
-  int get msgId => 508;
+  int get msgId => static_id;
   @override
   String get abbrev => "VehicleMedium";
 
@@ -6743,9 +6961,10 @@ abstract class VehicleMedium extends ImcMessage implements Built<VehicleMedium, 
 ///
 /// Detected collision.
 abstract class Collision extends ImcMessage implements Built<Collision, CollisionBuilder> {
+  static const static_id = 509;
   Collision._();
   @override
-  int get msgId => 509;
+  int get msgId => static_id;
   @override
   String get abbrev => "Collision";
 
@@ -6762,9 +6981,10 @@ abstract class Collision extends ImcMessage implements Built<Collision, Collisio
 ///
 /// Monitoring variables to assert the formation tracking state, i.e., the mismatch between the real and the simulated aircraft position, the convergence state, etc.
 abstract class FormState extends ImcMessage implements Built<FormState, FormStateBuilder> {
+  static const static_id = 510;
   FormState._();
   @override
-  int get msgId => 510;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormState";
 
@@ -6798,9 +7018,10 @@ abstract class FormState extends ImcMessage implements Built<FormState, FormStat
 ///
 /// Reports autopilot mode.
 abstract class AutopilotMode extends ImcMessage implements Built<AutopilotMode, AutopilotModeBuilder> {
+  static const static_id = 511;
   AutopilotMode._();
   @override
-  int get msgId => 511;
+  int get msgId => static_id;
   @override
   String get abbrev => "AutopilotMode";
 
@@ -6817,9 +7038,10 @@ abstract class AutopilotMode extends ImcMessage implements Built<AutopilotMode, 
 ///
 /// Monitoring variables to assert the formation tracking state, i.e., the mismatch between the real and the simulated aircraft position, the convergence state, etc.
 abstract class FormationState extends ImcMessage implements Built<FormationState, FormationStateBuilder> {
+  static const static_id = 512;
   FormationState._();
   @override
-  int get msgId => 512;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormationState";
 
@@ -6861,9 +7083,10 @@ abstract class FormationState extends ImcMessage implements Built<FormationState
 ///
 /// This message is sent to trigger reports to a destination system.
 abstract class ReportControl extends ImcMessage implements Built<ReportControl, ReportControlBuilder> {
+  static const static_id = 513;
   ReportControl._();
   @override
-  int get msgId => 513;
+  int get msgId => static_id;
   @override
   String get abbrev => "ReportControl";
 
@@ -6889,9 +7112,10 @@ abstract class ReportControl extends ImcMessage implements Built<ReportControl, 
 ///
 /// Concise representation of entire system state.
 abstract class StateReport extends ImcMessage implements Built<StateReport, StateReportBuilder> {
+  static const static_id = 514;
   StateReport._();
   @override
-  int get msgId => 514;
+  int get msgId => static_id;
   @override
   String get abbrev => "StateReport";
 
@@ -6947,9 +7171,10 @@ abstract class StateReport extends ImcMessage implements Built<StateReport, Stat
 ///
 /// Request data to be sent over a specified communication mean.
 abstract class TransmissionRequest extends ImcMessage implements Built<TransmissionRequest, TransmissionRequestBuilder> {
+  static const static_id = 515;
   TransmissionRequest._();
   @override
-  int get msgId => 515;
+  int get msgId => static_id;
   @override
   String get abbrev => "TransmissionRequest";
 
@@ -6990,9 +7215,10 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
 ///
 /// Reply sent in response to a communications request.
 abstract class TransmissionStatus extends ImcMessage implements Built<TransmissionStatus, TransmissionStatusBuilder> {
+  static const static_id = 516;
   TransmissionStatus._();
   @override
-  int get msgId => 516;
+  int get msgId => static_id;
   @override
   String get abbrev => "TransmissionStatus";
 
@@ -7010,9 +7236,10 @@ abstract class TransmissionStatus extends ImcMessage implements Built<Transmissi
 ///
 /// Request SMS Text sending.
 abstract class SmsRequest extends ImcMessage implements Built<SmsRequest, SmsRequestBuilder> {
+  static const static_id = 517;
   SmsRequest._();
   @override
-  int get msgId => 517;
+  int get msgId => static_id;
   @override
   String get abbrev => "SmsRequest";
 
@@ -7035,9 +7262,10 @@ abstract class SmsRequest extends ImcMessage implements Built<SmsRequest, SmsReq
 ///
 /// Reply sent in response to a SMS sending request.
 abstract class SmsStatus extends ImcMessage implements Built<SmsStatus, SmsStatusBuilder> {
+  static const static_id = 518;
   SmsStatus._();
   @override
-  int get msgId => 518;
+  int get msgId => static_id;
   @override
   String get abbrev => "SmsStatus";
 
@@ -7056,9 +7284,10 @@ abstract class SmsStatus extends ImcMessage implements Built<SmsStatus, SmsStatu
 ///
 /// Reports VTOL current state.
 abstract class VtolState extends ImcMessage implements Built<VtolState, VtolStateBuilder> {
+  static const static_id = 519;
   VtolState._();
   @override
-  int get msgId => 519;
+  int get msgId => static_id;
   @override
   String get abbrev => "VtolState";
 
@@ -7070,9 +7299,10 @@ abstract class VtolState extends ImcMessage implements Built<VtolState, VtolStat
 ///
 /// Reports if motors are currently armed or disarmed.
 abstract class ArmingState extends ImcMessage implements Built<ArmingState, ArmingStateBuilder> {
+  static const static_id = 520;
   ArmingState._();
   @override
-  int get msgId => 520;
+  int get msgId => static_id;
   @override
   String get abbrev => "ArmingState";
 
@@ -7084,9 +7314,10 @@ abstract class ArmingState extends ImcMessage implements Built<ArmingState, Armi
 ///
 /// Stops any executing actions and put the system in a standby mode.
 abstract class Abort extends ImcMessage implements Built<Abort, AbortBuilder> {
+  static const static_id = 550;
   Abort._();
   @override
-  int get msgId => 550;
+  int get msgId => static_id;
   @override
   String get abbrev => "Abort";
 }
@@ -7103,9 +7334,10 @@ abstract class Abort extends ImcMessage implements Built<Abort, AbortBuilder> {
 /// See the :ref:`PlanManeuver` message for details on maneuver
 /// specification.
 abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecification, PlanSpecificationBuilder> {
+  static const static_id = 551;
   PlanSpecification._();
   @override
-  int get msgId => 551;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanSpecification";
 
@@ -7152,9 +7384,10 @@ abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecifi
 ///
 /// Named plan maneuver.
 abstract class PlanManeuver extends ImcMessage implements Built<PlanManeuver, PlanManeuverBuilder> {
+  static const static_id = 552;
   PlanManeuver._();
   @override
-  int get msgId => 552;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanManeuver";
 
@@ -7185,9 +7418,10 @@ abstract class PlanManeuver extends ImcMessage implements Built<PlanManeuver, Pl
 /// result, and an optional set of actions triggered by the
 /// transition.
 abstract class PlanTransition extends ImcMessage implements Built<PlanTransition, PlanTransitionBuilder> {
+  static const static_id = 553;
   PlanTransition._();
   @override
-  int get msgId => 553;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanTransition";
 
@@ -7218,9 +7452,10 @@ abstract class PlanTransition extends ImcMessage implements Built<PlanTransition
 /// Emergency Control class
 ///
 abstract class EmergencyControl extends ImcMessage implements Built<EmergencyControl, EmergencyControlBuilder> {
+  static const static_id = 554;
   EmergencyControl._();
   @override
-  int get msgId => 554;
+  int get msgId => static_id;
   @override
   String get abbrev => "EmergencyControl";
 
@@ -7234,9 +7469,10 @@ abstract class EmergencyControl extends ImcMessage implements Built<EmergencyCon
 /// Emergency Control State class
 ///
 abstract class EmergencyControlState extends ImcMessage implements Built<EmergencyControlState, EmergencyControlStateBuilder> {
+  static const static_id = 555;
   EmergencyControlState._();
   @override
-  int get msgId => 555;
+  int get msgId => static_id;
   @override
   String get abbrev => "EmergencyControlState";
 
@@ -7254,9 +7490,10 @@ abstract class EmergencyControlState extends ImcMessage implements Built<Emergen
 ///
 /// Request/reply to plan database.
 abstract class PlanDB extends ImcMessage implements Built<PlanDB, PlanDBBuilder> {
+  static const static_id = 556;
   PlanDB._();
   @override
-  int get msgId => 556;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanDB";
 
@@ -7303,9 +7540,10 @@ abstract class PlanDB extends ImcMessage implements Built<PlanDB, PlanDBBuilder>
 ///
 /// Characterizes the state of the entire plan database.
 abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, PlanDBStateBuilder> {
+  static const static_id = 557;
   PlanDBState._();
   @override
-  int get msgId => 557;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanDBState";
 
@@ -7344,9 +7582,10 @@ abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, Plan
 /// Plan DB Information class
 ///
 abstract class PlanDBInformation extends ImcMessage implements Built<PlanDBInformation, PlanDBInformationBuilder> {
+  static const static_id = 558;
   PlanDBInformation._();
   @override
-  int get msgId => 558;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanDBInformation";
 
@@ -7382,9 +7621,10 @@ abstract class PlanDBInformation extends ImcMessage implements Built<PlanDBInfor
 ///
 /// Plan control request/reply.
 abstract class PlanControl extends ImcMessage implements Built<PlanControl, PlanControlBuilder> {
+  static const static_id = 559;
   PlanControl._();
   @override
-  int get msgId => 559;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanControl";
 
@@ -7427,9 +7667,10 @@ abstract class PlanControl extends ImcMessage implements Built<PlanControl, Plan
 ///
 /// State of plan control.
 abstract class PlanControlState extends ImcMessage implements Built<PlanControlState, PlanControlStateBuilder> {
+  static const static_id = 560;
   PlanControlState._();
   @override
-  int get msgId => 560;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanControlState";
 
@@ -7474,9 +7715,10 @@ abstract class PlanControlState extends ImcMessage implements Built<PlanControlS
 ///
 /// A plan variable.
 abstract class PlanVariable extends ImcMessage implements Built<PlanVariable, PlanVariableBuilder> {
+  static const static_id = 561;
   PlanVariable._();
   @override
-  int get msgId => 561;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanVariable";
 
@@ -7498,9 +7740,10 @@ abstract class PlanVariable extends ImcMessage implements Built<PlanVariable, Pl
 /// This message is used to order the generation of plans based on
 /// id and set of parameters.
 abstract class PlanGeneration extends ImcMessage implements Built<PlanGeneration, PlanGenerationBuilder> {
+  static const static_id = 562;
   PlanGeneration._();
   @override
-  int get msgId => 562;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanGeneration";
 
@@ -7544,9 +7787,10 @@ abstract class PlanGeneration extends ImcMessage implements Built<PlanGeneration
 /// 
 /// Euler angles
 abstract class LeaderState extends ImcMessage implements Built<LeaderState, LeaderStateBuilder> {
+  static const static_id = 563;
   LeaderState._();
   @override
-  int get msgId => 563;
+  int get msgId => static_id;
   @override
   String get abbrev => "LeaderState";
 
@@ -7637,9 +7881,10 @@ abstract class LeaderState extends ImcMessage implements Built<LeaderState, Lead
 /// Plan Statistics class
 ///
 abstract class PlanStatistics extends ImcMessage implements Built<PlanStatistics, PlanStatisticsBuilder> {
+  static const static_id = 564;
   PlanStatistics._();
   @override
-  int get msgId => 564;
+  int get msgId => static_id;
   @override
   String get abbrev => "PlanStatistics";
 
@@ -7675,9 +7920,10 @@ abstract class PlanStatistics extends ImcMessage implements Built<PlanStatistics
 ///
 /// A vehicle state that is reported to other consoles (including PDAConsole). Source can be acoustic tracker, SMS, Wi-Fi, etc...
 abstract class ReportedState extends ImcMessage implements Built<ReportedState, ReportedStateBuilder> {
+  static const static_id = 600;
   ReportedState._();
   @override
-  int get msgId => 600;
+  int get msgId => static_id;
   @override
   String get abbrev => "ReportedState";
 
@@ -7724,9 +7970,10 @@ abstract class ReportedState extends ImcMessage implements Built<ReportedState, 
 ///
 /// Whenever the CUCS receives a message from one of the existing sensors (through SMS, ZigBee, Acoustic Comms, ...) it disseminates that info recurring to this message.
 abstract class RemoteSensorInfo extends ImcMessage implements Built<RemoteSensorInfo, RemoteSensorInfoBuilder> {
+  static const static_id = 601;
   RemoteSensorInfo._();
   @override
-  int get msgId => 601;
+  int get msgId => static_id;
   @override
   String get abbrev => "RemoteSensorInfo";
 
@@ -7758,9 +8005,10 @@ abstract class RemoteSensorInfo extends ImcMessage implements Built<RemoteSensor
 ///
 /// This message represents a simple map that is transferred between CCU consoles (from Neptus to ACCU)
 abstract class Map extends ImcMessage implements Built<Map, MapBuilder> {
+  static const static_id = 602;
   Map._();
   @override
-  int get msgId => 602;
+  int get msgId => static_id;
   @override
   String get abbrev => "Map";
 
@@ -7777,9 +8025,10 @@ abstract class Map extends ImcMessage implements Built<Map, MapBuilder> {
 ///
 /// A feature to appear on the map
 abstract class MapFeature extends ImcMessage implements Built<MapFeature, MapFeatureBuilder> {
+  static const static_id = 603;
   MapFeature._();
   @override
-  int get msgId => 603;
+  int get msgId => static_id;
   @override
   String get abbrev => "MapFeature";
 
@@ -7812,9 +8061,10 @@ abstract class MapFeature extends ImcMessage implements Built<MapFeature, MapFea
 ///
 /// This message represents a point in the world.
 abstract class MapPoint extends ImcMessage implements Built<MapPoint, MapPointBuilder> {
+  static const static_id = 604;
   MapPoint._();
   @override
-  int get msgId => 604;
+  int get msgId => static_id;
   @override
   String get abbrev => "MapPoint";
 
@@ -7832,9 +8082,10 @@ abstract class MapPoint extends ImcMessage implements Built<MapPoint, MapPointBu
 ///
 /// This message is used to signal events among running CCUs.
 abstract class CcuEvent extends ImcMessage implements Built<CcuEvent, CcuEventBuilder> {
+  static const static_id = 606;
   CcuEvent._();
   @override
-  int get msgId => 606;
+  int get msgId => static_id;
   @override
   String get abbrev => "CcuEvent";
 
@@ -7852,9 +8103,10 @@ abstract class CcuEvent extends ImcMessage implements Built<CcuEvent, CcuEventBu
 ///
 /// This message is sent by the TREX task which gives further information to a TREX instance about connected IMC nodes
 abstract class VehicleLinks extends ImcMessage implements Built<VehicleLinks, VehicleLinksBuilder> {
+  static const static_id = 650;
   VehicleLinks._();
   @override
-  int get msgId => 650;
+  int get msgId => static_id;
   @override
   String get abbrev => "VehicleLinks";
 
@@ -7871,9 +8123,10 @@ abstract class VehicleLinks extends ImcMessage implements Built<VehicleLinks, Ve
 ///
 /// This message is sent to TREX to post timeline observations
 abstract class TrexObservation extends ImcMessage implements Built<TrexObservation, TrexObservationBuilder> {
+  static const static_id = 651;
   TrexObservation._();
   @override
-  int get msgId => 651;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrexObservation";
 
@@ -7891,9 +8144,10 @@ abstract class TrexObservation extends ImcMessage implements Built<TrexObservati
 ///
 /// This message is used to control TREX execution
 abstract class TrexCommand extends ImcMessage implements Built<TrexCommand, TrexCommandBuilder> {
+  static const static_id = 652;
   TrexCommand._();
   @override
-  int get msgId => 652;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrexCommand";
 
@@ -7913,9 +8167,10 @@ abstract class TrexCommand extends ImcMessage implements Built<TrexCommand, Trex
 ///
 /// This message is used to control TREX execution
 abstract class TrexOperation extends ImcMessage implements Built<TrexOperation, TrexOperationBuilder> {
+  static const static_id = 655;
   TrexOperation._();
   @override
-  int get msgId => 655;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrexOperation";
 
@@ -7934,9 +8189,10 @@ abstract class TrexOperation extends ImcMessage implements Built<TrexOperation, 
 /// TREX Attribute class
 ///
 abstract class TrexAttribute extends ImcMessage implements Built<TrexAttribute, TrexAttributeBuilder> {
+  static const static_id = 656;
   TrexAttribute._();
   @override
-  int get msgId => 656;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrexAttribute";
 
@@ -7959,9 +8215,10 @@ abstract class TrexAttribute extends ImcMessage implements Built<TrexAttribute, 
 /// TREX Token class
 ///
 abstract class TrexToken extends ImcMessage implements Built<TrexToken, TrexTokenBuilder> {
+  static const static_id = 657;
   TrexToken._();
   @override
-  int get msgId => 657;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrexToken";
 
@@ -7978,9 +8235,10 @@ abstract class TrexToken extends ImcMessage implements Built<TrexToken, TrexToke
 /// TREX Plan class
 ///
 abstract class TrexPlan extends ImcMessage implements Built<TrexPlan, TrexPlanBuilder> {
+  static const static_id = 658;
   TrexPlan._();
   @override
-  int get msgId => 658;
+  int get msgId => static_id;
   @override
   String get abbrev => "TrexPlan";
 
@@ -7995,9 +8253,10 @@ abstract class TrexPlan extends ImcMessage implements Built<TrexPlan, TrexPlanBu
 ///
 /// This message is used for signaling asynchronous events between different (sub) systems.
 abstract class Event extends ImcMessage implements Built<Event, EventBuilder> {
+  static const static_id = 660;
   Event._();
   @override
-  int get msgId => 660;
+  int get msgId => static_id;
   @override
   String get abbrev => "Event";
 
@@ -8014,9 +8273,10 @@ abstract class Event extends ImcMessage implements Built<Event, EventBuilder> {
 ///
 /// 
 abstract class CompressedImage extends ImcMessage implements Built<CompressedImage, CompressedImageBuilder> {
+  static const static_id = 702;
   CompressedImage._();
   @override
-  int get msgId => 702;
+  int get msgId => static_id;
   @override
   String get abbrev => "CompressedImage";
 
@@ -8031,9 +8291,10 @@ abstract class CompressedImage extends ImcMessage implements Built<CompressedIma
 ///
 /// 
 abstract class ImageTxSettings extends ImcMessage implements Built<ImageTxSettings, ImageTxSettingsBuilder> {
+  static const static_id = 703;
   ImageTxSettings._();
   @override
-  int get msgId => 703;
+  int get msgId => static_id;
   @override
   String get abbrev => "ImageTxSettings";
 
@@ -8054,9 +8315,10 @@ abstract class ImageTxSettings extends ImcMessage implements Built<ImageTxSettin
 ///
 /// State summary for a remote vehicle.
 abstract class RemoteState extends ImcMessage implements Built<RemoteState, RemoteStateBuilder> {
+  static const static_id = 750;
   RemoteState._();
   @override
-  int get msgId => 750;
+  int get msgId => static_id;
   @override
   String get abbrev => "RemoteState";
 
@@ -8085,9 +8347,10 @@ abstract class RemoteState extends ImcMessage implements Built<RemoteState, Remo
 ///
 /// Target.
 abstract class Target extends ImcMessage implements Built<Target, TargetBuilder> {
+  static const static_id = 800;
   Target._();
   @override
-  int get msgId => 800;
+  int get msgId => static_id;
   @override
   String get abbrev => "Target";
 
@@ -8125,9 +8388,10 @@ abstract class Target extends ImcMessage implements Built<Target, TargetBuilder>
 ///
 /// Entity parameter.
 abstract class EntityParameter extends ImcMessage implements Built<EntityParameter, EntityParameterBuilder> {
+  static const static_id = 801;
   EntityParameter._();
   @override
-  int get msgId => 801;
+  int get msgId => static_id;
   @override
   String get abbrev => "EntityParameter";
 
@@ -8144,9 +8408,10 @@ abstract class EntityParameter extends ImcMessage implements Built<EntityParamet
 ///
 /// List of entity parameters.
 abstract class EntityParameters extends ImcMessage implements Built<EntityParameters, EntityParametersBuilder> {
+  static const static_id = 802;
   EntityParameters._();
   @override
-  int get msgId => 802;
+  int get msgId => static_id;
   @override
   String get abbrev => "EntityParameters";
 
@@ -8162,9 +8427,10 @@ abstract class EntityParameters extends ImcMessage implements Built<EntityParame
 /// QueryEntityParameters class
 ///
 abstract class QueryEntityParameters extends ImcMessage implements Built<QueryEntityParameters, QueryEntityParametersBuilder> {
+  static const static_id = 803;
   QueryEntityParameters._();
   @override
-  int get msgId => 803;
+  int get msgId => static_id;
   @override
   String get abbrev => "QueryEntityParameters";
 
@@ -8181,9 +8447,10 @@ abstract class QueryEntityParameters extends ImcMessage implements Built<QueryEn
 /// SetEntityParameters class
 ///
 abstract class SetEntityParameters extends ImcMessage implements Built<SetEntityParameters, SetEntityParametersBuilder> {
+  static const static_id = 804;
   SetEntityParameters._();
   @override
-  int get msgId => 804;
+  int get msgId => static_id;
   @override
   String get abbrev => "SetEntityParameters";
 
@@ -8197,9 +8464,10 @@ abstract class SetEntityParameters extends ImcMessage implements Built<SetEntity
 /// SaveEntityParameters class
 ///
 abstract class SaveEntityParameters extends ImcMessage implements Built<SaveEntityParameters, SaveEntityParametersBuilder> {
+  static const static_id = 805;
   SaveEntityParameters._();
   @override
-  int get msgId => 805;
+  int get msgId => static_id;
   @override
   String get abbrev => "SaveEntityParameters";
 
@@ -8216,9 +8484,10 @@ abstract class SaveEntityParameters extends ImcMessage implements Built<SaveEnti
 /// 
 /// :align:  center
 abstract class CreateSession extends ImcMessage implements Built<CreateSession, CreateSessionBuilder> {
+  static const static_id = 806;
   CreateSession._();
   @override
-  int get msgId => 806;
+  int get msgId => static_id;
   @override
   String get abbrev => "CreateSession";
 
@@ -8233,9 +8502,10 @@ abstract class CreateSession extends ImcMessage implements Built<CreateSession, 
 ///
 /// Request closing of an ongoing session
 abstract class CloseSession extends ImcMessage implements Built<CloseSession, CloseSessionBuilder> {
+  static const static_id = 807;
   CloseSession._();
   @override
-  int get msgId => 807;
+  int get msgId => static_id;
   @override
   String get abbrev => "CloseSession";
 
@@ -8246,9 +8516,10 @@ abstract class CloseSession extends ImcMessage implements Built<CloseSession, Cl
 /// Session Subscription class
 ///
 abstract class SessionSubscription extends ImcMessage implements Built<SessionSubscription, SessionSubscriptionBuilder> {
+  static const static_id = 808;
   SessionSubscription._();
   @override
-  int get msgId => 808;
+  int get msgId => static_id;
   @override
   String get abbrev => "SessionSubscription";
 
@@ -8265,9 +8536,10 @@ abstract class SessionSubscription extends ImcMessage implements Built<SessionSu
 ///
 /// Message exchanged to prevent a session from timing out
 abstract class SessionKeepAlive extends ImcMessage implements Built<SessionKeepAlive, SessionKeepAliveBuilder> {
+  static const static_id = 809;
   SessionKeepAlive._();
   @override
-  int get msgId => 809;
+  int get msgId => static_id;
   @override
   String get abbrev => "SessionKeepAlive";
 
@@ -8279,9 +8551,10 @@ abstract class SessionKeepAlive extends ImcMessage implements Built<SessionKeepA
 ///
 /// Message transmitted periodically to inform the state of a communication session
 abstract class SessionStatus extends ImcMessage implements Built<SessionStatus, SessionStatusBuilder> {
+  static const static_id = 810;
   SessionStatus._();
   @override
-  int get msgId => 810;
+  int get msgId => static_id;
   @override
   String get abbrev => "SessionStatus";
 
@@ -8295,9 +8568,10 @@ abstract class SessionStatus extends ImcMessage implements Built<SessionStatus, 
 /// Push Entity Parameters class
 ///
 abstract class PushEntityParameters extends ImcMessage implements Built<PushEntityParameters, PushEntityParametersBuilder> {
+  static const static_id = 811;
   PushEntityParameters._();
   @override
-  int get msgId => 811;
+  int get msgId => static_id;
   @override
   String get abbrev => "PushEntityParameters";
 
@@ -8308,9 +8582,10 @@ abstract class PushEntityParameters extends ImcMessage implements Built<PushEnti
 /// Pop Entity Parameters class
 ///
 abstract class PopEntityParameters extends ImcMessage implements Built<PopEntityParameters, PopEntityParametersBuilder> {
+  static const static_id = 812;
   PopEntityParameters._();
   @override
-  int get msgId => 812;
+  int get msgId => static_id;
   @override
   String get abbrev => "PopEntityParameters";
 
@@ -8322,9 +8597,10 @@ abstract class PopEntityParameters extends ImcMessage implements Built<PopEntity
 ///
 /// Notification of an I/O event.
 abstract class IoEvent extends ImcMessage implements Built<IoEvent, IoEventBuilder> {
+  static const static_id = 813;
   IoEvent._();
   @override
-  int get msgId => 813;
+  int get msgId => static_id;
   @override
   String get abbrev => "IoEvent";
 
@@ -8340,9 +8616,10 @@ abstract class IoEvent extends ImcMessage implements Built<IoEvent, IoEventBuild
 /// UamTxFrame class
 ///
 abstract class UamTxFrame extends ImcMessage implements Built<UamTxFrame, UamTxFrameBuilder> {
+  static const static_id = 814;
   UamTxFrame._();
   @override
-  int get msgId => 814;
+  int get msgId => static_id;
   @override
   String get abbrev => "UamTxFrame";
 
@@ -8362,9 +8639,10 @@ abstract class UamTxFrame extends ImcMessage implements Built<UamTxFrame, UamTxF
 /// UamRxFrame class
 ///
 abstract class UamRxFrame extends ImcMessage implements Built<UamRxFrame, UamRxFrameBuilder> {
+  static const static_id = 815;
   UamRxFrame._();
   @override
-  int get msgId => 815;
+  int get msgId => static_id;
   @override
   String get abbrev => "UamRxFrame";
 
@@ -8384,9 +8662,10 @@ abstract class UamRxFrame extends ImcMessage implements Built<UamRxFrame, UamRxF
 /// UamTxStatus class
 ///
 abstract class UamTxStatus extends ImcMessage implements Built<UamTxStatus, UamTxStatusBuilder> {
+  static const static_id = 816;
   UamTxStatus._();
   @override
-  int get msgId => 816;
+  int get msgId => static_id;
   @override
   String get abbrev => "UamTxStatus";
 
@@ -8403,9 +8682,10 @@ abstract class UamTxStatus extends ImcMessage implements Built<UamTxStatus, UamT
 /// UamRxRange class
 ///
 abstract class UamRxRange extends ImcMessage implements Built<UamRxRange, UamRxRangeBuilder> {
+  static const static_id = 817;
   UamRxRange._();
   @override
-  int get msgId => 817;
+  int get msgId => static_id;
   @override
   String get abbrev => "UamRxRange";
 
@@ -8423,9 +8703,10 @@ abstract class UamRxRange extends ImcMessage implements Built<UamRxRange, UamRxR
 ///
 /// Formation controller paramenters, as: trajectory gains, control boundary layer thickness, and formation shape gains.
 abstract class FormCtrlParam extends ImcMessage implements Built<FormCtrlParam, FormCtrlParamBuilder> {
+  static const static_id = 820;
   FormCtrlParam._();
   @override
-  int get msgId => 820;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormCtrlParam";
 
@@ -8460,9 +8741,10 @@ abstract class FormCtrlParam extends ImcMessage implements Built<FormCtrlParam, 
 ///
 /// Formation control performance evaluation variables.
 abstract class FormationEval extends ImcMessage implements Built<FormationEval, FormationEvalBuilder> {
+  static const static_id = 821;
   FormationEval._();
   @override
-  int get msgId => 821;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormationEval";
 
@@ -8484,9 +8766,10 @@ abstract class FormationEval extends ImcMessage implements Built<FormationEval, 
 /// Formation controller paramenters, as: trajectory gains,
 /// control boundary layer thickness, and formation shape gains.
 abstract class FormationControlParams extends ImcMessage implements Built<FormationControlParams, FormationControlParamsBuilder> {
+  static const static_id = 822;
   FormationControlParams._();
   @override
-  int get msgId => 822;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormationControlParams";
 
@@ -8541,9 +8824,10 @@ abstract class FormationControlParams extends ImcMessage implements Built<Format
 ///
 /// Formation control performance evaluation variables.
 abstract class FormationEvaluation extends ImcMessage implements Built<FormationEvaluation, FormationEvaluationBuilder> {
+  static const static_id = 823;
   FormationEvaluation._();
   @override
-  int get msgId => 823;
+  int get msgId => static_id;
   @override
   String get abbrev => "FormationEvaluation";
 
@@ -8583,9 +8867,10 @@ abstract class FormationEvaluation extends ImcMessage implements Built<Formation
 /// SOI Waypoint class
 ///
 abstract class SoiWaypoint extends ImcMessage implements Built<SoiWaypoint, SoiWaypointBuilder> {
+  static const static_id = 850;
   SoiWaypoint._();
   @override
-  int get msgId => 850;
+  int get msgId => static_id;
   @override
   String get abbrev => "SoiWaypoint";
 
@@ -8605,9 +8890,10 @@ abstract class SoiWaypoint extends ImcMessage implements Built<SoiWaypoint, SoiW
 /// SOI Plan class
 ///
 abstract class SoiPlan extends ImcMessage implements Built<SoiPlan, SoiPlanBuilder> {
+  static const static_id = 851;
   SoiPlan._();
   @override
-  int get msgId => 851;
+  int get msgId => static_id;
   @override
   String get abbrev => "SoiPlan";
 
@@ -8621,9 +8907,10 @@ abstract class SoiPlan extends ImcMessage implements Built<SoiPlan, SoiPlanBuild
 /// SOI Command class
 ///
 abstract class SoiCommand extends ImcMessage implements Built<SoiCommand, SoiCommandBuilder> {
+  static const static_id = 852;
   SoiCommand._();
   @override
-  int get msgId => 852;
+  int get msgId => static_id;
   @override
   String get abbrev => "SoiCommand";
 
@@ -8646,9 +8933,10 @@ abstract class SoiCommand extends ImcMessage implements Built<SoiCommand, SoiCom
 /// SOI State class
 ///
 abstract class SoiState extends ImcMessage implements Built<SoiState, SoiStateBuilder> {
+  static const static_id = 853;
   SoiState._();
   @override
-  int get msgId => 853;
+  int get msgId => static_id;
   @override
   String get abbrev => "SoiState";
 
@@ -8668,9 +8956,10 @@ abstract class SoiState extends ImcMessage implements Built<SoiState, SoiStateBu
 /// Message Fragment class
 ///
 abstract class MessagePart extends ImcMessage implements Built<MessagePart, MessagePartBuilder> {
+  static const static_id = 877;
   MessagePart._();
   @override
-  int get msgId => 877;
+  int get msgId => static_id;
   @override
   String get abbrev => "MessagePart";
 
@@ -8690,9 +8979,10 @@ abstract class MessagePart extends ImcMessage implements Built<MessagePart, Mess
 /// Neptus Blob class
 ///
 abstract class NeptusBlob extends ImcMessage implements Built<NeptusBlob, NeptusBlobBuilder> {
+  static const static_id = 888;
   NeptusBlob._();
   @override
-  int get msgId => 888;
+  int get msgId => static_id;
   @override
   String get abbrev => "NeptusBlob";
 
@@ -8707,9 +8997,10 @@ abstract class NeptusBlob extends ImcMessage implements Built<NeptusBlob, Neptus
 ///
 /// This message signals that an :ref:`Abort` message was received and acted upon.
 abstract class Aborted extends ImcMessage implements Built<Aborted, AbortedBuilder> {
+  static const static_id = 889;
   Aborted._();
   @override
-  int get msgId => 889;
+  int get msgId => static_id;
   @override
   String get abbrev => "Aborted";
 }
@@ -8719,9 +9010,10 @@ abstract class Aborted extends ImcMessage implements Built<Aborted, AbortedBuild
 /// This message contains information, collected using USBL, about the
 /// bearing and elevation of a target.
 abstract class UsblAngles extends ImcMessage implements Built<UsblAngles, UsblAnglesBuilder> {
+  static const static_id = 890;
   UsblAngles._();
   @override
-  int get msgId => 890;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblAngles";
 
@@ -8743,9 +9035,10 @@ abstract class UsblAngles extends ImcMessage implements Built<UsblAngles, UsblAn
 /// This message contains information, collected using USBL, about a
 /// target's position.
 abstract class UsblPosition extends ImcMessage implements Built<UsblPosition, UsblPositionBuilder> {
+  static const static_id = 891;
   UsblPosition._();
   @override
-  int get msgId => 891;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblPosition";
 
@@ -8771,9 +9064,10 @@ abstract class UsblPosition extends ImcMessage implements Built<UsblPosition, Us
 /// This message contains the WGS-84 position of a target computed using
 /// USBL.
 abstract class UsblFix extends ImcMessage implements Built<UsblFix, UsblFixBuilder> {
+  static const static_id = 892;
   UsblFix._();
   @override
-  int get msgId => 892;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblFix";
 
@@ -8803,9 +9097,10 @@ abstract class UsblFix extends ImcMessage implements Built<UsblFix, UsblFixBuild
 ///
 /// Message containing the parameters XML of the source system.
 abstract class ParametersXml extends ImcMessage implements Built<ParametersXml, ParametersXmlBuilder> {
+  static const static_id = 893;
   ParametersXml._();
   @override
-  int get msgId => 893;
+  int get msgId => static_id;
   @override
   String get abbrev => "ParametersXml";
 
@@ -8823,9 +9118,10 @@ abstract class ParametersXml extends ImcMessage implements Built<ParametersXml, 
 /// Request the destination system to send its parameters XML file via a
 /// :ref:`ParametersXml` message.
 abstract class GetParametersXml extends ImcMessage implements Built<GetParametersXml, GetParametersXmlBuilder> {
+  static const static_id = 894;
   GetParametersXml._();
   @override
-  int get msgId => 894;
+  int get msgId => static_id;
   @override
   String get abbrev => "GetParametersXml";
 }
@@ -8834,9 +9130,10 @@ abstract class GetParametersXml extends ImcMessage implements Built<GetParameter
 ///
 /// Message containing the x and y coordinates of object to track in remote peer.
 abstract class SetImageCoords extends ImcMessage implements Built<SetImageCoords, SetImageCoordsBuilder> {
+  static const static_id = 895;
   SetImageCoords._();
   @override
-  int get msgId => 895;
+  int get msgId => static_id;
   @override
   String get abbrev => "SetImageCoords";
 
@@ -8857,9 +9154,10 @@ abstract class SetImageCoords extends ImcMessage implements Built<SetImageCoords
 ///
 /// Message containing the x and y coordinates of object to track in image slave.
 abstract class GetImageCoords extends ImcMessage implements Built<GetImageCoords, GetImageCoordsBuilder> {
+  static const static_id = 896;
   GetImageCoords._();
   @override
-  int get msgId => 896;
+  int get msgId => static_id;
   @override
   String get abbrev => "GetImageCoords";
 
@@ -8880,9 +9178,10 @@ abstract class GetImageCoords extends ImcMessage implements Built<GetImageCoords
 ///
 /// Message containing the x, y and z coordinates of object in the real world.
 abstract class GetWorldCoordinates extends ImcMessage implements Built<GetWorldCoordinates, GetWorldCoordinatesBuilder> {
+  static const static_id = 897;
   GetWorldCoordinates._();
   @override
-  int get msgId => 897;
+  int get msgId => static_id;
   @override
   String get abbrev => "GetWorldCoordinates";
 
@@ -8916,9 +9215,10 @@ abstract class GetWorldCoordinates extends ImcMessage implements Built<GetWorldC
 /// This message contains information, collected using USBL, about the
 /// bearing and elevation of a target.
 abstract class UsblAnglesExtended extends ImcMessage implements Built<UsblAnglesExtended, UsblAnglesExtendedBuilder> {
+  static const static_id = 898;
   UsblAnglesExtended._();
   @override
-  int get msgId => 898;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblAnglesExtended";
 
@@ -8964,9 +9264,10 @@ abstract class UsblAnglesExtended extends ImcMessage implements Built<UsblAngles
 /// This message contains information, collected using USBL, about a
 /// target's position.
 abstract class UsblPositionExtended extends ImcMessage implements Built<UsblPositionExtended, UsblPositionExtendedBuilder> {
+  static const static_id = 899;
   UsblPositionExtended._();
   @override
-  int get msgId => 899;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblPositionExtended";
 
@@ -9020,9 +9321,10 @@ abstract class UsblPositionExtended extends ImcMessage implements Built<UsblPosi
 /// This message contains the WGS-84 position of a target computed using
 /// USBL.
 abstract class UsblFixExtended extends ImcMessage implements Built<UsblFixExtended, UsblFixExtendedBuilder> {
+  static const static_id = 900;
   UsblFixExtended._();
   @override
-  int get msgId => 900;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblFixExtended";
 
@@ -9056,9 +9358,10 @@ abstract class UsblFixExtended extends ImcMessage implements Built<UsblFixExtend
 ///
 /// Position and configuration of an Ultra-Short Base Line modem.
 abstract class UsblModem extends ImcMessage implements Built<UsblModem, UsblModemBuilder> {
+  static const static_id = 901;
   UsblModem._();
   @override
-  int get msgId => 901;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblModem";
 
@@ -9088,9 +9391,10 @@ abstract class UsblModem extends ImcMessage implements Built<UsblModem, UsblMode
 ///
 /// Ultra-Short Base Line configuration.
 abstract class UsblConfig extends ImcMessage implements Built<UsblConfig, UsblConfigBuilder> {
+  static const static_id = 902;
   UsblConfig._();
   @override
-  int get msgId => 902;
+  int get msgId => static_id;
   @override
   String get abbrev => "UsblConfig";
 
@@ -9107,9 +9411,10 @@ abstract class UsblConfig extends ImcMessage implements Built<UsblConfig, UsblCo
 ///
 /// Dissolved Organic Matter measurement.
 abstract class DissolvedOrganicMatter extends ImcMessage implements Built<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder> {
+  static const static_id = 903;
   DissolvedOrganicMatter._();
   @override
-  int get msgId => 903;
+  int get msgId => static_id;
   @override
   String get abbrev => "DissolvedOrganicMatter";
 
@@ -9127,9 +9432,10 @@ abstract class DissolvedOrganicMatter extends ImcMessage implements Built<Dissol
 /// The optical backscattering coefficient refers to all the photons that have been redirected in the backward directions
 /// when a photon of light propagates in water and interacts with a "particle" (varying from water molecules to fish).
 abstract class OpticalBackscatter extends ImcMessage implements Built<OpticalBackscatter, OpticalBackscatterBuilder> {
+  static const static_id = 904;
   OpticalBackscatter._();
   @override
-  int get msgId => 904;
+  int get msgId => static_id;
   @override
   String get abbrev => "OpticalBackscatter";
 
@@ -9143,9 +9449,10 @@ abstract class OpticalBackscatter extends ImcMessage implements Built<OpticalBac
 /// This messages is used to record system activity parameters. These
 /// parameters are mainly used for used for maintenance purposes.
 abstract class Tachograph extends ImcMessage implements Built<Tachograph, TachographBuilder> {
+  static const static_id = 905;
   Tachograph._();
   @override
-  int get msgId => 905;
+  int get msgId => static_id;
   @override
   String get abbrev => "Tachograph";
 
@@ -9220,9 +9527,10 @@ abstract class Tachograph extends ImcMessage implements Built<Tachograph, Tachog
 ///
 /// StatusText message from ardupilot.
 abstract class ApmStatus extends ImcMessage implements Built<ApmStatus, ApmStatusBuilder> {
+  static const static_id = 906;
   ApmStatus._();
   @override
-  int get msgId => 906;
+  int get msgId => static_id;
   @override
   String get abbrev => "ApmStatus";
 
@@ -9239,9 +9547,10 @@ abstract class ApmStatus extends ImcMessage implements Built<ApmStatus, ApmStatu
 ///
 /// Readings from SADC board.
 abstract class SadcReadings extends ImcMessage implements Built<SadcReadings, SadcReadingsBuilder> {
+  static const static_id = 907;
   SadcReadings._();
   @override
-  int get msgId => 907;
+  int get msgId => static_id;
   @override
   String get abbrev => "SadcReadings";
 
@@ -9263,9 +9572,10 @@ abstract class SadcReadings extends ImcMessage implements Built<SadcReadings, Sa
 /// Presence of DMS (Dimethyl Sulphide).
 /// If the value of the channel is greater than zero, it means DMS was detected.
 abstract class DmsDetection extends ImcMessage implements Built<DmsDetection, DmsDetectionBuilder> {
+  static const static_id = 908;
   DmsDetection._();
   @override
-  int get msgId => 908;
+  int get msgId => static_id;
   @override
   String get abbrev => "DmsDetection";
 
@@ -9321,9 +9631,10 @@ abstract class DmsDetection extends ImcMessage implements Built<DmsDetection, Dm
 /// Total Magnetic Field Intensity class
 ///
 abstract class TotalMagIntensity extends ImcMessage implements Built<TotalMagIntensity, TotalMagIntensityBuilder> {
+  static const static_id = 2006;
   TotalMagIntensity._();
   @override
-  int get msgId => 2006;
+  int get msgId => static_id;
   @override
   String get abbrev => "TotalMagIntensity";
 

@@ -15,6 +15,12 @@ void main() {
     });
     
     print("0x${16.toRadixString(16)}");
+
+    print("0x${0xFE54.toRadixString(16)}");
+    print("0x${(0xFE54 >> 8).toRadixString(16)}");
+    print("0x${(0xFE54 & 0xFF).toRadixString(16)}");
+    print("0x${((0xFE54 & 0xFF) << 8 | 0xFE54 >> 8).toRadixString(16)}");
+
   });
   
 }
