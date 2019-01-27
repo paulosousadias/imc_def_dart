@@ -886,6 +886,10 @@ abstract class ImcMessage extends Message {
 ''';
   sinks[_idxBuilders].write(headerBuilderStr);
 
+  sinks[_idxSerGen].write('''\nfinal messagesSerializers = <String, imc.ImcSerializer>{''');
+  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Serializer(),"));
+  sinks[_idxSerGen].write('''\n};\n''');
+
   // Writting messages
   msgElm.findElements("message").forEach((m) => _writeMessageCode(m, sinks));
 

@@ -23,6 +23,27 @@ void main() {
 
   });
   test('serialize test', () {
+  
+    imc.messagesBuilders.forEach((n, b) {
+      (b as imc.ImcBuilderHeaderPart)
+          ..src = 0x4001
+          ..timestamp = DateTime.utc(1970);
+      var msg = b.build();
+      var ser = imc.messagesSerializers[n];
+      var dataSer = ser.serialize(msg);
+      var bufferSer = dataSer.buffer;
+      var serData = bufferSer.asUint8List(dataSer.offsetInBytes, dataSer.lengthInBytes);
+      var bytesSerStr = "$n [";
+      serData.forEach((b) {bytesSerStr +="0x${b.toRadixString(16)}, ";});
+      bytesSerStr += "]";
+      print("msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr");
+
+      var msgD = ser.deserialize(serData);
+      print("msgD=$msgD");
+      expect(msg == msgD, true);
+      print("Match? ${msg == msgD}");
+    });
+
     imc.Abort msg = (imc.AbortBuilder()
         ..src = 0x4001
         ..timestamp = DateTime.utc(1970)
@@ -40,9 +61,5 @@ void main() {
     print("msgD=$msgD");
     expect(msg == msgD, true);
     print("Match? ${msg == msgD}");
-
-    
-
   });
-  
 }
