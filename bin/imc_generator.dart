@@ -10,12 +10,13 @@ import "dart:convert";
 import 'package:xml/xml.dart' as xml;
 import 'package:crypto/crypto.dart';
 
+part 'imc_serializer_generator.dart';
+
 const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
 // IMC Code Generator
 // **************************************************************************
-
 ''';
 
 const _header_gen = '''$_header
@@ -29,6 +30,13 @@ part 'imc_def_i.dart';
 
 ''';
 
+const _header_ser_gen = '''$_header
+import 'dart:typed_data';
+
+import 'package:imc_def/imc_def_base.dart' as imc;
+import 'package:imc_def/imc_def.dart' as imc;
+''';
+
 const _header_gen_parts = '''$_header
 part of 'imc_def_gen.dart';
 
@@ -39,6 +47,7 @@ const _idxMsg = 1;
 const _idxBuilders = 2;
 const _idxEnums = 3;
 const _idxLocEnum = 4;
+const _idxSerGen = 5;
 
 /// A list of reserved words to not se on enums liks
 const _reservedWords = <String>[
@@ -170,6 +179,9 @@ _writeMessageCode(xml.XmlElement m, List<IOSink> sinks) {
 
   // Message builder
   _writeMessageBuilder(name, abbrev, msgId, m, sinks[_idxBuilders]);
+
+  // Message serializer
+  _writeMessageSerializer(name, abbrev, msgId, m, sinks[_idxSerGen]);
 }
 
 /// Writes a message class
@@ -331,27 +343,42 @@ _writeMessageBuilder(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('/// $name builder class\n///\n');
   var msgStringImmutableBuilder =
-      '''class ${abbrev}Builder implements Builder<$abbrev, ${abbrev}Builder> {
+      '''class ${abbrev}Builder implements Builder<$abbrev, ${abbrev}Builder>, ImcBuilderHeaderPart {
   _\$$abbrev _\$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _\$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _\$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _\$this._src;
+  @override
   set src(int src) => _\$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _\$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _\$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _\$this._dst;
+  @override
   set dst(int dst) => _\$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _\$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _\$this._dstEnt = dstEnt;\n''';
   sink.write('$msgStringImmutableBuilder');
 
@@ -437,6 +464,65 @@ _writeMessageBuilder(
 
   var msgStringImmutableBuilderClose = '''}\n\n''';
   sink.write('$msgStringImmutableBuilderClose');
+}
+
+/// Writes a message class serializer related code
+_writeMessageSerializer(
+    String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
+  sink.write('\n/// $name serializer class\n///\n');
+
+  var serClassStart = '''class ${abbrev}Serializer extends imc.ImcSerializer<imc.$abbrev> {
+  @override
+  ByteData serialize(imc.$abbrev message) {
+    var byteOffset = 0;
+    var byteData = ByteData(0xFFFF);
+    byteOffset = imc.serializeHeader(message, byteData);
+    var headerSize = byteOffset;
+
+    // Payload
+''';
+  sink.write('$serClassStart');
+
+  var serClass1 = '''    // End payload
+
+    var payloadSize = byteOffset - headerSize;
+    imc.writePayloadSize(byteData, payloadSize);
+    byteOffset = imc.calcAndAddFooter(byteData, byteOffset);
+    return byteData.buffer.asByteData(0, byteOffset);
+  }
+  
+  @override
+  imc.$abbrev deserialize(Uint8List data, [int offset = 0]) {
+    var byteOffset = offset;
+    var byteData = data.buffer.asByteData(offset);
+    
+    var endianess = imc.getEndianess(byteData, byteOffset);
+    byteOffset += 2;
+    if (endianess == null)
+      return null;
+    
+    var msgId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (msgId != imc.$abbrev.static_id)
+      return null;
+
+    var builder = imc.${abbrev}Builder();
+    var payloadSize = imc.deserializeHeader(builder, byteData, endianess, offset);
+    byteOffset = offset + imc.header_size;
+
+    // Payload
+''';
+  sink.write('$serClass1');
+
+  var serClassEnd = '''
+    // End payload
+    
+    byteOffset = offset + imc.header_size + payloadSize;
+    return builder.build();
+  }
+}
+''';
+  sink.write('$serClassEnd');
 }
 
 /// Writes a message field code
@@ -711,6 +797,7 @@ main(List<String> args) async {
   var fxBuilders = new File('lib/src/imc_def_i.dart');
   var fxEnums = new File('lib/src/imc_def_e.dart');
   var fxLEnums = new File('lib/src/imc_def_el.dart');
+  var fxSerGen = new File('lib/src/imc_serializers_gen.dart');
 
   print(fxMessages.path);
 
@@ -723,14 +810,22 @@ main(List<String> args) async {
   var sinkBuilders = fxBuilders.openWrite();
   var sinkEnums = fxEnums.openWrite();
   var sinkLEnums = fxLEnums.openWrite();
+  var sinkSerGen = fxSerGen.openWrite();
 
-  var sinks = <IOSink>[sinkGen, sinkMessages, sinkBuilders, sinkEnums, sinkLEnums];
+  var sinks = <IOSink>[sinkGen, 
+      sinkMessages, 
+      sinkBuilders, 
+      sinkEnums, 
+      sinkLEnums,
+      sinkSerGen
+      ];
 
   sinkGen.write('$_header_gen');
   sinkMessages.write('$_header_gen_parts');
   sinkBuilders.write('$_header_gen_parts');
   sinkEnums.write('$_header_gen_parts');
   sinkLEnums.write('$_header_gen_parts');
+  sinkSerGen.write('$_header_ser_gen');
 
   var msgElm = document.findElements("messages").first;
   sinks[_idxMsg]
@@ -766,6 +861,31 @@ abstract class ImcMessage extends Message {
       .findElements("message-group")
       .forEach((g) => _writeMessageGroup(g, sinks[_idxMsg])));
 
+  // Writing base builder
+  var headerBuilderStr = '''abstract class ImcBuilderHeaderPart {
+  DateTime _timestamp;
+  DateTime get timestamp;
+  set timestamp(DateTime timestamp);
+
+  int _src;
+  int get src;
+  set src(int src);
+
+  int _srcEnt;
+  int get srcEnt;
+  set srcEnt(int srcEnt);
+
+  int _dst;
+  int get dst;
+  set dst(int dst);
+
+  int _dstEnt;
+  int get dstEnt;
+  set dstEnt(int dstEnt);
+}
+''';
+  sinks[_idxBuilders].write(headerBuilderStr);
+
   // Writting messages
   msgElm.findElements("message").forEach((m) => _writeMessageCode(m, sinks));
 
@@ -786,4 +906,5 @@ abstract class ImcMessage extends Message {
   sinkBuilders.close();
   sinkEnums.close();
   sinkLEnums.close();
+  sinkSerGen.close();
 }

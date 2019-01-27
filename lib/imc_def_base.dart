@@ -5,3 +5,4 @@
 library imc_def_base;
 
 export 'src/imc_def_base.dart';
+export 'src/imc_serializers_base.dart';

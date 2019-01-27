@@ -4,7 +4,6 @@
 // IMC Code Generator
 // **************************************************************************
 
-
 part of 'imc_def_gen.dart';
 
 const String VERSION = "5.4.11";

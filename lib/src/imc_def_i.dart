@@ -4,9 +4,29 @@
 // IMC Code Generator
 // **************************************************************************
 
-
 part of 'imc_def_gen.dart';
 
+abstract class ImcBuilderHeaderPart {
+  DateTime _timestamp;
+  DateTime get timestamp;
+  set timestamp(DateTime timestamp);
+
+  int _src;
+  int get src;
+  set src(int src);
+
+  int _srcEnt;
+  int get srcEnt;
+  set srcEnt(int srcEnt);
+
+  int _dst;
+  int get dst;
+  set dst(int dst);
+
+  int _dstEnt;
+  int get dstEnt;
+  set dstEnt(int dstEnt);
+}
 /// Entity State immutable class
 ///
 class _$EntityState extends EntityState {
@@ -93,27 +113,42 @@ class _$EntityState extends EntityState {
 
 /// Entity State builder class
 ///
-class EntityStateBuilder implements Builder<EntityState, EntityStateBuilder> {
+class EntityStateBuilder implements Builder<EntityState, EntityStateBuilder>, ImcBuilderHeaderPart {
   _$EntityState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   EntityStateEnumState _state;
@@ -243,27 +278,42 @@ class _$QueryEntityState extends QueryEntityState {
 
 /// Query Entity State builder class
 ///
-class QueryEntityStateBuilder implements Builder<QueryEntityState, QueryEntityStateBuilder> {
+class QueryEntityStateBuilder implements Builder<QueryEntityState, QueryEntityStateBuilder>, ImcBuilderHeaderPart {
   _$QueryEntityState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   QueryEntityStateBuilder();
@@ -405,27 +455,42 @@ class _$EntityInfo extends EntityInfo {
 
 /// Entity Information builder class
 ///
-class EntityInfoBuilder implements Builder<EntityInfo, EntityInfoBuilder> {
+class EntityInfoBuilder implements Builder<EntityInfo, EntityInfoBuilder>, ImcBuilderHeaderPart {
   _$EntityInfo _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -573,27 +638,42 @@ class _$QueryEntityInfo extends QueryEntityInfo {
 
 /// Query Entity Information builder class
 ///
-class QueryEntityInfoBuilder implements Builder<QueryEntityInfo, QueryEntityInfoBuilder> {
+class QueryEntityInfoBuilder implements Builder<QueryEntityInfo, QueryEntityInfoBuilder>, ImcBuilderHeaderPart {
   _$QueryEntityInfo _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -723,27 +803,42 @@ class _$EntityList extends EntityList {
 
 /// Entity List builder class
 ///
-class EntityListBuilder implements Builder<EntityList, EntityListBuilder> {
+class EntityListBuilder implements Builder<EntityList, EntityListBuilder>, ImcBuilderHeaderPart {
   _$EntityList _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   EntityListEnumOp _op;
@@ -873,27 +968,42 @@ class _$CpuUsage extends CpuUsage {
 
 /// CPU Usage builder class
 ///
-class CpuUsageBuilder implements Builder<CpuUsage, CpuUsageBuilder> {
+class CpuUsageBuilder implements Builder<CpuUsage, CpuUsageBuilder>, ImcBuilderHeaderPart {
   _$CpuUsage _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _value;
@@ -1023,27 +1133,42 @@ class _$TransportBindings extends TransportBindings {
 
 /// Transport Bindings builder class
 ///
-class TransportBindingsBuilder implements Builder<TransportBindings, TransportBindingsBuilder> {
+class TransportBindingsBuilder implements Builder<TransportBindings, TransportBindingsBuilder>, ImcBuilderHeaderPart {
   _$TransportBindings _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _consumer;
@@ -1173,27 +1298,42 @@ class _$RestartSystem extends RestartSystem {
 
 /// Restart System builder class
 ///
-class RestartSystemBuilder implements Builder<RestartSystem, RestartSystemBuilder> {
+class RestartSystemBuilder implements Builder<RestartSystem, RestartSystemBuilder>, ImcBuilderHeaderPart {
   _$RestartSystem _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   RestartSystemEnumType _type;
@@ -1317,27 +1457,42 @@ class _$DevCalibrationControl extends DevCalibrationControl {
 
 /// Device Calibration Control builder class
 ///
-class DevCalibrationControlBuilder implements Builder<DevCalibrationControl, DevCalibrationControlBuilder> {
+class DevCalibrationControlBuilder implements Builder<DevCalibrationControl, DevCalibrationControlBuilder>, ImcBuilderHeaderPart {
   _$DevCalibrationControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   DevCalibrationControlEnumOp _op;
@@ -1479,27 +1634,42 @@ class _$DevCalibrationState extends DevCalibrationState {
 
 /// Device Calibration State builder class
 ///
-class DevCalibrationStateBuilder implements Builder<DevCalibrationState, DevCalibrationStateBuilder> {
+class DevCalibrationStateBuilder implements Builder<DevCalibrationState, DevCalibrationStateBuilder>, ImcBuilderHeaderPart {
   _$DevCalibrationState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _totalSteps;
@@ -1647,27 +1817,42 @@ class _$EntityActivationState extends EntityActivationState {
 
 /// Entity Activation State builder class
 ///
-class EntityActivationStateBuilder implements Builder<EntityActivationState, EntityActivationStateBuilder> {
+class EntityActivationStateBuilder implements Builder<EntityActivationState, EntityActivationStateBuilder>, ImcBuilderHeaderPart {
   _$EntityActivationState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   EntityActivationStateEnumState _state;
@@ -1791,27 +1976,42 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
 
 /// Query Entity Activation State builder class
 ///
-class QueryEntityActivationStateBuilder implements Builder<QueryEntityActivationState, QueryEntityActivationStateBuilder> {
+class QueryEntityActivationStateBuilder implements Builder<QueryEntityActivationState, QueryEntityActivationStateBuilder>, ImcBuilderHeaderPart {
   _$QueryEntityActivationState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   QueryEntityActivationStateBuilder();
@@ -2031,27 +2231,42 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
 
 /// Vehicle Operational Limits builder class
 ///
-class VehicleOperationalLimitsBuilder implements Builder<VehicleOperationalLimits, VehicleOperationalLimitsBuilder> {
+class VehicleOperationalLimitsBuilder implements Builder<VehicleOperationalLimits, VehicleOperationalLimitsBuilder>, ImcBuilderHeaderPart {
   _$VehicleOperationalLimits _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   VehicleOperationalLimitsEnumOp _op;
@@ -2277,27 +2492,42 @@ class _$MsgList extends MsgList {
 
 /// Message List builder class
 ///
-class MsgListBuilder implements Builder<MsgList, MsgListBuilder> {
+class MsgListBuilder implements Builder<MsgList, MsgListBuilder>, ImcBuilderHeaderPart {
   _$MsgList _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   List<ImcMessage> _msgs;
@@ -2523,27 +2753,42 @@ class _$SimulatedState extends SimulatedState {
 
 /// Simulated State builder class
 ///
-class SimulatedStateBuilder implements Builder<SimulatedState, SimulatedStateBuilder> {
+class SimulatedStateBuilder implements Builder<SimulatedState, SimulatedStateBuilder>, ImcBuilderHeaderPart {
   _$SimulatedState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -2775,27 +3020,42 @@ class _$LeakSimulation extends LeakSimulation {
 
 /// Leak Simulation builder class
 ///
-class LeakSimulationBuilder implements Builder<LeakSimulation, LeakSimulationBuilder> {
+class LeakSimulationBuilder implements Builder<LeakSimulation, LeakSimulationBuilder>, ImcBuilderHeaderPart {
   _$LeakSimulation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   LeakSimulationEnumOp _op;
@@ -2937,27 +3197,42 @@ class _$UASimulation extends UASimulation {
 
 /// Underwater Acoustics Simulation builder class
 ///
-class UASimulationBuilder implements Builder<UASimulation, UASimulationBuilder> {
+class UASimulationBuilder implements Builder<UASimulation, UASimulationBuilder>, ImcBuilderHeaderPart {
   _$UASimulation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   UASimulationEnumType _type;
@@ -3105,27 +3380,42 @@ class _$DynamicsSimParam extends DynamicsSimParam {
 
 /// Dynamics Simulation Parameters builder class
 ///
-class DynamicsSimParamBuilder implements Builder<DynamicsSimParam, DynamicsSimParamBuilder> {
+class DynamicsSimParamBuilder implements Builder<DynamicsSimParam, DynamicsSimParamBuilder>, ImcBuilderHeaderPart {
   _$DynamicsSimParam _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   DynamicsSimParamEnumOp _op;
@@ -3267,27 +3557,42 @@ class _$StorageUsage extends StorageUsage {
 
 /// Storage Usage builder class
 ///
-class StorageUsageBuilder implements Builder<StorageUsage, StorageUsageBuilder> {
+class StorageUsageBuilder implements Builder<StorageUsage, StorageUsageBuilder>, ImcBuilderHeaderPart {
   _$StorageUsage _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _available;
@@ -3429,27 +3734,42 @@ class _$CacheControl extends CacheControl {
 
 /// Cache Control builder class
 ///
-class CacheControlBuilder implements Builder<CacheControl, CacheControlBuilder> {
+class CacheControlBuilder implements Builder<CacheControl, CacheControlBuilder>, ImcBuilderHeaderPart {
   _$CacheControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   CacheControlEnumOp _op;
@@ -3591,27 +3911,42 @@ class _$LoggingControl extends LoggingControl {
 
 /// Logging Control builder class
 ///
-class LoggingControlBuilder implements Builder<LoggingControl, LoggingControlBuilder> {
+class LoggingControlBuilder implements Builder<LoggingControl, LoggingControlBuilder>, ImcBuilderHeaderPart {
   _$LoggingControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   LoggingControlEnumOp _op;
@@ -3759,27 +4094,42 @@ class _$LogBookEntry extends LogBookEntry {
 
 /// Log Book Entry builder class
 ///
-class LogBookEntryBuilder implements Builder<LogBookEntry, LogBookEntryBuilder> {
+class LogBookEntryBuilder implements Builder<LogBookEntry, LogBookEntryBuilder>, ImcBuilderHeaderPart {
   _$LogBookEntry _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   LogBookEntryEnumType _type;
@@ -3933,27 +4283,42 @@ class _$LogBookControl extends LogBookControl {
 
 /// Log Book Control builder class
 ///
-class LogBookControlBuilder implements Builder<LogBookControl, LogBookControlBuilder> {
+class LogBookControlBuilder implements Builder<LogBookControl, LogBookControlBuilder>, ImcBuilderHeaderPart {
   _$LogBookControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   LogBookControlEnumCommand _command;
@@ -4095,27 +4460,42 @@ class _$ReplayControl extends ReplayControl {
 
 /// Replay Control builder class
 ///
-class ReplayControlBuilder implements Builder<ReplayControl, ReplayControlBuilder> {
+class ReplayControlBuilder implements Builder<ReplayControl, ReplayControlBuilder>, ImcBuilderHeaderPart {
   _$ReplayControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ReplayControlEnumOp _op;
@@ -4257,27 +4637,42 @@ class _$ClockControl extends ClockControl {
 
 /// Clock Control builder class
 ///
-class ClockControlBuilder implements Builder<ClockControl, ClockControlBuilder> {
+class ClockControlBuilder implements Builder<ClockControl, ClockControlBuilder>, ImcBuilderHeaderPart {
   _$ClockControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ClockControlEnumOp _op;
@@ -4425,27 +4820,42 @@ class _$HistoricCTD extends HistoricCTD {
 
 /// Historic CTD builder class
 ///
-class HistoricCTDBuilder implements Builder<HistoricCTD, HistoricCTDBuilder> {
+class HistoricCTDBuilder implements Builder<HistoricCTD, HistoricCTDBuilder>, ImcBuilderHeaderPart {
   _$HistoricCTD _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _conductivity;
@@ -4605,27 +5015,42 @@ class _$HistoricTelemetry extends HistoricTelemetry {
 
 /// Historic Telemetry builder class
 ///
-class HistoricTelemetryBuilder implements Builder<HistoricTelemetry, HistoricTelemetryBuilder> {
+class HistoricTelemetryBuilder implements Builder<HistoricTelemetry, HistoricTelemetryBuilder>, ImcBuilderHeaderPart {
   _$HistoricTelemetry _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _altitude;
@@ -4809,27 +5234,42 @@ class _$HistoricSonarData extends HistoricSonarData {
 
 /// Historic Sonar Data builder class
 ///
-class HistoricSonarDataBuilder implements Builder<HistoricSonarData, HistoricSonarDataBuilder> {
+class HistoricSonarDataBuilder implements Builder<HistoricSonarData, HistoricSonarDataBuilder>, ImcBuilderHeaderPart {
   _$HistoricSonarData _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _altitude;
@@ -4995,27 +5435,42 @@ class _$HistoricEvent extends HistoricEvent {
 
 /// Historic Event builder class
 ///
-class HistoricEventBuilder implements Builder<HistoricEvent, HistoricEventBuilder> {
+class HistoricEventBuilder implements Builder<HistoricEvent, HistoricEventBuilder>, ImcBuilderHeaderPart {
   _$HistoricEvent _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _text;
@@ -5169,27 +5624,42 @@ class _$VerticalProfile extends VerticalProfile {
 
 /// Vertical Profile builder class
 ///
-class VerticalProfileBuilder implements Builder<VerticalProfile, VerticalProfileBuilder> {
+class VerticalProfileBuilder implements Builder<VerticalProfile, VerticalProfileBuilder>, ImcBuilderHeaderPart {
   _$VerticalProfile _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   VerticalProfileEnumParameter _parameter;
@@ -5343,27 +5813,42 @@ class _$ProfileSample extends ProfileSample {
 
 /// Profile Sample builder class
 ///
-class ProfileSampleBuilder implements Builder<ProfileSample, ProfileSampleBuilder> {
+class ProfileSampleBuilder implements Builder<ProfileSample, ProfileSampleBuilder>, ImcBuilderHeaderPart {
   _$ProfileSample _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _depth;
@@ -5487,27 +5972,42 @@ class _$Heartbeat extends Heartbeat {
 
 /// Heartbeat builder class
 ///
-class HeartbeatBuilder implements Builder<Heartbeat, HeartbeatBuilder> {
+class HeartbeatBuilder implements Builder<Heartbeat, HeartbeatBuilder>, ImcBuilderHeaderPart {
   _$Heartbeat _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   HeartbeatBuilder();
@@ -5661,27 +6161,42 @@ class _$Announce extends Announce {
 
 /// Announce builder class
 ///
-class AnnounceBuilder implements Builder<Announce, AnnounceBuilder> {
+class AnnounceBuilder implements Builder<Announce, AnnounceBuilder>, ImcBuilderHeaderPart {
   _$Announce _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _sysName;
@@ -5847,27 +6362,42 @@ class _$AnnounceService extends AnnounceService {
 
 /// Announce Service builder class
 ///
-class AnnounceServiceBuilder implements Builder<AnnounceService, AnnounceServiceBuilder> {
+class AnnounceServiceBuilder implements Builder<AnnounceService, AnnounceServiceBuilder>, ImcBuilderHeaderPart {
   _$AnnounceService _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _service;
@@ -5997,27 +6527,42 @@ class _$RSSI extends RSSI {
 
 /// Receive Signal Strength Information builder class
 ///
-class RSSIBuilder implements Builder<RSSI, RSSIBuilder> {
+class RSSIBuilder implements Builder<RSSI, RSSIBuilder>, ImcBuilderHeaderPart {
   _$RSSI _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -6141,27 +6686,42 @@ class _$VSWR extends VSWR {
 
 /// Voltage Standing Wave Ratio builder class
 ///
-class VSWRBuilder implements Builder<VSWR, VSWRBuilder> {
+class VSWRBuilder implements Builder<VSWR, VSWRBuilder>, ImcBuilderHeaderPart {
   _$VSWR _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -6285,27 +6845,42 @@ class _$LinkLevel extends LinkLevel {
 
 /// Link Level builder class
 ///
-class LinkLevelBuilder implements Builder<LinkLevel, LinkLevelBuilder> {
+class LinkLevelBuilder implements Builder<LinkLevel, LinkLevelBuilder>, ImcBuilderHeaderPart {
   _$LinkLevel _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -6441,27 +7016,42 @@ class _$Sms extends Sms {
 
 /// SMS builder class
 ///
-class SmsBuilder implements Builder<Sms, SmsBuilder> {
+class SmsBuilder implements Builder<Sms, SmsBuilder>, ImcBuilderHeaderPart {
   _$Sms _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _number;
@@ -6615,27 +7205,42 @@ class _$SmsTx extends SmsTx {
 
 /// SMS Transmit builder class
 ///
-class SmsTxBuilder implements Builder<SmsTx, SmsTxBuilder> {
+class SmsTxBuilder implements Builder<SmsTx, SmsTxBuilder>, ImcBuilderHeaderPart {
   _$SmsTx _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _seq;
@@ -6783,27 +7388,42 @@ class _$SmsRx extends SmsRx {
 
 /// SMS Receive builder class
 ///
-class SmsRxBuilder implements Builder<SmsRx, SmsRxBuilder> {
+class SmsRxBuilder implements Builder<SmsRx, SmsRxBuilder>, ImcBuilderHeaderPart {
   _$SmsRx _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _source;
@@ -6945,27 +7565,42 @@ class _$SmsState extends SmsState {
 
 /// SMS State builder class
 ///
-class SmsStateBuilder implements Builder<SmsState, SmsStateBuilder> {
+class SmsStateBuilder implements Builder<SmsState, SmsStateBuilder>, ImcBuilderHeaderPart {
   _$SmsState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _seq;
@@ -7107,27 +7742,42 @@ class _$TextMessage extends TextMessage {
 
 /// Text Message builder class
 ///
-class TextMessageBuilder implements Builder<TextMessage, TextMessageBuilder> {
+class TextMessageBuilder implements Builder<TextMessage, TextMessageBuilder>, ImcBuilderHeaderPart {
   _$TextMessage _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _origin;
@@ -7281,27 +7931,42 @@ class _$IridiumMsgRx extends IridiumMsgRx {
 
 /// Received Iridium Message builder class
 ///
-class IridiumMsgRxBuilder implements Builder<IridiumMsgRx, IridiumMsgRxBuilder> {
+class IridiumMsgRxBuilder implements Builder<IridiumMsgRx, IridiumMsgRxBuilder>, ImcBuilderHeaderPart {
   _$IridiumMsgRx _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _origin;
@@ -7467,27 +8132,42 @@ class _$IridiumMsgTx extends IridiumMsgTx {
 
 /// Transmit Iridium Message builder class
 ///
-class IridiumMsgTxBuilder implements Builder<IridiumMsgTx, IridiumMsgTxBuilder> {
+class IridiumMsgTxBuilder implements Builder<IridiumMsgTx, IridiumMsgTxBuilder>, ImcBuilderHeaderPart {
   _$IridiumMsgTx _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _reqId;
@@ -7641,27 +8321,42 @@ class _$IridiumTxStatus extends IridiumTxStatus {
 
 /// Iridium Transmission Status builder class
 ///
-class IridiumTxStatusBuilder implements Builder<IridiumTxStatus, IridiumTxStatusBuilder> {
+class IridiumTxStatusBuilder implements Builder<IridiumTxStatus, IridiumTxStatusBuilder>, ImcBuilderHeaderPart {
   _$IridiumTxStatus _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _reqId;
@@ -7803,27 +8498,42 @@ class _$GroupMembershipState extends GroupMembershipState {
 
 /// Group Membership State builder class
 ///
-class GroupMembershipStateBuilder implements Builder<GroupMembershipState, GroupMembershipStateBuilder> {
+class GroupMembershipStateBuilder implements Builder<GroupMembershipState, GroupMembershipStateBuilder>, ImcBuilderHeaderPart {
   _$GroupMembershipState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _groupName;
@@ -7965,27 +8675,42 @@ class _$SystemGroup extends SystemGroup {
 
 /// System Group builder class
 ///
-class SystemGroupBuilder implements Builder<SystemGroup, SystemGroupBuilder> {
+class SystemGroupBuilder implements Builder<SystemGroup, SystemGroupBuilder>, ImcBuilderHeaderPart {
   _$SystemGroup _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _groupName;
@@ -8127,27 +8852,42 @@ class _$LinkLatency extends LinkLatency {
 
 /// Link Latency builder class
 ///
-class LinkLatencyBuilder implements Builder<LinkLatency, LinkLatencyBuilder> {
+class LinkLatencyBuilder implements Builder<LinkLatency, LinkLatencyBuilder>, ImcBuilderHeaderPart {
   _$LinkLatency _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -8283,27 +9023,42 @@ class _$ExtendedRSSI extends ExtendedRSSI {
 
 /// Extended Receive Signal Strength Information builder class
 ///
-class ExtendedRSSIBuilder implements Builder<ExtendedRSSI, ExtendedRSSIBuilder> {
+class ExtendedRSSIBuilder implements Builder<ExtendedRSSI, ExtendedRSSIBuilder>, ImcBuilderHeaderPart {
   _$ExtendedRSSI _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -8451,27 +9206,42 @@ class _$HistoricData extends HistoricData {
 
 /// Historic Data Series builder class
 ///
-class HistoricDataBuilder implements Builder<HistoricData, HistoricDataBuilder> {
+class HistoricDataBuilder implements Builder<HistoricData, HistoricDataBuilder>, ImcBuilderHeaderPart {
   _$HistoricData _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _baseLat;
@@ -8631,27 +9401,42 @@ class _$CompressedHistory extends CompressedHistory {
 
 /// Compressed Historic Data Series builder class
 ///
-class CompressedHistoryBuilder implements Builder<CompressedHistory, CompressedHistoryBuilder> {
+class CompressedHistoryBuilder implements Builder<CompressedHistory, CompressedHistoryBuilder>, ImcBuilderHeaderPart {
   _$CompressedHistory _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _baseLat;
@@ -8829,27 +9614,42 @@ class _$HistoricSample extends HistoricSample {
 
 /// Historic Data Sample builder class
 ///
-class HistoricSampleBuilder implements Builder<HistoricSample, HistoricSampleBuilder> {
+class HistoricSampleBuilder implements Builder<HistoricSample, HistoricSampleBuilder>, ImcBuilderHeaderPart {
   _$HistoricSample _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _sysId;
@@ -9027,27 +9827,42 @@ class _$HistoricDataQuery extends HistoricDataQuery {
 
 /// Historic Data Query builder class
 ///
-class HistoricDataQueryBuilder implements Builder<HistoricDataQuery, HistoricDataQueryBuilder> {
+class HistoricDataQueryBuilder implements Builder<HistoricDataQuery, HistoricDataQueryBuilder>, ImcBuilderHeaderPart {
   _$HistoricDataQuery _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _reqId;
@@ -9207,27 +10022,42 @@ class _$RemoteCommand extends RemoteCommand {
 
 /// Remote Command builder class
 ///
-class RemoteCommandBuilder implements Builder<RemoteCommand, RemoteCommandBuilder> {
+class RemoteCommandBuilder implements Builder<RemoteCommand, RemoteCommandBuilder>, ImcBuilderHeaderPart {
   _$RemoteCommand _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _originalSource;
@@ -9387,27 +10217,42 @@ class _$CommSystemsQuery extends CommSystemsQuery {
 
 /// Communication Systems Query builder class
 ///
-class CommSystemsQueryBuilder implements Builder<CommSystemsQuery, CommSystemsQueryBuilder> {
+class CommSystemsQueryBuilder implements Builder<CommSystemsQuery, CommSystemsQueryBuilder>, ImcBuilderHeaderPart {
   _$CommSystemsQuery _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   CommSystemsQueryBitfieldType _type;
@@ -9597,27 +10442,42 @@ class _$TelemetryMsg extends TelemetryMsg {
 
 /// Telemetry Message builder class
 ///
-class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder> {
+class TelemetryMsgBuilder implements Builder<TelemetryMsg, TelemetryMsgBuilder>, ImcBuilderHeaderPart {
   _$TelemetryMsg _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   TelemetryMsgEnumType _type;
@@ -9795,27 +10655,42 @@ class _$LblRange extends LblRange {
 
 /// LBL Range builder class
 ///
-class LblRangeBuilder implements Builder<LblRange, LblRangeBuilder> {
+class LblRangeBuilder implements Builder<LblRange, LblRangeBuilder>, ImcBuilderHeaderPart {
   _$LblRange _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -9981,27 +10856,42 @@ class _$LblBeacon extends LblBeacon {
 
 /// LBL Beacon Configuration builder class
 ///
-class LblBeaconBuilder implements Builder<LblBeacon, LblBeaconBuilder> {
+class LblBeaconBuilder implements Builder<LblBeacon, LblBeaconBuilder>, ImcBuilderHeaderPart {
   _$LblBeacon _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _beacon;
@@ -10167,27 +11057,42 @@ class _$LblConfig extends LblConfig {
 
 /// LBL Configuration builder class
 ///
-class LblConfigBuilder implements Builder<LblConfig, LblConfigBuilder> {
+class LblConfigBuilder implements Builder<LblConfig, LblConfigBuilder>, ImcBuilderHeaderPart {
   _$LblConfig _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   LblConfigEnumOp _op;
@@ -10317,27 +11222,42 @@ class _$AcousticMessage extends AcousticMessage {
 
 /// Acoustic Message builder class
 ///
-class AcousticMessageBuilder implements Builder<AcousticMessage, AcousticMessageBuilder> {
+class AcousticMessageBuilder implements Builder<AcousticMessage, AcousticMessageBuilder>, ImcBuilderHeaderPart {
   _$AcousticMessage _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ImcMessage _message;
@@ -10479,27 +11399,42 @@ class _$AcousticOperation extends AcousticOperation {
 
 /// Acoustic Operation builder class
 ///
-class AcousticOperationBuilder implements Builder<AcousticOperation, AcousticOperationBuilder> {
+class AcousticOperationBuilder implements Builder<AcousticOperation, AcousticOperationBuilder>, ImcBuilderHeaderPart {
   _$AcousticOperation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   AcousticOperationEnumOp _op;
@@ -10635,27 +11570,42 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
 
 /// Acoustic Systems Query builder class
 ///
-class AcousticSystemsQueryBuilder implements Builder<AcousticSystemsQuery, AcousticSystemsQueryBuilder> {
+class AcousticSystemsQueryBuilder implements Builder<AcousticSystemsQuery, AcousticSystemsQueryBuilder>, ImcBuilderHeaderPart {
   _$AcousticSystemsQuery _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   AcousticSystemsQueryBuilder();
@@ -10773,27 +11723,42 @@ class _$AcousticSystems extends AcousticSystems {
 
 /// Acoustic Systems builder class
 ///
-class AcousticSystemsBuilder implements Builder<AcousticSystems, AcousticSystemsBuilder> {
+class AcousticSystemsBuilder implements Builder<AcousticSystems, AcousticSystemsBuilder>, ImcBuilderHeaderPart {
   _$AcousticSystems _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _list;
@@ -10929,27 +11894,42 @@ class _$AcousticLink extends AcousticLink {
 
 /// Acoustic Link Quality builder class
 ///
-class AcousticLinkBuilder implements Builder<AcousticLink, AcousticLinkBuilder> {
+class AcousticLinkBuilder implements Builder<AcousticLink, AcousticLinkBuilder>, ImcBuilderHeaderPart {
   _$AcousticLink _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _peer;
@@ -11085,27 +12065,42 @@ class _$Rpm extends Rpm {
 
 /// Revolutions Per Minute builder class
 ///
-class RpmBuilder implements Builder<Rpm, RpmBuilder> {
+class RpmBuilder implements Builder<Rpm, RpmBuilder>, ImcBuilderHeaderPart {
   _$Rpm _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _value;
@@ -11229,27 +12224,42 @@ class _$Voltage extends Voltage {
 
 /// Voltage builder class
 ///
-class VoltageBuilder implements Builder<Voltage, VoltageBuilder> {
+class VoltageBuilder implements Builder<Voltage, VoltageBuilder>, ImcBuilderHeaderPart {
   _$Voltage _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -11373,27 +12383,42 @@ class _$Current extends Current {
 
 /// Current builder class
 ///
-class CurrentBuilder implements Builder<Current, CurrentBuilder> {
+class CurrentBuilder implements Builder<Current, CurrentBuilder>, ImcBuilderHeaderPart {
   _$Current _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -11607,27 +12632,42 @@ class _$GpsFix extends GpsFix {
 
 /// GPS Fix builder class
 ///
-class GpsFixBuilder implements Builder<GpsFix, GpsFixBuilder> {
+class GpsFixBuilder implements Builder<GpsFix, GpsFixBuilder>, ImcBuilderHeaderPart {
   _$GpsFix _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   GpsFixBitfieldValidity _validity;
@@ -11865,27 +12905,42 @@ class _$EulerAngles extends EulerAngles {
 
 /// Euler Angles builder class
 ///
-class EulerAnglesBuilder implements Builder<EulerAngles, EulerAnglesBuilder> {
+class EulerAnglesBuilder implements Builder<EulerAngles, EulerAnglesBuilder>, ImcBuilderHeaderPart {
   _$EulerAngles _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _time;
@@ -12057,27 +13112,42 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
 
 /// Euler Angles Delta builder class
 ///
-class EulerAnglesDeltaBuilder implements Builder<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
+class EulerAnglesDeltaBuilder implements Builder<EulerAnglesDelta, EulerAnglesDeltaBuilder>, ImcBuilderHeaderPart {
   _$EulerAnglesDelta _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _time;
@@ -12243,27 +13313,42 @@ class _$AngularVelocity extends AngularVelocity {
 
 /// Angular Velocity builder class
 ///
-class AngularVelocityBuilder implements Builder<AngularVelocity, AngularVelocityBuilder> {
+class AngularVelocityBuilder implements Builder<AngularVelocity, AngularVelocityBuilder>, ImcBuilderHeaderPart {
   _$AngularVelocity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _time;
@@ -12423,27 +13508,42 @@ class _$Acceleration extends Acceleration {
 
 /// Acceleration builder class
 ///
-class AccelerationBuilder implements Builder<Acceleration, AccelerationBuilder> {
+class AccelerationBuilder implements Builder<Acceleration, AccelerationBuilder>, ImcBuilderHeaderPart {
   _$Acceleration _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _time;
@@ -12603,27 +13703,42 @@ class _$MagneticField extends MagneticField {
 
 /// Magnetic Field builder class
 ///
-class MagneticFieldBuilder implements Builder<MagneticField, MagneticFieldBuilder> {
+class MagneticFieldBuilder implements Builder<MagneticField, MagneticFieldBuilder>, ImcBuilderHeaderPart {
   _$MagneticField _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _time;
@@ -12783,27 +13898,42 @@ class _$GroundVelocity extends GroundVelocity {
 
 /// Ground Velocity builder class
 ///
-class GroundVelocityBuilder implements Builder<GroundVelocity, GroundVelocityBuilder> {
+class GroundVelocityBuilder implements Builder<GroundVelocity, GroundVelocityBuilder>, ImcBuilderHeaderPart {
   _$GroundVelocity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   GroundVelocityBitfieldValidity _validity;
@@ -12963,27 +14093,42 @@ class _$WaterVelocity extends WaterVelocity {
 
 /// Water Velocity builder class
 ///
-class WaterVelocityBuilder implements Builder<WaterVelocity, WaterVelocityBuilder> {
+class WaterVelocityBuilder implements Builder<WaterVelocity, WaterVelocityBuilder>, ImcBuilderHeaderPart {
   _$WaterVelocity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   WaterVelocityBitfieldValidity _validity;
@@ -13143,27 +14288,42 @@ class _$VelocityDelta extends VelocityDelta {
 
 /// Velocity Delta builder class
 ///
-class VelocityDeltaBuilder implements Builder<VelocityDelta, VelocityDeltaBuilder> {
+class VelocityDeltaBuilder implements Builder<VelocityDelta, VelocityDeltaBuilder>, ImcBuilderHeaderPart {
   _$VelocityDelta _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _time;
@@ -13323,27 +14483,42 @@ class _$Distance extends Distance {
 
 /// Distance builder class
 ///
-class DistanceBuilder implements Builder<Distance, DistanceBuilder> {
+class DistanceBuilder implements Builder<Distance, DistanceBuilder>, ImcBuilderHeaderPart {
   _$Distance _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   DistanceEnumValidity _validity;
@@ -13485,27 +14660,42 @@ class _$Temperature extends Temperature {
 
 /// Temperature builder class
 ///
-class TemperatureBuilder implements Builder<Temperature, TemperatureBuilder> {
+class TemperatureBuilder implements Builder<Temperature, TemperatureBuilder>, ImcBuilderHeaderPart {
   _$Temperature _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -13629,27 +14819,42 @@ class _$Pressure extends Pressure {
 
 /// Pressure builder class
 ///
-class PressureBuilder implements Builder<Pressure, PressureBuilder> {
+class PressureBuilder implements Builder<Pressure, PressureBuilder>, ImcBuilderHeaderPart {
   _$Pressure _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -13773,27 +14978,42 @@ class _$Depth extends Depth {
 
 /// Depth builder class
 ///
-class DepthBuilder implements Builder<Depth, DepthBuilder> {
+class DepthBuilder implements Builder<Depth, DepthBuilder>, ImcBuilderHeaderPart {
   _$Depth _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -13917,27 +15137,42 @@ class _$DepthOffset extends DepthOffset {
 
 /// Depth Offset builder class
 ///
-class DepthOffsetBuilder implements Builder<DepthOffset, DepthOffsetBuilder> {
+class DepthOffsetBuilder implements Builder<DepthOffset, DepthOffsetBuilder>, ImcBuilderHeaderPart {
   _$DepthOffset _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -14061,27 +15296,42 @@ class _$SoundSpeed extends SoundSpeed {
 
 /// Sound Speed builder class
 ///
-class SoundSpeedBuilder implements Builder<SoundSpeed, SoundSpeedBuilder> {
+class SoundSpeedBuilder implements Builder<SoundSpeed, SoundSpeedBuilder>, ImcBuilderHeaderPart {
   _$SoundSpeed _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -14205,27 +15455,42 @@ class _$WaterDensity extends WaterDensity {
 
 /// Water Density builder class
 ///
-class WaterDensityBuilder implements Builder<WaterDensity, WaterDensityBuilder> {
+class WaterDensityBuilder implements Builder<WaterDensity, WaterDensityBuilder>, ImcBuilderHeaderPart {
   _$WaterDensity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -14349,27 +15614,42 @@ class _$Conductivity extends Conductivity {
 
 /// Conductivity builder class
 ///
-class ConductivityBuilder implements Builder<Conductivity, ConductivityBuilder> {
+class ConductivityBuilder implements Builder<Conductivity, ConductivityBuilder>, ImcBuilderHeaderPart {
   _$Conductivity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -14493,27 +15773,42 @@ class _$Salinity extends Salinity {
 
 /// Salinity builder class
 ///
-class SalinityBuilder implements Builder<Salinity, SalinityBuilder> {
+class SalinityBuilder implements Builder<Salinity, SalinityBuilder>, ImcBuilderHeaderPart {
   _$Salinity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -14649,27 +15944,42 @@ class _$WindSpeed extends WindSpeed {
 
 /// Wind Speed builder class
 ///
-class WindSpeedBuilder implements Builder<WindSpeed, WindSpeedBuilder> {
+class WindSpeedBuilder implements Builder<WindSpeed, WindSpeedBuilder>, ImcBuilderHeaderPart {
   _$WindSpeed _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _direction;
@@ -14805,27 +16115,42 @@ class _$RelativeHumidity extends RelativeHumidity {
 
 /// Relative Humidity builder class
 ///
-class RelativeHumidityBuilder implements Builder<RelativeHumidity, RelativeHumidityBuilder> {
+class RelativeHumidityBuilder implements Builder<RelativeHumidity, RelativeHumidityBuilder>, ImcBuilderHeaderPart {
   _$RelativeHumidity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -14949,27 +16274,42 @@ class _$DevDataText extends DevDataText {
 
 /// Device Data (Text) builder class
 ///
-class DevDataTextBuilder implements Builder<DevDataText, DevDataTextBuilder> {
+class DevDataTextBuilder implements Builder<DevDataText, DevDataTextBuilder>, ImcBuilderHeaderPart {
   _$DevDataText _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _value;
@@ -15093,27 +16433,42 @@ class _$DevDataBinary extends DevDataBinary {
 
 /// Device Data (Binary) builder class
 ///
-class DevDataBinaryBuilder implements Builder<DevDataBinary, DevDataBinaryBuilder> {
+class DevDataBinaryBuilder implements Builder<DevDataBinary, DevDataBinaryBuilder>, ImcBuilderHeaderPart {
   _$DevDataBinary _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   List<int> _value;
@@ -15237,27 +16592,42 @@ class _$Force extends Force {
 
 /// Force builder class
 ///
-class ForceBuilder implements Builder<Force, ForceBuilder> {
+class ForceBuilder implements Builder<Force, ForceBuilder>, ImcBuilderHeaderPart {
   _$Force _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -15423,27 +16793,42 @@ class _$SonarData extends SonarData {
 
 /// Sonar Data builder class
 ///
-class SonarDataBuilder implements Builder<SonarData, SonarDataBuilder> {
+class SonarDataBuilder implements Builder<SonarData, SonarDataBuilder>, ImcBuilderHeaderPart {
   _$SonarData _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   SonarDataEnumType _type;
@@ -15603,27 +16988,42 @@ class _$Pulse extends Pulse {
 
 /// Pulse builder class
 ///
-class PulseBuilder implements Builder<Pulse, PulseBuilder> {
+class PulseBuilder implements Builder<Pulse, PulseBuilder>, ImcBuilderHeaderPart {
   _$Pulse _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   PulseBuilder();
@@ -15741,27 +17141,42 @@ class _$PulseDetectionControl extends PulseDetectionControl {
 
 /// Pulse Detection Control builder class
 ///
-class PulseDetectionControlBuilder implements Builder<PulseDetectionControl, PulseDetectionControlBuilder> {
+class PulseDetectionControlBuilder implements Builder<PulseDetectionControl, PulseDetectionControlBuilder>, ImcBuilderHeaderPart {
   _$PulseDetectionControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   PulseDetectionControlEnumOp _op;
@@ -15897,27 +17312,42 @@ class _$FuelLevel extends FuelLevel {
 
 /// Fuel Level builder class
 ///
-class FuelLevelBuilder implements Builder<FuelLevel, FuelLevelBuilder> {
+class FuelLevelBuilder implements Builder<FuelLevel, FuelLevelBuilder>, ImcBuilderHeaderPart {
   _$FuelLevel _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -16137,27 +17567,42 @@ class _$GpsNavData extends GpsNavData {
 
 /// GPS Navigation Data builder class
 ///
-class GpsNavDataBuilder implements Builder<GpsNavData, GpsNavDataBuilder> {
+class GpsNavDataBuilder implements Builder<GpsNavData, GpsNavDataBuilder>, ImcBuilderHeaderPart {
   _$GpsNavData _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _itow;
@@ -16371,27 +17816,42 @@ class _$ServoPosition extends ServoPosition {
 
 /// Servo Position builder class
 ///
-class ServoPositionBuilder implements Builder<ServoPosition, ServoPositionBuilder> {
+class ServoPositionBuilder implements Builder<ServoPosition, ServoPositionBuilder>, ImcBuilderHeaderPart {
   _$ServoPosition _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -16551,27 +18011,42 @@ class _$DeviceState extends DeviceState {
 
 /// Device State builder class
 ///
-class DeviceStateBuilder implements Builder<DeviceState, DeviceStateBuilder> {
+class DeviceStateBuilder implements Builder<DeviceState, DeviceStateBuilder>, ImcBuilderHeaderPart {
   _$DeviceState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -16731,27 +18206,42 @@ class _$BeamConfig extends BeamConfig {
 
 /// Beam Configuration builder class
 ///
-class BeamConfigBuilder implements Builder<BeamConfig, BeamConfigBuilder> {
+class BeamConfigBuilder implements Builder<BeamConfig, BeamConfigBuilder>, ImcBuilderHeaderPart {
   _$BeamConfig _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _beamWidth;
@@ -16881,27 +18371,42 @@ class _$DataSanity extends DataSanity {
 
 /// Data Sanity builder class
 ///
-class DataSanityBuilder implements Builder<DataSanity, DataSanityBuilder> {
+class DataSanityBuilder implements Builder<DataSanity, DataSanityBuilder>, ImcBuilderHeaderPart {
   _$DataSanity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   DataSanityEnumSane _sane;
@@ -17025,27 +18530,42 @@ class _$RhodamineDye extends RhodamineDye {
 
 /// Rhodamine Dye builder class
 ///
-class RhodamineDyeBuilder implements Builder<RhodamineDye, RhodamineDyeBuilder> {
+class RhodamineDyeBuilder implements Builder<RhodamineDye, RhodamineDyeBuilder>, ImcBuilderHeaderPart {
   _$RhodamineDye _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -17169,27 +18689,42 @@ class _$CrudeOil extends CrudeOil {
 
 /// Crude Oil builder class
 ///
-class CrudeOilBuilder implements Builder<CrudeOil, CrudeOilBuilder> {
+class CrudeOilBuilder implements Builder<CrudeOil, CrudeOilBuilder>, ImcBuilderHeaderPart {
   _$CrudeOil _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -17313,27 +18848,42 @@ class _$FineOil extends FineOil {
 
 /// Fine Oil builder class
 ///
-class FineOilBuilder implements Builder<FineOil, FineOilBuilder> {
+class FineOilBuilder implements Builder<FineOil, FineOilBuilder>, ImcBuilderHeaderPart {
   _$FineOil _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -17457,27 +19007,42 @@ class _$Turbidity extends Turbidity {
 
 /// Turbidity builder class
 ///
-class TurbidityBuilder implements Builder<Turbidity, TurbidityBuilder> {
+class TurbidityBuilder implements Builder<Turbidity, TurbidityBuilder>, ImcBuilderHeaderPart {
   _$Turbidity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -17601,27 +19166,42 @@ class _$Chlorophyll extends Chlorophyll {
 
 /// Chlorophyll builder class
 ///
-class ChlorophyllBuilder implements Builder<Chlorophyll, ChlorophyllBuilder> {
+class ChlorophyllBuilder implements Builder<Chlorophyll, ChlorophyllBuilder>, ImcBuilderHeaderPart {
   _$Chlorophyll _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -17745,27 +19325,42 @@ class _$Fluorescein extends Fluorescein {
 
 /// Fluorescein builder class
 ///
-class FluoresceinBuilder implements Builder<Fluorescein, FluoresceinBuilder> {
+class FluoresceinBuilder implements Builder<Fluorescein, FluoresceinBuilder>, ImcBuilderHeaderPart {
   _$Fluorescein _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -17889,27 +19484,42 @@ class _$Phycocyanin extends Phycocyanin {
 
 /// Phycocyanin builder class
 ///
-class PhycocyaninBuilder implements Builder<Phycocyanin, PhycocyaninBuilder> {
+class PhycocyaninBuilder implements Builder<Phycocyanin, PhycocyaninBuilder>, ImcBuilderHeaderPart {
   _$Phycocyanin _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -18033,27 +19643,42 @@ class _$Phycoerythrin extends Phycoerythrin {
 
 /// Phycoerythrin builder class
 ///
-class PhycoerythrinBuilder implements Builder<Phycoerythrin, PhycoerythrinBuilder> {
+class PhycoerythrinBuilder implements Builder<Phycoerythrin, PhycoerythrinBuilder>, ImcBuilderHeaderPart {
   _$Phycoerythrin _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -18261,27 +19886,42 @@ class _$GpsFixRtk extends GpsFixRtk {
 
 /// GPS Fix RTK builder class
 ///
-class GpsFixRtkBuilder implements Builder<GpsFixRtk, GpsFixRtkBuilder> {
+class GpsFixRtkBuilder implements Builder<GpsFixRtk, GpsFixRtkBuilder>, ImcBuilderHeaderPart {
   _$GpsFixRtk _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   GpsFixRtkBitfieldValidity _validity;
@@ -18495,27 +20135,42 @@ class _$ExternalNavData extends ExternalNavData {
 
 /// External Navigation Data builder class
 ///
-class ExternalNavDataBuilder implements Builder<ExternalNavData, ExternalNavDataBuilder> {
+class ExternalNavDataBuilder implements Builder<ExternalNavData, ExternalNavDataBuilder>, ImcBuilderHeaderPart {
   _$ExternalNavData _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   EstimatedState _state;
@@ -18645,27 +20300,42 @@ class _$DissolvedOxygen extends DissolvedOxygen {
 
 /// Dissolved Oxygen builder class
 ///
-class DissolvedOxygenBuilder implements Builder<DissolvedOxygen, DissolvedOxygenBuilder> {
+class DissolvedOxygenBuilder implements Builder<DissolvedOxygen, DissolvedOxygenBuilder>, ImcBuilderHeaderPart {
   _$DissolvedOxygen _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -18789,27 +20459,42 @@ class _$AirSaturation extends AirSaturation {
 
 /// Air Saturation builder class
 ///
-class AirSaturationBuilder implements Builder<AirSaturation, AirSaturationBuilder> {
+class AirSaturationBuilder implements Builder<AirSaturation, AirSaturationBuilder>, ImcBuilderHeaderPart {
   _$AirSaturation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -18933,27 +20618,42 @@ class _$Throttle extends Throttle {
 
 /// Throttle builder class
 ///
-class ThrottleBuilder implements Builder<Throttle, ThrottleBuilder> {
+class ThrottleBuilder implements Builder<Throttle, ThrottleBuilder>, ImcBuilderHeaderPart {
   _$Throttle _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -19077,27 +20777,42 @@ class _$PH extends PH {
 
 /// pH builder class
 ///
-class PHBuilder implements Builder<PH, PHBuilder> {
+class PHBuilder implements Builder<PH, PHBuilder>, ImcBuilderHeaderPart {
   _$PH _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -19221,27 +20936,42 @@ class _$Redox extends Redox {
 
 /// Redox Potential builder class
 ///
-class RedoxBuilder implements Builder<Redox, RedoxBuilder> {
+class RedoxBuilder implements Builder<Redox, RedoxBuilder>, ImcBuilderHeaderPart {
   _$Redox _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -19377,27 +21107,42 @@ class _$CameraZoom extends CameraZoom {
 
 /// Camera Zoom builder class
 ///
-class CameraZoomBuilder implements Builder<CameraZoom, CameraZoomBuilder> {
+class CameraZoomBuilder implements Builder<CameraZoom, CameraZoomBuilder>, ImcBuilderHeaderPart {
   _$CameraZoom _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -19539,27 +21284,42 @@ class _$SetThrusterActuation extends SetThrusterActuation {
 
 /// Set Thruster Actuation builder class
 ///
-class SetThrusterActuationBuilder implements Builder<SetThrusterActuation, SetThrusterActuationBuilder> {
+class SetThrusterActuationBuilder implements Builder<SetThrusterActuation, SetThrusterActuationBuilder>, ImcBuilderHeaderPart {
   _$SetThrusterActuation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -19695,27 +21455,42 @@ class _$SetServoPosition extends SetServoPosition {
 
 /// Set Servo Position builder class
 ///
-class SetServoPositionBuilder implements Builder<SetServoPosition, SetServoPositionBuilder> {
+class SetServoPositionBuilder implements Builder<SetServoPosition, SetServoPositionBuilder>, ImcBuilderHeaderPart {
   _$SetServoPosition _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -19851,27 +21626,42 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
 
 /// Set Control Surface Deflection builder class
 ///
-class SetControlSurfaceDeflectionBuilder implements Builder<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder> {
+class SetControlSurfaceDeflectionBuilder implements Builder<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder>, ImcBuilderHeaderPart {
   _$SetControlSurfaceDeflection _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -20007,27 +21797,42 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
 
 /// Remote Actions Request builder class
 ///
-class RemoteActionsRequestBuilder implements Builder<RemoteActionsRequest, RemoteActionsRequestBuilder> {
+class RemoteActionsRequestBuilder implements Builder<RemoteActionsRequest, RemoteActionsRequestBuilder>, ImcBuilderHeaderPart {
   _$RemoteActionsRequest _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   RemoteActionsRequestEnumOp _op;
@@ -20157,27 +21962,42 @@ class _$RemoteActions extends RemoteActions {
 
 /// Remote Actions builder class
 ///
-class RemoteActionsBuilder implements Builder<RemoteActions, RemoteActionsBuilder> {
+class RemoteActionsBuilder implements Builder<RemoteActions, RemoteActionsBuilder>, ImcBuilderHeaderPart {
   _$RemoteActions _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _actions;
@@ -20307,27 +22127,42 @@ class _$ButtonEvent extends ButtonEvent {
 
 /// Button Event builder class
 ///
-class ButtonEventBuilder implements Builder<ButtonEvent, ButtonEventBuilder> {
+class ButtonEventBuilder implements Builder<ButtonEvent, ButtonEventBuilder>, ImcBuilderHeaderPart {
   _$ButtonEvent _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _button;
@@ -20463,27 +22298,42 @@ class _$LcdControl extends LcdControl {
 
 /// LCD Control builder class
 ///
-class LcdControlBuilder implements Builder<LcdControl, LcdControlBuilder> {
+class LcdControlBuilder implements Builder<LcdControl, LcdControlBuilder>, ImcBuilderHeaderPart {
   _$LcdControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   LcdControlEnumOp _op;
@@ -20625,27 +22475,42 @@ class _$PowerOperation extends PowerOperation {
 
 /// Power Operation builder class
 ///
-class PowerOperationBuilder implements Builder<PowerOperation, PowerOperationBuilder> {
+class PowerOperationBuilder implements Builder<PowerOperation, PowerOperationBuilder>, ImcBuilderHeaderPart {
   _$PowerOperation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   PowerOperationEnumOp _op;
@@ -20793,27 +22658,42 @@ class _$PowerChannelControl extends PowerChannelControl {
 
 /// Power Channel Control builder class
 ///
-class PowerChannelControlBuilder implements Builder<PowerChannelControl, PowerChannelControlBuilder> {
+class PowerChannelControlBuilder implements Builder<PowerChannelControl, PowerChannelControlBuilder>, ImcBuilderHeaderPart {
   _$PowerChannelControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -20943,27 +22823,42 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
 
 /// Query Power Channel State builder class
 ///
-class QueryPowerChannelStateBuilder implements Builder<QueryPowerChannelState, QueryPowerChannelStateBuilder> {
+class QueryPowerChannelStateBuilder implements Builder<QueryPowerChannelState, QueryPowerChannelStateBuilder>, ImcBuilderHeaderPart {
   _$QueryPowerChannelState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   QueryPowerChannelStateBuilder();
@@ -21087,27 +22982,42 @@ class _$PowerChannelState extends PowerChannelState {
 
 /// Power Channel State builder class
 ///
-class PowerChannelStateBuilder implements Builder<PowerChannelState, PowerChannelStateBuilder> {
+class PowerChannelStateBuilder implements Builder<PowerChannelState, PowerChannelStateBuilder>, ImcBuilderHeaderPart {
   _$PowerChannelState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -21243,27 +23153,42 @@ class _$LedBrightness extends LedBrightness {
 
 /// LED Brightness builder class
 ///
-class LedBrightnessBuilder implements Builder<LedBrightness, LedBrightnessBuilder> {
+class LedBrightnessBuilder implements Builder<LedBrightness, LedBrightnessBuilder>, ImcBuilderHeaderPart {
   _$LedBrightness _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -21393,27 +23318,42 @@ class _$QueryLedBrightness extends QueryLedBrightness {
 
 /// Query LED Brightness builder class
 ///
-class QueryLedBrightnessBuilder implements Builder<QueryLedBrightness, QueryLedBrightnessBuilder> {
+class QueryLedBrightnessBuilder implements Builder<QueryLedBrightness, QueryLedBrightnessBuilder>, ImcBuilderHeaderPart {
   _$QueryLedBrightness _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -21543,27 +23483,42 @@ class _$SetLedBrightness extends SetLedBrightness {
 
 /// Set LED Brightness builder class
 ///
-class SetLedBrightnessBuilder implements Builder<SetLedBrightness, SetLedBrightnessBuilder> {
+class SetLedBrightnessBuilder implements Builder<SetLedBrightness, SetLedBrightnessBuilder>, ImcBuilderHeaderPart {
   _$SetLedBrightness _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -21705,27 +23660,42 @@ class _$SetPWM extends SetPWM {
 
 /// Set PWM builder class
 ///
-class SetPWMBuilder implements Builder<SetPWM, SetPWMBuilder> {
+class SetPWMBuilder implements Builder<SetPWM, SetPWMBuilder>, ImcBuilderHeaderPart {
   _$SetPWM _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -21873,27 +23843,42 @@ class _$PWM extends PWM {
 
 /// PWM builder class
 ///
-class PWMBuilder implements Builder<PWM, PWMBuilder> {
+class PWMBuilder implements Builder<PWM, PWMBuilder>, ImcBuilderHeaderPart {
   _$PWM _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -22143,27 +24128,42 @@ class _$EstimatedState extends EstimatedState {
 
 /// Estimated State builder class
 ///
-class EstimatedStateBuilder implements Builder<EstimatedState, EstimatedStateBuilder> {
+class EstimatedStateBuilder implements Builder<EstimatedState, EstimatedStateBuilder>, ImcBuilderHeaderPart {
   _$EstimatedState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -22413,27 +24413,42 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
 
 /// Estimated Stream Velocity builder class
 ///
-class EstimatedStreamVelocityBuilder implements Builder<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder> {
+class EstimatedStreamVelocityBuilder implements Builder<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder>, ImcBuilderHeaderPart {
   _$EstimatedStreamVelocity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -22569,27 +24584,42 @@ class _$IndicatedSpeed extends IndicatedSpeed {
 
 /// Indicated Speed builder class
 ///
-class IndicatedSpeedBuilder implements Builder<IndicatedSpeed, IndicatedSpeedBuilder> {
+class IndicatedSpeedBuilder implements Builder<IndicatedSpeed, IndicatedSpeedBuilder>, ImcBuilderHeaderPart {
   _$IndicatedSpeed _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -22713,27 +24743,42 @@ class _$TrueSpeed extends TrueSpeed {
 
 /// True Speed builder class
 ///
-class TrueSpeedBuilder implements Builder<TrueSpeed, TrueSpeedBuilder> {
+class TrueSpeedBuilder implements Builder<TrueSpeed, TrueSpeedBuilder>, ImcBuilderHeaderPart {
   _$TrueSpeed _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -22935,27 +24980,42 @@ class _$NavigationUncertainty extends NavigationUncertainty {
 
 /// Navigation Uncertainty builder class
 ///
-class NavigationUncertaintyBuilder implements Builder<NavigationUncertainty, NavigationUncertaintyBuilder> {
+class NavigationUncertaintyBuilder implements Builder<NavigationUncertainty, NavigationUncertaintyBuilder>, ImcBuilderHeaderPart {
   _$NavigationUncertainty _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -23205,27 +25265,42 @@ class _$NavigationData extends NavigationData {
 
 /// Navigation Data builder class
 ///
-class NavigationDataBuilder implements Builder<NavigationData, NavigationDataBuilder> {
+class NavigationDataBuilder implements Builder<NavigationData, NavigationDataBuilder>, ImcBuilderHeaderPart {
   _$NavigationData _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _biasPsi;
@@ -23403,27 +25478,42 @@ class _$GpsFixRejection extends GpsFixRejection {
 
 /// GPS Fix Rejection builder class
 ///
-class GpsFixRejectionBuilder implements Builder<GpsFixRejection, GpsFixRejectionBuilder> {
+class GpsFixRejectionBuilder implements Builder<GpsFixRejection, GpsFixRejectionBuilder>, ImcBuilderHeaderPart {
   _$GpsFixRejection _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _utcTime;
@@ -23565,27 +25655,42 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
 
 /// LBL Range Acceptance builder class
 ///
-class LblRangeAcceptanceBuilder implements Builder<LblRangeAcceptance, LblRangeAcceptanceBuilder> {
+class LblRangeAcceptanceBuilder implements Builder<LblRangeAcceptance, LblRangeAcceptanceBuilder>, ImcBuilderHeaderPart {
   _$LblRangeAcceptance _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _id;
@@ -23739,27 +25844,42 @@ class _$DvlRejection extends DvlRejection {
 
 /// DVL Rejection builder class
 ///
-class DvlRejectionBuilder implements Builder<DvlRejection, DvlRejectionBuilder> {
+class DvlRejectionBuilder implements Builder<DvlRejection, DvlRejectionBuilder>, ImcBuilderHeaderPart {
   _$DvlRejection _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   DvlRejectionBitfieldType _type;
@@ -23931,27 +26051,42 @@ class _$LblEstimate extends LblEstimate {
 
 /// LBL Beacon Position Estimate builder class
 ///
-class LblEstimateBuilder implements Builder<LblEstimate, LblEstimateBuilder> {
+class LblEstimateBuilder implements Builder<LblEstimate, LblEstimateBuilder>, ImcBuilderHeaderPart {
   _$LblEstimate _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   LblBeacon _beacon;
@@ -24105,27 +26240,42 @@ class _$AlignmentState extends AlignmentState {
 
 /// Alignment State builder class
 ///
-class AlignmentStateBuilder implements Builder<AlignmentState, AlignmentStateBuilder> {
+class AlignmentStateBuilder implements Builder<AlignmentState, AlignmentStateBuilder>, ImcBuilderHeaderPart {
   _$AlignmentState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   AlignmentStateEnumState _state;
@@ -24261,27 +26411,42 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
 
 /// GroupStreamVelocity builder class
 ///
-class GroupStreamVelocityBuilder implements Builder<GroupStreamVelocity, GroupStreamVelocityBuilder> {
+class GroupStreamVelocityBuilder implements Builder<GroupStreamVelocity, GroupStreamVelocityBuilder>, ImcBuilderHeaderPart {
   _$GroupStreamVelocity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -24429,27 +26594,42 @@ class _$Airflow extends Airflow {
 
 /// Airflow builder class
 ///
-class AirflowBuilder implements Builder<Airflow, AirflowBuilder> {
+class AirflowBuilder implements Builder<Airflow, AirflowBuilder>, ImcBuilderHeaderPart {
   _$Airflow _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _va;
@@ -24585,27 +26765,42 @@ class _$DesiredHeading extends DesiredHeading {
 
 /// Desired Heading builder class
 ///
-class DesiredHeadingBuilder implements Builder<DesiredHeading, DesiredHeadingBuilder> {
+class DesiredHeadingBuilder implements Builder<DesiredHeading, DesiredHeadingBuilder>, ImcBuilderHeaderPart {
   _$DesiredHeading _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -24735,27 +26930,42 @@ class _$DesiredZ extends DesiredZ {
 
 /// Desired Z builder class
 ///
-class DesiredZBuilder implements Builder<DesiredZ, DesiredZBuilder> {
+class DesiredZBuilder implements Builder<DesiredZ, DesiredZBuilder>, ImcBuilderHeaderPart {
   _$DesiredZ _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -24891,27 +27101,42 @@ class _$DesiredSpeed extends DesiredSpeed {
 
 /// Desired Speed builder class
 ///
-class DesiredSpeedBuilder implements Builder<DesiredSpeed, DesiredSpeedBuilder> {
+class DesiredSpeedBuilder implements Builder<DesiredSpeed, DesiredSpeedBuilder>, ImcBuilderHeaderPart {
   _$DesiredSpeed _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -25041,27 +27266,42 @@ class _$DesiredRoll extends DesiredRoll {
 
 /// Desired Roll builder class
 ///
-class DesiredRollBuilder implements Builder<DesiredRoll, DesiredRollBuilder> {
+class DesiredRollBuilder implements Builder<DesiredRoll, DesiredRollBuilder>, ImcBuilderHeaderPart {
   _$DesiredRoll _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -25185,27 +27425,42 @@ class _$DesiredPitch extends DesiredPitch {
 
 /// Desired Pitch builder class
 ///
-class DesiredPitchBuilder implements Builder<DesiredPitch, DesiredPitchBuilder> {
+class DesiredPitchBuilder implements Builder<DesiredPitch, DesiredPitchBuilder>, ImcBuilderHeaderPart {
   _$DesiredPitch _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -25329,27 +27584,42 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
 
 /// Desired Vertical Rate builder class
 ///
-class DesiredVerticalRateBuilder implements Builder<DesiredVerticalRate, DesiredVerticalRateBuilder> {
+class DesiredVerticalRateBuilder implements Builder<DesiredVerticalRate, DesiredVerticalRateBuilder>, ImcBuilderHeaderPart {
   _$DesiredVerticalRate _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -25545,27 +27815,42 @@ class _$DesiredPath extends DesiredPath {
 
 /// Desired Path builder class
 ///
-class DesiredPathBuilder implements Builder<DesiredPath, DesiredPathBuilder> {
+class DesiredPathBuilder implements Builder<DesiredPath, DesiredPathBuilder>, ImcBuilderHeaderPart {
   _$DesiredPath _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _pathRef;
@@ -25797,27 +28082,42 @@ class _$DesiredControl extends DesiredControl {
 
 /// Desired Control builder class
 ///
-class DesiredControlBuilder implements Builder<DesiredControl, DesiredControlBuilder> {
+class DesiredControlBuilder implements Builder<DesiredControl, DesiredControlBuilder>, ImcBuilderHeaderPart {
   _$DesiredControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -25977,27 +28277,42 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
 
 /// Desired Heading Rate builder class
 ///
-class DesiredHeadingRateBuilder implements Builder<DesiredHeadingRate, DesiredHeadingRateBuilder> {
+class DesiredHeadingRateBuilder implements Builder<DesiredHeadingRate, DesiredHeadingRateBuilder>, ImcBuilderHeaderPart {
   _$DesiredHeadingRate _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -26157,27 +28472,42 @@ class _$DesiredVelocity extends DesiredVelocity {
 
 /// Desired Velocity builder class
 ///
-class DesiredVelocityBuilder implements Builder<DesiredVelocity, DesiredVelocityBuilder> {
+class DesiredVelocityBuilder implements Builder<DesiredVelocity, DesiredVelocityBuilder>, ImcBuilderHeaderPart {
   _$DesiredVelocity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _u;
@@ -26445,27 +28775,42 @@ class _$PathControlState extends PathControlState {
 
 /// Path Control State builder class
 ///
-class PathControlStateBuilder implements Builder<PathControlState, PathControlStateBuilder> {
+class PathControlStateBuilder implements Builder<PathControlState, PathControlStateBuilder>, ImcBuilderHeaderPart {
   _$PathControlState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _pathRef;
@@ -26709,27 +29054,42 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
 
 /// Allocated Control Torques builder class
 ///
-class AllocatedControlTorquesBuilder implements Builder<AllocatedControlTorques, AllocatedControlTorquesBuilder> {
+class AllocatedControlTorquesBuilder implements Builder<AllocatedControlTorques, AllocatedControlTorquesBuilder>, ImcBuilderHeaderPart {
   _$AllocatedControlTorques _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _k;
@@ -26883,27 +29243,42 @@ class _$ControlParcel extends ControlParcel {
 
 /// Control Parcel builder class
 ///
-class ControlParcelBuilder implements Builder<ControlParcel, ControlParcelBuilder> {
+class ControlParcelBuilder implements Builder<ControlParcel, ControlParcelBuilder>, ImcBuilderHeaderPart {
   _$ControlParcel _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _p;
@@ -27045,27 +29420,42 @@ class _$Brake extends Brake {
 
 /// Brake builder class
 ///
-class BrakeBuilder implements Builder<Brake, BrakeBuilder> {
+class BrakeBuilder implements Builder<Brake, BrakeBuilder>, ImcBuilderHeaderPart {
   _$Brake _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   BrakeEnumOp _op;
@@ -27243,27 +29633,42 @@ class _$DesiredLinearState extends DesiredLinearState {
 
 /// Desired Linear State builder class
 ///
-class DesiredLinearStateBuilder implements Builder<DesiredLinearState, DesiredLinearStateBuilder> {
+class DesiredLinearStateBuilder implements Builder<DesiredLinearState, DesiredLinearStateBuilder>, ImcBuilderHeaderPart {
   _$DesiredLinearState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -27441,27 +29846,42 @@ class _$DesiredThrottle extends DesiredThrottle {
 
 /// Desired Throttle builder class
 ///
-class DesiredThrottleBuilder implements Builder<DesiredThrottle, DesiredThrottleBuilder> {
+class DesiredThrottleBuilder implements Builder<DesiredThrottle, DesiredThrottleBuilder>, ImcBuilderHeaderPart {
   _$DesiredThrottle _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -27645,27 +30065,42 @@ class _$Goto extends Goto {
 
 /// Goto Maneuver builder class
 ///
-class GotoBuilder implements Builder<Goto, GotoBuilder> {
+class GotoBuilder implements Builder<Goto, GotoBuilder>, ImcBuilderHeaderPart {
   _$Goto _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -27909,27 +30344,42 @@ class _$PopUp extends PopUp {
 
 /// PopUp Maneuver builder class
 ///
-class PopUpBuilder implements Builder<PopUp, PopUpBuilder> {
+class PopUpBuilder implements Builder<PopUp, PopUpBuilder>, ImcBuilderHeaderPart {
   _$PopUp _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -28113,27 +30563,42 @@ class _$Teleoperation extends Teleoperation {
 
 /// Teleoperation Maneuver builder class
 ///
-class TeleoperationBuilder implements Builder<Teleoperation, TeleoperationBuilder> {
+class TeleoperationBuilder implements Builder<Teleoperation, TeleoperationBuilder>, ImcBuilderHeaderPart {
   _$Teleoperation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _custom;
@@ -28335,27 +30800,42 @@ class _$Loiter extends Loiter {
 
 /// Loiter Maneuver builder class
 ///
-class LoiterBuilder implements Builder<Loiter, LoiterBuilder> {
+class LoiterBuilder implements Builder<Loiter, LoiterBuilder>, ImcBuilderHeaderPart {
   _$Loiter _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -28563,27 +31043,42 @@ class _$IdleManeuver extends IdleManeuver {
 
 /// Idle Maneuver builder class
 ///
-class IdleManeuverBuilder implements Builder<IdleManeuver, IdleManeuverBuilder> {
+class IdleManeuverBuilder implements Builder<IdleManeuver, IdleManeuverBuilder>, ImcBuilderHeaderPart {
   _$IdleManeuver _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _duration;
@@ -28725,27 +31220,42 @@ class _$LowLevelControl extends LowLevelControl {
 
 /// Low Level Control Maneuver builder class
 ///
-class LowLevelControlBuilder implements Builder<LowLevelControl, LowLevelControlBuilder> {
+class LowLevelControlBuilder implements Builder<LowLevelControl, LowLevelControlBuilder>, ImcBuilderHeaderPart {
   _$LowLevelControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ControlCommand _control;
@@ -28971,27 +31481,42 @@ class _$Rows extends Rows {
 
 /// Rows Maneuver builder class
 ///
-class RowsBuilder implements Builder<Rows, RowsBuilder> {
+class RowsBuilder implements Builder<Rows, RowsBuilder>, ImcBuilderHeaderPart {
   _$Rows _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -29253,27 +31778,42 @@ class _$FollowPath extends FollowPath {
 
 /// Follow Path Maneuver builder class
 ///
-class FollowPathBuilder implements Builder<FollowPath, FollowPathBuilder> {
+class FollowPathBuilder implements Builder<FollowPath, FollowPathBuilder>, ImcBuilderHeaderPart {
   _$FollowPath _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -29457,27 +31997,42 @@ class _$PathPoint extends PathPoint {
 
 /// Path Point builder class
 ///
-class PathPointBuilder implements Builder<PathPoint, PathPointBuilder> {
+class PathPointBuilder implements Builder<PathPoint, PathPointBuilder>, ImcBuilderHeaderPart {
   _$PathPoint _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -29667,27 +32222,42 @@ class _$YoYo extends YoYo {
 
 /// Yo-Yo Maneuver builder class
 ///
-class YoYoBuilder implements Builder<YoYo, YoYoBuilder> {
+class YoYoBuilder implements Builder<YoYo, YoYoBuilder>, ImcBuilderHeaderPart {
   _$YoYo _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -29859,27 +32429,42 @@ class _$TeleoperationDone extends TeleoperationDone {
 
 /// Teleoperation Done builder class
 ///
-class TeleoperationDoneBuilder implements Builder<TeleoperationDone, TeleoperationDoneBuilder> {
+class TeleoperationDoneBuilder implements Builder<TeleoperationDone, TeleoperationDoneBuilder>, ImcBuilderHeaderPart {
   _$TeleoperationDone _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   TeleoperationDoneBuilder();
@@ -30045,27 +32630,42 @@ class _$StationKeeping extends StationKeeping {
 
 /// Station Keeping builder class
 ///
-class StationKeepingBuilder implements Builder<StationKeeping, StationKeepingBuilder> {
+class StationKeepingBuilder implements Builder<StationKeeping, StationKeepingBuilder>, ImcBuilderHeaderPart {
   _$StationKeeping _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -30303,27 +32903,42 @@ class _$Elevator extends Elevator {
 
 /// Elevator Maneuver builder class
 ///
-class ElevatorBuilder implements Builder<Elevator, ElevatorBuilder> {
+class ElevatorBuilder implements Builder<Elevator, ElevatorBuilder>, ImcBuilderHeaderPart {
   _$Elevator _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -30561,27 +33176,42 @@ class _$FollowTrajectory extends FollowTrajectory {
 
 /// Follow Trajectory builder class
 ///
-class FollowTrajectoryBuilder implements Builder<FollowTrajectory, FollowTrajectoryBuilder> {
+class FollowTrajectoryBuilder implements Builder<FollowTrajectory, FollowTrajectoryBuilder>, ImcBuilderHeaderPart {
   _$FollowTrajectory _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -30771,27 +33401,42 @@ class _$TrajectoryPoint extends TrajectoryPoint {
 
 /// Trajectory Point builder class
 ///
-class TrajectoryPointBuilder implements Builder<TrajectoryPoint, TrajectoryPointBuilder> {
+class TrajectoryPointBuilder implements Builder<TrajectoryPoint, TrajectoryPointBuilder>, ImcBuilderHeaderPart {
   _$TrajectoryPoint _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _x;
@@ -30945,27 +33590,42 @@ class _$CustomManeuver extends CustomManeuver {
 
 /// Custom Maneuver builder class
 ///
-class CustomManeuverBuilder implements Builder<CustomManeuver, CustomManeuverBuilder> {
+class CustomManeuverBuilder implements Builder<CustomManeuver, CustomManeuverBuilder>, ImcBuilderHeaderPart {
   _$CustomManeuver _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -31155,27 +33815,42 @@ class _$VehicleFormation extends VehicleFormation {
 
 /// Vehicle Formation builder class
 ///
-class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormationBuilder> {
+class VehicleFormationBuilder implements Builder<VehicleFormation, VehicleFormationBuilder>, ImcBuilderHeaderPart {
   _$VehicleFormation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -31371,27 +34046,42 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
 
 /// Vehicle Formation Participant builder class
 ///
-class VehicleFormationParticipantBuilder implements Builder<VehicleFormationParticipant, VehicleFormationParticipantBuilder> {
+class VehicleFormationParticipantBuilder implements Builder<VehicleFormationParticipant, VehicleFormationParticipantBuilder>, ImcBuilderHeaderPart {
   _$VehicleFormationParticipant _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _vid;
@@ -31527,27 +34217,42 @@ class _$StopManeuver extends StopManeuver {
 
 /// Stop Maneuver builder class
 ///
-class StopManeuverBuilder implements Builder<StopManeuver, StopManeuverBuilder> {
+class StopManeuverBuilder implements Builder<StopManeuver, StopManeuverBuilder>, ImcBuilderHeaderPart {
   _$StopManeuver _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   StopManeuverBuilder();
@@ -31665,27 +34370,42 @@ class _$RegisterManeuver extends RegisterManeuver {
 
 /// Register Maneuver builder class
 ///
-class RegisterManeuverBuilder implements Builder<RegisterManeuver, RegisterManeuverBuilder> {
+class RegisterManeuverBuilder implements Builder<RegisterManeuver, RegisterManeuverBuilder>, ImcBuilderHeaderPart {
   _$RegisterManeuver _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _mid;
@@ -31821,27 +34541,42 @@ class _$ManeuverControlState extends ManeuverControlState {
 
 /// Maneuver Control State builder class
 ///
-class ManeuverControlStateBuilder implements Builder<ManeuverControlState, ManeuverControlStateBuilder> {
+class ManeuverControlStateBuilder implements Builder<ManeuverControlState, ManeuverControlStateBuilder>, ImcBuilderHeaderPart {
   _$ManeuverControlState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ManeuverControlStateEnumState _state;
@@ -32019,27 +34754,42 @@ class _$FollowSystem extends FollowSystem {
 
 /// Follow System builder class
 ///
-class FollowSystemBuilder implements Builder<FollowSystem, FollowSystemBuilder> {
+class FollowSystemBuilder implements Builder<FollowSystem, FollowSystemBuilder>, ImcBuilderHeaderPart {
   _$FollowSystem _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _system;
@@ -32247,27 +34997,42 @@ class _$CommsRelay extends CommsRelay {
 
 /// Communications Relay builder class
 ///
-class CommsRelayBuilder implements Builder<CommsRelay, CommsRelayBuilder> {
+class CommsRelayBuilder implements Builder<CommsRelay, CommsRelayBuilder>, ImcBuilderHeaderPart {
   _$CommsRelay _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -32475,27 +35240,42 @@ class _$CoverArea extends CoverArea {
 
 /// Cover Area builder class
 ///
-class CoverAreaBuilder implements Builder<CoverArea, CoverAreaBuilder> {
+class CoverAreaBuilder implements Builder<CoverArea, CoverAreaBuilder>, ImcBuilderHeaderPart {
   _$CoverArea _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -32667,27 +35447,42 @@ class _$PolygonVertex extends PolygonVertex {
 
 /// Polygon Vertex builder class
 ///
-class PolygonVertexBuilder implements Builder<PolygonVertex, PolygonVertexBuilder> {
+class PolygonVertexBuilder implements Builder<PolygonVertex, PolygonVertexBuilder>, ImcBuilderHeaderPart {
   _$PolygonVertex _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -32889,27 +35684,42 @@ class _$CompassCalibration extends CompassCalibration {
 
 /// Compass Calibration Maneuver builder class
 ///
-class CompassCalibrationBuilder implements Builder<CompassCalibration, CompassCalibrationBuilder> {
+class CompassCalibrationBuilder implements Builder<CompassCalibration, CompassCalibrationBuilder>, ImcBuilderHeaderPart {
   _$CompassCalibration _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -33123,27 +35933,42 @@ class _$FormationParameters extends FormationParameters {
 
 /// Formation Parameters builder class
 ///
-class FormationParametersBuilder implements Builder<FormationParameters, FormationParametersBuilder> {
+class FormationParametersBuilder implements Builder<FormationParameters, FormationParametersBuilder>, ImcBuilderHeaderPart {
   _$FormationParameters _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _formationName;
@@ -33363,27 +36188,42 @@ class _$FormationPlanExecution extends FormationPlanExecution {
 
 /// Formation Plan Execution builder class
 ///
-class FormationPlanExecutionBuilder implements Builder<FormationPlanExecution, FormationPlanExecutionBuilder> {
+class FormationPlanExecutionBuilder implements Builder<FormationPlanExecution, FormationPlanExecutionBuilder>, ImcBuilderHeaderPart {
   _$FormationPlanExecution _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _groupName;
@@ -33609,27 +36449,42 @@ class _$FollowReference extends FollowReference {
 
 /// Follow Reference Maneuver builder class
 ///
-class FollowReferenceBuilder implements Builder<FollowReference, FollowReferenceBuilder> {
+class FollowReferenceBuilder implements Builder<FollowReference, FollowReferenceBuilder>, ImcBuilderHeaderPart {
   _$FollowReference _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _controlSrc;
@@ -33807,27 +36662,42 @@ class _$Reference extends Reference {
 
 /// Reference To Follow builder class
 ///
-class ReferenceBuilder implements Builder<Reference, ReferenceBuilder> {
+class ReferenceBuilder implements Builder<Reference, ReferenceBuilder>, ImcBuilderHeaderPart {
   _$Reference _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ReferenceBitfieldFlags _flags;
@@ -34005,27 +36875,42 @@ class _$FollowRefState extends FollowRefState {
 
 /// Follow Reference State builder class
 ///
-class FollowRefStateBuilder implements Builder<FollowRefState, FollowRefStateBuilder> {
+class FollowRefStateBuilder implements Builder<FollowRefState, FollowRefStateBuilder>, ImcBuilderHeaderPart {
   _$FollowRefState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _controlSrc;
@@ -34281,27 +37166,42 @@ class _$FormationMonitor extends FormationMonitor {
 
 /// Formation Monitoring Data builder class
 ///
-class FormationMonitorBuilder implements Builder<FormationMonitor, FormationMonitorBuilder> {
+class FormationMonitorBuilder implements Builder<FormationMonitor, FormationMonitorBuilder>, ImcBuilderHeaderPart {
   _$FormationMonitor _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _axCmd;
@@ -34659,27 +37559,42 @@ class _$RelativeState extends RelativeState {
 
 /// Relative State builder class
 ///
-class RelativeStateBuilder implements Builder<RelativeState, RelativeStateBuilder> {
+class RelativeStateBuilder implements Builder<RelativeState, RelativeStateBuilder>, ImcBuilderHeaderPart {
   _$RelativeState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _sId;
@@ -34947,27 +37862,42 @@ class _$Dislodge extends Dislodge {
 
 /// Dislodge Maneuver builder class
 ///
-class DislodgeBuilder implements Builder<Dislodge, DislodgeBuilder> {
+class DislodgeBuilder implements Builder<Dislodge, DislodgeBuilder>, ImcBuilderHeaderPart {
   _$Dislodge _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -35229,27 +38159,42 @@ class _$Formation extends Formation {
 
 /// Formation builder class
 ///
-class FormationBuilder implements Builder<Formation, FormationBuilder> {
+class FormationBuilder implements Builder<Formation, FormationBuilder>, ImcBuilderHeaderPart {
   _$Formation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _formationName;
@@ -35535,27 +38480,42 @@ class _$Launch extends Launch {
 
 /// Launch Maneuver builder class
 ///
-class LaunchBuilder implements Builder<Launch, LaunchBuilder> {
+class LaunchBuilder implements Builder<Launch, LaunchBuilder>, ImcBuilderHeaderPart {
   _$Launch _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -35763,27 +38723,42 @@ class _$Drop extends Drop {
 
 /// Drop Maneuver builder class
 ///
-class DropBuilder implements Builder<Drop, DropBuilder> {
+class DropBuilder implements Builder<Drop, DropBuilder>, ImcBuilderHeaderPart {
   _$Drop _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -35991,27 +38966,42 @@ class _$ScheduledGoto extends ScheduledGoto {
 
 /// Scheduled Goto builder class
 ///
-class ScheduledGotoBuilder implements Builder<ScheduledGoto, ScheduledGotoBuilder> {
+class ScheduledGotoBuilder implements Builder<ScheduledGoto, ScheduledGotoBuilder>, ImcBuilderHeaderPart {
   _$ScheduledGoto _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _arrivalTime;
@@ -36267,27 +39257,42 @@ class _$RowsCoverage extends RowsCoverage {
 
 /// Rows Coverage builder class
 ///
-class RowsCoverageBuilder implements Builder<RowsCoverage, RowsCoverageBuilder> {
+class RowsCoverageBuilder implements Builder<RowsCoverage, RowsCoverageBuilder>, ImcBuilderHeaderPart {
   _$RowsCoverage _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -36561,27 +39566,42 @@ class _$Sample extends Sample {
 
 /// Sample Maneuver builder class
 ///
-class SampleBuilder implements Builder<Sample, SampleBuilder> {
+class SampleBuilder implements Builder<Sample, SampleBuilder>, ImcBuilderHeaderPart {
   _$Sample _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -36759,27 +39779,42 @@ class _$ImageTracking extends ImageTracking {
 
 /// Image Tracking builder class
 ///
-class ImageTrackingBuilder implements Builder<ImageTracking, ImageTrackingBuilder> {
+class ImageTrackingBuilder implements Builder<ImageTracking, ImageTrackingBuilder>, ImcBuilderHeaderPart {
   _$ImageTracking _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ImageTrackingBuilder();
@@ -36939,27 +39974,42 @@ class _$Takeoff extends Takeoff {
 
 /// Takeoff Maneuver builder class
 ///
-class TakeoffBuilder implements Builder<Takeoff, TakeoffBuilder> {
+class TakeoffBuilder implements Builder<Takeoff, TakeoffBuilder>, ImcBuilderHeaderPart {
   _$Takeoff _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -37185,27 +40235,42 @@ class _$Land extends Land {
 
 /// Land Maneuver builder class
 ///
-class LandBuilder implements Builder<Land, LandBuilder> {
+class LandBuilder implements Builder<Land, LandBuilder>, ImcBuilderHeaderPart {
   _$Land _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -37449,27 +40514,42 @@ class _$AutonomousSection extends AutonomousSection {
 
 /// Autonomous Section builder class
 ///
-class AutonomousSectionBuilder implements Builder<AutonomousSection, AutonomousSectionBuilder> {
+class AutonomousSectionBuilder implements Builder<AutonomousSection, AutonomousSectionBuilder>, ImcBuilderHeaderPart {
   _$AutonomousSection _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -37695,27 +40775,42 @@ class _$FollowPoint extends FollowPoint {
 
 /// Follow Point Maneuver builder class
 ///
-class FollowPointBuilder implements Builder<FollowPoint, FollowPointBuilder> {
+class FollowPointBuilder implements Builder<FollowPoint, FollowPointBuilder>, ImcBuilderHeaderPart {
   _$FollowPoint _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _target;
@@ -37911,27 +41006,42 @@ class _$Alignment extends Alignment {
 
 /// Alignment Maneuver builder class
 ///
-class AlignmentBuilder implements Builder<Alignment, AlignmentBuilder> {
+class AlignmentBuilder implements Builder<Alignment, AlignmentBuilder>, ImcBuilderHeaderPart {
   _$Alignment _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -38151,27 +41261,42 @@ class _$StationKeepingExtended extends StationKeepingExtended {
 
 /// Station Keeping Extended builder class
 ///
-class StationKeepingExtendedBuilder implements Builder<StationKeepingExtended, StationKeepingExtendedBuilder> {
+class StationKeepingExtendedBuilder implements Builder<StationKeepingExtended, StationKeepingExtendedBuilder>, ImcBuilderHeaderPart {
   _$StationKeepingExtended _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -38421,27 +41546,42 @@ class _$Magnetometer extends Magnetometer {
 
 /// Magnetometer Maneuver builder class
 ///
-class MagnetometerBuilder implements Builder<Magnetometer, MagnetometerBuilder> {
+class MagnetometerBuilder implements Builder<Magnetometer, MagnetometerBuilder>, ImcBuilderHeaderPart {
   _$Magnetometer _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -38679,27 +41819,42 @@ class _$VehicleState extends VehicleState {
 
 /// Vehicle State builder class
 ///
-class VehicleStateBuilder implements Builder<VehicleState, VehicleStateBuilder> {
+class VehicleStateBuilder implements Builder<VehicleState, VehicleStateBuilder>, ImcBuilderHeaderPart {
   _$VehicleState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   VehicleStateEnumOpMode _opMode;
@@ -38907,27 +42062,42 @@ class _$VehicleCommand extends VehicleCommand {
 
 /// Vehicle Command builder class
 ///
-class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBuilder> {
+class VehicleCommandBuilder implements Builder<VehicleCommand, VehicleCommandBuilder>, ImcBuilderHeaderPart {
   _$VehicleCommand _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   VehicleCommandEnumType _type;
@@ -39087,27 +42257,42 @@ class _$MonitorEntityState extends MonitorEntityState {
 
 /// Monitor Entity State builder class
 ///
-class MonitorEntityStateBuilder implements Builder<MonitorEntityState, MonitorEntityStateBuilder> {
+class MonitorEntityStateBuilder implements Builder<MonitorEntityState, MonitorEntityStateBuilder>, ImcBuilderHeaderPart {
   _$MonitorEntityState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   MonitorEntityStateEnumCommand _command;
@@ -39279,27 +42464,42 @@ class _$EntityMonitoringState extends EntityMonitoringState {
 
 /// Entity Monitoring State builder class
 ///
-class EntityMonitoringStateBuilder implements Builder<EntityMonitoringState, EntityMonitoringStateBuilder> {
+class EntityMonitoringStateBuilder implements Builder<EntityMonitoringState, EntityMonitoringStateBuilder>, ImcBuilderHeaderPart {
   _$EntityMonitoringState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _mcount;
@@ -39531,27 +42731,42 @@ class _$OperationalLimits extends OperationalLimits {
 
 /// Operational Limits builder class
 ///
-class OperationalLimitsBuilder implements Builder<OperationalLimits, OperationalLimitsBuilder> {
+class OperationalLimitsBuilder implements Builder<OperationalLimits, OperationalLimitsBuilder>, ImcBuilderHeaderPart {
   _$OperationalLimits _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   OpLimitsMaskBitfield _mask;
@@ -39735,27 +42950,42 @@ class _$GetOperationalLimits extends GetOperationalLimits {
 
 /// Get Operational Limits builder class
 ///
-class GetOperationalLimitsBuilder implements Builder<GetOperationalLimits, GetOperationalLimitsBuilder> {
+class GetOperationalLimitsBuilder implements Builder<GetOperationalLimits, GetOperationalLimitsBuilder>, ImcBuilderHeaderPart {
   _$GetOperationalLimits _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   GetOperationalLimitsBuilder();
@@ -39873,27 +43103,42 @@ class _$Calibration extends Calibration {
 
 /// Calibration builder class
 ///
-class CalibrationBuilder implements Builder<Calibration, CalibrationBuilder> {
+class CalibrationBuilder implements Builder<Calibration, CalibrationBuilder>, ImcBuilderHeaderPart {
   _$Calibration _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _duration;
@@ -40029,27 +43274,42 @@ class _$ControlLoops extends ControlLoops {
 
 /// Control Loops builder class
 ///
-class ControlLoopsBuilder implements Builder<ControlLoops, ControlLoopsBuilder> {
+class ControlLoopsBuilder implements Builder<ControlLoops, ControlLoopsBuilder>, ImcBuilderHeaderPart {
   _$ControlLoops _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ControlLoopsEnumEnable _enable;
@@ -40185,27 +43445,42 @@ class _$VehicleMedium extends VehicleMedium {
 
 /// Vehicle Medium builder class
 ///
-class VehicleMediumBuilder implements Builder<VehicleMedium, VehicleMediumBuilder> {
+class VehicleMediumBuilder implements Builder<VehicleMedium, VehicleMediumBuilder>, ImcBuilderHeaderPart {
   _$VehicleMedium _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   VehicleMediumEnumMedium _medium;
@@ -40335,27 +43610,42 @@ class _$Collision extends Collision {
 
 /// Collision builder class
 ///
-class CollisionBuilder implements Builder<Collision, CollisionBuilder> {
+class CollisionBuilder implements Builder<Collision, CollisionBuilder>, ImcBuilderHeaderPart {
   _$Collision _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -40515,27 +43805,42 @@ class _$FormState extends FormState {
 
 /// Formation Tracking State builder class
 ///
-class FormStateBuilder implements Builder<FormState, FormStateBuilder> {
+class FormStateBuilder implements Builder<FormState, FormStateBuilder>, ImcBuilderHeaderPart {
   _$FormState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _posSimErr;
@@ -40695,27 +44000,42 @@ class _$AutopilotMode extends AutopilotMode {
 
 /// Autopilot Mode builder class
 ///
-class AutopilotModeBuilder implements Builder<AutopilotMode, AutopilotModeBuilder> {
+class AutopilotModeBuilder implements Builder<AutopilotMode, AutopilotModeBuilder>, ImcBuilderHeaderPart {
   _$AutopilotMode _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   AutopilotModeEnumAutonomy _autonomy;
@@ -40887,27 +44207,42 @@ class _$FormationState extends FormationState {
 
 /// Formation Tracking State builder class
 ///
-class FormationStateBuilder implements Builder<FormationState, FormationStateBuilder> {
+class FormationStateBuilder implements Builder<FormationState, FormationStateBuilder>, ImcBuilderHeaderPart {
   _$FormationState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   FormationStateEnumType _type;
@@ -41091,27 +44426,42 @@ class _$ReportControl extends ReportControl {
 
 /// Report Control builder class
 ///
-class ReportControlBuilder implements Builder<ReportControl, ReportControlBuilder> {
+class ReportControlBuilder implements Builder<ReportControl, ReportControlBuilder>, ImcBuilderHeaderPart {
   _$ReportControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ReportControlEnumOp _op;
@@ -41307,27 +44657,42 @@ class _$StateReport extends StateReport {
 
 /// State Report builder class
 ///
-class StateReportBuilder implements Builder<StateReport, StateReportBuilder> {
+class StateReportBuilder implements Builder<StateReport, StateReportBuilder>, ImcBuilderHeaderPart {
   _$StateReport _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _stime;
@@ -41547,27 +44912,42 @@ class _$TransmissionRequest extends TransmissionRequest {
 
 /// Transmission Request builder class
 ///
-class TransmissionRequestBuilder implements Builder<TransmissionRequest, TransmissionRequestBuilder> {
+class TransmissionRequestBuilder implements Builder<TransmissionRequest, TransmissionRequestBuilder>, ImcBuilderHeaderPart {
   _$TransmissionRequest _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _reqId;
@@ -41745,27 +45125,42 @@ class _$TransmissionStatus extends TransmissionStatus {
 
 /// Transmission Status builder class
 ///
-class TransmissionStatusBuilder implements Builder<TransmissionStatus, TransmissionStatusBuilder> {
+class TransmissionStatusBuilder implements Builder<TransmissionStatus, TransmissionStatusBuilder>, ImcBuilderHeaderPart {
   _$TransmissionStatus _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _reqId;
@@ -41919,27 +45314,42 @@ class _$SmsRequest extends SmsRequest {
 
 /// SMS Transmission Request builder class
 ///
-class SmsRequestBuilder implements Builder<SmsRequest, SmsRequestBuilder> {
+class SmsRequestBuilder implements Builder<SmsRequest, SmsRequestBuilder>, ImcBuilderHeaderPart {
   _$SmsRequest _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _reqId;
@@ -42093,27 +45503,42 @@ class _$SmsStatus extends SmsStatus {
 
 /// SMS Transmission Status builder class
 ///
-class SmsStatusBuilder implements Builder<SmsStatus, SmsStatusBuilder> {
+class SmsStatusBuilder implements Builder<SmsStatus, SmsStatusBuilder>, ImcBuilderHeaderPart {
   _$SmsStatus _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _reqId;
@@ -42249,27 +45674,42 @@ class _$VtolState extends VtolState {
 
 /// VTOL State builder class
 ///
-class VtolStateBuilder implements Builder<VtolState, VtolStateBuilder> {
+class VtolStateBuilder implements Builder<VtolState, VtolStateBuilder>, ImcBuilderHeaderPart {
   _$VtolState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   VtolStateEnumState _state;
@@ -42393,27 +45833,42 @@ class _$ArmingState extends ArmingState {
 
 /// Arming State builder class
 ///
-class ArmingStateBuilder implements Builder<ArmingState, ArmingStateBuilder> {
+class ArmingStateBuilder implements Builder<ArmingState, ArmingStateBuilder>, ImcBuilderHeaderPart {
   _$ArmingState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ArmingStateEnumState _state;
@@ -42531,27 +45986,42 @@ class _$Abort extends Abort {
 
 /// Abort builder class
 ///
-class AbortBuilder implements Builder<Abort, AbortBuilder> {
+class AbortBuilder implements Builder<Abort, AbortBuilder>, ImcBuilderHeaderPart {
   _$Abort _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   AbortBuilder();
@@ -42717,27 +46187,42 @@ class _$PlanSpecification extends PlanSpecification {
 
 /// Plan Specification builder class
 ///
-class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecificationBuilder> {
+class PlanSpecificationBuilder implements Builder<PlanSpecification, PlanSpecificationBuilder>, ImcBuilderHeaderPart {
   _$PlanSpecification _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _planId;
@@ -42927,27 +46412,42 @@ class _$PlanManeuver extends PlanManeuver {
 
 /// Plan Maneuver builder class
 ///
-class PlanManeuverBuilder implements Builder<PlanManeuver, PlanManeuverBuilder> {
+class PlanManeuverBuilder implements Builder<PlanManeuver, PlanManeuverBuilder>, ImcBuilderHeaderPart {
   _$PlanManeuver _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _maneuverId;
@@ -43107,27 +46607,42 @@ class _$PlanTransition extends PlanTransition {
 
 /// Plan Transition builder class
 ///
-class PlanTransitionBuilder implements Builder<PlanTransition, PlanTransitionBuilder> {
+class PlanTransitionBuilder implements Builder<PlanTransition, PlanTransitionBuilder>, ImcBuilderHeaderPart {
   _$PlanTransition _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _sourceMan;
@@ -43275,27 +46790,42 @@ class _$EmergencyControl extends EmergencyControl {
 
 /// Emergency Control builder class
 ///
-class EmergencyControlBuilder implements Builder<EmergencyControl, EmergencyControlBuilder> {
+class EmergencyControlBuilder implements Builder<EmergencyControl, EmergencyControlBuilder>, ImcBuilderHeaderPart {
   _$EmergencyControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   EmergencyControlEnumCommand _command;
@@ -43437,27 +46967,42 @@ class _$EmergencyControlState extends EmergencyControlState {
 
 /// Emergency Control State builder class
 ///
-class EmergencyControlStateBuilder implements Builder<EmergencyControlState, EmergencyControlStateBuilder> {
+class EmergencyControlStateBuilder implements Builder<EmergencyControlState, EmergencyControlStateBuilder>, ImcBuilderHeaderPart {
   _$EmergencyControlState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   EmergencyControlStateEnumState _state;
@@ -43623,27 +47168,42 @@ class _$PlanDB extends PlanDB {
 
 /// Plan DB builder class
 ///
-class PlanDBBuilder implements Builder<PlanDB, PlanDBBuilder> {
+class PlanDBBuilder implements Builder<PlanDB, PlanDBBuilder>, ImcBuilderHeaderPart {
   _$PlanDB _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   PlanDBEnumType _type;
@@ -43833,27 +47393,42 @@ class _$PlanDBState extends PlanDBState {
 
 /// Plan DB State builder class
 ///
-class PlanDBStateBuilder implements Builder<PlanDBState, PlanDBStateBuilder> {
+class PlanDBStateBuilder implements Builder<PlanDBState, PlanDBStateBuilder>, ImcBuilderHeaderPart {
   _$PlanDBState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _planCount;
@@ -44043,27 +47618,42 @@ class _$PlanDBInformation extends PlanDBInformation {
 
 /// Plan DB Information builder class
 ///
-class PlanDBInformationBuilder implements Builder<PlanDBInformation, PlanDBInformationBuilder> {
+class PlanDBInformationBuilder implements Builder<PlanDBInformation, PlanDBInformationBuilder>, ImcBuilderHeaderPart {
   _$PlanDBInformation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _planId;
@@ -44253,27 +47843,42 @@ class _$PlanControl extends PlanControl {
 
 /// Plan Control builder class
 ///
-class PlanControlBuilder implements Builder<PlanControl, PlanControlBuilder> {
+class PlanControlBuilder implements Builder<PlanControl, PlanControlBuilder>, ImcBuilderHeaderPart {
   _$PlanControl _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   PlanControlEnumType _type;
@@ -44475,27 +48080,42 @@ class _$PlanControlState extends PlanControlState {
 
 /// Plan Control State builder class
 ///
-class PlanControlStateBuilder implements Builder<PlanControlState, PlanControlStateBuilder> {
+class PlanControlStateBuilder implements Builder<PlanControlState, PlanControlStateBuilder>, ImcBuilderHeaderPart {
   _$PlanControlState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   PlanControlStateEnumState _state;
@@ -44679,27 +48299,42 @@ class _$PlanVariable extends PlanVariable {
 
 /// Plan Variable builder class
 ///
-class PlanVariableBuilder implements Builder<PlanVariable, PlanVariableBuilder> {
+class PlanVariableBuilder implements Builder<PlanVariable, PlanVariableBuilder>, ImcBuilderHeaderPart {
   _$PlanVariable _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -44859,27 +48494,42 @@ class _$PlanGeneration extends PlanGeneration {
 
 /// Plan Generation builder class
 ///
-class PlanGenerationBuilder implements Builder<PlanGeneration, PlanGenerationBuilder> {
+class PlanGenerationBuilder implements Builder<PlanGeneration, PlanGenerationBuilder>, ImcBuilderHeaderPart {
   _$PlanGeneration _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   PlanGenerationEnumCmd _cmd;
@@ -45135,27 +48785,42 @@ class _$LeaderState extends LeaderState {
 
 /// Leader State builder class
 ///
-class LeaderStateBuilder implements Builder<LeaderState, LeaderStateBuilder> {
+class LeaderStateBuilder implements Builder<LeaderState, LeaderStateBuilder>, ImcBuilderHeaderPart {
   _$LeaderState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _groupName;
@@ -45429,27 +49094,42 @@ class _$PlanStatistics extends PlanStatistics {
 
 /// Plan Statistics builder class
 ///
-class PlanStatisticsBuilder implements Builder<PlanStatistics, PlanStatisticsBuilder> {
+class PlanStatisticsBuilder implements Builder<PlanStatistics, PlanStatisticsBuilder>, ImcBuilderHeaderPart {
   _$PlanStatistics _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _planId;
@@ -45657,27 +49337,42 @@ class _$ReportedState extends ReportedState {
 
 /// Reported State builder class
 ///
-class ReportedStateBuilder implements Builder<ReportedState, ReportedStateBuilder> {
+class ReportedStateBuilder implements Builder<ReportedState, ReportedStateBuilder>, ImcBuilderHeaderPart {
   _$ReportedState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -45885,27 +49580,42 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
 
 /// Remote Sensor Info builder class
 ///
-class RemoteSensorInfoBuilder implements Builder<RemoteSensorInfo, RemoteSensorInfoBuilder> {
+class RemoteSensorInfoBuilder implements Builder<RemoteSensorInfo, RemoteSensorInfoBuilder>, ImcBuilderHeaderPart {
   _$RemoteSensorInfo _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _id;
@@ -46071,27 +49781,42 @@ class _$Map extends Map {
 
 /// Map builder class
 ///
-class MapBuilder implements Builder<Map, MapBuilder> {
+class MapBuilder implements Builder<Map, MapBuilder>, ImcBuilderHeaderPart {
   _$Map _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _id;
@@ -46251,27 +49976,42 @@ class _$MapFeature extends MapFeature {
 
 /// Map Feature builder class
 ///
-class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder> {
+class MapFeatureBuilder implements Builder<MapFeature, MapFeatureBuilder>, ImcBuilderHeaderPart {
   _$MapFeature _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _id;
@@ -46437,27 +50177,42 @@ class _$MapPoint extends MapPoint {
 
 /// MapPoint builder class
 ///
-class MapPointBuilder implements Builder<MapPoint, MapPointBuilder> {
+class MapPointBuilder implements Builder<MapPoint, MapPointBuilder>, ImcBuilderHeaderPart {
   _$MapPoint _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -46605,27 +50360,42 @@ class _$CcuEvent extends CcuEvent {
 
 /// CCU Event builder class
 ///
-class CcuEventBuilder implements Builder<CcuEvent, CcuEventBuilder> {
+class CcuEventBuilder implements Builder<CcuEvent, CcuEventBuilder>, ImcBuilderHeaderPart {
   _$CcuEvent _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   CcuEventEnumType _type;
@@ -46767,27 +50537,42 @@ class _$VehicleLinks extends VehicleLinks {
 
 /// Vehicle Links builder class
 ///
-class VehicleLinksBuilder implements Builder<VehicleLinks, VehicleLinksBuilder> {
+class VehicleLinksBuilder implements Builder<VehicleLinks, VehicleLinksBuilder>, ImcBuilderHeaderPart {
   _$VehicleLinks _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _localname;
@@ -46929,27 +50714,42 @@ class _$TrexObservation extends TrexObservation {
 
 /// TREX Observation builder class
 ///
-class TrexObservationBuilder implements Builder<TrexObservation, TrexObservationBuilder> {
+class TrexObservationBuilder implements Builder<TrexObservation, TrexObservationBuilder>, ImcBuilderHeaderPart {
   _$TrexObservation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _timeline;
@@ -47097,27 +50897,42 @@ class _$TrexCommand extends TrexCommand {
 
 /// TREX Command builder class
 ///
-class TrexCommandBuilder implements Builder<TrexCommand, TrexCommandBuilder> {
+class TrexCommandBuilder implements Builder<TrexCommand, TrexCommandBuilder>, ImcBuilderHeaderPart {
   _$TrexCommand _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   TrexCommandEnumCommand _command;
@@ -47265,27 +51080,42 @@ class _$TrexOperation extends TrexOperation {
 
 /// TREX Operation builder class
 ///
-class TrexOperationBuilder implements Builder<TrexOperation, TrexOperationBuilder> {
+class TrexOperationBuilder implements Builder<TrexOperation, TrexOperationBuilder>, ImcBuilderHeaderPart {
   _$TrexOperation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   TrexOperationEnumOp _op;
@@ -47439,27 +51269,42 @@ class _$TrexAttribute extends TrexAttribute {
 
 /// TREX Attribute builder class
 ///
-class TrexAttributeBuilder implements Builder<TrexAttribute, TrexAttributeBuilder> {
+class TrexAttributeBuilder implements Builder<TrexAttribute, TrexAttributeBuilder>, ImcBuilderHeaderPart {
   _$TrexAttribute _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -47613,27 +51458,42 @@ class _$TrexToken extends TrexToken {
 
 /// TREX Token builder class
 ///
-class TrexTokenBuilder implements Builder<TrexToken, TrexTokenBuilder> {
+class TrexTokenBuilder implements Builder<TrexToken, TrexTokenBuilder>, ImcBuilderHeaderPart {
   _$TrexToken _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _timeline;
@@ -47775,27 +51635,42 @@ class _$TrexPlan extends TrexPlan {
 
 /// TREX Plan builder class
 ///
-class TrexPlanBuilder implements Builder<TrexPlan, TrexPlanBuilder> {
+class TrexPlanBuilder implements Builder<TrexPlan, TrexPlanBuilder>, ImcBuilderHeaderPart {
   _$TrexPlan _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _reactor;
@@ -47931,27 +51806,42 @@ class _$Event extends Event {
 
 /// Event builder class
 ///
-class EventBuilder implements Builder<Event, EventBuilder> {
+class EventBuilder implements Builder<Event, EventBuilder>, ImcBuilderHeaderPart {
   _$Event _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _topic;
@@ -48087,27 +51977,42 @@ class _$CompressedImage extends CompressedImage {
 
 /// Compressed Image builder class
 ///
-class CompressedImageBuilder implements Builder<CompressedImage, CompressedImageBuilder> {
+class CompressedImageBuilder implements Builder<CompressedImage, CompressedImageBuilder>, ImcBuilderHeaderPart {
   _$CompressedImage _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _frameid;
@@ -48255,27 +52160,42 @@ class _$ImageTxSettings extends ImageTxSettings {
 
 /// Image Transmission Settings builder class
 ///
-class ImageTxSettingsBuilder implements Builder<ImageTxSettings, ImageTxSettingsBuilder> {
+class ImageTxSettingsBuilder implements Builder<ImageTxSettings, ImageTxSettingsBuilder>, ImcBuilderHeaderPart {
   _$ImageTxSettings _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _fps;
@@ -48441,27 +52361,42 @@ class _$RemoteState extends RemoteState {
 
 /// Remote State builder class
 ///
-class RemoteStateBuilder implements Builder<RemoteState, RemoteStateBuilder> {
+class RemoteStateBuilder implements Builder<RemoteState, RemoteStateBuilder>, ImcBuilderHeaderPart {
   _$RemoteState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -48645,27 +52580,42 @@ class _$Target extends Target {
 
 /// Target builder class
 ///
-class TargetBuilder implements Builder<Target, TargetBuilder> {
+class TargetBuilder implements Builder<Target, TargetBuilder>, ImcBuilderHeaderPart {
   _$Target _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _label;
@@ -48831,27 +52781,42 @@ class _$EntityParameter extends EntityParameter {
 
 /// EntityParameter builder class
 ///
-class EntityParameterBuilder implements Builder<EntityParameter, EntityParameterBuilder> {
+class EntityParameterBuilder implements Builder<EntityParameter, EntityParameterBuilder>, ImcBuilderHeaderPart {
   _$EntityParameter _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -48987,27 +52952,42 @@ class _$EntityParameters extends EntityParameters {
 
 /// EntityParameters builder class
 ///
-class EntityParametersBuilder implements Builder<EntityParameters, EntityParametersBuilder> {
+class EntityParametersBuilder implements Builder<EntityParameters, EntityParametersBuilder>, ImcBuilderHeaderPart {
   _$EntityParameters _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -49149,27 +53129,42 @@ class _$QueryEntityParameters extends QueryEntityParameters {
 
 /// QueryEntityParameters builder class
 ///
-class QueryEntityParametersBuilder implements Builder<QueryEntityParameters, QueryEntityParametersBuilder> {
+class QueryEntityParametersBuilder implements Builder<QueryEntityParameters, QueryEntityParametersBuilder>, ImcBuilderHeaderPart {
   _$QueryEntityParameters _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -49311,27 +53306,42 @@ class _$SetEntityParameters extends SetEntityParameters {
 
 /// SetEntityParameters builder class
 ///
-class SetEntityParametersBuilder implements Builder<SetEntityParameters, SetEntityParametersBuilder> {
+class SetEntityParametersBuilder implements Builder<SetEntityParameters, SetEntityParametersBuilder>, ImcBuilderHeaderPart {
   _$SetEntityParameters _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -49461,27 +53471,42 @@ class _$SaveEntityParameters extends SaveEntityParameters {
 
 /// SaveEntityParameters builder class
 ///
-class SaveEntityParametersBuilder implements Builder<SaveEntityParameters, SaveEntityParametersBuilder> {
+class SaveEntityParametersBuilder implements Builder<SaveEntityParameters, SaveEntityParametersBuilder>, ImcBuilderHeaderPart {
   _$SaveEntityParameters _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -49605,27 +53630,42 @@ class _$CreateSession extends CreateSession {
 
 /// Create Session builder class
 ///
-class CreateSessionBuilder implements Builder<CreateSession, CreateSessionBuilder> {
+class CreateSessionBuilder implements Builder<CreateSession, CreateSessionBuilder>, ImcBuilderHeaderPart {
   _$CreateSession _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _timeout;
@@ -49749,27 +53789,42 @@ class _$CloseSession extends CloseSession {
 
 /// Close Session builder class
 ///
-class CloseSessionBuilder implements Builder<CloseSession, CloseSessionBuilder> {
+class CloseSessionBuilder implements Builder<CloseSession, CloseSessionBuilder>, ImcBuilderHeaderPart {
   _$CloseSession _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _sessid;
@@ -49899,27 +53954,42 @@ class _$SessionSubscription extends SessionSubscription {
 
 /// Session Subscription builder class
 ///
-class SessionSubscriptionBuilder implements Builder<SessionSubscription, SessionSubscriptionBuilder> {
+class SessionSubscriptionBuilder implements Builder<SessionSubscription, SessionSubscriptionBuilder>, ImcBuilderHeaderPart {
   _$SessionSubscription _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _sessid;
@@ -50049,27 +54119,42 @@ class _$SessionKeepAlive extends SessionKeepAlive {
 
 /// Session Keep-Alive builder class
 ///
-class SessionKeepAliveBuilder implements Builder<SessionKeepAlive, SessionKeepAliveBuilder> {
+class SessionKeepAliveBuilder implements Builder<SessionKeepAlive, SessionKeepAliveBuilder>, ImcBuilderHeaderPart {
   _$SessionKeepAlive _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _sessid;
@@ -50199,27 +54284,42 @@ class _$SessionStatus extends SessionStatus {
 
 /// Session Status builder class
 ///
-class SessionStatusBuilder implements Builder<SessionStatus, SessionStatusBuilder> {
+class SessionStatusBuilder implements Builder<SessionStatus, SessionStatusBuilder>, ImcBuilderHeaderPart {
   _$SessionStatus _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _sessid;
@@ -50349,27 +54449,42 @@ class _$PushEntityParameters extends PushEntityParameters {
 
 /// Push Entity Parameters builder class
 ///
-class PushEntityParametersBuilder implements Builder<PushEntityParameters, PushEntityParametersBuilder> {
+class PushEntityParametersBuilder implements Builder<PushEntityParameters, PushEntityParametersBuilder>, ImcBuilderHeaderPart {
   _$PushEntityParameters _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -50493,27 +54608,42 @@ class _$PopEntityParameters extends PopEntityParameters {
 
 /// Pop Entity Parameters builder class
 ///
-class PopEntityParametersBuilder implements Builder<PopEntityParameters, PopEntityParametersBuilder> {
+class PopEntityParametersBuilder implements Builder<PopEntityParameters, PopEntityParametersBuilder>, ImcBuilderHeaderPart {
   _$PopEntityParameters _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -50643,27 +54773,42 @@ class _$IoEvent extends IoEvent {
 
 /// I/O Event builder class
 ///
-class IoEventBuilder implements Builder<IoEvent, IoEventBuilder> {
+class IoEventBuilder implements Builder<IoEvent, IoEventBuilder>, ImcBuilderHeaderPart {
   _$IoEvent _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   IoEventEnumType _type;
@@ -50811,27 +54956,42 @@ class _$UamTxFrame extends UamTxFrame {
 
 /// UamTxFrame builder class
 ///
-class UamTxFrameBuilder implements Builder<UamTxFrame, UamTxFrameBuilder> {
+class UamTxFrameBuilder implements Builder<UamTxFrame, UamTxFrameBuilder>, ImcBuilderHeaderPart {
   _$UamTxFrame _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _seq;
@@ -50991,27 +55151,42 @@ class _$UamRxFrame extends UamRxFrame {
 
 /// UamRxFrame builder class
 ///
-class UamRxFrameBuilder implements Builder<UamRxFrame, UamRxFrameBuilder> {
+class UamRxFrameBuilder implements Builder<UamRxFrame, UamRxFrameBuilder>, ImcBuilderHeaderPart {
   _$UamRxFrame _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _sysSrc;
@@ -51165,27 +55340,42 @@ class _$UamTxStatus extends UamTxStatus {
 
 /// UamTxStatus builder class
 ///
-class UamTxStatusBuilder implements Builder<UamTxStatus, UamTxStatusBuilder> {
+class UamTxStatusBuilder implements Builder<UamTxStatus, UamTxStatusBuilder>, ImcBuilderHeaderPart {
   _$UamTxStatus _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _seq;
@@ -51333,27 +55523,42 @@ class _$UamRxRange extends UamRxRange {
 
 /// UamRxRange builder class
 ///
-class UamRxRangeBuilder implements Builder<UamRxRange, UamRxRangeBuilder> {
+class UamRxRangeBuilder implements Builder<UamRxRange, UamRxRangeBuilder>, ImcBuilderHeaderPart {
   _$UamRxRange _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _seq;
@@ -51519,27 +55724,42 @@ class _$FormCtrlParam extends FormCtrlParam {
 
 /// Formation Control Parameters builder class
 ///
-class FormCtrlParamBuilder implements Builder<FormCtrlParam, FormCtrlParamBuilder> {
+class FormCtrlParamBuilder implements Builder<FormCtrlParam, FormCtrlParamBuilder>, ImcBuilderHeaderPart {
   _$FormCtrlParam _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   FormCtrlParamEnumAction _action;
@@ -51705,27 +55925,42 @@ class _$FormationEval extends FormationEval {
 
 /// Formation Evaluation Data builder class
 ///
-class FormationEvalBuilder implements Builder<FormationEval, FormationEvalBuilder> {
+class FormationEvalBuilder implements Builder<FormationEval, FormationEvalBuilder>, ImcBuilderHeaderPart {
   _$FormationEval _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _errMean;
@@ -51921,27 +56156,42 @@ class _$FormationControlParams extends FormationControlParams {
 
 /// Formation Control Parameters builder class
 ///
-class FormationControlParamsBuilder implements Builder<FormationControlParams, FormationControlParamsBuilder> {
+class FormationControlParamsBuilder implements Builder<FormationControlParams, FormationControlParamsBuilder>, ImcBuilderHeaderPart {
   _$FormationControlParams _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   FormationControlParamsEnumAction _action;
@@ -52167,27 +56417,42 @@ class _$FormationEvaluation extends FormationEvaluation {
 
 /// Formation Evaluation Data builder class
 ///
-class FormationEvaluationBuilder implements Builder<FormationEvaluation, FormationEvaluationBuilder> {
+class FormationEvaluationBuilder implements Builder<FormationEvaluation, FormationEvaluationBuilder>, ImcBuilderHeaderPart {
   _$FormationEvaluation _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   FormationEvaluationEnumType _type;
@@ -52371,27 +56636,42 @@ class _$SoiWaypoint extends SoiWaypoint {
 
 /// SOI Waypoint builder class
 ///
-class SoiWaypointBuilder implements Builder<SoiWaypoint, SoiWaypointBuilder> {
+class SoiWaypointBuilder implements Builder<SoiWaypoint, SoiWaypointBuilder>, ImcBuilderHeaderPart {
   _$SoiWaypoint _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _lat;
@@ -52539,27 +56819,42 @@ class _$SoiPlan extends SoiPlan {
 
 /// SOI Plan builder class
 ///
-class SoiPlanBuilder implements Builder<SoiPlan, SoiPlanBuilder> {
+class SoiPlanBuilder implements Builder<SoiPlan, SoiPlanBuilder>, ImcBuilderHeaderPart {
   _$SoiPlan _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _planId;
@@ -52713,27 +57008,42 @@ class _$SoiCommand extends SoiCommand {
 
 /// SOI Command builder class
 ///
-class SoiCommandBuilder implements Builder<SoiCommand, SoiCommandBuilder> {
+class SoiCommandBuilder implements Builder<SoiCommand, SoiCommandBuilder>, ImcBuilderHeaderPart {
   _$SoiCommand _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   SoiCommandEnumType _type;
@@ -52899,27 +57209,42 @@ class _$SoiState extends SoiState {
 
 /// SOI State builder class
 ///
-class SoiStateBuilder implements Builder<SoiState, SoiStateBuilder> {
+class SoiStateBuilder implements Builder<SoiState, SoiStateBuilder>, ImcBuilderHeaderPart {
   _$SoiState _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   SoiStateEnumState _state;
@@ -53079,27 +57404,42 @@ class _$MessagePart extends MessagePart {
 
 /// Message Fragment builder class
 ///
-class MessagePartBuilder implements Builder<MessagePart, MessagePartBuilder> {
+class MessagePartBuilder implements Builder<MessagePart, MessagePartBuilder>, ImcBuilderHeaderPart {
   _$MessagePart _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _uid;
@@ -53247,27 +57587,42 @@ class _$NeptusBlob extends NeptusBlob {
 
 /// Neptus Blob builder class
 ///
-class NeptusBlobBuilder implements Builder<NeptusBlob, NeptusBlobBuilder> {
+class NeptusBlobBuilder implements Builder<NeptusBlob, NeptusBlobBuilder>, ImcBuilderHeaderPart {
   _$NeptusBlob _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _contentType;
@@ -53391,27 +57746,42 @@ class _$Aborted extends Aborted {
 
 /// Aborted builder class
 ///
-class AbortedBuilder implements Builder<Aborted, AbortedBuilder> {
+class AbortedBuilder implements Builder<Aborted, AbortedBuilder>, ImcBuilderHeaderPart {
   _$Aborted _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   AbortedBuilder();
@@ -53541,27 +57911,42 @@ class _$UsblAngles extends UsblAngles {
 
 /// USBL Angles builder class
 ///
-class UsblAnglesBuilder implements Builder<UsblAngles, UsblAnglesBuilder> {
+class UsblAnglesBuilder implements Builder<UsblAngles, UsblAnglesBuilder>, ImcBuilderHeaderPart {
   _$UsblAngles _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _target;
@@ -53715,27 +58100,42 @@ class _$UsblPosition extends UsblPosition {
 
 /// USBL Position builder class
 ///
-class UsblPositionBuilder implements Builder<UsblPosition, UsblPositionBuilder> {
+class UsblPositionBuilder implements Builder<UsblPosition, UsblPositionBuilder>, ImcBuilderHeaderPart {
   _$UsblPosition _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _target;
@@ -53901,27 +58301,42 @@ class _$UsblFix extends UsblFix {
 
 /// USBL Fix builder class
 ///
-class UsblFixBuilder implements Builder<UsblFix, UsblFixBuilder> {
+class UsblFixBuilder implements Builder<UsblFix, UsblFixBuilder>, ImcBuilderHeaderPart {
   _$UsblFix _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _target;
@@ -54075,27 +58490,42 @@ class _$ParametersXml extends ParametersXml {
 
 /// Parameters XML builder class
 ///
-class ParametersXmlBuilder implements Builder<ParametersXml, ParametersXmlBuilder> {
+class ParametersXmlBuilder implements Builder<ParametersXml, ParametersXmlBuilder>, ImcBuilderHeaderPart {
   _$ParametersXml _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _locale;
@@ -54219,27 +58649,42 @@ class _$GetParametersXml extends GetParametersXml {
 
 /// Get Parameters XML builder class
 ///
-class GetParametersXmlBuilder implements Builder<GetParametersXml, GetParametersXmlBuilder> {
+class GetParametersXmlBuilder implements Builder<GetParametersXml, GetParametersXmlBuilder>, ImcBuilderHeaderPart {
   _$GetParametersXml _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   GetParametersXmlBuilder();
@@ -54369,27 +58814,42 @@ class _$SetImageCoords extends SetImageCoords {
 
 /// Set Image Coordinates builder class
 ///
-class SetImageCoordsBuilder implements Builder<SetImageCoords, SetImageCoordsBuilder> {
+class SetImageCoordsBuilder implements Builder<SetImageCoords, SetImageCoordsBuilder>, ImcBuilderHeaderPart {
   _$SetImageCoords _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _camId;
@@ -54537,27 +58997,42 @@ class _$GetImageCoords extends GetImageCoords {
 
 /// Get Image Coordinates builder class
 ///
-class GetImageCoordsBuilder implements Builder<GetImageCoords, GetImageCoordsBuilder> {
+class GetImageCoordsBuilder implements Builder<GetImageCoords, GetImageCoordsBuilder>, ImcBuilderHeaderPart {
   _$GetImageCoords _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _camId;
@@ -54723,27 +59198,42 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
 
 /// Get World Coordinates builder class
 ///
-class GetWorldCoordinatesBuilder implements Builder<GetWorldCoordinates, GetWorldCoordinatesBuilder> {
+class GetWorldCoordinatesBuilder implements Builder<GetWorldCoordinates, GetWorldCoordinatesBuilder>, ImcBuilderHeaderPart {
   _$GetWorldCoordinates _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   BooleanEnum _tracking;
@@ -54945,27 +59435,42 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
 
 /// USBL Angles Extended builder class
 ///
-class UsblAnglesExtendedBuilder implements Builder<UsblAnglesExtended, UsblAnglesExtendedBuilder> {
+class UsblAnglesExtendedBuilder implements Builder<UsblAnglesExtended, UsblAnglesExtendedBuilder>, ImcBuilderHeaderPart {
   _$UsblAnglesExtended _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _target;
@@ -55197,27 +59702,42 @@ class _$UsblPositionExtended extends UsblPositionExtended {
 
 /// USBL Position Extended builder class
 ///
-class UsblPositionExtendedBuilder implements Builder<UsblPositionExtended, UsblPositionExtendedBuilder> {
+class UsblPositionExtendedBuilder implements Builder<UsblPositionExtended, UsblPositionExtendedBuilder>, ImcBuilderHeaderPart {
   _$UsblPositionExtended _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _target;
@@ -55431,27 +59951,42 @@ class _$UsblFixExtended extends UsblFixExtended {
 
 /// USBL Fix Extended builder class
 ///
-class UsblFixExtendedBuilder implements Builder<UsblFixExtended, UsblFixExtendedBuilder> {
+class UsblFixExtendedBuilder implements Builder<UsblFixExtended, UsblFixExtendedBuilder>, ImcBuilderHeaderPart {
   _$UsblFixExtended _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _target;
@@ -55629,27 +60164,42 @@ class _$UsblModem extends UsblModem {
 
 /// USBL Modem Configuration builder class
 ///
-class UsblModemBuilder implements Builder<UsblModem, UsblModemBuilder> {
+class UsblModemBuilder implements Builder<UsblModem, UsblModemBuilder>, ImcBuilderHeaderPart {
   _$UsblModem _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   String _name;
@@ -55803,27 +60353,42 @@ class _$UsblConfig extends UsblConfig {
 
 /// USBL Configuration builder class
 ///
-class UsblConfigBuilder implements Builder<UsblConfig, UsblConfigBuilder> {
+class UsblConfigBuilder implements Builder<UsblConfig, UsblConfigBuilder>, ImcBuilderHeaderPart {
   _$UsblConfig _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   UsblConfigEnumOp _op;
@@ -55959,27 +60524,42 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
 
 /// Dissolved Organic Matter builder class
 ///
-class DissolvedOrganicMatterBuilder implements Builder<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder> {
+class DissolvedOrganicMatterBuilder implements Builder<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder>, ImcBuilderHeaderPart {
   _$DissolvedOrganicMatter _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -56109,27 +60689,42 @@ class _$OpticalBackscatter extends OpticalBackscatter {
 
 /// Optical Backscattering Coefficient builder class
 ///
-class OpticalBackscatterBuilder implements Builder<OpticalBackscatter, OpticalBackscatterBuilder> {
+class OpticalBackscatterBuilder implements Builder<OpticalBackscatter, OpticalBackscatterBuilder>, ImcBuilderHeaderPart {
   _$OpticalBackscatter _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
@@ -56343,27 +60938,42 @@ class _$Tachograph extends Tachograph {
 
 /// Tachograph builder class
 ///
-class TachographBuilder implements Builder<Tachograph, TachographBuilder> {
+class TachographBuilder implements Builder<Tachograph, TachographBuilder>, ImcBuilderHeaderPart {
   _$Tachograph _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _timestampLastService;
@@ -56583,27 +61193,42 @@ class _$ApmStatus extends ApmStatus {
 
 /// APM Status builder class
 ///
-class ApmStatusBuilder implements Builder<ApmStatus, ApmStatusBuilder> {
+class ApmStatusBuilder implements Builder<ApmStatus, ApmStatusBuilder>, ImcBuilderHeaderPart {
   _$ApmStatus _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   ApmStatusEnumSeverity _severity;
@@ -56745,27 +61370,42 @@ class _$SadcReadings extends SadcReadings {
 
 /// SADC Readings builder class
 ///
-class SadcReadingsBuilder implements Builder<SadcReadings, SadcReadingsBuilder> {
+class SadcReadingsBuilder implements Builder<SadcReadings, SadcReadingsBuilder>, ImcBuilderHeaderPart {
   _$SadcReadings _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   int _channel;
@@ -56991,27 +61631,42 @@ class _$DmsDetection extends DmsDetection {
 
 /// DMS Detection builder class
 ///
-class DmsDetectionBuilder implements Builder<DmsDetection, DmsDetectionBuilder> {
+class DmsDetectionBuilder implements Builder<DmsDetection, DmsDetectionBuilder>, ImcBuilderHeaderPart {
   _$DmsDetection _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _ch01;
@@ -57225,27 +61880,42 @@ class _$TotalMagIntensity extends TotalMagIntensity {
 
 /// Total Magnetic Field Intensity builder class
 ///
-class TotalMagIntensityBuilder implements Builder<TotalMagIntensity, TotalMagIntensityBuilder> {
+class TotalMagIntensityBuilder implements Builder<TotalMagIntensity, TotalMagIntensityBuilder>, ImcBuilderHeaderPart {
   _$TotalMagIntensity _$v;
 
+  @override
   DateTime _timestamp;
+  @override
   DateTime get timestamp => _$this._timestamp;
+  @override
   set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
 
+  @override
   int _src;
+  @override
   int get src => _$this._src;
+  @override
   set src(int src) => _$this._src = src;
 
+  @override
   int _srcEnt;
+  @override
   int get srcEnt => _$this._srcEnt;
+  @override
   set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
 
+  @override
   int _dst;
+  @override
   int get dst => _$this._dst;
+  @override
   set dst(int dst) => _$this._dst = dst;
 
+  @override
   int _dstEnt;
+  @override
   int get dstEnt => _$this._dstEnt;
+  @override
   set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
 
   double _value;
