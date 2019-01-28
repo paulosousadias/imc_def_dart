@@ -5,6 +5,7 @@
 // **************************************************************************
 
 import 'dart:typed_data';
+import 'dart:convert' show utf8;
 
 import 'package:imc_def/imc_def_base.dart' as imc;
 import 'package:imc_def/imc_def.dart' as imc;
@@ -340,6 +341,11 @@ class EntityStateSerializer extends imc.ImcSerializer<imc.EntityState> {
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field description
+    var descriptionEncoded = utf8.encode(message.description);
+    var descriptionSSize = descriptionEncoded.length;
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteOffset += 2;
+    descriptionEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -381,6 +387,14 @@ class EntityStateSerializer extends imc.ImcSerializer<imc.EntityState> {
     builder.flags = imc.EntityStateBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field description
+    var descriptionSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var descriptionDData = List<int>(descriptionSSize);
+    for (var i = 0; i < descriptionSSize; i++) {
+      descriptionDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var descriptionDecoded = utf8.decode(descriptionDData);
+    builder.description = descriptionDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -455,7 +469,17 @@ class EntityInfoSerializer extends imc.ImcSerializer<imc.EntityInfo> {
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field label
+    var labelEncoded = utf8.encode(message.label);
+    var labelSSize = labelEncoded.length;
+    byteData.setUint16(byteOffset, labelSSize, imc.endian_ser);
+    byteOffset += 2;
+    labelEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field component
+    var componentEncoded = utf8.encode(message.component);
+    var componentSSize = componentEncoded.length;
+    byteData.setUint16(byteOffset, componentSSize, imc.endian_ser);
+    byteOffset += 2;
+    componentEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field actTime
     byteData.setUint16(byteOffset, message.actTime, imc.endian_ser);
     byteOffset += 2;
@@ -500,7 +524,23 @@ class EntityInfoSerializer extends imc.ImcSerializer<imc.EntityInfo> {
     builder.id = byteData.getUint8(byteOffset);
     byteOffset += 1;
     // field label
+    var labelSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var labelDData = List<int>(labelSSize);
+    for (var i = 0; i < labelSSize; i++) {
+      labelDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var labelDecoded = utf8.decode(labelDData);
+    builder.label = labelDecoded;
     // field component
+    var componentSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var componentDData = List<int>(componentSSize);
+    for (var i = 0; i < componentSSize; i++) {
+      componentDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var componentDecoded = utf8.decode(componentDData);
+    builder.component = componentDecoded;
     // field actTime
     builder.actTime = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -587,6 +627,11 @@ class EntityListSerializer extends imc.ImcSerializer<imc.EntityList> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field list
+    var listEncoded = utf8.encode(message.list);
+    var listSSize = listEncoded.length;
+    byteData.setUint16(byteOffset, listSSize, imc.endian_ser);
+    byteOffset += 2;
+    listEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -625,6 +670,14 @@ class EntityListSerializer extends imc.ImcSerializer<imc.EntityList> {
     builder.op = imc.EntityListEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field list
+    var listSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var listDData = List<int>(listSSize);
+    for (var i = 0; i < listSSize; i++) {
+      listDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var listDecoded = utf8.decode(listDData);
+    builder.list = listDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -702,6 +755,11 @@ class TransportBindingsSerializer extends imc.ImcSerializer<imc.TransportBinding
 
     // Payload
     // field consumer
+    var consumerEncoded = utf8.encode(message.consumer);
+    var consumerSSize = consumerEncoded.length;
+    byteData.setUint16(byteOffset, consumerSSize, imc.endian_ser);
+    byteOffset += 2;
+    consumerEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field messageId
     byteData.setUint16(byteOffset, message.messageId, imc.endian_ser);
     byteOffset += 2;
@@ -740,6 +798,14 @@ class TransportBindingsSerializer extends imc.ImcSerializer<imc.TransportBinding
 
     // Payload
     // field consumer
+    var consumerSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var consumerDData = List<int>(consumerSSize);
+    for (var i = 0; i < consumerSSize; i++) {
+      consumerDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var consumerDecoded = utf8.decode(consumerDData);
+    builder.consumer = consumerDecoded;
     // field messageId
     builder.messageId = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -884,6 +950,11 @@ class DevCalibrationStateSerializer extends imc.ImcSerializer<imc.DevCalibration
     byteData.setUint8(byteOffset, message.stepNumber);
     byteOffset += 1;
     // field step
+    var stepEncoded = utf8.encode(message.step);
+    var stepSSize = stepEncoded.length;
+    byteData.setUint16(byteOffset, stepSSize, imc.endian_ser);
+    byteOffset += 2;
+    stepEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
@@ -928,6 +999,14 @@ class DevCalibrationStateSerializer extends imc.ImcSerializer<imc.DevCalibration
     builder.stepNumber = byteData.getUint8(byteOffset);
     byteOffset += 1;
     // field step
+    var stepSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var stepDData = List<int>(stepSSize);
+    for (var i = 0; i < stepSSize; i++) {
+      stepDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var stepDecoded = utf8.decode(stepDData);
+    builder.step = stepDecoded;
     // field flags
     builder.flags = imc.DevCalibrationStateBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -953,6 +1032,11 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<imc.EntityActiva
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
     // field error
+    var errorEncoded = utf8.encode(message.error);
+    var errorSSize = errorEncoded.length;
+    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteOffset += 2;
+    errorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -991,6 +1075,14 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<imc.EntityActiva
     builder.state = imc.EntityActivationStateEnumState(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field error
+    var errorSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var errorDData = List<int>(errorSSize);
+    for (var i = 0; i < errorSSize; i++) {
+      errorDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var errorDecoded = utf8.decode(errorDData);
+    builder.error = errorDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -1439,6 +1531,11 @@ class LeakSimulationSerializer extends imc.ImcSerializer<imc.LeakSimulation> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field entities
+    var entitiesEncoded = utf8.encode(message.entities);
+    var entitiesSSize = entitiesEncoded.length;
+    byteData.setUint16(byteOffset, entitiesSSize, imc.endian_ser);
+    byteOffset += 2;
+    entitiesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -1477,6 +1574,14 @@ class LeakSimulationSerializer extends imc.ImcSerializer<imc.LeakSimulation> {
     builder.op = imc.LeakSimulationEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field entities
+    var entitiesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var entitiesDData = List<int>(entitiesSSize);
+    for (var i = 0; i < entitiesSSize; i++) {
+      entitiesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var entitiesDecoded = utf8.decode(entitiesDData);
+    builder.entities = entitiesDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -1710,6 +1815,11 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field snapshot
+    var snapshotEncoded = utf8.encode(message.snapshot);
+    var snapshotSSize = snapshotEncoded.length;
+    byteData.setUint16(byteOffset, snapshotSSize, imc.endian_ser);
+    byteOffset += 2;
+    snapshotEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field message
     // End payload
 
@@ -1749,6 +1859,14 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl> {
     builder.op = imc.CacheControlEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field snapshot
+    var snapshotSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var snapshotDData = List<int>(snapshotSSize);
+    for (var i = 0; i < snapshotSSize; i++) {
+      snapshotDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var snapshotDecoded = utf8.decode(snapshotDData);
+    builder.snapshot = snapshotDecoded;
     // field message
     // End payload
     
@@ -1772,6 +1890,11 @@ class LoggingControlSerializer extends imc.ImcSerializer<imc.LoggingControl> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -1810,6 +1933,14 @@ class LoggingControlSerializer extends imc.ImcSerializer<imc.LoggingControl> {
     builder.op = imc.LoggingControlEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -1835,7 +1966,17 @@ class LogBookEntrySerializer extends imc.ImcSerializer<imc.LogBookEntry> {
     byteData.setFloat64(byteOffset, message.htime, imc.endian_ser);
     byteOffset += 8;
     // field context
+    var contextEncoded = utf8.encode(message.context);
+    var contextSSize = contextEncoded.length;
+    byteData.setUint16(byteOffset, contextSSize, imc.endian_ser);
+    byteOffset += 2;
+    contextEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field text
+    var textEncoded = utf8.encode(message.text);
+    var textSSize = textEncoded.length;
+    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteOffset += 2;
+    textEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -1877,7 +2018,23 @@ class LogBookEntrySerializer extends imc.ImcSerializer<imc.LogBookEntry> {
     builder.htime = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
     // field context
+    var contextSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var contextDData = List<int>(contextSSize);
+    for (var i = 0; i < contextSSize; i++) {
+      contextDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var contextDecoded = utf8.decode(contextDData);
+    builder.context = contextDecoded;
     // field text
+    var textSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var textDData = List<int>(textSSize);
+    for (var i = 0; i < textSSize; i++) {
+      textDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var textDecoded = utf8.decode(textDData);
+    builder.text = textDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -1966,6 +2123,11 @@ class ReplayControlSerializer extends imc.ImcSerializer<imc.ReplayControl> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field file
+    var fileEncoded = utf8.encode(message.file);
+    var fileSSize = fileEncoded.length;
+    byteData.setUint16(byteOffset, fileSSize, imc.endian_ser);
+    byteOffset += 2;
+    fileEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -2004,6 +2166,14 @@ class ReplayControlSerializer extends imc.ImcSerializer<imc.ReplayControl> {
     builder.op = imc.ReplayControlEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field file
+    var fileSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var fileDData = List<int>(fileSSize);
+    for (var i = 0; i < fileSSize; i++) {
+      fileDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var fileDecoded = utf8.decode(fileDData);
+    builder.file = fileDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -2346,6 +2516,11 @@ class HistoricEventSerializer extends imc.ImcSerializer<imc.HistoricEvent> {
 
     // Payload
     // field text
+    var textEncoded = utf8.encode(message.text);
+    var textSSize = textEncoded.length;
+    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteOffset += 2;
+    textEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
@@ -2384,6 +2559,14 @@ class HistoricEventSerializer extends imc.ImcSerializer<imc.HistoricEvent> {
 
     // Payload
     // field text
+    var textSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var textDData = List<int>(textSSize);
+    for (var i = 0; i < textSSize; i++) {
+      textDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var textDecoded = utf8.decode(textDData);
+    builder.text = textDecoded;
     // field type
     builder.type = imc.HistoricEventEnumType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -2600,6 +2783,11 @@ class AnnounceSerializer extends imc.ImcSerializer<imc.Announce> {
 
     // Payload
     // field sysName
+    var sysNameEncoded = utf8.encode(message.sysName);
+    var sysNameSSize = sysNameEncoded.length;
+    byteData.setUint16(byteOffset, sysNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    sysNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field sysType
     byteData.setUint8(byteOffset, message.sysType.value);
     byteOffset += 1;
@@ -2616,6 +2804,11 @@ class AnnounceSerializer extends imc.ImcSerializer<imc.Announce> {
     byteData.setFloat32(byteOffset, message.height, imc.endian_ser);
     byteOffset += 4;
     // field services
+    var servicesEncoded = utf8.encode(message.services);
+    var servicesSSize = servicesEncoded.length;
+    byteData.setUint16(byteOffset, servicesSSize, imc.endian_ser);
+    byteOffset += 2;
+    servicesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -2651,6 +2844,14 @@ class AnnounceSerializer extends imc.ImcSerializer<imc.Announce> {
 
     // Payload
     // field sysName
+    var sysNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sysNameDData = List<int>(sysNameSSize);
+    for (var i = 0; i < sysNameSSize; i++) {
+      sysNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sysNameDecoded = utf8.decode(sysNameDData);
+    builder.sysName = sysNameDecoded;
     // field sysType
     builder.sysType = imc.SystemTypeEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -2667,6 +2868,14 @@ class AnnounceSerializer extends imc.ImcSerializer<imc.Announce> {
     builder.height = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field services
+    var servicesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var servicesDData = List<int>(servicesSSize);
+    for (var i = 0; i < servicesSSize; i++) {
+      servicesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var servicesDecoded = utf8.decode(servicesDData);
+    builder.services = servicesDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -2686,6 +2895,11 @@ class AnnounceServiceSerializer extends imc.ImcSerializer<imc.AnnounceService> {
 
     // Payload
     // field service
+    var serviceEncoded = utf8.encode(message.service);
+    var serviceSSize = serviceEncoded.length;
+    byteData.setUint16(byteOffset, serviceSSize, imc.endian_ser);
+    byteOffset += 2;
+    serviceEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field serviceType
     byteData.setUint8(byteOffset, message.serviceType.value);
     byteOffset += 1;
@@ -2724,6 +2938,14 @@ class AnnounceServiceSerializer extends imc.ImcSerializer<imc.AnnounceService> {
 
     // Payload
     // field service
+    var serviceSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var serviceDData = List<int>(serviceSSize);
+    for (var i = 0; i < serviceSSize; i++) {
+      serviceDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var serviceDecoded = utf8.decode(serviceDData);
+    builder.service = serviceDecoded;
     // field serviceType
     builder.serviceType = imc.AnnounceServiceBitfieldServiceType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -2920,10 +3142,20 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms> {
 
     // Payload
     // field number
+    var numberEncoded = utf8.encode(message.number);
+    var numberSSize = numberEncoded.length;
+    byteData.setUint16(byteOffset, numberSSize, imc.endian_ser);
+    byteOffset += 2;
+    numberEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field timeout
     byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
     byteOffset += 2;
     // field contents
+    var contentsEncoded = utf8.encode(message.contents);
+    var contentsSSize = contentsEncoded.length;
+    byteData.setUint16(byteOffset, contentsSSize, imc.endian_ser);
+    byteOffset += 2;
+    contentsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -2959,10 +3191,26 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms> {
 
     // Payload
     // field number
+    var numberSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var numberDData = List<int>(numberSSize);
+    for (var i = 0; i < numberSSize; i++) {
+      numberDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var numberDecoded = utf8.decode(numberDData);
+    builder.number = numberDecoded;
     // field timeout
     builder.timeout = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field contents
+    var contentsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var contentsDData = List<int>(contentsSSize);
+    for (var i = 0; i < contentsSSize; i++) {
+      contentsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var contentsDecoded = utf8.decode(contentsDData);
+    builder.contents = contentsDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -2985,6 +3233,11 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx> {
     byteData.setUint32(byteOffset, message.seq, imc.endian_ser);
     byteOffset += 4;
     // field destination
+    var destinationEncoded = utf8.encode(message.destination);
+    var destinationSSize = destinationEncoded.length;
+    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteOffset += 2;
+    destinationEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field timeout
     byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
     byteOffset += 2;
@@ -3031,6 +3284,14 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx> {
     builder.seq = byteData.getUint32(byteOffset, endianess);
     byteOffset += 4;
     // field destination
+    var destinationSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var destinationDData = List<int>(destinationSSize);
+    for (var i = 0; i < destinationSSize; i++) {
+      destinationDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var destinationDecoded = utf8.decode(destinationDData);
+    builder.destination = destinationDecoded;
     // field timeout
     builder.timeout = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -3061,6 +3322,11 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx> {
 
     // Payload
     // field source
+    var sourceEncoded = utf8.encode(message.source);
+    var sourceSSize = sourceEncoded.length;
+    byteData.setUint16(byteOffset, sourceSSize, imc.endian_ser);
+    byteOffset += 2;
+    sourceEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field data
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
@@ -3101,6 +3367,14 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx> {
 
     // Payload
     // field source
+    var sourceSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sourceDData = List<int>(sourceSSize);
+    for (var i = 0; i < sourceSSize; i++) {
+      sourceDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sourceDecoded = utf8.decode(sourceDData);
+    builder.source = sourceDecoded;
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -3134,6 +3408,11 @@ class SmsStateSerializer extends imc.ImcSerializer<imc.SmsState> {
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
     // field error
+    var errorEncoded = utf8.encode(message.error);
+    var errorSSize = errorEncoded.length;
+    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteOffset += 2;
+    errorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -3175,6 +3454,14 @@ class SmsStateSerializer extends imc.ImcSerializer<imc.SmsState> {
     builder.state = imc.SmsStateEnumState(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field error
+    var errorSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var errorDData = List<int>(errorSSize);
+    for (var i = 0; i < errorSSize; i++) {
+      errorDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var errorDecoded = utf8.decode(errorDData);
+    builder.error = errorDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -3194,7 +3481,17 @@ class TextMessageSerializer extends imc.ImcSerializer<imc.TextMessage> {
 
     // Payload
     // field origin
+    var originEncoded = utf8.encode(message.origin);
+    var originSSize = originEncoded.length;
+    byteData.setUint16(byteOffset, originSSize, imc.endian_ser);
+    byteOffset += 2;
+    originEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field text
+    var textEncoded = utf8.encode(message.text);
+    var textSSize = textEncoded.length;
+    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteOffset += 2;
+    textEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -3230,7 +3527,23 @@ class TextMessageSerializer extends imc.ImcSerializer<imc.TextMessage> {
 
     // Payload
     // field origin
+    var originSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var originDData = List<int>(originSSize);
+    for (var i = 0; i < originSSize; i++) {
+      originDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var originDecoded = utf8.decode(originDData);
+    builder.origin = originDecoded;
     // field text
+    var textSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var textDData = List<int>(textSSize);
+    for (var i = 0; i < textSSize; i++) {
+      textDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var textDecoded = utf8.decode(textDData);
+    builder.text = textDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -3250,6 +3563,11 @@ class IridiumMsgRxSerializer extends imc.ImcSerializer<imc.IridiumMsgRx> {
 
     // Payload
     // field origin
+    var originEncoded = utf8.encode(message.origin);
+    var originSSize = originEncoded.length;
+    byteData.setUint16(byteOffset, originSSize, imc.endian_ser);
+    byteOffset += 2;
+    originEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field htime
     byteData.setFloat64(byteOffset, message.htime, imc.endian_ser);
     byteOffset += 8;
@@ -3299,6 +3617,14 @@ class IridiumMsgRxSerializer extends imc.ImcSerializer<imc.IridiumMsgRx> {
 
     // Payload
     // field origin
+    var originSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var originDData = List<int>(originSSize);
+    for (var i = 0; i < originSSize; i++) {
+      originDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var originDecoded = utf8.decode(originDData);
+    builder.origin = originDecoded;
     // field htime
     builder.htime = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -3341,6 +3667,11 @@ class IridiumMsgTxSerializer extends imc.ImcSerializer<imc.IridiumMsgTx> {
     byteData.setUint16(byteOffset, message.ttl, imc.endian_ser);
     byteOffset += 2;
     // field destination
+    var destinationEncoded = utf8.encode(message.destination);
+    var destinationSSize = destinationEncoded.length;
+    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteOffset += 2;
+    destinationEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field data
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
@@ -3387,6 +3718,14 @@ class IridiumMsgTxSerializer extends imc.ImcSerializer<imc.IridiumMsgTx> {
     builder.ttl = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field destination
+    var destinationSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var destinationDData = List<int>(destinationSSize);
+    for (var i = 0; i < destinationSSize; i++) {
+      destinationDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var destinationDecoded = utf8.decode(destinationDData);
+    builder.destination = destinationDecoded;
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -3420,6 +3759,11 @@ class IridiumTxStatusSerializer extends imc.ImcSerializer<imc.IridiumTxStatus> {
     byteData.setUint8(byteOffset, message.status.value);
     byteOffset += 1;
     // field text
+    var textEncoded = utf8.encode(message.text);
+    var textSSize = textEncoded.length;
+    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteOffset += 2;
+    textEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -3461,6 +3805,14 @@ class IridiumTxStatusSerializer extends imc.ImcSerializer<imc.IridiumTxStatus> {
     builder.status = imc.IridiumTxStatusEnumStatus(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field text
+    var textSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var textDData = List<int>(textSSize);
+    for (var i = 0; i < textSSize; i++) {
+      textDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var textDecoded = utf8.decode(textDData);
+    builder.text = textDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -3480,6 +3832,11 @@ class GroupMembershipStateSerializer extends imc.ImcSerializer<imc.GroupMembersh
 
     // Payload
     // field groupName
+    var groupNameEncoded = utf8.encode(message.groupName);
+    var groupNameSSize = groupNameEncoded.length;
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    groupNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field links
     byteData.setUint32(byteOffset, message.links, imc.endian_ser);
     byteOffset += 4;
@@ -3518,6 +3875,14 @@ class GroupMembershipStateSerializer extends imc.ImcSerializer<imc.GroupMembersh
 
     // Payload
     // field groupName
+    var groupNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var groupNameDData = List<int>(groupNameSSize);
+    for (var i = 0; i < groupNameSSize; i++) {
+      groupNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var groupNameDecoded = utf8.decode(groupNameDData);
+    builder.groupName = groupNameDecoded;
     // field links
     builder.links = byteData.getUint32(byteOffset, endianess);
     byteOffset += 4;
@@ -3540,10 +3905,20 @@ class SystemGroupSerializer extends imc.ImcSerializer<imc.SystemGroup> {
 
     // Payload
     // field groupName
+    var groupNameEncoded = utf8.encode(message.groupName);
+    var groupNameSSize = groupNameEncoded.length;
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    groupNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field action
     byteData.setUint8(byteOffset, message.action.value);
     byteOffset += 1;
     // field groupList
+    var groupListEncoded = utf8.encode(message.groupList);
+    var groupListSSize = groupListEncoded.length;
+    byteData.setUint16(byteOffset, groupListSSize, imc.endian_ser);
+    byteOffset += 2;
+    groupListEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -3579,10 +3954,26 @@ class SystemGroupSerializer extends imc.ImcSerializer<imc.SystemGroup> {
 
     // Payload
     // field groupName
+    var groupNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var groupNameDData = List<int>(groupNameSSize);
+    for (var i = 0; i < groupNameSSize; i++) {
+      groupNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var groupNameDecoded = utf8.decode(groupNameDData);
+    builder.groupName = groupNameDecoded;
     // field action
     builder.action = imc.SystemGroupEnumAction(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field groupList
+    var groupListSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var groupListDData = List<int>(groupListSSize);
+    for (var i = 0; i < groupListSSize; i++) {
+      groupListDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var groupListDecoded = utf8.decode(groupListDData);
+    builder.groupList = groupListDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -4128,6 +4519,11 @@ class CommSystemsQuerySerializer extends imc.ImcSerializer<imc.CommSystemsQuery>
     byteData.setUint16(byteOffset, message.model.value, imc.endian_ser);
     byteOffset += 2;
     // field list
+    var listEncoded = utf8.encode(message.list);
+    var listSSize = listEncoded.length;
+    byteData.setUint16(byteOffset, listSSize, imc.endian_ser);
+    byteOffset += 2;
+    listEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -4172,6 +4568,14 @@ class CommSystemsQuerySerializer extends imc.ImcSerializer<imc.CommSystemsQuery>
     builder.model = imc.CommSystemsQueryEnumModel(byteData.getUint16(byteOffset, endianess));
     byteOffset += 2;
     // field list
+    var listSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var listDData = List<int>(listSSize);
+    for (var i = 0; i < listSSize; i++) {
+      listDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var listDecoded = utf8.decode(listDData);
+    builder.list = listDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -4203,7 +4607,17 @@ class TelemetryMsgSerializer extends imc.ImcSerializer<imc.TelemetryMsg> {
     byteData.setUint8(byteOffset, message.code.value);
     byteOffset += 1;
     // field destination
+    var destinationEncoded = utf8.encode(message.destination);
+    var destinationSSize = destinationEncoded.length;
+    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteOffset += 2;
+    destinationEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field source
+    var sourceEncoded = utf8.encode(message.source);
+    var sourceSSize = sourceEncoded.length;
+    byteData.setUint16(byteOffset, sourceSSize, imc.endian_ser);
+    byteOffset += 2;
+    sourceEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field acknowledge
     byteData.setUint8(byteOffset, message.acknowledge.value);
     byteOffset += 1;
@@ -4262,7 +4676,23 @@ class TelemetryMsgSerializer extends imc.ImcSerializer<imc.TelemetryMsg> {
     builder.code = imc.TelemetryMsgEnumCode(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field destination
+    var destinationSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var destinationDData = List<int>(destinationSSize);
+    for (var i = 0; i < destinationSSize; i++) {
+      destinationDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var destinationDecoded = utf8.decode(destinationDData);
+    builder.destination = destinationDecoded;
     // field source
+    var sourceSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sourceDData = List<int>(sourceSSize);
+    for (var i = 0; i < sourceSSize; i++) {
+      sourceDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sourceDecoded = utf8.decode(sourceDData);
+    builder.source = sourceDecoded;
     // field acknowledge
     builder.acknowledge = imc.TelemetryMsgBitfieldAcknowledge(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -4360,6 +4790,11 @@ class LblBeaconSerializer extends imc.ImcSerializer<imc.LblBeacon> {
 
     // Payload
     // field beacon
+    var beaconEncoded = utf8.encode(message.beacon);
+    var beaconSSize = beaconEncoded.length;
+    byteData.setUint16(byteOffset, beaconSSize, imc.endian_ser);
+    byteOffset += 2;
+    beaconEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lat
     byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
     byteOffset += 8;
@@ -4413,6 +4848,14 @@ class LblBeaconSerializer extends imc.ImcSerializer<imc.LblBeacon> {
 
     // Payload
     // field beacon
+    var beaconSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var beaconDData = List<int>(beaconSSize);
+    for (var i = 0; i < beaconSSize; i++) {
+      beaconDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var beaconDecoded = utf8.decode(beaconDData);
+    builder.beacon = beaconDecoded;
     // field lat
     builder.lat = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -4567,6 +5010,11 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field system
+    var systemEncoded = utf8.encode(message.system);
+    var systemSSize = systemEncoded.length;
+    byteData.setUint16(byteOffset, systemSSize, imc.endian_ser);
+    byteOffset += 2;
+    systemEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field range
     byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
     byteOffset += 4;
@@ -4609,6 +5057,14 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
     builder.op = imc.AcousticOperationEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field system
+    var systemSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var systemDData = List<int>(systemSSize);
+    for (var i = 0; i < systemSSize; i++) {
+      systemDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var systemDecoded = utf8.decode(systemDData);
+    builder.system = systemDecoded;
     // field range
     builder.range = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -4684,6 +5140,11 @@ class AcousticSystemsSerializer extends imc.ImcSerializer<imc.AcousticSystems> {
 
     // Payload
     // field list
+    var listEncoded = utf8.encode(message.list);
+    var listSSize = listEncoded.length;
+    byteData.setUint16(byteOffset, listSSize, imc.endian_ser);
+    byteOffset += 2;
+    listEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -4719,6 +5180,14 @@ class AcousticSystemsSerializer extends imc.ImcSerializer<imc.AcousticSystems> {
 
     // Payload
     // field list
+    var listSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var listDData = List<int>(listSSize);
+    for (var i = 0; i < listSSize; i++) {
+      listDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var listDecoded = utf8.decode(listDData);
+    builder.list = listDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -4738,6 +5207,11 @@ class AcousticLinkSerializer extends imc.ImcSerializer<imc.AcousticLink> {
 
     // Payload
     // field peer
+    var peerEncoded = utf8.encode(message.peer);
+    var peerSSize = peerEncoded.length;
+    byteData.setUint16(byteOffset, peerSSize, imc.endian_ser);
+    byteOffset += 2;
+    peerEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field rssi
     byteData.setFloat32(byteOffset, message.rssi, imc.endian_ser);
     byteOffset += 4;
@@ -4779,6 +5253,14 @@ class AcousticLinkSerializer extends imc.ImcSerializer<imc.AcousticLink> {
 
     // Payload
     // field peer
+    var peerSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var peerDData = List<int>(peerSSize);
+    for (var i = 0; i < peerSSize; i++) {
+      peerDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var peerDecoded = utf8.decode(peerDData);
+    builder.peer = peerDecoded;
     // field rssi
     builder.rssi = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -6406,6 +6888,11 @@ class DevDataTextSerializer extends imc.ImcSerializer<imc.DevDataText> {
 
     // Payload
     // field value
+    var valueEncoded = utf8.encode(message.value);
+    var valueSSize = valueEncoded.length;
+    byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
+    byteOffset += 2;
+    valueEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -6441,6 +6928,14 @@ class DevDataTextSerializer extends imc.ImcSerializer<imc.DevDataText> {
 
     // Payload
     // field value
+    var valueSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var valueDData = List<int>(valueSSize);
+    for (var i = 0; i < valueSSize; i++) {
+      valueDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var valueDecoded = utf8.decode(valueDData);
+    builder.value = valueDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -6802,6 +7297,11 @@ class FuelLevelSerializer extends imc.ImcSerializer<imc.FuelLevel> {
     byteData.setFloat32(byteOffset, message.confidence, imc.endian_ser);
     byteOffset += 4;
     // field opmodes
+    var opmodesEncoded = utf8.encode(message.opmodes);
+    var opmodesSSize = opmodesEncoded.length;
+    byteData.setUint16(byteOffset, opmodesSSize, imc.endian_ser);
+    byteOffset += 2;
+    opmodesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -6843,6 +7343,14 @@ class FuelLevelSerializer extends imc.ImcSerializer<imc.FuelLevel> {
     builder.confidence = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field opmodes
+    var opmodesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var opmodesDData = List<int>(opmodesSSize);
+    for (var i = 0; i < opmodesSSize; i++) {
+      opmodesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var opmodesDecoded = utf8.decode(opmodesDData);
+    builder.opmodes = opmodesDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -8499,6 +9007,11 @@ class RemoteActionsRequestSerializer extends imc.ImcSerializer<imc.RemoteActions
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field actions
+    var actionsEncoded = utf8.encode(message.actions);
+    var actionsSSize = actionsEncoded.length;
+    byteData.setUint16(byteOffset, actionsSSize, imc.endian_ser);
+    byteOffset += 2;
+    actionsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -8537,6 +9050,14 @@ class RemoteActionsRequestSerializer extends imc.ImcSerializer<imc.RemoteActions
     builder.op = imc.RemoteActionsRequestEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field actions
+    var actionsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var actionsDData = List<int>(actionsSSize);
+    for (var i = 0; i < actionsSSize; i++) {
+      actionsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var actionsDecoded = utf8.decode(actionsDData);
+    builder.actions = actionsDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -8556,6 +9077,11 @@ class RemoteActionsSerializer extends imc.ImcSerializer<imc.RemoteActions> {
 
     // Payload
     // field actions
+    var actionsEncoded = utf8.encode(message.actions);
+    var actionsSSize = actionsEncoded.length;
+    byteData.setUint16(byteOffset, actionsSSize, imc.endian_ser);
+    byteOffset += 2;
+    actionsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -8591,6 +9117,14 @@ class RemoteActionsSerializer extends imc.ImcSerializer<imc.RemoteActions> {
 
     // Payload
     // field actions
+    var actionsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var actionsDData = List<int>(actionsSSize);
+    for (var i = 0; i < actionsSSize; i++) {
+      actionsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var actionsDecoded = utf8.decode(actionsDData);
+    builder.actions = actionsDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -8677,6 +9211,11 @@ class LcdControlSerializer extends imc.ImcSerializer<imc.LcdControl> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field text
+    var textEncoded = utf8.encode(message.text);
+    var textSSize = textEncoded.length;
+    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteOffset += 2;
+    textEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -8715,6 +9254,14 @@ class LcdControlSerializer extends imc.ImcSerializer<imc.LcdControl> {
     builder.op = imc.LcdControlEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field text
+    var textSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var textDData = List<int>(textSSize);
+    for (var i = 0; i < textSSize; i++) {
+      textDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var textDecoded = utf8.decode(textDData);
+    builder.text = textDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -8804,6 +9351,11 @@ class PowerChannelControlSerializer extends imc.ImcSerializer<imc.PowerChannelCo
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field op
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
@@ -8845,6 +9397,14 @@ class PowerChannelControlSerializer extends imc.ImcSerializer<imc.PowerChannelCo
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field op
     builder.op = imc.PowerChannelControlEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -8922,6 +9482,11 @@ class PowerChannelStateSerializer extends imc.ImcSerializer<imc.PowerChannelStat
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field state
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
@@ -8960,6 +9525,14 @@ class PowerChannelStateSerializer extends imc.ImcSerializer<imc.PowerChannelStat
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field state
     builder.state = imc.PowerChannelStateEnumState(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -8982,6 +9555,11 @@ class LedBrightnessSerializer extends imc.ImcSerializer<imc.LedBrightness> {
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field value
     byteData.setUint8(byteOffset, message.value);
     byteOffset += 1;
@@ -9020,6 +9598,14 @@ class LedBrightnessSerializer extends imc.ImcSerializer<imc.LedBrightness> {
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field value
     builder.value = byteData.getUint8(byteOffset);
     byteOffset += 1;
@@ -9042,6 +9628,11 @@ class QueryLedBrightnessSerializer extends imc.ImcSerializer<imc.QueryLedBrightn
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -9077,6 +9668,14 @@ class QueryLedBrightnessSerializer extends imc.ImcSerializer<imc.QueryLedBrightn
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -9096,6 +9695,11 @@ class SetLedBrightnessSerializer extends imc.ImcSerializer<imc.SetLedBrightness>
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field value
     byteData.setUint8(byteOffset, message.value);
     byteOffset += 1;
@@ -9134,6 +9738,14 @@ class SetLedBrightnessSerializer extends imc.ImcSerializer<imc.SetLedBrightness>
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field value
     builder.value = byteData.getUint8(byteOffset);
     byteOffset += 1;
@@ -11694,6 +12306,11 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto> {
     byteData.setFloat64(byteOffset, message.yaw, imc.endian_ser);
     byteOffset += 8;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -11759,6 +12376,14 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto> {
     builder.yaw = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -11808,6 +12433,11 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp> {
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -11873,6 +12503,14 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp> {
     builder.flags = imc.PopUpBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -11892,6 +12530,11 @@ class TeleoperationSerializer extends imc.ImcSerializer<imc.Teleoperation> {
 
     // Payload
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -11927,6 +12570,14 @@ class TeleoperationSerializer extends imc.ImcSerializer<imc.Teleoperation> {
 
     // Payload
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -11985,6 +12636,11 @@ class LoiterSerializer extends imc.ImcSerializer<imc.Loiter> {
     byteData.setUint8(byteOffset, message.direction.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12059,6 +12715,14 @@ class LoiterSerializer extends imc.ImcSerializer<imc.Loiter> {
     builder.direction = imc.LoiterEnumDirection(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12081,6 +12745,11 @@ class IdleManeuverSerializer extends imc.ImcSerializer<imc.IdleManeuver> {
     byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
     byteOffset += 2;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12119,6 +12788,14 @@ class IdleManeuverSerializer extends imc.ImcSerializer<imc.IdleManeuver> {
     builder.duration = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12142,6 +12819,11 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl> {
     byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
     byteOffset += 2;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12181,6 +12863,14 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl> {
     builder.duration = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12245,6 +12935,11 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows> {
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12325,6 +13020,14 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows> {
     builder.flags = imc.RowsBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12366,6 +13069,11 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath> {
     byteOffset += 1;
     // field points
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12423,6 +13131,14 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath> {
     byteOffset += 1;
     // field points
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12539,6 +13255,11 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo> {
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12601,6 +13322,14 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo> {
     builder.speedUnits = imc.SpeedUnitsEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12696,6 +13425,11 @@ class StationKeepingSerializer extends imc.ImcSerializer<imc.StationKeeping> {
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12755,6 +13489,14 @@ class StationKeepingSerializer extends imc.ImcSerializer<imc.StationKeeping> {
     builder.speedUnits = imc.SpeedUnitsEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12807,6 +13549,11 @@ class ElevatorSerializer extends imc.ImcSerializer<imc.Elevator> {
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12875,6 +13622,14 @@ class ElevatorSerializer extends imc.ImcSerializer<imc.Elevator> {
     builder.speedUnits = imc.SpeedUnitsEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -12916,6 +13671,11 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory>
     byteOffset += 1;
     // field points
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -12973,6 +13733,14 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory>
     byteOffset += 1;
     // field points
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -13071,7 +13839,17 @@ class CustomManeuverSerializer extends imc.ImcSerializer<imc.CustomManeuver> {
     byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
     byteOffset += 2;
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -13110,7 +13888,23 @@ class CustomManeuverSerializer extends imc.ImcSerializer<imc.CustomManeuver> {
     builder.timeout = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -13153,6 +13947,11 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation>
     byteData.setFloat64(byteOffset, message.startTime, imc.endian_ser);
     byteOffset += 8;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -13211,6 +14010,14 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation>
     builder.startTime = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -13422,6 +14229,11 @@ class ManeuverControlStateSerializer extends imc.ImcSerializer<imc.ManeuverContr
     byteData.setUint16(byteOffset, message.eta, imc.endian_ser);
     byteOffset += 2;
     // field info
+    var infoEncoded = utf8.encode(message.info);
+    var infoSSize = infoEncoded.length;
+    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteOffset += 2;
+    infoEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -13463,6 +14275,14 @@ class ManeuverControlStateSerializer extends imc.ImcSerializer<imc.ManeuverContr
     builder.eta = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field info
+    var infoSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var infoDData = List<int>(infoSSize);
+    for (var i = 0; i < infoSSize; i++) {
+      infoDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var infoDecoded = utf8.decode(infoDData);
+    builder.info = infoDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -13701,6 +14521,11 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea> {
     byteOffset += 1;
     // field polygon
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -13755,6 +14580,14 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea> {
     byteOffset += 1;
     // field polygon
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -13874,6 +14707,11 @@ class CompassCalibrationSerializer extends imc.ImcSerializer<imc.CompassCalibrat
     byteData.setUint8(byteOffset, message.direction.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -13945,6 +14783,14 @@ class CompassCalibrationSerializer extends imc.ImcSerializer<imc.CompassCalibrat
     builder.direction = imc.CompassCalibrationEnumDirection(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -13964,11 +14810,21 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
 
     // Payload
     // field formationName
+    var formationNameEncoded = utf8.encode(message.formationName);
+    var formationNameSSize = formationNameEncoded.length;
+    byteData.setUint16(byteOffset, formationNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    formationNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field referenceFrame
     byteData.setUint8(byteOffset, message.referenceFrame.value);
     byteOffset += 1;
     // field participants
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -14004,11 +14860,27 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
 
     // Payload
     // field formationName
+    var formationNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var formationNameDData = List<int>(formationNameSSize);
+    for (var i = 0; i < formationNameSSize; i++) {
+      formationNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var formationNameDecoded = utf8.decode(formationNameDData);
+    builder.formationName = formationNameDecoded;
     // field referenceFrame
     builder.referenceFrame = imc.FormationParametersEnumReferenceFrame(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field participants
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -14028,9 +14900,29 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
 
     // Payload
     // field groupName
+    var groupNameEncoded = utf8.encode(message.groupName);
+    var groupNameSSize = groupNameEncoded.length;
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    groupNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field formationName
+    var formationNameEncoded = utf8.encode(message.formationName);
+    var formationNameSSize = formationNameEncoded.length;
+    byteData.setUint16(byteOffset, formationNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    formationNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field description
+    var descriptionEncoded = utf8.encode(message.description);
+    var descriptionSSize = descriptionEncoded.length;
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteOffset += 2;
+    descriptionEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field leaderSpeed
     byteData.setFloat32(byteOffset, message.leaderSpeed, imc.endian_ser);
     byteOffset += 4;
@@ -14059,6 +14951,11 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     byteData.setFloat32(byteOffset, message.turbLim, imc.endian_ser);
     byteOffset += 4;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -14094,9 +14991,41 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
 
     // Payload
     // field groupName
+    var groupNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var groupNameDData = List<int>(groupNameSSize);
+    for (var i = 0; i < groupNameSSize; i++) {
+      groupNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var groupNameDecoded = utf8.decode(groupNameDData);
+    builder.groupName = groupNameDecoded;
     // field formationName
+    var formationNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var formationNameDData = List<int>(formationNameSSize);
+    for (var i = 0; i < formationNameSSize; i++) {
+      formationNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var formationNameDecoded = utf8.decode(formationNameDData);
+    builder.formationName = formationNameDecoded;
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field description
+    var descriptionSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var descriptionDData = List<int>(descriptionSSize);
+    for (var i = 0; i < descriptionSSize; i++) {
+      descriptionDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var descriptionDecoded = utf8.decode(descriptionDData);
+    builder.description = descriptionDecoded;
     // field leaderSpeed
     builder.leaderSpeed = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -14125,6 +15054,14 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     builder.turbLim = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -14546,6 +15483,11 @@ class RelativeStateSerializer extends imc.ImcSerializer<imc.RelativeState> {
 
     // Payload
     // field sId
+    var sIdEncoded = utf8.encode(message.sId);
+    var sIdSSize = sIdEncoded.length;
+    byteData.setUint16(byteOffset, sIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    sIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field dist
     byteData.setFloat32(byteOffset, message.dist, imc.endian_ser);
     byteOffset += 4;
@@ -14644,6 +15586,14 @@ class RelativeStateSerializer extends imc.ImcSerializer<imc.RelativeState> {
 
     // Payload
     // field sId
+    var sIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sIdDData = List<int>(sIdSSize);
+    for (var i = 0; i < sIdSSize; i++) {
+      sIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sIdDecoded = utf8.decode(sIdDData);
+    builder.sId = sIdDecoded;
     // field dist
     builder.dist = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -14735,6 +15685,11 @@ class DislodgeSerializer extends imc.ImcSerializer<imc.Dislodge> {
     byteData.setUint8(byteOffset, message.direction.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -14779,6 +15734,14 @@ class DislodgeSerializer extends imc.ImcSerializer<imc.Dislodge> {
     builder.direction = imc.DislodgeEnumDirection(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -14798,6 +15761,11 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation> {
 
     // Payload
     // field formationName
+    var formationNameEncoded = utf8.encode(message.formationName);
+    var formationNameSSize = formationNameEncoded.length;
+    byteData.setUint16(byteOffset, formationNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    formationNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
@@ -14805,8 +15773,23 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field groupName
+    var groupNameEncoded = utf8.encode(message.groupName);
+    var groupNameSSize = groupNameEncoded.length;
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    groupNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field description
+    var descriptionEncoded = utf8.encode(message.description);
+    var descriptionSSize = descriptionEncoded.length;
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteOffset += 2;
+    descriptionEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field referenceFrame
     byteData.setUint8(byteOffset, message.referenceFrame.value);
     byteOffset += 1;
@@ -14848,6 +15831,11 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation> {
     byteData.setFloat32(byteOffset, message.turbLim, imc.endian_ser);
     byteOffset += 4;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -14883,6 +15871,14 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation> {
 
     // Payload
     // field formationName
+    var formationNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var formationNameDData = List<int>(formationNameSSize);
+    for (var i = 0; i < formationNameSSize; i++) {
+      formationNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var formationNameDecoded = utf8.decode(formationNameDData);
+    builder.formationName = formationNameDecoded;
     // field type
     builder.type = imc.FormationEnumType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -14890,8 +15886,32 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation> {
     builder.op = imc.FormationEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field groupName
+    var groupNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var groupNameDData = List<int>(groupNameSSize);
+    for (var i = 0; i < groupNameSSize; i++) {
+      groupNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var groupNameDecoded = utf8.decode(groupNameDData);
+    builder.groupName = groupNameDecoded;
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field description
+    var descriptionSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var descriptionDData = List<int>(descriptionSSize);
+    for (var i = 0; i < descriptionSSize; i++) {
+      descriptionDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var descriptionDecoded = utf8.decode(descriptionDData);
+    builder.description = descriptionDecoded;
     // field referenceFrame
     builder.referenceFrame = imc.FormationEnumReferenceFrame(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -14933,6 +15953,14 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation> {
     builder.turbLim = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -14973,6 +16001,11 @@ class LaunchSerializer extends imc.ImcSerializer<imc.Launch> {
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15029,6 +16062,14 @@ class LaunchSerializer extends imc.ImcSerializer<imc.Launch> {
     builder.speedUnits = imc.SpeedUnitsEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15069,6 +16110,11 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop> {
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15125,6 +16171,14 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop> {
     builder.speedUnits = imc.SpeedUnitsEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15289,6 +16343,11 @@ class RowsCoverageSerializer extends imc.ImcSerializer<imc.RowsCoverage> {
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15369,6 +16428,14 @@ class RowsCoverageSerializer extends imc.ImcSerializer<imc.RowsCoverage> {
     builder.flags = imc.RowsCoverageBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15418,6 +16485,11 @@ class SampleSerializer extends imc.ImcSerializer<imc.Sample> {
     byteData.setUint8(byteOffset, message.syringe2.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15483,6 +16555,14 @@ class SampleSerializer extends imc.ImcSerializer<imc.Sample> {
     builder.syringe2 = imc.BooleanEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15575,6 +16655,11 @@ class TakeoffSerializer extends imc.ImcSerializer<imc.Takeoff> {
     byteData.setFloat32(byteOffset, message.takeoffPitch, imc.endian_ser);
     byteOffset += 4;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15631,6 +16716,14 @@ class TakeoffSerializer extends imc.ImcSerializer<imc.Takeoff> {
     builder.takeoffPitch = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15680,6 +16773,11 @@ class LandSerializer extends imc.ImcSerializer<imc.Land> {
     byteData.setFloat32(byteOffset, message.glideSlopeAlt, imc.endian_ser);
     byteOffset += 4;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15745,6 +16843,14 @@ class LandSerializer extends imc.ImcSerializer<imc.Land> {
     builder.glideSlopeAlt = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15789,7 +16895,17 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
     byteOffset += 8;
     // field areaLimits
     // field controller
+    var controllerEncoded = utf8.encode(message.controller);
+    var controllerSSize = controllerEncoded.length;
+    byteData.setUint16(byteOffset, controllerSSize, imc.endian_ser);
+    byteOffset += 2;
+    controllerEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15850,7 +16966,23 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
     byteOffset += 8;
     // field areaLimits
     // field controller
+    var controllerSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var controllerDData = List<int>(controllerSSize);
+    for (var i = 0; i < controllerSSize; i++) {
+      controllerDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var controllerDecoded = utf8.decode(controllerDData);
+    builder.controller = controllerDecoded;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15870,6 +17002,11 @@ class FollowPointSerializer extends imc.ImcSerializer<imc.FollowPoint> {
 
     // Payload
     // field target
+    var targetEncoded = utf8.encode(message.target);
+    var targetSSize = targetEncoded.length;
+    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteOffset += 2;
+    targetEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field maxSpeed
     byteData.setFloat32(byteOffset, message.maxSpeed, imc.endian_ser);
     byteOffset += 4;
@@ -15889,6 +17026,11 @@ class FollowPointSerializer extends imc.ImcSerializer<imc.FollowPoint> {
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -15924,6 +17066,14 @@ class FollowPointSerializer extends imc.ImcSerializer<imc.FollowPoint> {
 
     // Payload
     // field target
+    var targetSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var targetDData = List<int>(targetSSize);
+    for (var i = 0; i < targetSSize; i++) {
+      targetDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var targetDecoded = utf8.decode(targetDData);
+    builder.target = targetDecoded;
     // field maxSpeed
     builder.maxSpeed = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -15943,6 +17093,14 @@ class FollowPointSerializer extends imc.ImcSerializer<imc.FollowPoint> {
     builder.zUnits = imc.ZUnitsEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -15977,6 +17135,11 @@ class AlignmentSerializer extends imc.ImcSerializer<imc.Alignment> {
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -16027,6 +17190,14 @@ class AlignmentSerializer extends imc.ImcSerializer<imc.Alignment> {
     builder.speedUnits = imc.SpeedUnitsEnum(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -16079,6 +17250,11 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<imc.StationKeep
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -16147,6 +17323,14 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<imc.StationKeep
     builder.flags = imc.StationKeepingExtendedBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -16196,6 +17380,11 @@ class MagnetometerSerializer extends imc.ImcSerializer<imc.Magnetometer> {
     byteData.setUint8(byteOffset, message.direction.value);
     byteOffset += 1;
     // field custom
+    var customEncoded = utf8.encode(message.custom);
+    var customSSize = customEncoded.length;
+    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteOffset += 2;
+    customEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -16261,6 +17450,14 @@ class MagnetometerSerializer extends imc.ImcSerializer<imc.Magnetometer> {
     builder.direction = imc.MagnetometerEnumDirection(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field custom
+    var customSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var customDData = List<int>(customSSize);
+    for (var i = 0; i < customSSize; i++) {
+      customDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var customDecoded = utf8.decode(customDData);
+    builder.custom = customDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -16286,6 +17483,11 @@ class VehicleStateSerializer extends imc.ImcSerializer<imc.VehicleState> {
     byteData.setUint8(byteOffset, message.errorCount);
     byteOffset += 1;
     // field errorEnts
+    var errorEntsEncoded = utf8.encode(message.errorEnts);
+    var errorEntsSSize = errorEntsEncoded.length;
+    byteData.setUint16(byteOffset, errorEntsSSize, imc.endian_ser);
+    byteOffset += 2;
+    errorEntsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field maneuverType
     byteData.setUint16(byteOffset, message.maneuverType, imc.endian_ser);
     byteOffset += 2;
@@ -16302,6 +17504,11 @@ class VehicleStateSerializer extends imc.ImcSerializer<imc.VehicleState> {
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field lastError
+    var lastErrorEncoded = utf8.encode(message.lastError);
+    var lastErrorSSize = lastErrorEncoded.length;
+    byteData.setUint16(byteOffset, lastErrorSSize, imc.endian_ser);
+    byteOffset += 2;
+    lastErrorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lastErrorTime
     byteData.setFloat64(byteOffset, message.lastErrorTime, imc.endian_ser);
     byteOffset += 8;
@@ -16346,6 +17553,14 @@ class VehicleStateSerializer extends imc.ImcSerializer<imc.VehicleState> {
     builder.errorCount = byteData.getUint8(byteOffset);
     byteOffset += 1;
     // field errorEnts
+    var errorEntsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var errorEntsDData = List<int>(errorEntsSSize);
+    for (var i = 0; i < errorEntsSSize; i++) {
+      errorEntsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var errorEntsDecoded = utf8.decode(errorEntsDData);
+    builder.errorEnts = errorEntsDecoded;
     // field maneuverType
     builder.maneuverType = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -16362,6 +17577,14 @@ class VehicleStateSerializer extends imc.ImcSerializer<imc.VehicleState> {
     builder.flags = imc.VehicleStateBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field lastError
+    var lastErrorSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var lastErrorDData = List<int>(lastErrorSSize);
+    for (var i = 0; i < lastErrorSSize; i++) {
+      lastErrorDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var lastErrorDecoded = utf8.decode(lastErrorDData);
+    builder.lastError = lastErrorDecoded;
     // field lastErrorTime
     builder.lastErrorTime = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -16397,6 +17620,11 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand> {
     byteData.setUint16(byteOffset, message.calibTime, imc.endian_ser);
     byteOffset += 2;
     // field info
+    var infoEncoded = utf8.encode(message.info);
+    var infoSSize = infoEncoded.length;
+    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteOffset += 2;
+    infoEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -16445,6 +17673,14 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand> {
     builder.calibTime = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field info
+    var infoSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var infoDData = List<int>(infoSSize);
+    for (var i = 0; i < infoSSize; i++) {
+      infoDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var infoDecoded = utf8.decode(infoDData);
+    builder.info = infoDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -16467,6 +17703,11 @@ class MonitorEntityStateSerializer extends imc.ImcSerializer<imc.MonitorEntitySt
     byteData.setUint8(byteOffset, message.command.value);
     byteOffset += 1;
     // field entities
+    var entitiesEncoded = utf8.encode(message.entities);
+    var entitiesSSize = entitiesEncoded.length;
+    byteData.setUint16(byteOffset, entitiesSSize, imc.endian_ser);
+    byteOffset += 2;
+    entitiesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -16505,6 +17746,14 @@ class MonitorEntityStateSerializer extends imc.ImcSerializer<imc.MonitorEntitySt
     builder.command = imc.MonitorEntityStateEnumCommand(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field entities
+    var entitiesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var entitiesDData = List<int>(entitiesSSize);
+    for (var i = 0; i < entitiesSSize; i++) {
+      entitiesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var entitiesDecoded = utf8.decode(entitiesDData);
+    builder.entities = entitiesDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -16527,15 +17776,35 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<imc.EntityMonito
     byteData.setUint8(byteOffset, message.mcount);
     byteOffset += 1;
     // field mnames
+    var mnamesEncoded = utf8.encode(message.mnames);
+    var mnamesSSize = mnamesEncoded.length;
+    byteData.setUint16(byteOffset, mnamesSSize, imc.endian_ser);
+    byteOffset += 2;
+    mnamesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field ecount
     byteData.setUint8(byteOffset, message.ecount);
     byteOffset += 1;
     // field enames
+    var enamesEncoded = utf8.encode(message.enames);
+    var enamesSSize = enamesEncoded.length;
+    byteData.setUint16(byteOffset, enamesSSize, imc.endian_ser);
+    byteOffset += 2;
+    enamesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field ccount
     byteData.setUint8(byteOffset, message.ccount);
     byteOffset += 1;
     // field cnames
+    var cnamesEncoded = utf8.encode(message.cnames);
+    var cnamesSSize = cnamesEncoded.length;
+    byteData.setUint16(byteOffset, cnamesSSize, imc.endian_ser);
+    byteOffset += 2;
+    cnamesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lastError
+    var lastErrorEncoded = utf8.encode(message.lastError);
+    var lastErrorSSize = lastErrorEncoded.length;
+    byteData.setUint16(byteOffset, lastErrorSSize, imc.endian_ser);
+    byteOffset += 2;
+    lastErrorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lastErrorTime
     byteData.setFloat64(byteOffset, message.lastErrorTime, imc.endian_ser);
     byteOffset += 8;
@@ -16577,15 +17846,47 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<imc.EntityMonito
     builder.mcount = byteData.getUint8(byteOffset);
     byteOffset += 1;
     // field mnames
+    var mnamesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var mnamesDData = List<int>(mnamesSSize);
+    for (var i = 0; i < mnamesSSize; i++) {
+      mnamesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var mnamesDecoded = utf8.decode(mnamesDData);
+    builder.mnames = mnamesDecoded;
     // field ecount
     builder.ecount = byteData.getUint8(byteOffset);
     byteOffset += 1;
     // field enames
+    var enamesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var enamesDData = List<int>(enamesSSize);
+    for (var i = 0; i < enamesSSize; i++) {
+      enamesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var enamesDecoded = utf8.decode(enamesDData);
+    builder.enames = enamesDecoded;
     // field ccount
     builder.ccount = byteData.getUint8(byteOffset);
     byteOffset += 1;
     // field cnames
+    var cnamesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var cnamesDData = List<int>(cnamesSSize);
+    for (var i = 0; i < cnamesSSize; i++) {
+      cnamesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var cnamesDecoded = utf8.decode(cnamesDData);
+    builder.cnames = cnamesDecoded;
     // field lastError
+    var lastErrorSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var lastErrorDData = List<int>(lastErrorSSize);
+    for (var i = 0; i < lastErrorSSize; i++) {
+      lastErrorDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var lastErrorDecoded = utf8.decode(lastErrorDData);
+    builder.lastError = lastErrorDecoded;
     // field lastErrorTime
     builder.lastErrorTime = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -17125,6 +18426,11 @@ class AutopilotModeSerializer extends imc.ImcSerializer<imc.AutopilotMode> {
     byteData.setUint8(byteOffset, message.autonomy.value);
     byteOffset += 1;
     // field mode
+    var modeEncoded = utf8.encode(message.mode);
+    var modeSSize = modeEncoded.length;
+    byteData.setUint16(byteOffset, modeSSize, imc.endian_ser);
+    byteOffset += 2;
+    modeEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -17163,6 +18469,14 @@ class AutopilotModeSerializer extends imc.ImcSerializer<imc.AutopilotMode> {
     builder.autonomy = imc.AutopilotModeEnumAutonomy(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field mode
+    var modeSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var modeDData = List<int>(modeSSize);
+    for (var i = 0; i < modeSSize; i++) {
+      modeDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var modeDecoded = utf8.decode(modeDData);
+    builder.mode = modeDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -17291,6 +18605,11 @@ class ReportControlSerializer extends imc.ImcSerializer<imc.ReportControl> {
     byteData.setUint16(byteOffset, message.period, imc.endian_ser);
     byteOffset += 2;
     // field sysDst
+    var sysDstEncoded = utf8.encode(message.sysDst);
+    var sysDstSSize = sysDstEncoded.length;
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteOffset += 2;
+    sysDstEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -17335,6 +18654,14 @@ class ReportControlSerializer extends imc.ImcSerializer<imc.ReportControl> {
     builder.period = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field sysDst
+    var sysDstSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sysDstDData = List<int>(sysDstSSize);
+    for (var i = 0; i < sysDstSSize; i++) {
+      sysDstDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sysDstDecoded = utf8.decode(sysDstDData);
+    builder.sysDst = sysDstDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -17472,6 +18799,11 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     byteData.setUint8(byteOffset, message.commMean.value);
     byteOffset += 1;
     // field destination
+    var destinationEncoded = utf8.encode(message.destination);
+    var destinationSSize = destinationEncoded.length;
+    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteOffset += 2;
+    destinationEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field deadline
     byteData.setFloat64(byteOffset, message.deadline, imc.endian_ser);
     byteOffset += 8;
@@ -17480,6 +18812,11 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     byteOffset += 1;
     // field msgData
     // field txtData
+    var txtDataEncoded = utf8.encode(message.txtData);
+    var txtDataSSize = txtDataEncoded.length;
+    byteData.setUint16(byteOffset, txtDataSSize, imc.endian_ser);
+    byteOffset += 2;
+    txtDataEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field rawData
     var rawDataSSize = message.rawData.length;
     byteData.setUint16(byteOffset, rawDataSSize, imc.endian_ser);
@@ -17526,6 +18863,14 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     builder.commMean = imc.TransmissionRequestEnumCommMean(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field destination
+    var destinationSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var destinationDData = List<int>(destinationSSize);
+    for (var i = 0; i < destinationSSize; i++) {
+      destinationDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var destinationDecoded = utf8.decode(destinationDData);
+    builder.destination = destinationDecoded;
     // field deadline
     builder.deadline = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -17534,6 +18879,14 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     byteOffset += 1;
     // field msgData
     // field txtData
+    var txtDataSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var txtDataDData = List<int>(txtDataSSize);
+    for (var i = 0; i < txtDataSSize; i++) {
+      txtDataDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var txtDataDecoded = utf8.decode(txtDataDData);
+    builder.txtData = txtDataDecoded;
     // field rawData
     var rawDataSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -17567,6 +18920,11 @@ class TransmissionStatusSerializer extends imc.ImcSerializer<imc.TransmissionSta
     byteData.setUint8(byteOffset, message.status.value);
     byteOffset += 1;
     // field info
+    var infoEncoded = utf8.encode(message.info);
+    var infoSSize = infoEncoded.length;
+    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteOffset += 2;
+    infoEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -17608,6 +18966,14 @@ class TransmissionStatusSerializer extends imc.ImcSerializer<imc.TransmissionSta
     builder.status = imc.TransmissionStatusEnumStatus(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field info
+    var infoSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var infoDData = List<int>(infoSSize);
+    for (var i = 0; i < infoSSize; i++) {
+      infoDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var infoDecoded = utf8.decode(infoDData);
+    builder.info = infoDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -17630,10 +18996,20 @@ class SmsRequestSerializer extends imc.ImcSerializer<imc.SmsRequest> {
     byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
     byteOffset += 2;
     // field destination
+    var destinationEncoded = utf8.encode(message.destination);
+    var destinationSSize = destinationEncoded.length;
+    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteOffset += 2;
+    destinationEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field timeout
     byteData.setFloat64(byteOffset, message.timeout, imc.endian_ser);
     byteOffset += 8;
     // field smsText
+    var smsTextEncoded = utf8.encode(message.smsText);
+    var smsTextSSize = smsTextEncoded.length;
+    byteData.setUint16(byteOffset, smsTextSSize, imc.endian_ser);
+    byteOffset += 2;
+    smsTextEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -17672,10 +19048,26 @@ class SmsRequestSerializer extends imc.ImcSerializer<imc.SmsRequest> {
     builder.reqId = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field destination
+    var destinationSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var destinationDData = List<int>(destinationSSize);
+    for (var i = 0; i < destinationSSize; i++) {
+      destinationDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var destinationDecoded = utf8.decode(destinationDData);
+    builder.destination = destinationDecoded;
     // field timeout
     builder.timeout = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
     // field smsText
+    var smsTextSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var smsTextDData = List<int>(smsTextSSize);
+    for (var i = 0; i < smsTextSSize; i++) {
+      smsTextDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var smsTextDecoded = utf8.decode(smsTextDData);
+    builder.smsText = smsTextDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -17701,6 +19093,11 @@ class SmsStatusSerializer extends imc.ImcSerializer<imc.SmsStatus> {
     byteData.setUint8(byteOffset, message.status.value);
     byteOffset += 1;
     // field info
+    var infoEncoded = utf8.encode(message.info);
+    var infoSSize = infoEncoded.length;
+    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteOffset += 2;
+    infoEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -17742,6 +19139,14 @@ class SmsStatusSerializer extends imc.ImcSerializer<imc.SmsStatus> {
     builder.status = imc.SmsStatusEnumStatus(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field info
+    var infoSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var infoDData = List<int>(infoSSize);
+    for (var i = 0; i < infoSSize; i++) {
+      infoDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var infoDecoded = utf8.decode(infoDData);
+    builder.info = infoDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -17929,10 +19334,30 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
 
     // Payload
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field description
+    var descriptionEncoded = utf8.encode(message.description);
+    var descriptionSSize = descriptionEncoded.length;
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteOffset += 2;
+    descriptionEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field vnamespace
+    var vnamespaceEncoded = utf8.encode(message.vnamespace);
+    var vnamespaceSSize = vnamespaceEncoded.length;
+    byteData.setUint16(byteOffset, vnamespaceSSize, imc.endian_ser);
+    byteOffset += 2;
+    vnamespaceEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field variables
     // field startManId
+    var startManIdEncoded = utf8.encode(message.startManId);
+    var startManIdSSize = startManIdEncoded.length;
+    byteData.setUint16(byteOffset, startManIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    startManIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field maneuvers
     // field transitions
     // field startActions
@@ -17972,10 +19397,42 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
 
     // Payload
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field description
+    var descriptionSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var descriptionDData = List<int>(descriptionSSize);
+    for (var i = 0; i < descriptionSSize; i++) {
+      descriptionDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var descriptionDecoded = utf8.decode(descriptionDData);
+    builder.description = descriptionDecoded;
     // field vnamespace
+    var vnamespaceSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var vnamespaceDData = List<int>(vnamespaceSSize);
+    for (var i = 0; i < vnamespaceSSize; i++) {
+      vnamespaceDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var vnamespaceDecoded = utf8.decode(vnamespaceDData);
+    builder.vnamespace = vnamespaceDecoded;
     // field variables
     // field startManId
+    var startManIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var startManIdDData = List<int>(startManIdSSize);
+    for (var i = 0; i < startManIdSSize; i++) {
+      startManIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var startManIdDecoded = utf8.decode(startManIdDData);
+    builder.startManId = startManIdDecoded;
     // field maneuvers
     // field transitions
     // field startActions
@@ -17999,6 +19456,11 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver> {
 
     // Payload
     // field maneuverId
+    var maneuverIdEncoded = utf8.encode(message.maneuverId);
+    var maneuverIdSSize = maneuverIdEncoded.length;
+    byteData.setUint16(byteOffset, maneuverIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    maneuverIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field data
     // field startActions
     // field endActions
@@ -18037,6 +19499,14 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver> {
 
     // Payload
     // field maneuverId
+    var maneuverIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var maneuverIdDData = List<int>(maneuverIdSSize);
+    for (var i = 0; i < maneuverIdSSize; i++) {
+      maneuverIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var maneuverIdDecoded = utf8.decode(maneuverIdDData);
+    builder.maneuverId = maneuverIdDecoded;
     // field data
     // field startActions
     // field endActions
@@ -18059,8 +19529,23 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition> {
 
     // Payload
     // field sourceMan
+    var sourceManEncoded = utf8.encode(message.sourceMan);
+    var sourceManSSize = sourceManEncoded.length;
+    byteData.setUint16(byteOffset, sourceManSSize, imc.endian_ser);
+    byteOffset += 2;
+    sourceManEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field destMan
+    var destManEncoded = utf8.encode(message.destMan);
+    var destManSSize = destManEncoded.length;
+    byteData.setUint16(byteOffset, destManSSize, imc.endian_ser);
+    byteOffset += 2;
+    destManEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field conditions
+    var conditionsEncoded = utf8.encode(message.conditions);
+    var conditionsSSize = conditionsEncoded.length;
+    byteData.setUint16(byteOffset, conditionsSSize, imc.endian_ser);
+    byteOffset += 2;
+    conditionsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field actions
     // End payload
 
@@ -18097,8 +19582,32 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition> {
 
     // Payload
     // field sourceMan
+    var sourceManSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sourceManDData = List<int>(sourceManSSize);
+    for (var i = 0; i < sourceManSSize; i++) {
+      sourceManDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sourceManDecoded = utf8.decode(sourceManDData);
+    builder.sourceMan = sourceManDecoded;
     // field destMan
+    var destManSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var destManDData = List<int>(destManSSize);
+    for (var i = 0; i < destManSSize; i++) {
+      destManDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var destManDecoded = utf8.decode(destManDData);
+    builder.destMan = destManDecoded;
     // field conditions
+    var conditionsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var conditionsDData = List<int>(conditionsSSize);
+    for (var i = 0; i < conditionsSSize; i++) {
+      conditionsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var conditionsDecoded = utf8.decode(conditionsDData);
+    builder.conditions = conditionsDecoded;
     // field actions
     // End payload
     
@@ -18182,6 +19691,11 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<imc.EmergencyCon
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field commLevel
     byteData.setUint8(byteOffset, message.commLevel);
     byteOffset += 1;
@@ -18223,6 +19737,14 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<imc.EmergencyCon
     builder.state = imc.EmergencyControlStateEnumState(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field commLevel
     builder.commLevel = byteData.getUint8(byteOffset);
     byteOffset += 1;
@@ -18254,8 +19776,18 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB> {
     byteData.setUint16(byteOffset, message.requestId, imc.endian_ser);
     byteOffset += 2;
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field arg
     // field info
+    var infoEncoded = utf8.encode(message.info);
+    var infoSSize = infoEncoded.length;
+    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteOffset += 2;
+    infoEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -18300,8 +19832,24 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB> {
     builder.requestId = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field arg
     // field info
+    var infoSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var infoDData = List<int>(infoSSize);
+    for (var i = 0; i < infoSSize; i++) {
+      infoDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var infoDecoded = utf8.decode(infoDData);
+    builder.info = infoDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -18333,6 +19881,11 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState> {
     byteData.setUint16(byteOffset, message.changeSid, imc.endian_ser);
     byteOffset += 2;
     // field changeSname
+    var changeSnameEncoded = utf8.encode(message.changeSname);
+    var changeSnameSSize = changeSnameEncoded.length;
+    byteData.setUint16(byteOffset, changeSnameSSize, imc.endian_ser);
+    byteOffset += 2;
+    changeSnameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field md5
     var md5SSize = message.md5.length;
     byteData.setUint16(byteOffset, md5SSize, imc.endian_ser);
@@ -18386,6 +19939,14 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState> {
     builder.changeSid = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field changeSname
+    var changeSnameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var changeSnameDData = List<int>(changeSnameSSize);
+    for (var i = 0; i < changeSnameSSize; i++) {
+      changeSnameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var changeSnameDecoded = utf8.decode(changeSnameDData);
+    builder.changeSname = changeSnameDecoded;
     // field md5
     var md5SSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -18414,6 +19975,11 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
 
     // Payload
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field planSize
     byteData.setUint16(byteOffset, message.planSize, imc.endian_ser);
     byteOffset += 2;
@@ -18424,6 +19990,11 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
     byteData.setUint16(byteOffset, message.changeSid, imc.endian_ser);
     byteOffset += 2;
     // field changeSname
+    var changeSnameEncoded = utf8.encode(message.changeSname);
+    var changeSnameSSize = changeSnameEncoded.length;
+    byteData.setUint16(byteOffset, changeSnameSSize, imc.endian_ser);
+    byteOffset += 2;
+    changeSnameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field md5
     var md5SSize = message.md5.length;
     byteData.setUint16(byteOffset, md5SSize, imc.endian_ser);
@@ -18464,6 +20035,14 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
 
     // Payload
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field planSize
     builder.planSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -18474,6 +20053,14 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
     builder.changeSid = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field changeSname
+    var changeSnameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var changeSnameDData = List<int>(changeSnameSSize);
+    for (var i = 0; i < changeSnameSSize; i++) {
+      changeSnameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var changeSnameDecoded = utf8.decode(changeSnameDData);
+    builder.changeSname = changeSnameDecoded;
     // field md5
     var md5SSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -18510,11 +20097,21 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl> {
     byteData.setUint16(byteOffset, message.requestId, imc.endian_ser);
     byteOffset += 2;
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field flags
     byteData.setUint16(byteOffset, message.flags.value, imc.endian_ser);
     byteOffset += 2;
     // field arg
     // field info
+    var infoEncoded = utf8.encode(message.info);
+    var infoSSize = infoEncoded.length;
+    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteOffset += 2;
+    infoEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -18559,11 +20156,27 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl> {
     builder.requestId = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field flags
     builder.flags = imc.PlanControlBitfieldFlags(byteData.getUint16(byteOffset, endianess));
     byteOffset += 2;
     // field arg
     // field info
+    var infoSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var infoDData = List<int>(infoSSize);
+    for (var i = 0; i < infoSSize; i++) {
+      infoDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var infoDecoded = utf8.decode(infoDData);
+    builder.info = infoDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -18586,6 +20199,11 @@ class PlanControlStateSerializer extends imc.ImcSerializer<imc.PlanControlState>
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field planEta
     byteData.setInt32(byteOffset, message.planEta, imc.endian_ser);
     byteOffset += 4;
@@ -18593,6 +20211,11 @@ class PlanControlStateSerializer extends imc.ImcSerializer<imc.PlanControlState>
     byteData.setFloat32(byteOffset, message.planProgress, imc.endian_ser);
     byteOffset += 4;
     // field manId
+    var manIdEncoded = utf8.encode(message.manId);
+    var manIdSSize = manIdEncoded.length;
+    byteData.setUint16(byteOffset, manIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    manIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field manType
     byteData.setUint16(byteOffset, message.manType, imc.endian_ser);
     byteOffset += 2;
@@ -18640,6 +20263,14 @@ class PlanControlStateSerializer extends imc.ImcSerializer<imc.PlanControlState>
     builder.state = imc.PlanControlStateEnumState(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field planEta
     builder.planEta = byteData.getInt32(byteOffset, endianess);
     byteOffset += 4;
@@ -18647,6 +20278,14 @@ class PlanControlStateSerializer extends imc.ImcSerializer<imc.PlanControlState>
     builder.planProgress = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field manId
+    var manIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var manIdDData = List<int>(manIdSSize);
+    for (var i = 0; i < manIdSSize; i++) {
+      manIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var manIdDecoded = utf8.decode(manIdDData);
+    builder.manId = manIdDecoded;
     // field manType
     builder.manType = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -18675,7 +20314,17 @@ class PlanVariableSerializer extends imc.ImcSerializer<imc.PlanVariable> {
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field value
+    var valueEncoded = utf8.encode(message.value);
+    var valueSSize = valueEncoded.length;
+    byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
+    byteOffset += 2;
+    valueEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
@@ -18717,7 +20366,23 @@ class PlanVariableSerializer extends imc.ImcSerializer<imc.PlanVariable> {
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field value
+    var valueSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var valueDData = List<int>(valueSSize);
+    for (var i = 0; i < valueSSize; i++) {
+      valueDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var valueDecoded = utf8.decode(valueDData);
+    builder.value = valueDecoded;
     // field type
     builder.type = imc.PlanVariableEnumType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -18749,7 +20414,17 @@ class PlanGenerationSerializer extends imc.ImcSerializer<imc.PlanGeneration> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field params
+    var paramsEncoded = utf8.encode(message.params);
+    var paramsSSize = paramsEncoded.length;
+    byteData.setUint16(byteOffset, paramsSSize, imc.endian_ser);
+    byteOffset += 2;
+    paramsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -18791,7 +20466,23 @@ class PlanGenerationSerializer extends imc.ImcSerializer<imc.PlanGeneration> {
     builder.op = imc.PlanGenerationEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field params
+    var paramsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var paramsDData = List<int>(paramsSSize);
+    for (var i = 0; i < paramsSSize; i++) {
+      paramsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var paramsDecoded = utf8.decode(paramsDData);
+    builder.params = paramsDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -18811,6 +20502,11 @@ class LeaderStateSerializer extends imc.ImcSerializer<imc.LeaderState> {
 
     // Payload
     // field groupName
+    var groupNameEncoded = utf8.encode(message.groupName);
+    var groupNameSSize = groupNameEncoded.length;
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteOffset += 2;
+    groupNameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field op
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
@@ -18903,6 +20599,14 @@ class LeaderStateSerializer extends imc.ImcSerializer<imc.LeaderState> {
 
     // Payload
     // field groupName
+    var groupNameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var groupNameDData = List<int>(groupNameSSize);
+    for (var i = 0; i < groupNameSSize; i++) {
+      groupNameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var groupNameDecoded = utf8.decode(groupNameDData);
+    builder.groupName = groupNameDecoded;
     // field op
     builder.op = imc.LeaderStateEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -18979,6 +20683,11 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics> {
 
     // Payload
     // field planId
+    var planIdEncoded = utf8.encode(message.planId);
+    var planIdSSize = planIdEncoded.length;
+    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
@@ -18986,9 +20695,29 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics> {
     byteData.setUint8(byteOffset, message.properties.value);
     byteOffset += 1;
     // field durations
+    var durationsEncoded = utf8.encode(message.durations);
+    var durationsSSize = durationsEncoded.length;
+    byteData.setUint16(byteOffset, durationsSSize, imc.endian_ser);
+    byteOffset += 2;
+    durationsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field distances
+    var distancesEncoded = utf8.encode(message.distances);
+    var distancesSSize = distancesEncoded.length;
+    byteData.setUint16(byteOffset, distancesSSize, imc.endian_ser);
+    byteOffset += 2;
+    distancesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field actions
+    var actionsEncoded = utf8.encode(message.actions);
+    var actionsSSize = actionsEncoded.length;
+    byteData.setUint16(byteOffset, actionsSSize, imc.endian_ser);
+    byteOffset += 2;
+    actionsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field fuel
+    var fuelEncoded = utf8.encode(message.fuel);
+    var fuelSSize = fuelEncoded.length;
+    byteData.setUint16(byteOffset, fuelSSize, imc.endian_ser);
+    byteOffset += 2;
+    fuelEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -19024,6 +20753,14 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics> {
 
     // Payload
     // field planId
+    var planIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var planIdDData = List<int>(planIdSSize);
+    for (var i = 0; i < planIdSSize; i++) {
+      planIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var planIdDecoded = utf8.decode(planIdDData);
+    builder.planId = planIdDecoded;
     // field type
     builder.type = imc.PlanStatisticsEnumType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -19031,9 +20768,41 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics> {
     builder.properties = imc.PlanStatisticsBitfieldProperties(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field durations
+    var durationsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var durationsDData = List<int>(durationsSSize);
+    for (var i = 0; i < durationsSSize; i++) {
+      durationsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var durationsDecoded = utf8.decode(durationsDData);
+    builder.durations = durationsDecoded;
     // field distances
+    var distancesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var distancesDData = List<int>(distancesSSize);
+    for (var i = 0; i < distancesSSize; i++) {
+      distancesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var distancesDecoded = utf8.decode(distancesDData);
+    builder.distances = distancesDecoded;
     // field actions
+    var actionsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var actionsDData = List<int>(actionsSSize);
+    for (var i = 0; i < actionsSSize; i++) {
+      actionsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var actionsDecoded = utf8.decode(actionsDData);
+    builder.actions = actionsDecoded;
     // field fuel
+    var fuelSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var fuelDData = List<int>(fuelSSize);
+    for (var i = 0; i < fuelSSize; i++) {
+      fuelDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var fuelDecoded = utf8.decode(fuelDData);
+    builder.fuel = fuelDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -19074,6 +20843,11 @@ class ReportedStateSerializer extends imc.ImcSerializer<imc.ReportedState> {
     byteData.setFloat64(byteOffset, message.rcpTime, imc.endian_ser);
     byteOffset += 8;
     // field sid
+    var sidEncoded = utf8.encode(message.sid);
+    var sidSSize = sidEncoded.length;
+    byteData.setUint16(byteOffset, sidSSize, imc.endian_ser);
+    byteOffset += 2;
+    sidEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field sType
     byteData.setUint8(byteOffset, message.sType.value);
     byteOffset += 1;
@@ -19133,6 +20907,14 @@ class ReportedStateSerializer extends imc.ImcSerializer<imc.ReportedState> {
     builder.rcpTime = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
     // field sid
+    var sidSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sidDData = List<int>(sidSSize);
+    for (var i = 0; i < sidSSize; i++) {
+      sidDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sidDecoded = utf8.decode(sidDData);
+    builder.sid = sidDecoded;
     // field sType
     builder.sType = imc.ReportedStateEnumSType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -19155,7 +20937,17 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo>
 
     // Payload
     // field id
+    var idEncoded = utf8.encode(message.id);
+    var idSSize = idEncoded.length;
+    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteOffset += 2;
+    idEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field sensorClass
+    var sensorClassEncoded = utf8.encode(message.sensorClass);
+    var sensorClassSSize = sensorClassEncoded.length;
+    byteData.setUint16(byteOffset, sensorClassSSize, imc.endian_ser);
+    byteOffset += 2;
+    sensorClassEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lat
     byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
     byteOffset += 8;
@@ -19169,6 +20961,11 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo>
     byteData.setFloat32(byteOffset, message.heading, imc.endian_ser);
     byteOffset += 4;
     // field data
+    var dataEncoded = utf8.encode(message.data);
+    var dataSSize = dataEncoded.length;
+    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteOffset += 2;
+    dataEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -19204,7 +21001,23 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo>
 
     // Payload
     // field id
+    var idSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var idDData = List<int>(idSSize);
+    for (var i = 0; i < idSSize; i++) {
+      idDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var idDecoded = utf8.decode(idDData);
+    builder.id = idDecoded;
     // field sensorClass
+    var sensorClassSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sensorClassDData = List<int>(sensorClassSSize);
+    for (var i = 0; i < sensorClassSSize; i++) {
+      sensorClassDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sensorClassDecoded = utf8.decode(sensorClassDData);
+    builder.sensorClass = sensorClassDecoded;
     // field lat
     builder.lat = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -19218,6 +21031,14 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo>
     builder.heading = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field data
+    var dataSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var dataDData = List<int>(dataSSize);
+    for (var i = 0; i < dataSSize; i++) {
+      dataDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var dataDecoded = utf8.decode(dataDData);
+    builder.data = dataDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -19237,6 +21058,11 @@ class MapSerializer extends imc.ImcSerializer<imc.Map> {
 
     // Payload
     // field id
+    var idEncoded = utf8.encode(message.id);
+    var idSSize = idEncoded.length;
+    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteOffset += 2;
+    idEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field features
     // End payload
 
@@ -19273,6 +21099,14 @@ class MapSerializer extends imc.ImcSerializer<imc.Map> {
 
     // Payload
     // field id
+    var idSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var idDData = List<int>(idSSize);
+    for (var i = 0; i < idSSize; i++) {
+      idDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var idDecoded = utf8.decode(idDData);
+    builder.id = idDecoded;
     // field features
     // End payload
     
@@ -19293,6 +21127,11 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature> {
 
     // Payload
     // field id
+    var idEncoded = utf8.encode(message.id);
+    var idSSize = idEncoded.length;
+    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteOffset += 2;
+    idEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field featureType
     byteData.setUint8(byteOffset, message.featureType.value);
     byteOffset += 1;
@@ -19341,6 +21180,14 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature> {
 
     // Payload
     // field id
+    var idSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var idDData = List<int>(idSSize);
+    for (var i = 0; i < idSSize; i++) {
+      idDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var idDecoded = utf8.decode(idDData);
+    builder.id = idDecoded;
     // field featureType
     builder.featureType = imc.MapFeatureEnumFeatureType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -19446,6 +21293,11 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent> {
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field id
+    var idEncoded = utf8.encode(message.id);
+    var idSSize = idEncoded.length;
+    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteOffset += 2;
+    idEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field arg
     // End payload
 
@@ -19485,6 +21337,14 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent> {
     builder.type = imc.CcuEventEnumType(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field id
+    var idSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var idDData = List<int>(idSSize);
+    for (var i = 0; i < idSSize; i++) {
+      idDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var idDecoded = utf8.decode(idDData);
+    builder.id = idDecoded;
     // field arg
     // End payload
     
@@ -19505,6 +21365,11 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks> {
 
     // Payload
     // field localname
+    var localnameEncoded = utf8.encode(message.localname);
+    var localnameSSize = localnameEncoded.length;
+    byteData.setUint16(byteOffset, localnameSSize, imc.endian_ser);
+    byteOffset += 2;
+    localnameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field links
     // End payload
 
@@ -19541,6 +21406,14 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks> {
 
     // Payload
     // field localname
+    var localnameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var localnameDData = List<int>(localnameSSize);
+    for (var i = 0; i < localnameSSize; i++) {
+      localnameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var localnameDecoded = utf8.decode(localnameDData);
+    builder.localname = localnameDecoded;
     // field links
     // End payload
     
@@ -19561,8 +21434,23 @@ class TrexObservationSerializer extends imc.ImcSerializer<imc.TrexObservation> {
 
     // Payload
     // field timeline
+    var timelineEncoded = utf8.encode(message.timeline);
+    var timelineSSize = timelineEncoded.length;
+    byteData.setUint16(byteOffset, timelineSSize, imc.endian_ser);
+    byteOffset += 2;
+    timelineEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field predicate
+    var predicateEncoded = utf8.encode(message.predicate);
+    var predicateSSize = predicateEncoded.length;
+    byteData.setUint16(byteOffset, predicateSSize, imc.endian_ser);
+    byteOffset += 2;
+    predicateEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field attributes
+    var attributesEncoded = utf8.encode(message.attributes);
+    var attributesSSize = attributesEncoded.length;
+    byteData.setUint16(byteOffset, attributesSSize, imc.endian_ser);
+    byteOffset += 2;
+    attributesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -19598,8 +21486,32 @@ class TrexObservationSerializer extends imc.ImcSerializer<imc.TrexObservation> {
 
     // Payload
     // field timeline
+    var timelineSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var timelineDData = List<int>(timelineSSize);
+    for (var i = 0; i < timelineSSize; i++) {
+      timelineDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var timelineDecoded = utf8.decode(timelineDData);
+    builder.timeline = timelineDecoded;
     // field predicate
+    var predicateSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var predicateDData = List<int>(predicateSSize);
+    for (var i = 0; i < predicateSSize; i++) {
+      predicateDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var predicateDecoded = utf8.decode(predicateDData);
+    builder.predicate = predicateDecoded;
     // field attributes
+    var attributesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var attributesDData = List<int>(attributesSSize);
+    for (var i = 0; i < attributesSSize; i++) {
+      attributesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var attributesDecoded = utf8.decode(attributesDData);
+    builder.attributes = attributesDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -19622,7 +21534,17 @@ class TrexCommandSerializer extends imc.ImcSerializer<imc.TrexCommand> {
     byteData.setUint8(byteOffset, message.command.value);
     byteOffset += 1;
     // field goalId
+    var goalIdEncoded = utf8.encode(message.goalId);
+    var goalIdSSize = goalIdEncoded.length;
+    byteData.setUint16(byteOffset, goalIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    goalIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field goalXml
+    var goalXmlEncoded = utf8.encode(message.goalXml);
+    var goalXmlSSize = goalXmlEncoded.length;
+    byteData.setUint16(byteOffset, goalXmlSSize, imc.endian_ser);
+    byteOffset += 2;
+    goalXmlEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -19661,7 +21583,23 @@ class TrexCommandSerializer extends imc.ImcSerializer<imc.TrexCommand> {
     builder.command = imc.TrexCommandEnumCommand(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field goalId
+    var goalIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var goalIdDData = List<int>(goalIdSSize);
+    for (var i = 0; i < goalIdSSize; i++) {
+      goalIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var goalIdDecoded = utf8.decode(goalIdDData);
+    builder.goalId = goalIdDecoded;
     // field goalXml
+    var goalXmlSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var goalXmlDData = List<int>(goalXmlSSize);
+    for (var i = 0; i < goalXmlSSize; i++) {
+      goalXmlDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var goalXmlDecoded = utf8.decode(goalXmlDData);
+    builder.goalXml = goalXmlDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -19684,6 +21622,11 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation> {
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field goalId
+    var goalIdEncoded = utf8.encode(message.goalId);
+    var goalIdSSize = goalIdEncoded.length;
+    byteData.setUint16(byteOffset, goalIdSSize, imc.endian_ser);
+    byteOffset += 2;
+    goalIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field token
     // End payload
 
@@ -19723,6 +21666,14 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation> {
     builder.op = imc.TrexOperationEnumOp(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field goalId
+    var goalIdSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var goalIdDData = List<int>(goalIdSSize);
+    for (var i = 0; i < goalIdSSize; i++) {
+      goalIdDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var goalIdDecoded = utf8.decode(goalIdDData);
+    builder.goalId = goalIdDecoded;
     // field token
     // End payload
     
@@ -19743,11 +21694,26 @@ class TrexAttributeSerializer extends imc.ImcSerializer<imc.TrexAttribute> {
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field attrType
     byteData.setUint8(byteOffset, message.attrType.value);
     byteOffset += 1;
     // field min
+    var minEncoded = utf8.encode(message.min);
+    var minSSize = minEncoded.length;
+    byteData.setUint16(byteOffset, minSSize, imc.endian_ser);
+    byteOffset += 2;
+    minEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field max
+    var maxEncoded = utf8.encode(message.max);
+    var maxSSize = maxEncoded.length;
+    byteData.setUint16(byteOffset, maxSSize, imc.endian_ser);
+    byteOffset += 2;
+    maxEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -19783,11 +21749,35 @@ class TrexAttributeSerializer extends imc.ImcSerializer<imc.TrexAttribute> {
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field attrType
     builder.attrType = imc.TrexAttributeEnumAttrType(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field min
+    var minSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var minDData = List<int>(minSSize);
+    for (var i = 0; i < minSSize; i++) {
+      minDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var minDecoded = utf8.decode(minDData);
+    builder.min = minDecoded;
     // field max
+    var maxSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var maxDData = List<int>(maxSSize);
+    for (var i = 0; i < maxSSize; i++) {
+      maxDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var maxDecoded = utf8.decode(maxDData);
+    builder.max = maxDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -19807,7 +21797,17 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken> {
 
     // Payload
     // field timeline
+    var timelineEncoded = utf8.encode(message.timeline);
+    var timelineSSize = timelineEncoded.length;
+    byteData.setUint16(byteOffset, timelineSSize, imc.endian_ser);
+    byteOffset += 2;
+    timelineEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field predicate
+    var predicateEncoded = utf8.encode(message.predicate);
+    var predicateSSize = predicateEncoded.length;
+    byteData.setUint16(byteOffset, predicateSSize, imc.endian_ser);
+    byteOffset += 2;
+    predicateEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field attributes
     // End payload
 
@@ -19844,7 +21844,23 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken> {
 
     // Payload
     // field timeline
+    var timelineSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var timelineDData = List<int>(timelineSSize);
+    for (var i = 0; i < timelineSSize; i++) {
+      timelineDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var timelineDecoded = utf8.decode(timelineDData);
+    builder.timeline = timelineDecoded;
     // field predicate
+    var predicateSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var predicateDData = List<int>(predicateSSize);
+    for (var i = 0; i < predicateSSize; i++) {
+      predicateDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var predicateDecoded = utf8.decode(predicateDData);
+    builder.predicate = predicateDecoded;
     // field attributes
     // End payload
     
@@ -19865,6 +21881,11 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan> {
 
     // Payload
     // field reactor
+    var reactorEncoded = utf8.encode(message.reactor);
+    var reactorSSize = reactorEncoded.length;
+    byteData.setUint16(byteOffset, reactorSSize, imc.endian_ser);
+    byteOffset += 2;
+    reactorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field tokens
     // End payload
 
@@ -19901,6 +21922,14 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan> {
 
     // Payload
     // field reactor
+    var reactorSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var reactorDData = List<int>(reactorSSize);
+    for (var i = 0; i < reactorSSize; i++) {
+      reactorDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var reactorDecoded = utf8.decode(reactorDData);
+    builder.reactor = reactorDecoded;
     // field tokens
     // End payload
     
@@ -19921,7 +21950,17 @@ class EventSerializer extends imc.ImcSerializer<imc.Event> {
 
     // Payload
     // field topic
+    var topicEncoded = utf8.encode(message.topic);
+    var topicSSize = topicEncoded.length;
+    byteData.setUint16(byteOffset, topicSSize, imc.endian_ser);
+    byteOffset += 2;
+    topicEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field data
+    var dataEncoded = utf8.encode(message.data);
+    var dataSSize = dataEncoded.length;
+    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteOffset += 2;
+    dataEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -19957,7 +21996,23 @@ class EventSerializer extends imc.ImcSerializer<imc.Event> {
 
     // Payload
     // field topic
+    var topicSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var topicDData = List<int>(topicSSize);
+    for (var i = 0; i < topicSSize; i++) {
+      topicDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var topicDecoded = utf8.decode(topicDData);
+    builder.topic = topicDecoded;
     // field data
+    var dataSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var dataDData = List<int>(dataSSize);
+    for (var i = 0; i < dataSSize; i++) {
+      dataDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var dataDecoded = utf8.decode(dataDData);
+    builder.data = dataDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -20206,6 +22261,11 @@ class TargetSerializer extends imc.ImcSerializer<imc.Target> {
 
     // Payload
     // field label
+    var labelEncoded = utf8.encode(message.label);
+    var labelSSize = labelEncoded.length;
+    byteData.setUint16(byteOffset, labelSSize, imc.endian_ser);
+    byteOffset += 2;
+    labelEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lat
     byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
     byteOffset += 8;
@@ -20259,6 +22319,14 @@ class TargetSerializer extends imc.ImcSerializer<imc.Target> {
 
     // Payload
     // field label
+    var labelSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var labelDData = List<int>(labelSSize);
+    for (var i = 0; i < labelSSize; i++) {
+      labelDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var labelDecoded = utf8.decode(labelDData);
+    builder.label = labelDecoded;
     // field lat
     builder.lat = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -20296,7 +22364,17 @@ class EntityParameterSerializer extends imc.ImcSerializer<imc.EntityParameter> {
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field value
+    var valueEncoded = utf8.encode(message.value);
+    var valueSSize = valueEncoded.length;
+    byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
+    byteOffset += 2;
+    valueEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -20332,7 +22410,23 @@ class EntityParameterSerializer extends imc.ImcSerializer<imc.EntityParameter> {
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field value
+    var valueSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var valueDData = List<int>(valueSSize);
+    for (var i = 0; i < valueSSize; i++) {
+      valueDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var valueDecoded = utf8.decode(valueDData);
+    builder.value = valueDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -20352,6 +22446,11 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters>
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field params
     // End payload
 
@@ -20388,6 +22487,14 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters>
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field params
     // End payload
     
@@ -20408,8 +22515,23 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<imc.QueryEntityP
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field visibility
+    var visibilityEncoded = utf8.encode(message.visibility);
+    var visibilitySSize = visibilityEncoded.length;
+    byteData.setUint16(byteOffset, visibilitySSize, imc.endian_ser);
+    byteOffset += 2;
+    visibilityEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field scope
+    var scopeEncoded = utf8.encode(message.scope);
+    var scopeSSize = scopeEncoded.length;
+    byteData.setUint16(byteOffset, scopeSSize, imc.endian_ser);
+    byteOffset += 2;
+    scopeEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -20445,8 +22567,32 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<imc.QueryEntityP
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field visibility
+    var visibilitySSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var visibilityDData = List<int>(visibilitySSize);
+    for (var i = 0; i < visibilitySSize; i++) {
+      visibilityDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var visibilityDecoded = utf8.decode(visibilityDData);
+    builder.visibility = visibilityDecoded;
     // field scope
+    var scopeSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var scopeDData = List<int>(scopeSSize);
+    for (var i = 0; i < scopeSSize; i++) {
+      scopeDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var scopeDecoded = utf8.decode(scopeDData);
+    builder.scope = scopeDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -20466,6 +22612,11 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field params
     // End payload
 
@@ -20502,6 +22653,14 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field params
     // End payload
     
@@ -20522,6 +22681,11 @@ class SaveEntityParametersSerializer extends imc.ImcSerializer<imc.SaveEntityPar
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -20557,6 +22721,14 @@ class SaveEntityParametersSerializer extends imc.ImcSerializer<imc.SaveEntityPar
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -20695,6 +22867,11 @@ class SessionSubscriptionSerializer extends imc.ImcSerializer<imc.SessionSubscri
     byteData.setUint32(byteOffset, message.sessid, imc.endian_ser);
     byteOffset += 4;
     // field messages
+    var messagesEncoded = utf8.encode(message.messages);
+    var messagesSSize = messagesEncoded.length;
+    byteData.setUint16(byteOffset, messagesSSize, imc.endian_ser);
+    byteOffset += 2;
+    messagesEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -20733,6 +22910,14 @@ class SessionSubscriptionSerializer extends imc.ImcSerializer<imc.SessionSubscri
     builder.sessid = byteData.getUint32(byteOffset, endianess);
     byteOffset += 4;
     // field messages
+    var messagesSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var messagesDData = List<int>(messagesSSize);
+    for (var i = 0; i < messagesSSize; i++) {
+      messagesDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var messagesDecoded = utf8.decode(messagesDData);
+    builder.messages = messagesDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -20874,6 +23059,11 @@ class PushEntityParametersSerializer extends imc.ImcSerializer<imc.PushEntityPar
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -20909,6 +23099,14 @@ class PushEntityParametersSerializer extends imc.ImcSerializer<imc.PushEntityPar
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -20928,6 +23126,11 @@ class PopEntityParametersSerializer extends imc.ImcSerializer<imc.PopEntityParam
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -20963,6 +23166,14 @@ class PopEntityParametersSerializer extends imc.ImcSerializer<imc.PopEntityParam
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -20985,6 +23196,11 @@ class IoEventSerializer extends imc.ImcSerializer<imc.IoEvent> {
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field error
+    var errorEncoded = utf8.encode(message.error);
+    var errorSSize = errorEncoded.length;
+    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteOffset += 2;
+    errorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -21023,6 +23239,14 @@ class IoEventSerializer extends imc.ImcSerializer<imc.IoEvent> {
     builder.type = imc.IoEventEnumType(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field error
+    var errorSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var errorDData = List<int>(errorSSize);
+    for (var i = 0; i < errorSSize; i++) {
+      errorDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var errorDecoded = utf8.decode(errorDData);
+    builder.error = errorDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -21045,6 +23269,11 @@ class UamTxFrameSerializer extends imc.ImcSerializer<imc.UamTxFrame> {
     byteData.setUint16(byteOffset, message.seq, imc.endian_ser);
     byteOffset += 2;
     // field sysDst
+    var sysDstEncoded = utf8.encode(message.sysDst);
+    var sysDstSSize = sysDstEncoded.length;
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteOffset += 2;
+    sysDstEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
@@ -21091,6 +23320,14 @@ class UamTxFrameSerializer extends imc.ImcSerializer<imc.UamTxFrame> {
     builder.seq = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field sysDst
+    var sysDstSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sysDstDData = List<int>(sysDstSSize);
+    for (var i = 0; i < sysDstSSize; i++) {
+      sysDstDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sysDstDecoded = utf8.decode(sysDstDData);
+    builder.sysDst = sysDstDecoded;
     // field flags
     builder.flags = imc.UamTxFrameBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -21121,7 +23358,17 @@ class UamRxFrameSerializer extends imc.ImcSerializer<imc.UamRxFrame> {
 
     // Payload
     // field sysSrc
+    var sysSrcEncoded = utf8.encode(message.sysSrc);
+    var sysSrcSSize = sysSrcEncoded.length;
+    byteData.setUint16(byteOffset, sysSrcSSize, imc.endian_ser);
+    byteOffset += 2;
+    sysSrcEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field sysDst
+    var sysDstEncoded = utf8.encode(message.sysDst);
+    var sysDstSSize = sysDstEncoded.length;
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteOffset += 2;
+    sysDstEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
@@ -21165,7 +23412,23 @@ class UamRxFrameSerializer extends imc.ImcSerializer<imc.UamRxFrame> {
 
     // Payload
     // field sysSrc
+    var sysSrcSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sysSrcDData = List<int>(sysSrcSSize);
+    for (var i = 0; i < sysSrcSSize; i++) {
+      sysSrcDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sysSrcDecoded = utf8.decode(sysSrcDData);
+    builder.sysSrc = sysSrcDecoded;
     // field sysDst
+    var sysDstSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sysDstDData = List<int>(sysDstSSize);
+    for (var i = 0; i < sysDstSSize; i++) {
+      sysDstDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sysDstDecoded = utf8.decode(sysDstDData);
+    builder.sysDst = sysDstDecoded;
     // field flags
     builder.flags = imc.UamRxFrameBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -21202,6 +23465,11 @@ class UamTxStatusSerializer extends imc.ImcSerializer<imc.UamTxStatus> {
     byteData.setUint8(byteOffset, message.value.value);
     byteOffset += 1;
     // field error
+    var errorEncoded = utf8.encode(message.error);
+    var errorSSize = errorEncoded.length;
+    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteOffset += 2;
+    errorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -21243,6 +23511,14 @@ class UamTxStatusSerializer extends imc.ImcSerializer<imc.UamTxStatus> {
     builder.value = imc.UamTxStatusEnumValue(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field error
+    var errorSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var errorDData = List<int>(errorSSize);
+    for (var i = 0; i < errorSSize; i++) {
+      errorDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var errorDecoded = utf8.decode(errorDData);
+    builder.error = errorDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -21265,6 +23541,11 @@ class UamRxRangeSerializer extends imc.ImcSerializer<imc.UamRxRange> {
     byteData.setUint16(byteOffset, message.seq, imc.endian_ser);
     byteOffset += 2;
     // field sys
+    var sysEncoded = utf8.encode(message.sys);
+    var sysSSize = sysEncoded.length;
+    byteData.setUint16(byteOffset, sysSSize, imc.endian_ser);
+    byteOffset += 2;
+    sysEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field value
     byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
     byteOffset += 4;
@@ -21306,6 +23587,14 @@ class UamRxRangeSerializer extends imc.ImcSerializer<imc.UamRxRange> {
     builder.seq = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field sys
+    var sysSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var sysDData = List<int>(sysSSize);
+    for (var i = 0; i < sysSSize; i++) {
+      sysDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var sysDecoded = utf8.decode(sysDData);
+    builder.sys = sysDecoded;
     // field value
     builder.value = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -21842,8 +24131,18 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand> {
     byteData.setUint8(byteOffset, message.command.value);
     byteOffset += 1;
     // field settings
+    var settingsEncoded = utf8.encode(message.settings);
+    var settingsSSize = settingsEncoded.length;
+    byteData.setUint16(byteOffset, settingsSSize, imc.endian_ser);
+    byteOffset += 2;
+    settingsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field plan
     // field info
+    var infoEncoded = utf8.encode(message.info);
+    var infoSSize = infoEncoded.length;
+    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteOffset += 2;
+    infoEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -21885,8 +24184,24 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand> {
     builder.command = imc.SoiCommandEnumCommand(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field settings
+    var settingsSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var settingsDData = List<int>(settingsSSize);
+    for (var i = 0; i < settingsSSize; i++) {
+      settingsDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var settingsDecoded = utf8.decode(settingsDData);
+    builder.settings = settingsDecoded;
     // field plan
     // field info
+    var infoSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var infoDData = List<int>(infoSSize);
+    for (var i = 0; i < infoSSize; i++) {
+      infoDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var infoDecoded = utf8.decode(infoDData);
+    builder.info = infoDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;
@@ -22065,6 +24380,11 @@ class NeptusBlobSerializer extends imc.ImcSerializer<imc.NeptusBlob> {
 
     // Payload
     // field contentType
+    var contentTypeEncoded = utf8.encode(message.contentType);
+    var contentTypeSSize = contentTypeEncoded.length;
+    byteData.setUint16(byteOffset, contentTypeSSize, imc.endian_ser);
+    byteOffset += 2;
+    contentTypeEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field content
     var contentSSize = message.content.length;
     byteData.setUint16(byteOffset, contentSSize, imc.endian_ser);
@@ -22105,6 +24425,14 @@ class NeptusBlobSerializer extends imc.ImcSerializer<imc.NeptusBlob> {
 
     // Payload
     // field contentType
+    var contentTypeSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var contentTypeDData = List<int>(contentTypeSSize);
+    for (var i = 0; i < contentTypeSSize; i++) {
+      contentTypeDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var contentTypeDecoded = utf8.decode(contentTypeDData);
+    builder.contentType = contentTypeDecoded;
     // field content
     var contentSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -22412,6 +24740,11 @@ class ParametersXmlSerializer extends imc.ImcSerializer<imc.ParametersXml> {
 
     // Payload
     // field locale
+    var localeEncoded = utf8.encode(message.locale);
+    var localeSSize = localeEncoded.length;
+    byteData.setUint16(byteOffset, localeSSize, imc.endian_ser);
+    byteOffset += 2;
+    localeEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field config
     var configSSize = message.config.length;
     byteData.setUint16(byteOffset, configSSize, imc.endian_ser);
@@ -22452,6 +24785,14 @@ class ParametersXmlSerializer extends imc.ImcSerializer<imc.ParametersXml> {
 
     // Payload
     // field locale
+    var localeSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var localeDData = List<int>(localeSSize);
+    for (var i = 0; i < localeSSize; i++) {
+      localeDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var localeDecoded = utf8.decode(localeDData);
+    builder.locale = localeDecoded;
     // field config
     var configSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -22759,6 +25100,11 @@ class UsblAnglesExtendedSerializer extends imc.ImcSerializer<imc.UsblAnglesExten
 
     // Payload
     // field target
+    var targetEncoded = utf8.encode(message.target);
+    var targetSSize = targetEncoded.length;
+    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteOffset += 2;
+    targetEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lbearing
     byteData.setFloat32(byteOffset, message.lbearing, imc.endian_ser);
     byteOffset += 4;
@@ -22818,6 +25164,14 @@ class UsblAnglesExtendedSerializer extends imc.ImcSerializer<imc.UsblAnglesExten
 
     // Payload
     // field target
+    var targetSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var targetDData = List<int>(targetSSize);
+    for (var i = 0; i < targetSSize; i++) {
+      targetDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var targetDecoded = utf8.decode(targetDData);
+    builder.target = targetDecoded;
     // field lbearing
     builder.lbearing = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -22861,6 +25215,11 @@ class UsblPositionExtendedSerializer extends imc.ImcSerializer<imc.UsblPositionE
 
     // Payload
     // field target
+    var targetEncoded = utf8.encode(message.target);
+    var targetSSize = targetEncoded.length;
+    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteOffset += 2;
+    targetEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field x
     byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
     byteOffset += 4;
@@ -22926,6 +25285,14 @@ class UsblPositionExtendedSerializer extends imc.ImcSerializer<imc.UsblPositionE
 
     // Payload
     // field target
+    var targetSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var targetDData = List<int>(targetSSize);
+    for (var i = 0; i < targetSSize; i++) {
+      targetDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var targetDecoded = utf8.decode(targetDData);
+    builder.target = targetDecoded;
     // field x
     builder.x = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -22975,6 +25342,11 @@ class UsblFixExtendedSerializer extends imc.ImcSerializer<imc.UsblFixExtended> {
 
     // Payload
     // field target
+    var targetEncoded = utf8.encode(message.target);
+    var targetSSize = targetEncoded.length;
+    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteOffset += 2;
+    targetEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lat
     byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
     byteOffset += 8;
@@ -23025,6 +25397,14 @@ class UsblFixExtendedSerializer extends imc.ImcSerializer<imc.UsblFixExtended> {
 
     // Payload
     // field target
+    var targetSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var targetDData = List<int>(targetSSize);
+    for (var i = 0; i < targetSSize; i++) {
+      targetDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var targetDecoded = utf8.decode(targetDData);
+    builder.target = targetDecoded;
     // field lat
     builder.lat = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -23059,6 +25439,11 @@ class UsblModemSerializer extends imc.ImcSerializer<imc.UsblModem> {
 
     // Payload
     // field name
+    var nameEncoded = utf8.encode(message.name);
+    var nameSSize = nameEncoded.length;
+    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteOffset += 2;
+    nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field lat
     byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
     byteOffset += 8;
@@ -23106,6 +25491,14 @@ class UsblModemSerializer extends imc.ImcSerializer<imc.UsblModem> {
 
     // Payload
     // field name
+    var nameSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var nameDData = List<int>(nameSSize);
+    for (var i = 0; i < nameSSize; i++) {
+      nameDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var nameDecoded = utf8.decode(nameDData);
+    builder.name = nameDecoded;
     // field lat
     builder.lat = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -23470,6 +25863,11 @@ class ApmStatusSerializer extends imc.ImcSerializer<imc.ApmStatus> {
     byteData.setUint8(byteOffset, message.severity.value);
     byteOffset += 1;
     // field text
+    var textEncoded = utf8.encode(message.text);
+    var textSSize = textEncoded.length;
+    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteOffset += 2;
+    textEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // End payload
 
     var payloadSize = byteOffset - headerSize;
@@ -23508,6 +25906,14 @@ class ApmStatusSerializer extends imc.ImcSerializer<imc.ApmStatus> {
     builder.severity = imc.ApmStatusEnumSeverity(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field text
+    var textSSize = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    var textDData = List<int>(textSSize);
+    for (var i = 0; i < textSSize; i++) {
+      textDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var textDecoded = utf8.decode(textDData);
+    builder.text = textDecoded;
     // End payload
     
     byteOffset = offset + imc.header_size + payloadSize;

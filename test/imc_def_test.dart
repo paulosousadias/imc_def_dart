@@ -80,4 +80,7 @@ void main() {
     expect(msgD, null);
   });
 
+//   var list = Utf8.encode('xxx');
+// var data = list is Uint8List ? list.buffer : new Uint8List.fromList(list).buffer;
+
 }

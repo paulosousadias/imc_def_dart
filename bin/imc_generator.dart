@@ -32,6 +32,7 @@ part 'imc_def_i.dart';
 
 const _header_ser_gen = '''$_header
 import 'dart:typed_data';
+import 'dart:convert' show utf8;
 
 import 'package:imc_def/imc_def_base.dart' as imc;
 import 'package:imc_def/imc_def.dart' as imc;
@@ -551,6 +552,11 @@ _writeMessageSerializer(
         fStr += '    message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
         break;
       case "plaintext":
+        fStr = '    var ${fieldName}Encoded = utf8.encode(message.$fieldName);\n';
+        fStr += '''    var ${fieldName}SSize = ${fieldName}Encoded.length;\n''';
+        fStr += '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
+        fStr += '    byteOffset += 2;\n';
+        fStr += '    ${fieldName}Encoded.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
         break;
       case "message":
         break;
@@ -672,6 +678,14 @@ _writeMessageSerializer(
         fStr += '    builder.$fieldName = ${fieldName}DData;\n';
         break;
       case "plaintext":
+        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianess);\n''';
+        fStr += '    byteOffset += 2;\n';
+        fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
+        fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
+        fStr += '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
+        fStr += '    }\n';
+        fStr += '    var ${fieldName}Decoded = utf8.decode(${fieldName}DData);\n';
+        fStr += '    builder.$fieldName = ${fieldName}Decoded;\n';
         break;
       case "message":
         break;
