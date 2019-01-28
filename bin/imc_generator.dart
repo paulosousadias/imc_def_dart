@@ -347,35 +347,30 @@ _writeMessageBuilder(
       '''class ${abbrev}Builder implements Builder<$abbrev, ${abbrev}Builder>, ImcBuilderHeaderPart {
   _\$$abbrev _\$v;
 
-  @override
   DateTime _timestamp;
   @override
   DateTime get timestamp => _\$this._timestamp;
   @override
   set timestamp(DateTime timestamp) => _\$this._timestamp = timestamp;
 
-  @override
   int _src;
   @override
   int get src => _\$this._src;
   @override
   set src(int src) => _\$this._src = src;
 
-  @override
   int _srcEnt;
   @override
   int get srcEnt => _\$this._srcEnt;
   @override
   set srcEnt(int srcEnt) => _\$this._srcEnt = srcEnt;
 
-  @override
   int _dst;
   @override
   int get dst => _\$this._dst;
   @override
   set dst(int dst) => _\$this._dst = dst;
 
-  @override
   int _dstEnt;
   @override
   int get dstEnt => _\$this._dstEnt;
@@ -1043,31 +1038,6 @@ abstract class ImcMessage extends Message {
   msgElm.findElements("message-groups").forEach((mg) => mg
       .findElements("message-group")
       .forEach((g) => _writeMessageGroup(g, sinks[_idxMsg])));
-
-  // Writing base builder
-  var headerBuilderStr = '''abstract class ImcBuilderHeaderPart {
-  DateTime _timestamp;
-  DateTime get timestamp;
-  set timestamp(DateTime timestamp);
-
-  int _src;
-  int get src;
-  set src(int src);
-
-  int _srcEnt;
-  int get srcEnt;
-  set srcEnt(int srcEnt);
-
-  int _dst;
-  int get dst;
-  set dst(int dst);
-
-  int _dstEnt;
-  int get dstEnt;
-  set dstEnt(int dstEnt);
-}
-''';
-  sinks[_idxBuilders].write(headerBuilderStr);
 
   sinks[_idxSerGen].write('''\nfinal messagesSerializers = <String, imc.ImcSerializer>{''');
   msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Serializer(),"));

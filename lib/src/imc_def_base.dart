@@ -105,6 +105,23 @@ abstract class Message {
   String get abbrev;
 }
 
+abstract class ImcBuilderHeaderPart {
+  DateTime get timestamp;
+  set timestamp(DateTime timestamp);
+
+  int get src;
+  set src(int src);
+
+  int get srcEnt;
+  set srcEnt(int srcEnt);
+
+  int get dst;
+  set dst(int dst);
+
+  int get dstEnt;
+  set dstEnt(int dstEnt);
+}
+
 // /// Implement this for a Built Value.
 // ///
 // /// Then use built_value_generator.dart code generation functionality to

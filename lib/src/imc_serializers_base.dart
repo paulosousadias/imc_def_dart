@@ -4,6 +4,7 @@
 
 import 'dart:typed_data';
 import 'package:imc_def/imc_def.dart';
+import 'package:imc_def/imc_def_base.dart' show ImcBuilderHeaderPart;
 
 const header_size = 20;
 const footer_size = 2;
@@ -32,10 +33,17 @@ const crc_table = <int>[ 0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280,
 
 /// This is the interface for serializing the IMC messages
 abstract class ImcSerializer<M> {
-  /// Call to serialize the all message
+  /// Call to serialize the all message, returns a [ByteData] with a serialized message
   ByteData serialize(M message);
+  /// Call to serialize only the payload, no header,
+  /// returns a [int] with a serialized size
+  //int serializePayload(M message, ByteData byteData, int offset);
   /// Call to deserialize the all message
   M deserialize(Uint8List data);
+  /// Call to deserialize only the payload, no header.
+  /// The [ImcBuilderHeaderPart] is to allow passing the
+  /// parent message for child messages of thi one.
+  //M deserializePayload(ImcBuilderHeaderPart builder, ByteData data, int offset);
 }
 
 // Future<void> writeToFile(ByteData data, String path) {
