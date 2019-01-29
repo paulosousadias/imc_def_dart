@@ -465,7 +465,7 @@ _writeMessageSerializer(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('\n/// $name serializer class\n///\n');
 
-  var serClassStart = '''class ${abbrev}Serializer extends imc.ImcSerializer<imc.$abbrev> {
+  var serClassStart = '''class ${abbrev}Serializer extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
   @override
   ByteData serialize(imc.$abbrev message) {
     var byteOffset = 0;
@@ -474,7 +474,20 @@ _writeMessageSerializer(
     var headerSize = byteOffset;
 
     // Payload
-''';
+    var payloadSize = serializePayload(message, byteData, byteOffset);
+    // End payload
+
+    byteOffset = headerSize + payloadSize;
+    imc.writePayloadSize(byteData, payloadSize);
+    imc.calcAndAddFooter(byteData, 0, headerSize + payloadSize);
+    byteOffset += 2;
+    return byteData.buffer.asByteData(0, byteOffset);
+  }
+  
+  @override
+  int serializePayload(imc.$abbrev message, ByteData byteData, int offset) {
+    var byteOffset = offset;
+\n''';
   sink.write('$serClassStart');
 
   m.findElements("field").forEach((f) {
@@ -561,15 +574,9 @@ _writeMessageSerializer(
     sink.write('$fStr');
   });
 
-  var serClass1 = '''    // End payload
-
-    var payloadSize = byteOffset - headerSize;
-    imc.writePayloadSize(byteData, payloadSize);
-    imc.calcAndAddFooter(byteData, 0, headerSize + payloadSize);
-    byteOffset += 2;
-    return byteData.buffer.asByteData(0, byteOffset);
+  var serClass1 = '''\n    return byteOffset - offset;
   }
-  
+
   @override
   imc.$abbrev deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
@@ -595,7 +602,18 @@ _writeMessageSerializer(
       return null;
 
     // Payload
-''';
+    var payloadSizeRead = deserializePayload(builder, byteData, endianess, byteOffset);
+    // End payload
+    
+    if (payloadSizeRead != payloadSize)
+      return null;
+    byteOffset = offset + imc.header_size + payloadSize;
+    return builder.build();
+  }
+
+  int deserializePayload(imc.${abbrev}Builder builder, ByteData byteData, Endian endianess, int offset) {
+    var byteOffset = offset;
+\n''';
   sink.write('$serClass1');
 
   m.findElements("field").forEach((f) {
@@ -690,11 +708,7 @@ _writeMessageSerializer(
     sink.write('$fStr');
   });
 
-  var serClassEnd = '''
-    // End payload
-    
-    byteOffset = offset + imc.header_size + payloadSize;
-    return builder.build();
+  var serClassEnd = '''\n    return byteOffset - offset;
   }
 }
 ''';

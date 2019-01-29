@@ -32,18 +32,19 @@ const crc_table = <int>[ 0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280,
     0x4540, 0x8701, 0x47C0, 0x4680, 0x8641, 0x8201, 0x42C0, 0x4380, 0x8341, 0x4100, 0x81C1, 0x8081, 0x4040, ];
 
 /// This is the interface for serializing the IMC messages
-abstract class ImcSerializer<M> {
+abstract class ImcSerializer<M, B> {
   /// Call to serialize the all message, returns a [ByteData] with a serialized message
   ByteData serialize(M message);
   /// Call to serialize only the payload, no header,
   /// returns a [int] with a serialized size
-  //int serializePayload(M message, ByteData byteData, int offset);
+  int serializePayload(M message, ByteData byteData, int offset);
   /// Call to deserialize the all message
   M deserialize(Uint8List data);
   /// Call to deserialize only the payload, no header.
-  /// The [ImcBuilderHeaderPart] is to allow passing the
-  /// parent message for child messages of thi one.
-  //M deserializePayload(ImcBuilderHeaderPart builder, ByteData data, int offset);
+  /// The [Builder] is to allow passing the
+  /// message to build into.
+  /// returns a [int] with a serialized size
+  int deserializePayload(B builder, ByteData data, Endian endianess, int offset);
 }
 
 // Future<void> writeToFile(ByteData data, String path) {
