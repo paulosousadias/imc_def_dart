@@ -10,8 +10,6 @@ import "dart:convert";
 import 'package:xml/xml.dart' as xml;
 import 'package:crypto/crypto.dart';
 
-part 'imc_serializer_generator.dart';
-
 const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
