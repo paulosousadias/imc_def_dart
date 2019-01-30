@@ -2196,6 +2196,19 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl, imc.Cac
     byteOffset += 2;
     snapshotEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field message
+    if (message.message == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.message.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.message, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -2250,6 +2263,18 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl, imc.Cac
     var snapshotDecoded = utf8.decode(snapshotDData);
     builder.snapshot = snapshotDecoded;
     // field message
+    var messageSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (messageSId == null) {
+      builder.message = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -5277,6 +5302,19 @@ class HistoricSampleSerializer extends imc.ImcSerializer<imc.HistoricSample, imc
     byteData.setInt16(byteOffset, message.t, imc.endian_ser);
     byteOffset += 2;
     // field sample
+    if (message.sample == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.sample.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.sample, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -5337,6 +5375,18 @@ class HistoricSampleSerializer extends imc.ImcSerializer<imc.HistoricSample, imc
     builder.t = byteData.getInt16(byteOffset, endianess);
     byteOffset += 2;
     // field sample
+    var sampleSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (sampleSId == null) {
+      builder.sample = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -5377,6 +5427,19 @@ class HistoricDataQuerySerializer extends imc.ImcSerializer<imc.HistoricDataQuer
     byteData.setUint16(byteOffset, message.maxSize, imc.endian_ser);
     byteOffset += 2;
     // field data
+    if (message.data == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.data.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.data, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -5428,6 +5491,18 @@ class HistoricDataQuerySerializer extends imc.ImcSerializer<imc.HistoricDataQuer
     builder.maxSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
     // field data
+    var dataSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (dataSId == null) {
+      builder.data = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -5468,6 +5543,19 @@ class RemoteCommandSerializer extends imc.ImcSerializer<imc.RemoteCommand, imc.R
     byteData.setFloat64(byteOffset, message.timeout, imc.endian_ser);
     byteOffset += 8;
     // field cmd
+    if (message.cmd == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.cmd.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.cmd, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -5519,6 +5607,18 @@ class RemoteCommandSerializer extends imc.ImcSerializer<imc.RemoteCommand, imc.R
     builder.timeout = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
     // field cmd
+    var cmdSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (cmdSId == null) {
+      builder.cmd = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -6088,6 +6188,19 @@ class AcousticMessageSerializer extends imc.ImcSerializer<imc.AcousticMessage, i
     var byteOffset = offset;
 
     // field message
+    if (message.message == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.message.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.message, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -6130,6 +6243,18 @@ class AcousticMessageSerializer extends imc.ImcSerializer<imc.AcousticMessage, i
     var byteOffset = offset;
 
     // field message
+    var messageSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (messageSId == null) {
+      builder.message = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -6173,6 +6298,19 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
     byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
     byteOffset += 4;
     // field msg
+    if (message.msg == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.msg.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.msg, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -6230,6 +6368,18 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
     builder.range = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field msg
+    var msgSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (msgSId == null) {
+      builder.msg = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -10458,6 +10608,19 @@ class ExternalNavDataSerializer extends imc.ImcSerializer<imc.ExternalNavData, i
     var byteOffset = offset;
 
     // field state
+    if (message.state == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.state.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.state, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
@@ -10503,6 +10666,18 @@ class ExternalNavDataSerializer extends imc.ImcSerializer<imc.ExternalNavData, i
     var byteOffset = offset;
 
     // field state
+    var stateSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (stateSId == null) {
+      builder.state = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field type
     builder.type = imc.ExternalNavDataEnumType(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -13392,6 +13567,19 @@ class LblEstimateSerializer extends imc.ImcSerializer<imc.LblEstimate, imc.LblEs
     var byteOffset = offset;
 
     // field beacon
+    if (message.beacon == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.beacon.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.beacon, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field x
     byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
     byteOffset += 4;
@@ -13449,6 +13637,18 @@ class LblEstimateSerializer extends imc.ImcSerializer<imc.LblEstimate, imc.LblEs
     var byteOffset = offset;
 
     // field beacon
+    var beaconSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (beaconSId == null) {
+      builder.beacon = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field x
     builder.x = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
@@ -15964,6 +16164,19 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl, i
     var byteOffset = offset;
 
     // field control
+    if (message.control == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.control.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.control, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field duration
     byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
     byteOffset += 2;
@@ -16015,6 +16228,18 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl, i
     var byteOffset = offset;
 
     // field control
+    var controlSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (controlSId == null) {
+      builder.control = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[controlSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[controlSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field duration
     builder.duration = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -18771,7 +18996,33 @@ class ReferenceSerializer extends imc.ImcSerializer<imc.Reference, imc.Reference
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field speed
+    if (message.speed == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.speed.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.speed, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field z
+    if (message.z == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.z.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.z, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field lat
     byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
     byteOffset += 8;
@@ -18826,7 +19077,31 @@ class ReferenceSerializer extends imc.ImcSerializer<imc.Reference, imc.Reference
     builder.flags = imc.ReferenceBitfieldFlags(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field speed
+    var speedSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (speedSId == null) {
+      builder.speed = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field z
+    var zSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (zSId == null) {
+      builder.z = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[zSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[zSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field lat
     builder.lat = byteData.getFloat64(byteOffset, endianess);
     byteOffset += 8;
@@ -18873,6 +19148,19 @@ class FollowRefStateSerializer extends imc.ImcSerializer<imc.FollowRefState, imc
     byteData.setUint8(byteOffset, message.controlEnt);
     byteOffset += 1;
     // field reference
+    if (message.reference == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.reference.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.reference, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field state
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
@@ -18927,6 +19215,18 @@ class FollowRefStateSerializer extends imc.ImcSerializer<imc.FollowRefState, imc
     builder.controlEnt = byteData.getUint8(byteOffset);
     byteOffset += 1;
     // field reference
+    var referenceSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (referenceSId == null) {
+      builder.reference = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field state
     builder.state = imc.FollowRefStateEnumState(byteData.getUint8(byteOffset));
     byteOffset += 1;
@@ -21601,6 +21901,19 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand, imc
     byteData.setUint8(byteOffset, message.command.value);
     byteOffset += 1;
     // field maneuver
+    if (message.maneuver == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.maneuver.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.maneuver, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field calibTime
     byteData.setUint16(byteOffset, message.calibTime, imc.endian_ser);
     byteOffset += 2;
@@ -21661,6 +21974,18 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand, imc
     builder.command = imc.VehicleCommandEnumCommand(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field maneuver
+    var maneuverSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (maneuverSId == null) {
+      builder.maneuver = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field calibTime
     builder.calibTime = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -23062,6 +23387,19 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     byteData.setUint8(byteOffset, message.dataMode.value);
     byteOffset += 1;
     // field msgData
+    if (message.msgData == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.msgData.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.msgData, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field txtData
     var txtDataEncoded = utf8.encode(message.txtData);
     var txtDataSSize = txtDataEncoded.length;
@@ -23136,6 +23474,18 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     builder.dataMode = imc.TransmissionRequestEnumDataMode(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field msgData
+    var msgDataSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (msgDataSId == null) {
+      builder.msgData = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field txtData
     var txtDataSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -23865,6 +24215,19 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
     byteOffset += 2;
     maneuverIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field data
+    if (message.data == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.data.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.data, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field startActions
     // field endActions
 
@@ -23918,6 +24281,18 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
     var maneuverIdDecoded = utf8.decode(maneuverIdDData);
     builder.maneuverId = maneuverIdDecoded;
     // field data
+    var dataSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (dataSId == null) {
+      builder.data = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field startActions
     // field endActions
 
@@ -24072,6 +24447,19 @@ class EmergencyControlSerializer extends imc.ImcSerializer<imc.EmergencyControl,
     byteData.setUint8(byteOffset, message.command.value);
     byteOffset += 1;
     // field plan
+    if (message.plan == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.plan.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.plan, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -24117,6 +24505,18 @@ class EmergencyControlSerializer extends imc.ImcSerializer<imc.EmergencyControl,
     builder.command = imc.EmergencyControlEnumCommand(byteData.getUint8(byteOffset));
     byteOffset += 1;
     // field plan
+    var planSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (planSId == null) {
+      builder.plan = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -24261,6 +24661,19 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> 
     byteOffset += 2;
     planIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field arg
+    if (message.arg == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.arg.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.arg, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
@@ -24327,6 +24740,18 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> 
     var planIdDecoded = utf8.decode(planIdDData);
     builder.planId = planIdDecoded;
     // field arg
+    var argSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (argSId == null) {
+      builder.arg = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -24642,6 +25067,19 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl, imc.PlanC
     byteData.setUint16(byteOffset, message.flags.value, imc.endian_ser);
     byteOffset += 2;
     // field arg
+    if (message.arg == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.arg.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.arg, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
@@ -24711,6 +25149,18 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl, imc.PlanC
     builder.flags = imc.PlanControlBitfieldFlags(byteData.getUint16(byteOffset, endianess));
     byteOffset += 2;
     // field arg
+    var argSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (argSId == null) {
+      builder.arg = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;
@@ -26044,6 +26494,19 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBui
     byteOffset += 2;
     idEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field arg
+    if (message.arg == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.arg.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.arg, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -26098,6 +26561,18 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBui
     var idDecoded = utf8.decode(idDData);
     builder.id = idDecoded;
     // field arg
+    var argSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (argSId == null) {
+      builder.arg = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -26449,6 +26924,19 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation, imc.T
     byteOffset += 2;
     goalIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field token
+    if (message.token == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.token.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.token, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -26503,6 +26991,18 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation, imc.T
     var goalIdDecoded = utf8.decode(goalIdDData);
     builder.goalId = goalIdDecoded;
     // field token
+    var tokenSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (tokenSId == null) {
+      builder.token = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -29286,6 +29786,19 @@ class FormationEvaluationSerializer extends imc.ImcSerializer<imc.FormationEvalu
     byteData.setFloat32(byteOffset, message.time, imc.endian_ser);
     byteOffset += 4;
     // field controlParams
+    if (message.controlParams == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.controlParams.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.controlParams, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -29349,6 +29862,18 @@ class FormationEvaluationSerializer extends imc.ImcSerializer<imc.FormationEvalu
     builder.time = byteData.getFloat32(byteOffset, endianess);
     byteOffset += 4;
     // field controlParams
+    var controlParamsSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (controlParamsSId == null) {
+      builder.controlParams = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
 
     return byteOffset - offset;
   }
@@ -29566,6 +30091,19 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand, imc.SoiComm
     byteOffset += 2;
     settingsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field plan
+    if (message.plan == null) {
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteOffset += 2;
+    } else {
+      var id = message.plan.msgId;
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      if (pMsgSerializer != null) {
+        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteOffset += 2;
+        var mPSize = pMsgSerializer.serializePayload(message.plan, byteData, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
@@ -29629,6 +30167,18 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand, imc.SoiComm
     var settingsDecoded = utf8.decode(settingsDData);
     builder.settings = settingsDecoded;
     // field plan
+    var planSId = byteData.getUint16(byteOffset, endianess);
+    byteOffset += 2;
+    if (planSId == null) {
+      builder.plan = null;
+    } else {
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId];
+      if (pMsgBuilder != null && pMsgSerializer != null) {
+        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);
+        byteOffset += mPSize;
+      }
+    }
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianess);
     byteOffset += 2;

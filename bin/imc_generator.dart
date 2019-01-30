@@ -565,6 +565,19 @@ _writeMessageSerializer(
         fStr += '    ${fieldName}Encoded.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
         break;
       case "message":
+        fStr = '    if (message.$fieldName == null) {\n';
+        fStr += '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);\n';
+        fStr += '      byteOffset += 2;\n';
+        fStr += '    } else {\n';
+        fStr += '      var id = message.$fieldName.msgId;\n';
+        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];\n';
+        fStr += '      if (pMsgSerializer != null) {\n';
+        fStr += '        byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
+        fStr += '        byteOffset += 2;\n';
+        fStr += '        var mPSize = pMsgSerializer.serializePayload(message.$fieldName, byteData, byteOffset);\n';
+        fStr += '        byteOffset += mPSize;\n';
+        fStr += '      }\n';
+        fStr += '    }\n';
         break;
       case "message-list":
         break;
@@ -699,6 +712,18 @@ _writeMessageSerializer(
         fStr += '    builder.$fieldName = ${fieldName}Decoded;\n';
         break;
       case "message":
+        fStr = '    var ${fieldName}SId = byteData.getUint16(byteOffset, endianess);\n';
+        fStr += '    byteOffset += 2;\n';
+        fStr += '    if (${fieldName}SId == null) {\n';
+        fStr += '      builder.$fieldName = null;\n';
+        fStr += '    } else {\n';
+        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
+        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
+        fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
+        fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);\n';
+        fStr += '        byteOffset += mPSize;\n';
+        fStr += '      }\n';
+        fStr += '    }\n';
         break;
       case "message-list":
         break;
