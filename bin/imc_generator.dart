@@ -744,12 +744,14 @@ _writeMessageSerializer(
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
         fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
+        fStr += '        builder.$fieldName = pMsgBuilder.build();\n';
         fStr += '      }\n';
         fStr += '    }\n';
         break;
       case "message-list":
         fStr = '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianess);\n';
         fStr += '    byteOffset += 2;\n';
+        fStr += '    builder.$fieldName = [];\n';
         fStr += '    for (int i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
         fStr += '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianess);\n';
         fStr += '      byteOffset += 2;\n';
@@ -759,6 +761,7 @@ _writeMessageSerializer(
         fStr += '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
         fStr += '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
+        fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
         fStr += '        }\n';
         fStr += '      }\n';
         fStr += '    }\n';
