@@ -342,7 +342,7 @@ _writeMessageBuilder(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('/// $name builder class\n///\n');
   var msgStringImmutableBuilder =
-      '''class ${abbrev}Builder implements Builder<$abbrev, ${abbrev}Builder>, ImcBuilderHeaderPart {
+      '''class ${abbrev}Builder implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder>, ImcBuilderHeaderPart {
   _\$$abbrev _\$v;
 
   DateTime _timestamp;
@@ -390,6 +390,8 @@ _writeMessageBuilder(
   });
 
   var msgStringImmutableBuilder1 = '''\n  ${abbrev}Builder();
+
+  ${abbrev}Builder get newInstance => ${abbrev}Builder();
 
   ${abbrev}Builder get _\$this {
     if (_\$v != null) {
@@ -717,7 +719,7 @@ _writeMessageSerializer(
         fStr += '    if (${fieldName}SId == null) {\n';
         fStr += '      builder.$fieldName = null;\n';
         fStr += '    } else {\n';
-        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
+        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance;\n';
         fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
         fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);\n';
@@ -983,7 +985,7 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   });
   sink.write('''\n};\n''');
 
-  sink.write('''\nfinal messagesBuilders = <String, Builder>{''');
+  sink.write('''\nfinal messagesBuilders = <String, BuilderWithInstanciator>{''');
   msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Builder(),"));
   sink.write('''\n};\n''');
 

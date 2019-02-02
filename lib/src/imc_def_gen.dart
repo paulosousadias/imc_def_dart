@@ -689,7 +689,7 @@ const messageGroups = {
     ],
 };
 
-final messagesBuilders = <String, Builder>{
+final messagesBuilders = <String, BuilderWithInstanciator>{
   'EntityState': EntityStateBuilder(),
   'QueryEntityState': QueryEntityStateBuilder(),
   'EntityInfo': EntityInfoBuilder(),
