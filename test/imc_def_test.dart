@@ -29,7 +29,7 @@ void main() {
       (b as imc.ImcBuilderHeaderPart)
           ..src = 0x4001
           ..timestamp = DateTime.utc(1970);
-      var msg = b.build();
+      var msg = b.build() as imc.ImcMessage;
       var ser = imc.messagesSerializers[n];
       var dataSer = ser.serialize(msg);
       var bufferSer = dataSer.buffer;

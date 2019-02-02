@@ -32,7 +32,7 @@ const crc_table = <int>[ 0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280,
     0x4540, 0x8701, 0x47C0, 0x4680, 0x8641, 0x8201, 0x42C0, 0x4380, 0x8341, 0x4100, 0x81C1, 0x8081, 0x4040, ];
 
 /// This is the interface for serializing the IMC messages
-abstract class ImcSerializer<M, B> {
+abstract class ImcSerializer<M extends Message, B> {
   /// Call to serialize the all message, returns a [ByteData] with a serialized message
   ByteData serialize(M message);
   /// Call to serialize only the payload, no header,
@@ -52,6 +52,14 @@ abstract class ImcSerializer<M, B> {
 //   return new File(path).writeAsBytes(
 //       buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
 // }
+
+int getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
+  var endianess = getEndianess(data, offset);
+  if (endianess == null)
+    return null;  
+  var msgId = data.getUint16(offset + 2, endianess);
+  return msgId;
+}
 
 int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian endianess, [int headerStartoffset = 0]) {
   try {
@@ -87,7 +95,6 @@ Endian getEndianess(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
   if (syncBE == SYNC_NUMBER)
     return Endian.big;
-  syncBE = byteData.getUint16(offset, Endian.little);
   if (syncBE == SYNC_NUMBER_REVERSED)
     return Endian.little;
   return null;
