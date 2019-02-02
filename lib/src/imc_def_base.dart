@@ -6,77 +6,6 @@ import 'package:built_value/built_value.dart';
 
 part 'imc_def_enums.dart';
 
-// abstract class ImcMessage implements Built<ImcMessage, ImcMessageBuilder> {
-//   // final int _sync = 0xFE54;
-//   // DateTime _timestamp = DateTime.now();
-//   // int _src = 0xFFFF;
-//   // int _srcEnt = 0xFF;
-//   // int _dst = 0xFFFF;
-//   // int _dstEnt = 0xFF;
-
-//   ImcMessage._();
-//   static Serializer<ImcMessage> get serializer => _$imcMessageSerializer;
-//   factory ImcMessage([updates(ImcMessageBuilder b)]) = _$ImcMessage;
-
-//   // int get size => serializeFields().length;
-//   int get sync => 0xFE54;
-//   DateTime get timestamp;
-//   int get src;
-//   int get srcEnt;
-//   int get dst;
-//   int get dstEnt;
-//   int get msgId;
-//   String get abbrev;
-
-//   // String toString() => "IMCMessage $msgId";
-
-//   // /**
-//   //  * Serialize this message's payload */
-//   // byte[] serializeFields;
-
-//   // /**
-//   //  * Deserialize this message's payload */
-//   // public abstract void deserializeFields(ByteBuffer buf) throws IOException;
-
-//   // /**
-//   //  * Serialize this message */
-//   // public byte[] serialize() {
-//   // 	return SerializationUtils.serializeMessage(this);
-//   // }
-
-//   // /**
-//   //  * Read a message from a byte array */
-//   // public static Message deserialize(byte[] data) throws Exception {
-//   // 	return SerializationUtils.deserializeMessage(data);
-//   // }
-
-//   void test() {
-//     var buffer = new Uint8List(8).buffer;
-//     var bdata = new ByteData.view(buffer);
-//     bdata.setFloat32(0, 3.04);
-//     int huh = bdata.getInt32(0);
-//   }
-// }
-
-// abstract class Builder<V extends Built<V, B>, B extends Builder<V, B>> {
-//   /// Replaces the value in the builder with a new one.
-//   ///
-//   /// The implementation of this method will be generated for you by the
-//   /// built_value generator.
-//   void replace(V value);
-
-//   /// Applies updates.
-//   ///
-//   /// [updates] is a function that takes a builder [B].
-//   void update(updates(B builder));
-
-//   /// Builds.
-//   ///
-//   /// The implementation of this method will be generated for you by the
-//   /// built_value generator.
-//   V build();
-// }
-
 class ImcField {
   final String name;
   final String abbrev;
@@ -96,7 +25,6 @@ class ImcField {
 abstract class Message {
   int get sync;
   int get msgId;
-  // int get size => serializeFields().length;
   DateTime get timestamp;
   int get src;
   int get srcEnt;

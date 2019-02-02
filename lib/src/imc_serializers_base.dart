@@ -53,42 +53,6 @@ abstract class ImcSerializer<M, B> {
 //       buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
 // }
 
-// class AbortSerializer extends ImcSerializer<Abort> {
-//   @override
-//   ByteData serialize(Abort message) {
-//     var byteOffset = 0;
-//     var byteData = ByteData(0xFFFF);
-//     byteOffset = serializeHeader(message, byteData);
-//     var headerSize = byteOffset;
-//     var payloadSize = byteOffset - headerSize;
-//     writePayloadSize(byteData, payloadSize);
-//     byteOffset = calcAndAddFooter(byteData, byteOffset);
-//     return byteData.buffer.asByteData(0, byteOffset);
-//   }
-  
-//   @override
-//   Abort deserialize(Uint8List data, [int offset = 0]) {
-//     var byteOffset = offset;
-//     var byteData = data.buffer.asByteData(offset);
-    
-//     var endianess = getEndianess(byteData, byteOffset);
-//     byteOffset += 2;
-//     if (endianess == null)
-//       return null;
-    
-//     var msgId = byteData.getUint16(byteOffset, endianess);
-//     byteOffset += 2;
-//     if (msgId != Abort.static_id)
-//       return null;
-
-//     var builder = AbortBuilder();
-//     var payloadSize = deserializeHeader(builder, byteData, endianess, offset);
-//     byteOffset = offset + header_size;
-
-//     return builder.build();
-//   }
-// }
-
 int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian endianess, [int headerStartoffset = 0]) {
   try {
     var byteOffset = headerStartoffset + 2 + 2;
