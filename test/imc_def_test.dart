@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:imc_def/imc_def.dart' as imc;
 
 void main() {
-  test('adds one to input values', () {
+  test('builders test', () {
     // final calculator = Calculator();
     // expect(calculator.addOne(2), 3);
     // expect(calculator.addOne(-7), -6);
@@ -11,7 +11,9 @@ void main() {
     // expect(() => calculator.addOne(null), throwsNoSuchMethodError);
     
     imc.messagesBuilders.values.forEach((b) {
-      print((b.build() as imc.ImcMessage).toString());
+      var msg = b.build() as imc.ImcMessage;
+      print(msg?.toString());
+      expect(msg != null, true);
     });
     
     print("0x${16.toRadixString(16)}");
