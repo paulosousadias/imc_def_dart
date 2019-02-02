@@ -582,6 +582,26 @@ _writeMessageSerializer(
         fStr += '    }\n';
         break;
       case "message-list":
+        fStr = '    if (message.$fieldName == null || message.$fieldName.isEmpty) {\n';
+        fStr += '      byteData.setUint16(byteOffset, 0, imc.endian_ser);\n';
+        fStr += '      byteOffset += 2;\n';
+        fStr += '    } else {\n';
+        fStr += '      var msgsCounter = 0;\n';
+        fStr += '      var bufCounterPos = byteOffset;\n';
+        fStr += '      byteOffset += 2;\n';
+        fStr += '      for (int i = 0; i < message.$fieldName.length; i++) {\n';
+        fStr += '        var id = message.$fieldName[i]?.msgId;\n';
+        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];\n';
+        fStr += '        if (id != null && pMsgSerializer != null) {\n';
+        fStr += '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
+        fStr += '          byteOffset += 2;\n';
+        fStr += '          var mPSize = pMsgSerializer.serializePayload(message.$fieldName[i], byteData, byteOffset);\n';
+        fStr += '          byteOffset += mPSize;\n';
+        fStr += '          msgsCounter++;\n';
+        fStr += '        }\n';
+        fStr += '        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);\n';
+        fStr += '      }\n';
+        fStr += '    }\n';
         break;
       default:
         break;
@@ -716,7 +736,7 @@ _writeMessageSerializer(
       case "message":
         fStr = '    var ${fieldName}SId = byteData.getUint16(byteOffset, endianess);\n';
         fStr += '    byteOffset += 2;\n';
-        fStr += '    if (${fieldName}SId == null) {\n';
+        fStr += '    if (${fieldName}SId == imc.ImcId.nullId) {\n';
         fStr += '      builder.$fieldName = null;\n';
         fStr += '    } else {\n';
         fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance;\n';
@@ -728,6 +748,20 @@ _writeMessageSerializer(
         fStr += '    }\n';
         break;
       case "message-list":
+        fStr = '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianess);\n';
+        fStr += '    byteOffset += 2;\n';
+        fStr += '    for (int i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
+        fStr += '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianess);\n';
+        fStr += '      byteOffset += 2;\n';
+        fStr += '      if (${fieldName}SId != imc.ImcId.nullId) {\n';
+        fStr += '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance;\n';
+        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
+        fStr += '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
+        fStr += '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);\n';
+        fStr += '          byteOffset += mPSize;\n';
+        fStr += '        }\n';
+        fStr += '      }\n';
+        fStr += '    }\n';
         break;
       default:
         break;
