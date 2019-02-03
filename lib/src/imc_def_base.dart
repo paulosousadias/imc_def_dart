@@ -33,6 +33,7 @@ abstract class Message {
   String get abbrev;
 }
 
+/// Is a mixin in the messages
 abstract class ImcBuilderHeaderPart {
   DateTime get timestamp;
   set timestamp(DateTime timestamp);
