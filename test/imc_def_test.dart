@@ -97,7 +97,7 @@ void main() {
 // var data = list is Uint8List ? list.buffer : new Uint8List.fromList(list).buffer;
 
   test("binary loading deserializing", () {
-    imc.endian_ser = Endian.little;
+    // imc.endian_ser = Endian.little;
 
     // RPM
     // little endian
@@ -117,6 +117,7 @@ void main() {
         .build();
     var serializerRpm = imc.RpmSerializer();
     var msgRpmD = serializerRpm.deserialize(Uint8List.fromList(bytes1));
+    print("Msg Id: $msgId");
     print("msg1: $msgRpm\nmsg2: $msgRpmD\n");
     expect(msgRpm, msgRpmD);
     var byteData2 = serializerRpm.serialize(msgRpm);
@@ -144,7 +145,8 @@ void main() {
       0x40, 0x1c, 0x77,
     ];
     msgId = 262;
-    var msgDistance = (imc.DistanceBuilder()
+    var msgBuilderDistance = imc.DistanceBuilder();
+    var msgDistance = (msgBuilderDistance
           ..timestamp = DateTime.utc(2019, 02, 02, 23, 20, 27, 202)
           ..src = 0x1b //(27)
           ..srcEnt = 0x31 //(49),
@@ -152,7 +154,7 @@ void main() {
           ..dstEnt = 0xff //(255),
           ..validity = imc.DistanceEnumValidity.valid
           ..location = [
-            (imc.DeviceStateBuilder()
+            (imc.DeviceStateBuilder.fromHeader(msgBuilderDistance)
                 ..x = 0
                 ..y = 0
                 ..z = 0
@@ -162,7 +164,7 @@ void main() {
               ).build(),
           ]
           ..beamConfig = [
-            (imc.BeamConfigBuilder()
+            (imc.BeamConfigBuilder.fromHeader(msgBuilderDistance)
                 ..beamWidth = -0.01745329238474369
                 ..beamHeight = -0.01745329238474369
               ).build(),
@@ -171,6 +173,7 @@ void main() {
         .build();
     var serializerDistance = imc.DistanceSerializer();
     var msgDistanceD = serializerDistance.deserialize(Uint8List.fromList(bytes1));
+    print("Msg Id: $msgId");
     print("msg1: $msgDistance\nmsg2: $msgDistanceD\n");
     expect(msgDistance, msgDistanceD);
     byteData2 = serializerDistance.serialize(msgDistance);

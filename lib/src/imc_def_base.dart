@@ -48,11 +48,23 @@ abstract class ImcBuilderHeaderPart {
 
   int get dstEnt;
   set dstEnt(int dstEnt);
+
+  copyFromHeader(ImcBuilderHeaderPart other) {
+    if (other == null) return;
+    
+    timestamp = other.timestamp;
+    src = other.src;
+    srcEnt = other.srcEnt;
+    dst = other.dst;
+    dstEnt = other.dstEnt;
+  }
 }
 
 abstract class BuilderWithInstanciator<V extends Built<V, B>, B extends Builder<V, B>> extends Builder<V, B> {
   /// Instanciates a new builder
-  B get newInstance;
+  B newInstance([ImcBuilderHeaderPart headerFrom]);
+
+  copyFromHeader(ImcBuilderHeaderPart other);
 }
 
 // /// Implement this for a Built Value.

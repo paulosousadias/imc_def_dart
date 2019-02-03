@@ -92,7 +92,7 @@ class _$EntityState extends EntityState {
 
 /// Entity State builder class
 ///
-class EntityStateBuilder implements BuilderWithInstanciator<EntityState, EntityStateBuilder>, ImcBuilderHeaderPart {
+class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityState, EntityStateBuilder> {
   _$EntityState _$v;
 
   DateTime _timestamp;
@@ -139,7 +139,11 @@ class EntityStateBuilder implements BuilderWithInstanciator<EntityState, EntityS
 
   EntityStateBuilder();
 
-  EntityStateBuilder get newInstance => EntityStateBuilder();
+  EntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityStateBuilder()..copyFromHeader(headerFrom);
 
   EntityStateBuilder get _$this {
     if (_$v != null) {
@@ -254,7 +258,7 @@ class _$QueryEntityState extends QueryEntityState {
 
 /// Query Entity State builder class
 ///
-class QueryEntityStateBuilder implements BuilderWithInstanciator<QueryEntityState, QueryEntityStateBuilder>, ImcBuilderHeaderPart {
+class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityState, QueryEntityStateBuilder> {
   _$QueryEntityState _$v;
 
   DateTime _timestamp;
@@ -289,7 +293,11 @@ class QueryEntityStateBuilder implements BuilderWithInstanciator<QueryEntityStat
 
   QueryEntityStateBuilder();
 
-  QueryEntityStateBuilder get newInstance => QueryEntityStateBuilder();
+  QueryEntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  QueryEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityStateBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityStateBuilder get _$this {
     if (_$v != null) {
@@ -428,7 +436,7 @@ class _$EntityInfo extends EntityInfo {
 
 /// Entity Information builder class
 ///
-class EntityInfoBuilder implements BuilderWithInstanciator<EntityInfo, EntityInfoBuilder>, ImcBuilderHeaderPart {
+class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityInfo, EntityInfoBuilder> {
   _$EntityInfo _$v;
 
   DateTime _timestamp;
@@ -483,7 +491,11 @@ class EntityInfoBuilder implements BuilderWithInstanciator<EntityInfo, EntityInf
 
   EntityInfoBuilder();
 
-  EntityInfoBuilder get newInstance => EntityInfoBuilder();
+  EntityInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityInfoBuilder()..copyFromHeader(headerFrom);
 
   EntityInfoBuilder get _$this {
     if (_$v != null) {
@@ -608,7 +620,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
 
 /// Query Entity Information builder class
 ///
-class QueryEntityInfoBuilder implements BuilderWithInstanciator<QueryEntityInfo, QueryEntityInfoBuilder>, ImcBuilderHeaderPart {
+class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityInfo, QueryEntityInfoBuilder> {
   _$QueryEntityInfo _$v;
 
   DateTime _timestamp;
@@ -647,7 +659,11 @@ class QueryEntityInfoBuilder implements BuilderWithInstanciator<QueryEntityInfo,
 
   QueryEntityInfoBuilder();
 
-  QueryEntityInfoBuilder get newInstance => QueryEntityInfoBuilder();
+  QueryEntityInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  QueryEntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityInfoBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityInfoBuilder get _$this {
     if (_$v != null) {
@@ -770,7 +786,7 @@ class _$EntityList extends EntityList {
 
 /// Entity List builder class
 ///
-class EntityListBuilder implements BuilderWithInstanciator<EntityList, EntityListBuilder>, ImcBuilderHeaderPart {
+class EntityListBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityList, EntityListBuilder> {
   _$EntityList _$v;
 
   DateTime _timestamp;
@@ -813,7 +829,11 @@ class EntityListBuilder implements BuilderWithInstanciator<EntityList, EntityLis
 
   EntityListBuilder();
 
-  EntityListBuilder get newInstance => EntityListBuilder();
+  EntityListBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EntityListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityListBuilder()..copyFromHeader(headerFrom);
 
   EntityListBuilder get _$this {
     if (_$v != null) {
@@ -932,7 +952,7 @@ class _$CpuUsage extends CpuUsage {
 
 /// CPU Usage builder class
 ///
-class CpuUsageBuilder implements BuilderWithInstanciator<CpuUsage, CpuUsageBuilder>, ImcBuilderHeaderPart {
+class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CpuUsage, CpuUsageBuilder> {
   _$CpuUsage _$v;
 
   DateTime _timestamp;
@@ -971,7 +991,11 @@ class CpuUsageBuilder implements BuilderWithInstanciator<CpuUsage, CpuUsageBuild
 
   CpuUsageBuilder();
 
-  CpuUsageBuilder get newInstance => CpuUsageBuilder();
+  CpuUsageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CpuUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CpuUsageBuilder()..copyFromHeader(headerFrom);
 
   CpuUsageBuilder get _$this {
     if (_$v != null) {
@@ -1094,7 +1118,7 @@ class _$TransportBindings extends TransportBindings {
 
 /// Transport Bindings builder class
 ///
-class TransportBindingsBuilder implements BuilderWithInstanciator<TransportBindings, TransportBindingsBuilder>, ImcBuilderHeaderPart {
+class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TransportBindings, TransportBindingsBuilder> {
   _$TransportBindings _$v;
 
   DateTime _timestamp;
@@ -1137,7 +1161,11 @@ class TransportBindingsBuilder implements BuilderWithInstanciator<TransportBindi
 
   TransportBindingsBuilder();
 
-  TransportBindingsBuilder get newInstance => TransportBindingsBuilder();
+  TransportBindingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TransportBindingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransportBindingsBuilder()..copyFromHeader(headerFrom);
 
   TransportBindingsBuilder get _$this {
     if (_$v != null) {
@@ -1256,7 +1284,7 @@ class _$RestartSystem extends RestartSystem {
 
 /// Restart System builder class
 ///
-class RestartSystemBuilder implements BuilderWithInstanciator<RestartSystem, RestartSystemBuilder>, ImcBuilderHeaderPart {
+class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RestartSystem, RestartSystemBuilder> {
   _$RestartSystem _$v;
 
   DateTime _timestamp;
@@ -1295,7 +1323,11 @@ class RestartSystemBuilder implements BuilderWithInstanciator<RestartSystem, Res
 
   RestartSystemBuilder();
 
-  RestartSystemBuilder get newInstance => RestartSystemBuilder();
+  RestartSystemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RestartSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RestartSystemBuilder()..copyFromHeader(headerFrom);
 
   RestartSystemBuilder get _$this {
     if (_$v != null) {
@@ -1412,7 +1444,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
 
 /// Device Calibration Control builder class
 ///
-class DevCalibrationControlBuilder implements BuilderWithInstanciator<DevCalibrationControl, DevCalibrationControlBuilder>, ImcBuilderHeaderPart {
+class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevCalibrationControl, DevCalibrationControlBuilder> {
   _$DevCalibrationControl _$v;
 
   DateTime _timestamp;
@@ -1451,7 +1483,11 @@ class DevCalibrationControlBuilder implements BuilderWithInstanciator<DevCalibra
 
   DevCalibrationControlBuilder();
 
-  DevCalibrationControlBuilder get newInstance => DevCalibrationControlBuilder();
+  DevCalibrationControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DevCalibrationControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevCalibrationControlBuilder()..copyFromHeader(headerFrom);
 
   DevCalibrationControlBuilder get _$this {
     if (_$v != null) {
@@ -1586,7 +1622,7 @@ class _$DevCalibrationState extends DevCalibrationState {
 
 /// Device Calibration State builder class
 ///
-class DevCalibrationStateBuilder implements BuilderWithInstanciator<DevCalibrationState, DevCalibrationStateBuilder>, ImcBuilderHeaderPart {
+class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevCalibrationState, DevCalibrationStateBuilder> {
   _$DevCalibrationState _$v;
 
   DateTime _timestamp;
@@ -1637,7 +1673,11 @@ class DevCalibrationStateBuilder implements BuilderWithInstanciator<DevCalibrati
 
   DevCalibrationStateBuilder();
 
-  DevCalibrationStateBuilder get newInstance => DevCalibrationStateBuilder();
+  DevCalibrationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DevCalibrationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevCalibrationStateBuilder()..copyFromHeader(headerFrom);
 
   DevCalibrationStateBuilder get _$this {
     if (_$v != null) {
@@ -1766,7 +1806,7 @@ class _$EntityActivationState extends EntityActivationState {
 
 /// Entity Activation State builder class
 ///
-class EntityActivationStateBuilder implements BuilderWithInstanciator<EntityActivationState, EntityActivationStateBuilder>, ImcBuilderHeaderPart {
+class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityActivationState, EntityActivationStateBuilder> {
   _$EntityActivationState _$v;
 
   DateTime _timestamp;
@@ -1809,7 +1849,11 @@ class EntityActivationStateBuilder implements BuilderWithInstanciator<EntityActi
 
   EntityActivationStateBuilder();
 
-  EntityActivationStateBuilder get newInstance => EntityActivationStateBuilder();
+  EntityActivationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EntityActivationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityActivationStateBuilder()..copyFromHeader(headerFrom);
 
   EntityActivationStateBuilder get _$this {
     if (_$v != null) {
@@ -1922,7 +1966,7 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
 
 /// Query Entity Activation State builder class
 ///
-class QueryEntityActivationStateBuilder implements BuilderWithInstanciator<QueryEntityActivationState, QueryEntityActivationStateBuilder>, ImcBuilderHeaderPart {
+class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityActivationState, QueryEntityActivationStateBuilder> {
   _$QueryEntityActivationState _$v;
 
   DateTime _timestamp;
@@ -1957,7 +2001,11 @@ class QueryEntityActivationStateBuilder implements BuilderWithInstanciator<Query
 
   QueryEntityActivationStateBuilder();
 
-  QueryEntityActivationStateBuilder get newInstance => QueryEntityActivationStateBuilder();
+  QueryEntityActivationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  QueryEntityActivationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityActivationStateBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityActivationStateBuilder get _$this {
     if (_$v != null) {
@@ -2174,7 +2222,7 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
 
 /// Vehicle Operational Limits builder class
 ///
-class VehicleOperationalLimitsBuilder implements BuilderWithInstanciator<VehicleOperationalLimits, VehicleOperationalLimitsBuilder>, ImcBuilderHeaderPart {
+class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleOperationalLimits, VehicleOperationalLimitsBuilder> {
   _$VehicleOperationalLimits _$v;
 
   DateTime _timestamp;
@@ -2281,7 +2329,11 @@ class VehicleOperationalLimitsBuilder implements BuilderWithInstanciator<Vehicle
 
   VehicleOperationalLimitsBuilder();
 
-  VehicleOperationalLimitsBuilder get newInstance => VehicleOperationalLimitsBuilder();
+  VehicleOperationalLimitsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VehicleOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleOperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   VehicleOperationalLimitsBuilder get _$this {
     if (_$v != null) {
@@ -2432,7 +2484,7 @@ class _$MsgList extends MsgList {
 
 /// Message List builder class
 ///
-class MsgListBuilder implements BuilderWithInstanciator<MsgList, MsgListBuilder>, ImcBuilderHeaderPart {
+class MsgListBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MsgList, MsgListBuilder> {
   _$MsgList _$v;
 
   DateTime _timestamp;
@@ -2471,7 +2523,11 @@ class MsgListBuilder implements BuilderWithInstanciator<MsgList, MsgListBuilder>
 
   MsgListBuilder();
 
-  MsgListBuilder get newInstance => MsgListBuilder();
+  MsgListBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MsgListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MsgListBuilder()..copyFromHeader(headerFrom);
 
   MsgListBuilder get _$this {
     if (_$v != null) {
@@ -2690,7 +2746,7 @@ class _$SimulatedState extends SimulatedState {
 
 /// Simulated State builder class
 ///
-class SimulatedStateBuilder implements BuilderWithInstanciator<SimulatedState, SimulatedStateBuilder>, ImcBuilderHeaderPart {
+class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SimulatedState, SimulatedStateBuilder> {
   _$SimulatedState _$v;
 
   DateTime _timestamp;
@@ -2797,7 +2853,11 @@ class SimulatedStateBuilder implements BuilderWithInstanciator<SimulatedState, S
 
   SimulatedStateBuilder();
 
-  SimulatedStateBuilder get newInstance => SimulatedStateBuilder();
+  SimulatedStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SimulatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SimulatedStateBuilder()..copyFromHeader(headerFrom);
 
   SimulatedStateBuilder get _$this {
     if (_$v != null) {
@@ -2954,7 +3014,7 @@ class _$LeakSimulation extends LeakSimulation {
 
 /// Leak Simulation builder class
 ///
-class LeakSimulationBuilder implements BuilderWithInstanciator<LeakSimulation, LeakSimulationBuilder>, ImcBuilderHeaderPart {
+class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LeakSimulation, LeakSimulationBuilder> {
   _$LeakSimulation _$v;
 
   DateTime _timestamp;
@@ -2997,7 +3057,11 @@ class LeakSimulationBuilder implements BuilderWithInstanciator<LeakSimulation, L
 
   LeakSimulationBuilder();
 
-  LeakSimulationBuilder get newInstance => LeakSimulationBuilder();
+  LeakSimulationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LeakSimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LeakSimulationBuilder()..copyFromHeader(headerFrom);
 
   LeakSimulationBuilder get _$this {
     if (_$v != null) {
@@ -3128,7 +3192,7 @@ class _$UASimulation extends UASimulation {
 
 /// Underwater Acoustics Simulation builder class
 ///
-class UASimulationBuilder implements BuilderWithInstanciator<UASimulation, UASimulationBuilder>, ImcBuilderHeaderPart {
+class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UASimulation, UASimulationBuilder> {
   _$UASimulation _$v;
 
   DateTime _timestamp;
@@ -3175,7 +3239,11 @@ class UASimulationBuilder implements BuilderWithInstanciator<UASimulation, UASim
 
   UASimulationBuilder();
 
-  UASimulationBuilder get newInstance => UASimulationBuilder();
+  UASimulationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UASimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UASimulationBuilder()..copyFromHeader(headerFrom);
 
   UASimulationBuilder get _$this {
     if (_$v != null) {
@@ -3308,7 +3376,7 @@ class _$DynamicsSimParam extends DynamicsSimParam {
 
 /// Dynamics Simulation Parameters builder class
 ///
-class DynamicsSimParamBuilder implements BuilderWithInstanciator<DynamicsSimParam, DynamicsSimParamBuilder>, ImcBuilderHeaderPart {
+class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DynamicsSimParam, DynamicsSimParamBuilder> {
   _$DynamicsSimParam _$v;
 
   DateTime _timestamp;
@@ -3355,7 +3423,11 @@ class DynamicsSimParamBuilder implements BuilderWithInstanciator<DynamicsSimPara
 
   DynamicsSimParamBuilder();
 
-  DynamicsSimParamBuilder get newInstance => DynamicsSimParamBuilder();
+  DynamicsSimParamBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DynamicsSimParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DynamicsSimParamBuilder()..copyFromHeader(headerFrom);
 
   DynamicsSimParamBuilder get _$this {
     if (_$v != null) {
@@ -3482,7 +3554,7 @@ class _$StorageUsage extends StorageUsage {
 
 /// Storage Usage builder class
 ///
-class StorageUsageBuilder implements BuilderWithInstanciator<StorageUsage, StorageUsageBuilder>, ImcBuilderHeaderPart {
+class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StorageUsage, StorageUsageBuilder> {
   _$StorageUsage _$v;
 
   DateTime _timestamp;
@@ -3525,7 +3597,11 @@ class StorageUsageBuilder implements BuilderWithInstanciator<StorageUsage, Stora
 
   StorageUsageBuilder();
 
-  StorageUsageBuilder get newInstance => StorageUsageBuilder();
+  StorageUsageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  StorageUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StorageUsageBuilder()..copyFromHeader(headerFrom);
 
   StorageUsageBuilder get _$this {
     if (_$v != null) {
@@ -3656,7 +3732,7 @@ class _$CacheControl extends CacheControl {
 
 /// Cache Control builder class
 ///
-class CacheControlBuilder implements BuilderWithInstanciator<CacheControl, CacheControlBuilder>, ImcBuilderHeaderPart {
+class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CacheControl, CacheControlBuilder> {
   _$CacheControl _$v;
 
   DateTime _timestamp;
@@ -3703,7 +3779,11 @@ class CacheControlBuilder implements BuilderWithInstanciator<CacheControl, Cache
 
   CacheControlBuilder();
 
-  CacheControlBuilder get newInstance => CacheControlBuilder();
+  CacheControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CacheControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CacheControlBuilder()..copyFromHeader(headerFrom);
 
   CacheControlBuilder get _$this {
     if (_$v != null) {
@@ -3830,7 +3910,7 @@ class _$LoggingControl extends LoggingControl {
 
 /// Logging Control builder class
 ///
-class LoggingControlBuilder implements BuilderWithInstanciator<LoggingControl, LoggingControlBuilder>, ImcBuilderHeaderPart {
+class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LoggingControl, LoggingControlBuilder> {
   _$LoggingControl _$v;
 
   DateTime _timestamp;
@@ -3873,7 +3953,11 @@ class LoggingControlBuilder implements BuilderWithInstanciator<LoggingControl, L
 
   LoggingControlBuilder();
 
-  LoggingControlBuilder get newInstance => LoggingControlBuilder();
+  LoggingControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LoggingControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LoggingControlBuilder()..copyFromHeader(headerFrom);
 
   LoggingControlBuilder get _$this {
     if (_$v != null) {
@@ -4010,7 +4094,7 @@ class _$LogBookEntry extends LogBookEntry {
 
 /// Log Book Entry builder class
 ///
-class LogBookEntryBuilder implements BuilderWithInstanciator<LogBookEntry, LogBookEntryBuilder>, ImcBuilderHeaderPart {
+class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LogBookEntry, LogBookEntryBuilder> {
   _$LogBookEntry _$v;
 
   DateTime _timestamp;
@@ -4061,7 +4145,11 @@ class LogBookEntryBuilder implements BuilderWithInstanciator<LogBookEntry, LogBo
 
   LogBookEntryBuilder();
 
-  LogBookEntryBuilder get newInstance => LogBookEntryBuilder();
+  LogBookEntryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LogBookEntryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LogBookEntryBuilder()..copyFromHeader(headerFrom);
 
   LogBookEntryBuilder get _$this {
     if (_$v != null) {
@@ -4196,7 +4284,7 @@ class _$LogBookControl extends LogBookControl {
 
 /// Log Book Control builder class
 ///
-class LogBookControlBuilder implements BuilderWithInstanciator<LogBookControl, LogBookControlBuilder>, ImcBuilderHeaderPart {
+class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LogBookControl, LogBookControlBuilder> {
   _$LogBookControl _$v;
 
   DateTime _timestamp;
@@ -4243,7 +4331,11 @@ class LogBookControlBuilder implements BuilderWithInstanciator<LogBookControl, L
 
   LogBookControlBuilder();
 
-  LogBookControlBuilder get newInstance => LogBookControlBuilder();
+  LogBookControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LogBookControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LogBookControlBuilder()..copyFromHeader(headerFrom);
 
   LogBookControlBuilder get _$this {
     if (_$v != null) {
@@ -4370,7 +4462,7 @@ class _$ReplayControl extends ReplayControl {
 
 /// Replay Control builder class
 ///
-class ReplayControlBuilder implements BuilderWithInstanciator<ReplayControl, ReplayControlBuilder>, ImcBuilderHeaderPart {
+class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ReplayControl, ReplayControlBuilder> {
   _$ReplayControl _$v;
 
   DateTime _timestamp;
@@ -4413,7 +4505,11 @@ class ReplayControlBuilder implements BuilderWithInstanciator<ReplayControl, Rep
 
   ReplayControlBuilder();
 
-  ReplayControlBuilder get newInstance => ReplayControlBuilder();
+  ReplayControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ReplayControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReplayControlBuilder()..copyFromHeader(headerFrom);
 
   ReplayControlBuilder get _$this {
     if (_$v != null) {
@@ -4544,7 +4640,7 @@ class _$ClockControl extends ClockControl {
 
 /// Clock Control builder class
 ///
-class ClockControlBuilder implements BuilderWithInstanciator<ClockControl, ClockControlBuilder>, ImcBuilderHeaderPart {
+class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ClockControl, ClockControlBuilder> {
   _$ClockControl _$v;
 
   DateTime _timestamp;
@@ -4591,7 +4687,11 @@ class ClockControlBuilder implements BuilderWithInstanciator<ClockControl, Clock
 
   ClockControlBuilder();
 
-  ClockControlBuilder get newInstance => ClockControlBuilder();
+  ClockControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ClockControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ClockControlBuilder()..copyFromHeader(headerFrom);
 
   ClockControlBuilder get _$this {
     if (_$v != null) {
@@ -4724,7 +4824,7 @@ class _$HistoricCTD extends HistoricCTD {
 
 /// Historic CTD builder class
 ///
-class HistoricCTDBuilder implements BuilderWithInstanciator<HistoricCTD, HistoricCTDBuilder>, ImcBuilderHeaderPart {
+class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricCTD, HistoricCTDBuilder> {
   _$HistoricCTD _$v;
 
   DateTime _timestamp;
@@ -4771,7 +4871,11 @@ class HistoricCTDBuilder implements BuilderWithInstanciator<HistoricCTD, Histori
 
   HistoricCTDBuilder();
 
-  HistoricCTDBuilder get newInstance => HistoricCTDBuilder();
+  HistoricCTDBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HistoricCTDBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricCTDBuilder()..copyFromHeader(headerFrom);
 
   HistoricCTDBuilder get _$this {
     if (_$v != null) {
@@ -4916,7 +5020,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
 
 /// Historic Telemetry builder class
 ///
-class HistoricTelemetryBuilder implements BuilderWithInstanciator<HistoricTelemetry, HistoricTelemetryBuilder>, ImcBuilderHeaderPart {
+class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricTelemetry, HistoricTelemetryBuilder> {
   _$HistoricTelemetry _$v;
 
   DateTime _timestamp;
@@ -4971,7 +5075,11 @@ class HistoricTelemetryBuilder implements BuilderWithInstanciator<HistoricTeleme
 
   HistoricTelemetryBuilder();
 
-  HistoricTelemetryBuilder get newInstance => HistoricTelemetryBuilder();
+  HistoricTelemetryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HistoricTelemetryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricTelemetryBuilder()..copyFromHeader(headerFrom);
 
   HistoricTelemetryBuilder get _$this {
     if (_$v != null) {
@@ -5132,7 +5240,7 @@ class _$HistoricSonarData extends HistoricSonarData {
 
 /// Historic Sonar Data builder class
 ///
-class HistoricSonarDataBuilder implements BuilderWithInstanciator<HistoricSonarData, HistoricSonarDataBuilder>, ImcBuilderHeaderPart {
+class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricSonarData, HistoricSonarDataBuilder> {
   _$HistoricSonarData _$v;
 
   DateTime _timestamp;
@@ -5195,7 +5303,11 @@ class HistoricSonarDataBuilder implements BuilderWithInstanciator<HistoricSonarD
 
   HistoricSonarDataBuilder();
 
-  HistoricSonarDataBuilder get newInstance => HistoricSonarDataBuilder();
+  HistoricSonarDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HistoricSonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricSonarDataBuilder()..copyFromHeader(headerFrom);
 
   HistoricSonarDataBuilder get _$this {
     if (_$v != null) {
@@ -5330,7 +5442,7 @@ class _$HistoricEvent extends HistoricEvent {
 
 /// Historic Event builder class
 ///
-class HistoricEventBuilder implements BuilderWithInstanciator<HistoricEvent, HistoricEventBuilder>, ImcBuilderHeaderPart {
+class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricEvent, HistoricEventBuilder> {
   _$HistoricEvent _$v;
 
   DateTime _timestamp;
@@ -5373,7 +5485,11 @@ class HistoricEventBuilder implements BuilderWithInstanciator<HistoricEvent, His
 
   HistoricEventBuilder();
 
-  HistoricEventBuilder get newInstance => HistoricEventBuilder();
+  HistoricEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HistoricEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricEventBuilder()..copyFromHeader(headerFrom);
 
   HistoricEventBuilder get _$this {
     if (_$v != null) {
@@ -5516,7 +5632,7 @@ class _$VerticalProfile extends VerticalProfile {
 
 /// Vertical Profile builder class
 ///
-class VerticalProfileBuilder implements BuilderWithInstanciator<VerticalProfile, VerticalProfileBuilder>, ImcBuilderHeaderPart {
+class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VerticalProfile, VerticalProfileBuilder> {
   _$VerticalProfile _$v;
 
   DateTime _timestamp;
@@ -5571,7 +5687,11 @@ class VerticalProfileBuilder implements BuilderWithInstanciator<VerticalProfile,
 
   VerticalProfileBuilder();
 
-  VerticalProfileBuilder get newInstance => VerticalProfileBuilder();
+  VerticalProfileBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VerticalProfileBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VerticalProfileBuilder()..copyFromHeader(headerFrom);
 
   VerticalProfileBuilder get _$this {
     if (_$v != null) {
@@ -5702,7 +5822,7 @@ class _$ProfileSample extends ProfileSample {
 
 /// Profile Sample builder class
 ///
-class ProfileSampleBuilder implements BuilderWithInstanciator<ProfileSample, ProfileSampleBuilder>, ImcBuilderHeaderPart {
+class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ProfileSample, ProfileSampleBuilder> {
   _$ProfileSample _$v;
 
   DateTime _timestamp;
@@ -5745,7 +5865,11 @@ class ProfileSampleBuilder implements BuilderWithInstanciator<ProfileSample, Pro
 
   ProfileSampleBuilder();
 
-  ProfileSampleBuilder get newInstance => ProfileSampleBuilder();
+  ProfileSampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ProfileSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ProfileSampleBuilder()..copyFromHeader(headerFrom);
 
   ProfileSampleBuilder get _$this {
     if (_$v != null) {
@@ -5858,7 +5982,7 @@ class _$Heartbeat extends Heartbeat {
 
 /// Heartbeat builder class
 ///
-class HeartbeatBuilder implements BuilderWithInstanciator<Heartbeat, HeartbeatBuilder>, ImcBuilderHeaderPart {
+class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Heartbeat, HeartbeatBuilder> {
   _$Heartbeat _$v;
 
   DateTime _timestamp;
@@ -5893,7 +6017,11 @@ class HeartbeatBuilder implements BuilderWithInstanciator<Heartbeat, HeartbeatBu
 
   HeartbeatBuilder();
 
-  HeartbeatBuilder get newInstance => HeartbeatBuilder();
+  HeartbeatBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HeartbeatBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HeartbeatBuilder()..copyFromHeader(headerFrom);
 
   HeartbeatBuilder get _$this {
     if (_$v != null) {
@@ -6044,7 +6172,7 @@ class _$Announce extends Announce {
 
 /// Announce builder class
 ///
-class AnnounceBuilder implements BuilderWithInstanciator<Announce, AnnounceBuilder>, ImcBuilderHeaderPart {
+class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Announce, AnnounceBuilder> {
   _$Announce _$v;
 
   DateTime _timestamp;
@@ -6107,7 +6235,11 @@ class AnnounceBuilder implements BuilderWithInstanciator<Announce, AnnounceBuild
 
   AnnounceBuilder();
 
-  AnnounceBuilder get newInstance => AnnounceBuilder();
+  AnnounceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AnnounceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AnnounceBuilder()..copyFromHeader(headerFrom);
 
   AnnounceBuilder get _$this {
     if (_$v != null) {
@@ -6242,7 +6374,7 @@ class _$AnnounceService extends AnnounceService {
 
 /// Announce Service builder class
 ///
-class AnnounceServiceBuilder implements BuilderWithInstanciator<AnnounceService, AnnounceServiceBuilder>, ImcBuilderHeaderPart {
+class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AnnounceService, AnnounceServiceBuilder> {
   _$AnnounceService _$v;
 
   DateTime _timestamp;
@@ -6285,7 +6417,11 @@ class AnnounceServiceBuilder implements BuilderWithInstanciator<AnnounceService,
 
   AnnounceServiceBuilder();
 
-  AnnounceServiceBuilder get newInstance => AnnounceServiceBuilder();
+  AnnounceServiceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AnnounceServiceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AnnounceServiceBuilder()..copyFromHeader(headerFrom);
 
   AnnounceServiceBuilder get _$this {
     if (_$v != null) {
@@ -6404,7 +6540,7 @@ class _$RSSI extends RSSI {
 
 /// Receive Signal Strength Information builder class
 ///
-class RSSIBuilder implements BuilderWithInstanciator<RSSI, RSSIBuilder>, ImcBuilderHeaderPart {
+class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RSSI, RSSIBuilder> {
   _$RSSI _$v;
 
   DateTime _timestamp;
@@ -6443,7 +6579,11 @@ class RSSIBuilder implements BuilderWithInstanciator<RSSI, RSSIBuilder>, ImcBuil
 
   RSSIBuilder();
 
-  RSSIBuilder get newInstance => RSSIBuilder();
+  RSSIBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RSSIBuilder()..copyFromHeader(headerFrom);
 
   RSSIBuilder get _$this {
     if (_$v != null) {
@@ -6560,7 +6700,7 @@ class _$VSWR extends VSWR {
 
 /// Voltage Standing Wave Ratio builder class
 ///
-class VSWRBuilder implements BuilderWithInstanciator<VSWR, VSWRBuilder>, ImcBuilderHeaderPart {
+class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VSWR, VSWRBuilder> {
   _$VSWR _$v;
 
   DateTime _timestamp;
@@ -6599,7 +6739,11 @@ class VSWRBuilder implements BuilderWithInstanciator<VSWR, VSWRBuilder>, ImcBuil
 
   VSWRBuilder();
 
-  VSWRBuilder get newInstance => VSWRBuilder();
+  VSWRBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VSWRBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VSWRBuilder()..copyFromHeader(headerFrom);
 
   VSWRBuilder get _$this {
     if (_$v != null) {
@@ -6716,7 +6860,7 @@ class _$LinkLevel extends LinkLevel {
 
 /// Link Level builder class
 ///
-class LinkLevelBuilder implements BuilderWithInstanciator<LinkLevel, LinkLevelBuilder>, ImcBuilderHeaderPart {
+class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LinkLevel, LinkLevelBuilder> {
   _$LinkLevel _$v;
 
   DateTime _timestamp;
@@ -6755,7 +6899,11 @@ class LinkLevelBuilder implements BuilderWithInstanciator<LinkLevel, LinkLevelBu
 
   LinkLevelBuilder();
 
-  LinkLevelBuilder get newInstance => LinkLevelBuilder();
+  LinkLevelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LinkLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LinkLevelBuilder()..copyFromHeader(headerFrom);
 
   LinkLevelBuilder get _$this {
     if (_$v != null) {
@@ -6884,7 +7032,7 @@ class _$Sms extends Sms {
 
 /// SMS builder class
 ///
-class SmsBuilder implements BuilderWithInstanciator<Sms, SmsBuilder>, ImcBuilderHeaderPart {
+class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Sms, SmsBuilder> {
   _$Sms _$v;
 
   DateTime _timestamp;
@@ -6931,7 +7079,11 @@ class SmsBuilder implements BuilderWithInstanciator<Sms, SmsBuilder>, ImcBuilder
 
   SmsBuilder();
 
-  SmsBuilder get newInstance => SmsBuilder();
+  SmsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SmsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsBuilder()..copyFromHeader(headerFrom);
 
   SmsBuilder get _$this {
     if (_$v != null) {
@@ -7070,7 +7222,7 @@ class _$SmsTx extends SmsTx {
 
 /// SMS Transmit builder class
 ///
-class SmsTxBuilder implements BuilderWithInstanciator<SmsTx, SmsTxBuilder>, ImcBuilderHeaderPart {
+class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsTx, SmsTxBuilder> {
   _$SmsTx _$v;
 
   DateTime _timestamp;
@@ -7121,7 +7273,11 @@ class SmsTxBuilder implements BuilderWithInstanciator<SmsTx, SmsTxBuilder>, ImcB
 
   SmsTxBuilder();
 
-  SmsTxBuilder get newInstance => SmsTxBuilder();
+  SmsTxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SmsTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsTxBuilder()..copyFromHeader(headerFrom);
 
   SmsTxBuilder get _$this {
     if (_$v != null) {
@@ -7250,7 +7406,7 @@ class _$SmsRx extends SmsRx {
 
 /// SMS Receive builder class
 ///
-class SmsRxBuilder implements BuilderWithInstanciator<SmsRx, SmsRxBuilder>, ImcBuilderHeaderPart {
+class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsRx, SmsRxBuilder> {
   _$SmsRx _$v;
 
   DateTime _timestamp;
@@ -7293,7 +7449,11 @@ class SmsRxBuilder implements BuilderWithInstanciator<SmsRx, SmsRxBuilder>, ImcB
 
   SmsRxBuilder();
 
-  SmsRxBuilder get newInstance => SmsRxBuilder();
+  SmsRxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SmsRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsRxBuilder()..copyFromHeader(headerFrom);
 
   SmsRxBuilder get _$this {
     if (_$v != null) {
@@ -7424,7 +7584,7 @@ class _$SmsState extends SmsState {
 
 /// SMS State builder class
 ///
-class SmsStateBuilder implements BuilderWithInstanciator<SmsState, SmsStateBuilder>, ImcBuilderHeaderPart {
+class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsState, SmsStateBuilder> {
   _$SmsState _$v;
 
   DateTime _timestamp;
@@ -7471,7 +7631,11 @@ class SmsStateBuilder implements BuilderWithInstanciator<SmsState, SmsStateBuild
 
   SmsStateBuilder();
 
-  SmsStateBuilder get newInstance => SmsStateBuilder();
+  SmsStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SmsStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsStateBuilder()..copyFromHeader(headerFrom);
 
   SmsStateBuilder get _$this {
     if (_$v != null) {
@@ -7598,7 +7762,7 @@ class _$TextMessage extends TextMessage {
 
 /// Text Message builder class
 ///
-class TextMessageBuilder implements BuilderWithInstanciator<TextMessage, TextMessageBuilder>, ImcBuilderHeaderPart {
+class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TextMessage, TextMessageBuilder> {
   _$TextMessage _$v;
 
   DateTime _timestamp;
@@ -7641,7 +7805,11 @@ class TextMessageBuilder implements BuilderWithInstanciator<TextMessage, TextMes
 
   TextMessageBuilder();
 
-  TextMessageBuilder get newInstance => TextMessageBuilder();
+  TextMessageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TextMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TextMessageBuilder()..copyFromHeader(headerFrom);
 
   TextMessageBuilder get _$this {
     if (_$v != null) {
@@ -7784,7 +7952,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
 
 /// Received Iridium Message builder class
 ///
-class IridiumMsgRxBuilder implements BuilderWithInstanciator<IridiumMsgRx, IridiumMsgRxBuilder>, ImcBuilderHeaderPart {
+class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IridiumMsgRx, IridiumMsgRxBuilder> {
   _$IridiumMsgRx _$v;
 
   DateTime _timestamp;
@@ -7839,7 +8007,11 @@ class IridiumMsgRxBuilder implements BuilderWithInstanciator<IridiumMsgRx, Iridi
 
   IridiumMsgRxBuilder();
 
-  IridiumMsgRxBuilder get newInstance => IridiumMsgRxBuilder();
+  IridiumMsgRxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  IridiumMsgRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumMsgRxBuilder()..copyFromHeader(headerFrom);
 
   IridiumMsgRxBuilder get _$this {
     if (_$v != null) {
@@ -7982,7 +8154,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
 
 /// Transmit Iridium Message builder class
 ///
-class IridiumMsgTxBuilder implements BuilderWithInstanciator<IridiumMsgTx, IridiumMsgTxBuilder>, ImcBuilderHeaderPart {
+class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IridiumMsgTx, IridiumMsgTxBuilder> {
   _$IridiumMsgTx _$v;
 
   DateTime _timestamp;
@@ -8033,7 +8205,11 @@ class IridiumMsgTxBuilder implements BuilderWithInstanciator<IridiumMsgTx, Iridi
 
   IridiumMsgTxBuilder();
 
-  IridiumMsgTxBuilder get newInstance => IridiumMsgTxBuilder();
+  IridiumMsgTxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  IridiumMsgTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumMsgTxBuilder()..copyFromHeader(headerFrom);
 
   IridiumMsgTxBuilder get _$this {
     if (_$v != null) {
@@ -8168,7 +8344,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
 
 /// Iridium Transmission Status builder class
 ///
-class IridiumTxStatusBuilder implements BuilderWithInstanciator<IridiumTxStatus, IridiumTxStatusBuilder>, ImcBuilderHeaderPart {
+class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IridiumTxStatus, IridiumTxStatusBuilder> {
   _$IridiumTxStatus _$v;
 
   DateTime _timestamp;
@@ -8215,7 +8391,11 @@ class IridiumTxStatusBuilder implements BuilderWithInstanciator<IridiumTxStatus,
 
   IridiumTxStatusBuilder();
 
-  IridiumTxStatusBuilder get newInstance => IridiumTxStatusBuilder();
+  IridiumTxStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  IridiumTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumTxStatusBuilder()..copyFromHeader(headerFrom);
 
   IridiumTxStatusBuilder get _$this {
     if (_$v != null) {
@@ -8342,7 +8522,7 @@ class _$GroupMembershipState extends GroupMembershipState {
 
 /// Group Membership State builder class
 ///
-class GroupMembershipStateBuilder implements BuilderWithInstanciator<GroupMembershipState, GroupMembershipStateBuilder>, ImcBuilderHeaderPart {
+class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GroupMembershipState, GroupMembershipStateBuilder> {
   _$GroupMembershipState _$v;
 
   DateTime _timestamp;
@@ -8385,7 +8565,11 @@ class GroupMembershipStateBuilder implements BuilderWithInstanciator<GroupMember
 
   GroupMembershipStateBuilder();
 
-  GroupMembershipStateBuilder get newInstance => GroupMembershipStateBuilder();
+  GroupMembershipStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GroupMembershipStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroupMembershipStateBuilder()..copyFromHeader(headerFrom);
 
   GroupMembershipStateBuilder get _$this {
     if (_$v != null) {
@@ -8516,7 +8700,7 @@ class _$SystemGroup extends SystemGroup {
 
 /// System Group builder class
 ///
-class SystemGroupBuilder implements BuilderWithInstanciator<SystemGroup, SystemGroupBuilder>, ImcBuilderHeaderPart {
+class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SystemGroup, SystemGroupBuilder> {
   _$SystemGroup _$v;
 
   DateTime _timestamp;
@@ -8563,7 +8747,11 @@ class SystemGroupBuilder implements BuilderWithInstanciator<SystemGroup, SystemG
 
   SystemGroupBuilder();
 
-  SystemGroupBuilder get newInstance => SystemGroupBuilder();
+  SystemGroupBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SystemGroupBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SystemGroupBuilder()..copyFromHeader(headerFrom);
 
   SystemGroupBuilder get _$this {
     if (_$v != null) {
@@ -8690,7 +8878,7 @@ class _$LinkLatency extends LinkLatency {
 
 /// Link Latency builder class
 ///
-class LinkLatencyBuilder implements BuilderWithInstanciator<LinkLatency, LinkLatencyBuilder>, ImcBuilderHeaderPart {
+class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LinkLatency, LinkLatencyBuilder> {
   _$LinkLatency _$v;
 
   DateTime _timestamp;
@@ -8733,7 +8921,11 @@ class LinkLatencyBuilder implements BuilderWithInstanciator<LinkLatency, LinkLat
 
   LinkLatencyBuilder();
 
-  LinkLatencyBuilder get newInstance => LinkLatencyBuilder();
+  LinkLatencyBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LinkLatencyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LinkLatencyBuilder()..copyFromHeader(headerFrom);
 
   LinkLatencyBuilder get _$this {
     if (_$v != null) {
@@ -8858,7 +9050,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
 
 /// Extended Receive Signal Strength Information builder class
 ///
-class ExtendedRSSIBuilder implements BuilderWithInstanciator<ExtendedRSSI, ExtendedRSSIBuilder>, ImcBuilderHeaderPart {
+class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ExtendedRSSI, ExtendedRSSIBuilder> {
   _$ExtendedRSSI _$v;
 
   DateTime _timestamp;
@@ -8901,7 +9093,11 @@ class ExtendedRSSIBuilder implements BuilderWithInstanciator<ExtendedRSSI, Exten
 
   ExtendedRSSIBuilder();
 
-  ExtendedRSSIBuilder get newInstance => ExtendedRSSIBuilder();
+  ExtendedRSSIBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ExtendedRSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ExtendedRSSIBuilder()..copyFromHeader(headerFrom);
 
   ExtendedRSSIBuilder get _$this {
     if (_$v != null) {
@@ -9038,7 +9234,7 @@ class _$HistoricData extends HistoricData {
 
 /// Historic Data Series builder class
 ///
-class HistoricDataBuilder implements BuilderWithInstanciator<HistoricData, HistoricDataBuilder>, ImcBuilderHeaderPart {
+class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricData, HistoricDataBuilder> {
   _$HistoricData _$v;
 
   DateTime _timestamp;
@@ -9089,7 +9285,11 @@ class HistoricDataBuilder implements BuilderWithInstanciator<HistoricData, Histo
 
   HistoricDataBuilder();
 
-  HistoricDataBuilder get newInstance => HistoricDataBuilder();
+  HistoricDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HistoricDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricDataBuilder()..copyFromHeader(headerFrom);
 
   HistoricDataBuilder get _$this {
     if (_$v != null) {
@@ -9230,7 +9430,7 @@ class _$CompressedHistory extends CompressedHistory {
 
 /// Compressed Historic Data Series builder class
 ///
-class CompressedHistoryBuilder implements BuilderWithInstanciator<CompressedHistory, CompressedHistoryBuilder>, ImcBuilderHeaderPart {
+class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CompressedHistory, CompressedHistoryBuilder> {
   _$CompressedHistory _$v;
 
   DateTime _timestamp;
@@ -9281,7 +9481,11 @@ class CompressedHistoryBuilder implements BuilderWithInstanciator<CompressedHist
 
   CompressedHistoryBuilder();
 
-  CompressedHistoryBuilder get newInstance => CompressedHistoryBuilder();
+  CompressedHistoryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CompressedHistoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompressedHistoryBuilder()..copyFromHeader(headerFrom);
 
   CompressedHistoryBuilder get _$this {
     if (_$v != null) {
@@ -9440,7 +9644,7 @@ class _$HistoricSample extends HistoricSample {
 
 /// Historic Data Sample builder class
 ///
-class HistoricSampleBuilder implements BuilderWithInstanciator<HistoricSample, HistoricSampleBuilder>, ImcBuilderHeaderPart {
+class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricSample, HistoricSampleBuilder> {
   _$HistoricSample _$v;
 
   DateTime _timestamp;
@@ -9503,7 +9707,11 @@ class HistoricSampleBuilder implements BuilderWithInstanciator<HistoricSample, H
 
   HistoricSampleBuilder();
 
-  HistoricSampleBuilder get newInstance => HistoricSampleBuilder();
+  HistoricSampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HistoricSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricSampleBuilder()..copyFromHeader(headerFrom);
 
   HistoricSampleBuilder get _$this {
     if (_$v != null) {
@@ -9650,7 +9858,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
 
 /// Historic Data Query builder class
 ///
-class HistoricDataQueryBuilder implements BuilderWithInstanciator<HistoricDataQuery, HistoricDataQueryBuilder>, ImcBuilderHeaderPart {
+class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricDataQuery, HistoricDataQueryBuilder> {
   _$HistoricDataQuery _$v;
 
   DateTime _timestamp;
@@ -9701,7 +9909,11 @@ class HistoricDataQueryBuilder implements BuilderWithInstanciator<HistoricDataQu
 
   HistoricDataQueryBuilder();
 
-  HistoricDataQueryBuilder get newInstance => HistoricDataQueryBuilder();
+  HistoricDataQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  HistoricDataQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricDataQueryBuilder()..copyFromHeader(headerFrom);
 
   HistoricDataQueryBuilder get _$this {
     if (_$v != null) {
@@ -9842,7 +10054,7 @@ class _$RemoteCommand extends RemoteCommand {
 
 /// Remote Command builder class
 ///
-class RemoteCommandBuilder implements BuilderWithInstanciator<RemoteCommand, RemoteCommandBuilder>, ImcBuilderHeaderPart {
+class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteCommand, RemoteCommandBuilder> {
   _$RemoteCommand _$v;
 
   DateTime _timestamp;
@@ -9893,7 +10105,11 @@ class RemoteCommandBuilder implements BuilderWithInstanciator<RemoteCommand, Rem
 
   RemoteCommandBuilder();
 
-  RemoteCommandBuilder get newInstance => RemoteCommandBuilder();
+  RemoteCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RemoteCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteCommandBuilder()..copyFromHeader(headerFrom);
 
   RemoteCommandBuilder get _$this {
     if (_$v != null) {
@@ -10034,7 +10250,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
 
 /// Communication Systems Query builder class
 ///
-class CommSystemsQueryBuilder implements BuilderWithInstanciator<CommSystemsQuery, CommSystemsQueryBuilder>, ImcBuilderHeaderPart {
+class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CommSystemsQuery, CommSystemsQueryBuilder> {
   _$CommSystemsQuery _$v;
 
   DateTime _timestamp;
@@ -10085,7 +10301,11 @@ class CommSystemsQueryBuilder implements BuilderWithInstanciator<CommSystemsQuer
 
   CommSystemsQueryBuilder();
 
-  CommSystemsQueryBuilder get newInstance => CommSystemsQueryBuilder();
+  CommSystemsQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CommSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CommSystemsQueryBuilder()..copyFromHeader(headerFrom);
 
   CommSystemsQueryBuilder get _$this {
     if (_$v != null) {
@@ -10256,7 +10476,7 @@ class _$TelemetryMsg extends TelemetryMsg {
 
 /// Telemetry Message builder class
 ///
-class TelemetryMsgBuilder implements BuilderWithInstanciator<TelemetryMsg, TelemetryMsgBuilder>, ImcBuilderHeaderPart {
+class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TelemetryMsg, TelemetryMsgBuilder> {
   _$TelemetryMsg _$v;
 
   DateTime _timestamp;
@@ -10327,7 +10547,11 @@ class TelemetryMsgBuilder implements BuilderWithInstanciator<TelemetryMsg, Telem
 
   TelemetryMsgBuilder();
 
-  TelemetryMsgBuilder get newInstance => TelemetryMsgBuilder();
+  TelemetryMsgBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TelemetryMsgBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TelemetryMsgBuilder()..copyFromHeader(headerFrom);
 
   TelemetryMsgBuilder get _$this {
     if (_$v != null) {
@@ -10466,7 +10690,7 @@ class _$LblRange extends LblRange {
 
 /// LBL Range builder class
 ///
-class LblRangeBuilder implements BuilderWithInstanciator<LblRange, LblRangeBuilder>, ImcBuilderHeaderPart {
+class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblRange, LblRangeBuilder> {
   _$LblRange _$v;
 
   DateTime _timestamp;
@@ -10509,7 +10733,11 @@ class LblRangeBuilder implements BuilderWithInstanciator<LblRange, LblRangeBuild
 
   LblRangeBuilder();
 
-  LblRangeBuilder get newInstance => LblRangeBuilder();
+  LblRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LblRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblRangeBuilder()..copyFromHeader(headerFrom);
 
   LblRangeBuilder get _$this {
     if (_$v != null) {
@@ -10664,7 +10892,7 @@ class _$LblBeacon extends LblBeacon {
 
 /// LBL Beacon Configuration builder class
 ///
-class LblBeaconBuilder implements BuilderWithInstanciator<LblBeacon, LblBeaconBuilder>, ImcBuilderHeaderPart {
+class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblBeacon, LblBeaconBuilder> {
   _$LblBeacon _$v;
 
   DateTime _timestamp;
@@ -10727,7 +10955,11 @@ class LblBeaconBuilder implements BuilderWithInstanciator<LblBeacon, LblBeaconBu
 
   LblBeaconBuilder();
 
-  LblBeaconBuilder get newInstance => LblBeaconBuilder();
+  LblBeaconBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LblBeaconBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblBeaconBuilder()..copyFromHeader(headerFrom);
 
   LblBeaconBuilder get _$this {
     if (_$v != null) {
@@ -10862,7 +11094,7 @@ class _$LblConfig extends LblConfig {
 
 /// LBL Configuration builder class
 ///
-class LblConfigBuilder implements BuilderWithInstanciator<LblConfig, LblConfigBuilder>, ImcBuilderHeaderPart {
+class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblConfig, LblConfigBuilder> {
   _$LblConfig _$v;
 
   DateTime _timestamp;
@@ -10905,7 +11137,11 @@ class LblConfigBuilder implements BuilderWithInstanciator<LblConfig, LblConfigBu
 
   LblConfigBuilder();
 
-  LblConfigBuilder get newInstance => LblConfigBuilder();
+  LblConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblConfigBuilder()..copyFromHeader(headerFrom);
 
   LblConfigBuilder get _$this {
     if (_$v != null) {
@@ -11024,7 +11260,7 @@ class _$AcousticMessage extends AcousticMessage {
 
 /// Acoustic Message builder class
 ///
-class AcousticMessageBuilder implements BuilderWithInstanciator<AcousticMessage, AcousticMessageBuilder>, ImcBuilderHeaderPart {
+class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticMessage, AcousticMessageBuilder> {
   _$AcousticMessage _$v;
 
   DateTime _timestamp;
@@ -11063,7 +11299,11 @@ class AcousticMessageBuilder implements BuilderWithInstanciator<AcousticMessage,
 
   AcousticMessageBuilder();
 
-  AcousticMessageBuilder get newInstance => AcousticMessageBuilder();
+  AcousticMessageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AcousticMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticMessageBuilder()..copyFromHeader(headerFrom);
 
   AcousticMessageBuilder get _$this {
     if (_$v != null) {
@@ -11198,7 +11438,7 @@ class _$AcousticOperation extends AcousticOperation {
 
 /// Acoustic Operation builder class
 ///
-class AcousticOperationBuilder implements BuilderWithInstanciator<AcousticOperation, AcousticOperationBuilder>, ImcBuilderHeaderPart {
+class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticOperation, AcousticOperationBuilder> {
   _$AcousticOperation _$v;
 
   DateTime _timestamp;
@@ -11249,7 +11489,11 @@ class AcousticOperationBuilder implements BuilderWithInstanciator<AcousticOperat
 
   AcousticOperationBuilder();
 
-  AcousticOperationBuilder get newInstance => AcousticOperationBuilder();
+  AcousticOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AcousticOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticOperationBuilder()..copyFromHeader(headerFrom);
 
   AcousticOperationBuilder get _$this {
     if (_$v != null) {
@@ -11366,7 +11610,7 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
 
 /// Acoustic Systems Query builder class
 ///
-class AcousticSystemsQueryBuilder implements BuilderWithInstanciator<AcousticSystemsQuery, AcousticSystemsQueryBuilder>, ImcBuilderHeaderPart {
+class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticSystemsQuery, AcousticSystemsQueryBuilder> {
   _$AcousticSystemsQuery _$v;
 
   DateTime _timestamp;
@@ -11401,7 +11645,11 @@ class AcousticSystemsQueryBuilder implements BuilderWithInstanciator<AcousticSys
 
   AcousticSystemsQueryBuilder();
 
-  AcousticSystemsQueryBuilder get newInstance => AcousticSystemsQueryBuilder();
+  AcousticSystemsQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AcousticSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticSystemsQueryBuilder()..copyFromHeader(headerFrom);
 
   AcousticSystemsQueryBuilder get _$this {
     if (_$v != null) {
@@ -11516,7 +11764,7 @@ class _$AcousticSystems extends AcousticSystems {
 
 /// Acoustic Systems builder class
 ///
-class AcousticSystemsBuilder implements BuilderWithInstanciator<AcousticSystems, AcousticSystemsBuilder>, ImcBuilderHeaderPart {
+class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticSystems, AcousticSystemsBuilder> {
   _$AcousticSystems _$v;
 
   DateTime _timestamp;
@@ -11555,7 +11803,11 @@ class AcousticSystemsBuilder implements BuilderWithInstanciator<AcousticSystems,
 
   AcousticSystemsBuilder();
 
-  AcousticSystemsBuilder get newInstance => AcousticSystemsBuilder();
+  AcousticSystemsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AcousticSystemsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticSystemsBuilder()..copyFromHeader(headerFrom);
 
   AcousticSystemsBuilder get _$this {
     if (_$v != null) {
@@ -11684,7 +11936,7 @@ class _$AcousticLink extends AcousticLink {
 
 /// Acoustic Link Quality builder class
 ///
-class AcousticLinkBuilder implements BuilderWithInstanciator<AcousticLink, AcousticLinkBuilder>, ImcBuilderHeaderPart {
+class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticLink, AcousticLinkBuilder> {
   _$AcousticLink _$v;
 
   DateTime _timestamp;
@@ -11731,7 +11983,11 @@ class AcousticLinkBuilder implements BuilderWithInstanciator<AcousticLink, Acous
 
   AcousticLinkBuilder();
 
-  AcousticLinkBuilder get newInstance => AcousticLinkBuilder();
+  AcousticLinkBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AcousticLinkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticLinkBuilder()..copyFromHeader(headerFrom);
 
   AcousticLinkBuilder get _$this {
     if (_$v != null) {
@@ -11852,7 +12108,7 @@ class _$Rpm extends Rpm {
 
 /// Revolutions Per Minute builder class
 ///
-class RpmBuilder implements BuilderWithInstanciator<Rpm, RpmBuilder>, ImcBuilderHeaderPart {
+class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Rpm, RpmBuilder> {
   _$Rpm _$v;
 
   DateTime _timestamp;
@@ -11891,7 +12147,11 @@ class RpmBuilder implements BuilderWithInstanciator<Rpm, RpmBuilder>, ImcBuilder
 
   RpmBuilder();
 
-  RpmBuilder get newInstance => RpmBuilder();
+  RpmBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RpmBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RpmBuilder()..copyFromHeader(headerFrom);
 
   RpmBuilder get _$this {
     if (_$v != null) {
@@ -12008,7 +12268,7 @@ class _$Voltage extends Voltage {
 
 /// Voltage builder class
 ///
-class VoltageBuilder implements BuilderWithInstanciator<Voltage, VoltageBuilder>, ImcBuilderHeaderPart {
+class VoltageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Voltage, VoltageBuilder> {
   _$Voltage _$v;
 
   DateTime _timestamp;
@@ -12047,7 +12307,11 @@ class VoltageBuilder implements BuilderWithInstanciator<Voltage, VoltageBuilder>
 
   VoltageBuilder();
 
-  VoltageBuilder get newInstance => VoltageBuilder();
+  VoltageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VoltageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VoltageBuilder()..copyFromHeader(headerFrom);
 
   VoltageBuilder get _$this {
     if (_$v != null) {
@@ -12164,7 +12428,7 @@ class _$Current extends Current {
 
 /// Current builder class
 ///
-class CurrentBuilder implements BuilderWithInstanciator<Current, CurrentBuilder>, ImcBuilderHeaderPart {
+class CurrentBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Current, CurrentBuilder> {
   _$Current _$v;
 
   DateTime _timestamp;
@@ -12203,7 +12467,11 @@ class CurrentBuilder implements BuilderWithInstanciator<Current, CurrentBuilder>
 
   CurrentBuilder();
 
-  CurrentBuilder get newInstance => CurrentBuilder();
+  CurrentBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CurrentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CurrentBuilder()..copyFromHeader(headerFrom);
 
   CurrentBuilder get _$this {
     if (_$v != null) {
@@ -12410,7 +12678,7 @@ class _$GpsFix extends GpsFix {
 
 /// GPS Fix builder class
 ///
-class GpsFixBuilder implements BuilderWithInstanciator<GpsFix, GpsFixBuilder>, ImcBuilderHeaderPart {
+class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsFix, GpsFixBuilder> {
   _$GpsFix _$v;
 
   DateTime _timestamp;
@@ -12509,7 +12777,11 @@ class GpsFixBuilder implements BuilderWithInstanciator<GpsFix, GpsFixBuilder>, I
 
   GpsFixBuilder();
 
-  GpsFixBuilder get newInstance => GpsFixBuilder();
+  GpsFixBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GpsFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixBuilder()..copyFromHeader(headerFrom);
 
   GpsFixBuilder get _$this {
     if (_$v != null) {
@@ -12680,7 +12952,7 @@ class _$EulerAngles extends EulerAngles {
 
 /// Euler Angles builder class
 ///
-class EulerAnglesBuilder implements BuilderWithInstanciator<EulerAngles, EulerAnglesBuilder>, ImcBuilderHeaderPart {
+class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EulerAngles, EulerAnglesBuilder> {
   _$EulerAngles _$v;
 
   DateTime _timestamp;
@@ -12735,7 +13007,11 @@ class EulerAnglesBuilder implements BuilderWithInstanciator<EulerAngles, EulerAn
 
   EulerAnglesBuilder();
 
-  EulerAnglesBuilder get newInstance => EulerAnglesBuilder();
+  EulerAnglesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EulerAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EulerAnglesBuilder()..copyFromHeader(headerFrom);
 
   EulerAnglesBuilder get _$this {
     if (_$v != null) {
@@ -12884,7 +13160,7 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
 
 /// Euler Angles Delta builder class
 ///
-class EulerAnglesDeltaBuilder implements BuilderWithInstanciator<EulerAnglesDelta, EulerAnglesDeltaBuilder>, ImcBuilderHeaderPart {
+class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
   _$EulerAnglesDelta _$v;
 
   DateTime _timestamp;
@@ -12939,7 +13215,11 @@ class EulerAnglesDeltaBuilder implements BuilderWithInstanciator<EulerAnglesDelt
 
   EulerAnglesDeltaBuilder();
 
-  EulerAnglesDeltaBuilder get newInstance => EulerAnglesDeltaBuilder();
+  EulerAnglesDeltaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EulerAnglesDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EulerAnglesDeltaBuilder()..copyFromHeader(headerFrom);
 
   EulerAnglesDeltaBuilder get _$this {
     if (_$v != null) {
@@ -13082,7 +13362,7 @@ class _$AngularVelocity extends AngularVelocity {
 
 /// Angular Velocity builder class
 ///
-class AngularVelocityBuilder implements BuilderWithInstanciator<AngularVelocity, AngularVelocityBuilder>, ImcBuilderHeaderPart {
+class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AngularVelocity, AngularVelocityBuilder> {
   _$AngularVelocity _$v;
 
   DateTime _timestamp;
@@ -13133,7 +13413,11 @@ class AngularVelocityBuilder implements BuilderWithInstanciator<AngularVelocity,
 
   AngularVelocityBuilder();
 
-  AngularVelocityBuilder get newInstance => AngularVelocityBuilder();
+  AngularVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AngularVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AngularVelocityBuilder()..copyFromHeader(headerFrom);
 
   AngularVelocityBuilder get _$this {
     if (_$v != null) {
@@ -13274,7 +13558,7 @@ class _$Acceleration extends Acceleration {
 
 /// Acceleration builder class
 ///
-class AccelerationBuilder implements BuilderWithInstanciator<Acceleration, AccelerationBuilder>, ImcBuilderHeaderPart {
+class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Acceleration, AccelerationBuilder> {
   _$Acceleration _$v;
 
   DateTime _timestamp;
@@ -13325,7 +13609,11 @@ class AccelerationBuilder implements BuilderWithInstanciator<Acceleration, Accel
 
   AccelerationBuilder();
 
-  AccelerationBuilder get newInstance => AccelerationBuilder();
+  AccelerationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AccelerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AccelerationBuilder()..copyFromHeader(headerFrom);
 
   AccelerationBuilder get _$this {
     if (_$v != null) {
@@ -13466,7 +13754,7 @@ class _$MagneticField extends MagneticField {
 
 /// Magnetic Field builder class
 ///
-class MagneticFieldBuilder implements BuilderWithInstanciator<MagneticField, MagneticFieldBuilder>, ImcBuilderHeaderPart {
+class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MagneticField, MagneticFieldBuilder> {
   _$MagneticField _$v;
 
   DateTime _timestamp;
@@ -13517,7 +13805,11 @@ class MagneticFieldBuilder implements BuilderWithInstanciator<MagneticField, Mag
 
   MagneticFieldBuilder();
 
-  MagneticFieldBuilder get newInstance => MagneticFieldBuilder();
+  MagneticFieldBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MagneticFieldBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MagneticFieldBuilder()..copyFromHeader(headerFrom);
 
   MagneticFieldBuilder get _$this {
     if (_$v != null) {
@@ -13658,7 +13950,7 @@ class _$GroundVelocity extends GroundVelocity {
 
 /// Ground Velocity builder class
 ///
-class GroundVelocityBuilder implements BuilderWithInstanciator<GroundVelocity, GroundVelocityBuilder>, ImcBuilderHeaderPart {
+class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GroundVelocity, GroundVelocityBuilder> {
   _$GroundVelocity _$v;
 
   DateTime _timestamp;
@@ -13709,7 +14001,11 @@ class GroundVelocityBuilder implements BuilderWithInstanciator<GroundVelocity, G
 
   GroundVelocityBuilder();
 
-  GroundVelocityBuilder get newInstance => GroundVelocityBuilder();
+  GroundVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GroundVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroundVelocityBuilder()..copyFromHeader(headerFrom);
 
   GroundVelocityBuilder get _$this {
     if (_$v != null) {
@@ -13850,7 +14146,7 @@ class _$WaterVelocity extends WaterVelocity {
 
 /// Water Velocity builder class
 ///
-class WaterVelocityBuilder implements BuilderWithInstanciator<WaterVelocity, WaterVelocityBuilder>, ImcBuilderHeaderPart {
+class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<WaterVelocity, WaterVelocityBuilder> {
   _$WaterVelocity _$v;
 
   DateTime _timestamp;
@@ -13901,7 +14197,11 @@ class WaterVelocityBuilder implements BuilderWithInstanciator<WaterVelocity, Wat
 
   WaterVelocityBuilder();
 
-  WaterVelocityBuilder get newInstance => WaterVelocityBuilder();
+  WaterVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  WaterVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WaterVelocityBuilder()..copyFromHeader(headerFrom);
 
   WaterVelocityBuilder get _$this {
     if (_$v != null) {
@@ -14042,7 +14342,7 @@ class _$VelocityDelta extends VelocityDelta {
 
 /// Velocity Delta builder class
 ///
-class VelocityDeltaBuilder implements BuilderWithInstanciator<VelocityDelta, VelocityDeltaBuilder>, ImcBuilderHeaderPart {
+class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VelocityDelta, VelocityDeltaBuilder> {
   _$VelocityDelta _$v;
 
   DateTime _timestamp;
@@ -14093,7 +14393,11 @@ class VelocityDeltaBuilder implements BuilderWithInstanciator<VelocityDelta, Vel
 
   VelocityDeltaBuilder();
 
-  VelocityDeltaBuilder get newInstance => VelocityDeltaBuilder();
+  VelocityDeltaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VelocityDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VelocityDeltaBuilder()..copyFromHeader(headerFrom);
 
   VelocityDeltaBuilder get _$this {
     if (_$v != null) {
@@ -14234,7 +14538,7 @@ class _$Distance extends Distance {
 
 /// Distance builder class
 ///
-class DistanceBuilder implements BuilderWithInstanciator<Distance, DistanceBuilder>, ImcBuilderHeaderPart {
+class DistanceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Distance, DistanceBuilder> {
   _$Distance _$v;
 
   DateTime _timestamp;
@@ -14285,7 +14589,11 @@ class DistanceBuilder implements BuilderWithInstanciator<Distance, DistanceBuild
 
   DistanceBuilder();
 
-  DistanceBuilder get newInstance => DistanceBuilder();
+  DistanceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DistanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DistanceBuilder()..copyFromHeader(headerFrom);
 
   DistanceBuilder get _$this {
     if (_$v != null) {
@@ -14408,7 +14716,7 @@ class _$Temperature extends Temperature {
 
 /// Temperature builder class
 ///
-class TemperatureBuilder implements BuilderWithInstanciator<Temperature, TemperatureBuilder>, ImcBuilderHeaderPart {
+class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Temperature, TemperatureBuilder> {
   _$Temperature _$v;
 
   DateTime _timestamp;
@@ -14447,7 +14755,11 @@ class TemperatureBuilder implements BuilderWithInstanciator<Temperature, Tempera
 
   TemperatureBuilder();
 
-  TemperatureBuilder get newInstance => TemperatureBuilder();
+  TemperatureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TemperatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TemperatureBuilder()..copyFromHeader(headerFrom);
 
   TemperatureBuilder get _$this {
     if (_$v != null) {
@@ -14564,7 +14876,7 @@ class _$Pressure extends Pressure {
 
 /// Pressure builder class
 ///
-class PressureBuilder implements BuilderWithInstanciator<Pressure, PressureBuilder>, ImcBuilderHeaderPart {
+class PressureBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Pressure, PressureBuilder> {
   _$Pressure _$v;
 
   DateTime _timestamp;
@@ -14603,7 +14915,11 @@ class PressureBuilder implements BuilderWithInstanciator<Pressure, PressureBuild
 
   PressureBuilder();
 
-  PressureBuilder get newInstance => PressureBuilder();
+  PressureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PressureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PressureBuilder()..copyFromHeader(headerFrom);
 
   PressureBuilder get _$this {
     if (_$v != null) {
@@ -14720,7 +15036,7 @@ class _$Depth extends Depth {
 
 /// Depth builder class
 ///
-class DepthBuilder implements BuilderWithInstanciator<Depth, DepthBuilder>, ImcBuilderHeaderPart {
+class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Depth, DepthBuilder> {
   _$Depth _$v;
 
   DateTime _timestamp;
@@ -14759,7 +15075,11 @@ class DepthBuilder implements BuilderWithInstanciator<Depth, DepthBuilder>, ImcB
 
   DepthBuilder();
 
-  DepthBuilder get newInstance => DepthBuilder();
+  DepthBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DepthBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DepthBuilder()..copyFromHeader(headerFrom);
 
   DepthBuilder get _$this {
     if (_$v != null) {
@@ -14876,7 +15196,7 @@ class _$DepthOffset extends DepthOffset {
 
 /// Depth Offset builder class
 ///
-class DepthOffsetBuilder implements BuilderWithInstanciator<DepthOffset, DepthOffsetBuilder>, ImcBuilderHeaderPart {
+class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DepthOffset, DepthOffsetBuilder> {
   _$DepthOffset _$v;
 
   DateTime _timestamp;
@@ -14915,7 +15235,11 @@ class DepthOffsetBuilder implements BuilderWithInstanciator<DepthOffset, DepthOf
 
   DepthOffsetBuilder();
 
-  DepthOffsetBuilder get newInstance => DepthOffsetBuilder();
+  DepthOffsetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DepthOffsetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DepthOffsetBuilder()..copyFromHeader(headerFrom);
 
   DepthOffsetBuilder get _$this {
     if (_$v != null) {
@@ -15032,7 +15356,7 @@ class _$SoundSpeed extends SoundSpeed {
 
 /// Sound Speed builder class
 ///
-class SoundSpeedBuilder implements BuilderWithInstanciator<SoundSpeed, SoundSpeedBuilder>, ImcBuilderHeaderPart {
+class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoundSpeed, SoundSpeedBuilder> {
   _$SoundSpeed _$v;
 
   DateTime _timestamp;
@@ -15071,7 +15395,11 @@ class SoundSpeedBuilder implements BuilderWithInstanciator<SoundSpeed, SoundSpee
 
   SoundSpeedBuilder();
 
-  SoundSpeedBuilder get newInstance => SoundSpeedBuilder();
+  SoundSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SoundSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoundSpeedBuilder()..copyFromHeader(headerFrom);
 
   SoundSpeedBuilder get _$this {
     if (_$v != null) {
@@ -15188,7 +15516,7 @@ class _$WaterDensity extends WaterDensity {
 
 /// Water Density builder class
 ///
-class WaterDensityBuilder implements BuilderWithInstanciator<WaterDensity, WaterDensityBuilder>, ImcBuilderHeaderPart {
+class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<WaterDensity, WaterDensityBuilder> {
   _$WaterDensity _$v;
 
   DateTime _timestamp;
@@ -15227,7 +15555,11 @@ class WaterDensityBuilder implements BuilderWithInstanciator<WaterDensity, Water
 
   WaterDensityBuilder();
 
-  WaterDensityBuilder get newInstance => WaterDensityBuilder();
+  WaterDensityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  WaterDensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WaterDensityBuilder()..copyFromHeader(headerFrom);
 
   WaterDensityBuilder get _$this {
     if (_$v != null) {
@@ -15344,7 +15676,7 @@ class _$Conductivity extends Conductivity {
 
 /// Conductivity builder class
 ///
-class ConductivityBuilder implements BuilderWithInstanciator<Conductivity, ConductivityBuilder>, ImcBuilderHeaderPart {
+class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Conductivity, ConductivityBuilder> {
   _$Conductivity _$v;
 
   DateTime _timestamp;
@@ -15383,7 +15715,11 @@ class ConductivityBuilder implements BuilderWithInstanciator<Conductivity, Condu
 
   ConductivityBuilder();
 
-  ConductivityBuilder get newInstance => ConductivityBuilder();
+  ConductivityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ConductivityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ConductivityBuilder()..copyFromHeader(headerFrom);
 
   ConductivityBuilder get _$this {
     if (_$v != null) {
@@ -15500,7 +15836,7 @@ class _$Salinity extends Salinity {
 
 /// Salinity builder class
 ///
-class SalinityBuilder implements BuilderWithInstanciator<Salinity, SalinityBuilder>, ImcBuilderHeaderPart {
+class SalinityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Salinity, SalinityBuilder> {
   _$Salinity _$v;
 
   DateTime _timestamp;
@@ -15539,7 +15875,11 @@ class SalinityBuilder implements BuilderWithInstanciator<Salinity, SalinityBuild
 
   SalinityBuilder();
 
-  SalinityBuilder get newInstance => SalinityBuilder();
+  SalinityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SalinityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SalinityBuilder()..copyFromHeader(headerFrom);
 
   SalinityBuilder get _$this {
     if (_$v != null) {
@@ -15668,7 +16008,7 @@ class _$WindSpeed extends WindSpeed {
 
 /// Wind Speed builder class
 ///
-class WindSpeedBuilder implements BuilderWithInstanciator<WindSpeed, WindSpeedBuilder>, ImcBuilderHeaderPart {
+class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<WindSpeed, WindSpeedBuilder> {
   _$WindSpeed _$v;
 
   DateTime _timestamp;
@@ -15715,7 +16055,11 @@ class WindSpeedBuilder implements BuilderWithInstanciator<WindSpeed, WindSpeedBu
 
   WindSpeedBuilder();
 
-  WindSpeedBuilder get newInstance => WindSpeedBuilder();
+  WindSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  WindSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WindSpeedBuilder()..copyFromHeader(headerFrom);
 
   WindSpeedBuilder get _$this {
     if (_$v != null) {
@@ -15836,7 +16180,7 @@ class _$RelativeHumidity extends RelativeHumidity {
 
 /// Relative Humidity builder class
 ///
-class RelativeHumidityBuilder implements BuilderWithInstanciator<RelativeHumidity, RelativeHumidityBuilder>, ImcBuilderHeaderPart {
+class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RelativeHumidity, RelativeHumidityBuilder> {
   _$RelativeHumidity _$v;
 
   DateTime _timestamp;
@@ -15875,7 +16219,11 @@ class RelativeHumidityBuilder implements BuilderWithInstanciator<RelativeHumidit
 
   RelativeHumidityBuilder();
 
-  RelativeHumidityBuilder get newInstance => RelativeHumidityBuilder();
+  RelativeHumidityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RelativeHumidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RelativeHumidityBuilder()..copyFromHeader(headerFrom);
 
   RelativeHumidityBuilder get _$this {
     if (_$v != null) {
@@ -15992,7 +16340,7 @@ class _$DevDataText extends DevDataText {
 
 /// Device Data (Text) builder class
 ///
-class DevDataTextBuilder implements BuilderWithInstanciator<DevDataText, DevDataTextBuilder>, ImcBuilderHeaderPart {
+class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevDataText, DevDataTextBuilder> {
   _$DevDataText _$v;
 
   DateTime _timestamp;
@@ -16031,7 +16379,11 @@ class DevDataTextBuilder implements BuilderWithInstanciator<DevDataText, DevData
 
   DevDataTextBuilder();
 
-  DevDataTextBuilder get newInstance => DevDataTextBuilder();
+  DevDataTextBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DevDataTextBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevDataTextBuilder()..copyFromHeader(headerFrom);
 
   DevDataTextBuilder get _$this {
     if (_$v != null) {
@@ -16148,7 +16500,7 @@ class _$DevDataBinary extends DevDataBinary {
 
 /// Device Data (Binary) builder class
 ///
-class DevDataBinaryBuilder implements BuilderWithInstanciator<DevDataBinary, DevDataBinaryBuilder>, ImcBuilderHeaderPart {
+class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevDataBinary, DevDataBinaryBuilder> {
   _$DevDataBinary _$v;
 
   DateTime _timestamp;
@@ -16187,7 +16539,11 @@ class DevDataBinaryBuilder implements BuilderWithInstanciator<DevDataBinary, Dev
 
   DevDataBinaryBuilder();
 
-  DevDataBinaryBuilder get newInstance => DevDataBinaryBuilder();
+  DevDataBinaryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DevDataBinaryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevDataBinaryBuilder()..copyFromHeader(headerFrom);
 
   DevDataBinaryBuilder get _$this {
     if (_$v != null) {
@@ -16304,7 +16660,7 @@ class _$Force extends Force {
 
 /// Force builder class
 ///
-class ForceBuilder implements BuilderWithInstanciator<Force, ForceBuilder>, ImcBuilderHeaderPart {
+class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Force, ForceBuilder> {
   _$Force _$v;
 
   DateTime _timestamp;
@@ -16343,7 +16699,11 @@ class ForceBuilder implements BuilderWithInstanciator<Force, ForceBuilder>, ImcB
 
   ForceBuilder();
 
-  ForceBuilder get newInstance => ForceBuilder();
+  ForceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ForceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ForceBuilder()..copyFromHeader(headerFrom);
 
   ForceBuilder get _$this {
     if (_$v != null) {
@@ -16502,7 +16862,7 @@ class _$SonarData extends SonarData {
 
 /// Sonar Data builder class
 ///
-class SonarDataBuilder implements BuilderWithInstanciator<SonarData, SonarDataBuilder>, ImcBuilderHeaderPart {
+class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SonarData, SonarDataBuilder> {
   _$SonarData _$v;
 
   DateTime _timestamp;
@@ -16569,7 +16929,11 @@ class SonarDataBuilder implements BuilderWithInstanciator<SonarData, SonarDataBu
 
   SonarDataBuilder();
 
-  SonarDataBuilder get newInstance => SonarDataBuilder();
+  SonarDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SonarDataBuilder()..copyFromHeader(headerFrom);
 
   SonarDataBuilder get _$this {
     if (_$v != null) {
@@ -16694,7 +17058,7 @@ class _$Pulse extends Pulse {
 
 /// Pulse builder class
 ///
-class PulseBuilder implements BuilderWithInstanciator<Pulse, PulseBuilder>, ImcBuilderHeaderPart {
+class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Pulse, PulseBuilder> {
   _$Pulse _$v;
 
   DateTime _timestamp;
@@ -16729,7 +17093,11 @@ class PulseBuilder implements BuilderWithInstanciator<Pulse, PulseBuilder>, ImcB
 
   PulseBuilder();
 
-  PulseBuilder get newInstance => PulseBuilder();
+  PulseBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PulseBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PulseBuilder()..copyFromHeader(headerFrom);
 
   PulseBuilder get _$this {
     if (_$v != null) {
@@ -16844,7 +17212,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
 
 /// Pulse Detection Control builder class
 ///
-class PulseDetectionControlBuilder implements BuilderWithInstanciator<PulseDetectionControl, PulseDetectionControlBuilder>, ImcBuilderHeaderPart {
+class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PulseDetectionControl, PulseDetectionControlBuilder> {
   _$PulseDetectionControl _$v;
 
   DateTime _timestamp;
@@ -16883,7 +17251,11 @@ class PulseDetectionControlBuilder implements BuilderWithInstanciator<PulseDetec
 
   PulseDetectionControlBuilder();
 
-  PulseDetectionControlBuilder get newInstance => PulseDetectionControlBuilder();
+  PulseDetectionControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PulseDetectionControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PulseDetectionControlBuilder()..copyFromHeader(headerFrom);
 
   PulseDetectionControlBuilder get _$this {
     if (_$v != null) {
@@ -17012,7 +17384,7 @@ class _$FuelLevel extends FuelLevel {
 
 /// Fuel Level builder class
 ///
-class FuelLevelBuilder implements BuilderWithInstanciator<FuelLevel, FuelLevelBuilder>, ImcBuilderHeaderPart {
+class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FuelLevel, FuelLevelBuilder> {
   _$FuelLevel _$v;
 
   DateTime _timestamp;
@@ -17059,7 +17431,11 @@ class FuelLevelBuilder implements BuilderWithInstanciator<FuelLevel, FuelLevelBu
 
   FuelLevelBuilder();
 
-  FuelLevelBuilder get newInstance => FuelLevelBuilder();
+  FuelLevelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FuelLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FuelLevelBuilder()..copyFromHeader(headerFrom);
 
   FuelLevelBuilder get _$this {
     if (_$v != null) {
@@ -17264,7 +17640,7 @@ class _$GpsNavData extends GpsNavData {
 
 /// GPS Navigation Data builder class
 ///
-class GpsNavDataBuilder implements BuilderWithInstanciator<GpsNavData, GpsNavDataBuilder>, ImcBuilderHeaderPart {
+class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsNavData, GpsNavDataBuilder> {
   _$GpsNavData _$v;
 
   DateTime _timestamp;
@@ -17359,7 +17735,11 @@ class GpsNavDataBuilder implements BuilderWithInstanciator<GpsNavData, GpsNavDat
 
   GpsNavDataBuilder();
 
-  GpsNavDataBuilder get newInstance => GpsNavDataBuilder();
+  GpsNavDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GpsNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsNavDataBuilder()..copyFromHeader(headerFrom);
 
   GpsNavDataBuilder get _$this {
     if (_$v != null) {
@@ -17510,7 +17890,7 @@ class _$ServoPosition extends ServoPosition {
 
 /// Servo Position builder class
 ///
-class ServoPositionBuilder implements BuilderWithInstanciator<ServoPosition, ServoPositionBuilder>, ImcBuilderHeaderPart {
+class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ServoPosition, ServoPositionBuilder> {
   _$ServoPosition _$v;
 
   DateTime _timestamp;
@@ -17553,7 +17933,11 @@ class ServoPositionBuilder implements BuilderWithInstanciator<ServoPosition, Ser
 
   ServoPositionBuilder();
 
-  ServoPositionBuilder get newInstance => ServoPositionBuilder();
+  ServoPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ServoPositionBuilder()..copyFromHeader(headerFrom);
 
   ServoPositionBuilder get _$this {
     if (_$v != null) {
@@ -17702,7 +18086,7 @@ class _$DeviceState extends DeviceState {
 
 /// Device State builder class
 ///
-class DeviceStateBuilder implements BuilderWithInstanciator<DeviceState, DeviceStateBuilder>, ImcBuilderHeaderPart {
+class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DeviceState, DeviceStateBuilder> {
   _$DeviceState _$v;
 
   DateTime _timestamp;
@@ -17761,7 +18145,11 @@ class DeviceStateBuilder implements BuilderWithInstanciator<DeviceState, DeviceS
 
   DeviceStateBuilder();
 
-  DeviceStateBuilder get newInstance => DeviceStateBuilder();
+  DeviceStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DeviceStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DeviceStateBuilder()..copyFromHeader(headerFrom);
 
   DeviceStateBuilder get _$this {
     if (_$v != null) {
@@ -17894,7 +18282,7 @@ class _$BeamConfig extends BeamConfig {
 
 /// Beam Configuration builder class
 ///
-class BeamConfigBuilder implements BuilderWithInstanciator<BeamConfig, BeamConfigBuilder>, ImcBuilderHeaderPart {
+class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<BeamConfig, BeamConfigBuilder> {
   _$BeamConfig _$v;
 
   DateTime _timestamp;
@@ -17937,7 +18325,11 @@ class BeamConfigBuilder implements BuilderWithInstanciator<BeamConfig, BeamConfi
 
   BeamConfigBuilder();
 
-  BeamConfigBuilder get newInstance => BeamConfigBuilder();
+  BeamConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  BeamConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => BeamConfigBuilder()..copyFromHeader(headerFrom);
 
   BeamConfigBuilder get _$this {
     if (_$v != null) {
@@ -18056,7 +18448,7 @@ class _$DataSanity extends DataSanity {
 
 /// Data Sanity builder class
 ///
-class DataSanityBuilder implements BuilderWithInstanciator<DataSanity, DataSanityBuilder>, ImcBuilderHeaderPart {
+class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DataSanity, DataSanityBuilder> {
   _$DataSanity _$v;
 
   DateTime _timestamp;
@@ -18095,7 +18487,11 @@ class DataSanityBuilder implements BuilderWithInstanciator<DataSanity, DataSanit
 
   DataSanityBuilder();
 
-  DataSanityBuilder get newInstance => DataSanityBuilder();
+  DataSanityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DataSanityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DataSanityBuilder()..copyFromHeader(headerFrom);
 
   DataSanityBuilder get _$this {
     if (_$v != null) {
@@ -18212,7 +18608,7 @@ class _$RhodamineDye extends RhodamineDye {
 
 /// Rhodamine Dye builder class
 ///
-class RhodamineDyeBuilder implements BuilderWithInstanciator<RhodamineDye, RhodamineDyeBuilder>, ImcBuilderHeaderPart {
+class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RhodamineDye, RhodamineDyeBuilder> {
   _$RhodamineDye _$v;
 
   DateTime _timestamp;
@@ -18251,7 +18647,11 @@ class RhodamineDyeBuilder implements BuilderWithInstanciator<RhodamineDye, Rhoda
 
   RhodamineDyeBuilder();
 
-  RhodamineDyeBuilder get newInstance => RhodamineDyeBuilder();
+  RhodamineDyeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RhodamineDyeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RhodamineDyeBuilder()..copyFromHeader(headerFrom);
 
   RhodamineDyeBuilder get _$this {
     if (_$v != null) {
@@ -18368,7 +18768,7 @@ class _$CrudeOil extends CrudeOil {
 
 /// Crude Oil builder class
 ///
-class CrudeOilBuilder implements BuilderWithInstanciator<CrudeOil, CrudeOilBuilder>, ImcBuilderHeaderPart {
+class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CrudeOil, CrudeOilBuilder> {
   _$CrudeOil _$v;
 
   DateTime _timestamp;
@@ -18407,7 +18807,11 @@ class CrudeOilBuilder implements BuilderWithInstanciator<CrudeOil, CrudeOilBuild
 
   CrudeOilBuilder();
 
-  CrudeOilBuilder get newInstance => CrudeOilBuilder();
+  CrudeOilBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CrudeOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CrudeOilBuilder()..copyFromHeader(headerFrom);
 
   CrudeOilBuilder get _$this {
     if (_$v != null) {
@@ -18524,7 +18928,7 @@ class _$FineOil extends FineOil {
 
 /// Fine Oil builder class
 ///
-class FineOilBuilder implements BuilderWithInstanciator<FineOil, FineOilBuilder>, ImcBuilderHeaderPart {
+class FineOilBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FineOil, FineOilBuilder> {
   _$FineOil _$v;
 
   DateTime _timestamp;
@@ -18563,7 +18967,11 @@ class FineOilBuilder implements BuilderWithInstanciator<FineOil, FineOilBuilder>
 
   FineOilBuilder();
 
-  FineOilBuilder get newInstance => FineOilBuilder();
+  FineOilBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FineOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FineOilBuilder()..copyFromHeader(headerFrom);
 
   FineOilBuilder get _$this {
     if (_$v != null) {
@@ -18680,7 +19088,7 @@ class _$Turbidity extends Turbidity {
 
 /// Turbidity builder class
 ///
-class TurbidityBuilder implements BuilderWithInstanciator<Turbidity, TurbidityBuilder>, ImcBuilderHeaderPart {
+class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Turbidity, TurbidityBuilder> {
   _$Turbidity _$v;
 
   DateTime _timestamp;
@@ -18719,7 +19127,11 @@ class TurbidityBuilder implements BuilderWithInstanciator<Turbidity, TurbidityBu
 
   TurbidityBuilder();
 
-  TurbidityBuilder get newInstance => TurbidityBuilder();
+  TurbidityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TurbidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TurbidityBuilder()..copyFromHeader(headerFrom);
 
   TurbidityBuilder get _$this {
     if (_$v != null) {
@@ -18836,7 +19248,7 @@ class _$Chlorophyll extends Chlorophyll {
 
 /// Chlorophyll builder class
 ///
-class ChlorophyllBuilder implements BuilderWithInstanciator<Chlorophyll, ChlorophyllBuilder>, ImcBuilderHeaderPart {
+class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Chlorophyll, ChlorophyllBuilder> {
   _$Chlorophyll _$v;
 
   DateTime _timestamp;
@@ -18875,7 +19287,11 @@ class ChlorophyllBuilder implements BuilderWithInstanciator<Chlorophyll, Chlorop
 
   ChlorophyllBuilder();
 
-  ChlorophyllBuilder get newInstance => ChlorophyllBuilder();
+  ChlorophyllBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ChlorophyllBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ChlorophyllBuilder()..copyFromHeader(headerFrom);
 
   ChlorophyllBuilder get _$this {
     if (_$v != null) {
@@ -18992,7 +19408,7 @@ class _$Fluorescein extends Fluorescein {
 
 /// Fluorescein builder class
 ///
-class FluoresceinBuilder implements BuilderWithInstanciator<Fluorescein, FluoresceinBuilder>, ImcBuilderHeaderPart {
+class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Fluorescein, FluoresceinBuilder> {
   _$Fluorescein _$v;
 
   DateTime _timestamp;
@@ -19031,7 +19447,11 @@ class FluoresceinBuilder implements BuilderWithInstanciator<Fluorescein, Fluores
 
   FluoresceinBuilder();
 
-  FluoresceinBuilder get newInstance => FluoresceinBuilder();
+  FluoresceinBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FluoresceinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FluoresceinBuilder()..copyFromHeader(headerFrom);
 
   FluoresceinBuilder get _$this {
     if (_$v != null) {
@@ -19148,7 +19568,7 @@ class _$Phycocyanin extends Phycocyanin {
 
 /// Phycocyanin builder class
 ///
-class PhycocyaninBuilder implements BuilderWithInstanciator<Phycocyanin, PhycocyaninBuilder>, ImcBuilderHeaderPart {
+class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Phycocyanin, PhycocyaninBuilder> {
   _$Phycocyanin _$v;
 
   DateTime _timestamp;
@@ -19187,7 +19607,11 @@ class PhycocyaninBuilder implements BuilderWithInstanciator<Phycocyanin, Phycocy
 
   PhycocyaninBuilder();
 
-  PhycocyaninBuilder get newInstance => PhycocyaninBuilder();
+  PhycocyaninBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PhycocyaninBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PhycocyaninBuilder()..copyFromHeader(headerFrom);
 
   PhycocyaninBuilder get _$this {
     if (_$v != null) {
@@ -19304,7 +19728,7 @@ class _$Phycoerythrin extends Phycoerythrin {
 
 /// Phycoerythrin builder class
 ///
-class PhycoerythrinBuilder implements BuilderWithInstanciator<Phycoerythrin, PhycoerythrinBuilder>, ImcBuilderHeaderPart {
+class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Phycoerythrin, PhycoerythrinBuilder> {
   _$Phycoerythrin _$v;
 
   DateTime _timestamp;
@@ -19343,7 +19767,11 @@ class PhycoerythrinBuilder implements BuilderWithInstanciator<Phycoerythrin, Phy
 
   PhycoerythrinBuilder();
 
-  PhycoerythrinBuilder get newInstance => PhycoerythrinBuilder();
+  PhycoerythrinBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PhycoerythrinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PhycoerythrinBuilder()..copyFromHeader(headerFrom);
 
   PhycoerythrinBuilder get _$this {
     if (_$v != null) {
@@ -19544,7 +19972,7 @@ class _$GpsFixRtk extends GpsFixRtk {
 
 /// GPS Fix RTK builder class
 ///
-class GpsFixRtkBuilder implements BuilderWithInstanciator<GpsFixRtk, GpsFixRtkBuilder>, ImcBuilderHeaderPart {
+class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsFixRtk, GpsFixRtkBuilder> {
   _$GpsFixRtk _$v;
 
   DateTime _timestamp;
@@ -19639,7 +20067,11 @@ class GpsFixRtkBuilder implements BuilderWithInstanciator<GpsFixRtk, GpsFixRtkBu
 
   GpsFixRtkBuilder();
 
-  GpsFixRtkBuilder get newInstance => GpsFixRtkBuilder();
+  GpsFixRtkBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GpsFixRtkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixRtkBuilder()..copyFromHeader(headerFrom);
 
   GpsFixRtkBuilder get _$this {
     if (_$v != null) {
@@ -19790,7 +20222,7 @@ class _$ExternalNavData extends ExternalNavData {
 
 /// External Navigation Data builder class
 ///
-class ExternalNavDataBuilder implements BuilderWithInstanciator<ExternalNavData, ExternalNavDataBuilder>, ImcBuilderHeaderPart {
+class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ExternalNavData, ExternalNavDataBuilder> {
   _$ExternalNavData _$v;
 
   DateTime _timestamp;
@@ -19833,7 +20265,11 @@ class ExternalNavDataBuilder implements BuilderWithInstanciator<ExternalNavData,
 
   ExternalNavDataBuilder();
 
-  ExternalNavDataBuilder get newInstance => ExternalNavDataBuilder();
+  ExternalNavDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ExternalNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ExternalNavDataBuilder()..copyFromHeader(headerFrom);
 
   ExternalNavDataBuilder get _$this {
     if (_$v != null) {
@@ -19952,7 +20388,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
 
 /// Dissolved Oxygen builder class
 ///
-class DissolvedOxygenBuilder implements BuilderWithInstanciator<DissolvedOxygen, DissolvedOxygenBuilder>, ImcBuilderHeaderPart {
+class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DissolvedOxygen, DissolvedOxygenBuilder> {
   _$DissolvedOxygen _$v;
 
   DateTime _timestamp;
@@ -19991,7 +20427,11 @@ class DissolvedOxygenBuilder implements BuilderWithInstanciator<DissolvedOxygen,
 
   DissolvedOxygenBuilder();
 
-  DissolvedOxygenBuilder get newInstance => DissolvedOxygenBuilder();
+  DissolvedOxygenBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DissolvedOxygenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DissolvedOxygenBuilder()..copyFromHeader(headerFrom);
 
   DissolvedOxygenBuilder get _$this {
     if (_$v != null) {
@@ -20108,7 +20548,7 @@ class _$AirSaturation extends AirSaturation {
 
 /// Air Saturation builder class
 ///
-class AirSaturationBuilder implements BuilderWithInstanciator<AirSaturation, AirSaturationBuilder>, ImcBuilderHeaderPart {
+class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AirSaturation, AirSaturationBuilder> {
   _$AirSaturation _$v;
 
   DateTime _timestamp;
@@ -20147,7 +20587,11 @@ class AirSaturationBuilder implements BuilderWithInstanciator<AirSaturation, Air
 
   AirSaturationBuilder();
 
-  AirSaturationBuilder get newInstance => AirSaturationBuilder();
+  AirSaturationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AirSaturationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AirSaturationBuilder()..copyFromHeader(headerFrom);
 
   AirSaturationBuilder get _$this {
     if (_$v != null) {
@@ -20264,7 +20708,7 @@ class _$Throttle extends Throttle {
 
 /// Throttle builder class
 ///
-class ThrottleBuilder implements BuilderWithInstanciator<Throttle, ThrottleBuilder>, ImcBuilderHeaderPart {
+class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Throttle, ThrottleBuilder> {
   _$Throttle _$v;
 
   DateTime _timestamp;
@@ -20303,7 +20747,11 @@ class ThrottleBuilder implements BuilderWithInstanciator<Throttle, ThrottleBuild
 
   ThrottleBuilder();
 
-  ThrottleBuilder get newInstance => ThrottleBuilder();
+  ThrottleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ThrottleBuilder()..copyFromHeader(headerFrom);
 
   ThrottleBuilder get _$this {
     if (_$v != null) {
@@ -20420,7 +20868,7 @@ class _$PH extends PH {
 
 /// pH builder class
 ///
-class PHBuilder implements BuilderWithInstanciator<PH, PHBuilder>, ImcBuilderHeaderPart {
+class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PH, PHBuilder> {
   _$PH _$v;
 
   DateTime _timestamp;
@@ -20459,7 +20907,11 @@ class PHBuilder implements BuilderWithInstanciator<PH, PHBuilder>, ImcBuilderHea
 
   PHBuilder();
 
-  PHBuilder get newInstance => PHBuilder();
+  PHBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PHBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PHBuilder()..copyFromHeader(headerFrom);
 
   PHBuilder get _$this {
     if (_$v != null) {
@@ -20576,7 +21028,7 @@ class _$Redox extends Redox {
 
 /// Redox Potential builder class
 ///
-class RedoxBuilder implements BuilderWithInstanciator<Redox, RedoxBuilder>, ImcBuilderHeaderPart {
+class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Redox, RedoxBuilder> {
   _$Redox _$v;
 
   DateTime _timestamp;
@@ -20615,7 +21067,11 @@ class RedoxBuilder implements BuilderWithInstanciator<Redox, RedoxBuilder>, ImcB
 
   RedoxBuilder();
 
-  RedoxBuilder get newInstance => RedoxBuilder();
+  RedoxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RedoxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RedoxBuilder()..copyFromHeader(headerFrom);
 
   RedoxBuilder get _$this {
     if (_$v != null) {
@@ -20744,7 +21200,7 @@ class _$CameraZoom extends CameraZoom {
 
 /// Camera Zoom builder class
 ///
-class CameraZoomBuilder implements BuilderWithInstanciator<CameraZoom, CameraZoomBuilder>, ImcBuilderHeaderPart {
+class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CameraZoom, CameraZoomBuilder> {
   _$CameraZoom _$v;
 
   DateTime _timestamp;
@@ -20791,7 +21247,11 @@ class CameraZoomBuilder implements BuilderWithInstanciator<CameraZoom, CameraZoo
 
   CameraZoomBuilder();
 
-  CameraZoomBuilder get newInstance => CameraZoomBuilder();
+  CameraZoomBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CameraZoomBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CameraZoomBuilder()..copyFromHeader(headerFrom);
 
   CameraZoomBuilder get _$this {
     if (_$v != null) {
@@ -20918,7 +21378,7 @@ class _$SetThrusterActuation extends SetThrusterActuation {
 
 /// Set Thruster Actuation builder class
 ///
-class SetThrusterActuationBuilder implements BuilderWithInstanciator<SetThrusterActuation, SetThrusterActuationBuilder>, ImcBuilderHeaderPart {
+class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetThrusterActuation, SetThrusterActuationBuilder> {
   _$SetThrusterActuation _$v;
 
   DateTime _timestamp;
@@ -20961,7 +21421,11 @@ class SetThrusterActuationBuilder implements BuilderWithInstanciator<SetThruster
 
   SetThrusterActuationBuilder();
 
-  SetThrusterActuationBuilder get newInstance => SetThrusterActuationBuilder();
+  SetThrusterActuationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SetThrusterActuationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetThrusterActuationBuilder()..copyFromHeader(headerFrom);
 
   SetThrusterActuationBuilder get _$this {
     if (_$v != null) {
@@ -21086,7 +21550,7 @@ class _$SetServoPosition extends SetServoPosition {
 
 /// Set Servo Position builder class
 ///
-class SetServoPositionBuilder implements BuilderWithInstanciator<SetServoPosition, SetServoPositionBuilder>, ImcBuilderHeaderPart {
+class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetServoPosition, SetServoPositionBuilder> {
   _$SetServoPosition _$v;
 
   DateTime _timestamp;
@@ -21129,7 +21593,11 @@ class SetServoPositionBuilder implements BuilderWithInstanciator<SetServoPositio
 
   SetServoPositionBuilder();
 
-  SetServoPositionBuilder get newInstance => SetServoPositionBuilder();
+  SetServoPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SetServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetServoPositionBuilder()..copyFromHeader(headerFrom);
 
   SetServoPositionBuilder get _$this {
     if (_$v != null) {
@@ -21254,7 +21722,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
 
 /// Set Control Surface Deflection builder class
 ///
-class SetControlSurfaceDeflectionBuilder implements BuilderWithInstanciator<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder>, ImcBuilderHeaderPart {
+class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder> {
   _$SetControlSurfaceDeflection _$v;
 
   DateTime _timestamp;
@@ -21297,7 +21765,11 @@ class SetControlSurfaceDeflectionBuilder implements BuilderWithInstanciator<SetC
 
   SetControlSurfaceDeflectionBuilder();
 
-  SetControlSurfaceDeflectionBuilder get newInstance => SetControlSurfaceDeflectionBuilder();
+  SetControlSurfaceDeflectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SetControlSurfaceDeflectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetControlSurfaceDeflectionBuilder()..copyFromHeader(headerFrom);
 
   SetControlSurfaceDeflectionBuilder get _$this {
     if (_$v != null) {
@@ -21422,7 +21894,7 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
 
 /// Remote Actions Request builder class
 ///
-class RemoteActionsRequestBuilder implements BuilderWithInstanciator<RemoteActionsRequest, RemoteActionsRequestBuilder>, ImcBuilderHeaderPart {
+class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteActionsRequest, RemoteActionsRequestBuilder> {
   _$RemoteActionsRequest _$v;
 
   DateTime _timestamp;
@@ -21465,7 +21937,11 @@ class RemoteActionsRequestBuilder implements BuilderWithInstanciator<RemoteActio
 
   RemoteActionsRequestBuilder();
 
-  RemoteActionsRequestBuilder get newInstance => RemoteActionsRequestBuilder();
+  RemoteActionsRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RemoteActionsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteActionsRequestBuilder()..copyFromHeader(headerFrom);
 
   RemoteActionsRequestBuilder get _$this {
     if (_$v != null) {
@@ -21584,7 +22060,7 @@ class _$RemoteActions extends RemoteActions {
 
 /// Remote Actions builder class
 ///
-class RemoteActionsBuilder implements BuilderWithInstanciator<RemoteActions, RemoteActionsBuilder>, ImcBuilderHeaderPart {
+class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteActions, RemoteActionsBuilder> {
   _$RemoteActions _$v;
 
   DateTime _timestamp;
@@ -21623,7 +22099,11 @@ class RemoteActionsBuilder implements BuilderWithInstanciator<RemoteActions, Rem
 
   RemoteActionsBuilder();
 
-  RemoteActionsBuilder get newInstance => RemoteActionsBuilder();
+  RemoteActionsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RemoteActionsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteActionsBuilder()..copyFromHeader(headerFrom);
 
   RemoteActionsBuilder get _$this {
     if (_$v != null) {
@@ -21746,7 +22226,7 @@ class _$ButtonEvent extends ButtonEvent {
 
 /// Button Event builder class
 ///
-class ButtonEventBuilder implements BuilderWithInstanciator<ButtonEvent, ButtonEventBuilder>, ImcBuilderHeaderPart {
+class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ButtonEvent, ButtonEventBuilder> {
   _$ButtonEvent _$v;
 
   DateTime _timestamp;
@@ -21789,7 +22269,11 @@ class ButtonEventBuilder implements BuilderWithInstanciator<ButtonEvent, ButtonE
 
   ButtonEventBuilder();
 
-  ButtonEventBuilder get newInstance => ButtonEventBuilder();
+  ButtonEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ButtonEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ButtonEventBuilder()..copyFromHeader(headerFrom);
 
   ButtonEventBuilder get _$this {
     if (_$v != null) {
@@ -21914,7 +22398,7 @@ class _$LcdControl extends LcdControl {
 
 /// LCD Control builder class
 ///
-class LcdControlBuilder implements BuilderWithInstanciator<LcdControl, LcdControlBuilder>, ImcBuilderHeaderPart {
+class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LcdControl, LcdControlBuilder> {
   _$LcdControl _$v;
 
   DateTime _timestamp;
@@ -21957,7 +22441,11 @@ class LcdControlBuilder implements BuilderWithInstanciator<LcdControl, LcdContro
 
   LcdControlBuilder();
 
-  LcdControlBuilder get newInstance => LcdControlBuilder();
+  LcdControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LcdControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LcdControlBuilder()..copyFromHeader(headerFrom);
 
   LcdControlBuilder get _$this {
     if (_$v != null) {
@@ -22088,7 +22576,7 @@ class _$PowerOperation extends PowerOperation {
 
 /// Power Operation builder class
 ///
-class PowerOperationBuilder implements BuilderWithInstanciator<PowerOperation, PowerOperationBuilder>, ImcBuilderHeaderPart {
+class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PowerOperation, PowerOperationBuilder> {
   _$PowerOperation _$v;
 
   DateTime _timestamp;
@@ -22135,7 +22623,11 @@ class PowerOperationBuilder implements BuilderWithInstanciator<PowerOperation, P
 
   PowerOperationBuilder();
 
-  PowerOperationBuilder get newInstance => PowerOperationBuilder();
+  PowerOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PowerOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerOperationBuilder()..copyFromHeader(headerFrom);
 
   PowerOperationBuilder get _$this {
     if (_$v != null) {
@@ -22268,7 +22760,7 @@ class _$PowerChannelControl extends PowerChannelControl {
 
 /// Power Channel Control builder class
 ///
-class PowerChannelControlBuilder implements BuilderWithInstanciator<PowerChannelControl, PowerChannelControlBuilder>, ImcBuilderHeaderPart {
+class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PowerChannelControl, PowerChannelControlBuilder> {
   _$PowerChannelControl _$v;
 
   DateTime _timestamp;
@@ -22315,7 +22807,11 @@ class PowerChannelControlBuilder implements BuilderWithInstanciator<PowerChannel
 
   PowerChannelControlBuilder();
 
-  PowerChannelControlBuilder get newInstance => PowerChannelControlBuilder();
+  PowerChannelControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PowerChannelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerChannelControlBuilder()..copyFromHeader(headerFrom);
 
   PowerChannelControlBuilder get _$this {
     if (_$v != null) {
@@ -22430,7 +22926,7 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
 
 /// Query Power Channel State builder class
 ///
-class QueryPowerChannelStateBuilder implements BuilderWithInstanciator<QueryPowerChannelState, QueryPowerChannelStateBuilder>, ImcBuilderHeaderPart {
+class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryPowerChannelState, QueryPowerChannelStateBuilder> {
   _$QueryPowerChannelState _$v;
 
   DateTime _timestamp;
@@ -22465,7 +22961,11 @@ class QueryPowerChannelStateBuilder implements BuilderWithInstanciator<QueryPowe
 
   QueryPowerChannelStateBuilder();
 
-  QueryPowerChannelStateBuilder get newInstance => QueryPowerChannelStateBuilder();
+  QueryPowerChannelStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  QueryPowerChannelStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryPowerChannelStateBuilder()..copyFromHeader(headerFrom);
 
   QueryPowerChannelStateBuilder get _$this {
     if (_$v != null) {
@@ -22586,7 +23086,7 @@ class _$PowerChannelState extends PowerChannelState {
 
 /// Power Channel State builder class
 ///
-class PowerChannelStateBuilder implements BuilderWithInstanciator<PowerChannelState, PowerChannelStateBuilder>, ImcBuilderHeaderPart {
+class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PowerChannelState, PowerChannelStateBuilder> {
   _$PowerChannelState _$v;
 
   DateTime _timestamp;
@@ -22629,7 +23129,11 @@ class PowerChannelStateBuilder implements BuilderWithInstanciator<PowerChannelSt
 
   PowerChannelStateBuilder();
 
-  PowerChannelStateBuilder get newInstance => PowerChannelStateBuilder();
+  PowerChannelStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PowerChannelStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerChannelStateBuilder()..copyFromHeader(headerFrom);
 
   PowerChannelStateBuilder get _$this {
     if (_$v != null) {
@@ -22754,7 +23258,7 @@ class _$LedBrightness extends LedBrightness {
 
 /// LED Brightness builder class
 ///
-class LedBrightnessBuilder implements BuilderWithInstanciator<LedBrightness, LedBrightnessBuilder>, ImcBuilderHeaderPart {
+class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LedBrightness, LedBrightnessBuilder> {
   _$LedBrightness _$v;
 
   DateTime _timestamp;
@@ -22797,7 +23301,11 @@ class LedBrightnessBuilder implements BuilderWithInstanciator<LedBrightness, Led
 
   LedBrightnessBuilder();
 
-  LedBrightnessBuilder get newInstance => LedBrightnessBuilder();
+  LedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   LedBrightnessBuilder get _$this {
     if (_$v != null) {
@@ -22916,7 +23424,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
 
 /// Query LED Brightness builder class
 ///
-class QueryLedBrightnessBuilder implements BuilderWithInstanciator<QueryLedBrightness, QueryLedBrightnessBuilder>, ImcBuilderHeaderPart {
+class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryLedBrightness, QueryLedBrightnessBuilder> {
   _$QueryLedBrightness _$v;
 
   DateTime _timestamp;
@@ -22955,7 +23463,11 @@ class QueryLedBrightnessBuilder implements BuilderWithInstanciator<QueryLedBrigh
 
   QueryLedBrightnessBuilder();
 
-  QueryLedBrightnessBuilder get newInstance => QueryLedBrightnessBuilder();
+  QueryLedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  QueryLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryLedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   QueryLedBrightnessBuilder get _$this {
     if (_$v != null) {
@@ -23078,7 +23590,7 @@ class _$SetLedBrightness extends SetLedBrightness {
 
 /// Set LED Brightness builder class
 ///
-class SetLedBrightnessBuilder implements BuilderWithInstanciator<SetLedBrightness, SetLedBrightnessBuilder>, ImcBuilderHeaderPart {
+class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetLedBrightness, SetLedBrightnessBuilder> {
   _$SetLedBrightness _$v;
 
   DateTime _timestamp;
@@ -23121,7 +23633,11 @@ class SetLedBrightnessBuilder implements BuilderWithInstanciator<SetLedBrightnes
 
   SetLedBrightnessBuilder();
 
-  SetLedBrightnessBuilder get newInstance => SetLedBrightnessBuilder();
+  SetLedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SetLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetLedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   SetLedBrightnessBuilder get _$this {
     if (_$v != null) {
@@ -23252,7 +23768,7 @@ class _$SetPWM extends SetPWM {
 
 /// Set PWM builder class
 ///
-class SetPWMBuilder implements BuilderWithInstanciator<SetPWM, SetPWMBuilder>, ImcBuilderHeaderPart {
+class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetPWM, SetPWMBuilder> {
   _$SetPWM _$v;
 
   DateTime _timestamp;
@@ -23299,7 +23815,11 @@ class SetPWMBuilder implements BuilderWithInstanciator<SetPWM, SetPWMBuilder>, I
 
   SetPWMBuilder();
 
-  SetPWMBuilder get newInstance => SetPWMBuilder();
+  SetPWMBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SetPWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetPWMBuilder()..copyFromHeader(headerFrom);
 
   SetPWMBuilder get _$this {
     if (_$v != null) {
@@ -23432,7 +23952,7 @@ class _$PWM extends PWM {
 
 /// PWM builder class
 ///
-class PWMBuilder implements BuilderWithInstanciator<PWM, PWMBuilder>, ImcBuilderHeaderPart {
+class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PWM, PWMBuilder> {
   _$PWM _$v;
 
   DateTime _timestamp;
@@ -23479,7 +23999,11 @@ class PWMBuilder implements BuilderWithInstanciator<PWM, PWMBuilder>, ImcBuilder
 
   PWMBuilder();
 
-  PWMBuilder get newInstance => PWMBuilder();
+  PWMBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PWMBuilder()..copyFromHeader(headerFrom);
 
   PWMBuilder get _$this {
     if (_$v != null) {
@@ -23714,7 +24238,7 @@ class _$EstimatedState extends EstimatedState {
 
 /// Estimated State builder class
 ///
-class EstimatedStateBuilder implements BuilderWithInstanciator<EstimatedState, EstimatedStateBuilder>, ImcBuilderHeaderPart {
+class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EstimatedState, EstimatedStateBuilder> {
   _$EstimatedState _$v;
 
   DateTime _timestamp;
@@ -23829,7 +24353,11 @@ class EstimatedStateBuilder implements BuilderWithInstanciator<EstimatedState, E
 
   EstimatedStateBuilder();
 
-  EstimatedStateBuilder get newInstance => EstimatedStateBuilder();
+  EstimatedStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EstimatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EstimatedStateBuilder()..copyFromHeader(headerFrom);
 
   EstimatedStateBuilder get _$this {
     if (_$v != null) {
@@ -23996,7 +24524,7 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
 
 /// Estimated Stream Velocity builder class
 ///
-class EstimatedStreamVelocityBuilder implements BuilderWithInstanciator<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder>, ImcBuilderHeaderPart {
+class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder> {
   _$EstimatedStreamVelocity _$v;
 
   DateTime _timestamp;
@@ -24043,7 +24571,11 @@ class EstimatedStreamVelocityBuilder implements BuilderWithInstanciator<Estimate
 
   EstimatedStreamVelocityBuilder();
 
-  EstimatedStreamVelocityBuilder get newInstance => EstimatedStreamVelocityBuilder();
+  EstimatedStreamVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EstimatedStreamVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EstimatedStreamVelocityBuilder()..copyFromHeader(headerFrom);
 
   EstimatedStreamVelocityBuilder get _$this {
     if (_$v != null) {
@@ -24164,7 +24696,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
 
 /// Indicated Speed builder class
 ///
-class IndicatedSpeedBuilder implements BuilderWithInstanciator<IndicatedSpeed, IndicatedSpeedBuilder>, ImcBuilderHeaderPart {
+class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IndicatedSpeed, IndicatedSpeedBuilder> {
   _$IndicatedSpeed _$v;
 
   DateTime _timestamp;
@@ -24203,7 +24735,11 @@ class IndicatedSpeedBuilder implements BuilderWithInstanciator<IndicatedSpeed, I
 
   IndicatedSpeedBuilder();
 
-  IndicatedSpeedBuilder get newInstance => IndicatedSpeedBuilder();
+  IndicatedSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  IndicatedSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IndicatedSpeedBuilder()..copyFromHeader(headerFrom);
 
   IndicatedSpeedBuilder get _$this {
     if (_$v != null) {
@@ -24320,7 +24856,7 @@ class _$TrueSpeed extends TrueSpeed {
 
 /// True Speed builder class
 ///
-class TrueSpeedBuilder implements BuilderWithInstanciator<TrueSpeed, TrueSpeedBuilder>, ImcBuilderHeaderPart {
+class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrueSpeed, TrueSpeedBuilder> {
   _$TrueSpeed _$v;
 
   DateTime _timestamp;
@@ -24359,7 +24895,11 @@ class TrueSpeedBuilder implements BuilderWithInstanciator<TrueSpeed, TrueSpeedBu
 
   TrueSpeedBuilder();
 
-  TrueSpeedBuilder get newInstance => TrueSpeedBuilder();
+  TrueSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrueSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrueSpeedBuilder()..copyFromHeader(headerFrom);
 
   TrueSpeedBuilder get _$this {
     if (_$v != null) {
@@ -24554,7 +25094,7 @@ class _$NavigationUncertainty extends NavigationUncertainty {
 
 /// Navigation Uncertainty builder class
 ///
-class NavigationUncertaintyBuilder implements BuilderWithInstanciator<NavigationUncertainty, NavigationUncertaintyBuilder>, ImcBuilderHeaderPart {
+class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<NavigationUncertainty, NavigationUncertaintyBuilder> {
   _$NavigationUncertainty _$v;
 
   DateTime _timestamp;
@@ -24645,7 +25185,11 @@ class NavigationUncertaintyBuilder implements BuilderWithInstanciator<Navigation
 
   NavigationUncertaintyBuilder();
 
-  NavigationUncertaintyBuilder get newInstance => NavigationUncertaintyBuilder();
+  NavigationUncertaintyBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  NavigationUncertaintyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NavigationUncertaintyBuilder()..copyFromHeader(headerFrom);
 
   NavigationUncertaintyBuilder get _$this {
     if (_$v != null) {
@@ -24836,7 +25380,7 @@ class _$NavigationData extends NavigationData {
 
 /// Navigation Data builder class
 ///
-class NavigationDataBuilder implements BuilderWithInstanciator<NavigationData, NavigationDataBuilder>, ImcBuilderHeaderPart {
+class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<NavigationData, NavigationDataBuilder> {
   _$NavigationData _$v;
 
   DateTime _timestamp;
@@ -24907,7 +25451,11 @@ class NavigationDataBuilder implements BuilderWithInstanciator<NavigationData, N
 
   NavigationDataBuilder();
 
-  NavigationDataBuilder get newInstance => NavigationDataBuilder();
+  NavigationDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  NavigationDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NavigationDataBuilder()..copyFromHeader(headerFrom);
 
   NavigationDataBuilder get _$this {
     if (_$v != null) {
@@ -25046,7 +25594,7 @@ class _$GpsFixRejection extends GpsFixRejection {
 
 /// GPS Fix Rejection builder class
 ///
-class GpsFixRejectionBuilder implements BuilderWithInstanciator<GpsFixRejection, GpsFixRejectionBuilder>, ImcBuilderHeaderPart {
+class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsFixRejection, GpsFixRejectionBuilder> {
   _$GpsFixRejection _$v;
 
   DateTime _timestamp;
@@ -25089,7 +25637,11 @@ class GpsFixRejectionBuilder implements BuilderWithInstanciator<GpsFixRejection,
 
   GpsFixRejectionBuilder();
 
-  GpsFixRejectionBuilder get newInstance => GpsFixRejectionBuilder();
+  GpsFixRejectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GpsFixRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixRejectionBuilder()..copyFromHeader(headerFrom);
 
   GpsFixRejectionBuilder get _$this {
     if (_$v != null) {
@@ -25220,7 +25772,7 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
 
 /// LBL Range Acceptance builder class
 ///
-class LblRangeAcceptanceBuilder implements BuilderWithInstanciator<LblRangeAcceptance, LblRangeAcceptanceBuilder>, ImcBuilderHeaderPart {
+class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblRangeAcceptance, LblRangeAcceptanceBuilder> {
   _$LblRangeAcceptance _$v;
 
   DateTime _timestamp;
@@ -25267,7 +25819,11 @@ class LblRangeAcceptanceBuilder implements BuilderWithInstanciator<LblRangeAccep
 
   LblRangeAcceptanceBuilder();
 
-  LblRangeAcceptanceBuilder get newInstance => LblRangeAcceptanceBuilder();
+  LblRangeAcceptanceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LblRangeAcceptanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblRangeAcceptanceBuilder()..copyFromHeader(headerFrom);
 
   LblRangeAcceptanceBuilder get _$this {
     if (_$v != null) {
@@ -25406,7 +25962,7 @@ class _$DvlRejection extends DvlRejection {
 
 /// DVL Rejection builder class
 ///
-class DvlRejectionBuilder implements BuilderWithInstanciator<DvlRejection, DvlRejectionBuilder>, ImcBuilderHeaderPart {
+class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DvlRejection, DvlRejectionBuilder> {
   _$DvlRejection _$v;
 
   DateTime _timestamp;
@@ -25457,7 +26013,11 @@ class DvlRejectionBuilder implements BuilderWithInstanciator<DvlRejection, DvlRe
 
   DvlRejectionBuilder();
 
-  DvlRejectionBuilder get newInstance => DvlRejectionBuilder();
+  DvlRejectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DvlRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DvlRejectionBuilder()..copyFromHeader(headerFrom);
 
   DvlRejectionBuilder get _$this {
     if (_$v != null) {
@@ -25610,7 +26170,7 @@ class _$LblEstimate extends LblEstimate {
 
 /// LBL Beacon Position Estimate builder class
 ///
-class LblEstimateBuilder implements BuilderWithInstanciator<LblEstimate, LblEstimateBuilder>, ImcBuilderHeaderPart {
+class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblEstimate, LblEstimateBuilder> {
   _$LblEstimate _$v;
 
   DateTime _timestamp;
@@ -25669,7 +26229,11 @@ class LblEstimateBuilder implements BuilderWithInstanciator<LblEstimate, LblEsti
 
   LblEstimateBuilder();
 
-  LblEstimateBuilder get newInstance => LblEstimateBuilder();
+  LblEstimateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LblEstimateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblEstimateBuilder()..copyFromHeader(headerFrom);
 
   LblEstimateBuilder get _$this {
     if (_$v != null) {
@@ -25796,7 +26360,7 @@ class _$AlignmentState extends AlignmentState {
 
 /// Alignment State builder class
 ///
-class AlignmentStateBuilder implements BuilderWithInstanciator<AlignmentState, AlignmentStateBuilder>, ImcBuilderHeaderPart {
+class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AlignmentState, AlignmentStateBuilder> {
   _$AlignmentState _$v;
 
   DateTime _timestamp;
@@ -25835,7 +26399,11 @@ class AlignmentStateBuilder implements BuilderWithInstanciator<AlignmentState, A
 
   AlignmentStateBuilder();
 
-  AlignmentStateBuilder get newInstance => AlignmentStateBuilder();
+  AlignmentStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AlignmentStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AlignmentStateBuilder()..copyFromHeader(headerFrom);
 
   AlignmentStateBuilder get _$this {
     if (_$v != null) {
@@ -25964,7 +26532,7 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
 
 /// GroupStreamVelocity builder class
 ///
-class GroupStreamVelocityBuilder implements BuilderWithInstanciator<GroupStreamVelocity, GroupStreamVelocityBuilder>, ImcBuilderHeaderPart {
+class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GroupStreamVelocity, GroupStreamVelocityBuilder> {
   _$GroupStreamVelocity _$v;
 
   DateTime _timestamp;
@@ -26011,7 +26579,11 @@ class GroupStreamVelocityBuilder implements BuilderWithInstanciator<GroupStreamV
 
   GroupStreamVelocityBuilder();
 
-  GroupStreamVelocityBuilder get newInstance => GroupStreamVelocityBuilder();
+  GroupStreamVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GroupStreamVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroupStreamVelocityBuilder()..copyFromHeader(headerFrom);
 
   GroupStreamVelocityBuilder get _$this {
     if (_$v != null) {
@@ -26144,7 +26716,7 @@ class _$Airflow extends Airflow {
 
 /// Airflow builder class
 ///
-class AirflowBuilder implements BuilderWithInstanciator<Airflow, AirflowBuilder>, ImcBuilderHeaderPart {
+class AirflowBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Airflow, AirflowBuilder> {
   _$Airflow _$v;
 
   DateTime _timestamp;
@@ -26191,7 +26763,11 @@ class AirflowBuilder implements BuilderWithInstanciator<Airflow, AirflowBuilder>
 
   AirflowBuilder();
 
-  AirflowBuilder get newInstance => AirflowBuilder();
+  AirflowBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AirflowBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AirflowBuilder()..copyFromHeader(headerFrom);
 
   AirflowBuilder get _$this {
     if (_$v != null) {
@@ -26312,7 +26888,7 @@ class _$DesiredHeading extends DesiredHeading {
 
 /// Desired Heading builder class
 ///
-class DesiredHeadingBuilder implements BuilderWithInstanciator<DesiredHeading, DesiredHeadingBuilder>, ImcBuilderHeaderPart {
+class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredHeading, DesiredHeadingBuilder> {
   _$DesiredHeading _$v;
 
   DateTime _timestamp;
@@ -26351,7 +26927,11 @@ class DesiredHeadingBuilder implements BuilderWithInstanciator<DesiredHeading, D
 
   DesiredHeadingBuilder();
 
-  DesiredHeadingBuilder get newInstance => DesiredHeadingBuilder();
+  DesiredHeadingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredHeadingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredHeadingBuilder()..copyFromHeader(headerFrom);
 
   DesiredHeadingBuilder get _$this {
     if (_$v != null) {
@@ -26474,7 +27054,7 @@ class _$DesiredZ extends DesiredZ {
 
 /// Desired Z builder class
 ///
-class DesiredZBuilder implements BuilderWithInstanciator<DesiredZ, DesiredZBuilder>, ImcBuilderHeaderPart {
+class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredZ, DesiredZBuilder> {
   _$DesiredZ _$v;
 
   DateTime _timestamp;
@@ -26517,7 +27097,11 @@ class DesiredZBuilder implements BuilderWithInstanciator<DesiredZ, DesiredZBuild
 
   DesiredZBuilder();
 
-  DesiredZBuilder get newInstance => DesiredZBuilder();
+  DesiredZBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredZBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredZBuilder()..copyFromHeader(headerFrom);
 
   DesiredZBuilder get _$this {
     if (_$v != null) {
@@ -26642,7 +27226,7 @@ class _$DesiredSpeed extends DesiredSpeed {
 
 /// Desired Speed builder class
 ///
-class DesiredSpeedBuilder implements BuilderWithInstanciator<DesiredSpeed, DesiredSpeedBuilder>, ImcBuilderHeaderPart {
+class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredSpeed, DesiredSpeedBuilder> {
   _$DesiredSpeed _$v;
 
   DateTime _timestamp;
@@ -26685,7 +27269,11 @@ class DesiredSpeedBuilder implements BuilderWithInstanciator<DesiredSpeed, Desir
 
   DesiredSpeedBuilder();
 
-  DesiredSpeedBuilder get newInstance => DesiredSpeedBuilder();
+  DesiredSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredSpeedBuilder()..copyFromHeader(headerFrom);
 
   DesiredSpeedBuilder get _$this {
     if (_$v != null) {
@@ -26804,7 +27392,7 @@ class _$DesiredRoll extends DesiredRoll {
 
 /// Desired Roll builder class
 ///
-class DesiredRollBuilder implements BuilderWithInstanciator<DesiredRoll, DesiredRollBuilder>, ImcBuilderHeaderPart {
+class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredRoll, DesiredRollBuilder> {
   _$DesiredRoll _$v;
 
   DateTime _timestamp;
@@ -26843,7 +27431,11 @@ class DesiredRollBuilder implements BuilderWithInstanciator<DesiredRoll, Desired
 
   DesiredRollBuilder();
 
-  DesiredRollBuilder get newInstance => DesiredRollBuilder();
+  DesiredRollBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredRollBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredRollBuilder()..copyFromHeader(headerFrom);
 
   DesiredRollBuilder get _$this {
     if (_$v != null) {
@@ -26960,7 +27552,7 @@ class _$DesiredPitch extends DesiredPitch {
 
 /// Desired Pitch builder class
 ///
-class DesiredPitchBuilder implements BuilderWithInstanciator<DesiredPitch, DesiredPitchBuilder>, ImcBuilderHeaderPart {
+class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredPitch, DesiredPitchBuilder> {
   _$DesiredPitch _$v;
 
   DateTime _timestamp;
@@ -26999,7 +27591,11 @@ class DesiredPitchBuilder implements BuilderWithInstanciator<DesiredPitch, Desir
 
   DesiredPitchBuilder();
 
-  DesiredPitchBuilder get newInstance => DesiredPitchBuilder();
+  DesiredPitchBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredPitchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredPitchBuilder()..copyFromHeader(headerFrom);
 
   DesiredPitchBuilder get _$this {
     if (_$v != null) {
@@ -27116,7 +27712,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
 
 /// Desired Vertical Rate builder class
 ///
-class DesiredVerticalRateBuilder implements BuilderWithInstanciator<DesiredVerticalRate, DesiredVerticalRateBuilder>, ImcBuilderHeaderPart {
+class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredVerticalRate, DesiredVerticalRateBuilder> {
   _$DesiredVerticalRate _$v;
 
   DateTime _timestamp;
@@ -27155,7 +27751,11 @@ class DesiredVerticalRateBuilder implements BuilderWithInstanciator<DesiredVerti
 
   DesiredVerticalRateBuilder();
 
-  DesiredVerticalRateBuilder get newInstance => DesiredVerticalRateBuilder();
+  DesiredVerticalRateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredVerticalRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredVerticalRateBuilder()..copyFromHeader(headerFrom);
 
   DesiredVerticalRateBuilder get _$this {
     if (_$v != null) {
@@ -27344,7 +27944,7 @@ class _$DesiredPath extends DesiredPath {
 
 /// Desired Path builder class
 ///
-class DesiredPathBuilder implements BuilderWithInstanciator<DesiredPath, DesiredPathBuilder>, ImcBuilderHeaderPart {
+class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredPath, DesiredPathBuilder> {
   _$DesiredPath _$v;
 
   DateTime _timestamp;
@@ -27431,7 +28031,11 @@ class DesiredPathBuilder implements BuilderWithInstanciator<DesiredPath, Desired
 
   DesiredPathBuilder();
 
-  DesiredPathBuilder get newInstance => DesiredPathBuilder();
+  DesiredPathBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredPathBuilder()..copyFromHeader(headerFrom);
 
   DesiredPathBuilder get _$this {
     if (_$v != null) {
@@ -27608,7 +28212,7 @@ class _$DesiredControl extends DesiredControl {
 
 /// Desired Control builder class
 ///
-class DesiredControlBuilder implements BuilderWithInstanciator<DesiredControl, DesiredControlBuilder>, ImcBuilderHeaderPart {
+class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredControl, DesiredControlBuilder> {
   _$DesiredControl _$v;
 
   DateTime _timestamp;
@@ -27671,7 +28275,11 @@ class DesiredControlBuilder implements BuilderWithInstanciator<DesiredControl, D
 
   DesiredControlBuilder();
 
-  DesiredControlBuilder get newInstance => DesiredControlBuilder();
+  DesiredControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredControlBuilder()..copyFromHeader(headerFrom);
 
   DesiredControlBuilder get _$this {
     if (_$v != null) {
@@ -27800,7 +28408,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
 
 /// Desired Heading Rate builder class
 ///
-class DesiredHeadingRateBuilder implements BuilderWithInstanciator<DesiredHeadingRate, DesiredHeadingRateBuilder>, ImcBuilderHeaderPart {
+class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredHeadingRate, DesiredHeadingRateBuilder> {
   _$DesiredHeadingRate _$v;
 
   DateTime _timestamp;
@@ -27839,7 +28447,11 @@ class DesiredHeadingRateBuilder implements BuilderWithInstanciator<DesiredHeadin
 
   DesiredHeadingRateBuilder();
 
-  DesiredHeadingRateBuilder get newInstance => DesiredHeadingRateBuilder();
+  DesiredHeadingRateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredHeadingRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredHeadingRateBuilder()..copyFromHeader(headerFrom);
 
   DesiredHeadingRateBuilder get _$this {
     if (_$v != null) {
@@ -27992,7 +28604,7 @@ class _$DesiredVelocity extends DesiredVelocity {
 
 /// Desired Velocity builder class
 ///
-class DesiredVelocityBuilder implements BuilderWithInstanciator<DesiredVelocity, DesiredVelocityBuilder>, ImcBuilderHeaderPart {
+class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredVelocity, DesiredVelocityBuilder> {
   _$DesiredVelocity _$v;
 
   DateTime _timestamp;
@@ -28055,7 +28667,11 @@ class DesiredVelocityBuilder implements BuilderWithInstanciator<DesiredVelocity,
 
   DesiredVelocityBuilder();
 
-  DesiredVelocityBuilder get newInstance => DesiredVelocityBuilder();
+  DesiredVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredVelocityBuilder()..copyFromHeader(headerFrom);
 
   DesiredVelocityBuilder get _$this {
     if (_$v != null) {
@@ -28292,7 +28908,7 @@ class _$PathControlState extends PathControlState {
 
 /// Path Control State builder class
 ///
-class PathControlStateBuilder implements BuilderWithInstanciator<PathControlState, PathControlStateBuilder>, ImcBuilderHeaderPart {
+class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PathControlState, PathControlStateBuilder> {
   _$PathControlState _$v;
 
   DateTime _timestamp;
@@ -28403,7 +29019,11 @@ class PathControlStateBuilder implements BuilderWithInstanciator<PathControlStat
 
   PathControlStateBuilder();
 
-  PathControlStateBuilder get newInstance => PathControlStateBuilder();
+  PathControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PathControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PathControlStateBuilder()..copyFromHeader(headerFrom);
 
   PathControlStateBuilder get _$this {
     if (_$v != null) {
@@ -28568,7 +29188,7 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
 
 /// Allocated Control Torques builder class
 ///
-class AllocatedControlTorquesBuilder implements BuilderWithInstanciator<AllocatedControlTorques, AllocatedControlTorquesBuilder>, ImcBuilderHeaderPart {
+class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AllocatedControlTorques, AllocatedControlTorquesBuilder> {
   _$AllocatedControlTorques _$v;
 
   DateTime _timestamp;
@@ -28615,7 +29235,11 @@ class AllocatedControlTorquesBuilder implements BuilderWithInstanciator<Allocate
 
   AllocatedControlTorquesBuilder();
 
-  AllocatedControlTorquesBuilder get newInstance => AllocatedControlTorquesBuilder();
+  AllocatedControlTorquesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AllocatedControlTorquesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AllocatedControlTorquesBuilder()..copyFromHeader(headerFrom);
 
   AllocatedControlTorquesBuilder get _$this {
     if (_$v != null) {
@@ -28754,7 +29378,7 @@ class _$ControlParcel extends ControlParcel {
 
 /// Control Parcel builder class
 ///
-class ControlParcelBuilder implements BuilderWithInstanciator<ControlParcel, ControlParcelBuilder>, ImcBuilderHeaderPart {
+class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ControlParcel, ControlParcelBuilder> {
   _$ControlParcel _$v;
 
   DateTime _timestamp;
@@ -28805,7 +29429,11 @@ class ControlParcelBuilder implements BuilderWithInstanciator<ControlParcel, Con
 
   ControlParcelBuilder();
 
-  ControlParcelBuilder get newInstance => ControlParcelBuilder();
+  ControlParcelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ControlParcelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ControlParcelBuilder()..copyFromHeader(headerFrom);
 
   ControlParcelBuilder get _$this {
     if (_$v != null) {
@@ -28928,7 +29556,7 @@ class _$Brake extends Brake {
 
 /// Brake builder class
 ///
-class BrakeBuilder implements BuilderWithInstanciator<Brake, BrakeBuilder>, ImcBuilderHeaderPart {
+class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Brake, BrakeBuilder> {
   _$Brake _$v;
 
   DateTime _timestamp;
@@ -28967,7 +29595,11 @@ class BrakeBuilder implements BuilderWithInstanciator<Brake, BrakeBuilder>, ImcB
 
   BrakeBuilder();
 
-  BrakeBuilder get newInstance => BrakeBuilder();
+  BrakeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  BrakeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => BrakeBuilder()..copyFromHeader(headerFrom);
 
   BrakeBuilder get _$this {
     if (_$v != null) {
@@ -29138,7 +29770,7 @@ class _$DesiredLinearState extends DesiredLinearState {
 
 /// Desired Linear State builder class
 ///
-class DesiredLinearStateBuilder implements BuilderWithInstanciator<DesiredLinearState, DesiredLinearStateBuilder>, ImcBuilderHeaderPart {
+class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredLinearState, DesiredLinearStateBuilder> {
   _$DesiredLinearState _$v;
 
   DateTime _timestamp;
@@ -29213,7 +29845,11 @@ class DesiredLinearStateBuilder implements BuilderWithInstanciator<DesiredLinear
 
   DesiredLinearStateBuilder();
 
-  DesiredLinearStateBuilder get newInstance => DesiredLinearStateBuilder();
+  DesiredLinearStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredLinearStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredLinearStateBuilder()..copyFromHeader(headerFrom);
 
   DesiredLinearStateBuilder get _$this {
     if (_$v != null) {
@@ -29348,7 +29984,7 @@ class _$DesiredThrottle extends DesiredThrottle {
 
 /// Desired Throttle builder class
 ///
-class DesiredThrottleBuilder implements BuilderWithInstanciator<DesiredThrottle, DesiredThrottleBuilder>, ImcBuilderHeaderPart {
+class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredThrottle, DesiredThrottleBuilder> {
   _$DesiredThrottle _$v;
 
   DateTime _timestamp;
@@ -29387,7 +30023,11 @@ class DesiredThrottleBuilder implements BuilderWithInstanciator<DesiredThrottle,
 
   DesiredThrottleBuilder();
 
-  DesiredThrottleBuilder get newInstance => DesiredThrottleBuilder();
+  DesiredThrottleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DesiredThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredThrottleBuilder()..copyFromHeader(headerFrom);
 
   DesiredThrottleBuilder get _$this {
     if (_$v != null) {
@@ -29564,7 +30204,7 @@ class _$Goto extends Goto {
 
 /// Goto Maneuver builder class
 ///
-class GotoBuilder implements BuilderWithInstanciator<Goto, GotoBuilder>, ImcBuilderHeaderPart {
+class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Goto, GotoBuilder> {
   _$Goto _$v;
 
   DateTime _timestamp;
@@ -29643,7 +30283,11 @@ class GotoBuilder implements BuilderWithInstanciator<Goto, GotoBuilder>, ImcBuil
 
   GotoBuilder();
 
-  GotoBuilder get newInstance => GotoBuilder();
+  GotoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GotoBuilder()..copyFromHeader(headerFrom);
 
   GotoBuilder get _$this {
     if (_$v != null) {
@@ -29840,7 +30484,7 @@ class _$PopUp extends PopUp {
 
 /// PopUp Maneuver builder class
 ///
-class PopUpBuilder implements BuilderWithInstanciator<PopUp, PopUpBuilder>, ImcBuilderHeaderPart {
+class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PopUp, PopUpBuilder> {
   _$PopUp _$v;
 
   DateTime _timestamp;
@@ -29919,7 +30563,11 @@ class PopUpBuilder implements BuilderWithInstanciator<PopUp, PopUpBuilder>, ImcB
 
   PopUpBuilder();
 
-  PopUpBuilder get newInstance => PopUpBuilder();
+  PopUpBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PopUpBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PopUpBuilder()..copyFromHeader(headerFrom);
 
   PopUpBuilder get _$this {
     if (_$v != null) {
@@ -30056,7 +30704,7 @@ class _$Teleoperation extends Teleoperation {
 
 /// Teleoperation Maneuver builder class
 ///
-class TeleoperationBuilder implements BuilderWithInstanciator<Teleoperation, TeleoperationBuilder>, ImcBuilderHeaderPart {
+class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Teleoperation, TeleoperationBuilder> {
   _$Teleoperation _$v;
 
   DateTime _timestamp;
@@ -30095,7 +30743,11 @@ class TeleoperationBuilder implements BuilderWithInstanciator<Teleoperation, Tel
 
   TeleoperationBuilder();
 
-  TeleoperationBuilder get newInstance => TeleoperationBuilder();
+  TeleoperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TeleoperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TeleoperationBuilder()..copyFromHeader(headerFrom);
 
   TeleoperationBuilder get _$this {
     if (_$v != null) {
@@ -30290,7 +30942,7 @@ class _$Loiter extends Loiter {
 
 /// Loiter Maneuver builder class
 ///
-class LoiterBuilder implements BuilderWithInstanciator<Loiter, LoiterBuilder>, ImcBuilderHeaderPart {
+class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Loiter, LoiterBuilder> {
   _$Loiter _$v;
 
   DateTime _timestamp;
@@ -30381,7 +31033,11 @@ class LoiterBuilder implements BuilderWithInstanciator<Loiter, LoiterBuilder>, I
 
   LoiterBuilder();
 
-  LoiterBuilder get newInstance => LoiterBuilder();
+  LoiterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LoiterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LoiterBuilder()..copyFromHeader(headerFrom);
 
   LoiterBuilder get _$this {
     if (_$v != null) {
@@ -30530,7 +31186,7 @@ class _$IdleManeuver extends IdleManeuver {
 
 /// Idle Maneuver builder class
 ///
-class IdleManeuverBuilder implements BuilderWithInstanciator<IdleManeuver, IdleManeuverBuilder>, ImcBuilderHeaderPart {
+class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IdleManeuver, IdleManeuverBuilder> {
   _$IdleManeuver _$v;
 
   DateTime _timestamp;
@@ -30573,7 +31229,11 @@ class IdleManeuverBuilder implements BuilderWithInstanciator<IdleManeuver, IdleM
 
   IdleManeuverBuilder();
 
-  IdleManeuverBuilder get newInstance => IdleManeuverBuilder();
+  IdleManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  IdleManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IdleManeuverBuilder()..copyFromHeader(headerFrom);
 
   IdleManeuverBuilder get _$this {
     if (_$v != null) {
@@ -30704,7 +31364,7 @@ class _$LowLevelControl extends LowLevelControl {
 
 /// Low Level Control Maneuver builder class
 ///
-class LowLevelControlBuilder implements BuilderWithInstanciator<LowLevelControl, LowLevelControlBuilder>, ImcBuilderHeaderPart {
+class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LowLevelControl, LowLevelControlBuilder> {
   _$LowLevelControl _$v;
 
   DateTime _timestamp;
@@ -30751,7 +31411,11 @@ class LowLevelControlBuilder implements BuilderWithInstanciator<LowLevelControl,
 
   LowLevelControlBuilder();
 
-  LowLevelControlBuilder get newInstance => LowLevelControlBuilder();
+  LowLevelControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LowLevelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LowLevelControlBuilder()..copyFromHeader(headerFrom);
 
   LowLevelControlBuilder get _$this {
     if (_$v != null) {
@@ -30962,7 +31626,7 @@ class _$Rows extends Rows {
 
 /// Rows Maneuver builder class
 ///
-class RowsBuilder implements BuilderWithInstanciator<Rows, RowsBuilder>, ImcBuilderHeaderPart {
+class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Rows, RowsBuilder> {
   _$Rows _$v;
 
   DateTime _timestamp;
@@ -31061,7 +31725,11 @@ class RowsBuilder implements BuilderWithInstanciator<Rows, RowsBuilder>, ImcBuil
 
   RowsBuilder();
 
-  RowsBuilder get newInstance => RowsBuilder();
+  RowsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RowsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RowsBuilder()..copyFromHeader(headerFrom);
 
   RowsBuilder get _$this {
     if (_$v != null) {
@@ -31256,7 +31924,7 @@ class _$FollowPath extends FollowPath {
 
 /// Follow Path Maneuver builder class
 ///
-class FollowPathBuilder implements BuilderWithInstanciator<FollowPath, FollowPathBuilder>, ImcBuilderHeaderPart {
+class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowPath, FollowPathBuilder> {
   _$FollowPath _$v;
 
   DateTime _timestamp;
@@ -31327,7 +31995,11 @@ class FollowPathBuilder implements BuilderWithInstanciator<FollowPath, FollowPat
 
   FollowPathBuilder();
 
-  FollowPathBuilder get newInstance => FollowPathBuilder();
+  FollowPathBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FollowPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowPathBuilder()..copyFromHeader(headerFrom);
 
   FollowPathBuilder get _$this {
     if (_$v != null) {
@@ -31472,7 +32144,7 @@ class _$PathPoint extends PathPoint {
 
 /// Path Point builder class
 ///
-class PathPointBuilder implements BuilderWithInstanciator<PathPoint, PathPointBuilder>, ImcBuilderHeaderPart {
+class PathPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PathPoint, PathPointBuilder> {
   _$PathPoint _$v;
 
   DateTime _timestamp;
@@ -31519,7 +32191,11 @@ class PathPointBuilder implements BuilderWithInstanciator<PathPoint, PathPointBu
 
   PathPointBuilder();
 
-  PathPointBuilder get newInstance => PathPointBuilder();
+  PathPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PathPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PathPointBuilder()..copyFromHeader(headerFrom);
 
   PathPointBuilder get _$this {
     if (_$v != null) {
@@ -31694,7 +32370,7 @@ class _$YoYo extends YoYo {
 
 /// Yo-Yo Maneuver builder class
 ///
-class YoYoBuilder implements BuilderWithInstanciator<YoYo, YoYoBuilder>, ImcBuilderHeaderPart {
+class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<YoYo, YoYoBuilder> {
   _$YoYo _$v;
 
   DateTime _timestamp;
@@ -31769,7 +32445,11 @@ class YoYoBuilder implements BuilderWithInstanciator<YoYo, YoYoBuilder>, ImcBuil
 
   YoYoBuilder();
 
-  YoYoBuilder get newInstance => YoYoBuilder();
+  YoYoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  YoYoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => YoYoBuilder()..copyFromHeader(headerFrom);
 
   YoYoBuilder get _$this {
     if (_$v != null) {
@@ -31898,7 +32578,7 @@ class _$TeleoperationDone extends TeleoperationDone {
 
 /// Teleoperation Done builder class
 ///
-class TeleoperationDoneBuilder implements BuilderWithInstanciator<TeleoperationDone, TeleoperationDoneBuilder>, ImcBuilderHeaderPart {
+class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TeleoperationDone, TeleoperationDoneBuilder> {
   _$TeleoperationDone _$v;
 
   DateTime _timestamp;
@@ -31933,7 +32613,11 @@ class TeleoperationDoneBuilder implements BuilderWithInstanciator<TeleoperationD
 
   TeleoperationDoneBuilder();
 
-  TeleoperationDoneBuilder get newInstance => TeleoperationDoneBuilder();
+  TeleoperationDoneBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TeleoperationDoneBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TeleoperationDoneBuilder()..copyFromHeader(headerFrom);
 
   TeleoperationDoneBuilder get _$this {
     if (_$v != null) {
@@ -32096,7 +32780,7 @@ class _$StationKeeping extends StationKeeping {
 
 /// Station Keeping builder class
 ///
-class StationKeepingBuilder implements BuilderWithInstanciator<StationKeeping, StationKeepingBuilder>, ImcBuilderHeaderPart {
+class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StationKeeping, StationKeepingBuilder> {
   _$StationKeeping _$v;
 
   DateTime _timestamp;
@@ -32167,7 +32851,11 @@ class StationKeepingBuilder implements BuilderWithInstanciator<StationKeeping, S
 
   StationKeepingBuilder();
 
-  StationKeepingBuilder get newInstance => StationKeepingBuilder();
+  StationKeepingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  StationKeepingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StationKeepingBuilder()..copyFromHeader(headerFrom);
 
   StationKeepingBuilder get _$this {
     if (_$v != null) {
@@ -32366,7 +33054,7 @@ class _$Elevator extends Elevator {
 
 /// Elevator Maneuver builder class
 ///
-class ElevatorBuilder implements BuilderWithInstanciator<Elevator, ElevatorBuilder>, ImcBuilderHeaderPart {
+class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Elevator, ElevatorBuilder> {
   _$Elevator _$v;
 
   DateTime _timestamp;
@@ -32449,7 +33137,11 @@ class ElevatorBuilder implements BuilderWithInstanciator<Elevator, ElevatorBuild
 
   ElevatorBuilder();
 
-  ElevatorBuilder get newInstance => ElevatorBuilder();
+  ElevatorBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ElevatorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ElevatorBuilder()..copyFromHeader(headerFrom);
 
   ElevatorBuilder get _$this {
     if (_$v != null) {
@@ -32636,7 +33328,7 @@ class _$FollowTrajectory extends FollowTrajectory {
 
 /// Follow Trajectory builder class
 ///
-class FollowTrajectoryBuilder implements BuilderWithInstanciator<FollowTrajectory, FollowTrajectoryBuilder>, ImcBuilderHeaderPart {
+class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowTrajectory, FollowTrajectoryBuilder> {
   _$FollowTrajectory _$v;
 
   DateTime _timestamp;
@@ -32707,7 +33399,11 @@ class FollowTrajectoryBuilder implements BuilderWithInstanciator<FollowTrajector
 
   FollowTrajectoryBuilder();
 
-  FollowTrajectoryBuilder get newInstance => FollowTrajectoryBuilder();
+  FollowTrajectoryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FollowTrajectoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowTrajectoryBuilder()..copyFromHeader(headerFrom);
 
   FollowTrajectoryBuilder get _$this {
     if (_$v != null) {
@@ -32858,7 +33554,7 @@ class _$TrajectoryPoint extends TrajectoryPoint {
 
 /// Trajectory Point builder class
 ///
-class TrajectoryPointBuilder implements BuilderWithInstanciator<TrajectoryPoint, TrajectoryPointBuilder>, ImcBuilderHeaderPart {
+class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrajectoryPoint, TrajectoryPointBuilder> {
   _$TrajectoryPoint _$v;
 
   DateTime _timestamp;
@@ -32909,7 +33605,11 @@ class TrajectoryPointBuilder implements BuilderWithInstanciator<TrajectoryPoint,
 
   TrajectoryPointBuilder();
 
-  TrajectoryPointBuilder get newInstance => TrajectoryPointBuilder();
+  TrajectoryPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrajectoryPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrajectoryPointBuilder()..copyFromHeader(headerFrom);
 
   TrajectoryPointBuilder get _$this {
     if (_$v != null) {
@@ -33044,7 +33744,7 @@ class _$CustomManeuver extends CustomManeuver {
 
 /// Custom Maneuver builder class
 ///
-class CustomManeuverBuilder implements BuilderWithInstanciator<CustomManeuver, CustomManeuverBuilder>, ImcBuilderHeaderPart {
+class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CustomManeuver, CustomManeuverBuilder> {
   _$CustomManeuver _$v;
 
   DateTime _timestamp;
@@ -33091,7 +33791,11 @@ class CustomManeuverBuilder implements BuilderWithInstanciator<CustomManeuver, C
 
   CustomManeuverBuilder();
 
-  CustomManeuverBuilder get newInstance => CustomManeuverBuilder();
+  CustomManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CustomManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CustomManeuverBuilder()..copyFromHeader(headerFrom);
 
   CustomManeuverBuilder get _$this {
     if (_$v != null) {
@@ -33266,7 +33970,7 @@ class _$VehicleFormation extends VehicleFormation {
 
 /// Vehicle Formation builder class
 ///
-class VehicleFormationBuilder implements BuilderWithInstanciator<VehicleFormation, VehicleFormationBuilder>, ImcBuilderHeaderPart {
+class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleFormation, VehicleFormationBuilder> {
   _$VehicleFormation _$v;
 
   DateTime _timestamp;
@@ -33341,7 +34045,11 @@ class VehicleFormationBuilder implements BuilderWithInstanciator<VehicleFormatio
 
   VehicleFormationBuilder();
 
-  VehicleFormationBuilder get newInstance => VehicleFormationBuilder();
+  VehicleFormationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VehicleFormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleFormationBuilder()..copyFromHeader(headerFrom);
 
   VehicleFormationBuilder get _$this {
     if (_$v != null) {
@@ -33494,7 +34202,7 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
 
 /// Vehicle Formation Participant builder class
 ///
-class VehicleFormationParticipantBuilder implements BuilderWithInstanciator<VehicleFormationParticipant, VehicleFormationParticipantBuilder>, ImcBuilderHeaderPart {
+class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleFormationParticipant, VehicleFormationParticipantBuilder> {
   _$VehicleFormationParticipant _$v;
 
   DateTime _timestamp;
@@ -33545,7 +34253,11 @@ class VehicleFormationParticipantBuilder implements BuilderWithInstanciator<Vehi
 
   VehicleFormationParticipantBuilder();
 
-  VehicleFormationParticipantBuilder get newInstance => VehicleFormationParticipantBuilder();
+  VehicleFormationParticipantBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VehicleFormationParticipantBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleFormationParticipantBuilder()..copyFromHeader(headerFrom);
 
   VehicleFormationParticipantBuilder get _$this {
     if (_$v != null) {
@@ -33662,7 +34374,7 @@ class _$StopManeuver extends StopManeuver {
 
 /// Stop Maneuver builder class
 ///
-class StopManeuverBuilder implements BuilderWithInstanciator<StopManeuver, StopManeuverBuilder>, ImcBuilderHeaderPart {
+class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StopManeuver, StopManeuverBuilder> {
   _$StopManeuver _$v;
 
   DateTime _timestamp;
@@ -33697,7 +34409,11 @@ class StopManeuverBuilder implements BuilderWithInstanciator<StopManeuver, StopM
 
   StopManeuverBuilder();
 
-  StopManeuverBuilder get newInstance => StopManeuverBuilder();
+  StopManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  StopManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StopManeuverBuilder()..copyFromHeader(headerFrom);
 
   StopManeuverBuilder get _$this {
     if (_$v != null) {
@@ -33812,7 +34528,7 @@ class _$RegisterManeuver extends RegisterManeuver {
 
 /// Register Maneuver builder class
 ///
-class RegisterManeuverBuilder implements BuilderWithInstanciator<RegisterManeuver, RegisterManeuverBuilder>, ImcBuilderHeaderPart {
+class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RegisterManeuver, RegisterManeuverBuilder> {
   _$RegisterManeuver _$v;
 
   DateTime _timestamp;
@@ -33851,7 +34567,11 @@ class RegisterManeuverBuilder implements BuilderWithInstanciator<RegisterManeuve
 
   RegisterManeuverBuilder();
 
-  RegisterManeuverBuilder get newInstance => RegisterManeuverBuilder();
+  RegisterManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RegisterManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RegisterManeuverBuilder()..copyFromHeader(headerFrom);
 
   RegisterManeuverBuilder get _$this {
     if (_$v != null) {
@@ -33980,7 +34700,7 @@ class _$ManeuverControlState extends ManeuverControlState {
 
 /// Maneuver Control State builder class
 ///
-class ManeuverControlStateBuilder implements BuilderWithInstanciator<ManeuverControlState, ManeuverControlStateBuilder>, ImcBuilderHeaderPart {
+class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ManeuverControlState, ManeuverControlStateBuilder> {
   _$ManeuverControlState _$v;
 
   DateTime _timestamp;
@@ -34027,7 +34747,11 @@ class ManeuverControlStateBuilder implements BuilderWithInstanciator<ManeuverCon
 
   ManeuverControlStateBuilder();
 
-  ManeuverControlStateBuilder get newInstance => ManeuverControlStateBuilder();
+  ManeuverControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ManeuverControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ManeuverControlStateBuilder()..copyFromHeader(headerFrom);
 
   ManeuverControlStateBuilder get _$this {
     if (_$v != null) {
@@ -34190,7 +34914,7 @@ class _$FollowSystem extends FollowSystem {
 
 /// Follow System builder class
 ///
-class FollowSystemBuilder implements BuilderWithInstanciator<FollowSystem, FollowSystemBuilder>, ImcBuilderHeaderPart {
+class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowSystem, FollowSystemBuilder> {
   _$FollowSystem _$v;
 
   DateTime _timestamp;
@@ -34257,7 +34981,11 @@ class FollowSystemBuilder implements BuilderWithInstanciator<FollowSystem, Follo
 
   FollowSystemBuilder();
 
-  FollowSystemBuilder get newInstance => FollowSystemBuilder();
+  FollowSystemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FollowSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowSystemBuilder()..copyFromHeader(headerFrom);
 
   FollowSystemBuilder get _$this {
     if (_$v != null) {
@@ -34430,7 +35158,7 @@ class _$CommsRelay extends CommsRelay {
 
 /// Communications Relay builder class
 ///
-class CommsRelayBuilder implements BuilderWithInstanciator<CommsRelay, CommsRelayBuilder>, ImcBuilderHeaderPart {
+class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CommsRelay, CommsRelayBuilder> {
   _$CommsRelay _$v;
 
   DateTime _timestamp;
@@ -34497,7 +35225,11 @@ class CommsRelayBuilder implements BuilderWithInstanciator<CommsRelay, CommsRela
 
   CommsRelayBuilder();
 
-  CommsRelayBuilder get newInstance => CommsRelayBuilder();
+  CommsRelayBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CommsRelayBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CommsRelayBuilder()..copyFromHeader(headerFrom);
 
   CommsRelayBuilder get _$this {
     if (_$v != null) {
@@ -34670,7 +35402,7 @@ class _$CoverArea extends CoverArea {
 
 /// Cover Area builder class
 ///
-class CoverAreaBuilder implements BuilderWithInstanciator<CoverArea, CoverAreaBuilder>, ImcBuilderHeaderPart {
+class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CoverArea, CoverAreaBuilder> {
   _$CoverArea _$v;
 
   DateTime _timestamp;
@@ -34737,7 +35469,11 @@ class CoverAreaBuilder implements BuilderWithInstanciator<CoverArea, CoverAreaBu
 
   CoverAreaBuilder();
 
-  CoverAreaBuilder get newInstance => CoverAreaBuilder();
+  CoverAreaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CoverAreaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CoverAreaBuilder()..copyFromHeader(headerFrom);
 
   CoverAreaBuilder get _$this {
     if (_$v != null) {
@@ -34874,7 +35610,7 @@ class _$PolygonVertex extends PolygonVertex {
 
 /// Polygon Vertex builder class
 ///
-class PolygonVertexBuilder implements BuilderWithInstanciator<PolygonVertex, PolygonVertexBuilder>, ImcBuilderHeaderPart {
+class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PolygonVertex, PolygonVertexBuilder> {
   _$PolygonVertex _$v;
 
   DateTime _timestamp;
@@ -34917,7 +35653,11 @@ class PolygonVertexBuilder implements BuilderWithInstanciator<PolygonVertex, Pol
 
   PolygonVertexBuilder();
 
-  PolygonVertexBuilder get newInstance => PolygonVertexBuilder();
+  PolygonVertexBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PolygonVertexBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PolygonVertexBuilder()..copyFromHeader(headerFrom);
 
   PolygonVertexBuilder get _$this {
     if (_$v != null) {
@@ -35108,7 +35848,7 @@ class _$CompassCalibration extends CompassCalibration {
 
 /// Compass Calibration Maneuver builder class
 ///
-class CompassCalibrationBuilder implements BuilderWithInstanciator<CompassCalibration, CompassCalibrationBuilder>, ImcBuilderHeaderPart {
+class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CompassCalibration, CompassCalibrationBuilder> {
   _$CompassCalibration _$v;
 
   DateTime _timestamp;
@@ -35195,7 +35935,11 @@ class CompassCalibrationBuilder implements BuilderWithInstanciator<CompassCalibr
 
   CompassCalibrationBuilder();
 
-  CompassCalibrationBuilder get newInstance => CompassCalibrationBuilder();
+  CompassCalibrationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CompassCalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompassCalibrationBuilder()..copyFromHeader(headerFrom);
 
   CompassCalibrationBuilder get _$this {
     if (_$v != null) {
@@ -35354,7 +36098,7 @@ class _$FormationParameters extends FormationParameters {
 
 /// Formation Parameters builder class
 ///
-class FormationParametersBuilder implements BuilderWithInstanciator<FormationParameters, FormationParametersBuilder>, ImcBuilderHeaderPart {
+class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationParameters, FormationParametersBuilder> {
   _$FormationParameters _$v;
 
   DateTime _timestamp;
@@ -35405,7 +36149,11 @@ class FormationParametersBuilder implements BuilderWithInstanciator<FormationPar
 
   FormationParametersBuilder();
 
-  FormationParametersBuilder get newInstance => FormationParametersBuilder();
+  FormationParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationParametersBuilder()..copyFromHeader(headerFrom);
 
   FormationParametersBuilder get _$this {
     if (_$v != null) {
@@ -35606,7 +36354,7 @@ class _$FormationPlanExecution extends FormationPlanExecution {
 
 /// Formation Plan Execution builder class
 ///
-class FormationPlanExecutionBuilder implements BuilderWithInstanciator<FormationPlanExecution, FormationPlanExecutionBuilder>, ImcBuilderHeaderPart {
+class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationPlanExecution, FormationPlanExecutionBuilder> {
   _$FormationPlanExecution _$v;
 
   DateTime _timestamp;
@@ -35697,7 +36445,11 @@ class FormationPlanExecutionBuilder implements BuilderWithInstanciator<Formation
 
   FormationPlanExecutionBuilder();
 
-  FormationPlanExecutionBuilder get newInstance => FormationPlanExecutionBuilder();
+  FormationPlanExecutionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationPlanExecutionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationPlanExecutionBuilder()..copyFromHeader(headerFrom);
 
   FormationPlanExecutionBuilder get _$this {
     if (_$v != null) {
@@ -35864,7 +36616,7 @@ class _$FollowReference extends FollowReference {
 
 /// Follow Reference Maneuver builder class
 ///
-class FollowReferenceBuilder implements BuilderWithInstanciator<FollowReference, FollowReferenceBuilder>, ImcBuilderHeaderPart {
+class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowReference, FollowReferenceBuilder> {
   _$FollowReference _$v;
 
   DateTime _timestamp;
@@ -35919,7 +36671,11 @@ class FollowReferenceBuilder implements BuilderWithInstanciator<FollowReference,
 
   FollowReferenceBuilder();
 
-  FollowReferenceBuilder get newInstance => FollowReferenceBuilder();
+  FollowReferenceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FollowReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowReferenceBuilder()..copyFromHeader(headerFrom);
 
   FollowReferenceBuilder get _$this {
     if (_$v != null) {
@@ -36074,7 +36830,7 @@ class _$Reference extends Reference {
 
 /// Reference To Follow builder class
 ///
-class ReferenceBuilder implements BuilderWithInstanciator<Reference, ReferenceBuilder>, ImcBuilderHeaderPart {
+class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Reference, ReferenceBuilder> {
   _$Reference _$v;
 
   DateTime _timestamp;
@@ -36133,7 +36889,11 @@ class ReferenceBuilder implements BuilderWithInstanciator<Reference, ReferenceBu
 
   ReferenceBuilder();
 
-  ReferenceBuilder get newInstance => ReferenceBuilder();
+  ReferenceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReferenceBuilder()..copyFromHeader(headerFrom);
 
   ReferenceBuilder get _$this {
     if (_$v != null) {
@@ -36284,7 +37044,7 @@ class _$FollowRefState extends FollowRefState {
 
 /// Follow Reference State builder class
 ///
-class FollowRefStateBuilder implements BuilderWithInstanciator<FollowRefState, FollowRefStateBuilder>, ImcBuilderHeaderPart {
+class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowRefState, FollowRefStateBuilder> {
   _$FollowRefState _$v;
 
   DateTime _timestamp;
@@ -36339,7 +37099,11 @@ class FollowRefStateBuilder implements BuilderWithInstanciator<FollowRefState, F
 
   FollowRefStateBuilder();
 
-  FollowRefStateBuilder get newInstance => FollowRefStateBuilder();
+  FollowRefStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FollowRefStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowRefStateBuilder()..copyFromHeader(headerFrom);
 
   FollowRefStateBuilder get _$this {
     if (_$v != null) {
@@ -36572,7 +37336,7 @@ class _$FormationMonitor extends FormationMonitor {
 
 /// Formation Monitoring Data builder class
 ///
-class FormationMonitorBuilder implements BuilderWithInstanciator<FormationMonitor, FormationMonitorBuilder>, ImcBuilderHeaderPart {
+class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationMonitor, FormationMonitorBuilder> {
   _$FormationMonitor _$v;
 
   DateTime _timestamp;
@@ -36683,7 +37447,11 @@ class FormationMonitorBuilder implements BuilderWithInstanciator<FormationMonito
 
   FormationMonitorBuilder();
 
-  FormationMonitorBuilder get newInstance => FormationMonitorBuilder();
+  FormationMonitorBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationMonitorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationMonitorBuilder()..copyFromHeader(headerFrom);
 
   FormationMonitorBuilder get _$this {
     if (_$v != null) {
@@ -36962,7 +37730,7 @@ class _$RelativeState extends RelativeState {
 
 /// Relative State builder class
 ///
-class RelativeStateBuilder implements BuilderWithInstanciator<RelativeState, RelativeStateBuilder>, ImcBuilderHeaderPart {
+class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RelativeState, RelativeStateBuilder> {
   _$RelativeState _$v;
 
   DateTime _timestamp;
@@ -37085,7 +37853,11 @@ class RelativeStateBuilder implements BuilderWithInstanciator<RelativeState, Rel
 
   RelativeStateBuilder();
 
-  RelativeStateBuilder get newInstance => RelativeStateBuilder();
+  RelativeStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RelativeStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RelativeStateBuilder()..copyFromHeader(headerFrom);
 
   RelativeStateBuilder get _$this {
     if (_$v != null) {
@@ -37262,7 +38034,7 @@ class _$Dislodge extends Dislodge {
 
 /// Dislodge Maneuver builder class
 ///
-class DislodgeBuilder implements BuilderWithInstanciator<Dislodge, DislodgeBuilder>, ImcBuilderHeaderPart {
+class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Dislodge, DislodgeBuilder> {
   _$Dislodge _$v;
 
   DateTime _timestamp;
@@ -37313,7 +38085,11 @@ class DislodgeBuilder implements BuilderWithInstanciator<Dislodge, DislodgeBuild
 
   DislodgeBuilder();
 
-  DislodgeBuilder get newInstance => DislodgeBuilder();
+  DislodgeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DislodgeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DislodgeBuilder()..copyFromHeader(headerFrom);
 
   DislodgeBuilder get _$this {
     if (_$v != null) {
@@ -37556,7 +38332,7 @@ class _$Formation extends Formation {
 
 /// Formation builder class
 ///
-class FormationBuilder implements BuilderWithInstanciator<Formation, FormationBuilder>, ImcBuilderHeaderPart {
+class FormationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Formation, FormationBuilder> {
   _$Formation _$v;
 
   DateTime _timestamp;
@@ -37675,7 +38451,11 @@ class FormationBuilder implements BuilderWithInstanciator<Formation, FormationBu
 
   FormationBuilder();
 
-  FormationBuilder get newInstance => FormationBuilder();
+  FormationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationBuilder()..copyFromHeader(headerFrom);
 
   FormationBuilder get _$this {
     if (_$v != null) {
@@ -37874,7 +38654,7 @@ class _$Launch extends Launch {
 
 /// Launch Maneuver builder class
 ///
-class LaunchBuilder implements BuilderWithInstanciator<Launch, LaunchBuilder>, ImcBuilderHeaderPart {
+class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Launch, LaunchBuilder> {
   _$Launch _$v;
 
   DateTime _timestamp;
@@ -37941,7 +38721,11 @@ class LaunchBuilder implements BuilderWithInstanciator<Launch, LaunchBuilder>, I
 
   LaunchBuilder();
 
-  LaunchBuilder get newInstance => LaunchBuilder();
+  LaunchBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LaunchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LaunchBuilder()..copyFromHeader(headerFrom);
 
   LaunchBuilder get _$this {
     if (_$v != null) {
@@ -38114,7 +38898,7 @@ class _$Drop extends Drop {
 
 /// Drop Maneuver builder class
 ///
-class DropBuilder implements BuilderWithInstanciator<Drop, DropBuilder>, ImcBuilderHeaderPart {
+class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Drop, DropBuilder> {
   _$Drop _$v;
 
   DateTime _timestamp;
@@ -38181,7 +38965,11 @@ class DropBuilder implements BuilderWithInstanciator<Drop, DropBuilder>, ImcBuil
 
   DropBuilder();
 
-  DropBuilder get newInstance => DropBuilder();
+  DropBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DropBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DropBuilder()..copyFromHeader(headerFrom);
 
   DropBuilder get _$this {
     if (_$v != null) {
@@ -38354,7 +39142,7 @@ class _$ScheduledGoto extends ScheduledGoto {
 
 /// Scheduled Goto builder class
 ///
-class ScheduledGotoBuilder implements BuilderWithInstanciator<ScheduledGoto, ScheduledGotoBuilder>, ImcBuilderHeaderPart {
+class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ScheduledGoto, ScheduledGotoBuilder> {
   _$ScheduledGoto _$v;
 
   DateTime _timestamp;
@@ -38421,7 +39209,11 @@ class ScheduledGotoBuilder implements BuilderWithInstanciator<ScheduledGoto, Sch
 
   ScheduledGotoBuilder();
 
-  ScheduledGotoBuilder get newInstance => ScheduledGotoBuilder();
+  ScheduledGotoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ScheduledGotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ScheduledGotoBuilder()..copyFromHeader(headerFrom);
 
   ScheduledGotoBuilder get _$this {
     if (_$v != null) {
@@ -38642,7 +39434,7 @@ class _$RowsCoverage extends RowsCoverage {
 
 /// Rows Coverage builder class
 ///
-class RowsCoverageBuilder implements BuilderWithInstanciator<RowsCoverage, RowsCoverageBuilder>, ImcBuilderHeaderPart {
+class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RowsCoverage, RowsCoverageBuilder> {
   _$RowsCoverage _$v;
 
   DateTime _timestamp;
@@ -38741,7 +39533,11 @@ class RowsCoverageBuilder implements BuilderWithInstanciator<RowsCoverage, RowsC
 
   RowsCoverageBuilder();
 
-  RowsCoverageBuilder get newInstance => RowsCoverageBuilder();
+  RowsCoverageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RowsCoverageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RowsCoverageBuilder()..copyFromHeader(headerFrom);
 
   RowsCoverageBuilder get _$this {
     if (_$v != null) {
@@ -38948,7 +39744,7 @@ class _$Sample extends Sample {
 
 /// Sample Maneuver builder class
 ///
-class SampleBuilder implements BuilderWithInstanciator<Sample, SampleBuilder>, ImcBuilderHeaderPart {
+class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Sample, SampleBuilder> {
   _$Sample _$v;
 
   DateTime _timestamp;
@@ -39027,7 +39823,11 @@ class SampleBuilder implements BuilderWithInstanciator<Sample, SampleBuilder>, I
 
   SampleBuilder();
 
-  SampleBuilder get newInstance => SampleBuilder();
+  SampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SampleBuilder()..copyFromHeader(headerFrom);
 
   SampleBuilder get _$this {
     if (_$v != null) {
@@ -39158,7 +39958,7 @@ class _$ImageTracking extends ImageTracking {
 
 /// Image Tracking builder class
 ///
-class ImageTrackingBuilder implements BuilderWithInstanciator<ImageTracking, ImageTrackingBuilder>, ImcBuilderHeaderPart {
+class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ImageTracking, ImageTrackingBuilder> {
   _$ImageTracking _$v;
 
   DateTime _timestamp;
@@ -39193,7 +39993,11 @@ class ImageTrackingBuilder implements BuilderWithInstanciator<ImageTracking, Ima
 
   ImageTrackingBuilder();
 
-  ImageTrackingBuilder get newInstance => ImageTrackingBuilder();
+  ImageTrackingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ImageTrackingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ImageTrackingBuilder()..copyFromHeader(headerFrom);
 
   ImageTrackingBuilder get _$this {
     if (_$v != null) {
@@ -39350,7 +40154,7 @@ class _$Takeoff extends Takeoff {
 
 /// Takeoff Maneuver builder class
 ///
-class TakeoffBuilder implements BuilderWithInstanciator<Takeoff, TakeoffBuilder>, ImcBuilderHeaderPart {
+class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Takeoff, TakeoffBuilder> {
   _$Takeoff _$v;
 
   DateTime _timestamp;
@@ -39417,7 +40221,11 @@ class TakeoffBuilder implements BuilderWithInstanciator<Takeoff, TakeoffBuilder>
 
   TakeoffBuilder();
 
-  TakeoffBuilder get newInstance => TakeoffBuilder();
+  TakeoffBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TakeoffBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TakeoffBuilder()..copyFromHeader(headerFrom);
 
   TakeoffBuilder get _$this {
     if (_$v != null) {
@@ -39608,7 +40416,7 @@ class _$Land extends Land {
 
 /// Land Maneuver builder class
 ///
-class LandBuilder implements BuilderWithInstanciator<Land, LandBuilder>, ImcBuilderHeaderPart {
+class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Land, LandBuilder> {
   _$Land _$v;
 
   DateTime _timestamp;
@@ -39687,7 +40495,11 @@ class LandBuilder implements BuilderWithInstanciator<Land, LandBuilder>, ImcBuil
 
   LandBuilder();
 
-  LandBuilder get newInstance => LandBuilder();
+  LandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LandBuilder()..copyFromHeader(headerFrom);
 
   LandBuilder get _$this {
     if (_$v != null) {
@@ -39884,7 +40696,7 @@ class _$AutonomousSection extends AutonomousSection {
 
 /// Autonomous Section builder class
 ///
-class AutonomousSectionBuilder implements BuilderWithInstanciator<AutonomousSection, AutonomousSectionBuilder>, ImcBuilderHeaderPart {
+class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AutonomousSection, AutonomousSectionBuilder> {
   _$AutonomousSection _$v;
 
   DateTime _timestamp;
@@ -39963,7 +40775,11 @@ class AutonomousSectionBuilder implements BuilderWithInstanciator<AutonomousSect
 
   AutonomousSectionBuilder();
 
-  AutonomousSectionBuilder get newInstance => AutonomousSectionBuilder();
+  AutonomousSectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AutonomousSectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AutonomousSectionBuilder()..copyFromHeader(headerFrom);
 
   AutonomousSectionBuilder get _$this {
     if (_$v != null) {
@@ -40142,7 +40958,7 @@ class _$FollowPoint extends FollowPoint {
 
 /// Follow Point Maneuver builder class
 ///
-class FollowPointBuilder implements BuilderWithInstanciator<FollowPoint, FollowPointBuilder>, ImcBuilderHeaderPart {
+class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowPoint, FollowPointBuilder> {
   _$FollowPoint _$v;
 
   DateTime _timestamp;
@@ -40209,7 +41025,11 @@ class FollowPointBuilder implements BuilderWithInstanciator<FollowPoint, FollowP
 
   FollowPointBuilder();
 
-  FollowPointBuilder get newInstance => FollowPointBuilder();
+  FollowPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FollowPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowPointBuilder()..copyFromHeader(headerFrom);
 
   FollowPointBuilder get _$this {
     if (_$v != null) {
@@ -40370,7 +41190,7 @@ class _$Alignment extends Alignment {
 
 /// Alignment Maneuver builder class
 ///
-class AlignmentBuilder implements BuilderWithInstanciator<Alignment, AlignmentBuilder>, ImcBuilderHeaderPart {
+class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Alignment, AlignmentBuilder> {
   _$Alignment _$v;
 
   DateTime _timestamp;
@@ -40429,7 +41249,11 @@ class AlignmentBuilder implements BuilderWithInstanciator<Alignment, AlignmentBu
 
   AlignmentBuilder();
 
-  AlignmentBuilder get newInstance => AlignmentBuilder();
+  AlignmentBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AlignmentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AlignmentBuilder()..copyFromHeader(headerFrom);
 
   AlignmentBuilder get _$this {
     if (_$v != null) {
@@ -40622,7 +41446,7 @@ class _$StationKeepingExtended extends StationKeepingExtended {
 
 /// Station Keeping Extended builder class
 ///
-class StationKeepingExtendedBuilder implements BuilderWithInstanciator<StationKeepingExtended, StationKeepingExtendedBuilder>, ImcBuilderHeaderPart {
+class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StationKeepingExtended, StationKeepingExtendedBuilder> {
   _$StationKeepingExtended _$v;
 
   DateTime _timestamp;
@@ -40705,7 +41529,11 @@ class StationKeepingExtendedBuilder implements BuilderWithInstanciator<StationKe
 
   StationKeepingExtendedBuilder();
 
-  StationKeepingExtendedBuilder get newInstance => StationKeepingExtendedBuilder();
+  StationKeepingExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  StationKeepingExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StationKeepingExtendedBuilder()..copyFromHeader(headerFrom);
 
   StationKeepingExtendedBuilder get _$this {
     if (_$v != null) {
@@ -40904,7 +41732,7 @@ class _$Magnetometer extends Magnetometer {
 
 /// Magnetometer Maneuver builder class
 ///
-class MagnetometerBuilder implements BuilderWithInstanciator<Magnetometer, MagnetometerBuilder>, ImcBuilderHeaderPart {
+class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Magnetometer, MagnetometerBuilder> {
   _$Magnetometer _$v;
 
   DateTime _timestamp;
@@ -40983,7 +41811,11 @@ class MagnetometerBuilder implements BuilderWithInstanciator<Magnetometer, Magne
 
   MagnetometerBuilder();
 
-  MagnetometerBuilder get newInstance => MagnetometerBuilder();
+  MagnetometerBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MagnetometerBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MagnetometerBuilder()..copyFromHeader(headerFrom);
 
   MagnetometerBuilder get _$this {
     if (_$v != null) {
@@ -41174,7 +42006,7 @@ class _$VehicleState extends VehicleState {
 
 /// Vehicle State builder class
 ///
-class VehicleStateBuilder implements BuilderWithInstanciator<VehicleState, VehicleStateBuilder>, ImcBuilderHeaderPart {
+class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleState, VehicleStateBuilder> {
   _$VehicleState _$v;
 
   DateTime _timestamp;
@@ -41249,7 +42081,11 @@ class VehicleStateBuilder implements BuilderWithInstanciator<VehicleState, Vehic
 
   VehicleStateBuilder();
 
-  VehicleStateBuilder get newInstance => VehicleStateBuilder();
+  VehicleStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VehicleStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleStateBuilder()..copyFromHeader(headerFrom);
 
   VehicleStateBuilder get _$this {
     if (_$v != null) {
@@ -41414,7 +42250,7 @@ class _$VehicleCommand extends VehicleCommand {
 
 /// Vehicle Command builder class
 ///
-class VehicleCommandBuilder implements BuilderWithInstanciator<VehicleCommand, VehicleCommandBuilder>, ImcBuilderHeaderPart {
+class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleCommand, VehicleCommandBuilder> {
   _$VehicleCommand _$v;
 
   DateTime _timestamp;
@@ -41473,7 +42309,11 @@ class VehicleCommandBuilder implements BuilderWithInstanciator<VehicleCommand, V
 
   VehicleCommandBuilder();
 
-  VehicleCommandBuilder get newInstance => VehicleCommandBuilder();
+  VehicleCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VehicleCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleCommandBuilder()..copyFromHeader(headerFrom);
 
   VehicleCommandBuilder get _$this {
     if (_$v != null) {
@@ -41606,7 +42446,7 @@ class _$MonitorEntityState extends MonitorEntityState {
 
 /// Monitor Entity State builder class
 ///
-class MonitorEntityStateBuilder implements BuilderWithInstanciator<MonitorEntityState, MonitorEntityStateBuilder>, ImcBuilderHeaderPart {
+class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MonitorEntityState, MonitorEntityStateBuilder> {
   _$MonitorEntityState _$v;
 
   DateTime _timestamp;
@@ -41649,7 +42489,11 @@ class MonitorEntityStateBuilder implements BuilderWithInstanciator<MonitorEntity
 
   MonitorEntityStateBuilder();
 
-  MonitorEntityStateBuilder get newInstance => MonitorEntityStateBuilder();
+  MonitorEntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MonitorEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MonitorEntityStateBuilder()..copyFromHeader(headerFrom);
 
   MonitorEntityStateBuilder get _$this {
     if (_$v != null) {
@@ -41810,7 +42654,7 @@ class _$EntityMonitoringState extends EntityMonitoringState {
 
 /// Entity Monitoring State builder class
 ///
-class EntityMonitoringStateBuilder implements BuilderWithInstanciator<EntityMonitoringState, EntityMonitoringStateBuilder>, ImcBuilderHeaderPart {
+class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityMonitoringState, EntityMonitoringStateBuilder> {
   _$EntityMonitoringState _$v;
 
   DateTime _timestamp;
@@ -41877,7 +42721,11 @@ class EntityMonitoringStateBuilder implements BuilderWithInstanciator<EntityMoni
 
   EntityMonitoringStateBuilder();
 
-  EntityMonitoringStateBuilder get newInstance => EntityMonitoringStateBuilder();
+  EntityMonitoringStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EntityMonitoringStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityMonitoringStateBuilder()..copyFromHeader(headerFrom);
 
   EntityMonitoringStateBuilder get _$this {
     if (_$v != null) {
@@ -42074,7 +42922,7 @@ class _$OperationalLimits extends OperationalLimits {
 
 /// Operational Limits builder class
 ///
-class OperationalLimitsBuilder implements BuilderWithInstanciator<OperationalLimits, OperationalLimitsBuilder>, ImcBuilderHeaderPart {
+class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<OperationalLimits, OperationalLimitsBuilder> {
   _$OperationalLimits _$v;
 
   DateTime _timestamp;
@@ -42157,7 +43005,11 @@ class OperationalLimitsBuilder implements BuilderWithInstanciator<OperationalLim
 
   OperationalLimitsBuilder();
 
-  OperationalLimitsBuilder get newInstance => OperationalLimitsBuilder();
+  OperationalLimitsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  OperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => OperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   OperationalLimitsBuilder get _$this {
     if (_$v != null) {
@@ -42290,7 +43142,7 @@ class _$GetOperationalLimits extends GetOperationalLimits {
 
 /// Get Operational Limits builder class
 ///
-class GetOperationalLimitsBuilder implements BuilderWithInstanciator<GetOperationalLimits, GetOperationalLimitsBuilder>, ImcBuilderHeaderPart {
+class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetOperationalLimits, GetOperationalLimitsBuilder> {
   _$GetOperationalLimits _$v;
 
   DateTime _timestamp;
@@ -42325,7 +43177,11 @@ class GetOperationalLimitsBuilder implements BuilderWithInstanciator<GetOperatio
 
   GetOperationalLimitsBuilder();
 
-  GetOperationalLimitsBuilder get newInstance => GetOperationalLimitsBuilder();
+  GetOperationalLimitsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GetOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetOperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   GetOperationalLimitsBuilder get _$this {
     if (_$v != null) {
@@ -42440,7 +43296,7 @@ class _$Calibration extends Calibration {
 
 /// Calibration builder class
 ///
-class CalibrationBuilder implements BuilderWithInstanciator<Calibration, CalibrationBuilder>, ImcBuilderHeaderPart {
+class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Calibration, CalibrationBuilder> {
   _$Calibration _$v;
 
   DateTime _timestamp;
@@ -42479,7 +43335,11 @@ class CalibrationBuilder implements BuilderWithInstanciator<Calibration, Calibra
 
   CalibrationBuilder();
 
-  CalibrationBuilder get newInstance => CalibrationBuilder();
+  CalibrationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CalibrationBuilder()..copyFromHeader(headerFrom);
 
   CalibrationBuilder get _$this {
     if (_$v != null) {
@@ -42608,7 +43468,7 @@ class _$ControlLoops extends ControlLoops {
 
 /// Control Loops builder class
 ///
-class ControlLoopsBuilder implements BuilderWithInstanciator<ControlLoops, ControlLoopsBuilder>, ImcBuilderHeaderPart {
+class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ControlLoops, ControlLoopsBuilder> {
   _$ControlLoops _$v;
 
   DateTime _timestamp;
@@ -42655,7 +43515,11 @@ class ControlLoopsBuilder implements BuilderWithInstanciator<ControlLoops, Contr
 
   ControlLoopsBuilder();
 
-  ControlLoopsBuilder get newInstance => ControlLoopsBuilder();
+  ControlLoopsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ControlLoopsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ControlLoopsBuilder()..copyFromHeader(headerFrom);
 
   ControlLoopsBuilder get _$this {
     if (_$v != null) {
@@ -42776,7 +43640,7 @@ class _$VehicleMedium extends VehicleMedium {
 
 /// Vehicle Medium builder class
 ///
-class VehicleMediumBuilder implements BuilderWithInstanciator<VehicleMedium, VehicleMediumBuilder>, ImcBuilderHeaderPart {
+class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleMedium, VehicleMediumBuilder> {
   _$VehicleMedium _$v;
 
   DateTime _timestamp;
@@ -42815,7 +43679,11 @@ class VehicleMediumBuilder implements BuilderWithInstanciator<VehicleMedium, Veh
 
   VehicleMediumBuilder();
 
-  VehicleMediumBuilder get newInstance => VehicleMediumBuilder();
+  VehicleMediumBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VehicleMediumBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleMediumBuilder()..copyFromHeader(headerFrom);
 
   VehicleMediumBuilder get _$this {
     if (_$v != null) {
@@ -42938,7 +43806,7 @@ class _$Collision extends Collision {
 
 /// Collision builder class
 ///
-class CollisionBuilder implements BuilderWithInstanciator<Collision, CollisionBuilder>, ImcBuilderHeaderPart {
+class CollisionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Collision, CollisionBuilder> {
   _$Collision _$v;
 
   DateTime _timestamp;
@@ -42981,7 +43849,11 @@ class CollisionBuilder implements BuilderWithInstanciator<Collision, CollisionBu
 
   CollisionBuilder();
 
-  CollisionBuilder get newInstance => CollisionBuilder();
+  CollisionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CollisionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CollisionBuilder()..copyFromHeader(headerFrom);
 
   CollisionBuilder get _$this {
     if (_$v != null) {
@@ -43130,7 +44002,7 @@ class _$FormState extends FormState {
 
 /// Formation Tracking State builder class
 ///
-class FormStateBuilder implements BuilderWithInstanciator<FormState, FormStateBuilder>, ImcBuilderHeaderPart {
+class FormStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormState, FormStateBuilder> {
   _$FormState _$v;
 
   DateTime _timestamp;
@@ -43189,7 +44061,11 @@ class FormStateBuilder implements BuilderWithInstanciator<FormState, FormStateBu
 
   FormStateBuilder();
 
-  FormStateBuilder get newInstance => FormStateBuilder();
+  FormStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormStateBuilder()..copyFromHeader(headerFrom);
 
   FormStateBuilder get _$this {
     if (_$v != null) {
@@ -43322,7 +44198,7 @@ class _$AutopilotMode extends AutopilotMode {
 
 /// Autopilot Mode builder class
 ///
-class AutopilotModeBuilder implements BuilderWithInstanciator<AutopilotMode, AutopilotModeBuilder>, ImcBuilderHeaderPart {
+class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AutopilotMode, AutopilotModeBuilder> {
   _$AutopilotMode _$v;
 
   DateTime _timestamp;
@@ -43365,7 +44241,11 @@ class AutopilotModeBuilder implements BuilderWithInstanciator<AutopilotMode, Aut
 
   AutopilotModeBuilder();
 
-  AutopilotModeBuilder get newInstance => AutopilotModeBuilder();
+  AutopilotModeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AutopilotModeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AutopilotModeBuilder()..copyFromHeader(headerFrom);
 
   AutopilotModeBuilder get _$this {
     if (_$v != null) {
@@ -43526,7 +44406,7 @@ class _$FormationState extends FormationState {
 
 /// Formation Tracking State builder class
 ///
-class FormationStateBuilder implements BuilderWithInstanciator<FormationState, FormationStateBuilder>, ImcBuilderHeaderPart {
+class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationState, FormationStateBuilder> {
   _$FormationState _$v;
 
   DateTime _timestamp;
@@ -43593,7 +44473,11 @@ class FormationStateBuilder implements BuilderWithInstanciator<FormationState, F
 
   FormationStateBuilder();
 
-  FormationStateBuilder get newInstance => FormationStateBuilder();
+  FormationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationStateBuilder()..copyFromHeader(headerFrom);
 
   FormationStateBuilder get _$this {
     if (_$v != null) {
@@ -43742,7 +44626,7 @@ class _$ReportControl extends ReportControl {
 
 /// Report Control builder class
 ///
-class ReportControlBuilder implements BuilderWithInstanciator<ReportControl, ReportControlBuilder>, ImcBuilderHeaderPart {
+class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ReportControl, ReportControlBuilder> {
   _$ReportControl _$v;
 
   DateTime _timestamp;
@@ -43793,7 +44677,11 @@ class ReportControlBuilder implements BuilderWithInstanciator<ReportControl, Rep
 
   ReportControlBuilder();
 
-  ReportControlBuilder get newInstance => ReportControlBuilder();
+  ReportControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ReportControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReportControlBuilder()..copyFromHeader(headerFrom);
 
   ReportControlBuilder get _$this {
     if (_$v != null) {
@@ -43970,7 +44858,7 @@ class _$StateReport extends StateReport {
 
 /// State Report builder class
 ///
-class StateReportBuilder implements BuilderWithInstanciator<StateReport, StateReportBuilder>, ImcBuilderHeaderPart {
+class StateReportBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StateReport, StateReportBuilder> {
   _$StateReport _$v;
 
   DateTime _timestamp;
@@ -44045,7 +44933,11 @@ class StateReportBuilder implements BuilderWithInstanciator<StateReport, StateRe
 
   StateReportBuilder();
 
-  StateReportBuilder get newInstance => StateReportBuilder();
+  StateReportBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  StateReportBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StateReportBuilder()..copyFromHeader(headerFrom);
 
   StateReportBuilder get _$this {
     if (_$v != null) {
@@ -44222,7 +45114,7 @@ class _$TransmissionRequest extends TransmissionRequest {
 
 /// Transmission Request builder class
 ///
-class TransmissionRequestBuilder implements BuilderWithInstanciator<TransmissionRequest, TransmissionRequestBuilder>, ImcBuilderHeaderPart {
+class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TransmissionRequest, TransmissionRequestBuilder> {
   _$TransmissionRequest _$v;
 
   DateTime _timestamp;
@@ -44289,7 +45181,11 @@ class TransmissionRequestBuilder implements BuilderWithInstanciator<Transmission
 
   TransmissionRequestBuilder();
 
-  TransmissionRequestBuilder get newInstance => TransmissionRequestBuilder();
+  TransmissionRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TransmissionRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransmissionRequestBuilder()..copyFromHeader(headerFrom);
 
   TransmissionRequestBuilder get _$this {
     if (_$v != null) {
@@ -44432,7 +45328,7 @@ class _$TransmissionStatus extends TransmissionStatus {
 
 /// Transmission Status builder class
 ///
-class TransmissionStatusBuilder implements BuilderWithInstanciator<TransmissionStatus, TransmissionStatusBuilder>, ImcBuilderHeaderPart {
+class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TransmissionStatus, TransmissionStatusBuilder> {
   _$TransmissionStatus _$v;
 
   DateTime _timestamp;
@@ -44479,7 +45375,11 @@ class TransmissionStatusBuilder implements BuilderWithInstanciator<TransmissionS
 
   TransmissionStatusBuilder();
 
-  TransmissionStatusBuilder get newInstance => TransmissionStatusBuilder();
+  TransmissionStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TransmissionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransmissionStatusBuilder()..copyFromHeader(headerFrom);
 
   TransmissionStatusBuilder get _$this {
     if (_$v != null) {
@@ -44618,7 +45518,7 @@ class _$SmsRequest extends SmsRequest {
 
 /// SMS Transmission Request builder class
 ///
-class SmsRequestBuilder implements BuilderWithInstanciator<SmsRequest, SmsRequestBuilder>, ImcBuilderHeaderPart {
+class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsRequest, SmsRequestBuilder> {
   _$SmsRequest _$v;
 
   DateTime _timestamp;
@@ -44669,7 +45569,11 @@ class SmsRequestBuilder implements BuilderWithInstanciator<SmsRequest, SmsReques
 
   SmsRequestBuilder();
 
-  SmsRequestBuilder get newInstance => SmsRequestBuilder();
+  SmsRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SmsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsRequestBuilder()..copyFromHeader(headerFrom);
 
   SmsRequestBuilder get _$this {
     if (_$v != null) {
@@ -44804,7 +45708,7 @@ class _$SmsStatus extends SmsStatus {
 
 /// SMS Transmission Status builder class
 ///
-class SmsStatusBuilder implements BuilderWithInstanciator<SmsStatus, SmsStatusBuilder>, ImcBuilderHeaderPart {
+class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsStatus, SmsStatusBuilder> {
   _$SmsStatus _$v;
 
   DateTime _timestamp;
@@ -44851,7 +45755,11 @@ class SmsStatusBuilder implements BuilderWithInstanciator<SmsStatus, SmsStatusBu
 
   SmsStatusBuilder();
 
-  SmsStatusBuilder get newInstance => SmsStatusBuilder();
+  SmsStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SmsStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsStatusBuilder()..copyFromHeader(headerFrom);
 
   SmsStatusBuilder get _$this {
     if (_$v != null) {
@@ -44972,7 +45880,7 @@ class _$VtolState extends VtolState {
 
 /// VTOL State builder class
 ///
-class VtolStateBuilder implements BuilderWithInstanciator<VtolState, VtolStateBuilder>, ImcBuilderHeaderPart {
+class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VtolState, VtolStateBuilder> {
   _$VtolState _$v;
 
   DateTime _timestamp;
@@ -45011,7 +45919,11 @@ class VtolStateBuilder implements BuilderWithInstanciator<VtolState, VtolStateBu
 
   VtolStateBuilder();
 
-  VtolStateBuilder get newInstance => VtolStateBuilder();
+  VtolStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VtolStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VtolStateBuilder()..copyFromHeader(headerFrom);
 
   VtolStateBuilder get _$this {
     if (_$v != null) {
@@ -45128,7 +46040,7 @@ class _$ArmingState extends ArmingState {
 
 /// Arming State builder class
 ///
-class ArmingStateBuilder implements BuilderWithInstanciator<ArmingState, ArmingStateBuilder>, ImcBuilderHeaderPart {
+class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ArmingState, ArmingStateBuilder> {
   _$ArmingState _$v;
 
   DateTime _timestamp;
@@ -45167,7 +46079,11 @@ class ArmingStateBuilder implements BuilderWithInstanciator<ArmingState, ArmingS
 
   ArmingStateBuilder();
 
-  ArmingStateBuilder get newInstance => ArmingStateBuilder();
+  ArmingStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ArmingStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ArmingStateBuilder()..copyFromHeader(headerFrom);
 
   ArmingStateBuilder get _$this {
     if (_$v != null) {
@@ -45278,7 +46194,7 @@ class _$Abort extends Abort {
 
 /// Abort builder class
 ///
-class AbortBuilder implements BuilderWithInstanciator<Abort, AbortBuilder>, ImcBuilderHeaderPart {
+class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Abort, AbortBuilder> {
   _$Abort _$v;
 
   DateTime _timestamp;
@@ -45313,7 +46229,11 @@ class AbortBuilder implements BuilderWithInstanciator<Abort, AbortBuilder>, ImcB
 
   AbortBuilder();
 
-  AbortBuilder get newInstance => AbortBuilder();
+  AbortBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AbortBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AbortBuilder()..copyFromHeader(headerFrom);
 
   AbortBuilder get _$this {
     if (_$v != null) {
@@ -45476,7 +46396,7 @@ class _$PlanSpecification extends PlanSpecification {
 
 /// Plan Specification builder class
 ///
-class PlanSpecificationBuilder implements BuilderWithInstanciator<PlanSpecification, PlanSpecificationBuilder>, ImcBuilderHeaderPart {
+class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanSpecification, PlanSpecificationBuilder> {
   _$PlanSpecification _$v;
 
   DateTime _timestamp;
@@ -45547,7 +46467,11 @@ class PlanSpecificationBuilder implements BuilderWithInstanciator<PlanSpecificat
 
   PlanSpecificationBuilder();
 
-  PlanSpecificationBuilder get newInstance => PlanSpecificationBuilder();
+  PlanSpecificationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanSpecificationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanSpecificationBuilder()..copyFromHeader(headerFrom);
 
   PlanSpecificationBuilder get _$this {
     if (_$v != null) {
@@ -45698,7 +46622,7 @@ class _$PlanManeuver extends PlanManeuver {
 
 /// Plan Maneuver builder class
 ///
-class PlanManeuverBuilder implements BuilderWithInstanciator<PlanManeuver, PlanManeuverBuilder>, ImcBuilderHeaderPart {
+class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanManeuver, PlanManeuverBuilder> {
   _$PlanManeuver _$v;
 
   DateTime _timestamp;
@@ -45749,7 +46673,11 @@ class PlanManeuverBuilder implements BuilderWithInstanciator<PlanManeuver, PlanM
 
   PlanManeuverBuilder();
 
-  PlanManeuverBuilder get newInstance => PlanManeuverBuilder();
+  PlanManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanManeuverBuilder()..copyFromHeader(headerFrom);
 
   PlanManeuverBuilder get _$this {
     if (_$v != null) {
@@ -45890,7 +46818,7 @@ class _$PlanTransition extends PlanTransition {
 
 /// Plan Transition builder class
 ///
-class PlanTransitionBuilder implements BuilderWithInstanciator<PlanTransition, PlanTransitionBuilder>, ImcBuilderHeaderPart {
+class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanTransition, PlanTransitionBuilder> {
   _$PlanTransition _$v;
 
   DateTime _timestamp;
@@ -45941,7 +46869,11 @@ class PlanTransitionBuilder implements BuilderWithInstanciator<PlanTransition, P
 
   PlanTransitionBuilder();
 
-  PlanTransitionBuilder get newInstance => PlanTransitionBuilder();
+  PlanTransitionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanTransitionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanTransitionBuilder()..copyFromHeader(headerFrom);
 
   PlanTransitionBuilder get _$this {
     if (_$v != null) {
@@ -46070,7 +47002,7 @@ class _$EmergencyControl extends EmergencyControl {
 
 /// Emergency Control builder class
 ///
-class EmergencyControlBuilder implements BuilderWithInstanciator<EmergencyControl, EmergencyControlBuilder>, ImcBuilderHeaderPart {
+class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EmergencyControl, EmergencyControlBuilder> {
   _$EmergencyControl _$v;
 
   DateTime _timestamp;
@@ -46113,7 +47045,11 @@ class EmergencyControlBuilder implements BuilderWithInstanciator<EmergencyContro
 
   EmergencyControlBuilder();
 
-  EmergencyControlBuilder get newInstance => EmergencyControlBuilder();
+  EmergencyControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EmergencyControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EmergencyControlBuilder()..copyFromHeader(headerFrom);
 
   EmergencyControlBuilder get _$this {
     if (_$v != null) {
@@ -46244,7 +47180,7 @@ class _$EmergencyControlState extends EmergencyControlState {
 
 /// Emergency Control State builder class
 ///
-class EmergencyControlStateBuilder implements BuilderWithInstanciator<EmergencyControlState, EmergencyControlStateBuilder>, ImcBuilderHeaderPart {
+class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EmergencyControlState, EmergencyControlStateBuilder> {
   _$EmergencyControlState _$v;
 
   DateTime _timestamp;
@@ -46291,7 +47227,11 @@ class EmergencyControlStateBuilder implements BuilderWithInstanciator<EmergencyC
 
   EmergencyControlStateBuilder();
 
-  EmergencyControlStateBuilder get newInstance => EmergencyControlStateBuilder();
+  EmergencyControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EmergencyControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EmergencyControlStateBuilder()..copyFromHeader(headerFrom);
 
   EmergencyControlStateBuilder get _$this {
     if (_$v != null) {
@@ -46442,7 +47382,7 @@ class _$PlanDB extends PlanDB {
 
 /// Plan DB builder class
 ///
-class PlanDBBuilder implements BuilderWithInstanciator<PlanDB, PlanDBBuilder>, ImcBuilderHeaderPart {
+class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanDB, PlanDBBuilder> {
   _$PlanDB _$v;
 
   DateTime _timestamp;
@@ -46501,7 +47441,11 @@ class PlanDBBuilder implements BuilderWithInstanciator<PlanDB, PlanDBBuilder>, I
 
   PlanDBBuilder();
 
-  PlanDBBuilder get newInstance => PlanDBBuilder();
+  PlanDBBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanDBBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBBuilder()..copyFromHeader(headerFrom);
 
   PlanDBBuilder get _$this {
     if (_$v != null) {
@@ -46664,7 +47608,7 @@ class _$PlanDBState extends PlanDBState {
 
 /// Plan DB State builder class
 ///
-class PlanDBStateBuilder implements BuilderWithInstanciator<PlanDBState, PlanDBStateBuilder>, ImcBuilderHeaderPart {
+class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanDBState, PlanDBStateBuilder> {
   _$PlanDBState _$v;
 
   DateTime _timestamp;
@@ -46727,7 +47671,11 @@ class PlanDBStateBuilder implements BuilderWithInstanciator<PlanDBState, PlanDBS
 
   PlanDBStateBuilder();
 
-  PlanDBStateBuilder get newInstance => PlanDBStateBuilder();
+  PlanDBStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanDBStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBStateBuilder()..copyFromHeader(headerFrom);
 
   PlanDBStateBuilder get _$this {
     if (_$v != null) {
@@ -46886,7 +47834,7 @@ class _$PlanDBInformation extends PlanDBInformation {
 
 /// Plan DB Information builder class
 ///
-class PlanDBInformationBuilder implements BuilderWithInstanciator<PlanDBInformation, PlanDBInformationBuilder>, ImcBuilderHeaderPart {
+class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanDBInformation, PlanDBInformationBuilder> {
   _$PlanDBInformation _$v;
 
   DateTime _timestamp;
@@ -46945,7 +47893,11 @@ class PlanDBInformationBuilder implements BuilderWithInstanciator<PlanDBInformat
 
   PlanDBInformationBuilder();
 
-  PlanDBInformationBuilder get newInstance => PlanDBInformationBuilder();
+  PlanDBInformationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanDBInformationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBInformationBuilder()..copyFromHeader(headerFrom);
 
   PlanDBInformationBuilder get _$this {
     if (_$v != null) {
@@ -47108,7 +48060,7 @@ class _$PlanControl extends PlanControl {
 
 /// Plan Control builder class
 ///
-class PlanControlBuilder implements BuilderWithInstanciator<PlanControl, PlanControlBuilder>, ImcBuilderHeaderPart {
+class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanControl, PlanControlBuilder> {
   _$PlanControl _$v;
 
   DateTime _timestamp;
@@ -47171,7 +48123,11 @@ class PlanControlBuilder implements BuilderWithInstanciator<PlanControl, PlanCon
 
   PlanControlBuilder();
 
-  PlanControlBuilder get newInstance => PlanControlBuilder();
+  PlanControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanControlBuilder()..copyFromHeader(headerFrom);
 
   PlanControlBuilder get _$this {
     if (_$v != null) {
@@ -47342,7 +48298,7 @@ class _$PlanControlState extends PlanControlState {
 
 /// Plan Control State builder class
 ///
-class PlanControlStateBuilder implements BuilderWithInstanciator<PlanControlState, PlanControlStateBuilder>, ImcBuilderHeaderPart {
+class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanControlState, PlanControlStateBuilder> {
   _$PlanControlState _$v;
 
   DateTime _timestamp;
@@ -47409,7 +48365,11 @@ class PlanControlStateBuilder implements BuilderWithInstanciator<PlanControlStat
 
   PlanControlStateBuilder();
 
-  PlanControlStateBuilder get newInstance => PlanControlStateBuilder();
+  PlanControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanControlStateBuilder()..copyFromHeader(headerFrom);
 
   PlanControlStateBuilder get _$this {
     if (_$v != null) {
@@ -47558,7 +48518,7 @@ class _$PlanVariable extends PlanVariable {
 
 /// Plan Variable builder class
 ///
-class PlanVariableBuilder implements BuilderWithInstanciator<PlanVariable, PlanVariableBuilder>, ImcBuilderHeaderPart {
+class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanVariable, PlanVariableBuilder> {
   _$PlanVariable _$v;
 
   DateTime _timestamp;
@@ -47609,7 +48569,11 @@ class PlanVariableBuilder implements BuilderWithInstanciator<PlanVariable, PlanV
 
   PlanVariableBuilder();
 
-  PlanVariableBuilder get newInstance => PlanVariableBuilder();
+  PlanVariableBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanVariableBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanVariableBuilder()..copyFromHeader(headerFrom);
 
   PlanVariableBuilder get _$this {
     if (_$v != null) {
@@ -47750,7 +48714,7 @@ class _$PlanGeneration extends PlanGeneration {
 
 /// Plan Generation builder class
 ///
-class PlanGenerationBuilder implements BuilderWithInstanciator<PlanGeneration, PlanGenerationBuilder>, ImcBuilderHeaderPart {
+class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanGeneration, PlanGenerationBuilder> {
   _$PlanGeneration _$v;
 
   DateTime _timestamp;
@@ -47801,7 +48765,11 @@ class PlanGenerationBuilder implements BuilderWithInstanciator<PlanGeneration, P
 
   PlanGenerationBuilder();
 
-  PlanGenerationBuilder get newInstance => PlanGenerationBuilder();
+  PlanGenerationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanGenerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanGenerationBuilder()..copyFromHeader(headerFrom);
 
   PlanGenerationBuilder get _$this {
     if (_$v != null) {
@@ -48038,7 +49006,7 @@ class _$LeaderState extends LeaderState {
 
 /// Leader State builder class
 ///
-class LeaderStateBuilder implements BuilderWithInstanciator<LeaderState, LeaderStateBuilder>, ImcBuilderHeaderPart {
+class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LeaderState, LeaderStateBuilder> {
   _$LeaderState _$v;
 
   DateTime _timestamp;
@@ -48153,7 +49121,11 @@ class LeaderStateBuilder implements BuilderWithInstanciator<LeaderState, LeaderS
 
   LeaderStateBuilder();
 
-  LeaderStateBuilder get newInstance => LeaderStateBuilder();
+  LeaderStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  LeaderStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LeaderStateBuilder()..copyFromHeader(headerFrom);
 
   LeaderStateBuilder get _$this {
     if (_$v != null) {
@@ -48344,7 +49316,7 @@ class _$PlanStatistics extends PlanStatistics {
 
 /// Plan Statistics builder class
 ///
-class PlanStatisticsBuilder implements BuilderWithInstanciator<PlanStatistics, PlanStatisticsBuilder>, ImcBuilderHeaderPart {
+class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanStatistics, PlanStatisticsBuilder> {
   _$PlanStatistics _$v;
 
   DateTime _timestamp;
@@ -48407,7 +49379,11 @@ class PlanStatisticsBuilder implements BuilderWithInstanciator<PlanStatistics, P
 
   PlanStatisticsBuilder();
 
-  PlanStatisticsBuilder get newInstance => PlanStatisticsBuilder();
+  PlanStatisticsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PlanStatisticsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanStatisticsBuilder()..copyFromHeader(headerFrom);
 
   PlanStatisticsBuilder get _$this {
     if (_$v != null) {
@@ -48584,7 +49560,7 @@ class _$ReportedState extends ReportedState {
 
 /// Reported State builder class
 ///
-class ReportedStateBuilder implements BuilderWithInstanciator<ReportedState, ReportedStateBuilder>, ImcBuilderHeaderPart {
+class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ReportedState, ReportedStateBuilder> {
   _$ReportedState _$v;
 
   DateTime _timestamp;
@@ -48655,7 +49631,11 @@ class ReportedStateBuilder implements BuilderWithInstanciator<ReportedState, Rep
 
   ReportedStateBuilder();
 
-  ReportedStateBuilder get newInstance => ReportedStateBuilder();
+  ReportedStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ReportedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReportedStateBuilder()..copyFromHeader(headerFrom);
 
   ReportedStateBuilder get _$this {
     if (_$v != null) {
@@ -48824,7 +49804,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
 
 /// Remote Sensor Info builder class
 ///
-class RemoteSensorInfoBuilder implements BuilderWithInstanciator<RemoteSensorInfo, RemoteSensorInfoBuilder>, ImcBuilderHeaderPart {
+class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteSensorInfo, RemoteSensorInfoBuilder> {
   _$RemoteSensorInfo _$v;
 
   DateTime _timestamp;
@@ -48887,7 +49867,11 @@ class RemoteSensorInfoBuilder implements BuilderWithInstanciator<RemoteSensorInf
 
   RemoteSensorInfoBuilder();
 
-  RemoteSensorInfoBuilder get newInstance => RemoteSensorInfoBuilder();
+  RemoteSensorInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RemoteSensorInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteSensorInfoBuilder()..copyFromHeader(headerFrom);
 
   RemoteSensorInfoBuilder get _$this {
     if (_$v != null) {
@@ -49022,7 +50006,7 @@ class _$Map extends Map {
 
 /// Map builder class
 ///
-class MapBuilder implements BuilderWithInstanciator<Map, MapBuilder>, ImcBuilderHeaderPart {
+class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Map, MapBuilder> {
   _$Map _$v;
 
   DateTime _timestamp;
@@ -49065,7 +50049,11 @@ class MapBuilder implements BuilderWithInstanciator<Map, MapBuilder>, ImcBuilder
 
   MapBuilder();
 
-  MapBuilder get newInstance => MapBuilder();
+  MapBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MapBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapBuilder()..copyFromHeader(headerFrom);
 
   MapBuilder get _$this {
     if (_$v != null) {
@@ -49214,7 +50202,7 @@ class _$MapFeature extends MapFeature {
 
 /// Map Feature builder class
 ///
-class MapFeatureBuilder implements BuilderWithInstanciator<MapFeature, MapFeatureBuilder>, ImcBuilderHeaderPart {
+class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MapFeature, MapFeatureBuilder> {
   _$MapFeature _$v;
 
   DateTime _timestamp;
@@ -49273,7 +50261,11 @@ class MapFeatureBuilder implements BuilderWithInstanciator<MapFeature, MapFeatur
 
   MapFeatureBuilder();
 
-  MapFeatureBuilder get newInstance => MapFeatureBuilder();
+  MapFeatureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MapFeatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapFeatureBuilder()..copyFromHeader(headerFrom);
 
   MapFeatureBuilder get _$this {
     if (_$v != null) {
@@ -49412,7 +50404,7 @@ class _$MapPoint extends MapPoint {
 
 /// MapPoint builder class
 ///
-class MapPointBuilder implements BuilderWithInstanciator<MapPoint, MapPointBuilder>, ImcBuilderHeaderPart {
+class MapPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MapPoint, MapPointBuilder> {
   _$MapPoint _$v;
 
   DateTime _timestamp;
@@ -49459,7 +50451,11 @@ class MapPointBuilder implements BuilderWithInstanciator<MapPoint, MapPointBuild
 
   MapPointBuilder();
 
-  MapPointBuilder get newInstance => MapPointBuilder();
+  MapPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MapPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapPointBuilder()..copyFromHeader(headerFrom);
 
   MapPointBuilder get _$this {
     if (_$v != null) {
@@ -49592,7 +50588,7 @@ class _$CcuEvent extends CcuEvent {
 
 /// CCU Event builder class
 ///
-class CcuEventBuilder implements BuilderWithInstanciator<CcuEvent, CcuEventBuilder>, ImcBuilderHeaderPart {
+class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CcuEvent, CcuEventBuilder> {
   _$CcuEvent _$v;
 
   DateTime _timestamp;
@@ -49639,7 +50635,11 @@ class CcuEventBuilder implements BuilderWithInstanciator<CcuEvent, CcuEventBuild
 
   CcuEventBuilder();
 
-  CcuEventBuilder get newInstance => CcuEventBuilder();
+  CcuEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CcuEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CcuEventBuilder()..copyFromHeader(headerFrom);
 
   CcuEventBuilder get _$this {
     if (_$v != null) {
@@ -49766,7 +50766,7 @@ class _$VehicleLinks extends VehicleLinks {
 
 /// Vehicle Links builder class
 ///
-class VehicleLinksBuilder implements BuilderWithInstanciator<VehicleLinks, VehicleLinksBuilder>, ImcBuilderHeaderPart {
+class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleLinks, VehicleLinksBuilder> {
   _$VehicleLinks _$v;
 
   DateTime _timestamp;
@@ -49809,7 +50809,11 @@ class VehicleLinksBuilder implements BuilderWithInstanciator<VehicleLinks, Vehic
 
   VehicleLinksBuilder();
 
-  VehicleLinksBuilder get newInstance => VehicleLinksBuilder();
+  VehicleLinksBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  VehicleLinksBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleLinksBuilder()..copyFromHeader(headerFrom);
 
   VehicleLinksBuilder get _$this {
     if (_$v != null) {
@@ -49940,7 +50944,7 @@ class _$TrexObservation extends TrexObservation {
 
 /// TREX Observation builder class
 ///
-class TrexObservationBuilder implements BuilderWithInstanciator<TrexObservation, TrexObservationBuilder>, ImcBuilderHeaderPart {
+class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexObservation, TrexObservationBuilder> {
   _$TrexObservation _$v;
 
   DateTime _timestamp;
@@ -49987,7 +50991,11 @@ class TrexObservationBuilder implements BuilderWithInstanciator<TrexObservation,
 
   TrexObservationBuilder();
 
-  TrexObservationBuilder get newInstance => TrexObservationBuilder();
+  TrexObservationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrexObservationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexObservationBuilder()..copyFromHeader(headerFrom);
 
   TrexObservationBuilder get _$this {
     if (_$v != null) {
@@ -50120,7 +51128,7 @@ class _$TrexCommand extends TrexCommand {
 
 /// TREX Command builder class
 ///
-class TrexCommandBuilder implements BuilderWithInstanciator<TrexCommand, TrexCommandBuilder>, ImcBuilderHeaderPart {
+class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexCommand, TrexCommandBuilder> {
   _$TrexCommand _$v;
 
   DateTime _timestamp;
@@ -50167,7 +51175,11 @@ class TrexCommandBuilder implements BuilderWithInstanciator<TrexCommand, TrexCom
 
   TrexCommandBuilder();
 
-  TrexCommandBuilder get newInstance => TrexCommandBuilder();
+  TrexCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrexCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexCommandBuilder()..copyFromHeader(headerFrom);
 
   TrexCommandBuilder get _$this {
     if (_$v != null) {
@@ -50300,7 +51312,7 @@ class _$TrexOperation extends TrexOperation {
 
 /// TREX Operation builder class
 ///
-class TrexOperationBuilder implements BuilderWithInstanciator<TrexOperation, TrexOperationBuilder>, ImcBuilderHeaderPart {
+class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexOperation, TrexOperationBuilder> {
   _$TrexOperation _$v;
 
   DateTime _timestamp;
@@ -50347,7 +51359,11 @@ class TrexOperationBuilder implements BuilderWithInstanciator<TrexOperation, Tre
 
   TrexOperationBuilder();
 
-  TrexOperationBuilder get newInstance => TrexOperationBuilder();
+  TrexOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrexOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexOperationBuilder()..copyFromHeader(headerFrom);
 
   TrexOperationBuilder get _$this {
     if (_$v != null) {
@@ -50486,7 +51502,7 @@ class _$TrexAttribute extends TrexAttribute {
 
 /// TREX Attribute builder class
 ///
-class TrexAttributeBuilder implements BuilderWithInstanciator<TrexAttribute, TrexAttributeBuilder>, ImcBuilderHeaderPart {
+class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexAttribute, TrexAttributeBuilder> {
   _$TrexAttribute _$v;
 
   DateTime _timestamp;
@@ -50537,7 +51553,11 @@ class TrexAttributeBuilder implements BuilderWithInstanciator<TrexAttribute, Tre
 
   TrexAttributeBuilder();
 
-  TrexAttributeBuilder get newInstance => TrexAttributeBuilder();
+  TrexAttributeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrexAttributeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexAttributeBuilder()..copyFromHeader(headerFrom);
 
   TrexAttributeBuilder get _$this {
     if (_$v != null) {
@@ -50672,7 +51692,7 @@ class _$TrexToken extends TrexToken {
 
 /// TREX Token builder class
 ///
-class TrexTokenBuilder implements BuilderWithInstanciator<TrexToken, TrexTokenBuilder>, ImcBuilderHeaderPart {
+class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexToken, TrexTokenBuilder> {
   _$TrexToken _$v;
 
   DateTime _timestamp;
@@ -50719,7 +51739,11 @@ class TrexTokenBuilder implements BuilderWithInstanciator<TrexToken, TrexTokenBu
 
   TrexTokenBuilder();
 
-  TrexTokenBuilder get newInstance => TrexTokenBuilder();
+  TrexTokenBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrexTokenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexTokenBuilder()..copyFromHeader(headerFrom);
 
   TrexTokenBuilder get _$this {
     if (_$v != null) {
@@ -50846,7 +51870,7 @@ class _$TrexPlan extends TrexPlan {
 
 /// TREX Plan builder class
 ///
-class TrexPlanBuilder implements BuilderWithInstanciator<TrexPlan, TrexPlanBuilder>, ImcBuilderHeaderPart {
+class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexPlan, TrexPlanBuilder> {
   _$TrexPlan _$v;
 
   DateTime _timestamp;
@@ -50889,7 +51913,11 @@ class TrexPlanBuilder implements BuilderWithInstanciator<TrexPlan, TrexPlanBuild
 
   TrexPlanBuilder();
 
-  TrexPlanBuilder get newInstance => TrexPlanBuilder();
+  TrexPlanBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TrexPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexPlanBuilder()..copyFromHeader(headerFrom);
 
   TrexPlanBuilder get _$this {
     if (_$v != null) {
@@ -51014,7 +52042,7 @@ class _$Event extends Event {
 
 /// Event builder class
 ///
-class EventBuilder implements BuilderWithInstanciator<Event, EventBuilder>, ImcBuilderHeaderPart {
+class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Event, EventBuilder> {
   _$Event _$v;
 
   DateTime _timestamp;
@@ -51057,7 +52085,11 @@ class EventBuilder implements BuilderWithInstanciator<Event, EventBuilder>, ImcB
 
   EventBuilder();
 
-  EventBuilder get newInstance => EventBuilder();
+  EventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EventBuilder()..copyFromHeader(headerFrom);
 
   EventBuilder get _$this {
     if (_$v != null) {
@@ -51182,7 +52214,7 @@ class _$CompressedImage extends CompressedImage {
 
 /// Compressed Image builder class
 ///
-class CompressedImageBuilder implements BuilderWithInstanciator<CompressedImage, CompressedImageBuilder>, ImcBuilderHeaderPart {
+class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CompressedImage, CompressedImageBuilder> {
   _$CompressedImage _$v;
 
   DateTime _timestamp;
@@ -51225,7 +52257,11 @@ class CompressedImageBuilder implements BuilderWithInstanciator<CompressedImage,
 
   CompressedImageBuilder();
 
-  CompressedImageBuilder get newInstance => CompressedImageBuilder();
+  CompressedImageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CompressedImageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompressedImageBuilder()..copyFromHeader(headerFrom);
 
   CompressedImageBuilder get _$this {
     if (_$v != null) {
@@ -51362,7 +52398,7 @@ class _$ImageTxSettings extends ImageTxSettings {
 
 /// Image Transmission Settings builder class
 ///
-class ImageTxSettingsBuilder implements BuilderWithInstanciator<ImageTxSettings, ImageTxSettingsBuilder>, ImcBuilderHeaderPart {
+class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ImageTxSettings, ImageTxSettingsBuilder> {
   _$ImageTxSettings _$v;
 
   DateTime _timestamp;
@@ -51413,7 +52449,11 @@ class ImageTxSettingsBuilder implements BuilderWithInstanciator<ImageTxSettings,
 
   ImageTxSettingsBuilder();
 
-  ImageTxSettingsBuilder get newInstance => ImageTxSettingsBuilder();
+  ImageTxSettingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ImageTxSettingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ImageTxSettingsBuilder()..copyFromHeader(headerFrom);
 
   ImageTxSettingsBuilder get _$this {
     if (_$v != null) {
@@ -51560,7 +52600,7 @@ class _$RemoteState extends RemoteState {
 
 /// Remote State builder class
 ///
-class RemoteStateBuilder implements BuilderWithInstanciator<RemoteState, RemoteStateBuilder>, ImcBuilderHeaderPart {
+class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteState, RemoteStateBuilder> {
   _$RemoteState _$v;
 
   DateTime _timestamp;
@@ -51615,7 +52655,11 @@ class RemoteStateBuilder implements BuilderWithInstanciator<RemoteState, RemoteS
 
   RemoteStateBuilder();
 
-  RemoteStateBuilder get newInstance => RemoteStateBuilder();
+  RemoteStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  RemoteStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteStateBuilder()..copyFromHeader(headerFrom);
 
   RemoteStateBuilder get _$this {
     if (_$v != null) {
@@ -51776,7 +52820,7 @@ class _$Target extends Target {
 
 /// Target builder class
 ///
-class TargetBuilder implements BuilderWithInstanciator<Target, TargetBuilder>, ImcBuilderHeaderPart {
+class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Target, TargetBuilder> {
   _$Target _$v;
 
   DateTime _timestamp;
@@ -51839,7 +52883,11 @@ class TargetBuilder implements BuilderWithInstanciator<Target, TargetBuilder>, I
 
   TargetBuilder();
 
-  TargetBuilder get newInstance => TargetBuilder();
+  TargetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TargetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TargetBuilder()..copyFromHeader(headerFrom);
 
   TargetBuilder get _$this {
     if (_$v != null) {
@@ -51974,7 +53022,7 @@ class _$EntityParameter extends EntityParameter {
 
 /// EntityParameter builder class
 ///
-class EntityParameterBuilder implements BuilderWithInstanciator<EntityParameter, EntityParameterBuilder>, ImcBuilderHeaderPart {
+class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityParameter, EntityParameterBuilder> {
   _$EntityParameter _$v;
 
   DateTime _timestamp;
@@ -52017,7 +53065,11 @@ class EntityParameterBuilder implements BuilderWithInstanciator<EntityParameter,
 
   EntityParameterBuilder();
 
-  EntityParameterBuilder get newInstance => EntityParameterBuilder();
+  EntityParameterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EntityParameterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityParameterBuilder()..copyFromHeader(headerFrom);
 
   EntityParameterBuilder get _$this {
     if (_$v != null) {
@@ -52142,7 +53194,7 @@ class _$EntityParameters extends EntityParameters {
 
 /// EntityParameters builder class
 ///
-class EntityParametersBuilder implements BuilderWithInstanciator<EntityParameters, EntityParametersBuilder>, ImcBuilderHeaderPart {
+class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityParameters, EntityParametersBuilder> {
   _$EntityParameters _$v;
 
   DateTime _timestamp;
@@ -52185,7 +53237,11 @@ class EntityParametersBuilder implements BuilderWithInstanciator<EntityParameter
 
   EntityParametersBuilder();
 
-  EntityParametersBuilder get newInstance => EntityParametersBuilder();
+  EntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  EntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityParametersBuilder()..copyFromHeader(headerFrom);
 
   EntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -52316,7 +53372,7 @@ class _$QueryEntityParameters extends QueryEntityParameters {
 
 /// QueryEntityParameters builder class
 ///
-class QueryEntityParametersBuilder implements BuilderWithInstanciator<QueryEntityParameters, QueryEntityParametersBuilder>, ImcBuilderHeaderPart {
+class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityParameters, QueryEntityParametersBuilder> {
   _$QueryEntityParameters _$v;
 
   DateTime _timestamp;
@@ -52363,7 +53419,11 @@ class QueryEntityParametersBuilder implements BuilderWithInstanciator<QueryEntit
 
   QueryEntityParametersBuilder();
 
-  QueryEntityParametersBuilder get newInstance => QueryEntityParametersBuilder();
+  QueryEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  QueryEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -52490,7 +53550,7 @@ class _$SetEntityParameters extends SetEntityParameters {
 
 /// SetEntityParameters builder class
 ///
-class SetEntityParametersBuilder implements BuilderWithInstanciator<SetEntityParameters, SetEntityParametersBuilder>, ImcBuilderHeaderPart {
+class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetEntityParameters, SetEntityParametersBuilder> {
   _$SetEntityParameters _$v;
 
   DateTime _timestamp;
@@ -52533,7 +53593,11 @@ class SetEntityParametersBuilder implements BuilderWithInstanciator<SetEntityPar
 
   SetEntityParametersBuilder();
 
-  SetEntityParametersBuilder get newInstance => SetEntityParametersBuilder();
+  SetEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SetEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   SetEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -52652,7 +53716,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
 
 /// SaveEntityParameters builder class
 ///
-class SaveEntityParametersBuilder implements BuilderWithInstanciator<SaveEntityParameters, SaveEntityParametersBuilder>, ImcBuilderHeaderPart {
+class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SaveEntityParameters, SaveEntityParametersBuilder> {
   _$SaveEntityParameters _$v;
 
   DateTime _timestamp;
@@ -52691,7 +53755,11 @@ class SaveEntityParametersBuilder implements BuilderWithInstanciator<SaveEntityP
 
   SaveEntityParametersBuilder();
 
-  SaveEntityParametersBuilder get newInstance => SaveEntityParametersBuilder();
+  SaveEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SaveEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SaveEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   SaveEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -52808,7 +53876,7 @@ class _$CreateSession extends CreateSession {
 
 /// Create Session builder class
 ///
-class CreateSessionBuilder implements BuilderWithInstanciator<CreateSession, CreateSessionBuilder>, ImcBuilderHeaderPart {
+class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CreateSession, CreateSessionBuilder> {
   _$CreateSession _$v;
 
   DateTime _timestamp;
@@ -52847,7 +53915,11 @@ class CreateSessionBuilder implements BuilderWithInstanciator<CreateSession, Cre
 
   CreateSessionBuilder();
 
-  CreateSessionBuilder get newInstance => CreateSessionBuilder();
+  CreateSessionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CreateSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CreateSessionBuilder()..copyFromHeader(headerFrom);
 
   CreateSessionBuilder get _$this {
     if (_$v != null) {
@@ -52964,7 +54036,7 @@ class _$CloseSession extends CloseSession {
 
 /// Close Session builder class
 ///
-class CloseSessionBuilder implements BuilderWithInstanciator<CloseSession, CloseSessionBuilder>, ImcBuilderHeaderPart {
+class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CloseSession, CloseSessionBuilder> {
   _$CloseSession _$v;
 
   DateTime _timestamp;
@@ -53003,7 +54075,11 @@ class CloseSessionBuilder implements BuilderWithInstanciator<CloseSession, Close
 
   CloseSessionBuilder();
 
-  CloseSessionBuilder get newInstance => CloseSessionBuilder();
+  CloseSessionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  CloseSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CloseSessionBuilder()..copyFromHeader(headerFrom);
 
   CloseSessionBuilder get _$this {
     if (_$v != null) {
@@ -53126,7 +54202,7 @@ class _$SessionSubscription extends SessionSubscription {
 
 /// Session Subscription builder class
 ///
-class SessionSubscriptionBuilder implements BuilderWithInstanciator<SessionSubscription, SessionSubscriptionBuilder>, ImcBuilderHeaderPart {
+class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SessionSubscription, SessionSubscriptionBuilder> {
   _$SessionSubscription _$v;
 
   DateTime _timestamp;
@@ -53169,7 +54245,11 @@ class SessionSubscriptionBuilder implements BuilderWithInstanciator<SessionSubsc
 
   SessionSubscriptionBuilder();
 
-  SessionSubscriptionBuilder get newInstance => SessionSubscriptionBuilder();
+  SessionSubscriptionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SessionSubscriptionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionSubscriptionBuilder()..copyFromHeader(headerFrom);
 
   SessionSubscriptionBuilder get _$this {
     if (_$v != null) {
@@ -53288,7 +54368,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
 
 /// Session Keep-Alive builder class
 ///
-class SessionKeepAliveBuilder implements BuilderWithInstanciator<SessionKeepAlive, SessionKeepAliveBuilder>, ImcBuilderHeaderPart {
+class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SessionKeepAlive, SessionKeepAliveBuilder> {
   _$SessionKeepAlive _$v;
 
   DateTime _timestamp;
@@ -53327,7 +54407,11 @@ class SessionKeepAliveBuilder implements BuilderWithInstanciator<SessionKeepAliv
 
   SessionKeepAliveBuilder();
 
-  SessionKeepAliveBuilder get newInstance => SessionKeepAliveBuilder();
+  SessionKeepAliveBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SessionKeepAliveBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionKeepAliveBuilder()..copyFromHeader(headerFrom);
 
   SessionKeepAliveBuilder get _$this {
     if (_$v != null) {
@@ -53450,7 +54534,7 @@ class _$SessionStatus extends SessionStatus {
 
 /// Session Status builder class
 ///
-class SessionStatusBuilder implements BuilderWithInstanciator<SessionStatus, SessionStatusBuilder>, ImcBuilderHeaderPart {
+class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SessionStatus, SessionStatusBuilder> {
   _$SessionStatus _$v;
 
   DateTime _timestamp;
@@ -53493,7 +54577,11 @@ class SessionStatusBuilder implements BuilderWithInstanciator<SessionStatus, Ses
 
   SessionStatusBuilder();
 
-  SessionStatusBuilder get newInstance => SessionStatusBuilder();
+  SessionStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SessionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionStatusBuilder()..copyFromHeader(headerFrom);
 
   SessionStatusBuilder get _$this {
     if (_$v != null) {
@@ -53612,7 +54700,7 @@ class _$PushEntityParameters extends PushEntityParameters {
 
 /// Push Entity Parameters builder class
 ///
-class PushEntityParametersBuilder implements BuilderWithInstanciator<PushEntityParameters, PushEntityParametersBuilder>, ImcBuilderHeaderPart {
+class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PushEntityParameters, PushEntityParametersBuilder> {
   _$PushEntityParameters _$v;
 
   DateTime _timestamp;
@@ -53651,7 +54739,11 @@ class PushEntityParametersBuilder implements BuilderWithInstanciator<PushEntityP
 
   PushEntityParametersBuilder();
 
-  PushEntityParametersBuilder get newInstance => PushEntityParametersBuilder();
+  PushEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PushEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PushEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   PushEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -53768,7 +54860,7 @@ class _$PopEntityParameters extends PopEntityParameters {
 
 /// Pop Entity Parameters builder class
 ///
-class PopEntityParametersBuilder implements BuilderWithInstanciator<PopEntityParameters, PopEntityParametersBuilder>, ImcBuilderHeaderPart {
+class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PopEntityParameters, PopEntityParametersBuilder> {
   _$PopEntityParameters _$v;
 
   DateTime _timestamp;
@@ -53807,7 +54899,11 @@ class PopEntityParametersBuilder implements BuilderWithInstanciator<PopEntityPar
 
   PopEntityParametersBuilder();
 
-  PopEntityParametersBuilder get newInstance => PopEntityParametersBuilder();
+  PopEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  PopEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PopEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   PopEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -53930,7 +55026,7 @@ class _$IoEvent extends IoEvent {
 
 /// I/O Event builder class
 ///
-class IoEventBuilder implements BuilderWithInstanciator<IoEvent, IoEventBuilder>, ImcBuilderHeaderPart {
+class IoEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IoEvent, IoEventBuilder> {
   _$IoEvent _$v;
 
   DateTime _timestamp;
@@ -53973,7 +55069,11 @@ class IoEventBuilder implements BuilderWithInstanciator<IoEvent, IoEventBuilder>
 
   IoEventBuilder();
 
-  IoEventBuilder get newInstance => IoEventBuilder();
+  IoEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  IoEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IoEventBuilder()..copyFromHeader(headerFrom);
 
   IoEventBuilder get _$this {
     if (_$v != null) {
@@ -54110,7 +55210,7 @@ class _$UamTxFrame extends UamTxFrame {
 
 /// UamTxFrame builder class
 ///
-class UamTxFrameBuilder implements BuilderWithInstanciator<UamTxFrame, UamTxFrameBuilder>, ImcBuilderHeaderPart {
+class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamTxFrame, UamTxFrameBuilder> {
   _$UamTxFrame _$v;
 
   DateTime _timestamp;
@@ -54161,7 +55261,11 @@ class UamTxFrameBuilder implements BuilderWithInstanciator<UamTxFrame, UamTxFram
 
   UamTxFrameBuilder();
 
-  UamTxFrameBuilder get newInstance => UamTxFrameBuilder();
+  UamTxFrameBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UamTxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamTxFrameBuilder()..copyFromHeader(headerFrom);
 
   UamTxFrameBuilder get _$this {
     if (_$v != null) {
@@ -54302,7 +55406,7 @@ class _$UamRxFrame extends UamRxFrame {
 
 /// UamRxFrame builder class
 ///
-class UamRxFrameBuilder implements BuilderWithInstanciator<UamRxFrame, UamRxFrameBuilder>, ImcBuilderHeaderPart {
+class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamRxFrame, UamRxFrameBuilder> {
   _$UamRxFrame _$v;
 
   DateTime _timestamp;
@@ -54353,7 +55457,11 @@ class UamRxFrameBuilder implements BuilderWithInstanciator<UamRxFrame, UamRxFram
 
   UamRxFrameBuilder();
 
-  UamRxFrameBuilder get newInstance => UamRxFrameBuilder();
+  UamRxFrameBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UamRxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamRxFrameBuilder()..copyFromHeader(headerFrom);
 
   UamRxFrameBuilder get _$this {
     if (_$v != null) {
@@ -54488,7 +55596,7 @@ class _$UamTxStatus extends UamTxStatus {
 
 /// UamTxStatus builder class
 ///
-class UamTxStatusBuilder implements BuilderWithInstanciator<UamTxStatus, UamTxStatusBuilder>, ImcBuilderHeaderPart {
+class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamTxStatus, UamTxStatusBuilder> {
   _$UamTxStatus _$v;
 
   DateTime _timestamp;
@@ -54535,7 +55643,11 @@ class UamTxStatusBuilder implements BuilderWithInstanciator<UamTxStatus, UamTxSt
 
   UamTxStatusBuilder();
 
-  UamTxStatusBuilder get newInstance => UamTxStatusBuilder();
+  UamTxStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UamTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamTxStatusBuilder()..copyFromHeader(headerFrom);
 
   UamTxStatusBuilder get _$this {
     if (_$v != null) {
@@ -54668,7 +55780,7 @@ class _$UamRxRange extends UamRxRange {
 
 /// UamRxRange builder class
 ///
-class UamRxRangeBuilder implements BuilderWithInstanciator<UamRxRange, UamRxRangeBuilder>, ImcBuilderHeaderPart {
+class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamRxRange, UamRxRangeBuilder> {
   _$UamRxRange _$v;
 
   DateTime _timestamp;
@@ -54715,7 +55827,11 @@ class UamRxRangeBuilder implements BuilderWithInstanciator<UamRxRange, UamRxRang
 
   UamRxRangeBuilder();
 
-  UamRxRangeBuilder get newInstance => UamRxRangeBuilder();
+  UamRxRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UamRxRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamRxRangeBuilder()..copyFromHeader(headerFrom);
 
   UamRxRangeBuilder get _$this {
     if (_$v != null) {
@@ -54866,7 +55982,7 @@ class _$FormCtrlParam extends FormCtrlParam {
 
 /// Formation Control Parameters builder class
 ///
-class FormCtrlParamBuilder implements BuilderWithInstanciator<FormCtrlParam, FormCtrlParamBuilder>, ImcBuilderHeaderPart {
+class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormCtrlParam, FormCtrlParamBuilder> {
   _$FormCtrlParam _$v;
 
   DateTime _timestamp;
@@ -54925,7 +56041,11 @@ class FormCtrlParamBuilder implements BuilderWithInstanciator<FormCtrlParam, For
 
   FormCtrlParamBuilder();
 
-  FormCtrlParamBuilder get newInstance => FormCtrlParamBuilder();
+  FormCtrlParamBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormCtrlParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormCtrlParamBuilder()..copyFromHeader(headerFrom);
 
   FormCtrlParamBuilder get _$this {
     if (_$v != null) {
@@ -55064,7 +56184,7 @@ class _$FormationEval extends FormationEval {
 
 /// Formation Evaluation Data builder class
 ///
-class FormationEvalBuilder implements BuilderWithInstanciator<FormationEval, FormationEvalBuilder>, ImcBuilderHeaderPart {
+class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationEval, FormationEvalBuilder> {
   _$FormationEval _$v;
 
   DateTime _timestamp;
@@ -55111,7 +56231,11 @@ class FormationEvalBuilder implements BuilderWithInstanciator<FormationEval, For
 
   FormationEvalBuilder();
 
-  FormationEvalBuilder get newInstance => FormationEvalBuilder();
+  FormationEvalBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationEvalBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationEvalBuilder()..copyFromHeader(headerFrom);
 
   FormationEvalBuilder get _$this {
     if (_$v != null) {
@@ -55292,7 +56416,7 @@ class _$FormationControlParams extends FormationControlParams {
 
 /// Formation Control Parameters builder class
 ///
-class FormationControlParamsBuilder implements BuilderWithInstanciator<FormationControlParams, FormationControlParamsBuilder>, ImcBuilderHeaderPart {
+class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationControlParams, FormationControlParamsBuilder> {
   _$FormationControlParams _$v;
 
   DateTime _timestamp;
@@ -55371,7 +56495,11 @@ class FormationControlParamsBuilder implements BuilderWithInstanciator<Formation
 
   FormationControlParamsBuilder();
 
-  FormationControlParamsBuilder get newInstance => FormationControlParamsBuilder();
+  FormationControlParamsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationControlParamsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationControlParamsBuilder()..copyFromHeader(headerFrom);
 
   FormationControlParamsBuilder get _$this {
     if (_$v != null) {
@@ -55550,7 +56678,7 @@ class _$FormationEvaluation extends FormationEvaluation {
 
 /// Formation Evaluation Data builder class
 ///
-class FormationEvaluationBuilder implements BuilderWithInstanciator<FormationEvaluation, FormationEvaluationBuilder>, ImcBuilderHeaderPart {
+class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationEvaluation, FormationEvaluationBuilder> {
   _$FormationEvaluation _$v;
 
   DateTime _timestamp;
@@ -55617,7 +56745,11 @@ class FormationEvaluationBuilder implements BuilderWithInstanciator<FormationEva
 
   FormationEvaluationBuilder();
 
-  FormationEvaluationBuilder get newInstance => FormationEvaluationBuilder();
+  FormationEvaluationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  FormationEvaluationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationEvaluationBuilder()..copyFromHeader(headerFrom);
 
   FormationEvaluationBuilder get _$this {
     if (_$v != null) {
@@ -55766,7 +56898,7 @@ class _$SoiWaypoint extends SoiWaypoint {
 
 /// SOI Waypoint builder class
 ///
-class SoiWaypointBuilder implements BuilderWithInstanciator<SoiWaypoint, SoiWaypointBuilder>, ImcBuilderHeaderPart {
+class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiWaypoint, SoiWaypointBuilder> {
   _$SoiWaypoint _$v;
 
   DateTime _timestamp;
@@ -55817,7 +56949,11 @@ class SoiWaypointBuilder implements BuilderWithInstanciator<SoiWaypoint, SoiWayp
 
   SoiWaypointBuilder();
 
-  SoiWaypointBuilder get newInstance => SoiWaypointBuilder();
+  SoiWaypointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SoiWaypointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiWaypointBuilder()..copyFromHeader(headerFrom);
 
   SoiWaypointBuilder get _$this {
     if (_$v != null) {
@@ -55946,7 +57082,7 @@ class _$SoiPlan extends SoiPlan {
 
 /// SOI Plan builder class
 ///
-class SoiPlanBuilder implements BuilderWithInstanciator<SoiPlan, SoiPlanBuilder>, ImcBuilderHeaderPart {
+class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiPlan, SoiPlanBuilder> {
   _$SoiPlan _$v;
 
   DateTime _timestamp;
@@ -55989,7 +57125,11 @@ class SoiPlanBuilder implements BuilderWithInstanciator<SoiPlan, SoiPlanBuilder>
 
   SoiPlanBuilder();
 
-  SoiPlanBuilder get newInstance => SoiPlanBuilder();
+  SoiPlanBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SoiPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiPlanBuilder()..copyFromHeader(headerFrom);
 
   SoiPlanBuilder get _$this {
     if (_$v != null) {
@@ -56132,7 +57272,7 @@ class _$SoiCommand extends SoiCommand {
 
 /// SOI Command builder class
 ///
-class SoiCommandBuilder implements BuilderWithInstanciator<SoiCommand, SoiCommandBuilder>, ImcBuilderHeaderPart {
+class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiCommand, SoiCommandBuilder> {
   _$SoiCommand _$v;
 
   DateTime _timestamp;
@@ -56187,7 +57327,11 @@ class SoiCommandBuilder implements BuilderWithInstanciator<SoiCommand, SoiComman
 
   SoiCommandBuilder();
 
-  SoiCommandBuilder get newInstance => SoiCommandBuilder();
+  SoiCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SoiCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiCommandBuilder()..copyFromHeader(headerFrom);
 
   SoiCommandBuilder get _$this {
     if (_$v != null) {
@@ -56330,7 +57474,7 @@ class _$SoiState extends SoiState {
 
 /// SOI State builder class
 ///
-class SoiStateBuilder implements BuilderWithInstanciator<SoiState, SoiStateBuilder>, ImcBuilderHeaderPart {
+class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiState, SoiStateBuilder> {
   _$SoiState _$v;
 
   DateTime _timestamp;
@@ -56381,7 +57525,11 @@ class SoiStateBuilder implements BuilderWithInstanciator<SoiState, SoiStateBuild
 
   SoiStateBuilder();
 
-  SoiStateBuilder get newInstance => SoiStateBuilder();
+  SoiStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SoiStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiStateBuilder()..copyFromHeader(headerFrom);
 
   SoiStateBuilder get _$this {
     if (_$v != null) {
@@ -56522,7 +57670,7 @@ class _$MessagePart extends MessagePart {
 
 /// Message Fragment builder class
 ///
-class MessagePartBuilder implements BuilderWithInstanciator<MessagePart, MessagePartBuilder>, ImcBuilderHeaderPart {
+class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MessagePart, MessagePartBuilder> {
   _$MessagePart _$v;
 
   DateTime _timestamp;
@@ -56573,7 +57721,11 @@ class MessagePartBuilder implements BuilderWithInstanciator<MessagePart, Message
 
   MessagePartBuilder();
 
-  MessagePartBuilder get newInstance => MessagePartBuilder();
+  MessagePartBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  MessagePartBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MessagePartBuilder()..copyFromHeader(headerFrom);
 
   MessagePartBuilder get _$this {
     if (_$v != null) {
@@ -56702,7 +57854,7 @@ class _$NeptusBlob extends NeptusBlob {
 
 /// Neptus Blob builder class
 ///
-class NeptusBlobBuilder implements BuilderWithInstanciator<NeptusBlob, NeptusBlobBuilder>, ImcBuilderHeaderPart {
+class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<NeptusBlob, NeptusBlobBuilder> {
   _$NeptusBlob _$v;
 
   DateTime _timestamp;
@@ -56745,7 +57897,11 @@ class NeptusBlobBuilder implements BuilderWithInstanciator<NeptusBlob, NeptusBlo
 
   NeptusBlobBuilder();
 
-  NeptusBlobBuilder get newInstance => NeptusBlobBuilder();
+  NeptusBlobBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  NeptusBlobBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NeptusBlobBuilder()..copyFromHeader(headerFrom);
 
   NeptusBlobBuilder get _$this {
     if (_$v != null) {
@@ -56858,7 +58014,7 @@ class _$Aborted extends Aborted {
 
 /// Aborted builder class
 ///
-class AbortedBuilder implements BuilderWithInstanciator<Aborted, AbortedBuilder>, ImcBuilderHeaderPart {
+class AbortedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Aborted, AbortedBuilder> {
   _$Aborted _$v;
 
   DateTime _timestamp;
@@ -56893,7 +58049,11 @@ class AbortedBuilder implements BuilderWithInstanciator<Aborted, AbortedBuilder>
 
   AbortedBuilder();
 
-  AbortedBuilder get newInstance => AbortedBuilder();
+  AbortedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  AbortedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AbortedBuilder()..copyFromHeader(headerFrom);
 
   AbortedBuilder get _$this {
     if (_$v != null) {
@@ -57020,7 +58180,7 @@ class _$UsblAngles extends UsblAngles {
 
 /// USBL Angles builder class
 ///
-class UsblAnglesBuilder implements BuilderWithInstanciator<UsblAngles, UsblAnglesBuilder>, ImcBuilderHeaderPart {
+class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblAngles, UsblAnglesBuilder> {
   _$UsblAngles _$v;
 
   DateTime _timestamp;
@@ -57067,7 +58227,11 @@ class UsblAnglesBuilder implements BuilderWithInstanciator<UsblAngles, UsblAngle
 
   UsblAnglesBuilder();
 
-  UsblAnglesBuilder get newInstance => UsblAnglesBuilder();
+  UsblAnglesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblAnglesBuilder()..copyFromHeader(headerFrom);
 
   UsblAnglesBuilder get _$this {
     if (_$v != null) {
@@ -57206,7 +58370,7 @@ class _$UsblPosition extends UsblPosition {
 
 /// USBL Position builder class
 ///
-class UsblPositionBuilder implements BuilderWithInstanciator<UsblPosition, UsblPositionBuilder>, ImcBuilderHeaderPart {
+class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblPosition, UsblPositionBuilder> {
   _$UsblPosition _$v;
 
   DateTime _timestamp;
@@ -57257,7 +58421,11 @@ class UsblPositionBuilder implements BuilderWithInstanciator<UsblPosition, UsblP
 
   UsblPositionBuilder();
 
-  UsblPositionBuilder get newInstance => UsblPositionBuilder();
+  UsblPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblPositionBuilder()..copyFromHeader(headerFrom);
 
   UsblPositionBuilder get _$this {
     if (_$v != null) {
@@ -57404,7 +58572,7 @@ class _$UsblFix extends UsblFix {
 
 /// USBL Fix builder class
 ///
-class UsblFixBuilder implements BuilderWithInstanciator<UsblFix, UsblFixBuilder>, ImcBuilderHeaderPart {
+class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblFix, UsblFixBuilder> {
   _$UsblFix _$v;
 
   DateTime _timestamp;
@@ -57459,7 +58627,11 @@ class UsblFixBuilder implements BuilderWithInstanciator<UsblFix, UsblFixBuilder>
 
   UsblFixBuilder();
 
-  UsblFixBuilder get newInstance => UsblFixBuilder();
+  UsblFixBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblFixBuilder()..copyFromHeader(headerFrom);
 
   UsblFixBuilder get _$this {
     if (_$v != null) {
@@ -57590,7 +58762,7 @@ class _$ParametersXml extends ParametersXml {
 
 /// Parameters XML builder class
 ///
-class ParametersXmlBuilder implements BuilderWithInstanciator<ParametersXml, ParametersXmlBuilder>, ImcBuilderHeaderPart {
+class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ParametersXml, ParametersXmlBuilder> {
   _$ParametersXml _$v;
 
   DateTime _timestamp;
@@ -57633,7 +58805,11 @@ class ParametersXmlBuilder implements BuilderWithInstanciator<ParametersXml, Par
 
   ParametersXmlBuilder();
 
-  ParametersXmlBuilder get newInstance => ParametersXmlBuilder();
+  ParametersXmlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ParametersXmlBuilder()..copyFromHeader(headerFrom);
 
   ParametersXmlBuilder get _$this {
     if (_$v != null) {
@@ -57746,7 +58922,7 @@ class _$GetParametersXml extends GetParametersXml {
 
 /// Get Parameters XML builder class
 ///
-class GetParametersXmlBuilder implements BuilderWithInstanciator<GetParametersXml, GetParametersXmlBuilder>, ImcBuilderHeaderPart {
+class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetParametersXml, GetParametersXmlBuilder> {
   _$GetParametersXml _$v;
 
   DateTime _timestamp;
@@ -57781,7 +58957,11 @@ class GetParametersXmlBuilder implements BuilderWithInstanciator<GetParametersXm
 
   GetParametersXmlBuilder();
 
-  GetParametersXmlBuilder get newInstance => GetParametersXmlBuilder();
+  GetParametersXmlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GetParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetParametersXmlBuilder()..copyFromHeader(headerFrom);
 
   GetParametersXmlBuilder get _$this {
     if (_$v != null) {
@@ -57908,7 +59088,7 @@ class _$SetImageCoords extends SetImageCoords {
 
 /// Set Image Coordinates builder class
 ///
-class SetImageCoordsBuilder implements BuilderWithInstanciator<SetImageCoords, SetImageCoordsBuilder>, ImcBuilderHeaderPart {
+class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetImageCoords, SetImageCoordsBuilder> {
   _$SetImageCoords _$v;
 
   DateTime _timestamp;
@@ -57955,7 +59135,11 @@ class SetImageCoordsBuilder implements BuilderWithInstanciator<SetImageCoords, S
 
   SetImageCoordsBuilder();
 
-  SetImageCoordsBuilder get newInstance => SetImageCoordsBuilder();
+  SetImageCoordsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetImageCoordsBuilder()..copyFromHeader(headerFrom);
 
   SetImageCoordsBuilder get _$this {
     if (_$v != null) {
@@ -58088,7 +59272,7 @@ class _$GetImageCoords extends GetImageCoords {
 
 /// Get Image Coordinates builder class
 ///
-class GetImageCoordsBuilder implements BuilderWithInstanciator<GetImageCoords, GetImageCoordsBuilder>, ImcBuilderHeaderPart {
+class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetImageCoords, GetImageCoordsBuilder> {
   _$GetImageCoords _$v;
 
   DateTime _timestamp;
@@ -58135,7 +59319,11 @@ class GetImageCoordsBuilder implements BuilderWithInstanciator<GetImageCoords, G
 
   GetImageCoordsBuilder();
 
-  GetImageCoordsBuilder get newInstance => GetImageCoordsBuilder();
+  GetImageCoordsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetImageCoordsBuilder()..copyFromHeader(headerFrom);
 
   GetImageCoordsBuilder get _$this {
     if (_$v != null) {
@@ -58286,7 +59474,7 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
 
 /// Get World Coordinates builder class
 ///
-class GetWorldCoordinatesBuilder implements BuilderWithInstanciator<GetWorldCoordinates, GetWorldCoordinatesBuilder>, ImcBuilderHeaderPart {
+class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetWorldCoordinates, GetWorldCoordinatesBuilder> {
   _$GetWorldCoordinates _$v;
 
   DateTime _timestamp;
@@ -58345,7 +59533,11 @@ class GetWorldCoordinatesBuilder implements BuilderWithInstanciator<GetWorldCoor
 
   GetWorldCoordinatesBuilder();
 
-  GetWorldCoordinatesBuilder get newInstance => GetWorldCoordinatesBuilder();
+  GetWorldCoordinatesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  GetWorldCoordinatesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetWorldCoordinatesBuilder()..copyFromHeader(headerFrom);
 
   GetWorldCoordinatesBuilder get _$this {
     if (_$v != null) {
@@ -58520,7 +59712,7 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
 
 /// USBL Angles Extended builder class
 ///
-class UsblAnglesExtendedBuilder implements BuilderWithInstanciator<UsblAnglesExtended, UsblAnglesExtendedBuilder>, ImcBuilderHeaderPart {
+class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblAnglesExtended, UsblAnglesExtendedBuilder> {
   _$UsblAnglesExtended _$v;
 
   DateTime _timestamp;
@@ -58591,7 +59783,11 @@ class UsblAnglesExtendedBuilder implements BuilderWithInstanciator<UsblAnglesExt
 
   UsblAnglesExtendedBuilder();
 
-  UsblAnglesExtendedBuilder get newInstance => UsblAnglesExtendedBuilder();
+  UsblAnglesExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblAnglesExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblAnglesExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblAnglesExtendedBuilder get _$this {
     if (_$v != null) {
@@ -58784,7 +59980,7 @@ class _$UsblPositionExtended extends UsblPositionExtended {
 
 /// USBL Position Extended builder class
 ///
-class UsblPositionExtendedBuilder implements BuilderWithInstanciator<UsblPositionExtended, UsblPositionExtendedBuilder>, ImcBuilderHeaderPart {
+class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblPositionExtended, UsblPositionExtendedBuilder> {
   _$UsblPositionExtended _$v;
 
   DateTime _timestamp;
@@ -58863,7 +60059,11 @@ class UsblPositionExtendedBuilder implements BuilderWithInstanciator<UsblPositio
 
   UsblPositionExtendedBuilder();
 
-  UsblPositionExtendedBuilder get newInstance => UsblPositionExtendedBuilder();
+  UsblPositionExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblPositionExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblPositionExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblPositionExtendedBuilder get _$this {
     if (_$v != null) {
@@ -59030,7 +60230,7 @@ class _$UsblFixExtended extends UsblFixExtended {
 
 /// USBL Fix Extended builder class
 ///
-class UsblFixExtendedBuilder implements BuilderWithInstanciator<UsblFixExtended, UsblFixExtendedBuilder>, ImcBuilderHeaderPart {
+class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblFixExtended, UsblFixExtendedBuilder> {
   _$UsblFixExtended _$v;
 
   DateTime _timestamp;
@@ -59089,7 +60289,11 @@ class UsblFixExtendedBuilder implements BuilderWithInstanciator<UsblFixExtended,
 
   UsblFixExtendedBuilder();
 
-  UsblFixExtendedBuilder get newInstance => UsblFixExtendedBuilder();
+  UsblFixExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblFixExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblFixExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblFixExtendedBuilder get _$this {
     if (_$v != null) {
@@ -59240,7 +60444,7 @@ class _$UsblModem extends UsblModem {
 
 /// USBL Modem Configuration builder class
 ///
-class UsblModemBuilder implements BuilderWithInstanciator<UsblModem, UsblModemBuilder>, ImcBuilderHeaderPart {
+class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblModem, UsblModemBuilder> {
   _$UsblModem _$v;
 
   DateTime _timestamp;
@@ -59295,7 +60499,11 @@ class UsblModemBuilder implements BuilderWithInstanciator<UsblModem, UsblModemBu
 
   UsblModemBuilder();
 
-  UsblModemBuilder get newInstance => UsblModemBuilder();
+  UsblModemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblModemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblModemBuilder()..copyFromHeader(headerFrom);
 
   UsblModemBuilder get _$this {
     if (_$v != null) {
@@ -59426,7 +60634,7 @@ class _$UsblConfig extends UsblConfig {
 
 /// USBL Configuration builder class
 ///
-class UsblConfigBuilder implements BuilderWithInstanciator<UsblConfig, UsblConfigBuilder>, ImcBuilderHeaderPart {
+class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblConfig, UsblConfigBuilder> {
   _$UsblConfig _$v;
 
   DateTime _timestamp;
@@ -59469,7 +60677,11 @@ class UsblConfigBuilder implements BuilderWithInstanciator<UsblConfig, UsblConfi
 
   UsblConfigBuilder();
 
-  UsblConfigBuilder get newInstance => UsblConfigBuilder();
+  UsblConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  UsblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblConfigBuilder()..copyFromHeader(headerFrom);
 
   UsblConfigBuilder get _$this {
     if (_$v != null) {
@@ -59594,7 +60806,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
 
 /// Dissolved Organic Matter builder class
 ///
-class DissolvedOrganicMatterBuilder implements BuilderWithInstanciator<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder>, ImcBuilderHeaderPart {
+class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder> {
   _$DissolvedOrganicMatter _$v;
 
   DateTime _timestamp;
@@ -59637,7 +60849,11 @@ class DissolvedOrganicMatterBuilder implements BuilderWithInstanciator<Dissolved
 
   DissolvedOrganicMatterBuilder();
 
-  DissolvedOrganicMatterBuilder get newInstance => DissolvedOrganicMatterBuilder();
+  DissolvedOrganicMatterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DissolvedOrganicMatterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DissolvedOrganicMatterBuilder()..copyFromHeader(headerFrom);
 
   DissolvedOrganicMatterBuilder get _$this {
     if (_$v != null) {
@@ -59756,7 +60972,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
 
 /// Optical Backscattering Coefficient builder class
 ///
-class OpticalBackscatterBuilder implements BuilderWithInstanciator<OpticalBackscatter, OpticalBackscatterBuilder>, ImcBuilderHeaderPart {
+class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<OpticalBackscatter, OpticalBackscatterBuilder> {
   _$OpticalBackscatter _$v;
 
   DateTime _timestamp;
@@ -59795,7 +61011,11 @@ class OpticalBackscatterBuilder implements BuilderWithInstanciator<OpticalBacksc
 
   OpticalBackscatterBuilder();
 
-  OpticalBackscatterBuilder get newInstance => OpticalBackscatterBuilder();
+  OpticalBackscatterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  OpticalBackscatterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => OpticalBackscatterBuilder()..copyFromHeader(headerFrom);
 
   OpticalBackscatterBuilder get _$this {
     if (_$v != null) {
@@ -60002,7 +61222,7 @@ class _$Tachograph extends Tachograph {
 
 /// Tachograph builder class
 ///
-class TachographBuilder implements BuilderWithInstanciator<Tachograph, TachographBuilder>, ImcBuilderHeaderPart {
+class TachographBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Tachograph, TachographBuilder> {
   _$Tachograph _$v;
 
   DateTime _timestamp;
@@ -60101,7 +61321,11 @@ class TachographBuilder implements BuilderWithInstanciator<Tachograph, Tachograp
 
   TachographBuilder();
 
-  TachographBuilder get newInstance => TachographBuilder();
+  TachographBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TachographBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TachographBuilder()..copyFromHeader(headerFrom);
 
   TachographBuilder get _$this {
     if (_$v != null) {
@@ -60254,7 +61478,7 @@ class _$ApmStatus extends ApmStatus {
 
 /// APM Status builder class
 ///
-class ApmStatusBuilder implements BuilderWithInstanciator<ApmStatus, ApmStatusBuilder>, ImcBuilderHeaderPart {
+class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ApmStatus, ApmStatusBuilder> {
   _$ApmStatus _$v;
 
   DateTime _timestamp;
@@ -60297,7 +61521,11 @@ class ApmStatusBuilder implements BuilderWithInstanciator<ApmStatus, ApmStatusBu
 
   ApmStatusBuilder();
 
-  ApmStatusBuilder get newInstance => ApmStatusBuilder();
+  ApmStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ApmStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ApmStatusBuilder()..copyFromHeader(headerFrom);
 
   ApmStatusBuilder get _$this {
     if (_$v != null) {
@@ -60428,7 +61656,7 @@ class _$SadcReadings extends SadcReadings {
 
 /// SADC Readings builder class
 ///
-class SadcReadingsBuilder implements BuilderWithInstanciator<SadcReadings, SadcReadingsBuilder>, ImcBuilderHeaderPart {
+class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SadcReadings, SadcReadingsBuilder> {
   _$SadcReadings _$v;
 
   DateTime _timestamp;
@@ -60475,7 +61703,11 @@ class SadcReadingsBuilder implements BuilderWithInstanciator<SadcReadings, SadcR
 
   SadcReadingsBuilder();
 
-  SadcReadingsBuilder get newInstance => SadcReadingsBuilder();
+  SadcReadingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  SadcReadingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SadcReadingsBuilder()..copyFromHeader(headerFrom);
 
   SadcReadingsBuilder get _$this {
     if (_$v != null) {
@@ -60686,7 +61918,7 @@ class _$DmsDetection extends DmsDetection {
 
 /// DMS Detection builder class
 ///
-class DmsDetectionBuilder implements BuilderWithInstanciator<DmsDetection, DmsDetectionBuilder>, ImcBuilderHeaderPart {
+class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DmsDetection, DmsDetectionBuilder> {
   _$DmsDetection _$v;
 
   DateTime _timestamp;
@@ -60785,7 +62017,11 @@ class DmsDetectionBuilder implements BuilderWithInstanciator<DmsDetection, DmsDe
 
   DmsDetectionBuilder();
 
-  DmsDetectionBuilder get newInstance => DmsDetectionBuilder();
+  DmsDetectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  DmsDetectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DmsDetectionBuilder()..copyFromHeader(headerFrom);
 
   DmsDetectionBuilder get _$this {
     if (_$v != null) {
@@ -60932,7 +62168,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
 
 /// Total Magnetic Field Intensity builder class
 ///
-class TotalMagIntensityBuilder implements BuilderWithInstanciator<TotalMagIntensity, TotalMagIntensityBuilder>, ImcBuilderHeaderPart {
+class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TotalMagIntensity, TotalMagIntensityBuilder> {
   _$TotalMagIntensity _$v;
 
   DateTime _timestamp;
@@ -60971,7 +62207,11 @@ class TotalMagIntensityBuilder implements BuilderWithInstanciator<TotalMagIntens
 
   TotalMagIntensityBuilder();
 
-  TotalMagIntensityBuilder get newInstance => TotalMagIntensityBuilder();
+  TotalMagIntensityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  TotalMagIntensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TotalMagIntensityBuilder()..copyFromHeader(headerFrom);
 
   TotalMagIntensityBuilder get _$this {
     if (_$v != null) {

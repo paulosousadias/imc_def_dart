@@ -342,7 +342,7 @@ _writeMessageBuilder(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('/// $name builder class\n///\n');
   var msgStringImmutableBuilder =
-      '''class ${abbrev}Builder implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder>, ImcBuilderHeaderPart {
+      '''class ${abbrev}Builder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder> {
   _\$$abbrev _\$v;
 
   DateTime _timestamp;
@@ -391,7 +391,11 @@ _writeMessageBuilder(
 
   var msgStringImmutableBuilder1 = '''\n  ${abbrev}Builder();
 
-  ${abbrev}Builder get newInstance => ${abbrev}Builder();
+  ${abbrev}Builder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    this.copyFromHeader(headerFrom);
+  }
+
+  ${abbrev}Builder newInstance([ImcBuilderHeaderPart headerFrom]) => ${abbrev}Builder()..copyFromHeader(headerFrom);
 
   ${abbrev}Builder get _\$this {
     if (_\$v != null) {
@@ -496,8 +500,8 @@ _writeMessageSerializer(
     var abbrev = f.getAttribute("abbrev");
     var type = f.getAttribute("type");
     var unit = f.getAttribute("unit");
-    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
-    var dartType = typesData[1];
+    // var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+    // var dartType = typesData[1];
 
     var enumLike = "";
     switch (unit) {
@@ -739,7 +743,7 @@ _writeMessageSerializer(
         fStr += '    if (${fieldName}SId == imc.ImcId.nullId) {\n';
         fStr += '      builder.$fieldName = null;\n';
         fStr += '    } else {\n';
-        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance;\n';
+        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance(builder);\n';
         fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
         fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
@@ -756,7 +760,7 @@ _writeMessageSerializer(
         fStr += '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '      if (${fieldName}SId != imc.ImcId.nullId) {\n';
-        fStr += '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance;\n';
+        fStr += '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance(builder);\n';
         fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
         fStr += '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
         fStr += '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
