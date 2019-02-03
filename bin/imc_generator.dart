@@ -617,27 +617,27 @@ _writeMessageSerializer(
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
     
-    var endianess = imc.getEndianess(byteData, byteOffset);
+    var endianness = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
-    if (endianess == null)
+    if (endianness == null)
       return null;
     
-    var msgId = byteData.getUint16(byteOffset, endianess);
+    var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     if (msgId != imc.$abbrev.static_id)
       return null;
 
     var builder = imc.${abbrev}Builder();
-    var payloadSize = imc.deserializeHeader(builder, byteData, endianess, offset);
+    var payloadSize = imc.deserializeHeader(builder, byteData, endianness, offset);
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
-    var readCrc = imc.getCrcFooter(byteData, offset + imc.header_size + payloadSize, endianess);
+    var readCrc = imc.getCrcFooter(byteData, offset + imc.header_size + payloadSize, endianness);
     if (calcCrc != readCrc)
       return null;
 
     // Payload
-    var payloadSizeRead = deserializePayload(builder, byteData, endianess, byteOffset);
+    var payloadSizeRead = deserializePayload(builder, byteData, endianness, byteOffset);
     // End payload
     
     if (payloadSizeRead != payloadSize)
@@ -646,7 +646,7 @@ _writeMessageSerializer(
     return builder.build();
   }
 
-  int deserializePayload(imc.${abbrev}Builder builder, ByteData byteData, Endian endianess, int offset) {
+  int deserializePayload(imc.${abbrev}Builder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 \n''';
   sink.write('$serClass1');
@@ -679,15 +679,15 @@ _writeMessageSerializer(
         fStr += '    byteOffset += 1;\n';
         break;
       case "uint16_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint16(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint16(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case "uint32_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint32(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "uint64_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint64(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "int8_t":
@@ -695,27 +695,27 @@ _writeMessageSerializer(
         fStr += '    byteOffset += 1;\n';
         break;
       case "int16_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt16(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt16(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case "int32_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt32(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "int64_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt64(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "fp32_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat32(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "fp64_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat64(byteOffset, endianess)$enumLikeE;\n''';
+        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "rawdata":
-        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianess);\n''';
+        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
         fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
         fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
@@ -724,7 +724,7 @@ _writeMessageSerializer(
         fStr += '    builder.$fieldName = ${fieldName}DData;\n';
         break;
       case "plaintext":
-        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianess);\n''';
+        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
         fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
         fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
@@ -734,7 +734,7 @@ _writeMessageSerializer(
         fStr += '    builder.$fieldName = ${fieldName}Decoded;\n';
         break;
       case "message":
-        fStr = '    var ${fieldName}SId = byteData.getUint16(byteOffset, endianess);\n';
+        fStr = '    var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '    byteOffset += 2;\n';
         fStr += '    if (${fieldName}SId == imc.ImcId.nullId) {\n';
         fStr += '      builder.$fieldName = null;\n';
@@ -742,24 +742,24 @@ _writeMessageSerializer(
         fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance;\n';
         fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
-        fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);\n';
+        fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
         fStr += '        builder.$fieldName = pMsgBuilder.build();\n';
         fStr += '      }\n';
         fStr += '    }\n';
         break;
       case "message-list":
-        fStr = '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianess);\n';
+        fStr = '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '    byteOffset += 2;\n';
         fStr += '    builder.$fieldName = [];\n';
         fStr += '    for (int i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
-        fStr += '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianess);\n';
+        fStr += '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '      if (${fieldName}SId != imc.ImcId.nullId) {\n';
         fStr += '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance;\n';
         fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
         fStr += '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
-        fStr += '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianess, byteOffset);\n';
+        fStr += '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
         fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
         fStr += '        }\n';

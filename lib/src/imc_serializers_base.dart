@@ -8,7 +8,7 @@ import 'package:imc_def/imc_def_base.dart' show ImcBuilderHeaderPart;
 
 const header_size = 20;
 const footer_size = 2;
-const endian_ser = Endian.big;
+var endian_ser = Endian.big;
 
 const crc_table = <int>[ 0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280, 0xC241, 0xC601,
     0x06C0, 0x0780, 0xC741, 0x0500, 0xC5C1, 0xC481, 0x0440, 0xCC01, 0x0CC0, 0x0D80, 0xCD41, 0x0F00, 0xCFC1,
@@ -44,7 +44,7 @@ abstract class ImcSerializer<M extends Message, B> {
   /// The [Builder] is to allow passing the
   /// message to build into.
   /// returns a [int] with a serialized size
-  int deserializePayload(B builder, ByteData data, Endian endianess, int offset);
+  int deserializePayload(B builder, ByteData data, Endian endianness, int offset);
 }
 
 // Future<void> writeToFile(ByteData data, String path) {
@@ -54,26 +54,26 @@ abstract class ImcSerializer<M extends Message, B> {
 // }
 
 int getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
-  var endianess = getEndianess(data, offset);
-  if (endianess == null)
+  var endianness = getEndianness(data, offset);
+  if (endianness == null)
     return null;  
-  var msgId = data.getUint16(offset + 2, endianess);
+  var msgId = data.getUint16(offset + 2, endianness);
   return msgId;
 }
 
-int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian endianess, [int headerStartoffset = 0]) {
+int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian endianness, [int headerStartoffset = 0]) {
   try {
     var byteOffset = headerStartoffset + 2 + 2;
 
-    var payloadSize = byteData.getUint16(byteOffset, endianess);
+    var payloadSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var timeSeconds = byteData.getFloat64(byteOffset, endianess);
+    var timeSeconds = byteData.getFloat64(byteOffset, endianness);
     byteOffset += 8;
-    var src = byteData.getUint16(byteOffset, endianess);
+    var src = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     var srcEnt = byteData.getUint8(byteOffset);
     byteOffset += 1;
-    var dst = byteData.getUint16(byteOffset, endianess);
+    var dst = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     var dstEnt = byteData.getUint8(byteOffset);
     byteOffset += 1;
@@ -91,7 +91,7 @@ int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian en
   }
 }
 
-Endian getEndianess(ByteData byteData, [int offset = 0]) {
+Endian getEndianness(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
   if (syncBE == SYNC_NUMBER)
     return Endian.big;
@@ -132,8 +132,8 @@ calcAndAddFooter(ByteData byteData, int offset, int lenght) {
   byteData.setUint16(offset + lenght, crc, endian_ser);
 }
 
-int getCrcFooter(ByteData byteData, int offset, Endian endianess) {
-  var crc = byteData.getUint16(offset, endianess);
+int getCrcFooter(ByteData byteData, int offset, Endian endianness) {
+  var crc = byteData.getUint16(offset, endianness);
   return crc;
 }
 
