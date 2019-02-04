@@ -1,6 +1,6 @@
 # imc_def
 
-A new Flutter package project.
+A dart package for IMC messages manipulation.
 
 ## Getting Started
 
