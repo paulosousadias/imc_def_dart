@@ -155,7 +155,7 @@ void main() {
           ..srcEnt = 0x31 //(49),
           ..dst = 0xffff //(65535),
           ..dstEnt = 0xff //(255),
-          ..validity = imc.DistanceEnumValidity.valid
+          ..validity = imc.DistanceEnumValidity.dv_valid
           ..location = [
             (imc.DeviceStateBuilder.fromHeader(msgBuilderDistance)
                 ..x = 0

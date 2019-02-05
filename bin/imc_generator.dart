@@ -952,10 +952,13 @@ _writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
 _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sink) {
   var eList = "";
   var c = 0;
+  var prefix = field.getAttribute("prefix")?.toLowerCase() ?? '';
+  if (prefix.length > 0)
+    prefix += '_';
   field.findElements("value").forEach((f) {
     if (eList.length != 0) eList += ", ";
     if (++c % 5 == 0) eList += "\n      ";
-    eList += _accountForReservedName(f.getAttribute("abbrev").toLowerCase());
+    eList += _accountForReservedName(prefix + f.getAttribute("abbrev").toLowerCase());
   });
 
   var sufix;
@@ -973,7 +976,7 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
   sink.write(body);
 
   field.findElements("value").forEach((f) {
-    var vName = _accountForReservedName(f.getAttribute("abbrev").toLowerCase());
+    var vName = _accountForReservedName(prefix + f.getAttribute("abbrev").toLowerCase());
     var vVal = f.getAttribute("id");
     var bodyV = '''  static const $vName = const $eName($vVal);
 ''';
