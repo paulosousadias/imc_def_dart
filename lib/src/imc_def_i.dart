@@ -83,9 +83,9 @@ class _$EntityState extends EntityState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state)
-          ..add('flags', flags)
-          ..add('description', description))
+          ..add('state', '$state (Enumerated)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('description', '$description '))
         .toString();
   }
 }
@@ -425,11 +425,11 @@ class _$EntityInfo extends EntityInfo {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('label', label)
-          ..add('component', component)
-          ..add('actTime', actTime)
-          ..add('deactTime', deactTime))
+          ..add('id', '$id ')
+          ..add('label', '$label ')
+          ..add('component', '$component ')
+          ..add('actTime', '$actTime (s)')
+          ..add('deactTime', '$deactTime (s)'))
         .toString();
   }
 }
@@ -613,7 +613,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id))
+          ..add('id', '$id '))
         .toString();
   }
 }
@@ -778,8 +778,8 @@ class _$EntityList extends EntityList {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('list', list))
+          ..add('op', '$op (Enumerated)')
+          ..add('list', '$list (TupleList)'))
         .toString();
   }
 }
@@ -945,7 +945,7 @@ class _$CpuUsage extends CpuUsage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (%)'))
         .toString();
   }
 }
@@ -1110,8 +1110,8 @@ class _$TransportBindings extends TransportBindings {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('consumer', consumer)
-          ..add('messageId', messageId))
+          ..add('consumer', '$consumer ')
+          ..add('messageId', '$messageId '))
         .toString();
   }
 }
@@ -1277,7 +1277,7 @@ class _$RestartSystem extends RestartSystem {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type))
+          ..add('type', '$type (Enumerated)'))
         .toString();
   }
 }
@@ -1437,7 +1437,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op))
+          ..add('op', '$op (Enumerated)'))
         .toString();
   }
 }
@@ -1612,10 +1612,10 @@ class _$DevCalibrationState extends DevCalibrationState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('totalSteps', totalSteps)
-          ..add('stepNumber', stepNumber)
-          ..add('step', step)
-          ..add('flags', flags))
+          ..add('totalSteps', '$totalSteps ')
+          ..add('stepNumber', '$stepNumber ')
+          ..add('step', '$step ')
+          ..add('flags', '$flags (Bitfield)'))
         .toString();
   }
 }
@@ -1798,8 +1798,8 @@ class _$EntityActivationState extends EntityActivationState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state)
-          ..add('error', error))
+          ..add('state', '$state (Enumerated)')
+          ..add('error', '$error '))
         .toString();
   }
 }
@@ -2198,24 +2198,24 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('speedMin', speedMin)
-          ..add('speedMax', speedMax)
-          ..add('longAccel', longAccel)
-          ..add('altMaxMsl', altMaxMsl)
-          ..add('diveFractionMax', diveFractionMax)
-          ..add('climbFractionMax', climbFractionMax)
-          ..add('bankMax', bankMax)
-          ..add('pMax', pMax)
-          ..add('pitchMin', pitchMin)
-          ..add('pitchMax', pitchMax)
-          ..add('qMax', qMax)
-          ..add('gMin', gMin)
-          ..add('gMax', gMax)
-          ..add('gLatMax', gLatMax)
-          ..add('rpmMin', rpmMin)
-          ..add('rpmMax', rpmMax)
-          ..add('rpmRateMax', rpmRateMax))
+          ..add('op', '$op (Enumerated)')
+          ..add('speedMin', '$speedMin (m/s)')
+          ..add('speedMax', '$speedMax (m/s)')
+          ..add('longAccel', '$longAccel (m/s/s)')
+          ..add('altMaxMsl', '$altMaxMsl (m)')
+          ..add('diveFractionMax', '$diveFractionMax ')
+          ..add('climbFractionMax', '$climbFractionMax ')
+          ..add('bankMax', '$bankMax (rad)${bankMax != null ? " [${bankMax * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('pMax', '$pMax (rad/s)${pMax != null ? " [${pMax * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('pitchMin', '$pitchMin (rad)${pitchMin != null ? " [${pitchMin * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('pitchMax', '$pitchMax (rad)${pitchMax != null ? " [${pitchMax * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('qMax', '$qMax (rad/s)${qMax != null ? " [${qMax * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('gMin', '$gMin (g)')
+          ..add('gMax', '$gMax (g)')
+          ..add('gLatMax', '$gLatMax (g)')
+          ..add('rpmMin', '$rpmMin (rpm)')
+          ..add('rpmMax', '$rpmMax (rpm)')
+          ..add('rpmRateMax', '$rpmRateMax (rpm/s)'))
         .toString();
   }
 }
@@ -2477,7 +2477,7 @@ class _$MsgList extends MsgList {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('msgs', msgs))
+          ..add('msgs', '$msgs '))
         .toString();
   }
 }
@@ -2722,24 +2722,24 @@ class _$SimulatedState extends SimulatedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('height', height)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi)
-          ..add('u', u)
-          ..add('v', v)
-          ..add('w', w)
-          ..add('p', p)
-          ..add('q', q)
-          ..add('r', r)
-          ..add('svx', svx)
-          ..add('svy', svy)
-          ..add('svz', svz))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('height', '$height (m)')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('u', '$u (m/s)')
+          ..add('v', '$v (m/s)')
+          ..add('w', '$w (m/s)')
+          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('svx', '$svx (m/s)')
+          ..add('svy', '$svy (m/s)')
+          ..add('svz', '$svz (m/s)'))
         .toString();
   }
 }
@@ -3006,8 +3006,8 @@ class _$LeakSimulation extends LeakSimulation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('entities', entities))
+          ..add('op', '$op (Enumerated)')
+          ..add('entities', '$entities '))
         .toString();
   }
 }
@@ -3183,9 +3183,9 @@ class _$UASimulation extends UASimulation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('speed', speed)
-          ..add('data', data))
+          ..add('type', '$type (Enumerated)')
+          ..add('speed', '$speed (bps)')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -3367,9 +3367,9 @@ class _$DynamicsSimParam extends DynamicsSimParam {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('tas2accPgain', tas2accPgain)
-          ..add('bank2pPgain', bank2pPgain))
+          ..add('op', '$op (Enumerated)')
+          ..add('tas2accPgain', '$tas2accPgain ')
+          ..add('bank2pPgain', '$bank2pPgain '))
         .toString();
   }
 }
@@ -3546,8 +3546,8 @@ class _$StorageUsage extends StorageUsage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('available', available)
-          ..add('value', value))
+          ..add('available', '$available (MiB)')
+          ..add('value', '$value (%)'))
         .toString();
   }
 }
@@ -3723,9 +3723,9 @@ class _$CacheControl extends CacheControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('snapshot', snapshot)
-          ..add('message', message))
+          ..add('op', '$op (Enumerated)')
+          ..add('snapshot', '$snapshot ')
+          ..add('message', '$message '))
         .toString();
   }
 }
@@ -3902,8 +3902,8 @@ class _$LoggingControl extends LoggingControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('name', name))
+          ..add('op', '$op (Enumerated)')
+          ..add('name', '$name '))
         .toString();
   }
 }
@@ -4084,10 +4084,10 @@ class _$LogBookEntry extends LogBookEntry {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('htime', htime)
-          ..add('context', context)
-          ..add('text', text))
+          ..add('type', '$type (Enumerated)')
+          ..add('htime', '$htime (s)')
+          ..add('context', '$context ')
+          ..add('text', '$text '))
         .toString();
   }
 }
@@ -4275,9 +4275,9 @@ class _$LogBookControl extends LogBookControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('command', command)
-          ..add('htime', htime)
-          ..add('msg', msg))
+          ..add('command', '$command (Enumerated)')
+          ..add('htime', '$htime (s)')
+          ..add('msg', '$msg '))
         .toString();
   }
 }
@@ -4454,8 +4454,8 @@ class _$ReplayControl extends ReplayControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('file', file))
+          ..add('op', '$op (Enumerated)')
+          ..add('file', '$file '))
         .toString();
   }
 }
@@ -4631,9 +4631,9 @@ class _$ClockControl extends ClockControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('clock', clock)
-          ..add('tz', tz))
+          ..add('op', '$op (Enumerated)')
+          ..add('clock', '$clock (s)')
+          ..add('tz', '$tz '))
         .toString();
   }
 }
@@ -4815,9 +4815,9 @@ class _$HistoricCTD extends HistoricCTD {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('conductivity', conductivity)
-          ..add('temperature', temperature)
-          ..add('depth', depth))
+          ..add('conductivity', '$conductivity (S/m)')
+          ..add('temperature', '$temperature (°C)')
+          ..add('depth', '$depth (m)'))
         .toString();
   }
 }
@@ -5009,11 +5009,11 @@ class _$HistoricTelemetry extends HistoricTelemetry {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('altitude', altitude)
-          ..add('roll', roll)
-          ..add('pitch', pitch)
-          ..add('yaw', yaw)
-          ..add('speed', speed))
+          ..add('altitude', '$altitude (m)')
+          ..add('roll', '$roll ')
+          ..add('pitch', '$pitch ')
+          ..add('yaw', '$yaw ')
+          ..add('speed', '$speed (dm)'))
         .toString();
   }
 }
@@ -5227,13 +5227,13 @@ class _$HistoricSonarData extends HistoricSonarData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('altitude', altitude)
-          ..add('width', width)
-          ..add('length', length)
-          ..add('bearing', bearing)
-          ..add('pxl', pxl)
-          ..add('encoding', encoding)
-          ..add('sonarData', sonarData))
+          ..add('altitude', '$altitude (m)')
+          ..add('width', '$width (m)')
+          ..add('length', '$length (m)')
+          ..add('bearing', '$bearing ')
+          ..add('pxl', '$pxl ')
+          ..add('encoding', '$encoding (Enumerated)')
+          ..add('sonarData', '$sonarData '))
         .toString();
   }
 }
@@ -5434,8 +5434,8 @@ class _$HistoricEvent extends HistoricEvent {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('text', text)
-          ..add('type', type))
+          ..add('text', '$text ')
+          ..add('type', '$type (Enumerated)'))
         .toString();
   }
 }
@@ -5621,11 +5621,11 @@ class _$VerticalProfile extends VerticalProfile {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('parameter', parameter)
-          ..add('numSamples', numSamples)
-          ..add('samples', samples)
-          ..add('lat', lat)
-          ..add('lon', lon))
+          ..add('parameter', '$parameter (Enumerated)')
+          ..add('numSamples', '$numSamples ')
+          ..add('samples', '$samples ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -5814,8 +5814,8 @@ class _$ProfileSample extends ProfileSample {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('depth', depth)
-          ..add('avg', avg))
+          ..add('depth', '$depth (dm)')
+          ..add('avg', '$avg '))
         .toString();
   }
 }
@@ -6159,13 +6159,13 @@ class _$Announce extends Announce {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sysName', sysName)
-          ..add('sysType', sysType)
-          ..add('owner', owner)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('height', height)
-          ..add('services', services))
+          ..add('sysName', '$sysName ')
+          ..add('sysType', '$sysType (Enumerated)')
+          ..add('owner', '$owner ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('height', '$height (m)')
+          ..add('services', '$services '))
         .toString();
   }
 }
@@ -6366,8 +6366,8 @@ class _$AnnounceService extends AnnounceService {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('service', service)
-          ..add('serviceType', serviceType))
+          ..add('service', '$service ')
+          ..add('serviceType', '$serviceType (Bitfield)'))
         .toString();
   }
 }
@@ -6533,7 +6533,7 @@ class _$RSSI extends RSSI {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (%)'))
         .toString();
   }
 }
@@ -6693,7 +6693,7 @@ class _$VSWR extends VSWR {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -6853,7 +6853,7 @@ class _$LinkLevel extends LinkLevel {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -7023,9 +7023,9 @@ class _$Sms extends Sms {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('number', number)
-          ..add('timeout', timeout)
-          ..add('contents', contents))
+          ..add('number', '$number ')
+          ..add('timeout', '$timeout ')
+          ..add('contents', '$contents '))
         .toString();
   }
 }
@@ -7212,10 +7212,10 @@ class _$SmsTx extends SmsTx {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('seq', seq)
-          ..add('destination', destination)
-          ..add('timeout', timeout)
-          ..add('data', data))
+          ..add('seq', '$seq ')
+          ..add('destination', '$destination ')
+          ..add('timeout', '$timeout (s)')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -7398,8 +7398,8 @@ class _$SmsRx extends SmsRx {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('source', source)
-          ..add('data', data))
+          ..add('source', '$source ')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -7575,9 +7575,9 @@ class _$SmsState extends SmsState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('seq', seq)
-          ..add('state', state)
-          ..add('error', error))
+          ..add('seq', '$seq ')
+          ..add('state', '$state (Enumerated)')
+          ..add('error', '$error '))
         .toString();
   }
 }
@@ -7754,8 +7754,8 @@ class _$TextMessage extends TextMessage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('origin', origin)
-          ..add('text', text))
+          ..add('origin', '$origin ')
+          ..add('text', '$text '))
         .toString();
   }
 }
@@ -7941,11 +7941,11 @@ class _$IridiumMsgRx extends IridiumMsgRx {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('origin', origin)
-          ..add('htime', htime)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('data', data))
+          ..add('origin', '$origin ')
+          ..add('htime', '$htime (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -8144,10 +8144,10 @@ class _$IridiumMsgTx extends IridiumMsgTx {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reqId', reqId)
-          ..add('ttl', ttl)
-          ..add('destination', destination)
-          ..add('data', data))
+          ..add('reqId', '$reqId ')
+          ..add('ttl', '$ttl (s)')
+          ..add('destination', '$destination ')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -8335,9 +8335,9 @@ class _$IridiumTxStatus extends IridiumTxStatus {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reqId', reqId)
-          ..add('status', status)
-          ..add('text', text))
+          ..add('reqId', '$reqId ')
+          ..add('status', '$status (Enumerated)')
+          ..add('text', '$text '))
         .toString();
   }
 }
@@ -8514,8 +8514,8 @@ class _$GroupMembershipState extends GroupMembershipState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('groupName', groupName)
-          ..add('links', links))
+          ..add('groupName', '$groupName ')
+          ..add('links', '$links '))
         .toString();
   }
 }
@@ -8691,9 +8691,9 @@ class _$SystemGroup extends SystemGroup {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('groupName', groupName)
-          ..add('action', action)
-          ..add('groupList', groupList))
+          ..add('groupName', '$groupName ')
+          ..add('action', '$action (Enumerated)')
+          ..add('groupList', '$groupList '))
         .toString();
   }
 }
@@ -8870,8 +8870,8 @@ class _$LinkLatency extends LinkLatency {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value)
-          ..add('sysSrc', sysSrc))
+          ..add('value', '$value (s)')
+          ..add('sysSrc', '$sysSrc '))
         .toString();
   }
 }
@@ -9042,8 +9042,8 @@ class _$ExtendedRSSI extends ExtendedRSSI {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value)
-          ..add('units', units))
+          ..add('value', '$value ')
+          ..add('units', '$units (Enumerated)'))
         .toString();
   }
 }
@@ -9224,10 +9224,10 @@ class _$HistoricData extends HistoricData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('baseLat', baseLat)
-          ..add('baseLon', baseLon)
-          ..add('baseTime', baseTime)
-          ..add('data', data))
+          ..add('baseLat', '$baseLat (°)')
+          ..add('baseLon', '$baseLon (°)')
+          ..add('baseTime', '$baseTime (s)')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -9420,10 +9420,10 @@ class _$CompressedHistory extends CompressedHistory {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('baseLat', baseLat)
-          ..add('baseLon', baseLon)
-          ..add('baseTime', baseTime)
-          ..add('data', data))
+          ..add('baseLat', '$baseLat (°)')
+          ..add('baseLon', '$baseLon (°)')
+          ..add('baseTime', '$baseTime (s)')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -9631,13 +9631,13 @@ class _$HistoricSample extends HistoricSample {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sysId', sysId)
-          ..add('priority', priority)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('t', t)
-          ..add('sample', sample))
+          ..add('sysId', '$sysId ')
+          ..add('priority', '$priority ')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (dm)')
+          ..add('t', '$t (s)')
+          ..add('sample', '$sample '))
         .toString();
   }
 }
@@ -9848,10 +9848,10 @@ class _$HistoricDataQuery extends HistoricDataQuery {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reqId', reqId)
-          ..add('type', type)
-          ..add('maxSize', maxSize)
-          ..add('data', data))
+          ..add('reqId', '$reqId ')
+          ..add('type', '$type (Enumerated)')
+          ..add('maxSize', '$maxSize ')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -10044,10 +10044,10 @@ class _$RemoteCommand extends RemoteCommand {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('originalSource', originalSource)
-          ..add('destination', destination)
-          ..add('timeout', timeout)
-          ..add('cmd', cmd))
+          ..add('originalSource', '$originalSource ')
+          ..add('destination', '$destination ')
+          ..add('timeout', '$timeout (s)')
+          ..add('cmd', '$cmd '))
         .toString();
   }
 }
@@ -10240,10 +10240,10 @@ class _$CommSystemsQuery extends CommSystemsQuery {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('commInterface', commInterface)
-          ..add('model', model)
-          ..add('list', list))
+          ..add('type', '$type (Bitfield)')
+          ..add('commInterface', '$commInterface (Bitfield)')
+          ..add('model', '$model (Enumerated)')
+          ..add('list', '$list (List)'))
         .toString();
   }
 }
@@ -10461,15 +10461,15 @@ class _$TelemetryMsg extends TelemetryMsg {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('reqId', reqId)
-          ..add('ttl', ttl)
-          ..add('code', code)
-          ..add('destination', destination)
-          ..add('source', source)
-          ..add('acknowledge', acknowledge)
-          ..add('status', status)
-          ..add('data', data))
+          ..add('type', '$type (Enumerated)')
+          ..add('reqId', '$reqId ')
+          ..add('ttl', '$ttl (s)')
+          ..add('code', '$code (Enumerated)')
+          ..add('destination', '$destination ')
+          ..add('source', '$source ')
+          ..add('acknowledge', '$acknowledge (Bitfield)')
+          ..add('status', '$status (Enumerated)')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -10682,8 +10682,8 @@ class _$LblRange extends LblRange {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('range', range))
+          ..add('id', '$id ')
+          ..add('range', '$range (m)'))
         .toString();
   }
 }
@@ -10879,13 +10879,13 @@ class _$LblBeacon extends LblBeacon {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('beacon', beacon)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('depth', depth)
-          ..add('queryChannel', queryChannel)
-          ..add('replyChannel', replyChannel)
-          ..add('transponderDelay', transponderDelay))
+          ..add('beacon', '$beacon ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('depth', '$depth (m)')
+          ..add('queryChannel', '$queryChannel ')
+          ..add('replyChannel', '$replyChannel ')
+          ..add('transponderDelay', '$transponderDelay (ms)'))
         .toString();
   }
 }
@@ -11086,8 +11086,8 @@ class _$LblConfig extends LblConfig {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('beacons', beacons))
+          ..add('op', '$op (Enumerated)')
+          ..add('beacons', '$beacons '))
         .toString();
   }
 }
@@ -11253,7 +11253,7 @@ class _$AcousticMessage extends AcousticMessage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('message', message))
+          ..add('message', '$message '))
         .toString();
   }
 }
@@ -11428,10 +11428,10 @@ class _$AcousticOperation extends AcousticOperation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('system', system)
-          ..add('range', range)
-          ..add('msg', msg))
+          ..add('op', '$op (Enumerated)')
+          ..add('system', '$system ')
+          ..add('range', '$range (m)')
+          ..add('msg', '$msg '))
         .toString();
   }
 }
@@ -11757,7 +11757,7 @@ class _$AcousticSystems extends AcousticSystems {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('list', list))
+          ..add('list', '$list (List)'))
         .toString();
   }
 }
@@ -11927,9 +11927,9 @@ class _$AcousticLink extends AcousticLink {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('peer', peer)
-          ..add('rssi', rssi)
-          ..add('integrity', integrity))
+          ..add('peer', '$peer ')
+          ..add('rssi', '$rssi (dB)')
+          ..add('integrity', '$integrity '))
         .toString();
   }
 }
@@ -12101,7 +12101,7 @@ class _$Rpm extends Rpm {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (rpm)'))
         .toString();
   }
 }
@@ -12261,7 +12261,7 @@ class _$Voltage extends Voltage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (V)'))
         .toString();
   }
 }
@@ -12421,7 +12421,7 @@ class _$Current extends Current {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (A)'))
         .toString();
   }
 }
@@ -12656,22 +12656,22 @@ class _$GpsFix extends GpsFix {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('validity', validity)
-          ..add('type', type)
-          ..add('utcYear', utcYear)
-          ..add('utcMonth', utcMonth)
-          ..add('utcDay', utcDay)
-          ..add('utcTime', utcTime)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('height', height)
-          ..add('satellites', satellites)
-          ..add('cog', cog)
-          ..add('sog', sog)
-          ..add('hdop', hdop)
-          ..add('vdop', vdop)
-          ..add('hacc', hacc)
-          ..add('vacc', vacc))
+          ..add('validity', '$validity (Bitfield)')
+          ..add('type', '$type (Enumerated)')
+          ..add('utcYear', '$utcYear ')
+          ..add('utcMonth', '$utcMonth ')
+          ..add('utcDay', '$utcDay ')
+          ..add('utcTime', '$utcTime (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('height', '$height (m)')
+          ..add('satellites', '$satellites ')
+          ..add('cog', '$cog (rad)${cog != null ? " [${cog * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('sog', '$sog (m/s)')
+          ..add('hdop', '$hdop ')
+          ..add('vdop', '$vdop ')
+          ..add('hacc', '$hacc (m)')
+          ..add('vacc', '$vacc (m)'))
         .toString();
   }
 }
@@ -12941,11 +12941,11 @@ class _$EulerAngles extends EulerAngles {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('time', time)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi)
-          ..add('psiMagnetic', psiMagnetic))
+          ..add('time', '$time (s)')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psiMagnetic', '$psiMagnetic (rad)${psiMagnetic != null ? " [${psiMagnetic * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -13149,11 +13149,11 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('time', time)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('timestep', timestep))
+          ..add('time', '$time (s)')
+          ..add('x', '$x (rad)${x != null ? " [${x * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('y', '$y (rad)${y != null ? " [${y * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (rad)${z != null ? " [${z * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('timestep', '$timestep (s)'))
         .toString();
   }
 }
@@ -13352,10 +13352,10 @@ class _$AngularVelocity extends AngularVelocity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('time', time)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('time', '$time (s)')
+          ..add('x', '$x (rad/s)${x != null ? " [${x * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('y', '$y (rad/s)${y != null ? " [${y * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('z', '$z (rad/s)${z != null ? " [${z * 180.0 / math.pi} (deg/s)]" : ""}'))
         .toString();
   }
 }
@@ -13548,10 +13548,10 @@ class _$Acceleration extends Acceleration {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('time', time)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('time', '$time (s)')
+          ..add('x', '$x (m/s/s)')
+          ..add('y', '$y (m/s/s)')
+          ..add('z', '$z (m/s/s)'))
         .toString();
   }
 }
@@ -13744,10 +13744,10 @@ class _$MagneticField extends MagneticField {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('time', time)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('time', '$time (s)')
+          ..add('x', '$x (G)')
+          ..add('y', '$y (G)')
+          ..add('z', '$z (G)'))
         .toString();
   }
 }
@@ -13940,10 +13940,10 @@ class _$GroundVelocity extends GroundVelocity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('validity', validity)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('validity', '$validity (Bitfield)')
+          ..add('x', '$x (m/s)')
+          ..add('y', '$y (m/s)')
+          ..add('z', '$z (m/s)'))
         .toString();
   }
 }
@@ -14136,10 +14136,10 @@ class _$WaterVelocity extends WaterVelocity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('validity', validity)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('validity', '$validity (Bitfield)')
+          ..add('x', '$x (m/s)')
+          ..add('y', '$y (m/s)')
+          ..add('z', '$z (m/s)'))
         .toString();
   }
 }
@@ -14332,10 +14332,10 @@ class _$VelocityDelta extends VelocityDelta {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('time', time)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('time', '$time (s)')
+          ..add('x', '$x (m/s)')
+          ..add('y', '$y (m/s)')
+          ..add('z', '$z (m/s)'))
         .toString();
   }
 }
@@ -14528,10 +14528,10 @@ class _$Distance extends Distance {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('validity', validity)
-          ..add('location', location)
-          ..add('beamConfig', beamConfig)
-          ..add('value', value))
+          ..add('validity', '$validity (Enumerated)')
+          ..add('location', '$location ')
+          ..add('beamConfig', '$beamConfig ')
+          ..add('value', '$value (m)'))
         .toString();
   }
 }
@@ -14709,7 +14709,7 @@ class _$Temperature extends Temperature {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (°C)'))
         .toString();
   }
 }
@@ -14869,7 +14869,7 @@ class _$Pressure extends Pressure {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (hPa)'))
         .toString();
   }
 }
@@ -15029,7 +15029,7 @@ class _$Depth extends Depth {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (m)'))
         .toString();
   }
 }
@@ -15189,7 +15189,7 @@ class _$DepthOffset extends DepthOffset {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (m)'))
         .toString();
   }
 }
@@ -15349,7 +15349,7 @@ class _$SoundSpeed extends SoundSpeed {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (m/s)'))
         .toString();
   }
 }
@@ -15509,7 +15509,7 @@ class _$WaterDensity extends WaterDensity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (kg/m/m/m)'))
         .toString();
   }
 }
@@ -15669,7 +15669,7 @@ class _$Conductivity extends Conductivity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (S/m)'))
         .toString();
   }
 }
@@ -15829,7 +15829,7 @@ class _$Salinity extends Salinity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -15999,9 +15999,9 @@ class _$WindSpeed extends WindSpeed {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('direction', direction)
-          ..add('speed', speed)
-          ..add('turbulence', turbulence))
+          ..add('direction', '$direction (rad)${direction != null ? " [${direction * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('speed', '$speed (m/s)')
+          ..add('turbulence', '$turbulence (m/s)'))
         .toString();
   }
 }
@@ -16173,7 +16173,7 @@ class _$RelativeHumidity extends RelativeHumidity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -16333,7 +16333,7 @@ class _$DevDataText extends DevDataText {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -16493,7 +16493,7 @@ class _$DevDataBinary extends DevDataBinary {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -16653,7 +16653,7 @@ class _$Force extends Force {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (N)'))
         .toString();
   }
 }
@@ -16848,14 +16848,14 @@ class _$SonarData extends SonarData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('frequency', frequency)
-          ..add('minRange', minRange)
-          ..add('maxRange', maxRange)
-          ..add('bitsPerPoint', bitsPerPoint)
-          ..add('scaleFactor', scaleFactor)
-          ..add('beamConfig', beamConfig)
-          ..add('data', data))
+          ..add('type', '$type (Enumerated)')
+          ..add('frequency', '$frequency (Hz)')
+          ..add('minRange', '$minRange (m)')
+          ..add('maxRange', '$maxRange (m)')
+          ..add('bitsPerPoint', '$bitsPerPoint (bit)')
+          ..add('scaleFactor', '$scaleFactor ')
+          ..add('beamConfig', '$beamConfig ')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -17205,7 +17205,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op))
+          ..add('op', '$op (Enumerated)'))
         .toString();
   }
 }
@@ -17375,9 +17375,9 @@ class _$FuelLevel extends FuelLevel {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value)
-          ..add('confidence', confidence)
-          ..add('opmodes', opmodes))
+          ..add('value', '$value (%)')
+          ..add('confidence', '$confidence (%)')
+          ..add('opmodes', '$opmodes (TupleList)'))
         .toString();
   }
 }
@@ -17619,21 +17619,21 @@ class _$GpsNavData extends GpsNavData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('itow', itow)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('heightEll', heightEll)
-          ..add('heightSea', heightSea)
-          ..add('hacc', hacc)
-          ..add('vacc', vacc)
-          ..add('velN', velN)
-          ..add('velE', velE)
-          ..add('velD', velD)
-          ..add('speed', speed)
-          ..add('gspeed', gspeed)
-          ..add('heading', heading)
-          ..add('sacc', sacc)
-          ..add('cacc', cacc))
+          ..add('itow', '$itow (ms)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('heightEll', '$heightEll (m)')
+          ..add('heightSea', '$heightSea (m)')
+          ..add('hacc', '$hacc (m)')
+          ..add('vacc', '$vacc (m)')
+          ..add('velN', '$velN (m/s)')
+          ..add('velE', '$velE (m/s)')
+          ..add('velD', '$velD (m/s)')
+          ..add('speed', '$speed (m/s)')
+          ..add('gspeed', '$gspeed (m/s)')
+          ..add('heading', '$heading (rad)${heading != null ? " [${heading * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('sacc', '$sacc (m/s)')
+          ..add('cacc', '$cacc (rad)${cacc != null ? " [${cacc * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -17882,8 +17882,8 @@ class _$ServoPosition extends ServoPosition {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('value', value))
+          ..add('id', '$id ')
+          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -18074,12 +18074,12 @@ class _$DeviceState extends DeviceState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi))
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -18274,8 +18274,8 @@ class _$BeamConfig extends BeamConfig {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('beamWidth', beamWidth)
-          ..add('beamHeight', beamHeight))
+          ..add('beamWidth', '$beamWidth (rad)${beamWidth != null ? " [${beamWidth * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('beamHeight', '$beamHeight (rad)${beamHeight != null ? " [${beamHeight * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -18441,7 +18441,7 @@ class _$DataSanity extends DataSanity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sane', sane))
+          ..add('sane', '$sane (Enumerated)'))
         .toString();
   }
 }
@@ -18601,7 +18601,7 @@ class _$RhodamineDye extends RhodamineDye {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (PPB)'))
         .toString();
   }
 }
@@ -18761,7 +18761,7 @@ class _$CrudeOil extends CrudeOil {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (PPB)'))
         .toString();
   }
 }
@@ -18921,7 +18921,7 @@ class _$FineOil extends FineOil {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (PPB)'))
         .toString();
   }
 }
@@ -19081,7 +19081,7 @@ class _$Turbidity extends Turbidity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (NTU)'))
         .toString();
   }
 }
@@ -19241,7 +19241,7 @@ class _$Chlorophyll extends Chlorophyll {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (µg/L)'))
         .toString();
   }
 }
@@ -19401,7 +19401,7 @@ class _$Fluorescein extends Fluorescein {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (PPB)'))
         .toString();
   }
 }
@@ -19561,7 +19561,7 @@ class _$Phycocyanin extends Phycocyanin {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (PPB)'))
         .toString();
   }
 }
@@ -19721,7 +19721,7 @@ class _$Phycoerythrin extends Phycoerythrin {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (PPB)'))
         .toString();
   }
 }
@@ -19951,21 +19951,21 @@ class _$GpsFixRtk extends GpsFixRtk {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('validity', validity)
-          ..add('type', type)
-          ..add('tow', tow)
-          ..add('baseLat', baseLat)
-          ..add('baseLon', baseLon)
-          ..add('baseHeight', baseHeight)
-          ..add('n', n)
-          ..add('e', e)
-          ..add('d', d)
-          ..add('vN', vN)
-          ..add('vE', vE)
-          ..add('vD', vD)
-          ..add('satellites', satellites)
-          ..add('iarHyp', iarHyp)
-          ..add('iarRatio', iarRatio))
+          ..add('validity', '$validity (Bitfield)')
+          ..add('type', '$type (Enumerated)')
+          ..add('tow', '$tow ')
+          ..add('baseLat', '$baseLat (rad)${baseLat != null ? " [${baseLat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('baseLon', '$baseLon (rad)${baseLon != null ? " [${baseLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('baseHeight', '$baseHeight (m)')
+          ..add('n', '$n (m)')
+          ..add('e', '$e (m)')
+          ..add('d', '$d (m)')
+          ..add('vN', '$vN (m/s)')
+          ..add('vE', '$vE (m/s)')
+          ..add('vD', '$vD (m/s)')
+          ..add('satellites', '$satellites ')
+          ..add('iarHyp', '$iarHyp ')
+          ..add('iarRatio', '$iarRatio '))
         .toString();
   }
 }
@@ -20214,8 +20214,8 @@ class _$ExternalNavData extends ExternalNavData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state)
-          ..add('type', type))
+          ..add('state', '$state ')
+          ..add('type', '$type (Enumerated)'))
         .toString();
   }
 }
@@ -20381,7 +20381,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (µM)'))
         .toString();
   }
 }
@@ -20541,7 +20541,7 @@ class _$AirSaturation extends AirSaturation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (%)'))
         .toString();
   }
 }
@@ -20701,7 +20701,7 @@ class _$Throttle extends Throttle {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (%)'))
         .toString();
   }
 }
@@ -20861,7 +20861,7 @@ class _$PH extends PH {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -21021,7 +21021,7 @@ class _$Redox extends Redox {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (V)'))
         .toString();
   }
 }
@@ -21191,9 +21191,9 @@ class _$CameraZoom extends CameraZoom {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('zoom', zoom)
-          ..add('action', action))
+          ..add('id', '$id ')
+          ..add('zoom', '$zoom ')
+          ..add('action', '$action (Enumerated)'))
         .toString();
   }
 }
@@ -21370,8 +21370,8 @@ class _$SetThrusterActuation extends SetThrusterActuation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('value', value))
+          ..add('id', '$id ')
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -21542,8 +21542,8 @@ class _$SetServoPosition extends SetServoPosition {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('value', value))
+          ..add('id', '$id ')
+          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -21714,8 +21714,8 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('angle', angle))
+          ..add('id', '$id ')
+          ..add('angle', '$angle (rad)${angle != null ? " [${angle * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -21886,8 +21886,8 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('actions', actions))
+          ..add('op', '$op (Enumerated)')
+          ..add('actions', '$actions (TupleList)'))
         .toString();
   }
 }
@@ -22053,7 +22053,7 @@ class _$RemoteActions extends RemoteActions {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('actions', actions))
+          ..add('actions', '$actions (TupleList)'))
         .toString();
   }
 }
@@ -22218,8 +22218,8 @@ class _$ButtonEvent extends ButtonEvent {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('button', button)
-          ..add('value', value))
+          ..add('button', '$button ')
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -22390,8 +22390,8 @@ class _$LcdControl extends LcdControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('text', text))
+          ..add('op', '$op (Enumerated)')
+          ..add('text', '$text '))
         .toString();
   }
 }
@@ -22567,9 +22567,9 @@ class _$PowerOperation extends PowerOperation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('timeRemain', timeRemain)
-          ..add('schedTime', schedTime))
+          ..add('op', '$op (Enumerated)')
+          ..add('timeRemain', '$timeRemain (s)')
+          ..add('schedTime', '$schedTime (s)'))
         .toString();
   }
 }
@@ -22751,9 +22751,9 @@ class _$PowerChannelControl extends PowerChannelControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('op', op)
-          ..add('schedTime', schedTime))
+          ..add('name', '$name ')
+          ..add('op', '$op (Enumerated)')
+          ..add('schedTime', '$schedTime (s)'))
         .toString();
   }
 }
@@ -23078,8 +23078,8 @@ class _$PowerChannelState extends PowerChannelState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('state', state))
+          ..add('name', '$name ')
+          ..add('state', '$state (Enumerated)'))
         .toString();
   }
 }
@@ -23250,8 +23250,8 @@ class _$LedBrightness extends LedBrightness {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('value', value))
+          ..add('name', '$name ')
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -23417,7 +23417,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name))
+          ..add('name', '$name '))
         .toString();
   }
 }
@@ -23582,8 +23582,8 @@ class _$SetLedBrightness extends SetLedBrightness {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('value', value))
+          ..add('name', '$name ')
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -23759,9 +23759,9 @@ class _$SetPWM extends SetPWM {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('period', period)
-          ..add('dutyCycle', dutyCycle))
+          ..add('id', '$id ')
+          ..add('period', '$period (µs)')
+          ..add('dutyCycle', '$dutyCycle (µs)'))
         .toString();
   }
 }
@@ -23943,9 +23943,9 @@ class _$PWM extends PWM {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('period', period)
-          ..add('dutyCycle', dutyCycle))
+          ..add('id', '$id ')
+          ..add('period', '$period (µs)')
+          ..add('dutyCycle', '$dutyCycle (µs)'))
         .toString();
   }
 }
@@ -24212,26 +24212,26 @@ class _$EstimatedState extends EstimatedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('height', height)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi)
-          ..add('u', u)
-          ..add('v', v)
-          ..add('w', w)
-          ..add('vx', vx)
-          ..add('vy', vy)
-          ..add('vz', vz)
-          ..add('p', p)
-          ..add('q', q)
-          ..add('r', r)
-          ..add('depth', depth)
-          ..add('alt', alt))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('height', '$height (m)')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('u', '$u (m/s)')
+          ..add('v', '$v (m/s)')
+          ..add('w', '$w (m/s)')
+          ..add('vx', '$vx (m/s)')
+          ..add('vy', '$vy (m/s)')
+          ..add('vz', '$vz (m/s)')
+          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('depth', '$depth (m)')
+          ..add('alt', '$alt (m)'))
         .toString();
   }
 }
@@ -24515,9 +24515,9 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('x', '$x (m/s)')
+          ..add('y', '$y (m/s)')
+          ..add('z', '$z (m/s)'))
         .toString();
   }
 }
@@ -24689,7 +24689,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (m/s)'))
         .toString();
   }
 }
@@ -24849,7 +24849,7 @@ class _$TrueSpeed extends TrueSpeed {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (m/s)'))
         .toString();
   }
 }
@@ -25074,20 +25074,20 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi)
-          ..add('p', p)
-          ..add('q', q)
-          ..add('r', r)
-          ..add('u', u)
-          ..add('v', v)
-          ..add('w', w)
-          ..add('biasPsi', biasPsi)
-          ..add('biasR', biasR))
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('u', '$u (m/s)')
+          ..add('v', '$v (m/s)')
+          ..add('w', '$w (m/s)')
+          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? " [${biasPsi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('biasR', '$biasR (rad/s)${biasR != null ? " [${biasR * 180.0 / math.pi} (deg/s)]" : ""}'))
         .toString();
   }
 }
@@ -25365,15 +25365,15 @@ class _$NavigationData extends NavigationData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('biasPsi', biasPsi)
-          ..add('biasR', biasR)
-          ..add('cog', cog)
-          ..add('cyaw', cyaw)
-          ..add('lblRejLevel', lblRejLevel)
-          ..add('gpsRejLevel', gpsRejLevel)
-          ..add('customX', customX)
-          ..add('customY', customY)
-          ..add('customZ', customZ))
+          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? " [${biasPsi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('biasR', '$biasR (rad/s)${biasR != null ? " [${biasR * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('cog', '$cog (rad)${cog != null ? " [${cog * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('cyaw', '$cyaw (rad)${cyaw != null ? " [${cyaw * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lblRejLevel', '$lblRejLevel ')
+          ..add('gpsRejLevel', '$gpsRejLevel ')
+          ..add('customX', '$customX ')
+          ..add('customY', '$customY ')
+          ..add('customZ', '$customZ '))
         .toString();
   }
 }
@@ -25586,8 +25586,8 @@ class _$GpsFixRejection extends GpsFixRejection {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('utcTime', utcTime)
-          ..add('reason', reason))
+          ..add('utcTime', '$utcTime (s)')
+          ..add('reason', '$reason (Enumerated)'))
         .toString();
   }
 }
@@ -25763,9 +25763,9 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('range', range)
-          ..add('acceptance', acceptance))
+          ..add('id', '$id ')
+          ..add('range', '$range (m)')
+          ..add('acceptance', '$acceptance (Enumerated)'))
         .toString();
   }
 }
@@ -25952,10 +25952,10 @@ class _$DvlRejection extends DvlRejection {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('reason', reason)
-          ..add('value', value)
-          ..add('timestep', timestep))
+          ..add('type', '$type (Bitfield)')
+          ..add('reason', '$reason (Enumerated)')
+          ..add('value', '$value (m/s)')
+          ..add('timestep', '$timestep (s)'))
         .toString();
   }
 }
@@ -26158,12 +26158,12 @@ class _$LblEstimate extends LblEstimate {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('beacon', beacon)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('varX', varX)
-          ..add('varY', varY)
-          ..add('distance', distance))
+          ..add('beacon', '$beacon ')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('varX', '$varX (m)')
+          ..add('varY', '$varY (m)')
+          ..add('distance', '$distance (m)'))
         .toString();
   }
 }
@@ -26353,7 +26353,7 @@ class _$AlignmentState extends AlignmentState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state))
+          ..add('state', '$state (Enumerated)'))
         .toString();
   }
 }
@@ -26523,9 +26523,9 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('x', '$x (m/s)')
+          ..add('y', '$y (m/s)')
+          ..add('z', '$z (m/s)'))
         .toString();
   }
 }
@@ -26707,9 +26707,9 @@ class _$Airflow extends Airflow {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('va', va)
-          ..add('aoa', aoa)
-          ..add('ssa', ssa))
+          ..add('va', '$va (m/s)')
+          ..add('aoa', '$aoa (rad)${aoa != null ? " [${aoa * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('ssa', '$ssa (rad)${ssa != null ? " [${ssa * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -26881,7 +26881,7 @@ class _$DesiredHeading extends DesiredHeading {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -27046,8 +27046,8 @@ class _$DesiredZ extends DesiredZ {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value)
-          ..add('zUnits', zUnits))
+          ..add('value', '$value (m)')
+          ..add('zUnits', '$zUnits (Enumerated)'))
         .toString();
   }
 }
@@ -27218,8 +27218,8 @@ class _$DesiredSpeed extends DesiredSpeed {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value)
-          ..add('speedUnits', speedUnits))
+          ..add('value', '$value ')
+          ..add('speedUnits', '$speedUnits (Enumerated)'))
         .toString();
   }
 }
@@ -27385,7 +27385,7 @@ class _$DesiredRoll extends DesiredRoll {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -27545,7 +27545,7 @@ class _$DesiredPitch extends DesiredPitch {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -27705,7 +27705,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (m/s)'))
         .toString();
   }
 }
@@ -27925,19 +27925,19 @@ class _$DesiredPath extends DesiredPath {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('pathRef', pathRef)
-          ..add('startLat', startLat)
-          ..add('startLon', startLon)
-          ..add('startZ', startZ)
-          ..add('startZUnits', startZUnits)
-          ..add('endLat', endLat)
-          ..add('endLon', endLon)
-          ..add('endZ', endZ)
-          ..add('endZUnits', endZUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('lradius', lradius)
-          ..add('flags', flags))
+          ..add('pathRef', '$pathRef ')
+          ..add('startLat', '$startLat (rad)${startLat != null ? " [${startLat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('startLon', '$startLon (rad)${startLon != null ? " [${startLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('startZ', '$startZ (m)')
+          ..add('startZUnits', '$startZUnits (Enumerated)')
+          ..add('endLat', '$endLat (rad)${endLat != null ? " [${endLat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('endLon', '$endLon (rad)${endLon != null ? " [${endLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('endZ', '$endZ (m)')
+          ..add('endZUnits', '$endZUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('lradius', '$lradius (m)')
+          ..add('flags', '$flags (Bitfield)'))
         .toString();
   }
 }
@@ -28199,13 +28199,13 @@ class _$DesiredControl extends DesiredControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('k', k)
-          ..add('m', m)
-          ..add('n', n)
-          ..add('flags', flags))
+          ..add('x', '$x (N)')
+          ..add('y', '$y (N)')
+          ..add('z', '$z (N)')
+          ..add('k', '$k (Nm)')
+          ..add('m', '$m (Nm)')
+          ..add('n', '$n (Nm)')
+          ..add('flags', '$flags (Bitfield)'))
         .toString();
   }
 }
@@ -28401,7 +28401,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (rad/s)${value != null ? " [${value * 180.0 / math.pi} (deg/s)]" : ""}'))
         .toString();
   }
 }
@@ -28591,13 +28591,13 @@ class _$DesiredVelocity extends DesiredVelocity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('u', u)
-          ..add('v', v)
-          ..add('w', w)
-          ..add('p', p)
-          ..add('q', q)
-          ..add('r', r)
-          ..add('flags', flags))
+          ..add('u', '$u (m/s)')
+          ..add('v', '$v (m/s)')
+          ..add('w', '$w (m/s)')
+          ..add('p', '$p (m/s)')
+          ..add('q', '$q (m/s)')
+          ..add('r', '$r (m/s)')
+          ..add('flags', '$flags (Bitfield)'))
         .toString();
   }
 }
@@ -28883,25 +28883,25 @@ class _$PathControlState extends PathControlState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('pathRef', pathRef)
-          ..add('startLat', startLat)
-          ..add('startLon', startLon)
-          ..add('startZ', startZ)
-          ..add('startZUnits', startZUnits)
-          ..add('endLat', endLat)
-          ..add('endLon', endLon)
-          ..add('endZ', endZ)
-          ..add('endZUnits', endZUnits)
-          ..add('lradius', lradius)
-          ..add('flags', flags)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('vx', vx)
-          ..add('vy', vy)
-          ..add('vz', vz)
-          ..add('courseError', courseError)
-          ..add('eta', eta))
+          ..add('pathRef', '$pathRef ')
+          ..add('startLat', '$startLat (rad)${startLat != null ? " [${startLat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('startLon', '$startLon (rad)${startLon != null ? " [${startLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('startZ', '$startZ (m)')
+          ..add('startZUnits', '$startZUnits (Enumerated)')
+          ..add('endLat', '$endLat (rad)${endLat != null ? " [${endLat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('endLon', '$endLon (rad)${endLon != null ? " [${endLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('endZ', '$endZ (m)')
+          ..add('endZUnits', '$endZUnits (Enumerated)')
+          ..add('lradius', '$lradius (m)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('vx', '$vx (m/s)')
+          ..add('vy', '$vy (m/s)')
+          ..add('vz', '$vz (m/s)')
+          ..add('courseError', '$courseError (rad)${courseError != null ? " [${courseError * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('eta', '$eta (s)'))
         .toString();
   }
 }
@@ -29179,9 +29179,9 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('k', k)
-          ..add('m', m)
-          ..add('n', n))
+          ..add('k', '$k (Nm)')
+          ..add('m', '$m (Nm)')
+          ..add('n', '$n (Nm)'))
         .toString();
   }
 }
@@ -29368,10 +29368,10 @@ class _$ControlParcel extends ControlParcel {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('p', p)
-          ..add('i', i)
-          ..add('d', d)
-          ..add('a', a))
+          ..add('p', '$p ')
+          ..add('i', '$i ')
+          ..add('d', '$d ')
+          ..add('a', '$a '))
         .toString();
   }
 }
@@ -29549,7 +29549,7 @@ class _$Brake extends Brake {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op))
+          ..add('op', '$op (Enumerated)'))
         .toString();
   }
 }
@@ -29754,16 +29754,16 @@ class _$DesiredLinearState extends DesiredLinearState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('vx', vx)
-          ..add('vy', vy)
-          ..add('vz', vz)
-          ..add('ax', ax)
-          ..add('ay', ay)
-          ..add('az', az)
-          ..add('flags', flags))
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('vx', '$vx (m/s)')
+          ..add('vy', '$vy (m/s)')
+          ..add('vz', '$vz (m/s)')
+          ..add('ax', '$ax (m/s/s)')
+          ..add('ay', '$ay (m/s/s)')
+          ..add('az', '$az (m/s/s)')
+          ..add('flags', '$flags (Bitfield)'))
         .toString();
   }
 }
@@ -29977,7 +29977,7 @@ class _$DesiredThrottle extends DesiredThrottle {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (%)'))
         .toString();
   }
 }
@@ -30187,17 +30187,17 @@ class _$Goto extends Goto {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('roll', roll)
-          ..add('pitch', pitch)
-          ..add('yaw', yaw)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('roll', '$roll (rad)${roll != null ? " [${roll * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('yaw', '$yaw (rad)${yaw != null ? " [${yaw * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -30467,17 +30467,17 @@ class _$PopUp extends PopUp {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('duration', duration)
-          ..add('radius', radius)
-          ..add('flags', flags)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('duration', '$duration (s)')
+          ..add('radius', '$radius (m)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -30697,7 +30697,7 @@ class _$Teleoperation extends Teleoperation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('custom', custom))
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -30922,20 +30922,20 @@ class _$Loiter extends Loiter {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('duration', duration)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('type', type)
-          ..add('radius', radius)
-          ..add('length', length)
-          ..add('bearing', bearing)
-          ..add('direction', direction)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('duration', '$duration (s)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('type', '$type (Enumerated)')
+          ..add('radius', '$radius (m)')
+          ..add('length', '$length (m)')
+          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('direction', '$direction (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -31178,8 +31178,8 @@ class _$IdleManeuver extends IdleManeuver {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('duration', duration)
-          ..add('custom', custom))
+          ..add('duration', '$duration (s)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -31355,9 +31355,9 @@ class _$LowLevelControl extends LowLevelControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('control', control)
-          ..add('duration', duration)
-          ..add('custom', custom))
+          ..add('control', '$control ')
+          ..add('duration', '$duration (s)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -31604,22 +31604,22 @@ class _$Rows extends Rows {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('bearing', bearing)
-          ..add('crossAngle', crossAngle)
-          ..add('width', width)
-          ..add('length', length)
-          ..add('hstep', hstep)
-          ..add('coff', coff)
-          ..add('alternation', alternation)
-          ..add('flags', flags)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? " [${crossAngle * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('width', '$width (m)')
+          ..add('length', '$length (m)')
+          ..add('hstep', '$hstep (m)')
+          ..add('coff', '$coff (m)')
+          ..add('alternation', '$alternation (%)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -31909,15 +31909,15 @@ class _$FollowPath extends FollowPath {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('points', points)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('points', '$points ')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -32135,9 +32135,9 @@ class _$PathPoint extends PathPoint {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)'))
         .toString();
   }
 }
@@ -32354,16 +32354,16 @@ class _$YoYo extends YoYo {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('amplitude', amplitude)
-          ..add('pitch', pitch)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('amplitude', '$amplitude (m)')
+          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -32765,15 +32765,15 @@ class _$StationKeeping extends StationKeeping {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('radius', radius)
-          ..add('duration', duration)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('radius', '$radius (m)')
+          ..add('duration', '$duration (s)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -33036,18 +33036,18 @@ class _$Elevator extends Elevator {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('flags', flags)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('startZ', startZ)
-          ..add('startZUnits', startZUnits)
-          ..add('endZ', endZ)
-          ..add('endZUnits', endZUnits)
-          ..add('radius', radius)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('startZ', '$startZ (m)')
+          ..add('startZUnits', '$startZUnits (Enumerated)')
+          ..add('endZ', '$endZ (m)')
+          ..add('endZUnits', '$endZUnits (Enumerated)')
+          ..add('radius', '$radius (m)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -33313,15 +33313,15 @@ class _$FollowTrajectory extends FollowTrajectory {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('points', points)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('points', '$points ')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -33544,10 +33544,10 @@ class _$TrajectoryPoint extends TrajectoryPoint {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('t', t))
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('t', '$t (s)'))
         .toString();
   }
 }
@@ -33735,9 +33735,9 @@ class _$CustomManeuver extends CustomManeuver {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('name', name)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('name', '$name ')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -33954,16 +33954,16 @@ class _$VehicleFormation extends VehicleFormation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('points', points)
-          ..add('participants', participants)
-          ..add('startTime', startTime)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('points', '$points ')
+          ..add('participants', '$participants ')
+          ..add('startTime', '$startTime (s)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -34192,10 +34192,10 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('vid', vid)
-          ..add('offX', offX)
-          ..add('offY', offY)
-          ..add('offZ', offZ))
+          ..add('vid', '$vid ')
+          ..add('offX', '$offX (m)')
+          ..add('offY', '$offY (m)')
+          ..add('offZ', '$offZ (m)'))
         .toString();
   }
 }
@@ -34521,7 +34521,7 @@ class _$RegisterManeuver extends RegisterManeuver {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('mid', mid))
+          ..add('mid', '$mid '))
         .toString();
   }
 }
@@ -34691,9 +34691,9 @@ class _$ManeuverControlState extends ManeuverControlState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state)
-          ..add('eta', eta)
-          ..add('info', info))
+          ..add('state', '$state (Enumerated)')
+          ..add('eta', '$eta (s)')
+          ..add('info', '$info '))
         .toString();
   }
 }
@@ -34900,14 +34900,14 @@ class _$FollowSystem extends FollowSystem {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('system', system)
-          ..add('duration', duration)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('zUnits', zUnits))
+          ..add('system', '$system ')
+          ..add('duration', '$duration (s)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('x', '$x ')
+          ..add('y', '$y ')
+          ..add('z', '$z ')
+          ..add('zUnits', '$zUnits (Enumerated)'))
         .toString();
   }
 }
@@ -35144,14 +35144,14 @@ class _$CommsRelay extends CommsRelay {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('duration', duration)
-          ..add('sysA', sysA)
-          ..add('sysB', sysB)
-          ..add('moveThreshold', moveThreshold))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('duration', '$duration (s)')
+          ..add('sysA', '$sysA ')
+          ..add('sysB', '$sysB ')
+          ..add('moveThreshold', '$moveThreshold (m)'))
         .toString();
   }
 }
@@ -35388,14 +35388,14 @@ class _$CoverArea extends CoverArea {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('polygon', polygon)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('polygon', '$polygon ')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -35602,8 +35602,8 @@ class _$PolygonVertex extends PolygonVertex {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -35829,19 +35829,19 @@ class _$CompassCalibration extends CompassCalibration {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('pitch', pitch)
-          ..add('amplitude', amplitude)
-          ..add('duration', duration)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('radius', radius)
-          ..add('direction', direction)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('amplitude', '$amplitude (m)')
+          ..add('duration', '$duration (s)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('radius', '$radius (m)')
+          ..add('direction', '$direction (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -36088,10 +36088,10 @@ class _$FormationParameters extends FormationParameters {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('formationName', formationName)
-          ..add('referenceFrame', referenceFrame)
-          ..add('participants', participants)
-          ..add('custom', custom))
+          ..add('formationName', '$formationName ')
+          ..add('referenceFrame', '$referenceFrame (Enumerated)')
+          ..add('participants', '$participants ')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -36334,20 +36334,20 @@ class _$FormationPlanExecution extends FormationPlanExecution {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('groupName', groupName)
-          ..add('formationName', formationName)
-          ..add('planId', planId)
-          ..add('description', description)
-          ..add('leaderSpeed', leaderSpeed)
-          ..add('leaderBankLim', leaderBankLim)
-          ..add('posSimErrLim', posSimErrLim)
-          ..add('posSimErrWrn', posSimErrWrn)
-          ..add('posSimErrTimeout', posSimErrTimeout)
-          ..add('convergMax', convergMax)
-          ..add('convergTimeout', convergTimeout)
-          ..add('commsTimeout', commsTimeout)
-          ..add('turbLim', turbLim)
-          ..add('custom', custom))
+          ..add('groupName', '$groupName ')
+          ..add('formationName', '$formationName ')
+          ..add('planId', '$planId ')
+          ..add('description', '$description ')
+          ..add('leaderSpeed', '$leaderSpeed (m/s)')
+          ..add('leaderBankLim', '$leaderBankLim (m/s)')
+          ..add('posSimErrLim', '$posSimErrLim (m)')
+          ..add('posSimErrWrn', '$posSimErrWrn (m)')
+          ..add('posSimErrTimeout', '$posSimErrTimeout (s)')
+          ..add('convergMax', '$convergMax (m)')
+          ..add('convergTimeout', '$convergTimeout (s)')
+          ..add('commsTimeout', '$commsTimeout (s)')
+          ..add('turbLim', '$turbLim (m/s)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -36605,11 +36605,11 @@ class _$FollowReference extends FollowReference {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('controlSrc', controlSrc)
-          ..add('controlEnt', controlEnt)
-          ..add('timeout', timeout)
-          ..add('loiterRadius', loiterRadius)
-          ..add('altitudeInterval', altitudeInterval))
+          ..add('controlSrc', '$controlSrc ')
+          ..add('controlEnt', '$controlEnt ')
+          ..add('timeout', '$timeout ')
+          ..add('loiterRadius', '$loiterRadius ')
+          ..add('altitudeInterval', '$altitudeInterval '))
         .toString();
   }
 }
@@ -36818,12 +36818,12 @@ class _$Reference extends Reference {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('flags', flags)
-          ..add('speed', speed)
-          ..add('z', z)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('radius', radius))
+          ..add('flags', '$flags (Bitfield)')
+          ..add('speed', '$speed ')
+          ..add('z', '$z ')
+          ..add('lat', '$lat ')
+          ..add('lon', '$lon ')
+          ..add('radius', '$radius '))
         .toString();
   }
 }
@@ -37033,11 +37033,11 @@ class _$FollowRefState extends FollowRefState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('controlSrc', controlSrc)
-          ..add('controlEnt', controlEnt)
-          ..add('reference', reference)
-          ..add('state', state)
-          ..add('proximity', proximity))
+          ..add('controlSrc', '$controlSrc ')
+          ..add('controlEnt', '$controlEnt ')
+          ..add('reference', '$reference ')
+          ..add('state', '$state (Enumerated)')
+          ..add('proximity', '$proximity (Bitfield)'))
         .toString();
   }
 }
@@ -37311,25 +37311,25 @@ class _$FormationMonitor extends FormationMonitor {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('axCmd', axCmd)
-          ..add('ayCmd', ayCmd)
-          ..add('azCmd', azCmd)
-          ..add('axDes', axDes)
-          ..add('ayDes', ayDes)
-          ..add('azDes', azDes)
-          ..add('virtErrX', virtErrX)
-          ..add('virtErrY', virtErrY)
-          ..add('virtErrZ', virtErrZ)
-          ..add('surfFdbkX', surfFdbkX)
-          ..add('surfFdbkY', surfFdbkY)
-          ..add('surfFdbkZ', surfFdbkZ)
-          ..add('surfUnknX', surfUnknX)
-          ..add('surfUnknY', surfUnknY)
-          ..add('surfUnknZ', surfUnknZ)
-          ..add('ssX', ssX)
-          ..add('ssY', ssY)
-          ..add('ssZ', ssZ)
-          ..add('relState', relState))
+          ..add('axCmd', '$axCmd ')
+          ..add('ayCmd', '$ayCmd ')
+          ..add('azCmd', '$azCmd ')
+          ..add('axDes', '$axDes ')
+          ..add('ayDes', '$ayDes ')
+          ..add('azDes', '$azDes ')
+          ..add('virtErrX', '$virtErrX ')
+          ..add('virtErrY', '$virtErrY ')
+          ..add('virtErrZ', '$virtErrZ ')
+          ..add('surfFdbkX', '$surfFdbkX ')
+          ..add('surfFdbkY', '$surfFdbkY ')
+          ..add('surfFdbkZ', '$surfFdbkZ ')
+          ..add('surfUnknX', '$surfUnknX ')
+          ..add('surfUnknY', '$surfUnknY ')
+          ..add('surfUnknZ', '$surfUnknZ ')
+          ..add('ssX', '$ssX ')
+          ..add('ssY', '$ssY ')
+          ..add('ssZ', '$ssZ ')
+          ..add('relState', '$relState '))
         .toString();
   }
 }
@@ -37702,28 +37702,28 @@ class _$RelativeState extends RelativeState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sId', sId)
-          ..add('dist', dist)
-          ..add('err', err)
-          ..add('ctrlImp', ctrlImp)
-          ..add('relDirX', relDirX)
-          ..add('relDirY', relDirY)
-          ..add('relDirZ', relDirZ)
-          ..add('errX', errX)
-          ..add('errY', errY)
-          ..add('errZ', errZ)
-          ..add('rfErrX', rfErrX)
-          ..add('rfErrY', rfErrY)
-          ..add('rfErrZ', rfErrZ)
-          ..add('rfErrVx', rfErrVx)
-          ..add('rfErrVy', rfErrVy)
-          ..add('rfErrVz', rfErrVz)
-          ..add('ssX', ssX)
-          ..add('ssY', ssY)
-          ..add('ssZ', ssZ)
-          ..add('virtErrX', virtErrX)
-          ..add('virtErrY', virtErrY)
-          ..add('virtErrZ', virtErrZ))
+          ..add('sId', '$sId ')
+          ..add('dist', '$dist ')
+          ..add('err', '$err ')
+          ..add('ctrlImp', '$ctrlImp ')
+          ..add('relDirX', '$relDirX ')
+          ..add('relDirY', '$relDirY ')
+          ..add('relDirZ', '$relDirZ ')
+          ..add('errX', '$errX ')
+          ..add('errY', '$errY ')
+          ..add('errZ', '$errZ ')
+          ..add('rfErrX', '$rfErrX ')
+          ..add('rfErrY', '$rfErrY ')
+          ..add('rfErrZ', '$rfErrZ ')
+          ..add('rfErrVx', '$rfErrVx ')
+          ..add('rfErrVy', '$rfErrVy ')
+          ..add('rfErrVz', '$rfErrVz ')
+          ..add('ssX', '$ssX ')
+          ..add('ssY', '$ssY ')
+          ..add('ssZ', '$ssZ ')
+          ..add('virtErrX', '$virtErrX ')
+          ..add('virtErrY', '$virtErrY ')
+          ..add('virtErrZ', '$virtErrZ '))
         .toString();
   }
 }
@@ -38024,10 +38024,10 @@ class _$Dislodge extends Dislodge {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('rpm', rpm)
-          ..add('direction', direction)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('rpm', '$rpm ')
+          ..add('direction', '$direction (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -38305,27 +38305,27 @@ class _$Formation extends Formation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('formationName', formationName)
-          ..add('type', type)
-          ..add('op', op)
-          ..add('groupName', groupName)
-          ..add('planId', planId)
-          ..add('description', description)
-          ..add('referenceFrame', referenceFrame)
-          ..add('participants', participants)
-          ..add('leaderBankLim', leaderBankLim)
-          ..add('leaderSpeedMin', leaderSpeedMin)
-          ..add('leaderSpeedMax', leaderSpeedMax)
-          ..add('leaderAltMin', leaderAltMin)
-          ..add('leaderAltMax', leaderAltMax)
-          ..add('posSimErrLim', posSimErrLim)
-          ..add('posSimErrWrn', posSimErrWrn)
-          ..add('posSimErrTimeout', posSimErrTimeout)
-          ..add('convergMax', convergMax)
-          ..add('convergTimeout', convergTimeout)
-          ..add('commsTimeout', commsTimeout)
-          ..add('turbLim', turbLim)
-          ..add('custom', custom))
+          ..add('formationName', '$formationName ')
+          ..add('type', '$type (Enumerated)')
+          ..add('op', '$op (Enumerated)')
+          ..add('groupName', '$groupName ')
+          ..add('planId', '$planId ')
+          ..add('description', '$description ')
+          ..add('referenceFrame', '$referenceFrame (Enumerated)')
+          ..add('participants', '$participants ')
+          ..add('leaderBankLim', '$leaderBankLim (rad)${leaderBankLim != null ? " [${leaderBankLim * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('leaderSpeedMin', '$leaderSpeedMin (m/s)')
+          ..add('leaderSpeedMax', '$leaderSpeedMax (m/s)')
+          ..add('leaderAltMin', '$leaderAltMin (m)')
+          ..add('leaderAltMax', '$leaderAltMax (m)')
+          ..add('posSimErrLim', '$posSimErrLim (m)')
+          ..add('posSimErrWrn', '$posSimErrWrn (m)')
+          ..add('posSimErrTimeout', '$posSimErrTimeout (s)')
+          ..add('convergMax', '$convergMax (m)')
+          ..add('convergTimeout', '$convergTimeout (s)')
+          ..add('commsTimeout', '$commsTimeout (s)')
+          ..add('turbLim', '$turbLim (m/s)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -38640,14 +38640,14 @@ class _$Launch extends Launch {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -38884,14 +38884,14 @@ class _$Drop extends Drop {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -39128,14 +39128,14 @@ class _$ScheduledGoto extends ScheduledGoto {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('arrivalTime', arrivalTime)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('travelZ', travelZ)
-          ..add('travelZUnits', travelZUnits)
-          ..add('delayed', delayed))
+          ..add('arrivalTime', '$arrivalTime (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('travelZ', '$travelZ (m)')
+          ..add('travelZUnits', '$travelZUnits (Enumerated)')
+          ..add('delayed', '$delayed (Enumerated)'))
         .toString();
   }
 }
@@ -39412,22 +39412,22 @@ class _$RowsCoverage extends RowsCoverage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('bearing', bearing)
-          ..add('crossAngle', crossAngle)
-          ..add('width', width)
-          ..add('length', length)
-          ..add('coff', coff)
-          ..add('angAperture', angAperture)
-          ..add('range', range)
-          ..add('overlap', overlap)
-          ..add('flags', flags)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? " [${crossAngle * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('width', '$width (m)')
+          ..add('length', '$length (m)')
+          ..add('coff', '$coff (m)')
+          ..add('angAperture', '$angAperture (rad)${angAperture != null ? " [${angAperture * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('range', '$range (m)')
+          ..add('overlap', '$overlap (%)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -39727,17 +39727,17 @@ class _$Sample extends Sample {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('syringe0', syringe0)
-          ..add('syringe1', syringe1)
-          ..add('syringe2', syringe2)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('syringe0', '$syringe0 (Enumerated)')
+          ..add('syringe1', '$syringe1 (Enumerated)')
+          ..add('syringe2', '$syringe2 (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -40140,14 +40140,14 @@ class _$Takeoff extends Takeoff {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('takeoffPitch', takeoffPitch)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('takeoffPitch', '$takeoffPitch (rad)${takeoffPitch != null ? " [${takeoffPitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -40399,17 +40399,17 @@ class _$Land extends Land {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('abortZ', abortZ)
-          ..add('bearing', bearing)
-          ..add('glideSlope', glideSlope)
-          ..add('glideSlopeAlt', glideSlopeAlt)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('abortZ', '$abortZ (m)')
+          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('glideSlope', '$glideSlope (%)')
+          ..add('glideSlopeAlt', '$glideSlopeAlt (m)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -40679,17 +40679,17 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('limits', limits)
-          ..add('maxDepth', maxDepth)
-          ..add('minAlt', minAlt)
-          ..add('timeLimit', timeLimit)
-          ..add('areaLimits', areaLimits)
-          ..add('controller', controller)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('limits', '$limits (Bitfield)')
+          ..add('maxDepth', '$maxDepth (m)')
+          ..add('minAlt', '$minAlt (m)')
+          ..add('timeLimit', '$timeLimit (s)')
+          ..add('areaLimits', '$areaLimits ')
+          ..add('controller', '$controller ')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -40944,14 +40944,14 @@ class _$FollowPoint extends FollowPoint {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('target', target)
-          ..add('maxSpeed', maxSpeed)
-          ..add('speedUnits', speedUnits)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('custom', custom))
+          ..add('target', '$target ')
+          ..add('maxSpeed', '$maxSpeed (m/s)')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -41178,12 +41178,12 @@ class _$Alignment extends Alignment {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -41428,18 +41428,18 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('radius', radius)
-          ..add('duration', duration)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('popupPeriod', popupPeriod)
-          ..add('popupDuration', popupDuration)
-          ..add('flags', flags)
-          ..add('custom', custom))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('radius', '$radius (m)')
+          ..add('duration', '$duration (s)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('popupPeriod', '$popupPeriod (s)')
+          ..add('popupDuration', '$popupDuration (s)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -41715,17 +41715,17 @@ class _$Magnetometer extends Magnetometer {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('speed', speed)
-          ..add('speedUnits', speedUnits)
-          ..add('bearing', bearing)
-          ..add('width', width)
-          ..add('direction', direction)
-          ..add('custom', custom))
+          ..add('timeout', '$timeout (s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('speed', '$speed ')
+          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('width', '$width (m)')
+          ..add('direction', '$direction (Enumerated)')
+          ..add('custom', '$custom (TupleList)'))
         .toString();
   }
 }
@@ -41990,16 +41990,16 @@ class _$VehicleState extends VehicleState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('opMode', opMode)
-          ..add('errorCount', errorCount)
-          ..add('errorEnts', errorEnts)
-          ..add('maneuverType', maneuverType)
-          ..add('maneuverStime', maneuverStime)
-          ..add('maneuverEta', maneuverEta)
-          ..add('controlLoops', controlLoops)
-          ..add('flags', flags)
-          ..add('lastError', lastError)
-          ..add('lastErrorTime', lastErrorTime))
+          ..add('opMode', '$opMode (Enumerated)')
+          ..add('errorCount', '$errorCount ')
+          ..add('errorEnts', '$errorEnts ')
+          ..add('maneuverType', '$maneuverType ')
+          ..add('maneuverStime', '$maneuverStime (s)')
+          ..add('maneuverEta', '$maneuverEta (s)')
+          ..add('controlLoops', '$controlLoops (Bitfield)')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('lastError', '$lastError ')
+          ..add('lastErrorTime', '$lastErrorTime (s)'))
         .toString();
   }
 }
@@ -42238,12 +42238,12 @@ class _$VehicleCommand extends VehicleCommand {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('requestId', requestId)
-          ..add('command', command)
-          ..add('maneuver', maneuver)
-          ..add('calibTime', calibTime)
-          ..add('info', info))
+          ..add('type', '$type (Enumerated)')
+          ..add('requestId', '$requestId ')
+          ..add('command', '$command (Enumerated)')
+          ..add('maneuver', '$maneuver ')
+          ..add('calibTime', '$calibTime (s)')
+          ..add('info', '$info '))
         .toString();
   }
 }
@@ -42438,8 +42438,8 @@ class _$MonitorEntityState extends MonitorEntityState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('command', command)
-          ..add('entities', entities))
+          ..add('command', '$command (Enumerated)')
+          ..add('entities', '$entities '))
         .toString();
   }
 }
@@ -42640,14 +42640,14 @@ class _$EntityMonitoringState extends EntityMonitoringState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('mcount', mcount)
-          ..add('mnames', mnames)
-          ..add('ecount', ecount)
-          ..add('enames', enames)
-          ..add('ccount', ccount)
-          ..add('cnames', cnames)
-          ..add('lastError', lastError)
-          ..add('lastErrorTime', lastErrorTime))
+          ..add('mcount', '$mcount ')
+          ..add('mnames', '$mnames ')
+          ..add('ecount', '$ecount ')
+          ..add('enames', '$enames ')
+          ..add('ccount', '$ccount ')
+          ..add('cnames', '$cnames ')
+          ..add('lastError', '$lastError ')
+          ..add('lastErrorTime', '$lastErrorTime (s)'))
         .toString();
   }
 }
@@ -42904,18 +42904,18 @@ class _$OperationalLimits extends OperationalLimits {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('mask', mask)
-          ..add('maxDepth', maxDepth)
-          ..add('minAltitude', minAltitude)
-          ..add('maxAltitude', maxAltitude)
-          ..add('minSpeed', minSpeed)
-          ..add('maxSpeed', maxSpeed)
-          ..add('maxVrate', maxVrate)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('orientation', orientation)
-          ..add('width', width)
-          ..add('length', length))
+          ..add('mask', '$mask (Bitfield)')
+          ..add('maxDepth', '$maxDepth (m)')
+          ..add('minAltitude', '$minAltitude (m)')
+          ..add('maxAltitude', '$maxAltitude (m)')
+          ..add('minSpeed', '$minSpeed (m/s)')
+          ..add('maxSpeed', '$maxSpeed (m/s)')
+          ..add('maxVrate', '$maxVrate (m/s)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('orientation', '$orientation (rad)${orientation != null ? " [${orientation * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('width', '$width (m)')
+          ..add('length', '$length (m)'))
         .toString();
   }
 }
@@ -43289,7 +43289,7 @@ class _$Calibration extends Calibration {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('duration', duration))
+          ..add('duration', '$duration (s)'))
         .toString();
   }
 }
@@ -43459,9 +43459,9 @@ class _$ControlLoops extends ControlLoops {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('enable', enable)
-          ..add('mask', mask)
-          ..add('scopeRef', scopeRef))
+          ..add('enable', '$enable (Enumerated)')
+          ..add('mask', '$mask (Bitfield)')
+          ..add('scopeRef', '$scopeRef '))
         .toString();
   }
 }
@@ -43633,7 +43633,7 @@ class _$VehicleMedium extends VehicleMedium {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('medium', medium))
+          ..add('medium', '$medium (Enumerated)'))
         .toString();
   }
 }
@@ -43798,8 +43798,8 @@ class _$Collision extends Collision {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value)
-          ..add('type', type))
+          ..add('value', '$value (m/s/s)')
+          ..add('type', '$type (Bitfield)'))
         .toString();
   }
 }
@@ -43990,12 +43990,12 @@ class _$FormState extends FormState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('posSimErr', posSimErr)
-          ..add('converg', converg)
-          ..add('turbulence', turbulence)
-          ..add('posSimMon', posSimMon)
-          ..add('commMon', commMon)
-          ..add('convergMon', convergMon))
+          ..add('posSimErr', '$posSimErr (m)')
+          ..add('converg', '$converg (m)')
+          ..add('turbulence', '$turbulence (m/s/s)')
+          ..add('posSimMon', '$posSimMon (Enumerated)')
+          ..add('commMon', '$commMon (Enumerated)')
+          ..add('convergMon', '$convergMon (Enumerated)'))
         .toString();
   }
 }
@@ -44190,8 +44190,8 @@ class _$AutopilotMode extends AutopilotMode {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('autonomy', autonomy)
-          ..add('mode', mode))
+          ..add('autonomy', '$autonomy (Enumerated)')
+          ..add('mode', '$mode '))
         .toString();
   }
 }
@@ -44392,14 +44392,14 @@ class _$FormationState extends FormationState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('op', op)
-          ..add('posSimErr', posSimErr)
-          ..add('converg', converg)
-          ..add('turbulence', turbulence)
-          ..add('posSimMon', posSimMon)
-          ..add('commMon', commMon)
-          ..add('convergMon', convergMon))
+          ..add('type', '$type (Enumerated)')
+          ..add('op', '$op (Enumerated)')
+          ..add('posSimErr', '$posSimErr (m)')
+          ..add('converg', '$converg (m)')
+          ..add('turbulence', '$turbulence (m/s/s)')
+          ..add('posSimMon', '$posSimMon (Enumerated)')
+          ..add('commMon', '$commMon (Enumerated)')
+          ..add('convergMon', '$convergMon (Enumerated)'))
         .toString();
   }
 }
@@ -44616,10 +44616,10 @@ class _$ReportControl extends ReportControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('commInterface', commInterface)
-          ..add('period', period)
-          ..add('sysDst', sysDst))
+          ..add('op', '$op (Enumerated)')
+          ..add('commInterface', '$commInterface (Bitfield)')
+          ..add('period', '$period (s)')
+          ..add('sysDst', '$sysDst '))
         .toString();
   }
 }
@@ -44842,16 +44842,16 @@ class _$StateReport extends StateReport {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('stime', stime)
-          ..add('latitude', latitude)
-          ..add('longitude', longitude)
-          ..add('altitude', altitude)
-          ..add('depth', depth)
-          ..add('heading', heading)
-          ..add('speed', speed)
-          ..add('fuel', fuel)
-          ..add('execState', execState)
-          ..add('planChecksum', planChecksum))
+          ..add('stime', '$stime (s)')
+          ..add('latitude', '$latitude (°)')
+          ..add('longitude', '$longitude (°)')
+          ..add('altitude', '$altitude (dm)')
+          ..add('depth', '$depth (dm)')
+          ..add('heading', '$heading ')
+          ..add('speed', '$speed (cm/s)')
+          ..add('fuel', '$fuel (%)')
+          ..add('execState', '$execState (%)')
+          ..add('planChecksum', '$planChecksum '))
         .toString();
   }
 }
@@ -45100,14 +45100,14 @@ class _$TransmissionRequest extends TransmissionRequest {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reqId', reqId)
-          ..add('commMean', commMean)
-          ..add('destination', destination)
-          ..add('deadline', deadline)
-          ..add('dataMode', dataMode)
-          ..add('msgData', msgData)
-          ..add('txtData', txtData)
-          ..add('rawData', rawData))
+          ..add('reqId', '$reqId ')
+          ..add('commMean', '$commMean (Enumerated)')
+          ..add('destination', '$destination ')
+          ..add('deadline', '$deadline ')
+          ..add('dataMode', '$dataMode (Enumerated)')
+          ..add('msgData', '$msgData ')
+          ..add('txtData', '$txtData ')
+          ..add('rawData', '$rawData '))
         .toString();
   }
 }
@@ -45319,9 +45319,9 @@ class _$TransmissionStatus extends TransmissionStatus {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reqId', reqId)
-          ..add('status', status)
-          ..add('info', info))
+          ..add('reqId', '$reqId ')
+          ..add('status', '$status (Enumerated)')
+          ..add('info', '$info '))
         .toString();
   }
 }
@@ -45508,10 +45508,10 @@ class _$SmsRequest extends SmsRequest {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reqId', reqId)
-          ..add('destination', destination)
-          ..add('timeout', timeout)
-          ..add('smsText', smsText))
+          ..add('reqId', '$reqId ')
+          ..add('destination', '$destination ')
+          ..add('timeout', '$timeout (s)')
+          ..add('smsText', '$smsText '))
         .toString();
   }
 }
@@ -45699,9 +45699,9 @@ class _$SmsStatus extends SmsStatus {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reqId', reqId)
-          ..add('status', status)
-          ..add('info', info))
+          ..add('reqId', '$reqId ')
+          ..add('status', '$status (Enumerated)')
+          ..add('info', '$info '))
         .toString();
   }
 }
@@ -45873,7 +45873,7 @@ class _$VtolState extends VtolState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state))
+          ..add('state', '$state (Enumerated)'))
         .toString();
   }
 }
@@ -46033,7 +46033,7 @@ class _$ArmingState extends ArmingState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state))
+          ..add('state', '$state (Enumerated)'))
         .toString();
   }
 }
@@ -46381,15 +46381,15 @@ class _$PlanSpecification extends PlanSpecification {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('planId', planId)
-          ..add('description', description)
-          ..add('vnamespace', vnamespace)
-          ..add('variables', variables)
-          ..add('startManId', startManId)
-          ..add('maneuvers', maneuvers)
-          ..add('transitions', transitions)
-          ..add('startActions', startActions)
-          ..add('endActions', endActions))
+          ..add('planId', '$planId ')
+          ..add('description', '$description ')
+          ..add('vnamespace', '$vnamespace ')
+          ..add('variables', '$variables ')
+          ..add('startManId', '$startManId ')
+          ..add('maneuvers', '$maneuvers ')
+          ..add('transitions', '$transitions ')
+          ..add('startActions', '$startActions ')
+          ..add('endActions', '$endActions '))
         .toString();
   }
 }
@@ -46612,10 +46612,10 @@ class _$PlanManeuver extends PlanManeuver {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('maneuverId', maneuverId)
-          ..add('data', data)
-          ..add('startActions', startActions)
-          ..add('endActions', endActions))
+          ..add('maneuverId', '$maneuverId ')
+          ..add('data', '$data ')
+          ..add('startActions', '$startActions ')
+          ..add('endActions', '$endActions '))
         .toString();
   }
 }
@@ -46808,10 +46808,10 @@ class _$PlanTransition extends PlanTransition {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sourceMan', sourceMan)
-          ..add('destMan', destMan)
-          ..add('conditions', conditions)
-          ..add('actions', actions))
+          ..add('sourceMan', '$sourceMan ')
+          ..add('destMan', '$destMan ')
+          ..add('conditions', '$conditions ')
+          ..add('actions', '$actions '))
         .toString();
   }
 }
@@ -46994,8 +46994,8 @@ class _$EmergencyControl extends EmergencyControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('command', command)
-          ..add('plan', plan))
+          ..add('command', '$command (Enumerated)')
+          ..add('plan', '$plan '))
         .toString();
   }
 }
@@ -47171,9 +47171,9 @@ class _$EmergencyControlState extends EmergencyControlState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state)
-          ..add('planId', planId)
-          ..add('commLevel', commLevel))
+          ..add('state', '$state (Enumerated)')
+          ..add('planId', '$planId ')
+          ..add('commLevel', '$commLevel (%)'))
         .toString();
   }
 }
@@ -47370,12 +47370,12 @@ class _$PlanDB extends PlanDB {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('op', op)
-          ..add('requestId', requestId)
-          ..add('planId', planId)
-          ..add('arg', arg)
-          ..add('info', info))
+          ..add('type', '$type (Enumerated)')
+          ..add('op', '$op (Enumerated)')
+          ..add('requestId', '$requestId ')
+          ..add('planId', '$planId ')
+          ..add('arg', '$arg ')
+          ..add('info', '$info '))
         .toString();
   }
 }
@@ -47595,13 +47595,13 @@ class _$PlanDBState extends PlanDBState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('planCount', planCount)
-          ..add('planSize', planSize)
-          ..add('changeTime', changeTime)
-          ..add('changeSid', changeSid)
-          ..add('changeSname', changeSname)
-          ..add('md5', md5)
-          ..add('plansInfo', plansInfo))
+          ..add('planCount', '$planCount ')
+          ..add('planSize', '$planSize ')
+          ..add('changeTime', '$changeTime (s)')
+          ..add('changeSid', '$changeSid ')
+          ..add('changeSname', '$changeSname ')
+          ..add('md5', '$md5 ')
+          ..add('plansInfo', '$plansInfo '))
         .toString();
   }
 }
@@ -47822,12 +47822,12 @@ class _$PlanDBInformation extends PlanDBInformation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('planId', planId)
-          ..add('planSize', planSize)
-          ..add('changeTime', changeTime)
-          ..add('changeSid', changeSid)
-          ..add('changeSname', changeSname)
-          ..add('md5', md5))
+          ..add('planId', '$planId ')
+          ..add('planSize', '$planSize ')
+          ..add('changeTime', '$changeTime ')
+          ..add('changeSid', '$changeSid ')
+          ..add('changeSname', '$changeSname ')
+          ..add('md5', '$md5 '))
         .toString();
   }
 }
@@ -48047,13 +48047,13 @@ class _$PlanControl extends PlanControl {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('op', op)
-          ..add('requestId', requestId)
-          ..add('planId', planId)
-          ..add('flags', flags)
-          ..add('arg', arg)
-          ..add('info', info))
+          ..add('type', '$type (Enumerated)')
+          ..add('op', '$op (Enumerated)')
+          ..add('requestId', '$requestId ')
+          ..add('planId', '$planId ')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('arg', '$arg ')
+          ..add('info', '$info '))
         .toString();
   }
 }
@@ -48284,14 +48284,14 @@ class _$PlanControlState extends PlanControlState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state)
-          ..add('planId', planId)
-          ..add('planEta', planEta)
-          ..add('planProgress', planProgress)
-          ..add('manId', manId)
-          ..add('manType', manType)
-          ..add('manEta', manEta)
-          ..add('lastOutcome', lastOutcome))
+          ..add('state', '$state (Enumerated)')
+          ..add('planId', '$planId ')
+          ..add('planEta', '$planEta (s)')
+          ..add('planProgress', '$planProgress (%)')
+          ..add('manId', '$manId ')
+          ..add('manType', '$manType ')
+          ..add('manEta', '$manEta (s)')
+          ..add('lastOutcome', '$lastOutcome (Enumerated)'))
         .toString();
   }
 }
@@ -48508,10 +48508,10 @@ class _$PlanVariable extends PlanVariable {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('value', value)
-          ..add('type', type)
-          ..add('access', access))
+          ..add('name', '$name ')
+          ..add('value', '$value ')
+          ..add('type', '$type (Enumerated)')
+          ..add('access', '$access (Enumerated)'))
         .toString();
   }
 }
@@ -48704,10 +48704,10 @@ class _$PlanGeneration extends PlanGeneration {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('cmd', cmd)
-          ..add('op', op)
-          ..add('planId', planId)
-          ..add('params', params))
+          ..add('cmd', '$cmd (Enumerated)')
+          ..add('op', '$op (Enumerated)')
+          ..add('planId', '$planId ')
+          ..add('params', '$params (TupleList)'))
         .toString();
   }
 }
@@ -48980,26 +48980,26 @@ class _$LeaderState extends LeaderState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('groupName', groupName)
-          ..add('op', op)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('height', height)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi)
-          ..add('vx', vx)
-          ..add('vy', vy)
-          ..add('vz', vz)
-          ..add('p', p)
-          ..add('q', q)
-          ..add('r', r)
-          ..add('svx', svx)
-          ..add('svy', svy)
-          ..add('svz', svz))
+          ..add('groupName', '$groupName ')
+          ..add('op', '$op (Enumerated)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('height', '$height (m)')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('vx', '$vx (m/s)')
+          ..add('vy', '$vy (m/s)')
+          ..add('vz', '$vz (m/s)')
+          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('svx', '$svx (m/s)')
+          ..add('svy', '$svy (m/s)')
+          ..add('svz', '$svz (m/s)'))
         .toString();
   }
 }
@@ -49303,13 +49303,13 @@ class _$PlanStatistics extends PlanStatistics {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('planId', planId)
-          ..add('type', type)
-          ..add('properties', properties)
-          ..add('durations', durations)
-          ..add('distances', distances)
-          ..add('actions', actions)
-          ..add('fuel', fuel))
+          ..add('planId', '$planId ')
+          ..add('type', '$type (Enumerated)')
+          ..add('properties', '$properties (Bitfield)')
+          ..add('durations', '$durations (TupleList)')
+          ..add('distances', '$distances (TupleList)')
+          ..add('actions', '$actions (TupleList)')
+          ..add('fuel', '$fuel (TupleList)'))
         .toString();
   }
 }
@@ -49545,15 +49545,15 @@ class _$ReportedState extends ReportedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('depth', depth)
-          ..add('roll', roll)
-          ..add('pitch', pitch)
-          ..add('yaw', yaw)
-          ..add('rcpTime', rcpTime)
-          ..add('sid', sid)
-          ..add('sType', sType))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('depth', '$depth (m)')
+          ..add('roll', '$roll (rad)${roll != null ? " [${roll * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('yaw', '$yaw (rad)${yaw != null ? " [${yaw * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('rcpTime', '$rcpTime (s)')
+          ..add('sid', '$sid ')
+          ..add('sType', '$sType (Enumerated)'))
         .toString();
   }
 }
@@ -49791,13 +49791,13 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('sensorClass', sensorClass)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('alt', alt)
-          ..add('heading', heading)
-          ..add('data', data))
+          ..add('id', '$id ')
+          ..add('sensorClass', '$sensorClass ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('alt', '$alt (m)')
+          ..add('heading', '$heading (rad)${heading != null ? " [${heading * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('data', '$data (TupleList)'))
         .toString();
   }
 }
@@ -49998,8 +49998,8 @@ class _$Map extends Map {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('features', features))
+          ..add('id', '$id ')
+          ..add('features', '$features '))
         .toString();
   }
 }
@@ -50190,12 +50190,12 @@ class _$MapFeature extends MapFeature {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('id', id)
-          ..add('featureType', featureType)
-          ..add('rgbRed', rgbRed)
-          ..add('rgbGreen', rgbGreen)
-          ..add('rgbBlue', rgbBlue)
-          ..add('feature', feature))
+          ..add('id', '$id ')
+          ..add('featureType', '$featureType (Enumerated)')
+          ..add('rgbRed', '$rgbRed ')
+          ..add('rgbGreen', '$rgbGreen ')
+          ..add('rgbBlue', '$rgbBlue ')
+          ..add('feature', '$feature '))
         .toString();
   }
 }
@@ -50395,9 +50395,9 @@ class _$MapPoint extends MapPoint {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('alt', alt))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('alt', '$alt (m)'))
         .toString();
   }
 }
@@ -50579,9 +50579,9 @@ class _$CcuEvent extends CcuEvent {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('id', id)
-          ..add('arg', arg))
+          ..add('type', '$type (Enumerated)')
+          ..add('id', '$id ')
+          ..add('arg', '$arg '))
         .toString();
   }
 }
@@ -50758,8 +50758,8 @@ class _$VehicleLinks extends VehicleLinks {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('localname', localname)
-          ..add('links', links))
+          ..add('localname', '$localname ')
+          ..add('links', '$links '))
         .toString();
   }
 }
@@ -50935,9 +50935,9 @@ class _$TrexObservation extends TrexObservation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeline', timeline)
-          ..add('predicate', predicate)
-          ..add('attributes', attributes))
+          ..add('timeline', '$timeline ')
+          ..add('predicate', '$predicate ')
+          ..add('attributes', '$attributes (TupleList)'))
         .toString();
   }
 }
@@ -51119,9 +51119,9 @@ class _$TrexCommand extends TrexCommand {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('command', command)
-          ..add('goalId', goalId)
-          ..add('goalXml', goalXml))
+          ..add('command', '$command (Enumerated)')
+          ..add('goalId', '$goalId ')
+          ..add('goalXml', '$goalXml '))
         .toString();
   }
 }
@@ -51303,9 +51303,9 @@ class _$TrexOperation extends TrexOperation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('goalId', goalId)
-          ..add('token', token))
+          ..add('op', '$op (Enumerated)')
+          ..add('goalId', '$goalId ')
+          ..add('token', '$token '))
         .toString();
   }
 }
@@ -51492,10 +51492,10 @@ class _$TrexAttribute extends TrexAttribute {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('attrType', attrType)
-          ..add('min', min)
-          ..add('max', max))
+          ..add('name', '$name ')
+          ..add('attrType', '$attrType (Enumerated)')
+          ..add('min', '$min ')
+          ..add('max', '$max '))
         .toString();
   }
 }
@@ -51683,9 +51683,9 @@ class _$TrexToken extends TrexToken {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeline', timeline)
-          ..add('predicate', predicate)
-          ..add('attributes', attributes))
+          ..add('timeline', '$timeline ')
+          ..add('predicate', '$predicate ')
+          ..add('attributes', '$attributes '))
         .toString();
   }
 }
@@ -51862,8 +51862,8 @@ class _$TrexPlan extends TrexPlan {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('reactor', reactor)
-          ..add('tokens', tokens))
+          ..add('reactor', '$reactor ')
+          ..add('tokens', '$tokens '))
         .toString();
   }
 }
@@ -52034,8 +52034,8 @@ class _$Event extends Event {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('topic', topic)
-          ..add('data', data))
+          ..add('topic', '$topic ')
+          ..add('data', '$data (TupleList)'))
         .toString();
   }
 }
@@ -52206,8 +52206,8 @@ class _$CompressedImage extends CompressedImage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('frameid', frameid)
-          ..add('data', data))
+          ..add('frameid', '$frameid ')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -52388,10 +52388,10 @@ class _$ImageTxSettings extends ImageTxSettings {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('fps', fps)
-          ..add('quality', quality)
-          ..add('reps', reps)
-          ..add('tsize', tsize))
+          ..add('fps', '$fps ')
+          ..add('quality', '$quality ')
+          ..add('reps', '$reps ')
+          ..add('tsize', '$tsize '))
         .toString();
   }
 }
@@ -52589,11 +52589,11 @@ class _$RemoteState extends RemoteState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('depth', depth)
-          ..add('speed', speed)
-          ..add('psi', psi))
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('depth', '$depth (m)')
+          ..add('speed', '$speed (m/s)')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -52807,13 +52807,13 @@ class _$Target extends Target {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('label', label)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits)
-          ..add('cog', cog)
-          ..add('sog', sog))
+          ..add('label', '$label ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('cog', '$cog (rad)${cog != null ? " [${cog * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('sog', '$sog (m/s)'))
         .toString();
   }
 }
@@ -53014,8 +53014,8 @@ class _$EntityParameter extends EntityParameter {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('value', value))
+          ..add('name', '$name ')
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -53186,8 +53186,8 @@ class _$EntityParameters extends EntityParameters {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('params', params))
+          ..add('name', '$name ')
+          ..add('params', '$params '))
         .toString();
   }
 }
@@ -53363,9 +53363,9 @@ class _$QueryEntityParameters extends QueryEntityParameters {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('visibility', visibility)
-          ..add('scope', scope))
+          ..add('name', '$name ')
+          ..add('visibility', '$visibility ')
+          ..add('scope', '$scope '))
         .toString();
   }
 }
@@ -53542,8 +53542,8 @@ class _$SetEntityParameters extends SetEntityParameters {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('params', params))
+          ..add('name', '$name ')
+          ..add('params', '$params '))
         .toString();
   }
 }
@@ -53709,7 +53709,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name))
+          ..add('name', '$name '))
         .toString();
   }
 }
@@ -53869,7 +53869,7 @@ class _$CreateSession extends CreateSession {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timeout', timeout))
+          ..add('timeout', '$timeout '))
         .toString();
   }
 }
@@ -54029,7 +54029,7 @@ class _$CloseSession extends CloseSession {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sessid', sessid))
+          ..add('sessid', '$sessid '))
         .toString();
   }
 }
@@ -54194,8 +54194,8 @@ class _$SessionSubscription extends SessionSubscription {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sessid', sessid)
-          ..add('messages', messages))
+          ..add('sessid', '$sessid ')
+          ..add('messages', '$messages '))
         .toString();
   }
 }
@@ -54361,7 +54361,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sessid', sessid))
+          ..add('sessid', '$sessid '))
         .toString();
   }
 }
@@ -54526,8 +54526,8 @@ class _$SessionStatus extends SessionStatus {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sessid', sessid)
-          ..add('status', status))
+          ..add('sessid', '$sessid ')
+          ..add('status', '$status (Enumerated)'))
         .toString();
   }
 }
@@ -54693,7 +54693,7 @@ class _$PushEntityParameters extends PushEntityParameters {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name))
+          ..add('name', '$name '))
         .toString();
   }
 }
@@ -54853,7 +54853,7 @@ class _$PopEntityParameters extends PopEntityParameters {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name))
+          ..add('name', '$name '))
         .toString();
   }
 }
@@ -55018,8 +55018,8 @@ class _$IoEvent extends IoEvent {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('error', error))
+          ..add('type', '$type (Enumerated)')
+          ..add('error', '$error '))
         .toString();
   }
 }
@@ -55200,10 +55200,10 @@ class _$UamTxFrame extends UamTxFrame {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('seq', seq)
-          ..add('sysDst', sysDst)
-          ..add('flags', flags)
-          ..add('data', data))
+          ..add('seq', '$seq ')
+          ..add('sysDst', '$sysDst ')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -55396,10 +55396,10 @@ class _$UamRxFrame extends UamRxFrame {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('sysSrc', sysSrc)
-          ..add('sysDst', sysDst)
-          ..add('flags', flags)
-          ..add('data', data))
+          ..add('sysSrc', '$sysSrc ')
+          ..add('sysDst', '$sysDst ')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -55587,9 +55587,9 @@ class _$UamTxStatus extends UamTxStatus {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('seq', seq)
-          ..add('value', value)
-          ..add('error', error))
+          ..add('seq', '$seq ')
+          ..add('value', '$value (Enumerated)')
+          ..add('error', '$error '))
         .toString();
   }
 }
@@ -55771,9 +55771,9 @@ class _$UamRxRange extends UamRxRange {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('seq', seq)
-          ..add('sys', sys)
-          ..add('value', value))
+          ..add('seq', '$seq ')
+          ..add('sys', '$sys ')
+          ..add('value', '$value '))
         .toString();
   }
 }
@@ -55970,12 +55970,12 @@ class _$FormCtrlParam extends FormCtrlParam {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('action', action)
-          ..add('lonGain', lonGain)
-          ..add('latGain', latGain)
-          ..add('bondThick', bondThick)
-          ..add('leadGain', leadGain)
-          ..add('deconflGain', deconflGain))
+          ..add('action', '$action (Enumerated)')
+          ..add('lonGain', '$lonGain ')
+          ..add('latGain', '$latGain ')
+          ..add('bondThick', '$bondThick ')
+          ..add('leadGain', '$leadGain ')
+          ..add('deconflGain', '$deconflGain '))
         .toString();
   }
 }
@@ -56175,9 +56175,9 @@ class _$FormationEval extends FormationEval {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('errMean', errMean)
-          ..add('distMinAbs', distMinAbs)
-          ..add('distMinMean', distMinMean))
+          ..add('errMean', '$errMean ')
+          ..add('distMinAbs', '$distMinAbs ')
+          ..add('distMinMean', '$distMinMean '))
         .toString();
   }
 }
@@ -56399,17 +56399,17 @@ class _$FormationControlParams extends FormationControlParams {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('action', action)
-          ..add('lonGain', lonGain)
-          ..add('latGain', latGain)
-          ..add('bondThick', bondThick)
-          ..add('leadGain', leadGain)
-          ..add('deconflGain', deconflGain)
-          ..add('accelSwitchGain', accelSwitchGain)
-          ..add('safeDist', safeDist)
-          ..add('deconflictOffset', deconflictOffset)
-          ..add('accelSafeMargin', accelSafeMargin)
-          ..add('accelLimX', accelLimX))
+          ..add('action', '$action (Enumerated)')
+          ..add('lonGain', '$lonGain ')
+          ..add('latGain', '$latGain ')
+          ..add('bondThick', '$bondThick ')
+          ..add('leadGain', '$leadGain ')
+          ..add('deconflGain', '$deconflGain ')
+          ..add('accelSwitchGain', '$accelSwitchGain ')
+          ..add('safeDist', '$safeDist ')
+          ..add('deconflictOffset', '$deconflictOffset ')
+          ..add('accelSafeMargin', '$accelSafeMargin ')
+          ..add('accelLimX', '$accelLimX '))
         .toString();
   }
 }
@@ -56664,14 +56664,14 @@ class _$FormationEvaluation extends FormationEvaluation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('op', op)
-          ..add('errMean', errMean)
-          ..add('distMinAbs', distMinAbs)
-          ..add('distMinMean', distMinMean)
-          ..add('rollRateMean', rollRateMean)
-          ..add('time', time)
-          ..add('controlParams', controlParams))
+          ..add('type', '$type (Enumerated)')
+          ..add('op', '$op (Enumerated)')
+          ..add('errMean', '$errMean ')
+          ..add('distMinAbs', '$distMinAbs ')
+          ..add('distMinMean', '$distMinMean ')
+          ..add('rollRateMean', '$rollRateMean ')
+          ..add('time', '$time ')
+          ..add('controlParams', '$controlParams '))
         .toString();
   }
 }
@@ -56888,10 +56888,10 @@ class _$SoiWaypoint extends SoiWaypoint {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('eta', eta)
-          ..add('duration', duration))
+          ..add('lat', '$lat (°)')
+          ..add('lon', '$lon (°)')
+          ..add('eta', '$eta ')
+          ..add('duration', '$duration (s)'))
         .toString();
   }
 }
@@ -57074,8 +57074,8 @@ class _$SoiPlan extends SoiPlan {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('planId', planId)
-          ..add('waypoints', waypoints))
+          ..add('planId', '$planId ')
+          ..add('waypoints', '$waypoints '))
         .toString();
   }
 }
@@ -57261,11 +57261,11 @@ class _$SoiCommand extends SoiCommand {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('type', type)
-          ..add('command', command)
-          ..add('settings', settings)
-          ..add('plan', plan)
-          ..add('info', info))
+          ..add('type', '$type (Enumerated)')
+          ..add('command', '$command (Enumerated)')
+          ..add('settings', '$settings (TupleList)')
+          ..add('plan', '$plan ')
+          ..add('info', '$info '))
         .toString();
   }
 }
@@ -57464,10 +57464,10 @@ class _$SoiState extends SoiState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('state', state)
-          ..add('planId', planId)
-          ..add('wptId', wptId)
-          ..add('settingsChk', settingsChk))
+          ..add('state', '$state (Enumerated)')
+          ..add('planId', '$planId ')
+          ..add('wptId', '$wptId ')
+          ..add('settingsChk', '$settingsChk '))
         .toString();
   }
 }
@@ -57660,10 +57660,10 @@ class _$MessagePart extends MessagePart {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('uid', uid)
-          ..add('fragNumber', fragNumber)
-          ..add('numFrags', numFrags)
-          ..add('data', data))
+          ..add('uid', '$uid ')
+          ..add('fragNumber', '$fragNumber ')
+          ..add('numFrags', '$numFrags ')
+          ..add('data', '$data '))
         .toString();
   }
 }
@@ -57846,8 +57846,8 @@ class _$NeptusBlob extends NeptusBlob {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('contentType', contentType)
-          ..add('content', content))
+          ..add('contentType', '$contentType ')
+          ..add('content', '$content '))
         .toString();
   }
 }
@@ -58171,9 +58171,9 @@ class _$UsblAngles extends UsblAngles {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('target', target)
-          ..add('bearing', bearing)
-          ..add('elevation', elevation))
+          ..add('target', '$target ')
+          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('elevation', '$elevation (rad)${elevation != null ? " [${elevation * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -58360,10 +58360,10 @@ class _$UsblPosition extends UsblPosition {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('target', target)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('target', '$target ')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)'))
         .toString();
   }
 }
@@ -58561,11 +58561,11 @@ class _$UsblFix extends UsblFix {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('target', target)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('zUnits', zUnits)
-          ..add('z', z))
+          ..add('target', '$target ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('z', '$z (m)'))
         .toString();
   }
 }
@@ -58754,8 +58754,8 @@ class _$ParametersXml extends ParametersXml {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('locale', locale)
-          ..add('config', config))
+          ..add('locale', '$locale ')
+          ..add('config', '$config '))
         .toString();
   }
 }
@@ -59079,9 +59079,9 @@ class _$SetImageCoords extends SetImageCoords {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('camId', camId)
-          ..add('x', x)
-          ..add('y', y))
+          ..add('camId', '$camId ')
+          ..add('x', '$x (px)')
+          ..add('y', '$y (px)'))
         .toString();
   }
 }
@@ -59263,9 +59263,9 @@ class _$GetImageCoords extends GetImageCoords {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('camId', camId)
-          ..add('x', x)
-          ..add('y', y))
+          ..add('camId', '$camId ')
+          ..add('x', '$x (px)')
+          ..add('y', '$y (px)'))
         .toString();
   }
 }
@@ -59462,12 +59462,12 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('tracking', tracking)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z))
+          ..add('tracking', '$tracking (Enumerated)')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)'))
         .toString();
   }
 }
@@ -59697,15 +59697,15 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('target', target)
-          ..add('lbearing', lbearing)
-          ..add('lelevation', lelevation)
-          ..add('bearing', bearing)
-          ..add('elevation', elevation)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi)
-          ..add('accuracy', accuracy))
+          ..add('target', '$target ')
+          ..add('lbearing', '$lbearing (rad)${lbearing != null ? " [${lbearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lelevation', '$lelevation (rad)${lelevation != null ? " [${lelevation * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('elevation', '$elevation (rad)${elevation != null ? " [${elevation * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('accuracy', '$accuracy (rad)${accuracy != null ? " [${accuracy * 180.0 / math.pi} (deg)]" : ""}'))
         .toString();
   }
 }
@@ -59963,17 +59963,17 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('target', target)
-          ..add('x', x)
-          ..add('y', y)
-          ..add('z', z)
-          ..add('n', n)
-          ..add('e', e)
-          ..add('d', d)
-          ..add('phi', phi)
-          ..add('theta', theta)
-          ..add('psi', psi)
-          ..add('accuracy', accuracy))
+          ..add('target', '$target ')
+          ..add('x', '$x (m)')
+          ..add('y', '$y (m)')
+          ..add('z', '$z (m)')
+          ..add('n', '$n (m)')
+          ..add('e', '$e (m)')
+          ..add('d', '$d (m)')
+          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('accuracy', '$accuracy (m)'))
         .toString();
   }
 }
@@ -60218,12 +60218,12 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('target', target)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('zUnits', zUnits)
-          ..add('z', z)
-          ..add('accuracy', accuracy))
+          ..add('target', '$target ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('z', '$z (m)')
+          ..add('accuracy', '$accuracy (m)'))
         .toString();
   }
 }
@@ -60433,11 +60433,11 @@ class _$UsblModem extends UsblModem {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('name', name)
-          ..add('lat', lat)
-          ..add('lon', lon)
-          ..add('z', z)
-          ..add('zUnits', zUnits))
+          ..add('name', '$name ')
+          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('z', '$z (m)')
+          ..add('zUnits', '$zUnits (Enumerated)'))
         .toString();
   }
 }
@@ -60626,8 +60626,8 @@ class _$UsblConfig extends UsblConfig {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('op', op)
-          ..add('modems', modems))
+          ..add('op', '$op (Enumerated)')
+          ..add('modems', '$modems '))
         .toString();
   }
 }
@@ -60798,8 +60798,8 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value)
-          ..add('type', type))
+          ..add('value', '$value (PPB)')
+          ..add('type', '$type (Enumerated)'))
         .toString();
   }
 }
@@ -60965,7 +60965,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value (1/m)'))
         .toString();
   }
 }
@@ -61200,22 +61200,22 @@ class _$Tachograph extends Tachograph {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('timestampLastService', timestampLastService)
-          ..add('timeNextService', timeNextService)
-          ..add('timeMotorNextService', timeMotorNextService)
-          ..add('timeIdleGround', timeIdleGround)
-          ..add('timeIdleAir', timeIdleAir)
-          ..add('timeIdleWater', timeIdleWater)
-          ..add('timeIdleUnderwater', timeIdleUnderwater)
-          ..add('timeIdleUnknown', timeIdleUnknown)
-          ..add('timeMotorGround', timeMotorGround)
-          ..add('timeMotorAir', timeMotorAir)
-          ..add('timeMotorWater', timeMotorWater)
-          ..add('timeMotorUnderwater', timeMotorUnderwater)
-          ..add('timeMotorUnknown', timeMotorUnknown)
-          ..add('rpmMin', rpmMin)
-          ..add('rpmMax', rpmMax)
-          ..add('depthMax', depthMax))
+          ..add('timestampLastService', '$timestampLastService (s)')
+          ..add('timeNextService', '$timeNextService (s)')
+          ..add('timeMotorNextService', '$timeMotorNextService (s)')
+          ..add('timeIdleGround', '$timeIdleGround (s)')
+          ..add('timeIdleAir', '$timeIdleAir (s)')
+          ..add('timeIdleWater', '$timeIdleWater (s)')
+          ..add('timeIdleUnderwater', '$timeIdleUnderwater (s)')
+          ..add('timeIdleUnknown', '$timeIdleUnknown (s)')
+          ..add('timeMotorGround', '$timeMotorGround (s)')
+          ..add('timeMotorAir', '$timeMotorAir (s)')
+          ..add('timeMotorWater', '$timeMotorWater (s)')
+          ..add('timeMotorUnderwater', '$timeMotorUnderwater (s)')
+          ..add('timeMotorUnknown', '$timeMotorUnknown (s)')
+          ..add('rpmMin', '$rpmMin (rpm)')
+          ..add('rpmMax', '$rpmMax (rpm)')
+          ..add('depthMax', '$depthMax (m)'))
         .toString();
   }
 }
@@ -61470,8 +61470,8 @@ class _$ApmStatus extends ApmStatus {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('severity', severity)
-          ..add('text', text))
+          ..add('severity', '$severity (Enumerated)')
+          ..add('text', '$text '))
         .toString();
   }
 }
@@ -61647,9 +61647,9 @@ class _$SadcReadings extends SadcReadings {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('channel', channel)
-          ..add('value', value)
-          ..add('gain', gain))
+          ..add('channel', '$channel ')
+          ..add('value', '$value ')
+          ..add('gain', '$gain (Enumerated)'))
         .toString();
   }
 }
@@ -61896,22 +61896,22 @@ class _$DmsDetection extends DmsDetection {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('ch01', ch01)
-          ..add('ch02', ch02)
-          ..add('ch03', ch03)
-          ..add('ch04', ch04)
-          ..add('ch05', ch05)
-          ..add('ch06', ch06)
-          ..add('ch07', ch07)
-          ..add('ch08', ch08)
-          ..add('ch09', ch09)
-          ..add('ch10', ch10)
-          ..add('ch11', ch11)
-          ..add('ch12', ch12)
-          ..add('ch13', ch13)
-          ..add('ch14', ch14)
-          ..add('ch15', ch15)
-          ..add('ch16', ch16))
+          ..add('ch01', '$ch01 ')
+          ..add('ch02', '$ch02 ')
+          ..add('ch03', '$ch03 ')
+          ..add('ch04', '$ch04 ')
+          ..add('ch05', '$ch05 ')
+          ..add('ch06', '$ch06 ')
+          ..add('ch07', '$ch07 ')
+          ..add('ch08', '$ch08 ')
+          ..add('ch09', '$ch09 ')
+          ..add('ch10', '$ch10 ')
+          ..add('ch11', '$ch11 ')
+          ..add('ch12', '$ch12 ')
+          ..add('ch13', '$ch13 ')
+          ..add('ch14', '$ch14 ')
+          ..add('ch15', '$ch15 ')
+          ..add('ch16', '$ch16 '))
         .toString();
   }
 }
@@ -62161,7 +62161,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', value))
+          ..add('value', '$value '))
         .toString();
   }
 }

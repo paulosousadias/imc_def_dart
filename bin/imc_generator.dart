@@ -18,6 +18,7 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 ''';
 
 const _header_gen = '''$_header
+import 'dart:math' as math;
 import 'package:built_value/built_value.dart';
 import 'package:imc_def/imc_def_base.dart';
 
@@ -324,7 +325,16 @@ _writeMessageImmutable(
 
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
-    var fStr = '''\n          ..add('${_convertToFieldName(abbrev)}', ${_convertToFieldName(abbrev)})''';
+    var unit = f.getAttribute("unit");
+    var unitConv = '';
+    if (unit != null && unit.length > 0) {
+      if (unit.startsWith('rad')) {
+        unitConv = '\${';
+        unitConv += '${_convertToFieldName(abbrev)} != null ? " [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]" : ""';
+        unitConv += '}';
+      }
+    }
+    var fStr = '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)} ${unit != null ? '($unit)' : ''}$unitConv')''';
     sink.write('$fStr');
   });
 
