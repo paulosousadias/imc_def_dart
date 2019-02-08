@@ -334,7 +334,7 @@ _writeMessageImmutable(
         unitConv += '}';
       }
     }
-    var fStr = '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)} ${unit != null ? '($unit)' : ''}$unitConv')''';
+    var fStr = '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)}${unit != null ? ' ($unit)' : ''}$unitConv')''';
     sink.write('$fStr');
   });
 
