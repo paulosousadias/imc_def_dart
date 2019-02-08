@@ -29,12 +29,16 @@ void main() {
     // expect(calculator.addOne(0), 1);
     // expect(() => calculator.addOne(null), throwsNoSuchMethodError);
 
+    var globalSW = Stopwatch();
+    globalSW.start();
     imc.messagesBuilders.values.forEach((b) {
       var msg = b.build() as imc.ImcMessage;
       print(msg?.toString());
       expect(msg != null, true);
     });
-
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
+    
     print("0x${16.toRadixString(16)}");
 
     print("0x${0xFE54.toRadixString(16)}");
@@ -43,6 +47,9 @@ void main() {
     print("0x${((0xFE54 & 0xFF) << 8 | 0xFE54 >> 8).toRadixString(16)}");
   });
   test('serialize test', () {
+    var globalSW = Stopwatch();
+    globalSW.start();
+
     imc.messagesBuilders.forEach((n, b) {
       (b as imc.ImcBuilderHeaderPart)
         ..src = 0x4001
@@ -61,7 +68,11 @@ void main() {
       expect(msg == msgD, true);
       print("Match? ${msg == msgD}");
     });
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
 
+    globalSW.reset();
+    globalSW.start();
     imc.Abort msg = (imc.AbortBuilder()
           ..src = 0x4001
           ..timestamp = DateTime.utc(1970))
@@ -73,8 +84,12 @@ void main() {
         bufferSer.asUint8List(dataSer.offsetInBytes, dataSer.lengthInBytes);
     String bytesSerStr = _byteDataToHexString(serData);
     print("msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr");
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
 
     var msgD = ser.deserialize(serData);
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
     print("msgD=$msgD");
     expect(msg == msgD, true);
     print("Match? ${msg == msgD}");
