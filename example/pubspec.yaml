@@ -1,0 +1,21 @@
+name: example
+description: An example.
+version: 1.0.0+1
+author: Paulo Sousa Dias <pdias@lsts.pt>
+homepage: https://github.com/paulosousadias
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  imc_def:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
