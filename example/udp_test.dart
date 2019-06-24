@@ -9,7 +9,7 @@ import 'dart:typed_data';
 import 'package:imc_def/imc_def.dart' as imc;
 
 //InternetAddress.ANY_IP_V4
-void main() {
+void main() async {
   RawDatagramSocket.bind(InternetAddress.anyIPv4, 4444)
       .then((RawDatagramSocket socket) {
     print('Datagram socket ready to receive');
