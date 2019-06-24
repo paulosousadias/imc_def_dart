@@ -27,6 +27,12 @@ abstract class EnumType {
 
   @override
   String toString() => "E$value";
+
+  @override
+  int get hashCode => value.hashCode;
+
+  @override
+  bool operator==(o) => o is EnumType && o.value == value;
 }
 
 abstract class BitfieldType {
@@ -39,6 +45,12 @@ abstract class BitfieldType {
 
   @override
   String toString() => "B0x${value.toRadixString(16)} ($value)";
+
+  @override
+  int get hashCode => value.hashCode;
+  
+  @override
+  bool operator==(o) => o is BitfieldType && o.value == value;
 }
 
 
