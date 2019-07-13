@@ -11,13 +11,13 @@ dependencies:
   flutter:
     sdk: flutter
   
-  built_value: ^6.2.0
+  built_value: ^6.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  xml: ^3.2.5
+  xml: ^3.5.0
   crypto: ^2.0.6
   
 
