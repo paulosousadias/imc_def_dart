@@ -13,26 +13,26 @@ To use you need to import into your pubspec.yaml such as:
 
 - In case to use the package with the bundle generated IMC
 
-'''dart
+```dart
    imc_def: ^x.x.x
-'''
+```
 
 - In case you want to use the source to generate your own code
   
-'''dart
+```dart
   imc_def:
     path: ../imc_def_dart
-'''
+```
 
 In your code just import: 
 
-'''dart
+```dart
 import 'package:imc_def/imc_def.dart' as imc;
-'''
+```
 
 An example of use is the following:
 
-'''dart
+```dart
 ...
 var hbMsgB = imc.HeartbeatBuilder();
 new Timer.periodic(new Duration(milliseconds: 300), (Timer t) {
@@ -48,7 +48,7 @@ new Timer.periodic(new Duration(milliseconds: 300), (Timer t) {
     }
 });
 ...
-'''
+```
 
 This project is a starting point for a Dart
 [package](https://flutter.io/developing-packages/),
