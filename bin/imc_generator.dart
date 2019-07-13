@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// To run call "flutter packages pub run lib/imc_generator" with IMC.xml on the base folder.
+// To run call "flutter packages pub run bin/imc_generator" with IMC.xml on the base folder.
 
 import "dart:io";
 import "dart:convert";
@@ -138,8 +138,7 @@ String _accountForReservedName(String s) {
 /// Looks for 'description' element and writes it to [sink].
 /// The level tells how mush spaces ident.
 _writeDescription(IOSink sink, xml.XmlElement e, {int level = 0}) {
-  e
-      .findElements("description")
+  e.findElements("description")
       .forEach((d) => d.text.trim().split("\n").forEach((tx) {
             for (var i = 0; i < level; i++) sink.write('  ');
             sink.write('/// ${tx.trim()}\n');
@@ -1047,17 +1046,21 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
 
 /// This code grnerate the IMC relate classes to work with IMC.
 /// The following are NOT generated:
-///  - imc_def.dart (the only one you need to import in your code)
+///  - imc_def_base.dart
 ///  - imc_def_enums.dart holds the base for enum like code.
+///  - imc_serializers_base.dart holds the serializers base code.
 /// 
 /// The following are ARE generated:
+///  - imc_def_gen.dart holds the lists for id to names and vice-versa lookup
 ///  - imc_def_m.dart holding the IMC classes.
 ///  - imc_def_i.dart holding the builders and immutables in built_value style.
 ///  - imc_def_e.dart holding global enum like classes.
 ///  - imc_def_el.dart holding message field local enum like classes.
+///  - imc_serializers_gen.dart holds the lists for name/id to serializer and
+///       serializers code
 /// 
-/// To run copy the IMC.xml to the base folder and run 
-/// "flutter packages pub run lib/imc_generator" to (re)generate the code.
+/// To run copy the IMC.xml to the base 'xml' folder and run 
+/// "flutter packages pub run bin/imc_generator" to (re)generate the code.
 main(List<String> args) async {
   String imcXml = await File('xml/IMC.xml').readAsString();
 
