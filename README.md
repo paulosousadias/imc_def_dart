@@ -7,6 +7,8 @@ A dart package for IMC messages manipulation.
 This package is both a generator and an IMC messages manipulation
 package.
 
+The IMC definition is found [here](https://github.com/LSTS/imc).
+
 ## Using the package
 
 To use you need to import into your pubspec.yaml such as:
