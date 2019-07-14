@@ -1044,6 +1044,9 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   sink.write('''\n};\n''');
 
   sink.write('''\n/// Lookup table from message names to builders''');
+  sink.write('''\n///''');
+  sink.write('''\n/// IMPORTANT: To make sure it is unique create a new''');
+  sink.write('''\n/// instance with newInstance() call on the return.''');
   sink.write('''\nfinal messagesBuilders = <String, BuilderWithInstanciator>{''');
   msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Builder(),"));
   sink.write('''\n};\n''');

@@ -694,6 +694,9 @@ const messageGroups = {
 };
 
 /// Lookup table from message names to builders
+///
+/// IMPORTANT: To make sure it is unique create a new
+/// instance with newInstance() call on the return.
 final messagesBuilders = <String, BuilderWithInstanciator>{
   'EntityState': EntityStateBuilder(),
   'QueryEntityState': QueryEntityStateBuilder(),
