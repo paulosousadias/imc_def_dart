@@ -30,7 +30,9 @@ class EntityStateBitfieldFlags extends BitfieldType {
 
   static EntityStateBitfieldFlags fromBits(
           List<EntityStateBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => EntityStateBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? EntityStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => EntityStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Operation to perform.
@@ -93,7 +95,9 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
 
   static DevCalibrationStateBitfieldFlags fromBits(
           List<DevCalibrationStateBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => DevCalibrationStateBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? DevCalibrationStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => DevCalibrationStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Current state.
@@ -331,7 +335,9 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
 
   static AnnounceServiceBitfieldServiceType fromBits(
           List<AnnounceServiceBitfieldServiceType> bits) =>
-      bits.reduce((b1, b2) => AnnounceServiceBitfieldServiceType(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? AnnounceServiceBitfieldServiceType(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => AnnounceServiceBitfieldServiceType(b1.value | b2.value));
 }
 
 /// Current state of an SMS transaction.
@@ -404,7 +410,9 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
 
   static CommSystemsQueryBitfieldType fromBits(
           List<CommSystemsQueryBitfieldType> bits) =>
-      bits.reduce((b1, b2) => CommSystemsQueryBitfieldType(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? CommSystemsQueryBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => CommSystemsQueryBitfieldType(b1.value | b2.value));
 }
 
 /// Communication interface to be used for reports.
@@ -427,7 +435,9 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
 
   static CommSystemsQueryBitfieldCommInterface fromBits(
           List<CommSystemsQueryBitfieldCommInterface> bits) =>
-      bits.reduce((b1, b2) => CommSystemsQueryBitfieldCommInterface(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? CommSystemsQueryBitfieldCommInterface(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => CommSystemsQueryBitfieldCommInterface(b1.value | b2.value));
 }
 
 class CommSystemsQueryEnumModel extends EnumType {
@@ -487,7 +497,9 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
 
   static TelemetryMsgBitfieldAcknowledge fromBits(
           List<TelemetryMsgBitfieldAcknowledge> bits) =>
-      bits.reduce((b1, b2) => TelemetryMsgBitfieldAcknowledge(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? TelemetryMsgBitfieldAcknowledge(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => TelemetryMsgBitfieldAcknowledge(b1.value | b2.value));
 }
 
 /// State of the transmitted message.
@@ -608,7 +620,9 @@ class GpsFixBitfieldValidity extends BitfieldType {
 
   static GpsFixBitfieldValidity fromBits(
           List<GpsFixBitfieldValidity> bits) =>
-      bits.reduce((b1, b2) => GpsFixBitfieldValidity(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? GpsFixBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => GpsFixBitfieldValidity(b1.value | b2.value));
 }
 
 /// Type of fix.
@@ -643,7 +657,9 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
 
   static GroundVelocityBitfieldValidity fromBits(
           List<GroundVelocityBitfieldValidity> bits) =>
-      bits.reduce((b1, b2) => GroundVelocityBitfieldValidity(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? GroundVelocityBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => GroundVelocityBitfieldValidity(b1.value | b2.value));
 }
 
 /// Each bit of this field represents if a given velocity
@@ -659,7 +675,9 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
 
   static WaterVelocityBitfieldValidity fromBits(
           List<WaterVelocityBitfieldValidity> bits) =>
-      bits.reduce((b1, b2) => WaterVelocityBitfieldValidity(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? WaterVelocityBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => WaterVelocityBitfieldValidity(b1.value | b2.value));
 }
 
 /// Validity of the measurement.
@@ -724,7 +742,9 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
 
   static GpsFixRtkBitfieldValidity fromBits(
           List<GpsFixRtkBitfieldValidity> bits) =>
-      bits.reduce((b1, b2) => GpsFixRtkBitfieldValidity(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? GpsFixRtkBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => GpsFixRtkBitfieldValidity(b1.value | b2.value));
 }
 
 /// Type of fix.
@@ -913,7 +933,9 @@ class DvlRejectionBitfieldType extends BitfieldType {
 
   static DvlRejectionBitfieldType fromBits(
           List<DvlRejectionBitfieldType> bits) =>
-      bits.reduce((b1, b2) => DvlRejectionBitfieldType(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? DvlRejectionBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => DvlRejectionBitfieldType(b1.value | b2.value));
 }
 
 /// Reason for rejection. There are two types of DVL measurement
@@ -1000,7 +1022,9 @@ class DesiredPathBitfieldFlags extends BitfieldType {
 
   static DesiredPathBitfieldFlags fromBits(
           List<DesiredPathBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => DesiredPathBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? DesiredPathBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => DesiredPathBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired Control flags.
@@ -1025,7 +1049,9 @@ class DesiredControlBitfieldFlags extends BitfieldType {
 
   static DesiredControlBitfieldFlags fromBits(
           List<DesiredControlBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => DesiredControlBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? DesiredControlBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => DesiredControlBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired Velocity flags.
@@ -1050,7 +1076,9 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
 
   static DesiredVelocityBitfieldFlags fromBits(
           List<DesiredVelocityBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => DesiredVelocityBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? DesiredVelocityBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => DesiredVelocityBitfieldFlags(b1.value | b2.value));
 }
 
 /// Path control state flags.
@@ -1075,7 +1103,9 @@ class PathControlStateBitfieldFlags extends BitfieldType {
 
   static PathControlStateBitfieldFlags fromBits(
           List<PathControlStateBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => PathControlStateBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? PathControlStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => PathControlStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Brake operation.
@@ -1120,7 +1150,9 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
 
   static DesiredLinearStateBitfieldFlags fromBits(
           List<DesiredLinearStateBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => DesiredLinearStateBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? DesiredLinearStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => DesiredLinearStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Flags of the maneuver.
@@ -1143,7 +1175,9 @@ class PopUpBitfieldFlags extends BitfieldType {
 
   static PopUpBitfieldFlags fromBits(
           List<PopUpBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => PopUpBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? PopUpBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => PopUpBitfieldFlags(b1.value | b2.value));
 }
 
 /// Loiter maneuver type.
@@ -1183,7 +1217,9 @@ class RowsBitfieldFlags extends BitfieldType {
 
   static RowsBitfieldFlags fromBits(
           List<RowsBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => RowsBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? RowsBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => RowsBitfieldFlags(b1.value | b2.value));
 }
 
 /// Flags of the maneuver.
@@ -1199,7 +1235,9 @@ class ElevatorBitfieldFlags extends BitfieldType {
 
   static ElevatorBitfieldFlags fromBits(
           List<ElevatorBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => ElevatorBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? ElevatorBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => ElevatorBitfieldFlags(b1.value | b2.value));
 }
 
 /// Code indicating maneuver state.
@@ -1257,7 +1295,9 @@ class ReferenceBitfieldFlags extends BitfieldType {
 
   static ReferenceBitfieldFlags fromBits(
           List<ReferenceBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => ReferenceBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? ReferenceBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => ReferenceBitfieldFlags(b1.value | b2.value));
 }
 
 class FollowRefStateEnumState extends EnumType {
@@ -1288,7 +1328,9 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
 
   static FollowRefStateBitfieldProximity fromBits(
           List<FollowRefStateBitfieldProximity> bits) =>
-      bits.reduce((b1, b2) => FollowRefStateBitfieldProximity(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? FollowRefStateBitfieldProximity(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => FollowRefStateBitfieldProximity(b1.value | b2.value));
 }
 
 /// Direction to which the vehicle should attempt to unstuck.
@@ -1372,7 +1414,9 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
 
   static RowsCoverageBitfieldFlags fromBits(
           List<RowsCoverageBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => RowsCoverageBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? RowsCoverageBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => RowsCoverageBitfieldFlags(b1.value | b2.value));
 }
 
 class AutonomousSectionBitfieldLimits extends BitfieldType {
@@ -1387,7 +1431,9 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
 
   static AutonomousSectionBitfieldLimits fromBits(
           List<AutonomousSectionBitfieldLimits> bits) =>
-      bits.reduce((b1, b2) => AutonomousSectionBitfieldLimits(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? AutonomousSectionBitfieldLimits(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => AutonomousSectionBitfieldLimits(b1.value | b2.value));
 }
 
 /// Flags of the maneuver.
@@ -1402,7 +1448,9 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
 
   static StationKeepingExtendedBitfieldFlags fromBits(
           List<StationKeepingExtendedBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => StationKeepingExtendedBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? StationKeepingExtendedBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => StationKeepingExtendedBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired direction.
@@ -1445,7 +1493,9 @@ class VehicleStateBitfieldFlags extends BitfieldType {
 
   static VehicleStateBitfieldFlags fromBits(
           List<VehicleStateBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => VehicleStateBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? VehicleStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => VehicleStateBitfieldFlags(b1.value | b2.value));
 }
 
 class VehicleCommandEnumType extends EnumType {
@@ -1534,7 +1584,9 @@ class CollisionBitfieldType extends BitfieldType {
 
   static CollisionBitfieldType fromBits(
           List<CollisionBitfieldType> bits) =>
-      bits.reduce((b1, b2) => CollisionBitfieldType(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? CollisionBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => CollisionBitfieldType(b1.value | b2.value));
 }
 
 /// Position mismatch monitoring flag.
@@ -1693,7 +1745,9 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
 
   static ReportControlBitfieldCommInterface fromBits(
           List<ReportControlBitfieldCommInterface> bits) =>
-      bits.reduce((b1, b2) => ReportControlBitfieldCommInterface(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? ReportControlBitfieldCommInterface(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => ReportControlBitfieldCommInterface(b1.value | b2.value));
 }
 
 /// Communication mean to be used to transfer these data.
@@ -1918,7 +1972,9 @@ class PlanControlBitfieldFlags extends BitfieldType {
 
   static PlanControlBitfieldFlags fromBits(
           List<PlanControlBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => PlanControlBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? PlanControlBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => PlanControlBitfieldFlags(b1.value | b2.value));
 }
 
 /// Describes overall state.
@@ -2040,7 +2096,9 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
 
   static PlanStatisticsBitfieldProperties fromBits(
           List<PlanStatisticsBitfieldProperties> bits) =>
-      bits.reduce((b1, b2) => PlanStatisticsBitfieldProperties(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? PlanStatisticsBitfieldProperties(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => PlanStatisticsBitfieldProperties(b1.value | b2.value));
 }
 
 /// How the position was received/calculated
@@ -2166,7 +2224,9 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
 
   static UamTxFrameBitfieldFlags fromBits(
           List<UamTxFrameBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => UamTxFrameBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? UamTxFrameBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => UamTxFrameBitfieldFlags(b1.value | b2.value));
 }
 
 class UamRxFrameBitfieldFlags extends BitfieldType {
@@ -2179,7 +2239,9 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
 
   static UamRxFrameBitfieldFlags fromBits(
           List<UamRxFrameBitfieldFlags> bits) =>
-      bits.reduce((b1, b2) => UamRxFrameBitfieldFlags(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? UamRxFrameBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => UamRxFrameBitfieldFlags(b1.value | b2.value));
 }
 
 class UamTxStatusEnumValue extends EnumType {

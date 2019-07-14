@@ -1004,7 +1004,9 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
     case "Bitfield":
       bodyBitfield = '''\n  static $eName fromBits(
           List<$eName> bits) =>
-      bits.reduce((b1, b2) => $eName(b1.value | b2.value));
+      (bits == null || bits.length < 2)
+          ? $eName(bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) => $eName(b1.value | b2.value));
 ''';
       break;
     default:
