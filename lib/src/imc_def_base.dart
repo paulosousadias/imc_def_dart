@@ -6,6 +6,7 @@ import 'package:built_value/built_value.dart';
 
 part 'imc_def_enums.dart';
 
+/// This contains internal IMC field info
 class ImcField {
   final String name;
   final String abbrev;
@@ -22,6 +23,7 @@ class ImcField {
       this.units = ""});
 }
 
+/// This is the base class for IMC messages
 abstract class Message {
   int get sync;
   int get msgId;
@@ -33,7 +35,7 @@ abstract class Message {
   String get abbrev;
 }
 
-/// Is a mixin in the messages
+/// Is a mixin in the messages to get and set header fields
 abstract class ImcBuilderHeaderPart {
   DateTime get timestamp;
   set timestamp(DateTime timestamp);
@@ -61,6 +63,7 @@ abstract class ImcBuilderHeaderPart {
   }
 }
 
+/// This is to be used as interface for the builders
 abstract class BuilderWithInstanciator<V extends Built<V, B>, B extends Builder<V, B>> extends Builder<V, B> {
   /// Instanciates a new builder
   B newInstance([ImcBuilderHeaderPart headerFrom]);

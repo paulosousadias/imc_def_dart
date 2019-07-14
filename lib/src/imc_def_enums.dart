@@ -4,6 +4,7 @@
 
 part of 'imc_def_base.dart';
 
+/// This represents constants for systems IDs
 class ImcId {
   static const announce = 0x0000;
   static const broadcast = 0xFFF0;
@@ -12,12 +13,14 @@ class ImcId {
   ImcId._();
 }
 
+/// This represents constants for Entities IDs
 class ImcEntityId {
   static const nullId = 0xFF;
 
   ImcEntityId._();
 }
 
+/// This is the base for Enums types
 abstract class EnumType {
   static const type = "Enumeration" ;
 
@@ -29,19 +32,19 @@ abstract class EnumType {
   String toString() => "E$value";
 }
 
+/// This is the base for Bitfield types
 abstract class BitfieldType {
   static const type = "Bitfield" ;
   
   final int value;
 
   const BitfieldType(this.value);
-  // static BitfieldType fromBits(List<BitfieldType>bits) => BitfieldType(bits.reduce((b1, b2) => b1.value & b2.value));
 
   @override
   String toString() => "B0x${value.toRadixString(16)} ($value)";
 }
 
-
+/// This contains internal IMC types for fields
 class ImcType extends EnumType {
 	static const typeUInt8 = const ImcType._(0, "uint8_t", size : 1);
 	static const typeUInt16 = const ImcType._(1, "uint16_t", size : 2);
@@ -57,7 +60,12 @@ class ImcType extends EnumType {
 	static const typeMessage = const ImcType._(11, "message", size : -1);
 	static const typeMessageList = const ImcType._(12, "message-list", size : -1);
 
-  static get values => [ typeUInt8, typeUInt16, typeUint32, typeInt8, typeInt16, typeInt32, typeInt64, typeFp32, typeFp64, typeRawdata, typePlaintext, typeMessage, typeMessageList];
+  static get values => [
+        typeUInt8, typeUInt16, typeUint32,
+        typeInt8, typeInt16, typeInt32, typeInt64,
+        typeFp32, typeFp64, 
+        typeRawdata, typePlaintext,
+        typeMessage, typeMessageList];
 
   final String name;
   final int size;
@@ -88,6 +96,7 @@ class ImcType extends EnumType {
   static ImcType getType(String typeName) => types[typeName] ?? null;
 }
 
+/// This contains internal IMC flags for messages
 class Flags extends EnumType {
   static const periodic = const Flags._(0);
   static const deprecated = const Flags._(1);
