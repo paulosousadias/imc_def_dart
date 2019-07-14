@@ -1022,14 +1022,17 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
 }
 
 void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
-  sink.write('''const messagesToIds = {''');
+  sink.write('''/// Lookup table from message names to IDs''');
+  sink.write('''\nconst messagesToIds = {''');
   msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("id")},"));
   sink.write('''\n};\n''');
 
+  sink.write('''\n/// Lookup table from IDs to message names''');
   sink.write('''\nconst idsToMessages = {''');
   msgElm.findElements("message").forEach((m) => sink.write("\n  ${m.getAttribute("id")}: '${m.getAttribute("abbrev")}',"));
   sink.write('''\n};\n''');
 
+  sink.write('''\n/// Lookup 2D table from groups to message names''');
   sink.write('''\nconst messageGroups = {''');
   msgElm.findElements("message-groups").forEach((mg) {
     mg.findElements("message-group").forEach((m) {
@@ -1040,10 +1043,10 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   });
   sink.write('''\n};\n''');
 
+  sink.write('''\n/// Lookup table from message names to builders''');
   sink.write('''\nfinal messagesBuilders = <String, BuilderWithInstanciator>{''');
   msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Builder(),"));
   sink.write('''\n};\n''');
-
 }
 
 /// This code grnerate the IMC relate classes to work with IMC.

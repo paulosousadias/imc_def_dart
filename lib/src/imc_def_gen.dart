@@ -13,6 +13,7 @@ part 'imc_def_el.dart';
 part 'imc_def_m.dart';
 part 'imc_def_i.dart';
 
+/// Lookup table from message names to IDs
 const messagesToIds = {
   'EntityState': 1,
   'QueryEntityState': 2,
@@ -326,6 +327,7 @@ const messagesToIds = {
   'TotalMagIntensity': 2006,
 };
 
+/// Lookup table from IDs to message names
 const idsToMessages = {
   1: 'EntityState',
   2: 'QueryEntityState',
@@ -639,6 +641,7 @@ const idsToMessages = {
   2006: 'TotalMagIntensity',
 };
 
+/// Lookup 2D table from groups to message names
 const messageGroups = {
   'Maneuver': [
       'Goto',
@@ -690,6 +693,7 @@ const messageGroups = {
     ],
 };
 
+/// Lookup table from message names to builders
 final messagesBuilders = <String, BuilderWithInstanciator>{
   'EntityState': EntityStateBuilder(),
   'QueryEntityState': QueryEntityStateBuilder(),
