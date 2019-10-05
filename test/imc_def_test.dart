@@ -274,4 +274,46 @@ void main() {
     var su2 = imc.ZUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
     expect(su2 == imc.SpeedUnitsEnum.sunits_meters_ps, false);
   });
+
+  test("bitfields hasBits test", () {
+    var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic;
+    var su2 = imc.CommSystemsQueryBitfieldCommInterface(imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic.value);
+    var su3 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+    ]);
+
+    expect(su1.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+    ]), true);
+    expect(su1.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+    ]), false);
+    expect(su1.hasBits(null), false);
+
+    expect(su2.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+    ]), true);
+    expect(su2.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+    ]), false);
+    expect(su2.hasBits(null), false);
+
+    expect(su3.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+    ]), true);
+    expect(su3.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+    ]), true);
+    expect(su3.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+    ]), false);
+    expect(su3.hasBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+    ]), false);
+    expect(su3.hasBits(null), false);
+  });
 }

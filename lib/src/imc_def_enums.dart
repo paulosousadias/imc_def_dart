@@ -52,6 +52,16 @@ abstract class BitfieldType {
   @override
   bool operator ==(other) => this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
 
+  /// Tests that all 1 bts from all the elements of the elements in [bits].
+  bool hasBits<B extends BitfieldType>(List<B> bits) {
+    if (bits == null)
+      return false;
+    var testVal = 0;
+    for (var item in bits)
+      if (this.runtimeType == item.runtimeType) testVal |= item.value;
+    return this.value & testVal == testVal;
+  }
+
   @override
   int get hashCode => value;
 }
