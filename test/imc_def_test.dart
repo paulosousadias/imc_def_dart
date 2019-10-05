@@ -266,4 +266,12 @@ void main() {
     // timestamps might have diferences, so binary may not be identical
     // expect(bytes1, bytes2);
   });
+
+  test("enum like comparison test", () {
+    var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
+    expect(su1 == imc.SpeedUnitsEnum.sunits_meters_ps, true);
+
+    var su2 = imc.ZUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
+    expect(su2 == imc.SpeedUnitsEnum.sunits_meters_ps, false);
+  });
 }

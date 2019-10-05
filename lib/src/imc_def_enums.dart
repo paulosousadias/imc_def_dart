@@ -30,6 +30,12 @@ abstract class EnumType {
 
   @override
   String toString() => "E$value";
+
+  @override
+  bool operator ==(other) => this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
+
+  @override
+  int get hashCode => value;
 }
 
 /// This is the base for Bitfield types
@@ -42,6 +48,12 @@ abstract class BitfieldType {
 
   @override
   String toString() => "B0x${value.toRadixString(16)} ($value)";
+
+  @override
+  bool operator ==(other) => this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
+
+  @override
+  int get hashCode => value;
 }
 
 /// This contains internal IMC types for fields
