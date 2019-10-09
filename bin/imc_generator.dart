@@ -10,6 +10,8 @@ import "dart:convert";
 import 'package:xml/xml.dart' as xml;
 import 'package:crypto/crypto.dart';
 
+import 'package:yaml/yaml.dart';
+
 const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -122,7 +124,7 @@ var _messagesGroups = Map<String, String>();
 
 String _toSentenceCase(String s) => "${s[0].toUpperCase()}${s.substring(1)}";
 
-String _replaceMiddleUnderscoreLetterWithUpercaseLetter(String s) => s.split(new RegExp(r'_')).reduce((t1, t2) => t1 + _toSentenceCase(t2));
+String _replaceMiddleUnderscoreLetterWithUpercaseLetter(String s) => s.split(RegExp(r'_')).reduce((t1, t2) => t1 + _toSentenceCase(t2));
 
 String _convertToFieldName(String s) => _replaceMiddleUnderscoreLetterWithUpercaseLetter("${s[0].toLowerCase()}${s.substring(1)}");
 
@@ -131,7 +133,7 @@ String _convertToClassName(String s) => _replaceMiddleUnderscoreLetterWithUperca
 /// Adds 'v' prefix if is a reserved word or starts with numbers
 String _accountForReservedName(String s) {
   if (_reservedWords.contains(s.trim())) return "${s}Val";
-  if (s.startsWith(new RegExp(r'[0-9]'))) return "v$s";
+  if (s.startsWith(RegExp(r'[0-9]'))) return "v$s";
   return s;
 }
 
@@ -236,7 +238,7 @@ _writeMessageImmutable(
 
   var msgStringImmutableClass2 = '''\n
   factory _\$$abbrev([void updates(${abbrev}Builder b)]) =>
-      (new ${abbrev}Builder()..update(updates)).build();
+      (${abbrev}Builder()..update(updates)).build();
 
   _\$$abbrev._(
       {this.timestamp,
@@ -260,7 +262,7 @@ _writeMessageImmutable(
       (toBuilder()..update(updates)).build();
 
   @override
-  ${abbrev}Builder toBuilder() => new ${abbrev}Builder()..replace(this);
+  ${abbrev}Builder toBuilder() => ${abbrev}Builder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -431,7 +433,7 @@ _writeMessageBuilder(
   @override
   void replace($abbrev other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _\$v = other as _\$$abbrev;
   }
@@ -444,7 +446,7 @@ _writeMessageBuilder(
   @override
   _\$$abbrev build() {
     final _\$result = _\$v ??
-        new _\$$abbrev._(
+        _\$$abbrev._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -1052,6 +1054,41 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   sink.write('''\n};\n''');
 }
 
+/// Get config from `pubspec.yaml` or `imc_def.yaml`
+Map<String, dynamic> _getConfig() {
+  // if `imc_def.yaml` exists use it, otherwise use `pubspec.yaml`
+  String filePath = (FileSystemEntity.typeSync("imc_def.yaml") !=
+          FileSystemEntityType.notFound)
+      ? "imc_def.yaml"
+      : "pubspec.yaml";
+
+  final File file = File(filePath);
+  final String yamlString = file.readAsStringSync();
+  final Map yamlMap = loadYaml(yamlString);
+
+  if (yamlMap == null || !(yamlMap['imc_def'] is Map)) {
+    stderr.writeln(Exception(
+        "Your `$filePath` file does not contain a `imc_def` section."));
+  }
+
+  // yamlMap has the type YamlMap, which has several unwanted sideeffects
+  final Map<String, dynamic> config = <String, dynamic>{};
+  for (MapEntry<dynamic, dynamic> entry
+      in yamlMap['imc_def'].entries) {
+    config[entry.key] = entry.value;
+  }
+
+  if (!config.containsKey('imc')) {
+    stderr.writeln(Exception(
+        "Your `imc_def` section does not contain a `imc`."));
+    exit(1);
+  }
+
+  return config;
+}
+
+enum _Mode { local, production }
+
 /// This code grnerate the IMC relate classes to work with IMC.
 /// The following are NOT generated:
 ///  - imc_def_base.dart
@@ -1070,22 +1107,48 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
 /// To run copy the IMC.xml to the base 'xml' folder and run 
 /// "flutter packages pub run bin/imc_generator" to (re)generate the code.
 main(List<String> args) async {
-  String imcXml = await File('xml/IMC.xml').readAsString();
+  Map<String, dynamic> config = _getConfig();
+  var localOrProductionMode = config.length == 0 || config['mode'] != null ? _Mode.local : _Mode.production;
+  String xmlFilePath;
+  String packageName;
+  switch (localOrProductionMode) {
+    case _Mode.production:
+      xmlFilePath = config['imc'];
+      packageName = config['package'] ?? '';
+      break;
+    default:
+      xmlFilePath= 'xml/IMC.xml';
+      packageName = '';
+  }
+  if (packageName.isNotEmpty && !packageName.endsWith('/')) packageName += '/';
+
+  String imcXml;
+  try {
+    imcXml = await File(xmlFilePath).readAsString();
+  } catch (e) {
+    stderr.writeln(e);
+    exit(1);
+  }
 
   var document = xml.parse(imcXml);
 
-  var fxGen = new File('lib/src/imc_def_gen.dart');
-  var fxMessages = new File('lib/src/imc_def_m.dart');
-  var fxBuilders = new File('lib/src/imc_def_i.dart');
-  var fxEnums = new File('lib/src/imc_def_e.dart');
-  var fxLEnums = new File('lib/src/imc_def_el.dart');
-  var fxSerGen = new File('lib/src/imc_serializers_gen.dart');
+  var fxGen = await File('lib/src/${packageName}imc_def_gen.dart').create(recursive: true);
+  var fxMessages = await File('lib/src/${packageName}imc_def_m.dart').create(recursive: true);
+  var fxBuilders = await File('lib/src/${packageName}imc_def_i.dart').create(recursive: true);
+  var fxEnums = await File('lib/src/${packageName}imc_def_e.dart').create(recursive: true);
+  var fxLEnums = await File('lib/src/${packageName}imc_def_el.dart').create(recursive: true);
+  var fxSerGen = await File('lib/src/${packageName}imc_serializers_gen.dart').create(recursive: true);
 
-  print(fxMessages.path);
+  print('Generating ${fxGen.path}');
+  print('Generating ${fxMessages.path}');
+  print('Generating ${fxBuilders.path}');
+  print('Generating ${fxEnums.path}');
+  print('Generating ${fxLEnums.path}');
+  print('Generating ${fxSerGen.path}');
 
   var imcAsBytes = utf8.encode(imcXml); // data being hashed
   var imcDigest = md5.convert(imcAsBytes);
-  print("Hash $imcDigest");
+  print("Hash of IMC file is $imcDigest");
 
   var sinkGen = fxGen.openWrite();
   var sinkMessages = fxMessages.openWrite();
@@ -1164,6 +1227,25 @@ abstract class ImcMessage extends Message {
 
 
   _writeMsgList(msgElm, sinks[_idxGen]);
+
+  // Generating the imc_def for easy import and use
+  if (localOrProductionMode == _Mode.production) {
+    var fxSerDef = await File('lib/src/${packageName}imc_def.dart').create(recursive: true);
+    print('Generating ${fxSerDef.path}');
+    var sinkDef = fxSerDef.openWrite();
+
+    sinkDef.write('$_header');
+    sinkDef.write('''
+
+library imc_def;
+
+export 'package:imc_def/imc_def_base.dart';
+export 'imc_def_gen.dart';
+export 'imc_serializers_gen.dart';
+''');
+
+    sinkDef.close();
+  }
 
   // Close the IOSink to free system resources.
   sinkGen.close();

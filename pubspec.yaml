@@ -15,10 +15,15 @@ dependencies:
 
   xml: ^3.5.0 # for generator
   crypto: ^2.0.6 # for generator
+  yaml: ^2.2.0 # for generator
 
 dev_dependencies:
   flutter_test:
     sdk: flutter  
+
+imc_def:
+  imc: xml/IMC.xml
+  mode: local
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
