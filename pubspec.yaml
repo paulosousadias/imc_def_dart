@@ -1,6 +1,6 @@
 name: imc_def
 description: A dart package for IMC messages manipulation.
-version: 0.5.1
+version: 0.6.0
 author: Paulo Sousa Dias <pdias@lsts.pt>
 homepage: https://github.com/paulosousadias/imc_def_dart
 
