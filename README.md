@@ -15,21 +15,37 @@ To use you need to import into your pubspec.yaml such as:
 
 - In case to use the package with the bundle generated IMC
 
-```dart
+```yaml
+dev_dependencies:
    imc_def: ^x.x.x
 ```
+Don't forget to `flutter pub get`.
 
-- In case you want to use the source to generate your own code
+- In case you want to use the source to generate your own code 
+add your settings to your project's pubspec.yaml file or create
+a file in your root project folder named imc_def.yaml with your settings.
   
-```dart
-  imc_def:
-    path: ../imc_def_dart
+```yaml
+imc_def:
+  imc: <path_to_imc_file_definitions>
+  # package: imc # optional, will create in src inside the folder(s)
+```
+
+After adding your settings, run the package with
+
+```
+flutter pub pub run imc_def:imc_generator
 ```
 
 In your code just import: 
 
 ```dart
 import 'package:imc_def/imc_def.dart' as imc;
+```
+or if generating:
+
+```dart
+import 'package:<project_name>/src/<package/>imc_def.dart' as imc;
 ```
 
 An example of use is the following:
@@ -51,12 +67,3 @@ new Timer.periodic(new Duration(milliseconds: 300), (Timer t) {
 });
 ...
 ```
-
-This project is a starting point for a Dart
-[package](https://flutter.io/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.io/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
