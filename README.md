@@ -16,7 +16,7 @@ To use you need to import into your pubspec.yaml such as:
 - In case to use the package with the bundle generated IMC
 
 ```yaml
-dev_dependencies:
+dependencies:
    imc_def: ^x.x.x
 ```
 Don't forget to `flutter pub get`.
