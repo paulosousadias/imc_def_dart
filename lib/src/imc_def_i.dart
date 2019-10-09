@@ -28,7 +28,7 @@ class _$EntityState extends EntityState {
   final String description;
 
   factory _$EntityState([void updates(EntityStateBuilder b)]) =>
-      (new EntityStateBuilder()..update(updates)).build();
+      (EntityStateBuilder()..update(updates)).build();
 
   _$EntityState._(
       {this.timestamp,
@@ -46,7 +46,7 @@ class _$EntityState extends EntityState {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityStateBuilder toBuilder() => new EntityStateBuilder()..replace(this);
+  EntityStateBuilder toBuilder() => EntityStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -163,7 +163,7 @@ class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(EntityState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EntityState;
   }
@@ -176,7 +176,7 @@ class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$EntityState build() {
     final _$result = _$v ??
-        new _$EntityState._(
+        _$EntityState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -206,7 +206,7 @@ class _$QueryEntityState extends QueryEntityState {
 
 
   factory _$QueryEntityState([void updates(QueryEntityStateBuilder b)]) =>
-      (new QueryEntityStateBuilder()..update(updates)).build();
+      (QueryEntityStateBuilder()..update(updates)).build();
 
   _$QueryEntityState._(
       {this.timestamp,
@@ -221,7 +221,7 @@ class _$QueryEntityState extends QueryEntityState {
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryEntityStateBuilder toBuilder() => new QueryEntityStateBuilder()..replace(this);
+  QueryEntityStateBuilder toBuilder() => QueryEntityStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -314,7 +314,7 @@ class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(QueryEntityState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$QueryEntityState;
   }
@@ -327,7 +327,7 @@ class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$QueryEntityState build() {
     final _$result = _$v ??
-        new _$QueryEntityState._(
+        _$QueryEntityState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -364,7 +364,7 @@ class _$EntityInfo extends EntityInfo {
   final int deactTime;
 
   factory _$EntityInfo([void updates(EntityInfoBuilder b)]) =>
-      (new EntityInfoBuilder()..update(updates)).build();
+      (EntityInfoBuilder()..update(updates)).build();
 
   _$EntityInfo._(
       {this.timestamp,
@@ -384,7 +384,7 @@ class _$EntityInfo extends EntityInfo {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityInfoBuilder toBuilder() => new EntityInfoBuilder()..replace(this);
+  EntityInfoBuilder toBuilder() => EntityInfoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -517,7 +517,7 @@ class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(EntityInfo other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EntityInfo;
   }
@@ -530,7 +530,7 @@ class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$EntityInfo build() {
     final _$result = _$v ??
-        new _$EntityInfo._(
+        _$EntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -564,7 +564,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
   final int id;
 
   factory _$QueryEntityInfo([void updates(QueryEntityInfoBuilder b)]) =>
-      (new QueryEntityInfoBuilder()..update(updates)).build();
+      (QueryEntityInfoBuilder()..update(updates)).build();
 
   _$QueryEntityInfo._(
       {this.timestamp,
@@ -580,7 +580,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryEntityInfoBuilder toBuilder() => new QueryEntityInfoBuilder()..replace(this);
+  QueryEntityInfoBuilder toBuilder() => QueryEntityInfoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -681,7 +681,7 @@ class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(QueryEntityInfo other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$QueryEntityInfo;
   }
@@ -694,7 +694,7 @@ class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$QueryEntityInfo build() {
     final _$result = _$v ??
-        new _$QueryEntityInfo._(
+        _$QueryEntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -726,7 +726,7 @@ class _$EntityList extends EntityList {
   final String list;
 
   factory _$EntityList([void updates(EntityListBuilder b)]) =>
-      (new EntityListBuilder()..update(updates)).build();
+      (EntityListBuilder()..update(updates)).build();
 
   _$EntityList._(
       {this.timestamp,
@@ -743,7 +743,7 @@ class _$EntityList extends EntityList {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityListBuilder toBuilder() => new EntityListBuilder()..replace(this);
+  EntityListBuilder toBuilder() => EntityListBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -852,7 +852,7 @@ class EntityListBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(EntityList other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EntityList;
   }
@@ -865,7 +865,7 @@ class EntityListBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$EntityList build() {
     final _$result = _$v ??
-        new _$EntityList._(
+        _$EntityList._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -896,7 +896,7 @@ class _$CpuUsage extends CpuUsage {
   final int value;
 
   factory _$CpuUsage([void updates(CpuUsageBuilder b)]) =>
-      (new CpuUsageBuilder()..update(updates)).build();
+      (CpuUsageBuilder()..update(updates)).build();
 
   _$CpuUsage._(
       {this.timestamp,
@@ -912,7 +912,7 @@ class _$CpuUsage extends CpuUsage {
       (toBuilder()..update(updates)).build();
 
   @override
-  CpuUsageBuilder toBuilder() => new CpuUsageBuilder()..replace(this);
+  CpuUsageBuilder toBuilder() => CpuUsageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1013,7 +1013,7 @@ class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(CpuUsage other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CpuUsage;
   }
@@ -1026,7 +1026,7 @@ class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$CpuUsage build() {
     final _$result = _$v ??
-        new _$CpuUsage._(
+        _$CpuUsage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -1058,7 +1058,7 @@ class _$TransportBindings extends TransportBindings {
   final int messageId;
 
   factory _$TransportBindings([void updates(TransportBindingsBuilder b)]) =>
-      (new TransportBindingsBuilder()..update(updates)).build();
+      (TransportBindingsBuilder()..update(updates)).build();
 
   _$TransportBindings._(
       {this.timestamp,
@@ -1075,7 +1075,7 @@ class _$TransportBindings extends TransportBindings {
       (toBuilder()..update(updates)).build();
 
   @override
-  TransportBindingsBuilder toBuilder() => new TransportBindingsBuilder()..replace(this);
+  TransportBindingsBuilder toBuilder() => TransportBindingsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1184,7 +1184,7 @@ class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(TransportBindings other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TransportBindings;
   }
@@ -1197,7 +1197,7 @@ class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$TransportBindings build() {
     final _$result = _$v ??
-        new _$TransportBindings._(
+        _$TransportBindings._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -1228,7 +1228,7 @@ class _$RestartSystem extends RestartSystem {
   final RestartSystemEnumType type;
 
   factory _$RestartSystem([void updates(RestartSystemBuilder b)]) =>
-      (new RestartSystemBuilder()..update(updates)).build();
+      (RestartSystemBuilder()..update(updates)).build();
 
   _$RestartSystem._(
       {this.timestamp,
@@ -1244,7 +1244,7 @@ class _$RestartSystem extends RestartSystem {
       (toBuilder()..update(updates)).build();
 
   @override
-  RestartSystemBuilder toBuilder() => new RestartSystemBuilder()..replace(this);
+  RestartSystemBuilder toBuilder() => RestartSystemBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1345,7 +1345,7 @@ class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(RestartSystem other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RestartSystem;
   }
@@ -1358,7 +1358,7 @@ class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$RestartSystem build() {
     final _$result = _$v ??
-        new _$RestartSystem._(
+        _$RestartSystem._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -1388,7 +1388,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
   final DevCalibrationControlEnumOp op;
 
   factory _$DevCalibrationControl([void updates(DevCalibrationControlBuilder b)]) =>
-      (new DevCalibrationControlBuilder()..update(updates)).build();
+      (DevCalibrationControlBuilder()..update(updates)).build();
 
   _$DevCalibrationControl._(
       {this.timestamp,
@@ -1404,7 +1404,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  DevCalibrationControlBuilder toBuilder() => new DevCalibrationControlBuilder()..replace(this);
+  DevCalibrationControlBuilder toBuilder() => DevCalibrationControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1505,7 +1505,7 @@ class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   void replace(DevCalibrationControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DevCalibrationControl;
   }
@@ -1518,7 +1518,7 @@ class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   _$DevCalibrationControl build() {
     final _$result = _$v ??
-        new _$DevCalibrationControl._(
+        _$DevCalibrationControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -1554,7 +1554,7 @@ class _$DevCalibrationState extends DevCalibrationState {
   final DevCalibrationStateBitfieldFlags flags;
 
   factory _$DevCalibrationState([void updates(DevCalibrationStateBuilder b)]) =>
-      (new DevCalibrationStateBuilder()..update(updates)).build();
+      (DevCalibrationStateBuilder()..update(updates)).build();
 
   _$DevCalibrationState._(
       {this.timestamp,
@@ -1573,7 +1573,7 @@ class _$DevCalibrationState extends DevCalibrationState {
       (toBuilder()..update(updates)).build();
 
   @override
-  DevCalibrationStateBuilder toBuilder() => new DevCalibrationStateBuilder()..replace(this);
+  DevCalibrationStateBuilder toBuilder() => DevCalibrationStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1698,7 +1698,7 @@ class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(DevCalibrationState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DevCalibrationState;
   }
@@ -1711,7 +1711,7 @@ class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$DevCalibrationState build() {
     final _$result = _$v ??
-        new _$DevCalibrationState._(
+        _$DevCalibrationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -1746,7 +1746,7 @@ class _$EntityActivationState extends EntityActivationState {
   final String error;
 
   factory _$EntityActivationState([void updates(EntityActivationStateBuilder b)]) =>
-      (new EntityActivationStateBuilder()..update(updates)).build();
+      (EntityActivationStateBuilder()..update(updates)).build();
 
   _$EntityActivationState._(
       {this.timestamp,
@@ -1763,7 +1763,7 @@ class _$EntityActivationState extends EntityActivationState {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityActivationStateBuilder toBuilder() => new EntityActivationStateBuilder()..replace(this);
+  EntityActivationStateBuilder toBuilder() => EntityActivationStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1872,7 +1872,7 @@ class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   void replace(EntityActivationState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EntityActivationState;
   }
@@ -1885,7 +1885,7 @@ class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   _$EntityActivationState build() {
     final _$result = _$v ??
-        new _$EntityActivationState._(
+        _$EntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -1914,7 +1914,7 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
 
 
   factory _$QueryEntityActivationState([void updates(QueryEntityActivationStateBuilder b)]) =>
-      (new QueryEntityActivationStateBuilder()..update(updates)).build();
+      (QueryEntityActivationStateBuilder()..update(updates)).build();
 
   _$QueryEntityActivationState._(
       {this.timestamp,
@@ -1929,7 +1929,7 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryEntityActivationStateBuilder toBuilder() => new QueryEntityActivationStateBuilder()..replace(this);
+  QueryEntityActivationStateBuilder toBuilder() => QueryEntityActivationStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2022,7 +2022,7 @@ class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart
   @override
   void replace(QueryEntityActivationState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$QueryEntityActivationState;
   }
@@ -2035,7 +2035,7 @@ class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart
   @override
   _$QueryEntityActivationState build() {
     final _$result = _$v ??
-        new _$QueryEntityActivationState._(
+        _$QueryEntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -2098,7 +2098,7 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
   final double rpmRateMax;
 
   factory _$VehicleOperationalLimits([void updates(VehicleOperationalLimitsBuilder b)]) =>
-      (new VehicleOperationalLimitsBuilder()..update(updates)).build();
+      (VehicleOperationalLimitsBuilder()..update(updates)).build();
 
   _$VehicleOperationalLimits._(
       {this.timestamp,
@@ -2131,7 +2131,7 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleOperationalLimitsBuilder toBuilder() => new VehicleOperationalLimitsBuilder()..replace(this);
+  VehicleOperationalLimitsBuilder toBuilder() => VehicleOperationalLimitsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2368,7 +2368,7 @@ class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart i
   @override
   void replace(VehicleOperationalLimits other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VehicleOperationalLimits;
   }
@@ -2381,7 +2381,7 @@ class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart i
   @override
   _$VehicleOperationalLimits build() {
     final _$result = _$v ??
-        new _$VehicleOperationalLimits._(
+        _$VehicleOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -2428,7 +2428,7 @@ class _$MsgList extends MsgList {
   final List<ImcMessage> msgs;
 
   factory _$MsgList([void updates(MsgListBuilder b)]) =>
-      (new MsgListBuilder()..update(updates)).build();
+      (MsgListBuilder()..update(updates)).build();
 
   _$MsgList._(
       {this.timestamp,
@@ -2444,7 +2444,7 @@ class _$MsgList extends MsgList {
       (toBuilder()..update(updates)).build();
 
   @override
-  MsgListBuilder toBuilder() => new MsgListBuilder()..replace(this);
+  MsgListBuilder toBuilder() => MsgListBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2545,7 +2545,7 @@ class MsgListBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(MsgList other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$MsgList;
   }
@@ -2558,7 +2558,7 @@ class MsgListBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$MsgList build() {
     final _$result = _$v ??
-        new _$MsgList._(
+        _$MsgList._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -2622,7 +2622,7 @@ class _$SimulatedState extends SimulatedState {
   final double svz;
 
   factory _$SimulatedState([void updates(SimulatedStateBuilder b)]) =>
-      (new SimulatedStateBuilder()..update(updates)).build();
+      (SimulatedStateBuilder()..update(updates)).build();
 
   _$SimulatedState._(
       {this.timestamp,
@@ -2655,7 +2655,7 @@ class _$SimulatedState extends SimulatedState {
       (toBuilder()..update(updates)).build();
 
   @override
-  SimulatedStateBuilder toBuilder() => new SimulatedStateBuilder()..replace(this);
+  SimulatedStateBuilder toBuilder() => SimulatedStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2892,7 +2892,7 @@ class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(SimulatedState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SimulatedState;
   }
@@ -2905,7 +2905,7 @@ class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$SimulatedState build() {
     final _$result = _$v ??
-        new _$SimulatedState._(
+        _$SimulatedState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -2954,7 +2954,7 @@ class _$LeakSimulation extends LeakSimulation {
   final String entities;
 
   factory _$LeakSimulation([void updates(LeakSimulationBuilder b)]) =>
-      (new LeakSimulationBuilder()..update(updates)).build();
+      (LeakSimulationBuilder()..update(updates)).build();
 
   _$LeakSimulation._(
       {this.timestamp,
@@ -2971,7 +2971,7 @@ class _$LeakSimulation extends LeakSimulation {
       (toBuilder()..update(updates)).build();
 
   @override
-  LeakSimulationBuilder toBuilder() => new LeakSimulationBuilder()..replace(this);
+  LeakSimulationBuilder toBuilder() => LeakSimulationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3080,7 +3080,7 @@ class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(LeakSimulation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LeakSimulation;
   }
@@ -3093,7 +3093,7 @@ class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$LeakSimulation build() {
     final _$result = _$v ??
-        new _$LeakSimulation._(
+        _$LeakSimulation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -3128,7 +3128,7 @@ class _$UASimulation extends UASimulation {
   final List<int> data;
 
   factory _$UASimulation([void updates(UASimulationBuilder b)]) =>
-      (new UASimulationBuilder()..update(updates)).build();
+      (UASimulationBuilder()..update(updates)).build();
 
   _$UASimulation._(
       {this.timestamp,
@@ -3146,7 +3146,7 @@ class _$UASimulation extends UASimulation {
       (toBuilder()..update(updates)).build();
 
   @override
-  UASimulationBuilder toBuilder() => new UASimulationBuilder()..replace(this);
+  UASimulationBuilder toBuilder() => UASimulationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3263,7 +3263,7 @@ class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(UASimulation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UASimulation;
   }
@@ -3276,7 +3276,7 @@ class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$UASimulation build() {
     final _$result = _$v ??
-        new _$UASimulation._(
+        _$UASimulation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -3312,7 +3312,7 @@ class _$DynamicsSimParam extends DynamicsSimParam {
   final double bank2pPgain;
 
   factory _$DynamicsSimParam([void updates(DynamicsSimParamBuilder b)]) =>
-      (new DynamicsSimParamBuilder()..update(updates)).build();
+      (DynamicsSimParamBuilder()..update(updates)).build();
 
   _$DynamicsSimParam._(
       {this.timestamp,
@@ -3330,7 +3330,7 @@ class _$DynamicsSimParam extends DynamicsSimParam {
       (toBuilder()..update(updates)).build();
 
   @override
-  DynamicsSimParamBuilder toBuilder() => new DynamicsSimParamBuilder()..replace(this);
+  DynamicsSimParamBuilder toBuilder() => DynamicsSimParamBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3447,7 +3447,7 @@ class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(DynamicsSimParam other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DynamicsSimParam;
   }
@@ -3460,7 +3460,7 @@ class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$DynamicsSimParam build() {
     final _$result = _$v ??
-        new _$DynamicsSimParam._(
+        _$DynamicsSimParam._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -3494,7 +3494,7 @@ class _$StorageUsage extends StorageUsage {
   final int value;
 
   factory _$StorageUsage([void updates(StorageUsageBuilder b)]) =>
-      (new StorageUsageBuilder()..update(updates)).build();
+      (StorageUsageBuilder()..update(updates)).build();
 
   _$StorageUsage._(
       {this.timestamp,
@@ -3511,7 +3511,7 @@ class _$StorageUsage extends StorageUsage {
       (toBuilder()..update(updates)).build();
 
   @override
-  StorageUsageBuilder toBuilder() => new StorageUsageBuilder()..replace(this);
+  StorageUsageBuilder toBuilder() => StorageUsageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3620,7 +3620,7 @@ class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(StorageUsage other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$StorageUsage;
   }
@@ -3633,7 +3633,7 @@ class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$StorageUsage build() {
     final _$result = _$v ??
-        new _$StorageUsage._(
+        _$StorageUsage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -3668,7 +3668,7 @@ class _$CacheControl extends CacheControl {
   final ImcMessage message;
 
   factory _$CacheControl([void updates(CacheControlBuilder b)]) =>
-      (new CacheControlBuilder()..update(updates)).build();
+      (CacheControlBuilder()..update(updates)).build();
 
   _$CacheControl._(
       {this.timestamp,
@@ -3686,7 +3686,7 @@ class _$CacheControl extends CacheControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  CacheControlBuilder toBuilder() => new CacheControlBuilder()..replace(this);
+  CacheControlBuilder toBuilder() => CacheControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3803,7 +3803,7 @@ class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(CacheControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CacheControl;
   }
@@ -3816,7 +3816,7 @@ class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$CacheControl build() {
     final _$result = _$v ??
-        new _$CacheControl._(
+        _$CacheControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -3850,7 +3850,7 @@ class _$LoggingControl extends LoggingControl {
   final String name;
 
   factory _$LoggingControl([void updates(LoggingControlBuilder b)]) =>
-      (new LoggingControlBuilder()..update(updates)).build();
+      (LoggingControlBuilder()..update(updates)).build();
 
   _$LoggingControl._(
       {this.timestamp,
@@ -3867,7 +3867,7 @@ class _$LoggingControl extends LoggingControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  LoggingControlBuilder toBuilder() => new LoggingControlBuilder()..replace(this);
+  LoggingControlBuilder toBuilder() => LoggingControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3976,7 +3976,7 @@ class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(LoggingControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LoggingControl;
   }
@@ -3989,7 +3989,7 @@ class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$LoggingControl build() {
     final _$result = _$v ??
-        new _$LoggingControl._(
+        _$LoggingControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -4026,7 +4026,7 @@ class _$LogBookEntry extends LogBookEntry {
   final String text;
 
   factory _$LogBookEntry([void updates(LogBookEntryBuilder b)]) =>
-      (new LogBookEntryBuilder()..update(updates)).build();
+      (LogBookEntryBuilder()..update(updates)).build();
 
   _$LogBookEntry._(
       {this.timestamp,
@@ -4045,7 +4045,7 @@ class _$LogBookEntry extends LogBookEntry {
       (toBuilder()..update(updates)).build();
 
   @override
-  LogBookEntryBuilder toBuilder() => new LogBookEntryBuilder()..replace(this);
+  LogBookEntryBuilder toBuilder() => LogBookEntryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4170,7 +4170,7 @@ class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(LogBookEntry other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LogBookEntry;
   }
@@ -4183,7 +4183,7 @@ class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$LogBookEntry build() {
     final _$result = _$v ??
-        new _$LogBookEntry._(
+        _$LogBookEntry._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -4220,7 +4220,7 @@ class _$LogBookControl extends LogBookControl {
   final List<LogBookEntry> msg;
 
   factory _$LogBookControl([void updates(LogBookControlBuilder b)]) =>
-      (new LogBookControlBuilder()..update(updates)).build();
+      (LogBookControlBuilder()..update(updates)).build();
 
   _$LogBookControl._(
       {this.timestamp,
@@ -4238,7 +4238,7 @@ class _$LogBookControl extends LogBookControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  LogBookControlBuilder toBuilder() => new LogBookControlBuilder()..replace(this);
+  LogBookControlBuilder toBuilder() => LogBookControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4355,7 +4355,7 @@ class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(LogBookControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LogBookControl;
   }
@@ -4368,7 +4368,7 @@ class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$LogBookControl build() {
     final _$result = _$v ??
-        new _$LogBookControl._(
+        _$LogBookControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -4402,7 +4402,7 @@ class _$ReplayControl extends ReplayControl {
   final String file;
 
   factory _$ReplayControl([void updates(ReplayControlBuilder b)]) =>
-      (new ReplayControlBuilder()..update(updates)).build();
+      (ReplayControlBuilder()..update(updates)).build();
 
   _$ReplayControl._(
       {this.timestamp,
@@ -4419,7 +4419,7 @@ class _$ReplayControl extends ReplayControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  ReplayControlBuilder toBuilder() => new ReplayControlBuilder()..replace(this);
+  ReplayControlBuilder toBuilder() => ReplayControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4528,7 +4528,7 @@ class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ReplayControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ReplayControl;
   }
@@ -4541,7 +4541,7 @@ class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ReplayControl build() {
     final _$result = _$v ??
-        new _$ReplayControl._(
+        _$ReplayControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -4576,7 +4576,7 @@ class _$ClockControl extends ClockControl {
   final int tz;
 
   factory _$ClockControl([void updates(ClockControlBuilder b)]) =>
-      (new ClockControlBuilder()..update(updates)).build();
+      (ClockControlBuilder()..update(updates)).build();
 
   _$ClockControl._(
       {this.timestamp,
@@ -4594,7 +4594,7 @@ class _$ClockControl extends ClockControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  ClockControlBuilder toBuilder() => new ClockControlBuilder()..replace(this);
+  ClockControlBuilder toBuilder() => ClockControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4711,7 +4711,7 @@ class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(ClockControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ClockControl;
   }
@@ -4724,7 +4724,7 @@ class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$ClockControl build() {
     final _$result = _$v ??
-        new _$ClockControl._(
+        _$ClockControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -4760,7 +4760,7 @@ class _$HistoricCTD extends HistoricCTD {
   final double depth;
 
   factory _$HistoricCTD([void updates(HistoricCTDBuilder b)]) =>
-      (new HistoricCTDBuilder()..update(updates)).build();
+      (HistoricCTDBuilder()..update(updates)).build();
 
   _$HistoricCTD._(
       {this.timestamp,
@@ -4778,7 +4778,7 @@ class _$HistoricCTD extends HistoricCTD {
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricCTDBuilder toBuilder() => new HistoricCTDBuilder()..replace(this);
+  HistoricCTDBuilder toBuilder() => HistoricCTDBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4895,7 +4895,7 @@ class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(HistoricCTD other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$HistoricCTD;
   }
@@ -4908,7 +4908,7 @@ class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$HistoricCTD build() {
     final _$result = _$v ??
-        new _$HistoricCTD._(
+        _$HistoricCTD._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -4948,7 +4948,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
   final int speed;
 
   factory _$HistoricTelemetry([void updates(HistoricTelemetryBuilder b)]) =>
-      (new HistoricTelemetryBuilder()..update(updates)).build();
+      (HistoricTelemetryBuilder()..update(updates)).build();
 
   _$HistoricTelemetry._(
       {this.timestamp,
@@ -4968,7 +4968,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricTelemetryBuilder toBuilder() => new HistoricTelemetryBuilder()..replace(this);
+  HistoricTelemetryBuilder toBuilder() => HistoricTelemetryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5101,7 +5101,7 @@ class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(HistoricTelemetry other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$HistoricTelemetry;
   }
@@ -5114,7 +5114,7 @@ class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$HistoricTelemetry build() {
     final _$result = _$v ??
-        new _$HistoricTelemetry._(
+        _$HistoricTelemetry._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -5160,7 +5160,7 @@ class _$HistoricSonarData extends HistoricSonarData {
   final List<int> sonarData;
 
   factory _$HistoricSonarData([void updates(HistoricSonarDataBuilder b)]) =>
-      (new HistoricSonarDataBuilder()..update(updates)).build();
+      (HistoricSonarDataBuilder()..update(updates)).build();
 
   _$HistoricSonarData._(
       {this.timestamp,
@@ -5182,7 +5182,7 @@ class _$HistoricSonarData extends HistoricSonarData {
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricSonarDataBuilder toBuilder() => new HistoricSonarDataBuilder()..replace(this);
+  HistoricSonarDataBuilder toBuilder() => HistoricSonarDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5331,7 +5331,7 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(HistoricSonarData other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$HistoricSonarData;
   }
@@ -5344,7 +5344,7 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$HistoricSonarData build() {
     final _$result = _$v ??
-        new _$HistoricSonarData._(
+        _$HistoricSonarData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -5382,7 +5382,7 @@ class _$HistoricEvent extends HistoricEvent {
   final HistoricEventEnumType type;
 
   factory _$HistoricEvent([void updates(HistoricEventBuilder b)]) =>
-      (new HistoricEventBuilder()..update(updates)).build();
+      (HistoricEventBuilder()..update(updates)).build();
 
   _$HistoricEvent._(
       {this.timestamp,
@@ -5399,7 +5399,7 @@ class _$HistoricEvent extends HistoricEvent {
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricEventBuilder toBuilder() => new HistoricEventBuilder()..replace(this);
+  HistoricEventBuilder toBuilder() => HistoricEventBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5508,7 +5508,7 @@ class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(HistoricEvent other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$HistoricEvent;
   }
@@ -5521,7 +5521,7 @@ class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$HistoricEvent build() {
     final _$result = _$v ??
-        new _$HistoricEvent._(
+        _$HistoricEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -5560,7 +5560,7 @@ class _$VerticalProfile extends VerticalProfile {
   final double lon;
 
   factory _$VerticalProfile([void updates(VerticalProfileBuilder b)]) =>
-      (new VerticalProfileBuilder()..update(updates)).build();
+      (VerticalProfileBuilder()..update(updates)).build();
 
   _$VerticalProfile._(
       {this.timestamp,
@@ -5580,7 +5580,7 @@ class _$VerticalProfile extends VerticalProfile {
       (toBuilder()..update(updates)).build();
 
   @override
-  VerticalProfileBuilder toBuilder() => new VerticalProfileBuilder()..replace(this);
+  VerticalProfileBuilder toBuilder() => VerticalProfileBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5713,7 +5713,7 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(VerticalProfile other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VerticalProfile;
   }
@@ -5726,7 +5726,7 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$VerticalProfile build() {
     final _$result = _$v ??
-        new _$VerticalProfile._(
+        _$VerticalProfile._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -5762,7 +5762,7 @@ class _$ProfileSample extends ProfileSample {
   final double avg;
 
   factory _$ProfileSample([void updates(ProfileSampleBuilder b)]) =>
-      (new ProfileSampleBuilder()..update(updates)).build();
+      (ProfileSampleBuilder()..update(updates)).build();
 
   _$ProfileSample._(
       {this.timestamp,
@@ -5779,7 +5779,7 @@ class _$ProfileSample extends ProfileSample {
       (toBuilder()..update(updates)).build();
 
   @override
-  ProfileSampleBuilder toBuilder() => new ProfileSampleBuilder()..replace(this);
+  ProfileSampleBuilder toBuilder() => ProfileSampleBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5888,7 +5888,7 @@ class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ProfileSample other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ProfileSample;
   }
@@ -5901,7 +5901,7 @@ class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ProfileSample build() {
     final _$result = _$v ??
-        new _$ProfileSample._(
+        _$ProfileSample._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -5930,7 +5930,7 @@ class _$Heartbeat extends Heartbeat {
 
 
   factory _$Heartbeat([void updates(HeartbeatBuilder b)]) =>
-      (new HeartbeatBuilder()..update(updates)).build();
+      (HeartbeatBuilder()..update(updates)).build();
 
   _$Heartbeat._(
       {this.timestamp,
@@ -5945,7 +5945,7 @@ class _$Heartbeat extends Heartbeat {
       (toBuilder()..update(updates)).build();
 
   @override
-  HeartbeatBuilder toBuilder() => new HeartbeatBuilder()..replace(this);
+  HeartbeatBuilder toBuilder() => HeartbeatBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6038,7 +6038,7 @@ class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(Heartbeat other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Heartbeat;
   }
@@ -6051,7 +6051,7 @@ class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$Heartbeat build() {
     final _$result = _$v ??
-        new _$Heartbeat._(
+        _$Heartbeat._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -6092,7 +6092,7 @@ class _$Announce extends Announce {
   final String services;
 
   factory _$Announce([void updates(AnnounceBuilder b)]) =>
-      (new AnnounceBuilder()..update(updates)).build();
+      (AnnounceBuilder()..update(updates)).build();
 
   _$Announce._(
       {this.timestamp,
@@ -6114,7 +6114,7 @@ class _$Announce extends Announce {
       (toBuilder()..update(updates)).build();
 
   @override
-  AnnounceBuilder toBuilder() => new AnnounceBuilder()..replace(this);
+  AnnounceBuilder toBuilder() => AnnounceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6263,7 +6263,7 @@ class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(Announce other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Announce;
   }
@@ -6276,7 +6276,7 @@ class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$Announce build() {
     final _$result = _$v ??
-        new _$Announce._(
+        _$Announce._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -6314,7 +6314,7 @@ class _$AnnounceService extends AnnounceService {
   final AnnounceServiceBitfieldServiceType serviceType;
 
   factory _$AnnounceService([void updates(AnnounceServiceBuilder b)]) =>
-      (new AnnounceServiceBuilder()..update(updates)).build();
+      (AnnounceServiceBuilder()..update(updates)).build();
 
   _$AnnounceService._(
       {this.timestamp,
@@ -6331,7 +6331,7 @@ class _$AnnounceService extends AnnounceService {
       (toBuilder()..update(updates)).build();
 
   @override
-  AnnounceServiceBuilder toBuilder() => new AnnounceServiceBuilder()..replace(this);
+  AnnounceServiceBuilder toBuilder() => AnnounceServiceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6440,7 +6440,7 @@ class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(AnnounceService other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AnnounceService;
   }
@@ -6453,7 +6453,7 @@ class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$AnnounceService build() {
     final _$result = _$v ??
-        new _$AnnounceService._(
+        _$AnnounceService._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -6484,7 +6484,7 @@ class _$RSSI extends RSSI {
   final double value;
 
   factory _$RSSI([void updates(RSSIBuilder b)]) =>
-      (new RSSIBuilder()..update(updates)).build();
+      (RSSIBuilder()..update(updates)).build();
 
   _$RSSI._(
       {this.timestamp,
@@ -6500,7 +6500,7 @@ class _$RSSI extends RSSI {
       (toBuilder()..update(updates)).build();
 
   @override
-  RSSIBuilder toBuilder() => new RSSIBuilder()..replace(this);
+  RSSIBuilder toBuilder() => RSSIBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6601,7 +6601,7 @@ class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   void replace(RSSI other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RSSI;
   }
@@ -6614,7 +6614,7 @@ class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   _$RSSI build() {
     final _$result = _$v ??
-        new _$RSSI._(
+        _$RSSI._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -6644,7 +6644,7 @@ class _$VSWR extends VSWR {
   final double value;
 
   factory _$VSWR([void updates(VSWRBuilder b)]) =>
-      (new VSWRBuilder()..update(updates)).build();
+      (VSWRBuilder()..update(updates)).build();
 
   _$VSWR._(
       {this.timestamp,
@@ -6660,7 +6660,7 @@ class _$VSWR extends VSWR {
       (toBuilder()..update(updates)).build();
 
   @override
-  VSWRBuilder toBuilder() => new VSWRBuilder()..replace(this);
+  VSWRBuilder toBuilder() => VSWRBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6761,7 +6761,7 @@ class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   void replace(VSWR other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VSWR;
   }
@@ -6774,7 +6774,7 @@ class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   _$VSWR build() {
     final _$result = _$v ??
-        new _$VSWR._(
+        _$VSWR._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -6804,7 +6804,7 @@ class _$LinkLevel extends LinkLevel {
   final double value;
 
   factory _$LinkLevel([void updates(LinkLevelBuilder b)]) =>
-      (new LinkLevelBuilder()..update(updates)).build();
+      (LinkLevelBuilder()..update(updates)).build();
 
   _$LinkLevel._(
       {this.timestamp,
@@ -6820,7 +6820,7 @@ class _$LinkLevel extends LinkLevel {
       (toBuilder()..update(updates)).build();
 
   @override
-  LinkLevelBuilder toBuilder() => new LinkLevelBuilder()..replace(this);
+  LinkLevelBuilder toBuilder() => LinkLevelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6921,7 +6921,7 @@ class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(LinkLevel other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LinkLevel;
   }
@@ -6934,7 +6934,7 @@ class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$LinkLevel build() {
     final _$result = _$v ??
-        new _$LinkLevel._(
+        _$LinkLevel._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -6968,7 +6968,7 @@ class _$Sms extends Sms {
   final String contents;
 
   factory _$Sms([void updates(SmsBuilder b)]) =>
-      (new SmsBuilder()..update(updates)).build();
+      (SmsBuilder()..update(updates)).build();
 
   _$Sms._(
       {this.timestamp,
@@ -6986,7 +6986,7 @@ class _$Sms extends Sms {
       (toBuilder()..update(updates)).build();
 
   @override
-  SmsBuilder toBuilder() => new SmsBuilder()..replace(this);
+  SmsBuilder toBuilder() => SmsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7103,7 +7103,7 @@ class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   void replace(Sms other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Sms;
   }
@@ -7116,7 +7116,7 @@ class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   _$Sms build() {
     final _$result = _$v ??
-        new _$Sms._(
+        _$Sms._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -7154,7 +7154,7 @@ class _$SmsTx extends SmsTx {
   final List<int> data;
 
   factory _$SmsTx([void updates(SmsTxBuilder b)]) =>
-      (new SmsTxBuilder()..update(updates)).build();
+      (SmsTxBuilder()..update(updates)).build();
 
   _$SmsTx._(
       {this.timestamp,
@@ -7173,7 +7173,7 @@ class _$SmsTx extends SmsTx {
       (toBuilder()..update(updates)).build();
 
   @override
-  SmsTxBuilder toBuilder() => new SmsTxBuilder()..replace(this);
+  SmsTxBuilder toBuilder() => SmsTxBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7298,7 +7298,7 @@ class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(SmsTx other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SmsTx;
   }
@@ -7311,7 +7311,7 @@ class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$SmsTx build() {
     final _$result = _$v ??
-        new _$SmsTx._(
+        _$SmsTx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -7346,7 +7346,7 @@ class _$SmsRx extends SmsRx {
   final List<int> data;
 
   factory _$SmsRx([void updates(SmsRxBuilder b)]) =>
-      (new SmsRxBuilder()..update(updates)).build();
+      (SmsRxBuilder()..update(updates)).build();
 
   _$SmsRx._(
       {this.timestamp,
@@ -7363,7 +7363,7 @@ class _$SmsRx extends SmsRx {
       (toBuilder()..update(updates)).build();
 
   @override
-  SmsRxBuilder toBuilder() => new SmsRxBuilder()..replace(this);
+  SmsRxBuilder toBuilder() => SmsRxBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7472,7 +7472,7 @@ class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(SmsRx other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SmsRx;
   }
@@ -7485,7 +7485,7 @@ class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$SmsRx build() {
     final _$result = _$v ??
-        new _$SmsRx._(
+        _$SmsRx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -7520,7 +7520,7 @@ class _$SmsState extends SmsState {
   final String error;
 
   factory _$SmsState([void updates(SmsStateBuilder b)]) =>
-      (new SmsStateBuilder()..update(updates)).build();
+      (SmsStateBuilder()..update(updates)).build();
 
   _$SmsState._(
       {this.timestamp,
@@ -7538,7 +7538,7 @@ class _$SmsState extends SmsState {
       (toBuilder()..update(updates)).build();
 
   @override
-  SmsStateBuilder toBuilder() => new SmsStateBuilder()..replace(this);
+  SmsStateBuilder toBuilder() => SmsStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7655,7 +7655,7 @@ class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(SmsState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SmsState;
   }
@@ -7668,7 +7668,7 @@ class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$SmsState build() {
     final _$result = _$v ??
-        new _$SmsState._(
+        _$SmsState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -7702,7 +7702,7 @@ class _$TextMessage extends TextMessage {
   final String text;
 
   factory _$TextMessage([void updates(TextMessageBuilder b)]) =>
-      (new TextMessageBuilder()..update(updates)).build();
+      (TextMessageBuilder()..update(updates)).build();
 
   _$TextMessage._(
       {this.timestamp,
@@ -7719,7 +7719,7 @@ class _$TextMessage extends TextMessage {
       (toBuilder()..update(updates)).build();
 
   @override
-  TextMessageBuilder toBuilder() => new TextMessageBuilder()..replace(this);
+  TextMessageBuilder toBuilder() => TextMessageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7828,7 +7828,7 @@ class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(TextMessage other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TextMessage;
   }
@@ -7841,7 +7841,7 @@ class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$TextMessage build() {
     final _$result = _$v ??
-        new _$TextMessage._(
+        _$TextMessage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -7880,7 +7880,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
   final List<int> data;
 
   factory _$IridiumMsgRx([void updates(IridiumMsgRxBuilder b)]) =>
-      (new IridiumMsgRxBuilder()..update(updates)).build();
+      (IridiumMsgRxBuilder()..update(updates)).build();
 
   _$IridiumMsgRx._(
       {this.timestamp,
@@ -7900,7 +7900,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
       (toBuilder()..update(updates)).build();
 
   @override
-  IridiumMsgRxBuilder toBuilder() => new IridiumMsgRxBuilder()..replace(this);
+  IridiumMsgRxBuilder toBuilder() => IridiumMsgRxBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8033,7 +8033,7 @@ class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(IridiumMsgRx other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$IridiumMsgRx;
   }
@@ -8046,7 +8046,7 @@ class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$IridiumMsgRx build() {
     final _$result = _$v ??
-        new _$IridiumMsgRx._(
+        _$IridiumMsgRx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -8086,7 +8086,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
   final List<int> data;
 
   factory _$IridiumMsgTx([void updates(IridiumMsgTxBuilder b)]) =>
-      (new IridiumMsgTxBuilder()..update(updates)).build();
+      (IridiumMsgTxBuilder()..update(updates)).build();
 
   _$IridiumMsgTx._(
       {this.timestamp,
@@ -8105,7 +8105,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
       (toBuilder()..update(updates)).build();
 
   @override
-  IridiumMsgTxBuilder toBuilder() => new IridiumMsgTxBuilder()..replace(this);
+  IridiumMsgTxBuilder toBuilder() => IridiumMsgTxBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8230,7 +8230,7 @@ class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(IridiumMsgTx other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$IridiumMsgTx;
   }
@@ -8243,7 +8243,7 @@ class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$IridiumMsgTx build() {
     final _$result = _$v ??
-        new _$IridiumMsgTx._(
+        _$IridiumMsgTx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -8280,7 +8280,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
   final String text;
 
   factory _$IridiumTxStatus([void updates(IridiumTxStatusBuilder b)]) =>
-      (new IridiumTxStatusBuilder()..update(updates)).build();
+      (IridiumTxStatusBuilder()..update(updates)).build();
 
   _$IridiumTxStatus._(
       {this.timestamp,
@@ -8298,7 +8298,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
       (toBuilder()..update(updates)).build();
 
   @override
-  IridiumTxStatusBuilder toBuilder() => new IridiumTxStatusBuilder()..replace(this);
+  IridiumTxStatusBuilder toBuilder() => IridiumTxStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8415,7 +8415,7 @@ class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(IridiumTxStatus other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$IridiumTxStatus;
   }
@@ -8428,7 +8428,7 @@ class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$IridiumTxStatus build() {
     final _$result = _$v ??
-        new _$IridiumTxStatus._(
+        _$IridiumTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -8462,7 +8462,7 @@ class _$GroupMembershipState extends GroupMembershipState {
   final int links;
 
   factory _$GroupMembershipState([void updates(GroupMembershipStateBuilder b)]) =>
-      (new GroupMembershipStateBuilder()..update(updates)).build();
+      (GroupMembershipStateBuilder()..update(updates)).build();
 
   _$GroupMembershipState._(
       {this.timestamp,
@@ -8479,7 +8479,7 @@ class _$GroupMembershipState extends GroupMembershipState {
       (toBuilder()..update(updates)).build();
 
   @override
-  GroupMembershipStateBuilder toBuilder() => new GroupMembershipStateBuilder()..replace(this);
+  GroupMembershipStateBuilder toBuilder() => GroupMembershipStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8588,7 +8588,7 @@ class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(GroupMembershipState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GroupMembershipState;
   }
@@ -8601,7 +8601,7 @@ class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$GroupMembershipState build() {
     final _$result = _$v ??
-        new _$GroupMembershipState._(
+        _$GroupMembershipState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -8636,7 +8636,7 @@ class _$SystemGroup extends SystemGroup {
   final String groupList;
 
   factory _$SystemGroup([void updates(SystemGroupBuilder b)]) =>
-      (new SystemGroupBuilder()..update(updates)).build();
+      (SystemGroupBuilder()..update(updates)).build();
 
   _$SystemGroup._(
       {this.timestamp,
@@ -8654,7 +8654,7 @@ class _$SystemGroup extends SystemGroup {
       (toBuilder()..update(updates)).build();
 
   @override
-  SystemGroupBuilder toBuilder() => new SystemGroupBuilder()..replace(this);
+  SystemGroupBuilder toBuilder() => SystemGroupBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8771,7 +8771,7 @@ class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(SystemGroup other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SystemGroup;
   }
@@ -8784,7 +8784,7 @@ class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$SystemGroup build() {
     final _$result = _$v ??
-        new _$SystemGroup._(
+        _$SystemGroup._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -8818,7 +8818,7 @@ class _$LinkLatency extends LinkLatency {
   final int sysSrc;
 
   factory _$LinkLatency([void updates(LinkLatencyBuilder b)]) =>
-      (new LinkLatencyBuilder()..update(updates)).build();
+      (LinkLatencyBuilder()..update(updates)).build();
 
   _$LinkLatency._(
       {this.timestamp,
@@ -8835,7 +8835,7 @@ class _$LinkLatency extends LinkLatency {
       (toBuilder()..update(updates)).build();
 
   @override
-  LinkLatencyBuilder toBuilder() => new LinkLatencyBuilder()..replace(this);
+  LinkLatencyBuilder toBuilder() => LinkLatencyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8944,7 +8944,7 @@ class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(LinkLatency other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LinkLatency;
   }
@@ -8957,7 +8957,7 @@ class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$LinkLatency build() {
     final _$result = _$v ??
-        new _$LinkLatency._(
+        _$LinkLatency._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -8990,7 +8990,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
   final RSSIUnitsEnum units;
 
   factory _$ExtendedRSSI([void updates(ExtendedRSSIBuilder b)]) =>
-      (new ExtendedRSSIBuilder()..update(updates)).build();
+      (ExtendedRSSIBuilder()..update(updates)).build();
 
   _$ExtendedRSSI._(
       {this.timestamp,
@@ -9007,7 +9007,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
       (toBuilder()..update(updates)).build();
 
   @override
-  ExtendedRSSIBuilder toBuilder() => new ExtendedRSSIBuilder()..replace(this);
+  ExtendedRSSIBuilder toBuilder() => ExtendedRSSIBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -9116,7 +9116,7 @@ class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(ExtendedRSSI other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ExtendedRSSI;
   }
@@ -9129,7 +9129,7 @@ class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$ExtendedRSSI build() {
     final _$result = _$v ??
-        new _$ExtendedRSSI._(
+        _$ExtendedRSSI._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -9166,7 +9166,7 @@ class _$HistoricData extends HistoricData {
   final List<RemoteData> data;
 
   factory _$HistoricData([void updates(HistoricDataBuilder b)]) =>
-      (new HistoricDataBuilder()..update(updates)).build();
+      (HistoricDataBuilder()..update(updates)).build();
 
   _$HistoricData._(
       {this.timestamp,
@@ -9185,7 +9185,7 @@ class _$HistoricData extends HistoricData {
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricDataBuilder toBuilder() => new HistoricDataBuilder()..replace(this);
+  HistoricDataBuilder toBuilder() => HistoricDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -9310,7 +9310,7 @@ class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(HistoricData other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$HistoricData;
   }
@@ -9323,7 +9323,7 @@ class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$HistoricData build() {
     final _$result = _$v ??
-        new _$HistoricData._(
+        _$HistoricData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -9362,7 +9362,7 @@ class _$CompressedHistory extends CompressedHistory {
   final List<int> data;
 
   factory _$CompressedHistory([void updates(CompressedHistoryBuilder b)]) =>
-      (new CompressedHistoryBuilder()..update(updates)).build();
+      (CompressedHistoryBuilder()..update(updates)).build();
 
   _$CompressedHistory._(
       {this.timestamp,
@@ -9381,7 +9381,7 @@ class _$CompressedHistory extends CompressedHistory {
       (toBuilder()..update(updates)).build();
 
   @override
-  CompressedHistoryBuilder toBuilder() => new CompressedHistoryBuilder()..replace(this);
+  CompressedHistoryBuilder toBuilder() => CompressedHistoryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -9506,7 +9506,7 @@ class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(CompressedHistory other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CompressedHistory;
   }
@@ -9519,7 +9519,7 @@ class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$CompressedHistory build() {
     final _$result = _$v ??
-        new _$CompressedHistory._(
+        _$CompressedHistory._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -9564,7 +9564,7 @@ class _$HistoricSample extends HistoricSample {
   final ImcMessage sample;
 
   factory _$HistoricSample([void updates(HistoricSampleBuilder b)]) =>
-      (new HistoricSampleBuilder()..update(updates)).build();
+      (HistoricSampleBuilder()..update(updates)).build();
 
   _$HistoricSample._(
       {this.timestamp,
@@ -9586,7 +9586,7 @@ class _$HistoricSample extends HistoricSample {
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricSampleBuilder toBuilder() => new HistoricSampleBuilder()..replace(this);
+  HistoricSampleBuilder toBuilder() => HistoricSampleBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -9735,7 +9735,7 @@ class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(HistoricSample other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$HistoricSample;
   }
@@ -9748,7 +9748,7 @@ class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$HistoricSample build() {
     final _$result = _$v ??
-        new _$HistoricSample._(
+        _$HistoricSample._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -9790,7 +9790,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
   final HistoricData data;
 
   factory _$HistoricDataQuery([void updates(HistoricDataQueryBuilder b)]) =>
-      (new HistoricDataQueryBuilder()..update(updates)).build();
+      (HistoricDataQueryBuilder()..update(updates)).build();
 
   _$HistoricDataQuery._(
       {this.timestamp,
@@ -9809,7 +9809,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricDataQueryBuilder toBuilder() => new HistoricDataQueryBuilder()..replace(this);
+  HistoricDataQueryBuilder toBuilder() => HistoricDataQueryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -9934,7 +9934,7 @@ class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(HistoricDataQuery other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$HistoricDataQuery;
   }
@@ -9947,7 +9947,7 @@ class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$HistoricDataQuery build() {
     final _$result = _$v ??
-        new _$HistoricDataQuery._(
+        _$HistoricDataQuery._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -9986,7 +9986,7 @@ class _$RemoteCommand extends RemoteCommand {
   final ImcMessage cmd;
 
   factory _$RemoteCommand([void updates(RemoteCommandBuilder b)]) =>
-      (new RemoteCommandBuilder()..update(updates)).build();
+      (RemoteCommandBuilder()..update(updates)).build();
 
   _$RemoteCommand._(
       {this.timestamp,
@@ -10005,7 +10005,7 @@ class _$RemoteCommand extends RemoteCommand {
       (toBuilder()..update(updates)).build();
 
   @override
-  RemoteCommandBuilder toBuilder() => new RemoteCommandBuilder()..replace(this);
+  RemoteCommandBuilder toBuilder() => RemoteCommandBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10130,7 +10130,7 @@ class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(RemoteCommand other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RemoteCommand;
   }
@@ -10143,7 +10143,7 @@ class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$RemoteCommand build() {
     final _$result = _$v ??
-        new _$RemoteCommand._(
+        _$RemoteCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -10182,7 +10182,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
   final String list;
 
   factory _$CommSystemsQuery([void updates(CommSystemsQueryBuilder b)]) =>
-      (new CommSystemsQueryBuilder()..update(updates)).build();
+      (CommSystemsQueryBuilder()..update(updates)).build();
 
   _$CommSystemsQuery._(
       {this.timestamp,
@@ -10201,7 +10201,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
       (toBuilder()..update(updates)).build();
 
   @override
-  CommSystemsQueryBuilder toBuilder() => new CommSystemsQueryBuilder()..replace(this);
+  CommSystemsQueryBuilder toBuilder() => CommSystemsQueryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10326,7 +10326,7 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(CommSystemsQuery other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CommSystemsQuery;
   }
@@ -10339,7 +10339,7 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$CommSystemsQuery build() {
     final _$result = _$v ??
-        new _$CommSystemsQuery._(
+        _$CommSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -10388,7 +10388,7 @@ class _$TelemetryMsg extends TelemetryMsg {
   final List<int> data;
 
   factory _$TelemetryMsg([void updates(TelemetryMsgBuilder b)]) =>
-      (new TelemetryMsgBuilder()..update(updates)).build();
+      (TelemetryMsgBuilder()..update(updates)).build();
 
   _$TelemetryMsg._(
       {this.timestamp,
@@ -10412,7 +10412,7 @@ class _$TelemetryMsg extends TelemetryMsg {
       (toBuilder()..update(updates)).build();
 
   @override
-  TelemetryMsgBuilder toBuilder() => new TelemetryMsgBuilder()..replace(this);
+  TelemetryMsgBuilder toBuilder() => TelemetryMsgBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10577,7 +10577,7 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(TelemetryMsg other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TelemetryMsg;
   }
@@ -10590,7 +10590,7 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$TelemetryMsg build() {
     final _$result = _$v ??
-        new _$TelemetryMsg._(
+        _$TelemetryMsg._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -10630,7 +10630,7 @@ class _$LblRange extends LblRange {
   final double range;
 
   factory _$LblRange([void updates(LblRangeBuilder b)]) =>
-      (new LblRangeBuilder()..update(updates)).build();
+      (LblRangeBuilder()..update(updates)).build();
 
   _$LblRange._(
       {this.timestamp,
@@ -10647,7 +10647,7 @@ class _$LblRange extends LblRange {
       (toBuilder()..update(updates)).build();
 
   @override
-  LblRangeBuilder toBuilder() => new LblRangeBuilder()..replace(this);
+  LblRangeBuilder toBuilder() => LblRangeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10756,7 +10756,7 @@ class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(LblRange other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LblRange;
   }
@@ -10769,7 +10769,7 @@ class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$LblRange build() {
     final _$result = _$v ??
-        new _$LblRange._(
+        _$LblRange._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -10812,7 +10812,7 @@ class _$LblBeacon extends LblBeacon {
   final int transponderDelay;
 
   factory _$LblBeacon([void updates(LblBeaconBuilder b)]) =>
-      (new LblBeaconBuilder()..update(updates)).build();
+      (LblBeaconBuilder()..update(updates)).build();
 
   _$LblBeacon._(
       {this.timestamp,
@@ -10834,7 +10834,7 @@ class _$LblBeacon extends LblBeacon {
       (toBuilder()..update(updates)).build();
 
   @override
-  LblBeaconBuilder toBuilder() => new LblBeaconBuilder()..replace(this);
+  LblBeaconBuilder toBuilder() => LblBeaconBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10983,7 +10983,7 @@ class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(LblBeacon other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LblBeacon;
   }
@@ -10996,7 +10996,7 @@ class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$LblBeacon build() {
     final _$result = _$v ??
-        new _$LblBeacon._(
+        _$LblBeacon._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -11034,7 +11034,7 @@ class _$LblConfig extends LblConfig {
   final List<LblBeacon> beacons;
 
   factory _$LblConfig([void updates(LblConfigBuilder b)]) =>
-      (new LblConfigBuilder()..update(updates)).build();
+      (LblConfigBuilder()..update(updates)).build();
 
   _$LblConfig._(
       {this.timestamp,
@@ -11051,7 +11051,7 @@ class _$LblConfig extends LblConfig {
       (toBuilder()..update(updates)).build();
 
   @override
-  LblConfigBuilder toBuilder() => new LblConfigBuilder()..replace(this);
+  LblConfigBuilder toBuilder() => LblConfigBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11160,7 +11160,7 @@ class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(LblConfig other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LblConfig;
   }
@@ -11173,7 +11173,7 @@ class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$LblConfig build() {
     final _$result = _$v ??
-        new _$LblConfig._(
+        _$LblConfig._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -11204,7 +11204,7 @@ class _$AcousticMessage extends AcousticMessage {
   final ImcMessage message;
 
   factory _$AcousticMessage([void updates(AcousticMessageBuilder b)]) =>
-      (new AcousticMessageBuilder()..update(updates)).build();
+      (AcousticMessageBuilder()..update(updates)).build();
 
   _$AcousticMessage._(
       {this.timestamp,
@@ -11220,7 +11220,7 @@ class _$AcousticMessage extends AcousticMessage {
       (toBuilder()..update(updates)).build();
 
   @override
-  AcousticMessageBuilder toBuilder() => new AcousticMessageBuilder()..replace(this);
+  AcousticMessageBuilder toBuilder() => AcousticMessageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11321,7 +11321,7 @@ class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(AcousticMessage other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AcousticMessage;
   }
@@ -11334,7 +11334,7 @@ class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$AcousticMessage build() {
     final _$result = _$v ??
-        new _$AcousticMessage._(
+        _$AcousticMessage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -11370,7 +11370,7 @@ class _$AcousticOperation extends AcousticOperation {
   final ImcMessage msg;
 
   factory _$AcousticOperation([void updates(AcousticOperationBuilder b)]) =>
-      (new AcousticOperationBuilder()..update(updates)).build();
+      (AcousticOperationBuilder()..update(updates)).build();
 
   _$AcousticOperation._(
       {this.timestamp,
@@ -11389,7 +11389,7 @@ class _$AcousticOperation extends AcousticOperation {
       (toBuilder()..update(updates)).build();
 
   @override
-  AcousticOperationBuilder toBuilder() => new AcousticOperationBuilder()..replace(this);
+  AcousticOperationBuilder toBuilder() => AcousticOperationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11514,7 +11514,7 @@ class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(AcousticOperation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AcousticOperation;
   }
@@ -11527,7 +11527,7 @@ class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$AcousticOperation build() {
     final _$result = _$v ??
-        new _$AcousticOperation._(
+        _$AcousticOperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -11558,7 +11558,7 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
 
 
   factory _$AcousticSystemsQuery([void updates(AcousticSystemsQueryBuilder b)]) =>
-      (new AcousticSystemsQueryBuilder()..update(updates)).build();
+      (AcousticSystemsQueryBuilder()..update(updates)).build();
 
   _$AcousticSystemsQuery._(
       {this.timestamp,
@@ -11573,7 +11573,7 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
       (toBuilder()..update(updates)).build();
 
   @override
-  AcousticSystemsQueryBuilder toBuilder() => new AcousticSystemsQueryBuilder()..replace(this);
+  AcousticSystemsQueryBuilder toBuilder() => AcousticSystemsQueryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11666,7 +11666,7 @@ class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(AcousticSystemsQuery other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AcousticSystemsQuery;
   }
@@ -11679,7 +11679,7 @@ class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$AcousticSystemsQuery build() {
     final _$result = _$v ??
-        new _$AcousticSystemsQuery._(
+        _$AcousticSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -11708,7 +11708,7 @@ class _$AcousticSystems extends AcousticSystems {
   final String list;
 
   factory _$AcousticSystems([void updates(AcousticSystemsBuilder b)]) =>
-      (new AcousticSystemsBuilder()..update(updates)).build();
+      (AcousticSystemsBuilder()..update(updates)).build();
 
   _$AcousticSystems._(
       {this.timestamp,
@@ -11724,7 +11724,7 @@ class _$AcousticSystems extends AcousticSystems {
       (toBuilder()..update(updates)).build();
 
   @override
-  AcousticSystemsBuilder toBuilder() => new AcousticSystemsBuilder()..replace(this);
+  AcousticSystemsBuilder toBuilder() => AcousticSystemsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11825,7 +11825,7 @@ class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(AcousticSystems other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AcousticSystems;
   }
@@ -11838,7 +11838,7 @@ class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$AcousticSystems build() {
     final _$result = _$v ??
-        new _$AcousticSystems._(
+        _$AcousticSystems._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -11872,7 +11872,7 @@ class _$AcousticLink extends AcousticLink {
   final int integrity;
 
   factory _$AcousticLink([void updates(AcousticLinkBuilder b)]) =>
-      (new AcousticLinkBuilder()..update(updates)).build();
+      (AcousticLinkBuilder()..update(updates)).build();
 
   _$AcousticLink._(
       {this.timestamp,
@@ -11890,7 +11890,7 @@ class _$AcousticLink extends AcousticLink {
       (toBuilder()..update(updates)).build();
 
   @override
-  AcousticLinkBuilder toBuilder() => new AcousticLinkBuilder()..replace(this);
+  AcousticLinkBuilder toBuilder() => AcousticLinkBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -12007,7 +12007,7 @@ class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(AcousticLink other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AcousticLink;
   }
@@ -12020,7 +12020,7 @@ class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$AcousticLink build() {
     final _$result = _$v ??
-        new _$AcousticLink._(
+        _$AcousticLink._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -12052,7 +12052,7 @@ class _$Rpm extends Rpm {
   final int value;
 
   factory _$Rpm([void updates(RpmBuilder b)]) =>
-      (new RpmBuilder()..update(updates)).build();
+      (RpmBuilder()..update(updates)).build();
 
   _$Rpm._(
       {this.timestamp,
@@ -12068,7 +12068,7 @@ class _$Rpm extends Rpm {
       (toBuilder()..update(updates)).build();
 
   @override
-  RpmBuilder toBuilder() => new RpmBuilder()..replace(this);
+  RpmBuilder toBuilder() => RpmBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -12169,7 +12169,7 @@ class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   void replace(Rpm other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Rpm;
   }
@@ -12182,7 +12182,7 @@ class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   _$Rpm build() {
     final _$result = _$v ??
-        new _$Rpm._(
+        _$Rpm._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -12212,7 +12212,7 @@ class _$Voltage extends Voltage {
   final double value;
 
   factory _$Voltage([void updates(VoltageBuilder b)]) =>
-      (new VoltageBuilder()..update(updates)).build();
+      (VoltageBuilder()..update(updates)).build();
 
   _$Voltage._(
       {this.timestamp,
@@ -12228,7 +12228,7 @@ class _$Voltage extends Voltage {
       (toBuilder()..update(updates)).build();
 
   @override
-  VoltageBuilder toBuilder() => new VoltageBuilder()..replace(this);
+  VoltageBuilder toBuilder() => VoltageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -12329,7 +12329,7 @@ class VoltageBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(Voltage other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Voltage;
   }
@@ -12342,7 +12342,7 @@ class VoltageBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$Voltage build() {
     final _$result = _$v ??
-        new _$Voltage._(
+        _$Voltage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -12372,7 +12372,7 @@ class _$Current extends Current {
   final double value;
 
   factory _$Current([void updates(CurrentBuilder b)]) =>
-      (new CurrentBuilder()..update(updates)).build();
+      (CurrentBuilder()..update(updates)).build();
 
   _$Current._(
       {this.timestamp,
@@ -12388,7 +12388,7 @@ class _$Current extends Current {
       (toBuilder()..update(updates)).build();
 
   @override
-  CurrentBuilder toBuilder() => new CurrentBuilder()..replace(this);
+  CurrentBuilder toBuilder() => CurrentBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -12489,7 +12489,7 @@ class CurrentBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(Current other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Current;
   }
@@ -12502,7 +12502,7 @@ class CurrentBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$Current build() {
     final _$result = _$v ??
-        new _$Current._(
+        _$Current._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -12562,7 +12562,7 @@ class _$GpsFix extends GpsFix {
   final double vacc;
 
   factory _$GpsFix([void updates(GpsFixBuilder b)]) =>
-      (new GpsFixBuilder()..update(updates)).build();
+      (GpsFixBuilder()..update(updates)).build();
 
   _$GpsFix._(
       {this.timestamp,
@@ -12593,7 +12593,7 @@ class _$GpsFix extends GpsFix {
       (toBuilder()..update(updates)).build();
 
   @override
-  GpsFixBuilder toBuilder() => new GpsFixBuilder()..replace(this);
+  GpsFixBuilder toBuilder() => GpsFixBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -12814,7 +12814,7 @@ class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   void replace(GpsFix other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GpsFix;
   }
@@ -12827,7 +12827,7 @@ class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   _$GpsFix build() {
     final _$result = _$v ??
-        new _$GpsFix._(
+        _$GpsFix._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -12880,7 +12880,7 @@ class _$EulerAngles extends EulerAngles {
   final double psiMagnetic;
 
   factory _$EulerAngles([void updates(EulerAnglesBuilder b)]) =>
-      (new EulerAnglesBuilder()..update(updates)).build();
+      (EulerAnglesBuilder()..update(updates)).build();
 
   _$EulerAngles._(
       {this.timestamp,
@@ -12900,7 +12900,7 @@ class _$EulerAngles extends EulerAngles {
       (toBuilder()..update(updates)).build();
 
   @override
-  EulerAnglesBuilder toBuilder() => new EulerAnglesBuilder()..replace(this);
+  EulerAnglesBuilder toBuilder() => EulerAnglesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -13033,7 +13033,7 @@ class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(EulerAngles other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EulerAngles;
   }
@@ -13046,7 +13046,7 @@ class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$EulerAngles build() {
     final _$result = _$v ??
-        new _$EulerAngles._(
+        _$EulerAngles._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -13088,7 +13088,7 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
   final double timestep;
 
   factory _$EulerAnglesDelta([void updates(EulerAnglesDeltaBuilder b)]) =>
-      (new EulerAnglesDeltaBuilder()..update(updates)).build();
+      (EulerAnglesDeltaBuilder()..update(updates)).build();
 
   _$EulerAnglesDelta._(
       {this.timestamp,
@@ -13108,7 +13108,7 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
       (toBuilder()..update(updates)).build();
 
   @override
-  EulerAnglesDeltaBuilder toBuilder() => new EulerAnglesDeltaBuilder()..replace(this);
+  EulerAnglesDeltaBuilder toBuilder() => EulerAnglesDeltaBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -13241,7 +13241,7 @@ class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(EulerAnglesDelta other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EulerAnglesDelta;
   }
@@ -13254,7 +13254,7 @@ class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$EulerAnglesDelta build() {
     final _$result = _$v ??
-        new _$EulerAnglesDelta._(
+        _$EulerAnglesDelta._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -13294,7 +13294,7 @@ class _$AngularVelocity extends AngularVelocity {
   final double z;
 
   factory _$AngularVelocity([void updates(AngularVelocityBuilder b)]) =>
-      (new AngularVelocityBuilder()..update(updates)).build();
+      (AngularVelocityBuilder()..update(updates)).build();
 
   _$AngularVelocity._(
       {this.timestamp,
@@ -13313,7 +13313,7 @@ class _$AngularVelocity extends AngularVelocity {
       (toBuilder()..update(updates)).build();
 
   @override
-  AngularVelocityBuilder toBuilder() => new AngularVelocityBuilder()..replace(this);
+  AngularVelocityBuilder toBuilder() => AngularVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -13438,7 +13438,7 @@ class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(AngularVelocity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AngularVelocity;
   }
@@ -13451,7 +13451,7 @@ class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$AngularVelocity build() {
     final _$result = _$v ??
-        new _$AngularVelocity._(
+        _$AngularVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -13490,7 +13490,7 @@ class _$Acceleration extends Acceleration {
   final double z;
 
   factory _$Acceleration([void updates(AccelerationBuilder b)]) =>
-      (new AccelerationBuilder()..update(updates)).build();
+      (AccelerationBuilder()..update(updates)).build();
 
   _$Acceleration._(
       {this.timestamp,
@@ -13509,7 +13509,7 @@ class _$Acceleration extends Acceleration {
       (toBuilder()..update(updates)).build();
 
   @override
-  AccelerationBuilder toBuilder() => new AccelerationBuilder()..replace(this);
+  AccelerationBuilder toBuilder() => AccelerationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -13634,7 +13634,7 @@ class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(Acceleration other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Acceleration;
   }
@@ -13647,7 +13647,7 @@ class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$Acceleration build() {
     final _$result = _$v ??
-        new _$Acceleration._(
+        _$Acceleration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -13686,7 +13686,7 @@ class _$MagneticField extends MagneticField {
   final double z;
 
   factory _$MagneticField([void updates(MagneticFieldBuilder b)]) =>
-      (new MagneticFieldBuilder()..update(updates)).build();
+      (MagneticFieldBuilder()..update(updates)).build();
 
   _$MagneticField._(
       {this.timestamp,
@@ -13705,7 +13705,7 @@ class _$MagneticField extends MagneticField {
       (toBuilder()..update(updates)).build();
 
   @override
-  MagneticFieldBuilder toBuilder() => new MagneticFieldBuilder()..replace(this);
+  MagneticFieldBuilder toBuilder() => MagneticFieldBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -13830,7 +13830,7 @@ class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(MagneticField other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$MagneticField;
   }
@@ -13843,7 +13843,7 @@ class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$MagneticField build() {
     final _$result = _$v ??
-        new _$MagneticField._(
+        _$MagneticField._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -13882,7 +13882,7 @@ class _$GroundVelocity extends GroundVelocity {
   final double z;
 
   factory _$GroundVelocity([void updates(GroundVelocityBuilder b)]) =>
-      (new GroundVelocityBuilder()..update(updates)).build();
+      (GroundVelocityBuilder()..update(updates)).build();
 
   _$GroundVelocity._(
       {this.timestamp,
@@ -13901,7 +13901,7 @@ class _$GroundVelocity extends GroundVelocity {
       (toBuilder()..update(updates)).build();
 
   @override
-  GroundVelocityBuilder toBuilder() => new GroundVelocityBuilder()..replace(this);
+  GroundVelocityBuilder toBuilder() => GroundVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -14026,7 +14026,7 @@ class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(GroundVelocity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GroundVelocity;
   }
@@ -14039,7 +14039,7 @@ class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$GroundVelocity build() {
     final _$result = _$v ??
-        new _$GroundVelocity._(
+        _$GroundVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -14078,7 +14078,7 @@ class _$WaterVelocity extends WaterVelocity {
   final double z;
 
   factory _$WaterVelocity([void updates(WaterVelocityBuilder b)]) =>
-      (new WaterVelocityBuilder()..update(updates)).build();
+      (WaterVelocityBuilder()..update(updates)).build();
 
   _$WaterVelocity._(
       {this.timestamp,
@@ -14097,7 +14097,7 @@ class _$WaterVelocity extends WaterVelocity {
       (toBuilder()..update(updates)).build();
 
   @override
-  WaterVelocityBuilder toBuilder() => new WaterVelocityBuilder()..replace(this);
+  WaterVelocityBuilder toBuilder() => WaterVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -14222,7 +14222,7 @@ class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(WaterVelocity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$WaterVelocity;
   }
@@ -14235,7 +14235,7 @@ class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$WaterVelocity build() {
     final _$result = _$v ??
-        new _$WaterVelocity._(
+        _$WaterVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -14274,7 +14274,7 @@ class _$VelocityDelta extends VelocityDelta {
   final double z;
 
   factory _$VelocityDelta([void updates(VelocityDeltaBuilder b)]) =>
-      (new VelocityDeltaBuilder()..update(updates)).build();
+      (VelocityDeltaBuilder()..update(updates)).build();
 
   _$VelocityDelta._(
       {this.timestamp,
@@ -14293,7 +14293,7 @@ class _$VelocityDelta extends VelocityDelta {
       (toBuilder()..update(updates)).build();
 
   @override
-  VelocityDeltaBuilder toBuilder() => new VelocityDeltaBuilder()..replace(this);
+  VelocityDeltaBuilder toBuilder() => VelocityDeltaBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -14418,7 +14418,7 @@ class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(VelocityDelta other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VelocityDelta;
   }
@@ -14431,7 +14431,7 @@ class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$VelocityDelta build() {
     final _$result = _$v ??
-        new _$VelocityDelta._(
+        _$VelocityDelta._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -14470,7 +14470,7 @@ class _$Distance extends Distance {
   final double value;
 
   factory _$Distance([void updates(DistanceBuilder b)]) =>
-      (new DistanceBuilder()..update(updates)).build();
+      (DistanceBuilder()..update(updates)).build();
 
   _$Distance._(
       {this.timestamp,
@@ -14489,7 +14489,7 @@ class _$Distance extends Distance {
       (toBuilder()..update(updates)).build();
 
   @override
-  DistanceBuilder toBuilder() => new DistanceBuilder()..replace(this);
+  DistanceBuilder toBuilder() => DistanceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -14614,7 +14614,7 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(Distance other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Distance;
   }
@@ -14627,7 +14627,7 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$Distance build() {
     final _$result = _$v ??
-        new _$Distance._(
+        _$Distance._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -14660,7 +14660,7 @@ class _$Temperature extends Temperature {
   final double value;
 
   factory _$Temperature([void updates(TemperatureBuilder b)]) =>
-      (new TemperatureBuilder()..update(updates)).build();
+      (TemperatureBuilder()..update(updates)).build();
 
   _$Temperature._(
       {this.timestamp,
@@ -14676,7 +14676,7 @@ class _$Temperature extends Temperature {
       (toBuilder()..update(updates)).build();
 
   @override
-  TemperatureBuilder toBuilder() => new TemperatureBuilder()..replace(this);
+  TemperatureBuilder toBuilder() => TemperatureBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -14777,7 +14777,7 @@ class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(Temperature other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Temperature;
   }
@@ -14790,7 +14790,7 @@ class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$Temperature build() {
     final _$result = _$v ??
-        new _$Temperature._(
+        _$Temperature._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -14820,7 +14820,7 @@ class _$Pressure extends Pressure {
   final double value;
 
   factory _$Pressure([void updates(PressureBuilder b)]) =>
-      (new PressureBuilder()..update(updates)).build();
+      (PressureBuilder()..update(updates)).build();
 
   _$Pressure._(
       {this.timestamp,
@@ -14836,7 +14836,7 @@ class _$Pressure extends Pressure {
       (toBuilder()..update(updates)).build();
 
   @override
-  PressureBuilder toBuilder() => new PressureBuilder()..replace(this);
+  PressureBuilder toBuilder() => PressureBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -14937,7 +14937,7 @@ class PressureBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(Pressure other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Pressure;
   }
@@ -14950,7 +14950,7 @@ class PressureBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$Pressure build() {
     final _$result = _$v ??
-        new _$Pressure._(
+        _$Pressure._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -14980,7 +14980,7 @@ class _$Depth extends Depth {
   final double value;
 
   factory _$Depth([void updates(DepthBuilder b)]) =>
-      (new DepthBuilder()..update(updates)).build();
+      (DepthBuilder()..update(updates)).build();
 
   _$Depth._(
       {this.timestamp,
@@ -14996,7 +14996,7 @@ class _$Depth extends Depth {
       (toBuilder()..update(updates)).build();
 
   @override
-  DepthBuilder toBuilder() => new DepthBuilder()..replace(this);
+  DepthBuilder toBuilder() => DepthBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -15097,7 +15097,7 @@ class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(Depth other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Depth;
   }
@@ -15110,7 +15110,7 @@ class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$Depth build() {
     final _$result = _$v ??
-        new _$Depth._(
+        _$Depth._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -15140,7 +15140,7 @@ class _$DepthOffset extends DepthOffset {
   final double value;
 
   factory _$DepthOffset([void updates(DepthOffsetBuilder b)]) =>
-      (new DepthOffsetBuilder()..update(updates)).build();
+      (DepthOffsetBuilder()..update(updates)).build();
 
   _$DepthOffset._(
       {this.timestamp,
@@ -15156,7 +15156,7 @@ class _$DepthOffset extends DepthOffset {
       (toBuilder()..update(updates)).build();
 
   @override
-  DepthOffsetBuilder toBuilder() => new DepthOffsetBuilder()..replace(this);
+  DepthOffsetBuilder toBuilder() => DepthOffsetBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -15257,7 +15257,7 @@ class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(DepthOffset other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DepthOffset;
   }
@@ -15270,7 +15270,7 @@ class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$DepthOffset build() {
     final _$result = _$v ??
-        new _$DepthOffset._(
+        _$DepthOffset._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -15300,7 +15300,7 @@ class _$SoundSpeed extends SoundSpeed {
   final double value;
 
   factory _$SoundSpeed([void updates(SoundSpeedBuilder b)]) =>
-      (new SoundSpeedBuilder()..update(updates)).build();
+      (SoundSpeedBuilder()..update(updates)).build();
 
   _$SoundSpeed._(
       {this.timestamp,
@@ -15316,7 +15316,7 @@ class _$SoundSpeed extends SoundSpeed {
       (toBuilder()..update(updates)).build();
 
   @override
-  SoundSpeedBuilder toBuilder() => new SoundSpeedBuilder()..replace(this);
+  SoundSpeedBuilder toBuilder() => SoundSpeedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -15417,7 +15417,7 @@ class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(SoundSpeed other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SoundSpeed;
   }
@@ -15430,7 +15430,7 @@ class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$SoundSpeed build() {
     final _$result = _$v ??
-        new _$SoundSpeed._(
+        _$SoundSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -15460,7 +15460,7 @@ class _$WaterDensity extends WaterDensity {
   final double value;
 
   factory _$WaterDensity([void updates(WaterDensityBuilder b)]) =>
-      (new WaterDensityBuilder()..update(updates)).build();
+      (WaterDensityBuilder()..update(updates)).build();
 
   _$WaterDensity._(
       {this.timestamp,
@@ -15476,7 +15476,7 @@ class _$WaterDensity extends WaterDensity {
       (toBuilder()..update(updates)).build();
 
   @override
-  WaterDensityBuilder toBuilder() => new WaterDensityBuilder()..replace(this);
+  WaterDensityBuilder toBuilder() => WaterDensityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -15577,7 +15577,7 @@ class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(WaterDensity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$WaterDensity;
   }
@@ -15590,7 +15590,7 @@ class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$WaterDensity build() {
     final _$result = _$v ??
-        new _$WaterDensity._(
+        _$WaterDensity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -15620,7 +15620,7 @@ class _$Conductivity extends Conductivity {
   final double value;
 
   factory _$Conductivity([void updates(ConductivityBuilder b)]) =>
-      (new ConductivityBuilder()..update(updates)).build();
+      (ConductivityBuilder()..update(updates)).build();
 
   _$Conductivity._(
       {this.timestamp,
@@ -15636,7 +15636,7 @@ class _$Conductivity extends Conductivity {
       (toBuilder()..update(updates)).build();
 
   @override
-  ConductivityBuilder toBuilder() => new ConductivityBuilder()..replace(this);
+  ConductivityBuilder toBuilder() => ConductivityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -15737,7 +15737,7 @@ class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(Conductivity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Conductivity;
   }
@@ -15750,7 +15750,7 @@ class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$Conductivity build() {
     final _$result = _$v ??
-        new _$Conductivity._(
+        _$Conductivity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -15780,7 +15780,7 @@ class _$Salinity extends Salinity {
   final double value;
 
   factory _$Salinity([void updates(SalinityBuilder b)]) =>
-      (new SalinityBuilder()..update(updates)).build();
+      (SalinityBuilder()..update(updates)).build();
 
   _$Salinity._(
       {this.timestamp,
@@ -15796,7 +15796,7 @@ class _$Salinity extends Salinity {
       (toBuilder()..update(updates)).build();
 
   @override
-  SalinityBuilder toBuilder() => new SalinityBuilder()..replace(this);
+  SalinityBuilder toBuilder() => SalinityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -15897,7 +15897,7 @@ class SalinityBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(Salinity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Salinity;
   }
@@ -15910,7 +15910,7 @@ class SalinityBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$Salinity build() {
     final _$result = _$v ??
-        new _$Salinity._(
+        _$Salinity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -15944,7 +15944,7 @@ class _$WindSpeed extends WindSpeed {
   final double turbulence;
 
   factory _$WindSpeed([void updates(WindSpeedBuilder b)]) =>
-      (new WindSpeedBuilder()..update(updates)).build();
+      (WindSpeedBuilder()..update(updates)).build();
 
   _$WindSpeed._(
       {this.timestamp,
@@ -15962,7 +15962,7 @@ class _$WindSpeed extends WindSpeed {
       (toBuilder()..update(updates)).build();
 
   @override
-  WindSpeedBuilder toBuilder() => new WindSpeedBuilder()..replace(this);
+  WindSpeedBuilder toBuilder() => WindSpeedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -16079,7 +16079,7 @@ class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(WindSpeed other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$WindSpeed;
   }
@@ -16092,7 +16092,7 @@ class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$WindSpeed build() {
     final _$result = _$v ??
-        new _$WindSpeed._(
+        _$WindSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -16124,7 +16124,7 @@ class _$RelativeHumidity extends RelativeHumidity {
   final double value;
 
   factory _$RelativeHumidity([void updates(RelativeHumidityBuilder b)]) =>
-      (new RelativeHumidityBuilder()..update(updates)).build();
+      (RelativeHumidityBuilder()..update(updates)).build();
 
   _$RelativeHumidity._(
       {this.timestamp,
@@ -16140,7 +16140,7 @@ class _$RelativeHumidity extends RelativeHumidity {
       (toBuilder()..update(updates)).build();
 
   @override
-  RelativeHumidityBuilder toBuilder() => new RelativeHumidityBuilder()..replace(this);
+  RelativeHumidityBuilder toBuilder() => RelativeHumidityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -16241,7 +16241,7 @@ class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(RelativeHumidity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RelativeHumidity;
   }
@@ -16254,7 +16254,7 @@ class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$RelativeHumidity build() {
     final _$result = _$v ??
-        new _$RelativeHumidity._(
+        _$RelativeHumidity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -16284,7 +16284,7 @@ class _$DevDataText extends DevDataText {
   final String value;
 
   factory _$DevDataText([void updates(DevDataTextBuilder b)]) =>
-      (new DevDataTextBuilder()..update(updates)).build();
+      (DevDataTextBuilder()..update(updates)).build();
 
   _$DevDataText._(
       {this.timestamp,
@@ -16300,7 +16300,7 @@ class _$DevDataText extends DevDataText {
       (toBuilder()..update(updates)).build();
 
   @override
-  DevDataTextBuilder toBuilder() => new DevDataTextBuilder()..replace(this);
+  DevDataTextBuilder toBuilder() => DevDataTextBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -16401,7 +16401,7 @@ class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(DevDataText other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DevDataText;
   }
@@ -16414,7 +16414,7 @@ class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$DevDataText build() {
     final _$result = _$v ??
-        new _$DevDataText._(
+        _$DevDataText._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -16444,7 +16444,7 @@ class _$DevDataBinary extends DevDataBinary {
   final List<int> value;
 
   factory _$DevDataBinary([void updates(DevDataBinaryBuilder b)]) =>
-      (new DevDataBinaryBuilder()..update(updates)).build();
+      (DevDataBinaryBuilder()..update(updates)).build();
 
   _$DevDataBinary._(
       {this.timestamp,
@@ -16460,7 +16460,7 @@ class _$DevDataBinary extends DevDataBinary {
       (toBuilder()..update(updates)).build();
 
   @override
-  DevDataBinaryBuilder toBuilder() => new DevDataBinaryBuilder()..replace(this);
+  DevDataBinaryBuilder toBuilder() => DevDataBinaryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -16561,7 +16561,7 @@ class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(DevDataBinary other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DevDataBinary;
   }
@@ -16574,7 +16574,7 @@ class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$DevDataBinary build() {
     final _$result = _$v ??
-        new _$DevDataBinary._(
+        _$DevDataBinary._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -16604,7 +16604,7 @@ class _$Force extends Force {
   final double value;
 
   factory _$Force([void updates(ForceBuilder b)]) =>
-      (new ForceBuilder()..update(updates)).build();
+      (ForceBuilder()..update(updates)).build();
 
   _$Force._(
       {this.timestamp,
@@ -16620,7 +16620,7 @@ class _$Force extends Force {
       (toBuilder()..update(updates)).build();
 
   @override
-  ForceBuilder toBuilder() => new ForceBuilder()..replace(this);
+  ForceBuilder toBuilder() => ForceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -16721,7 +16721,7 @@ class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(Force other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Force;
   }
@@ -16734,7 +16734,7 @@ class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$Force build() {
     final _$result = _$v ??
-        new _$Force._(
+        _$Force._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -16778,7 +16778,7 @@ class _$SonarData extends SonarData {
   final List<int> data;
 
   factory _$SonarData([void updates(SonarDataBuilder b)]) =>
-      (new SonarDataBuilder()..update(updates)).build();
+      (SonarDataBuilder()..update(updates)).build();
 
   _$SonarData._(
       {this.timestamp,
@@ -16801,7 +16801,7 @@ class _$SonarData extends SonarData {
       (toBuilder()..update(updates)).build();
 
   @override
-  SonarDataBuilder toBuilder() => new SonarDataBuilder()..replace(this);
+  SonarDataBuilder toBuilder() => SonarDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -16958,7 +16958,7 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(SonarData other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SonarData;
   }
@@ -16971,7 +16971,7 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$SonarData build() {
     final _$result = _$v ??
-        new _$SonarData._(
+        _$SonarData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -17006,7 +17006,7 @@ class _$Pulse extends Pulse {
 
 
   factory _$Pulse([void updates(PulseBuilder b)]) =>
-      (new PulseBuilder()..update(updates)).build();
+      (PulseBuilder()..update(updates)).build();
 
   _$Pulse._(
       {this.timestamp,
@@ -17021,7 +17021,7 @@ class _$Pulse extends Pulse {
       (toBuilder()..update(updates)).build();
 
   @override
-  PulseBuilder toBuilder() => new PulseBuilder()..replace(this);
+  PulseBuilder toBuilder() => PulseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -17114,7 +17114,7 @@ class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(Pulse other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Pulse;
   }
@@ -17127,7 +17127,7 @@ class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$Pulse build() {
     final _$result = _$v ??
-        new _$Pulse._(
+        _$Pulse._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -17156,7 +17156,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
   final PulseDetectionControlEnumOp op;
 
   factory _$PulseDetectionControl([void updates(PulseDetectionControlBuilder b)]) =>
-      (new PulseDetectionControlBuilder()..update(updates)).build();
+      (PulseDetectionControlBuilder()..update(updates)).build();
 
   _$PulseDetectionControl._(
       {this.timestamp,
@@ -17172,7 +17172,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  PulseDetectionControlBuilder toBuilder() => new PulseDetectionControlBuilder()..replace(this);
+  PulseDetectionControlBuilder toBuilder() => PulseDetectionControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -17273,7 +17273,7 @@ class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   void replace(PulseDetectionControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PulseDetectionControl;
   }
@@ -17286,7 +17286,7 @@ class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   _$PulseDetectionControl build() {
     final _$result = _$v ??
-        new _$PulseDetectionControl._(
+        _$PulseDetectionControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -17320,7 +17320,7 @@ class _$FuelLevel extends FuelLevel {
   final String opmodes;
 
   factory _$FuelLevel([void updates(FuelLevelBuilder b)]) =>
-      (new FuelLevelBuilder()..update(updates)).build();
+      (FuelLevelBuilder()..update(updates)).build();
 
   _$FuelLevel._(
       {this.timestamp,
@@ -17338,7 +17338,7 @@ class _$FuelLevel extends FuelLevel {
       (toBuilder()..update(updates)).build();
 
   @override
-  FuelLevelBuilder toBuilder() => new FuelLevelBuilder()..replace(this);
+  FuelLevelBuilder toBuilder() => FuelLevelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -17455,7 +17455,7 @@ class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(FuelLevel other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FuelLevel;
   }
@@ -17468,7 +17468,7 @@ class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$FuelLevel build() {
     final _$result = _$v ??
-        new _$FuelLevel._(
+        _$FuelLevel._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -17528,7 +17528,7 @@ class _$GpsNavData extends GpsNavData {
   final double cacc;
 
   factory _$GpsNavData([void updates(GpsNavDataBuilder b)]) =>
-      (new GpsNavDataBuilder()..update(updates)).build();
+      (GpsNavDataBuilder()..update(updates)).build();
 
   _$GpsNavData._(
       {this.timestamp,
@@ -17558,7 +17558,7 @@ class _$GpsNavData extends GpsNavData {
       (toBuilder()..update(updates)).build();
 
   @override
-  GpsNavDataBuilder toBuilder() => new GpsNavDataBuilder()..replace(this);
+  GpsNavDataBuilder toBuilder() => GpsNavDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -17771,7 +17771,7 @@ class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(GpsNavData other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GpsNavData;
   }
@@ -17784,7 +17784,7 @@ class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$GpsNavData build() {
     final _$result = _$v ??
-        new _$GpsNavData._(
+        _$GpsNavData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -17830,7 +17830,7 @@ class _$ServoPosition extends ServoPosition {
   final double value;
 
   factory _$ServoPosition([void updates(ServoPositionBuilder b)]) =>
-      (new ServoPositionBuilder()..update(updates)).build();
+      (ServoPositionBuilder()..update(updates)).build();
 
   _$ServoPosition._(
       {this.timestamp,
@@ -17847,7 +17847,7 @@ class _$ServoPosition extends ServoPosition {
       (toBuilder()..update(updates)).build();
 
   @override
-  ServoPositionBuilder toBuilder() => new ServoPositionBuilder()..replace(this);
+  ServoPositionBuilder toBuilder() => ServoPositionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -17956,7 +17956,7 @@ class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ServoPosition other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ServoPosition;
   }
@@ -17969,7 +17969,7 @@ class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ServoPosition build() {
     final _$result = _$v ??
-        new _$ServoPosition._(
+        _$ServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -18010,7 +18010,7 @@ class _$DeviceState extends DeviceState {
   final double psi;
 
   factory _$DeviceState([void updates(DeviceStateBuilder b)]) =>
-      (new DeviceStateBuilder()..update(updates)).build();
+      (DeviceStateBuilder()..update(updates)).build();
 
   _$DeviceState._(
       {this.timestamp,
@@ -18031,7 +18031,7 @@ class _$DeviceState extends DeviceState {
       (toBuilder()..update(updates)).build();
 
   @override
-  DeviceStateBuilder toBuilder() => new DeviceStateBuilder()..replace(this);
+  DeviceStateBuilder toBuilder() => DeviceStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -18172,7 +18172,7 @@ class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(DeviceState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DeviceState;
   }
@@ -18185,7 +18185,7 @@ class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$DeviceState build() {
     final _$result = _$v ??
-        new _$DeviceState._(
+        _$DeviceState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -18222,7 +18222,7 @@ class _$BeamConfig extends BeamConfig {
   final double beamHeight;
 
   factory _$BeamConfig([void updates(BeamConfigBuilder b)]) =>
-      (new BeamConfigBuilder()..update(updates)).build();
+      (BeamConfigBuilder()..update(updates)).build();
 
   _$BeamConfig._(
       {this.timestamp,
@@ -18239,7 +18239,7 @@ class _$BeamConfig extends BeamConfig {
       (toBuilder()..update(updates)).build();
 
   @override
-  BeamConfigBuilder toBuilder() => new BeamConfigBuilder()..replace(this);
+  BeamConfigBuilder toBuilder() => BeamConfigBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -18348,7 +18348,7 @@ class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(BeamConfig other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$BeamConfig;
   }
@@ -18361,7 +18361,7 @@ class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$BeamConfig build() {
     final _$result = _$v ??
-        new _$BeamConfig._(
+        _$BeamConfig._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -18392,7 +18392,7 @@ class _$DataSanity extends DataSanity {
   final DataSanityEnumSane sane;
 
   factory _$DataSanity([void updates(DataSanityBuilder b)]) =>
-      (new DataSanityBuilder()..update(updates)).build();
+      (DataSanityBuilder()..update(updates)).build();
 
   _$DataSanity._(
       {this.timestamp,
@@ -18408,7 +18408,7 @@ class _$DataSanity extends DataSanity {
       (toBuilder()..update(updates)).build();
 
   @override
-  DataSanityBuilder toBuilder() => new DataSanityBuilder()..replace(this);
+  DataSanityBuilder toBuilder() => DataSanityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -18509,7 +18509,7 @@ class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(DataSanity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DataSanity;
   }
@@ -18522,7 +18522,7 @@ class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$DataSanity build() {
     final _$result = _$v ??
-        new _$DataSanity._(
+        _$DataSanity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -18552,7 +18552,7 @@ class _$RhodamineDye extends RhodamineDye {
   final double value;
 
   factory _$RhodamineDye([void updates(RhodamineDyeBuilder b)]) =>
-      (new RhodamineDyeBuilder()..update(updates)).build();
+      (RhodamineDyeBuilder()..update(updates)).build();
 
   _$RhodamineDye._(
       {this.timestamp,
@@ -18568,7 +18568,7 @@ class _$RhodamineDye extends RhodamineDye {
       (toBuilder()..update(updates)).build();
 
   @override
-  RhodamineDyeBuilder toBuilder() => new RhodamineDyeBuilder()..replace(this);
+  RhodamineDyeBuilder toBuilder() => RhodamineDyeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -18669,7 +18669,7 @@ class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(RhodamineDye other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RhodamineDye;
   }
@@ -18682,7 +18682,7 @@ class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$RhodamineDye build() {
     final _$result = _$v ??
-        new _$RhodamineDye._(
+        _$RhodamineDye._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -18712,7 +18712,7 @@ class _$CrudeOil extends CrudeOil {
   final double value;
 
   factory _$CrudeOil([void updates(CrudeOilBuilder b)]) =>
-      (new CrudeOilBuilder()..update(updates)).build();
+      (CrudeOilBuilder()..update(updates)).build();
 
   _$CrudeOil._(
       {this.timestamp,
@@ -18728,7 +18728,7 @@ class _$CrudeOil extends CrudeOil {
       (toBuilder()..update(updates)).build();
 
   @override
-  CrudeOilBuilder toBuilder() => new CrudeOilBuilder()..replace(this);
+  CrudeOilBuilder toBuilder() => CrudeOilBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -18829,7 +18829,7 @@ class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(CrudeOil other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CrudeOil;
   }
@@ -18842,7 +18842,7 @@ class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$CrudeOil build() {
     final _$result = _$v ??
-        new _$CrudeOil._(
+        _$CrudeOil._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -18872,7 +18872,7 @@ class _$FineOil extends FineOil {
   final double value;
 
   factory _$FineOil([void updates(FineOilBuilder b)]) =>
-      (new FineOilBuilder()..update(updates)).build();
+      (FineOilBuilder()..update(updates)).build();
 
   _$FineOil._(
       {this.timestamp,
@@ -18888,7 +18888,7 @@ class _$FineOil extends FineOil {
       (toBuilder()..update(updates)).build();
 
   @override
-  FineOilBuilder toBuilder() => new FineOilBuilder()..replace(this);
+  FineOilBuilder toBuilder() => FineOilBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -18989,7 +18989,7 @@ class FineOilBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(FineOil other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FineOil;
   }
@@ -19002,7 +19002,7 @@ class FineOilBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$FineOil build() {
     final _$result = _$v ??
-        new _$FineOil._(
+        _$FineOil._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -19032,7 +19032,7 @@ class _$Turbidity extends Turbidity {
   final double value;
 
   factory _$Turbidity([void updates(TurbidityBuilder b)]) =>
-      (new TurbidityBuilder()..update(updates)).build();
+      (TurbidityBuilder()..update(updates)).build();
 
   _$Turbidity._(
       {this.timestamp,
@@ -19048,7 +19048,7 @@ class _$Turbidity extends Turbidity {
       (toBuilder()..update(updates)).build();
 
   @override
-  TurbidityBuilder toBuilder() => new TurbidityBuilder()..replace(this);
+  TurbidityBuilder toBuilder() => TurbidityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -19149,7 +19149,7 @@ class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(Turbidity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Turbidity;
   }
@@ -19162,7 +19162,7 @@ class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$Turbidity build() {
     final _$result = _$v ??
-        new _$Turbidity._(
+        _$Turbidity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -19192,7 +19192,7 @@ class _$Chlorophyll extends Chlorophyll {
   final double value;
 
   factory _$Chlorophyll([void updates(ChlorophyllBuilder b)]) =>
-      (new ChlorophyllBuilder()..update(updates)).build();
+      (ChlorophyllBuilder()..update(updates)).build();
 
   _$Chlorophyll._(
       {this.timestamp,
@@ -19208,7 +19208,7 @@ class _$Chlorophyll extends Chlorophyll {
       (toBuilder()..update(updates)).build();
 
   @override
-  ChlorophyllBuilder toBuilder() => new ChlorophyllBuilder()..replace(this);
+  ChlorophyllBuilder toBuilder() => ChlorophyllBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -19309,7 +19309,7 @@ class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(Chlorophyll other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Chlorophyll;
   }
@@ -19322,7 +19322,7 @@ class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$Chlorophyll build() {
     final _$result = _$v ??
-        new _$Chlorophyll._(
+        _$Chlorophyll._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -19352,7 +19352,7 @@ class _$Fluorescein extends Fluorescein {
   final double value;
 
   factory _$Fluorescein([void updates(FluoresceinBuilder b)]) =>
-      (new FluoresceinBuilder()..update(updates)).build();
+      (FluoresceinBuilder()..update(updates)).build();
 
   _$Fluorescein._(
       {this.timestamp,
@@ -19368,7 +19368,7 @@ class _$Fluorescein extends Fluorescein {
       (toBuilder()..update(updates)).build();
 
   @override
-  FluoresceinBuilder toBuilder() => new FluoresceinBuilder()..replace(this);
+  FluoresceinBuilder toBuilder() => FluoresceinBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -19469,7 +19469,7 @@ class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(Fluorescein other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Fluorescein;
   }
@@ -19482,7 +19482,7 @@ class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$Fluorescein build() {
     final _$result = _$v ??
-        new _$Fluorescein._(
+        _$Fluorescein._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -19512,7 +19512,7 @@ class _$Phycocyanin extends Phycocyanin {
   final double value;
 
   factory _$Phycocyanin([void updates(PhycocyaninBuilder b)]) =>
-      (new PhycocyaninBuilder()..update(updates)).build();
+      (PhycocyaninBuilder()..update(updates)).build();
 
   _$Phycocyanin._(
       {this.timestamp,
@@ -19528,7 +19528,7 @@ class _$Phycocyanin extends Phycocyanin {
       (toBuilder()..update(updates)).build();
 
   @override
-  PhycocyaninBuilder toBuilder() => new PhycocyaninBuilder()..replace(this);
+  PhycocyaninBuilder toBuilder() => PhycocyaninBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -19629,7 +19629,7 @@ class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(Phycocyanin other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Phycocyanin;
   }
@@ -19642,7 +19642,7 @@ class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$Phycocyanin build() {
     final _$result = _$v ??
-        new _$Phycocyanin._(
+        _$Phycocyanin._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -19672,7 +19672,7 @@ class _$Phycoerythrin extends Phycoerythrin {
   final double value;
 
   factory _$Phycoerythrin([void updates(PhycoerythrinBuilder b)]) =>
-      (new PhycoerythrinBuilder()..update(updates)).build();
+      (PhycoerythrinBuilder()..update(updates)).build();
 
   _$Phycoerythrin._(
       {this.timestamp,
@@ -19688,7 +19688,7 @@ class _$Phycoerythrin extends Phycoerythrin {
       (toBuilder()..update(updates)).build();
 
   @override
-  PhycoerythrinBuilder toBuilder() => new PhycoerythrinBuilder()..replace(this);
+  PhycoerythrinBuilder toBuilder() => PhycoerythrinBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -19789,7 +19789,7 @@ class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(Phycoerythrin other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Phycoerythrin;
   }
@@ -19802,7 +19802,7 @@ class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$Phycoerythrin build() {
     final _$result = _$v ??
-        new _$Phycoerythrin._(
+        _$Phycoerythrin._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -19860,7 +19860,7 @@ class _$GpsFixRtk extends GpsFixRtk {
   final double iarRatio;
 
   factory _$GpsFixRtk([void updates(GpsFixRtkBuilder b)]) =>
-      (new GpsFixRtkBuilder()..update(updates)).build();
+      (GpsFixRtkBuilder()..update(updates)).build();
 
   _$GpsFixRtk._(
       {this.timestamp,
@@ -19890,7 +19890,7 @@ class _$GpsFixRtk extends GpsFixRtk {
       (toBuilder()..update(updates)).build();
 
   @override
-  GpsFixRtkBuilder toBuilder() => new GpsFixRtkBuilder()..replace(this);
+  GpsFixRtkBuilder toBuilder() => GpsFixRtkBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -20103,7 +20103,7 @@ class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(GpsFixRtk other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GpsFixRtk;
   }
@@ -20116,7 +20116,7 @@ class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$GpsFixRtk build() {
     final _$result = _$v ??
-        new _$GpsFixRtk._(
+        _$GpsFixRtk._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -20162,7 +20162,7 @@ class _$ExternalNavData extends ExternalNavData {
   final ExternalNavDataEnumType type;
 
   factory _$ExternalNavData([void updates(ExternalNavDataBuilder b)]) =>
-      (new ExternalNavDataBuilder()..update(updates)).build();
+      (ExternalNavDataBuilder()..update(updates)).build();
 
   _$ExternalNavData._(
       {this.timestamp,
@@ -20179,7 +20179,7 @@ class _$ExternalNavData extends ExternalNavData {
       (toBuilder()..update(updates)).build();
 
   @override
-  ExternalNavDataBuilder toBuilder() => new ExternalNavDataBuilder()..replace(this);
+  ExternalNavDataBuilder toBuilder() => ExternalNavDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -20288,7 +20288,7 @@ class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(ExternalNavData other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ExternalNavData;
   }
@@ -20301,7 +20301,7 @@ class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$ExternalNavData build() {
     final _$result = _$v ??
-        new _$ExternalNavData._(
+        _$ExternalNavData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -20332,7 +20332,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
   final double value;
 
   factory _$DissolvedOxygen([void updates(DissolvedOxygenBuilder b)]) =>
-      (new DissolvedOxygenBuilder()..update(updates)).build();
+      (DissolvedOxygenBuilder()..update(updates)).build();
 
   _$DissolvedOxygen._(
       {this.timestamp,
@@ -20348,7 +20348,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
       (toBuilder()..update(updates)).build();
 
   @override
-  DissolvedOxygenBuilder toBuilder() => new DissolvedOxygenBuilder()..replace(this);
+  DissolvedOxygenBuilder toBuilder() => DissolvedOxygenBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -20449,7 +20449,7 @@ class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(DissolvedOxygen other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DissolvedOxygen;
   }
@@ -20462,7 +20462,7 @@ class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$DissolvedOxygen build() {
     final _$result = _$v ??
-        new _$DissolvedOxygen._(
+        _$DissolvedOxygen._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -20492,7 +20492,7 @@ class _$AirSaturation extends AirSaturation {
   final double value;
 
   factory _$AirSaturation([void updates(AirSaturationBuilder b)]) =>
-      (new AirSaturationBuilder()..update(updates)).build();
+      (AirSaturationBuilder()..update(updates)).build();
 
   _$AirSaturation._(
       {this.timestamp,
@@ -20508,7 +20508,7 @@ class _$AirSaturation extends AirSaturation {
       (toBuilder()..update(updates)).build();
 
   @override
-  AirSaturationBuilder toBuilder() => new AirSaturationBuilder()..replace(this);
+  AirSaturationBuilder toBuilder() => AirSaturationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -20609,7 +20609,7 @@ class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(AirSaturation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AirSaturation;
   }
@@ -20622,7 +20622,7 @@ class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$AirSaturation build() {
     final _$result = _$v ??
-        new _$AirSaturation._(
+        _$AirSaturation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -20652,7 +20652,7 @@ class _$Throttle extends Throttle {
   final double value;
 
   factory _$Throttle([void updates(ThrottleBuilder b)]) =>
-      (new ThrottleBuilder()..update(updates)).build();
+      (ThrottleBuilder()..update(updates)).build();
 
   _$Throttle._(
       {this.timestamp,
@@ -20668,7 +20668,7 @@ class _$Throttle extends Throttle {
       (toBuilder()..update(updates)).build();
 
   @override
-  ThrottleBuilder toBuilder() => new ThrottleBuilder()..replace(this);
+  ThrottleBuilder toBuilder() => ThrottleBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -20769,7 +20769,7 @@ class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(Throttle other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Throttle;
   }
@@ -20782,7 +20782,7 @@ class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$Throttle build() {
     final _$result = _$v ??
-        new _$Throttle._(
+        _$Throttle._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -20812,7 +20812,7 @@ class _$PH extends PH {
   final double value;
 
   factory _$PH([void updates(PHBuilder b)]) =>
-      (new PHBuilder()..update(updates)).build();
+      (PHBuilder()..update(updates)).build();
 
   _$PH._(
       {this.timestamp,
@@ -20828,7 +20828,7 @@ class _$PH extends PH {
       (toBuilder()..update(updates)).build();
 
   @override
-  PHBuilder toBuilder() => new PHBuilder()..replace(this);
+  PHBuilder toBuilder() => PHBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -20929,7 +20929,7 @@ class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithI
   @override
   void replace(PH other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PH;
   }
@@ -20942,7 +20942,7 @@ class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithI
   @override
   _$PH build() {
     final _$result = _$v ??
-        new _$PH._(
+        _$PH._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -20972,7 +20972,7 @@ class _$Redox extends Redox {
   final double value;
 
   factory _$Redox([void updates(RedoxBuilder b)]) =>
-      (new RedoxBuilder()..update(updates)).build();
+      (RedoxBuilder()..update(updates)).build();
 
   _$Redox._(
       {this.timestamp,
@@ -20988,7 +20988,7 @@ class _$Redox extends Redox {
       (toBuilder()..update(updates)).build();
 
   @override
-  RedoxBuilder toBuilder() => new RedoxBuilder()..replace(this);
+  RedoxBuilder toBuilder() => RedoxBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21089,7 +21089,7 @@ class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(Redox other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Redox;
   }
@@ -21102,7 +21102,7 @@ class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$Redox build() {
     final _$result = _$v ??
-        new _$Redox._(
+        _$Redox._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -21136,7 +21136,7 @@ class _$CameraZoom extends CameraZoom {
   final CameraZoomEnumAction action;
 
   factory _$CameraZoom([void updates(CameraZoomBuilder b)]) =>
-      (new CameraZoomBuilder()..update(updates)).build();
+      (CameraZoomBuilder()..update(updates)).build();
 
   _$CameraZoom._(
       {this.timestamp,
@@ -21154,7 +21154,7 @@ class _$CameraZoom extends CameraZoom {
       (toBuilder()..update(updates)).build();
 
   @override
-  CameraZoomBuilder toBuilder() => new CameraZoomBuilder()..replace(this);
+  CameraZoomBuilder toBuilder() => CameraZoomBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21271,7 +21271,7 @@ class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(CameraZoom other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CameraZoom;
   }
@@ -21284,7 +21284,7 @@ class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$CameraZoom build() {
     final _$result = _$v ??
-        new _$CameraZoom._(
+        _$CameraZoom._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -21318,7 +21318,7 @@ class _$SetThrusterActuation extends SetThrusterActuation {
   final double value;
 
   factory _$SetThrusterActuation([void updates(SetThrusterActuationBuilder b)]) =>
-      (new SetThrusterActuationBuilder()..update(updates)).build();
+      (SetThrusterActuationBuilder()..update(updates)).build();
 
   _$SetThrusterActuation._(
       {this.timestamp,
@@ -21335,7 +21335,7 @@ class _$SetThrusterActuation extends SetThrusterActuation {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetThrusterActuationBuilder toBuilder() => new SetThrusterActuationBuilder()..replace(this);
+  SetThrusterActuationBuilder toBuilder() => SetThrusterActuationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21444,7 +21444,7 @@ class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(SetThrusterActuation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SetThrusterActuation;
   }
@@ -21457,7 +21457,7 @@ class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$SetThrusterActuation build() {
     final _$result = _$v ??
-        new _$SetThrusterActuation._(
+        _$SetThrusterActuation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -21490,7 +21490,7 @@ class _$SetServoPosition extends SetServoPosition {
   final double value;
 
   factory _$SetServoPosition([void updates(SetServoPositionBuilder b)]) =>
-      (new SetServoPositionBuilder()..update(updates)).build();
+      (SetServoPositionBuilder()..update(updates)).build();
 
   _$SetServoPosition._(
       {this.timestamp,
@@ -21507,7 +21507,7 @@ class _$SetServoPosition extends SetServoPosition {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetServoPositionBuilder toBuilder() => new SetServoPositionBuilder()..replace(this);
+  SetServoPositionBuilder toBuilder() => SetServoPositionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21616,7 +21616,7 @@ class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(SetServoPosition other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SetServoPosition;
   }
@@ -21629,7 +21629,7 @@ class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$SetServoPosition build() {
     final _$result = _$v ??
-        new _$SetServoPosition._(
+        _$SetServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -21662,7 +21662,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
   final double angle;
 
   factory _$SetControlSurfaceDeflection([void updates(SetControlSurfaceDeflectionBuilder b)]) =>
-      (new SetControlSurfaceDeflectionBuilder()..update(updates)).build();
+      (SetControlSurfaceDeflectionBuilder()..update(updates)).build();
 
   _$SetControlSurfaceDeflection._(
       {this.timestamp,
@@ -21679,7 +21679,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetControlSurfaceDeflectionBuilder toBuilder() => new SetControlSurfaceDeflectionBuilder()..replace(this);
+  SetControlSurfaceDeflectionBuilder toBuilder() => SetControlSurfaceDeflectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21788,7 +21788,7 @@ class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPar
   @override
   void replace(SetControlSurfaceDeflection other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SetControlSurfaceDeflection;
   }
@@ -21801,7 +21801,7 @@ class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPar
   @override
   _$SetControlSurfaceDeflection build() {
     final _$result = _$v ??
-        new _$SetControlSurfaceDeflection._(
+        _$SetControlSurfaceDeflection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -21834,7 +21834,7 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
   final String actions;
 
   factory _$RemoteActionsRequest([void updates(RemoteActionsRequestBuilder b)]) =>
-      (new RemoteActionsRequestBuilder()..update(updates)).build();
+      (RemoteActionsRequestBuilder()..update(updates)).build();
 
   _$RemoteActionsRequest._(
       {this.timestamp,
@@ -21851,7 +21851,7 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
       (toBuilder()..update(updates)).build();
 
   @override
-  RemoteActionsRequestBuilder toBuilder() => new RemoteActionsRequestBuilder()..replace(this);
+  RemoteActionsRequestBuilder toBuilder() => RemoteActionsRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21960,7 +21960,7 @@ class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(RemoteActionsRequest other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RemoteActionsRequest;
   }
@@ -21973,7 +21973,7 @@ class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$RemoteActionsRequest build() {
     final _$result = _$v ??
-        new _$RemoteActionsRequest._(
+        _$RemoteActionsRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -22004,7 +22004,7 @@ class _$RemoteActions extends RemoteActions {
   final String actions;
 
   factory _$RemoteActions([void updates(RemoteActionsBuilder b)]) =>
-      (new RemoteActionsBuilder()..update(updates)).build();
+      (RemoteActionsBuilder()..update(updates)).build();
 
   _$RemoteActions._(
       {this.timestamp,
@@ -22020,7 +22020,7 @@ class _$RemoteActions extends RemoteActions {
       (toBuilder()..update(updates)).build();
 
   @override
-  RemoteActionsBuilder toBuilder() => new RemoteActionsBuilder()..replace(this);
+  RemoteActionsBuilder toBuilder() => RemoteActionsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -22121,7 +22121,7 @@ class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(RemoteActions other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RemoteActions;
   }
@@ -22134,7 +22134,7 @@ class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$RemoteActions build() {
     final _$result = _$v ??
-        new _$RemoteActions._(
+        _$RemoteActions._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -22166,7 +22166,7 @@ class _$ButtonEvent extends ButtonEvent {
   final int value;
 
   factory _$ButtonEvent([void updates(ButtonEventBuilder b)]) =>
-      (new ButtonEventBuilder()..update(updates)).build();
+      (ButtonEventBuilder()..update(updates)).build();
 
   _$ButtonEvent._(
       {this.timestamp,
@@ -22183,7 +22183,7 @@ class _$ButtonEvent extends ButtonEvent {
       (toBuilder()..update(updates)).build();
 
   @override
-  ButtonEventBuilder toBuilder() => new ButtonEventBuilder()..replace(this);
+  ButtonEventBuilder toBuilder() => ButtonEventBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -22292,7 +22292,7 @@ class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(ButtonEvent other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ButtonEvent;
   }
@@ -22305,7 +22305,7 @@ class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$ButtonEvent build() {
     final _$result = _$v ??
-        new _$ButtonEvent._(
+        _$ButtonEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -22338,7 +22338,7 @@ class _$LcdControl extends LcdControl {
   final String text;
 
   factory _$LcdControl([void updates(LcdControlBuilder b)]) =>
-      (new LcdControlBuilder()..update(updates)).build();
+      (LcdControlBuilder()..update(updates)).build();
 
   _$LcdControl._(
       {this.timestamp,
@@ -22355,7 +22355,7 @@ class _$LcdControl extends LcdControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  LcdControlBuilder toBuilder() => new LcdControlBuilder()..replace(this);
+  LcdControlBuilder toBuilder() => LcdControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -22464,7 +22464,7 @@ class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(LcdControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LcdControl;
   }
@@ -22477,7 +22477,7 @@ class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$LcdControl build() {
     final _$result = _$v ??
-        new _$LcdControl._(
+        _$LcdControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -22512,7 +22512,7 @@ class _$PowerOperation extends PowerOperation {
   final double schedTime;
 
   factory _$PowerOperation([void updates(PowerOperationBuilder b)]) =>
-      (new PowerOperationBuilder()..update(updates)).build();
+      (PowerOperationBuilder()..update(updates)).build();
 
   _$PowerOperation._(
       {this.timestamp,
@@ -22530,7 +22530,7 @@ class _$PowerOperation extends PowerOperation {
       (toBuilder()..update(updates)).build();
 
   @override
-  PowerOperationBuilder toBuilder() => new PowerOperationBuilder()..replace(this);
+  PowerOperationBuilder toBuilder() => PowerOperationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -22647,7 +22647,7 @@ class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(PowerOperation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PowerOperation;
   }
@@ -22660,7 +22660,7 @@ class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$PowerOperation build() {
     final _$result = _$v ??
-        new _$PowerOperation._(
+        _$PowerOperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -22696,7 +22696,7 @@ class _$PowerChannelControl extends PowerChannelControl {
   final double schedTime;
 
   factory _$PowerChannelControl([void updates(PowerChannelControlBuilder b)]) =>
-      (new PowerChannelControlBuilder()..update(updates)).build();
+      (PowerChannelControlBuilder()..update(updates)).build();
 
   _$PowerChannelControl._(
       {this.timestamp,
@@ -22714,7 +22714,7 @@ class _$PowerChannelControl extends PowerChannelControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  PowerChannelControlBuilder toBuilder() => new PowerChannelControlBuilder()..replace(this);
+  PowerChannelControlBuilder toBuilder() => PowerChannelControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -22831,7 +22831,7 @@ class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(PowerChannelControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PowerChannelControl;
   }
@@ -22844,7 +22844,7 @@ class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$PowerChannelControl build() {
     final _$result = _$v ??
-        new _$PowerChannelControl._(
+        _$PowerChannelControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -22874,7 +22874,7 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
 
 
   factory _$QueryPowerChannelState([void updates(QueryPowerChannelStateBuilder b)]) =>
-      (new QueryPowerChannelStateBuilder()..update(updates)).build();
+      (QueryPowerChannelStateBuilder()..update(updates)).build();
 
   _$QueryPowerChannelState._(
       {this.timestamp,
@@ -22889,7 +22889,7 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryPowerChannelStateBuilder toBuilder() => new QueryPowerChannelStateBuilder()..replace(this);
+  QueryPowerChannelStateBuilder toBuilder() => QueryPowerChannelStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -22982,7 +22982,7 @@ class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   void replace(QueryPowerChannelState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$QueryPowerChannelState;
   }
@@ -22995,7 +22995,7 @@ class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   _$QueryPowerChannelState build() {
     final _$result = _$v ??
-        new _$QueryPowerChannelState._(
+        _$QueryPowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -23026,7 +23026,7 @@ class _$PowerChannelState extends PowerChannelState {
   final PowerChannelStateEnumState state;
 
   factory _$PowerChannelState([void updates(PowerChannelStateBuilder b)]) =>
-      (new PowerChannelStateBuilder()..update(updates)).build();
+      (PowerChannelStateBuilder()..update(updates)).build();
 
   _$PowerChannelState._(
       {this.timestamp,
@@ -23043,7 +23043,7 @@ class _$PowerChannelState extends PowerChannelState {
       (toBuilder()..update(updates)).build();
 
   @override
-  PowerChannelStateBuilder toBuilder() => new PowerChannelStateBuilder()..replace(this);
+  PowerChannelStateBuilder toBuilder() => PowerChannelStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23152,7 +23152,7 @@ class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(PowerChannelState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PowerChannelState;
   }
@@ -23165,7 +23165,7 @@ class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$PowerChannelState build() {
     final _$result = _$v ??
-        new _$PowerChannelState._(
+        _$PowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -23198,7 +23198,7 @@ class _$LedBrightness extends LedBrightness {
   final int value;
 
   factory _$LedBrightness([void updates(LedBrightnessBuilder b)]) =>
-      (new LedBrightnessBuilder()..update(updates)).build();
+      (LedBrightnessBuilder()..update(updates)).build();
 
   _$LedBrightness._(
       {this.timestamp,
@@ -23215,7 +23215,7 @@ class _$LedBrightness extends LedBrightness {
       (toBuilder()..update(updates)).build();
 
   @override
-  LedBrightnessBuilder toBuilder() => new LedBrightnessBuilder()..replace(this);
+  LedBrightnessBuilder toBuilder() => LedBrightnessBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23324,7 +23324,7 @@ class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(LedBrightness other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LedBrightness;
   }
@@ -23337,7 +23337,7 @@ class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$LedBrightness build() {
     final _$result = _$v ??
-        new _$LedBrightness._(
+        _$LedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -23368,7 +23368,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
   final String name;
 
   factory _$QueryLedBrightness([void updates(QueryLedBrightnessBuilder b)]) =>
-      (new QueryLedBrightnessBuilder()..update(updates)).build();
+      (QueryLedBrightnessBuilder()..update(updates)).build();
 
   _$QueryLedBrightness._(
       {this.timestamp,
@@ -23384,7 +23384,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryLedBrightnessBuilder toBuilder() => new QueryLedBrightnessBuilder()..replace(this);
+  QueryLedBrightnessBuilder toBuilder() => QueryLedBrightnessBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23485,7 +23485,7 @@ class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(QueryLedBrightness other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$QueryLedBrightness;
   }
@@ -23498,7 +23498,7 @@ class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$QueryLedBrightness build() {
     final _$result = _$v ??
-        new _$QueryLedBrightness._(
+        _$QueryLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -23530,7 +23530,7 @@ class _$SetLedBrightness extends SetLedBrightness {
   final int value;
 
   factory _$SetLedBrightness([void updates(SetLedBrightnessBuilder b)]) =>
-      (new SetLedBrightnessBuilder()..update(updates)).build();
+      (SetLedBrightnessBuilder()..update(updates)).build();
 
   _$SetLedBrightness._(
       {this.timestamp,
@@ -23547,7 +23547,7 @@ class _$SetLedBrightness extends SetLedBrightness {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetLedBrightnessBuilder toBuilder() => new SetLedBrightnessBuilder()..replace(this);
+  SetLedBrightnessBuilder toBuilder() => SetLedBrightnessBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23656,7 +23656,7 @@ class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(SetLedBrightness other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SetLedBrightness;
   }
@@ -23669,7 +23669,7 @@ class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$SetLedBrightness build() {
     final _$result = _$v ??
-        new _$SetLedBrightness._(
+        _$SetLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -23704,7 +23704,7 @@ class _$SetPWM extends SetPWM {
   final int dutyCycle;
 
   factory _$SetPWM([void updates(SetPWMBuilder b)]) =>
-      (new SetPWMBuilder()..update(updates)).build();
+      (SetPWMBuilder()..update(updates)).build();
 
   _$SetPWM._(
       {this.timestamp,
@@ -23722,7 +23722,7 @@ class _$SetPWM extends SetPWM {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetPWMBuilder toBuilder() => new SetPWMBuilder()..replace(this);
+  SetPWMBuilder toBuilder() => SetPWMBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23839,7 +23839,7 @@ class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   void replace(SetPWM other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SetPWM;
   }
@@ -23852,7 +23852,7 @@ class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   _$SetPWM build() {
     final _$result = _$v ??
-        new _$SetPWM._(
+        _$SetPWM._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -23888,7 +23888,7 @@ class _$PWM extends PWM {
   final int dutyCycle;
 
   factory _$PWM([void updates(PWMBuilder b)]) =>
-      (new PWMBuilder()..update(updates)).build();
+      (PWMBuilder()..update(updates)).build();
 
   _$PWM._(
       {this.timestamp,
@@ -23906,7 +23906,7 @@ class _$PWM extends PWM {
       (toBuilder()..update(updates)).build();
 
   @override
-  PWMBuilder toBuilder() => new PWMBuilder()..replace(this);
+  PWMBuilder toBuilder() => PWMBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -24023,7 +24023,7 @@ class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   void replace(PWM other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PWM;
   }
@@ -24036,7 +24036,7 @@ class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   _$PWM build() {
     final _$result = _$v ??
-        new _$PWM._(
+        _$PWM._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -24106,7 +24106,7 @@ class _$EstimatedState extends EstimatedState {
   final double alt;
 
   factory _$EstimatedState([void updates(EstimatedStateBuilder b)]) =>
-      (new EstimatedStateBuilder()..update(updates)).build();
+      (EstimatedStateBuilder()..update(updates)).build();
 
   _$EstimatedState._(
       {this.timestamp,
@@ -24141,7 +24141,7 @@ class _$EstimatedState extends EstimatedState {
       (toBuilder()..update(updates)).build();
 
   @override
-  EstimatedStateBuilder toBuilder() => new EstimatedStateBuilder()..replace(this);
+  EstimatedStateBuilder toBuilder() => EstimatedStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -24394,7 +24394,7 @@ class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(EstimatedState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EstimatedState;
   }
@@ -24407,7 +24407,7 @@ class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$EstimatedState build() {
     final _$result = _$v ??
-        new _$EstimatedState._(
+        _$EstimatedState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -24460,7 +24460,7 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
   final double z;
 
   factory _$EstimatedStreamVelocity([void updates(EstimatedStreamVelocityBuilder b)]) =>
-      (new EstimatedStreamVelocityBuilder()..update(updates)).build();
+      (EstimatedStreamVelocityBuilder()..update(updates)).build();
 
   _$EstimatedStreamVelocity._(
       {this.timestamp,
@@ -24478,7 +24478,7 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
       (toBuilder()..update(updates)).build();
 
   @override
-  EstimatedStreamVelocityBuilder toBuilder() => new EstimatedStreamVelocityBuilder()..replace(this);
+  EstimatedStreamVelocityBuilder toBuilder() => EstimatedStreamVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -24595,7 +24595,7 @@ class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart im
   @override
   void replace(EstimatedStreamVelocity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EstimatedStreamVelocity;
   }
@@ -24608,7 +24608,7 @@ class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart im
   @override
   _$EstimatedStreamVelocity build() {
     final _$result = _$v ??
-        new _$EstimatedStreamVelocity._(
+        _$EstimatedStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -24640,7 +24640,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
   final double value;
 
   factory _$IndicatedSpeed([void updates(IndicatedSpeedBuilder b)]) =>
-      (new IndicatedSpeedBuilder()..update(updates)).build();
+      (IndicatedSpeedBuilder()..update(updates)).build();
 
   _$IndicatedSpeed._(
       {this.timestamp,
@@ -24656,7 +24656,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
       (toBuilder()..update(updates)).build();
 
   @override
-  IndicatedSpeedBuilder toBuilder() => new IndicatedSpeedBuilder()..replace(this);
+  IndicatedSpeedBuilder toBuilder() => IndicatedSpeedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -24757,7 +24757,7 @@ class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(IndicatedSpeed other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$IndicatedSpeed;
   }
@@ -24770,7 +24770,7 @@ class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$IndicatedSpeed build() {
     final _$result = _$v ??
-        new _$IndicatedSpeed._(
+        _$IndicatedSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -24800,7 +24800,7 @@ class _$TrueSpeed extends TrueSpeed {
   final double value;
 
   factory _$TrueSpeed([void updates(TrueSpeedBuilder b)]) =>
-      (new TrueSpeedBuilder()..update(updates)).build();
+      (TrueSpeedBuilder()..update(updates)).build();
 
   _$TrueSpeed._(
       {this.timestamp,
@@ -24816,7 +24816,7 @@ class _$TrueSpeed extends TrueSpeed {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrueSpeedBuilder toBuilder() => new TrueSpeedBuilder()..replace(this);
+  TrueSpeedBuilder toBuilder() => TrueSpeedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -24917,7 +24917,7 @@ class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(TrueSpeed other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrueSpeed;
   }
@@ -24930,7 +24930,7 @@ class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$TrueSpeed build() {
     final _$result = _$v ??
-        new _$TrueSpeed._(
+        _$TrueSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -24986,7 +24986,7 @@ class _$NavigationUncertainty extends NavigationUncertainty {
   final double biasR;
 
   factory _$NavigationUncertainty([void updates(NavigationUncertaintyBuilder b)]) =>
-      (new NavigationUncertaintyBuilder()..update(updates)).build();
+      (NavigationUncertaintyBuilder()..update(updates)).build();
 
   _$NavigationUncertainty._(
       {this.timestamp,
@@ -25015,7 +25015,7 @@ class _$NavigationUncertainty extends NavigationUncertainty {
       (toBuilder()..update(updates)).build();
 
   @override
-  NavigationUncertaintyBuilder toBuilder() => new NavigationUncertaintyBuilder()..replace(this);
+  NavigationUncertaintyBuilder toBuilder() => NavigationUncertaintyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -25220,7 +25220,7 @@ class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   void replace(NavigationUncertainty other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$NavigationUncertainty;
   }
@@ -25233,7 +25233,7 @@ class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   _$NavigationUncertainty build() {
     final _$result = _$v ??
-        new _$NavigationUncertainty._(
+        _$NavigationUncertainty._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -25292,7 +25292,7 @@ class _$NavigationData extends NavigationData {
   final double customZ;
 
   factory _$NavigationData([void updates(NavigationDataBuilder b)]) =>
-      (new NavigationDataBuilder()..update(updates)).build();
+      (NavigationDataBuilder()..update(updates)).build();
 
   _$NavigationData._(
       {this.timestamp,
@@ -25316,7 +25316,7 @@ class _$NavigationData extends NavigationData {
       (toBuilder()..update(updates)).build();
 
   @override
-  NavigationDataBuilder toBuilder() => new NavigationDataBuilder()..replace(this);
+  NavigationDataBuilder toBuilder() => NavigationDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -25481,7 +25481,7 @@ class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(NavigationData other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$NavigationData;
   }
@@ -25494,7 +25494,7 @@ class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$NavigationData build() {
     final _$result = _$v ??
-        new _$NavigationData._(
+        _$NavigationData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -25534,7 +25534,7 @@ class _$GpsFixRejection extends GpsFixRejection {
   final GpsFixRejectionEnumReason reason;
 
   factory _$GpsFixRejection([void updates(GpsFixRejectionBuilder b)]) =>
-      (new GpsFixRejectionBuilder()..update(updates)).build();
+      (GpsFixRejectionBuilder()..update(updates)).build();
 
   _$GpsFixRejection._(
       {this.timestamp,
@@ -25551,7 +25551,7 @@ class _$GpsFixRejection extends GpsFixRejection {
       (toBuilder()..update(updates)).build();
 
   @override
-  GpsFixRejectionBuilder toBuilder() => new GpsFixRejectionBuilder()..replace(this);
+  GpsFixRejectionBuilder toBuilder() => GpsFixRejectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -25660,7 +25660,7 @@ class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(GpsFixRejection other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GpsFixRejection;
   }
@@ -25673,7 +25673,7 @@ class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$GpsFixRejection build() {
     final _$result = _$v ??
-        new _$GpsFixRejection._(
+        _$GpsFixRejection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -25708,7 +25708,7 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
   final LblRangeAcceptanceEnumAcceptance acceptance;
 
   factory _$LblRangeAcceptance([void updates(LblRangeAcceptanceBuilder b)]) =>
-      (new LblRangeAcceptanceBuilder()..update(updates)).build();
+      (LblRangeAcceptanceBuilder()..update(updates)).build();
 
   _$LblRangeAcceptance._(
       {this.timestamp,
@@ -25726,7 +25726,7 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
       (toBuilder()..update(updates)).build();
 
   @override
-  LblRangeAcceptanceBuilder toBuilder() => new LblRangeAcceptanceBuilder()..replace(this);
+  LblRangeAcceptanceBuilder toBuilder() => LblRangeAcceptanceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -25843,7 +25843,7 @@ class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(LblRangeAcceptance other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LblRangeAcceptance;
   }
@@ -25856,7 +25856,7 @@ class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$LblRangeAcceptance build() {
     final _$result = _$v ??
-        new _$LblRangeAcceptance._(
+        _$LblRangeAcceptance._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -25894,7 +25894,7 @@ class _$DvlRejection extends DvlRejection {
   final double timestep;
 
   factory _$DvlRejection([void updates(DvlRejectionBuilder b)]) =>
-      (new DvlRejectionBuilder()..update(updates)).build();
+      (DvlRejectionBuilder()..update(updates)).build();
 
   _$DvlRejection._(
       {this.timestamp,
@@ -25913,7 +25913,7 @@ class _$DvlRejection extends DvlRejection {
       (toBuilder()..update(updates)).build();
 
   @override
-  DvlRejectionBuilder toBuilder() => new DvlRejectionBuilder()..replace(this);
+  DvlRejectionBuilder toBuilder() => DvlRejectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26038,7 +26038,7 @@ class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(DvlRejection other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DvlRejection;
   }
@@ -26051,7 +26051,7 @@ class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$DvlRejection build() {
     final _$result = _$v ??
-        new _$DvlRejection._(
+        _$DvlRejection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -26094,7 +26094,7 @@ class _$LblEstimate extends LblEstimate {
   final double distance;
 
   factory _$LblEstimate([void updates(LblEstimateBuilder b)]) =>
-      (new LblEstimateBuilder()..update(updates)).build();
+      (LblEstimateBuilder()..update(updates)).build();
 
   _$LblEstimate._(
       {this.timestamp,
@@ -26115,7 +26115,7 @@ class _$LblEstimate extends LblEstimate {
       (toBuilder()..update(updates)).build();
 
   @override
-  LblEstimateBuilder toBuilder() => new LblEstimateBuilder()..replace(this);
+  LblEstimateBuilder toBuilder() => LblEstimateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26256,7 +26256,7 @@ class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(LblEstimate other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LblEstimate;
   }
@@ -26269,7 +26269,7 @@ class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$LblEstimate build() {
     final _$result = _$v ??
-        new _$LblEstimate._(
+        _$LblEstimate._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -26304,7 +26304,7 @@ class _$AlignmentState extends AlignmentState {
   final AlignmentStateEnumState state;
 
   factory _$AlignmentState([void updates(AlignmentStateBuilder b)]) =>
-      (new AlignmentStateBuilder()..update(updates)).build();
+      (AlignmentStateBuilder()..update(updates)).build();
 
   _$AlignmentState._(
       {this.timestamp,
@@ -26320,7 +26320,7 @@ class _$AlignmentState extends AlignmentState {
       (toBuilder()..update(updates)).build();
 
   @override
-  AlignmentStateBuilder toBuilder() => new AlignmentStateBuilder()..replace(this);
+  AlignmentStateBuilder toBuilder() => AlignmentStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26421,7 +26421,7 @@ class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(AlignmentState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AlignmentState;
   }
@@ -26434,7 +26434,7 @@ class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$AlignmentState build() {
     final _$result = _$v ??
-        new _$AlignmentState._(
+        _$AlignmentState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -26468,7 +26468,7 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
   final double z;
 
   factory _$GroupStreamVelocity([void updates(GroupStreamVelocityBuilder b)]) =>
-      (new GroupStreamVelocityBuilder()..update(updates)).build();
+      (GroupStreamVelocityBuilder()..update(updates)).build();
 
   _$GroupStreamVelocity._(
       {this.timestamp,
@@ -26486,7 +26486,7 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
       (toBuilder()..update(updates)).build();
 
   @override
-  GroupStreamVelocityBuilder toBuilder() => new GroupStreamVelocityBuilder()..replace(this);
+  GroupStreamVelocityBuilder toBuilder() => GroupStreamVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26603,7 +26603,7 @@ class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(GroupStreamVelocity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GroupStreamVelocity;
   }
@@ -26616,7 +26616,7 @@ class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$GroupStreamVelocity build() {
     final _$result = _$v ??
-        new _$GroupStreamVelocity._(
+        _$GroupStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -26652,7 +26652,7 @@ class _$Airflow extends Airflow {
   final double ssa;
 
   factory _$Airflow([void updates(AirflowBuilder b)]) =>
-      (new AirflowBuilder()..update(updates)).build();
+      (AirflowBuilder()..update(updates)).build();
 
   _$Airflow._(
       {this.timestamp,
@@ -26670,7 +26670,7 @@ class _$Airflow extends Airflow {
       (toBuilder()..update(updates)).build();
 
   @override
-  AirflowBuilder toBuilder() => new AirflowBuilder()..replace(this);
+  AirflowBuilder toBuilder() => AirflowBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26787,7 +26787,7 @@ class AirflowBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(Airflow other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Airflow;
   }
@@ -26800,7 +26800,7 @@ class AirflowBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$Airflow build() {
     final _$result = _$v ??
-        new _$Airflow._(
+        _$Airflow._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -26832,7 +26832,7 @@ class _$DesiredHeading extends DesiredHeading {
   final double value;
 
   factory _$DesiredHeading([void updates(DesiredHeadingBuilder b)]) =>
-      (new DesiredHeadingBuilder()..update(updates)).build();
+      (DesiredHeadingBuilder()..update(updates)).build();
 
   _$DesiredHeading._(
       {this.timestamp,
@@ -26848,7 +26848,7 @@ class _$DesiredHeading extends DesiredHeading {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredHeadingBuilder toBuilder() => new DesiredHeadingBuilder()..replace(this);
+  DesiredHeadingBuilder toBuilder() => DesiredHeadingBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26949,7 +26949,7 @@ class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(DesiredHeading other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredHeading;
   }
@@ -26962,7 +26962,7 @@ class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$DesiredHeading build() {
     final _$result = _$v ??
-        new _$DesiredHeading._(
+        _$DesiredHeading._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -26994,7 +26994,7 @@ class _$DesiredZ extends DesiredZ {
   final ZUnitsEnum zUnits;
 
   factory _$DesiredZ([void updates(DesiredZBuilder b)]) =>
-      (new DesiredZBuilder()..update(updates)).build();
+      (DesiredZBuilder()..update(updates)).build();
 
   _$DesiredZ._(
       {this.timestamp,
@@ -27011,7 +27011,7 @@ class _$DesiredZ extends DesiredZ {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredZBuilder toBuilder() => new DesiredZBuilder()..replace(this);
+  DesiredZBuilder toBuilder() => DesiredZBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -27120,7 +27120,7 @@ class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(DesiredZ other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredZ;
   }
@@ -27133,7 +27133,7 @@ class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$DesiredZ build() {
     final _$result = _$v ??
-        new _$DesiredZ._(
+        _$DesiredZ._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -27166,7 +27166,7 @@ class _$DesiredSpeed extends DesiredSpeed {
   final SpeedUnitsEnum speedUnits;
 
   factory _$DesiredSpeed([void updates(DesiredSpeedBuilder b)]) =>
-      (new DesiredSpeedBuilder()..update(updates)).build();
+      (DesiredSpeedBuilder()..update(updates)).build();
 
   _$DesiredSpeed._(
       {this.timestamp,
@@ -27183,7 +27183,7 @@ class _$DesiredSpeed extends DesiredSpeed {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredSpeedBuilder toBuilder() => new DesiredSpeedBuilder()..replace(this);
+  DesiredSpeedBuilder toBuilder() => DesiredSpeedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -27292,7 +27292,7 @@ class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(DesiredSpeed other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredSpeed;
   }
@@ -27305,7 +27305,7 @@ class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$DesiredSpeed build() {
     final _$result = _$v ??
-        new _$DesiredSpeed._(
+        _$DesiredSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -27336,7 +27336,7 @@ class _$DesiredRoll extends DesiredRoll {
   final double value;
 
   factory _$DesiredRoll([void updates(DesiredRollBuilder b)]) =>
-      (new DesiredRollBuilder()..update(updates)).build();
+      (DesiredRollBuilder()..update(updates)).build();
 
   _$DesiredRoll._(
       {this.timestamp,
@@ -27352,7 +27352,7 @@ class _$DesiredRoll extends DesiredRoll {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredRollBuilder toBuilder() => new DesiredRollBuilder()..replace(this);
+  DesiredRollBuilder toBuilder() => DesiredRollBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -27453,7 +27453,7 @@ class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(DesiredRoll other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredRoll;
   }
@@ -27466,7 +27466,7 @@ class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$DesiredRoll build() {
     final _$result = _$v ??
-        new _$DesiredRoll._(
+        _$DesiredRoll._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -27496,7 +27496,7 @@ class _$DesiredPitch extends DesiredPitch {
   final double value;
 
   factory _$DesiredPitch([void updates(DesiredPitchBuilder b)]) =>
-      (new DesiredPitchBuilder()..update(updates)).build();
+      (DesiredPitchBuilder()..update(updates)).build();
 
   _$DesiredPitch._(
       {this.timestamp,
@@ -27512,7 +27512,7 @@ class _$DesiredPitch extends DesiredPitch {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredPitchBuilder toBuilder() => new DesiredPitchBuilder()..replace(this);
+  DesiredPitchBuilder toBuilder() => DesiredPitchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -27613,7 +27613,7 @@ class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(DesiredPitch other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredPitch;
   }
@@ -27626,7 +27626,7 @@ class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$DesiredPitch build() {
     final _$result = _$v ??
-        new _$DesiredPitch._(
+        _$DesiredPitch._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -27656,7 +27656,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
   final double value;
 
   factory _$DesiredVerticalRate([void updates(DesiredVerticalRateBuilder b)]) =>
-      (new DesiredVerticalRateBuilder()..update(updates)).build();
+      (DesiredVerticalRateBuilder()..update(updates)).build();
 
   _$DesiredVerticalRate._(
       {this.timestamp,
@@ -27672,7 +27672,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredVerticalRateBuilder toBuilder() => new DesiredVerticalRateBuilder()..replace(this);
+  DesiredVerticalRateBuilder toBuilder() => DesiredVerticalRateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -27773,7 +27773,7 @@ class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(DesiredVerticalRate other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredVerticalRate;
   }
@@ -27786,7 +27786,7 @@ class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$DesiredVerticalRate build() {
     final _$result = _$v ??
-        new _$DesiredVerticalRate._(
+        _$DesiredVerticalRate._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -27840,7 +27840,7 @@ class _$DesiredPath extends DesiredPath {
   final DesiredPathBitfieldFlags flags;
 
   factory _$DesiredPath([void updates(DesiredPathBuilder b)]) =>
-      (new DesiredPathBuilder()..update(updates)).build();
+      (DesiredPathBuilder()..update(updates)).build();
 
   _$DesiredPath._(
       {this.timestamp,
@@ -27868,7 +27868,7 @@ class _$DesiredPath extends DesiredPath {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredPathBuilder toBuilder() => new DesiredPathBuilder()..replace(this);
+  DesiredPathBuilder toBuilder() => DesiredPathBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -28065,7 +28065,7 @@ class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(DesiredPath other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredPath;
   }
@@ -28078,7 +28078,7 @@ class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$DesiredPath build() {
     final _$result = _$v ??
-        new _$DesiredPath._(
+        _$DesiredPath._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -28132,7 +28132,7 @@ class _$DesiredControl extends DesiredControl {
   final DesiredControlBitfieldFlags flags;
 
   factory _$DesiredControl([void updates(DesiredControlBuilder b)]) =>
-      (new DesiredControlBuilder()..update(updates)).build();
+      (DesiredControlBuilder()..update(updates)).build();
 
   _$DesiredControl._(
       {this.timestamp,
@@ -28154,7 +28154,7 @@ class _$DesiredControl extends DesiredControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredControlBuilder toBuilder() => new DesiredControlBuilder()..replace(this);
+  DesiredControlBuilder toBuilder() => DesiredControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -28303,7 +28303,7 @@ class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(DesiredControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredControl;
   }
@@ -28316,7 +28316,7 @@ class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$DesiredControl build() {
     final _$result = _$v ??
-        new _$DesiredControl._(
+        _$DesiredControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -28352,7 +28352,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
   final double value;
 
   factory _$DesiredHeadingRate([void updates(DesiredHeadingRateBuilder b)]) =>
-      (new DesiredHeadingRateBuilder()..update(updates)).build();
+      (DesiredHeadingRateBuilder()..update(updates)).build();
 
   _$DesiredHeadingRate._(
       {this.timestamp,
@@ -28368,7 +28368,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredHeadingRateBuilder toBuilder() => new DesiredHeadingRateBuilder()..replace(this);
+  DesiredHeadingRateBuilder toBuilder() => DesiredHeadingRateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -28469,7 +28469,7 @@ class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(DesiredHeadingRate other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredHeadingRate;
   }
@@ -28482,7 +28482,7 @@ class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$DesiredHeadingRate build() {
     final _$result = _$v ??
-        new _$DesiredHeadingRate._(
+        _$DesiredHeadingRate._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -28524,7 +28524,7 @@ class _$DesiredVelocity extends DesiredVelocity {
   final DesiredVelocityBitfieldFlags flags;
 
   factory _$DesiredVelocity([void updates(DesiredVelocityBuilder b)]) =>
-      (new DesiredVelocityBuilder()..update(updates)).build();
+      (DesiredVelocityBuilder()..update(updates)).build();
 
   _$DesiredVelocity._(
       {this.timestamp,
@@ -28546,7 +28546,7 @@ class _$DesiredVelocity extends DesiredVelocity {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredVelocityBuilder toBuilder() => new DesiredVelocityBuilder()..replace(this);
+  DesiredVelocityBuilder toBuilder() => DesiredVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -28695,7 +28695,7 @@ class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(DesiredVelocity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredVelocity;
   }
@@ -28708,7 +28708,7 @@ class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$DesiredVelocity build() {
     final _$result = _$v ??
-        new _$DesiredVelocity._(
+        _$DesiredVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -28780,7 +28780,7 @@ class _$PathControlState extends PathControlState {
   final int eta;
 
   factory _$PathControlState([void updates(PathControlStateBuilder b)]) =>
-      (new PathControlStateBuilder()..update(updates)).build();
+      (PathControlStateBuilder()..update(updates)).build();
 
   _$PathControlState._(
       {this.timestamp,
@@ -28814,7 +28814,7 @@ class _$PathControlState extends PathControlState {
       (toBuilder()..update(updates)).build();
 
   @override
-  PathControlStateBuilder toBuilder() => new PathControlStateBuilder()..replace(this);
+  PathControlStateBuilder toBuilder() => PathControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -29059,7 +29059,7 @@ class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(PathControlState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PathControlState;
   }
@@ -29072,7 +29072,7 @@ class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$PathControlState build() {
     final _$result = _$v ??
-        new _$PathControlState._(
+        _$PathControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -29124,7 +29124,7 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
   final double n;
 
   factory _$AllocatedControlTorques([void updates(AllocatedControlTorquesBuilder b)]) =>
-      (new AllocatedControlTorquesBuilder()..update(updates)).build();
+      (AllocatedControlTorquesBuilder()..update(updates)).build();
 
   _$AllocatedControlTorques._(
       {this.timestamp,
@@ -29142,7 +29142,7 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
       (toBuilder()..update(updates)).build();
 
   @override
-  AllocatedControlTorquesBuilder toBuilder() => new AllocatedControlTorquesBuilder()..replace(this);
+  AllocatedControlTorquesBuilder toBuilder() => AllocatedControlTorquesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -29259,7 +29259,7 @@ class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart im
   @override
   void replace(AllocatedControlTorques other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AllocatedControlTorques;
   }
@@ -29272,7 +29272,7 @@ class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart im
   @override
   _$AllocatedControlTorques build() {
     final _$result = _$v ??
-        new _$AllocatedControlTorques._(
+        _$AllocatedControlTorques._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -29310,7 +29310,7 @@ class _$ControlParcel extends ControlParcel {
   final double a;
 
   factory _$ControlParcel([void updates(ControlParcelBuilder b)]) =>
-      (new ControlParcelBuilder()..update(updates)).build();
+      (ControlParcelBuilder()..update(updates)).build();
 
   _$ControlParcel._(
       {this.timestamp,
@@ -29329,7 +29329,7 @@ class _$ControlParcel extends ControlParcel {
       (toBuilder()..update(updates)).build();
 
   @override
-  ControlParcelBuilder toBuilder() => new ControlParcelBuilder()..replace(this);
+  ControlParcelBuilder toBuilder() => ControlParcelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -29454,7 +29454,7 @@ class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ControlParcel other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ControlParcel;
   }
@@ -29467,7 +29467,7 @@ class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ControlParcel build() {
     final _$result = _$v ??
-        new _$ControlParcel._(
+        _$ControlParcel._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -29500,7 +29500,7 @@ class _$Brake extends Brake {
   final BrakeEnumOp op;
 
   factory _$Brake([void updates(BrakeBuilder b)]) =>
-      (new BrakeBuilder()..update(updates)).build();
+      (BrakeBuilder()..update(updates)).build();
 
   _$Brake._(
       {this.timestamp,
@@ -29516,7 +29516,7 @@ class _$Brake extends Brake {
       (toBuilder()..update(updates)).build();
 
   @override
-  BrakeBuilder toBuilder() => new BrakeBuilder()..replace(this);
+  BrakeBuilder toBuilder() => BrakeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -29617,7 +29617,7 @@ class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(Brake other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Brake;
   }
@@ -29630,7 +29630,7 @@ class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$Brake build() {
     final _$result = _$v ??
-        new _$Brake._(
+        _$Brake._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -29678,7 +29678,7 @@ class _$DesiredLinearState extends DesiredLinearState {
   final DesiredLinearStateBitfieldFlags flags;
 
   factory _$DesiredLinearState([void updates(DesiredLinearStateBuilder b)]) =>
-      (new DesiredLinearStateBuilder()..update(updates)).build();
+      (DesiredLinearStateBuilder()..update(updates)).build();
 
   _$DesiredLinearState._(
       {this.timestamp,
@@ -29703,7 +29703,7 @@ class _$DesiredLinearState extends DesiredLinearState {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredLinearStateBuilder toBuilder() => new DesiredLinearStateBuilder()..replace(this);
+  DesiredLinearStateBuilder toBuilder() => DesiredLinearStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -29876,7 +29876,7 @@ class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(DesiredLinearState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredLinearState;
   }
@@ -29889,7 +29889,7 @@ class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$DesiredLinearState build() {
     final _$result = _$v ??
-        new _$DesiredLinearState._(
+        _$DesiredLinearState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -29928,7 +29928,7 @@ class _$DesiredThrottle extends DesiredThrottle {
   final double value;
 
   factory _$DesiredThrottle([void updates(DesiredThrottleBuilder b)]) =>
-      (new DesiredThrottleBuilder()..update(updates)).build();
+      (DesiredThrottleBuilder()..update(updates)).build();
 
   _$DesiredThrottle._(
       {this.timestamp,
@@ -29944,7 +29944,7 @@ class _$DesiredThrottle extends DesiredThrottle {
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredThrottleBuilder toBuilder() => new DesiredThrottleBuilder()..replace(this);
+  DesiredThrottleBuilder toBuilder() => DesiredThrottleBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -30045,7 +30045,7 @@ class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(DesiredThrottle other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DesiredThrottle;
   }
@@ -30058,7 +30058,7 @@ class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$DesiredThrottle build() {
     final _$result = _$v ??
-        new _$DesiredThrottle._(
+        _$DesiredThrottle._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -30108,7 +30108,7 @@ class _$Goto extends Goto {
   final String custom;
 
   factory _$Goto([void updates(GotoBuilder b)]) =>
-      (new GotoBuilder()..update(updates)).build();
+      (GotoBuilder()..update(updates)).build();
 
   _$Goto._(
       {this.timestamp,
@@ -30134,7 +30134,7 @@ class _$Goto extends Goto {
       (toBuilder()..update(updates)).build();
 
   @override
-  GotoBuilder toBuilder() => new GotoBuilder()..replace(this);
+  GotoBuilder toBuilder() => GotoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -30315,7 +30315,7 @@ class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   void replace(Goto other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Goto;
   }
@@ -30328,7 +30328,7 @@ class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   _$Goto build() {
     final _$result = _$v ??
-        new _$Goto._(
+        _$Goto._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -30388,7 +30388,7 @@ class _$PopUp extends PopUp {
   final String custom;
 
   factory _$PopUp([void updates(PopUpBuilder b)]) =>
-      (new PopUpBuilder()..update(updates)).build();
+      (PopUpBuilder()..update(updates)).build();
 
   _$PopUp._(
       {this.timestamp,
@@ -30414,7 +30414,7 @@ class _$PopUp extends PopUp {
       (toBuilder()..update(updates)).build();
 
   @override
-  PopUpBuilder toBuilder() => new PopUpBuilder()..replace(this);
+  PopUpBuilder toBuilder() => PopUpBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -30595,7 +30595,7 @@ class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(PopUp other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PopUp;
   }
@@ -30608,7 +30608,7 @@ class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$PopUp build() {
     final _$result = _$v ??
-        new _$PopUp._(
+        _$PopUp._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -30648,7 +30648,7 @@ class _$Teleoperation extends Teleoperation {
   final String custom;
 
   factory _$Teleoperation([void updates(TeleoperationBuilder b)]) =>
-      (new TeleoperationBuilder()..update(updates)).build();
+      (TeleoperationBuilder()..update(updates)).build();
 
   _$Teleoperation._(
       {this.timestamp,
@@ -30664,7 +30664,7 @@ class _$Teleoperation extends Teleoperation {
       (toBuilder()..update(updates)).build();
 
   @override
-  TeleoperationBuilder toBuilder() => new TeleoperationBuilder()..replace(this);
+  TeleoperationBuilder toBuilder() => TeleoperationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -30765,7 +30765,7 @@ class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(Teleoperation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Teleoperation;
   }
@@ -30778,7 +30778,7 @@ class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$Teleoperation build() {
     final _$result = _$v ??
-        new _$Teleoperation._(
+        _$Teleoperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -30834,7 +30834,7 @@ class _$Loiter extends Loiter {
   final String custom;
 
   factory _$Loiter([void updates(LoiterBuilder b)]) =>
-      (new LoiterBuilder()..update(updates)).build();
+      (LoiterBuilder()..update(updates)).build();
 
   _$Loiter._(
       {this.timestamp,
@@ -30863,7 +30863,7 @@ class _$Loiter extends Loiter {
       (toBuilder()..update(updates)).build();
 
   @override
-  LoiterBuilder toBuilder() => new LoiterBuilder()..replace(this);
+  LoiterBuilder toBuilder() => LoiterBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -31068,7 +31068,7 @@ class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   void replace(Loiter other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Loiter;
   }
@@ -31081,7 +31081,7 @@ class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   _$Loiter build() {
     final _$result = _$v ??
-        new _$Loiter._(
+        _$Loiter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -31126,7 +31126,7 @@ class _$IdleManeuver extends IdleManeuver {
   final String custom;
 
   factory _$IdleManeuver([void updates(IdleManeuverBuilder b)]) =>
-      (new IdleManeuverBuilder()..update(updates)).build();
+      (IdleManeuverBuilder()..update(updates)).build();
 
   _$IdleManeuver._(
       {this.timestamp,
@@ -31143,7 +31143,7 @@ class _$IdleManeuver extends IdleManeuver {
       (toBuilder()..update(updates)).build();
 
   @override
-  IdleManeuverBuilder toBuilder() => new IdleManeuverBuilder()..replace(this);
+  IdleManeuverBuilder toBuilder() => IdleManeuverBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -31252,7 +31252,7 @@ class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(IdleManeuver other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$IdleManeuver;
   }
@@ -31265,7 +31265,7 @@ class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$IdleManeuver build() {
     final _$result = _$v ??
-        new _$IdleManeuver._(
+        _$IdleManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -31300,7 +31300,7 @@ class _$LowLevelControl extends LowLevelControl {
   final String custom;
 
   factory _$LowLevelControl([void updates(LowLevelControlBuilder b)]) =>
-      (new LowLevelControlBuilder()..update(updates)).build();
+      (LowLevelControlBuilder()..update(updates)).build();
 
   _$LowLevelControl._(
       {this.timestamp,
@@ -31318,7 +31318,7 @@ class _$LowLevelControl extends LowLevelControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  LowLevelControlBuilder toBuilder() => new LowLevelControlBuilder()..replace(this);
+  LowLevelControlBuilder toBuilder() => LowLevelControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -31435,7 +31435,7 @@ class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(LowLevelControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LowLevelControl;
   }
@@ -31448,7 +31448,7 @@ class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$LowLevelControl build() {
     final _$result = _$v ??
-        new _$LowLevelControl._(
+        _$LowLevelControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -31510,7 +31510,7 @@ class _$Rows extends Rows {
   final String custom;
 
   factory _$Rows([void updates(RowsBuilder b)]) =>
-      (new RowsBuilder()..update(updates)).build();
+      (RowsBuilder()..update(updates)).build();
 
   _$Rows._(
       {this.timestamp,
@@ -31541,7 +31541,7 @@ class _$Rows extends Rows {
       (toBuilder()..update(updates)).build();
 
   @override
-  RowsBuilder toBuilder() => new RowsBuilder()..replace(this);
+  RowsBuilder toBuilder() => RowsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -31762,7 +31762,7 @@ class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   void replace(Rows other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Rows;
   }
@@ -31775,7 +31775,7 @@ class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   _$Rows build() {
     final _$result = _$v ??
-        new _$Rows._(
+        _$Rows._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -31836,7 +31836,7 @@ class _$FollowPath extends FollowPath {
   final String custom;
 
   factory _$FollowPath([void updates(FollowPathBuilder b)]) =>
-      (new FollowPathBuilder()..update(updates)).build();
+      (FollowPathBuilder()..update(updates)).build();
 
   _$FollowPath._(
       {this.timestamp,
@@ -31860,7 +31860,7 @@ class _$FollowPath extends FollowPath {
       (toBuilder()..update(updates)).build();
 
   @override
-  FollowPathBuilder toBuilder() => new FollowPathBuilder()..replace(this);
+  FollowPathBuilder toBuilder() => FollowPathBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -32025,7 +32025,7 @@ class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(FollowPath other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FollowPath;
   }
@@ -32038,7 +32038,7 @@ class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$FollowPath build() {
     final _$result = _$v ??
-        new _$FollowPath._(
+        _$FollowPath._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -32080,7 +32080,7 @@ class _$PathPoint extends PathPoint {
   final double z;
 
   factory _$PathPoint([void updates(PathPointBuilder b)]) =>
-      (new PathPointBuilder()..update(updates)).build();
+      (PathPointBuilder()..update(updates)).build();
 
   _$PathPoint._(
       {this.timestamp,
@@ -32098,7 +32098,7 @@ class _$PathPoint extends PathPoint {
       (toBuilder()..update(updates)).build();
 
   @override
-  PathPointBuilder toBuilder() => new PathPointBuilder()..replace(this);
+  PathPointBuilder toBuilder() => PathPointBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -32215,7 +32215,7 @@ class PathPointBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(PathPoint other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PathPoint;
   }
@@ -32228,7 +32228,7 @@ class PathPointBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$PathPoint build() {
     final _$result = _$v ??
-        new _$PathPoint._(
+        _$PathPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -32278,7 +32278,7 @@ class _$YoYo extends YoYo {
   final String custom;
 
   factory _$YoYo([void updates(YoYoBuilder b)]) =>
-      (new YoYoBuilder()..update(updates)).build();
+      (YoYoBuilder()..update(updates)).build();
 
   _$YoYo._(
       {this.timestamp,
@@ -32303,7 +32303,7 @@ class _$YoYo extends YoYo {
       (toBuilder()..update(updates)).build();
 
   @override
-  YoYoBuilder toBuilder() => new YoYoBuilder()..replace(this);
+  YoYoBuilder toBuilder() => YoYoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -32476,7 +32476,7 @@ class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   void replace(YoYo other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$YoYo;
   }
@@ -32489,7 +32489,7 @@ class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   _$YoYo build() {
     final _$result = _$v ??
-        new _$YoYo._(
+        _$YoYo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -32526,7 +32526,7 @@ class _$TeleoperationDone extends TeleoperationDone {
 
 
   factory _$TeleoperationDone([void updates(TeleoperationDoneBuilder b)]) =>
-      (new TeleoperationDoneBuilder()..update(updates)).build();
+      (TeleoperationDoneBuilder()..update(updates)).build();
 
   _$TeleoperationDone._(
       {this.timestamp,
@@ -32541,7 +32541,7 @@ class _$TeleoperationDone extends TeleoperationDone {
       (toBuilder()..update(updates)).build();
 
   @override
-  TeleoperationDoneBuilder toBuilder() => new TeleoperationDoneBuilder()..replace(this);
+  TeleoperationDoneBuilder toBuilder() => TeleoperationDoneBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -32634,7 +32634,7 @@ class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(TeleoperationDone other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TeleoperationDone;
   }
@@ -32647,7 +32647,7 @@ class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$TeleoperationDone build() {
     final _$result = _$v ??
-        new _$TeleoperationDone._(
+        _$TeleoperationDone._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -32692,7 +32692,7 @@ class _$StationKeeping extends StationKeeping {
   final String custom;
 
   factory _$StationKeeping([void updates(StationKeepingBuilder b)]) =>
-      (new StationKeepingBuilder()..update(updates)).build();
+      (StationKeepingBuilder()..update(updates)).build();
 
   _$StationKeeping._(
       {this.timestamp,
@@ -32716,7 +32716,7 @@ class _$StationKeeping extends StationKeeping {
       (toBuilder()..update(updates)).build();
 
   @override
-  StationKeepingBuilder toBuilder() => new StationKeepingBuilder()..replace(this);
+  StationKeepingBuilder toBuilder() => StationKeepingBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -32881,7 +32881,7 @@ class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(StationKeeping other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$StationKeeping;
   }
@@ -32894,7 +32894,7 @@ class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$StationKeeping build() {
     final _$result = _$v ??
-        new _$StationKeeping._(
+        _$StationKeeping._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -32954,7 +32954,7 @@ class _$Elevator extends Elevator {
   final String custom;
 
   factory _$Elevator([void updates(ElevatorBuilder b)]) =>
-      (new ElevatorBuilder()..update(updates)).build();
+      (ElevatorBuilder()..update(updates)).build();
 
   _$Elevator._(
       {this.timestamp,
@@ -32981,7 +32981,7 @@ class _$Elevator extends Elevator {
       (toBuilder()..update(updates)).build();
 
   @override
-  ElevatorBuilder toBuilder() => new ElevatorBuilder()..replace(this);
+  ElevatorBuilder toBuilder() => ElevatorBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -33170,7 +33170,7 @@ class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(Elevator other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Elevator;
   }
@@ -33183,7 +33183,7 @@ class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$Elevator build() {
     final _$result = _$v ??
-        new _$Elevator._(
+        _$Elevator._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -33240,7 +33240,7 @@ class _$FollowTrajectory extends FollowTrajectory {
   final String custom;
 
   factory _$FollowTrajectory([void updates(FollowTrajectoryBuilder b)]) =>
-      (new FollowTrajectoryBuilder()..update(updates)).build();
+      (FollowTrajectoryBuilder()..update(updates)).build();
 
   _$FollowTrajectory._(
       {this.timestamp,
@@ -33264,7 +33264,7 @@ class _$FollowTrajectory extends FollowTrajectory {
       (toBuilder()..update(updates)).build();
 
   @override
-  FollowTrajectoryBuilder toBuilder() => new FollowTrajectoryBuilder()..replace(this);
+  FollowTrajectoryBuilder toBuilder() => FollowTrajectoryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -33429,7 +33429,7 @@ class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(FollowTrajectory other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FollowTrajectory;
   }
@@ -33442,7 +33442,7 @@ class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$FollowTrajectory build() {
     final _$result = _$v ??
-        new _$FollowTrajectory._(
+        _$FollowTrajectory._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -33486,7 +33486,7 @@ class _$TrajectoryPoint extends TrajectoryPoint {
   final double t;
 
   factory _$TrajectoryPoint([void updates(TrajectoryPointBuilder b)]) =>
-      (new TrajectoryPointBuilder()..update(updates)).build();
+      (TrajectoryPointBuilder()..update(updates)).build();
 
   _$TrajectoryPoint._(
       {this.timestamp,
@@ -33505,7 +33505,7 @@ class _$TrajectoryPoint extends TrajectoryPoint {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrajectoryPointBuilder toBuilder() => new TrajectoryPointBuilder()..replace(this);
+  TrajectoryPointBuilder toBuilder() => TrajectoryPointBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -33630,7 +33630,7 @@ class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(TrajectoryPoint other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrajectoryPoint;
   }
@@ -33643,7 +33643,7 @@ class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$TrajectoryPoint build() {
     final _$result = _$v ??
-        new _$TrajectoryPoint._(
+        _$TrajectoryPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -33680,7 +33680,7 @@ class _$CustomManeuver extends CustomManeuver {
   final String custom;
 
   factory _$CustomManeuver([void updates(CustomManeuverBuilder b)]) =>
-      (new CustomManeuverBuilder()..update(updates)).build();
+      (CustomManeuverBuilder()..update(updates)).build();
 
   _$CustomManeuver._(
       {this.timestamp,
@@ -33698,7 +33698,7 @@ class _$CustomManeuver extends CustomManeuver {
       (toBuilder()..update(updates)).build();
 
   @override
-  CustomManeuverBuilder toBuilder() => new CustomManeuverBuilder()..replace(this);
+  CustomManeuverBuilder toBuilder() => CustomManeuverBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -33815,7 +33815,7 @@ class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(CustomManeuver other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CustomManeuver;
   }
@@ -33828,7 +33828,7 @@ class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$CustomManeuver build() {
     final _$result = _$v ??
-        new _$CustomManeuver._(
+        _$CustomManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -33878,7 +33878,7 @@ class _$VehicleFormation extends VehicleFormation {
   final String custom;
 
   factory _$VehicleFormation([void updates(VehicleFormationBuilder b)]) =>
-      (new VehicleFormationBuilder()..update(updates)).build();
+      (VehicleFormationBuilder()..update(updates)).build();
 
   _$VehicleFormation._(
       {this.timestamp,
@@ -33903,7 +33903,7 @@ class _$VehicleFormation extends VehicleFormation {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleFormationBuilder toBuilder() => new VehicleFormationBuilder()..replace(this);
+  VehicleFormationBuilder toBuilder() => VehicleFormationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -34076,7 +34076,7 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(VehicleFormation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VehicleFormation;
   }
@@ -34089,7 +34089,7 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$VehicleFormation build() {
     final _$result = _$v ??
-        new _$VehicleFormation._(
+        _$VehicleFormation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -34134,7 +34134,7 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
   final double offZ;
 
   factory _$VehicleFormationParticipant([void updates(VehicleFormationParticipantBuilder b)]) =>
-      (new VehicleFormationParticipantBuilder()..update(updates)).build();
+      (VehicleFormationParticipantBuilder()..update(updates)).build();
 
   _$VehicleFormationParticipant._(
       {this.timestamp,
@@ -34153,7 +34153,7 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleFormationParticipantBuilder toBuilder() => new VehicleFormationParticipantBuilder()..replace(this);
+  VehicleFormationParticipantBuilder toBuilder() => VehicleFormationParticipantBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -34278,7 +34278,7 @@ class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPar
   @override
   void replace(VehicleFormationParticipant other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VehicleFormationParticipant;
   }
@@ -34291,7 +34291,7 @@ class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPar
   @override
   _$VehicleFormationParticipant build() {
     final _$result = _$v ??
-        new _$VehicleFormationParticipant._(
+        _$VehicleFormationParticipant._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -34322,7 +34322,7 @@ class _$StopManeuver extends StopManeuver {
 
 
   factory _$StopManeuver([void updates(StopManeuverBuilder b)]) =>
-      (new StopManeuverBuilder()..update(updates)).build();
+      (StopManeuverBuilder()..update(updates)).build();
 
   _$StopManeuver._(
       {this.timestamp,
@@ -34337,7 +34337,7 @@ class _$StopManeuver extends StopManeuver {
       (toBuilder()..update(updates)).build();
 
   @override
-  StopManeuverBuilder toBuilder() => new StopManeuverBuilder()..replace(this);
+  StopManeuverBuilder toBuilder() => StopManeuverBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -34430,7 +34430,7 @@ class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(StopManeuver other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$StopManeuver;
   }
@@ -34443,7 +34443,7 @@ class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$StopManeuver build() {
     final _$result = _$v ??
-        new _$StopManeuver._(
+        _$StopManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -34472,7 +34472,7 @@ class _$RegisterManeuver extends RegisterManeuver {
   final int mid;
 
   factory _$RegisterManeuver([void updates(RegisterManeuverBuilder b)]) =>
-      (new RegisterManeuverBuilder()..update(updates)).build();
+      (RegisterManeuverBuilder()..update(updates)).build();
 
   _$RegisterManeuver._(
       {this.timestamp,
@@ -34488,7 +34488,7 @@ class _$RegisterManeuver extends RegisterManeuver {
       (toBuilder()..update(updates)).build();
 
   @override
-  RegisterManeuverBuilder toBuilder() => new RegisterManeuverBuilder()..replace(this);
+  RegisterManeuverBuilder toBuilder() => RegisterManeuverBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -34589,7 +34589,7 @@ class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(RegisterManeuver other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RegisterManeuver;
   }
@@ -34602,7 +34602,7 @@ class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$RegisterManeuver build() {
     final _$result = _$v ??
-        new _$RegisterManeuver._(
+        _$RegisterManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -34636,7 +34636,7 @@ class _$ManeuverControlState extends ManeuverControlState {
   final String info;
 
   factory _$ManeuverControlState([void updates(ManeuverControlStateBuilder b)]) =>
-      (new ManeuverControlStateBuilder()..update(updates)).build();
+      (ManeuverControlStateBuilder()..update(updates)).build();
 
   _$ManeuverControlState._(
       {this.timestamp,
@@ -34654,7 +34654,7 @@ class _$ManeuverControlState extends ManeuverControlState {
       (toBuilder()..update(updates)).build();
 
   @override
-  ManeuverControlStateBuilder toBuilder() => new ManeuverControlStateBuilder()..replace(this);
+  ManeuverControlStateBuilder toBuilder() => ManeuverControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -34771,7 +34771,7 @@ class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(ManeuverControlState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ManeuverControlState;
   }
@@ -34784,7 +34784,7 @@ class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$ManeuverControlState build() {
     final _$result = _$v ??
-        new _$ManeuverControlState._(
+        _$ManeuverControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -34830,7 +34830,7 @@ class _$FollowSystem extends FollowSystem {
   final ZUnitsEnum zUnits;
 
   factory _$FollowSystem([void updates(FollowSystemBuilder b)]) =>
-      (new FollowSystemBuilder()..update(updates)).build();
+      (FollowSystemBuilder()..update(updates)).build();
 
   _$FollowSystem._(
       {this.timestamp,
@@ -34853,7 +34853,7 @@ class _$FollowSystem extends FollowSystem {
       (toBuilder()..update(updates)).build();
 
   @override
-  FollowSystemBuilder toBuilder() => new FollowSystemBuilder()..replace(this);
+  FollowSystemBuilder toBuilder() => FollowSystemBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -35010,7 +35010,7 @@ class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(FollowSystem other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FollowSystem;
   }
@@ -35023,7 +35023,7 @@ class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$FollowSystem build() {
     final _$result = _$v ??
-        new _$FollowSystem._(
+        _$FollowSystem._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -35074,7 +35074,7 @@ class _$CommsRelay extends CommsRelay {
   final double moveThreshold;
 
   factory _$CommsRelay([void updates(CommsRelayBuilder b)]) =>
-      (new CommsRelayBuilder()..update(updates)).build();
+      (CommsRelayBuilder()..update(updates)).build();
 
   _$CommsRelay._(
       {this.timestamp,
@@ -35097,7 +35097,7 @@ class _$CommsRelay extends CommsRelay {
       (toBuilder()..update(updates)).build();
 
   @override
-  CommsRelayBuilder toBuilder() => new CommsRelayBuilder()..replace(this);
+  CommsRelayBuilder toBuilder() => CommsRelayBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -35254,7 +35254,7 @@ class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(CommsRelay other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CommsRelay;
   }
@@ -35267,7 +35267,7 @@ class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$CommsRelay build() {
     final _$result = _$v ??
-        new _$CommsRelay._(
+        _$CommsRelay._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -35318,7 +35318,7 @@ class _$CoverArea extends CoverArea {
   final String custom;
 
   factory _$CoverArea([void updates(CoverAreaBuilder b)]) =>
-      (new CoverAreaBuilder()..update(updates)).build();
+      (CoverAreaBuilder()..update(updates)).build();
 
   _$CoverArea._(
       {this.timestamp,
@@ -35341,7 +35341,7 @@ class _$CoverArea extends CoverArea {
       (toBuilder()..update(updates)).build();
 
   @override
-  CoverAreaBuilder toBuilder() => new CoverAreaBuilder()..replace(this);
+  CoverAreaBuilder toBuilder() => CoverAreaBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -35498,7 +35498,7 @@ class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(CoverArea other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CoverArea;
   }
@@ -35511,7 +35511,7 @@ class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$CoverArea build() {
     final _$result = _$v ??
-        new _$CoverArea._(
+        _$CoverArea._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -35550,7 +35550,7 @@ class _$PolygonVertex extends PolygonVertex {
   final double lon;
 
   factory _$PolygonVertex([void updates(PolygonVertexBuilder b)]) =>
-      (new PolygonVertexBuilder()..update(updates)).build();
+      (PolygonVertexBuilder()..update(updates)).build();
 
   _$PolygonVertex._(
       {this.timestamp,
@@ -35567,7 +35567,7 @@ class _$PolygonVertex extends PolygonVertex {
       (toBuilder()..update(updates)).build();
 
   @override
-  PolygonVertexBuilder toBuilder() => new PolygonVertexBuilder()..replace(this);
+  PolygonVertexBuilder toBuilder() => PolygonVertexBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -35676,7 +35676,7 @@ class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(PolygonVertex other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PolygonVertex;
   }
@@ -35689,7 +35689,7 @@ class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$PolygonVertex build() {
     final _$result = _$v ??
-        new _$PolygonVertex._(
+        _$PolygonVertex._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -35744,7 +35744,7 @@ class _$CompassCalibration extends CompassCalibration {
   final String custom;
 
   factory _$CompassCalibration([void updates(CompassCalibrationBuilder b)]) =>
-      (new CompassCalibrationBuilder()..update(updates)).build();
+      (CompassCalibrationBuilder()..update(updates)).build();
 
   _$CompassCalibration._(
       {this.timestamp,
@@ -35772,7 +35772,7 @@ class _$CompassCalibration extends CompassCalibration {
       (toBuilder()..update(updates)).build();
 
   @override
-  CompassCalibrationBuilder toBuilder() => new CompassCalibrationBuilder()..replace(this);
+  CompassCalibrationBuilder toBuilder() => CompassCalibrationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -35969,7 +35969,7 @@ class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(CompassCalibration other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CompassCalibration;
   }
@@ -35982,7 +35982,7 @@ class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$CompassCalibration build() {
     final _$result = _$v ??
-        new _$CompassCalibration._(
+        _$CompassCalibration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -36030,7 +36030,7 @@ class _$FormationParameters extends FormationParameters {
   final String custom;
 
   factory _$FormationParameters([void updates(FormationParametersBuilder b)]) =>
-      (new FormationParametersBuilder()..update(updates)).build();
+      (FormationParametersBuilder()..update(updates)).build();
 
   _$FormationParameters._(
       {this.timestamp,
@@ -36049,7 +36049,7 @@ class _$FormationParameters extends FormationParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationParametersBuilder toBuilder() => new FormationParametersBuilder()..replace(this);
+  FormationParametersBuilder toBuilder() => FormationParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -36174,7 +36174,7 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(FormationParameters other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormationParameters;
   }
@@ -36187,7 +36187,7 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$FormationParameters build() {
     final _$result = _$v ??
-        new _$FormationParameters._(
+        _$FormationParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -36246,7 +36246,7 @@ class _$FormationPlanExecution extends FormationPlanExecution {
   final String custom;
 
   factory _$FormationPlanExecution([void updates(FormationPlanExecutionBuilder b)]) =>
-      (new FormationPlanExecutionBuilder()..update(updates)).build();
+      (FormationPlanExecutionBuilder()..update(updates)).build();
 
   _$FormationPlanExecution._(
       {this.timestamp,
@@ -36275,7 +36275,7 @@ class _$FormationPlanExecution extends FormationPlanExecution {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationPlanExecutionBuilder toBuilder() => new FormationPlanExecutionBuilder()..replace(this);
+  FormationPlanExecutionBuilder toBuilder() => FormationPlanExecutionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -36480,7 +36480,7 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   void replace(FormationPlanExecution other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormationPlanExecution;
   }
@@ -36493,7 +36493,7 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   _$FormationPlanExecution build() {
     final _$result = _$v ??
-        new _$FormationPlanExecution._(
+        _$FormationPlanExecution._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -36544,7 +36544,7 @@ class _$FollowReference extends FollowReference {
   final double altitudeInterval;
 
   factory _$FollowReference([void updates(FollowReferenceBuilder b)]) =>
-      (new FollowReferenceBuilder()..update(updates)).build();
+      (FollowReferenceBuilder()..update(updates)).build();
 
   _$FollowReference._(
       {this.timestamp,
@@ -36564,7 +36564,7 @@ class _$FollowReference extends FollowReference {
       (toBuilder()..update(updates)).build();
 
   @override
-  FollowReferenceBuilder toBuilder() => new FollowReferenceBuilder()..replace(this);
+  FollowReferenceBuilder toBuilder() => FollowReferenceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -36697,7 +36697,7 @@ class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(FollowReference other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FollowReference;
   }
@@ -36710,7 +36710,7 @@ class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$FollowReference build() {
     final _$result = _$v ??
-        new _$FollowReference._(
+        _$FollowReference._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -36754,7 +36754,7 @@ class _$Reference extends Reference {
   final double radius;
 
   factory _$Reference([void updates(ReferenceBuilder b)]) =>
-      (new ReferenceBuilder()..update(updates)).build();
+      (ReferenceBuilder()..update(updates)).build();
 
   _$Reference._(
       {this.timestamp,
@@ -36775,7 +36775,7 @@ class _$Reference extends Reference {
       (toBuilder()..update(updates)).build();
 
   @override
-  ReferenceBuilder toBuilder() => new ReferenceBuilder()..replace(this);
+  ReferenceBuilder toBuilder() => ReferenceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -36916,7 +36916,7 @@ class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(Reference other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Reference;
   }
@@ -36929,7 +36929,7 @@ class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$Reference build() {
     final _$result = _$v ??
-        new _$Reference._(
+        _$Reference._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -36972,7 +36972,7 @@ class _$FollowRefState extends FollowRefState {
   final FollowRefStateBitfieldProximity proximity;
 
   factory _$FollowRefState([void updates(FollowRefStateBuilder b)]) =>
-      (new FollowRefStateBuilder()..update(updates)).build();
+      (FollowRefStateBuilder()..update(updates)).build();
 
   _$FollowRefState._(
       {this.timestamp,
@@ -36992,7 +36992,7 @@ class _$FollowRefState extends FollowRefState {
       (toBuilder()..update(updates)).build();
 
   @override
-  FollowRefStateBuilder toBuilder() => new FollowRefStateBuilder()..replace(this);
+  FollowRefStateBuilder toBuilder() => FollowRefStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -37125,7 +37125,7 @@ class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(FollowRefState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FollowRefState;
   }
@@ -37138,7 +37138,7 @@ class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$FollowRefState build() {
     final _$result = _$v ??
-        new _$FollowRefState._(
+        _$FollowRefState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -37208,7 +37208,7 @@ class _$FormationMonitor extends FormationMonitor {
   final List<RelativeState> relState;
 
   factory _$FormationMonitor([void updates(FormationMonitorBuilder b)]) =>
-      (new FormationMonitorBuilder()..update(updates)).build();
+      (FormationMonitorBuilder()..update(updates)).build();
 
   _$FormationMonitor._(
       {this.timestamp,
@@ -37242,7 +37242,7 @@ class _$FormationMonitor extends FormationMonitor {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationMonitorBuilder toBuilder() => new FormationMonitorBuilder()..replace(this);
+  FormationMonitorBuilder toBuilder() => FormationMonitorBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -37487,7 +37487,7 @@ class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(FormationMonitor other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormationMonitor;
   }
@@ -37500,7 +37500,7 @@ class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$FormationMonitor build() {
     final _$result = _$v ??
-        new _$FormationMonitor._(
+        _$FormationMonitor._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -37590,7 +37590,7 @@ class _$RelativeState extends RelativeState {
   final double virtErrZ;
 
   factory _$RelativeState([void updates(RelativeStateBuilder b)]) =>
-      (new RelativeStateBuilder()..update(updates)).build();
+      (RelativeStateBuilder()..update(updates)).build();
 
   _$RelativeState._(
       {this.timestamp,
@@ -37627,7 +37627,7 @@ class _$RelativeState extends RelativeState {
       (toBuilder()..update(updates)).build();
 
   @override
-  RelativeStateBuilder toBuilder() => new RelativeStateBuilder()..replace(this);
+  RelativeStateBuilder toBuilder() => RelativeStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -37896,7 +37896,7 @@ class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(RelativeState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RelativeState;
   }
@@ -37909,7 +37909,7 @@ class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$RelativeState build() {
     final _$result = _$v ??
-        new _$RelativeState._(
+        _$RelativeState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -37966,7 +37966,7 @@ class _$Dislodge extends Dislodge {
   final String custom;
 
   factory _$Dislodge([void updates(DislodgeBuilder b)]) =>
-      (new DislodgeBuilder()..update(updates)).build();
+      (DislodgeBuilder()..update(updates)).build();
 
   _$Dislodge._(
       {this.timestamp,
@@ -37985,7 +37985,7 @@ class _$Dislodge extends Dislodge {
       (toBuilder()..update(updates)).build();
 
   @override
-  DislodgeBuilder toBuilder() => new DislodgeBuilder()..replace(this);
+  DislodgeBuilder toBuilder() => DislodgeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -38110,7 +38110,7 @@ class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(Dislodge other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Dislodge;
   }
@@ -38123,7 +38123,7 @@ class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$Dislodge build() {
     final _$result = _$v ??
-        new _$Dislodge._(
+        _$Dislodge._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -38196,7 +38196,7 @@ class _$Formation extends Formation {
   final String custom;
 
   factory _$Formation([void updates(FormationBuilder b)]) =>
-      (new FormationBuilder()..update(updates)).build();
+      (FormationBuilder()..update(updates)).build();
 
   _$Formation._(
       {this.timestamp,
@@ -38232,7 +38232,7 @@ class _$Formation extends Formation {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationBuilder toBuilder() => new FormationBuilder()..replace(this);
+  FormationBuilder toBuilder() => FormationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -38493,7 +38493,7 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(Formation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Formation;
   }
@@ -38506,7 +38506,7 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$Formation build() {
     final _$result = _$v ??
-        new _$Formation._(
+        _$Formation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -38570,7 +38570,7 @@ class _$Launch extends Launch {
   final String custom;
 
   factory _$Launch([void updates(LaunchBuilder b)]) =>
-      (new LaunchBuilder()..update(updates)).build();
+      (LaunchBuilder()..update(updates)).build();
 
   _$Launch._(
       {this.timestamp,
@@ -38593,7 +38593,7 @@ class _$Launch extends Launch {
       (toBuilder()..update(updates)).build();
 
   @override
-  LaunchBuilder toBuilder() => new LaunchBuilder()..replace(this);
+  LaunchBuilder toBuilder() => LaunchBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -38750,7 +38750,7 @@ class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   void replace(Launch other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Launch;
   }
@@ -38763,7 +38763,7 @@ class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   _$Launch build() {
     final _$result = _$v ??
-        new _$Launch._(
+        _$Launch._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -38814,7 +38814,7 @@ class _$Drop extends Drop {
   final String custom;
 
   factory _$Drop([void updates(DropBuilder b)]) =>
-      (new DropBuilder()..update(updates)).build();
+      (DropBuilder()..update(updates)).build();
 
   _$Drop._(
       {this.timestamp,
@@ -38837,7 +38837,7 @@ class _$Drop extends Drop {
       (toBuilder()..update(updates)).build();
 
   @override
-  DropBuilder toBuilder() => new DropBuilder()..replace(this);
+  DropBuilder toBuilder() => DropBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -38994,7 +38994,7 @@ class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   void replace(Drop other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Drop;
   }
@@ -39007,7 +39007,7 @@ class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   _$Drop build() {
     final _$result = _$v ??
-        new _$Drop._(
+        _$Drop._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -39058,7 +39058,7 @@ class _$ScheduledGoto extends ScheduledGoto {
   final ScheduledGotoEnumDelayed delayed;
 
   factory _$ScheduledGoto([void updates(ScheduledGotoBuilder b)]) =>
-      (new ScheduledGotoBuilder()..update(updates)).build();
+      (ScheduledGotoBuilder()..update(updates)).build();
 
   _$ScheduledGoto._(
       {this.timestamp,
@@ -39081,7 +39081,7 @@ class _$ScheduledGoto extends ScheduledGoto {
       (toBuilder()..update(updates)).build();
 
   @override
-  ScheduledGotoBuilder toBuilder() => new ScheduledGotoBuilder()..replace(this);
+  ScheduledGotoBuilder toBuilder() => ScheduledGotoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -39238,7 +39238,7 @@ class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ScheduledGoto other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ScheduledGoto;
   }
@@ -39251,7 +39251,7 @@ class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ScheduledGoto build() {
     final _$result = _$v ??
-        new _$ScheduledGoto._(
+        _$ScheduledGoto._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -39318,7 +39318,7 @@ class _$RowsCoverage extends RowsCoverage {
   final String custom;
 
   factory _$RowsCoverage([void updates(RowsCoverageBuilder b)]) =>
-      (new RowsCoverageBuilder()..update(updates)).build();
+      (RowsCoverageBuilder()..update(updates)).build();
 
   _$RowsCoverage._(
       {this.timestamp,
@@ -39349,7 +39349,7 @@ class _$RowsCoverage extends RowsCoverage {
       (toBuilder()..update(updates)).build();
 
   @override
-  RowsCoverageBuilder toBuilder() => new RowsCoverageBuilder()..replace(this);
+  RowsCoverageBuilder toBuilder() => RowsCoverageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -39570,7 +39570,7 @@ class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(RowsCoverage other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RowsCoverage;
   }
@@ -39583,7 +39583,7 @@ class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$RowsCoverage build() {
     final _$result = _$v ??
-        new _$RowsCoverage._(
+        _$RowsCoverage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -39648,7 +39648,7 @@ class _$Sample extends Sample {
   final String custom;
 
   factory _$Sample([void updates(SampleBuilder b)]) =>
-      (new SampleBuilder()..update(updates)).build();
+      (SampleBuilder()..update(updates)).build();
 
   _$Sample._(
       {this.timestamp,
@@ -39674,7 +39674,7 @@ class _$Sample extends Sample {
       (toBuilder()..update(updates)).build();
 
   @override
-  SampleBuilder toBuilder() => new SampleBuilder()..replace(this);
+  SampleBuilder toBuilder() => SampleBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -39855,7 +39855,7 @@ class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   void replace(Sample other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Sample;
   }
@@ -39868,7 +39868,7 @@ class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   _$Sample build() {
     final _$result = _$v ??
-        new _$Sample._(
+        _$Sample._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -39906,7 +39906,7 @@ class _$ImageTracking extends ImageTracking {
 
 
   factory _$ImageTracking([void updates(ImageTrackingBuilder b)]) =>
-      (new ImageTrackingBuilder()..update(updates)).build();
+      (ImageTrackingBuilder()..update(updates)).build();
 
   _$ImageTracking._(
       {this.timestamp,
@@ -39921,7 +39921,7 @@ class _$ImageTracking extends ImageTracking {
       (toBuilder()..update(updates)).build();
 
   @override
-  ImageTrackingBuilder toBuilder() => new ImageTrackingBuilder()..replace(this);
+  ImageTrackingBuilder toBuilder() => ImageTrackingBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -40014,7 +40014,7 @@ class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ImageTracking other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ImageTracking;
   }
@@ -40027,7 +40027,7 @@ class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ImageTracking build() {
     final _$result = _$v ??
-        new _$ImageTracking._(
+        _$ImageTracking._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -40070,7 +40070,7 @@ class _$Takeoff extends Takeoff {
   final String custom;
 
   factory _$Takeoff([void updates(TakeoffBuilder b)]) =>
-      (new TakeoffBuilder()..update(updates)).build();
+      (TakeoffBuilder()..update(updates)).build();
 
   _$Takeoff._(
       {this.timestamp,
@@ -40093,7 +40093,7 @@ class _$Takeoff extends Takeoff {
       (toBuilder()..update(updates)).build();
 
   @override
-  TakeoffBuilder toBuilder() => new TakeoffBuilder()..replace(this);
+  TakeoffBuilder toBuilder() => TakeoffBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -40250,7 +40250,7 @@ class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(Takeoff other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Takeoff;
   }
@@ -40263,7 +40263,7 @@ class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$Takeoff build() {
     final _$result = _$v ??
-        new _$Takeoff._(
+        _$Takeoff._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -40320,7 +40320,7 @@ class _$Land extends Land {
   final String custom;
 
   factory _$Land([void updates(LandBuilder b)]) =>
-      (new LandBuilder()..update(updates)).build();
+      (LandBuilder()..update(updates)).build();
 
   _$Land._(
       {this.timestamp,
@@ -40346,7 +40346,7 @@ class _$Land extends Land {
       (toBuilder()..update(updates)).build();
 
   @override
-  LandBuilder toBuilder() => new LandBuilder()..replace(this);
+  LandBuilder toBuilder() => LandBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -40527,7 +40527,7 @@ class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   void replace(Land other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Land;
   }
@@ -40540,7 +40540,7 @@ class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   @override
   _$Land build() {
     final _$result = _$v ??
-        new _$Land._(
+        _$Land._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -40600,7 +40600,7 @@ class _$AutonomousSection extends AutonomousSection {
   final String custom;
 
   factory _$AutonomousSection([void updates(AutonomousSectionBuilder b)]) =>
-      (new AutonomousSectionBuilder()..update(updates)).build();
+      (AutonomousSectionBuilder()..update(updates)).build();
 
   _$AutonomousSection._(
       {this.timestamp,
@@ -40626,7 +40626,7 @@ class _$AutonomousSection extends AutonomousSection {
       (toBuilder()..update(updates)).build();
 
   @override
-  AutonomousSectionBuilder toBuilder() => new AutonomousSectionBuilder()..replace(this);
+  AutonomousSectionBuilder toBuilder() => AutonomousSectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -40807,7 +40807,7 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(AutonomousSection other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AutonomousSection;
   }
@@ -40820,7 +40820,7 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$AutonomousSection build() {
     final _$result = _$v ??
-        new _$AutonomousSection._(
+        _$AutonomousSection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -40874,7 +40874,7 @@ class _$FollowPoint extends FollowPoint {
   final String custom;
 
   factory _$FollowPoint([void updates(FollowPointBuilder b)]) =>
-      (new FollowPointBuilder()..update(updates)).build();
+      (FollowPointBuilder()..update(updates)).build();
 
   _$FollowPoint._(
       {this.timestamp,
@@ -40897,7 +40897,7 @@ class _$FollowPoint extends FollowPoint {
       (toBuilder()..update(updates)).build();
 
   @override
-  FollowPointBuilder toBuilder() => new FollowPointBuilder()..replace(this);
+  FollowPointBuilder toBuilder() => FollowPointBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -41054,7 +41054,7 @@ class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(FollowPoint other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FollowPoint;
   }
@@ -41067,7 +41067,7 @@ class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$FollowPoint build() {
     final _$result = _$v ??
-        new _$FollowPoint._(
+        _$FollowPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -41114,7 +41114,7 @@ class _$Alignment extends Alignment {
   final String custom;
 
   factory _$Alignment([void updates(AlignmentBuilder b)]) =>
-      (new AlignmentBuilder()..update(updates)).build();
+      (AlignmentBuilder()..update(updates)).build();
 
   _$Alignment._(
       {this.timestamp,
@@ -41135,7 +41135,7 @@ class _$Alignment extends Alignment {
       (toBuilder()..update(updates)).build();
 
   @override
-  AlignmentBuilder toBuilder() => new AlignmentBuilder()..replace(this);
+  AlignmentBuilder toBuilder() => AlignmentBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -41276,7 +41276,7 @@ class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(Alignment other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Alignment;
   }
@@ -41289,7 +41289,7 @@ class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$Alignment build() {
     final _$result = _$v ??
-        new _$Alignment._(
+        _$Alignment._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -41346,7 +41346,7 @@ class _$StationKeepingExtended extends StationKeepingExtended {
   final String custom;
 
   factory _$StationKeepingExtended([void updates(StationKeepingExtendedBuilder b)]) =>
-      (new StationKeepingExtendedBuilder()..update(updates)).build();
+      (StationKeepingExtendedBuilder()..update(updates)).build();
 
   _$StationKeepingExtended._(
       {this.timestamp,
@@ -41373,7 +41373,7 @@ class _$StationKeepingExtended extends StationKeepingExtended {
       (toBuilder()..update(updates)).build();
 
   @override
-  StationKeepingExtendedBuilder toBuilder() => new StationKeepingExtendedBuilder()..replace(this);
+  StationKeepingExtendedBuilder toBuilder() => StationKeepingExtendedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -41562,7 +41562,7 @@ class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   void replace(StationKeepingExtended other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$StationKeepingExtended;
   }
@@ -41575,7 +41575,7 @@ class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   _$StationKeepingExtended build() {
     final _$result = _$v ??
-        new _$StationKeepingExtended._(
+        _$StationKeepingExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -41636,7 +41636,7 @@ class _$Magnetometer extends Magnetometer {
   final String custom;
 
   factory _$Magnetometer([void updates(MagnetometerBuilder b)]) =>
-      (new MagnetometerBuilder()..update(updates)).build();
+      (MagnetometerBuilder()..update(updates)).build();
 
   _$Magnetometer._(
       {this.timestamp,
@@ -41662,7 +41662,7 @@ class _$Magnetometer extends Magnetometer {
       (toBuilder()..update(updates)).build();
 
   @override
-  MagnetometerBuilder toBuilder() => new MagnetometerBuilder()..replace(this);
+  MagnetometerBuilder toBuilder() => MagnetometerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -41843,7 +41843,7 @@ class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(Magnetometer other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Magnetometer;
   }
@@ -41856,7 +41856,7 @@ class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$Magnetometer build() {
     final _$result = _$v ??
-        new _$Magnetometer._(
+        _$Magnetometer._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -41914,7 +41914,7 @@ class _$VehicleState extends VehicleState {
   final double lastErrorTime;
 
   factory _$VehicleState([void updates(VehicleStateBuilder b)]) =>
-      (new VehicleStateBuilder()..update(updates)).build();
+      (VehicleStateBuilder()..update(updates)).build();
 
   _$VehicleState._(
       {this.timestamp,
@@ -41939,7 +41939,7 @@ class _$VehicleState extends VehicleState {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleStateBuilder toBuilder() => new VehicleStateBuilder()..replace(this);
+  VehicleStateBuilder toBuilder() => VehicleStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -42112,7 +42112,7 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(VehicleState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VehicleState;
   }
@@ -42125,7 +42125,7 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$VehicleState build() {
     final _$result = _$v ??
-        new _$VehicleState._(
+        _$VehicleState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -42174,7 +42174,7 @@ class _$VehicleCommand extends VehicleCommand {
   final String info;
 
   factory _$VehicleCommand([void updates(VehicleCommandBuilder b)]) =>
-      (new VehicleCommandBuilder()..update(updates)).build();
+      (VehicleCommandBuilder()..update(updates)).build();
 
   _$VehicleCommand._(
       {this.timestamp,
@@ -42195,7 +42195,7 @@ class _$VehicleCommand extends VehicleCommand {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleCommandBuilder toBuilder() => new VehicleCommandBuilder()..replace(this);
+  VehicleCommandBuilder toBuilder() => VehicleCommandBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -42336,7 +42336,7 @@ class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(VehicleCommand other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VehicleCommand;
   }
@@ -42349,7 +42349,7 @@ class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$VehicleCommand build() {
     final _$result = _$v ??
-        new _$VehicleCommand._(
+        _$VehicleCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -42386,7 +42386,7 @@ class _$MonitorEntityState extends MonitorEntityState {
   final String entities;
 
   factory _$MonitorEntityState([void updates(MonitorEntityStateBuilder b)]) =>
-      (new MonitorEntityStateBuilder()..update(updates)).build();
+      (MonitorEntityStateBuilder()..update(updates)).build();
 
   _$MonitorEntityState._(
       {this.timestamp,
@@ -42403,7 +42403,7 @@ class _$MonitorEntityState extends MonitorEntityState {
       (toBuilder()..update(updates)).build();
 
   @override
-  MonitorEntityStateBuilder toBuilder() => new MonitorEntityStateBuilder()..replace(this);
+  MonitorEntityStateBuilder toBuilder() => MonitorEntityStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -42512,7 +42512,7 @@ class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(MonitorEntityState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$MonitorEntityState;
   }
@@ -42525,7 +42525,7 @@ class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$MonitorEntityState build() {
     final _$result = _$v ??
-        new _$MonitorEntityState._(
+        _$MonitorEntityState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -42570,7 +42570,7 @@ class _$EntityMonitoringState extends EntityMonitoringState {
   final double lastErrorTime;
 
   factory _$EntityMonitoringState([void updates(EntityMonitoringStateBuilder b)]) =>
-      (new EntityMonitoringStateBuilder()..update(updates)).build();
+      (EntityMonitoringStateBuilder()..update(updates)).build();
 
   _$EntityMonitoringState._(
       {this.timestamp,
@@ -42593,7 +42593,7 @@ class _$EntityMonitoringState extends EntityMonitoringState {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityMonitoringStateBuilder toBuilder() => new EntityMonitoringStateBuilder()..replace(this);
+  EntityMonitoringStateBuilder toBuilder() => EntityMonitoringStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -42750,7 +42750,7 @@ class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   void replace(EntityMonitoringState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EntityMonitoringState;
   }
@@ -42763,7 +42763,7 @@ class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   _$EntityMonitoringState build() {
     final _$result = _$v ??
-        new _$EntityMonitoringState._(
+        _$EntityMonitoringState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -42822,7 +42822,7 @@ class _$OperationalLimits extends OperationalLimits {
   final double length;
 
   factory _$OperationalLimits([void updates(OperationalLimitsBuilder b)]) =>
-      (new OperationalLimitsBuilder()..update(updates)).build();
+      (OperationalLimitsBuilder()..update(updates)).build();
 
   _$OperationalLimits._(
       {this.timestamp,
@@ -42849,7 +42849,7 @@ class _$OperationalLimits extends OperationalLimits {
       (toBuilder()..update(updates)).build();
 
   @override
-  OperationalLimitsBuilder toBuilder() => new OperationalLimitsBuilder()..replace(this);
+  OperationalLimitsBuilder toBuilder() => OperationalLimitsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43038,7 +43038,7 @@ class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(OperationalLimits other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$OperationalLimits;
   }
@@ -43051,7 +43051,7 @@ class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$OperationalLimits build() {
     final _$result = _$v ??
-        new _$OperationalLimits._(
+        _$OperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -43090,7 +43090,7 @@ class _$GetOperationalLimits extends GetOperationalLimits {
 
 
   factory _$GetOperationalLimits([void updates(GetOperationalLimitsBuilder b)]) =>
-      (new GetOperationalLimitsBuilder()..update(updates)).build();
+      (GetOperationalLimitsBuilder()..update(updates)).build();
 
   _$GetOperationalLimits._(
       {this.timestamp,
@@ -43105,7 +43105,7 @@ class _$GetOperationalLimits extends GetOperationalLimits {
       (toBuilder()..update(updates)).build();
 
   @override
-  GetOperationalLimitsBuilder toBuilder() => new GetOperationalLimitsBuilder()..replace(this);
+  GetOperationalLimitsBuilder toBuilder() => GetOperationalLimitsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43198,7 +43198,7 @@ class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(GetOperationalLimits other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GetOperationalLimits;
   }
@@ -43211,7 +43211,7 @@ class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$GetOperationalLimits build() {
     final _$result = _$v ??
-        new _$GetOperationalLimits._(
+        _$GetOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -43240,7 +43240,7 @@ class _$Calibration extends Calibration {
   final int duration;
 
   factory _$Calibration([void updates(CalibrationBuilder b)]) =>
-      (new CalibrationBuilder()..update(updates)).build();
+      (CalibrationBuilder()..update(updates)).build();
 
   _$Calibration._(
       {this.timestamp,
@@ -43256,7 +43256,7 @@ class _$Calibration extends Calibration {
       (toBuilder()..update(updates)).build();
 
   @override
-  CalibrationBuilder toBuilder() => new CalibrationBuilder()..replace(this);
+  CalibrationBuilder toBuilder() => CalibrationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43357,7 +43357,7 @@ class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(Calibration other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Calibration;
   }
@@ -43370,7 +43370,7 @@ class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$Calibration build() {
     final _$result = _$v ??
-        new _$Calibration._(
+        _$Calibration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -43404,7 +43404,7 @@ class _$ControlLoops extends ControlLoops {
   final int scopeRef;
 
   factory _$ControlLoops([void updates(ControlLoopsBuilder b)]) =>
-      (new ControlLoopsBuilder()..update(updates)).build();
+      (ControlLoopsBuilder()..update(updates)).build();
 
   _$ControlLoops._(
       {this.timestamp,
@@ -43422,7 +43422,7 @@ class _$ControlLoops extends ControlLoops {
       (toBuilder()..update(updates)).build();
 
   @override
-  ControlLoopsBuilder toBuilder() => new ControlLoopsBuilder()..replace(this);
+  ControlLoopsBuilder toBuilder() => ControlLoopsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43539,7 +43539,7 @@ class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(ControlLoops other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ControlLoops;
   }
@@ -43552,7 +43552,7 @@ class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$ControlLoops build() {
     final _$result = _$v ??
-        new _$ControlLoops._(
+        _$ControlLoops._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -43584,7 +43584,7 @@ class _$VehicleMedium extends VehicleMedium {
   final VehicleMediumEnumMedium medium;
 
   factory _$VehicleMedium([void updates(VehicleMediumBuilder b)]) =>
-      (new VehicleMediumBuilder()..update(updates)).build();
+      (VehicleMediumBuilder()..update(updates)).build();
 
   _$VehicleMedium._(
       {this.timestamp,
@@ -43600,7 +43600,7 @@ class _$VehicleMedium extends VehicleMedium {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleMediumBuilder toBuilder() => new VehicleMediumBuilder()..replace(this);
+  VehicleMediumBuilder toBuilder() => VehicleMediumBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43701,7 +43701,7 @@ class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(VehicleMedium other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VehicleMedium;
   }
@@ -43714,7 +43714,7 @@ class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$VehicleMedium build() {
     final _$result = _$v ??
-        new _$VehicleMedium._(
+        _$VehicleMedium._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -43746,7 +43746,7 @@ class _$Collision extends Collision {
   final CollisionBitfieldType type;
 
   factory _$Collision([void updates(CollisionBuilder b)]) =>
-      (new CollisionBuilder()..update(updates)).build();
+      (CollisionBuilder()..update(updates)).build();
 
   _$Collision._(
       {this.timestamp,
@@ -43763,7 +43763,7 @@ class _$Collision extends Collision {
       (toBuilder()..update(updates)).build();
 
   @override
-  CollisionBuilder toBuilder() => new CollisionBuilder()..replace(this);
+  CollisionBuilder toBuilder() => CollisionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43872,7 +43872,7 @@ class CollisionBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(Collision other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Collision;
   }
@@ -43885,7 +43885,7 @@ class CollisionBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$Collision build() {
     final _$result = _$v ??
-        new _$Collision._(
+        _$Collision._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -43926,7 +43926,7 @@ class _$FormState extends FormState {
   final FormStateEnumConvergMon convergMon;
 
   factory _$FormState([void updates(FormStateBuilder b)]) =>
-      (new FormStateBuilder()..update(updates)).build();
+      (FormStateBuilder()..update(updates)).build();
 
   _$FormState._(
       {this.timestamp,
@@ -43947,7 +43947,7 @@ class _$FormState extends FormState {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormStateBuilder toBuilder() => new FormStateBuilder()..replace(this);
+  FormStateBuilder toBuilder() => FormStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -44088,7 +44088,7 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(FormState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormState;
   }
@@ -44101,7 +44101,7 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$FormState build() {
     final _$result = _$v ??
-        new _$FormState._(
+        _$FormState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -44138,7 +44138,7 @@ class _$AutopilotMode extends AutopilotMode {
   final String mode;
 
   factory _$AutopilotMode([void updates(AutopilotModeBuilder b)]) =>
-      (new AutopilotModeBuilder()..update(updates)).build();
+      (AutopilotModeBuilder()..update(updates)).build();
 
   _$AutopilotMode._(
       {this.timestamp,
@@ -44155,7 +44155,7 @@ class _$AutopilotMode extends AutopilotMode {
       (toBuilder()..update(updates)).build();
 
   @override
-  AutopilotModeBuilder toBuilder() => new AutopilotModeBuilder()..replace(this);
+  AutopilotModeBuilder toBuilder() => AutopilotModeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -44264,7 +44264,7 @@ class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(AutopilotMode other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$AutopilotMode;
   }
@@ -44277,7 +44277,7 @@ class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$AutopilotMode build() {
     final _$result = _$v ??
-        new _$AutopilotMode._(
+        _$AutopilotMode._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -44322,7 +44322,7 @@ class _$FormationState extends FormationState {
   final FormationStateEnumConvergMon convergMon;
 
   factory _$FormationState([void updates(FormationStateBuilder b)]) =>
-      (new FormationStateBuilder()..update(updates)).build();
+      (FormationStateBuilder()..update(updates)).build();
 
   _$FormationState._(
       {this.timestamp,
@@ -44345,7 +44345,7 @@ class _$FormationState extends FormationState {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationStateBuilder toBuilder() => new FormationStateBuilder()..replace(this);
+  FormationStateBuilder toBuilder() => FormationStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -44502,7 +44502,7 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(FormationState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormationState;
   }
@@ -44515,7 +44515,7 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$FormationState build() {
     final _$result = _$v ??
-        new _$FormationState._(
+        _$FormationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -44558,7 +44558,7 @@ class _$ReportControl extends ReportControl {
   final String sysDst;
 
   factory _$ReportControl([void updates(ReportControlBuilder b)]) =>
-      (new ReportControlBuilder()..update(updates)).build();
+      (ReportControlBuilder()..update(updates)).build();
 
   _$ReportControl._(
       {this.timestamp,
@@ -44577,7 +44577,7 @@ class _$ReportControl extends ReportControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  ReportControlBuilder toBuilder() => new ReportControlBuilder()..replace(this);
+  ReportControlBuilder toBuilder() => ReportControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -44702,7 +44702,7 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ReportControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ReportControl;
   }
@@ -44715,7 +44715,7 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ReportControl build() {
     final _$result = _$v ??
-        new _$ReportControl._(
+        _$ReportControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -44766,7 +44766,7 @@ class _$StateReport extends StateReport {
   final int planChecksum;
 
   factory _$StateReport([void updates(StateReportBuilder b)]) =>
-      (new StateReportBuilder()..update(updates)).build();
+      (StateReportBuilder()..update(updates)).build();
 
   _$StateReport._(
       {this.timestamp,
@@ -44791,7 +44791,7 @@ class _$StateReport extends StateReport {
       (toBuilder()..update(updates)).build();
 
   @override
-  StateReportBuilder toBuilder() => new StateReportBuilder()..replace(this);
+  StateReportBuilder toBuilder() => StateReportBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -44964,7 +44964,7 @@ class StateReportBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(StateReport other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$StateReport;
   }
@@ -44977,7 +44977,7 @@ class StateReportBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$StateReport build() {
     final _$result = _$v ??
-        new _$StateReport._(
+        _$StateReport._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -45030,7 +45030,7 @@ class _$TransmissionRequest extends TransmissionRequest {
   final List<int> rawData;
 
   factory _$TransmissionRequest([void updates(TransmissionRequestBuilder b)]) =>
-      (new TransmissionRequestBuilder()..update(updates)).build();
+      (TransmissionRequestBuilder()..update(updates)).build();
 
   _$TransmissionRequest._(
       {this.timestamp,
@@ -45053,7 +45053,7 @@ class _$TransmissionRequest extends TransmissionRequest {
       (toBuilder()..update(updates)).build();
 
   @override
-  TransmissionRequestBuilder toBuilder() => new TransmissionRequestBuilder()..replace(this);
+  TransmissionRequestBuilder toBuilder() => TransmissionRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -45210,7 +45210,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(TransmissionRequest other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TransmissionRequest;
   }
@@ -45223,7 +45223,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$TransmissionRequest build() {
     final _$result = _$v ??
-        new _$TransmissionRequest._(
+        _$TransmissionRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -45264,7 +45264,7 @@ class _$TransmissionStatus extends TransmissionStatus {
   final String info;
 
   factory _$TransmissionStatus([void updates(TransmissionStatusBuilder b)]) =>
-      (new TransmissionStatusBuilder()..update(updates)).build();
+      (TransmissionStatusBuilder()..update(updates)).build();
 
   _$TransmissionStatus._(
       {this.timestamp,
@@ -45282,7 +45282,7 @@ class _$TransmissionStatus extends TransmissionStatus {
       (toBuilder()..update(updates)).build();
 
   @override
-  TransmissionStatusBuilder toBuilder() => new TransmissionStatusBuilder()..replace(this);
+  TransmissionStatusBuilder toBuilder() => TransmissionStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -45399,7 +45399,7 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(TransmissionStatus other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TransmissionStatus;
   }
@@ -45412,7 +45412,7 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$TransmissionStatus build() {
     final _$result = _$v ??
-        new _$TransmissionStatus._(
+        _$TransmissionStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -45450,7 +45450,7 @@ class _$SmsRequest extends SmsRequest {
   final String smsText;
 
   factory _$SmsRequest([void updates(SmsRequestBuilder b)]) =>
-      (new SmsRequestBuilder()..update(updates)).build();
+      (SmsRequestBuilder()..update(updates)).build();
 
   _$SmsRequest._(
       {this.timestamp,
@@ -45469,7 +45469,7 @@ class _$SmsRequest extends SmsRequest {
       (toBuilder()..update(updates)).build();
 
   @override
-  SmsRequestBuilder toBuilder() => new SmsRequestBuilder()..replace(this);
+  SmsRequestBuilder toBuilder() => SmsRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -45594,7 +45594,7 @@ class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(SmsRequest other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SmsRequest;
   }
@@ -45607,7 +45607,7 @@ class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$SmsRequest build() {
     final _$result = _$v ??
-        new _$SmsRequest._(
+        _$SmsRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -45644,7 +45644,7 @@ class _$SmsStatus extends SmsStatus {
   final String info;
 
   factory _$SmsStatus([void updates(SmsStatusBuilder b)]) =>
-      (new SmsStatusBuilder()..update(updates)).build();
+      (SmsStatusBuilder()..update(updates)).build();
 
   _$SmsStatus._(
       {this.timestamp,
@@ -45662,7 +45662,7 @@ class _$SmsStatus extends SmsStatus {
       (toBuilder()..update(updates)).build();
 
   @override
-  SmsStatusBuilder toBuilder() => new SmsStatusBuilder()..replace(this);
+  SmsStatusBuilder toBuilder() => SmsStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -45779,7 +45779,7 @@ class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(SmsStatus other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SmsStatus;
   }
@@ -45792,7 +45792,7 @@ class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$SmsStatus build() {
     final _$result = _$v ??
-        new _$SmsStatus._(
+        _$SmsStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -45824,7 +45824,7 @@ class _$VtolState extends VtolState {
   final VtolStateEnumState state;
 
   factory _$VtolState([void updates(VtolStateBuilder b)]) =>
-      (new VtolStateBuilder()..update(updates)).build();
+      (VtolStateBuilder()..update(updates)).build();
 
   _$VtolState._(
       {this.timestamp,
@@ -45840,7 +45840,7 @@ class _$VtolState extends VtolState {
       (toBuilder()..update(updates)).build();
 
   @override
-  VtolStateBuilder toBuilder() => new VtolStateBuilder()..replace(this);
+  VtolStateBuilder toBuilder() => VtolStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -45941,7 +45941,7 @@ class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(VtolState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VtolState;
   }
@@ -45954,7 +45954,7 @@ class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$VtolState build() {
     final _$result = _$v ??
-        new _$VtolState._(
+        _$VtolState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -45984,7 +45984,7 @@ class _$ArmingState extends ArmingState {
   final ArmingStateEnumState state;
 
   factory _$ArmingState([void updates(ArmingStateBuilder b)]) =>
-      (new ArmingStateBuilder()..update(updates)).build();
+      (ArmingStateBuilder()..update(updates)).build();
 
   _$ArmingState._(
       {this.timestamp,
@@ -46000,7 +46000,7 @@ class _$ArmingState extends ArmingState {
       (toBuilder()..update(updates)).build();
 
   @override
-  ArmingStateBuilder toBuilder() => new ArmingStateBuilder()..replace(this);
+  ArmingStateBuilder toBuilder() => ArmingStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -46101,7 +46101,7 @@ class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(ArmingState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ArmingState;
   }
@@ -46114,7 +46114,7 @@ class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$ArmingState build() {
     final _$result = _$v ??
-        new _$ArmingState._(
+        _$ArmingState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -46142,7 +46142,7 @@ class _$Abort extends Abort {
 
 
   factory _$Abort([void updates(AbortBuilder b)]) =>
-      (new AbortBuilder()..update(updates)).build();
+      (AbortBuilder()..update(updates)).build();
 
   _$Abort._(
       {this.timestamp,
@@ -46157,7 +46157,7 @@ class _$Abort extends Abort {
       (toBuilder()..update(updates)).build();
 
   @override
-  AbortBuilder toBuilder() => new AbortBuilder()..replace(this);
+  AbortBuilder toBuilder() => AbortBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -46250,7 +46250,7 @@ class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(Abort other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Abort;
   }
@@ -46263,7 +46263,7 @@ class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$Abort build() {
     final _$result = _$v ??
-        new _$Abort._(
+        _$Abort._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -46308,7 +46308,7 @@ class _$PlanSpecification extends PlanSpecification {
   final List<ImcMessage> endActions;
 
   factory _$PlanSpecification([void updates(PlanSpecificationBuilder b)]) =>
-      (new PlanSpecificationBuilder()..update(updates)).build();
+      (PlanSpecificationBuilder()..update(updates)).build();
 
   _$PlanSpecification._(
       {this.timestamp,
@@ -46332,7 +46332,7 @@ class _$PlanSpecification extends PlanSpecification {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanSpecificationBuilder toBuilder() => new PlanSpecificationBuilder()..replace(this);
+  PlanSpecificationBuilder toBuilder() => PlanSpecificationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -46497,7 +46497,7 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(PlanSpecification other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanSpecification;
   }
@@ -46510,7 +46510,7 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$PlanSpecification build() {
     final _$result = _$v ??
-        new _$PlanSpecification._(
+        _$PlanSpecification._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -46554,7 +46554,7 @@ class _$PlanManeuver extends PlanManeuver {
   final List<ImcMessage> endActions;
 
   factory _$PlanManeuver([void updates(PlanManeuverBuilder b)]) =>
-      (new PlanManeuverBuilder()..update(updates)).build();
+      (PlanManeuverBuilder()..update(updates)).build();
 
   _$PlanManeuver._(
       {this.timestamp,
@@ -46573,7 +46573,7 @@ class _$PlanManeuver extends PlanManeuver {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanManeuverBuilder toBuilder() => new PlanManeuverBuilder()..replace(this);
+  PlanManeuverBuilder toBuilder() => PlanManeuverBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -46698,7 +46698,7 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(PlanManeuver other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanManeuver;
   }
@@ -46711,7 +46711,7 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$PlanManeuver build() {
     final _$result = _$v ??
-        new _$PlanManeuver._(
+        _$PlanManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -46750,7 +46750,7 @@ class _$PlanTransition extends PlanTransition {
   final List<ImcMessage> actions;
 
   factory _$PlanTransition([void updates(PlanTransitionBuilder b)]) =>
-      (new PlanTransitionBuilder()..update(updates)).build();
+      (PlanTransitionBuilder()..update(updates)).build();
 
   _$PlanTransition._(
       {this.timestamp,
@@ -46769,7 +46769,7 @@ class _$PlanTransition extends PlanTransition {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanTransitionBuilder toBuilder() => new PlanTransitionBuilder()..replace(this);
+  PlanTransitionBuilder toBuilder() => PlanTransitionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -46894,7 +46894,7 @@ class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(PlanTransition other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanTransition;
   }
@@ -46907,7 +46907,7 @@ class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$PlanTransition build() {
     final _$result = _$v ??
-        new _$PlanTransition._(
+        _$PlanTransition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -46942,7 +46942,7 @@ class _$EmergencyControl extends EmergencyControl {
   final PlanSpecification plan;
 
   factory _$EmergencyControl([void updates(EmergencyControlBuilder b)]) =>
-      (new EmergencyControlBuilder()..update(updates)).build();
+      (EmergencyControlBuilder()..update(updates)).build();
 
   _$EmergencyControl._(
       {this.timestamp,
@@ -46959,7 +46959,7 @@ class _$EmergencyControl extends EmergencyControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  EmergencyControlBuilder toBuilder() => new EmergencyControlBuilder()..replace(this);
+  EmergencyControlBuilder toBuilder() => EmergencyControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47068,7 +47068,7 @@ class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(EmergencyControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EmergencyControl;
   }
@@ -47081,7 +47081,7 @@ class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$EmergencyControl build() {
     final _$result = _$v ??
-        new _$EmergencyControl._(
+        _$EmergencyControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -47116,7 +47116,7 @@ class _$EmergencyControlState extends EmergencyControlState {
   final int commLevel;
 
   factory _$EmergencyControlState([void updates(EmergencyControlStateBuilder b)]) =>
-      (new EmergencyControlStateBuilder()..update(updates)).build();
+      (EmergencyControlStateBuilder()..update(updates)).build();
 
   _$EmergencyControlState._(
       {this.timestamp,
@@ -47134,7 +47134,7 @@ class _$EmergencyControlState extends EmergencyControlState {
       (toBuilder()..update(updates)).build();
 
   @override
-  EmergencyControlStateBuilder toBuilder() => new EmergencyControlStateBuilder()..replace(this);
+  EmergencyControlStateBuilder toBuilder() => EmergencyControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47251,7 +47251,7 @@ class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   void replace(EmergencyControlState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EmergencyControlState;
   }
@@ -47264,7 +47264,7 @@ class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   _$EmergencyControlState build() {
     final _$result = _$v ??
-        new _$EmergencyControlState._(
+        _$EmergencyControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -47306,7 +47306,7 @@ class _$PlanDB extends PlanDB {
   final String info;
 
   factory _$PlanDB([void updates(PlanDBBuilder b)]) =>
-      (new PlanDBBuilder()..update(updates)).build();
+      (PlanDBBuilder()..update(updates)).build();
 
   _$PlanDB._(
       {this.timestamp,
@@ -47327,7 +47327,7 @@ class _$PlanDB extends PlanDB {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanDBBuilder toBuilder() => new PlanDBBuilder()..replace(this);
+  PlanDBBuilder toBuilder() => PlanDBBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47468,7 +47468,7 @@ class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   void replace(PlanDB other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanDB;
   }
@@ -47481,7 +47481,7 @@ class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   _$PlanDB build() {
     final _$result = _$v ??
-        new _$PlanDB._(
+        _$PlanDB._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -47528,7 +47528,7 @@ class _$PlanDBState extends PlanDBState {
   final List<PlanDBInformation> plansInfo;
 
   factory _$PlanDBState([void updates(PlanDBStateBuilder b)]) =>
-      (new PlanDBStateBuilder()..update(updates)).build();
+      (PlanDBStateBuilder()..update(updates)).build();
 
   _$PlanDBState._(
       {this.timestamp,
@@ -47550,7 +47550,7 @@ class _$PlanDBState extends PlanDBState {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanDBStateBuilder toBuilder() => new PlanDBStateBuilder()..replace(this);
+  PlanDBStateBuilder toBuilder() => PlanDBStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47699,7 +47699,7 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(PlanDBState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanDBState;
   }
@@ -47712,7 +47712,7 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$PlanDBState build() {
     final _$result = _$v ??
-        new _$PlanDBState._(
+        _$PlanDBState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -47758,7 +47758,7 @@ class _$PlanDBInformation extends PlanDBInformation {
   final List<int> md5;
 
   factory _$PlanDBInformation([void updates(PlanDBInformationBuilder b)]) =>
-      (new PlanDBInformationBuilder()..update(updates)).build();
+      (PlanDBInformationBuilder()..update(updates)).build();
 
   _$PlanDBInformation._(
       {this.timestamp,
@@ -47779,7 +47779,7 @@ class _$PlanDBInformation extends PlanDBInformation {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanDBInformationBuilder toBuilder() => new PlanDBInformationBuilder()..replace(this);
+  PlanDBInformationBuilder toBuilder() => PlanDBInformationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47920,7 +47920,7 @@ class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(PlanDBInformation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanDBInformation;
   }
@@ -47933,7 +47933,7 @@ class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$PlanDBInformation build() {
     final _$result = _$v ??
-        new _$PlanDBInformation._(
+        _$PlanDBInformation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -47980,7 +47980,7 @@ class _$PlanControl extends PlanControl {
   final String info;
 
   factory _$PlanControl([void updates(PlanControlBuilder b)]) =>
-      (new PlanControlBuilder()..update(updates)).build();
+      (PlanControlBuilder()..update(updates)).build();
 
   _$PlanControl._(
       {this.timestamp,
@@ -48002,7 +48002,7 @@ class _$PlanControl extends PlanControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanControlBuilder toBuilder() => new PlanControlBuilder()..replace(this);
+  PlanControlBuilder toBuilder() => PlanControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -48151,7 +48151,7 @@ class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(PlanControl other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanControl;
   }
@@ -48164,7 +48164,7 @@ class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$PlanControl build() {
     final _$result = _$v ??
-        new _$PlanControl._(
+        _$PlanControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -48214,7 +48214,7 @@ class _$PlanControlState extends PlanControlState {
   final PlanControlStateEnumLastOutcome lastOutcome;
 
   factory _$PlanControlState([void updates(PlanControlStateBuilder b)]) =>
-      (new PlanControlStateBuilder()..update(updates)).build();
+      (PlanControlStateBuilder()..update(updates)).build();
 
   _$PlanControlState._(
       {this.timestamp,
@@ -48237,7 +48237,7 @@ class _$PlanControlState extends PlanControlState {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanControlStateBuilder toBuilder() => new PlanControlStateBuilder()..replace(this);
+  PlanControlStateBuilder toBuilder() => PlanControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -48394,7 +48394,7 @@ class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(PlanControlState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanControlState;
   }
@@ -48407,7 +48407,7 @@ class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$PlanControlState build() {
     final _$result = _$v ??
-        new _$PlanControlState._(
+        _$PlanControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -48450,7 +48450,7 @@ class _$PlanVariable extends PlanVariable {
   final PlanVariableEnumAccess access;
 
   factory _$PlanVariable([void updates(PlanVariableBuilder b)]) =>
-      (new PlanVariableBuilder()..update(updates)).build();
+      (PlanVariableBuilder()..update(updates)).build();
 
   _$PlanVariable._(
       {this.timestamp,
@@ -48469,7 +48469,7 @@ class _$PlanVariable extends PlanVariable {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanVariableBuilder toBuilder() => new PlanVariableBuilder()..replace(this);
+  PlanVariableBuilder toBuilder() => PlanVariableBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -48594,7 +48594,7 @@ class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(PlanVariable other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanVariable;
   }
@@ -48607,7 +48607,7 @@ class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$PlanVariable build() {
     final _$result = _$v ??
-        new _$PlanVariable._(
+        _$PlanVariable._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -48646,7 +48646,7 @@ class _$PlanGeneration extends PlanGeneration {
   final String params;
 
   factory _$PlanGeneration([void updates(PlanGenerationBuilder b)]) =>
-      (new PlanGenerationBuilder()..update(updates)).build();
+      (PlanGenerationBuilder()..update(updates)).build();
 
   _$PlanGeneration._(
       {this.timestamp,
@@ -48665,7 +48665,7 @@ class _$PlanGeneration extends PlanGeneration {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanGenerationBuilder toBuilder() => new PlanGenerationBuilder()..replace(this);
+  PlanGenerationBuilder toBuilder() => PlanGenerationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -48790,7 +48790,7 @@ class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(PlanGeneration other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanGeneration;
   }
@@ -48803,7 +48803,7 @@ class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$PlanGeneration build() {
     final _$result = _$v ??
-        new _$PlanGeneration._(
+        _$PlanGeneration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -48874,7 +48874,7 @@ class _$LeaderState extends LeaderState {
   final double svz;
 
   factory _$LeaderState([void updates(LeaderStateBuilder b)]) =>
-      (new LeaderStateBuilder()..update(updates)).build();
+      (LeaderStateBuilder()..update(updates)).build();
 
   _$LeaderState._(
       {this.timestamp,
@@ -48909,7 +48909,7 @@ class _$LeaderState extends LeaderState {
       (toBuilder()..update(updates)).build();
 
   @override
-  LeaderStateBuilder toBuilder() => new LeaderStateBuilder()..replace(this);
+  LeaderStateBuilder toBuilder() => LeaderStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -49162,7 +49162,7 @@ class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(LeaderState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$LeaderState;
   }
@@ -49175,7 +49175,7 @@ class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$LeaderState build() {
     final _$result = _$v ??
-        new _$LeaderState._(
+        _$LeaderState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -49236,7 +49236,7 @@ class _$PlanStatistics extends PlanStatistics {
   final String fuel;
 
   factory _$PlanStatistics([void updates(PlanStatisticsBuilder b)]) =>
-      (new PlanStatisticsBuilder()..update(updates)).build();
+      (PlanStatisticsBuilder()..update(updates)).build();
 
   _$PlanStatistics._(
       {this.timestamp,
@@ -49258,7 +49258,7 @@ class _$PlanStatistics extends PlanStatistics {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanStatisticsBuilder toBuilder() => new PlanStatisticsBuilder()..replace(this);
+  PlanStatisticsBuilder toBuilder() => PlanStatisticsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -49407,7 +49407,7 @@ class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(PlanStatistics other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PlanStatistics;
   }
@@ -49420,7 +49420,7 @@ class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$PlanStatistics build() {
     final _$result = _$v ??
-        new _$PlanStatistics._(
+        _$PlanStatistics._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -49472,7 +49472,7 @@ class _$ReportedState extends ReportedState {
   final ReportedStateEnumSType sType;
 
   factory _$ReportedState([void updates(ReportedStateBuilder b)]) =>
-      (new ReportedStateBuilder()..update(updates)).build();
+      (ReportedStateBuilder()..update(updates)).build();
 
   _$ReportedState._(
       {this.timestamp,
@@ -49496,7 +49496,7 @@ class _$ReportedState extends ReportedState {
       (toBuilder()..update(updates)).build();
 
   @override
-  ReportedStateBuilder toBuilder() => new ReportedStateBuilder()..replace(this);
+  ReportedStateBuilder toBuilder() => ReportedStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -49661,7 +49661,7 @@ class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ReportedState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ReportedState;
   }
@@ -49674,7 +49674,7 @@ class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ReportedState build() {
     final _$result = _$v ??
-        new _$ReportedState._(
+        _$ReportedState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -49724,7 +49724,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
   final String data;
 
   factory _$RemoteSensorInfo([void updates(RemoteSensorInfoBuilder b)]) =>
-      (new RemoteSensorInfoBuilder()..update(updates)).build();
+      (RemoteSensorInfoBuilder()..update(updates)).build();
 
   _$RemoteSensorInfo._(
       {this.timestamp,
@@ -49746,7 +49746,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
       (toBuilder()..update(updates)).build();
 
   @override
-  RemoteSensorInfoBuilder toBuilder() => new RemoteSensorInfoBuilder()..replace(this);
+  RemoteSensorInfoBuilder toBuilder() => RemoteSensorInfoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -49895,7 +49895,7 @@ class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(RemoteSensorInfo other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RemoteSensorInfo;
   }
@@ -49908,7 +49908,7 @@ class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$RemoteSensorInfo build() {
     final _$result = _$v ??
-        new _$RemoteSensorInfo._(
+        _$RemoteSensorInfo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -49946,7 +49946,7 @@ class _$Map extends Map {
   final List<MapFeature> features;
 
   factory _$Map([void updates(MapBuilder b)]) =>
-      (new MapBuilder()..update(updates)).build();
+      (MapBuilder()..update(updates)).build();
 
   _$Map._(
       {this.timestamp,
@@ -49963,7 +49963,7 @@ class _$Map extends Map {
       (toBuilder()..update(updates)).build();
 
   @override
-  MapBuilder toBuilder() => new MapBuilder()..replace(this);
+  MapBuilder toBuilder() => MapBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -50072,7 +50072,7 @@ class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   void replace(Map other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Map;
   }
@@ -50085,7 +50085,7 @@ class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   @override
   _$Map build() {
     final _$result = _$v ??
-        new _$Map._(
+        _$Map._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -50126,7 +50126,7 @@ class _$MapFeature extends MapFeature {
   final List<MapPoint> feature;
 
   factory _$MapFeature([void updates(MapFeatureBuilder b)]) =>
-      (new MapFeatureBuilder()..update(updates)).build();
+      (MapFeatureBuilder()..update(updates)).build();
 
   _$MapFeature._(
       {this.timestamp,
@@ -50147,7 +50147,7 @@ class _$MapFeature extends MapFeature {
       (toBuilder()..update(updates)).build();
 
   @override
-  MapFeatureBuilder toBuilder() => new MapFeatureBuilder()..replace(this);
+  MapFeatureBuilder toBuilder() => MapFeatureBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -50288,7 +50288,7 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(MapFeature other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$MapFeature;
   }
@@ -50301,7 +50301,7 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$MapFeature build() {
     final _$result = _$v ??
-        new _$MapFeature._(
+        _$MapFeature._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -50340,7 +50340,7 @@ class _$MapPoint extends MapPoint {
   final double alt;
 
   factory _$MapPoint([void updates(MapPointBuilder b)]) =>
-      (new MapPointBuilder()..update(updates)).build();
+      (MapPointBuilder()..update(updates)).build();
 
   _$MapPoint._(
       {this.timestamp,
@@ -50358,7 +50358,7 @@ class _$MapPoint extends MapPoint {
       (toBuilder()..update(updates)).build();
 
   @override
-  MapPointBuilder toBuilder() => new MapPointBuilder()..replace(this);
+  MapPointBuilder toBuilder() => MapPointBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -50475,7 +50475,7 @@ class MapPointBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(MapPoint other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$MapPoint;
   }
@@ -50488,7 +50488,7 @@ class MapPointBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$MapPoint build() {
     final _$result = _$v ??
-        new _$MapPoint._(
+        _$MapPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -50524,7 +50524,7 @@ class _$CcuEvent extends CcuEvent {
   final ImcMessage arg;
 
   factory _$CcuEvent([void updates(CcuEventBuilder b)]) =>
-      (new CcuEventBuilder()..update(updates)).build();
+      (CcuEventBuilder()..update(updates)).build();
 
   _$CcuEvent._(
       {this.timestamp,
@@ -50542,7 +50542,7 @@ class _$CcuEvent extends CcuEvent {
       (toBuilder()..update(updates)).build();
 
   @override
-  CcuEventBuilder toBuilder() => new CcuEventBuilder()..replace(this);
+  CcuEventBuilder toBuilder() => CcuEventBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -50659,7 +50659,7 @@ class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(CcuEvent other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CcuEvent;
   }
@@ -50672,7 +50672,7 @@ class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$CcuEvent build() {
     final _$result = _$v ??
-        new _$CcuEvent._(
+        _$CcuEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -50706,7 +50706,7 @@ class _$VehicleLinks extends VehicleLinks {
   final List<Announce> links;
 
   factory _$VehicleLinks([void updates(VehicleLinksBuilder b)]) =>
-      (new VehicleLinksBuilder()..update(updates)).build();
+      (VehicleLinksBuilder()..update(updates)).build();
 
   _$VehicleLinks._(
       {this.timestamp,
@@ -50723,7 +50723,7 @@ class _$VehicleLinks extends VehicleLinks {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleLinksBuilder toBuilder() => new VehicleLinksBuilder()..replace(this);
+  VehicleLinksBuilder toBuilder() => VehicleLinksBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -50832,7 +50832,7 @@ class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(VehicleLinks other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$VehicleLinks;
   }
@@ -50845,7 +50845,7 @@ class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$VehicleLinks build() {
     final _$result = _$v ??
-        new _$VehicleLinks._(
+        _$VehicleLinks._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -50880,7 +50880,7 @@ class _$TrexObservation extends TrexObservation {
   final String attributes;
 
   factory _$TrexObservation([void updates(TrexObservationBuilder b)]) =>
-      (new TrexObservationBuilder()..update(updates)).build();
+      (TrexObservationBuilder()..update(updates)).build();
 
   _$TrexObservation._(
       {this.timestamp,
@@ -50898,7 +50898,7 @@ class _$TrexObservation extends TrexObservation {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrexObservationBuilder toBuilder() => new TrexObservationBuilder()..replace(this);
+  TrexObservationBuilder toBuilder() => TrexObservationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -51015,7 +51015,7 @@ class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(TrexObservation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrexObservation;
   }
@@ -51028,7 +51028,7 @@ class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$TrexObservation build() {
     final _$result = _$v ??
-        new _$TrexObservation._(
+        _$TrexObservation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -51064,7 +51064,7 @@ class _$TrexCommand extends TrexCommand {
   final String goalXml;
 
   factory _$TrexCommand([void updates(TrexCommandBuilder b)]) =>
-      (new TrexCommandBuilder()..update(updates)).build();
+      (TrexCommandBuilder()..update(updates)).build();
 
   _$TrexCommand._(
       {this.timestamp,
@@ -51082,7 +51082,7 @@ class _$TrexCommand extends TrexCommand {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrexCommandBuilder toBuilder() => new TrexCommandBuilder()..replace(this);
+  TrexCommandBuilder toBuilder() => TrexCommandBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -51199,7 +51199,7 @@ class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(TrexCommand other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrexCommand;
   }
@@ -51212,7 +51212,7 @@ class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$TrexCommand build() {
     final _$result = _$v ??
-        new _$TrexCommand._(
+        _$TrexCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -51248,7 +51248,7 @@ class _$TrexOperation extends TrexOperation {
   final TrexToken token;
 
   factory _$TrexOperation([void updates(TrexOperationBuilder b)]) =>
-      (new TrexOperationBuilder()..update(updates)).build();
+      (TrexOperationBuilder()..update(updates)).build();
 
   _$TrexOperation._(
       {this.timestamp,
@@ -51266,7 +51266,7 @@ class _$TrexOperation extends TrexOperation {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrexOperationBuilder toBuilder() => new TrexOperationBuilder()..replace(this);
+  TrexOperationBuilder toBuilder() => TrexOperationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -51383,7 +51383,7 @@ class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(TrexOperation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrexOperation;
   }
@@ -51396,7 +51396,7 @@ class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$TrexOperation build() {
     final _$result = _$v ??
-        new _$TrexOperation._(
+        _$TrexOperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -51434,7 +51434,7 @@ class _$TrexAttribute extends TrexAttribute {
   final String max;
 
   factory _$TrexAttribute([void updates(TrexAttributeBuilder b)]) =>
-      (new TrexAttributeBuilder()..update(updates)).build();
+      (TrexAttributeBuilder()..update(updates)).build();
 
   _$TrexAttribute._(
       {this.timestamp,
@@ -51453,7 +51453,7 @@ class _$TrexAttribute extends TrexAttribute {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrexAttributeBuilder toBuilder() => new TrexAttributeBuilder()..replace(this);
+  TrexAttributeBuilder toBuilder() => TrexAttributeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -51578,7 +51578,7 @@ class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(TrexAttribute other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrexAttribute;
   }
@@ -51591,7 +51591,7 @@ class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$TrexAttribute build() {
     final _$result = _$v ??
-        new _$TrexAttribute._(
+        _$TrexAttribute._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -51628,7 +51628,7 @@ class _$TrexToken extends TrexToken {
   final List<TrexAttribute> attributes;
 
   factory _$TrexToken([void updates(TrexTokenBuilder b)]) =>
-      (new TrexTokenBuilder()..update(updates)).build();
+      (TrexTokenBuilder()..update(updates)).build();
 
   _$TrexToken._(
       {this.timestamp,
@@ -51646,7 +51646,7 @@ class _$TrexToken extends TrexToken {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrexTokenBuilder toBuilder() => new TrexTokenBuilder()..replace(this);
+  TrexTokenBuilder toBuilder() => TrexTokenBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -51763,7 +51763,7 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(TrexToken other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrexToken;
   }
@@ -51776,7 +51776,7 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$TrexToken build() {
     final _$result = _$v ??
-        new _$TrexToken._(
+        _$TrexToken._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -51810,7 +51810,7 @@ class _$TrexPlan extends TrexPlan {
   final List<TrexToken> tokens;
 
   factory _$TrexPlan([void updates(TrexPlanBuilder b)]) =>
-      (new TrexPlanBuilder()..update(updates)).build();
+      (TrexPlanBuilder()..update(updates)).build();
 
   _$TrexPlan._(
       {this.timestamp,
@@ -51827,7 +51827,7 @@ class _$TrexPlan extends TrexPlan {
       (toBuilder()..update(updates)).build();
 
   @override
-  TrexPlanBuilder toBuilder() => new TrexPlanBuilder()..replace(this);
+  TrexPlanBuilder toBuilder() => TrexPlanBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -51936,7 +51936,7 @@ class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(TrexPlan other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TrexPlan;
   }
@@ -51949,7 +51949,7 @@ class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$TrexPlan build() {
     final _$result = _$v ??
-        new _$TrexPlan._(
+        _$TrexPlan._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -51982,7 +51982,7 @@ class _$Event extends Event {
   final String data;
 
   factory _$Event([void updates(EventBuilder b)]) =>
-      (new EventBuilder()..update(updates)).build();
+      (EventBuilder()..update(updates)).build();
 
   _$Event._(
       {this.timestamp,
@@ -51999,7 +51999,7 @@ class _$Event extends Event {
       (toBuilder()..update(updates)).build();
 
   @override
-  EventBuilder toBuilder() => new EventBuilder()..replace(this);
+  EventBuilder toBuilder() => EventBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -52108,7 +52108,7 @@ class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   void replace(Event other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Event;
   }
@@ -52121,7 +52121,7 @@ class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   @override
   _$Event build() {
     final _$result = _$v ??
-        new _$Event._(
+        _$Event._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -52154,7 +52154,7 @@ class _$CompressedImage extends CompressedImage {
   final List<int> data;
 
   factory _$CompressedImage([void updates(CompressedImageBuilder b)]) =>
-      (new CompressedImageBuilder()..update(updates)).build();
+      (CompressedImageBuilder()..update(updates)).build();
 
   _$CompressedImage._(
       {this.timestamp,
@@ -52171,7 +52171,7 @@ class _$CompressedImage extends CompressedImage {
       (toBuilder()..update(updates)).build();
 
   @override
-  CompressedImageBuilder toBuilder() => new CompressedImageBuilder()..replace(this);
+  CompressedImageBuilder toBuilder() => CompressedImageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -52280,7 +52280,7 @@ class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(CompressedImage other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CompressedImage;
   }
@@ -52293,7 +52293,7 @@ class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$CompressedImage build() {
     final _$result = _$v ??
-        new _$CompressedImage._(
+        _$CompressedImage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -52330,7 +52330,7 @@ class _$ImageTxSettings extends ImageTxSettings {
   final int tsize;
 
   factory _$ImageTxSettings([void updates(ImageTxSettingsBuilder b)]) =>
-      (new ImageTxSettingsBuilder()..update(updates)).build();
+      (ImageTxSettingsBuilder()..update(updates)).build();
 
   _$ImageTxSettings._(
       {this.timestamp,
@@ -52349,7 +52349,7 @@ class _$ImageTxSettings extends ImageTxSettings {
       (toBuilder()..update(updates)).build();
 
   @override
-  ImageTxSettingsBuilder toBuilder() => new ImageTxSettingsBuilder()..replace(this);
+  ImageTxSettingsBuilder toBuilder() => ImageTxSettingsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -52474,7 +52474,7 @@ class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(ImageTxSettings other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ImageTxSettings;
   }
@@ -52487,7 +52487,7 @@ class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$ImageTxSettings build() {
     final _$result = _$v ??
-        new _$ImageTxSettings._(
+        _$ImageTxSettings._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -52528,7 +52528,7 @@ class _$RemoteState extends RemoteState {
   final double psi;
 
   factory _$RemoteState([void updates(RemoteStateBuilder b)]) =>
-      (new RemoteStateBuilder()..update(updates)).build();
+      (RemoteStateBuilder()..update(updates)).build();
 
   _$RemoteState._(
       {this.timestamp,
@@ -52548,7 +52548,7 @@ class _$RemoteState extends RemoteState {
       (toBuilder()..update(updates)).build();
 
   @override
-  RemoteStateBuilder toBuilder() => new RemoteStateBuilder()..replace(this);
+  RemoteStateBuilder toBuilder() => RemoteStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -52681,7 +52681,7 @@ class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(RemoteState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$RemoteState;
   }
@@ -52694,7 +52694,7 @@ class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$RemoteState build() {
     final _$result = _$v ??
-        new _$RemoteState._(
+        _$RemoteState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -52740,7 +52740,7 @@ class _$Target extends Target {
   final double sog;
 
   factory _$Target([void updates(TargetBuilder b)]) =>
-      (new TargetBuilder()..update(updates)).build();
+      (TargetBuilder()..update(updates)).build();
 
   _$Target._(
       {this.timestamp,
@@ -52762,7 +52762,7 @@ class _$Target extends Target {
       (toBuilder()..update(updates)).build();
 
   @override
-  TargetBuilder toBuilder() => new TargetBuilder()..replace(this);
+  TargetBuilder toBuilder() => TargetBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -52911,7 +52911,7 @@ class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   void replace(Target other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Target;
   }
@@ -52924,7 +52924,7 @@ class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   @override
   _$Target build() {
     final _$result = _$v ??
-        new _$Target._(
+        _$Target._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -52962,7 +52962,7 @@ class _$EntityParameter extends EntityParameter {
   final String value;
 
   factory _$EntityParameter([void updates(EntityParameterBuilder b)]) =>
-      (new EntityParameterBuilder()..update(updates)).build();
+      (EntityParameterBuilder()..update(updates)).build();
 
   _$EntityParameter._(
       {this.timestamp,
@@ -52979,7 +52979,7 @@ class _$EntityParameter extends EntityParameter {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityParameterBuilder toBuilder() => new EntityParameterBuilder()..replace(this);
+  EntityParameterBuilder toBuilder() => EntityParameterBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -53088,7 +53088,7 @@ class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(EntityParameter other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EntityParameter;
   }
@@ -53101,7 +53101,7 @@ class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$EntityParameter build() {
     final _$result = _$v ??
-        new _$EntityParameter._(
+        _$EntityParameter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -53134,7 +53134,7 @@ class _$EntityParameters extends EntityParameters {
   final List<EntityParameter> params;
 
   factory _$EntityParameters([void updates(EntityParametersBuilder b)]) =>
-      (new EntityParametersBuilder()..update(updates)).build();
+      (EntityParametersBuilder()..update(updates)).build();
 
   _$EntityParameters._(
       {this.timestamp,
@@ -53151,7 +53151,7 @@ class _$EntityParameters extends EntityParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityParametersBuilder toBuilder() => new EntityParametersBuilder()..replace(this);
+  EntityParametersBuilder toBuilder() => EntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -53260,7 +53260,7 @@ class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(EntityParameters other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$EntityParameters;
   }
@@ -53273,7 +53273,7 @@ class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$EntityParameters build() {
     final _$result = _$v ??
-        new _$EntityParameters._(
+        _$EntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -53308,7 +53308,7 @@ class _$QueryEntityParameters extends QueryEntityParameters {
   final String scope;
 
   factory _$QueryEntityParameters([void updates(QueryEntityParametersBuilder b)]) =>
-      (new QueryEntityParametersBuilder()..update(updates)).build();
+      (QueryEntityParametersBuilder()..update(updates)).build();
 
   _$QueryEntityParameters._(
       {this.timestamp,
@@ -53326,7 +53326,7 @@ class _$QueryEntityParameters extends QueryEntityParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryEntityParametersBuilder toBuilder() => new QueryEntityParametersBuilder()..replace(this);
+  QueryEntityParametersBuilder toBuilder() => QueryEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -53443,7 +53443,7 @@ class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   void replace(QueryEntityParameters other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$QueryEntityParameters;
   }
@@ -53456,7 +53456,7 @@ class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart impl
   @override
   _$QueryEntityParameters build() {
     final _$result = _$v ??
-        new _$QueryEntityParameters._(
+        _$QueryEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -53490,7 +53490,7 @@ class _$SetEntityParameters extends SetEntityParameters {
   final List<EntityParameter> params;
 
   factory _$SetEntityParameters([void updates(SetEntityParametersBuilder b)]) =>
-      (new SetEntityParametersBuilder()..update(updates)).build();
+      (SetEntityParametersBuilder()..update(updates)).build();
 
   _$SetEntityParameters._(
       {this.timestamp,
@@ -53507,7 +53507,7 @@ class _$SetEntityParameters extends SetEntityParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetEntityParametersBuilder toBuilder() => new SetEntityParametersBuilder()..replace(this);
+  SetEntityParametersBuilder toBuilder() => SetEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -53616,7 +53616,7 @@ class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(SetEntityParameters other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SetEntityParameters;
   }
@@ -53629,7 +53629,7 @@ class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$SetEntityParameters build() {
     final _$result = _$v ??
-        new _$SetEntityParameters._(
+        _$SetEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -53660,7 +53660,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
   final String name;
 
   factory _$SaveEntityParameters([void updates(SaveEntityParametersBuilder b)]) =>
-      (new SaveEntityParametersBuilder()..update(updates)).build();
+      (SaveEntityParametersBuilder()..update(updates)).build();
 
   _$SaveEntityParameters._(
       {this.timestamp,
@@ -53676,7 +53676,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  SaveEntityParametersBuilder toBuilder() => new SaveEntityParametersBuilder()..replace(this);
+  SaveEntityParametersBuilder toBuilder() => SaveEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -53777,7 +53777,7 @@ class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(SaveEntityParameters other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SaveEntityParameters;
   }
@@ -53790,7 +53790,7 @@ class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$SaveEntityParameters build() {
     final _$result = _$v ??
-        new _$SaveEntityParameters._(
+        _$SaveEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -53820,7 +53820,7 @@ class _$CreateSession extends CreateSession {
   final int timeout;
 
   factory _$CreateSession([void updates(CreateSessionBuilder b)]) =>
-      (new CreateSessionBuilder()..update(updates)).build();
+      (CreateSessionBuilder()..update(updates)).build();
 
   _$CreateSession._(
       {this.timestamp,
@@ -53836,7 +53836,7 @@ class _$CreateSession extends CreateSession {
       (toBuilder()..update(updates)).build();
 
   @override
-  CreateSessionBuilder toBuilder() => new CreateSessionBuilder()..replace(this);
+  CreateSessionBuilder toBuilder() => CreateSessionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -53937,7 +53937,7 @@ class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(CreateSession other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CreateSession;
   }
@@ -53950,7 +53950,7 @@ class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$CreateSession build() {
     final _$result = _$v ??
-        new _$CreateSession._(
+        _$CreateSession._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -53980,7 +53980,7 @@ class _$CloseSession extends CloseSession {
   final int sessid;
 
   factory _$CloseSession([void updates(CloseSessionBuilder b)]) =>
-      (new CloseSessionBuilder()..update(updates)).build();
+      (CloseSessionBuilder()..update(updates)).build();
 
   _$CloseSession._(
       {this.timestamp,
@@ -53996,7 +53996,7 @@ class _$CloseSession extends CloseSession {
       (toBuilder()..update(updates)).build();
 
   @override
-  CloseSessionBuilder toBuilder() => new CloseSessionBuilder()..replace(this);
+  CloseSessionBuilder toBuilder() => CloseSessionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54097,7 +54097,7 @@ class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(CloseSession other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$CloseSession;
   }
@@ -54110,7 +54110,7 @@ class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$CloseSession build() {
     final _$result = _$v ??
-        new _$CloseSession._(
+        _$CloseSession._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -54142,7 +54142,7 @@ class _$SessionSubscription extends SessionSubscription {
   final String messages;
 
   factory _$SessionSubscription([void updates(SessionSubscriptionBuilder b)]) =>
-      (new SessionSubscriptionBuilder()..update(updates)).build();
+      (SessionSubscriptionBuilder()..update(updates)).build();
 
   _$SessionSubscription._(
       {this.timestamp,
@@ -54159,7 +54159,7 @@ class _$SessionSubscription extends SessionSubscription {
       (toBuilder()..update(updates)).build();
 
   @override
-  SessionSubscriptionBuilder toBuilder() => new SessionSubscriptionBuilder()..replace(this);
+  SessionSubscriptionBuilder toBuilder() => SessionSubscriptionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54268,7 +54268,7 @@ class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(SessionSubscription other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SessionSubscription;
   }
@@ -54281,7 +54281,7 @@ class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$SessionSubscription build() {
     final _$result = _$v ??
-        new _$SessionSubscription._(
+        _$SessionSubscription._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -54312,7 +54312,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
   final int sessid;
 
   factory _$SessionKeepAlive([void updates(SessionKeepAliveBuilder b)]) =>
-      (new SessionKeepAliveBuilder()..update(updates)).build();
+      (SessionKeepAliveBuilder()..update(updates)).build();
 
   _$SessionKeepAlive._(
       {this.timestamp,
@@ -54328,7 +54328,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
       (toBuilder()..update(updates)).build();
 
   @override
-  SessionKeepAliveBuilder toBuilder() => new SessionKeepAliveBuilder()..replace(this);
+  SessionKeepAliveBuilder toBuilder() => SessionKeepAliveBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54429,7 +54429,7 @@ class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(SessionKeepAlive other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SessionKeepAlive;
   }
@@ -54442,7 +54442,7 @@ class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$SessionKeepAlive build() {
     final _$result = _$v ??
-        new _$SessionKeepAlive._(
+        _$SessionKeepAlive._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -54474,7 +54474,7 @@ class _$SessionStatus extends SessionStatus {
   final SessionStatusEnumStatus status;
 
   factory _$SessionStatus([void updates(SessionStatusBuilder b)]) =>
-      (new SessionStatusBuilder()..update(updates)).build();
+      (SessionStatusBuilder()..update(updates)).build();
 
   _$SessionStatus._(
       {this.timestamp,
@@ -54491,7 +54491,7 @@ class _$SessionStatus extends SessionStatus {
       (toBuilder()..update(updates)).build();
 
   @override
-  SessionStatusBuilder toBuilder() => new SessionStatusBuilder()..replace(this);
+  SessionStatusBuilder toBuilder() => SessionStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54600,7 +54600,7 @@ class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(SessionStatus other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SessionStatus;
   }
@@ -54613,7 +54613,7 @@ class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$SessionStatus build() {
     final _$result = _$v ??
-        new _$SessionStatus._(
+        _$SessionStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -54644,7 +54644,7 @@ class _$PushEntityParameters extends PushEntityParameters {
   final String name;
 
   factory _$PushEntityParameters([void updates(PushEntityParametersBuilder b)]) =>
-      (new PushEntityParametersBuilder()..update(updates)).build();
+      (PushEntityParametersBuilder()..update(updates)).build();
 
   _$PushEntityParameters._(
       {this.timestamp,
@@ -54660,7 +54660,7 @@ class _$PushEntityParameters extends PushEntityParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  PushEntityParametersBuilder toBuilder() => new PushEntityParametersBuilder()..replace(this);
+  PushEntityParametersBuilder toBuilder() => PushEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54761,7 +54761,7 @@ class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(PushEntityParameters other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PushEntityParameters;
   }
@@ -54774,7 +54774,7 @@ class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$PushEntityParameters build() {
     final _$result = _$v ??
-        new _$PushEntityParameters._(
+        _$PushEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -54804,7 +54804,7 @@ class _$PopEntityParameters extends PopEntityParameters {
   final String name;
 
   factory _$PopEntityParameters([void updates(PopEntityParametersBuilder b)]) =>
-      (new PopEntityParametersBuilder()..update(updates)).build();
+      (PopEntityParametersBuilder()..update(updates)).build();
 
   _$PopEntityParameters._(
       {this.timestamp,
@@ -54820,7 +54820,7 @@ class _$PopEntityParameters extends PopEntityParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  PopEntityParametersBuilder toBuilder() => new PopEntityParametersBuilder()..replace(this);
+  PopEntityParametersBuilder toBuilder() => PopEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54921,7 +54921,7 @@ class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(PopEntityParameters other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$PopEntityParameters;
   }
@@ -54934,7 +54934,7 @@ class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$PopEntityParameters build() {
     final _$result = _$v ??
-        new _$PopEntityParameters._(
+        _$PopEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -54966,7 +54966,7 @@ class _$IoEvent extends IoEvent {
   final String error;
 
   factory _$IoEvent([void updates(IoEventBuilder b)]) =>
-      (new IoEventBuilder()..update(updates)).build();
+      (IoEventBuilder()..update(updates)).build();
 
   _$IoEvent._(
       {this.timestamp,
@@ -54983,7 +54983,7 @@ class _$IoEvent extends IoEvent {
       (toBuilder()..update(updates)).build();
 
   @override
-  IoEventBuilder toBuilder() => new IoEventBuilder()..replace(this);
+  IoEventBuilder toBuilder() => IoEventBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55092,7 +55092,7 @@ class IoEventBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(IoEvent other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$IoEvent;
   }
@@ -55105,7 +55105,7 @@ class IoEventBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$IoEvent build() {
     final _$result = _$v ??
-        new _$IoEvent._(
+        _$IoEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -55142,7 +55142,7 @@ class _$UamTxFrame extends UamTxFrame {
   final List<int> data;
 
   factory _$UamTxFrame([void updates(UamTxFrameBuilder b)]) =>
-      (new UamTxFrameBuilder()..update(updates)).build();
+      (UamTxFrameBuilder()..update(updates)).build();
 
   _$UamTxFrame._(
       {this.timestamp,
@@ -55161,7 +55161,7 @@ class _$UamTxFrame extends UamTxFrame {
       (toBuilder()..update(updates)).build();
 
   @override
-  UamTxFrameBuilder toBuilder() => new UamTxFrameBuilder()..replace(this);
+  UamTxFrameBuilder toBuilder() => UamTxFrameBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55286,7 +55286,7 @@ class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(UamTxFrame other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UamTxFrame;
   }
@@ -55299,7 +55299,7 @@ class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$UamTxFrame build() {
     final _$result = _$v ??
-        new _$UamTxFrame._(
+        _$UamTxFrame._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -55338,7 +55338,7 @@ class _$UamRxFrame extends UamRxFrame {
   final List<int> data;
 
   factory _$UamRxFrame([void updates(UamRxFrameBuilder b)]) =>
-      (new UamRxFrameBuilder()..update(updates)).build();
+      (UamRxFrameBuilder()..update(updates)).build();
 
   _$UamRxFrame._(
       {this.timestamp,
@@ -55357,7 +55357,7 @@ class _$UamRxFrame extends UamRxFrame {
       (toBuilder()..update(updates)).build();
 
   @override
-  UamRxFrameBuilder toBuilder() => new UamRxFrameBuilder()..replace(this);
+  UamRxFrameBuilder toBuilder() => UamRxFrameBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55482,7 +55482,7 @@ class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(UamRxFrame other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UamRxFrame;
   }
@@ -55495,7 +55495,7 @@ class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$UamRxFrame build() {
     final _$result = _$v ??
-        new _$UamRxFrame._(
+        _$UamRxFrame._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -55532,7 +55532,7 @@ class _$UamTxStatus extends UamTxStatus {
   final String error;
 
   factory _$UamTxStatus([void updates(UamTxStatusBuilder b)]) =>
-      (new UamTxStatusBuilder()..update(updates)).build();
+      (UamTxStatusBuilder()..update(updates)).build();
 
   _$UamTxStatus._(
       {this.timestamp,
@@ -55550,7 +55550,7 @@ class _$UamTxStatus extends UamTxStatus {
       (toBuilder()..update(updates)).build();
 
   @override
-  UamTxStatusBuilder toBuilder() => new UamTxStatusBuilder()..replace(this);
+  UamTxStatusBuilder toBuilder() => UamTxStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55667,7 +55667,7 @@ class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(UamTxStatus other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UamTxStatus;
   }
@@ -55680,7 +55680,7 @@ class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$UamTxStatus build() {
     final _$result = _$v ??
-        new _$UamTxStatus._(
+        _$UamTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -55716,7 +55716,7 @@ class _$UamRxRange extends UamRxRange {
   final double value;
 
   factory _$UamRxRange([void updates(UamRxRangeBuilder b)]) =>
-      (new UamRxRangeBuilder()..update(updates)).build();
+      (UamRxRangeBuilder()..update(updates)).build();
 
   _$UamRxRange._(
       {this.timestamp,
@@ -55734,7 +55734,7 @@ class _$UamRxRange extends UamRxRange {
       (toBuilder()..update(updates)).build();
 
   @override
-  UamRxRangeBuilder toBuilder() => new UamRxRangeBuilder()..replace(this);
+  UamRxRangeBuilder toBuilder() => UamRxRangeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55851,7 +55851,7 @@ class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(UamRxRange other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UamRxRange;
   }
@@ -55864,7 +55864,7 @@ class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$UamRxRange build() {
     final _$result = _$v ??
-        new _$UamRxRange._(
+        _$UamRxRange._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -55906,7 +55906,7 @@ class _$FormCtrlParam extends FormCtrlParam {
   final double deconflGain;
 
   factory _$FormCtrlParam([void updates(FormCtrlParamBuilder b)]) =>
-      (new FormCtrlParamBuilder()..update(updates)).build();
+      (FormCtrlParamBuilder()..update(updates)).build();
 
   _$FormCtrlParam._(
       {this.timestamp,
@@ -55927,7 +55927,7 @@ class _$FormCtrlParam extends FormCtrlParam {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormCtrlParamBuilder toBuilder() => new FormCtrlParamBuilder()..replace(this);
+  FormCtrlParamBuilder toBuilder() => FormCtrlParamBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -56068,7 +56068,7 @@ class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(FormCtrlParam other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormCtrlParam;
   }
@@ -56081,7 +56081,7 @@ class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$FormCtrlParam build() {
     final _$result = _$v ??
-        new _$FormCtrlParam._(
+        _$FormCtrlParam._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -56120,7 +56120,7 @@ class _$FormationEval extends FormationEval {
   final double distMinMean;
 
   factory _$FormationEval([void updates(FormationEvalBuilder b)]) =>
-      (new FormationEvalBuilder()..update(updates)).build();
+      (FormationEvalBuilder()..update(updates)).build();
 
   _$FormationEval._(
       {this.timestamp,
@@ -56138,7 +56138,7 @@ class _$FormationEval extends FormationEval {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationEvalBuilder toBuilder() => new FormationEvalBuilder()..replace(this);
+  FormationEvalBuilder toBuilder() => FormationEvalBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -56255,7 +56255,7 @@ class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(FormationEval other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormationEval;
   }
@@ -56268,7 +56268,7 @@ class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$FormationEval build() {
     final _$result = _$v ??
-        new _$FormationEval._(
+        _$FormationEval._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -56320,7 +56320,7 @@ class _$FormationControlParams extends FormationControlParams {
   final double accelLimX;
 
   factory _$FormationControlParams([void updates(FormationControlParamsBuilder b)]) =>
-      (new FormationControlParamsBuilder()..update(updates)).build();
+      (FormationControlParamsBuilder()..update(updates)).build();
 
   _$FormationControlParams._(
       {this.timestamp,
@@ -56346,7 +56346,7 @@ class _$FormationControlParams extends FormationControlParams {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationControlParamsBuilder toBuilder() => new FormationControlParamsBuilder()..replace(this);
+  FormationControlParamsBuilder toBuilder() => FormationControlParamsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -56527,7 +56527,7 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   void replace(FormationControlParams other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormationControlParams;
   }
@@ -56540,7 +56540,7 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   _$FormationControlParams build() {
     final _$result = _$v ??
-        new _$FormationControlParams._(
+        _$FormationControlParams._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -56594,7 +56594,7 @@ class _$FormationEvaluation extends FormationEvaluation {
   final FormationControlParams controlParams;
 
   factory _$FormationEvaluation([void updates(FormationEvaluationBuilder b)]) =>
-      (new FormationEvaluationBuilder()..update(updates)).build();
+      (FormationEvaluationBuilder()..update(updates)).build();
 
   _$FormationEvaluation._(
       {this.timestamp,
@@ -56617,7 +56617,7 @@ class _$FormationEvaluation extends FormationEvaluation {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationEvaluationBuilder toBuilder() => new FormationEvaluationBuilder()..replace(this);
+  FormationEvaluationBuilder toBuilder() => FormationEvaluationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -56774,7 +56774,7 @@ class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(FormationEvaluation other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$FormationEvaluation;
   }
@@ -56787,7 +56787,7 @@ class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$FormationEvaluation build() {
     final _$result = _$v ??
-        new _$FormationEvaluation._(
+        _$FormationEvaluation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -56830,7 +56830,7 @@ class _$SoiWaypoint extends SoiWaypoint {
   final int duration;
 
   factory _$SoiWaypoint([void updates(SoiWaypointBuilder b)]) =>
-      (new SoiWaypointBuilder()..update(updates)).build();
+      (SoiWaypointBuilder()..update(updates)).build();
 
   _$SoiWaypoint._(
       {this.timestamp,
@@ -56849,7 +56849,7 @@ class _$SoiWaypoint extends SoiWaypoint {
       (toBuilder()..update(updates)).build();
 
   @override
-  SoiWaypointBuilder toBuilder() => new SoiWaypointBuilder()..replace(this);
+  SoiWaypointBuilder toBuilder() => SoiWaypointBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -56974,7 +56974,7 @@ class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(SoiWaypoint other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SoiWaypoint;
   }
@@ -56987,7 +56987,7 @@ class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$SoiWaypoint build() {
     final _$result = _$v ??
-        new _$SoiWaypoint._(
+        _$SoiWaypoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -57022,7 +57022,7 @@ class _$SoiPlan extends SoiPlan {
   final List<SoiWaypoint> waypoints;
 
   factory _$SoiPlan([void updates(SoiPlanBuilder b)]) =>
-      (new SoiPlanBuilder()..update(updates)).build();
+      (SoiPlanBuilder()..update(updates)).build();
 
   _$SoiPlan._(
       {this.timestamp,
@@ -57039,7 +57039,7 @@ class _$SoiPlan extends SoiPlan {
       (toBuilder()..update(updates)).build();
 
   @override
-  SoiPlanBuilder toBuilder() => new SoiPlanBuilder()..replace(this);
+  SoiPlanBuilder toBuilder() => SoiPlanBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57148,7 +57148,7 @@ class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(SoiPlan other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SoiPlan;
   }
@@ -57161,7 +57161,7 @@ class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$SoiPlan build() {
     final _$result = _$v ??
-        new _$SoiPlan._(
+        _$SoiPlan._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -57200,7 +57200,7 @@ class _$SoiCommand extends SoiCommand {
   final String info;
 
   factory _$SoiCommand([void updates(SoiCommandBuilder b)]) =>
-      (new SoiCommandBuilder()..update(updates)).build();
+      (SoiCommandBuilder()..update(updates)).build();
 
   _$SoiCommand._(
       {this.timestamp,
@@ -57220,7 +57220,7 @@ class _$SoiCommand extends SoiCommand {
       (toBuilder()..update(updates)).build();
 
   @override
-  SoiCommandBuilder toBuilder() => new SoiCommandBuilder()..replace(this);
+  SoiCommandBuilder toBuilder() => SoiCommandBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57353,7 +57353,7 @@ class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(SoiCommand other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SoiCommand;
   }
@@ -57366,7 +57366,7 @@ class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$SoiCommand build() {
     final _$result = _$v ??
-        new _$SoiCommand._(
+        _$SoiCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -57406,7 +57406,7 @@ class _$SoiState extends SoiState {
   final int settingsChk;
 
   factory _$SoiState([void updates(SoiStateBuilder b)]) =>
-      (new SoiStateBuilder()..update(updates)).build();
+      (SoiStateBuilder()..update(updates)).build();
 
   _$SoiState._(
       {this.timestamp,
@@ -57425,7 +57425,7 @@ class _$SoiState extends SoiState {
       (toBuilder()..update(updates)).build();
 
   @override
-  SoiStateBuilder toBuilder() => new SoiStateBuilder()..replace(this);
+  SoiStateBuilder toBuilder() => SoiStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57550,7 +57550,7 @@ class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   void replace(SoiState other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SoiState;
   }
@@ -57563,7 +57563,7 @@ class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   @override
   _$SoiState build() {
     final _$result = _$v ??
-        new _$SoiState._(
+        _$SoiState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -57602,7 +57602,7 @@ class _$MessagePart extends MessagePart {
   final List<int> data;
 
   factory _$MessagePart([void updates(MessagePartBuilder b)]) =>
-      (new MessagePartBuilder()..update(updates)).build();
+      (MessagePartBuilder()..update(updates)).build();
 
   _$MessagePart._(
       {this.timestamp,
@@ -57621,7 +57621,7 @@ class _$MessagePart extends MessagePart {
       (toBuilder()..update(updates)).build();
 
   @override
-  MessagePartBuilder toBuilder() => new MessagePartBuilder()..replace(this);
+  MessagePartBuilder toBuilder() => MessagePartBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57746,7 +57746,7 @@ class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   void replace(MessagePart other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$MessagePart;
   }
@@ -57759,7 +57759,7 @@ class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements Bui
   @override
   _$MessagePart build() {
     final _$result = _$v ??
-        new _$MessagePart._(
+        _$MessagePart._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -57794,7 +57794,7 @@ class _$NeptusBlob extends NeptusBlob {
   final List<int> content;
 
   factory _$NeptusBlob([void updates(NeptusBlobBuilder b)]) =>
-      (new NeptusBlobBuilder()..update(updates)).build();
+      (NeptusBlobBuilder()..update(updates)).build();
 
   _$NeptusBlob._(
       {this.timestamp,
@@ -57811,7 +57811,7 @@ class _$NeptusBlob extends NeptusBlob {
       (toBuilder()..update(updates)).build();
 
   @override
-  NeptusBlobBuilder toBuilder() => new NeptusBlobBuilder()..replace(this);
+  NeptusBlobBuilder toBuilder() => NeptusBlobBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57920,7 +57920,7 @@ class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(NeptusBlob other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$NeptusBlob;
   }
@@ -57933,7 +57933,7 @@ class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$NeptusBlob build() {
     final _$result = _$v ??
-        new _$NeptusBlob._(
+        _$NeptusBlob._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -57962,7 +57962,7 @@ class _$Aborted extends Aborted {
 
 
   factory _$Aborted([void updates(AbortedBuilder b)]) =>
-      (new AbortedBuilder()..update(updates)).build();
+      (AbortedBuilder()..update(updates)).build();
 
   _$Aborted._(
       {this.timestamp,
@@ -57977,7 +57977,7 @@ class _$Aborted extends Aborted {
       (toBuilder()..update(updates)).build();
 
   @override
-  AbortedBuilder toBuilder() => new AbortedBuilder()..replace(this);
+  AbortedBuilder toBuilder() => AbortedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -58070,7 +58070,7 @@ class AbortedBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(Aborted other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Aborted;
   }
@@ -58083,7 +58083,7 @@ class AbortedBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$Aborted build() {
     final _$result = _$v ??
-        new _$Aborted._(
+        _$Aborted._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -58116,7 +58116,7 @@ class _$UsblAngles extends UsblAngles {
   final double elevation;
 
   factory _$UsblAngles([void updates(UsblAnglesBuilder b)]) =>
-      (new UsblAnglesBuilder()..update(updates)).build();
+      (UsblAnglesBuilder()..update(updates)).build();
 
   _$UsblAngles._(
       {this.timestamp,
@@ -58134,7 +58134,7 @@ class _$UsblAngles extends UsblAngles {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblAnglesBuilder toBuilder() => new UsblAnglesBuilder()..replace(this);
+  UsblAnglesBuilder toBuilder() => UsblAnglesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -58251,7 +58251,7 @@ class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(UsblAngles other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblAngles;
   }
@@ -58264,7 +58264,7 @@ class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$UsblAngles build() {
     final _$result = _$v ??
-        new _$UsblAngles._(
+        _$UsblAngles._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -58302,7 +58302,7 @@ class _$UsblPosition extends UsblPosition {
   final double z;
 
   factory _$UsblPosition([void updates(UsblPositionBuilder b)]) =>
-      (new UsblPositionBuilder()..update(updates)).build();
+      (UsblPositionBuilder()..update(updates)).build();
 
   _$UsblPosition._(
       {this.timestamp,
@@ -58321,7 +58321,7 @@ class _$UsblPosition extends UsblPosition {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblPositionBuilder toBuilder() => new UsblPositionBuilder()..replace(this);
+  UsblPositionBuilder toBuilder() => UsblPositionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -58446,7 +58446,7 @@ class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(UsblPosition other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblPosition;
   }
@@ -58459,7 +58459,7 @@ class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$UsblPosition build() {
     final _$result = _$v ??
-        new _$UsblPosition._(
+        _$UsblPosition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -58500,7 +58500,7 @@ class _$UsblFix extends UsblFix {
   final double z;
 
   factory _$UsblFix([void updates(UsblFixBuilder b)]) =>
-      (new UsblFixBuilder()..update(updates)).build();
+      (UsblFixBuilder()..update(updates)).build();
 
   _$UsblFix._(
       {this.timestamp,
@@ -58520,7 +58520,7 @@ class _$UsblFix extends UsblFix {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblFixBuilder toBuilder() => new UsblFixBuilder()..replace(this);
+  UsblFixBuilder toBuilder() => UsblFixBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -58653,7 +58653,7 @@ class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   void replace(UsblFix other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblFix;
   }
@@ -58666,7 +58666,7 @@ class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements Builder
   @override
   _$UsblFix build() {
     final _$result = _$v ??
-        new _$UsblFix._(
+        _$UsblFix._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -58702,7 +58702,7 @@ class _$ParametersXml extends ParametersXml {
   final List<int> config;
 
   factory _$ParametersXml([void updates(ParametersXmlBuilder b)]) =>
-      (new ParametersXmlBuilder()..update(updates)).build();
+      (ParametersXmlBuilder()..update(updates)).build();
 
   _$ParametersXml._(
       {this.timestamp,
@@ -58719,7 +58719,7 @@ class _$ParametersXml extends ParametersXml {
       (toBuilder()..update(updates)).build();
 
   @override
-  ParametersXmlBuilder toBuilder() => new ParametersXmlBuilder()..replace(this);
+  ParametersXmlBuilder toBuilder() => ParametersXmlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -58828,7 +58828,7 @@ class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   void replace(ParametersXml other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ParametersXml;
   }
@@ -58841,7 +58841,7 @@ class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements B
   @override
   _$ParametersXml build() {
     final _$result = _$v ??
-        new _$ParametersXml._(
+        _$ParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -58870,7 +58870,7 @@ class _$GetParametersXml extends GetParametersXml {
 
 
   factory _$GetParametersXml([void updates(GetParametersXmlBuilder b)]) =>
-      (new GetParametersXmlBuilder()..update(updates)).build();
+      (GetParametersXmlBuilder()..update(updates)).build();
 
   _$GetParametersXml._(
       {this.timestamp,
@@ -58885,7 +58885,7 @@ class _$GetParametersXml extends GetParametersXml {
       (toBuilder()..update(updates)).build();
 
   @override
-  GetParametersXmlBuilder toBuilder() => new GetParametersXmlBuilder()..replace(this);
+  GetParametersXmlBuilder toBuilder() => GetParametersXmlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -58978,7 +58978,7 @@ class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   void replace(GetParametersXml other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GetParametersXml;
   }
@@ -58991,7 +58991,7 @@ class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implement
   @override
   _$GetParametersXml build() {
     final _$result = _$v ??
-        new _$GetParametersXml._(
+        _$GetParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -59024,7 +59024,7 @@ class _$SetImageCoords extends SetImageCoords {
   final int y;
 
   factory _$SetImageCoords([void updates(SetImageCoordsBuilder b)]) =>
-      (new SetImageCoordsBuilder()..update(updates)).build();
+      (SetImageCoordsBuilder()..update(updates)).build();
 
   _$SetImageCoords._(
       {this.timestamp,
@@ -59042,7 +59042,7 @@ class _$SetImageCoords extends SetImageCoords {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetImageCoordsBuilder toBuilder() => new SetImageCoordsBuilder()..replace(this);
+  SetImageCoordsBuilder toBuilder() => SetImageCoordsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -59159,7 +59159,7 @@ class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(SetImageCoords other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SetImageCoords;
   }
@@ -59172,7 +59172,7 @@ class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$SetImageCoords build() {
     final _$result = _$v ??
-        new _$SetImageCoords._(
+        _$SetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -59208,7 +59208,7 @@ class _$GetImageCoords extends GetImageCoords {
   final int y;
 
   factory _$GetImageCoords([void updates(GetImageCoordsBuilder b)]) =>
-      (new GetImageCoordsBuilder()..update(updates)).build();
+      (GetImageCoordsBuilder()..update(updates)).build();
 
   _$GetImageCoords._(
       {this.timestamp,
@@ -59226,7 +59226,7 @@ class _$GetImageCoords extends GetImageCoords {
       (toBuilder()..update(updates)).build();
 
   @override
-  GetImageCoordsBuilder toBuilder() => new GetImageCoordsBuilder()..replace(this);
+  GetImageCoordsBuilder toBuilder() => GetImageCoordsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -59343,7 +59343,7 @@ class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   void replace(GetImageCoords other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GetImageCoords;
   }
@@ -59356,7 +59356,7 @@ class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   @override
   _$GetImageCoords build() {
     final _$result = _$v ??
-        new _$GetImageCoords._(
+        _$GetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -59398,7 +59398,7 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
   final double z;
 
   factory _$GetWorldCoordinates([void updates(GetWorldCoordinatesBuilder b)]) =>
-      (new GetWorldCoordinatesBuilder()..update(updates)).build();
+      (GetWorldCoordinatesBuilder()..update(updates)).build();
 
   _$GetWorldCoordinates._(
       {this.timestamp,
@@ -59419,7 +59419,7 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
       (toBuilder()..update(updates)).build();
 
   @override
-  GetWorldCoordinatesBuilder toBuilder() => new GetWorldCoordinatesBuilder()..replace(this);
+  GetWorldCoordinatesBuilder toBuilder() => GetWorldCoordinatesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -59560,7 +59560,7 @@ class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   void replace(GetWorldCoordinates other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$GetWorldCoordinates;
   }
@@ -59573,7 +59573,7 @@ class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implem
   @override
   _$GetWorldCoordinates build() {
     final _$result = _$v ??
-        new _$GetWorldCoordinates._(
+        _$GetWorldCoordinates._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -59624,7 +59624,7 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
   final double accuracy;
 
   factory _$UsblAnglesExtended([void updates(UsblAnglesExtendedBuilder b)]) =>
-      (new UsblAnglesExtendedBuilder()..update(updates)).build();
+      (UsblAnglesExtendedBuilder()..update(updates)).build();
 
   _$UsblAnglesExtended._(
       {this.timestamp,
@@ -59648,7 +59648,7 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblAnglesExtendedBuilder toBuilder() => new UsblAnglesExtendedBuilder()..replace(this);
+  UsblAnglesExtendedBuilder toBuilder() => UsblAnglesExtendedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -59813,7 +59813,7 @@ class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(UsblAnglesExtended other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblAnglesExtended;
   }
@@ -59826,7 +59826,7 @@ class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$UsblAnglesExtended build() {
     final _$result = _$v ??
-        new _$UsblAnglesExtended._(
+        _$UsblAnglesExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -59884,7 +59884,7 @@ class _$UsblPositionExtended extends UsblPositionExtended {
   final double accuracy;
 
   factory _$UsblPositionExtended([void updates(UsblPositionExtendedBuilder b)]) =>
-      (new UsblPositionExtendedBuilder()..update(updates)).build();
+      (UsblPositionExtendedBuilder()..update(updates)).build();
 
   _$UsblPositionExtended._(
       {this.timestamp,
@@ -59910,7 +59910,7 @@ class _$UsblPositionExtended extends UsblPositionExtended {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblPositionExtendedBuilder toBuilder() => new UsblPositionExtendedBuilder()..replace(this);
+  UsblPositionExtendedBuilder toBuilder() => UsblPositionExtendedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60091,7 +60091,7 @@ class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   void replace(UsblPositionExtended other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblPositionExtended;
   }
@@ -60104,7 +60104,7 @@ class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart imple
   @override
   _$UsblPositionExtended build() {
     final _$result = _$v ??
-        new _$UsblPositionExtended._(
+        _$UsblPositionExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -60154,7 +60154,7 @@ class _$UsblFixExtended extends UsblFixExtended {
   final double accuracy;
 
   factory _$UsblFixExtended([void updates(UsblFixExtendedBuilder b)]) =>
-      (new UsblFixExtendedBuilder()..update(updates)).build();
+      (UsblFixExtendedBuilder()..update(updates)).build();
 
   _$UsblFixExtended._(
       {this.timestamp,
@@ -60175,7 +60175,7 @@ class _$UsblFixExtended extends UsblFixExtended {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblFixExtendedBuilder toBuilder() => new UsblFixExtendedBuilder()..replace(this);
+  UsblFixExtendedBuilder toBuilder() => UsblFixExtendedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60316,7 +60316,7 @@ class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   void replace(UsblFixExtended other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblFixExtended;
   }
@@ -60329,7 +60329,7 @@ class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements
   @override
   _$UsblFixExtended build() {
     final _$result = _$v ??
-        new _$UsblFixExtended._(
+        _$UsblFixExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -60372,7 +60372,7 @@ class _$UsblModem extends UsblModem {
   final ZUnitsEnum zUnits;
 
   factory _$UsblModem([void updates(UsblModemBuilder b)]) =>
-      (new UsblModemBuilder()..update(updates)).build();
+      (UsblModemBuilder()..update(updates)).build();
 
   _$UsblModem._(
       {this.timestamp,
@@ -60392,7 +60392,7 @@ class _$UsblModem extends UsblModem {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblModemBuilder toBuilder() => new UsblModemBuilder()..replace(this);
+  UsblModemBuilder toBuilder() => UsblModemBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60525,7 +60525,7 @@ class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(UsblModem other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblModem;
   }
@@ -60538,7 +60538,7 @@ class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$UsblModem build() {
     final _$result = _$v ??
-        new _$UsblModem._(
+        _$UsblModem._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -60574,7 +60574,7 @@ class _$UsblConfig extends UsblConfig {
   final List<UsblModem> modems;
 
   factory _$UsblConfig([void updates(UsblConfigBuilder b)]) =>
-      (new UsblConfigBuilder()..update(updates)).build();
+      (UsblConfigBuilder()..update(updates)).build();
 
   _$UsblConfig._(
       {this.timestamp,
@@ -60591,7 +60591,7 @@ class _$UsblConfig extends UsblConfig {
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblConfigBuilder toBuilder() => new UsblConfigBuilder()..replace(this);
+  UsblConfigBuilder toBuilder() => UsblConfigBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60700,7 +60700,7 @@ class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(UsblConfig other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$UsblConfig;
   }
@@ -60713,7 +60713,7 @@ class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$UsblConfig build() {
     final _$result = _$v ??
-        new _$UsblConfig._(
+        _$UsblConfig._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -60746,7 +60746,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
   final DissolvedOrganicMatterEnumType type;
 
   factory _$DissolvedOrganicMatter([void updates(DissolvedOrganicMatterBuilder b)]) =>
-      (new DissolvedOrganicMatterBuilder()..update(updates)).build();
+      (DissolvedOrganicMatterBuilder()..update(updates)).build();
 
   _$DissolvedOrganicMatter._(
       {this.timestamp,
@@ -60763,7 +60763,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
       (toBuilder()..update(updates)).build();
 
   @override
-  DissolvedOrganicMatterBuilder toBuilder() => new DissolvedOrganicMatterBuilder()..replace(this);
+  DissolvedOrganicMatterBuilder toBuilder() => DissolvedOrganicMatterBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60872,7 +60872,7 @@ class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   void replace(DissolvedOrganicMatter other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DissolvedOrganicMatter;
   }
@@ -60885,7 +60885,7 @@ class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart imp
   @override
   _$DissolvedOrganicMatter build() {
     final _$result = _$v ??
-        new _$DissolvedOrganicMatter._(
+        _$DissolvedOrganicMatter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -60916,7 +60916,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
   final double value;
 
   factory _$OpticalBackscatter([void updates(OpticalBackscatterBuilder b)]) =>
-      (new OpticalBackscatterBuilder()..update(updates)).build();
+      (OpticalBackscatterBuilder()..update(updates)).build();
 
   _$OpticalBackscatter._(
       {this.timestamp,
@@ -60932,7 +60932,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
       (toBuilder()..update(updates)).build();
 
   @override
-  OpticalBackscatterBuilder toBuilder() => new OpticalBackscatterBuilder()..replace(this);
+  OpticalBackscatterBuilder toBuilder() => OpticalBackscatterBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -61033,7 +61033,7 @@ class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   void replace(OpticalBackscatter other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$OpticalBackscatter;
   }
@@ -61046,7 +61046,7 @@ class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart impleme
   @override
   _$OpticalBackscatter build() {
     final _$result = _$v ??
-        new _$OpticalBackscatter._(
+        _$OpticalBackscatter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -61106,7 +61106,7 @@ class _$Tachograph extends Tachograph {
   final double depthMax;
 
   factory _$Tachograph([void updates(TachographBuilder b)]) =>
-      (new TachographBuilder()..update(updates)).build();
+      (TachographBuilder()..update(updates)).build();
 
   _$Tachograph._(
       {this.timestamp,
@@ -61137,7 +61137,7 @@ class _$Tachograph extends Tachograph {
       (toBuilder()..update(updates)).build();
 
   @override
-  TachographBuilder toBuilder() => new TachographBuilder()..replace(this);
+  TachographBuilder toBuilder() => TachographBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -61358,7 +61358,7 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   void replace(Tachograph other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$Tachograph;
   }
@@ -61371,7 +61371,7 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
   @override
   _$Tachograph build() {
     final _$result = _$v ??
-        new _$Tachograph._(
+        _$Tachograph._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -61418,7 +61418,7 @@ class _$ApmStatus extends ApmStatus {
   final String text;
 
   factory _$ApmStatus([void updates(ApmStatusBuilder b)]) =>
-      (new ApmStatusBuilder()..update(updates)).build();
+      (ApmStatusBuilder()..update(updates)).build();
 
   _$ApmStatus._(
       {this.timestamp,
@@ -61435,7 +61435,7 @@ class _$ApmStatus extends ApmStatus {
       (toBuilder()..update(updates)).build();
 
   @override
-  ApmStatusBuilder toBuilder() => new ApmStatusBuilder()..replace(this);
+  ApmStatusBuilder toBuilder() => ApmStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -61544,7 +61544,7 @@ class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   void replace(ApmStatus other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$ApmStatus;
   }
@@ -61557,7 +61557,7 @@ class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   @override
   _$ApmStatus build() {
     final _$result = _$v ??
-        new _$ApmStatus._(
+        _$ApmStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -61592,7 +61592,7 @@ class _$SadcReadings extends SadcReadings {
   final SadcReadingsEnumGain gain;
 
   factory _$SadcReadings([void updates(SadcReadingsBuilder b)]) =>
-      (new SadcReadingsBuilder()..update(updates)).build();
+      (SadcReadingsBuilder()..update(updates)).build();
 
   _$SadcReadings._(
       {this.timestamp,
@@ -61610,7 +61610,7 @@ class _$SadcReadings extends SadcReadings {
       (toBuilder()..update(updates)).build();
 
   @override
-  SadcReadingsBuilder toBuilder() => new SadcReadingsBuilder()..replace(this);
+  SadcReadingsBuilder toBuilder() => SadcReadingsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -61727,7 +61727,7 @@ class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(SadcReadings other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$SadcReadings;
   }
@@ -61740,7 +61740,7 @@ class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$SadcReadings build() {
     final _$result = _$v ??
-        new _$SadcReadings._(
+        _$SadcReadings._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -61802,7 +61802,7 @@ class _$DmsDetection extends DmsDetection {
   final double ch16;
 
   factory _$DmsDetection([void updates(DmsDetectionBuilder b)]) =>
-      (new DmsDetectionBuilder()..update(updates)).build();
+      (DmsDetectionBuilder()..update(updates)).build();
 
   _$DmsDetection._(
       {this.timestamp,
@@ -61833,7 +61833,7 @@ class _$DmsDetection extends DmsDetection {
       (toBuilder()..update(updates)).build();
 
   @override
-  DmsDetectionBuilder toBuilder() => new DmsDetectionBuilder()..replace(this);
+  DmsDetectionBuilder toBuilder() => DmsDetectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -62054,7 +62054,7 @@ class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   void replace(DmsDetection other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$DmsDetection;
   }
@@ -62067,7 +62067,7 @@ class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   @override
   _$DmsDetection build() {
     final _$result = _$v ??
-        new _$DmsDetection._(
+        _$DmsDetection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
@@ -62112,7 +62112,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
   final double value;
 
   factory _$TotalMagIntensity([void updates(TotalMagIntensityBuilder b)]) =>
-      (new TotalMagIntensityBuilder()..update(updates)).build();
+      (TotalMagIntensityBuilder()..update(updates)).build();
 
   _$TotalMagIntensity._(
       {this.timestamp,
@@ -62128,7 +62128,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
       (toBuilder()..update(updates)).build();
 
   @override
-  TotalMagIntensityBuilder toBuilder() => new TotalMagIntensityBuilder()..replace(this);
+  TotalMagIntensityBuilder toBuilder() => TotalMagIntensityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -62229,7 +62229,7 @@ class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   void replace(TotalMagIntensity other) {
     if (other == null) {
-      throw new ArgumentError.notNull('other');
+      throw ArgumentError.notNull('other');
     }
     _$v = other as _$TotalMagIntensity;
   }
@@ -62242,7 +62242,7 @@ class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implemen
   @override
   _$TotalMagIntensity build() {
     final _$result = _$v ??
-        new _$TotalMagIntensity._(
+        _$TotalMagIntensity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src ?? ImcId.nullId,
             srcEnt: srcEnt ?? ImcEntityId.nullId,
