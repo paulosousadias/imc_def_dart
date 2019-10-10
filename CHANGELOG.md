@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.6.0] - 09 Oct 2019
+
+* Adding reading generator parameters by the `pubspec.yaml` or `imc_def.yaml`
+  files for generating the IMC code on production.
+
 ## [0.5.1] - 05 Oct 2019
 
 * Now you can test EnumLike (EnumType and BitfieldType) with ==.
