@@ -44,7 +44,7 @@ void main() async {
     });
 
     var hbMsgB = imc.HeartbeatBuilder();
-    new Timer.periodic(new Duration(milliseconds: 300), (Timer t) {
+    Timer.periodic(Duration(milliseconds: 300), (Timer t) {
       var msg = (hbMsgB..timestamp = DateTime.now()).build();
       //stdout.write("Sending ${msg.abbrev}  \n");
       var dataB = imc.messagesIdsSerializers[msg.msgId]?.serialize(msg);

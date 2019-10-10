@@ -53,7 +53,7 @@ An example of use is the following:
 ```dart
 ...
 var hbMsgB = imc.HeartbeatBuilder();
-new Timer.periodic(new Duration(milliseconds: 300), (Timer t) {
+Timer.periodic(Duration(milliseconds: 300), (Timer t) {
     var msg = (hbMsgB..timestamp = DateTime.now()).build();
     var dataB = imc.messagesIdsSerializers[msg.msgId]?.serialize(msg);
     var bytes = dataB?.buffer?.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);

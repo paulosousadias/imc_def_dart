@@ -113,7 +113,7 @@ void main() {
   });
 
 //   var list = Utf8.encode('xxx');
-// var data = list is Uint8List ? list.buffer : new Uint8List.fromList(list).buffer;
+// var data = list is Uint8List ? list.buffer : Uint8List.fromList(list).buffer;
 
   test("binary loading deserializing", () {
     // imc.endian_ser = Endian.little;

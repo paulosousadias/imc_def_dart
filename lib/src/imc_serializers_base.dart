@@ -49,7 +49,7 @@ abstract class ImcSerializer<M extends Message, B> {
 
 // Future<void> writeToFile(ByteData data, String path) {
 //   final buffer = data.buffer;
-//   return new File(path).writeAsBytes(
+//   return File(path).writeAsBytes(
 //       buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
 // }
 
