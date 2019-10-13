@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.6.1] - 13 Oct 2019
+
+* Added toPrettyString() to EnumType and BitfieldType.
+* Updated dependencies: built_value: ^6.7.1; crypto: ^2.1.3.
+
 ## [0.6.0] - 09 Oct 2019
 
 * Adding reading generator parameters by the `pubspec.yaml` or `imc_def.yaml`
