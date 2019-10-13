@@ -962,14 +962,21 @@ _writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
 /// A worker to be used for the enum like code creation.
 _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sink) {
   var eList = "";
+  var eNameList = "";
   var c = 0;
   var prefix = field.getAttribute("prefix")?.toLowerCase() ?? '';
   if (prefix.length > 0)
     prefix += '_';
   field.findElements("value").forEach((f) {
-    if (eList.length != 0) eList += ", ";
-    if (++c % 5 == 0) eList += "\n      ";
-    eList += _accountForReservedName(prefix + f.getAttribute("abbrev").toLowerCase());
+    if (eList.length != 0) {
+      eList += ", ";
+      eNameList += ", ";
+    }
+    if (++c % 5 == 0) eList += "\n        ";
+    if (++c % 1 == 0) eNameList += "\n        ";
+    var ab = _accountForReservedName(prefix + f.getAttribute("abbrev").toLowerCase());
+    eList += ab;
+    eNameList += "$ab:'''${f.getAttribute("name")}'''";
   });
 
   var sufix;
@@ -997,6 +1004,9 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
 
   var body2 = '''\n  static get values => [$eList];
 
+  static get names => {$eNameList
+      };
+
   const $eName(int value) : super(value);
 ''';
   sink.write(body2);
@@ -1004,14 +1014,43 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
   var bodyBitfield = "";
   switch (unit) {
     case "Bitfield":
-      bodyBitfield = '''\n  static $eName fromBits(
+      bodyBitfield = '''\n  @override
+  String toPrettyString() {
+    var ret;
+    if (value == 0) return '';
+
+    var valNot = value;
+    for (var item in values) {
+      if (hasBits(<$eName>[item])) {
+        ret ??= '';
+        ret += '\${ret.isNotEmpty ? '|' : ''}\${names[item]}';
+        valNot &= ~item.value & (values.last.value << 1);
+      }
+    }
+    if (valNot != 0) {
+      ret ??= '';
+      ret += '\${ret.isNotEmpty ? '|' : ''}?';
+    }
+    return ret ?? super.toPrettyString();
+  }
+
+  static $eName fromBits(
           List<$eName> bits) =>
       (bits == null || bits.length < 2)
           ? $eName(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => $eName(b1.value | b2.value));
 ''';
       break;
+    case "Enumerated":
     default:
+      bodyBitfield = '''\n  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if(ret != null)
+      return ret;
+    return super.toPrettyString();
+  }
+''';
   }
   sink.write(bodyBitfield);
 

@@ -316,4 +316,31 @@ void main() {
     ]), false);
     expect(su3.hasBits(null), false);
   });
+
+  test("enumerations toPrettyString() test", () {
+    var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
+    expect(su1.toPrettyString() == 'Meters per second', true);
+    var su2 = imc.SpeedUnitsEnum(9);
+    expect(su2.toPrettyString() == su2.toString(), true);
+  });
+
+  test("bitfields toPrettyString() test", () {
+    var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic;
+    var su2 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+    ]);
+    var su3 = imc.CommSystemsQueryBitfieldCommInterface(0);
+    var su4 = imc.CommSystemsQueryBitfieldCommInterface(0x80);
+    var su5 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
+      su2,
+      su4,
+    ]);
+
+    expect(su1.toPrettyString() == 'Acoustic', true);
+    expect(su2.toPrettyString() == 'Acoustic|Satellite', true);
+    expect(su3.toPrettyString() == '', true);
+    expect(su4.toPrettyString() == '?', true);
+    expect(su5.toPrettyString() == 'Acoustic|Satellite|?', true);
+  });
 }

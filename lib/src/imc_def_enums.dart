@@ -31,8 +31,11 @@ abstract class EnumType {
   @override
   String toString() => "E$value";
 
+  /// Output this as a pretty string. Override for propper text.
+  String toPrettyString() => toString();
+
   @override
-  bool operator ==(other) => this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
+  bool operator ==(Object other) => this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
 
   @override
   int get hashCode => value;
@@ -49,8 +52,11 @@ abstract class BitfieldType {
   @override
   String toString() => "B0x${value.toRadixString(16)} ($value)";
 
+  /// Output this as a pretty string. Override for propper text.
+  String toPrettyString() => toString();
+
   @override
-  bool operator ==(other) => this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
+  bool operator ==(Object other) => this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
 
   /// Tests that all 1 bts from all the elements of the elements in [bits].
   bool hasBits<B extends BitfieldType>(List<B> bits) {
