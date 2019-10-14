@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.6.1] - 13 Oct 2019
+## [0.6.1] - 14 Oct 2019
 
 * Added toPrettyString() to EnumType and BitfieldType.
 * Updated dependencies: built_value: ^6.7.1; crypto: ^2.1.3.

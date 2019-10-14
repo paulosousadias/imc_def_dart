@@ -3,6 +3,7 @@ description: A dart package for IMC messages manipulation.
 version: 0.6.1
 author: Paulo Sousa Dias <pdias@lsts.pt>
 homepage: https://github.com/paulosousadias/imc_def_dart
+repository: https://github.com/paulosousadias/imc_def_dart
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -20,6 +21,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter  
+
+executables:
+  imc_generator: 
 
 imc_def:
   imc: xml/IMC.xml
