@@ -18,11 +18,11 @@ class EntityStateEnumState extends EnumType {
         esta_fault, esta_error, esta_failure];
 
   static get names => {
-        esta_boot:'''Bootstrapping''', 
-        esta_normal:'''Normal Operation''', 
-        esta_fault:'''Fault''', 
-        esta_error:'''Error''', 
-        esta_failure:'''Failure'''
+        esta_boot: '''Bootstrapping''', 
+        esta_normal: '''Normal Operation''', 
+        esta_fault: '''Fault''', 
+        esta_error: '''Error''', 
+        esta_failure: '''Failure'''
       };
 
   const EntityStateEnumState(int value) : super(value);
@@ -43,7 +43,7 @@ class EntityStateBitfieldFlags extends BitfieldType {
   static get values => [efla_human_intervention];
 
   static get names => {
-        efla_human_intervention:'''Human Intervention Required'''
+        efla_human_intervention: '''Human Intervention Required'''
       };
 
   const EntityStateBitfieldFlags(int value) : super(value);
@@ -83,8 +83,8 @@ class EntityListEnumOp extends EnumType {
   static get values => [op_report, op_query];
 
   static get names => {
-        op_report:'''Report''', 
-        op_query:'''Query'''
+        op_report: '''Report''', 
+        op_query: '''Query'''
       };
 
   const EntityListEnumOp(int value) : super(value);
@@ -107,8 +107,8 @@ class RestartSystemEnumType extends EnumType {
   static get values => [rstype_dune, rstype_system];
 
   static get names => {
-        rstype_dune:'''Dune''', 
-        rstype_system:'''System'''
+        rstype_dune: '''Dune''', 
+        rstype_system: '''System'''
       };
 
   const RestartSystemEnumType(int value) : super(value);
@@ -137,10 +137,10 @@ class DevCalibrationControlEnumOp extends EnumType {
         dcal_step_next, dcal_step_previous];
 
   static get names => {
-        dcal_start:'''Start''', 
-        dcal_stop:'''Stop''', 
-        dcal_step_next:'''Perform Next Calibration Step''', 
-        dcal_step_previous:'''Perform Previous Calibration Step'''
+        dcal_start: '''Start''', 
+        dcal_stop: '''Stop''', 
+        dcal_step_next: '''Perform Next Calibration Step''', 
+        dcal_step_previous: '''Perform Previous Calibration Step'''
       };
 
   const DevCalibrationControlEnumOp(int value) : super(value);
@@ -174,11 +174,11 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
         dcs_waiting_control, dcs_error, dcs_completed];
 
   static get names => {
-        dcs_previous_not_supported:'''Previous Step Not Supported''', 
-        dcs_next_not_supported:'''Next Step Not Supported''', 
-        dcs_waiting_control:'''Waiting Device Calibration Control''', 
-        dcs_error:'''Calibration Error''', 
-        dcs_completed:'''Calibration Procedure Completed'''
+        dcs_previous_not_supported: '''Previous Step Not Supported''', 
+        dcs_next_not_supported: '''Next Step Not Supported''', 
+        dcs_waiting_control: '''Waiting Device Calibration Control''', 
+        dcs_error: '''Calibration Error''', 
+        dcs_completed: '''Calibration Procedure Completed'''
       };
 
   const DevCalibrationStateBitfieldFlags(int value) : super(value);
@@ -234,14 +234,14 @@ class EntityActivationStateEnumState extends EnumType {
         eas_deact_fail];
 
   static get names => {
-        eas_inactive:'''Entity is Inactive''', 
-        eas_active:'''Entity is Active''', 
-        eas_act_ip:'''Activation in Progress''', 
-        eas_act_done:'''Activation Completed''', 
-        eas_act_fail:'''Activation Failed''', 
-        eas_deact_ip:'''Deactivation In Progress''', 
-        eas_deact_done:'''Deactivation Completed''', 
-        eas_deact_fail:'''Deactivation Failed'''
+        eas_inactive: '''Entity is Inactive''', 
+        eas_active: '''Entity is Active''', 
+        eas_act_ip: '''Activation in Progress''', 
+        eas_act_done: '''Activation Completed''', 
+        eas_act_fail: '''Activation Failed''', 
+        eas_deact_ip: '''Deactivation In Progress''', 
+        eas_deact_done: '''Deactivation Completed''', 
+        eas_deact_fail: '''Deactivation Failed'''
       };
 
   const EntityActivationStateEnumState(int value) : super(value);
@@ -265,9 +265,9 @@ class VehicleOperationalLimitsEnumOp extends EnumType {
         op_report];
 
   static get names => {
-        op_request:'''Request''', 
-        op_set:'''Set''', 
-        op_report:'''Report'''
+        op_request: '''Request''', 
+        op_set: '''Set''', 
+        op_report: '''Report'''
       };
 
   const VehicleOperationalLimitsEnumOp(int value) : super(value);
@@ -289,8 +289,8 @@ class LeakSimulationEnumOp extends EnumType {
   static get values => [lsim_off, lsim_on];
 
   static get names => {
-        lsim_off:'''Leaks Off''', 
-        lsim_on:'''Leaks On'''
+        lsim_off: '''Leaks Off''', 
+        lsim_on: '''Leaks On'''
       };
 
   const LeakSimulationEnumOp(int value) : super(value);
@@ -314,9 +314,9 @@ class UASimulationEnumType extends EnumType {
         uas_ping_reply];
 
   static get names => {
-        uas_data:'''Data Transmission''', 
-        uas_ping:'''Ping''', 
-        uas_ping_reply:'''Ping Reply'''
+        uas_data: '''Data Transmission''', 
+        uas_ping: '''Ping''', 
+        uas_ping_reply: '''Ping Reply'''
       };
 
   const UASimulationEnumType(int value) : super(value);
@@ -340,9 +340,9 @@ class DynamicsSimParamEnumOp extends EnumType {
         op_report];
 
   static get names => {
-        op_request:'''Request''', 
-        op_set:'''Set''', 
-        op_report:'''Report'''
+        op_request: '''Request''', 
+        op_set: '''Set''', 
+        op_report: '''Report'''
       };
 
   const DynamicsSimParamEnumOp(int value) : super(value);
@@ -368,11 +368,11 @@ class CacheControlEnumOp extends EnumType {
         cop_clear, cop_copy, cop_copy_complete];
 
   static get names => {
-        cop_store:'''Store''', 
-        cop_load:'''Load''', 
-        cop_clear:'''Clear''', 
-        cop_copy:'''Copy Snapshot''', 
-        cop_copy_complete:'''Snapshot Copy Complete'''
+        cop_store: '''Store''', 
+        cop_load: '''Load''', 
+        cop_clear: '''Clear''', 
+        cop_copy: '''Copy Snapshot''', 
+        cop_copy_complete: '''Snapshot Copy Complete'''
       };
 
   const CacheControlEnumOp(int value) : super(value);
@@ -425,12 +425,12 @@ class LoggingControlEnumOp extends EnumType {
         cop_request_stop, cop_stopped, cop_request_current_name, cop_current_name];
 
   static get names => {
-        cop_request_start:'''Request Start of Logging''', 
-        cop_started:'''Logging Started''', 
-        cop_request_stop:'''Request Logging Stop''', 
-        cop_stopped:'''Logging Stopped''', 
-        cop_request_current_name:'''Request Current Log Name''', 
-        cop_current_name:'''Current Log Name'''
+        cop_request_start: '''Request Start of Logging''', 
+        cop_started: '''Logging Started''', 
+        cop_request_stop: '''Request Logging Stop''', 
+        cop_stopped: '''Logging Stopped''', 
+        cop_request_current_name: '''Request Current Log Name''', 
+        cop_current_name: '''Current Log Name'''
       };
 
   const LoggingControlEnumOp(int value) : super(value);
@@ -456,11 +456,11 @@ class LogBookEntryEnumType extends EnumType {
         lbet_error, lbet_critical, lbet_debug];
 
   static get names => {
-        lbet_info:'''Information''', 
-        lbet_warning:'''Warning''', 
-        lbet_error:'''Error''', 
-        lbet_critical:'''Critical''', 
-        lbet_debug:'''Debug'''
+        lbet_info: '''Information''', 
+        lbet_warning: '''Warning''', 
+        lbet_error: '''Error''', 
+        lbet_critical: '''Critical''', 
+        lbet_debug: '''Debug'''
       };
 
   const LogBookEntryEnumType(int value) : super(value);
@@ -490,10 +490,10 @@ class LogBookControlEnumCommand extends EnumType {
         lbc_get_err, lbc_reply];
 
   static get names => {
-        lbc_get:'''Get''', 
-        lbc_clear:'''Clear''', 
-        lbc_get_err:'''Get Errors''', 
-        lbc_reply:'''Reply'''
+        lbc_get: '''Get''', 
+        lbc_clear: '''Clear''', 
+        lbc_get_err: '''Get Errors''', 
+        lbc_reply: '''Reply'''
       };
 
   const LogBookControlEnumCommand(int value) : super(value);
@@ -518,10 +518,10 @@ class ReplayControlEnumOp extends EnumType {
         rop_pause, rop_resume];
 
   static get names => {
-        rop_start:'''Start''', 
-        rop_stop:'''Stop''', 
-        rop_pause:'''Pause''', 
-        rop_resume:'''Resume'''
+        rop_start: '''Start''', 
+        rop_stop: '''Stop''', 
+        rop_pause: '''Pause''', 
+        rop_resume: '''Resume'''
       };
 
   const ReplayControlEnumOp(int value) : super(value);
@@ -554,12 +554,12 @@ class ClockControlEnumOp extends EnumType {
         cop_sync_started, cop_sync_done, cop_set_tz, cop_set_tz_done];
 
   static get names => {
-        cop_sync_exec:'''Execute Sync.''', 
-        cop_sync_request:'''Request Sync.''', 
-        cop_sync_started:'''Sync. Started''', 
-        cop_sync_done:'''Sync. done''', 
-        cop_set_tz:'''Set Timezone ''', 
-        cop_set_tz_done:'''Timezone Setup'''
+        cop_sync_exec: '''Execute Sync.''', 
+        cop_sync_request: '''Request Sync.''', 
+        cop_sync_started: '''Sync. Started''', 
+        cop_sync_done: '''Sync. done''', 
+        cop_set_tz: '''Set Timezone ''', 
+        cop_set_tz_done: '''Timezone Setup'''
       };
 
   const ClockControlEnumOp(int value) : super(value);
@@ -582,9 +582,9 @@ class HistoricSonarDataEnumEncoding extends EnumType {
         enc_jpeg];
 
   static get names => {
-        enc_one_byte_per_pixel:'''One Byte Per Pixel''', 
-        enc_png:'''PNG compressed image''', 
-        enc_jpeg:'''JPEG compressed image'''
+        enc_one_byte_per_pixel: '''One Byte Per Pixel''', 
+        enc_png: '''PNG compressed image''', 
+        enc_jpeg: '''JPEG compressed image'''
       };
 
   const HistoricSonarDataEnumEncoding(int value) : super(value);
@@ -606,8 +606,8 @@ class HistoricEventEnumType extends EnumType {
   static get values => [evtype_info, evtype_error];
 
   static get names => {
-        evtype_info:'''Information''', 
-        evtype_error:'''Error'''
+        evtype_info: '''Information''', 
+        evtype_error: '''Error'''
       };
 
   const HistoricEventEnumType(int value) : super(value);
@@ -635,13 +635,13 @@ class VerticalProfileEnumParameter extends EnumType {
         prof_conductivity, prof_ph, prof_redox, prof_chlorophyll, prof_turbidity];
 
   static get names => {
-        prof_temperature:'''Temperature''', 
-        prof_salinity:'''Salinity''', 
-        prof_conductivity:'''Conductivity''', 
-        prof_ph:'''pH''', 
-        prof_redox:'''Redox''', 
-        prof_chlorophyll:'''Chlorophyll''', 
-        prof_turbidity:'''Turbidity'''
+        prof_temperature: '''Temperature''', 
+        prof_salinity: '''Salinity''', 
+        prof_conductivity: '''Conductivity''', 
+        prof_ph: '''pH''', 
+        prof_redox: '''Redox''', 
+        prof_chlorophyll: '''Chlorophyll''', 
+        prof_turbidity: '''Turbidity'''
       };
 
   const VerticalProfileEnumParameter(int value) : super(value);
@@ -664,8 +664,8 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
   static get values => [srv_type_external, srv_type_local];
 
   static get names => {
-        srv_type_external:'''External''', 
-        srv_type_local:'''Local'''
+        srv_type_external: '''External''', 
+        srv_type_local: '''Local'''
       };
 
   const AnnounceServiceBitfieldServiceType(int value) : super(value);
@@ -711,13 +711,13 @@ class SmsStateEnumState extends EnumType {
         sms_interrupted, sms_completed, sms_idle, sms_transmitting, sms_receiving];
 
   static get names => {
-        sms_accepted:'''Accepted''', 
-        sms_rejected:'''Rejected''', 
-        sms_interrupted:'''Interrupted''', 
-        sms_completed:'''Completed''', 
-        sms_idle:'''Idle''', 
-        sms_transmitting:'''Transmitting''', 
-        sms_receiving:'''Receiving'''
+        sms_accepted: '''Accepted''', 
+        sms_rejected: '''Rejected''', 
+        sms_interrupted: '''Interrupted''', 
+        sms_completed: '''Completed''', 
+        sms_idle: '''Idle''', 
+        sms_transmitting: '''Transmitting''', 
+        sms_receiving: '''Receiving'''
       };
 
   const SmsStateEnumState(int value) : super(value);
@@ -743,12 +743,12 @@ class IridiumTxStatusEnumStatus extends EnumType {
         txstatus_queued, txstatus_transmit, txstatus_expired, txstatus_empty];
 
   static get names => {
-        txstatus_ok:'''Successfull transmission''', 
-        txstatus_error:'''Error while trying to transmit message''', 
-        txstatus_queued:'''Message has been queued for transmission''', 
-        txstatus_transmit:'''Message is currently being transmitted''', 
-        txstatus_expired:'''Message's TTL has expired. Transmition cancelled.''', 
-        txstatus_empty:'''No more messages to be transmitted or received.'''
+        txstatus_ok: '''Successfull transmission''', 
+        txstatus_error: '''Error while trying to transmit message''', 
+        txstatus_queued: '''Message has been queued for transmission''', 
+        txstatus_transmit: '''Message is currently being transmitted''', 
+        txstatus_expired: '''Message's TTL has expired. Transmition cancelled.''', 
+        txstatus_empty: '''No more messages to be transmitted or received.'''
       };
 
   const IridiumTxStatusEnumStatus(int value) : super(value);
@@ -775,12 +775,12 @@ class SystemGroupEnumAction extends EnumType {
         op_req, op_chg, op_rep, op_frc];
 
   static get names => {
-        op_dis:'''Disband''', 
-        op_set:'''Set''', 
-        op_req:'''Request''', 
-        op_chg:'''Change''', 
-        op_rep:'''Report''', 
-        op_frc:'''Force'''
+        op_dis: '''Disband''', 
+        op_set: '''Set''', 
+        op_req: '''Request''', 
+        op_chg: '''Change''', 
+        op_rep: '''Report''', 
+        op_frc: '''Force'''
       };
 
   const SystemGroupEnumAction(int value) : super(value);
@@ -806,9 +806,9 @@ class HistoricDataQueryEnumType extends EnumType {
         hrtype_clear];
 
   static get names => {
-        hrtype_query:'''Query''', 
-        hrtype_reply:'''Reply''', 
-        hrtype_clear:'''Clear'''
+        hrtype_query: '''Query''', 
+        hrtype_reply: '''Reply''', 
+        hrtype_clear: '''Clear'''
       };
 
   const HistoricDataQueryEnumType(int value) : super(value);
@@ -831,8 +831,8 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
   static get values => [ciq_query, ciq_reply];
 
   static get names => {
-        ciq_query:'''Query Systems''', 
-        ciq_reply:'''Reply'''
+        ciq_query: '''Query Systems''', 
+        ciq_reply: '''Reply'''
       };
 
   const CommSystemsQueryBitfieldType(int value) : super(value);
@@ -881,11 +881,11 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
         ciq_gsm, ciq_mobile, ciq_radio];
 
   static get names => {
-        ciq_acoustic:'''Acoustic''', 
-        ciq_satellite:'''Satellite''', 
-        ciq_gsm:'''GSM''', 
-        ciq_mobile:'''Mobile''', 
-        ciq_radio:'''Radio'''
+        ciq_acoustic: '''Acoustic''', 
+        ciq_satellite: '''Satellite''', 
+        ciq_gsm: '''GSM''', 
+        ciq_mobile: '''Mobile''', 
+        ciq_radio: '''Radio'''
       };
 
   const CommSystemsQueryBitfieldCommInterface(int value) : super(value);
@@ -929,9 +929,9 @@ class CommSystemsQueryEnumModel extends EnumType {
         ciq_rdfxxxxptp];
 
   static get names => {
-        ciq_unknown:'''unknown''', 
-        ciq_m3dr:'''3DR''', 
-        ciq_rdfxxxxptp:'''RDFXXXxPtP'''
+        ciq_unknown: '''unknown''', 
+        ciq_m3dr: '''3DR''', 
+        ciq_rdfxxxxptp: '''RDFXXXxPtP'''
       };
 
   const CommSystemsQueryEnumModel(int value) : super(value);
@@ -958,9 +958,9 @@ class TelemetryMsgEnumType extends EnumType {
         tm_txstatus];
 
   static get names => {
-        tm_tx:'''Tx''', 
-        tm_rx:'''Rx''', 
-        tm_txstatus:'''TxStatus'''
+        tm_tx: '''Tx''', 
+        tm_rx: '''Rx''', 
+        tm_txstatus: '''TxStatus'''
       };
 
   const TelemetryMsgEnumType(int value) : super(value);
@@ -990,10 +990,10 @@ class TelemetryMsgEnumCode extends EnumType {
         tm_code_imc, tm_code_raw];
 
   static get names => {
-        tm_code_unk:'''Code unknown''', 
-        tm_code_report:'''Code Report''', 
-        tm_code_imc:'''Code IMC''', 
-        tm_code_raw:'''Code raw'''
+        tm_code_unk: '''Code unknown''', 
+        tm_code_report: '''Code Report''', 
+        tm_code_imc: '''Code IMC''', 
+        tm_code_raw: '''Code raw'''
       };
 
   const TelemetryMsgEnumCode(int value) : super(value);
@@ -1017,8 +1017,8 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
   static get values => [tm_nak, tm_ak];
 
   static get names => {
-        tm_nak:'''Not acknowledge''', 
-        tm_ak:'''acknowledge'''
+        tm_nak: '''Not acknowledge''', 
+        tm_ak: '''acknowledge'''
       };
 
   const TelemetryMsgBitfieldAcknowledge(int value) : super(value);
@@ -1067,15 +1067,15 @@ class TelemetryMsgEnumStatus extends EnumType {
         tm_inv_addr, tm_inv_size];
 
   static get names => {
-        tm_none:'''Does not apply''', 
-        tm_done:'''Successfull transmission''', 
-        tm_failed:'''Error while trying to transmit message''', 
-        tm_queued:'''Message has been queued for transmission''', 
-        tm_transmit:'''Message is currently being transmitted''', 
-        tm_expired:'''Message's TTL has expired. Transmition cancelled''', 
-        tm_empty:'''No more messages to be transmitted or received''', 
-        tm_inv_addr:'''Invalid address''', 
-        tm_inv_size:'''Invalid transmission size'''
+        tm_none: '''Does not apply''', 
+        tm_done: '''Successfull transmission''', 
+        tm_failed: '''Error while trying to transmit message''', 
+        tm_queued: '''Message has been queued for transmission''', 
+        tm_transmit: '''Message is currently being transmitted''', 
+        tm_expired: '''Message's TTL has expired. Transmition cancelled''', 
+        tm_empty: '''No more messages to be transmitted or received''', 
+        tm_inv_addr: '''Invalid address''', 
+        tm_inv_size: '''Invalid transmission size'''
       };
 
   const TelemetryMsgEnumStatus(int value) : super(value);
@@ -1101,9 +1101,9 @@ class LblConfigEnumOp extends EnumType {
         op_cur_cfg];
 
   static get names => {
-        op_set_cfg:'''Set LBL Configuration''', 
-        op_get_cfg:'''Retrieve LBL Configuration''', 
-        op_cur_cfg:'''Reply to a GET command'''
+        op_set_cfg: '''Set LBL Configuration''', 
+        op_get_cfg: '''Retrieve LBL Configuration''', 
+        op_cur_cfg: '''Reply to a GET command'''
       };
 
   const LblConfigEnumOp(int value) : super(value);
@@ -1175,24 +1175,24 @@ class AcousticOperationEnumOp extends EnumType {
         aop_reverse_range];
 
   static get names => {
-        aop_abort:'''Abort''', 
-        aop_abort_ip:'''Abort in Progress''', 
-        aop_abort_timeout:'''Abort Timeout''', 
-        aop_abort_acked:'''Abort Acknowledged''', 
-        aop_range:'''Range Request''', 
-        aop_range_ip:'''Range in Progress''', 
-        aop_range_timeout:'''Range Timeout''', 
-        aop_range_recved:'''Range Received''', 
-        aop_busy:'''Modem is Busy''', 
-        aop_unsupported:'''Unsupported operation''', 
-        aop_no_txd:'''Transducer Not Detected''', 
-        aop_msg:'''Send Message''', 
-        aop_msg_queued:'''Message Send -- Queued''', 
-        aop_msg_ip:'''Message Send -- In progress''', 
-        aop_msg_done:'''Message Send -- Done''', 
-        aop_msg_failure:'''Message Send -- Failure''', 
-        aop_msg_short:'''Send Short Message''', 
-        aop_reverse_range:'''Initiate Reverse Range'''
+        aop_abort: '''Abort''', 
+        aop_abort_ip: '''Abort in Progress''', 
+        aop_abort_timeout: '''Abort Timeout''', 
+        aop_abort_acked: '''Abort Acknowledged''', 
+        aop_range: '''Range Request''', 
+        aop_range_ip: '''Range in Progress''', 
+        aop_range_timeout: '''Range Timeout''', 
+        aop_range_recved: '''Range Received''', 
+        aop_busy: '''Modem is Busy''', 
+        aop_unsupported: '''Unsupported operation''', 
+        aop_no_txd: '''Transducer Not Detected''', 
+        aop_msg: '''Send Message''', 
+        aop_msg_queued: '''Message Send -- Queued''', 
+        aop_msg_ip: '''Message Send -- In progress''', 
+        aop_msg_done: '''Message Send -- Done''', 
+        aop_msg_failure: '''Message Send -- Failure''', 
+        aop_msg_short: '''Send Short Message''', 
+        aop_reverse_range: '''Initiate Reverse Range'''
       };
 
   const AcousticOperationEnumOp(int value) : super(value);
@@ -1232,15 +1232,15 @@ class GpsFixBitfieldValidity extends BitfieldType {
         gfv_valid_hdop, gfv_valid_vdop];
 
   static get names => {
-        gfv_valid_date:'''Valid Date''', 
-        gfv_valid_time:'''Valid Time''', 
-        gfv_valid_pos:'''Valid Position''', 
-        gfv_valid_cog:'''Valid Course Over Ground''', 
-        gfv_valid_sog:'''Valid Speed Over Ground''', 
-        gfv_valid_hacc:'''Valid Horizontal Accuracy Estimate''', 
-        gfv_valid_vacc:'''Valid Vertical Accuracy Estimate''', 
-        gfv_valid_hdop:'''Valid Horizontal Dilution of Precision''', 
-        gfv_valid_vdop:'''Valid Vertical Dilution of Precision'''
+        gfv_valid_date: '''Valid Date''', 
+        gfv_valid_time: '''Valid Time''', 
+        gfv_valid_pos: '''Valid Position''', 
+        gfv_valid_cog: '''Valid Course Over Ground''', 
+        gfv_valid_sog: '''Valid Speed Over Ground''', 
+        gfv_valid_hacc: '''Valid Horizontal Accuracy Estimate''', 
+        gfv_valid_vacc: '''Valid Vertical Accuracy Estimate''', 
+        gfv_valid_hdop: '''Valid Horizontal Dilution of Precision''', 
+        gfv_valid_vdop: '''Valid Vertical Dilution of Precision'''
       };
 
   const GpsFixBitfieldValidity(int value) : super(value);
@@ -1289,11 +1289,11 @@ class GpsFixEnumType extends EnumType {
         gft_dead_reckoning, gft_manual_input, gft_simulation];
 
   static get names => {
-        gft_standalone:'''Stand Alone''', 
-        gft_differential:'''Differential''', 
-        gft_dead_reckoning:'''Dead Reckoning''', 
-        gft_manual_input:'''Manual Input''', 
-        gft_simulation:'''Simulation'''
+        gft_standalone: '''Stand Alone''', 
+        gft_differential: '''Differential''', 
+        gft_dead_reckoning: '''Dead Reckoning''', 
+        gft_manual_input: '''Manual Input''', 
+        gft_simulation: '''Simulation'''
       };
 
   const GpsFixEnumType(int value) : super(value);
@@ -1318,9 +1318,9 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
         val_vel_z];
 
   static get names => {
-        val_vel_x:'''X component is valid''', 
-        val_vel_y:'''Y component is valid''', 
-        val_vel_z:'''Z component is valid'''
+        val_vel_x: '''X component is valid''', 
+        val_vel_y: '''Y component is valid''', 
+        val_vel_z: '''Z component is valid'''
       };
 
   const GroundVelocityBitfieldValidity(int value) : super(value);
@@ -1363,9 +1363,9 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
         val_vel_z];
 
   static get names => {
-        val_vel_x:'''X component is valid''', 
-        val_vel_y:'''Y component is valid''', 
-        val_vel_z:'''Z component is valid'''
+        val_vel_x: '''X component is valid''', 
+        val_vel_y: '''Y component is valid''', 
+        val_vel_z: '''Z component is valid'''
       };
 
   const WaterVelocityBitfieldValidity(int value) : super(value);
@@ -1407,8 +1407,8 @@ class DistanceEnumValidity extends EnumType {
   static get values => [dv_invalid, dv_valid];
 
   static get names => {
-        dv_invalid:'''Invalid''', 
-        dv_valid:'''Valid'''
+        dv_invalid: '''Invalid''', 
+        dv_valid: '''Valid'''
       };
 
   const DistanceEnumValidity(int value) : super(value);
@@ -1432,9 +1432,9 @@ class SonarDataEnumType extends EnumType {
         st_multibeam];
 
   static get names => {
-        st_sidescan:'''Sidescan''', 
-        st_echosounder:'''Echo Sounder''', 
-        st_multibeam:'''Multibeam'''
+        st_sidescan: '''Sidescan''', 
+        st_echosounder: '''Echo Sounder''', 
+        st_multibeam: '''Multibeam'''
       };
 
   const SonarDataEnumType(int value) : super(value);
@@ -1456,8 +1456,8 @@ class PulseDetectionControlEnumOp extends EnumType {
   static get values => [pop_off, pop_on];
 
   static get names => {
-        pop_off:'''Pulse Detection OFF''', 
-        pop_on:'''Pulse Detection ON'''
+        pop_off: '''Pulse Detection OFF''', 
+        pop_on: '''Pulse Detection ON'''
       };
 
   const PulseDetectionControlEnumOp(int value) : super(value);
@@ -1481,8 +1481,8 @@ class DataSanityEnumSane extends EnumType {
   static get values => [ds_sane, ds_not_sane];
 
   static get names => {
-        ds_sane:'''Sane''', 
-        ds_not_sane:'''Not Sane'''
+        ds_sane: '''Sane''', 
+        ds_not_sane: '''Not Sane'''
       };
 
   const DataSanityEnumSane(int value) : super(value);
@@ -1511,10 +1511,10 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
         rfv_valid_pos, rfv_valid_vel];
 
   static get names => {
-        rfv_valid_time:'''Valid Time''', 
-        rfv_valid_base:'''Valid Base LLH''', 
-        rfv_valid_pos:'''Valid Position''', 
-        rfv_valid_vel:'''Valid Velocity'''
+        rfv_valid_time: '''Valid Time''', 
+        rfv_valid_base: '''Valid Base LLH''', 
+        rfv_valid_pos: '''Valid Position''', 
+        rfv_valid_vel: '''Valid Velocity'''
       };
 
   const GpsFixRtkBitfieldValidity(int value) : super(value);
@@ -1561,10 +1561,10 @@ class GpsFixRtkEnumType extends EnumType {
         rtk_float, rtk_fixed];
 
   static get names => {
-        rtk_none:'''None''', 
-        rtk_obs:'''Obs''', 
-        rtk_float:'''Float''', 
-        rtk_fixed:'''Fixed'''
+        rtk_none: '''None''', 
+        rtk_obs: '''Obs''', 
+        rtk_float: '''Float''', 
+        rtk_fixed: '''Fixed'''
       };
 
   const GpsFixRtkEnumType(int value) : super(value);
@@ -1588,9 +1588,9 @@ class ExternalNavDataEnumType extends EnumType {
         extnav_posref];
 
   static get names => {
-        extnav_full:'''Full State''', 
-        extnav_ahrs:'''Attitude Heading Reference System Only''', 
-        extnav_posref:'''Position Reference System only'''
+        extnav_full: '''Full State''', 
+        extnav_ahrs: '''Attitude Heading Reference System Only''', 
+        extnav_posref: '''Position Reference System only'''
       };
 
   const ExternalNavDataEnumType(int value) : super(value);
@@ -1615,10 +1615,10 @@ class CameraZoomEnumAction extends EnumType {
         action_zoom_out, action_zoom_stop];
 
   static get names => {
-        action_zoom_reset:'''Reset Zoom''', 
-        action_zoom_in:'''Zoom In''', 
-        action_zoom_out:'''Zoom Out''', 
-        action_zoom_stop:'''Stop Zooming'''
+        action_zoom_reset: '''Reset Zoom''', 
+        action_zoom_in: '''Zoom In''', 
+        action_zoom_out: '''Zoom Out''', 
+        action_zoom_stop: '''Stop Zooming'''
       };
 
   const CameraZoomEnumAction(int value) : super(value);
@@ -1640,8 +1640,8 @@ class RemoteActionsRequestEnumOp extends EnumType {
   static get values => [op_report, op_query];
 
   static get names => {
-        op_report:'''Report''', 
-        op_query:'''Query'''
+        op_report: '''Report''', 
+        op_query: '''Query'''
       };
 
   const RemoteActionsRequestEnumOp(int value) : super(value);
@@ -1667,11 +1667,11 @@ class LcdControlEnumOp extends EnumType {
         op_clear, op_write0, op_write1];
 
   static get names => {
-        op_turn_off:'''Turn off display''', 
-        op_turn_on:'''Turn on display''', 
-        op_clear:'''Clear display''', 
-        op_write0:'''Write Line #0''', 
-        op_write1:'''Write Line #1'''
+        op_turn_off: '''Turn off display''', 
+        op_turn_on: '''Turn on display''', 
+        op_clear: '''Clear display''', 
+        op_write0: '''Write Line #0''', 
+        op_write1: '''Write Line #1'''
       };
 
   const LcdControlEnumOp(int value) : super(value);
@@ -1716,13 +1716,13 @@ class PowerOperationEnumOp extends EnumType {
         pop_pwr_down_aborted, pop_sched_pwr_down, pop_pwr_up, pop_pwr_up_ip, pop_sched_pwr_up];
 
   static get names => {
-        pop_pwr_down:'''Power Down''', 
-        pop_pwr_down_ip:'''Power Down in Progress''', 
-        pop_pwr_down_aborted:'''Power Down Aborted''', 
-        pop_sched_pwr_down:'''Schedule Power Down''', 
-        pop_pwr_up:'''Power Up''', 
-        pop_pwr_up_ip:'''Power Up in Progress''', 
-        pop_sched_pwr_up:'''Schedule Power Up'''
+        pop_pwr_down: '''Power Down''', 
+        pop_pwr_down_ip: '''Power Down in Progress''', 
+        pop_pwr_down_aborted: '''Power Down Aborted''', 
+        pop_sched_pwr_down: '''Schedule Power Down''', 
+        pop_pwr_up: '''Power Up''', 
+        pop_pwr_up_ip: '''Power Up in Progress''', 
+        pop_sched_pwr_up: '''Schedule Power Up'''
       };
 
   const PowerOperationEnumOp(int value) : super(value);
@@ -1764,14 +1764,14 @@ class PowerChannelControlEnumOp extends EnumType {
         pcc_op_restart];
 
   static get names => {
-        pcc_op_turn_off:'''Turn Off''', 
-        pcc_op_turn_on:'''Turn On''', 
-        pcc_op_toggle:'''Toggle''', 
-        pcc_op_sched_on:'''Schedule Turn On''', 
-        pcc_op_sched_off:'''Schedule Turn Off''', 
-        pcc_op_sched_reset:'''Reset Schedules''', 
-        pcc_op_save:'''Save Current State''', 
-        pcc_op_restart:'''Restart'''
+        pcc_op_turn_off: '''Turn Off''', 
+        pcc_op_turn_on: '''Turn On''', 
+        pcc_op_toggle: '''Toggle''', 
+        pcc_op_sched_on: '''Schedule Turn On''', 
+        pcc_op_sched_off: '''Schedule Turn Off''', 
+        pcc_op_sched_reset: '''Reset Schedules''', 
+        pcc_op_save: '''Save Current State''', 
+        pcc_op_restart: '''Restart'''
       };
 
   const PowerChannelControlEnumOp(int value) : super(value);
@@ -1795,8 +1795,8 @@ class PowerChannelStateEnumState extends EnumType {
   static get values => [pcs_off, pcs_on];
 
   static get names => {
-        pcs_off:'''Off''', 
-        pcs_on:'''On'''
+        pcs_off: '''Off''', 
+        pcs_on: '''On'''
       };
 
   const PowerChannelStateEnumState(int value) : super(value);
@@ -1827,11 +1827,11 @@ class GpsFixRejectionEnumReason extends EnumType {
         rr_above_max_hdop, rr_above_max_hacc, rr_lost_val_bit];
 
   static get names => {
-        rr_above_threshold:'''Above Threshold''', 
-        rr_invalid:'''Invalid Fix''', 
-        rr_above_max_hdop:'''Above Maximum HDOP''', 
-        rr_above_max_hacc:'''Above Maximum HACC''', 
-        rr_lost_val_bit:'''Lost Validity Bit'''
+        rr_above_threshold: '''Above Threshold''', 
+        rr_invalid: '''Invalid Fix''', 
+        rr_above_max_hdop: '''Above Maximum HDOP''', 
+        rr_above_max_hacc: '''Above Maximum HACC''', 
+        rr_lost_val_bit: '''Lost Validity Bit'''
       };
 
   const GpsFixRejectionEnumReason(int value) : super(value);
@@ -1862,11 +1862,11 @@ class LblRangeAcceptanceEnumAcceptance extends EnumType {
         rr_singular, rr_no_info, rr_at_surface];
 
   static get names => {
-        rr_accepted:'''Accepted''', 
-        rr_above_threshold:'''Rejected - Above Threshold''', 
-        rr_singular:'''Rejected - Singular Point''', 
-        rr_no_info:'''Rejected - Not Enough Information''', 
-        rr_at_surface:'''Rejected - Vehicle At Surface'''
+        rr_accepted: '''Accepted''', 
+        rr_above_threshold: '''Rejected - Above Threshold''', 
+        rr_singular: '''Rejected - Singular Point''', 
+        rr_no_info: '''Rejected - Not Enough Information''', 
+        rr_at_surface: '''Rejected - Vehicle At Surface'''
       };
 
   const LblRangeAcceptanceEnumAcceptance(int value) : super(value);
@@ -1888,8 +1888,8 @@ class DvlRejectionBitfieldType extends BitfieldType {
   static get values => [type_gv, type_wv];
 
   static get names => {
-        type_gv:'''Ground velocity''', 
-        type_wv:'''Water velocity'''
+        type_gv: '''Ground velocity''', 
+        type_wv: '''Water velocity'''
       };
 
   const DvlRejectionBitfieldType(int value) : super(value);
@@ -1954,10 +1954,10 @@ class DvlRejectionEnumReason extends EnumType {
         rr_abs_threshold_x, rr_abs_threshold_y];
 
   static get names => {
-        rr_innov_threshold_x:'''Innovation Threshold - X''', 
-        rr_innov_threshold_y:'''Innovation Threshold - Y''', 
-        rr_abs_threshold_x:'''Absolute Threshold - X''', 
-        rr_abs_threshold_y:'''Absolute Threshold - Y'''
+        rr_innov_threshold_x: '''Innovation Threshold - X''', 
+        rr_innov_threshold_y: '''Innovation Threshold - Y''', 
+        rr_abs_threshold_x: '''Absolute Threshold - X''', 
+        rr_abs_threshold_y: '''Absolute Threshold - Y'''
       };
 
   const DvlRejectionEnumReason(int value) : super(value);
@@ -1983,11 +1983,11 @@ class AlignmentStateEnumState extends EnumType {
         as_not_supported, as_aligning, as_wrong_medium];
 
   static get names => {
-        as_not_aligned:'''Not Aligned''', 
-        as_aligned:'''Aligned''', 
-        as_not_supported:'''Not Supported''', 
-        as_aligning:'''Aligning''', 
-        as_wrong_medium:'''Wrong Medium'''
+        as_not_aligned: '''Not Aligned''', 
+        as_aligned: '''Aligned''', 
+        as_not_supported: '''Not Supported''', 
+        as_aligning: '''Aligning''', 
+        as_wrong_medium: '''Wrong Medium'''
       };
 
   const AlignmentStateEnumState(int value) : super(value);
@@ -2035,14 +2035,14 @@ class DesiredPathBitfieldFlags extends BitfieldType {
         fl_land];
 
   static get names => {
-        fl_start:'''Start Point''', 
-        fl_direct:'''Direct''', 
-        fl_no_z:'''No Altitude/Depth control''', 
-        fl_3dtrack:'''3D Tracking''', 
-        fl_cclockw:'''Counter-Clockwise loiter''', 
-        fl_loiter_curr:'''Loiter from current position''', 
-        fl_takeoff:'''Takeoff''', 
-        fl_land:'''Land'''
+        fl_start: '''Start Point''', 
+        fl_direct: '''Direct''', 
+        fl_no_z: '''No Altitude/Depth control''', 
+        fl_3dtrack: '''3D Tracking''', 
+        fl_cclockw: '''Counter-Clockwise loiter''', 
+        fl_loiter_curr: '''Loiter from current position''', 
+        fl_takeoff: '''Takeoff''', 
+        fl_land: '''Land'''
       };
 
   const DesiredPathBitfieldFlags(int value) : super(value);
@@ -2093,12 +2093,12 @@ class DesiredControlBitfieldFlags extends BitfieldType {
         fl_z, fl_k, fl_m, fl_n];
 
   static get names => {
-        fl_x:'''Value of X is meaningful''', 
-        fl_y:'''Value of Y is meaningful''', 
-        fl_z:'''Value of Z is meaningful''', 
-        fl_k:'''Value of K is meaningful''', 
-        fl_m:'''Value of M is meaningful''', 
-        fl_n:'''Value of N is meaningful'''
+        fl_x: '''Value of X is meaningful''', 
+        fl_y: '''Value of Y is meaningful''', 
+        fl_z: '''Value of Z is meaningful''', 
+        fl_k: '''Value of K is meaningful''', 
+        fl_m: '''Value of M is meaningful''', 
+        fl_n: '''Value of N is meaningful'''
       };
 
   const DesiredControlBitfieldFlags(int value) : super(value);
@@ -2149,12 +2149,12 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
         fl_heave, fl_roll, fl_pitch, fl_yaw];
 
   static get names => {
-        fl_surge:'''Value of u is meaningful''', 
-        fl_sway:'''Value of v is meaningful''', 
-        fl_heave:'''Value of w is meaningful''', 
-        fl_roll:'''Value of p is meaningful''', 
-        fl_pitch:'''Value of q is meaningful''', 
-        fl_yaw:'''Value of r is meaningful'''
+        fl_surge: '''Value of u is meaningful''', 
+        fl_sway: '''Value of v is meaningful''', 
+        fl_heave: '''Value of w is meaningful''', 
+        fl_roll: '''Value of p is meaningful''', 
+        fl_pitch: '''Value of q is meaningful''', 
+        fl_yaw: '''Value of r is meaningful'''
       };
 
   const DesiredVelocityBitfieldFlags(int value) : super(value);
@@ -2205,11 +2205,11 @@ class PathControlStateBitfieldFlags extends BitfieldType {
         fl_no_z, fl_3dtrack, fl_cclockw];
 
   static get names => {
-        fl_near:'''Near Endpoint''', 
-        fl_loitering:'''Loitering''', 
-        fl_no_z:'''No Altitude/Depth control''', 
-        fl_3dtrack:'''3D Tracking''', 
-        fl_cclockw:'''Counter-Clockwise loiter'''
+        fl_near: '''Near Endpoint''', 
+        fl_loitering: '''Loitering''', 
+        fl_no_z: '''No Altitude/Depth control''', 
+        fl_3dtrack: '''3D Tracking''', 
+        fl_cclockw: '''Counter-Clockwise loiter'''
       };
 
   const PathControlStateBitfieldFlags(int value) : super(value);
@@ -2254,9 +2254,9 @@ class BrakeEnumOp extends EnumType {
         op_revert];
 
   static get names => {
-        op_stop:'''Stop Braking''', 
-        op_start:'''Start Braking''', 
-        op_revert:'''Revert Actuation'''
+        op_stop: '''Stop Braking''', 
+        op_start: '''Start Braking''', 
+        op_revert: '''Revert Actuation'''
       };
 
   const BrakeEnumOp(int value) : super(value);
@@ -2296,15 +2296,15 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
         fl_ay, fl_az];
 
   static get names => {
-        fl_x:'''Value of x is meaningful''', 
-        fl_y:'''Value of y is meaningful''', 
-        fl_z:'''Value of z is meaningful''', 
-        fl_vx:'''Value of vx is meaningful''', 
-        fl_vy:'''Value of vy is meaningful''', 
-        fl_vz:'''Value of vz is meaningful''', 
-        fl_ax:'''Value of ax is meaningful''', 
-        fl_ay:'''Value of ay is meaningful''', 
-        fl_az:'''Value of az is meaningful'''
+        fl_x: '''Value of x is meaningful''', 
+        fl_y: '''Value of y is meaningful''', 
+        fl_z: '''Value of z is meaningful''', 
+        fl_vx: '''Value of vx is meaningful''', 
+        fl_vy: '''Value of vy is meaningful''', 
+        fl_vz: '''Value of vz is meaningful''', 
+        fl_ax: '''Value of ax is meaningful''', 
+        fl_ay: '''Value of ay is meaningful''', 
+        fl_az: '''Value of az is meaningful'''
       };
 
   const DesiredLinearStateBitfieldFlags(int value) : super(value);
@@ -2354,9 +2354,9 @@ class PopUpBitfieldFlags extends BitfieldType {
         flg_station_keep];
 
   static get names => {
-        flg_curr_pos:'''Start from current position''', 
-        flg_wait_at_surface:'''Wait at surface''', 
-        flg_station_keep:'''Station keeping'''
+        flg_curr_pos: '''Start from current position''', 
+        flg_wait_at_surface: '''Wait at surface''', 
+        flg_station_keep: '''Station keeping'''
       };
 
   const PopUpBitfieldFlags(int value) : super(value);
@@ -2400,11 +2400,11 @@ class LoiterEnumType extends EnumType {
         lt_racetrack, lt_eight, lt_hover];
 
   static get names => {
-        lt_default:'''Default''', 
-        lt_circular:'''Circular''', 
-        lt_racetrack:'''Race track''', 
-        lt_eight:'''Figure 8''', 
-        lt_hover:'''Hover'''
+        lt_default: '''Default''', 
+        lt_circular: '''Circular''', 
+        lt_racetrack: '''Race track''', 
+        lt_eight: '''Figure 8''', 
+        lt_hover: '''Hover'''
       };
 
   const LoiterEnumType(int value) : super(value);
@@ -2429,10 +2429,10 @@ class LoiterEnumDirection extends EnumType {
         ld_cclockw, ld_iwindcurr];
 
   static get names => {
-        ld_vdep:'''Vehicle Dependent''', 
-        ld_clockw:'''Clockwise''', 
-        ld_cclockw:'''Counter Clockwise''', 
-        ld_iwindcurr:'''Into the wind/current'''
+        ld_vdep: '''Vehicle Dependent''', 
+        ld_clockw: '''Clockwise''', 
+        ld_cclockw: '''Counter Clockwise''', 
+        ld_iwindcurr: '''Into the wind/current'''
       };
 
   const LoiterEnumDirection(int value) : super(value);
@@ -2454,8 +2454,8 @@ class RowsBitfieldFlags extends BitfieldType {
   static get values => [flg_square_curve, flg_curve_right];
 
   static get names => {
-        flg_square_curve:'''Square Curve''', 
-        flg_curve_right:'''First Curve Right'''
+        flg_square_curve: '''Square Curve''', 
+        flg_curve_right: '''First Curve Right'''
       };
 
   const RowsBitfieldFlags(int value) : super(value);
@@ -2497,7 +2497,7 @@ class ElevatorBitfieldFlags extends BitfieldType {
   static get values => [flg_curr_pos];
 
   static get names => {
-        flg_curr_pos:'''Start from current position'''
+        flg_curr_pos: '''Start from current position'''
       };
 
   const ElevatorBitfieldFlags(int value) : super(value);
@@ -2544,10 +2544,10 @@ class ManeuverControlStateEnumState extends EnumType {
         mcs_error, mcs_stopped];
 
   static get names => {
-        mcs_executing:'''Maneuver in progress''', 
-        mcs_done:'''Maneuver completed''', 
-        mcs_error:'''Maneuver error''', 
-        mcs_stopped:'''Maneuver stopped'''
+        mcs_executing: '''Maneuver in progress''', 
+        mcs_done: '''Maneuver completed''', 
+        mcs_error: '''Maneuver error''', 
+        mcs_stopped: '''Maneuver stopped'''
       };
 
   const ManeuverControlStateEnumState(int value) : super(value);
@@ -2572,10 +2572,10 @@ class CompassCalibrationEnumDirection extends EnumType {
         ld_cclockw, ld_iwindcurr];
 
   static get names => {
-        ld_vdep:'''Vehicle Dependent''', 
-        ld_clockw:'''Clockwise''', 
-        ld_cclockw:'''Counter Clockwise''', 
-        ld_iwindcurr:'''Into the wind/current'''
+        ld_vdep: '''Vehicle Dependent''', 
+        ld_clockw: '''Clockwise''', 
+        ld_cclockw: '''Counter Clockwise''', 
+        ld_iwindcurr: '''Into the wind/current'''
       };
 
   const CompassCalibrationEnumDirection(int value) : super(value);
@@ -2599,9 +2599,9 @@ class FormationParametersEnumReferenceFrame extends EnumType {
         op_path_curved];
 
   static get names => {
-        op_earth_fixed:'''Earth Fixed''', 
-        op_path_fixed:'''Path Fixed''', 
-        op_path_curved:'''Path Curved'''
+        op_earth_fixed: '''Earth Fixed''', 
+        op_path_fixed: '''Path Fixed''', 
+        op_path_curved: '''Path Curved'''
       };
 
   const FormationParametersEnumReferenceFrame(int value) : super(value);
@@ -2628,13 +2628,13 @@ class ReferenceBitfieldFlags extends BitfieldType {
         flag_z, flag_radius, flag_start_point, flag_direct, flag_mandone];
 
   static get names => {
-        flag_location:'''Use Location Reference''', 
-        flag_speed:'''Use Speed Reference''', 
-        flag_z:'''Use Z Reference''', 
-        flag_radius:'''Use Radius Reference''', 
-        flag_start_point:'''Use this Reference as Start Position for PathControler''', 
-        flag_direct:'''Use Current Position as Start Position for PathControler''', 
-        flag_mandone:'''Flag Maneuver Completion'''
+        flag_location: '''Use Location Reference''', 
+        flag_speed: '''Use Speed Reference''', 
+        flag_z: '''Use Z Reference''', 
+        flag_radius: '''Use Radius Reference''', 
+        flag_start_point: '''Use this Reference as Start Position for PathControler''', 
+        flag_direct: '''Use Current Position as Start Position for PathControler''', 
+        flag_mandone: '''Flag Maneuver Completion'''
       };
 
   const ReferenceBitfieldFlags(int value) : super(value);
@@ -2678,12 +2678,12 @@ class FollowRefStateEnumState extends EnumType {
         fr_loiter, fr_hover, fr_elevator, fr_timeout];
 
   static get names => {
-        fr_wait:'''Waiting for first reference''', 
-        fr_goto:'''Going towards received reference''', 
-        fr_loiter:'''Loitering after arriving at the reference''', 
-        fr_hover:'''Hovering after arriving at the reference''', 
-        fr_elevator:'''Moving in z after arriving at the target cylinder''', 
-        fr_timeout:'''Controlling system timed out'''
+        fr_wait: '''Waiting for first reference''', 
+        fr_goto: '''Going towards received reference''', 
+        fr_loiter: '''Loitering after arriving at the reference''', 
+        fr_hover: '''Hovering after arriving at the reference''', 
+        fr_elevator: '''Moving in z after arriving at the target cylinder''', 
+        fr_timeout: '''Controlling system timed out'''
       };
 
   const FollowRefStateEnumState(int value) : super(value);
@@ -2708,11 +2708,11 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
         prox_z_near, prox_xy_unreachable, prox_z_unreachable];
 
   static get names => {
-        prox_far:'''Far from the destination''', 
-        prox_xy_near:'''Near in the horizontal plane''', 
-        prox_z_near:'''Near in the vertical plane''', 
-        prox_xy_unreachable:'''Unreachable in the horizontal plane''', 
-        prox_z_unreachable:'''Unreachable in the vertical plane'''
+        prox_far: '''Far from the destination''', 
+        prox_xy_near: '''Near in the horizontal plane''', 
+        prox_z_near: '''Near in the vertical plane''', 
+        prox_xy_unreachable: '''Unreachable in the horizontal plane''', 
+        prox_z_unreachable: '''Unreachable in the vertical plane'''
       };
 
   const FollowRefStateBitfieldProximity(int value) : super(value);
@@ -2754,9 +2754,9 @@ class DislodgeEnumDirection extends EnumType {
         dir_backward];
 
   static get names => {
-        dir_auto:'''Let the vehicle decide''', 
-        dir_forward:'''Attempt to move forward''', 
-        dir_backward:'''Attempt to move backward'''
+        dir_auto: '''Let the vehicle decide''', 
+        dir_forward: '''Attempt to move forward''', 
+        dir_backward: '''Attempt to move backward'''
       };
 
   const DislodgeEnumDirection(int value) : super(value);
@@ -2778,8 +2778,8 @@ class FormationEnumType extends EnumType {
   static get values => [fc_request, fc_report];
 
   static get names => {
-        fc_request:'''Request''', 
-        fc_report:'''Report'''
+        fc_request: '''Request''', 
+        fc_report: '''Report'''
       };
 
   const FormationEnumType(int value) : super(value);
@@ -2810,11 +2810,11 @@ class FormationEnumOp extends EnumType {
         op_ready, op_executing, op_failure];
 
   static get names => {
-        op_start:'''Start''', 
-        op_stop:'''Stop''', 
-        op_ready:'''Ready''', 
-        op_executing:'''Executing''', 
-        op_failure:'''Failure'''
+        op_start: '''Start''', 
+        op_stop: '''Stop''', 
+        op_ready: '''Ready''', 
+        op_executing: '''Executing''', 
+        op_failure: '''Failure'''
       };
 
   const FormationEnumOp(int value) : super(value);
@@ -2838,9 +2838,9 @@ class FormationEnumReferenceFrame extends EnumType {
         op_path_curved];
 
   static get names => {
-        op_earth_fixed:'''Earth Fixed''', 
-        op_path_fixed:'''Path Fixed''', 
-        op_path_curved:'''Path Curved'''
+        op_earth_fixed: '''Earth Fixed''', 
+        op_path_fixed: '''Path Fixed''', 
+        op_path_curved: '''Path Curved'''
       };
 
   const FormationEnumReferenceFrame(int value) : super(value);
@@ -2870,9 +2870,9 @@ class ScheduledGotoEnumDelayed extends EnumType {
         dbeh_fail];
 
   static get names => {
-        dbeh_resume:'''Resume''', 
-        dbeh_skip:'''Skip''', 
-        dbeh_fail:'''Fail'''
+        dbeh_resume: '''Resume''', 
+        dbeh_skip: '''Skip''', 
+        dbeh_fail: '''Fail'''
       };
 
   const ScheduledGotoEnumDelayed(int value) : super(value);
@@ -2896,8 +2896,8 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
   static get values => [flg_square_curve, flg_curve_right];
 
   static get names => {
-        flg_square_curve:'''Square Curve''', 
-        flg_curve_right:'''First Curve Right'''
+        flg_square_curve: '''Square Curve''', 
+        flg_curve_right: '''First Curve Right'''
       };
 
   const RowsCoverageBitfieldFlags(int value) : super(value);
@@ -2939,10 +2939,10 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
         enforce_timeout, enforce_area2d];
 
   static get names => {
-        enforce_depth:'''Maximum Depth Limit''', 
-        enforce_altitude:'''Minimum Altitude Limit''', 
-        enforce_timeout:'''Time Limit''', 
-        enforce_area2d:'''Polygonal Area Limits'''
+        enforce_depth: '''Maximum Depth Limit''', 
+        enforce_altitude: '''Minimum Altitude Limit''', 
+        enforce_timeout: '''Time Limit''', 
+        enforce_area2d: '''Polygonal Area Limits'''
       };
 
   const AutonomousSectionBitfieldLimits(int value) : super(value);
@@ -2983,7 +2983,7 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
   static get values => [flg_keep_safe];
 
   static get names => {
-        flg_keep_safe:'''Keep safe behaviour'''
+        flg_keep_safe: '''Keep safe behaviour'''
       };
 
   const StationKeepingExtendedBitfieldFlags(int value) : super(value);
@@ -3023,8 +3023,8 @@ class MagnetometerEnumDirection extends EnumType {
   static get values => [md_clockw_first, md_cclockw_first];
 
   static get names => {
-        md_clockw_first:'''Clockwise First''', 
-        md_cclockw_first:'''Counter Clockwise First'''
+        md_clockw_first: '''Clockwise First''', 
+        md_cclockw_first: '''Counter Clockwise First'''
       };
 
   const MagnetometerEnumDirection(int value) : super(value);
@@ -3057,12 +3057,12 @@ class VehicleStateEnumOpMode extends EnumType {
         vs_error, vs_maneuver, vs_external, vs_boot];
 
   static get names => {
-        vs_service:'''Service''', 
-        vs_calibration:'''Calibration''', 
-        vs_error:'''Error''', 
-        vs_maneuver:'''Maneuver''', 
-        vs_external:'''External Control''', 
-        vs_boot:'''Boot'''
+        vs_service: '''Service''', 
+        vs_calibration: '''Calibration''', 
+        vs_error: '''Error''', 
+        vs_maneuver: '''Maneuver''', 
+        vs_external: '''External Control''', 
+        vs_boot: '''Boot'''
       };
 
   const VehicleStateEnumOpMode(int value) : super(value);
@@ -3082,7 +3082,7 @@ class VehicleStateBitfieldFlags extends BitfieldType {
   static get values => [vflg_maneuver_done];
 
   static get names => {
-        vflg_maneuver_done:'''Maneuver Done'''
+        vflg_maneuver_done: '''Maneuver Done'''
       };
 
   const VehicleStateBitfieldFlags(int value) : super(value);
@@ -3124,10 +3124,10 @@ class VehicleCommandEnumType extends EnumType {
         vc_in_progress, vc_failure];
 
   static get names => {
-        vc_request:'''Request''', 
-        vc_success:'''Reply -- Success''', 
-        vc_in_progress:'''Reply -- In Progress''', 
-        vc_failure:'''Reply -- Failure'''
+        vc_request: '''Request''', 
+        vc_success: '''Reply -- Success''', 
+        vc_in_progress: '''Reply -- In Progress''', 
+        vc_failure: '''Reply -- Failure'''
       };
 
   const VehicleCommandEnumType(int value) : super(value);
@@ -3156,10 +3156,10 @@ class VehicleCommandEnumCommand extends EnumType {
         vc_start_calibration, vc_stop_calibration];
 
   static get names => {
-        vc_exec_maneuver:'''Execute Maneuver''', 
-        vc_stop_maneuver:'''Stop Maneuver''', 
-        vc_start_calibration:'''Start Calibration''', 
-        vc_stop_calibration:'''Stop Calibration'''
+        vc_exec_maneuver: '''Execute Maneuver''', 
+        vc_stop_maneuver: '''Stop Maneuver''', 
+        vc_start_calibration: '''Start Calibration''', 
+        vc_stop_calibration: '''Stop Calibration'''
       };
 
   const VehicleCommandEnumCommand(int value) : super(value);
@@ -3185,11 +3185,11 @@ class MonitorEntityStateEnumCommand extends EnumType {
         mes_disable, mes_enable_exclusive, mes_status];
 
   static get names => {
-        mes_reset:'''Reset to defaults''', 
-        mes_enable:'''Enable Monitoring''', 
-        mes_disable:'''Disable Monitoring''', 
-        mes_enable_exclusive:'''Enable Monitoring (exclusive - disables all others)''', 
-        mes_status:'''Status Report'''
+        mes_reset: '''Reset to defaults''', 
+        mes_enable: '''Enable Monitoring''', 
+        mes_disable: '''Disable Monitoring''', 
+        mes_enable_exclusive: '''Enable Monitoring (exclusive - disables all others)''', 
+        mes_status: '''Status Report'''
       };
 
   const MonitorEntityStateEnumCommand(int value) : super(value);
@@ -3210,8 +3210,8 @@ class ControlLoopsEnumEnable extends EnumType {
   static get values => [cl_disable, cl_enable];
 
   static get names => {
-        cl_disable:'''Disable''', 
-        cl_enable:'''Enable'''
+        cl_disable: '''Disable''', 
+        cl_enable: '''Enable'''
       };
 
   const ControlLoopsEnumEnable(int value) : super(value);
@@ -3242,11 +3242,11 @@ class VehicleMediumEnumMedium extends EnumType {
         vm_water, vm_underwater, vm_unknown];
 
   static get names => {
-        vm_ground:'''Ground''', 
-        vm_air:'''Air''', 
-        vm_water:'''Water''', 
-        vm_underwater:'''Underwater''', 
-        vm_unknown:'''Unknown'''
+        vm_ground: '''Ground''', 
+        vm_air: '''Air''', 
+        vm_water: '''Water''', 
+        vm_underwater: '''Underwater''', 
+        vm_unknown: '''Unknown'''
       };
 
   const VehicleMediumEnumMedium(int value) : super(value);
@@ -3275,10 +3275,10 @@ class CollisionBitfieldType extends BitfieldType {
         cd_z, cd_impact];
 
   static get names => {
-        cd_x:'''X-axis''', 
-        cd_y:'''Y-axis''', 
-        cd_z:'''Z-axis''', 
-        cd_impact:'''Impact'''
+        cd_x: '''X-axis''', 
+        cd_y: '''Y-axis''', 
+        cd_z: '''Z-axis''', 
+        cd_impact: '''Impact'''
       };
 
   const CollisionBitfieldType(int value) : super(value);
@@ -3320,9 +3320,9 @@ class FormStateEnumPosSimMon extends EnumType {
         pos_lim];
 
   static get names => {
-        pos_ok:'''Ok''', 
-        pos_wrn:'''Warning threshold''', 
-        pos_lim:'''Limit threshold'''
+        pos_ok: '''Ok''', 
+        pos_wrn: '''Warning threshold''', 
+        pos_lim: '''Limit threshold'''
       };
 
   const FormStateEnumPosSimMon(int value) : super(value);
@@ -3344,8 +3344,8 @@ class FormStateEnumCommMon extends EnumType {
   static get values => [comms_ok, comms_timeout];
 
   static get names => {
-        comms_ok:'''Ok''', 
-        comms_timeout:'''Timeout'''
+        comms_ok: '''Ok''', 
+        comms_timeout: '''Timeout'''
       };
 
   const FormStateEnumCommMon(int value) : super(value);
@@ -3367,8 +3367,8 @@ class FormStateEnumConvergMon extends EnumType {
   static get values => [conv_ok, conv_timeout];
 
   static get names => {
-        conv_ok:'''Ok''', 
-        conv_timeout:'''Timeout'''
+        conv_ok: '''Ok''', 
+        conv_timeout: '''Timeout'''
       };
 
   const FormStateEnumConvergMon(int value) : super(value);
@@ -3395,9 +3395,9 @@ class AutopilotModeEnumAutonomy extends EnumType {
         al_auto];
 
   static get names => {
-        al_manual:'''Manual''', 
-        al_assisted:'''Assisted''', 
-        al_auto:'''Auto'''
+        al_manual: '''Manual''', 
+        al_assisted: '''Assisted''', 
+        al_auto: '''Auto'''
       };
 
   const AutopilotModeEnumAutonomy(int value) : super(value);
@@ -3419,8 +3419,8 @@ class FormationStateEnumType extends EnumType {
   static get values => [fc_request, fc_report];
 
   static get names => {
-        fc_request:'''Request''', 
-        fc_report:'''Report'''
+        fc_request: '''Request''', 
+        fc_report: '''Report'''
       };
 
   const FormationStateEnumType(int value) : super(value);
@@ -3444,8 +3444,8 @@ class FormationStateEnumOp extends EnumType {
   static get values => [op_start, op_stop];
 
   static get names => {
-        op_start:'''Start''', 
-        op_stop:'''Stop'''
+        op_start: '''Start''', 
+        op_stop: '''Stop'''
       };
 
   const FormationStateEnumOp(int value) : super(value);
@@ -3469,9 +3469,9 @@ class FormationStateEnumPosSimMon extends EnumType {
         pos_lim];
 
   static get names => {
-        pos_ok:'''Ok''', 
-        pos_wrn:'''Warning threshold''', 
-        pos_lim:'''Limit threshold'''
+        pos_ok: '''Ok''', 
+        pos_wrn: '''Warning threshold''', 
+        pos_lim: '''Limit threshold'''
       };
 
   const FormationStateEnumPosSimMon(int value) : super(value);
@@ -3493,8 +3493,8 @@ class FormationStateEnumCommMon extends EnumType {
   static get values => [comms_ok, comms_timeout];
 
   static get names => {
-        comms_ok:'''Ok''', 
-        comms_timeout:'''Timeout'''
+        comms_ok: '''Ok''', 
+        comms_timeout: '''Timeout'''
       };
 
   const FormationStateEnumCommMon(int value) : super(value);
@@ -3516,8 +3516,8 @@ class FormationStateEnumConvergMon extends EnumType {
   static get values => [conv_ok, conv_timeout];
 
   static get names => {
-        conv_ok:'''Ok''', 
-        conv_timeout:'''Timeout'''
+        conv_ok: '''Ok''', 
+        conv_timeout: '''Timeout'''
       };
 
   const FormationStateEnumConvergMon(int value) : super(value);
@@ -3567,12 +3567,12 @@ class ReportControlEnumOp extends EnumType {
         op_request_stop, op_stopped, op_request_report, op_report_sent];
 
   static get names => {
-        op_request_start:'''Request Start of Reports''', 
-        op_started:'''Report Started''', 
-        op_request_stop:'''Request Stop of Reports''', 
-        op_stopped:'''Report Stopped''', 
-        op_request_report:'''Request Single Reports''', 
-        op_report_sent:'''Single Report Sent'''
+        op_request_start: '''Request Start of Reports''', 
+        op_started: '''Report Started''', 
+        op_request_stop: '''Request Stop of Reports''', 
+        op_stopped: '''Report Stopped''', 
+        op_request_report: '''Request Single Reports''', 
+        op_report_sent: '''Single Report Sent'''
       };
 
   const ReportControlEnumOp(int value) : super(value);
@@ -3603,11 +3603,11 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
         ci_gsm, ci_mobile, ci_radio];
 
   static get names => {
-        ci_acoustic:'''Acoustic''', 
-        ci_satellite:'''Satellite''', 
-        ci_gsm:'''GSM''', 
-        ci_mobile:'''Mobile''', 
-        ci_radio:'''Radio'''
+        ci_acoustic: '''Acoustic''', 
+        ci_satellite: '''Satellite''', 
+        ci_gsm: '''GSM''', 
+        ci_mobile: '''Mobile''', 
+        ci_radio: '''Radio'''
       };
 
   const ReportControlBitfieldCommInterface(int value) : super(value);
@@ -3650,10 +3650,10 @@ class TransmissionRequestEnumCommMean extends EnumType {
         cmean_satellite, cmean_gsm];
 
   static get names => {
-        cmean_wifi:'''WiFi''', 
-        cmean_acoustic:'''Acoustic''', 
-        cmean_satellite:'''Satellite''', 
-        cmean_gsm:'''GSM'''
+        cmean_wifi: '''WiFi''', 
+        cmean_acoustic: '''Acoustic''', 
+        cmean_satellite: '''Satellite''', 
+        cmean_gsm: '''GSM'''
       };
 
   const TransmissionRequestEnumCommMean(int value) : super(value);
@@ -3677,9 +3677,9 @@ class TransmissionRequestEnumDataMode extends EnumType {
         dmode_raw];
 
   static get names => {
-        dmode_inlinemsg:'''Inline Message''', 
-        dmode_text:'''Text''', 
-        dmode_raw:'''Raw Data'''
+        dmode_inlinemsg: '''Inline Message''', 
+        dmode_text: '''Text''', 
+        dmode_raw: '''Raw Data'''
       };
 
   const TransmissionRequestEnumDataMode(int value) : super(value);
@@ -3706,13 +3706,13 @@ class TransmissionStatusEnumStatus extends EnumType {
         tstat_delivered, tstat_maybe_delivered, tstat_input_failure, tstat_temporary_failure, tstat_permanent_failure];
 
   static get names => {
-        tstat_in_progress:'''In progress''', 
-        tstat_sent:'''Sent''', 
-        tstat_delivered:'''Delivered''', 
-        tstat_maybe_delivered:'''Delivery is unknown''', 
-        tstat_input_failure:'''Input Error''', 
-        tstat_temporary_failure:'''Temporary Error''', 
-        tstat_permanent_failure:'''Permanent Failure'''
+        tstat_in_progress: '''In progress''', 
+        tstat_sent: '''Sent''', 
+        tstat_delivered: '''Delivered''', 
+        tstat_maybe_delivered: '''Delivery is unknown''', 
+        tstat_input_failure: '''Input Error''', 
+        tstat_temporary_failure: '''Temporary Error''', 
+        tstat_permanent_failure: '''Permanent Failure'''
       };
 
   const TransmissionStatusEnumStatus(int value) : super(value);
@@ -3736,10 +3736,10 @@ class SmsStatusEnumStatus extends EnumType {
         smsstat_input_failure, smsstat_error];
 
   static get names => {
-        smsstat_queued:'''Queued''', 
-        smsstat_sent:'''Sent''', 
-        smsstat_input_failure:'''Input Error''', 
-        smsstat_error:'''Error trying to send sms'''
+        smsstat_queued: '''Queued''', 
+        smsstat_sent: '''Sent''', 
+        smsstat_input_failure: '''Input Error''', 
+        smsstat_error: '''Error trying to send sms'''
       };
 
   const SmsStatusEnumStatus(int value) : super(value);
@@ -3769,11 +3769,11 @@ class VtolStateEnumState extends EnumType {
         vtol_state_transition_to_mc, vtol_state_mc, vtol_state_fw];
 
   static get names => {
-        vtol_state_undefined:'''Undefined''', 
-        vtol_state_transition_to_fw:'''Transition to Fixed-Wing''', 
-        vtol_state_transition_to_mc:'''Transition to MultiCopter''', 
-        vtol_state_mc:'''MutiCopter''', 
-        vtol_state_fw:'''Fixed-Wing'''
+        vtol_state_undefined: '''Undefined''', 
+        vtol_state_transition_to_fw: '''Transition to Fixed-Wing''', 
+        vtol_state_transition_to_mc: '''Transition to MultiCopter''', 
+        vtol_state_mc: '''MutiCopter''', 
+        vtol_state_fw: '''Fixed-Wing'''
       };
 
   const VtolStateEnumState(int value) : super(value);
@@ -3794,8 +3794,8 @@ class ArmingStateEnumState extends EnumType {
   static get values => [motors_armed, motors_disarmed];
 
   static get names => {
-        motors_armed:'''Armed''', 
-        motors_disarmed:'''Disarmed'''
+        motors_armed: '''Armed''', 
+        motors_disarmed: '''Disarmed'''
       };
 
   const ArmingStateEnumState(int value) : super(value);
@@ -3821,12 +3821,12 @@ class EmergencyControlEnumCommand extends EnumType {
         ectl_start, ectl_stop, ectl_query, ectl_set_plan];
 
   static get names => {
-        ectl_enable:'''Enable''', 
-        ectl_disable:'''Disable''', 
-        ectl_start:'''Start''', 
-        ectl_stop:'''Stop''', 
-        ectl_query:'''Query''', 
-        ectl_set_plan:'''Set Plan'''
+        ectl_enable: '''Enable''', 
+        ectl_disable: '''Disable''', 
+        ectl_start: '''Start''', 
+        ectl_stop: '''Stop''', 
+        ectl_query: '''Query''', 
+        ectl_set_plan: '''Set Plan'''
       };
 
   const EmergencyControlEnumCommand(int value) : super(value);
@@ -3852,12 +3852,12 @@ class EmergencyControlStateEnumState extends EnumType {
         ecs_enabled, ecs_armed, ecs_active, ecs_stopping];
 
   static get names => {
-        ecs_not_configured:'''Not Configured''', 
-        ecs_disabled:'''Disabled''', 
-        ecs_enabled:'''Enabled''', 
-        ecs_armed:'''Armed''', 
-        ecs_active:'''Active''', 
-        ecs_stopping:'''Stopping'''
+        ecs_not_configured: '''Not Configured''', 
+        ecs_disabled: '''Disabled''', 
+        ecs_enabled: '''Enabled''', 
+        ecs_armed: '''Armed''', 
+        ecs_active: '''Active''', 
+        ecs_stopping: '''Stopping'''
       };
 
   const EmergencyControlStateEnumState(int value) : super(value);
@@ -3883,10 +3883,10 @@ class PlanDBEnumType extends EnumType {
         dbt_failure, dbt_in_progress];
 
   static get names => {
-        dbt_request:'''Request''', 
-        dbt_success:'''Reply -- Success''', 
-        dbt_failure:'''Reply -- Failure''', 
-        dbt_in_progress:'''Reply -- In Progress'''
+        dbt_request: '''Request''', 
+        dbt_success: '''Reply -- Success''', 
+        dbt_failure: '''Reply -- Failure''', 
+        dbt_in_progress: '''Reply -- In Progress'''
       };
 
   const PlanDBEnumType(int value) : super(value);
@@ -3948,14 +3948,14 @@ class PlanDBEnumOp extends EnumType {
         dbop_boot];
 
   static get names => {
-        dbop_set:'''Set Plan''', 
-        dbop_del:'''Delete Plan''', 
-        dbop_get:'''Get Plan''', 
-        dbop_get_info:'''Get Plan Info''', 
-        dbop_clear:'''Clear Database''', 
-        dbop_get_state:'''Get Database State (Simple)''', 
-        dbop_get_dstate:'''Get Database State (Detailed)''', 
-        dbop_boot:'''Boot Notification'''
+        dbop_set: '''Set Plan''', 
+        dbop_del: '''Delete Plan''', 
+        dbop_get: '''Get Plan''', 
+        dbop_get_info: '''Get Plan Info''', 
+        dbop_clear: '''Clear Database''', 
+        dbop_get_state: '''Get Database State (Simple)''', 
+        dbop_get_dstate: '''Get Database State (Detailed)''', 
+        dbop_boot: '''Boot Notification'''
       };
 
   const PlanDBEnumOp(int value) : super(value);
@@ -3983,10 +3983,10 @@ class PlanControlEnumType extends EnumType {
         pc_failure, pc_in_progress];
 
   static get names => {
-        pc_request:'''Request''', 
-        pc_success:'''Reply -- Success''', 
-        pc_failure:'''Reply -- Failure''', 
-        pc_in_progress:'''Reply -- In Progress'''
+        pc_request: '''Request''', 
+        pc_success: '''Reply -- Success''', 
+        pc_failure: '''Reply -- Failure''', 
+        pc_in_progress: '''Reply -- In Progress'''
       };
 
   const PlanControlEnumType(int value) : super(value);
@@ -4028,10 +4028,10 @@ class PlanControlEnumOp extends EnumType {
         pc_load, pc_get];
 
   static get names => {
-        pc_start:'''Start Plan''', 
-        pc_stop:'''Stop Plan''', 
-        pc_load:'''Load Plan''', 
-        pc_get:'''Get Plan'''
+        pc_start: '''Start Plan''', 
+        pc_stop: '''Stop Plan''', 
+        pc_load: '''Load Plan''', 
+        pc_get: '''Get Plan'''
       };
 
   const PlanControlEnumOp(int value) : super(value);
@@ -4054,8 +4054,8 @@ class PlanControlBitfieldFlags extends BitfieldType {
   static get values => [flg_calibrate, flg_ignore_errors];
 
   static get names => {
-        flg_calibrate:'''Calibrate Vehicle''', 
-        flg_ignore_errors:'''Ignore Errors'''
+        flg_calibrate: '''Calibrate Vehicle''', 
+        flg_ignore_errors: '''Ignore Errors'''
       };
 
   const PlanControlBitfieldFlags(int value) : super(value);
@@ -4103,10 +4103,10 @@ class PlanControlStateEnumState extends EnumType {
         pcs_initializing, pcs_executing];
 
   static get names => {
-        pcs_blocked:'''Blocked''', 
-        pcs_ready:'''Ready''', 
-        pcs_initializing:'''Initializing''', 
-        pcs_executing:'''Executing'''
+        pcs_blocked: '''Blocked''', 
+        pcs_ready: '''Ready''', 
+        pcs_initializing: '''Initializing''', 
+        pcs_executing: '''Executing'''
       };
 
   const PlanControlStateEnumState(int value) : super(value);
@@ -4133,9 +4133,9 @@ class PlanControlStateEnumLastOutcome extends EnumType {
         lpo_failure];
 
   static get names => {
-        lpo_none:'''None''', 
-        lpo_success:'''Success''', 
-        lpo_failure:'''Failure'''
+        lpo_none: '''None''', 
+        lpo_success: '''Success''', 
+        lpo_failure: '''Failure'''
       };
 
   const PlanControlStateEnumLastOutcome(int value) : super(value);
@@ -4159,10 +4159,10 @@ class PlanVariableEnumType extends EnumType {
         pvt_text, pvt_message];
 
   static get names => {
-        pvt_boolean:'''Boolean''', 
-        pvt_number:'''Number''', 
-        pvt_text:'''Text''', 
-        pvt_message:'''Message'''
+        pvt_boolean: '''Boolean''', 
+        pvt_number: '''Number''', 
+        pvt_text: '''Text''', 
+        pvt_message: '''Message'''
       };
 
   const PlanVariableEnumType(int value) : super(value);
@@ -4185,9 +4185,9 @@ class PlanVariableEnumAccess extends EnumType {
         pva_local];
 
   static get names => {
-        pva_input:'''Input''', 
-        pva_output:'''Output''', 
-        pva_local:'''Local'''
+        pva_input: '''Input''', 
+        pva_output: '''Output''', 
+        pva_local: '''Local'''
       };
 
   const PlanVariableEnumAccess(int value) : super(value);
@@ -4210,8 +4210,8 @@ class PlanGenerationEnumCmd extends EnumType {
   static get values => [cmd_generate, cmd_execute];
 
   static get names => {
-        cmd_generate:'''Generate''', 
-        cmd_execute:'''Execute'''
+        cmd_generate: '''Generate''', 
+        cmd_execute: '''Execute'''
       };
 
   const PlanGenerationEnumCmd(int value) : super(value);
@@ -4239,9 +4239,9 @@ class PlanGenerationEnumOp extends EnumType {
         op_success];
 
   static get names => {
-        op_request:'''Request''', 
-        op_error:'''Error''', 
-        op_success:'''Success'''
+        op_request: '''Request''', 
+        op_error: '''Error''', 
+        op_success: '''Success'''
       };
 
   const PlanGenerationEnumOp(int value) : super(value);
@@ -4265,9 +4265,9 @@ class LeaderStateEnumOp extends EnumType {
         op_report];
 
   static get names => {
-        op_request:'''Request''', 
-        op_set:'''Set''', 
-        op_report:'''Report'''
+        op_request: '''Request''', 
+        op_set: '''Set''', 
+        op_report: '''Report'''
       };
 
   const LeaderStateEnumOp(int value) : super(value);
@@ -4291,9 +4291,9 @@ class PlanStatisticsEnumType extends EnumType {
         tp_postplan];
 
   static get names => {
-        tp_preplan:'''Before Plan''', 
-        tp_inplan:'''During Plan''', 
-        tp_postplan:'''After Plan'''
+        tp_preplan: '''Before Plan''', 
+        tp_inplan: '''During Plan''', 
+        tp_postplan: '''After Plan'''
       };
 
   const PlanStatisticsEnumType(int value) : super(value);
@@ -4323,11 +4323,11 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
         prp_infinite, prp_cyclical, prp_all];
 
   static get names => {
-        prp_basic:'''Basic Plan''', 
-        prp_nonlinear:'''Nonlinear''', 
-        prp_infinite:'''Infinite''', 
-        prp_cyclical:'''Cyclical''', 
-        prp_all:'''All'''
+        prp_basic: '''Basic Plan''', 
+        prp_nonlinear: '''Nonlinear''', 
+        prp_infinite: '''Infinite''', 
+        prp_cyclical: '''Cyclical''', 
+        prp_all: '''All'''
       };
 
   const PlanStatisticsBitfieldProperties(int value) : super(value);
@@ -4371,11 +4371,11 @@ class ReportedStateEnumSType extends EnumType {
         stype_sms, stype_acoustic_modem, stype_unknown];
 
   static get names => {
-        stype_wi_fi:'''Wi-Fi''', 
-        stype_tracker:'''Tracker''', 
-        stype_sms:'''SMS''', 
-        stype_acoustic_modem:'''Acoustic Modem''', 
-        stype_unknown:'''Unknown source'''
+        stype_wi_fi: '''Wi-Fi''', 
+        stype_tracker: '''Tracker''', 
+        stype_sms: '''SMS''', 
+        stype_acoustic_modem: '''Acoustic Modem''', 
+        stype_unknown: '''Unknown source'''
       };
 
   const ReportedStateEnumSType(int value) : super(value);
@@ -4410,13 +4410,13 @@ class MapFeatureEnumFeatureType extends EnumType {
         ftype_contouredpoly, ftype_line, ftype_transponder, ftype_startloc, ftype_homeref];
 
   static get names => {
-        ftype_poi:'''Point of Interest''', 
-        ftype_filledpoly:'''Filled Polygon''', 
-        ftype_contouredpoly:'''Countoured Polygon''', 
-        ftype_line:'''Line''', 
-        ftype_transponder:'''Transponder''', 
-        ftype_startloc:'''Start Location''', 
-        ftype_homeref:'''Home Reference'''
+        ftype_poi: '''Point of Interest''', 
+        ftype_filledpoly: '''Filled Polygon''', 
+        ftype_contouredpoly: '''Countoured Polygon''', 
+        ftype_line: '''Line''', 
+        ftype_transponder: '''Transponder''', 
+        ftype_startloc: '''Start Location''', 
+        ftype_homeref: '''Home Reference'''
       };
 
   const MapFeatureEnumFeatureType(int value) : super(value);
@@ -4446,15 +4446,15 @@ class CcuEventEnumType extends EnumType {
         evt_teleoperation_started, evt_teleoperation_ended];
 
   static get names => {
-        evt_log_entry:'''Log Book Entry Added''', 
-        evt_plan_added:'''Plan Added''', 
-        evt_plan_removed:'''Plan Removed''', 
-        evt_plan_changed:'''Plan Changed''', 
-        evt_map_feature_added:'''Map feature added''', 
-        evt_map_feature_removed:'''Map feature removed''', 
-        evt_map_feature_changed:'''Map feature changed''', 
-        evt_teleoperation_started:'''The sender is now teleoperating the vehicle''', 
-        evt_teleoperation_ended:'''The sender stopped teleoperating the vehicle'''
+        evt_log_entry: '''Log Book Entry Added''', 
+        evt_plan_added: '''Plan Added''', 
+        evt_plan_removed: '''Plan Removed''', 
+        evt_plan_changed: '''Plan Changed''', 
+        evt_map_feature_added: '''Map feature added''', 
+        evt_map_feature_removed: '''Map feature removed''', 
+        evt_map_feature_changed: '''Map feature changed''', 
+        evt_teleoperation_started: '''The sender is now teleoperating the vehicle''', 
+        evt_teleoperation_ended: '''The sender stopped teleoperating the vehicle'''
       };
 
   const CcuEventEnumType(int value) : super(value);
@@ -4480,12 +4480,12 @@ class TrexCommandEnumCommand extends EnumType {
         op_post_goal, op_recall_goal, op_request_plan, op_report_plan];
 
   static get names => {
-        op_disable:'''Disable TREX''', 
-        op_enable:'''Enable TREX''', 
-        op_post_goal:'''Post Goal''', 
-        op_recall_goal:'''Recall Goal''', 
-        op_request_plan:'''Request current plan''', 
-        op_report_plan:'''Report current plan'''
+        op_disable: '''Disable TREX''', 
+        op_enable: '''Enable TREX''', 
+        op_post_goal: '''Post Goal''', 
+        op_recall_goal: '''Recall Goal''', 
+        op_request_plan: '''Request current plan''', 
+        op_report_plan: '''Report current plan'''
       };
 
   const TrexCommandEnumCommand(int value) : super(value);
@@ -4510,11 +4510,11 @@ class TrexOperationEnumOp extends EnumType {
         op_recall_goal, op_request_plan, op_report_plan];
 
   static get names => {
-        op_post_token:'''Post Token''', 
-        op_post_goal:'''Post Goal''', 
-        op_recall_goal:'''Recall Goal''', 
-        op_request_plan:'''Request current plan''', 
-        op_report_plan:'''Report current plan'''
+        op_post_token: '''Post Token''', 
+        op_post_goal: '''Post Goal''', 
+        op_recall_goal: '''Recall Goal''', 
+        op_request_plan: '''Request current plan''', 
+        op_report_plan: '''Report current plan'''
       };
 
   const TrexOperationEnumOp(int value) : super(value);
@@ -4539,11 +4539,11 @@ class TrexAttributeEnumAttrType extends EnumType {
         type_float, type_string, type_enum];
 
   static get names => {
-        type_bool:'''Boolean Domain''', 
-        type_int:'''Integer Domain''', 
-        type_float:'''Float Domain''', 
-        type_string:'''String Domain''', 
-        type_enum:'''Enumerated Domain'''
+        type_bool: '''Boolean Domain''', 
+        type_int: '''Integer Domain''', 
+        type_float: '''Float Domain''', 
+        type_string: '''String Domain''', 
+        type_enum: '''Enumerated Domain'''
       };
 
   const TrexAttributeEnumAttrType(int value) : super(value);
@@ -4564,8 +4564,8 @@ class SessionStatusEnumStatus extends EnumType {
   static get values => [status_established, status_closed];
 
   static get names => {
-        status_established:'''Established''', 
-        status_closed:'''Closed'''
+        status_established: '''Established''', 
+        status_closed: '''Closed'''
       };
 
   const SessionStatusEnumStatus(int value) : super(value);
@@ -4587,8 +4587,8 @@ class IoEventEnumType extends EnumType {
   static get values => [iov_type_input, iov_type_input_error];
 
   static get names => {
-        iov_type_input:'''Input Available''', 
-        iov_type_input_error:'''Input Error'''
+        iov_type_input: '''Input Available''', 
+        iov_type_input_error: '''Input Error'''
       };
 
   const IoEventEnumType(int value) : super(value);
@@ -4609,8 +4609,8 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
   static get values => [utf_ack, utf_delayed];
 
   static get names => {
-        utf_ack:'''Acknowledgement''', 
-        utf_delayed:'''Delayed'''
+        utf_ack: '''Acknowledgement''', 
+        utf_delayed: '''Delayed'''
       };
 
   const UamTxFrameBitfieldFlags(int value) : super(value);
@@ -4649,8 +4649,8 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
   static get values => [urf_promiscuous, urf_delayed];
 
   static get names => {
-        urf_promiscuous:'''Promiscuous''', 
-        urf_delayed:'''Delayed'''
+        urf_promiscuous: '''Promiscuous''', 
+        urf_delayed: '''Delayed'''
       };
 
   const UamRxFrameBitfieldFlags(int value) : super(value);
@@ -4697,14 +4697,14 @@ class UamTxStatusEnumValue extends EnumType {
         uts_inv_size];
 
   static get names => {
-        uts_done:'''Transmission Completed''', 
-        uts_failed:'''Transmission Failed''', 
-        uts_canceled:'''Transmission Canceled''', 
-        uts_busy:'''Modem is busy''', 
-        uts_inv_addr:'''Invalid address''', 
-        uts_ip:'''In Progress''', 
-        uts_unsupported:'''Unsupported operation''', 
-        uts_inv_size:'''Invalid transmission size'''
+        uts_done: '''Transmission Completed''', 
+        uts_failed: '''Transmission Failed''', 
+        uts_canceled: '''Transmission Canceled''', 
+        uts_busy: '''Modem is busy''', 
+        uts_inv_addr: '''Invalid address''', 
+        uts_ip: '''In Progress''', 
+        uts_unsupported: '''Unsupported operation''', 
+        uts_inv_size: '''Invalid transmission size'''
       };
 
   const UamTxStatusEnumValue(int value) : super(value);
@@ -4728,9 +4728,9 @@ class FormCtrlParamEnumAction extends EnumType {
         op_rep];
 
   static get names => {
-        op_req:'''Request''', 
-        op_set:'''Set''', 
-        op_rep:'''Report'''
+        op_req: '''Request''', 
+        op_set: '''Set''', 
+        op_rep: '''Report'''
       };
 
   const FormCtrlParamEnumAction(int value) : super(value);
@@ -4754,9 +4754,9 @@ class FormationControlParamsEnumAction extends EnumType {
         op_rep];
 
   static get names => {
-        op_req:'''Request''', 
-        op_set:'''Set''', 
-        op_rep:'''Report'''
+        op_req: '''Request''', 
+        op_set: '''Set''', 
+        op_rep: '''Report'''
       };
 
   const FormationControlParamsEnumAction(int value) : super(value);
@@ -4778,8 +4778,8 @@ class FormationEvaluationEnumType extends EnumType {
   static get values => [fc_request, fc_report];
 
   static get names => {
-        fc_request:'''Request''', 
-        fc_report:'''Report'''
+        fc_request: '''Request''', 
+        fc_report: '''Report'''
       };
 
   const FormationEvaluationEnumType(int value) : super(value);
@@ -4810,11 +4810,11 @@ class FormationEvaluationEnumOp extends EnumType {
         op_ready, op_executing, op_failure];
 
   static get names => {
-        op_start:'''Start''', 
-        op_stop:'''Stop''', 
-        op_ready:'''Ready''', 
-        op_executing:'''Executing''', 
-        op_failure:'''Failure'''
+        op_start: '''Start''', 
+        op_stop: '''Stop''', 
+        op_ready: '''Ready''', 
+        op_executing: '''Executing''', 
+        op_failure: '''Failure'''
       };
 
   const FormationEvaluationEnumOp(int value) : super(value);
@@ -4837,9 +4837,9 @@ class SoiCommandEnumType extends EnumType {
         soitype_error];
 
   static get names => {
-        soitype_request:'''Request''', 
-        soitype_success:'''Success''', 
-        soitype_error:'''Error'''
+        soitype_request: '''Request''', 
+        soitype_success: '''Success''', 
+        soitype_error: '''Error'''
       };
 
   const SoiCommandEnumType(int value) : super(value);
@@ -4865,12 +4865,12 @@ class SoiCommandEnumCommand extends EnumType {
         soicmd_set_params, soicmd_get_params, soicmd_get_plan, soicmd_resume];
 
   static get names => {
-        soicmd_exec:'''Execute Plan''', 
-        soicmd_stop:'''Stop Execution''', 
-        soicmd_set_params:'''Set Parameters''', 
-        soicmd_get_params:'''Get Parameters''', 
-        soicmd_get_plan:'''Get Plan''', 
-        soicmd_resume:'''Resume Execution'''
+        soicmd_exec: '''Execute Plan''', 
+        soicmd_stop: '''Stop Execution''', 
+        soicmd_set_params: '''Set Parameters''', 
+        soicmd_get_params: '''Get Parameters''', 
+        soicmd_get_plan: '''Get Plan''', 
+        soicmd_resume: '''Resume Execution'''
       };
 
   const SoiCommandEnumCommand(int value) : super(value);
@@ -4893,9 +4893,9 @@ class SoiStateEnumState extends EnumType {
         soistate_inactive];
 
   static get names => {
-        soistate_exec:'''Executing''', 
-        soistate_idle:'''Idle''', 
-        soistate_inactive:'''Inactive'''
+        soistate_exec: '''Executing''', 
+        soistate_idle: '''Idle''', 
+        soistate_inactive: '''Inactive'''
       };
 
   const SoiStateEnumState(int value) : super(value);
@@ -4921,9 +4921,9 @@ class UsblConfigEnumOp extends EnumType {
         op_cur_cfg];
 
   static get names => {
-        op_set_cfg:'''Set LBL Configuration''', 
-        op_get_cfg:'''Retrieve LBL Configuration''', 
-        op_cur_cfg:'''Reply to a GET command'''
+        op_set_cfg: '''Set LBL Configuration''', 
+        op_get_cfg: '''Retrieve LBL Configuration''', 
+        op_cur_cfg: '''Reply to a GET command'''
       };
 
   const UsblConfigEnumOp(int value) : super(value);
@@ -4945,8 +4945,8 @@ class DissolvedOrganicMatterEnumType extends EnumType {
   static get values => [dt_colored, dt_fluorescent];
 
   static get names => {
-        dt_colored:'''Colored''', 
-        dt_fluorescent:'''Fluorescent'''
+        dt_colored: '''Colored''', 
+        dt_fluorescent: '''Fluorescent'''
       };
 
   const DissolvedOrganicMatterEnumType(int value) : super(value);
@@ -4976,14 +4976,14 @@ class ApmStatusEnumSeverity extends EnumType {
         apm_debug];
 
   static get names => {
-        apm_emergency:'''Emergency''', 
-        apm_alert:'''Alert''', 
-        apm_critical:'''Critical''', 
-        apm_error:'''Error''', 
-        apm_warning:'''Warning''', 
-        apm_notice:'''Notice''', 
-        apm_info:'''Info''', 
-        apm_debug:'''Debug'''
+        apm_emergency: '''Emergency''', 
+        apm_alert: '''Alert''', 
+        apm_critical: '''Critical''', 
+        apm_error: '''Error''', 
+        apm_warning: '''Warning''', 
+        apm_notice: '''Notice''', 
+        apm_info: '''Info''', 
+        apm_debug: '''Debug'''
       };
 
   const ApmStatusEnumSeverity(int value) : super(value);
@@ -5007,9 +5007,9 @@ class SadcReadingsEnumGain extends EnumType {
         gain_x100];
 
   static get names => {
-        gain_x1:'''x1''', 
-        gain_x10:'''x10''', 
-        gain_x100:'''x100'''
+        gain_x1: '''x1''', 
+        gain_x10: '''x10''', 
+        gain_x100: '''x100'''
       };
 
   const SadcReadingsEnumGain(int value) : super(value);

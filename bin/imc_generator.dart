@@ -981,7 +981,7 @@ _writeEnumLikeWorker(
     var ab = _accountForReservedName(
         prefix + f.getAttribute("abbrev").toLowerCase());
     eList += ab;
-    eNameList += "$ab:'''${f.getAttribute("name")}'''";
+    eNameList += "$ab: '''${f.getAttribute("name")}'''";
   });
 
   var sufix;
