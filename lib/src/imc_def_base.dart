@@ -1,5 +1,5 @@
 // Copyright (c) 2019, Paulo Sousa Dias. Please see the AUTHORS file for details.
-// All rights reserved. Use of this source code is governed by a BSD-style 
+// All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 import 'package:built_value/built_value.dart';
@@ -54,7 +54,7 @@ abstract class ImcBuilderHeaderPart {
 
   copyFromHeader(ImcBuilderHeaderPart other) {
     if (other == null) return;
-    
+
     timestamp = other.timestamp;
     src = other.src;
     srcEnt = other.srcEnt;
@@ -64,7 +64,8 @@ abstract class ImcBuilderHeaderPart {
 }
 
 /// This is to be used as interface for the builders
-abstract class BuilderWithInstanciator<V extends Built<V, B>, B extends Builder<V, B>> extends Builder<V, B> {
+abstract class BuilderWithInstanciator<V extends Built<V, B>,
+    B extends Builder<V, B>> extends Builder<V, B> {
   /// Instanciates a new builder
   B newInstance([ImcBuilderHeaderPart headerFrom]);
 

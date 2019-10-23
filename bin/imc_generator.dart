@@ -124,11 +124,15 @@ var _messagesGroups = Map<String, String>();
 
 String _toSentenceCase(String s) => "${s[0].toUpperCase()}${s.substring(1)}";
 
-String _replaceMiddleUnderscoreLetterWithUpercaseLetter(String s) => s.split(RegExp(r'_')).reduce((t1, t2) => t1 + _toSentenceCase(t2));
+String _replaceMiddleUnderscoreLetterWithUpercaseLetter(String s) =>
+    s.split(RegExp(r'_')).reduce((t1, t2) => t1 + _toSentenceCase(t2));
 
-String _convertToFieldName(String s) => _replaceMiddleUnderscoreLetterWithUpercaseLetter("${s[0].toLowerCase()}${s.substring(1)}");
+String _convertToFieldName(String s) =>
+    _replaceMiddleUnderscoreLetterWithUpercaseLetter(
+        "${s[0].toLowerCase()}${s.substring(1)}");
 
-String _convertToClassName(String s) => _replaceMiddleUnderscoreLetterWithUpercaseLetter(_toSentenceCase(s));
+String _convertToClassName(String s) =>
+    _replaceMiddleUnderscoreLetterWithUpercaseLetter(_toSentenceCase(s));
 
 /// Adds 'v' prefix if is a reserved word or starts with numbers
 String _accountForReservedName(String s) {
@@ -147,7 +151,7 @@ _writeDescription(IOSink sink, xml.XmlElement e, {int level = 0}) {
           }));
 }
 
-/// Writes the empty abstract message group classes from where their 
+/// Writes the empty abstract message group classes from where their
 /// elements can extend instead of [ImcMessage],
 /// Fill also [_messagesGroups] variable.
 _writeMessageGroup(xml.XmlElement g, IOSink sink) {
@@ -804,7 +808,7 @@ _writeMessageField(xml.XmlElement field, xml.XmlElement message, List<IOSink> si
   var typesData = getTypesForImcAndDart(abbrev, type, unit, field, message);
   var typeImc = typesData[0];
   var dartType = typesData[1];
-  
+
   var unitsStr = "";
   switch (unit) {
     case "Enumerated":
@@ -912,8 +916,8 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
 }
 
 /// Gets the name of the type for the enum like class.
-_getTypeForEnumLike(
-    String fieldAbbrev, xml.XmlElement field, xml.XmlElement message, String unit) {
+_getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
+    xml.XmlElement message, String unit) {
   var eDef = field.getAttribute("enum-def");
   if (eDef != null) return "${eDef}Enum";
   eDef = field.getAttribute("bitfield-def");
@@ -960,13 +964,13 @@ _writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
 }
 
 /// A worker to be used for the enum like code creation.
-_writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sink) {
+_writeEnumLikeWorker(
+    String eName, xml.XmlElement field, String unit, IOSink sink) {
   var eList = "";
   var eNameList = "";
   var c = 0;
   var prefix = field.getAttribute("prefix")?.toLowerCase() ?? '';
-  if (prefix.length > 0)
-    prefix += '_';
+  if (prefix.length > 0) prefix += '_';
   field.findElements("value").forEach((f) {
     if (eList.length != 0) {
       eList += ", ";
@@ -974,7 +978,8 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
     }
     if (++c % 5 == 0) eList += "\n        ";
     if (++c % 1 == 0) eNameList += "\n        ";
-    var ab = _accountForReservedName(prefix + f.getAttribute("abbrev").toLowerCase());
+    var ab = _accountForReservedName(
+        prefix + f.getAttribute("abbrev").toLowerCase());
     eList += ab;
     eNameList += "$ab:'''${f.getAttribute("name")}'''";
   });
@@ -994,7 +999,8 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
   sink.write(body);
 
   field.findElements("value").forEach((f) {
-    var vName = _accountForReservedName(prefix + f.getAttribute("abbrev").toLowerCase());
+    var vName = _accountForReservedName(
+        prefix + f.getAttribute("abbrev").toLowerCase());
     var vVal = f.getAttribute("id");
     var bodyV = '''  static const $vName = const $eName($vVal);
 ''';
@@ -1065,12 +1071,14 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
 void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   sink.write('''/// Lookup table from message names to IDs''');
   sink.write('''\nconst messagesToIds = {''');
-  msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("id")},"));
+  msgElm.findElements("message").forEach((m) => sink
+      .write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("id")},"));
   sink.write('''\n};\n''');
 
   sink.write('''\n/// Lookup table from IDs to message names''');
   sink.write('''\nconst idsToMessages = {''');
-  msgElm.findElements("message").forEach((m) => sink.write("\n  ${m.getAttribute("id")}: '${m.getAttribute("abbrev")}',"));
+  msgElm.findElements("message").forEach((m) => sink
+      .write("\n  ${m.getAttribute("id")}: '${m.getAttribute("abbrev")}',"));
   sink.write('''\n};\n''');
 
   sink.write('''\n/// Lookup 2D table from groups to message names''');
@@ -1078,8 +1086,9 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   msgElm.findElements("message-groups").forEach((mg) {
     mg.findElements("message-group").forEach((m) {
       sink.write("\n  '${m.getAttribute("abbrev")}': [");
-      m.findElements("message-type").forEach((mt) => sink.write("\n      '${mt.getAttribute("abbrev")}',"));
-      sink.write('''\n    ],'''); 
+      m.findElements("message-type").forEach(
+          (mt) => sink.write("\n      '${mt.getAttribute("abbrev")}',"));
+      sink.write('''\n    ],''');
     });
   });
   sink.write('''\n};\n''');
@@ -1089,7 +1098,8 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   sink.write('''\n/// IMPORTANT: To make sure it is unique create a new''');
   sink.write('''\n/// instance with newInstance() call on the return.''');
   sink.write('''\nfinal messagesBuilders = <String, BuilderWithInstanciator>{''');
-  msgElm.findElements("message").forEach((m) => sink.write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Builder(),"));
+  msgElm.findElements("message").forEach((m) => sink.write(
+      "\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Builder(),"));
   sink.write('''\n};\n''');
 }
 
@@ -1112,8 +1122,7 @@ Map<String, dynamic> _getConfig() {
 
   // yamlMap has the type YamlMap, which has several unwanted sideeffects
   final Map<String, dynamic> config = <String, dynamic>{};
-  for (MapEntry<dynamic, dynamic> entry
-      in yamlMap['imc_def'].entries) {
+  for (MapEntry<dynamic, dynamic> entry in yamlMap['imc_def'].entries) {
     config[entry.key] = entry.value;
   }
 
@@ -1133,7 +1142,7 @@ enum _Mode { local, production }
 ///  - imc_def_base.dart
 ///  - imc_def_enums.dart holds the base for enum like code.
 ///  - imc_serializers_base.dart holds the serializers base code.
-/// 
+///
 /// The following are ARE generated:
 ///  - imc_def_gen.dart holds the lists for id to names and vice-versa lookup
 ///  - imc_def_m.dart holding the IMC classes.
@@ -1142,12 +1151,14 @@ enum _Mode { local, production }
 ///  - imc_def_el.dart holding message field local enum like classes.
 ///  - imc_serializers_gen.dart holds the lists for name/id to serializer and
 ///       serializers code
-/// 
-/// To run copy the IMC.xml to the base 'xml' folder and run 
+///
+/// To run copy the IMC.xml to the base 'xml' folder and run
 /// "flutter packages pub run bin/imc_generator" to (re)generate the code.
 main(List<String> args) async {
   Map<String, dynamic> config = _getConfig();
-  var localOrProductionMode = config.length == 0 || config['mode'] != null ? _Mode.local : _Mode.production;
+  var localOrProductionMode = config.length == 0 || config['mode'] != null
+      ? _Mode.local
+      : _Mode.production;
   String xmlFilePath;
   String packageName;
   switch (localOrProductionMode) {
@@ -1156,7 +1167,7 @@ main(List<String> args) async {
       packageName = config['package'] ?? '';
       break;
     default:
-      xmlFilePath= 'xml/IMC.xml';
+      xmlFilePath = 'xml/IMC.xml';
       packageName = '';
   }
   if (packageName.isNotEmpty && !packageName.endsWith('/')) packageName += '/';
@@ -1171,12 +1182,18 @@ main(List<String> args) async {
 
   var document = xml.parse(imcXml);
 
-  var fxGen = await File('lib/src/${packageName}imc_def_gen.dart').create(recursive: true);
-  var fxMessages = await File('lib/src/${packageName}imc_def_m.dart').create(recursive: true);
-  var fxBuilders = await File('lib/src/${packageName}imc_def_i.dart').create(recursive: true);
-  var fxEnums = await File('lib/src/${packageName}imc_def_e.dart').create(recursive: true);
-  var fxLEnums = await File('lib/src/${packageName}imc_def_el.dart').create(recursive: true);
-  var fxSerGen = await File('lib/src/${packageName}imc_serializers_gen.dart').create(recursive: true);
+  var fxGen = await File('lib/src/${packageName}imc_def_gen.dart')
+      .create(recursive: true);
+  var fxMessages = await File('lib/src/${packageName}imc_def_m.dart')
+      .create(recursive: true);
+  var fxBuilders = await File('lib/src/${packageName}imc_def_i.dart')
+      .create(recursive: true);
+  var fxEnums = await File('lib/src/${packageName}imc_def_e.dart')
+      .create(recursive: true);
+  var fxLEnums = await File('lib/src/${packageName}imc_def_el.dart')
+      .create(recursive: true);
+  var fxSerGen = await File('lib/src/${packageName}imc_serializers_gen.dart')
+      .create(recursive: true);
 
   print('Generating ${fxGen.path}');
   print('Generating ${fxMessages.path}');
@@ -1196,13 +1213,14 @@ main(List<String> args) async {
   var sinkLEnums = fxLEnums.openWrite();
   var sinkSerGen = fxSerGen.openWrite();
 
-  var sinks = <IOSink>[sinkGen, 
-      sinkMessages, 
-      sinkBuilders, 
-      sinkEnums, 
-      sinkLEnums,
-      sinkSerGen
-      ];
+  var sinks = <IOSink>[
+    sinkGen,
+    sinkMessages,
+    sinkBuilders,
+    sinkEnums,
+    sinkLEnums,
+    sinkSerGen
+  ];
 
   sinkGen.write('$_header_gen');
   sinkMessages.write('$_header_gen_parts');
@@ -1219,14 +1237,13 @@ main(List<String> args) async {
   var syncElm = headerElm.findElements("field").first;
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
-  
+
   var sNmbr = int.parse(syncElm.getAttribute("value"));
   int rSNmbr = ((sNmbr & 0xFF) << 8 | sNmbr >> 8);
-  sinks[_idxMsg]
-      .write('const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
-  
-  sinks[_idxMsg]
-      .write('const String MD5_SUM = "$imcDigest";\n');
+  sinks[_idxMsg].write(
+      'const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
+
+  sinks[_idxMsg].write('const String MD5_SUM = "$imcDigest";\n');
 
   sinks[_idxMsg].write('\n');
 
@@ -1245,12 +1262,16 @@ abstract class ImcMessage extends Message {
       .findElements("message-group")
       .forEach((g) => _writeMessageGroup(g, sinks[_idxMsg])));
 
-  sinks[_idxSerGen].write('''\nfinal messagesSerializers = <String, imc.ImcSerializer>{''');
-  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Serializer(),"));
+  sinks[_idxSerGen]
+      .write('''\nfinal messagesSerializers = <String, imc.ImcSerializer>{''');
+  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
+      "\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
 
-  sinks[_idxSerGen].write('''\nfinal messagesIdsSerializers = <int, imc.ImcSerializer>{''');
-  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write("\n  ${m.getAttribute("id")}: ${m.getAttribute("abbrev")}Serializer(),"));
+  sinks[_idxSerGen]
+      .write('''\nfinal messagesIdsSerializers = <int, imc.ImcSerializer>{''');
+  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
+      "\n  ${m.getAttribute("id")}: ${m.getAttribute("abbrev")}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
 
   // Writting messages
@@ -1264,12 +1285,12 @@ abstract class ImcMessage extends Message {
       .findElements("def")
       .forEach((m) => _writeGlobalEnumLike(m, "Bitfield", sinks[_idxEnums])));
 
-
   _writeMsgList(msgElm, sinks[_idxGen]);
 
   // Generating the imc_def for easy import and use
   if (localOrProductionMode == _Mode.production) {
-    var fxSerDef = await File('lib/src/${packageName}imc_def.dart').create(recursive: true);
+    var fxSerDef = await File('lib/src/${packageName}imc_def.dart')
+        .create(recursive: true);
     print('Generating ${fxSerDef.path}');
     var sinkDef = fxSerDef.openWrite();
 
