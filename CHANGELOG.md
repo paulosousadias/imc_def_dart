@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.2] - 23 Oct 2019
+
+* Fix toPrettyString() problem in BitfieldType.
+
 ## [0.6.1] - 14 Oct 2019
 
 * Added toPrettyString() to EnumType and BitfieldType.
