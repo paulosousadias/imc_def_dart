@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.3] - 23 Oct 2019
+
+* Cleanups.
+
 ## [0.6.2] - 23 Oct 2019
 
 * Fix toPrettyString() problem in BitfieldType.
