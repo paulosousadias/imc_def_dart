@@ -1,5 +1,5 @@
 name: imc_def
-description: '.This package is a Dart package for IMC messages manipulation. 
+description: 'This package is a Dart package for IMC messages manipulation. 
 IMC is an open source message protocol specification from 
 UPorto-FEUP-LSTS (https://github.com/LSTS/imc).'
 version: 0.6.3+1
