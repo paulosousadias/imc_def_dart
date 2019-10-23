@@ -337,10 +337,15 @@ void main() {
       su4,
     ]);
 
+    print('${su1.toPrettyString()} == \'Acoustic\'');
     expect(su1.toPrettyString() == 'Acoustic', true);
+    print('${su2.toPrettyString()} == \'Acoustic|Satellite\'');
     expect(su2.toPrettyString() == 'Acoustic|Satellite', true);
+    print('${su3.toPrettyString()} == \'\'');
     expect(su3.toPrettyString() == '', true);
+    print('${su4.toPrettyString()} == \'?\'');
     expect(su4.toPrettyString() == '?', true);
+    print('${su5.toPrettyString()} == \'Acoustic|Satellite|?\'');
     expect(su5.toPrettyString() == 'Acoustic|Satellite|?', true);
   });
 }

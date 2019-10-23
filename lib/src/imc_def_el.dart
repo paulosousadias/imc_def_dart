@@ -58,7 +58,7 @@ class EntityStateBitfieldFlags extends BitfieldType {
       if (hasBits(<EntityStateBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -193,7 +193,7 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
       if (hasBits(<DevCalibrationStateBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -680,7 +680,7 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
       if (hasBits(<AnnounceServiceBitfieldServiceType>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -847,7 +847,7 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
       if (hasBits(<CommSystemsQueryBitfieldType>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -1033,7 +1033,7 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
       if (hasBits(<TelemetryMsgBitfieldAcknowledge>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -1255,7 +1255,7 @@ class GpsFixBitfieldValidity extends BitfieldType {
       if (hasBits(<GpsFixBitfieldValidity>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -1335,7 +1335,7 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
       if (hasBits(<GroundVelocityBitfieldValidity>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -1380,7 +1380,7 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
       if (hasBits(<WaterVelocityBitfieldValidity>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -1529,7 +1529,7 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
       if (hasBits(<GpsFixRtkBitfieldValidity>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -1904,7 +1904,7 @@ class DvlRejectionBitfieldType extends BitfieldType {
       if (hasBits(<DvlRejectionBitfieldType>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2057,7 +2057,7 @@ class DesiredPathBitfieldFlags extends BitfieldType {
       if (hasBits(<DesiredPathBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2113,7 +2113,7 @@ class DesiredControlBitfieldFlags extends BitfieldType {
       if (hasBits(<DesiredControlBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2169,7 +2169,7 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
       if (hasBits(<DesiredVelocityBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2224,7 +2224,7 @@ class PathControlStateBitfieldFlags extends BitfieldType {
       if (hasBits(<PathControlStateBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2319,7 +2319,7 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
       if (hasBits(<DesiredLinearStateBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2371,7 +2371,7 @@ class PopUpBitfieldFlags extends BitfieldType {
       if (hasBits(<PopUpBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2470,7 +2470,7 @@ class RowsBitfieldFlags extends BitfieldType {
       if (hasBits(<RowsBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2512,7 +2512,7 @@ class ElevatorBitfieldFlags extends BitfieldType {
       if (hasBits(<ElevatorBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2649,7 +2649,7 @@ class ReferenceBitfieldFlags extends BitfieldType {
       if (hasBits(<ReferenceBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2727,7 +2727,7 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
       if (hasBits(<FollowRefStateBitfieldProximity>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2912,7 +2912,7 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
       if (hasBits(<RowsCoverageBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2957,7 +2957,7 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
       if (hasBits(<AutonomousSectionBitfieldLimits>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -2998,7 +2998,7 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
       if (hasBits(<StationKeepingExtendedBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -3097,7 +3097,7 @@ class VehicleStateBitfieldFlags extends BitfieldType {
       if (hasBits(<VehicleStateBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -3293,7 +3293,7 @@ class CollisionBitfieldType extends BitfieldType {
       if (hasBits(<CollisionBitfieldType>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -3622,7 +3622,7 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
       if (hasBits(<ReportControlBitfieldCommInterface>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -4070,7 +4070,7 @@ class PlanControlBitfieldFlags extends BitfieldType {
       if (hasBits(<PlanControlBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -4342,7 +4342,7 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
       if (hasBits(<PlanStatisticsBitfieldProperties>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -4625,7 +4625,7 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
       if (hasBits(<UamTxFrameBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -4665,7 +4665,7 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
       if (hasBits(<UamRxFrameBitfieldFlags>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {

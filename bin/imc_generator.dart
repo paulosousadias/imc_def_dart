@@ -1024,7 +1024,7 @@ _writeEnumLikeWorker(String eName, xml.XmlElement field, String unit, IOSink sin
       if (hasBits(<$eName>[item])) {
         ret ??= '';
         ret += '\${ret.isNotEmpty ? '|' : ''}\${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {

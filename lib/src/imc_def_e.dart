@@ -251,7 +251,7 @@ class CLoopsMaskBitfield extends BitfieldType {
       if (hasBits(<CLoopsMaskBitfield>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
@@ -302,7 +302,7 @@ class OpLimitsMaskBitfield extends BitfieldType {
       if (hasBits(<OpLimitsMaskBitfield>[item])) {
         ret ??= '';
         ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
-        valNot &= ~item.value & (values.last.value << 1);
+        valNot &= ~item.value;
       }
     }
     if (valNot != 0) {
