@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.4] - 2 Nov 2019
+
+* Updated dependencies: built_value: ^7.0.0.
+
 ## [0.6.3+1] - 23 Oct 2019
 
 * Cleanups for publishing.
