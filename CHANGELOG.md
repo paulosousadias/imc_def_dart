@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.5] - 15 Nov 2019
+
+* Adding factory methods to the messages.
+
 ## [0.6.4] - 2 Nov 2019
 
 * Updated dependencies: built_value: ^7.0.0.
