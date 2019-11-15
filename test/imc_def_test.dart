@@ -348,4 +348,16 @@ void main() {
     print('${su5.toPrettyString()} == \'Acoustic|Satellite|?\'');
     expect(su5.toPrettyString() == 'Acoustic|Satellite|?', true);
   });
+
+  test('factories test', () {
+    imc.Abort msg = (imc.AbortBuilder()
+          ..src = 0x4001
+          ..timestamp = DateTime.utc(1970))
+        .build();
+    imc.Abort msg2 = imc.Abort((b) => b
+      ..src = 0x4001
+    );
+
+    expect(msg.src, msg2.src);
+  });
 }

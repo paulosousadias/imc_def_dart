@@ -201,6 +201,8 @@ _writeMessageClass(String name, String abbrev, String msgId, xml.XmlElement m,
       '''abstract class $abbrev extends $extentionClass implements Built<$abbrev, ${abbrev}Builder> {
   static const static_id = $msgId;
   $abbrev._();
+  factory $abbrev([updates(${abbrev}Builder b)]) = _\$$abbrev;
+
   @override
   int get msgId => static_id;
   @override
