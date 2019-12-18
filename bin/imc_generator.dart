@@ -593,7 +593,7 @@ _writeMessageSerializer(
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
         fStr += '      var id = message.$fieldName.msgId;\n';
-        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];\n';
+        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '      if (pMsgSerializer != null) {\n';
         fStr += '        byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
         fStr += '        byteOffset += 2;\n';
@@ -612,7 +612,7 @@ _writeMessageSerializer(
         fStr += '      byteOffset += 2;\n';
         fStr += '      for (int i = 0; i < message.$fieldName.length; i++) {\n';
         fStr += '        var id = message.$fieldName[i]?.msgId;\n';
-        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];\n';
+        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '        if (id != null && pMsgSerializer != null) {\n';
         fStr += '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
         fStr += '          byteOffset += 2;\n';
@@ -760,8 +760,8 @@ _writeMessageSerializer(
         fStr += '    if (${fieldName}SId == imc.ImcId.nullId) {\n';
         fStr += '      builder.$fieldName = null;\n';
         fStr += '    } else {\n';
-        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance(builder);\n';
-        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
+        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
         fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
@@ -777,8 +777,8 @@ _writeMessageSerializer(
         fStr += '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '      if (${fieldName}SId != imc.ImcId.nullId) {\n';
-        fStr += '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.newInstance(builder);\n';
-        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId];\n';
+        fStr += '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
         fStr += '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
@@ -1095,13 +1095,15 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   });
   sink.write('''\n};\n''');
 
-  sink.write('''\n/// Lookup table from message names to builders''');
+  sink.write('''\n/// Signature for a function that creates a builder.''');
   sink.write('''\n///''');
-  sink.write('''\n/// IMPORTANT: To make sure it is unique create a new''');
-  sink.write('''\n/// instance with newInstance() call on the return.''');
-  sink.write('''\nfinal messagesBuilders = <String, BuilderWithInstanciator>{''');
-  msgElm.findElements("message").forEach((m) => sink.write(
-      "\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Builder(),"));
+  sink.write('''\n/// Used by [messagesBuilders].''');
+  sink.write('''\ntypedef BuilderWithInstanciatorBuilder = BuilderWithInstanciator Function();\n''');
+
+  sink.write('''\n/// Lookup table from message names to builders''');
+  sink.write('''\nfinal messagesBuilders = <String, BuilderWithInstanciatorBuilder>{''');
+  msgElm.findElements("message").forEach((m) => 
+      sink.write("\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Builder(),"));
   sink.write('''\n};\n''');
 }
 
@@ -1264,16 +1266,20 @@ abstract class ImcMessage extends Message {
       .findElements("message-group")
       .forEach((g) => _writeMessageGroup(g, sinks[_idxMsg])));
 
-  sinks[_idxSerGen]
-      .write('''\nfinal messagesSerializers = <String, imc.ImcSerializer>{''');
-  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
-      "\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("abbrev")}Serializer(),"));
+  sinks[_idxSerGen].write('''\n/// Signature for a function that creates a builder.''');
+  sinks[_idxSerGen].write('''\n///''');
+  sinks[_idxSerGen].write('''\n/// Used by [messagesSerializers].''');
+  sinks[_idxSerGen].write('''\ntypedef ImcSerializerBuilder = imc.ImcSerializer Function();''');
+
+  sinks[_idxSerGen].
+  write('''\nfinal messagesSerializers = <String, ImcSerializerBuilder>{''');
+  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write("\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
 
   sinks[_idxSerGen]
-      .write('''\nfinal messagesIdsSerializers = <int, imc.ImcSerializer>{''');
+      .write('''\nfinal messagesIdsSerializers = <int, ImcSerializerBuilder>{''');
   msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
-      "\n  ${m.getAttribute("id")}: ${m.getAttribute("abbrev")}Serializer(),"));
+      "\n  ${m.getAttribute("id")}: () => ${m.getAttribute("abbrev")}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
 
   // Writting messages

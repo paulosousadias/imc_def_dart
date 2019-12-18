@@ -10,630 +10,634 @@ import 'dart:convert' show utf8;
 import 'package:imc_def/imc_def_base.dart' as imc;
 import 'package:imc_def/imc_def.dart' as imc;
 
-final messagesSerializers = <String, imc.ImcSerializer>{
-  'EntityState': EntityStateSerializer(),
-  'QueryEntityState': QueryEntityStateSerializer(),
-  'EntityInfo': EntityInfoSerializer(),
-  'QueryEntityInfo': QueryEntityInfoSerializer(),
-  'EntityList': EntityListSerializer(),
-  'CpuUsage': CpuUsageSerializer(),
-  'TransportBindings': TransportBindingsSerializer(),
-  'RestartSystem': RestartSystemSerializer(),
-  'DevCalibrationControl': DevCalibrationControlSerializer(),
-  'DevCalibrationState': DevCalibrationStateSerializer(),
-  'EntityActivationState': EntityActivationStateSerializer(),
-  'QueryEntityActivationState': QueryEntityActivationStateSerializer(),
-  'VehicleOperationalLimits': VehicleOperationalLimitsSerializer(),
-  'MsgList': MsgListSerializer(),
-  'SimulatedState': SimulatedStateSerializer(),
-  'LeakSimulation': LeakSimulationSerializer(),
-  'UASimulation': UASimulationSerializer(),
-  'DynamicsSimParam': DynamicsSimParamSerializer(),
-  'StorageUsage': StorageUsageSerializer(),
-  'CacheControl': CacheControlSerializer(),
-  'LoggingControl': LoggingControlSerializer(),
-  'LogBookEntry': LogBookEntrySerializer(),
-  'LogBookControl': LogBookControlSerializer(),
-  'ReplayControl': ReplayControlSerializer(),
-  'ClockControl': ClockControlSerializer(),
-  'HistoricCTD': HistoricCTDSerializer(),
-  'HistoricTelemetry': HistoricTelemetrySerializer(),
-  'HistoricSonarData': HistoricSonarDataSerializer(),
-  'HistoricEvent': HistoricEventSerializer(),
-  'VerticalProfile': VerticalProfileSerializer(),
-  'ProfileSample': ProfileSampleSerializer(),
-  'Heartbeat': HeartbeatSerializer(),
-  'Announce': AnnounceSerializer(),
-  'AnnounceService': AnnounceServiceSerializer(),
-  'RSSI': RSSISerializer(),
-  'VSWR': VSWRSerializer(),
-  'LinkLevel': LinkLevelSerializer(),
-  'Sms': SmsSerializer(),
-  'SmsTx': SmsTxSerializer(),
-  'SmsRx': SmsRxSerializer(),
-  'SmsState': SmsStateSerializer(),
-  'TextMessage': TextMessageSerializer(),
-  'IridiumMsgRx': IridiumMsgRxSerializer(),
-  'IridiumMsgTx': IridiumMsgTxSerializer(),
-  'IridiumTxStatus': IridiumTxStatusSerializer(),
-  'GroupMembershipState': GroupMembershipStateSerializer(),
-  'SystemGroup': SystemGroupSerializer(),
-  'LinkLatency': LinkLatencySerializer(),
-  'ExtendedRSSI': ExtendedRSSISerializer(),
-  'HistoricData': HistoricDataSerializer(),
-  'CompressedHistory': CompressedHistorySerializer(),
-  'HistoricSample': HistoricSampleSerializer(),
-  'HistoricDataQuery': HistoricDataQuerySerializer(),
-  'RemoteCommand': RemoteCommandSerializer(),
-  'CommSystemsQuery': CommSystemsQuerySerializer(),
-  'TelemetryMsg': TelemetryMsgSerializer(),
-  'LblRange': LblRangeSerializer(),
-  'LblBeacon': LblBeaconSerializer(),
-  'LblConfig': LblConfigSerializer(),
-  'AcousticMessage': AcousticMessageSerializer(),
-  'AcousticOperation': AcousticOperationSerializer(),
-  'AcousticSystemsQuery': AcousticSystemsQuerySerializer(),
-  'AcousticSystems': AcousticSystemsSerializer(),
-  'AcousticLink': AcousticLinkSerializer(),
-  'Rpm': RpmSerializer(),
-  'Voltage': VoltageSerializer(),
-  'Current': CurrentSerializer(),
-  'GpsFix': GpsFixSerializer(),
-  'EulerAngles': EulerAnglesSerializer(),
-  'EulerAnglesDelta': EulerAnglesDeltaSerializer(),
-  'AngularVelocity': AngularVelocitySerializer(),
-  'Acceleration': AccelerationSerializer(),
-  'MagneticField': MagneticFieldSerializer(),
-  'GroundVelocity': GroundVelocitySerializer(),
-  'WaterVelocity': WaterVelocitySerializer(),
-  'VelocityDelta': VelocityDeltaSerializer(),
-  'Distance': DistanceSerializer(),
-  'Temperature': TemperatureSerializer(),
-  'Pressure': PressureSerializer(),
-  'Depth': DepthSerializer(),
-  'DepthOffset': DepthOffsetSerializer(),
-  'SoundSpeed': SoundSpeedSerializer(),
-  'WaterDensity': WaterDensitySerializer(),
-  'Conductivity': ConductivitySerializer(),
-  'Salinity': SalinitySerializer(),
-  'WindSpeed': WindSpeedSerializer(),
-  'RelativeHumidity': RelativeHumiditySerializer(),
-  'DevDataText': DevDataTextSerializer(),
-  'DevDataBinary': DevDataBinarySerializer(),
-  'Force': ForceSerializer(),
-  'SonarData': SonarDataSerializer(),
-  'Pulse': PulseSerializer(),
-  'PulseDetectionControl': PulseDetectionControlSerializer(),
-  'FuelLevel': FuelLevelSerializer(),
-  'GpsNavData': GpsNavDataSerializer(),
-  'ServoPosition': ServoPositionSerializer(),
-  'DeviceState': DeviceStateSerializer(),
-  'BeamConfig': BeamConfigSerializer(),
-  'DataSanity': DataSanitySerializer(),
-  'RhodamineDye': RhodamineDyeSerializer(),
-  'CrudeOil': CrudeOilSerializer(),
-  'FineOil': FineOilSerializer(),
-  'Turbidity': TurbiditySerializer(),
-  'Chlorophyll': ChlorophyllSerializer(),
-  'Fluorescein': FluoresceinSerializer(),
-  'Phycocyanin': PhycocyaninSerializer(),
-  'Phycoerythrin': PhycoerythrinSerializer(),
-  'GpsFixRtk': GpsFixRtkSerializer(),
-  'ExternalNavData': ExternalNavDataSerializer(),
-  'DissolvedOxygen': DissolvedOxygenSerializer(),
-  'AirSaturation': AirSaturationSerializer(),
-  'Throttle': ThrottleSerializer(),
-  'PH': PHSerializer(),
-  'Redox': RedoxSerializer(),
-  'CameraZoom': CameraZoomSerializer(),
-  'SetThrusterActuation': SetThrusterActuationSerializer(),
-  'SetServoPosition': SetServoPositionSerializer(),
-  'SetControlSurfaceDeflection': SetControlSurfaceDeflectionSerializer(),
-  'RemoteActionsRequest': RemoteActionsRequestSerializer(),
-  'RemoteActions': RemoteActionsSerializer(),
-  'ButtonEvent': ButtonEventSerializer(),
-  'LcdControl': LcdControlSerializer(),
-  'PowerOperation': PowerOperationSerializer(),
-  'PowerChannelControl': PowerChannelControlSerializer(),
-  'QueryPowerChannelState': QueryPowerChannelStateSerializer(),
-  'PowerChannelState': PowerChannelStateSerializer(),
-  'LedBrightness': LedBrightnessSerializer(),
-  'QueryLedBrightness': QueryLedBrightnessSerializer(),
-  'SetLedBrightness': SetLedBrightnessSerializer(),
-  'SetPWM': SetPWMSerializer(),
-  'PWM': PWMSerializer(),
-  'EstimatedState': EstimatedStateSerializer(),
-  'EstimatedStreamVelocity': EstimatedStreamVelocitySerializer(),
-  'IndicatedSpeed': IndicatedSpeedSerializer(),
-  'TrueSpeed': TrueSpeedSerializer(),
-  'NavigationUncertainty': NavigationUncertaintySerializer(),
-  'NavigationData': NavigationDataSerializer(),
-  'GpsFixRejection': GpsFixRejectionSerializer(),
-  'LblRangeAcceptance': LblRangeAcceptanceSerializer(),
-  'DvlRejection': DvlRejectionSerializer(),
-  'LblEstimate': LblEstimateSerializer(),
-  'AlignmentState': AlignmentStateSerializer(),
-  'GroupStreamVelocity': GroupStreamVelocitySerializer(),
-  'Airflow': AirflowSerializer(),
-  'DesiredHeading': DesiredHeadingSerializer(),
-  'DesiredZ': DesiredZSerializer(),
-  'DesiredSpeed': DesiredSpeedSerializer(),
-  'DesiredRoll': DesiredRollSerializer(),
-  'DesiredPitch': DesiredPitchSerializer(),
-  'DesiredVerticalRate': DesiredVerticalRateSerializer(),
-  'DesiredPath': DesiredPathSerializer(),
-  'DesiredControl': DesiredControlSerializer(),
-  'DesiredHeadingRate': DesiredHeadingRateSerializer(),
-  'DesiredVelocity': DesiredVelocitySerializer(),
-  'PathControlState': PathControlStateSerializer(),
-  'AllocatedControlTorques': AllocatedControlTorquesSerializer(),
-  'ControlParcel': ControlParcelSerializer(),
-  'Brake': BrakeSerializer(),
-  'DesiredLinearState': DesiredLinearStateSerializer(),
-  'DesiredThrottle': DesiredThrottleSerializer(),
-  'Goto': GotoSerializer(),
-  'PopUp': PopUpSerializer(),
-  'Teleoperation': TeleoperationSerializer(),
-  'Loiter': LoiterSerializer(),
-  'IdleManeuver': IdleManeuverSerializer(),
-  'LowLevelControl': LowLevelControlSerializer(),
-  'Rows': RowsSerializer(),
-  'FollowPath': FollowPathSerializer(),
-  'PathPoint': PathPointSerializer(),
-  'YoYo': YoYoSerializer(),
-  'TeleoperationDone': TeleoperationDoneSerializer(),
-  'StationKeeping': StationKeepingSerializer(),
-  'Elevator': ElevatorSerializer(),
-  'FollowTrajectory': FollowTrajectorySerializer(),
-  'TrajectoryPoint': TrajectoryPointSerializer(),
-  'CustomManeuver': CustomManeuverSerializer(),
-  'VehicleFormation': VehicleFormationSerializer(),
-  'VehicleFormationParticipant': VehicleFormationParticipantSerializer(),
-  'StopManeuver': StopManeuverSerializer(),
-  'RegisterManeuver': RegisterManeuverSerializer(),
-  'ManeuverControlState': ManeuverControlStateSerializer(),
-  'FollowSystem': FollowSystemSerializer(),
-  'CommsRelay': CommsRelaySerializer(),
-  'CoverArea': CoverAreaSerializer(),
-  'PolygonVertex': PolygonVertexSerializer(),
-  'CompassCalibration': CompassCalibrationSerializer(),
-  'FormationParameters': FormationParametersSerializer(),
-  'FormationPlanExecution': FormationPlanExecutionSerializer(),
-  'FollowReference': FollowReferenceSerializer(),
-  'Reference': ReferenceSerializer(),
-  'FollowRefState': FollowRefStateSerializer(),
-  'FormationMonitor': FormationMonitorSerializer(),
-  'RelativeState': RelativeStateSerializer(),
-  'Dislodge': DislodgeSerializer(),
-  'Formation': FormationSerializer(),
-  'Launch': LaunchSerializer(),
-  'Drop': DropSerializer(),
-  'ScheduledGoto': ScheduledGotoSerializer(),
-  'RowsCoverage': RowsCoverageSerializer(),
-  'Sample': SampleSerializer(),
-  'ImageTracking': ImageTrackingSerializer(),
-  'Takeoff': TakeoffSerializer(),
-  'Land': LandSerializer(),
-  'AutonomousSection': AutonomousSectionSerializer(),
-  'FollowPoint': FollowPointSerializer(),
-  'Alignment': AlignmentSerializer(),
-  'StationKeepingExtended': StationKeepingExtendedSerializer(),
-  'Magnetometer': MagnetometerSerializer(),
-  'VehicleState': VehicleStateSerializer(),
-  'VehicleCommand': VehicleCommandSerializer(),
-  'MonitorEntityState': MonitorEntityStateSerializer(),
-  'EntityMonitoringState': EntityMonitoringStateSerializer(),
-  'OperationalLimits': OperationalLimitsSerializer(),
-  'GetOperationalLimits': GetOperationalLimitsSerializer(),
-  'Calibration': CalibrationSerializer(),
-  'ControlLoops': ControlLoopsSerializer(),
-  'VehicleMedium': VehicleMediumSerializer(),
-  'Collision': CollisionSerializer(),
-  'FormState': FormStateSerializer(),
-  'AutopilotMode': AutopilotModeSerializer(),
-  'FormationState': FormationStateSerializer(),
-  'ReportControl': ReportControlSerializer(),
-  'StateReport': StateReportSerializer(),
-  'TransmissionRequest': TransmissionRequestSerializer(),
-  'TransmissionStatus': TransmissionStatusSerializer(),
-  'SmsRequest': SmsRequestSerializer(),
-  'SmsStatus': SmsStatusSerializer(),
-  'VtolState': VtolStateSerializer(),
-  'ArmingState': ArmingStateSerializer(),
-  'Abort': AbortSerializer(),
-  'PlanSpecification': PlanSpecificationSerializer(),
-  'PlanManeuver': PlanManeuverSerializer(),
-  'PlanTransition': PlanTransitionSerializer(),
-  'EmergencyControl': EmergencyControlSerializer(),
-  'EmergencyControlState': EmergencyControlStateSerializer(),
-  'PlanDB': PlanDBSerializer(),
-  'PlanDBState': PlanDBStateSerializer(),
-  'PlanDBInformation': PlanDBInformationSerializer(),
-  'PlanControl': PlanControlSerializer(),
-  'PlanControlState': PlanControlStateSerializer(),
-  'PlanVariable': PlanVariableSerializer(),
-  'PlanGeneration': PlanGenerationSerializer(),
-  'LeaderState': LeaderStateSerializer(),
-  'PlanStatistics': PlanStatisticsSerializer(),
-  'ReportedState': ReportedStateSerializer(),
-  'RemoteSensorInfo': RemoteSensorInfoSerializer(),
-  'Map': MapSerializer(),
-  'MapFeature': MapFeatureSerializer(),
-  'MapPoint': MapPointSerializer(),
-  'CcuEvent': CcuEventSerializer(),
-  'VehicleLinks': VehicleLinksSerializer(),
-  'TrexObservation': TrexObservationSerializer(),
-  'TrexCommand': TrexCommandSerializer(),
-  'TrexOperation': TrexOperationSerializer(),
-  'TrexAttribute': TrexAttributeSerializer(),
-  'TrexToken': TrexTokenSerializer(),
-  'TrexPlan': TrexPlanSerializer(),
-  'Event': EventSerializer(),
-  'CompressedImage': CompressedImageSerializer(),
-  'ImageTxSettings': ImageTxSettingsSerializer(),
-  'RemoteState': RemoteStateSerializer(),
-  'Target': TargetSerializer(),
-  'EntityParameter': EntityParameterSerializer(),
-  'EntityParameters': EntityParametersSerializer(),
-  'QueryEntityParameters': QueryEntityParametersSerializer(),
-  'SetEntityParameters': SetEntityParametersSerializer(),
-  'SaveEntityParameters': SaveEntityParametersSerializer(),
-  'CreateSession': CreateSessionSerializer(),
-  'CloseSession': CloseSessionSerializer(),
-  'SessionSubscription': SessionSubscriptionSerializer(),
-  'SessionKeepAlive': SessionKeepAliveSerializer(),
-  'SessionStatus': SessionStatusSerializer(),
-  'PushEntityParameters': PushEntityParametersSerializer(),
-  'PopEntityParameters': PopEntityParametersSerializer(),
-  'IoEvent': IoEventSerializer(),
-  'UamTxFrame': UamTxFrameSerializer(),
-  'UamRxFrame': UamRxFrameSerializer(),
-  'UamTxStatus': UamTxStatusSerializer(),
-  'UamRxRange': UamRxRangeSerializer(),
-  'FormCtrlParam': FormCtrlParamSerializer(),
-  'FormationEval': FormationEvalSerializer(),
-  'FormationControlParams': FormationControlParamsSerializer(),
-  'FormationEvaluation': FormationEvaluationSerializer(),
-  'SoiWaypoint': SoiWaypointSerializer(),
-  'SoiPlan': SoiPlanSerializer(),
-  'SoiCommand': SoiCommandSerializer(),
-  'SoiState': SoiStateSerializer(),
-  'MessagePart': MessagePartSerializer(),
-  'NeptusBlob': NeptusBlobSerializer(),
-  'Aborted': AbortedSerializer(),
-  'UsblAngles': UsblAnglesSerializer(),
-  'UsblPosition': UsblPositionSerializer(),
-  'UsblFix': UsblFixSerializer(),
-  'ParametersXml': ParametersXmlSerializer(),
-  'GetParametersXml': GetParametersXmlSerializer(),
-  'SetImageCoords': SetImageCoordsSerializer(),
-  'GetImageCoords': GetImageCoordsSerializer(),
-  'GetWorldCoordinates': GetWorldCoordinatesSerializer(),
-  'UsblAnglesExtended': UsblAnglesExtendedSerializer(),
-  'UsblPositionExtended': UsblPositionExtendedSerializer(),
-  'UsblFixExtended': UsblFixExtendedSerializer(),
-  'UsblModem': UsblModemSerializer(),
-  'UsblConfig': UsblConfigSerializer(),
-  'DissolvedOrganicMatter': DissolvedOrganicMatterSerializer(),
-  'OpticalBackscatter': OpticalBackscatterSerializer(),
-  'Tachograph': TachographSerializer(),
-  'ApmStatus': ApmStatusSerializer(),
-  'SadcReadings': SadcReadingsSerializer(),
-  'DmsDetection': DmsDetectionSerializer(),
-  'TotalMagIntensity': TotalMagIntensitySerializer(),
+/// Signature for a function that creates a builder.
+///
+/// Used by [messagesSerializers].
+typedef ImcSerializerBuilder = imc.ImcSerializer Function();
+final messagesSerializers = <String, ImcSerializerBuilder>{
+  'EntityState': () => EntityStateSerializer(),
+  'QueryEntityState': () => QueryEntityStateSerializer(),
+  'EntityInfo': () => EntityInfoSerializer(),
+  'QueryEntityInfo': () => QueryEntityInfoSerializer(),
+  'EntityList': () => EntityListSerializer(),
+  'CpuUsage': () => CpuUsageSerializer(),
+  'TransportBindings': () => TransportBindingsSerializer(),
+  'RestartSystem': () => RestartSystemSerializer(),
+  'DevCalibrationControl': () => DevCalibrationControlSerializer(),
+  'DevCalibrationState': () => DevCalibrationStateSerializer(),
+  'EntityActivationState': () => EntityActivationStateSerializer(),
+  'QueryEntityActivationState': () => QueryEntityActivationStateSerializer(),
+  'VehicleOperationalLimits': () => VehicleOperationalLimitsSerializer(),
+  'MsgList': () => MsgListSerializer(),
+  'SimulatedState': () => SimulatedStateSerializer(),
+  'LeakSimulation': () => LeakSimulationSerializer(),
+  'UASimulation': () => UASimulationSerializer(),
+  'DynamicsSimParam': () => DynamicsSimParamSerializer(),
+  'StorageUsage': () => StorageUsageSerializer(),
+  'CacheControl': () => CacheControlSerializer(),
+  'LoggingControl': () => LoggingControlSerializer(),
+  'LogBookEntry': () => LogBookEntrySerializer(),
+  'LogBookControl': () => LogBookControlSerializer(),
+  'ReplayControl': () => ReplayControlSerializer(),
+  'ClockControl': () => ClockControlSerializer(),
+  'HistoricCTD': () => HistoricCTDSerializer(),
+  'HistoricTelemetry': () => HistoricTelemetrySerializer(),
+  'HistoricSonarData': () => HistoricSonarDataSerializer(),
+  'HistoricEvent': () => HistoricEventSerializer(),
+  'VerticalProfile': () => VerticalProfileSerializer(),
+  'ProfileSample': () => ProfileSampleSerializer(),
+  'Heartbeat': () => HeartbeatSerializer(),
+  'Announce': () => AnnounceSerializer(),
+  'AnnounceService': () => AnnounceServiceSerializer(),
+  'RSSI': () => RSSISerializer(),
+  'VSWR': () => VSWRSerializer(),
+  'LinkLevel': () => LinkLevelSerializer(),
+  'Sms': () => SmsSerializer(),
+  'SmsTx': () => SmsTxSerializer(),
+  'SmsRx': () => SmsRxSerializer(),
+  'SmsState': () => SmsStateSerializer(),
+  'TextMessage': () => TextMessageSerializer(),
+  'IridiumMsgRx': () => IridiumMsgRxSerializer(),
+  'IridiumMsgTx': () => IridiumMsgTxSerializer(),
+  'IridiumTxStatus': () => IridiumTxStatusSerializer(),
+  'GroupMembershipState': () => GroupMembershipStateSerializer(),
+  'SystemGroup': () => SystemGroupSerializer(),
+  'LinkLatency': () => LinkLatencySerializer(),
+  'ExtendedRSSI': () => ExtendedRSSISerializer(),
+  'HistoricData': () => HistoricDataSerializer(),
+  'CompressedHistory': () => CompressedHistorySerializer(),
+  'HistoricSample': () => HistoricSampleSerializer(),
+  'HistoricDataQuery': () => HistoricDataQuerySerializer(),
+  'RemoteCommand': () => RemoteCommandSerializer(),
+  'CommSystemsQuery': () => CommSystemsQuerySerializer(),
+  'TelemetryMsg': () => TelemetryMsgSerializer(),
+  'LblRange': () => LblRangeSerializer(),
+  'LblBeacon': () => LblBeaconSerializer(),
+  'LblConfig': () => LblConfigSerializer(),
+  'AcousticMessage': () => AcousticMessageSerializer(),
+  'AcousticOperation': () => AcousticOperationSerializer(),
+  'AcousticSystemsQuery': () => AcousticSystemsQuerySerializer(),
+  'AcousticSystems': () => AcousticSystemsSerializer(),
+  'AcousticLink': () => AcousticLinkSerializer(),
+  'Rpm': () => RpmSerializer(),
+  'Voltage': () => VoltageSerializer(),
+  'Current': () => CurrentSerializer(),
+  'GpsFix': () => GpsFixSerializer(),
+  'EulerAngles': () => EulerAnglesSerializer(),
+  'EulerAnglesDelta': () => EulerAnglesDeltaSerializer(),
+  'AngularVelocity': () => AngularVelocitySerializer(),
+  'Acceleration': () => AccelerationSerializer(),
+  'MagneticField': () => MagneticFieldSerializer(),
+  'GroundVelocity': () => GroundVelocitySerializer(),
+  'WaterVelocity': () => WaterVelocitySerializer(),
+  'VelocityDelta': () => VelocityDeltaSerializer(),
+  'Distance': () => DistanceSerializer(),
+  'Temperature': () => TemperatureSerializer(),
+  'Pressure': () => PressureSerializer(),
+  'Depth': () => DepthSerializer(),
+  'DepthOffset': () => DepthOffsetSerializer(),
+  'SoundSpeed': () => SoundSpeedSerializer(),
+  'WaterDensity': () => WaterDensitySerializer(),
+  'Conductivity': () => ConductivitySerializer(),
+  'Salinity': () => SalinitySerializer(),
+  'WindSpeed': () => WindSpeedSerializer(),
+  'RelativeHumidity': () => RelativeHumiditySerializer(),
+  'DevDataText': () => DevDataTextSerializer(),
+  'DevDataBinary': () => DevDataBinarySerializer(),
+  'Force': () => ForceSerializer(),
+  'SonarData': () => SonarDataSerializer(),
+  'Pulse': () => PulseSerializer(),
+  'PulseDetectionControl': () => PulseDetectionControlSerializer(),
+  'FuelLevel': () => FuelLevelSerializer(),
+  'GpsNavData': () => GpsNavDataSerializer(),
+  'ServoPosition': () => ServoPositionSerializer(),
+  'DeviceState': () => DeviceStateSerializer(),
+  'BeamConfig': () => BeamConfigSerializer(),
+  'DataSanity': () => DataSanitySerializer(),
+  'RhodamineDye': () => RhodamineDyeSerializer(),
+  'CrudeOil': () => CrudeOilSerializer(),
+  'FineOil': () => FineOilSerializer(),
+  'Turbidity': () => TurbiditySerializer(),
+  'Chlorophyll': () => ChlorophyllSerializer(),
+  'Fluorescein': () => FluoresceinSerializer(),
+  'Phycocyanin': () => PhycocyaninSerializer(),
+  'Phycoerythrin': () => PhycoerythrinSerializer(),
+  'GpsFixRtk': () => GpsFixRtkSerializer(),
+  'ExternalNavData': () => ExternalNavDataSerializer(),
+  'DissolvedOxygen': () => DissolvedOxygenSerializer(),
+  'AirSaturation': () => AirSaturationSerializer(),
+  'Throttle': () => ThrottleSerializer(),
+  'PH': () => PHSerializer(),
+  'Redox': () => RedoxSerializer(),
+  'CameraZoom': () => CameraZoomSerializer(),
+  'SetThrusterActuation': () => SetThrusterActuationSerializer(),
+  'SetServoPosition': () => SetServoPositionSerializer(),
+  'SetControlSurfaceDeflection': () => SetControlSurfaceDeflectionSerializer(),
+  'RemoteActionsRequest': () => RemoteActionsRequestSerializer(),
+  'RemoteActions': () => RemoteActionsSerializer(),
+  'ButtonEvent': () => ButtonEventSerializer(),
+  'LcdControl': () => LcdControlSerializer(),
+  'PowerOperation': () => PowerOperationSerializer(),
+  'PowerChannelControl': () => PowerChannelControlSerializer(),
+  'QueryPowerChannelState': () => QueryPowerChannelStateSerializer(),
+  'PowerChannelState': () => PowerChannelStateSerializer(),
+  'LedBrightness': () => LedBrightnessSerializer(),
+  'QueryLedBrightness': () => QueryLedBrightnessSerializer(),
+  'SetLedBrightness': () => SetLedBrightnessSerializer(),
+  'SetPWM': () => SetPWMSerializer(),
+  'PWM': () => PWMSerializer(),
+  'EstimatedState': () => EstimatedStateSerializer(),
+  'EstimatedStreamVelocity': () => EstimatedStreamVelocitySerializer(),
+  'IndicatedSpeed': () => IndicatedSpeedSerializer(),
+  'TrueSpeed': () => TrueSpeedSerializer(),
+  'NavigationUncertainty': () => NavigationUncertaintySerializer(),
+  'NavigationData': () => NavigationDataSerializer(),
+  'GpsFixRejection': () => GpsFixRejectionSerializer(),
+  'LblRangeAcceptance': () => LblRangeAcceptanceSerializer(),
+  'DvlRejection': () => DvlRejectionSerializer(),
+  'LblEstimate': () => LblEstimateSerializer(),
+  'AlignmentState': () => AlignmentStateSerializer(),
+  'GroupStreamVelocity': () => GroupStreamVelocitySerializer(),
+  'Airflow': () => AirflowSerializer(),
+  'DesiredHeading': () => DesiredHeadingSerializer(),
+  'DesiredZ': () => DesiredZSerializer(),
+  'DesiredSpeed': () => DesiredSpeedSerializer(),
+  'DesiredRoll': () => DesiredRollSerializer(),
+  'DesiredPitch': () => DesiredPitchSerializer(),
+  'DesiredVerticalRate': () => DesiredVerticalRateSerializer(),
+  'DesiredPath': () => DesiredPathSerializer(),
+  'DesiredControl': () => DesiredControlSerializer(),
+  'DesiredHeadingRate': () => DesiredHeadingRateSerializer(),
+  'DesiredVelocity': () => DesiredVelocitySerializer(),
+  'PathControlState': () => PathControlStateSerializer(),
+  'AllocatedControlTorques': () => AllocatedControlTorquesSerializer(),
+  'ControlParcel': () => ControlParcelSerializer(),
+  'Brake': () => BrakeSerializer(),
+  'DesiredLinearState': () => DesiredLinearStateSerializer(),
+  'DesiredThrottle': () => DesiredThrottleSerializer(),
+  'Goto': () => GotoSerializer(),
+  'PopUp': () => PopUpSerializer(),
+  'Teleoperation': () => TeleoperationSerializer(),
+  'Loiter': () => LoiterSerializer(),
+  'IdleManeuver': () => IdleManeuverSerializer(),
+  'LowLevelControl': () => LowLevelControlSerializer(),
+  'Rows': () => RowsSerializer(),
+  'FollowPath': () => FollowPathSerializer(),
+  'PathPoint': () => PathPointSerializer(),
+  'YoYo': () => YoYoSerializer(),
+  'TeleoperationDone': () => TeleoperationDoneSerializer(),
+  'StationKeeping': () => StationKeepingSerializer(),
+  'Elevator': () => ElevatorSerializer(),
+  'FollowTrajectory': () => FollowTrajectorySerializer(),
+  'TrajectoryPoint': () => TrajectoryPointSerializer(),
+  'CustomManeuver': () => CustomManeuverSerializer(),
+  'VehicleFormation': () => VehicleFormationSerializer(),
+  'VehicleFormationParticipant': () => VehicleFormationParticipantSerializer(),
+  'StopManeuver': () => StopManeuverSerializer(),
+  'RegisterManeuver': () => RegisterManeuverSerializer(),
+  'ManeuverControlState': () => ManeuverControlStateSerializer(),
+  'FollowSystem': () => FollowSystemSerializer(),
+  'CommsRelay': () => CommsRelaySerializer(),
+  'CoverArea': () => CoverAreaSerializer(),
+  'PolygonVertex': () => PolygonVertexSerializer(),
+  'CompassCalibration': () => CompassCalibrationSerializer(),
+  'FormationParameters': () => FormationParametersSerializer(),
+  'FormationPlanExecution': () => FormationPlanExecutionSerializer(),
+  'FollowReference': () => FollowReferenceSerializer(),
+  'Reference': () => ReferenceSerializer(),
+  'FollowRefState': () => FollowRefStateSerializer(),
+  'FormationMonitor': () => FormationMonitorSerializer(),
+  'RelativeState': () => RelativeStateSerializer(),
+  'Dislodge': () => DislodgeSerializer(),
+  'Formation': () => FormationSerializer(),
+  'Launch': () => LaunchSerializer(),
+  'Drop': () => DropSerializer(),
+  'ScheduledGoto': () => ScheduledGotoSerializer(),
+  'RowsCoverage': () => RowsCoverageSerializer(),
+  'Sample': () => SampleSerializer(),
+  'ImageTracking': () => ImageTrackingSerializer(),
+  'Takeoff': () => TakeoffSerializer(),
+  'Land': () => LandSerializer(),
+  'AutonomousSection': () => AutonomousSectionSerializer(),
+  'FollowPoint': () => FollowPointSerializer(),
+  'Alignment': () => AlignmentSerializer(),
+  'StationKeepingExtended': () => StationKeepingExtendedSerializer(),
+  'Magnetometer': () => MagnetometerSerializer(),
+  'VehicleState': () => VehicleStateSerializer(),
+  'VehicleCommand': () => VehicleCommandSerializer(),
+  'MonitorEntityState': () => MonitorEntityStateSerializer(),
+  'EntityMonitoringState': () => EntityMonitoringStateSerializer(),
+  'OperationalLimits': () => OperationalLimitsSerializer(),
+  'GetOperationalLimits': () => GetOperationalLimitsSerializer(),
+  'Calibration': () => CalibrationSerializer(),
+  'ControlLoops': () => ControlLoopsSerializer(),
+  'VehicleMedium': () => VehicleMediumSerializer(),
+  'Collision': () => CollisionSerializer(),
+  'FormState': () => FormStateSerializer(),
+  'AutopilotMode': () => AutopilotModeSerializer(),
+  'FormationState': () => FormationStateSerializer(),
+  'ReportControl': () => ReportControlSerializer(),
+  'StateReport': () => StateReportSerializer(),
+  'TransmissionRequest': () => TransmissionRequestSerializer(),
+  'TransmissionStatus': () => TransmissionStatusSerializer(),
+  'SmsRequest': () => SmsRequestSerializer(),
+  'SmsStatus': () => SmsStatusSerializer(),
+  'VtolState': () => VtolStateSerializer(),
+  'ArmingState': () => ArmingStateSerializer(),
+  'Abort': () => AbortSerializer(),
+  'PlanSpecification': () => PlanSpecificationSerializer(),
+  'PlanManeuver': () => PlanManeuverSerializer(),
+  'PlanTransition': () => PlanTransitionSerializer(),
+  'EmergencyControl': () => EmergencyControlSerializer(),
+  'EmergencyControlState': () => EmergencyControlStateSerializer(),
+  'PlanDB': () => PlanDBSerializer(),
+  'PlanDBState': () => PlanDBStateSerializer(),
+  'PlanDBInformation': () => PlanDBInformationSerializer(),
+  'PlanControl': () => PlanControlSerializer(),
+  'PlanControlState': () => PlanControlStateSerializer(),
+  'PlanVariable': () => PlanVariableSerializer(),
+  'PlanGeneration': () => PlanGenerationSerializer(),
+  'LeaderState': () => LeaderStateSerializer(),
+  'PlanStatistics': () => PlanStatisticsSerializer(),
+  'ReportedState': () => ReportedStateSerializer(),
+  'RemoteSensorInfo': () => RemoteSensorInfoSerializer(),
+  'Map': () => MapSerializer(),
+  'MapFeature': () => MapFeatureSerializer(),
+  'MapPoint': () => MapPointSerializer(),
+  'CcuEvent': () => CcuEventSerializer(),
+  'VehicleLinks': () => VehicleLinksSerializer(),
+  'TrexObservation': () => TrexObservationSerializer(),
+  'TrexCommand': () => TrexCommandSerializer(),
+  'TrexOperation': () => TrexOperationSerializer(),
+  'TrexAttribute': () => TrexAttributeSerializer(),
+  'TrexToken': () => TrexTokenSerializer(),
+  'TrexPlan': () => TrexPlanSerializer(),
+  'Event': () => EventSerializer(),
+  'CompressedImage': () => CompressedImageSerializer(),
+  'ImageTxSettings': () => ImageTxSettingsSerializer(),
+  'RemoteState': () => RemoteStateSerializer(),
+  'Target': () => TargetSerializer(),
+  'EntityParameter': () => EntityParameterSerializer(),
+  'EntityParameters': () => EntityParametersSerializer(),
+  'QueryEntityParameters': () => QueryEntityParametersSerializer(),
+  'SetEntityParameters': () => SetEntityParametersSerializer(),
+  'SaveEntityParameters': () => SaveEntityParametersSerializer(),
+  'CreateSession': () => CreateSessionSerializer(),
+  'CloseSession': () => CloseSessionSerializer(),
+  'SessionSubscription': () => SessionSubscriptionSerializer(),
+  'SessionKeepAlive': () => SessionKeepAliveSerializer(),
+  'SessionStatus': () => SessionStatusSerializer(),
+  'PushEntityParameters': () => PushEntityParametersSerializer(),
+  'PopEntityParameters': () => PopEntityParametersSerializer(),
+  'IoEvent': () => IoEventSerializer(),
+  'UamTxFrame': () => UamTxFrameSerializer(),
+  'UamRxFrame': () => UamRxFrameSerializer(),
+  'UamTxStatus': () => UamTxStatusSerializer(),
+  'UamRxRange': () => UamRxRangeSerializer(),
+  'FormCtrlParam': () => FormCtrlParamSerializer(),
+  'FormationEval': () => FormationEvalSerializer(),
+  'FormationControlParams': () => FormationControlParamsSerializer(),
+  'FormationEvaluation': () => FormationEvaluationSerializer(),
+  'SoiWaypoint': () => SoiWaypointSerializer(),
+  'SoiPlan': () => SoiPlanSerializer(),
+  'SoiCommand': () => SoiCommandSerializer(),
+  'SoiState': () => SoiStateSerializer(),
+  'MessagePart': () => MessagePartSerializer(),
+  'NeptusBlob': () => NeptusBlobSerializer(),
+  'Aborted': () => AbortedSerializer(),
+  'UsblAngles': () => UsblAnglesSerializer(),
+  'UsblPosition': () => UsblPositionSerializer(),
+  'UsblFix': () => UsblFixSerializer(),
+  'ParametersXml': () => ParametersXmlSerializer(),
+  'GetParametersXml': () => GetParametersXmlSerializer(),
+  'SetImageCoords': () => SetImageCoordsSerializer(),
+  'GetImageCoords': () => GetImageCoordsSerializer(),
+  'GetWorldCoordinates': () => GetWorldCoordinatesSerializer(),
+  'UsblAnglesExtended': () => UsblAnglesExtendedSerializer(),
+  'UsblPositionExtended': () => UsblPositionExtendedSerializer(),
+  'UsblFixExtended': () => UsblFixExtendedSerializer(),
+  'UsblModem': () => UsblModemSerializer(),
+  'UsblConfig': () => UsblConfigSerializer(),
+  'DissolvedOrganicMatter': () => DissolvedOrganicMatterSerializer(),
+  'OpticalBackscatter': () => OpticalBackscatterSerializer(),
+  'Tachograph': () => TachographSerializer(),
+  'ApmStatus': () => ApmStatusSerializer(),
+  'SadcReadings': () => SadcReadingsSerializer(),
+  'DmsDetection': () => DmsDetectionSerializer(),
+  'TotalMagIntensity': () => TotalMagIntensitySerializer(),
 };
 
-final messagesIdsSerializers = <int, imc.ImcSerializer>{
-  1: EntityStateSerializer(),
-  2: QueryEntityStateSerializer(),
-  3: EntityInfoSerializer(),
-  4: QueryEntityInfoSerializer(),
-  5: EntityListSerializer(),
-  7: CpuUsageSerializer(),
-  8: TransportBindingsSerializer(),
-  9: RestartSystemSerializer(),
-  12: DevCalibrationControlSerializer(),
-  13: DevCalibrationStateSerializer(),
-  14: EntityActivationStateSerializer(),
-  15: QueryEntityActivationStateSerializer(),
-  16: VehicleOperationalLimitsSerializer(),
-  20: MsgListSerializer(),
-  50: SimulatedStateSerializer(),
-  51: LeakSimulationSerializer(),
-  52: UASimulationSerializer(),
-  53: DynamicsSimParamSerializer(),
-  100: StorageUsageSerializer(),
-  101: CacheControlSerializer(),
-  102: LoggingControlSerializer(),
-  103: LogBookEntrySerializer(),
-  104: LogBookControlSerializer(),
-  105: ReplayControlSerializer(),
-  106: ClockControlSerializer(),
-  107: HistoricCTDSerializer(),
-  108: HistoricTelemetrySerializer(),
-  109: HistoricSonarDataSerializer(),
-  110: HistoricEventSerializer(),
-  111: VerticalProfileSerializer(),
-  112: ProfileSampleSerializer(),
-  150: HeartbeatSerializer(),
-  151: AnnounceSerializer(),
-  152: AnnounceServiceSerializer(),
-  153: RSSISerializer(),
-  154: VSWRSerializer(),
-  155: LinkLevelSerializer(),
-  156: SmsSerializer(),
-  157: SmsTxSerializer(),
-  158: SmsRxSerializer(),
-  159: SmsStateSerializer(),
-  160: TextMessageSerializer(),
-  170: IridiumMsgRxSerializer(),
-  171: IridiumMsgTxSerializer(),
-  172: IridiumTxStatusSerializer(),
-  180: GroupMembershipStateSerializer(),
-  181: SystemGroupSerializer(),
-  182: LinkLatencySerializer(),
-  183: ExtendedRSSISerializer(),
-  184: HistoricDataSerializer(),
-  185: CompressedHistorySerializer(),
-  186: HistoricSampleSerializer(),
-  187: HistoricDataQuerySerializer(),
-  188: RemoteCommandSerializer(),
-  189: CommSystemsQuerySerializer(),
-  190: TelemetryMsgSerializer(),
-  200: LblRangeSerializer(),
-  202: LblBeaconSerializer(),
-  203: LblConfigSerializer(),
-  206: AcousticMessageSerializer(),
-  211: AcousticOperationSerializer(),
-  212: AcousticSystemsQuerySerializer(),
-  213: AcousticSystemsSerializer(),
-  214: AcousticLinkSerializer(),
-  250: RpmSerializer(),
-  251: VoltageSerializer(),
-  252: CurrentSerializer(),
-  253: GpsFixSerializer(),
-  254: EulerAnglesSerializer(),
-  255: EulerAnglesDeltaSerializer(),
-  256: AngularVelocitySerializer(),
-  257: AccelerationSerializer(),
-  258: MagneticFieldSerializer(),
-  259: GroundVelocitySerializer(),
-  260: WaterVelocitySerializer(),
-  261: VelocityDeltaSerializer(),
-  262: DistanceSerializer(),
-  263: TemperatureSerializer(),
-  264: PressureSerializer(),
-  265: DepthSerializer(),
-  266: DepthOffsetSerializer(),
-  267: SoundSpeedSerializer(),
-  268: WaterDensitySerializer(),
-  269: ConductivitySerializer(),
-  270: SalinitySerializer(),
-  271: WindSpeedSerializer(),
-  272: RelativeHumiditySerializer(),
-  273: DevDataTextSerializer(),
-  274: DevDataBinarySerializer(),
-  275: ForceSerializer(),
-  276: SonarDataSerializer(),
-  277: PulseSerializer(),
-  278: PulseDetectionControlSerializer(),
-  279: FuelLevelSerializer(),
-  280: GpsNavDataSerializer(),
-  281: ServoPositionSerializer(),
-  282: DeviceStateSerializer(),
-  283: BeamConfigSerializer(),
-  284: DataSanitySerializer(),
-  285: RhodamineDyeSerializer(),
-  286: CrudeOilSerializer(),
-  287: FineOilSerializer(),
-  288: TurbiditySerializer(),
-  289: ChlorophyllSerializer(),
-  290: FluoresceinSerializer(),
-  291: PhycocyaninSerializer(),
-  292: PhycoerythrinSerializer(),
-  293: GpsFixRtkSerializer(),
-  294: ExternalNavDataSerializer(),
-  295: DissolvedOxygenSerializer(),
-  296: AirSaturationSerializer(),
-  297: ThrottleSerializer(),
-  298: PHSerializer(),
-  299: RedoxSerializer(),
-  300: CameraZoomSerializer(),
-  301: SetThrusterActuationSerializer(),
-  302: SetServoPositionSerializer(),
-  303: SetControlSurfaceDeflectionSerializer(),
-  304: RemoteActionsRequestSerializer(),
-  305: RemoteActionsSerializer(),
-  306: ButtonEventSerializer(),
-  307: LcdControlSerializer(),
-  308: PowerOperationSerializer(),
-  309: PowerChannelControlSerializer(),
-  310: QueryPowerChannelStateSerializer(),
-  311: PowerChannelStateSerializer(),
-  312: LedBrightnessSerializer(),
-  313: QueryLedBrightnessSerializer(),
-  314: SetLedBrightnessSerializer(),
-  315: SetPWMSerializer(),
-  316: PWMSerializer(),
-  350: EstimatedStateSerializer(),
-  351: EstimatedStreamVelocitySerializer(),
-  352: IndicatedSpeedSerializer(),
-  353: TrueSpeedSerializer(),
-  354: NavigationUncertaintySerializer(),
-  355: NavigationDataSerializer(),
-  356: GpsFixRejectionSerializer(),
-  357: LblRangeAcceptanceSerializer(),
-  358: DvlRejectionSerializer(),
-  360: LblEstimateSerializer(),
-  361: AlignmentStateSerializer(),
-  362: GroupStreamVelocitySerializer(),
-  363: AirflowSerializer(),
-  400: DesiredHeadingSerializer(),
-  401: DesiredZSerializer(),
-  402: DesiredSpeedSerializer(),
-  403: DesiredRollSerializer(),
-  404: DesiredPitchSerializer(),
-  405: DesiredVerticalRateSerializer(),
-  406: DesiredPathSerializer(),
-  407: DesiredControlSerializer(),
-  408: DesiredHeadingRateSerializer(),
-  409: DesiredVelocitySerializer(),
-  410: PathControlStateSerializer(),
-  411: AllocatedControlTorquesSerializer(),
-  412: ControlParcelSerializer(),
-  413: BrakeSerializer(),
-  414: DesiredLinearStateSerializer(),
-  415: DesiredThrottleSerializer(),
-  450: GotoSerializer(),
-  451: PopUpSerializer(),
-  452: TeleoperationSerializer(),
-  453: LoiterSerializer(),
-  454: IdleManeuverSerializer(),
-  455: LowLevelControlSerializer(),
-  456: RowsSerializer(),
-  457: FollowPathSerializer(),
-  458: PathPointSerializer(),
-  459: YoYoSerializer(),
-  460: TeleoperationDoneSerializer(),
-  461: StationKeepingSerializer(),
-  462: ElevatorSerializer(),
-  463: FollowTrajectorySerializer(),
-  464: TrajectoryPointSerializer(),
-  465: CustomManeuverSerializer(),
-  466: VehicleFormationSerializer(),
-  467: VehicleFormationParticipantSerializer(),
-  468: StopManeuverSerializer(),
-  469: RegisterManeuverSerializer(),
-  470: ManeuverControlStateSerializer(),
-  471: FollowSystemSerializer(),
-  472: CommsRelaySerializer(),
-  473: CoverAreaSerializer(),
-  474: PolygonVertexSerializer(),
-  475: CompassCalibrationSerializer(),
-  476: FormationParametersSerializer(),
-  477: FormationPlanExecutionSerializer(),
-  478: FollowReferenceSerializer(),
-  479: ReferenceSerializer(),
-  480: FollowRefStateSerializer(),
-  481: FormationMonitorSerializer(),
-  482: RelativeStateSerializer(),
-  483: DislodgeSerializer(),
-  484: FormationSerializer(),
-  485: LaunchSerializer(),
-  486: DropSerializer(),
-  487: ScheduledGotoSerializer(),
-  488: RowsCoverageSerializer(),
-  489: SampleSerializer(),
-  490: ImageTrackingSerializer(),
-  491: TakeoffSerializer(),
-  492: LandSerializer(),
-  493: AutonomousSectionSerializer(),
-  494: FollowPointSerializer(),
-  495: AlignmentSerializer(),
-  496: StationKeepingExtendedSerializer(),
-  499: MagnetometerSerializer(),
-  500: VehicleStateSerializer(),
-  501: VehicleCommandSerializer(),
-  502: MonitorEntityStateSerializer(),
-  503: EntityMonitoringStateSerializer(),
-  504: OperationalLimitsSerializer(),
-  505: GetOperationalLimitsSerializer(),
-  506: CalibrationSerializer(),
-  507: ControlLoopsSerializer(),
-  508: VehicleMediumSerializer(),
-  509: CollisionSerializer(),
-  510: FormStateSerializer(),
-  511: AutopilotModeSerializer(),
-  512: FormationStateSerializer(),
-  513: ReportControlSerializer(),
-  514: StateReportSerializer(),
-  515: TransmissionRequestSerializer(),
-  516: TransmissionStatusSerializer(),
-  517: SmsRequestSerializer(),
-  518: SmsStatusSerializer(),
-  519: VtolStateSerializer(),
-  520: ArmingStateSerializer(),
-  550: AbortSerializer(),
-  551: PlanSpecificationSerializer(),
-  552: PlanManeuverSerializer(),
-  553: PlanTransitionSerializer(),
-  554: EmergencyControlSerializer(),
-  555: EmergencyControlStateSerializer(),
-  556: PlanDBSerializer(),
-  557: PlanDBStateSerializer(),
-  558: PlanDBInformationSerializer(),
-  559: PlanControlSerializer(),
-  560: PlanControlStateSerializer(),
-  561: PlanVariableSerializer(),
-  562: PlanGenerationSerializer(),
-  563: LeaderStateSerializer(),
-  564: PlanStatisticsSerializer(),
-  600: ReportedStateSerializer(),
-  601: RemoteSensorInfoSerializer(),
-  602: MapSerializer(),
-  603: MapFeatureSerializer(),
-  604: MapPointSerializer(),
-  606: CcuEventSerializer(),
-  650: VehicleLinksSerializer(),
-  651: TrexObservationSerializer(),
-  652: TrexCommandSerializer(),
-  655: TrexOperationSerializer(),
-  656: TrexAttributeSerializer(),
-  657: TrexTokenSerializer(),
-  658: TrexPlanSerializer(),
-  660: EventSerializer(),
-  702: CompressedImageSerializer(),
-  703: ImageTxSettingsSerializer(),
-  750: RemoteStateSerializer(),
-  800: TargetSerializer(),
-  801: EntityParameterSerializer(),
-  802: EntityParametersSerializer(),
-  803: QueryEntityParametersSerializer(),
-  804: SetEntityParametersSerializer(),
-  805: SaveEntityParametersSerializer(),
-  806: CreateSessionSerializer(),
-  807: CloseSessionSerializer(),
-  808: SessionSubscriptionSerializer(),
-  809: SessionKeepAliveSerializer(),
-  810: SessionStatusSerializer(),
-  811: PushEntityParametersSerializer(),
-  812: PopEntityParametersSerializer(),
-  813: IoEventSerializer(),
-  814: UamTxFrameSerializer(),
-  815: UamRxFrameSerializer(),
-  816: UamTxStatusSerializer(),
-  817: UamRxRangeSerializer(),
-  820: FormCtrlParamSerializer(),
-  821: FormationEvalSerializer(),
-  822: FormationControlParamsSerializer(),
-  823: FormationEvaluationSerializer(),
-  850: SoiWaypointSerializer(),
-  851: SoiPlanSerializer(),
-  852: SoiCommandSerializer(),
-  853: SoiStateSerializer(),
-  877: MessagePartSerializer(),
-  888: NeptusBlobSerializer(),
-  889: AbortedSerializer(),
-  890: UsblAnglesSerializer(),
-  891: UsblPositionSerializer(),
-  892: UsblFixSerializer(),
-  893: ParametersXmlSerializer(),
-  894: GetParametersXmlSerializer(),
-  895: SetImageCoordsSerializer(),
-  896: GetImageCoordsSerializer(),
-  897: GetWorldCoordinatesSerializer(),
-  898: UsblAnglesExtendedSerializer(),
-  899: UsblPositionExtendedSerializer(),
-  900: UsblFixExtendedSerializer(),
-  901: UsblModemSerializer(),
-  902: UsblConfigSerializer(),
-  903: DissolvedOrganicMatterSerializer(),
-  904: OpticalBackscatterSerializer(),
-  905: TachographSerializer(),
-  906: ApmStatusSerializer(),
-  907: SadcReadingsSerializer(),
-  908: DmsDetectionSerializer(),
-  2006: TotalMagIntensitySerializer(),
+final messagesIdsSerializers = <int, ImcSerializerBuilder>{
+  1: () => EntityStateSerializer(),
+  2: () => QueryEntityStateSerializer(),
+  3: () => EntityInfoSerializer(),
+  4: () => QueryEntityInfoSerializer(),
+  5: () => EntityListSerializer(),
+  7: () => CpuUsageSerializer(),
+  8: () => TransportBindingsSerializer(),
+  9: () => RestartSystemSerializer(),
+  12: () => DevCalibrationControlSerializer(),
+  13: () => DevCalibrationStateSerializer(),
+  14: () => EntityActivationStateSerializer(),
+  15: () => QueryEntityActivationStateSerializer(),
+  16: () => VehicleOperationalLimitsSerializer(),
+  20: () => MsgListSerializer(),
+  50: () => SimulatedStateSerializer(),
+  51: () => LeakSimulationSerializer(),
+  52: () => UASimulationSerializer(),
+  53: () => DynamicsSimParamSerializer(),
+  100: () => StorageUsageSerializer(),
+  101: () => CacheControlSerializer(),
+  102: () => LoggingControlSerializer(),
+  103: () => LogBookEntrySerializer(),
+  104: () => LogBookControlSerializer(),
+  105: () => ReplayControlSerializer(),
+  106: () => ClockControlSerializer(),
+  107: () => HistoricCTDSerializer(),
+  108: () => HistoricTelemetrySerializer(),
+  109: () => HistoricSonarDataSerializer(),
+  110: () => HistoricEventSerializer(),
+  111: () => VerticalProfileSerializer(),
+  112: () => ProfileSampleSerializer(),
+  150: () => HeartbeatSerializer(),
+  151: () => AnnounceSerializer(),
+  152: () => AnnounceServiceSerializer(),
+  153: () => RSSISerializer(),
+  154: () => VSWRSerializer(),
+  155: () => LinkLevelSerializer(),
+  156: () => SmsSerializer(),
+  157: () => SmsTxSerializer(),
+  158: () => SmsRxSerializer(),
+  159: () => SmsStateSerializer(),
+  160: () => TextMessageSerializer(),
+  170: () => IridiumMsgRxSerializer(),
+  171: () => IridiumMsgTxSerializer(),
+  172: () => IridiumTxStatusSerializer(),
+  180: () => GroupMembershipStateSerializer(),
+  181: () => SystemGroupSerializer(),
+  182: () => LinkLatencySerializer(),
+  183: () => ExtendedRSSISerializer(),
+  184: () => HistoricDataSerializer(),
+  185: () => CompressedHistorySerializer(),
+  186: () => HistoricSampleSerializer(),
+  187: () => HistoricDataQuerySerializer(),
+  188: () => RemoteCommandSerializer(),
+  189: () => CommSystemsQuerySerializer(),
+  190: () => TelemetryMsgSerializer(),
+  200: () => LblRangeSerializer(),
+  202: () => LblBeaconSerializer(),
+  203: () => LblConfigSerializer(),
+  206: () => AcousticMessageSerializer(),
+  211: () => AcousticOperationSerializer(),
+  212: () => AcousticSystemsQuerySerializer(),
+  213: () => AcousticSystemsSerializer(),
+  214: () => AcousticLinkSerializer(),
+  250: () => RpmSerializer(),
+  251: () => VoltageSerializer(),
+  252: () => CurrentSerializer(),
+  253: () => GpsFixSerializer(),
+  254: () => EulerAnglesSerializer(),
+  255: () => EulerAnglesDeltaSerializer(),
+  256: () => AngularVelocitySerializer(),
+  257: () => AccelerationSerializer(),
+  258: () => MagneticFieldSerializer(),
+  259: () => GroundVelocitySerializer(),
+  260: () => WaterVelocitySerializer(),
+  261: () => VelocityDeltaSerializer(),
+  262: () => DistanceSerializer(),
+  263: () => TemperatureSerializer(),
+  264: () => PressureSerializer(),
+  265: () => DepthSerializer(),
+  266: () => DepthOffsetSerializer(),
+  267: () => SoundSpeedSerializer(),
+  268: () => WaterDensitySerializer(),
+  269: () => ConductivitySerializer(),
+  270: () => SalinitySerializer(),
+  271: () => WindSpeedSerializer(),
+  272: () => RelativeHumiditySerializer(),
+  273: () => DevDataTextSerializer(),
+  274: () => DevDataBinarySerializer(),
+  275: () => ForceSerializer(),
+  276: () => SonarDataSerializer(),
+  277: () => PulseSerializer(),
+  278: () => PulseDetectionControlSerializer(),
+  279: () => FuelLevelSerializer(),
+  280: () => GpsNavDataSerializer(),
+  281: () => ServoPositionSerializer(),
+  282: () => DeviceStateSerializer(),
+  283: () => BeamConfigSerializer(),
+  284: () => DataSanitySerializer(),
+  285: () => RhodamineDyeSerializer(),
+  286: () => CrudeOilSerializer(),
+  287: () => FineOilSerializer(),
+  288: () => TurbiditySerializer(),
+  289: () => ChlorophyllSerializer(),
+  290: () => FluoresceinSerializer(),
+  291: () => PhycocyaninSerializer(),
+  292: () => PhycoerythrinSerializer(),
+  293: () => GpsFixRtkSerializer(),
+  294: () => ExternalNavDataSerializer(),
+  295: () => DissolvedOxygenSerializer(),
+  296: () => AirSaturationSerializer(),
+  297: () => ThrottleSerializer(),
+  298: () => PHSerializer(),
+  299: () => RedoxSerializer(),
+  300: () => CameraZoomSerializer(),
+  301: () => SetThrusterActuationSerializer(),
+  302: () => SetServoPositionSerializer(),
+  303: () => SetControlSurfaceDeflectionSerializer(),
+  304: () => RemoteActionsRequestSerializer(),
+  305: () => RemoteActionsSerializer(),
+  306: () => ButtonEventSerializer(),
+  307: () => LcdControlSerializer(),
+  308: () => PowerOperationSerializer(),
+  309: () => PowerChannelControlSerializer(),
+  310: () => QueryPowerChannelStateSerializer(),
+  311: () => PowerChannelStateSerializer(),
+  312: () => LedBrightnessSerializer(),
+  313: () => QueryLedBrightnessSerializer(),
+  314: () => SetLedBrightnessSerializer(),
+  315: () => SetPWMSerializer(),
+  316: () => PWMSerializer(),
+  350: () => EstimatedStateSerializer(),
+  351: () => EstimatedStreamVelocitySerializer(),
+  352: () => IndicatedSpeedSerializer(),
+  353: () => TrueSpeedSerializer(),
+  354: () => NavigationUncertaintySerializer(),
+  355: () => NavigationDataSerializer(),
+  356: () => GpsFixRejectionSerializer(),
+  357: () => LblRangeAcceptanceSerializer(),
+  358: () => DvlRejectionSerializer(),
+  360: () => LblEstimateSerializer(),
+  361: () => AlignmentStateSerializer(),
+  362: () => GroupStreamVelocitySerializer(),
+  363: () => AirflowSerializer(),
+  400: () => DesiredHeadingSerializer(),
+  401: () => DesiredZSerializer(),
+  402: () => DesiredSpeedSerializer(),
+  403: () => DesiredRollSerializer(),
+  404: () => DesiredPitchSerializer(),
+  405: () => DesiredVerticalRateSerializer(),
+  406: () => DesiredPathSerializer(),
+  407: () => DesiredControlSerializer(),
+  408: () => DesiredHeadingRateSerializer(),
+  409: () => DesiredVelocitySerializer(),
+  410: () => PathControlStateSerializer(),
+  411: () => AllocatedControlTorquesSerializer(),
+  412: () => ControlParcelSerializer(),
+  413: () => BrakeSerializer(),
+  414: () => DesiredLinearStateSerializer(),
+  415: () => DesiredThrottleSerializer(),
+  450: () => GotoSerializer(),
+  451: () => PopUpSerializer(),
+  452: () => TeleoperationSerializer(),
+  453: () => LoiterSerializer(),
+  454: () => IdleManeuverSerializer(),
+  455: () => LowLevelControlSerializer(),
+  456: () => RowsSerializer(),
+  457: () => FollowPathSerializer(),
+  458: () => PathPointSerializer(),
+  459: () => YoYoSerializer(),
+  460: () => TeleoperationDoneSerializer(),
+  461: () => StationKeepingSerializer(),
+  462: () => ElevatorSerializer(),
+  463: () => FollowTrajectorySerializer(),
+  464: () => TrajectoryPointSerializer(),
+  465: () => CustomManeuverSerializer(),
+  466: () => VehicleFormationSerializer(),
+  467: () => VehicleFormationParticipantSerializer(),
+  468: () => StopManeuverSerializer(),
+  469: () => RegisterManeuverSerializer(),
+  470: () => ManeuverControlStateSerializer(),
+  471: () => FollowSystemSerializer(),
+  472: () => CommsRelaySerializer(),
+  473: () => CoverAreaSerializer(),
+  474: () => PolygonVertexSerializer(),
+  475: () => CompassCalibrationSerializer(),
+  476: () => FormationParametersSerializer(),
+  477: () => FormationPlanExecutionSerializer(),
+  478: () => FollowReferenceSerializer(),
+  479: () => ReferenceSerializer(),
+  480: () => FollowRefStateSerializer(),
+  481: () => FormationMonitorSerializer(),
+  482: () => RelativeStateSerializer(),
+  483: () => DislodgeSerializer(),
+  484: () => FormationSerializer(),
+  485: () => LaunchSerializer(),
+  486: () => DropSerializer(),
+  487: () => ScheduledGotoSerializer(),
+  488: () => RowsCoverageSerializer(),
+  489: () => SampleSerializer(),
+  490: () => ImageTrackingSerializer(),
+  491: () => TakeoffSerializer(),
+  492: () => LandSerializer(),
+  493: () => AutonomousSectionSerializer(),
+  494: () => FollowPointSerializer(),
+  495: () => AlignmentSerializer(),
+  496: () => StationKeepingExtendedSerializer(),
+  499: () => MagnetometerSerializer(),
+  500: () => VehicleStateSerializer(),
+  501: () => VehicleCommandSerializer(),
+  502: () => MonitorEntityStateSerializer(),
+  503: () => EntityMonitoringStateSerializer(),
+  504: () => OperationalLimitsSerializer(),
+  505: () => GetOperationalLimitsSerializer(),
+  506: () => CalibrationSerializer(),
+  507: () => ControlLoopsSerializer(),
+  508: () => VehicleMediumSerializer(),
+  509: () => CollisionSerializer(),
+  510: () => FormStateSerializer(),
+  511: () => AutopilotModeSerializer(),
+  512: () => FormationStateSerializer(),
+  513: () => ReportControlSerializer(),
+  514: () => StateReportSerializer(),
+  515: () => TransmissionRequestSerializer(),
+  516: () => TransmissionStatusSerializer(),
+  517: () => SmsRequestSerializer(),
+  518: () => SmsStatusSerializer(),
+  519: () => VtolStateSerializer(),
+  520: () => ArmingStateSerializer(),
+  550: () => AbortSerializer(),
+  551: () => PlanSpecificationSerializer(),
+  552: () => PlanManeuverSerializer(),
+  553: () => PlanTransitionSerializer(),
+  554: () => EmergencyControlSerializer(),
+  555: () => EmergencyControlStateSerializer(),
+  556: () => PlanDBSerializer(),
+  557: () => PlanDBStateSerializer(),
+  558: () => PlanDBInformationSerializer(),
+  559: () => PlanControlSerializer(),
+  560: () => PlanControlStateSerializer(),
+  561: () => PlanVariableSerializer(),
+  562: () => PlanGenerationSerializer(),
+  563: () => LeaderStateSerializer(),
+  564: () => PlanStatisticsSerializer(),
+  600: () => ReportedStateSerializer(),
+  601: () => RemoteSensorInfoSerializer(),
+  602: () => MapSerializer(),
+  603: () => MapFeatureSerializer(),
+  604: () => MapPointSerializer(),
+  606: () => CcuEventSerializer(),
+  650: () => VehicleLinksSerializer(),
+  651: () => TrexObservationSerializer(),
+  652: () => TrexCommandSerializer(),
+  655: () => TrexOperationSerializer(),
+  656: () => TrexAttributeSerializer(),
+  657: () => TrexTokenSerializer(),
+  658: () => TrexPlanSerializer(),
+  660: () => EventSerializer(),
+  702: () => CompressedImageSerializer(),
+  703: () => ImageTxSettingsSerializer(),
+  750: () => RemoteStateSerializer(),
+  800: () => TargetSerializer(),
+  801: () => EntityParameterSerializer(),
+  802: () => EntityParametersSerializer(),
+  803: () => QueryEntityParametersSerializer(),
+  804: () => SetEntityParametersSerializer(),
+  805: () => SaveEntityParametersSerializer(),
+  806: () => CreateSessionSerializer(),
+  807: () => CloseSessionSerializer(),
+  808: () => SessionSubscriptionSerializer(),
+  809: () => SessionKeepAliveSerializer(),
+  810: () => SessionStatusSerializer(),
+  811: () => PushEntityParametersSerializer(),
+  812: () => PopEntityParametersSerializer(),
+  813: () => IoEventSerializer(),
+  814: () => UamTxFrameSerializer(),
+  815: () => UamRxFrameSerializer(),
+  816: () => UamTxStatusSerializer(),
+  817: () => UamRxRangeSerializer(),
+  820: () => FormCtrlParamSerializer(),
+  821: () => FormationEvalSerializer(),
+  822: () => FormationControlParamsSerializer(),
+  823: () => FormationEvaluationSerializer(),
+  850: () => SoiWaypointSerializer(),
+  851: () => SoiPlanSerializer(),
+  852: () => SoiCommandSerializer(),
+  853: () => SoiStateSerializer(),
+  877: () => MessagePartSerializer(),
+  888: () => NeptusBlobSerializer(),
+  889: () => AbortedSerializer(),
+  890: () => UsblAnglesSerializer(),
+  891: () => UsblPositionSerializer(),
+  892: () => UsblFixSerializer(),
+  893: () => ParametersXmlSerializer(),
+  894: () => GetParametersXmlSerializer(),
+  895: () => SetImageCoordsSerializer(),
+  896: () => GetImageCoordsSerializer(),
+  897: () => GetWorldCoordinatesSerializer(),
+  898: () => UsblAnglesExtendedSerializer(),
+  899: () => UsblPositionExtendedSerializer(),
+  900: () => UsblFixExtendedSerializer(),
+  901: () => UsblModemSerializer(),
+  902: () => UsblConfigSerializer(),
+  903: () => DissolvedOrganicMatterSerializer(),
+  904: () => OpticalBackscatterSerializer(),
+  905: () => TachographSerializer(),
+  906: () => ApmStatusSerializer(),
+  907: () => SadcReadingsSerializer(),
+  908: () => DmsDetectionSerializer(),
+  2006: () => TotalMagIntensitySerializer(),
 };
 
 /// Entity State serializer class
@@ -1897,7 +1901,7 @@ class MsgListSerializer extends imc.ImcSerializer<imc.MsgList, imc.MsgListBuilde
       byteOffset += 2;
       for (int i = 0; i < message.msgs.length; i++) {
         var id = message.msgs[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -1957,8 +1961,8 @@ class MsgListSerializer extends imc.ImcSerializer<imc.MsgList, imc.MsgListBuilde
       var msgsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (msgsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -2550,7 +2554,7 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl, imc.Cac
       byteOffset += 2;
     } else {
       var id = message.message.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -2617,8 +2621,8 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl, imc.Cac
     if (messageSId == imc.ImcId.nullId) {
       builder.message = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -2876,7 +2880,7 @@ class LogBookControlSerializer extends imc.ImcSerializer<imc.LogBookControl, imc
       byteOffset += 2;
       for (int i = 0; i < message.msg.length; i++) {
         var id = message.msg[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -2942,8 +2946,8 @@ class LogBookControlSerializer extends imc.ImcSerializer<imc.LogBookControl, imc
       var msgSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (msgSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -3580,7 +3584,7 @@ class VerticalProfileSerializer extends imc.ImcSerializer<imc.VerticalProfile, i
       byteOffset += 2;
       for (int i = 0; i < message.samples.length; i++) {
         var id = message.samples[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -3652,8 +3656,8 @@ class VerticalProfileSerializer extends imc.ImcSerializer<imc.VerticalProfile, i
       var samplesSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (samplesSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -5531,7 +5535,7 @@ class HistoricDataSerializer extends imc.ImcSerializer<imc.HistoricData, imc.His
       byteOffset += 2;
       for (int i = 0; i < message.data.length; i++) {
         var id = message.data[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -5600,8 +5604,8 @@ class HistoricDataSerializer extends imc.ImcSerializer<imc.HistoricData, imc.His
       var dataSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (dataSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -5765,7 +5769,7 @@ class HistoricSampleSerializer extends imc.ImcSerializer<imc.HistoricSample, imc
       byteOffset += 2;
     } else {
       var id = message.sample.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -5838,8 +5842,8 @@ class HistoricSampleSerializer extends imc.ImcSerializer<imc.HistoricSample, imc
     if (sampleSId == imc.ImcId.nullId) {
       builder.sample = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -5891,7 +5895,7 @@ class HistoricDataQuerySerializer extends imc.ImcSerializer<imc.HistoricDataQuer
       byteOffset += 2;
     } else {
       var id = message.data.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -5955,8 +5959,8 @@ class HistoricDataQuerySerializer extends imc.ImcSerializer<imc.HistoricDataQuer
     if (dataSId == imc.ImcId.nullId) {
       builder.data = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -6008,7 +6012,7 @@ class RemoteCommandSerializer extends imc.ImcSerializer<imc.RemoteCommand, imc.R
       byteOffset += 2;
     } else {
       var id = message.cmd.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -6072,8 +6076,8 @@ class RemoteCommandSerializer extends imc.ImcSerializer<imc.RemoteCommand, imc.R
     if (cmdSId == imc.ImcId.nullId) {
       builder.cmd = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -6582,7 +6586,7 @@ class LblConfigSerializer extends imc.ImcSerializer<imc.LblConfig, imc.LblConfig
       byteOffset += 2;
       for (int i = 0; i < message.beacons.length; i++) {
         var id = message.beacons[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -6645,8 +6649,8 @@ class LblConfigSerializer extends imc.ImcSerializer<imc.LblConfig, imc.LblConfig
       var beaconsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (beaconsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -6690,7 +6694,7 @@ class AcousticMessageSerializer extends imc.ImcSerializer<imc.AcousticMessage, i
       byteOffset += 2;
     } else {
       var id = message.message.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -6745,8 +6749,8 @@ class AcousticMessageSerializer extends imc.ImcSerializer<imc.AcousticMessage, i
     if (messageSId == imc.ImcId.nullId) {
       builder.message = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -6801,7 +6805,7 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
       byteOffset += 2;
     } else {
       var id = message.msg.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -6871,8 +6875,8 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
     if (msgSId == imc.ImcId.nullId) {
       builder.msg = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -8347,7 +8351,7 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
       byteOffset += 2;
       for (int i = 0; i < message.location.length; i++) {
         var id = message.location[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -8368,7 +8372,7 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
       byteOffset += 2;
       for (int i = 0; i < message.beamConfig.length; i++) {
         var id = message.beamConfig[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -8434,8 +8438,8 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
       var locationSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (locationSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[locationSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[locationSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[locationSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[locationSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -8451,8 +8455,8 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
       var beamConfigSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (beamConfigSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -9550,7 +9554,7 @@ class SonarDataSerializer extends imc.ImcSerializer<imc.SonarData, imc.SonarData
       byteOffset += 2;
       for (int i = 0; i < message.beamConfig.length; i++) {
         var id = message.beamConfig[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -9633,8 +9637,8 @@ class SonarDataSerializer extends imc.ImcSerializer<imc.SonarData, imc.SonarData
       var beamConfigSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (beamConfigSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -11220,7 +11224,7 @@ class ExternalNavDataSerializer extends imc.ImcSerializer<imc.ExternalNavData, i
       byteOffset += 2;
     } else {
       var id = message.state.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -11278,8 +11282,8 @@ class ExternalNavDataSerializer extends imc.ImcSerializer<imc.ExternalNavData, i
     if (stateSId == imc.ImcId.nullId) {
       builder.state = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -14180,7 +14184,7 @@ class LblEstimateSerializer extends imc.ImcSerializer<imc.LblEstimate, imc.LblEs
       byteOffset += 2;
     } else {
       var id = message.beacon.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -14250,8 +14254,8 @@ class LblEstimateSerializer extends imc.ImcSerializer<imc.LblEstimate, imc.LblEs
     if (beaconSId == imc.ImcId.nullId) {
       builder.beacon = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -16778,7 +16782,7 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl, i
       byteOffset += 2;
     } else {
       var id = message.control.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -16842,8 +16846,8 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl, i
     if (controlSId == imc.ImcId.nullId) {
       builder.control = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[controlSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[controlSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[controlSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[controlSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -17099,7 +17103,7 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath, imc.FollowP
       byteOffset += 2;
       for (int i = 0; i < message.points.length; i++) {
         var id = message.points[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -17186,8 +17190,8 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath, imc.FollowP
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -17851,7 +17855,7 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory,
       byteOffset += 2;
       for (int i = 0; i < message.points.length; i++) {
         var id = message.points[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -17938,8 +17942,8 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory,
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -18216,7 +18220,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
       byteOffset += 2;
       for (int i = 0; i < message.points.length; i++) {
         var id = message.points[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -18237,7 +18241,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
       byteOffset += 2;
       for (int i = 0; i < message.participants.length; i++) {
         var id = message.participants[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -18324,8 +18328,8 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -18341,8 +18345,8 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
       var participantsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -18999,7 +19003,7 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea, imc.CoverArea
       byteOffset += 2;
       for (int i = 0; i < message.polygon.length; i++) {
         var id = message.polygon[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -19083,8 +19087,8 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea, imc.CoverArea
       var polygonSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (polygonSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -19391,7 +19395,7 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
       byteOffset += 2;
       for (int i = 0; i < message.participants.length; i++) {
         var id = message.participants[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -19469,8 +19473,8 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
       var participantsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -19827,7 +19831,7 @@ class ReferenceSerializer extends imc.ImcSerializer<imc.Reference, imc.Reference
       byteOffset += 2;
     } else {
       var id = message.speed.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -19841,7 +19845,7 @@ class ReferenceSerializer extends imc.ImcSerializer<imc.Reference, imc.Reference
       byteOffset += 2;
     } else {
       var id = message.z.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -19908,8 +19912,8 @@ class ReferenceSerializer extends imc.ImcSerializer<imc.Reference, imc.Reference
     if (speedSId == imc.ImcId.nullId) {
       builder.speed = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -19922,8 +19926,8 @@ class ReferenceSerializer extends imc.ImcSerializer<imc.Reference, imc.Reference
     if (zSId == imc.ImcId.nullId) {
       builder.z = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[zSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[zSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[zSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[zSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -19981,7 +19985,7 @@ class FollowRefStateSerializer extends imc.ImcSerializer<imc.FollowRefState, imc
       byteOffset += 2;
     } else {
       var id = message.reference.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -20048,8 +20052,8 @@ class FollowRefStateSerializer extends imc.ImcSerializer<imc.FollowRefState, imc
     if (referenceSId == imc.ImcId.nullId) {
       builder.reference = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -20156,7 +20160,7 @@ class FormationMonitorSerializer extends imc.ImcSerializer<imc.FormationMonitor,
       byteOffset += 2;
       for (int i = 0; i < message.relState.length; i++) {
         var id = message.relState[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -20270,8 +20274,8 @@ class FormationMonitorSerializer extends imc.ImcSerializer<imc.FormationMonitor,
       var relStateSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (relStateSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -20668,7 +20672,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
       byteOffset += 2;
       for (int i = 0; i < message.participants.length; i++) {
         var id = message.participants[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -20815,8 +20819,8 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
       var participantsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -21975,7 +21979,7 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
       byteOffset += 2;
       for (int i = 0; i < message.areaLimits.length; i++) {
         var id = message.areaLimits[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -22071,8 +22075,8 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
       var areaLimitsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (areaLimitsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -22843,7 +22847,7 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand, imc
       byteOffset += 2;
     } else {
       var id = message.maneuver.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -22916,8 +22920,8 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand, imc
     if (maneuverSId == imc.ImcId.nullId) {
       builder.maneuver = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -24330,7 +24334,7 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
       byteOffset += 2;
     } else {
       var id = message.msgData.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -24417,8 +24421,8 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     if (msgDataSId == imc.ImcId.nullId) {
       builder.msgData = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -25034,7 +25038,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       byteOffset += 2;
       for (int i = 0; i < message.variables.length; i++) {
         var id = message.variables[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25061,7 +25065,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       byteOffset += 2;
       for (int i = 0; i < message.maneuvers.length; i++) {
         var id = message.maneuvers[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25082,7 +25086,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       byteOffset += 2;
       for (int i = 0; i < message.transitions.length; i++) {
         var id = message.transitions[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25103,7 +25107,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       byteOffset += 2;
       for (int i = 0; i < message.startActions.length; i++) {
         var id = message.startActions[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25124,7 +25128,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       byteOffset += 2;
       for (int i = 0; i < message.endActions.length; i++) {
         var id = message.endActions[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25211,8 +25215,8 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var variablesSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (variablesSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25237,8 +25241,8 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var maneuversSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (maneuversSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25254,8 +25258,8 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var transitionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (transitionsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[transitionsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[transitionsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[transitionsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[transitionsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25271,8 +25275,8 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var startActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (startActionsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25288,8 +25292,8 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var endActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (endActionsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25339,7 +25343,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
       byteOffset += 2;
     } else {
       var id = message.data.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -25357,7 +25361,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
       byteOffset += 2;
       for (int i = 0; i < message.startActions.length; i++) {
         var id = message.startActions[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25378,7 +25382,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
       byteOffset += 2;
       for (int i = 0; i < message.endActions.length; i++) {
         var id = message.endActions[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25445,8 +25449,8 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
     if (dataSId == imc.ImcId.nullId) {
       builder.data = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -25461,8 +25465,8 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
       var startActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (startActionsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25478,8 +25482,8 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
       var endActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (endActionsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25545,7 +25549,7 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
       byteOffset += 2;
       for (int i = 0; i < message.actions.length; i++) {
         var id = message.actions[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -25632,8 +25636,8 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
       var actionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (actionsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -25680,7 +25684,7 @@ class EmergencyControlSerializer extends imc.ImcSerializer<imc.EmergencyControl,
       byteOffset += 2;
     } else {
       var id = message.plan.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -25738,8 +25742,8 @@ class EmergencyControlSerializer extends imc.ImcSerializer<imc.EmergencyControl,
     if (planSId == imc.ImcId.nullId) {
       builder.plan = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -25895,7 +25899,7 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> 
       byteOffset += 2;
     } else {
       var id = message.arg.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -25974,8 +25978,8 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> 
     if (argSId == imc.ImcId.nullId) {
       builder.arg = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -26054,7 +26058,7 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState, imc.PlanD
       byteOffset += 2;
       for (int i = 0; i < message.plansInfo.length; i++) {
         var id = message.plansInfo[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -26143,8 +26147,8 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState, imc.PlanD
       var plansInfoSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (plansInfoSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -26338,7 +26342,7 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl, imc.PlanC
       byteOffset += 2;
     } else {
       var id = message.arg.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -26420,8 +26424,8 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl, imc.PlanC
     if (argSId == imc.ImcId.nullId) {
       builder.arg = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -27478,7 +27482,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
       byteOffset += 2;
       for (int i = 0; i < message.features.length; i++) {
         var id = message.features[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -27547,8 +27551,8 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
       var featuresSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (featuresSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -27614,7 +27618,7 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature, imc.MapFeat
       byteOffset += 2;
       for (int i = 0; i < message.feature.length; i++) {
         var id = message.feature[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -27695,8 +27699,8 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature, imc.MapFeat
       var featureSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (featureSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[featureSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[featureSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[featureSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[featureSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -27838,7 +27842,7 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBui
       byteOffset += 2;
     } else {
       var id = message.arg.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -27905,8 +27909,8 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBui
     if (argSId == imc.ImcId.nullId) {
       builder.arg = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -27959,7 +27963,7 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks, imc.Veh
       byteOffset += 2;
       for (int i = 0; i < message.links.length; i++) {
         var id = message.links[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -28028,8 +28032,8 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks, imc.Veh
       var linksSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (linksSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[linksSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[linksSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[linksSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[linksSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -28305,7 +28309,7 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation, imc.T
       byteOffset += 2;
     } else {
       var id = message.token.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -28372,8 +28376,8 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation, imc.T
     if (tokenSId == imc.ImcId.nullId) {
       builder.token = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -28554,7 +28558,7 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken, imc.TrexToken
       byteOffset += 2;
       for (int i = 0; i < message.attributes.length; i++) {
         var id = message.attributes[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -28632,8 +28636,8 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken, imc.TrexToken
       var attributesSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (attributesSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -28687,7 +28691,7 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBui
       byteOffset += 2;
       for (int i = 0; i < message.tokens.length; i++) {
         var id = message.tokens[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -28756,8 +28760,8 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBui
       var tokensSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (tokensSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -29421,7 +29425,7 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters,
       byteOffset += 2;
       for (int i = 0; i < message.params.length; i++) {
         var id = message.params[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -29490,8 +29494,8 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters,
       var paramsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (paramsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -29661,7 +29665,7 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
       byteOffset += 2;
       for (int i = 0; i < message.params.length; i++) {
         var id = message.params[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -29730,8 +29734,8 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
       var paramsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (paramsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -31312,7 +31316,7 @@ class FormationEvaluationSerializer extends imc.ImcSerializer<imc.FormationEvalu
       byteOffset += 2;
     } else {
       var id = message.controlParams.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -31388,8 +31392,8 @@ class FormationEvaluationSerializer extends imc.ImcSerializer<imc.FormationEvalu
     if (controlParamsSId == imc.ImcId.nullId) {
       builder.controlParams = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -31534,7 +31538,7 @@ class SoiPlanSerializer extends imc.ImcSerializer<imc.SoiPlan, imc.SoiPlanBuilde
       byteOffset += 2;
       for (int i = 0; i < message.waypoints.length; i++) {
         var id = message.waypoints[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -31597,8 +31601,8 @@ class SoiPlanSerializer extends imc.ImcSerializer<imc.SoiPlan, imc.SoiPlanBuilde
       var waypointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (waypointsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
@@ -31654,7 +31658,7 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand, imc.SoiComm
       byteOffset += 2;
     } else {
       var id = message.plan.msgId;
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId];
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();
       if (pMsgSerializer != null) {
         byteData.setUint16(byteOffset, id, imc.endian_ser);
         byteOffset += 2;
@@ -31730,8 +31734,8 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand, imc.SoiComm
     if (planSId == imc.ImcId.nullId) {
       builder.plan = null;
     } else {
-      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId];
+      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
         byteOffset += mPSize;
@@ -33403,7 +33407,7 @@ class UsblConfigSerializer extends imc.ImcSerializer<imc.UsblConfig, imc.UsblCon
       byteOffset += 2;
       for (int i = 0; i < message.modems.length; i++) {
         var id = message.modems[i]?.msgId;
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId];
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
@@ -33466,8 +33470,8 @@ class UsblConfigSerializer extends imc.ImcSerializer<imc.UsblConfig, imc.UsblCon
       var modemsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (modemsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId]?.newInstance(builder);
-        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId];
+        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId]?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;

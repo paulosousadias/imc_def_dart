@@ -32,7 +32,7 @@ void main() {
     var globalSW = Stopwatch();
     globalSW.start();
     imc.messagesBuilders.values.forEach((b) {
-      var msg = b.build() as imc.ImcMessage;
+      var msg = b().build() as imc.ImcMessage;
       print(msg?.toString());
       expect(msg != null, true);
     });
@@ -50,12 +50,13 @@ void main() {
     var globalSW = Stopwatch();
     globalSW.start();
 
-    imc.messagesBuilders.forEach((n, b) {
+    imc.messagesBuilders.forEach((n, bf) {
+      var b = bf();
       (b as imc.ImcBuilderHeaderPart)
         ..src = 0x4001
         ..timestamp = DateTime.utc(1970);
       var msg = b.build() as imc.ImcMessage;
-      var ser = imc.messagesSerializers[n];
+      var ser = imc.messagesSerializers[n]();
       var dataSer = ser.serialize(msg);
       var bufferSer = dataSer.buffer;
       var serData =
