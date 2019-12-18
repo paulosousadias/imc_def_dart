@@ -1,5 +1,5 @@
 // Copyright (c) 2019, Paulo Sousa Dias. Please see the AUTHORS file for details.
-// All rights reserved. Use of this source code is governed by a BSD-style 
+// All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 import 'dart:typed_data';
@@ -35,16 +35,20 @@ const crc_table = <int>[ 0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280,
 abstract class ImcSerializer<M extends Message, B> {
   /// Call to serialize the all message, returns a [ByteData] with a serialized message
   ByteData serialize(M message);
+
   /// Call to serialize only the payload, no header,
   /// returns a [int] with a serialized size
   int serializePayload(M message, ByteData byteData, int offset);
+
   /// Call to deserialize the all message
   M deserialize(Uint8List data);
+
   /// Call to deserialize only the payload, no header.
   /// The [Builder] is to allow passing the
   /// message to build into.
   /// returns a [int] with a serialized size
-  int deserializePayload(B builder, ByteData data, Endian endianness, int offset);
+  int deserializePayload(
+      B builder, ByteData data, Endian endianness, int offset);
 }
 
 // Future<void> writeToFile(ByteData data, String path) {
@@ -55,13 +59,14 @@ abstract class ImcSerializer<M extends Message, B> {
 
 int getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
   var endianness = getEndianness(data, offset);
-  if (endianness == null)
-    return null;  
+  if (endianness == null) return null;
   var msgId = data.getUint16(offset + 2, endianness);
   return msgId;
 }
 
-int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian endianness, [int headerStartoffset = 0]) {
+int deserializeHeader(
+    ImcBuilderHeaderPart builder, ByteData byteData, Endian endianness,
+    [int headerStartoffset = 0]) {
   try {
     var byteOffset = headerStartoffset + 2 + 2;
 
@@ -79,12 +84,14 @@ int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian en
     byteOffset += 1;
 
     builder
-        ..timestamp = DateTime.fromMillisecondsSinceEpoch((timeSeconds * 1E3).toInt(), isUtc: true)
-        ..src = src
-        ..srcEnt = srcEnt
-        ..dst = dst
-        ..dstEnt = dstEnt;
-    
+      ..timestamp = DateTime.fromMillisecondsSinceEpoch(
+          (timeSeconds * 1E3).toInt(),
+          isUtc: true)
+      ..src = src
+      ..srcEnt = srcEnt
+      ..dst = dst
+      ..dstEnt = dstEnt;
+
     return payloadSize;
   } catch (e) {
     return null;
@@ -93,10 +100,8 @@ int deserializeHeader(ImcBuilderHeaderPart builder, ByteData byteData, Endian en
 
 Endian getEndianness(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
-  if (syncBE == SYNC_NUMBER)
-    return Endian.big;
-  if (syncBE == SYNC_NUMBER_REVERSED)
-    return Endian.little;
+  if (syncBE == SYNC_NUMBER) return Endian.big;
+  if (syncBE == SYNC_NUMBER_REVERSED) return Endian.little;
   return null;
 }
 
@@ -113,7 +118,8 @@ int serializeHeader(ImcMessage message, ByteData byteData) {
   byteOffset += 2;
   byteData.setUint16(byteOffset, 0, endian_ser); // Temp size
   byteOffset += 2;
-  byteData.setFloat64(byteOffset, message.timestamp.millisecondsSinceEpoch /1E3, endian_ser);
+  byteData.setFloat64(
+      byteOffset, message.timestamp.millisecondsSinceEpoch / 1E3, endian_ser);
   byteOffset += 8;
   byteData.setUint16(byteOffset, message.src, endian_ser);
   byteOffset += 2;
