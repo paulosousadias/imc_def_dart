@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.0] - 18 Dec 2019
+
+* Changing generated messagesBuilders, messagesSerializers, and
+  messagesIdsSerializers to be a function that creates a new instance on call.
+  (BREAKING CHANGE)
+
 ## [0.6.5] - 15 Nov 2019
 
 * Adding factory methods to the messages.
