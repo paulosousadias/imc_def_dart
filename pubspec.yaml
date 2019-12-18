@@ -3,7 +3,6 @@ description: 'This package is a Dart package for IMC messages manipulation.
 IMC is an open source message protocol specification from 
 UPorto-FEUP-LSTS (https://github.com/LSTS/imc).'
 version: 0.7.0
-author: Paulo Sousa Dias <pdias@lsts.pt>
 homepage: https://github.com/paulosousadias/imc_def_dart
 repository: https://github.com/paulosousadias/imc_def_dart
 
