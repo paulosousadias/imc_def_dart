@@ -14,15 +14,20 @@ class EntityStateEnumState extends EnumType {
   static const esta_error = const EntityStateEnumState(3);
   static const esta_failure = const EntityStateEnumState(4);
 
-  static get values => [esta_boot, esta_normal, 
-        esta_fault, esta_error, esta_failure];
+  static get values => [
+        esta_boot,
+        esta_normal,
+        esta_fault,
+        esta_error,
+        esta_failure,
+      ];
 
   static get names => {
-        esta_boot: '''Bootstrapping''', 
-        esta_normal: '''Normal Operation''', 
-        esta_fault: '''Fault''', 
-        esta_error: '''Error''', 
-        esta_failure: '''Failure'''
+        esta_boot: '''Bootstrapping''',
+        esta_normal: '''Normal Operation''',
+        esta_fault: '''Fault''',
+        esta_error: '''Error''',
+        esta_failure: '''Failure''',
       };
 
   const EntityStateEnumState(int value) : super(value);
@@ -30,8 +35,7 @@ class EntityStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -40,11 +44,11 @@ class EntityStateEnumState extends EnumType {
 class EntityStateBitfieldFlags extends BitfieldType {
   static const efla_human_intervention = const EntityStateBitfieldFlags(0x01);
 
-  static get values => [efla_human_intervention];
+  static get values => [
+        efla_human_intervention];
 
   static get names => {
-        efla_human_intervention: '''Human Intervention Required'''
-      };
+        efla_human_intervention: '''Human Intervention Required'''};
 
   const EntityStateBitfieldFlags(int value) : super(value);
 
@@ -80,11 +84,14 @@ class EntityListEnumOp extends EnumType {
   static const op_report = const EntityListEnumOp(0);
   static const op_query = const EntityListEnumOp(1);
 
-  static get values => [op_report, op_query];
+  static get values => [
+        op_report,
+        op_query,
+      ];
 
   static get names => {
-        op_report: '''Report''', 
-        op_query: '''Query'''
+        op_report: '''Report''',
+        op_query: '''Query''',
       };
 
   const EntityListEnumOp(int value) : super(value);
@@ -92,8 +99,7 @@ class EntityListEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -104,11 +110,14 @@ class RestartSystemEnumType extends EnumType {
   /// Request a system restart.
   static const rstype_system = const RestartSystemEnumType(2);
 
-  static get values => [rstype_dune, rstype_system];
+  static get values => [
+        rstype_dune,
+        rstype_system,
+      ];
 
   static get names => {
-        rstype_dune: '''Dune''', 
-        rstype_system: '''System'''
+        rstype_dune: '''Dune''',
+        rstype_system: '''System''',
       };
 
   const RestartSystemEnumType(int value) : super(value);
@@ -116,8 +125,7 @@ class RestartSystemEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -133,14 +141,18 @@ class DevCalibrationControlEnumOp extends EnumType {
   /// Perform previous step of the calibration procedure.
   static const dcal_step_previous = const DevCalibrationControlEnumOp(3);
 
-  static get values => [dcal_start, dcal_stop, 
-        dcal_step_next, dcal_step_previous];
+  static get values => [
+        dcal_start,
+        dcal_stop,
+        dcal_step_next,
+        dcal_step_previous,
+      ];
 
   static get names => {
-        dcal_start: '''Start''', 
-        dcal_stop: '''Stop''', 
-        dcal_step_next: '''Perform Next Calibration Step''', 
-        dcal_step_previous: '''Perform Previous Calibration Step'''
+        dcal_start: '''Start''',
+        dcal_stop: '''Stop''',
+        dcal_step_next: '''Perform Next Calibration Step''',
+        dcal_step_previous: '''Perform Previous Calibration Step''',
       };
 
   const DevCalibrationControlEnumOp(int value) : super(value);
@@ -148,8 +160,7 @@ class DevCalibrationControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -170,15 +181,20 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
   /// The calibration procedure was completed.
   static const dcs_completed = const DevCalibrationStateBitfieldFlags(0x10);
 
-  static get values => [dcs_previous_not_supported, dcs_next_not_supported, 
-        dcs_waiting_control, dcs_error, dcs_completed];
+  static get values => [
+        dcs_previous_not_supported,
+        dcs_next_not_supported,
+        dcs_waiting_control,
+        dcs_error,
+        dcs_completed,
+      ];
 
   static get names => {
-        dcs_previous_not_supported: '''Previous Step Not Supported''', 
-        dcs_next_not_supported: '''Next Step Not Supported''', 
-        dcs_waiting_control: '''Waiting Device Calibration Control''', 
-        dcs_error: '''Calibration Error''', 
-        dcs_completed: '''Calibration Procedure Completed'''
+        dcs_previous_not_supported: '''Previous Step Not Supported''',
+        dcs_next_not_supported: '''Next Step Not Supported''',
+        dcs_waiting_control: '''Waiting Device Calibration Control''',
+        dcs_error: '''Calibration Error''',
+        dcs_completed: '''Calibration Procedure Completed''',
       };
 
   const DevCalibrationStateBitfieldFlags(int value) : super(value);
@@ -229,19 +245,26 @@ class EntityActivationStateEnumState extends EnumType {
   /// The deactivation procedure failed and the field 'error' contains the error message.
   static const eas_deact_fail = const EntityActivationStateEnumState(7);
 
-  static get values => [eas_inactive, eas_active, 
-        eas_act_ip, eas_act_done, eas_act_fail, eas_deact_ip, eas_deact_done, 
-        eas_deact_fail];
+  static get values => [
+        eas_inactive,
+        eas_active,
+        eas_act_ip,
+        eas_act_done,
+        eas_act_fail,
+        eas_deact_ip,
+        eas_deact_done,
+        eas_deact_fail,
+      ];
 
   static get names => {
-        eas_inactive: '''Entity is Inactive''', 
-        eas_active: '''Entity is Active''', 
-        eas_act_ip: '''Activation in Progress''', 
-        eas_act_done: '''Activation Completed''', 
-        eas_act_fail: '''Activation Failed''', 
-        eas_deact_ip: '''Deactivation In Progress''', 
-        eas_deact_done: '''Deactivation Completed''', 
-        eas_deact_fail: '''Deactivation Failed'''
+        eas_inactive: '''Entity is Inactive''',
+        eas_active: '''Entity is Active''',
+        eas_act_ip: '''Activation in Progress''',
+        eas_act_done: '''Activation Completed''',
+        eas_act_fail: '''Activation Failed''',
+        eas_deact_ip: '''Deactivation In Progress''',
+        eas_deact_done: '''Deactivation Completed''',
+        eas_deact_fail: '''Deactivation Failed''',
       };
 
   const EntityActivationStateEnumState(int value) : super(value);
@@ -249,8 +272,7 @@ class EntityActivationStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -261,13 +283,16 @@ class VehicleOperationalLimitsEnumOp extends EnumType {
   static const op_set = const VehicleOperationalLimitsEnumOp(1);
   static const op_report = const VehicleOperationalLimitsEnumOp(2);
 
-  static get values => [op_request, op_set, 
-        op_report];
+  static get values => [
+        op_request,
+        op_set,
+        op_report,
+      ];
 
   static get names => {
-        op_request: '''Request''', 
-        op_set: '''Set''', 
-        op_report: '''Report'''
+        op_request: '''Request''',
+        op_set: '''Set''',
+        op_report: '''Report''',
       };
 
   const VehicleOperationalLimitsEnumOp(int value) : super(value);
@@ -275,8 +300,7 @@ class VehicleOperationalLimitsEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -286,11 +310,14 @@ class LeakSimulationEnumOp extends EnumType {
   static const lsim_off = const LeakSimulationEnumOp(0);
   static const lsim_on = const LeakSimulationEnumOp(1);
 
-  static get values => [lsim_off, lsim_on];
+  static get values => [
+        lsim_off,
+        lsim_on,
+      ];
 
   static get names => {
-        lsim_off: '''Leaks Off''', 
-        lsim_on: '''Leaks On'''
+        lsim_off: '''Leaks Off''',
+        lsim_on: '''Leaks On''',
       };
 
   const LeakSimulationEnumOp(int value) : super(value);
@@ -298,8 +325,7 @@ class LeakSimulationEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -310,13 +336,16 @@ class UASimulationEnumType extends EnumType {
   static const uas_ping = const UASimulationEnumType(1);
   static const uas_ping_reply = const UASimulationEnumType(2);
 
-  static get values => [uas_data, uas_ping, 
-        uas_ping_reply];
+  static get values => [
+        uas_data,
+        uas_ping,
+        uas_ping_reply,
+      ];
 
   static get names => {
-        uas_data: '''Data Transmission''', 
-        uas_ping: '''Ping''', 
-        uas_ping_reply: '''Ping Reply'''
+        uas_data: '''Data Transmission''',
+        uas_ping: '''Ping''',
+        uas_ping_reply: '''Ping Reply''',
       };
 
   const UASimulationEnumType(int value) : super(value);
@@ -324,8 +353,7 @@ class UASimulationEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -336,13 +364,16 @@ class DynamicsSimParamEnumOp extends EnumType {
   static const op_set = const DynamicsSimParamEnumOp(1);
   static const op_report = const DynamicsSimParamEnumOp(2);
 
-  static get values => [op_request, op_set, 
-        op_report];
+  static get values => [
+        op_request,
+        op_set,
+        op_report,
+      ];
 
   static get names => {
-        op_request: '''Request''', 
-        op_set: '''Set''', 
-        op_report: '''Report'''
+        op_request: '''Request''',
+        op_set: '''Set''',
+        op_report: '''Report''',
       };
 
   const DynamicsSimParamEnumOp(int value) : super(value);
@@ -350,8 +381,7 @@ class DynamicsSimParamEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -364,15 +394,20 @@ class CacheControlEnumOp extends EnumType {
   static const cop_copy = const CacheControlEnumOp(3);
   static const cop_copy_complete = const CacheControlEnumOp(4);
 
-  static get values => [cop_store, cop_load, 
-        cop_clear, cop_copy, cop_copy_complete];
+  static get values => [
+        cop_store,
+        cop_load,
+        cop_clear,
+        cop_copy,
+        cop_copy_complete,
+      ];
 
   static get names => {
-        cop_store: '''Store''', 
-        cop_load: '''Load''', 
-        cop_clear: '''Clear''', 
-        cop_copy: '''Copy Snapshot''', 
-        cop_copy_complete: '''Snapshot Copy Complete'''
+        cop_store: '''Store''',
+        cop_load: '''Load''',
+        cop_clear: '''Clear''',
+        cop_copy: '''Copy Snapshot''',
+        cop_copy_complete: '''Snapshot Copy Complete''',
       };
 
   const CacheControlEnumOp(int value) : super(value);
@@ -380,8 +415,7 @@ class CacheControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -421,16 +455,22 @@ class LoggingControlEnumOp extends EnumType {
   /// 'name' contains the complete name of the log.
   static const cop_current_name = const LoggingControlEnumOp(5);
 
-  static get values => [cop_request_start, cop_started, 
-        cop_request_stop, cop_stopped, cop_request_current_name, cop_current_name];
+  static get values => [
+        cop_request_start,
+        cop_started,
+        cop_request_stop,
+        cop_stopped,
+        cop_request_current_name,
+        cop_current_name,
+      ];
 
   static get names => {
-        cop_request_start: '''Request Start of Logging''', 
-        cop_started: '''Logging Started''', 
-        cop_request_stop: '''Request Logging Stop''', 
-        cop_stopped: '''Logging Stopped''', 
-        cop_request_current_name: '''Request Current Log Name''', 
-        cop_current_name: '''Current Log Name'''
+        cop_request_start: '''Request Start of Logging''',
+        cop_started: '''Logging Started''',
+        cop_request_stop: '''Request Logging Stop''',
+        cop_stopped: '''Logging Stopped''',
+        cop_request_current_name: '''Request Current Log Name''',
+        cop_current_name: '''Current Log Name''',
       };
 
   const LoggingControlEnumOp(int value) : super(value);
@@ -438,8 +478,7 @@ class LoggingControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -452,15 +491,20 @@ class LogBookEntryEnumType extends EnumType {
   static const lbet_critical = const LogBookEntryEnumType(3);
   static const lbet_debug = const LogBookEntryEnumType(4);
 
-  static get values => [lbet_info, lbet_warning, 
-        lbet_error, lbet_critical, lbet_debug];
+  static get values => [
+        lbet_info,
+        lbet_warning,
+        lbet_error,
+        lbet_critical,
+        lbet_debug,
+      ];
 
   static get names => {
-        lbet_info: '''Information''', 
-        lbet_warning: '''Warning''', 
-        lbet_error: '''Error''', 
-        lbet_critical: '''Critical''', 
-        lbet_debug: '''Debug'''
+        lbet_info: '''Information''',
+        lbet_warning: '''Warning''',
+        lbet_error: '''Error''',
+        lbet_critical: '''Critical''',
+        lbet_debug: '''Debug''',
       };
 
   const LogBookEntryEnumType(int value) : super(value);
@@ -468,8 +512,7 @@ class LogBookEntryEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -486,14 +529,18 @@ class LogBookControlEnumCommand extends EnumType {
   /// instance containing LogBookEntry messages.
   static const lbc_reply = const LogBookControlEnumCommand(3);
 
-  static get values => [lbc_get, lbc_clear, 
-        lbc_get_err, lbc_reply];
+  static get values => [
+        lbc_get,
+        lbc_clear,
+        lbc_get_err,
+        lbc_reply,
+      ];
 
   static get names => {
-        lbc_get: '''Get''', 
-        lbc_clear: '''Clear''', 
-        lbc_get_err: '''Get Errors''', 
-        lbc_reply: '''Reply'''
+        lbc_get: '''Get''',
+        lbc_clear: '''Clear''',
+        lbc_get_err: '''Get Errors''',
+        lbc_reply: '''Reply''',
       };
 
   const LogBookControlEnumCommand(int value) : super(value);
@@ -501,8 +548,7 @@ class LogBookControlEnumCommand extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -514,14 +560,18 @@ class ReplayControlEnumOp extends EnumType {
   static const rop_pause = const ReplayControlEnumOp(2);
   static const rop_resume = const ReplayControlEnumOp(3);
 
-  static get values => [rop_start, rop_stop, 
-        rop_pause, rop_resume];
+  static get values => [
+        rop_start,
+        rop_stop,
+        rop_pause,
+        rop_resume,
+      ];
 
   static get names => {
-        rop_start: '''Start''', 
-        rop_stop: '''Stop''', 
-        rop_pause: '''Pause''', 
-        rop_resume: '''Resume'''
+        rop_start: '''Start''',
+        rop_stop: '''Stop''',
+        rop_pause: '''Pause''',
+        rop_resume: '''Resume''',
       };
 
   const ReplayControlEnumOp(int value) : super(value);
@@ -529,8 +579,7 @@ class ReplayControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -550,16 +599,22 @@ class ClockControlEnumOp extends EnumType {
   /// Notification due to timezone modification.
   static const cop_set_tz_done = const ClockControlEnumOp(5);
 
-  static get values => [cop_sync_exec, cop_sync_request, 
-        cop_sync_started, cop_sync_done, cop_set_tz, cop_set_tz_done];
+  static get values => [
+        cop_sync_exec,
+        cop_sync_request,
+        cop_sync_started,
+        cop_sync_done,
+        cop_set_tz,
+        cop_set_tz_done,
+      ];
 
   static get names => {
-        cop_sync_exec: '''Execute Sync.''', 
-        cop_sync_request: '''Request Sync.''', 
-        cop_sync_started: '''Sync. Started''', 
-        cop_sync_done: '''Sync. done''', 
-        cop_set_tz: '''Set Timezone ''', 
-        cop_set_tz_done: '''Timezone Setup'''
+        cop_sync_exec: '''Execute Sync.''',
+        cop_sync_request: '''Request Sync.''',
+        cop_sync_started: '''Sync. Started''',
+        cop_sync_done: '''Sync. done''',
+        cop_set_tz: '''Set Timezone ''',
+        cop_set_tz_done: '''Timezone Setup''',
       };
 
   const ClockControlEnumOp(int value) : super(value);
@@ -567,8 +622,7 @@ class ClockControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -578,13 +632,16 @@ class HistoricSonarDataEnumEncoding extends EnumType {
   static const enc_png = const HistoricSonarDataEnumEncoding(1);
   static const enc_jpeg = const HistoricSonarDataEnumEncoding(2);
 
-  static get values => [enc_one_byte_per_pixel, enc_png, 
-        enc_jpeg];
+  static get values => [
+        enc_one_byte_per_pixel,
+        enc_png,
+        enc_jpeg,
+      ];
 
   static get names => {
-        enc_one_byte_per_pixel: '''One Byte Per Pixel''', 
-        enc_png: '''PNG compressed image''', 
-        enc_jpeg: '''JPEG compressed image'''
+        enc_one_byte_per_pixel: '''One Byte Per Pixel''',
+        enc_png: '''PNG compressed image''',
+        enc_jpeg: '''JPEG compressed image''',
       };
 
   const HistoricSonarDataEnumEncoding(int value) : super(value);
@@ -592,8 +649,7 @@ class HistoricSonarDataEnumEncoding extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -603,11 +659,14 @@ class HistoricEventEnumType extends EnumType {
   static const evtype_info = const HistoricEventEnumType(0);
   static const evtype_error = const HistoricEventEnumType(1);
 
-  static get values => [evtype_info, evtype_error];
+  static get values => [
+        evtype_info,
+        evtype_error,
+      ];
 
   static get names => {
-        evtype_info: '''Information''', 
-        evtype_error: '''Error'''
+        evtype_info: '''Information''',
+        evtype_error: '''Error''',
       };
 
   const HistoricEventEnumType(int value) : super(value);
@@ -615,8 +674,7 @@ class HistoricEventEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -631,17 +689,24 @@ class VerticalProfileEnumParameter extends EnumType {
   static const prof_chlorophyll = const VerticalProfileEnumParameter(5);
   static const prof_turbidity = const VerticalProfileEnumParameter(6);
 
-  static get values => [prof_temperature, prof_salinity, 
-        prof_conductivity, prof_ph, prof_redox, prof_chlorophyll, prof_turbidity];
+  static get values => [
+        prof_temperature,
+        prof_salinity,
+        prof_conductivity,
+        prof_ph,
+        prof_redox,
+        prof_chlorophyll,
+        prof_turbidity,
+      ];
 
   static get names => {
-        prof_temperature: '''Temperature''', 
-        prof_salinity: '''Salinity''', 
-        prof_conductivity: '''Conductivity''', 
-        prof_ph: '''pH''', 
-        prof_redox: '''Redox''', 
-        prof_chlorophyll: '''Chlorophyll''', 
-        prof_turbidity: '''Turbidity'''
+        prof_temperature: '''Temperature''',
+        prof_salinity: '''Salinity''',
+        prof_conductivity: '''Conductivity''',
+        prof_ph: '''pH''',
+        prof_redox: '''Redox''',
+        prof_chlorophyll: '''Chlorophyll''',
+        prof_turbidity: '''Turbidity''',
       };
 
   const VerticalProfileEnumParameter(int value) : super(value);
@@ -649,8 +714,7 @@ class VerticalProfileEnumParameter extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -661,11 +725,14 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
   static const srv_type_external = const AnnounceServiceBitfieldServiceType(0x01);
   static const srv_type_local = const AnnounceServiceBitfieldServiceType(0x02);
 
-  static get values => [srv_type_external, srv_type_local];
+  static get values => [
+        srv_type_external,
+        srv_type_local,
+      ];
 
   static get names => {
-        srv_type_external: '''External''', 
-        srv_type_local: '''Local'''
+        srv_type_external: '''External''',
+        srv_type_local: '''Local''',
       };
 
   const AnnounceServiceBitfieldServiceType(int value) : super(value);
@@ -707,17 +774,24 @@ class SmsStateEnumState extends EnumType {
   static const sms_transmitting = const SmsStateEnumState(5);
   static const sms_receiving = const SmsStateEnumState(6);
 
-  static get values => [sms_accepted, sms_rejected, 
-        sms_interrupted, sms_completed, sms_idle, sms_transmitting, sms_receiving];
+  static get values => [
+        sms_accepted,
+        sms_rejected,
+        sms_interrupted,
+        sms_completed,
+        sms_idle,
+        sms_transmitting,
+        sms_receiving,
+      ];
 
   static get names => {
-        sms_accepted: '''Accepted''', 
-        sms_rejected: '''Rejected''', 
-        sms_interrupted: '''Interrupted''', 
-        sms_completed: '''Completed''', 
-        sms_idle: '''Idle''', 
-        sms_transmitting: '''Transmitting''', 
-        sms_receiving: '''Receiving'''
+        sms_accepted: '''Accepted''',
+        sms_rejected: '''Rejected''',
+        sms_interrupted: '''Interrupted''',
+        sms_completed: '''Completed''',
+        sms_idle: '''Idle''',
+        sms_transmitting: '''Transmitting''',
+        sms_receiving: '''Receiving''',
       };
 
   const SmsStateEnumState(int value) : super(value);
@@ -725,8 +799,7 @@ class SmsStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -739,16 +812,22 @@ class IridiumTxStatusEnumStatus extends EnumType {
   static const txstatus_expired = const IridiumTxStatusEnumStatus(5);
   static const txstatus_empty = const IridiumTxStatusEnumStatus(6);
 
-  static get values => [txstatus_ok, txstatus_error, 
-        txstatus_queued, txstatus_transmit, txstatus_expired, txstatus_empty];
+  static get values => [
+        txstatus_ok,
+        txstatus_error,
+        txstatus_queued,
+        txstatus_transmit,
+        txstatus_expired,
+        txstatus_empty,
+      ];
 
   static get names => {
-        txstatus_ok: '''Successfull transmission''', 
-        txstatus_error: '''Error while trying to transmit message''', 
-        txstatus_queued: '''Message has been queued for transmission''', 
-        txstatus_transmit: '''Message is currently being transmitted''', 
-        txstatus_expired: '''Message's TTL has expired. Transmition cancelled.''', 
-        txstatus_empty: '''No more messages to be transmitted or received.'''
+        txstatus_ok: '''Successfull transmission''',
+        txstatus_error: '''Error while trying to transmit message''',
+        txstatus_queued: '''Message has been queued for transmission''',
+        txstatus_transmit: '''Message is currently being transmitted''',
+        txstatus_expired: '''Message's TTL has expired. Transmition cancelled.''',
+        txstatus_empty: '''No more messages to be transmitted or received.''',
       };
 
   const IridiumTxStatusEnumStatus(int value) : super(value);
@@ -756,8 +835,7 @@ class IridiumTxStatusEnumStatus extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -771,16 +849,22 @@ class SystemGroupEnumAction extends EnumType {
   static const op_rep = const SystemGroupEnumAction(4);
   static const op_frc = const SystemGroupEnumAction(5);
 
-  static get values => [op_dis, op_set, 
-        op_req, op_chg, op_rep, op_frc];
+  static get values => [
+        op_dis,
+        op_set,
+        op_req,
+        op_chg,
+        op_rep,
+        op_frc,
+      ];
 
   static get names => {
-        op_dis: '''Disband''', 
-        op_set: '''Set''', 
-        op_req: '''Request''', 
-        op_chg: '''Change''', 
-        op_rep: '''Report''', 
-        op_frc: '''Force'''
+        op_dis: '''Disband''',
+        op_set: '''Set''',
+        op_req: '''Request''',
+        op_chg: '''Change''',
+        op_rep: '''Report''',
+        op_frc: '''Force''',
       };
 
   const SystemGroupEnumAction(int value) : super(value);
@@ -788,8 +872,7 @@ class SystemGroupEnumAction extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -802,13 +885,16 @@ class HistoricDataQueryEnumType extends EnumType {
   /// Clear 'data' from the Data Store
   static const hrtype_clear = const HistoricDataQueryEnumType(3);
 
-  static get values => [hrtype_query, hrtype_reply, 
-        hrtype_clear];
+  static get values => [
+        hrtype_query,
+        hrtype_reply,
+        hrtype_clear,
+      ];
 
   static get names => {
-        hrtype_query: '''Query''', 
-        hrtype_reply: '''Reply''', 
-        hrtype_clear: '''Clear'''
+        hrtype_query: '''Query''',
+        hrtype_reply: '''Reply''',
+        hrtype_clear: '''Clear''',
       };
 
   const HistoricDataQueryEnumType(int value) : super(value);
@@ -816,8 +902,7 @@ class HistoricDataQueryEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -828,11 +913,14 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
   /// Reply systems about communication capability
   static const ciq_reply = const CommSystemsQueryBitfieldType(0x02);
 
-  static get values => [ciq_query, ciq_reply];
+  static get values => [
+        ciq_query,
+        ciq_reply,
+      ];
 
   static get names => {
-        ciq_query: '''Query Systems''', 
-        ciq_reply: '''Reply'''
+        ciq_query: '''Query Systems''',
+        ciq_reply: '''Reply''',
       };
 
   const CommSystemsQueryBitfieldType(int value) : super(value);
@@ -877,15 +965,20 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
   /// Use Radio telemetry
   static const ciq_radio = const CommSystemsQueryBitfieldCommInterface(0x10);
 
-  static get values => [ciq_acoustic, ciq_satellite, 
-        ciq_gsm, ciq_mobile, ciq_radio];
+  static get values => [
+        ciq_acoustic,
+        ciq_satellite,
+        ciq_gsm,
+        ciq_mobile,
+        ciq_radio,
+      ];
 
   static get names => {
-        ciq_acoustic: '''Acoustic''', 
-        ciq_satellite: '''Satellite''', 
-        ciq_gsm: '''GSM''', 
-        ciq_mobile: '''Mobile''', 
-        ciq_radio: '''Radio'''
+        ciq_acoustic: '''Acoustic''',
+        ciq_satellite: '''Satellite''',
+        ciq_gsm: '''GSM''',
+        ciq_mobile: '''Mobile''',
+        ciq_radio: '''Radio''',
       };
 
   const CommSystemsQueryBitfieldCommInterface(int value) : super(value);
@@ -925,13 +1018,16 @@ class CommSystemsQueryEnumModel extends EnumType {
   /// Radio Model RDFXXXx point to point
   static const ciq_rdfxxxxptp = const CommSystemsQueryEnumModel(0x02);
 
-  static get values => [ciq_unknown, ciq_m3dr, 
-        ciq_rdfxxxxptp];
+  static get values => [
+        ciq_unknown,
+        ciq_m3dr,
+        ciq_rdfxxxxptp,
+      ];
 
   static get names => {
-        ciq_unknown: '''unknown''', 
-        ciq_m3dr: '''3DR''', 
-        ciq_rdfxxxxptp: '''RDFXXXxPtP'''
+        ciq_unknown: '''unknown''',
+        ciq_m3dr: '''3DR''',
+        ciq_rdfxxxxptp: '''RDFXXXxPtP''',
       };
 
   const CommSystemsQueryEnumModel(int value) : super(value);
@@ -939,8 +1035,7 @@ class CommSystemsQueryEnumModel extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -954,13 +1049,16 @@ class TelemetryMsgEnumType extends EnumType {
   /// Status of transmitted data.
   static const tm_txstatus = const TelemetryMsgEnumType(0x03);
 
-  static get values => [tm_tx, tm_rx, 
-        tm_txstatus];
+  static get values => [
+        tm_tx,
+        tm_rx,
+        tm_txstatus,
+      ];
 
   static get names => {
-        tm_tx: '''Tx''', 
-        tm_rx: '''Rx''', 
-        tm_txstatus: '''TxStatus'''
+        tm_tx: '''Tx''',
+        tm_rx: '''Rx''',
+        tm_txstatus: '''TxStatus''',
       };
 
   const TelemetryMsgEnumType(int value) : super(value);
@@ -968,8 +1066,7 @@ class TelemetryMsgEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -986,14 +1083,18 @@ class TelemetryMsgEnumCode extends EnumType {
   /// Payload message is in raw
   static const tm_code_raw = const TelemetryMsgEnumCode(0x03);
 
-  static get values => [tm_code_unk, tm_code_report, 
-        tm_code_imc, tm_code_raw];
+  static get values => [
+        tm_code_unk,
+        tm_code_report,
+        tm_code_imc,
+        tm_code_raw,
+      ];
 
   static get names => {
-        tm_code_unk: '''Code unknown''', 
-        tm_code_report: '''Code Report''', 
-        tm_code_imc: '''Code IMC''', 
-        tm_code_raw: '''Code raw'''
+        tm_code_unk: '''Code unknown''',
+        tm_code_report: '''Code Report''',
+        tm_code_imc: '''Code IMC''',
+        tm_code_raw: '''Code raw''',
       };
 
   const TelemetryMsgEnumCode(int value) : super(value);
@@ -1001,8 +1102,7 @@ class TelemetryMsgEnumCode extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1014,11 +1114,14 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
   /// Message transmitted with acknowledged reception response
   static const tm_ak = const TelemetryMsgBitfieldAcknowledge(0x01);
 
-  static get values => [tm_nak, tm_ak];
+  static get values => [
+        tm_nak,
+        tm_ak,
+      ];
 
   static get names => {
-        tm_nak: '''Not acknowledge''', 
-        tm_ak: '''acknowledge'''
+        tm_nak: '''Not acknowledge''',
+        tm_ak: '''acknowledge''',
       };
 
   const TelemetryMsgBitfieldAcknowledge(int value) : super(value);
@@ -1062,20 +1165,28 @@ class TelemetryMsgEnumStatus extends EnumType {
   static const tm_inv_addr = const TelemetryMsgEnumStatus(7);
   static const tm_inv_size = const TelemetryMsgEnumStatus(8);
 
-  static get values => [tm_none, tm_done, 
-        tm_failed, tm_queued, tm_transmit, tm_expired, tm_empty, 
-        tm_inv_addr, tm_inv_size];
+  static get values => [
+        tm_none,
+        tm_done,
+        tm_failed,
+        tm_queued,
+        tm_transmit,
+        tm_expired,
+        tm_empty,
+        tm_inv_addr,
+        tm_inv_size,
+      ];
 
   static get names => {
-        tm_none: '''Does not apply''', 
-        tm_done: '''Successfull transmission''', 
-        tm_failed: '''Error while trying to transmit message''', 
-        tm_queued: '''Message has been queued for transmission''', 
-        tm_transmit: '''Message is currently being transmitted''', 
-        tm_expired: '''Message's TTL has expired. Transmition cancelled''', 
-        tm_empty: '''No more messages to be transmitted or received''', 
-        tm_inv_addr: '''Invalid address''', 
-        tm_inv_size: '''Invalid transmission size'''
+        tm_none: '''Does not apply''',
+        tm_done: '''Successfull transmission''',
+        tm_failed: '''Error while trying to transmit message''',
+        tm_queued: '''Message has been queued for transmission''',
+        tm_transmit: '''Message is currently being transmitted''',
+        tm_expired: '''Message's TTL has expired. Transmition cancelled''',
+        tm_empty: '''No more messages to be transmitted or received''',
+        tm_inv_addr: '''Invalid address''',
+        tm_inv_size: '''Invalid transmission size''',
       };
 
   const TelemetryMsgEnumStatus(int value) : super(value);
@@ -1083,8 +1194,7 @@ class TelemetryMsgEnumStatus extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1097,13 +1207,16 @@ class LblConfigEnumOp extends EnumType {
   static const op_get_cfg = const LblConfigEnumOp(1);
   static const op_cur_cfg = const LblConfigEnumOp(2);
 
-  static get values => [op_set_cfg, op_get_cfg, 
-        op_cur_cfg];
+  static get values => [
+        op_set_cfg,
+        op_get_cfg,
+        op_cur_cfg,
+      ];
 
   static get names => {
-        op_set_cfg: '''Set LBL Configuration''', 
-        op_get_cfg: '''Retrieve LBL Configuration''', 
-        op_cur_cfg: '''Reply to a GET command'''
+        op_set_cfg: '''Set LBL Configuration''',
+        op_get_cfg: '''Retrieve LBL Configuration''',
+        op_cur_cfg: '''Reply to a GET command''',
       };
 
   const LblConfigEnumOp(int value) : super(value);
@@ -1111,8 +1224,7 @@ class LblConfigEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1168,31 +1280,46 @@ class AcousticOperationEnumOp extends EnumType {
   /// Request sending updated position to remote system so it can be ranged.
   static const aop_reverse_range = const AcousticOperationEnumOp(17);
 
-  static get values => [aop_abort, aop_abort_ip, 
-        aop_abort_timeout, aop_abort_acked, aop_range, aop_range_ip, aop_range_timeout, 
-        aop_range_recved, aop_busy, aop_unsupported, aop_no_txd, aop_msg, 
-        aop_msg_queued, aop_msg_ip, aop_msg_done, aop_msg_failure, aop_msg_short, 
-        aop_reverse_range];
+  static get values => [
+        aop_abort,
+        aop_abort_ip,
+        aop_abort_timeout,
+        aop_abort_acked,
+        aop_range,
+        aop_range_ip,
+        aop_range_timeout,
+        aop_range_recved,
+        aop_busy,
+        aop_unsupported,
+        aop_no_txd,
+        aop_msg,
+        aop_msg_queued,
+        aop_msg_ip,
+        aop_msg_done,
+        aop_msg_failure,
+        aop_msg_short,
+        aop_reverse_range,
+      ];
 
   static get names => {
-        aop_abort: '''Abort''', 
-        aop_abort_ip: '''Abort in Progress''', 
-        aop_abort_timeout: '''Abort Timeout''', 
-        aop_abort_acked: '''Abort Acknowledged''', 
-        aop_range: '''Range Request''', 
-        aop_range_ip: '''Range in Progress''', 
-        aop_range_timeout: '''Range Timeout''', 
-        aop_range_recved: '''Range Received''', 
-        aop_busy: '''Modem is Busy''', 
-        aop_unsupported: '''Unsupported operation''', 
-        aop_no_txd: '''Transducer Not Detected''', 
-        aop_msg: '''Send Message''', 
-        aop_msg_queued: '''Message Send -- Queued''', 
-        aop_msg_ip: '''Message Send -- In progress''', 
-        aop_msg_done: '''Message Send -- Done''', 
-        aop_msg_failure: '''Message Send -- Failure''', 
-        aop_msg_short: '''Send Short Message''', 
-        aop_reverse_range: '''Initiate Reverse Range'''
+        aop_abort: '''Abort''',
+        aop_abort_ip: '''Abort in Progress''',
+        aop_abort_timeout: '''Abort Timeout''',
+        aop_abort_acked: '''Abort Acknowledged''',
+        aop_range: '''Range Request''',
+        aop_range_ip: '''Range in Progress''',
+        aop_range_timeout: '''Range Timeout''',
+        aop_range_recved: '''Range Received''',
+        aop_busy: '''Modem is Busy''',
+        aop_unsupported: '''Unsupported operation''',
+        aop_no_txd: '''Transducer Not Detected''',
+        aop_msg: '''Send Message''',
+        aop_msg_queued: '''Message Send -- Queued''',
+        aop_msg_ip: '''Message Send -- In progress''',
+        aop_msg_done: '''Message Send -- Done''',
+        aop_msg_failure: '''Message Send -- Failure''',
+        aop_msg_short: '''Send Short Message''',
+        aop_reverse_range: '''Initiate Reverse Range''',
       };
 
   const AcousticOperationEnumOp(int value) : super(value);
@@ -1200,8 +1327,7 @@ class AcousticOperationEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1227,20 +1353,28 @@ class GpsFixBitfieldValidity extends BitfieldType {
   /// Field 'vdop' is valid.
   static const gfv_valid_vdop = const GpsFixBitfieldValidity(0x0100);
 
-  static get values => [gfv_valid_date, gfv_valid_time, 
-        gfv_valid_pos, gfv_valid_cog, gfv_valid_sog, gfv_valid_hacc, gfv_valid_vacc, 
-        gfv_valid_hdop, gfv_valid_vdop];
+  static get values => [
+        gfv_valid_date,
+        gfv_valid_time,
+        gfv_valid_pos,
+        gfv_valid_cog,
+        gfv_valid_sog,
+        gfv_valid_hacc,
+        gfv_valid_vacc,
+        gfv_valid_hdop,
+        gfv_valid_vdop,
+      ];
 
   static get names => {
-        gfv_valid_date: '''Valid Date''', 
-        gfv_valid_time: '''Valid Time''', 
-        gfv_valid_pos: '''Valid Position''', 
-        gfv_valid_cog: '''Valid Course Over Ground''', 
-        gfv_valid_sog: '''Valid Speed Over Ground''', 
-        gfv_valid_hacc: '''Valid Horizontal Accuracy Estimate''', 
-        gfv_valid_vacc: '''Valid Vertical Accuracy Estimate''', 
-        gfv_valid_hdop: '''Valid Horizontal Dilution of Precision''', 
-        gfv_valid_vdop: '''Valid Vertical Dilution of Precision'''
+        gfv_valid_date: '''Valid Date''',
+        gfv_valid_time: '''Valid Time''',
+        gfv_valid_pos: '''Valid Position''',
+        gfv_valid_cog: '''Valid Course Over Ground''',
+        gfv_valid_sog: '''Valid Speed Over Ground''',
+        gfv_valid_hacc: '''Valid Horizontal Accuracy Estimate''',
+        gfv_valid_vacc: '''Valid Vertical Accuracy Estimate''',
+        gfv_valid_hdop: '''Valid Horizontal Dilution of Precision''',
+        gfv_valid_vdop: '''Valid Vertical Dilution of Precision''',
       };
 
   const GpsFixBitfieldValidity(int value) : super(value);
@@ -1285,15 +1419,20 @@ class GpsFixEnumType extends EnumType {
   /// Simulated solution.
   static const gft_simulation = const GpsFixEnumType(0x04);
 
-  static get values => [gft_standalone, gft_differential, 
-        gft_dead_reckoning, gft_manual_input, gft_simulation];
+  static get values => [
+        gft_standalone,
+        gft_differential,
+        gft_dead_reckoning,
+        gft_manual_input,
+        gft_simulation,
+      ];
 
   static get names => {
-        gft_standalone: '''Stand Alone''', 
-        gft_differential: '''Differential''', 
-        gft_dead_reckoning: '''Dead Reckoning''', 
-        gft_manual_input: '''Manual Input''', 
-        gft_simulation: '''Simulation'''
+        gft_standalone: '''Stand Alone''',
+        gft_differential: '''Differential''',
+        gft_dead_reckoning: '''Dead Reckoning''',
+        gft_manual_input: '''Manual Input''',
+        gft_simulation: '''Simulation''',
       };
 
   const GpsFixEnumType(int value) : super(value);
@@ -1301,8 +1440,7 @@ class GpsFixEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1314,13 +1452,16 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
   static const val_vel_y = const GroundVelocityBitfieldValidity(0x02);
   static const val_vel_z = const GroundVelocityBitfieldValidity(0x04);
 
-  static get values => [val_vel_x, val_vel_y, 
-        val_vel_z];
+  static get values => [
+        val_vel_x,
+        val_vel_y,
+        val_vel_z,
+      ];
 
   static get names => {
-        val_vel_x: '''X component is valid''', 
-        val_vel_y: '''Y component is valid''', 
-        val_vel_z: '''Z component is valid'''
+        val_vel_x: '''X component is valid''',
+        val_vel_y: '''Y component is valid''',
+        val_vel_z: '''Z component is valid''',
       };
 
   const GroundVelocityBitfieldValidity(int value) : super(value);
@@ -1359,13 +1500,16 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
   static const val_vel_y = const WaterVelocityBitfieldValidity(0x02);
   static const val_vel_z = const WaterVelocityBitfieldValidity(0x04);
 
-  static get values => [val_vel_x, val_vel_y, 
-        val_vel_z];
+  static get values => [
+        val_vel_x,
+        val_vel_y,
+        val_vel_z,
+      ];
 
   static get names => {
-        val_vel_x: '''X component is valid''', 
-        val_vel_y: '''Y component is valid''', 
-        val_vel_z: '''Z component is valid'''
+        val_vel_x: '''X component is valid''',
+        val_vel_y: '''Y component is valid''',
+        val_vel_z: '''Z component is valid''',
       };
 
   const WaterVelocityBitfieldValidity(int value) : super(value);
@@ -1404,11 +1548,14 @@ class DistanceEnumValidity extends EnumType {
   /// Measurement is valid.
   static const dv_valid = const DistanceEnumValidity(1);
 
-  static get values => [dv_invalid, dv_valid];
+  static get values => [
+        dv_invalid,
+        dv_valid,
+      ];
 
   static get names => {
-        dv_invalid: '''Invalid''', 
-        dv_valid: '''Valid'''
+        dv_invalid: '''Invalid''',
+        dv_valid: '''Valid''',
       };
 
   const DistanceEnumValidity(int value) : super(value);
@@ -1416,8 +1563,7 @@ class DistanceEnumValidity extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1428,13 +1574,16 @@ class SonarDataEnumType extends EnumType {
   static const st_echosounder = const SonarDataEnumType(1);
   static const st_multibeam = const SonarDataEnumType(2);
 
-  static get values => [st_sidescan, st_echosounder, 
-        st_multibeam];
+  static get values => [
+        st_sidescan,
+        st_echosounder,
+        st_multibeam,
+      ];
 
   static get names => {
-        st_sidescan: '''Sidescan''', 
-        st_echosounder: '''Echo Sounder''', 
-        st_multibeam: '''Multibeam'''
+        st_sidescan: '''Sidescan''',
+        st_echosounder: '''Echo Sounder''',
+        st_multibeam: '''Multibeam''',
       };
 
   const SonarDataEnumType(int value) : super(value);
@@ -1442,8 +1591,7 @@ class SonarDataEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1453,11 +1601,14 @@ class PulseDetectionControlEnumOp extends EnumType {
   static const pop_off = const PulseDetectionControlEnumOp(0);
   static const pop_on = const PulseDetectionControlEnumOp(1);
 
-  static get values => [pop_off, pop_on];
+  static get values => [
+        pop_off,
+        pop_on,
+      ];
 
   static get names => {
-        pop_off: '''Pulse Detection OFF''', 
-        pop_on: '''Pulse Detection ON'''
+        pop_off: '''Pulse Detection OFF''',
+        pop_on: '''Pulse Detection ON''',
       };
 
   const PulseDetectionControlEnumOp(int value) : super(value);
@@ -1465,8 +1616,7 @@ class PulseDetectionControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1478,11 +1628,14 @@ class DataSanityEnumSane extends EnumType {
   /// Data is not sane.
   static const ds_not_sane = const DataSanityEnumSane(1);
 
-  static get values => [ds_sane, ds_not_sane];
+  static get values => [
+        ds_sane,
+        ds_not_sane,
+      ];
 
   static get names => {
-        ds_sane: '''Sane''', 
-        ds_not_sane: '''Not Sane'''
+        ds_sane: '''Sane''',
+        ds_not_sane: '''Not Sane''',
       };
 
   const DataSanityEnumSane(int value) : super(value);
@@ -1490,8 +1643,7 @@ class DataSanityEnumSane extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1507,14 +1659,18 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
   /// Fields 'v_n', 'v_e', 'v_d' are valid.
   static const rfv_valid_vel = const GpsFixRtkBitfieldValidity(0x0008);
 
-  static get values => [rfv_valid_time, rfv_valid_base, 
-        rfv_valid_pos, rfv_valid_vel];
+  static get values => [
+        rfv_valid_time,
+        rfv_valid_base,
+        rfv_valid_pos,
+        rfv_valid_vel,
+      ];
 
   static get names => {
-        rfv_valid_time: '''Valid Time''', 
-        rfv_valid_base: '''Valid Base LLH''', 
-        rfv_valid_pos: '''Valid Position''', 
-        rfv_valid_vel: '''Valid Velocity'''
+        rfv_valid_time: '''Valid Time''',
+        rfv_valid_base: '''Valid Base LLH''',
+        rfv_valid_pos: '''Valid Position''',
+        rfv_valid_vel: '''Valid Velocity''',
       };
 
   const GpsFixRtkBitfieldValidity(int value) : super(value);
@@ -1557,14 +1713,18 @@ class GpsFixRtkEnumType extends EnumType {
   /// Fixed (single) solution of IAR.
   static const rtk_fixed = const GpsFixRtkEnumType(0x03);
 
-  static get values => [rtk_none, rtk_obs, 
-        rtk_float, rtk_fixed];
+  static get values => [
+        rtk_none,
+        rtk_obs,
+        rtk_float,
+        rtk_fixed,
+      ];
 
   static get names => {
-        rtk_none: '''None''', 
-        rtk_obs: '''Obs''', 
-        rtk_float: '''Float''', 
-        rtk_fixed: '''Fixed'''
+        rtk_none: '''None''',
+        rtk_obs: '''Obs''',
+        rtk_float: '''Float''',
+        rtk_fixed: '''Fixed''',
       };
 
   const GpsFixRtkEnumType(int value) : super(value);
@@ -1572,8 +1732,7 @@ class GpsFixRtkEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1584,13 +1743,16 @@ class ExternalNavDataEnumType extends EnumType {
   static const extnav_ahrs = const ExternalNavDataEnumType(1);
   static const extnav_posref = const ExternalNavDataEnumType(2);
 
-  static get values => [extnav_full, extnav_ahrs, 
-        extnav_posref];
+  static get values => [
+        extnav_full,
+        extnav_ahrs,
+        extnav_posref,
+      ];
 
   static get names => {
-        extnav_full: '''Full State''', 
-        extnav_ahrs: '''Attitude Heading Reference System Only''', 
-        extnav_posref: '''Position Reference System only'''
+        extnav_full: '''Full State''',
+        extnav_ahrs: '''Attitude Heading Reference System Only''',
+        extnav_posref: '''Position Reference System only''',
       };
 
   const ExternalNavDataEnumType(int value) : super(value);
@@ -1598,8 +1760,7 @@ class ExternalNavDataEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1611,14 +1772,18 @@ class CameraZoomEnumAction extends EnumType {
   static const action_zoom_out = const CameraZoomEnumAction(2);
   static const action_zoom_stop = const CameraZoomEnumAction(3);
 
-  static get values => [action_zoom_reset, action_zoom_in, 
-        action_zoom_out, action_zoom_stop];
+  static get values => [
+        action_zoom_reset,
+        action_zoom_in,
+        action_zoom_out,
+        action_zoom_stop,
+      ];
 
   static get names => {
-        action_zoom_reset: '''Reset Zoom''', 
-        action_zoom_in: '''Zoom In''', 
-        action_zoom_out: '''Zoom Out''', 
-        action_zoom_stop: '''Stop Zooming'''
+        action_zoom_reset: '''Reset Zoom''',
+        action_zoom_in: '''Zoom In''',
+        action_zoom_out: '''Zoom Out''',
+        action_zoom_stop: '''Stop Zooming''',
       };
 
   const CameraZoomEnumAction(int value) : super(value);
@@ -1626,8 +1791,7 @@ class CameraZoomEnumAction extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1637,11 +1801,14 @@ class RemoteActionsRequestEnumOp extends EnumType {
   static const op_report = const RemoteActionsRequestEnumOp(0);
   static const op_query = const RemoteActionsRequestEnumOp(1);
 
-  static get values => [op_report, op_query];
+  static get values => [
+        op_report,
+        op_query,
+      ];
 
   static get names => {
-        op_report: '''Report''', 
-        op_query: '''Query'''
+        op_report: '''Report''',
+        op_query: '''Query''',
       };
 
   const RemoteActionsRequestEnumOp(int value) : super(value);
@@ -1649,8 +1816,7 @@ class RemoteActionsRequestEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1663,15 +1829,20 @@ class LcdControlEnumOp extends EnumType {
   static const op_write0 = const LcdControlEnumOp(3);
   static const op_write1 = const LcdControlEnumOp(4);
 
-  static get values => [op_turn_off, op_turn_on, 
-        op_clear, op_write0, op_write1];
+  static get values => [
+        op_turn_off,
+        op_turn_on,
+        op_clear,
+        op_write0,
+        op_write1,
+      ];
 
   static get names => {
-        op_turn_off: '''Turn off display''', 
-        op_turn_on: '''Turn on display''', 
-        op_clear: '''Clear display''', 
-        op_write0: '''Write Line #0''', 
-        op_write1: '''Write Line #1'''
+        op_turn_off: '''Turn off display''',
+        op_turn_on: '''Turn on display''',
+        op_clear: '''Clear display''',
+        op_write0: '''Write Line #0''',
+        op_write1: '''Write Line #1''',
       };
 
   const LcdControlEnumOp(int value) : super(value);
@@ -1679,8 +1850,7 @@ class LcdControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1712,17 +1882,24 @@ class PowerOperationEnumOp extends EnumType {
   /// system will power up.
   static const pop_sched_pwr_up = const PowerOperationEnumOp(6);
 
-  static get values => [pop_pwr_down, pop_pwr_down_ip, 
-        pop_pwr_down_aborted, pop_sched_pwr_down, pop_pwr_up, pop_pwr_up_ip, pop_sched_pwr_up];
+  static get values => [
+        pop_pwr_down,
+        pop_pwr_down_ip,
+        pop_pwr_down_aborted,
+        pop_sched_pwr_down,
+        pop_pwr_up,
+        pop_pwr_up_ip,
+        pop_sched_pwr_up,
+      ];
 
   static get names => {
-        pop_pwr_down: '''Power Down''', 
-        pop_pwr_down_ip: '''Power Down in Progress''', 
-        pop_pwr_down_aborted: '''Power Down Aborted''', 
-        pop_sched_pwr_down: '''Schedule Power Down''', 
-        pop_pwr_up: '''Power Up''', 
-        pop_pwr_up_ip: '''Power Up in Progress''', 
-        pop_sched_pwr_up: '''Schedule Power Up'''
+        pop_pwr_down: '''Power Down''',
+        pop_pwr_down_ip: '''Power Down in Progress''',
+        pop_pwr_down_aborted: '''Power Down Aborted''',
+        pop_sched_pwr_down: '''Schedule Power Down''',
+        pop_pwr_up: '''Power Up''',
+        pop_pwr_up_ip: '''Power Up in Progress''',
+        pop_sched_pwr_up: '''Schedule Power Up''',
       };
 
   const PowerOperationEnumOp(int value) : super(value);
@@ -1730,8 +1907,7 @@ class PowerOperationEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1759,19 +1935,26 @@ class PowerChannelControlEnumOp extends EnumType {
   /// Restart power channel specified in field 'id'.
   static const pcc_op_restart = const PowerChannelControlEnumOp(7);
 
-  static get values => [pcc_op_turn_off, pcc_op_turn_on, 
-        pcc_op_toggle, pcc_op_sched_on, pcc_op_sched_off, pcc_op_sched_reset, pcc_op_save, 
-        pcc_op_restart];
+  static get values => [
+        pcc_op_turn_off,
+        pcc_op_turn_on,
+        pcc_op_toggle,
+        pcc_op_sched_on,
+        pcc_op_sched_off,
+        pcc_op_sched_reset,
+        pcc_op_save,
+        pcc_op_restart,
+      ];
 
   static get names => {
-        pcc_op_turn_off: '''Turn Off''', 
-        pcc_op_turn_on: '''Turn On''', 
-        pcc_op_toggle: '''Toggle''', 
-        pcc_op_sched_on: '''Schedule Turn On''', 
-        pcc_op_sched_off: '''Schedule Turn Off''', 
-        pcc_op_sched_reset: '''Reset Schedules''', 
-        pcc_op_save: '''Save Current State''', 
-        pcc_op_restart: '''Restart'''
+        pcc_op_turn_off: '''Turn Off''',
+        pcc_op_turn_on: '''Turn On''',
+        pcc_op_toggle: '''Toggle''',
+        pcc_op_sched_on: '''Schedule Turn On''',
+        pcc_op_sched_off: '''Schedule Turn Off''',
+        pcc_op_sched_reset: '''Reset Schedules''',
+        pcc_op_save: '''Save Current State''',
+        pcc_op_restart: '''Restart''',
       };
 
   const PowerChannelControlEnumOp(int value) : super(value);
@@ -1779,8 +1962,7 @@ class PowerChannelControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1792,11 +1974,14 @@ class PowerChannelStateEnumState extends EnumType {
   /// Power channel is on.
   static const pcs_on = const PowerChannelStateEnumState(1);
 
-  static get values => [pcs_off, pcs_on];
+  static get values => [
+        pcs_off,
+        pcs_on,
+      ];
 
   static get names => {
-        pcs_off: '''Off''', 
-        pcs_on: '''On'''
+        pcs_off: '''Off''',
+        pcs_on: '''On''',
       };
 
   const PowerChannelStateEnumState(int value) : super(value);
@@ -1804,8 +1989,7 @@ class PowerChannelStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1823,15 +2007,20 @@ class GpsFixRejectionEnumReason extends EnumType {
   /// Lost one of the validity bits between consecutive GPS fixes.
   static const rr_lost_val_bit = const GpsFixRejectionEnumReason(4);
 
-  static get values => [rr_above_threshold, rr_invalid, 
-        rr_above_max_hdop, rr_above_max_hacc, rr_lost_val_bit];
+  static get values => [
+        rr_above_threshold,
+        rr_invalid,
+        rr_above_max_hdop,
+        rr_above_max_hacc,
+        rr_lost_val_bit,
+      ];
 
   static get names => {
-        rr_above_threshold: '''Above Threshold''', 
-        rr_invalid: '''Invalid Fix''', 
-        rr_above_max_hdop: '''Above Maximum HDOP''', 
-        rr_above_max_hacc: '''Above Maximum HACC''', 
-        rr_lost_val_bit: '''Lost Validity Bit'''
+        rr_above_threshold: '''Above Threshold''',
+        rr_invalid: '''Invalid Fix''',
+        rr_above_max_hdop: '''Above Maximum HDOP''',
+        rr_above_max_hacc: '''Above Maximum HACC''',
+        rr_lost_val_bit: '''Lost Validity Bit''',
       };
 
   const GpsFixRejectionEnumReason(int value) : super(value);
@@ -1839,8 +2028,7 @@ class GpsFixRejectionEnumReason extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1858,15 +2046,20 @@ class LblRangeAcceptanceEnumAcceptance extends EnumType {
   /// Vehicle is using only GPS fix when it is at surface.
   static const rr_at_surface = const LblRangeAcceptanceEnumAcceptance(4);
 
-  static get values => [rr_accepted, rr_above_threshold, 
-        rr_singular, rr_no_info, rr_at_surface];
+  static get values => [
+        rr_accepted,
+        rr_above_threshold,
+        rr_singular,
+        rr_no_info,
+        rr_at_surface,
+      ];
 
   static get names => {
-        rr_accepted: '''Accepted''', 
-        rr_above_threshold: '''Rejected - Above Threshold''', 
-        rr_singular: '''Rejected - Singular Point''', 
-        rr_no_info: '''Rejected - Not Enough Information''', 
-        rr_at_surface: '''Rejected - Vehicle At Surface'''
+        rr_accepted: '''Accepted''',
+        rr_above_threshold: '''Rejected - Above Threshold''',
+        rr_singular: '''Rejected - Singular Point''',
+        rr_no_info: '''Rejected - Not Enough Information''',
+        rr_at_surface: '''Rejected - Vehicle At Surface''',
       };
 
   const LblRangeAcceptanceEnumAcceptance(int value) : super(value);
@@ -1874,8 +2067,7 @@ class LblRangeAcceptanceEnumAcceptance extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1885,11 +2077,14 @@ class DvlRejectionBitfieldType extends BitfieldType {
   static const type_gv = const DvlRejectionBitfieldType(0x01);
   static const type_wv = const DvlRejectionBitfieldType(0x02);
 
-  static get values => [type_gv, type_wv];
+  static get values => [
+        type_gv,
+        type_wv,
+      ];
 
   static get names => {
-        type_gv: '''Ground velocity''', 
-        type_wv: '''Water velocity'''
+        type_gv: '''Ground velocity''',
+        type_wv: '''Water velocity''',
       };
 
   const DvlRejectionBitfieldType(int value) : super(value);
@@ -1950,14 +2145,18 @@ class DvlRejectionEnumReason extends EnumType {
   /// configurable threshold.
   static const rr_abs_threshold_y = const DvlRejectionEnumReason(3);
 
-  static get values => [rr_innov_threshold_x, rr_innov_threshold_y, 
-        rr_abs_threshold_x, rr_abs_threshold_y];
+  static get values => [
+        rr_innov_threshold_x,
+        rr_innov_threshold_y,
+        rr_abs_threshold_x,
+        rr_abs_threshold_y,
+      ];
 
   static get names => {
-        rr_innov_threshold_x: '''Innovation Threshold - X''', 
-        rr_innov_threshold_y: '''Innovation Threshold - Y''', 
-        rr_abs_threshold_x: '''Absolute Threshold - X''', 
-        rr_abs_threshold_y: '''Absolute Threshold - Y'''
+        rr_innov_threshold_x: '''Innovation Threshold - X''',
+        rr_innov_threshold_y: '''Innovation Threshold - Y''',
+        rr_abs_threshold_x: '''Absolute Threshold - X''',
+        rr_abs_threshold_y: '''Absolute Threshold - Y''',
       };
 
   const DvlRejectionEnumReason(int value) : super(value);
@@ -1965,8 +2164,7 @@ class DvlRejectionEnumReason extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -1979,15 +2177,20 @@ class AlignmentStateEnumState extends EnumType {
   static const as_aligning = const AlignmentStateEnumState(3);
   static const as_wrong_medium = const AlignmentStateEnumState(4);
 
-  static get values => [as_not_aligned, as_aligned, 
-        as_not_supported, as_aligning, as_wrong_medium];
+  static get values => [
+        as_not_aligned,
+        as_aligned,
+        as_not_supported,
+        as_aligning,
+        as_wrong_medium,
+      ];
 
   static get names => {
-        as_not_aligned: '''Not Aligned''', 
-        as_aligned: '''Aligned''', 
-        as_not_supported: '''Not Supported''', 
-        as_aligning: '''Aligning''', 
-        as_wrong_medium: '''Wrong Medium'''
+        as_not_aligned: '''Not Aligned''',
+        as_aligned: '''Aligned''',
+        as_not_supported: '''Not Supported''',
+        as_aligning: '''Aligning''',
+        as_wrong_medium: '''Wrong Medium''',
       };
 
   const AlignmentStateEnumState(int value) : super(value);
@@ -1995,8 +2198,7 @@ class AlignmentStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2030,19 +2232,26 @@ class DesiredPathBitfieldFlags extends BitfieldType {
   /// Indicates that the system should land at the end position.
   static const fl_land = const DesiredPathBitfieldFlags(0x80);
 
-  static get values => [fl_start, fl_direct, 
-        fl_no_z, fl_3dtrack, fl_cclockw, fl_loiter_curr, fl_takeoff, 
-        fl_land];
+  static get values => [
+        fl_start,
+        fl_direct,
+        fl_no_z,
+        fl_3dtrack,
+        fl_cclockw,
+        fl_loiter_curr,
+        fl_takeoff,
+        fl_land,
+      ];
 
   static get names => {
-        fl_start: '''Start Point''', 
-        fl_direct: '''Direct''', 
-        fl_no_z: '''No Altitude/Depth control''', 
-        fl_3dtrack: '''3D Tracking''', 
-        fl_cclockw: '''Counter-Clockwise loiter''', 
-        fl_loiter_curr: '''Loiter from current position''', 
-        fl_takeoff: '''Takeoff''', 
-        fl_land: '''Land'''
+        fl_start: '''Start Point''',
+        fl_direct: '''Direct''',
+        fl_no_z: '''No Altitude/Depth control''',
+        fl_3dtrack: '''3D Tracking''',
+        fl_cclockw: '''Counter-Clockwise loiter''',
+        fl_loiter_curr: '''Loiter from current position''',
+        fl_takeoff: '''Takeoff''',
+        fl_land: '''Land''',
       };
 
   const DesiredPathBitfieldFlags(int value) : super(value);
@@ -2089,16 +2298,22 @@ class DesiredControlBitfieldFlags extends BitfieldType {
   /// If enabled then field N has a meaningful value.
   static const fl_n = const DesiredControlBitfieldFlags(0x20);
 
-  static get values => [fl_x, fl_y, 
-        fl_z, fl_k, fl_m, fl_n];
+  static get values => [
+        fl_x,
+        fl_y,
+        fl_z,
+        fl_k,
+        fl_m,
+        fl_n,
+      ];
 
   static get names => {
-        fl_x: '''Value of X is meaningful''', 
-        fl_y: '''Value of Y is meaningful''', 
-        fl_z: '''Value of Z is meaningful''', 
-        fl_k: '''Value of K is meaningful''', 
-        fl_m: '''Value of M is meaningful''', 
-        fl_n: '''Value of N is meaningful'''
+        fl_x: '''Value of X is meaningful''',
+        fl_y: '''Value of Y is meaningful''',
+        fl_z: '''Value of Z is meaningful''',
+        fl_k: '''Value of K is meaningful''',
+        fl_m: '''Value of M is meaningful''',
+        fl_n: '''Value of N is meaningful''',
       };
 
   const DesiredControlBitfieldFlags(int value) : super(value);
@@ -2145,16 +2360,22 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
   /// If enabled then field r has a meaningful value.
   static const fl_yaw = const DesiredVelocityBitfieldFlags(0x20);
 
-  static get values => [fl_surge, fl_sway, 
-        fl_heave, fl_roll, fl_pitch, fl_yaw];
+  static get values => [
+        fl_surge,
+        fl_sway,
+        fl_heave,
+        fl_roll,
+        fl_pitch,
+        fl_yaw,
+      ];
 
   static get names => {
-        fl_surge: '''Value of u is meaningful''', 
-        fl_sway: '''Value of v is meaningful''', 
-        fl_heave: '''Value of w is meaningful''', 
-        fl_roll: '''Value of p is meaningful''', 
-        fl_pitch: '''Value of q is meaningful''', 
-        fl_yaw: '''Value of r is meaningful'''
+        fl_surge: '''Value of u is meaningful''',
+        fl_sway: '''Value of v is meaningful''',
+        fl_heave: '''Value of w is meaningful''',
+        fl_roll: '''Value of p is meaningful''',
+        fl_pitch: '''Value of q is meaningful''',
+        fl_yaw: '''Value of r is meaningful''',
       };
 
   const DesiredVelocityBitfieldFlags(int value) : super(value);
@@ -2201,15 +2422,20 @@ class PathControlStateBitfieldFlags extends BitfieldType {
   /// assumed.
   static const fl_cclockw = const PathControlStateBitfieldFlags(0x10);
 
-  static get values => [fl_near, fl_loitering, 
-        fl_no_z, fl_3dtrack, fl_cclockw];
+  static get values => [
+        fl_near,
+        fl_loitering,
+        fl_no_z,
+        fl_3dtrack,
+        fl_cclockw,
+      ];
 
   static get names => {
-        fl_near: '''Near Endpoint''', 
-        fl_loitering: '''Loitering''', 
-        fl_no_z: '''No Altitude/Depth control''', 
-        fl_3dtrack: '''3D Tracking''', 
-        fl_cclockw: '''Counter-Clockwise loiter'''
+        fl_near: '''Near Endpoint''',
+        fl_loitering: '''Loitering''',
+        fl_no_z: '''No Altitude/Depth control''',
+        fl_3dtrack: '''3D Tracking''',
+        fl_cclockw: '''Counter-Clockwise loiter''',
       };
 
   const PathControlStateBitfieldFlags(int value) : super(value);
@@ -2250,13 +2476,16 @@ class BrakeEnumOp extends EnumType {
   /// Revert Actuation.
   static const op_revert = const BrakeEnumOp(2);
 
-  static get values => [op_stop, op_start, 
-        op_revert];
+  static get values => [
+        op_stop,
+        op_start,
+        op_revert,
+      ];
 
   static get names => {
-        op_stop: '''Stop Braking''', 
-        op_start: '''Start Braking''', 
-        op_revert: '''Revert Actuation'''
+        op_stop: '''Stop Braking''',
+        op_start: '''Start Braking''',
+        op_revert: '''Revert Actuation''',
       };
 
   const BrakeEnumOp(int value) : super(value);
@@ -2264,8 +2493,7 @@ class BrakeEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2291,20 +2519,28 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
   /// If enabled then field az has a meaningful value.
   static const fl_az = const DesiredLinearStateBitfieldFlags(0x0100);
 
-  static get values => [fl_x, fl_y, 
-        fl_z, fl_vx, fl_vy, fl_vz, fl_ax, 
-        fl_ay, fl_az];
+  static get values => [
+        fl_x,
+        fl_y,
+        fl_z,
+        fl_vx,
+        fl_vy,
+        fl_vz,
+        fl_ax,
+        fl_ay,
+        fl_az,
+      ];
 
   static get names => {
-        fl_x: '''Value of x is meaningful''', 
-        fl_y: '''Value of y is meaningful''', 
-        fl_z: '''Value of z is meaningful''', 
-        fl_vx: '''Value of vx is meaningful''', 
-        fl_vy: '''Value of vy is meaningful''', 
-        fl_vz: '''Value of vz is meaningful''', 
-        fl_ax: '''Value of ax is meaningful''', 
-        fl_ay: '''Value of ay is meaningful''', 
-        fl_az: '''Value of az is meaningful'''
+        fl_x: '''Value of x is meaningful''',
+        fl_y: '''Value of y is meaningful''',
+        fl_z: '''Value of z is meaningful''',
+        fl_vx: '''Value of vx is meaningful''',
+        fl_vy: '''Value of vy is meaningful''',
+        fl_vz: '''Value of vz is meaningful''',
+        fl_ax: '''Value of ax is meaningful''',
+        fl_ay: '''Value of ay is meaningful''',
+        fl_az: '''Value of az is meaningful''',
       };
 
   const DesiredLinearStateBitfieldFlags(int value) : super(value);
@@ -2350,13 +2586,16 @@ class PopUpBitfieldFlags extends BitfieldType {
   /// station keeping behavior.
   static const flg_station_keep = const PopUpBitfieldFlags(0x04);
 
-  static get values => [flg_curr_pos, flg_wait_at_surface, 
-        flg_station_keep];
+  static get values => [
+        flg_curr_pos,
+        flg_wait_at_surface,
+        flg_station_keep,
+      ];
 
   static get names => {
-        flg_curr_pos: '''Start from current position''', 
-        flg_wait_at_surface: '''Wait at surface''', 
-        flg_station_keep: '''Station keeping'''
+        flg_curr_pos: '''Start from current position''',
+        flg_wait_at_surface: '''Wait at surface''',
+        flg_station_keep: '''Station keeping''',
       };
 
   const PopUpBitfieldFlags(int value) : super(value);
@@ -2396,15 +2635,20 @@ class LoiterEnumType extends EnumType {
   static const lt_eight = const LoiterEnumType(3);
   static const lt_hover = const LoiterEnumType(4);
 
-  static get values => [lt_default, lt_circular, 
-        lt_racetrack, lt_eight, lt_hover];
+  static get values => [
+        lt_default,
+        lt_circular,
+        lt_racetrack,
+        lt_eight,
+        lt_hover,
+      ];
 
   static get names => {
-        lt_default: '''Default''', 
-        lt_circular: '''Circular''', 
-        lt_racetrack: '''Race track''', 
-        lt_eight: '''Figure 8''', 
-        lt_hover: '''Hover'''
+        lt_default: '''Default''',
+        lt_circular: '''Circular''',
+        lt_racetrack: '''Race track''',
+        lt_eight: '''Figure 8''',
+        lt_hover: '''Hover''',
       };
 
   const LoiterEnumType(int value) : super(value);
@@ -2412,8 +2656,7 @@ class LoiterEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2425,14 +2668,18 @@ class LoiterEnumDirection extends EnumType {
   static const ld_cclockw = const LoiterEnumDirection(2);
   static const ld_iwindcurr = const LoiterEnumDirection(3);
 
-  static get values => [ld_vdep, ld_clockw, 
-        ld_cclockw, ld_iwindcurr];
+  static get values => [
+        ld_vdep,
+        ld_clockw,
+        ld_cclockw,
+        ld_iwindcurr,
+      ];
 
   static get names => {
-        ld_vdep: '''Vehicle Dependent''', 
-        ld_clockw: '''Clockwise''', 
-        ld_cclockw: '''Counter Clockwise''', 
-        ld_iwindcurr: '''Into the wind/current'''
+        ld_vdep: '''Vehicle Dependent''',
+        ld_clockw: '''Clockwise''',
+        ld_cclockw: '''Counter Clockwise''',
+        ld_iwindcurr: '''Into the wind/current''',
       };
 
   const LoiterEnumDirection(int value) : super(value);
@@ -2440,8 +2687,7 @@ class LoiterEnumDirection extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2451,11 +2697,14 @@ class RowsBitfieldFlags extends BitfieldType {
   static const flg_square_curve = const RowsBitfieldFlags(0x0001);
   static const flg_curve_right = const RowsBitfieldFlags(0x0002);
 
-  static get values => [flg_square_curve, flg_curve_right];
+  static get values => [
+        flg_square_curve,
+        flg_curve_right,
+      ];
 
   static get names => {
-        flg_square_curve: '''Square Curve''', 
-        flg_curve_right: '''First Curve Right'''
+        flg_square_curve: '''Square Curve''',
+        flg_curve_right: '''First Curve Right''',
       };
 
   const RowsBitfieldFlags(int value) : super(value);
@@ -2494,11 +2743,11 @@ class ElevatorBitfieldFlags extends BitfieldType {
   /// starting point for ascent/descent.
   static const flg_curr_pos = const ElevatorBitfieldFlags(0x01);
 
-  static get values => [flg_curr_pos];
+  static get values => [
+        flg_curr_pos];
 
   static get names => {
-        flg_curr_pos: '''Start from current position'''
-      };
+        flg_curr_pos: '''Start from current position'''};
 
   const ElevatorBitfieldFlags(int value) : super(value);
 
@@ -2540,14 +2789,18 @@ class ManeuverControlStateEnumState extends EnumType {
   /// Maneuver stopped.
   static const mcs_stopped = const ManeuverControlStateEnumState(3);
 
-  static get values => [mcs_executing, mcs_done, 
-        mcs_error, mcs_stopped];
+  static get values => [
+        mcs_executing,
+        mcs_done,
+        mcs_error,
+        mcs_stopped,
+      ];
 
   static get names => {
-        mcs_executing: '''Maneuver in progress''', 
-        mcs_done: '''Maneuver completed''', 
-        mcs_error: '''Maneuver error''', 
-        mcs_stopped: '''Maneuver stopped'''
+        mcs_executing: '''Maneuver in progress''',
+        mcs_done: '''Maneuver completed''',
+        mcs_error: '''Maneuver error''',
+        mcs_stopped: '''Maneuver stopped''',
       };
 
   const ManeuverControlStateEnumState(int value) : super(value);
@@ -2555,8 +2808,7 @@ class ManeuverControlStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2568,14 +2820,18 @@ class CompassCalibrationEnumDirection extends EnumType {
   static const ld_cclockw = const CompassCalibrationEnumDirection(2);
   static const ld_iwindcurr = const CompassCalibrationEnumDirection(3);
 
-  static get values => [ld_vdep, ld_clockw, 
-        ld_cclockw, ld_iwindcurr];
+  static get values => [
+        ld_vdep,
+        ld_clockw,
+        ld_cclockw,
+        ld_iwindcurr,
+      ];
 
   static get names => {
-        ld_vdep: '''Vehicle Dependent''', 
-        ld_clockw: '''Clockwise''', 
-        ld_cclockw: '''Counter Clockwise''', 
-        ld_iwindcurr: '''Into the wind/current'''
+        ld_vdep: '''Vehicle Dependent''',
+        ld_clockw: '''Clockwise''',
+        ld_cclockw: '''Counter Clockwise''',
+        ld_iwindcurr: '''Into the wind/current''',
       };
 
   const CompassCalibrationEnumDirection(int value) : super(value);
@@ -2583,8 +2839,7 @@ class CompassCalibrationEnumDirection extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2595,13 +2850,16 @@ class FormationParametersEnumReferenceFrame extends EnumType {
   static const op_path_fixed = const FormationParametersEnumReferenceFrame(1);
   static const op_path_curved = const FormationParametersEnumReferenceFrame(2);
 
-  static get values => [op_earth_fixed, op_path_fixed, 
-        op_path_curved];
+  static get values => [
+        op_earth_fixed,
+        op_path_fixed,
+        op_path_curved,
+      ];
 
   static get names => {
-        op_earth_fixed: '''Earth Fixed''', 
-        op_path_fixed: '''Path Fixed''', 
-        op_path_curved: '''Path Curved'''
+        op_earth_fixed: '''Earth Fixed''',
+        op_path_fixed: '''Path Fixed''',
+        op_path_curved: '''Path Curved''',
       };
 
   const FormationParametersEnumReferenceFrame(int value) : super(value);
@@ -2609,8 +2867,7 @@ class FormationParametersEnumReferenceFrame extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2624,17 +2881,24 @@ class ReferenceBitfieldFlags extends BitfieldType {
   static const flag_direct = const ReferenceBitfieldFlags(0x20);
   static const flag_mandone = const ReferenceBitfieldFlags(0x80);
 
-  static get values => [flag_location, flag_speed, 
-        flag_z, flag_radius, flag_start_point, flag_direct, flag_mandone];
+  static get values => [
+        flag_location,
+        flag_speed,
+        flag_z,
+        flag_radius,
+        flag_start_point,
+        flag_direct,
+        flag_mandone,
+      ];
 
   static get names => {
-        flag_location: '''Use Location Reference''', 
-        flag_speed: '''Use Speed Reference''', 
-        flag_z: '''Use Z Reference''', 
-        flag_radius: '''Use Radius Reference''', 
-        flag_start_point: '''Use this Reference as Start Position for PathControler''', 
-        flag_direct: '''Use Current Position as Start Position for PathControler''', 
-        flag_mandone: '''Flag Maneuver Completion'''
+        flag_location: '''Use Location Reference''',
+        flag_speed: '''Use Speed Reference''',
+        flag_z: '''Use Z Reference''',
+        flag_radius: '''Use Radius Reference''',
+        flag_start_point: '''Use this Reference as Start Position for PathControler''',
+        flag_direct: '''Use Current Position as Start Position for PathControler''',
+        flag_mandone: '''Flag Maneuver Completion''',
       };
 
   const ReferenceBitfieldFlags(int value) : super(value);
@@ -2674,16 +2938,22 @@ class FollowRefStateEnumState extends EnumType {
   static const fr_elevator = const FollowRefStateEnumState(5);
   static const fr_timeout = const FollowRefStateEnumState(6);
 
-  static get values => [fr_wait, fr_goto, 
-        fr_loiter, fr_hover, fr_elevator, fr_timeout];
+  static get values => [
+        fr_wait,
+        fr_goto,
+        fr_loiter,
+        fr_hover,
+        fr_elevator,
+        fr_timeout,
+      ];
 
   static get names => {
-        fr_wait: '''Waiting for first reference''', 
-        fr_goto: '''Going towards received reference''', 
-        fr_loiter: '''Loitering after arriving at the reference''', 
-        fr_hover: '''Hovering after arriving at the reference''', 
-        fr_elevator: '''Moving in z after arriving at the target cylinder''', 
-        fr_timeout: '''Controlling system timed out'''
+        fr_wait: '''Waiting for first reference''',
+        fr_goto: '''Going towards received reference''',
+        fr_loiter: '''Loitering after arriving at the reference''',
+        fr_hover: '''Hovering after arriving at the reference''',
+        fr_elevator: '''Moving in z after arriving at the target cylinder''',
+        fr_timeout: '''Controlling system timed out''',
       };
 
   const FollowRefStateEnumState(int value) : super(value);
@@ -2691,8 +2961,7 @@ class FollowRefStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2704,15 +2973,20 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
   static const prox_xy_unreachable = const FollowRefStateBitfieldProximity(0x08);
   static const prox_z_unreachable = const FollowRefStateBitfieldProximity(0x10);
 
-  static get values => [prox_far, prox_xy_near, 
-        prox_z_near, prox_xy_unreachable, prox_z_unreachable];
+  static get values => [
+        prox_far,
+        prox_xy_near,
+        prox_z_near,
+        prox_xy_unreachable,
+        prox_z_unreachable,
+      ];
 
   static get names => {
-        prox_far: '''Far from the destination''', 
-        prox_xy_near: '''Near in the horizontal plane''', 
-        prox_z_near: '''Near in the vertical plane''', 
-        prox_xy_unreachable: '''Unreachable in the horizontal plane''', 
-        prox_z_unreachable: '''Unreachable in the vertical plane'''
+        prox_far: '''Far from the destination''',
+        prox_xy_near: '''Near in the horizontal plane''',
+        prox_z_near: '''Near in the vertical plane''',
+        prox_xy_unreachable: '''Unreachable in the horizontal plane''',
+        prox_z_unreachable: '''Unreachable in the vertical plane''',
       };
 
   const FollowRefStateBitfieldProximity(int value) : super(value);
@@ -2750,13 +3024,16 @@ class DislodgeEnumDirection extends EnumType {
   static const dir_forward = const DislodgeEnumDirection(1);
   static const dir_backward = const DislodgeEnumDirection(2);
 
-  static get values => [dir_auto, dir_forward, 
-        dir_backward];
+  static get values => [
+        dir_auto,
+        dir_forward,
+        dir_backward,
+      ];
 
   static get names => {
-        dir_auto: '''Let the vehicle decide''', 
-        dir_forward: '''Attempt to move forward''', 
-        dir_backward: '''Attempt to move backward'''
+        dir_auto: '''Let the vehicle decide''',
+        dir_forward: '''Attempt to move forward''',
+        dir_backward: '''Attempt to move backward''',
       };
 
   const DislodgeEnumDirection(int value) : super(value);
@@ -2764,8 +3041,7 @@ class DislodgeEnumDirection extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2775,11 +3051,14 @@ class FormationEnumType extends EnumType {
   static const fc_request = const FormationEnumType(0);
   static const fc_report = const FormationEnumType(1);
 
-  static get values => [fc_request, fc_report];
+  static get values => [
+        fc_request,
+        fc_report,
+      ];
 
   static get names => {
-        fc_request: '''Request''', 
-        fc_report: '''Report'''
+        fc_request: '''Request''',
+        fc_report: '''Report''',
       };
 
   const FormationEnumType(int value) : super(value);
@@ -2787,8 +3066,7 @@ class FormationEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2806,15 +3084,20 @@ class FormationEnumOp extends EnumType {
   /// Stop the formation maneuver.
   static const op_failure = const FormationEnumOp(4);
 
-  static get values => [op_start, op_stop, 
-        op_ready, op_executing, op_failure];
+  static get values => [
+        op_start,
+        op_stop,
+        op_ready,
+        op_executing,
+        op_failure,
+      ];
 
   static get names => {
-        op_start: '''Start''', 
-        op_stop: '''Stop''', 
-        op_ready: '''Ready''', 
-        op_executing: '''Executing''', 
-        op_failure: '''Failure'''
+        op_start: '''Start''',
+        op_stop: '''Stop''',
+        op_ready: '''Ready''',
+        op_executing: '''Executing''',
+        op_failure: '''Failure''',
       };
 
   const FormationEnumOp(int value) : super(value);
@@ -2822,8 +3105,7 @@ class FormationEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2834,13 +3116,16 @@ class FormationEnumReferenceFrame extends EnumType {
   static const op_path_fixed = const FormationEnumReferenceFrame(1);
   static const op_path_curved = const FormationEnumReferenceFrame(2);
 
-  static get values => [op_earth_fixed, op_path_fixed, 
-        op_path_curved];
+  static get values => [
+        op_earth_fixed,
+        op_path_fixed,
+        op_path_curved,
+      ];
 
   static get names => {
-        op_earth_fixed: '''Earth Fixed''', 
-        op_path_fixed: '''Path Fixed''', 
-        op_path_curved: '''Path Curved'''
+        op_earth_fixed: '''Earth Fixed''',
+        op_path_fixed: '''Path Fixed''',
+        op_path_curved: '''Path Curved''',
       };
 
   const FormationEnumReferenceFrame(int value) : super(value);
@@ -2848,8 +3133,7 @@ class FormationEnumReferenceFrame extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2866,13 +3150,16 @@ class ScheduledGotoEnumDelayed extends EnumType {
   /// maneuver with a FAILED result (the entire plan will be stopped).
   static const dbeh_fail = const ScheduledGotoEnumDelayed(2);
 
-  static get values => [dbeh_resume, dbeh_skip, 
-        dbeh_fail];
+  static get values => [
+        dbeh_resume,
+        dbeh_skip,
+        dbeh_fail,
+      ];
 
   static get names => {
-        dbeh_resume: '''Resume''', 
-        dbeh_skip: '''Skip''', 
-        dbeh_fail: '''Fail'''
+        dbeh_resume: '''Resume''',
+        dbeh_skip: '''Skip''',
+        dbeh_fail: '''Fail''',
       };
 
   const ScheduledGotoEnumDelayed(int value) : super(value);
@@ -2880,8 +3167,7 @@ class ScheduledGotoEnumDelayed extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -2893,11 +3179,14 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
   /// Shall the vehicle turn towards the right after the first transect (alternatively it will turn left).
   static const flg_curve_right = const RowsCoverageBitfieldFlags(0x02);
 
-  static get values => [flg_square_curve, flg_curve_right];
+  static get values => [
+        flg_square_curve,
+        flg_curve_right,
+      ];
 
   static get names => {
-        flg_square_curve: '''Square Curve''', 
-        flg_curve_right: '''First Curve Right'''
+        flg_square_curve: '''Square Curve''',
+        flg_curve_right: '''First Curve Right''',
       };
 
   const RowsCoverageBitfieldFlags(int value) : super(value);
@@ -2935,14 +3224,18 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
   static const enforce_timeout = const AutonomousSectionBitfieldLimits(0x04);
   static const enforce_area2d = const AutonomousSectionBitfieldLimits(0x08);
 
-  static get values => [enforce_depth, enforce_altitude, 
-        enforce_timeout, enforce_area2d];
+  static get values => [
+        enforce_depth,
+        enforce_altitude,
+        enforce_timeout,
+        enforce_area2d,
+      ];
 
   static get names => {
-        enforce_depth: '''Maximum Depth Limit''', 
-        enforce_altitude: '''Minimum Altitude Limit''', 
-        enforce_timeout: '''Time Limit''', 
-        enforce_area2d: '''Polygonal Area Limits'''
+        enforce_depth: '''Maximum Depth Limit''',
+        enforce_altitude: '''Minimum Altitude Limit''',
+        enforce_timeout: '''Time Limit''',
+        enforce_area2d: '''Polygonal Area Limits''',
       };
 
   const AutonomousSectionBitfieldLimits(int value) : super(value);
@@ -2980,11 +3273,11 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
   /// It will popup periodically to report position. When it pops up, it will stay at surface in "normal" station keeping behaviour for a certain time (popup_duration).
   static const flg_keep_safe = const StationKeepingExtendedBitfieldFlags(0x01);
 
-  static get values => [flg_keep_safe];
+  static get values => [
+        flg_keep_safe];
 
   static get names => {
-        flg_keep_safe: '''Keep safe behaviour'''
-      };
+        flg_keep_safe: '''Keep safe behaviour'''};
 
   const StationKeepingExtendedBitfieldFlags(int value) : super(value);
 
@@ -3020,11 +3313,14 @@ class MagnetometerEnumDirection extends EnumType {
   static const md_clockw_first = const MagnetometerEnumDirection(0);
   static const md_cclockw_first = const MagnetometerEnumDirection(1);
 
-  static get values => [md_clockw_first, md_cclockw_first];
+  static get values => [
+        md_clockw_first,
+        md_cclockw_first,
+      ];
 
   static get names => {
-        md_clockw_first: '''Clockwise First''', 
-        md_cclockw_first: '''Counter Clockwise First'''
+        md_clockw_first: '''Clockwise First''',
+        md_cclockw_first: '''Counter Clockwise First''',
       };
 
   const MagnetometerEnumDirection(int value) : super(value);
@@ -3032,8 +3328,7 @@ class MagnetometerEnumDirection extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3053,16 +3348,22 @@ class VehicleStateEnumOpMode extends EnumType {
   /// Booting system.
   static const vs_boot = const VehicleStateEnumOpMode(5);
 
-  static get values => [vs_service, vs_calibration, 
-        vs_error, vs_maneuver, vs_external, vs_boot];
+  static get values => [
+        vs_service,
+        vs_calibration,
+        vs_error,
+        vs_maneuver,
+        vs_external,
+        vs_boot,
+      ];
 
   static get names => {
-        vs_service: '''Service''', 
-        vs_calibration: '''Calibration''', 
-        vs_error: '''Error''', 
-        vs_maneuver: '''Maneuver''', 
-        vs_external: '''External Control''', 
-        vs_boot: '''Boot'''
+        vs_service: '''Service''',
+        vs_calibration: '''Calibration''',
+        vs_error: '''Error''',
+        vs_maneuver: '''Maneuver''',
+        vs_external: '''External Control''',
+        vs_boot: '''Boot''',
       };
 
   const VehicleStateEnumOpMode(int value) : super(value);
@@ -3070,8 +3371,7 @@ class VehicleStateEnumOpMode extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3079,11 +3379,11 @@ class VehicleStateEnumOpMode extends EnumType {
 class VehicleStateBitfieldFlags extends BitfieldType {
   static const vflg_maneuver_done = const VehicleStateBitfieldFlags(0x01);
 
-  static get values => [vflg_maneuver_done];
+  static get values => [
+        vflg_maneuver_done];
 
   static get names => {
-        vflg_maneuver_done: '''Maneuver Done'''
-      };
+        vflg_maneuver_done: '''Maneuver Done'''};
 
   const VehicleStateBitfieldFlags(int value) : super(value);
 
@@ -3120,14 +3420,18 @@ class VehicleCommandEnumType extends EnumType {
   static const vc_in_progress = const VehicleCommandEnumType(2);
   static const vc_failure = const VehicleCommandEnumType(3);
 
-  static get values => [vc_request, vc_success, 
-        vc_in_progress, vc_failure];
+  static get values => [
+        vc_request,
+        vc_success,
+        vc_in_progress,
+        vc_failure,
+      ];
 
   static get names => {
-        vc_request: '''Request''', 
-        vc_success: '''Reply -- Success''', 
-        vc_in_progress: '''Reply -- In Progress''', 
-        vc_failure: '''Reply -- Failure'''
+        vc_request: '''Request''',
+        vc_success: '''Reply -- Success''',
+        vc_in_progress: '''Reply -- In Progress''',
+        vc_failure: '''Reply -- Failure''',
       };
 
   const VehicleCommandEnumType(int value) : super(value);
@@ -3135,8 +3439,7 @@ class VehicleCommandEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3152,14 +3455,18 @@ class VehicleCommandEnumCommand extends EnumType {
   /// Stop calibrating vehicle.
   static const vc_stop_calibration = const VehicleCommandEnumCommand(3);
 
-  static get values => [vc_exec_maneuver, vc_stop_maneuver, 
-        vc_start_calibration, vc_stop_calibration];
+  static get values => [
+        vc_exec_maneuver,
+        vc_stop_maneuver,
+        vc_start_calibration,
+        vc_stop_calibration,
+      ];
 
   static get names => {
-        vc_exec_maneuver: '''Execute Maneuver''', 
-        vc_stop_maneuver: '''Stop Maneuver''', 
-        vc_start_calibration: '''Start Calibration''', 
-        vc_stop_calibration: '''Stop Calibration'''
+        vc_exec_maneuver: '''Execute Maneuver''',
+        vc_stop_maneuver: '''Stop Maneuver''',
+        vc_start_calibration: '''Start Calibration''',
+        vc_stop_calibration: '''Stop Calibration''',
       };
 
   const VehicleCommandEnumCommand(int value) : super(value);
@@ -3167,8 +3474,7 @@ class VehicleCommandEnumCommand extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3181,15 +3487,20 @@ class MonitorEntityStateEnumCommand extends EnumType {
   static const mes_enable_exclusive = const MonitorEntityStateEnumCommand(3);
   static const mes_status = const MonitorEntityStateEnumCommand(4);
 
-  static get values => [mes_reset, mes_enable, 
-        mes_disable, mes_enable_exclusive, mes_status];
+  static get values => [
+        mes_reset,
+        mes_enable,
+        mes_disable,
+        mes_enable_exclusive,
+        mes_status,
+      ];
 
   static get names => {
-        mes_reset: '''Reset to defaults''', 
-        mes_enable: '''Enable Monitoring''', 
-        mes_disable: '''Disable Monitoring''', 
-        mes_enable_exclusive: '''Enable Monitoring (exclusive - disables all others)''', 
-        mes_status: '''Status Report'''
+        mes_reset: '''Reset to defaults''',
+        mes_enable: '''Enable Monitoring''',
+        mes_disable: '''Disable Monitoring''',
+        mes_enable_exclusive: '''Enable Monitoring (exclusive - disables all others)''',
+        mes_status: '''Status Report''',
       };
 
   const MonitorEntityStateEnumCommand(int value) : super(value);
@@ -3197,8 +3508,7 @@ class MonitorEntityStateEnumCommand extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3207,11 +3517,14 @@ class ControlLoopsEnumEnable extends EnumType {
   static const cl_disable = const ControlLoopsEnumEnable(0);
   static const cl_enable = const ControlLoopsEnumEnable(1);
 
-  static get values => [cl_disable, cl_enable];
+  static get values => [
+        cl_disable,
+        cl_enable,
+      ];
 
   static get names => {
-        cl_disable: '''Disable''', 
-        cl_enable: '''Enable'''
+        cl_disable: '''Disable''',
+        cl_enable: '''Enable''',
       };
 
   const ControlLoopsEnumEnable(int value) : super(value);
@@ -3219,8 +3532,7 @@ class ControlLoopsEnumEnable extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3238,15 +3550,20 @@ class VehicleMediumEnumMedium extends EnumType {
   /// Vehicle medium is unknown
   static const vm_unknown = const VehicleMediumEnumMedium(4);
 
-  static get values => [vm_ground, vm_air, 
-        vm_water, vm_underwater, vm_unknown];
+  static get values => [
+        vm_ground,
+        vm_air,
+        vm_water,
+        vm_underwater,
+        vm_unknown,
+      ];
 
   static get names => {
-        vm_ground: '''Ground''', 
-        vm_air: '''Air''', 
-        vm_water: '''Water''', 
-        vm_underwater: '''Underwater''', 
-        vm_unknown: '''Unknown'''
+        vm_ground: '''Ground''',
+        vm_air: '''Air''',
+        vm_water: '''Water''',
+        vm_underwater: '''Underwater''',
+        vm_unknown: '''Unknown''',
       };
 
   const VehicleMediumEnumMedium(int value) : super(value);
@@ -3254,8 +3571,7 @@ class VehicleMediumEnumMedium extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3271,14 +3587,18 @@ class CollisionBitfieldType extends BitfieldType {
   /// Sudden impact detected
   static const cd_impact = const CollisionBitfieldType(0x08);
 
-  static get values => [cd_x, cd_y, 
-        cd_z, cd_impact];
+  static get values => [
+        cd_x,
+        cd_y,
+        cd_z,
+        cd_impact,
+      ];
 
   static get names => {
-        cd_x: '''X-axis''', 
-        cd_y: '''Y-axis''', 
-        cd_z: '''Z-axis''', 
-        cd_impact: '''Impact'''
+        cd_x: '''X-axis''',
+        cd_y: '''Y-axis''',
+        cd_z: '''Z-axis''',
+        cd_impact: '''Impact''',
       };
 
   const CollisionBitfieldType(int value) : super(value);
@@ -3316,13 +3636,16 @@ class FormStateEnumPosSimMon extends EnumType {
   static const pos_wrn = const FormStateEnumPosSimMon(1);
   static const pos_lim = const FormStateEnumPosSimMon(2);
 
-  static get values => [pos_ok, pos_wrn, 
-        pos_lim];
+  static get values => [
+        pos_ok,
+        pos_wrn,
+        pos_lim,
+      ];
 
   static get names => {
-        pos_ok: '''Ok''', 
-        pos_wrn: '''Warning threshold''', 
-        pos_lim: '''Limit threshold'''
+        pos_ok: '''Ok''',
+        pos_wrn: '''Warning threshold''',
+        pos_lim: '''Limit threshold''',
       };
 
   const FormStateEnumPosSimMon(int value) : super(value);
@@ -3330,8 +3653,7 @@ class FormStateEnumPosSimMon extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3341,11 +3663,14 @@ class FormStateEnumCommMon extends EnumType {
   static const comms_ok = const FormStateEnumCommMon(0);
   static const comms_timeout = const FormStateEnumCommMon(1);
 
-  static get values => [comms_ok, comms_timeout];
+  static get values => [
+        comms_ok,
+        comms_timeout,
+      ];
 
   static get names => {
-        comms_ok: '''Ok''', 
-        comms_timeout: '''Timeout'''
+        comms_ok: '''Ok''',
+        comms_timeout: '''Timeout''',
       };
 
   const FormStateEnumCommMon(int value) : super(value);
@@ -3353,8 +3678,7 @@ class FormStateEnumCommMon extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3364,11 +3688,14 @@ class FormStateEnumConvergMon extends EnumType {
   static const conv_ok = const FormStateEnumConvergMon(0);
   static const conv_timeout = const FormStateEnumConvergMon(1);
 
-  static get values => [conv_ok, conv_timeout];
+  static get values => [
+        conv_ok,
+        conv_timeout,
+      ];
 
   static get names => {
-        conv_ok: '''Ok''', 
-        conv_timeout: '''Timeout'''
+        conv_ok: '''Ok''',
+        conv_timeout: '''Timeout''',
       };
 
   const FormStateEnumConvergMon(int value) : super(value);
@@ -3376,8 +3703,7 @@ class FormStateEnumConvergMon extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3391,13 +3717,16 @@ class AutopilotModeEnumAutonomy extends EnumType {
   /// Autopilot has full control
   static const al_auto = const AutopilotModeEnumAutonomy(2);
 
-  static get values => [al_manual, al_assisted, 
-        al_auto];
+  static get values => [
+        al_manual,
+        al_assisted,
+        al_auto,
+      ];
 
   static get names => {
-        al_manual: '''Manual''', 
-        al_assisted: '''Assisted''', 
-        al_auto: '''Auto'''
+        al_manual: '''Manual''',
+        al_assisted: '''Assisted''',
+        al_auto: '''Auto''',
       };
 
   const AutopilotModeEnumAutonomy(int value) : super(value);
@@ -3405,8 +3734,7 @@ class AutopilotModeEnumAutonomy extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3416,11 +3744,14 @@ class FormationStateEnumType extends EnumType {
   static const fc_request = const FormationStateEnumType(0);
   static const fc_report = const FormationStateEnumType(1);
 
-  static get values => [fc_request, fc_report];
+  static get values => [
+        fc_request,
+        fc_report,
+      ];
 
   static get names => {
-        fc_request: '''Request''', 
-        fc_report: '''Report'''
+        fc_request: '''Request''',
+        fc_report: '''Report''',
       };
 
   const FormationStateEnumType(int value) : super(value);
@@ -3428,8 +3759,7 @@ class FormationStateEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3441,11 +3771,14 @@ class FormationStateEnumOp extends EnumType {
   /// Stop the formation maneuver.
   static const op_stop = const FormationStateEnumOp(1);
 
-  static get values => [op_start, op_stop];
+  static get values => [
+        op_start,
+        op_stop,
+      ];
 
   static get names => {
-        op_start: '''Start''', 
-        op_stop: '''Stop'''
+        op_start: '''Start''',
+        op_stop: '''Stop''',
       };
 
   const FormationStateEnumOp(int value) : super(value);
@@ -3453,8 +3786,7 @@ class FormationStateEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3465,13 +3797,16 @@ class FormationStateEnumPosSimMon extends EnumType {
   static const pos_wrn = const FormationStateEnumPosSimMon(1);
   static const pos_lim = const FormationStateEnumPosSimMon(2);
 
-  static get values => [pos_ok, pos_wrn, 
-        pos_lim];
+  static get values => [
+        pos_ok,
+        pos_wrn,
+        pos_lim,
+      ];
 
   static get names => {
-        pos_ok: '''Ok''', 
-        pos_wrn: '''Warning threshold''', 
-        pos_lim: '''Limit threshold'''
+        pos_ok: '''Ok''',
+        pos_wrn: '''Warning threshold''',
+        pos_lim: '''Limit threshold''',
       };
 
   const FormationStateEnumPosSimMon(int value) : super(value);
@@ -3479,8 +3814,7 @@ class FormationStateEnumPosSimMon extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3490,11 +3824,14 @@ class FormationStateEnumCommMon extends EnumType {
   static const comms_ok = const FormationStateEnumCommMon(0);
   static const comms_timeout = const FormationStateEnumCommMon(1);
 
-  static get values => [comms_ok, comms_timeout];
+  static get values => [
+        comms_ok,
+        comms_timeout,
+      ];
 
   static get names => {
-        comms_ok: '''Ok''', 
-        comms_timeout: '''Timeout'''
+        comms_ok: '''Ok''',
+        comms_timeout: '''Timeout''',
       };
 
   const FormationStateEnumCommMon(int value) : super(value);
@@ -3502,8 +3839,7 @@ class FormationStateEnumCommMon extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3513,11 +3849,14 @@ class FormationStateEnumConvergMon extends EnumType {
   static const conv_ok = const FormationStateEnumConvergMon(0);
   static const conv_timeout = const FormationStateEnumConvergMon(1);
 
-  static get values => [conv_ok, conv_timeout];
+  static get values => [
+        conv_ok,
+        conv_timeout,
+      ];
 
   static get names => {
-        conv_ok: '''Ok''', 
-        conv_timeout: '''Timeout'''
+        conv_ok: '''Ok''',
+        conv_timeout: '''Timeout''',
       };
 
   const FormationStateEnumConvergMon(int value) : super(value);
@@ -3525,8 +3864,7 @@ class FormationStateEnumConvergMon extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3563,16 +3901,22 @@ class ReportControlEnumOp extends EnumType {
   /// in field 'dst'.
   static const op_report_sent = const ReportControlEnumOp(5);
 
-  static get values => [op_request_start, op_started, 
-        op_request_stop, op_stopped, op_request_report, op_report_sent];
+  static get values => [
+        op_request_start,
+        op_started,
+        op_request_stop,
+        op_stopped,
+        op_request_report,
+        op_report_sent,
+      ];
 
   static get names => {
-        op_request_start: '''Request Start of Reports''', 
-        op_started: '''Report Started''', 
-        op_request_stop: '''Request Stop of Reports''', 
-        op_stopped: '''Report Stopped''', 
-        op_request_report: '''Request Single Reports''', 
-        op_report_sent: '''Single Report Sent'''
+        op_request_start: '''Request Start of Reports''',
+        op_started: '''Report Started''',
+        op_request_stop: '''Request Stop of Reports''',
+        op_stopped: '''Report Stopped''',
+        op_request_report: '''Request Single Reports''',
+        op_report_sent: '''Single Report Sent''',
       };
 
   const ReportControlEnumOp(int value) : super(value);
@@ -3580,8 +3924,7 @@ class ReportControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3599,15 +3942,20 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
   /// Use Radio telemetry
   static const ci_radio = const ReportControlBitfieldCommInterface(0x10);
 
-  static get values => [ci_acoustic, ci_satellite, 
-        ci_gsm, ci_mobile, ci_radio];
+  static get values => [
+        ci_acoustic,
+        ci_satellite,
+        ci_gsm,
+        ci_mobile,
+        ci_radio,
+      ];
 
   static get names => {
-        ci_acoustic: '''Acoustic''', 
-        ci_satellite: '''Satellite''', 
-        ci_gsm: '''GSM''', 
-        ci_mobile: '''Mobile''', 
-        ci_radio: '''Radio'''
+        ci_acoustic: '''Acoustic''',
+        ci_satellite: '''Satellite''',
+        ci_gsm: '''GSM''',
+        ci_mobile: '''Mobile''',
+        ci_radio: '''Radio''',
       };
 
   const ReportControlBitfieldCommInterface(int value) : super(value);
@@ -3646,14 +3994,18 @@ class TransmissionRequestEnumCommMean extends EnumType {
   static const cmean_satellite = const TransmissionRequestEnumCommMean(2);
   static const cmean_gsm = const TransmissionRequestEnumCommMean(3);
 
-  static get values => [cmean_wifi, cmean_acoustic, 
-        cmean_satellite, cmean_gsm];
+  static get values => [
+        cmean_wifi,
+        cmean_acoustic,
+        cmean_satellite,
+        cmean_gsm,
+      ];
 
   static get names => {
-        cmean_wifi: '''WiFi''', 
-        cmean_acoustic: '''Acoustic''', 
-        cmean_satellite: '''Satellite''', 
-        cmean_gsm: '''GSM'''
+        cmean_wifi: '''WiFi''',
+        cmean_acoustic: '''Acoustic''',
+        cmean_satellite: '''Satellite''',
+        cmean_gsm: '''GSM''',
       };
 
   const TransmissionRequestEnumCommMean(int value) : super(value);
@@ -3661,8 +4013,7 @@ class TransmissionRequestEnumCommMean extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3673,13 +4024,16 @@ class TransmissionRequestEnumDataMode extends EnumType {
   static const dmode_text = const TransmissionRequestEnumDataMode(1);
   static const dmode_raw = const TransmissionRequestEnumDataMode(2);
 
-  static get values => [dmode_inlinemsg, dmode_text, 
-        dmode_raw];
+  static get values => [
+        dmode_inlinemsg,
+        dmode_text,
+        dmode_raw,
+      ];
 
   static get names => {
-        dmode_inlinemsg: '''Inline Message''', 
-        dmode_text: '''Text''', 
-        dmode_raw: '''Raw Data'''
+        dmode_inlinemsg: '''Inline Message''',
+        dmode_text: '''Text''',
+        dmode_raw: '''Raw Data''',
       };
 
   const TransmissionRequestEnumDataMode(int value) : super(value);
@@ -3687,8 +4041,7 @@ class TransmissionRequestEnumDataMode extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3702,17 +4055,24 @@ class TransmissionStatusEnumStatus extends EnumType {
   static const tstat_temporary_failure = const TransmissionStatusEnumStatus(102);
   static const tstat_permanent_failure = const TransmissionStatusEnumStatus(103);
 
-  static get values => [tstat_in_progress, tstat_sent, 
-        tstat_delivered, tstat_maybe_delivered, tstat_input_failure, tstat_temporary_failure, tstat_permanent_failure];
+  static get values => [
+        tstat_in_progress,
+        tstat_sent,
+        tstat_delivered,
+        tstat_maybe_delivered,
+        tstat_input_failure,
+        tstat_temporary_failure,
+        tstat_permanent_failure,
+      ];
 
   static get names => {
-        tstat_in_progress: '''In progress''', 
-        tstat_sent: '''Sent''', 
-        tstat_delivered: '''Delivered''', 
-        tstat_maybe_delivered: '''Delivery is unknown''', 
-        tstat_input_failure: '''Input Error''', 
-        tstat_temporary_failure: '''Temporary Error''', 
-        tstat_permanent_failure: '''Permanent Failure'''
+        tstat_in_progress: '''In progress''',
+        tstat_sent: '''Sent''',
+        tstat_delivered: '''Delivered''',
+        tstat_maybe_delivered: '''Delivery is unknown''',
+        tstat_input_failure: '''Input Error''',
+        tstat_temporary_failure: '''Temporary Error''',
+        tstat_permanent_failure: '''Permanent Failure''',
       };
 
   const TransmissionStatusEnumStatus(int value) : super(value);
@@ -3720,8 +4080,7 @@ class TransmissionStatusEnumStatus extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3732,14 +4091,18 @@ class SmsStatusEnumStatus extends EnumType {
   static const smsstat_input_failure = const SmsStatusEnumStatus(101);
   static const smsstat_error = const SmsStatusEnumStatus(102);
 
-  static get values => [smsstat_queued, smsstat_sent, 
-        smsstat_input_failure, smsstat_error];
+  static get values => [
+        smsstat_queued,
+        smsstat_sent,
+        smsstat_input_failure,
+        smsstat_error,
+      ];
 
   static get names => {
-        smsstat_queued: '''Queued''', 
-        smsstat_sent: '''Sent''', 
-        smsstat_input_failure: '''Input Error''', 
-        smsstat_error: '''Error trying to send sms'''
+        smsstat_queued: '''Queued''',
+        smsstat_sent: '''Sent''',
+        smsstat_input_failure: '''Input Error''',
+        smsstat_error: '''Error trying to send sms''',
       };
 
   const SmsStatusEnumStatus(int value) : super(value);
@@ -3747,8 +4110,7 @@ class SmsStatusEnumStatus extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3765,15 +4127,20 @@ class VtolStateEnumState extends EnumType {
   /// Vehicle is in fixed-wing state.
   static const vtol_state_fw = const VtolStateEnumState(4);
 
-  static get values => [vtol_state_undefined, vtol_state_transition_to_fw, 
-        vtol_state_transition_to_mc, vtol_state_mc, vtol_state_fw];
+  static get values => [
+        vtol_state_undefined,
+        vtol_state_transition_to_fw,
+        vtol_state_transition_to_mc,
+        vtol_state_mc,
+        vtol_state_fw,
+      ];
 
   static get names => {
-        vtol_state_undefined: '''Undefined''', 
-        vtol_state_transition_to_fw: '''Transition to Fixed-Wing''', 
-        vtol_state_transition_to_mc: '''Transition to MultiCopter''', 
-        vtol_state_mc: '''MutiCopter''', 
-        vtol_state_fw: '''Fixed-Wing'''
+        vtol_state_undefined: '''Undefined''',
+        vtol_state_transition_to_fw: '''Transition to Fixed-Wing''',
+        vtol_state_transition_to_mc: '''Transition to MultiCopter''',
+        vtol_state_mc: '''MutiCopter''',
+        vtol_state_fw: '''Fixed-Wing''',
       };
 
   const VtolStateEnumState(int value) : super(value);
@@ -3781,8 +4148,7 @@ class VtolStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3791,11 +4157,14 @@ class ArmingStateEnumState extends EnumType {
   static const motors_armed = const ArmingStateEnumState(0);
   static const motors_disarmed = const ArmingStateEnumState(1);
 
-  static get values => [motors_armed, motors_disarmed];
+  static get values => [
+        motors_armed,
+        motors_disarmed,
+      ];
 
   static get names => {
-        motors_armed: '''Armed''', 
-        motors_disarmed: '''Disarmed'''
+        motors_armed: '''Armed''',
+        motors_disarmed: '''Disarmed''',
       };
 
   const ArmingStateEnumState(int value) : super(value);
@@ -3803,8 +4172,7 @@ class ArmingStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3817,16 +4185,22 @@ class EmergencyControlEnumCommand extends EnumType {
   static const ectl_query = const EmergencyControlEnumCommand(4);
   static const ectl_set_plan = const EmergencyControlEnumCommand(5);
 
-  static get values => [ectl_enable, ectl_disable, 
-        ectl_start, ectl_stop, ectl_query, ectl_set_plan];
+  static get values => [
+        ectl_enable,
+        ectl_disable,
+        ectl_start,
+        ectl_stop,
+        ectl_query,
+        ectl_set_plan,
+      ];
 
   static get names => {
-        ectl_enable: '''Enable''', 
-        ectl_disable: '''Disable''', 
-        ectl_start: '''Start''', 
-        ectl_stop: '''Stop''', 
-        ectl_query: '''Query''', 
-        ectl_set_plan: '''Set Plan'''
+        ectl_enable: '''Enable''',
+        ectl_disable: '''Disable''',
+        ectl_start: '''Start''',
+        ectl_stop: '''Stop''',
+        ectl_query: '''Query''',
+        ectl_set_plan: '''Set Plan''',
       };
 
   const EmergencyControlEnumCommand(int value) : super(value);
@@ -3834,8 +4208,7 @@ class EmergencyControlEnumCommand extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3848,16 +4221,22 @@ class EmergencyControlStateEnumState extends EnumType {
   static const ecs_active = const EmergencyControlStateEnumState(4);
   static const ecs_stopping = const EmergencyControlStateEnumState(5);
 
-  static get values => [ecs_not_configured, ecs_disabled, 
-        ecs_enabled, ecs_armed, ecs_active, ecs_stopping];
+  static get values => [
+        ecs_not_configured,
+        ecs_disabled,
+        ecs_enabled,
+        ecs_armed,
+        ecs_active,
+        ecs_stopping,
+      ];
 
   static get names => {
-        ecs_not_configured: '''Not Configured''', 
-        ecs_disabled: '''Disabled''', 
-        ecs_enabled: '''Enabled''', 
-        ecs_armed: '''Armed''', 
-        ecs_active: '''Active''', 
-        ecs_stopping: '''Stopping'''
+        ecs_not_configured: '''Not Configured''',
+        ecs_disabled: '''Disabled''',
+        ecs_enabled: '''Enabled''',
+        ecs_armed: '''Armed''',
+        ecs_active: '''Active''',
+        ecs_stopping: '''Stopping''',
       };
 
   const EmergencyControlStateEnumState(int value) : super(value);
@@ -3865,8 +4244,7 @@ class EmergencyControlStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3879,14 +4257,18 @@ class PlanDBEnumType extends EnumType {
   static const dbt_failure = const PlanDBEnumType(2);
   static const dbt_in_progress = const PlanDBEnumType(3);
 
-  static get values => [dbt_request, dbt_success, 
-        dbt_failure, dbt_in_progress];
+  static get values => [
+        dbt_request,
+        dbt_success,
+        dbt_failure,
+        dbt_in_progress,
+      ];
 
   static get names => {
-        dbt_request: '''Request''', 
-        dbt_success: '''Reply -- Success''', 
-        dbt_failure: '''Reply -- Failure''', 
-        dbt_in_progress: '''Reply -- In Progress'''
+        dbt_request: '''Request''',
+        dbt_success: '''Reply -- Success''',
+        dbt_failure: '''Reply -- Failure''',
+        dbt_in_progress: '''Reply -- In Progress''',
       };
 
   const PlanDBEnumType(int value) : super(value);
@@ -3894,8 +4276,7 @@ class PlanDBEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3943,19 +4324,26 @@ class PlanDBEnumOp extends EnumType {
   /// bootstrap.
   static const dbop_boot = const PlanDBEnumOp(7);
 
-  static get values => [dbop_set, dbop_del, 
-        dbop_get, dbop_get_info, dbop_clear, dbop_get_state, dbop_get_dstate, 
-        dbop_boot];
+  static get values => [
+        dbop_set,
+        dbop_del,
+        dbop_get,
+        dbop_get_info,
+        dbop_clear,
+        dbop_get_state,
+        dbop_get_dstate,
+        dbop_boot,
+      ];
 
   static get names => {
-        dbop_set: '''Set Plan''', 
-        dbop_del: '''Delete Plan''', 
-        dbop_get: '''Get Plan''', 
-        dbop_get_info: '''Get Plan Info''', 
-        dbop_clear: '''Clear Database''', 
-        dbop_get_state: '''Get Database State (Simple)''', 
-        dbop_get_dstate: '''Get Database State (Detailed)''', 
-        dbop_boot: '''Boot Notification'''
+        dbop_set: '''Set Plan''',
+        dbop_del: '''Delete Plan''',
+        dbop_get: '''Get Plan''',
+        dbop_get_info: '''Get Plan Info''',
+        dbop_clear: '''Clear Database''',
+        dbop_get_state: '''Get Database State (Simple)''',
+        dbop_get_dstate: '''Get Database State (Detailed)''',
+        dbop_boot: '''Boot Notification''',
       };
 
   const PlanDBEnumOp(int value) : super(value);
@@ -3963,8 +4351,7 @@ class PlanDBEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -3979,14 +4366,18 @@ class PlanControlEnumType extends EnumType {
   static const pc_failure = const PlanControlEnumType(2);
   static const pc_in_progress = const PlanControlEnumType(3);
 
-  static get values => [pc_request, pc_success, 
-        pc_failure, pc_in_progress];
+  static get values => [
+        pc_request,
+        pc_success,
+        pc_failure,
+        pc_in_progress,
+      ];
 
   static get names => {
-        pc_request: '''Request''', 
-        pc_success: '''Reply -- Success''', 
-        pc_failure: '''Reply -- Failure''', 
-        pc_in_progress: '''Reply -- In Progress'''
+        pc_request: '''Request''',
+        pc_success: '''Reply -- Success''',
+        pc_failure: '''Reply -- Failure''',
+        pc_in_progress: '''Reply -- In Progress''',
       };
 
   const PlanControlEnumType(int value) : super(value);
@@ -3994,8 +4385,7 @@ class PlanControlEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4024,14 +4414,18 @@ class PlanControlEnumOp extends EnumType {
   /// corresponds to the currently loaded plan.
   static const pc_get = const PlanControlEnumOp(3);
 
-  static get values => [pc_start, pc_stop, 
-        pc_load, pc_get];
+  static get values => [
+        pc_start,
+        pc_stop,
+        pc_load,
+        pc_get,
+      ];
 
   static get names => {
-        pc_start: '''Start Plan''', 
-        pc_stop: '''Stop Plan''', 
-        pc_load: '''Load Plan''', 
-        pc_get: '''Get Plan'''
+        pc_start: '''Start Plan''',
+        pc_stop: '''Stop Plan''',
+        pc_load: '''Load Plan''',
+        pc_get: '''Get Plan''',
       };
 
   const PlanControlEnumOp(int value) : super(value);
@@ -4039,8 +4433,7 @@ class PlanControlEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4051,11 +4444,14 @@ class PlanControlBitfieldFlags extends BitfieldType {
   /// Execute current plan while ignoring some errors that might be active.
   static const flg_ignore_errors = const PlanControlBitfieldFlags(0x0002);
 
-  static get values => [flg_calibrate, flg_ignore_errors];
+  static get values => [
+        flg_calibrate,
+        flg_ignore_errors,
+      ];
 
   static get names => {
-        flg_calibrate: '''Calibrate Vehicle''', 
-        flg_ignore_errors: '''Ignore Errors'''
+        flg_calibrate: '''Calibrate Vehicle''',
+        flg_ignore_errors: '''Ignore Errors''',
       };
 
   const PlanControlBitfieldFlags(int value) : super(value);
@@ -4099,14 +4495,18 @@ class PlanControlStateEnumState extends EnumType {
   /// Executing plan.
   static const pcs_executing = const PlanControlStateEnumState(3);
 
-  static get values => [pcs_blocked, pcs_ready, 
-        pcs_initializing, pcs_executing];
+  static get values => [
+        pcs_blocked,
+        pcs_ready,
+        pcs_initializing,
+        pcs_executing,
+      ];
 
   static get names => {
-        pcs_blocked: '''Blocked''', 
-        pcs_ready: '''Ready''', 
-        pcs_initializing: '''Initializing''', 
-        pcs_executing: '''Executing'''
+        pcs_blocked: '''Blocked''',
+        pcs_ready: '''Ready''',
+        pcs_initializing: '''Initializing''',
+        pcs_executing: '''Executing''',
       };
 
   const PlanControlStateEnumState(int value) : super(value);
@@ -4114,8 +4514,7 @@ class PlanControlStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4129,13 +4528,16 @@ class PlanControlStateEnumLastOutcome extends EnumType {
   /// Last plan execution was a failure.
   static const lpo_failure = const PlanControlStateEnumLastOutcome(2);
 
-  static get values => [lpo_none, lpo_success, 
-        lpo_failure];
+  static get values => [
+        lpo_none,
+        lpo_success,
+        lpo_failure,
+      ];
 
   static get names => {
-        lpo_none: '''None''', 
-        lpo_success: '''Success''', 
-        lpo_failure: '''Failure'''
+        lpo_none: '''None''',
+        lpo_success: '''Success''',
+        lpo_failure: '''Failure''',
       };
 
   const PlanControlStateEnumLastOutcome(int value) : super(value);
@@ -4143,8 +4545,7 @@ class PlanControlStateEnumLastOutcome extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4155,14 +4556,18 @@ class PlanVariableEnumType extends EnumType {
   static const pvt_text = const PlanVariableEnumType(2);
   static const pvt_message = const PlanVariableEnumType(3);
 
-  static get values => [pvt_boolean, pvt_number, 
-        pvt_text, pvt_message];
+  static get values => [
+        pvt_boolean,
+        pvt_number,
+        pvt_text,
+        pvt_message,
+      ];
 
   static get names => {
-        pvt_boolean: '''Boolean''', 
-        pvt_number: '''Number''', 
-        pvt_text: '''Text''', 
-        pvt_message: '''Message'''
+        pvt_boolean: '''Boolean''',
+        pvt_number: '''Number''',
+        pvt_text: '''Text''',
+        pvt_message: '''Message''',
       };
 
   const PlanVariableEnumType(int value) : super(value);
@@ -4170,8 +4575,7 @@ class PlanVariableEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4181,13 +4585,16 @@ class PlanVariableEnumAccess extends EnumType {
   static const pva_output = const PlanVariableEnumAccess(1);
   static const pva_local = const PlanVariableEnumAccess(2);
 
-  static get values => [pva_input, pva_output, 
-        pva_local];
+  static get values => [
+        pva_input,
+        pva_output,
+        pva_local,
+      ];
 
   static get names => {
-        pva_input: '''Input''', 
-        pva_output: '''Output''', 
-        pva_local: '''Local'''
+        pva_input: '''Input''',
+        pva_output: '''Output''',
+        pva_local: '''Local''',
       };
 
   const PlanVariableEnumAccess(int value) : super(value);
@@ -4195,8 +4602,7 @@ class PlanVariableEnumAccess extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4207,11 +4613,14 @@ class PlanGenerationEnumCmd extends EnumType {
   /// Generate (storing it in the PlanDB) and execute it immediately.
   static const cmd_execute = const PlanGenerationEnumCmd(1);
 
-  static get values => [cmd_generate, cmd_execute];
+  static get values => [
+        cmd_generate,
+        cmd_execute,
+      ];
 
   static get names => {
-        cmd_generate: '''Generate''', 
-        cmd_execute: '''Execute'''
+        cmd_generate: '''Generate''',
+        cmd_execute: '''Execute''',
       };
 
   const PlanGenerationEnumCmd(int value) : super(value);
@@ -4219,8 +4628,7 @@ class PlanGenerationEnumCmd extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4235,13 +4643,16 @@ class PlanGenerationEnumOp extends EnumType {
   /// The requested command was executed successfully.
   static const op_success = const PlanGenerationEnumOp(2);
 
-  static get values => [op_request, op_error, 
-        op_success];
+  static get values => [
+        op_request,
+        op_error,
+        op_success,
+      ];
 
   static get names => {
-        op_request: '''Request''', 
-        op_error: '''Error''', 
-        op_success: '''Success'''
+        op_request: '''Request''',
+        op_error: '''Error''',
+        op_success: '''Success''',
       };
 
   const PlanGenerationEnumOp(int value) : super(value);
@@ -4249,8 +4660,7 @@ class PlanGenerationEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4261,13 +4671,16 @@ class LeaderStateEnumOp extends EnumType {
   static const op_set = const LeaderStateEnumOp(1);
   static const op_report = const LeaderStateEnumOp(2);
 
-  static get values => [op_request, op_set, 
-        op_report];
+  static get values => [
+        op_request,
+        op_set,
+        op_report,
+      ];
 
   static get names => {
-        op_request: '''Request''', 
-        op_set: '''Set''', 
-        op_report: '''Report'''
+        op_request: '''Request''',
+        op_set: '''Set''',
+        op_report: '''Report''',
       };
 
   const LeaderStateEnumOp(int value) : super(value);
@@ -4275,8 +4688,7 @@ class LeaderStateEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4287,13 +4699,16 @@ class PlanStatisticsEnumType extends EnumType {
   static const tp_inplan = const PlanStatisticsEnumType(1);
   static const tp_postplan = const PlanStatisticsEnumType(2);
 
-  static get values => [tp_preplan, tp_inplan, 
-        tp_postplan];
+  static get values => [
+        tp_preplan,
+        tp_inplan,
+        tp_postplan,
+      ];
 
   static get names => {
-        tp_preplan: '''Before Plan''', 
-        tp_inplan: '''During Plan''', 
-        tp_postplan: '''After Plan'''
+        tp_preplan: '''Before Plan''',
+        tp_inplan: '''During Plan''',
+        tp_postplan: '''After Plan''',
       };
 
   const PlanStatisticsEnumType(int value) : super(value);
@@ -4301,8 +4716,7 @@ class PlanStatisticsEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4319,15 +4733,20 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
   /// All properties checked.
   static const prp_all = const PlanStatisticsBitfieldProperties(0x07);
 
-  static get values => [prp_basic, prp_nonlinear, 
-        prp_infinite, prp_cyclical, prp_all];
+  static get values => [
+        prp_basic,
+        prp_nonlinear,
+        prp_infinite,
+        prp_cyclical,
+        prp_all,
+      ];
 
   static get names => {
-        prp_basic: '''Basic Plan''', 
-        prp_nonlinear: '''Nonlinear''', 
-        prp_infinite: '''Infinite''', 
-        prp_cyclical: '''Cyclical''', 
-        prp_all: '''All'''
+        prp_basic: '''Basic Plan''',
+        prp_nonlinear: '''Nonlinear''',
+        prp_infinite: '''Infinite''',
+        prp_cyclical: '''Cyclical''',
+        prp_all: '''All''',
       };
 
   const PlanStatisticsBitfieldProperties(int value) : super(value);
@@ -4367,15 +4786,20 @@ class ReportedStateEnumSType extends EnumType {
   static const stype_acoustic_modem = const ReportedStateEnumSType(3);
   static const stype_unknown = const ReportedStateEnumSType(254);
 
-  static get values => [stype_wi_fi, stype_tracker, 
-        stype_sms, stype_acoustic_modem, stype_unknown];
+  static get values => [
+        stype_wi_fi,
+        stype_tracker,
+        stype_sms,
+        stype_acoustic_modem,
+        stype_unknown,
+      ];
 
   static get names => {
-        stype_wi_fi: '''Wi-Fi''', 
-        stype_tracker: '''Tracker''', 
-        stype_sms: '''SMS''', 
-        stype_acoustic_modem: '''Acoustic Modem''', 
-        stype_unknown: '''Unknown source'''
+        stype_wi_fi: '''Wi-Fi''',
+        stype_tracker: '''Tracker''',
+        stype_sms: '''SMS''',
+        stype_acoustic_modem: '''Acoustic Modem''',
+        stype_unknown: '''Unknown source''',
       };
 
   const ReportedStateEnumSType(int value) : super(value);
@@ -4383,8 +4807,7 @@ class ReportedStateEnumSType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4406,17 +4829,24 @@ class MapFeatureEnumFeatureType extends EnumType {
   /// The offsets reference for this map
   static const ftype_homeref = const MapFeatureEnumFeatureType(6);
 
-  static get values => [ftype_poi, ftype_filledpoly, 
-        ftype_contouredpoly, ftype_line, ftype_transponder, ftype_startloc, ftype_homeref];
+  static get values => [
+        ftype_poi,
+        ftype_filledpoly,
+        ftype_contouredpoly,
+        ftype_line,
+        ftype_transponder,
+        ftype_startloc,
+        ftype_homeref,
+      ];
 
   static get names => {
-        ftype_poi: '''Point of Interest''', 
-        ftype_filledpoly: '''Filled Polygon''', 
-        ftype_contouredpoly: '''Countoured Polygon''', 
-        ftype_line: '''Line''', 
-        ftype_transponder: '''Transponder''', 
-        ftype_startloc: '''Start Location''', 
-        ftype_homeref: '''Home Reference'''
+        ftype_poi: '''Point of Interest''',
+        ftype_filledpoly: '''Filled Polygon''',
+        ftype_contouredpoly: '''Countoured Polygon''',
+        ftype_line: '''Line''',
+        ftype_transponder: '''Transponder''',
+        ftype_startloc: '''Start Location''',
+        ftype_homeref: '''Home Reference''',
       };
 
   const MapFeatureEnumFeatureType(int value) : super(value);
@@ -4424,8 +4854,7 @@ class MapFeatureEnumFeatureType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4441,20 +4870,28 @@ class CcuEventEnumType extends EnumType {
   static const evt_teleoperation_started = const CcuEventEnumType(8);
   static const evt_teleoperation_ended = const CcuEventEnumType(9);
 
-  static get values => [evt_log_entry, evt_plan_added, 
-        evt_plan_removed, evt_plan_changed, evt_map_feature_added, evt_map_feature_removed, evt_map_feature_changed, 
-        evt_teleoperation_started, evt_teleoperation_ended];
+  static get values => [
+        evt_log_entry,
+        evt_plan_added,
+        evt_plan_removed,
+        evt_plan_changed,
+        evt_map_feature_added,
+        evt_map_feature_removed,
+        evt_map_feature_changed,
+        evt_teleoperation_started,
+        evt_teleoperation_ended,
+      ];
 
   static get names => {
-        evt_log_entry: '''Log Book Entry Added''', 
-        evt_plan_added: '''Plan Added''', 
-        evt_plan_removed: '''Plan Removed''', 
-        evt_plan_changed: '''Plan Changed''', 
-        evt_map_feature_added: '''Map feature added''', 
-        evt_map_feature_removed: '''Map feature removed''', 
-        evt_map_feature_changed: '''Map feature changed''', 
-        evt_teleoperation_started: '''The sender is now teleoperating the vehicle''', 
-        evt_teleoperation_ended: '''The sender stopped teleoperating the vehicle'''
+        evt_log_entry: '''Log Book Entry Added''',
+        evt_plan_added: '''Plan Added''',
+        evt_plan_removed: '''Plan Removed''',
+        evt_plan_changed: '''Plan Changed''',
+        evt_map_feature_added: '''Map feature added''',
+        evt_map_feature_removed: '''Map feature removed''',
+        evt_map_feature_changed: '''Map feature changed''',
+        evt_teleoperation_started: '''The sender is now teleoperating the vehicle''',
+        evt_teleoperation_ended: '''The sender stopped teleoperating the vehicle''',
       };
 
   const CcuEventEnumType(int value) : super(value);
@@ -4462,8 +4899,7 @@ class CcuEventEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4476,16 +4912,22 @@ class TrexCommandEnumCommand extends EnumType {
   static const op_request_plan = const TrexCommandEnumCommand(4);
   static const op_report_plan = const TrexCommandEnumCommand(5);
 
-  static get values => [op_disable, op_enable, 
-        op_post_goal, op_recall_goal, op_request_plan, op_report_plan];
+  static get values => [
+        op_disable,
+        op_enable,
+        op_post_goal,
+        op_recall_goal,
+        op_request_plan,
+        op_report_plan,
+      ];
 
   static get names => {
-        op_disable: '''Disable TREX''', 
-        op_enable: '''Enable TREX''', 
-        op_post_goal: '''Post Goal''', 
-        op_recall_goal: '''Recall Goal''', 
-        op_request_plan: '''Request current plan''', 
-        op_report_plan: '''Report current plan'''
+        op_disable: '''Disable TREX''',
+        op_enable: '''Enable TREX''',
+        op_post_goal: '''Post Goal''',
+        op_recall_goal: '''Recall Goal''',
+        op_request_plan: '''Request current plan''',
+        op_report_plan: '''Report current plan''',
       };
 
   const TrexCommandEnumCommand(int value) : super(value);
@@ -4493,8 +4935,7 @@ class TrexCommandEnumCommand extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4506,15 +4947,20 @@ class TrexOperationEnumOp extends EnumType {
   static const op_request_plan = const TrexOperationEnumOp(4);
   static const op_report_plan = const TrexOperationEnumOp(5);
 
-  static get values => [op_post_token, op_post_goal, 
-        op_recall_goal, op_request_plan, op_report_plan];
+  static get values => [
+        op_post_token,
+        op_post_goal,
+        op_recall_goal,
+        op_request_plan,
+        op_report_plan,
+      ];
 
   static get names => {
-        op_post_token: '''Post Token''', 
-        op_post_goal: '''Post Goal''', 
-        op_recall_goal: '''Recall Goal''', 
-        op_request_plan: '''Request current plan''', 
-        op_report_plan: '''Report current plan'''
+        op_post_token: '''Post Token''',
+        op_post_goal: '''Post Goal''',
+        op_recall_goal: '''Recall Goal''',
+        op_request_plan: '''Request current plan''',
+        op_report_plan: '''Report current plan''',
       };
 
   const TrexOperationEnumOp(int value) : super(value);
@@ -4522,8 +4968,7 @@ class TrexOperationEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4535,15 +4980,20 @@ class TrexAttributeEnumAttrType extends EnumType {
   static const type_string = const TrexAttributeEnumAttrType(4);
   static const type_enum = const TrexAttributeEnumAttrType(5);
 
-  static get values => [type_bool, type_int, 
-        type_float, type_string, type_enum];
+  static get values => [
+        type_bool,
+        type_int,
+        type_float,
+        type_string,
+        type_enum,
+      ];
 
   static get names => {
-        type_bool: '''Boolean Domain''', 
-        type_int: '''Integer Domain''', 
-        type_float: '''Float Domain''', 
-        type_string: '''String Domain''', 
-        type_enum: '''Enumerated Domain'''
+        type_bool: '''Boolean Domain''',
+        type_int: '''Integer Domain''',
+        type_float: '''Float Domain''',
+        type_string: '''String Domain''',
+        type_enum: '''Enumerated Domain''',
       };
 
   const TrexAttributeEnumAttrType(int value) : super(value);
@@ -4551,8 +5001,7 @@ class TrexAttributeEnumAttrType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4561,11 +5010,14 @@ class SessionStatusEnumStatus extends EnumType {
   static const status_established = const SessionStatusEnumStatus(1);
   static const status_closed = const SessionStatusEnumStatus(2);
 
-  static get values => [status_established, status_closed];
+  static get values => [
+        status_established,
+        status_closed,
+      ];
 
   static get names => {
-        status_established: '''Established''', 
-        status_closed: '''Closed'''
+        status_established: '''Established''',
+        status_closed: '''Closed''',
       };
 
   const SessionStatusEnumStatus(int value) : super(value);
@@ -4573,8 +5025,7 @@ class SessionStatusEnumStatus extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4584,11 +5035,14 @@ class IoEventEnumType extends EnumType {
   static const iov_type_input = const IoEventEnumType(1);
   static const iov_type_input_error = const IoEventEnumType(2);
 
-  static get values => [iov_type_input, iov_type_input_error];
+  static get values => [
+        iov_type_input,
+        iov_type_input_error,
+      ];
 
   static get names => {
-        iov_type_input: '''Input Available''', 
-        iov_type_input_error: '''Input Error'''
+        iov_type_input: '''Input Available''',
+        iov_type_input_error: '''Input Error''',
       };
 
   const IoEventEnumType(int value) : super(value);
@@ -4596,8 +5050,7 @@ class IoEventEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4606,11 +5059,14 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
   static const utf_ack = const UamTxFrameBitfieldFlags(0x01);
   static const utf_delayed = const UamTxFrameBitfieldFlags(0x02);
 
-  static get values => [utf_ack, utf_delayed];
+  static get values => [
+        utf_ack,
+        utf_delayed,
+      ];
 
   static get names => {
-        utf_ack: '''Acknowledgement''', 
-        utf_delayed: '''Delayed'''
+        utf_ack: '''Acknowledgement''',
+        utf_delayed: '''Delayed''',
       };
 
   const UamTxFrameBitfieldFlags(int value) : super(value);
@@ -4646,11 +5102,14 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
   static const urf_promiscuous = const UamRxFrameBitfieldFlags(0x01);
   static const urf_delayed = const UamRxFrameBitfieldFlags(0x02);
 
-  static get values => [urf_promiscuous, urf_delayed];
+  static get values => [
+        urf_promiscuous,
+        urf_delayed,
+      ];
 
   static get names => {
-        urf_promiscuous: '''Promiscuous''', 
-        urf_delayed: '''Delayed'''
+        urf_promiscuous: '''Promiscuous''',
+        urf_delayed: '''Delayed''',
       };
 
   const UamRxFrameBitfieldFlags(int value) : super(value);
@@ -4692,19 +5151,26 @@ class UamTxStatusEnumValue extends EnumType {
   static const uts_unsupported = const UamTxStatusEnumValue(6);
   static const uts_inv_size = const UamTxStatusEnumValue(7);
 
-  static get values => [uts_done, uts_failed, 
-        uts_canceled, uts_busy, uts_inv_addr, uts_ip, uts_unsupported, 
-        uts_inv_size];
+  static get values => [
+        uts_done,
+        uts_failed,
+        uts_canceled,
+        uts_busy,
+        uts_inv_addr,
+        uts_ip,
+        uts_unsupported,
+        uts_inv_size,
+      ];
 
   static get names => {
-        uts_done: '''Transmission Completed''', 
-        uts_failed: '''Transmission Failed''', 
-        uts_canceled: '''Transmission Canceled''', 
-        uts_busy: '''Modem is busy''', 
-        uts_inv_addr: '''Invalid address''', 
-        uts_ip: '''In Progress''', 
-        uts_unsupported: '''Unsupported operation''', 
-        uts_inv_size: '''Invalid transmission size'''
+        uts_done: '''Transmission Completed''',
+        uts_failed: '''Transmission Failed''',
+        uts_canceled: '''Transmission Canceled''',
+        uts_busy: '''Modem is busy''',
+        uts_inv_addr: '''Invalid address''',
+        uts_ip: '''In Progress''',
+        uts_unsupported: '''Unsupported operation''',
+        uts_inv_size: '''Invalid transmission size''',
       };
 
   const UamTxStatusEnumValue(int value) : super(value);
@@ -4712,8 +5178,7 @@ class UamTxStatusEnumValue extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4724,13 +5189,16 @@ class FormCtrlParamEnumAction extends EnumType {
   static const op_set = const FormCtrlParamEnumAction(1);
   static const op_rep = const FormCtrlParamEnumAction(2);
 
-  static get values => [op_req, op_set, 
-        op_rep];
+  static get values => [
+        op_req,
+        op_set,
+        op_rep,
+      ];
 
   static get names => {
-        op_req: '''Request''', 
-        op_set: '''Set''', 
-        op_rep: '''Report'''
+        op_req: '''Request''',
+        op_set: '''Set''',
+        op_rep: '''Report''',
       };
 
   const FormCtrlParamEnumAction(int value) : super(value);
@@ -4738,8 +5206,7 @@ class FormCtrlParamEnumAction extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4750,13 +5217,16 @@ class FormationControlParamsEnumAction extends EnumType {
   static const op_set = const FormationControlParamsEnumAction(1);
   static const op_rep = const FormationControlParamsEnumAction(2);
 
-  static get values => [op_req, op_set, 
-        op_rep];
+  static get values => [
+        op_req,
+        op_set,
+        op_rep,
+      ];
 
   static get names => {
-        op_req: '''Request''', 
-        op_set: '''Set''', 
-        op_rep: '''Report'''
+        op_req: '''Request''',
+        op_set: '''Set''',
+        op_rep: '''Report''',
       };
 
   const FormationControlParamsEnumAction(int value) : super(value);
@@ -4764,8 +5234,7 @@ class FormationControlParamsEnumAction extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4775,11 +5244,14 @@ class FormationEvaluationEnumType extends EnumType {
   static const fc_request = const FormationEvaluationEnumType(0);
   static const fc_report = const FormationEvaluationEnumType(1);
 
-  static get values => [fc_request, fc_report];
+  static get values => [
+        fc_request,
+        fc_report,
+      ];
 
   static get names => {
-        fc_request: '''Request''', 
-        fc_report: '''Report'''
+        fc_request: '''Request''',
+        fc_report: '''Report''',
       };
 
   const FormationEvaluationEnumType(int value) : super(value);
@@ -4787,8 +5259,7 @@ class FormationEvaluationEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4806,15 +5277,20 @@ class FormationEvaluationEnumOp extends EnumType {
   /// Stop the formation maneuver.
   static const op_failure = const FormationEvaluationEnumOp(4);
 
-  static get values => [op_start, op_stop, 
-        op_ready, op_executing, op_failure];
+  static get values => [
+        op_start,
+        op_stop,
+        op_ready,
+        op_executing,
+        op_failure,
+      ];
 
   static get names => {
-        op_start: '''Start''', 
-        op_stop: '''Stop''', 
-        op_ready: '''Ready''', 
-        op_executing: '''Executing''', 
-        op_failure: '''Failure'''
+        op_start: '''Start''',
+        op_stop: '''Stop''',
+        op_ready: '''Ready''',
+        op_executing: '''Executing''',
+        op_failure: '''Failure''',
       };
 
   const FormationEvaluationEnumOp(int value) : super(value);
@@ -4822,8 +5298,7 @@ class FormationEvaluationEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4833,13 +5308,16 @@ class SoiCommandEnumType extends EnumType {
   static const soitype_success = const SoiCommandEnumType(2);
   static const soitype_error = const SoiCommandEnumType(3);
 
-  static get values => [soitype_request, soitype_success, 
-        soitype_error];
+  static get values => [
+        soitype_request,
+        soitype_success,
+        soitype_error,
+      ];
 
   static get names => {
-        soitype_request: '''Request''', 
-        soitype_success: '''Success''', 
-        soitype_error: '''Error'''
+        soitype_request: '''Request''',
+        soitype_success: '''Success''',
+        soitype_error: '''Error''',
       };
 
   const SoiCommandEnumType(int value) : super(value);
@@ -4847,8 +5325,7 @@ class SoiCommandEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4861,16 +5338,22 @@ class SoiCommandEnumCommand extends EnumType {
   static const soicmd_get_plan = const SoiCommandEnumCommand(5);
   static const soicmd_resume = const SoiCommandEnumCommand(6);
 
-  static get values => [soicmd_exec, soicmd_stop, 
-        soicmd_set_params, soicmd_get_params, soicmd_get_plan, soicmd_resume];
+  static get values => [
+        soicmd_exec,
+        soicmd_stop,
+        soicmd_set_params,
+        soicmd_get_params,
+        soicmd_get_plan,
+        soicmd_resume,
+      ];
 
   static get names => {
-        soicmd_exec: '''Execute Plan''', 
-        soicmd_stop: '''Stop Execution''', 
-        soicmd_set_params: '''Set Parameters''', 
-        soicmd_get_params: '''Get Parameters''', 
-        soicmd_get_plan: '''Get Plan''', 
-        soicmd_resume: '''Resume Execution'''
+        soicmd_exec: '''Execute Plan''',
+        soicmd_stop: '''Stop Execution''',
+        soicmd_set_params: '''Set Parameters''',
+        soicmd_get_params: '''Get Parameters''',
+        soicmd_get_plan: '''Get Plan''',
+        soicmd_resume: '''Resume Execution''',
       };
 
   const SoiCommandEnumCommand(int value) : super(value);
@@ -4878,8 +5361,7 @@ class SoiCommandEnumCommand extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4889,13 +5371,16 @@ class SoiStateEnumState extends EnumType {
   static const soistate_idle = const SoiStateEnumState(2);
   static const soistate_inactive = const SoiStateEnumState(3);
 
-  static get values => [soistate_exec, soistate_idle, 
-        soistate_inactive];
+  static get values => [
+        soistate_exec,
+        soistate_idle,
+        soistate_inactive,
+      ];
 
   static get names => {
-        soistate_exec: '''Executing''', 
-        soistate_idle: '''Idle''', 
-        soistate_inactive: '''Inactive'''
+        soistate_exec: '''Executing''',
+        soistate_idle: '''Idle''',
+        soistate_inactive: '''Inactive''',
       };
 
   const SoiStateEnumState(int value) : super(value);
@@ -4903,8 +5388,7 @@ class SoiStateEnumState extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4917,13 +5401,16 @@ class UsblConfigEnumOp extends EnumType {
   static const op_get_cfg = const UsblConfigEnumOp(1);
   static const op_cur_cfg = const UsblConfigEnumOp(2);
 
-  static get values => [op_set_cfg, op_get_cfg, 
-        op_cur_cfg];
+  static get values => [
+        op_set_cfg,
+        op_get_cfg,
+        op_cur_cfg,
+      ];
 
   static get names => {
-        op_set_cfg: '''Set LBL Configuration''', 
-        op_get_cfg: '''Retrieve LBL Configuration''', 
-        op_cur_cfg: '''Reply to a GET command'''
+        op_set_cfg: '''Set LBL Configuration''',
+        op_get_cfg: '''Retrieve LBL Configuration''',
+        op_cur_cfg: '''Reply to a GET command''',
       };
 
   const UsblConfigEnumOp(int value) : super(value);
@@ -4931,8 +5418,7 @@ class UsblConfigEnumOp extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4942,11 +5428,14 @@ class DissolvedOrganicMatterEnumType extends EnumType {
   static const dt_colored = const DissolvedOrganicMatterEnumType(0);
   static const dt_fluorescent = const DissolvedOrganicMatterEnumType(1);
 
-  static get values => [dt_colored, dt_fluorescent];
+  static get values => [
+        dt_colored,
+        dt_fluorescent,
+      ];
 
   static get names => {
-        dt_colored: '''Colored''', 
-        dt_fluorescent: '''Fluorescent'''
+        dt_colored: '''Colored''',
+        dt_fluorescent: '''Fluorescent''',
       };
 
   const DissolvedOrganicMatterEnumType(int value) : super(value);
@@ -4954,8 +5443,7 @@ class DissolvedOrganicMatterEnumType extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -4971,19 +5459,26 @@ class ApmStatusEnumSeverity extends EnumType {
   static const apm_info = const ApmStatusEnumSeverity(6);
   static const apm_debug = const ApmStatusEnumSeverity(7);
 
-  static get values => [apm_emergency, apm_alert, 
-        apm_critical, apm_error, apm_warning, apm_notice, apm_info, 
-        apm_debug];
+  static get values => [
+        apm_emergency,
+        apm_alert,
+        apm_critical,
+        apm_error,
+        apm_warning,
+        apm_notice,
+        apm_info,
+        apm_debug,
+      ];
 
   static get names => {
-        apm_emergency: '''Emergency''', 
-        apm_alert: '''Alert''', 
-        apm_critical: '''Critical''', 
-        apm_error: '''Error''', 
-        apm_warning: '''Warning''', 
-        apm_notice: '''Notice''', 
-        apm_info: '''Info''', 
-        apm_debug: '''Debug'''
+        apm_emergency: '''Emergency''',
+        apm_alert: '''Alert''',
+        apm_critical: '''Critical''',
+        apm_error: '''Error''',
+        apm_warning: '''Warning''',
+        apm_notice: '''Notice''',
+        apm_info: '''Info''',
+        apm_debug: '''Debug''',
       };
 
   const ApmStatusEnumSeverity(int value) : super(value);
@@ -4991,8 +5486,7 @@ class ApmStatusEnumSeverity extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }
@@ -5003,13 +5497,16 @@ class SadcReadingsEnumGain extends EnumType {
   static const gain_x10 = const SadcReadingsEnumGain(1);
   static const gain_x100 = const SadcReadingsEnumGain(2);
 
-  static get values => [gain_x1, gain_x10, 
-        gain_x100];
+  static get values => [
+        gain_x1,
+        gain_x10,
+        gain_x100,
+      ];
 
   static get names => {
-        gain_x1: '''x1''', 
-        gain_x10: '''x10''', 
-        gain_x100: '''x100'''
+        gain_x1: '''x1''',
+        gain_x10: '''x10''',
+        gain_x100: '''x100''',
       };
 
   const SadcReadingsEnumGain(int value) : super(value);
@@ -5017,8 +5514,7 @@ class SadcReadingsEnumGain extends EnumType {
   @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if(ret != null) return ret;
     return super.toPrettyString();
   }
 }

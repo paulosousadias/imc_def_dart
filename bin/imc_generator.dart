@@ -143,8 +143,9 @@ String _accountForReservedName(String s) {
 
 /// Looks for 'description' element and writes it to [sink].
 /// The level tells how mush spaces ident.
-_writeDescription(IOSink sink, xml.XmlElement e, {int level = 0}) {
-  e.findElements("description")
+_writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
+  element
+      .findElements("description")
       .forEach((d) => d.text.trim().split("\n").forEach((tx) {
             for (var i = 0; i < level; i++) sink.write('  ');
             sink.write('/// ${tx.trim()}\n');
@@ -1025,23 +1026,25 @@ _writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
 /// A worker to be used for the enum like code creation.
 _writeEnumLikeWorker(
     String eName, xml.XmlElement field, String unit, IOSink sink) {
-  var eList = "";
-  var eNameList = "";
+  var eList = '';
+  var eNameList = '';
   var c = 0;
   var prefix = field.getAttribute("prefix")?.toLowerCase() ?? '';
   if (prefix.length > 0) prefix += '_';
-  field.findElements("value").forEach((f) {
-    if (eList.length != 0) {
-      eList += ", ";
-      eNameList += ", ";
-    }
-    if (++c % 5 == 0) eList += "\n        ";
+  var vLst = field.findElements("value");
+  vLst.forEach((f) {
+    var commaSep = vLst.length > 1 ? ',' : '';
+    if (++c % 1 == 0) eList += "\n        ";
     if (++c % 1 == 0) eNameList += "\n        ";
     var ab = _accountForReservedName(
-        prefix + f.getAttribute("abbrev").toLowerCase());
-    eList += ab;
-    eNameList += "$ab: '''${f.getAttribute("name")}'''";
+        prefix + f.getAttribute('abbrev').toLowerCase());
+    eList += '$ab$commaSep';
+    eNameList += "$ab: '''${f.getAttribute("name")}'''$commaSep";
   });
+  if (vLst.length > 1) {
+    eList += "\n      ";
+    eNameList += "\n      ";
+  }
 
   var sufix;
   switch (unit) {
@@ -1069,8 +1072,7 @@ _writeEnumLikeWorker(
 
   var body2 = '''\n  static get values => [$eList];
 
-  static get names => {$eNameList
-      };
+  static get names => {$eNameList};
 
   const $eName(int value) : super(value);
 ''';
@@ -1111,8 +1113,7 @@ _writeEnumLikeWorker(
       bodyBitfield = '''\n  @override
   String toPrettyString() {
     var ret = names[this];
-    if(ret != null)
-      return ret;
+    if (ret != null) return ret;
     return super.toPrettyString();
   }
 ''';
