@@ -238,7 +238,8 @@ _writeMessageImmutable(
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
 
-    var fStr = '''\n  @override\n  final $dartType ${_convertToFieldName(abbrev)};''';
+    var fStr =
+        '''\n  @override\n  final $dartType ${_convertToFieldName(abbrev)};''';
     sink.write('$fStr');
   });
 
@@ -293,7 +294,8 @@ _writeMessageImmutable(
 
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
-    var fStr = ''' &&\n        ${_convertToFieldName(abbrev)} == this.${_convertToFieldName(abbrev)}''';
+    var fStr =
+        ''' &&\n        ${_convertToFieldName(abbrev)} == this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
 
     hashElements.add("${_convertToFieldName(abbrev)}?.hashCode");
@@ -337,11 +339,13 @@ _writeMessageImmutable(
     if (unit != null && unit.length > 0) {
       if (unit.startsWith('rad')) {
         unitConv = '\${';
-        unitConv += '${_convertToFieldName(abbrev)} != null ? " [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]" : ""';
+        unitConv +=
+            '${_convertToFieldName(abbrev)} != null ? " [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]" : ""';
         unitConv += '}';
       }
     }
-    var fStr = '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)}${unit != null ? ' ($unit)' : ''}$unitConv')''';
+    var fStr =
+        '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)}${unit != null ? ' ($unit)' : ''}$unitConv')''';
     sink.write('$fStr');
   });
 
@@ -426,7 +430,8 @@ _writeMessageBuilder(
   m.findElements("field").forEach((f) {
     var abbrev = f.getAttribute("abbrev");
 
-    var fStr = '''      _${_convertToFieldName(abbrev)} = _\$v.${_convertToFieldName(abbrev)};\n''';
+    var fStr =
+        '''      _${_convertToFieldName(abbrev)} = _\$v.${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -468,7 +473,8 @@ _writeMessageBuilder(
 
     var ifNullVal = typesData[2] == null ? "" : " ?? ${typesData[2]}";
 
-    var fStr = ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}$ifNullVal''';
+    var fStr =
+        ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}$ifNullVal''';
     sink.write('$fStr');
   });
 
@@ -488,7 +494,8 @@ _writeMessageSerializer(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('\n/// $name serializer class\n///\n');
 
-  var serClassStart = '''class ${abbrev}Serializer extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
+  var serClassStart =
+      '''class ${abbrev}Serializer extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
   @override
   ByteData serialize(imc.$abbrev message) {
     var byteOffset = 0;
@@ -535,75 +542,94 @@ _writeMessageSerializer(
     var fStr = '';
     switch (type) {
       case "uint8_t":
-        fStr = '''    byteData.setUint8(byteOffset, message.$fieldName$enumLike);\n''';
+        fStr =
+            '''    byteData.setUint8(byteOffset, message.$fieldName$enumLike);\n''';
         fStr += '    byteOffset += 1;\n';
         break;
       case "uint16_t":
-        fStr = '''    byteData.setUint16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setUint16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case "uint32_t":
-        fStr = '''    byteData.setUint32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setUint32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "uint64_t":
-        fStr = '''    byteData.setUint64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setUint64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "int8_t":
-        fStr = '''    byteData.setInt8(byteOffset, message.$fieldName$enumLike);\n''';
+        fStr =
+            '''    byteData.setInt8(byteOffset, message.$fieldName$enumLike);\n''';
         fStr += '    byteOffset += 1;\n';
         break;
       case "int16_t":
-        fStr = '''    byteData.setInt16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setInt16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case "int32_t":
-        fStr = '''    byteData.setInt32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setInt32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "int64_t":
-        fStr = '''    byteData.setInt64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setInt64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "fp32_t":
-        fStr = '''    byteData.setFloat32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setFloat32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "fp64_t":
-        fStr = '''    byteData.setFloat64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+        fStr =
+            '''    byteData.setFloat64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "rawdata":
         fStr = '''    var ${fieldName}SSize = message.$fieldName.length;\n''';
-        fStr += '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
+        fStr +=
+            '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
-        fStr += '    message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+        fStr +=
+            '    message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
         break;
       case "plaintext":
-        fStr = '    var ${fieldName}Encoded = utf8.encode(message.$fieldName);\n';
+        fStr =
+            '    var ${fieldName}Encoded = utf8.encode(message.$fieldName);\n';
         fStr += '''    var ${fieldName}SSize = ${fieldName}Encoded.length;\n''';
-        fStr += '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
+        fStr +=
+            '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
-        fStr += '    ${fieldName}Encoded.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+        fStr +=
+            '    ${fieldName}Encoded.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
         break;
       case "message":
         fStr = '    if (message.$fieldName == null) {\n';
-        fStr += '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);\n';
+        fStr +=
+            '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
         fStr += '      var id = message.$fieldName.msgId;\n';
-        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();\n';
+        fStr +=
+            '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '      if (pMsgSerializer != null) {\n';
         fStr += '        byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
         fStr += '        byteOffset += 2;\n';
-        fStr += '        var mPSize = pMsgSerializer.serializePayload(message.$fieldName, byteData, byteOffset);\n';
+        fStr +=
+            '        var mPSize = pMsgSerializer.serializePayload(message.$fieldName, byteData, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
         fStr += '      }\n';
         fStr += '    }\n';
         break;
       case "message-list":
-        fStr = '    if (message.$fieldName == null || message.$fieldName.isEmpty) {\n';
+        fStr =
+            '    if (message.$fieldName == null || message.$fieldName.isEmpty) {\n';
         fStr += '      byteData.setUint16(byteOffset, 0, imc.endian_ser);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
@@ -612,15 +638,19 @@ _writeMessageSerializer(
         fStr += '      byteOffset += 2;\n';
         fStr += '      for (int i = 0; i < message.$fieldName.length; i++) {\n';
         fStr += '        var id = message.$fieldName[i]?.msgId;\n';
-        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();\n';
+        fStr +=
+            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '        if (id != null && pMsgSerializer != null) {\n';
-        fStr += '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
+        fStr +=
+            '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
         fStr += '          byteOffset += 2;\n';
-        fStr += '          var mPSize = pMsgSerializer.serializePayload(message.$fieldName[i], byteData, byteOffset);\n';
+        fStr +=
+            '          var mPSize = pMsgSerializer.serializePayload(message.$fieldName[i], byteData, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
         fStr += '          msgsCounter++;\n';
         fStr += '        }\n';
-        fStr += '        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);\n';
+        fStr +=
+            '        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);\n';
         fStr += '      }\n';
         fStr += '    }\n';
         break;
@@ -696,91 +726,116 @@ _writeMessageSerializer(
     var fStr = '';
     switch (type) {
       case "uint8_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint8(byteOffset)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getUint8(byteOffset)$enumLikeE;\n''';
         fStr += '    byteOffset += 1;\n';
         break;
       case "uint16_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint16(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getUint16(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case "uint32_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint32(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getUint32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "uint64_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getUint64(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getUint64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "int8_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt8(byteOffset)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getInt8(byteOffset)$enumLikeE;\n''';
         fStr += '    byteOffset += 1;\n';
         break;
       case "int16_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt16(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getInt16(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case "int32_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt32(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getInt32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "int64_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getInt64(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getInt64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "fp32_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat32(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getFloat32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case "fp64_t":
-        fStr = '''    builder.$fieldName = ${enumLike}byteData.getFloat64(byteOffset, endianness)$enumLikeE;\n''';
+        fStr =
+            '''    builder.$fieldName = ${enumLike}byteData.getFloat64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case "rawdata":
-        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
+        fStr =
+            '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
         fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
         fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
-        fStr += '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
+        fStr +=
+            '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
         fStr += '    }\n';
         fStr += '    builder.$fieldName = ${fieldName}DData;\n';
         break;
       case "plaintext":
-        fStr = '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
+        fStr =
+            '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
         fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
         fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
-        fStr += '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
+        fStr +=
+            '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
         fStr += '    }\n';
-        fStr += '    var ${fieldName}Decoded = utf8.decode(${fieldName}DData);\n';
+        fStr +=
+            '    var ${fieldName}Decoded = utf8.decode(${fieldName}DData);\n';
         fStr += '    builder.$fieldName = ${fieldName}Decoded;\n';
         break;
       case "message":
-        fStr = '    var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
+        fStr =
+            '    var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '    byteOffset += 2;\n';
         fStr += '    if (${fieldName}SId == imc.ImcId.nullId) {\n';
         fStr += '      builder.$fieldName = null;\n';
         fStr += '    } else {\n';
-        fStr += '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
-        fStr += '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
+        fStr +=
+            '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+        fStr +=
+            '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
-        fStr += '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
+        fStr +=
+            '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
         fStr += '        builder.$fieldName = pMsgBuilder.build();\n';
         fStr += '      }\n';
         fStr += '    }\n';
         break;
       case "message-list":
-        fStr = '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianness);\n';
+        fStr =
+            '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '    byteOffset += 2;\n';
         fStr += '    builder.$fieldName = [];\n';
         fStr += '    for (int i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
-        fStr += '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
+        fStr +=
+            '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '      if (${fieldName}SId != imc.ImcId.nullId) {\n';
-        fStr += '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
-        fStr += '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
-        fStr += '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
-        fStr += '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
+        fStr +=
+            '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+        fStr +=
+            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
+        fStr +=
+            '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
+        fStr +=
+            '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
         fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
         fStr += '        }\n';
@@ -801,7 +856,8 @@ _writeMessageSerializer(
 }
 
 /// Writes a message field code
-_writeMessageField(xml.XmlElement field, xml.XmlElement message, List<IOSink> sinks) {
+_writeMessageField(
+    xml.XmlElement field, xml.XmlElement message, List<IOSink> sinks) {
   var name = field.getAttribute("name");
   var abbrev = field.getAttribute("abbrev");
   var type = field.getAttribute("type");
@@ -898,7 +954,8 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
     case "message-list":
       typeImc = "ImcType.typeMessageList";
       dartType = "List<${field.getAttribute("message-type") ?? "ImcMessage"}>";
-      defaultVal = "List<${field.getAttribute("message-type") ?? "ImcMessage"}>(0)";
+      defaultVal =
+          "List<${field.getAttribute("message-type") ?? "ImcMessage"}>(0)";
       break;
     default:
       break;
@@ -1098,12 +1155,14 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   sink.write('''\n/// Signature for a function that creates a builder.''');
   sink.write('''\n///''');
   sink.write('''\n/// Used by [messagesBuilders].''');
-  sink.write('''\ntypedef BuilderWithInstanciatorBuilder = BuilderWithInstanciator Function();\n''');
+  sink.write(
+      '''\ntypedef BuilderWithInstanciatorBuilder = BuilderWithInstanciator Function();\n''');
 
   sink.write('''\n/// Lookup table from message names to builders''');
-  sink.write('''\nfinal messagesBuilders = <String, BuilderWithInstanciatorBuilder>{''');
-  msgElm.findElements("message").forEach((m) => 
-      sink.write("\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Builder(),"));
+  sink.write(
+      '''\nfinal messagesBuilders = <String, BuilderWithInstanciatorBuilder>{''');
+  msgElm.findElements("message").forEach((m) => sink.write(
+      "\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Builder(),"));
   sink.write('''\n};\n''');
 }
 
@@ -1131,8 +1190,8 @@ Map<String, dynamic> _getConfig() {
   }
 
   if (!config.containsKey('imc')) {
-    stderr.writeln(Exception(
-        "Your `imc_def` section does not contain a `imc`."));
+    stderr
+        .writeln(Exception("Your `imc_def` section does not contain a `imc`."));
     exit(1);
   }
 
@@ -1266,18 +1325,21 @@ abstract class ImcMessage extends Message {
       .findElements("message-group")
       .forEach((g) => _writeMessageGroup(g, sinks[_idxMsg])));
 
-  sinks[_idxSerGen].write('''\n/// Signature for a function that creates a builder.''');
+  sinks[_idxSerGen]
+      .write('''\n/// Signature for a function that creates a builder.''');
   sinks[_idxSerGen].write('''\n///''');
   sinks[_idxSerGen].write('''\n/// Used by [messagesSerializers].''');
-  sinks[_idxSerGen].write('''\ntypedef ImcSerializerBuilder = imc.ImcSerializer Function();''');
+  sinks[_idxSerGen].write(
+      '''\ntypedef ImcSerializerBuilder = imc.ImcSerializer Function();''');
 
-  sinks[_idxSerGen].
-  write('''\nfinal messagesSerializers = <String, ImcSerializerBuilder>{''');
-  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write("\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Serializer(),"));
+  sinks[_idxSerGen].write(
+      '''\nfinal messagesSerializers = <String, ImcSerializerBuilder>{''');
+  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
+      "\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
 
-  sinks[_idxSerGen]
-      .write('''\nfinal messagesIdsSerializers = <int, ImcSerializerBuilder>{''');
+  sinks[_idxSerGen].write(
+      '''\nfinal messagesIdsSerializers = <int, ImcSerializerBuilder>{''');
   msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
       "\n  ${m.getAttribute("id")}: () => ${m.getAttribute("abbrev")}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
