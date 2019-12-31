@@ -1,3 +1,5 @@
+[![pub package](https://img.shields.io/pub/v/imc_def?color=blue)](https://pub.dev/packages/imc_def)
+
 # imc_def
 
 A dart package for IMC messages manipulation.
