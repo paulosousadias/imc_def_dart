@@ -57,7 +57,7 @@ An example of use is the following:
 var hbMsgB = imc.HeartbeatBuilder();
 Timer.periodic(Duration(milliseconds: 300), (Timer t) {
     var msg = (hbMsgB..timestamp = DateTime.now()).build();
-    var dataB = imc.messagesIdsSerializers[msg.msgId]?.serialize(msg);
+    var dataB = imc.messagesIdsSerializers[msg.msgId].?call().?.serialize(msg);
     var bytes = dataB?.buffer?.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);
     if (bytes != null) {
     var bs = socket.send(
