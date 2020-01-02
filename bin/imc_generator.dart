@@ -147,7 +147,9 @@ _writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
   element
       .findElements("description")
       .forEach((d) => d.text.trim().split("\n").forEach((tx) {
-            for (var i = 0; i < level; i++) sink.write('  ');
+            for (var i = 0; i < level; i++) {
+              sink.write('  ');
+            }
             sink.write('/// ${tx.trim()}\n');
           }));
 }
@@ -250,10 +252,10 @@ _writeMessageImmutable(
 
   _\$$abbrev._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId''';
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId''';
   sink.write('$msgStringImmutableClass2');
 
   m.findElements("field").forEach((f) {
@@ -304,10 +306,11 @@ _writeMessageImmutable(
 
   var hashStr = "";
   for (var i = 0; i < hashElements.length; i++) {
-    if (i == 0)
+    if (i == 0) {
       hashStr = "\$jc(${hashElements[i]}, \n        ${hashElements[++i]})";
-    else
+    } else {
       hashStr = "\$jc($hashStr, \n        ${hashElements[i]})";
+    }
   }
   hashStr = "\$jf($hashStr)";
 
@@ -337,7 +340,7 @@ _writeMessageImmutable(
     var abbrev = f.getAttribute("abbrev");
     var unit = f.getAttribute("unit");
     var unitConv = '';
-    if (unit != null && unit.length > 0) {
+    if (unit != null && unit.isNotEmpty) {
       if (unit.startsWith('rad')) {
         unitConv = '\${';
         unitConv +=
@@ -671,13 +674,15 @@ _writeMessageSerializer(
     
     var endianness = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
-    if (endianness == null)
+    if (endianness == null) {
       return null;
+    }
     
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.$abbrev.static_id)
+    if (msgId != imc.$abbrev.static_id) {
       return null;
+    }
 
     var builder = imc.${abbrev}Builder();
     var payloadSize = imc.deserializeHeader(builder, byteData, endianness, offset);
@@ -685,15 +690,17 @@ _writeMessageSerializer(
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
     var readCrc = imc.getCrcFooter(byteData, offset + imc.header_size + payloadSize, endianness);
-    if (calcCrc != readCrc)
+    if (calcCrc != readCrc) {
       return null;
+    }
 
     // Payload
     var payloadSizeRead = deserializePayload(builder, byteData, endianness, byteOffset);
     // End payload
     
-    if (payloadSizeRead != payloadSize)
+    if (payloadSizeRead != payloadSize) {
       return null;
+    }
     byteOffset = offset + imc.header_size + payloadSize;
     return builder.build();
   }
@@ -1030,7 +1037,7 @@ _writeEnumLikeWorker(
   var eNameList = '';
   var c = 0;
   var prefix = field.getAttribute("prefix")?.toLowerCase() ?? '';
-  if (prefix.length > 0) prefix += '_';
+  if (prefix.isNotEmpty) prefix += '_';
   var vLst = field.findElements("value");
   vLst.forEach((f) {
     var commaSep = vLst.length > 1 ? ',' : '';
@@ -1064,7 +1071,7 @@ _writeEnumLikeWorker(
     var vName = _accountForReservedName(
         prefix + f.getAttribute("abbrev").toLowerCase());
     var vVal = f.getAttribute("id");
-    var bodyV = '''  static const $vName = const $eName($vVal);
+    var bodyV = '''  static const $vName = $eName($vVal);
 ''';
     _writeDescription(sink, f, level: 1);
     sink.write(bodyV);
@@ -1220,7 +1227,7 @@ enum _Mode { local, production }
 /// "flutter packages pub run bin/imc_generator" to (re)generate the code.
 main(List<String> args) async {
   Map<String, dynamic> config = _getConfig();
-  var localOrProductionMode = config.length == 0 || config['mode'] != null
+  var localOrProductionMode = config.isEmpty || config['mode'] != null
       ? _Mode.local
       : _Mode.production;
   String xmlFilePath;
@@ -1375,14 +1382,14 @@ export 'imc_def_gen.dart';
 export 'imc_serializers_gen.dart';
 ''');
 
-    sinkDef.close();
+    await sinkDef.close();
   }
 
   // Close the IOSink to free system resources.
-  sinkGen.close();
-  sinkMessages.close();
-  sinkBuilders.close();
-  sinkEnums.close();
-  sinkLEnums.close();
-  sinkSerGen.close();
+  await sinkGen.close();
+  await sinkMessages.close();
+  await sinkBuilders.close();
+  await sinkEnums.close();
+  await sinkLEnums.close();
+  await sinkSerGen.close();
 }

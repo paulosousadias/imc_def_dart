@@ -7,8 +7,8 @@
 part of 'imc_def_gen.dart';
 
 class BooleanEnum extends EnumType {
-  static const bool_false = const BooleanEnum(0);
-  static const bool_true = const BooleanEnum(1);
+  static const bool_false = BooleanEnum(0);
+  static const bool_true = BooleanEnum(1);
 
   static get values => [
         bool_false,
@@ -33,9 +33,9 @@ class BooleanEnum extends EnumType {
 }
 
 class ControlledModeEnum extends EnumType {
-  static const ctlmd_relinquish_handoff_ctl = const ControlledModeEnum(0);
-  static const ctlmd_request_ctl = const ControlledModeEnum(1);
-  static const ctlmd_override_ctl = const ControlledModeEnum(2);
+  static const ctlmd_relinquish_handoff_ctl = ControlledModeEnum(0);
+  static const ctlmd_request_ctl = ControlledModeEnum(1);
+  static const ctlmd_override_ctl = ControlledModeEnum(2);
 
   static get values => [
         ctlmd_relinquish_handoff_ctl,
@@ -60,9 +60,9 @@ class ControlledModeEnum extends EnumType {
 }
 
 class SpeedUnitsEnum extends EnumType {
-  static const sunits_meters_ps = const SpeedUnitsEnum(0);
-  static const sunits_rpm = const SpeedUnitsEnum(1);
-  static const sunits_percentage = const SpeedUnitsEnum(2);
+  static const sunits_meters_ps = SpeedUnitsEnum(0);
+  static const sunits_rpm = SpeedUnitsEnum(1);
+  static const sunits_percentage = SpeedUnitsEnum(2);
 
   static get values => [
         sunits_meters_ps,
@@ -87,15 +87,15 @@ class SpeedUnitsEnum extends EnumType {
 }
 
 class SystemTypeEnum extends EnumType {
-  static const systemtype_ccu = const SystemTypeEnum(0);
-  static const systemtype_humansensor = const SystemTypeEnum(1);
-  static const systemtype_uuv = const SystemTypeEnum(2);
-  static const systemtype_usv = const SystemTypeEnum(3);
-  static const systemtype_uav = const SystemTypeEnum(4);
-  static const systemtype_ugv = const SystemTypeEnum(5);
-  static const systemtype_staticsensor = const SystemTypeEnum(6);
-  static const systemtype_mobilesensor = const SystemTypeEnum(7);
-  static const systemtype_wsn = const SystemTypeEnum(8);
+  static const systemtype_ccu = SystemTypeEnum(0);
+  static const systemtype_humansensor = SystemTypeEnum(1);
+  static const systemtype_uuv = SystemTypeEnum(2);
+  static const systemtype_usv = SystemTypeEnum(3);
+  static const systemtype_uav = SystemTypeEnum(4);
+  static const systemtype_ugv = SystemTypeEnum(5);
+  static const systemtype_staticsensor = SystemTypeEnum(6);
+  static const systemtype_mobilesensor = SystemTypeEnum(7);
+  static const systemtype_wsn = SystemTypeEnum(8);
 
   static get values => [
         systemtype_ccu,
@@ -132,10 +132,10 @@ class SystemTypeEnum extends EnumType {
 }
 
 class ZUnitsEnum extends EnumType {
-  static const z_none = const ZUnitsEnum(0);
-  static const z_depth = const ZUnitsEnum(1);
-  static const z_altitude = const ZUnitsEnum(2);
-  static const z_height = const ZUnitsEnum(3);
+  static const z_none = ZUnitsEnum(0);
+  static const z_depth = ZUnitsEnum(1);
+  static const z_altitude = ZUnitsEnum(2);
+  static const z_height = ZUnitsEnum(3);
 
   static get values => [
         z_none,
@@ -162,8 +162,8 @@ class ZUnitsEnum extends EnumType {
 }
 
 class RSSIUnitsEnum extends EnumType {
-  static const rssiunits_db = const RSSIUnitsEnum(0);
-  static const rssiunits_percentage = const RSSIUnitsEnum(1);
+  static const rssiunits_db = RSSIUnitsEnum(0);
+  static const rssiunits_percentage = RSSIUnitsEnum(1);
 
   static get values => [
         rssiunits_db,
@@ -186,9 +186,9 @@ class RSSIUnitsEnum extends EnumType {
 }
 
 class UAVTypeEnum extends EnumType {
-  static const uavtype_fixedwing = const UAVTypeEnum(0);
-  static const uavtype_copter = const UAVTypeEnum(1);
-  static const uavtype_vtol = const UAVTypeEnum(2);
+  static const uavtype_fixedwing = UAVTypeEnum(0);
+  static const uavtype_copter = UAVTypeEnum(1);
+  static const uavtype_vtol = UAVTypeEnum(2);
 
   static get values => [
         uavtype_fixedwing,
@@ -213,24 +213,24 @@ class UAVTypeEnum extends EnumType {
 }
 
 class CLoopsMaskBitfield extends BitfieldType {
-  static const cl_none = const CLoopsMaskBitfield(0x00000000);
-  static const cl_path = const CLoopsMaskBitfield(0x00000001);
-  static const cl_teleoperation = const CLoopsMaskBitfield(0x00000002);
-  static const cl_altitude = const CLoopsMaskBitfield(0x00000004);
-  static const cl_depth = const CLoopsMaskBitfield(0x00000008);
-  static const cl_roll = const CLoopsMaskBitfield(0x00000010);
-  static const cl_pitch = const CLoopsMaskBitfield(0x00000020);
-  static const cl_yaw = const CLoopsMaskBitfield(0x00000040);
-  static const cl_speed = const CLoopsMaskBitfield(0x00000080);
-  static const cl_yaw_rate = const CLoopsMaskBitfield(0x00000100);
-  static const cl_vertical_rate = const CLoopsMaskBitfield(0x00000200);
-  static const cl_torque = const CLoopsMaskBitfield(0x00000400);
-  static const cl_force = const CLoopsMaskBitfield(0x00000800);
-  static const cl_velocity = const CLoopsMaskBitfield(0x00001000);
-  static const cl_throttle = const CLoopsMaskBitfield(0x00002000);
-  static const cl_external = const CLoopsMaskBitfield(0x40000000);
-  static const cl_no_override = const CLoopsMaskBitfield(0x80000000);
-  static const cl_all = const CLoopsMaskBitfield(0xFFFFFFFF);
+  static const cl_none = CLoopsMaskBitfield(0x00000000);
+  static const cl_path = CLoopsMaskBitfield(0x00000001);
+  static const cl_teleoperation = CLoopsMaskBitfield(0x00000002);
+  static const cl_altitude = CLoopsMaskBitfield(0x00000004);
+  static const cl_depth = CLoopsMaskBitfield(0x00000008);
+  static const cl_roll = CLoopsMaskBitfield(0x00000010);
+  static const cl_pitch = CLoopsMaskBitfield(0x00000020);
+  static const cl_yaw = CLoopsMaskBitfield(0x00000040);
+  static const cl_speed = CLoopsMaskBitfield(0x00000080);
+  static const cl_yaw_rate = CLoopsMaskBitfield(0x00000100);
+  static const cl_vertical_rate = CLoopsMaskBitfield(0x00000200);
+  static const cl_torque = CLoopsMaskBitfield(0x00000400);
+  static const cl_force = CLoopsMaskBitfield(0x00000800);
+  static const cl_velocity = CLoopsMaskBitfield(0x00001000);
+  static const cl_throttle = CLoopsMaskBitfield(0x00002000);
+  static const cl_external = CLoopsMaskBitfield(0x40000000);
+  static const cl_no_override = CLoopsMaskBitfield(0x80000000);
+  static const cl_all = CLoopsMaskBitfield(0xFFFFFFFF);
 
   static get values => [
         cl_none,
@@ -296,20 +296,21 @@ class CLoopsMaskBitfield extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static CLoopsMaskBitfield fromBits(List<CLoopsMaskBitfield> bits) =>
+  static CLoopsMaskBitfield fromBits(
+          List<CLoopsMaskBitfield> bits) =>
       (bits == null || bits.length < 2)
           ? CLoopsMaskBitfield(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => CLoopsMaskBitfield(b1.value | b2.value));
 }
 
 class OpLimitsMaskBitfield extends BitfieldType {
-  static const opl_max_depth = const OpLimitsMaskBitfield(0x01);
-  static const opl_min_alt = const OpLimitsMaskBitfield(0x02);
-  static const opl_max_alt = const OpLimitsMaskBitfield(0x04);
-  static const opl_min_speed = const OpLimitsMaskBitfield(0x08);
-  static const opl_max_speed = const OpLimitsMaskBitfield(0x10);
-  static const opl_max_vrate = const OpLimitsMaskBitfield(0x20);
-  static const opl_area = const OpLimitsMaskBitfield(0x40);
+  static const opl_max_depth = OpLimitsMaskBitfield(0x01);
+  static const opl_min_alt = OpLimitsMaskBitfield(0x02);
+  static const opl_max_alt = OpLimitsMaskBitfield(0x04);
+  static const opl_min_speed = OpLimitsMaskBitfield(0x08);
+  static const opl_max_speed = OpLimitsMaskBitfield(0x10);
+  static const opl_max_vrate = OpLimitsMaskBitfield(0x20);
+  static const opl_area = OpLimitsMaskBitfield(0x40);
 
   static get values => [
         opl_max_depth,
@@ -353,8 +354,10 @@ class OpLimitsMaskBitfield extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static OpLimitsMaskBitfield fromBits(List<OpLimitsMaskBitfield> bits) =>
+  static OpLimitsMaskBitfield fromBits(
+          List<OpLimitsMaskBitfield> bits) =>
       (bits == null || bits.length < 2)
           ? OpLimitsMaskBitfield(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => OpLimitsMaskBitfield(b1.value | b2.value));
 }
+

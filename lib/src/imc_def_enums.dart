@@ -64,8 +64,11 @@ abstract class BitfieldType {
   bool hasBits<B extends BitfieldType>(List<B> bits) {
     if (bits == null) return false;
     var testVal = 0;
-    for (var item in bits)
-      if (this.runtimeType == item.runtimeType) testVal |= item.value;
+    for (var item in bits) {
+      if (this.runtimeType == item.runtimeType) {
+        testVal |= item.value;
+      }
+    }
     return this.value & testVal == testVal;
   }
 
@@ -75,19 +78,19 @@ abstract class BitfieldType {
 
 /// This contains internal IMC types for fields
 class ImcType extends EnumType {
-  static const typeUInt8 = const ImcType._(0, "uint8_t", size: 1);
-  static const typeUInt16 = const ImcType._(1, "uint16_t", size: 2);
-  static const typeUint32 = const ImcType._(2, "uint32_t", size: 4);
-  static const typeInt8 = const ImcType._(3, "int8_t", size: 1);
-  static const typeInt16 = const ImcType._(4, "int16_t", size: 2);
-  static const typeInt32 = const ImcType._(5, "int32_t", size: 4);
-  static const typeInt64 = const ImcType._(6, "int64_t", size: 8);
-  static const typeFp32 = const ImcType._(7, "fp32_t", size: 4);
-  static const typeFp64 = const ImcType._(8, "fp64_t", size: 8);
-  static const typeRawdata = const ImcType._(9, "rawdata", size: -1);
-  static const typePlaintext = const ImcType._(10, "plaintext", size: -1);
-  static const typeMessage = const ImcType._(11, "message", size: -1);
-  static const typeMessageList = const ImcType._(12, "message-list", size: -1);
+  static const typeUInt8 = ImcType._(0, "uint8_t", size: 1);
+  static const typeUInt16 = ImcType._(1, "uint16_t", size: 2);
+  static const typeUint32 = ImcType._(2, "uint32_t", size: 4);
+  static const typeInt8 = ImcType._(3, "int8_t", size: 1);
+  static const typeInt16 = ImcType._(4, "int16_t", size: 2);
+  static const typeInt32 = ImcType._(5, "int32_t", size: 4);
+  static const typeInt64 = ImcType._(6, "int64_t", size: 8);
+  static const typeFp32 = ImcType._(7, "fp32_t", size: 4);
+  static const typeFp64 = ImcType._(8, "fp64_t", size: 8);
+  static const typeRawdata = ImcType._(9, "rawdata", size: -1);
+  static const typePlaintext = ImcType._(10, "plaintext", size: -1);
+  static const typeMessage = ImcType._(11, "message", size: -1);
+  static const typeMessageList = ImcType._(12, "message-list", size: -1);
 
   static get values => [
         typeUInt8,
@@ -131,13 +134,13 @@ class ImcType extends EnumType {
     "message-list": typeMessageList,
   };
 
-  static ImcType getType(String typeName) => types[typeName] ?? null;
+  static ImcType getType(String typeName) => types[typeName];
 }
 
 /// This contains internal IMC flags for messages
 class Flags extends EnumType {
-  static const periodic = const Flags._(0);
-  static const deprecated = const Flags._(1);
+  static const periodic = Flags._(0);
+  static const deprecated = Flags._(1);
 
   static get values => [periodic, deprecated];
 

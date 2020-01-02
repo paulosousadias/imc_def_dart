@@ -32,10 +32,10 @@ class _$EntityState extends EntityState {
 
   _$EntityState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state,
       this.flags,
       this.description})
@@ -210,10 +210,10 @@ class _$QueryEntityState extends QueryEntityState {
 
   _$QueryEntityState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -368,10 +368,10 @@ class _$EntityInfo extends EntityInfo {
 
   _$EntityInfo._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.label,
       this.component,
@@ -568,10 +568,10 @@ class _$QueryEntityInfo extends QueryEntityInfo {
 
   _$QueryEntityInfo._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id})
       : super._();
 
@@ -730,10 +730,10 @@ class _$EntityList extends EntityList {
 
   _$EntityList._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.list})
       : super._();
@@ -900,10 +900,10 @@ class _$CpuUsage extends CpuUsage {
 
   _$CpuUsage._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -1062,10 +1062,10 @@ class _$TransportBindings extends TransportBindings {
 
   _$TransportBindings._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.consumer,
       this.messageId})
       : super._();
@@ -1232,10 +1232,10 @@ class _$RestartSystem extends RestartSystem {
 
   _$RestartSystem._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type})
       : super._();
 
@@ -1392,10 +1392,10 @@ class _$DevCalibrationControl extends DevCalibrationControl {
 
   _$DevCalibrationControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op})
       : super._();
 
@@ -1558,10 +1558,10 @@ class _$DevCalibrationState extends DevCalibrationState {
 
   _$DevCalibrationState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.totalSteps,
       this.stepNumber,
       this.step,
@@ -1750,10 +1750,10 @@ class _$EntityActivationState extends EntityActivationState {
 
   _$EntityActivationState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state,
       this.error})
       : super._();
@@ -1918,10 +1918,10 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
 
   _$QueryEntityActivationState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -2102,10 +2102,10 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
 
   _$VehicleOperationalLimits._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.speedMin,
       this.speedMax,
@@ -2432,10 +2432,10 @@ class _$MsgList extends MsgList {
 
   _$MsgList._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.msgs})
       : super._();
 
@@ -2626,10 +2626,10 @@ class _$SimulatedState extends SimulatedState {
 
   _$SimulatedState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.height,
@@ -2958,10 +2958,10 @@ class _$LeakSimulation extends LeakSimulation {
 
   _$LeakSimulation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.entities})
       : super._();
@@ -3132,10 +3132,10 @@ class _$UASimulation extends UASimulation {
 
   _$UASimulation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.speed,
       this.data})
@@ -3316,10 +3316,10 @@ class _$DynamicsSimParam extends DynamicsSimParam {
 
   _$DynamicsSimParam._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.tas2accPgain,
       this.bank2pPgain})
@@ -3498,10 +3498,10 @@ class _$StorageUsage extends StorageUsage {
 
   _$StorageUsage._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.available,
       this.value})
       : super._();
@@ -3672,10 +3672,10 @@ class _$CacheControl extends CacheControl {
 
   _$CacheControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.snapshot,
       this.message})
@@ -3854,10 +3854,10 @@ class _$LoggingControl extends LoggingControl {
 
   _$LoggingControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.name})
       : super._();
@@ -4030,10 +4030,10 @@ class _$LogBookEntry extends LogBookEntry {
 
   _$LogBookEntry._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.htime,
       this.context,
@@ -4224,10 +4224,10 @@ class _$LogBookControl extends LogBookControl {
 
   _$LogBookControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.command,
       this.htime,
       this.msg})
@@ -4406,10 +4406,10 @@ class _$ReplayControl extends ReplayControl {
 
   _$ReplayControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.file})
       : super._();
@@ -4580,10 +4580,10 @@ class _$ClockControl extends ClockControl {
 
   _$ClockControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.clock,
       this.tz})
@@ -4764,10 +4764,10 @@ class _$HistoricCTD extends HistoricCTD {
 
   _$HistoricCTD._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.conductivity,
       this.temperature,
       this.depth})
@@ -4952,10 +4952,10 @@ class _$HistoricTelemetry extends HistoricTelemetry {
 
   _$HistoricTelemetry._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.altitude,
       this.roll,
       this.pitch,
@@ -5164,10 +5164,10 @@ class _$HistoricSonarData extends HistoricSonarData {
 
   _$HistoricSonarData._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.altitude,
       this.width,
       this.length,
@@ -5386,10 +5386,10 @@ class _$HistoricEvent extends HistoricEvent {
 
   _$HistoricEvent._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.text,
       this.type})
       : super._();
@@ -5564,10 +5564,10 @@ class _$VerticalProfile extends VerticalProfile {
 
   _$VerticalProfile._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.parameter,
       this.numSamples,
       this.samples,
@@ -5766,10 +5766,10 @@ class _$ProfileSample extends ProfileSample {
 
   _$ProfileSample._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.depth,
       this.avg})
       : super._();
@@ -5934,10 +5934,10 @@ class _$Heartbeat extends Heartbeat {
 
   _$Heartbeat._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -6096,10 +6096,10 @@ class _$Announce extends Announce {
 
   _$Announce._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sysName,
       this.sysType,
       this.owner,
@@ -6318,10 +6318,10 @@ class _$AnnounceService extends AnnounceService {
 
   _$AnnounceService._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.service,
       this.serviceType})
       : super._();
@@ -6488,10 +6488,10 @@ class _$RSSI extends RSSI {
 
   _$RSSI._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -6648,10 +6648,10 @@ class _$VSWR extends VSWR {
 
   _$VSWR._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -6808,10 +6808,10 @@ class _$LinkLevel extends LinkLevel {
 
   _$LinkLevel._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -6972,10 +6972,10 @@ class _$Sms extends Sms {
 
   _$Sms._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.number,
       this.timeout,
       this.contents})
@@ -7158,10 +7158,10 @@ class _$SmsTx extends SmsTx {
 
   _$SmsTx._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.seq,
       this.destination,
       this.timeout,
@@ -7350,10 +7350,10 @@ class _$SmsRx extends SmsRx {
 
   _$SmsRx._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.source,
       this.data})
       : super._();
@@ -7524,10 +7524,10 @@ class _$SmsState extends SmsState {
 
   _$SmsState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.seq,
       this.state,
       this.error})
@@ -7706,10 +7706,10 @@ class _$TextMessage extends TextMessage {
 
   _$TextMessage._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.origin,
       this.text})
       : super._();
@@ -7884,10 +7884,10 @@ class _$IridiumMsgRx extends IridiumMsgRx {
 
   _$IridiumMsgRx._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.origin,
       this.htime,
       this.lat,
@@ -8090,10 +8090,10 @@ class _$IridiumMsgTx extends IridiumMsgTx {
 
   _$IridiumMsgTx._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.ttl,
       this.destination,
@@ -8284,10 +8284,10 @@ class _$IridiumTxStatus extends IridiumTxStatus {
 
   _$IridiumTxStatus._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.status,
       this.text})
@@ -8466,10 +8466,10 @@ class _$GroupMembershipState extends GroupMembershipState {
 
   _$GroupMembershipState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.groupName,
       this.links})
       : super._();
@@ -8640,10 +8640,10 @@ class _$SystemGroup extends SystemGroup {
 
   _$SystemGroup._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.groupName,
       this.action,
       this.groupList})
@@ -8822,10 +8822,10 @@ class _$LinkLatency extends LinkLatency {
 
   _$LinkLatency._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value,
       this.sysSrc})
       : super._();
@@ -8994,10 +8994,10 @@ class _$ExtendedRSSI extends ExtendedRSSI {
 
   _$ExtendedRSSI._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value,
       this.units})
       : super._();
@@ -9170,10 +9170,10 @@ class _$HistoricData extends HistoricData {
 
   _$HistoricData._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.baseLat,
       this.baseLon,
       this.baseTime,
@@ -9366,10 +9366,10 @@ class _$CompressedHistory extends CompressedHistory {
 
   _$CompressedHistory._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.baseLat,
       this.baseLon,
       this.baseTime,
@@ -9568,10 +9568,10 @@ class _$HistoricSample extends HistoricSample {
 
   _$HistoricSample._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sysId,
       this.priority,
       this.x,
@@ -9794,10 +9794,10 @@ class _$HistoricDataQuery extends HistoricDataQuery {
 
   _$HistoricDataQuery._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.type,
       this.maxSize,
@@ -9990,10 +9990,10 @@ class _$RemoteCommand extends RemoteCommand {
 
   _$RemoteCommand._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.originalSource,
       this.destination,
       this.timeout,
@@ -10186,10 +10186,10 @@ class _$CommSystemsQuery extends CommSystemsQuery {
 
   _$CommSystemsQuery._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.commInterface,
       this.model,
@@ -10392,10 +10392,10 @@ class _$TelemetryMsg extends TelemetryMsg {
 
   _$TelemetryMsg._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.reqId,
       this.ttl,
@@ -10634,10 +10634,10 @@ class _$LblRange extends LblRange {
 
   _$LblRange._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.range})
       : super._();
@@ -10816,10 +10816,10 @@ class _$LblBeacon extends LblBeacon {
 
   _$LblBeacon._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.beacon,
       this.lat,
       this.lon,
@@ -11038,10 +11038,10 @@ class _$LblConfig extends LblConfig {
 
   _$LblConfig._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.beacons})
       : super._();
@@ -11208,10 +11208,10 @@ class _$AcousticMessage extends AcousticMessage {
 
   _$AcousticMessage._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.message})
       : super._();
 
@@ -11374,10 +11374,10 @@ class _$AcousticOperation extends AcousticOperation {
 
   _$AcousticOperation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.system,
       this.range,
@@ -11562,10 +11562,10 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
 
   _$AcousticSystemsQuery._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -11712,10 +11712,10 @@ class _$AcousticSystems extends AcousticSystems {
 
   _$AcousticSystems._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.list})
       : super._();
 
@@ -11876,10 +11876,10 @@ class _$AcousticLink extends AcousticLink {
 
   _$AcousticLink._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.peer,
       this.rssi,
       this.integrity})
@@ -12056,10 +12056,10 @@ class _$Rpm extends Rpm {
 
   _$Rpm._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -12216,10 +12216,10 @@ class _$Voltage extends Voltage {
 
   _$Voltage._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -12376,10 +12376,10 @@ class _$Current extends Current {
 
   _$Current._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -12566,10 +12566,10 @@ class _$GpsFix extends GpsFix {
 
   _$GpsFix._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.validity,
       this.type,
       this.utcYear,
@@ -12884,10 +12884,10 @@ class _$EulerAngles extends EulerAngles {
 
   _$EulerAngles._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.time,
       this.phi,
       this.theta,
@@ -13092,10 +13092,10 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
 
   _$EulerAnglesDelta._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.time,
       this.x,
       this.y,
@@ -13298,10 +13298,10 @@ class _$AngularVelocity extends AngularVelocity {
 
   _$AngularVelocity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.time,
       this.x,
       this.y,
@@ -13494,10 +13494,10 @@ class _$Acceleration extends Acceleration {
 
   _$Acceleration._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.time,
       this.x,
       this.y,
@@ -13690,10 +13690,10 @@ class _$MagneticField extends MagneticField {
 
   _$MagneticField._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.time,
       this.x,
       this.y,
@@ -13886,10 +13886,10 @@ class _$GroundVelocity extends GroundVelocity {
 
   _$GroundVelocity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.validity,
       this.x,
       this.y,
@@ -14082,10 +14082,10 @@ class _$WaterVelocity extends WaterVelocity {
 
   _$WaterVelocity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.validity,
       this.x,
       this.y,
@@ -14278,10 +14278,10 @@ class _$VelocityDelta extends VelocityDelta {
 
   _$VelocityDelta._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.time,
       this.x,
       this.y,
@@ -14474,10 +14474,10 @@ class _$Distance extends Distance {
 
   _$Distance._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.validity,
       this.location,
       this.beamConfig,
@@ -14664,10 +14664,10 @@ class _$Temperature extends Temperature {
 
   _$Temperature._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -14824,10 +14824,10 @@ class _$Pressure extends Pressure {
 
   _$Pressure._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -14984,10 +14984,10 @@ class _$Depth extends Depth {
 
   _$Depth._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -15144,10 +15144,10 @@ class _$DepthOffset extends DepthOffset {
 
   _$DepthOffset._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -15304,10 +15304,10 @@ class _$SoundSpeed extends SoundSpeed {
 
   _$SoundSpeed._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -15464,10 +15464,10 @@ class _$WaterDensity extends WaterDensity {
 
   _$WaterDensity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -15624,10 +15624,10 @@ class _$Conductivity extends Conductivity {
 
   _$Conductivity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -15784,10 +15784,10 @@ class _$Salinity extends Salinity {
 
   _$Salinity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -15948,10 +15948,10 @@ class _$WindSpeed extends WindSpeed {
 
   _$WindSpeed._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.direction,
       this.speed,
       this.turbulence})
@@ -16128,10 +16128,10 @@ class _$RelativeHumidity extends RelativeHumidity {
 
   _$RelativeHumidity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -16288,10 +16288,10 @@ class _$DevDataText extends DevDataText {
 
   _$DevDataText._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -16448,10 +16448,10 @@ class _$DevDataBinary extends DevDataBinary {
 
   _$DevDataBinary._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -16608,10 +16608,10 @@ class _$Force extends Force {
 
   _$Force._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -16782,10 +16782,10 @@ class _$SonarData extends SonarData {
 
   _$SonarData._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.frequency,
       this.minRange,
@@ -17010,10 +17010,10 @@ class _$Pulse extends Pulse {
 
   _$Pulse._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -17160,10 +17160,10 @@ class _$PulseDetectionControl extends PulseDetectionControl {
 
   _$PulseDetectionControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op})
       : super._();
 
@@ -17324,10 +17324,10 @@ class _$FuelLevel extends FuelLevel {
 
   _$FuelLevel._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value,
       this.confidence,
       this.opmodes})
@@ -17532,10 +17532,10 @@ class _$GpsNavData extends GpsNavData {
 
   _$GpsNavData._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.itow,
       this.lat,
       this.lon,
@@ -17834,10 +17834,10 @@ class _$ServoPosition extends ServoPosition {
 
   _$ServoPosition._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.value})
       : super._();
@@ -18014,10 +18014,10 @@ class _$DeviceState extends DeviceState {
 
   _$DeviceState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z,
@@ -18226,10 +18226,10 @@ class _$BeamConfig extends BeamConfig {
 
   _$BeamConfig._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.beamWidth,
       this.beamHeight})
       : super._();
@@ -18396,10 +18396,10 @@ class _$DataSanity extends DataSanity {
 
   _$DataSanity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sane})
       : super._();
 
@@ -18556,10 +18556,10 @@ class _$RhodamineDye extends RhodamineDye {
 
   _$RhodamineDye._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -18716,10 +18716,10 @@ class _$CrudeOil extends CrudeOil {
 
   _$CrudeOil._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -18876,10 +18876,10 @@ class _$FineOil extends FineOil {
 
   _$FineOil._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -19036,10 +19036,10 @@ class _$Turbidity extends Turbidity {
 
   _$Turbidity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -19196,10 +19196,10 @@ class _$Chlorophyll extends Chlorophyll {
 
   _$Chlorophyll._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -19356,10 +19356,10 @@ class _$Fluorescein extends Fluorescein {
 
   _$Fluorescein._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -19516,10 +19516,10 @@ class _$Phycocyanin extends Phycocyanin {
 
   _$Phycocyanin._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -19676,10 +19676,10 @@ class _$Phycoerythrin extends Phycoerythrin {
 
   _$Phycoerythrin._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -19864,10 +19864,10 @@ class _$GpsFixRtk extends GpsFixRtk {
 
   _$GpsFixRtk._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.validity,
       this.type,
       this.tow,
@@ -20166,10 +20166,10 @@ class _$ExternalNavData extends ExternalNavData {
 
   _$ExternalNavData._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state,
       this.type})
       : super._();
@@ -20336,10 +20336,10 @@ class _$DissolvedOxygen extends DissolvedOxygen {
 
   _$DissolvedOxygen._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -20496,10 +20496,10 @@ class _$AirSaturation extends AirSaturation {
 
   _$AirSaturation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -20656,10 +20656,10 @@ class _$Throttle extends Throttle {
 
   _$Throttle._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -20816,10 +20816,10 @@ class _$PH extends PH {
 
   _$PH._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -20976,10 +20976,10 @@ class _$Redox extends Redox {
 
   _$Redox._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -21140,10 +21140,10 @@ class _$CameraZoom extends CameraZoom {
 
   _$CameraZoom._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.zoom,
       this.action})
@@ -21322,10 +21322,10 @@ class _$SetThrusterActuation extends SetThrusterActuation {
 
   _$SetThrusterActuation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.value})
       : super._();
@@ -21494,10 +21494,10 @@ class _$SetServoPosition extends SetServoPosition {
 
   _$SetServoPosition._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.value})
       : super._();
@@ -21666,10 +21666,10 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
 
   _$SetControlSurfaceDeflection._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.angle})
       : super._();
@@ -21838,10 +21838,10 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
 
   _$RemoteActionsRequest._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.actions})
       : super._();
@@ -22008,10 +22008,10 @@ class _$RemoteActions extends RemoteActions {
 
   _$RemoteActions._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.actions})
       : super._();
 
@@ -22170,10 +22170,10 @@ class _$ButtonEvent extends ButtonEvent {
 
   _$ButtonEvent._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.button,
       this.value})
       : super._();
@@ -22342,10 +22342,10 @@ class _$LcdControl extends LcdControl {
 
   _$LcdControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.text})
       : super._();
@@ -22516,10 +22516,10 @@ class _$PowerOperation extends PowerOperation {
 
   _$PowerOperation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.timeRemain,
       this.schedTime})
@@ -22700,10 +22700,10 @@ class _$PowerChannelControl extends PowerChannelControl {
 
   _$PowerChannelControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.op,
       this.schedTime})
@@ -22878,10 +22878,10 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
 
   _$QueryPowerChannelState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -23030,10 +23030,10 @@ class _$PowerChannelState extends PowerChannelState {
 
   _$PowerChannelState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.state})
       : super._();
@@ -23202,10 +23202,10 @@ class _$LedBrightness extends LedBrightness {
 
   _$LedBrightness._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.value})
       : super._();
@@ -23372,10 +23372,10 @@ class _$QueryLedBrightness extends QueryLedBrightness {
 
   _$QueryLedBrightness._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name})
       : super._();
 
@@ -23534,10 +23534,10 @@ class _$SetLedBrightness extends SetLedBrightness {
 
   _$SetLedBrightness._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.value})
       : super._();
@@ -23708,10 +23708,10 @@ class _$SetPWM extends SetPWM {
 
   _$SetPWM._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.period,
       this.dutyCycle})
@@ -23892,10 +23892,10 @@ class _$PWM extends PWM {
 
   _$PWM._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.period,
       this.dutyCycle})
@@ -24110,10 +24110,10 @@ class _$EstimatedState extends EstimatedState {
 
   _$EstimatedState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.height,
@@ -24464,10 +24464,10 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
 
   _$EstimatedStreamVelocity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z})
@@ -24644,10 +24644,10 @@ class _$IndicatedSpeed extends IndicatedSpeed {
 
   _$IndicatedSpeed._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -24804,10 +24804,10 @@ class _$TrueSpeed extends TrueSpeed {
 
   _$TrueSpeed._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -24990,10 +24990,10 @@ class _$NavigationUncertainty extends NavigationUncertainty {
 
   _$NavigationUncertainty._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z,
@@ -25296,10 +25296,10 @@ class _$NavigationData extends NavigationData {
 
   _$NavigationData._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.biasPsi,
       this.biasR,
       this.cog,
@@ -25538,10 +25538,10 @@ class _$GpsFixRejection extends GpsFixRejection {
 
   _$GpsFixRejection._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.utcTime,
       this.reason})
       : super._();
@@ -25712,10 +25712,10 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
 
   _$LblRangeAcceptance._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.range,
       this.acceptance})
@@ -25898,10 +25898,10 @@ class _$DvlRejection extends DvlRejection {
 
   _$DvlRejection._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.reason,
       this.value,
@@ -26098,10 +26098,10 @@ class _$LblEstimate extends LblEstimate {
 
   _$LblEstimate._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.beacon,
       this.x,
       this.y,
@@ -26308,10 +26308,10 @@ class _$AlignmentState extends AlignmentState {
 
   _$AlignmentState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state})
       : super._();
 
@@ -26472,10 +26472,10 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
 
   _$GroupStreamVelocity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z})
@@ -26656,10 +26656,10 @@ class _$Airflow extends Airflow {
 
   _$Airflow._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.va,
       this.aoa,
       this.ssa})
@@ -26836,10 +26836,10 @@ class _$DesiredHeading extends DesiredHeading {
 
   _$DesiredHeading._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -26998,10 +26998,10 @@ class _$DesiredZ extends DesiredZ {
 
   _$DesiredZ._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value,
       this.zUnits})
       : super._();
@@ -27170,10 +27170,10 @@ class _$DesiredSpeed extends DesiredSpeed {
 
   _$DesiredSpeed._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value,
       this.speedUnits})
       : super._();
@@ -27340,10 +27340,10 @@ class _$DesiredRoll extends DesiredRoll {
 
   _$DesiredRoll._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -27500,10 +27500,10 @@ class _$DesiredPitch extends DesiredPitch {
 
   _$DesiredPitch._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -27660,10 +27660,10 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
 
   _$DesiredVerticalRate._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -27844,10 +27844,10 @@ class _$DesiredPath extends DesiredPath {
 
   _$DesiredPath._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.pathRef,
       this.startLat,
       this.startLon,
@@ -28136,10 +28136,10 @@ class _$DesiredControl extends DesiredControl {
 
   _$DesiredControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z,
@@ -28356,10 +28356,10 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
 
   _$DesiredHeadingRate._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -28528,10 +28528,10 @@ class _$DesiredVelocity extends DesiredVelocity {
 
   _$DesiredVelocity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.u,
       this.v,
       this.w,
@@ -28784,10 +28784,10 @@ class _$PathControlState extends PathControlState {
 
   _$PathControlState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.pathRef,
       this.startLat,
       this.startLon,
@@ -29128,10 +29128,10 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
 
   _$AllocatedControlTorques._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.k,
       this.m,
       this.n})
@@ -29314,10 +29314,10 @@ class _$ControlParcel extends ControlParcel {
 
   _$ControlParcel._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.p,
       this.i,
       this.d,
@@ -29504,10 +29504,10 @@ class _$Brake extends Brake {
 
   _$Brake._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op})
       : super._();
 
@@ -29682,10 +29682,10 @@ class _$DesiredLinearState extends DesiredLinearState {
 
   _$DesiredLinearState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z,
@@ -29932,10 +29932,10 @@ class _$DesiredThrottle extends DesiredThrottle {
 
   _$DesiredThrottle._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -30112,10 +30112,10 @@ class _$Goto extends Goto {
 
   _$Goto._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -30392,10 +30392,10 @@ class _$PopUp extends PopUp {
 
   _$PopUp._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -30652,10 +30652,10 @@ class _$Teleoperation extends Teleoperation {
 
   _$Teleoperation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.custom})
       : super._();
 
@@ -30838,10 +30838,10 @@ class _$Loiter extends Loiter {
 
   _$Loiter._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -31130,10 +31130,10 @@ class _$IdleManeuver extends IdleManeuver {
 
   _$IdleManeuver._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.duration,
       this.custom})
       : super._();
@@ -31304,10 +31304,10 @@ class _$LowLevelControl extends LowLevelControl {
 
   _$LowLevelControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.control,
       this.duration,
       this.custom})
@@ -31514,10 +31514,10 @@ class _$Rows extends Rows {
 
   _$Rows._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -31840,10 +31840,10 @@ class _$FollowPath extends FollowPath {
 
   _$FollowPath._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -32084,10 +32084,10 @@ class _$PathPoint extends PathPoint {
 
   _$PathPoint._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z})
@@ -32282,10 +32282,10 @@ class _$YoYo extends YoYo {
 
   _$YoYo._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -32530,10 +32530,10 @@ class _$TeleoperationDone extends TeleoperationDone {
 
   _$TeleoperationDone._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -32696,10 +32696,10 @@ class _$StationKeeping extends StationKeeping {
 
   _$StationKeeping._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.z,
@@ -32958,10 +32958,10 @@ class _$Elevator extends Elevator {
 
   _$Elevator._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.flags,
       this.lat,
@@ -33244,10 +33244,10 @@ class _$FollowTrajectory extends FollowTrajectory {
 
   _$FollowTrajectory._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -33490,10 +33490,10 @@ class _$TrajectoryPoint extends TrajectoryPoint {
 
   _$TrajectoryPoint._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.x,
       this.y,
       this.z,
@@ -33684,10 +33684,10 @@ class _$CustomManeuver extends CustomManeuver {
 
   _$CustomManeuver._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.name,
       this.custom})
@@ -33882,10 +33882,10 @@ class _$VehicleFormation extends VehicleFormation {
 
   _$VehicleFormation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.z,
@@ -34138,10 +34138,10 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
 
   _$VehicleFormationParticipant._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.vid,
       this.offX,
       this.offY,
@@ -34326,10 +34326,10 @@ class _$StopManeuver extends StopManeuver {
 
   _$StopManeuver._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -34476,10 +34476,10 @@ class _$RegisterManeuver extends RegisterManeuver {
 
   _$RegisterManeuver._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.mid})
       : super._();
 
@@ -34640,10 +34640,10 @@ class _$ManeuverControlState extends ManeuverControlState {
 
   _$ManeuverControlState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state,
       this.eta,
       this.info})
@@ -34834,10 +34834,10 @@ class _$FollowSystem extends FollowSystem {
 
   _$FollowSystem._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.system,
       this.duration,
       this.speed,
@@ -35078,10 +35078,10 @@ class _$CommsRelay extends CommsRelay {
 
   _$CommsRelay._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.speed,
@@ -35322,10 +35322,10 @@ class _$CoverArea extends CoverArea {
 
   _$CoverArea._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.z,
@@ -35554,10 +35554,10 @@ class _$PolygonVertex extends PolygonVertex {
 
   _$PolygonVertex._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon})
       : super._();
@@ -35748,10 +35748,10 @@ class _$CompassCalibration extends CompassCalibration {
 
   _$CompassCalibration._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -36034,10 +36034,10 @@ class _$FormationParameters extends FormationParameters {
 
   _$FormationParameters._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.formationName,
       this.referenceFrame,
       this.participants,
@@ -36250,10 +36250,10 @@ class _$FormationPlanExecution extends FormationPlanExecution {
 
   _$FormationPlanExecution._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.groupName,
       this.formationName,
       this.planId,
@@ -36548,10 +36548,10 @@ class _$FollowReference extends FollowReference {
 
   _$FollowReference._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.controlSrc,
       this.controlEnt,
       this.timeout,
@@ -36758,10 +36758,10 @@ class _$Reference extends Reference {
 
   _$Reference._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.flags,
       this.speed,
       this.z,
@@ -36976,10 +36976,10 @@ class _$FollowRefState extends FollowRefState {
 
   _$FollowRefState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.controlSrc,
       this.controlEnt,
       this.reference,
@@ -37212,10 +37212,10 @@ class _$FormationMonitor extends FormationMonitor {
 
   _$FormationMonitor._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.axCmd,
       this.ayCmd,
       this.azCmd,
@@ -37594,10 +37594,10 @@ class _$RelativeState extends RelativeState {
 
   _$RelativeState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sId,
       this.dist,
       this.err,
@@ -37970,10 +37970,10 @@ class _$Dislodge extends Dislodge {
 
   _$Dislodge._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.rpm,
       this.direction,
@@ -38200,10 +38200,10 @@ class _$Formation extends Formation {
 
   _$Formation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.formationName,
       this.type,
       this.op,
@@ -38574,10 +38574,10 @@ class _$Launch extends Launch {
 
   _$Launch._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -38818,10 +38818,10 @@ class _$Drop extends Drop {
 
   _$Drop._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -39062,10 +39062,10 @@ class _$ScheduledGoto extends ScheduledGoto {
 
   _$ScheduledGoto._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.arrivalTime,
       this.lat,
       this.lon,
@@ -39322,10 +39322,10 @@ class _$RowsCoverage extends RowsCoverage {
 
   _$RowsCoverage._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.z,
@@ -39652,10 +39652,10 @@ class _$Sample extends Sample {
 
   _$Sample._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -39910,10 +39910,10 @@ class _$ImageTracking extends ImageTracking {
 
   _$ImageTracking._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -40074,10 +40074,10 @@ class _$Takeoff extends Takeoff {
 
   _$Takeoff._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.z,
@@ -40324,10 +40324,10 @@ class _$Land extends Land {
 
   _$Land._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.z,
@@ -40604,10 +40604,10 @@ class _$AutonomousSection extends AutonomousSection {
 
   _$AutonomousSection._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.speed,
@@ -40878,10 +40878,10 @@ class _$FollowPoint extends FollowPoint {
 
   _$FollowPoint._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.target,
       this.maxSpeed,
       this.speedUnits,
@@ -41118,10 +41118,10 @@ class _$Alignment extends Alignment {
 
   _$Alignment._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -41350,10 +41350,10 @@ class _$StationKeepingExtended extends StationKeepingExtended {
 
   _$StationKeepingExtended._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.z,
@@ -41640,10 +41640,10 @@ class _$Magnetometer extends Magnetometer {
 
   _$Magnetometer._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout,
       this.lat,
       this.lon,
@@ -41918,10 +41918,10 @@ class _$VehicleState extends VehicleState {
 
   _$VehicleState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.opMode,
       this.errorCount,
       this.errorEnts,
@@ -42178,10 +42178,10 @@ class _$VehicleCommand extends VehicleCommand {
 
   _$VehicleCommand._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.requestId,
       this.command,
@@ -42390,10 +42390,10 @@ class _$MonitorEntityState extends MonitorEntityState {
 
   _$MonitorEntityState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.command,
       this.entities})
       : super._();
@@ -42574,10 +42574,10 @@ class _$EntityMonitoringState extends EntityMonitoringState {
 
   _$EntityMonitoringState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.mcount,
       this.mnames,
       this.ecount,
@@ -42826,10 +42826,10 @@ class _$OperationalLimits extends OperationalLimits {
 
   _$OperationalLimits._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.mask,
       this.maxDepth,
       this.minAltitude,
@@ -43094,10 +43094,10 @@ class _$GetOperationalLimits extends GetOperationalLimits {
 
   _$GetOperationalLimits._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -43244,10 +43244,10 @@ class _$Calibration extends Calibration {
 
   _$Calibration._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.duration})
       : super._();
 
@@ -43408,10 +43408,10 @@ class _$ControlLoops extends ControlLoops {
 
   _$ControlLoops._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.enable,
       this.mask,
       this.scopeRef})
@@ -43588,10 +43588,10 @@ class _$VehicleMedium extends VehicleMedium {
 
   _$VehicleMedium._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.medium})
       : super._();
 
@@ -43750,10 +43750,10 @@ class _$Collision extends Collision {
 
   _$Collision._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value,
       this.type})
       : super._();
@@ -43930,10 +43930,10 @@ class _$FormState extends FormState {
 
   _$FormState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.posSimErr,
       this.converg,
       this.turbulence,
@@ -44142,10 +44142,10 @@ class _$AutopilotMode extends AutopilotMode {
 
   _$AutopilotMode._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.autonomy,
       this.mode})
       : super._();
@@ -44326,10 +44326,10 @@ class _$FormationState extends FormationState {
 
   _$FormationState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.op,
       this.posSimErr,
@@ -44562,10 +44562,10 @@ class _$ReportControl extends ReportControl {
 
   _$ReportControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.commInterface,
       this.period,
@@ -44770,10 +44770,10 @@ class _$StateReport extends StateReport {
 
   _$StateReport._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.stime,
       this.latitude,
       this.longitude,
@@ -45034,10 +45034,10 @@ class _$TransmissionRequest extends TransmissionRequest {
 
   _$TransmissionRequest._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.commMean,
       this.destination,
@@ -45268,10 +45268,10 @@ class _$TransmissionStatus extends TransmissionStatus {
 
   _$TransmissionStatus._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.status,
       this.info})
@@ -45454,10 +45454,10 @@ class _$SmsRequest extends SmsRequest {
 
   _$SmsRequest._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.destination,
       this.timeout,
@@ -45648,10 +45648,10 @@ class _$SmsStatus extends SmsStatus {
 
   _$SmsStatus._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.status,
       this.info})
@@ -45828,10 +45828,10 @@ class _$VtolState extends VtolState {
 
   _$VtolState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state})
       : super._();
 
@@ -45988,10 +45988,10 @@ class _$ArmingState extends ArmingState {
 
   _$ArmingState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state})
       : super._();
 
@@ -46146,10 +46146,10 @@ class _$Abort extends Abort {
 
   _$Abort._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -46312,10 +46312,10 @@ class _$PlanSpecification extends PlanSpecification {
 
   _$PlanSpecification._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.planId,
       this.description,
       this.vnamespace,
@@ -46558,10 +46558,10 @@ class _$PlanManeuver extends PlanManeuver {
 
   _$PlanManeuver._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.maneuverId,
       this.data,
       this.startActions,
@@ -46754,10 +46754,10 @@ class _$PlanTransition extends PlanTransition {
 
   _$PlanTransition._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sourceMan,
       this.destMan,
       this.conditions,
@@ -46946,10 +46946,10 @@ class _$EmergencyControl extends EmergencyControl {
 
   _$EmergencyControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.command,
       this.plan})
       : super._();
@@ -47120,10 +47120,10 @@ class _$EmergencyControlState extends EmergencyControlState {
 
   _$EmergencyControlState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state,
       this.planId,
       this.commLevel})
@@ -47310,10 +47310,10 @@ class _$PlanDB extends PlanDB {
 
   _$PlanDB._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.op,
       this.requestId,
@@ -47532,10 +47532,10 @@ class _$PlanDBState extends PlanDBState {
 
   _$PlanDBState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.planCount,
       this.planSize,
       this.changeTime,
@@ -47762,10 +47762,10 @@ class _$PlanDBInformation extends PlanDBInformation {
 
   _$PlanDBInformation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.planId,
       this.planSize,
       this.changeTime,
@@ -47984,10 +47984,10 @@ class _$PlanControl extends PlanControl {
 
   _$PlanControl._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.op,
       this.requestId,
@@ -48218,10 +48218,10 @@ class _$PlanControlState extends PlanControlState {
 
   _$PlanControlState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state,
       this.planId,
       this.planEta,
@@ -48454,10 +48454,10 @@ class _$PlanVariable extends PlanVariable {
 
   _$PlanVariable._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.value,
       this.type,
@@ -48650,10 +48650,10 @@ class _$PlanGeneration extends PlanGeneration {
 
   _$PlanGeneration._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.cmd,
       this.op,
       this.planId,
@@ -48878,10 +48878,10 @@ class _$LeaderState extends LeaderState {
 
   _$LeaderState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.groupName,
       this.op,
       this.lat,
@@ -49240,10 +49240,10 @@ class _$PlanStatistics extends PlanStatistics {
 
   _$PlanStatistics._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.planId,
       this.type,
       this.properties,
@@ -49476,10 +49476,10 @@ class _$ReportedState extends ReportedState {
 
   _$ReportedState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.depth,
@@ -49728,10 +49728,10 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
 
   _$RemoteSensorInfo._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.sensorClass,
       this.lat,
@@ -49950,10 +49950,10 @@ class _$Map extends Map {
 
   _$Map._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.features})
       : super._();
@@ -50130,10 +50130,10 @@ class _$MapFeature extends MapFeature {
 
   _$MapFeature._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.id,
       this.featureType,
       this.rgbRed,
@@ -50344,10 +50344,10 @@ class _$MapPoint extends MapPoint {
 
   _$MapPoint._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.alt})
@@ -50528,10 +50528,10 @@ class _$CcuEvent extends CcuEvent {
 
   _$CcuEvent._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.id,
       this.arg})
@@ -50710,10 +50710,10 @@ class _$VehicleLinks extends VehicleLinks {
 
   _$VehicleLinks._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.localname,
       this.links})
       : super._();
@@ -50884,10 +50884,10 @@ class _$TrexObservation extends TrexObservation {
 
   _$TrexObservation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeline,
       this.predicate,
       this.attributes})
@@ -51068,10 +51068,10 @@ class _$TrexCommand extends TrexCommand {
 
   _$TrexCommand._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.command,
       this.goalId,
       this.goalXml})
@@ -51252,10 +51252,10 @@ class _$TrexOperation extends TrexOperation {
 
   _$TrexOperation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.goalId,
       this.token})
@@ -51438,10 +51438,10 @@ class _$TrexAttribute extends TrexAttribute {
 
   _$TrexAttribute._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.attrType,
       this.min,
@@ -51632,10 +51632,10 @@ class _$TrexToken extends TrexToken {
 
   _$TrexToken._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeline,
       this.predicate,
       this.attributes})
@@ -51814,10 +51814,10 @@ class _$TrexPlan extends TrexPlan {
 
   _$TrexPlan._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.reactor,
       this.tokens})
       : super._();
@@ -51986,10 +51986,10 @@ class _$Event extends Event {
 
   _$Event._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.topic,
       this.data})
       : super._();
@@ -52158,10 +52158,10 @@ class _$CompressedImage extends CompressedImage {
 
   _$CompressedImage._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.frameid,
       this.data})
       : super._();
@@ -52334,10 +52334,10 @@ class _$ImageTxSettings extends ImageTxSettings {
 
   _$ImageTxSettings._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.fps,
       this.quality,
       this.reps,
@@ -52532,10 +52532,10 @@ class _$RemoteState extends RemoteState {
 
   _$RemoteState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.depth,
@@ -52744,10 +52744,10 @@ class _$Target extends Target {
 
   _$Target._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.label,
       this.lat,
       this.lon,
@@ -52966,10 +52966,10 @@ class _$EntityParameter extends EntityParameter {
 
   _$EntityParameter._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.value})
       : super._();
@@ -53138,10 +53138,10 @@ class _$EntityParameters extends EntityParameters {
 
   _$EntityParameters._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.params})
       : super._();
@@ -53312,10 +53312,10 @@ class _$QueryEntityParameters extends QueryEntityParameters {
 
   _$QueryEntityParameters._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.visibility,
       this.scope})
@@ -53494,10 +53494,10 @@ class _$SetEntityParameters extends SetEntityParameters {
 
   _$SetEntityParameters._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.params})
       : super._();
@@ -53664,10 +53664,10 @@ class _$SaveEntityParameters extends SaveEntityParameters {
 
   _$SaveEntityParameters._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name})
       : super._();
 
@@ -53824,10 +53824,10 @@ class _$CreateSession extends CreateSession {
 
   _$CreateSession._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timeout})
       : super._();
 
@@ -53984,10 +53984,10 @@ class _$CloseSession extends CloseSession {
 
   _$CloseSession._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sessid})
       : super._();
 
@@ -54146,10 +54146,10 @@ class _$SessionSubscription extends SessionSubscription {
 
   _$SessionSubscription._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sessid,
       this.messages})
       : super._();
@@ -54316,10 +54316,10 @@ class _$SessionKeepAlive extends SessionKeepAlive {
 
   _$SessionKeepAlive._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sessid})
       : super._();
 
@@ -54478,10 +54478,10 @@ class _$SessionStatus extends SessionStatus {
 
   _$SessionStatus._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sessid,
       this.status})
       : super._();
@@ -54648,10 +54648,10 @@ class _$PushEntityParameters extends PushEntityParameters {
 
   _$PushEntityParameters._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name})
       : super._();
 
@@ -54808,10 +54808,10 @@ class _$PopEntityParameters extends PopEntityParameters {
 
   _$PopEntityParameters._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name})
       : super._();
 
@@ -54970,10 +54970,10 @@ class _$IoEvent extends IoEvent {
 
   _$IoEvent._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.error})
       : super._();
@@ -55146,10 +55146,10 @@ class _$UamTxFrame extends UamTxFrame {
 
   _$UamTxFrame._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.seq,
       this.sysDst,
       this.flags,
@@ -55342,10 +55342,10 @@ class _$UamRxFrame extends UamRxFrame {
 
   _$UamRxFrame._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.sysSrc,
       this.sysDst,
       this.flags,
@@ -55536,10 +55536,10 @@ class _$UamTxStatus extends UamTxStatus {
 
   _$UamTxStatus._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.seq,
       this.value,
       this.error})
@@ -55720,10 +55720,10 @@ class _$UamRxRange extends UamRxRange {
 
   _$UamRxRange._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.seq,
       this.sys,
       this.value})
@@ -55910,10 +55910,10 @@ class _$FormCtrlParam extends FormCtrlParam {
 
   _$FormCtrlParam._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.action,
       this.lonGain,
       this.latGain,
@@ -56124,10 +56124,10 @@ class _$FormationEval extends FormationEval {
 
   _$FormationEval._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.errMean,
       this.distMinAbs,
       this.distMinMean})
@@ -56324,10 +56324,10 @@ class _$FormationControlParams extends FormationControlParams {
 
   _$FormationControlParams._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.action,
       this.lonGain,
       this.latGain,
@@ -56598,10 +56598,10 @@ class _$FormationEvaluation extends FormationEvaluation {
 
   _$FormationEvaluation._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.op,
       this.errMean,
@@ -56834,10 +56834,10 @@ class _$SoiWaypoint extends SoiWaypoint {
 
   _$SoiWaypoint._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.lat,
       this.lon,
       this.eta,
@@ -57026,10 +57026,10 @@ class _$SoiPlan extends SoiPlan {
 
   _$SoiPlan._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.planId,
       this.waypoints})
       : super._();
@@ -57204,10 +57204,10 @@ class _$SoiCommand extends SoiCommand {
 
   _$SoiCommand._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.type,
       this.command,
       this.settings,
@@ -57410,10 +57410,10 @@ class _$SoiState extends SoiState {
 
   _$SoiState._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.state,
       this.planId,
       this.wptId,
@@ -57606,10 +57606,10 @@ class _$MessagePart extends MessagePart {
 
   _$MessagePart._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.uid,
       this.fragNumber,
       this.numFrags,
@@ -57798,10 +57798,10 @@ class _$NeptusBlob extends NeptusBlob {
 
   _$NeptusBlob._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.contentType,
       this.content})
       : super._();
@@ -57966,10 +57966,10 @@ class _$Aborted extends Aborted {
 
   _$Aborted._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -58120,10 +58120,10 @@ class _$UsblAngles extends UsblAngles {
 
   _$UsblAngles._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.target,
       this.bearing,
       this.elevation})
@@ -58306,10 +58306,10 @@ class _$UsblPosition extends UsblPosition {
 
   _$UsblPosition._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.target,
       this.x,
       this.y,
@@ -58504,10 +58504,10 @@ class _$UsblFix extends UsblFix {
 
   _$UsblFix._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.target,
       this.lat,
       this.lon,
@@ -58706,10 +58706,10 @@ class _$ParametersXml extends ParametersXml {
 
   _$ParametersXml._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.locale,
       this.config})
       : super._();
@@ -58874,10 +58874,10 @@ class _$GetParametersXml extends GetParametersXml {
 
   _$GetParametersXml._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId})
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
       : super._();
 
   @override
@@ -59028,10 +59028,10 @@ class _$SetImageCoords extends SetImageCoords {
 
   _$SetImageCoords._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.camId,
       this.x,
       this.y})
@@ -59212,10 +59212,10 @@ class _$GetImageCoords extends GetImageCoords {
 
   _$GetImageCoords._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.camId,
       this.x,
       this.y})
@@ -59402,10 +59402,10 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
 
   _$GetWorldCoordinates._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.tracking,
       this.lat,
       this.lon,
@@ -59628,10 +59628,10 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
 
   _$UsblAnglesExtended._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.target,
       this.lbearing,
       this.lelevation,
@@ -59888,10 +59888,10 @@ class _$UsblPositionExtended extends UsblPositionExtended {
 
   _$UsblPositionExtended._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.target,
       this.x,
       this.y,
@@ -60158,10 +60158,10 @@ class _$UsblFixExtended extends UsblFixExtended {
 
   _$UsblFixExtended._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.target,
       this.lat,
       this.lon,
@@ -60376,10 +60376,10 @@ class _$UsblModem extends UsblModem {
 
   _$UsblModem._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.name,
       this.lat,
       this.lon,
@@ -60578,10 +60578,10 @@ class _$UsblConfig extends UsblConfig {
 
   _$UsblConfig._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.op,
       this.modems})
       : super._();
@@ -60750,10 +60750,10 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
 
   _$DissolvedOrganicMatter._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value,
       this.type})
       : super._();
@@ -60920,10 +60920,10 @@ class _$OpticalBackscatter extends OpticalBackscatter {
 
   _$OpticalBackscatter._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 
@@ -61110,10 +61110,10 @@ class _$Tachograph extends Tachograph {
 
   _$Tachograph._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.timestampLastService,
       this.timeNextService,
       this.timeMotorNextService,
@@ -61422,10 +61422,10 @@ class _$ApmStatus extends ApmStatus {
 
   _$ApmStatus._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.severity,
       this.text})
       : super._();
@@ -61596,10 +61596,10 @@ class _$SadcReadings extends SadcReadings {
 
   _$SadcReadings._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.channel,
       this.value,
       this.gain})
@@ -61806,10 +61806,10 @@ class _$DmsDetection extends DmsDetection {
 
   _$DmsDetection._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.ch01,
       this.ch02,
       this.ch03,
@@ -62116,10 +62116,10 @@ class _$TotalMagIntensity extends TotalMagIntensity {
 
   _$TotalMagIntensity._(
       {this.timestamp,
-      this.src: ImcId.nullId,
-      this.srcEnt: ImcEntityId.nullId,
-      this.dst: ImcId.nullId,
-      this.dstEnt: ImcEntityId.nullId,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
       this.value})
       : super._();
 

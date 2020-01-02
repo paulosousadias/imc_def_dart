@@ -13,8 +13,9 @@ String _byteDataToHexString(List<int> serData) {
   serData.forEach((b) {
     var bhs = '${b.toRadixString(16)}';
     var bds = '$b';
-    while (bds.length < 3)
+    while (bds.length < 3) {
       bds = '0$bds';
+    }
     bytesSerStr += "0x${bhs.length == 1 ? '0' : ''}$bhs ($bds), ";
   });
   bytesSerStr += "]";
