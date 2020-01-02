@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.7.1] - 2 Jan 2020
+
+* Fixing README.md example.
+* Adding analysis_options.yaml and clear warnings.
+
 ## [0.7.0] - 18 Dec 2019
 
 * Changing generated messagesBuilders, messagesSerializers, and
