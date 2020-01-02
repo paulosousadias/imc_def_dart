@@ -1,6 +1,6 @@
-[![pub package](https://img.shields.io/pub/v/imc_def?color=blue)](https://pub.dev/packages/imc_def)
-
 # imc_def
+
+[![pub package](https://img.shields.io/pub/v/imc_def?color=blue)](https://pub.dev/packages/imc_def)
 
 A dart package for IMC messages manipulation.
 
@@ -21,9 +21,10 @@ To use you need to import into your pubspec.yaml such as:
 dependencies:
    imc_def: ^x.x.x
 ```
+
 Don't forget to `flutter pub get`.
 
-- In case you want to use the source to generate your own code 
+- In case you want to use the source to generate your own code
 add your settings to your project's pubspec.yaml file or create
 a file in your root project folder named imc_def.yaml with your settings.
   
@@ -39,11 +40,12 @@ After adding your settings, run the package with
 flutter pub pub run imc_def:imc_generator
 ```
 
-In your code just import: 
+In your code just import:
 
 ```dart
 import 'package:imc_def/imc_def.dart' as imc;
 ```
+
 or if generating:
 
 ```dart
