@@ -13,11 +13,11 @@ dependencies:
   flutter:
     sdk: flutter
   
-  built_value: ^7.0.0
+  built_value: ^7.1.0
 
-  xml: ^3.5.0 # for generator
-  crypto: ^2.1.3 # for generator
-  yaml: ^2.2.0 # for generator
+  xml: ^3.6.1 # for generator
+  crypto: ^2.1.4 # for generator
+  yaml: ^2.2.1 # for generator
 
 dev_dependencies:
   flutter_test:
