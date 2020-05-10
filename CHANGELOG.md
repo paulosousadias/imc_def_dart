@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.7.2] - 10 Mai 2020
+
+* Updated dependencies: built_value: ^7.0.1, xml: ^3.6.1, crypto: ^2.1.4,
+  and yaml: ^2.2.1.
+
 ## [0.7.1] - 2 Jan 2020
 
 * Fixing README.md example.
