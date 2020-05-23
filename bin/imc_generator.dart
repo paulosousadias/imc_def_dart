@@ -643,7 +643,7 @@ void _writeMessageSerializer(
         fStr += '      var msgsCounter = 0;\n';
         fStr += '      var bufCounterPos = byteOffset;\n';
         fStr += '      byteOffset += 2;\n';
-        fStr += '      for (int i = 0; i < message.$fieldName.length; i++) {\n';
+        fStr += '      for (var i = 0; i < message.$fieldName.length; i++) {\n';
         fStr += '        var id = message.$fieldName[i]?.msgId;\n';
         fStr +=
             '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();\n';
@@ -708,6 +708,7 @@ void _writeMessageSerializer(
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.${abbrev}Builder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 \n''';
@@ -834,7 +835,7 @@ void _writeMessageSerializer(
             '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '    byteOffset += 2;\n';
         fStr += '    builder.$fieldName = [];\n';
-        fStr += '    for (int i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
+        fStr += '    for (var i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
         fStr +=
             '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
