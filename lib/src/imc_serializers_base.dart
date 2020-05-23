@@ -149,9 +149,9 @@ int calcCrc(ByteData byteData, int offset, int lenght) {
 }
 
 int _crc16(ByteData byteData, int offset, int length) {
-  int crc = 0x0000;
+  var crc = 0x0000;
   var bytes = byteData.buffer.asUint8List();
-  for (int i = offset; i < offset + length; i++) {
+  for (var i = offset; i < offset + length; i++) {
     crc = (crc >> 8) ^ crc_table[(crc ^ bytes[i]) & 0xff];
   }
   return crc;
