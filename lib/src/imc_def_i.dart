@@ -140,7 +140,7 @@ class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   EntityStateBuilder();
 
   EntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -295,7 +295,7 @@ class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implement
   QueryEntityStateBuilder();
 
   QueryEntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -494,7 +494,7 @@ class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements Buil
   EntityInfoBuilder();
 
   EntityInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -663,7 +663,7 @@ class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements
   QueryEntityInfoBuilder();
 
   QueryEntityInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -834,7 +834,7 @@ class EntityListBuilder extends Object with ImcBuilderHeaderPart implements Buil
   EntityListBuilder();
 
   EntityListBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -997,7 +997,7 @@ class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements Builde
   CpuUsageBuilder();
 
   CpuUsageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -1168,7 +1168,7 @@ class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implemen
   TransportBindingsBuilder();
 
   TransportBindingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -1331,7 +1331,7 @@ class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements B
   RestartSystemBuilder();
 
   RestartSystemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -1492,7 +1492,7 @@ class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart impl
   DevCalibrationControlBuilder();
 
   DevCalibrationControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -1683,7 +1683,7 @@ class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implem
   DevCalibrationStateBuilder();
 
   DevCalibrationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -1860,7 +1860,7 @@ class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart impl
   EntityActivationStateBuilder();
 
   EntityActivationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -2013,7 +2013,7 @@ class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart
   QueryEntityActivationStateBuilder();
 
   QueryEntityActivationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -2342,7 +2342,7 @@ class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart i
   VehicleOperationalLimitsBuilder();
 
   VehicleOperationalLimitsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -2537,7 +2537,7 @@ class MsgListBuilder extends Object with ImcBuilderHeaderPart implements Builder
   MsgListBuilder();
 
   MsgListBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -2868,7 +2868,7 @@ class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   SimulatedStateBuilder();
 
   SimulatedStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -3073,7 +3073,7 @@ class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements 
   LeakSimulationBuilder();
 
   LeakSimulationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -3256,7 +3256,7 @@ class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   UASimulationBuilder();
 
   UASimulationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -3441,7 +3441,7 @@ class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implement
   DynamicsSimParamBuilder();
 
   DynamicsSimParamBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -3616,7 +3616,7 @@ class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   StorageUsageBuilder();
 
   StorageUsageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -3799,7 +3799,7 @@ class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   CacheControlBuilder();
 
   CacheControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -3974,7 +3974,7 @@ class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements 
   LoggingControlBuilder();
 
   LoggingControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -4167,7 +4167,7 @@ class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements Bu
   LogBookEntryBuilder();
 
   LogBookEntryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -4354,7 +4354,7 @@ class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements 
   LogBookControlBuilder();
 
   LogBookControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -4529,7 +4529,7 @@ class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements B
   ReplayControlBuilder();
 
   ReplayControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -4712,7 +4712,7 @@ class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   ClockControlBuilder();
 
   ClockControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -4897,7 +4897,7 @@ class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements Bui
   HistoricCTDBuilder();
 
   HistoricCTDBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -5102,7 +5102,7 @@ class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implemen
   HistoricTelemetryBuilder();
 
   HistoricTelemetryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -5331,7 +5331,7 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
   HistoricSonarDataBuilder();
 
   HistoricSonarDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -5514,7 +5514,7 @@ class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements B
   HistoricEventBuilder();
 
   HistoricEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -5717,7 +5717,7 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
   VerticalProfileBuilder();
 
   VerticalProfileBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -5896,7 +5896,7 @@ class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements B
   ProfileSampleBuilder();
 
   ProfileSampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -6049,7 +6049,7 @@ class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements Build
   HeartbeatBuilder();
 
   HeartbeatBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -6268,7 +6268,7 @@ class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   AnnounceBuilder();
 
   AnnounceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -6451,7 +6451,7 @@ class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements
   AnnounceServiceBuilder();
 
   AnnounceServiceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -6614,7 +6614,7 @@ class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   RSSIBuilder();
 
   RSSIBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -6775,7 +6775,7 @@ class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   VSWRBuilder();
 
   VSWRBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -6936,7 +6936,7 @@ class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   LinkLevelBuilder();
 
   LinkLevelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -7117,7 +7117,7 @@ class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   SmsBuilder();
 
   SmsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -7312,7 +7312,7 @@ class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   SmsTxBuilder();
 
   SmsTxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -7489,7 +7489,7 @@ class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   SmsRxBuilder();
 
   SmsRxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -7672,7 +7672,7 @@ class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   SmsStateBuilder();
 
   SmsStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -7847,7 +7847,7 @@ class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements Bui
   TextMessageBuilder();
 
   TextMessageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -8050,7 +8050,7 @@ class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   IridiumMsgRxBuilder();
 
   IridiumMsgRxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -8249,7 +8249,7 @@ class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   IridiumMsgTxBuilder();
 
   IridiumMsgTxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -8436,7 +8436,7 @@ class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements
   IridiumTxStatusBuilder();
 
   IridiumTxStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -8611,7 +8611,7 @@ class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart imple
   GroupMembershipStateBuilder();
 
   GroupMembershipStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -8794,7 +8794,7 @@ class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements Bui
   SystemGroupBuilder();
 
   SystemGroupBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -8969,7 +8969,7 @@ class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements Bui
   LinkLatencyBuilder();
 
   LinkLatencyBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -9142,7 +9142,7 @@ class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements Bu
   ExtendedRSSIBuilder();
 
   ExtendedRSSIBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -9335,7 +9335,7 @@ class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements Bu
   HistoricDataBuilder();
 
   HistoricDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -9532,7 +9532,7 @@ class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implemen
   CompressedHistoryBuilder();
 
   CompressedHistoryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -9759,7 +9759,7 @@ class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements 
   HistoricSampleBuilder();
 
   HistoricSampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -9962,7 +9962,7 @@ class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implemen
   HistoricDataQueryBuilder();
 
   HistoricDataQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -10159,7 +10159,7 @@ class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements B
   RemoteCommandBuilder();
 
   RemoteCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -10356,7 +10356,7 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
   CommSystemsQueryBuilder();
 
   CommSystemsQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -10603,7 +10603,7 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
   TelemetryMsgBuilder();
 
   TelemetryMsgBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -10790,7 +10790,7 @@ class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   LblRangeBuilder();
 
   LblRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -11013,7 +11013,7 @@ class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements Build
   LblBeaconBuilder();
 
   LblBeaconBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -11196,7 +11196,7 @@ class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements Build
   LblConfigBuilder();
 
   LblConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -11359,7 +11359,7 @@ class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements
   AcousticMessageBuilder();
 
   AcousticMessageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -11550,7 +11550,7 @@ class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implemen
   AcousticOperationBuilder();
 
   AcousticOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -11707,7 +11707,7 @@ class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart imple
   AcousticSystemsQueryBuilder();
 
   AcousticSystemsQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -11866,7 +11866,7 @@ class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements
   AcousticSystemsBuilder();
 
   AcousticSystemsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -12047,7 +12047,7 @@ class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements Bu
   AcousticLinkBuilder();
 
   AcousticLinkBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -12212,7 +12212,7 @@ class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   RpmBuilder();
 
   RpmBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -12373,7 +12373,7 @@ class VoltageBuilder extends Object with ImcBuilderHeaderPart implements Builder
   VoltageBuilder();
 
   VoltageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -12534,7 +12534,7 @@ class CurrentBuilder extends Object with ImcBuilderHeaderPart implements Builder
   CurrentBuilder();
 
   CurrentBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -12845,7 +12845,7 @@ class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   GpsFixBuilder();
 
   GpsFixBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -13076,7 +13076,7 @@ class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements Bui
   EulerAnglesBuilder();
 
   EulerAnglesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -13285,7 +13285,7 @@ class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implement
   EulerAnglesDeltaBuilder();
 
   EulerAnglesDeltaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -13484,7 +13484,7 @@ class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   AngularVelocityBuilder();
 
   AngularVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -13681,7 +13681,7 @@ class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   AccelerationBuilder();
 
   AccelerationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -13878,7 +13878,7 @@ class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements B
   MagneticFieldBuilder();
 
   MagneticFieldBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -14075,7 +14075,7 @@ class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements 
   GroundVelocityBuilder();
 
   GroundVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -14272,7 +14272,7 @@ class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements B
   WaterVelocityBuilder();
 
   WaterVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -14469,7 +14469,7 @@ class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements B
   VelocityDeltaBuilder();
 
   VelocityDeltaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -14666,7 +14666,7 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   DistanceBuilder();
 
   DistanceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -14833,7 +14833,7 @@ class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements Bui
   TemperatureBuilder();
 
   TemperatureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -14994,7 +14994,7 @@ class PressureBuilder extends Object with ImcBuilderHeaderPart implements Builde
   PressureBuilder();
 
   PressureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -15155,7 +15155,7 @@ class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   DepthBuilder();
 
   DepthBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -15316,7 +15316,7 @@ class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements Bui
   DepthOffsetBuilder();
 
   DepthOffsetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -15477,7 +15477,7 @@ class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements Buil
   SoundSpeedBuilder();
 
   SoundSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -15638,7 +15638,7 @@ class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   WaterDensityBuilder();
 
   WaterDensityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -15799,7 +15799,7 @@ class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   ConductivityBuilder();
 
   ConductivityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -15960,7 +15960,7 @@ class SalinityBuilder extends Object with ImcBuilderHeaderPart implements Builde
   SalinityBuilder();
 
   SalinityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -16141,7 +16141,7 @@ class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   WindSpeedBuilder();
 
   WindSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -16306,7 +16306,7 @@ class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implement
   RelativeHumidityBuilder();
 
   RelativeHumidityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -16467,7 +16467,7 @@ class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements Bui
   DevDataTextBuilder();
 
   DevDataTextBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -16628,7 +16628,7 @@ class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements B
   DevDataBinaryBuilder();
 
   DevDataBinaryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -16789,7 +16789,7 @@ class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   ForceBuilder();
 
   ForceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -17020,7 +17020,7 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
   SonarDataBuilder();
 
   SonarDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -17185,7 +17185,7 @@ class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   PulseBuilder();
 
   PulseBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -17344,7 +17344,7 @@ class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart impl
   PulseDetectionControlBuilder();
 
   PulseDetectionControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -17525,7 +17525,7 @@ class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   FuelLevelBuilder();
 
   FuelLevelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -17830,7 +17830,7 @@ class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements Buil
   GpsNavDataBuilder();
 
   GpsNavDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -18029,7 +18029,7 @@ class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements B
   ServoPositionBuilder();
 
   ServoPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -18242,7 +18242,7 @@ class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   DeviceStateBuilder();
 
   DeviceStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -18423,7 +18423,7 @@ class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   BeamConfigBuilder();
 
   BeamConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -18586,7 +18586,7 @@ class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements Buil
   DataSanityBuilder();
 
   DataSanityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -18747,7 +18747,7 @@ class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements Bu
   RhodamineDyeBuilder();
 
   RhodamineDyeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -18908,7 +18908,7 @@ class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements Builde
   CrudeOilBuilder();
 
   CrudeOilBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -19069,7 +19069,7 @@ class FineOilBuilder extends Object with ImcBuilderHeaderPart implements Builder
   FineOilBuilder();
 
   FineOilBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -19230,7 +19230,7 @@ class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements Build
   TurbidityBuilder();
 
   TurbidityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -19391,7 +19391,7 @@ class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements Bui
   ChlorophyllBuilder();
 
   ChlorophyllBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -19552,7 +19552,7 @@ class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements Bui
   FluoresceinBuilder();
 
   FluoresceinBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -19713,7 +19713,7 @@ class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements Bui
   PhycocyaninBuilder();
 
   PhycocyaninBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -19874,7 +19874,7 @@ class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements B
   PhycoerythrinBuilder();
 
   PhycoerythrinBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -20175,7 +20175,7 @@ class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements Build
   GpsFixRtkBuilder();
 
   GpsFixRtkBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -20374,7 +20374,7 @@ class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements
   ExternalNavDataBuilder();
 
   ExternalNavDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -20537,7 +20537,7 @@ class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements
   DissolvedOxygenBuilder();
 
   DissolvedOxygenBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -20698,7 +20698,7 @@ class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements B
   AirSaturationBuilder();
 
   AirSaturationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -20859,7 +20859,7 @@ class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements Builde
   ThrottleBuilder();
 
   ThrottleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -21020,7 +21020,7 @@ class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithI
   PHBuilder();
 
   PHBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -21181,7 +21181,7 @@ class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   RedoxBuilder();
 
   RedoxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -21362,7 +21362,7 @@ class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements Buil
   CameraZoomBuilder();
 
   CameraZoomBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -21537,7 +21537,7 @@ class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart imple
   SetThrusterActuationBuilder();
 
   SetThrusterActuationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -21710,7 +21710,7 @@ class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implement
   SetServoPositionBuilder();
 
   SetServoPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -21883,7 +21883,7 @@ class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPar
   SetControlSurfaceDeflectionBuilder();
 
   SetControlSurfaceDeflectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -22056,7 +22056,7 @@ class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart imple
   RemoteActionsRequestBuilder();
 
   RemoteActionsRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -22219,7 +22219,7 @@ class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements B
   RemoteActionsBuilder();
 
   RemoteActionsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -22390,7 +22390,7 @@ class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements Bui
   ButtonEventBuilder();
 
   ButtonEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -22563,7 +22563,7 @@ class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements Buil
   LcdControlBuilder();
 
   LcdControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -22746,7 +22746,7 @@ class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements 
   PowerOperationBuilder();
 
   PowerOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -22931,7 +22931,7 @@ class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implem
   PowerChannelControlBuilder();
 
   PowerChannelControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -23086,7 +23086,7 @@ class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart imp
   QueryPowerChannelStateBuilder();
 
   QueryPowerChannelStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -23255,7 +23255,7 @@ class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implemen
   PowerChannelStateBuilder();
 
   PowerChannelStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -23428,7 +23428,7 @@ class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements B
   LedBrightnessBuilder();
 
   LedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -23591,7 +23591,7 @@ class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart impleme
   QueryLedBrightnessBuilder();
 
   QueryLedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -23762,7 +23762,7 @@ class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implement
   SetLedBrightnessBuilder();
 
   SetLedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -23945,7 +23945,7 @@ class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   SetPWMBuilder();
 
   SetPWMBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -24130,7 +24130,7 @@ class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   PWMBuilder();
 
   PWMBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -24485,7 +24485,7 @@ class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   EstimatedStateBuilder();
 
   EstimatedStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -24704,7 +24704,7 @@ class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart im
   EstimatedStreamVelocityBuilder();
 
   EstimatedStreamVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -24869,7 +24869,7 @@ class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements 
   IndicatedSpeedBuilder();
 
   IndicatedSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -25030,7 +25030,7 @@ class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   TrueSpeedBuilder();
 
   TrueSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -25321,7 +25321,7 @@ class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart impl
   NavigationUncertaintyBuilder();
 
   NavigationUncertaintyBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -25588,7 +25588,7 @@ class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements 
   NavigationDataBuilder();
 
   NavigationDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -25775,7 +25775,7 @@ class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements
   GpsFixRejectionBuilder();
 
   GpsFixRejectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -25958,7 +25958,7 @@ class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart impleme
   LblRangeAcceptanceBuilder();
 
   LblRangeAcceptanceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -26153,7 +26153,7 @@ class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   DvlRejectionBuilder();
 
   DvlRejectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -26370,7 +26370,7 @@ class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   LblEstimateBuilder();
 
   LblEstimateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -26541,7 +26541,7 @@ class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements 
   AlignmentStateBuilder();
 
   AlignmentStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -26722,7 +26722,7 @@ class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implem
   GroupStreamVelocityBuilder();
 
   GroupStreamVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -26907,7 +26907,7 @@ class AirflowBuilder extends Object with ImcBuilderHeaderPart implements Builder
   AirflowBuilder();
 
   AirflowBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -27072,7 +27072,7 @@ class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements 
   DesiredHeadingBuilder();
 
   DesiredHeadingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -27243,7 +27243,7 @@ class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements Builde
   DesiredZBuilder();
 
   DesiredZBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -27416,7 +27416,7 @@ class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements Bu
   DesiredSpeedBuilder();
 
   DesiredSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -27579,7 +27579,7 @@ class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements Bui
   DesiredRollBuilder();
 
   DesiredRollBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -27740,7 +27740,7 @@ class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements Bu
   DesiredPitchBuilder();
 
   DesiredPitchBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -27901,7 +27901,7 @@ class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implem
   DesiredVerticalRateBuilder();
 
   DesiredVerticalRateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -28182,7 +28182,7 @@ class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements Bui
   DesiredPathBuilder();
 
   DesiredPathBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -28427,7 +28427,7 @@ class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements 
   DesiredControlBuilder();
 
   DesiredControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -28600,7 +28600,7 @@ class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart impleme
   DesiredHeadingRateBuilder();
 
   DesiredHeadingRateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -28821,7 +28821,7 @@ class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   DesiredVelocityBuilder();
 
   DesiredVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -29174,7 +29174,7 @@ class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   PathControlStateBuilder();
 
   PathControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -29391,7 +29391,7 @@ class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart im
   AllocatedControlTorquesBuilder();
 
   AllocatedControlTorquesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -29586,7 +29586,7 @@ class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements B
   ControlParcelBuilder();
 
   ControlParcelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -29753,7 +29753,7 @@ class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   BrakeBuilder();
 
   BrakeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -30004,7 +30004,7 @@ class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart impleme
   DesiredLinearStateBuilder();
 
   DesiredLinearStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -30183,7 +30183,7 @@ class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements
   DesiredThrottleBuilder();
 
   DesiredThrottleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -30444,7 +30444,7 @@ class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   GotoBuilder();
 
   GotoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -30725,7 +30725,7 @@ class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   PopUpBuilder();
 
   PopUpBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -30906,7 +30906,7 @@ class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements B
   TeleoperationBuilder();
 
   TeleoperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -31197,7 +31197,7 @@ class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   LoiterBuilder();
 
   LoiterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -31394,7 +31394,7 @@ class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   IdleManeuverBuilder();
 
   IdleManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -31577,7 +31577,7 @@ class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements
   LowLevelControlBuilder();
 
   LowLevelControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -31892,7 +31892,7 @@ class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   RowsBuilder();
 
   RowsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -32163,7 +32163,7 @@ class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements Buil
   FollowPathBuilder();
 
   FollowPathBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -32360,7 +32360,7 @@ class PathPointBuilder extends Object with ImcBuilderHeaderPart implements Build
   PathPointBuilder();
 
   PathPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -32615,7 +32615,7 @@ class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   YoYoBuilder();
 
   YoYoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -32784,7 +32784,7 @@ class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implemen
   TeleoperationDoneBuilder();
 
   TeleoperationDoneBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -33023,7 +33023,7 @@ class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements 
   StationKeepingBuilder();
 
   StationKeepingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -33310,7 +33310,7 @@ class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements Builde
   ElevatorBuilder();
 
   ElevatorBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -33573,7 +33573,7 @@ class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implement
   FollowTrajectoryBuilder();
 
   FollowTrajectoryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -33780,7 +33780,7 @@ class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements
   TrajectoryPointBuilder();
 
   TrajectoryPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -33967,7 +33967,7 @@ class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements 
   CustomManeuverBuilder();
 
   CustomManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -34222,7 +34222,7 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
   VehicleFormationBuilder();
 
   VehicleFormationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -34431,7 +34431,7 @@ class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPar
   VehicleFormationParticipantBuilder();
 
   VehicleFormationParticipantBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -34588,7 +34588,7 @@ class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   StopManeuverBuilder();
 
   StopManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -34747,7 +34747,7 @@ class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implement
   RegisterManeuverBuilder();
 
   RegisterManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -34928,7 +34928,7 @@ class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart imple
   ManeuverControlStateBuilder();
 
   ManeuverControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -35163,7 +35163,7 @@ class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements Bu
   FollowSystemBuilder();
 
   FollowSystemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -35408,7 +35408,7 @@ class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements Buil
   CommsRelayBuilder();
 
   CommsRelayBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -35653,7 +35653,7 @@ class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements Build
   CoverAreaBuilder();
 
   CoverAreaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -35838,7 +35838,7 @@ class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements B
   PolygonVertexBuilder();
 
   PolygonVertexBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -36121,7 +36121,7 @@ class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart impleme
   CompassCalibrationBuilder();
 
   CompassCalibrationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -36336,7 +36336,7 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
   FormationParametersBuilder();
 
   FormationParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -36633,7 +36633,7 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
   FormationPlanExecutionBuilder();
 
   FormationPlanExecutionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -36860,7 +36860,7 @@ class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements
   FollowReferenceBuilder();
 
   FollowReferenceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -37079,7 +37079,7 @@ class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements Build
   ReferenceBuilder();
 
   ReferenceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -37290,7 +37290,7 @@ class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements 
   FollowRefStateBuilder();
 
   FollowRefStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -37639,7 +37639,7 @@ class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implement
   FormationMonitorBuilder();
 
   FormationMonitorBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -38046,7 +38046,7 @@ class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements B
   RelativeStateBuilder();
 
   RelativeStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -38279,7 +38279,7 @@ class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   DislodgeBuilder();
 
   DislodgeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -38646,7 +38646,7 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
   FormationBuilder();
 
   FormationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -38917,7 +38917,7 @@ class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   LaunchBuilder();
 
   LaunchBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -39162,7 +39162,7 @@ class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   DropBuilder();
 
   DropBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -39407,7 +39407,7 @@ class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements B
   ScheduledGotoBuilder();
 
   ScheduledGotoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -39732,7 +39732,7 @@ class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   RowsCoverageBuilder();
 
   RowsCoverageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -40023,7 +40023,7 @@ class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   SampleBuilder();
 
   SampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -40194,7 +40194,7 @@ class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements B
   ImageTrackingBuilder();
 
   ImageTrackingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -40423,7 +40423,7 @@ class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements Builder
   TakeoffBuilder();
 
   TakeoffBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -40698,7 +40698,7 @@ class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   LandBuilder();
 
   LandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -40979,7 +40979,7 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
   AutonomousSectionBuilder();
 
   AutonomousSectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -41230,7 +41230,7 @@ class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   FollowPointBuilder();
 
   FollowPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -41455,7 +41455,7 @@ class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements Build
   AlignmentBuilder();
 
   AlignmentBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -41736,7 +41736,7 @@ class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart imp
   StationKeepingExtendedBuilder();
 
   StationKeepingExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -42019,7 +42019,7 @@ class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements Bu
   MagnetometerBuilder();
 
   MagnetometerBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -42290,7 +42290,7 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
   VehicleStateBuilder();
 
   VehicleStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -42519,7 +42519,7 @@ class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements 
   VehicleCommandBuilder();
 
   VehicleCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -42700,7 +42700,7 @@ class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart impleme
   MonitorEntityStateBuilder();
 
   MonitorEntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -42933,7 +42933,7 @@ class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart impl
   EntityMonitoringStateBuilder();
 
   EntityMonitoringStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -43218,7 +43218,7 @@ class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implemen
   OperationalLimitsBuilder();
 
   OperationalLimitsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -43391,7 +43391,7 @@ class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart imple
   GetOperationalLimitsBuilder();
 
   GetOperationalLimitsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -43550,7 +43550,7 @@ class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements Bui
   CalibrationBuilder();
 
   CalibrationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -43731,7 +43731,7 @@ class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   ControlLoopsBuilder();
 
   ControlLoopsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -43896,7 +43896,7 @@ class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements B
   VehicleMediumBuilder();
 
   VehicleMediumBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -44067,7 +44067,7 @@ class CollisionBuilder extends Object with ImcBuilderHeaderPart implements Build
   CollisionBuilder();
 
   CollisionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -44280,7 +44280,7 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   FormStateBuilder();
 
   FormStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -44461,7 +44461,7 @@ class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements B
   AutopilotModeBuilder();
 
   AutopilotModeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -44694,7 +44694,7 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
   FormationStateBuilder();
 
   FormationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -44899,7 +44899,7 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
   ReportControlBuilder();
 
   ReportControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -45156,7 +45156,7 @@ class StateReportBuilder extends Object with ImcBuilderHeaderPart implements Bui
   StateReportBuilder();
 
   StateReportBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -45405,7 +45405,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
   TransmissionRequestBuilder();
 
   TransmissionRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -45600,7 +45600,7 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
   TransmissionStatusBuilder();
 
   TransmissionStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -45795,7 +45795,7 @@ class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements Buil
   SmsRequestBuilder();
 
   SmsRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -45982,7 +45982,7 @@ class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   SmsStatusBuilder();
 
   SmsStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -46147,7 +46147,7 @@ class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   VtolStateBuilder();
 
   VtolStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -46308,7 +46308,7 @@ class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   ArmingStateBuilder();
 
   ArmingStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -46459,7 +46459,7 @@ class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   AbortBuilder();
 
   AbortBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -46698,7 +46698,7 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
   PlanSpecificationBuilder();
 
   PlanSpecificationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -46905,7 +46905,7 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   PlanManeuverBuilder();
 
   PlanManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -47102,7 +47102,7 @@ class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements 
   PlanTransitionBuilder();
 
   PlanTransitionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -47279,7 +47279,7 @@ class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implement
   EmergencyControlBuilder();
 
   EmergencyControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -47462,7 +47462,7 @@ class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart impl
   EmergencyControlStateBuilder();
 
   EmergencyControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -47677,7 +47677,7 @@ class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   PlanDBBuilder();
 
   PlanDBBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -47908,7 +47908,7 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   PlanDBStateBuilder();
 
   PlanDBStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -48131,7 +48131,7 @@ class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implemen
   PlanDBInformationBuilder();
 
   PlanDBInformationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -48362,7 +48362,7 @@ class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements Bui
   PlanControlBuilder();
 
   PlanControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -48605,7 +48605,7 @@ class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   PlanControlStateBuilder();
 
   PlanControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -48810,7 +48810,7 @@ class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements Bu
   PlanVariableBuilder();
 
   PlanVariableBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -49007,7 +49007,7 @@ class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements 
   PlanGenerationBuilder();
 
   PlanGenerationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -49364,7 +49364,7 @@ class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   LeaderStateBuilder();
 
   LeaderStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -49623,7 +49623,7 @@ class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements 
   PlanStatisticsBuilder();
 
   PlanStatisticsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -49876,7 +49876,7 @@ class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements B
   ReportedStateBuilder();
 
   ReportedStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -50113,7 +50113,7 @@ class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implement
   RemoteSensorInfoBuilder();
 
   RemoteSensorInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -50296,7 +50296,7 @@ class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   MapBuilder();
 
   MapBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -50509,7 +50509,7 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
   MapFeatureBuilder();
 
   MapFeatureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -50700,7 +50700,7 @@ class MapPointBuilder extends Object with ImcBuilderHeaderPart implements Builde
   MapPointBuilder();
 
   MapPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -50885,7 +50885,7 @@ class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements Builde
   CcuEventBuilder();
 
   CcuEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -51060,7 +51060,7 @@ class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements Bu
   VehicleLinksBuilder();
 
   VehicleLinksBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -51243,7 +51243,7 @@ class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements
   TrexObservationBuilder();
 
   TrexObservationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -51428,7 +51428,7 @@ class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements Bui
   TrexCommandBuilder();
 
   TrexCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -51613,7 +51613,7 @@ class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements B
   TrexOperationBuilder();
 
   TrexOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -51808,7 +51808,7 @@ class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements B
   TrexAttributeBuilder();
 
   TrexAttributeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -51995,7 +51995,7 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
   TrexTokenBuilder();
 
   TrexTokenBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -52170,7 +52170,7 @@ class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements Builde
   TrexPlanBuilder();
 
   TrexPlanBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -52343,7 +52343,7 @@ class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   EventBuilder();
 
   EventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -52516,7 +52516,7 @@ class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements
   CompressedImageBuilder();
 
   CompressedImageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -52709,7 +52709,7 @@ class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements
   ImageTxSettingsBuilder();
 
   ImageTxSettingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -52916,7 +52916,7 @@ class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   RemoteStateBuilder();
 
   RemoteStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -53145,7 +53145,7 @@ class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   TargetBuilder();
 
   TargetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -53328,7 +53328,7 @@ class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements
   EntityParameterBuilder();
 
   EntityParameterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -53501,7 +53501,7 @@ class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implement
   EntityParametersBuilder();
 
   EntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -53684,7 +53684,7 @@ class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart impl
   QueryEntityParametersBuilder();
 
   QueryEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -53859,7 +53859,7 @@ class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   SetEntityParametersBuilder();
 
   SetEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -54022,7 +54022,7 @@ class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   SaveEntityParametersBuilder();
 
   SaveEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -54183,7 +54183,7 @@ class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements B
   CreateSessionBuilder();
 
   CreateSessionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -54344,7 +54344,7 @@ class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   CloseSessionBuilder();
 
   CloseSessionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -54515,7 +54515,7 @@ class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implem
   SessionSubscriptionBuilder();
 
   SessionSubscriptionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -54678,7 +54678,7 @@ class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implement
   SessionKeepAliveBuilder();
 
   SessionKeepAliveBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -54849,7 +54849,7 @@ class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements B
   SessionStatusBuilder();
 
   SessionStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -55012,7 +55012,7 @@ class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   PushEntityParametersBuilder();
 
   PushEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -55173,7 +55173,7 @@ class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   PopEntityParametersBuilder();
 
   PopEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -55344,7 +55344,7 @@ class IoEventBuilder extends Object with ImcBuilderHeaderPart implements Builder
   IoEventBuilder();
 
   IoEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -55537,7 +55537,7 @@ class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   UamTxFrameBuilder();
 
   UamTxFrameBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -55734,7 +55734,7 @@ class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   UamRxFrameBuilder();
 
   UamRxFrameBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -55921,7 +55921,7 @@ class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements Bui
   UamTxStatusBuilder();
 
   UamTxStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -56106,7 +56106,7 @@ class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements Buil
   UamRxRangeBuilder();
 
   UamRxRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -56321,7 +56321,7 @@ class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements B
   FormCtrlParamBuilder();
 
   FormCtrlParamBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -56512,7 +56512,7 @@ class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements B
   FormationEvalBuilder();
 
   FormationEvalBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -56777,7 +56777,7 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
   FormationControlParamsBuilder();
 
   FormationControlParamsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -57028,7 +57028,7 @@ class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implem
   FormationEvaluationBuilder();
 
   FormationEvaluationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -57233,7 +57233,7 @@ class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   SoiWaypointBuilder();
 
   SoiWaypointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -57410,7 +57410,7 @@ class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements Builder
   SoiPlanBuilder();
 
   SoiPlanBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -57613,7 +57613,7 @@ class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements Buil
   SoiCommandBuilder();
 
   SoiCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -57812,7 +57812,7 @@ class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   SoiStateBuilder();
 
   SoiStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -58009,7 +58009,7 @@ class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements Bui
   MessagePartBuilder();
 
   MessagePartBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -58186,7 +58186,7 @@ class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements Buil
   NeptusBlobBuilder();
 
   NeptusBlobBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -58339,7 +58339,7 @@ class AbortedBuilder extends Object with ImcBuilderHeaderPart implements Builder
   AbortedBuilder();
 
   AbortedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -58518,7 +58518,7 @@ class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements Buil
   UsblAnglesBuilder();
 
   UsblAnglesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -58713,7 +58713,7 @@ class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   UsblPositionBuilder();
 
   UsblPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -58920,7 +58920,7 @@ class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements Builder
   UsblFixBuilder();
 
   UsblFixBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -59099,7 +59099,7 @@ class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements B
   ParametersXmlBuilder();
 
   ParametersXmlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -59252,7 +59252,7 @@ class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implement
   GetParametersXmlBuilder();
 
   GetParametersXmlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -59431,7 +59431,7 @@ class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   SetImageCoordsBuilder();
 
   SetImageCoordsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -59616,7 +59616,7 @@ class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   GetImageCoordsBuilder();
 
   GetImageCoordsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -59831,7 +59831,7 @@ class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implem
   GetWorldCoordinatesBuilder();
 
   GetWorldCoordinatesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -60082,7 +60082,7 @@ class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart impleme
   UsblAnglesExtendedBuilder();
 
   UsblAnglesExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -60359,7 +60359,7 @@ class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart imple
   UsblPositionExtendedBuilder();
 
   UsblPositionExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -60590,7 +60590,7 @@ class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements
   UsblFixExtendedBuilder();
 
   UsblFixExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -60801,7 +60801,7 @@ class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements Build
   UsblModemBuilder();
 
   UsblModemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -60980,7 +60980,7 @@ class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   UsblConfigBuilder();
 
   UsblConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -61153,7 +61153,7 @@ class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart imp
   DissolvedOrganicMatterBuilder();
 
   DissolvedOrganicMatterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -61316,7 +61316,7 @@ class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart impleme
   OpticalBackscatterBuilder();
 
   OpticalBackscatterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -61627,7 +61627,7 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
   TachographBuilder();
 
   TachographBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -61828,7 +61828,7 @@ class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   ApmStatusBuilder();
 
   ApmStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -62011,7 +62011,7 @@ class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   SadcReadingsBuilder();
 
   SadcReadingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -62326,7 +62326,7 @@ class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   DmsDetectionBuilder();
 
   DmsDetectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
@@ -62517,7 +62517,7 @@ class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implemen
   TotalMagIntensityBuilder();
 
   TotalMagIntensityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override

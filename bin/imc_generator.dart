@@ -419,7 +419,7 @@ void _writeMessageBuilder(
   var msgStringImmutableBuilder1 = '''\n  ${abbrev}Builder();
 
   ${abbrev}Builder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
   @override
