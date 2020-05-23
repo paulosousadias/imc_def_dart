@@ -209,7 +209,7 @@ void _writeMessageClass(String name, String abbrev, String msgId, xml.XmlElement
   @override
   int get msgId => static_id;
   @override
-  String get abbrev => "$abbrev";
+  String get abbrev => '$abbrev';
 ''';
   var msgStringClassClose = '''}\n\n''';
   sinks[_idxMsg].write('$msgStringClass');
@@ -885,9 +885,9 @@ void _writeMessageField(
       _writeLocalEnumLike(abbrev, field, message, unit, sinks[_idxLocEnum]);
       break;
     default:
-      unitsStr = unit == null ? '' : ', units: "$unit"';
+      unitsStr = unit == null ? '' : ", units: '$unit'";
   }
-  var str = '''  @ImcField("$name", "$abbrev", $typeImc$unitsStr)
+  var str = '''  @ImcField('$name', '$abbrev', $typeImc$unitsStr)
   $dartType get ${_convertToFieldName(abbrev)};
 ''';
 
@@ -1305,7 +1305,7 @@ void main(List<String> args) async {
 
   var msgElm = document.findElements('messages').first;
   sinks[_idxMsg]
-      .write('const String VERSION = "${msgElm.getAttribute("version")}";\n');
+      .write("const String VERSION = '${msgElm.getAttribute('version')}';\n");
 
   var headerElm = msgElm.findElements('header').first;
   var syncElm = headerElm.findElements('field').first;
@@ -1317,7 +1317,7 @@ void main(List<String> args) async {
   sinks[_idxMsg].write(
       'const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
 
-  sinks[_idxMsg].write('const String MD5_SUM = "$imcDigest";\n');
+  sinks[_idxMsg].write("const String MD5_SUM = '$imcDigest';\n");
 
   sinks[_idxMsg].write('\n');
 
