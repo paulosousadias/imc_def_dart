@@ -27,7 +27,7 @@ class _$EntityState extends EntityState {
   @override
   final String description;
 
-  factory _$EntityState([void updates(EntityStateBuilder b)]) =>
+  factory _$EntityState([void Function(EntityStateBuilder b) updates]) =>
       (EntityStateBuilder()..update(updates)).build();
 
   _$EntityState._(
@@ -42,7 +42,7 @@ class _$EntityState extends EntityState {
       : super._();
 
   @override
-  EntityState rebuild(void updates(EntityStateBuilder b)) =>
+  EntityState rebuild(void Function(EntityStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -170,7 +170,7 @@ class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(EntityStateBuilder b)) {
+  void update(void Function(EntityStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -206,7 +206,7 @@ class _$QueryEntityState extends QueryEntityState {
   final int dstEnt;
 
 
-  factory _$QueryEntityState([void updates(QueryEntityStateBuilder b)]) =>
+  factory _$QueryEntityState([void Function(QueryEntityStateBuilder b) updates]) =>
       (QueryEntityStateBuilder()..update(updates)).build();
 
   _$QueryEntityState._(
@@ -218,7 +218,7 @@ class _$QueryEntityState extends QueryEntityState {
       : super._();
 
   @override
-  QueryEntityState rebuild(void updates(QueryEntityStateBuilder b)) =>
+  QueryEntityState rebuild(void Function(QueryEntityStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -322,7 +322,7 @@ class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(QueryEntityStateBuilder b)) {
+  void update(void Function(QueryEntityStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -365,7 +365,7 @@ class _$EntityInfo extends EntityInfo {
   @override
   final int deactTime;
 
-  factory _$EntityInfo([void updates(EntityInfoBuilder b)]) =>
+  factory _$EntityInfo([void Function(EntityInfoBuilder b) updates]) =>
       (EntityInfoBuilder()..update(updates)).build();
 
   _$EntityInfo._(
@@ -382,7 +382,7 @@ class _$EntityInfo extends EntityInfo {
       : super._();
 
   @override
-  EntityInfo rebuild(void updates(EntityInfoBuilder b)) =>
+  EntityInfo rebuild(void Function(EntityInfoBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -526,7 +526,7 @@ class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(EntityInfoBuilder b)) {
+  void update(void Function(EntityInfoBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -566,7 +566,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
   @override
   final int id;
 
-  factory _$QueryEntityInfo([void updates(QueryEntityInfoBuilder b)]) =>
+  factory _$QueryEntityInfo([void Function(QueryEntityInfoBuilder b) updates]) =>
       (QueryEntityInfoBuilder()..update(updates)).build();
 
   _$QueryEntityInfo._(
@@ -579,7 +579,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
       : super._();
 
   @override
-  QueryEntityInfo rebuild(void updates(QueryEntityInfoBuilder b)) =>
+  QueryEntityInfo rebuild(void Function(QueryEntityInfoBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -691,7 +691,7 @@ class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(QueryEntityInfoBuilder b)) {
+  void update(void Function(QueryEntityInfoBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -729,7 +729,7 @@ class _$EntityList extends EntityList {
   @override
   final String list;
 
-  factory _$EntityList([void updates(EntityListBuilder b)]) =>
+  factory _$EntityList([void Function(EntityListBuilder b) updates]) =>
       (EntityListBuilder()..update(updates)).build();
 
   _$EntityList._(
@@ -743,7 +743,7 @@ class _$EntityList extends EntityList {
       : super._();
 
   @override
-  EntityList rebuild(void updates(EntityListBuilder b)) =>
+  EntityList rebuild(void Function(EntityListBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -863,7 +863,7 @@ class EntityListBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(EntityListBuilder b)) {
+  void update(void Function(EntityListBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -900,7 +900,7 @@ class _$CpuUsage extends CpuUsage {
   @override
   final int value;
 
-  factory _$CpuUsage([void updates(CpuUsageBuilder b)]) =>
+  factory _$CpuUsage([void Function(CpuUsageBuilder b) updates]) =>
       (CpuUsageBuilder()..update(updates)).build();
 
   _$CpuUsage._(
@@ -913,7 +913,7 @@ class _$CpuUsage extends CpuUsage {
       : super._();
 
   @override
-  CpuUsage rebuild(void updates(CpuUsageBuilder b)) =>
+  CpuUsage rebuild(void Function(CpuUsageBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -1025,7 +1025,7 @@ class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(CpuUsageBuilder b)) {
+  void update(void Function(CpuUsageBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1063,7 +1063,7 @@ class _$TransportBindings extends TransportBindings {
   @override
   final int messageId;
 
-  factory _$TransportBindings([void updates(TransportBindingsBuilder b)]) =>
+  factory _$TransportBindings([void Function(TransportBindingsBuilder b) updates]) =>
       (TransportBindingsBuilder()..update(updates)).build();
 
   _$TransportBindings._(
@@ -1077,7 +1077,7 @@ class _$TransportBindings extends TransportBindings {
       : super._();
 
   @override
-  TransportBindings rebuild(void updates(TransportBindingsBuilder b)) =>
+  TransportBindings rebuild(void Function(TransportBindingsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -1197,7 +1197,7 @@ class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(TransportBindingsBuilder b)) {
+  void update(void Function(TransportBindingsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1234,7 +1234,7 @@ class _$RestartSystem extends RestartSystem {
   @override
   final RestartSystemEnumType type;
 
-  factory _$RestartSystem([void updates(RestartSystemBuilder b)]) =>
+  factory _$RestartSystem([void Function(RestartSystemBuilder b) updates]) =>
       (RestartSystemBuilder()..update(updates)).build();
 
   _$RestartSystem._(
@@ -1247,7 +1247,7 @@ class _$RestartSystem extends RestartSystem {
       : super._();
 
   @override
-  RestartSystem rebuild(void updates(RestartSystemBuilder b)) =>
+  RestartSystem rebuild(void Function(RestartSystemBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -1359,7 +1359,7 @@ class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(RestartSystemBuilder b)) {
+  void update(void Function(RestartSystemBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1395,7 +1395,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
   @override
   final DevCalibrationControlEnumOp op;
 
-  factory _$DevCalibrationControl([void updates(DevCalibrationControlBuilder b)]) =>
+  factory _$DevCalibrationControl([void Function(DevCalibrationControlBuilder b) updates]) =>
       (DevCalibrationControlBuilder()..update(updates)).build();
 
   _$DevCalibrationControl._(
@@ -1408,7 +1408,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
       : super._();
 
   @override
-  DevCalibrationControl rebuild(void updates(DevCalibrationControlBuilder b)) =>
+  DevCalibrationControl rebuild(void Function(DevCalibrationControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -1520,7 +1520,7 @@ class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  void update(void updates(DevCalibrationControlBuilder b)) {
+  void update(void Function(DevCalibrationControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1562,7 +1562,7 @@ class _$DevCalibrationState extends DevCalibrationState {
   @override
   final DevCalibrationStateBitfieldFlags flags;
 
-  factory _$DevCalibrationState([void updates(DevCalibrationStateBuilder b)]) =>
+  factory _$DevCalibrationState([void Function(DevCalibrationStateBuilder b) updates]) =>
       (DevCalibrationStateBuilder()..update(updates)).build();
 
   _$DevCalibrationState._(
@@ -1578,7 +1578,7 @@ class _$DevCalibrationState extends DevCalibrationState {
       : super._();
 
   @override
-  DevCalibrationState rebuild(void updates(DevCalibrationStateBuilder b)) =>
+  DevCalibrationState rebuild(void Function(DevCalibrationStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -1714,7 +1714,7 @@ class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(DevCalibrationStateBuilder b)) {
+  void update(void Function(DevCalibrationStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1755,7 +1755,7 @@ class _$EntityActivationState extends EntityActivationState {
   @override
   final String error;
 
-  factory _$EntityActivationState([void updates(EntityActivationStateBuilder b)]) =>
+  factory _$EntityActivationState([void Function(EntityActivationStateBuilder b) updates]) =>
       (EntityActivationStateBuilder()..update(updates)).build();
 
   _$EntityActivationState._(
@@ -1769,7 +1769,7 @@ class _$EntityActivationState extends EntityActivationState {
       : super._();
 
   @override
-  EntityActivationState rebuild(void updates(EntityActivationStateBuilder b)) =>
+  EntityActivationState rebuild(void Function(EntityActivationStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -1889,7 +1889,7 @@ class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  void update(void updates(EntityActivationStateBuilder b)) {
+  void update(void Function(EntityActivationStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1924,7 +1924,7 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
   final int dstEnt;
 
 
-  factory _$QueryEntityActivationState([void updates(QueryEntityActivationStateBuilder b)]) =>
+  factory _$QueryEntityActivationState([void Function(QueryEntityActivationStateBuilder b) updates]) =>
       (QueryEntityActivationStateBuilder()..update(updates)).build();
 
   _$QueryEntityActivationState._(
@@ -1936,7 +1936,7 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
       : super._();
 
   @override
-  QueryEntityActivationState rebuild(void updates(QueryEntityActivationStateBuilder b)) =>
+  QueryEntityActivationState rebuild(void Function(QueryEntityActivationStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -2040,7 +2040,7 @@ class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart
   }
 
   @override
-  void update(void updates(QueryEntityActivationStateBuilder b)) {
+  void update(void Function(QueryEntityActivationStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -2109,7 +2109,7 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
   @override
   final double rpmRateMax;
 
-  factory _$VehicleOperationalLimits([void updates(VehicleOperationalLimitsBuilder b)]) =>
+  factory _$VehicleOperationalLimits([void Function(VehicleOperationalLimitsBuilder b) updates]) =>
       (VehicleOperationalLimitsBuilder()..update(updates)).build();
 
   _$VehicleOperationalLimits._(
@@ -2139,7 +2139,7 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
       : super._();
 
   @override
-  VehicleOperationalLimits rebuild(void updates(VehicleOperationalLimitsBuilder b)) =>
+  VehicleOperationalLimits rebuild(void Function(VehicleOperationalLimitsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -2387,7 +2387,7 @@ class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart i
   }
 
   @override
-  void update(void updates(VehicleOperationalLimitsBuilder b)) {
+  void update(void Function(VehicleOperationalLimitsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -2440,7 +2440,7 @@ class _$MsgList extends MsgList {
   @override
   final List<ImcMessage> msgs;
 
-  factory _$MsgList([void updates(MsgListBuilder b)]) =>
+  factory _$MsgList([void Function(MsgListBuilder b) updates]) =>
       (MsgListBuilder()..update(updates)).build();
 
   _$MsgList._(
@@ -2453,7 +2453,7 @@ class _$MsgList extends MsgList {
       : super._();
 
   @override
-  MsgList rebuild(void updates(MsgListBuilder b)) =>
+  MsgList rebuild(void Function(MsgListBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -2565,7 +2565,7 @@ class MsgListBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(MsgListBuilder b)) {
+  void update(void Function(MsgListBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -2635,7 +2635,7 @@ class _$SimulatedState extends SimulatedState {
   @override
   final double svz;
 
-  factory _$SimulatedState([void updates(SimulatedStateBuilder b)]) =>
+  factory _$SimulatedState([void Function(SimulatedStateBuilder b) updates]) =>
       (SimulatedStateBuilder()..update(updates)).build();
 
   _$SimulatedState._(
@@ -2665,7 +2665,7 @@ class _$SimulatedState extends SimulatedState {
       : super._();
 
   @override
-  SimulatedState rebuild(void updates(SimulatedStateBuilder b)) =>
+  SimulatedState rebuild(void Function(SimulatedStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -2913,7 +2913,7 @@ class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(SimulatedStateBuilder b)) {
+  void update(void Function(SimulatedStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -2968,7 +2968,7 @@ class _$LeakSimulation extends LeakSimulation {
   @override
   final String entities;
 
-  factory _$LeakSimulation([void updates(LeakSimulationBuilder b)]) =>
+  factory _$LeakSimulation([void Function(LeakSimulationBuilder b) updates]) =>
       (LeakSimulationBuilder()..update(updates)).build();
 
   _$LeakSimulation._(
@@ -2982,7 +2982,7 @@ class _$LeakSimulation extends LeakSimulation {
       : super._();
 
   @override
-  LeakSimulation rebuild(void updates(LeakSimulationBuilder b)) =>
+  LeakSimulation rebuild(void Function(LeakSimulationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -3102,7 +3102,7 @@ class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(LeakSimulationBuilder b)) {
+  void update(void Function(LeakSimulationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -3143,7 +3143,7 @@ class _$UASimulation extends UASimulation {
   @override
   final List<int> data;
 
-  factory _$UASimulation([void updates(UASimulationBuilder b)]) =>
+  factory _$UASimulation([void Function(UASimulationBuilder b) updates]) =>
       (UASimulationBuilder()..update(updates)).build();
 
   _$UASimulation._(
@@ -3158,7 +3158,7 @@ class _$UASimulation extends UASimulation {
       : super._();
 
   @override
-  UASimulation rebuild(void updates(UASimulationBuilder b)) =>
+  UASimulation rebuild(void Function(UASimulationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -3286,7 +3286,7 @@ class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(UASimulationBuilder b)) {
+  void update(void Function(UASimulationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -3328,7 +3328,7 @@ class _$DynamicsSimParam extends DynamicsSimParam {
   @override
   final double bank2pPgain;
 
-  factory _$DynamicsSimParam([void updates(DynamicsSimParamBuilder b)]) =>
+  factory _$DynamicsSimParam([void Function(DynamicsSimParamBuilder b) updates]) =>
       (DynamicsSimParamBuilder()..update(updates)).build();
 
   _$DynamicsSimParam._(
@@ -3343,7 +3343,7 @@ class _$DynamicsSimParam extends DynamicsSimParam {
       : super._();
 
   @override
-  DynamicsSimParam rebuild(void updates(DynamicsSimParamBuilder b)) =>
+  DynamicsSimParam rebuild(void Function(DynamicsSimParamBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -3471,7 +3471,7 @@ class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(DynamicsSimParamBuilder b)) {
+  void update(void Function(DynamicsSimParamBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -3511,7 +3511,7 @@ class _$StorageUsage extends StorageUsage {
   @override
   final int value;
 
-  factory _$StorageUsage([void updates(StorageUsageBuilder b)]) =>
+  factory _$StorageUsage([void Function(StorageUsageBuilder b) updates]) =>
       (StorageUsageBuilder()..update(updates)).build();
 
   _$StorageUsage._(
@@ -3525,7 +3525,7 @@ class _$StorageUsage extends StorageUsage {
       : super._();
 
   @override
-  StorageUsage rebuild(void updates(StorageUsageBuilder b)) =>
+  StorageUsage rebuild(void Function(StorageUsageBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -3645,7 +3645,7 @@ class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(StorageUsageBuilder b)) {
+  void update(void Function(StorageUsageBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -3686,7 +3686,7 @@ class _$CacheControl extends CacheControl {
   @override
   final ImcMessage message;
 
-  factory _$CacheControl([void updates(CacheControlBuilder b)]) =>
+  factory _$CacheControl([void Function(CacheControlBuilder b) updates]) =>
       (CacheControlBuilder()..update(updates)).build();
 
   _$CacheControl._(
@@ -3701,7 +3701,7 @@ class _$CacheControl extends CacheControl {
       : super._();
 
   @override
-  CacheControl rebuild(void updates(CacheControlBuilder b)) =>
+  CacheControl rebuild(void Function(CacheControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -3829,7 +3829,7 @@ class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(CacheControlBuilder b)) {
+  void update(void Function(CacheControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -3869,7 +3869,7 @@ class _$LoggingControl extends LoggingControl {
   @override
   final String name;
 
-  factory _$LoggingControl([void updates(LoggingControlBuilder b)]) =>
+  factory _$LoggingControl([void Function(LoggingControlBuilder b) updates]) =>
       (LoggingControlBuilder()..update(updates)).build();
 
   _$LoggingControl._(
@@ -3883,7 +3883,7 @@ class _$LoggingControl extends LoggingControl {
       : super._();
 
   @override
-  LoggingControl rebuild(void updates(LoggingControlBuilder b)) =>
+  LoggingControl rebuild(void Function(LoggingControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -4003,7 +4003,7 @@ class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(LoggingControlBuilder b)) {
+  void update(void Function(LoggingControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -4046,7 +4046,7 @@ class _$LogBookEntry extends LogBookEntry {
   @override
   final String text;
 
-  factory _$LogBookEntry([void updates(LogBookEntryBuilder b)]) =>
+  factory _$LogBookEntry([void Function(LogBookEntryBuilder b) updates]) =>
       (LogBookEntryBuilder()..update(updates)).build();
 
   _$LogBookEntry._(
@@ -4062,7 +4062,7 @@ class _$LogBookEntry extends LogBookEntry {
       : super._();
 
   @override
-  LogBookEntry rebuild(void updates(LogBookEntryBuilder b)) =>
+  LogBookEntry rebuild(void Function(LogBookEntryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -4198,7 +4198,7 @@ class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(LogBookEntryBuilder b)) {
+  void update(void Function(LogBookEntryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -4241,7 +4241,7 @@ class _$LogBookControl extends LogBookControl {
   @override
   final List<LogBookEntry> msg;
 
-  factory _$LogBookControl([void updates(LogBookControlBuilder b)]) =>
+  factory _$LogBookControl([void Function(LogBookControlBuilder b) updates]) =>
       (LogBookControlBuilder()..update(updates)).build();
 
   _$LogBookControl._(
@@ -4256,7 +4256,7 @@ class _$LogBookControl extends LogBookControl {
       : super._();
 
   @override
-  LogBookControl rebuild(void updates(LogBookControlBuilder b)) =>
+  LogBookControl rebuild(void Function(LogBookControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -4384,7 +4384,7 @@ class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(LogBookControlBuilder b)) {
+  void update(void Function(LogBookControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -4424,7 +4424,7 @@ class _$ReplayControl extends ReplayControl {
   @override
   final String file;
 
-  factory _$ReplayControl([void updates(ReplayControlBuilder b)]) =>
+  factory _$ReplayControl([void Function(ReplayControlBuilder b) updates]) =>
       (ReplayControlBuilder()..update(updates)).build();
 
   _$ReplayControl._(
@@ -4438,7 +4438,7 @@ class _$ReplayControl extends ReplayControl {
       : super._();
 
   @override
-  ReplayControl rebuild(void updates(ReplayControlBuilder b)) =>
+  ReplayControl rebuild(void Function(ReplayControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -4558,7 +4558,7 @@ class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ReplayControlBuilder b)) {
+  void update(void Function(ReplayControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -4599,7 +4599,7 @@ class _$ClockControl extends ClockControl {
   @override
   final int tz;
 
-  factory _$ClockControl([void updates(ClockControlBuilder b)]) =>
+  factory _$ClockControl([void Function(ClockControlBuilder b) updates]) =>
       (ClockControlBuilder()..update(updates)).build();
 
   _$ClockControl._(
@@ -4614,7 +4614,7 @@ class _$ClockControl extends ClockControl {
       : super._();
 
   @override
-  ClockControl rebuild(void updates(ClockControlBuilder b)) =>
+  ClockControl rebuild(void Function(ClockControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -4742,7 +4742,7 @@ class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(ClockControlBuilder b)) {
+  void update(void Function(ClockControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -4784,7 +4784,7 @@ class _$HistoricCTD extends HistoricCTD {
   @override
   final double depth;
 
-  factory _$HistoricCTD([void updates(HistoricCTDBuilder b)]) =>
+  factory _$HistoricCTD([void Function(HistoricCTDBuilder b) updates]) =>
       (HistoricCTDBuilder()..update(updates)).build();
 
   _$HistoricCTD._(
@@ -4799,7 +4799,7 @@ class _$HistoricCTD extends HistoricCTD {
       : super._();
 
   @override
-  HistoricCTD rebuild(void updates(HistoricCTDBuilder b)) =>
+  HistoricCTD rebuild(void Function(HistoricCTDBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -4927,7 +4927,7 @@ class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(HistoricCTDBuilder b)) {
+  void update(void Function(HistoricCTDBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -4973,7 +4973,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
   @override
   final int speed;
 
-  factory _$HistoricTelemetry([void updates(HistoricTelemetryBuilder b)]) =>
+  factory _$HistoricTelemetry([void Function(HistoricTelemetryBuilder b) updates]) =>
       (HistoricTelemetryBuilder()..update(updates)).build();
 
   _$HistoricTelemetry._(
@@ -4990,7 +4990,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
       : super._();
 
   @override
-  HistoricTelemetry rebuild(void updates(HistoricTelemetryBuilder b)) =>
+  HistoricTelemetry rebuild(void Function(HistoricTelemetryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -5134,7 +5134,7 @@ class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(HistoricTelemetryBuilder b)) {
+  void update(void Function(HistoricTelemetryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -5186,7 +5186,7 @@ class _$HistoricSonarData extends HistoricSonarData {
   @override
   final List<int> sonarData;
 
-  factory _$HistoricSonarData([void updates(HistoricSonarDataBuilder b)]) =>
+  factory _$HistoricSonarData([void Function(HistoricSonarDataBuilder b) updates]) =>
       (HistoricSonarDataBuilder()..update(updates)).build();
 
   _$HistoricSonarData._(
@@ -5205,7 +5205,7 @@ class _$HistoricSonarData extends HistoricSonarData {
       : super._();
 
   @override
-  HistoricSonarData rebuild(void updates(HistoricSonarDataBuilder b)) =>
+  HistoricSonarData rebuild(void Function(HistoricSonarDataBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -5365,7 +5365,7 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(HistoricSonarDataBuilder b)) {
+  void update(void Function(HistoricSonarDataBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -5409,7 +5409,7 @@ class _$HistoricEvent extends HistoricEvent {
   @override
   final HistoricEventEnumType type;
 
-  factory _$HistoricEvent([void updates(HistoricEventBuilder b)]) =>
+  factory _$HistoricEvent([void Function(HistoricEventBuilder b) updates]) =>
       (HistoricEventBuilder()..update(updates)).build();
 
   _$HistoricEvent._(
@@ -5423,7 +5423,7 @@ class _$HistoricEvent extends HistoricEvent {
       : super._();
 
   @override
-  HistoricEvent rebuild(void updates(HistoricEventBuilder b)) =>
+  HistoricEvent rebuild(void Function(HistoricEventBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -5543,7 +5543,7 @@ class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(HistoricEventBuilder b)) {
+  void update(void Function(HistoricEventBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -5588,7 +5588,7 @@ class _$VerticalProfile extends VerticalProfile {
   @override
   final double lon;
 
-  factory _$VerticalProfile([void updates(VerticalProfileBuilder b)]) =>
+  factory _$VerticalProfile([void Function(VerticalProfileBuilder b) updates]) =>
       (VerticalProfileBuilder()..update(updates)).build();
 
   _$VerticalProfile._(
@@ -5605,7 +5605,7 @@ class _$VerticalProfile extends VerticalProfile {
       : super._();
 
   @override
-  VerticalProfile rebuild(void updates(VerticalProfileBuilder b)) =>
+  VerticalProfile rebuild(void Function(VerticalProfileBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -5749,7 +5749,7 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(VerticalProfileBuilder b)) {
+  void update(void Function(VerticalProfileBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -5791,7 +5791,7 @@ class _$ProfileSample extends ProfileSample {
   @override
   final double avg;
 
-  factory _$ProfileSample([void updates(ProfileSampleBuilder b)]) =>
+  factory _$ProfileSample([void Function(ProfileSampleBuilder b) updates]) =>
       (ProfileSampleBuilder()..update(updates)).build();
 
   _$ProfileSample._(
@@ -5805,7 +5805,7 @@ class _$ProfileSample extends ProfileSample {
       : super._();
 
   @override
-  ProfileSample rebuild(void updates(ProfileSampleBuilder b)) =>
+  ProfileSample rebuild(void Function(ProfileSampleBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -5925,7 +5925,7 @@ class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ProfileSampleBuilder b)) {
+  void update(void Function(ProfileSampleBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -5960,7 +5960,7 @@ class _$Heartbeat extends Heartbeat {
   final int dstEnt;
 
 
-  factory _$Heartbeat([void updates(HeartbeatBuilder b)]) =>
+  factory _$Heartbeat([void Function(HeartbeatBuilder b) updates]) =>
       (HeartbeatBuilder()..update(updates)).build();
 
   _$Heartbeat._(
@@ -5972,7 +5972,7 @@ class _$Heartbeat extends Heartbeat {
       : super._();
 
   @override
-  Heartbeat rebuild(void updates(HeartbeatBuilder b)) =>
+  Heartbeat rebuild(void Function(HeartbeatBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -6076,7 +6076,7 @@ class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(HeartbeatBuilder b)) {
+  void update(void Function(HeartbeatBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -6123,7 +6123,7 @@ class _$Announce extends Announce {
   @override
   final String services;
 
-  factory _$Announce([void updates(AnnounceBuilder b)]) =>
+  factory _$Announce([void Function(AnnounceBuilder b) updates]) =>
       (AnnounceBuilder()..update(updates)).build();
 
   _$Announce._(
@@ -6142,7 +6142,7 @@ class _$Announce extends Announce {
       : super._();
 
   @override
-  Announce rebuild(void updates(AnnounceBuilder b)) =>
+  Announce rebuild(void Function(AnnounceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -6302,7 +6302,7 @@ class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(AnnounceBuilder b)) {
+  void update(void Function(AnnounceBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -6346,7 +6346,7 @@ class _$AnnounceService extends AnnounceService {
   @override
   final AnnounceServiceBitfieldServiceType serviceType;
 
-  factory _$AnnounceService([void updates(AnnounceServiceBuilder b)]) =>
+  factory _$AnnounceService([void Function(AnnounceServiceBuilder b) updates]) =>
       (AnnounceServiceBuilder()..update(updates)).build();
 
   _$AnnounceService._(
@@ -6360,7 +6360,7 @@ class _$AnnounceService extends AnnounceService {
       : super._();
 
   @override
-  AnnounceService rebuild(void updates(AnnounceServiceBuilder b)) =>
+  AnnounceService rebuild(void Function(AnnounceServiceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -6480,7 +6480,7 @@ class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(AnnounceServiceBuilder b)) {
+  void update(void Function(AnnounceServiceBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -6517,7 +6517,7 @@ class _$RSSI extends RSSI {
   @override
   final double value;
 
-  factory _$RSSI([void updates(RSSIBuilder b)]) =>
+  factory _$RSSI([void Function(RSSIBuilder b) updates]) =>
       (RSSIBuilder()..update(updates)).build();
 
   _$RSSI._(
@@ -6530,7 +6530,7 @@ class _$RSSI extends RSSI {
       : super._();
 
   @override
-  RSSI rebuild(void updates(RSSIBuilder b)) =>
+  RSSI rebuild(void Function(RSSIBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -6642,7 +6642,7 @@ class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  void update(void updates(RSSIBuilder b)) {
+  void update(void Function(RSSIBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -6678,7 +6678,7 @@ class _$VSWR extends VSWR {
   @override
   final double value;
 
-  factory _$VSWR([void updates(VSWRBuilder b)]) =>
+  factory _$VSWR([void Function(VSWRBuilder b) updates]) =>
       (VSWRBuilder()..update(updates)).build();
 
   _$VSWR._(
@@ -6691,7 +6691,7 @@ class _$VSWR extends VSWR {
       : super._();
 
   @override
-  VSWR rebuild(void updates(VSWRBuilder b)) =>
+  VSWR rebuild(void Function(VSWRBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -6803,7 +6803,7 @@ class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  void update(void updates(VSWRBuilder b)) {
+  void update(void Function(VSWRBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -6839,7 +6839,7 @@ class _$LinkLevel extends LinkLevel {
   @override
   final double value;
 
-  factory _$LinkLevel([void updates(LinkLevelBuilder b)]) =>
+  factory _$LinkLevel([void Function(LinkLevelBuilder b) updates]) =>
       (LinkLevelBuilder()..update(updates)).build();
 
   _$LinkLevel._(
@@ -6852,7 +6852,7 @@ class _$LinkLevel extends LinkLevel {
       : super._();
 
   @override
-  LinkLevel rebuild(void updates(LinkLevelBuilder b)) =>
+  LinkLevel rebuild(void Function(LinkLevelBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -6964,7 +6964,7 @@ class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(LinkLevelBuilder b)) {
+  void update(void Function(LinkLevelBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -7004,7 +7004,7 @@ class _$Sms extends Sms {
   @override
   final String contents;
 
-  factory _$Sms([void updates(SmsBuilder b)]) =>
+  factory _$Sms([void Function(SmsBuilder b) updates]) =>
       (SmsBuilder()..update(updates)).build();
 
   _$Sms._(
@@ -7019,7 +7019,7 @@ class _$Sms extends Sms {
       : super._();
 
   @override
-  Sms rebuild(void updates(SmsBuilder b)) =>
+  Sms rebuild(void Function(SmsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -7147,7 +7147,7 @@ class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  void update(void updates(SmsBuilder b)) {
+  void update(void Function(SmsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -7191,7 +7191,7 @@ class _$SmsTx extends SmsTx {
   @override
   final List<int> data;
 
-  factory _$SmsTx([void updates(SmsTxBuilder b)]) =>
+  factory _$SmsTx([void Function(SmsTxBuilder b) updates]) =>
       (SmsTxBuilder()..update(updates)).build();
 
   _$SmsTx._(
@@ -7207,7 +7207,7 @@ class _$SmsTx extends SmsTx {
       : super._();
 
   @override
-  SmsTx rebuild(void updates(SmsTxBuilder b)) =>
+  SmsTx rebuild(void Function(SmsTxBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -7343,7 +7343,7 @@ class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(SmsTxBuilder b)) {
+  void update(void Function(SmsTxBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -7384,7 +7384,7 @@ class _$SmsRx extends SmsRx {
   @override
   final List<int> data;
 
-  factory _$SmsRx([void updates(SmsRxBuilder b)]) =>
+  factory _$SmsRx([void Function(SmsRxBuilder b) updates]) =>
       (SmsRxBuilder()..update(updates)).build();
 
   _$SmsRx._(
@@ -7398,7 +7398,7 @@ class _$SmsRx extends SmsRx {
       : super._();
 
   @override
-  SmsRx rebuild(void updates(SmsRxBuilder b)) =>
+  SmsRx rebuild(void Function(SmsRxBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -7518,7 +7518,7 @@ class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(SmsRxBuilder b)) {
+  void update(void Function(SmsRxBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -7559,7 +7559,7 @@ class _$SmsState extends SmsState {
   @override
   final String error;
 
-  factory _$SmsState([void updates(SmsStateBuilder b)]) =>
+  factory _$SmsState([void Function(SmsStateBuilder b) updates]) =>
       (SmsStateBuilder()..update(updates)).build();
 
   _$SmsState._(
@@ -7574,7 +7574,7 @@ class _$SmsState extends SmsState {
       : super._();
 
   @override
-  SmsState rebuild(void updates(SmsStateBuilder b)) =>
+  SmsState rebuild(void Function(SmsStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -7702,7 +7702,7 @@ class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(SmsStateBuilder b)) {
+  void update(void Function(SmsStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -7742,7 +7742,7 @@ class _$TextMessage extends TextMessage {
   @override
   final String text;
 
-  factory _$TextMessage([void updates(TextMessageBuilder b)]) =>
+  factory _$TextMessage([void Function(TextMessageBuilder b) updates]) =>
       (TextMessageBuilder()..update(updates)).build();
 
   _$TextMessage._(
@@ -7756,7 +7756,7 @@ class _$TextMessage extends TextMessage {
       : super._();
 
   @override
-  TextMessage rebuild(void updates(TextMessageBuilder b)) =>
+  TextMessage rebuild(void Function(TextMessageBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -7876,7 +7876,7 @@ class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(TextMessageBuilder b)) {
+  void update(void Function(TextMessageBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -7921,7 +7921,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
   @override
   final List<int> data;
 
-  factory _$IridiumMsgRx([void updates(IridiumMsgRxBuilder b)]) =>
+  factory _$IridiumMsgRx([void Function(IridiumMsgRxBuilder b) updates]) =>
       (IridiumMsgRxBuilder()..update(updates)).build();
 
   _$IridiumMsgRx._(
@@ -7938,7 +7938,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
       : super._();
 
   @override
-  IridiumMsgRx rebuild(void updates(IridiumMsgRxBuilder b)) =>
+  IridiumMsgRx rebuild(void Function(IridiumMsgRxBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -8082,7 +8082,7 @@ class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(IridiumMsgRxBuilder b)) {
+  void update(void Function(IridiumMsgRxBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -8128,7 +8128,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
   @override
   final List<int> data;
 
-  factory _$IridiumMsgTx([void updates(IridiumMsgTxBuilder b)]) =>
+  factory _$IridiumMsgTx([void Function(IridiumMsgTxBuilder b) updates]) =>
       (IridiumMsgTxBuilder()..update(updates)).build();
 
   _$IridiumMsgTx._(
@@ -8144,7 +8144,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
       : super._();
 
   @override
-  IridiumMsgTx rebuild(void updates(IridiumMsgTxBuilder b)) =>
+  IridiumMsgTx rebuild(void Function(IridiumMsgTxBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -8280,7 +8280,7 @@ class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(IridiumMsgTxBuilder b)) {
+  void update(void Function(IridiumMsgTxBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -8323,7 +8323,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
   @override
   final String text;
 
-  factory _$IridiumTxStatus([void updates(IridiumTxStatusBuilder b)]) =>
+  factory _$IridiumTxStatus([void Function(IridiumTxStatusBuilder b) updates]) =>
       (IridiumTxStatusBuilder()..update(updates)).build();
 
   _$IridiumTxStatus._(
@@ -8338,7 +8338,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
       : super._();
 
   @override
-  IridiumTxStatus rebuild(void updates(IridiumTxStatusBuilder b)) =>
+  IridiumTxStatus rebuild(void Function(IridiumTxStatusBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -8466,7 +8466,7 @@ class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(IridiumTxStatusBuilder b)) {
+  void update(void Function(IridiumTxStatusBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -8506,7 +8506,7 @@ class _$GroupMembershipState extends GroupMembershipState {
   @override
   final int links;
 
-  factory _$GroupMembershipState([void updates(GroupMembershipStateBuilder b)]) =>
+  factory _$GroupMembershipState([void Function(GroupMembershipStateBuilder b) updates]) =>
       (GroupMembershipStateBuilder()..update(updates)).build();
 
   _$GroupMembershipState._(
@@ -8520,7 +8520,7 @@ class _$GroupMembershipState extends GroupMembershipState {
       : super._();
 
   @override
-  GroupMembershipState rebuild(void updates(GroupMembershipStateBuilder b)) =>
+  GroupMembershipState rebuild(void Function(GroupMembershipStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -8640,7 +8640,7 @@ class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(GroupMembershipStateBuilder b)) {
+  void update(void Function(GroupMembershipStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -8681,7 +8681,7 @@ class _$SystemGroup extends SystemGroup {
   @override
   final String groupList;
 
-  factory _$SystemGroup([void updates(SystemGroupBuilder b)]) =>
+  factory _$SystemGroup([void Function(SystemGroupBuilder b) updates]) =>
       (SystemGroupBuilder()..update(updates)).build();
 
   _$SystemGroup._(
@@ -8696,7 +8696,7 @@ class _$SystemGroup extends SystemGroup {
       : super._();
 
   @override
-  SystemGroup rebuild(void updates(SystemGroupBuilder b)) =>
+  SystemGroup rebuild(void Function(SystemGroupBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -8824,7 +8824,7 @@ class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(SystemGroupBuilder b)) {
+  void update(void Function(SystemGroupBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -8864,7 +8864,7 @@ class _$LinkLatency extends LinkLatency {
   @override
   final int sysSrc;
 
-  factory _$LinkLatency([void updates(LinkLatencyBuilder b)]) =>
+  factory _$LinkLatency([void Function(LinkLatencyBuilder b) updates]) =>
       (LinkLatencyBuilder()..update(updates)).build();
 
   _$LinkLatency._(
@@ -8878,7 +8878,7 @@ class _$LinkLatency extends LinkLatency {
       : super._();
 
   @override
-  LinkLatency rebuild(void updates(LinkLatencyBuilder b)) =>
+  LinkLatency rebuild(void Function(LinkLatencyBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -8998,7 +8998,7 @@ class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(LinkLatencyBuilder b)) {
+  void update(void Function(LinkLatencyBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -9037,7 +9037,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
   @override
   final RSSIUnitsEnum units;
 
-  factory _$ExtendedRSSI([void updates(ExtendedRSSIBuilder b)]) =>
+  factory _$ExtendedRSSI([void Function(ExtendedRSSIBuilder b) updates]) =>
       (ExtendedRSSIBuilder()..update(updates)).build();
 
   _$ExtendedRSSI._(
@@ -9051,7 +9051,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
       : super._();
 
   @override
-  ExtendedRSSI rebuild(void updates(ExtendedRSSIBuilder b)) =>
+  ExtendedRSSI rebuild(void Function(ExtendedRSSIBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -9171,7 +9171,7 @@ class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(ExtendedRSSIBuilder b)) {
+  void update(void Function(ExtendedRSSIBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -9214,7 +9214,7 @@ class _$HistoricData extends HistoricData {
   @override
   final List<RemoteData> data;
 
-  factory _$HistoricData([void updates(HistoricDataBuilder b)]) =>
+  factory _$HistoricData([void Function(HistoricDataBuilder b) updates]) =>
       (HistoricDataBuilder()..update(updates)).build();
 
   _$HistoricData._(
@@ -9230,7 +9230,7 @@ class _$HistoricData extends HistoricData {
       : super._();
 
   @override
-  HistoricData rebuild(void updates(HistoricDataBuilder b)) =>
+  HistoricData rebuild(void Function(HistoricDataBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -9366,7 +9366,7 @@ class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(HistoricDataBuilder b)) {
+  void update(void Function(HistoricDataBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -9411,7 +9411,7 @@ class _$CompressedHistory extends CompressedHistory {
   @override
   final List<int> data;
 
-  factory _$CompressedHistory([void updates(CompressedHistoryBuilder b)]) =>
+  factory _$CompressedHistory([void Function(CompressedHistoryBuilder b) updates]) =>
       (CompressedHistoryBuilder()..update(updates)).build();
 
   _$CompressedHistory._(
@@ -9427,7 +9427,7 @@ class _$CompressedHistory extends CompressedHistory {
       : super._();
 
   @override
-  CompressedHistory rebuild(void updates(CompressedHistoryBuilder b)) =>
+  CompressedHistory rebuild(void Function(CompressedHistoryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -9563,7 +9563,7 @@ class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(CompressedHistoryBuilder b)) {
+  void update(void Function(CompressedHistoryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -9614,7 +9614,7 @@ class _$HistoricSample extends HistoricSample {
   @override
   final ImcMessage sample;
 
-  factory _$HistoricSample([void updates(HistoricSampleBuilder b)]) =>
+  factory _$HistoricSample([void Function(HistoricSampleBuilder b) updates]) =>
       (HistoricSampleBuilder()..update(updates)).build();
 
   _$HistoricSample._(
@@ -9633,7 +9633,7 @@ class _$HistoricSample extends HistoricSample {
       : super._();
 
   @override
-  HistoricSample rebuild(void updates(HistoricSampleBuilder b)) =>
+  HistoricSample rebuild(void Function(HistoricSampleBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -9793,7 +9793,7 @@ class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(HistoricSampleBuilder b)) {
+  void update(void Function(HistoricSampleBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -9841,7 +9841,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
   @override
   final HistoricData data;
 
-  factory _$HistoricDataQuery([void updates(HistoricDataQueryBuilder b)]) =>
+  factory _$HistoricDataQuery([void Function(HistoricDataQueryBuilder b) updates]) =>
       (HistoricDataQueryBuilder()..update(updates)).build();
 
   _$HistoricDataQuery._(
@@ -9857,7 +9857,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
       : super._();
 
   @override
-  HistoricDataQuery rebuild(void updates(HistoricDataQueryBuilder b)) =>
+  HistoricDataQuery rebuild(void Function(HistoricDataQueryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -9993,7 +9993,7 @@ class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(HistoricDataQueryBuilder b)) {
+  void update(void Function(HistoricDataQueryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -10038,7 +10038,7 @@ class _$RemoteCommand extends RemoteCommand {
   @override
   final ImcMessage cmd;
 
-  factory _$RemoteCommand([void updates(RemoteCommandBuilder b)]) =>
+  factory _$RemoteCommand([void Function(RemoteCommandBuilder b) updates]) =>
       (RemoteCommandBuilder()..update(updates)).build();
 
   _$RemoteCommand._(
@@ -10054,7 +10054,7 @@ class _$RemoteCommand extends RemoteCommand {
       : super._();
 
   @override
-  RemoteCommand rebuild(void updates(RemoteCommandBuilder b)) =>
+  RemoteCommand rebuild(void Function(RemoteCommandBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -10190,7 +10190,7 @@ class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(RemoteCommandBuilder b)) {
+  void update(void Function(RemoteCommandBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -10235,7 +10235,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
   @override
   final String list;
 
-  factory _$CommSystemsQuery([void updates(CommSystemsQueryBuilder b)]) =>
+  factory _$CommSystemsQuery([void Function(CommSystemsQueryBuilder b) updates]) =>
       (CommSystemsQueryBuilder()..update(updates)).build();
 
   _$CommSystemsQuery._(
@@ -10251,7 +10251,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
       : super._();
 
   @override
-  CommSystemsQuery rebuild(void updates(CommSystemsQueryBuilder b)) =>
+  CommSystemsQuery rebuild(void Function(CommSystemsQueryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -10387,7 +10387,7 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(CommSystemsQueryBuilder b)) {
+  void update(void Function(CommSystemsQueryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -10442,7 +10442,7 @@ class _$TelemetryMsg extends TelemetryMsg {
   @override
   final List<int> data;
 
-  factory _$TelemetryMsg([void updates(TelemetryMsgBuilder b)]) =>
+  factory _$TelemetryMsg([void Function(TelemetryMsgBuilder b) updates]) =>
       (TelemetryMsgBuilder()..update(updates)).build();
 
   _$TelemetryMsg._(
@@ -10463,7 +10463,7 @@ class _$TelemetryMsg extends TelemetryMsg {
       : super._();
 
   @override
-  TelemetryMsg rebuild(void updates(TelemetryMsgBuilder b)) =>
+  TelemetryMsg rebuild(void Function(TelemetryMsgBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -10639,7 +10639,7 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(TelemetryMsgBuilder b)) {
+  void update(void Function(TelemetryMsgBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -10685,7 +10685,7 @@ class _$LblRange extends LblRange {
   @override
   final double range;
 
-  factory _$LblRange([void updates(LblRangeBuilder b)]) =>
+  factory _$LblRange([void Function(LblRangeBuilder b) updates]) =>
       (LblRangeBuilder()..update(updates)).build();
 
   _$LblRange._(
@@ -10699,7 +10699,7 @@ class _$LblRange extends LblRange {
       : super._();
 
   @override
-  LblRange rebuild(void updates(LblRangeBuilder b)) =>
+  LblRange rebuild(void Function(LblRangeBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -10819,7 +10819,7 @@ class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(LblRangeBuilder b)) {
+  void update(void Function(LblRangeBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -10868,7 +10868,7 @@ class _$LblBeacon extends LblBeacon {
   @override
   final int transponderDelay;
 
-  factory _$LblBeacon([void updates(LblBeaconBuilder b)]) =>
+  factory _$LblBeacon([void Function(LblBeaconBuilder b) updates]) =>
       (LblBeaconBuilder()..update(updates)).build();
 
   _$LblBeacon._(
@@ -10887,7 +10887,7 @@ class _$LblBeacon extends LblBeacon {
       : super._();
 
   @override
-  LblBeacon rebuild(void updates(LblBeaconBuilder b)) =>
+  LblBeacon rebuild(void Function(LblBeaconBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -11047,7 +11047,7 @@ class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(LblBeaconBuilder b)) {
+  void update(void Function(LblBeaconBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -11091,7 +11091,7 @@ class _$LblConfig extends LblConfig {
   @override
   final List<LblBeacon> beacons;
 
-  factory _$LblConfig([void updates(LblConfigBuilder b)]) =>
+  factory _$LblConfig([void Function(LblConfigBuilder b) updates]) =>
       (LblConfigBuilder()..update(updates)).build();
 
   _$LblConfig._(
@@ -11105,7 +11105,7 @@ class _$LblConfig extends LblConfig {
       : super._();
 
   @override
-  LblConfig rebuild(void updates(LblConfigBuilder b)) =>
+  LblConfig rebuild(void Function(LblConfigBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -11225,7 +11225,7 @@ class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(LblConfigBuilder b)) {
+  void update(void Function(LblConfigBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -11262,7 +11262,7 @@ class _$AcousticMessage extends AcousticMessage {
   @override
   final ImcMessage message;
 
-  factory _$AcousticMessage([void updates(AcousticMessageBuilder b)]) =>
+  factory _$AcousticMessage([void Function(AcousticMessageBuilder b) updates]) =>
       (AcousticMessageBuilder()..update(updates)).build();
 
   _$AcousticMessage._(
@@ -11275,7 +11275,7 @@ class _$AcousticMessage extends AcousticMessage {
       : super._();
 
   @override
-  AcousticMessage rebuild(void updates(AcousticMessageBuilder b)) =>
+  AcousticMessage rebuild(void Function(AcousticMessageBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -11387,7 +11387,7 @@ class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(AcousticMessageBuilder b)) {
+  void update(void Function(AcousticMessageBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -11429,7 +11429,7 @@ class _$AcousticOperation extends AcousticOperation {
   @override
   final ImcMessage msg;
 
-  factory _$AcousticOperation([void updates(AcousticOperationBuilder b)]) =>
+  factory _$AcousticOperation([void Function(AcousticOperationBuilder b) updates]) =>
       (AcousticOperationBuilder()..update(updates)).build();
 
   _$AcousticOperation._(
@@ -11445,7 +11445,7 @@ class _$AcousticOperation extends AcousticOperation {
       : super._();
 
   @override
-  AcousticOperation rebuild(void updates(AcousticOperationBuilder b)) =>
+  AcousticOperation rebuild(void Function(AcousticOperationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -11581,7 +11581,7 @@ class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(AcousticOperationBuilder b)) {
+  void update(void Function(AcousticOperationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -11618,7 +11618,7 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
   final int dstEnt;
 
 
-  factory _$AcousticSystemsQuery([void updates(AcousticSystemsQueryBuilder b)]) =>
+  factory _$AcousticSystemsQuery([void Function(AcousticSystemsQueryBuilder b) updates]) =>
       (AcousticSystemsQueryBuilder()..update(updates)).build();
 
   _$AcousticSystemsQuery._(
@@ -11630,7 +11630,7 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
       : super._();
 
   @override
-  AcousticSystemsQuery rebuild(void updates(AcousticSystemsQueryBuilder b)) =>
+  AcousticSystemsQuery rebuild(void Function(AcousticSystemsQueryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -11734,7 +11734,7 @@ class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(AcousticSystemsQueryBuilder b)) {
+  void update(void Function(AcousticSystemsQueryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -11769,7 +11769,7 @@ class _$AcousticSystems extends AcousticSystems {
   @override
   final String list;
 
-  factory _$AcousticSystems([void updates(AcousticSystemsBuilder b)]) =>
+  factory _$AcousticSystems([void Function(AcousticSystemsBuilder b) updates]) =>
       (AcousticSystemsBuilder()..update(updates)).build();
 
   _$AcousticSystems._(
@@ -11782,7 +11782,7 @@ class _$AcousticSystems extends AcousticSystems {
       : super._();
 
   @override
-  AcousticSystems rebuild(void updates(AcousticSystemsBuilder b)) =>
+  AcousticSystems rebuild(void Function(AcousticSystemsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -11894,7 +11894,7 @@ class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(AcousticSystemsBuilder b)) {
+  void update(void Function(AcousticSystemsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -11934,7 +11934,7 @@ class _$AcousticLink extends AcousticLink {
   @override
   final int integrity;
 
-  factory _$AcousticLink([void updates(AcousticLinkBuilder b)]) =>
+  factory _$AcousticLink([void Function(AcousticLinkBuilder b) updates]) =>
       (AcousticLinkBuilder()..update(updates)).build();
 
   _$AcousticLink._(
@@ -11949,7 +11949,7 @@ class _$AcousticLink extends AcousticLink {
       : super._();
 
   @override
-  AcousticLink rebuild(void updates(AcousticLinkBuilder b)) =>
+  AcousticLink rebuild(void Function(AcousticLinkBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -12077,7 +12077,7 @@ class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(AcousticLinkBuilder b)) {
+  void update(void Function(AcousticLinkBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -12115,7 +12115,7 @@ class _$Rpm extends Rpm {
   @override
   final int value;
 
-  factory _$Rpm([void updates(RpmBuilder b)]) =>
+  factory _$Rpm([void Function(RpmBuilder b) updates]) =>
       (RpmBuilder()..update(updates)).build();
 
   _$Rpm._(
@@ -12128,7 +12128,7 @@ class _$Rpm extends Rpm {
       : super._();
 
   @override
-  Rpm rebuild(void updates(RpmBuilder b)) =>
+  Rpm rebuild(void Function(RpmBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -12240,7 +12240,7 @@ class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  void update(void updates(RpmBuilder b)) {
+  void update(void Function(RpmBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -12276,7 +12276,7 @@ class _$Voltage extends Voltage {
   @override
   final double value;
 
-  factory _$Voltage([void updates(VoltageBuilder b)]) =>
+  factory _$Voltage([void Function(VoltageBuilder b) updates]) =>
       (VoltageBuilder()..update(updates)).build();
 
   _$Voltage._(
@@ -12289,7 +12289,7 @@ class _$Voltage extends Voltage {
       : super._();
 
   @override
-  Voltage rebuild(void updates(VoltageBuilder b)) =>
+  Voltage rebuild(void Function(VoltageBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -12401,7 +12401,7 @@ class VoltageBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(VoltageBuilder b)) {
+  void update(void Function(VoltageBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -12437,7 +12437,7 @@ class _$Current extends Current {
   @override
   final double value;
 
-  factory _$Current([void updates(CurrentBuilder b)]) =>
+  factory _$Current([void Function(CurrentBuilder b) updates]) =>
       (CurrentBuilder()..update(updates)).build();
 
   _$Current._(
@@ -12450,7 +12450,7 @@ class _$Current extends Current {
       : super._();
 
   @override
-  Current rebuild(void updates(CurrentBuilder b)) =>
+  Current rebuild(void Function(CurrentBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -12562,7 +12562,7 @@ class CurrentBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(CurrentBuilder b)) {
+  void update(void Function(CurrentBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -12628,7 +12628,7 @@ class _$GpsFix extends GpsFix {
   @override
   final double vacc;
 
-  factory _$GpsFix([void updates(GpsFixBuilder b)]) =>
+  factory _$GpsFix([void Function(GpsFixBuilder b) updates]) =>
       (GpsFixBuilder()..update(updates)).build();
 
   _$GpsFix._(
@@ -12656,7 +12656,7 @@ class _$GpsFix extends GpsFix {
       : super._();
 
   @override
-  GpsFix rebuild(void updates(GpsFixBuilder b)) =>
+  GpsFix rebuild(void Function(GpsFixBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -12888,7 +12888,7 @@ class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  void update(void updates(GpsFixBuilder b)) {
+  void update(void Function(GpsFixBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -12947,7 +12947,7 @@ class _$EulerAngles extends EulerAngles {
   @override
   final double psiMagnetic;
 
-  factory _$EulerAngles([void updates(EulerAnglesBuilder b)]) =>
+  factory _$EulerAngles([void Function(EulerAnglesBuilder b) updates]) =>
       (EulerAnglesBuilder()..update(updates)).build();
 
   _$EulerAngles._(
@@ -12964,7 +12964,7 @@ class _$EulerAngles extends EulerAngles {
       : super._();
 
   @override
-  EulerAngles rebuild(void updates(EulerAnglesBuilder b)) =>
+  EulerAngles rebuild(void Function(EulerAnglesBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -13108,7 +13108,7 @@ class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(EulerAnglesBuilder b)) {
+  void update(void Function(EulerAnglesBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -13156,7 +13156,7 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
   @override
   final double timestep;
 
-  factory _$EulerAnglesDelta([void updates(EulerAnglesDeltaBuilder b)]) =>
+  factory _$EulerAnglesDelta([void Function(EulerAnglesDeltaBuilder b) updates]) =>
       (EulerAnglesDeltaBuilder()..update(updates)).build();
 
   _$EulerAnglesDelta._(
@@ -13173,7 +13173,7 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
       : super._();
 
   @override
-  EulerAnglesDelta rebuild(void updates(EulerAnglesDeltaBuilder b)) =>
+  EulerAnglesDelta rebuild(void Function(EulerAnglesDeltaBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -13317,7 +13317,7 @@ class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(EulerAnglesDeltaBuilder b)) {
+  void update(void Function(EulerAnglesDeltaBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -13363,7 +13363,7 @@ class _$AngularVelocity extends AngularVelocity {
   @override
   final double z;
 
-  factory _$AngularVelocity([void updates(AngularVelocityBuilder b)]) =>
+  factory _$AngularVelocity([void Function(AngularVelocityBuilder b) updates]) =>
       (AngularVelocityBuilder()..update(updates)).build();
 
   _$AngularVelocity._(
@@ -13379,7 +13379,7 @@ class _$AngularVelocity extends AngularVelocity {
       : super._();
 
   @override
-  AngularVelocity rebuild(void updates(AngularVelocityBuilder b)) =>
+  AngularVelocity rebuild(void Function(AngularVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -13515,7 +13515,7 @@ class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(AngularVelocityBuilder b)) {
+  void update(void Function(AngularVelocityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -13560,7 +13560,7 @@ class _$Acceleration extends Acceleration {
   @override
   final double z;
 
-  factory _$Acceleration([void updates(AccelerationBuilder b)]) =>
+  factory _$Acceleration([void Function(AccelerationBuilder b) updates]) =>
       (AccelerationBuilder()..update(updates)).build();
 
   _$Acceleration._(
@@ -13576,7 +13576,7 @@ class _$Acceleration extends Acceleration {
       : super._();
 
   @override
-  Acceleration rebuild(void updates(AccelerationBuilder b)) =>
+  Acceleration rebuild(void Function(AccelerationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -13712,7 +13712,7 @@ class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(AccelerationBuilder b)) {
+  void update(void Function(AccelerationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -13757,7 +13757,7 @@ class _$MagneticField extends MagneticField {
   @override
   final double z;
 
-  factory _$MagneticField([void updates(MagneticFieldBuilder b)]) =>
+  factory _$MagneticField([void Function(MagneticFieldBuilder b) updates]) =>
       (MagneticFieldBuilder()..update(updates)).build();
 
   _$MagneticField._(
@@ -13773,7 +13773,7 @@ class _$MagneticField extends MagneticField {
       : super._();
 
   @override
-  MagneticField rebuild(void updates(MagneticFieldBuilder b)) =>
+  MagneticField rebuild(void Function(MagneticFieldBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -13909,7 +13909,7 @@ class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(MagneticFieldBuilder b)) {
+  void update(void Function(MagneticFieldBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -13954,7 +13954,7 @@ class _$GroundVelocity extends GroundVelocity {
   @override
   final double z;
 
-  factory _$GroundVelocity([void updates(GroundVelocityBuilder b)]) =>
+  factory _$GroundVelocity([void Function(GroundVelocityBuilder b) updates]) =>
       (GroundVelocityBuilder()..update(updates)).build();
 
   _$GroundVelocity._(
@@ -13970,7 +13970,7 @@ class _$GroundVelocity extends GroundVelocity {
       : super._();
 
   @override
-  GroundVelocity rebuild(void updates(GroundVelocityBuilder b)) =>
+  GroundVelocity rebuild(void Function(GroundVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -14106,7 +14106,7 @@ class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(GroundVelocityBuilder b)) {
+  void update(void Function(GroundVelocityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -14151,7 +14151,7 @@ class _$WaterVelocity extends WaterVelocity {
   @override
   final double z;
 
-  factory _$WaterVelocity([void updates(WaterVelocityBuilder b)]) =>
+  factory _$WaterVelocity([void Function(WaterVelocityBuilder b) updates]) =>
       (WaterVelocityBuilder()..update(updates)).build();
 
   _$WaterVelocity._(
@@ -14167,7 +14167,7 @@ class _$WaterVelocity extends WaterVelocity {
       : super._();
 
   @override
-  WaterVelocity rebuild(void updates(WaterVelocityBuilder b)) =>
+  WaterVelocity rebuild(void Function(WaterVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -14303,7 +14303,7 @@ class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(WaterVelocityBuilder b)) {
+  void update(void Function(WaterVelocityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -14348,7 +14348,7 @@ class _$VelocityDelta extends VelocityDelta {
   @override
   final double z;
 
-  factory _$VelocityDelta([void updates(VelocityDeltaBuilder b)]) =>
+  factory _$VelocityDelta([void Function(VelocityDeltaBuilder b) updates]) =>
       (VelocityDeltaBuilder()..update(updates)).build();
 
   _$VelocityDelta._(
@@ -14364,7 +14364,7 @@ class _$VelocityDelta extends VelocityDelta {
       : super._();
 
   @override
-  VelocityDelta rebuild(void updates(VelocityDeltaBuilder b)) =>
+  VelocityDelta rebuild(void Function(VelocityDeltaBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -14500,7 +14500,7 @@ class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(VelocityDeltaBuilder b)) {
+  void update(void Function(VelocityDeltaBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -14545,7 +14545,7 @@ class _$Distance extends Distance {
   @override
   final double value;
 
-  factory _$Distance([void updates(DistanceBuilder b)]) =>
+  factory _$Distance([void Function(DistanceBuilder b) updates]) =>
       (DistanceBuilder()..update(updates)).build();
 
   _$Distance._(
@@ -14561,7 +14561,7 @@ class _$Distance extends Distance {
       : super._();
 
   @override
-  Distance rebuild(void updates(DistanceBuilder b)) =>
+  Distance rebuild(void Function(DistanceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -14697,7 +14697,7 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(DistanceBuilder b)) {
+  void update(void Function(DistanceBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -14736,7 +14736,7 @@ class _$Temperature extends Temperature {
   @override
   final double value;
 
-  factory _$Temperature([void updates(TemperatureBuilder b)]) =>
+  factory _$Temperature([void Function(TemperatureBuilder b) updates]) =>
       (TemperatureBuilder()..update(updates)).build();
 
   _$Temperature._(
@@ -14749,7 +14749,7 @@ class _$Temperature extends Temperature {
       : super._();
 
   @override
-  Temperature rebuild(void updates(TemperatureBuilder b)) =>
+  Temperature rebuild(void Function(TemperatureBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -14861,7 +14861,7 @@ class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(TemperatureBuilder b)) {
+  void update(void Function(TemperatureBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -14897,7 +14897,7 @@ class _$Pressure extends Pressure {
   @override
   final double value;
 
-  factory _$Pressure([void updates(PressureBuilder b)]) =>
+  factory _$Pressure([void Function(PressureBuilder b) updates]) =>
       (PressureBuilder()..update(updates)).build();
 
   _$Pressure._(
@@ -14910,7 +14910,7 @@ class _$Pressure extends Pressure {
       : super._();
 
   @override
-  Pressure rebuild(void updates(PressureBuilder b)) =>
+  Pressure rebuild(void Function(PressureBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -15022,7 +15022,7 @@ class PressureBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(PressureBuilder b)) {
+  void update(void Function(PressureBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -15058,7 +15058,7 @@ class _$Depth extends Depth {
   @override
   final double value;
 
-  factory _$Depth([void updates(DepthBuilder b)]) =>
+  factory _$Depth([void Function(DepthBuilder b) updates]) =>
       (DepthBuilder()..update(updates)).build();
 
   _$Depth._(
@@ -15071,7 +15071,7 @@ class _$Depth extends Depth {
       : super._();
 
   @override
-  Depth rebuild(void updates(DepthBuilder b)) =>
+  Depth rebuild(void Function(DepthBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -15183,7 +15183,7 @@ class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(DepthBuilder b)) {
+  void update(void Function(DepthBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -15219,7 +15219,7 @@ class _$DepthOffset extends DepthOffset {
   @override
   final double value;
 
-  factory _$DepthOffset([void updates(DepthOffsetBuilder b)]) =>
+  factory _$DepthOffset([void Function(DepthOffsetBuilder b) updates]) =>
       (DepthOffsetBuilder()..update(updates)).build();
 
   _$DepthOffset._(
@@ -15232,7 +15232,7 @@ class _$DepthOffset extends DepthOffset {
       : super._();
 
   @override
-  DepthOffset rebuild(void updates(DepthOffsetBuilder b)) =>
+  DepthOffset rebuild(void Function(DepthOffsetBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -15344,7 +15344,7 @@ class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(DepthOffsetBuilder b)) {
+  void update(void Function(DepthOffsetBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -15380,7 +15380,7 @@ class _$SoundSpeed extends SoundSpeed {
   @override
   final double value;
 
-  factory _$SoundSpeed([void updates(SoundSpeedBuilder b)]) =>
+  factory _$SoundSpeed([void Function(SoundSpeedBuilder b) updates]) =>
       (SoundSpeedBuilder()..update(updates)).build();
 
   _$SoundSpeed._(
@@ -15393,7 +15393,7 @@ class _$SoundSpeed extends SoundSpeed {
       : super._();
 
   @override
-  SoundSpeed rebuild(void updates(SoundSpeedBuilder b)) =>
+  SoundSpeed rebuild(void Function(SoundSpeedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -15505,7 +15505,7 @@ class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(SoundSpeedBuilder b)) {
+  void update(void Function(SoundSpeedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -15541,7 +15541,7 @@ class _$WaterDensity extends WaterDensity {
   @override
   final double value;
 
-  factory _$WaterDensity([void updates(WaterDensityBuilder b)]) =>
+  factory _$WaterDensity([void Function(WaterDensityBuilder b) updates]) =>
       (WaterDensityBuilder()..update(updates)).build();
 
   _$WaterDensity._(
@@ -15554,7 +15554,7 @@ class _$WaterDensity extends WaterDensity {
       : super._();
 
   @override
-  WaterDensity rebuild(void updates(WaterDensityBuilder b)) =>
+  WaterDensity rebuild(void Function(WaterDensityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -15666,7 +15666,7 @@ class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(WaterDensityBuilder b)) {
+  void update(void Function(WaterDensityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -15702,7 +15702,7 @@ class _$Conductivity extends Conductivity {
   @override
   final double value;
 
-  factory _$Conductivity([void updates(ConductivityBuilder b)]) =>
+  factory _$Conductivity([void Function(ConductivityBuilder b) updates]) =>
       (ConductivityBuilder()..update(updates)).build();
 
   _$Conductivity._(
@@ -15715,7 +15715,7 @@ class _$Conductivity extends Conductivity {
       : super._();
 
   @override
-  Conductivity rebuild(void updates(ConductivityBuilder b)) =>
+  Conductivity rebuild(void Function(ConductivityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -15827,7 +15827,7 @@ class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(ConductivityBuilder b)) {
+  void update(void Function(ConductivityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -15863,7 +15863,7 @@ class _$Salinity extends Salinity {
   @override
   final double value;
 
-  factory _$Salinity([void updates(SalinityBuilder b)]) =>
+  factory _$Salinity([void Function(SalinityBuilder b) updates]) =>
       (SalinityBuilder()..update(updates)).build();
 
   _$Salinity._(
@@ -15876,7 +15876,7 @@ class _$Salinity extends Salinity {
       : super._();
 
   @override
-  Salinity rebuild(void updates(SalinityBuilder b)) =>
+  Salinity rebuild(void Function(SalinityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -15988,7 +15988,7 @@ class SalinityBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(SalinityBuilder b)) {
+  void update(void Function(SalinityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -16028,7 +16028,7 @@ class _$WindSpeed extends WindSpeed {
   @override
   final double turbulence;
 
-  factory _$WindSpeed([void updates(WindSpeedBuilder b)]) =>
+  factory _$WindSpeed([void Function(WindSpeedBuilder b) updates]) =>
       (WindSpeedBuilder()..update(updates)).build();
 
   _$WindSpeed._(
@@ -16043,7 +16043,7 @@ class _$WindSpeed extends WindSpeed {
       : super._();
 
   @override
-  WindSpeed rebuild(void updates(WindSpeedBuilder b)) =>
+  WindSpeed rebuild(void Function(WindSpeedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -16171,7 +16171,7 @@ class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(WindSpeedBuilder b)) {
+  void update(void Function(WindSpeedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -16209,7 +16209,7 @@ class _$RelativeHumidity extends RelativeHumidity {
   @override
   final double value;
 
-  factory _$RelativeHumidity([void updates(RelativeHumidityBuilder b)]) =>
+  factory _$RelativeHumidity([void Function(RelativeHumidityBuilder b) updates]) =>
       (RelativeHumidityBuilder()..update(updates)).build();
 
   _$RelativeHumidity._(
@@ -16222,7 +16222,7 @@ class _$RelativeHumidity extends RelativeHumidity {
       : super._();
 
   @override
-  RelativeHumidity rebuild(void updates(RelativeHumidityBuilder b)) =>
+  RelativeHumidity rebuild(void Function(RelativeHumidityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -16334,7 +16334,7 @@ class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(RelativeHumidityBuilder b)) {
+  void update(void Function(RelativeHumidityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -16370,7 +16370,7 @@ class _$DevDataText extends DevDataText {
   @override
   final String value;
 
-  factory _$DevDataText([void updates(DevDataTextBuilder b)]) =>
+  factory _$DevDataText([void Function(DevDataTextBuilder b) updates]) =>
       (DevDataTextBuilder()..update(updates)).build();
 
   _$DevDataText._(
@@ -16383,7 +16383,7 @@ class _$DevDataText extends DevDataText {
       : super._();
 
   @override
-  DevDataText rebuild(void updates(DevDataTextBuilder b)) =>
+  DevDataText rebuild(void Function(DevDataTextBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -16495,7 +16495,7 @@ class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(DevDataTextBuilder b)) {
+  void update(void Function(DevDataTextBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -16531,7 +16531,7 @@ class _$DevDataBinary extends DevDataBinary {
   @override
   final List<int> value;
 
-  factory _$DevDataBinary([void updates(DevDataBinaryBuilder b)]) =>
+  factory _$DevDataBinary([void Function(DevDataBinaryBuilder b) updates]) =>
       (DevDataBinaryBuilder()..update(updates)).build();
 
   _$DevDataBinary._(
@@ -16544,7 +16544,7 @@ class _$DevDataBinary extends DevDataBinary {
       : super._();
 
   @override
-  DevDataBinary rebuild(void updates(DevDataBinaryBuilder b)) =>
+  DevDataBinary rebuild(void Function(DevDataBinaryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -16656,7 +16656,7 @@ class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(DevDataBinaryBuilder b)) {
+  void update(void Function(DevDataBinaryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -16692,7 +16692,7 @@ class _$Force extends Force {
   @override
   final double value;
 
-  factory _$Force([void updates(ForceBuilder b)]) =>
+  factory _$Force([void Function(ForceBuilder b) updates]) =>
       (ForceBuilder()..update(updates)).build();
 
   _$Force._(
@@ -16705,7 +16705,7 @@ class _$Force extends Force {
       : super._();
 
   @override
-  Force rebuild(void updates(ForceBuilder b)) =>
+  Force rebuild(void Function(ForceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -16817,7 +16817,7 @@ class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(ForceBuilder b)) {
+  void update(void Function(ForceBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -16867,7 +16867,7 @@ class _$SonarData extends SonarData {
   @override
   final List<int> data;
 
-  factory _$SonarData([void updates(SonarDataBuilder b)]) =>
+  factory _$SonarData([void Function(SonarDataBuilder b) updates]) =>
       (SonarDataBuilder()..update(updates)).build();
 
   _$SonarData._(
@@ -16887,7 +16887,7 @@ class _$SonarData extends SonarData {
       : super._();
 
   @override
-  SonarData rebuild(void updates(SonarDataBuilder b)) =>
+  SonarData rebuild(void Function(SonarDataBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -17055,7 +17055,7 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(SonarDataBuilder b)) {
+  void update(void Function(SonarDataBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -17096,7 +17096,7 @@ class _$Pulse extends Pulse {
   final int dstEnt;
 
 
-  factory _$Pulse([void updates(PulseBuilder b)]) =>
+  factory _$Pulse([void Function(PulseBuilder b) updates]) =>
       (PulseBuilder()..update(updates)).build();
 
   _$Pulse._(
@@ -17108,7 +17108,7 @@ class _$Pulse extends Pulse {
       : super._();
 
   @override
-  Pulse rebuild(void updates(PulseBuilder b)) =>
+  Pulse rebuild(void Function(PulseBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -17212,7 +17212,7 @@ class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(PulseBuilder b)) {
+  void update(void Function(PulseBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -17247,7 +17247,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
   @override
   final PulseDetectionControlEnumOp op;
 
-  factory _$PulseDetectionControl([void updates(PulseDetectionControlBuilder b)]) =>
+  factory _$PulseDetectionControl([void Function(PulseDetectionControlBuilder b) updates]) =>
       (PulseDetectionControlBuilder()..update(updates)).build();
 
   _$PulseDetectionControl._(
@@ -17260,7 +17260,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
       : super._();
 
   @override
-  PulseDetectionControl rebuild(void updates(PulseDetectionControlBuilder b)) =>
+  PulseDetectionControl rebuild(void Function(PulseDetectionControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -17372,7 +17372,7 @@ class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  void update(void updates(PulseDetectionControlBuilder b)) {
+  void update(void Function(PulseDetectionControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -17412,7 +17412,7 @@ class _$FuelLevel extends FuelLevel {
   @override
   final String opmodes;
 
-  factory _$FuelLevel([void updates(FuelLevelBuilder b)]) =>
+  factory _$FuelLevel([void Function(FuelLevelBuilder b) updates]) =>
       (FuelLevelBuilder()..update(updates)).build();
 
   _$FuelLevel._(
@@ -17427,7 +17427,7 @@ class _$FuelLevel extends FuelLevel {
       : super._();
 
   @override
-  FuelLevel rebuild(void updates(FuelLevelBuilder b)) =>
+  FuelLevel rebuild(void Function(FuelLevelBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -17555,7 +17555,7 @@ class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(FuelLevelBuilder b)) {
+  void update(void Function(FuelLevelBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -17621,7 +17621,7 @@ class _$GpsNavData extends GpsNavData {
   @override
   final double cacc;
 
-  factory _$GpsNavData([void updates(GpsNavDataBuilder b)]) =>
+  factory _$GpsNavData([void Function(GpsNavDataBuilder b) updates]) =>
       (GpsNavDataBuilder()..update(updates)).build();
 
   _$GpsNavData._(
@@ -17648,7 +17648,7 @@ class _$GpsNavData extends GpsNavData {
       : super._();
 
   @override
-  GpsNavData rebuild(void updates(GpsNavDataBuilder b)) =>
+  GpsNavData rebuild(void Function(GpsNavDataBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -17872,7 +17872,7 @@ class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(GpsNavDataBuilder b)) {
+  void update(void Function(GpsNavDataBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -17924,7 +17924,7 @@ class _$ServoPosition extends ServoPosition {
   @override
   final double value;
 
-  factory _$ServoPosition([void updates(ServoPositionBuilder b)]) =>
+  factory _$ServoPosition([void Function(ServoPositionBuilder b) updates]) =>
       (ServoPositionBuilder()..update(updates)).build();
 
   _$ServoPosition._(
@@ -17938,7 +17938,7 @@ class _$ServoPosition extends ServoPosition {
       : super._();
 
   @override
-  ServoPosition rebuild(void updates(ServoPositionBuilder b)) =>
+  ServoPosition rebuild(void Function(ServoPositionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -18058,7 +18058,7 @@ class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ServoPositionBuilder b)) {
+  void update(void Function(ServoPositionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -18105,7 +18105,7 @@ class _$DeviceState extends DeviceState {
   @override
   final double psi;
 
-  factory _$DeviceState([void updates(DeviceStateBuilder b)]) =>
+  factory _$DeviceState([void Function(DeviceStateBuilder b) updates]) =>
       (DeviceStateBuilder()..update(updates)).build();
 
   _$DeviceState._(
@@ -18123,7 +18123,7 @@ class _$DeviceState extends DeviceState {
       : super._();
 
   @override
-  DeviceState rebuild(void updates(DeviceStateBuilder b)) =>
+  DeviceState rebuild(void Function(DeviceStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -18275,7 +18275,7 @@ class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(DeviceStateBuilder b)) {
+  void update(void Function(DeviceStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -18318,7 +18318,7 @@ class _$BeamConfig extends BeamConfig {
   @override
   final double beamHeight;
 
-  factory _$BeamConfig([void updates(BeamConfigBuilder b)]) =>
+  factory _$BeamConfig([void Function(BeamConfigBuilder b) updates]) =>
       (BeamConfigBuilder()..update(updates)).build();
 
   _$BeamConfig._(
@@ -18332,7 +18332,7 @@ class _$BeamConfig extends BeamConfig {
       : super._();
 
   @override
-  BeamConfig rebuild(void updates(BeamConfigBuilder b)) =>
+  BeamConfig rebuild(void Function(BeamConfigBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -18452,7 +18452,7 @@ class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(BeamConfigBuilder b)) {
+  void update(void Function(BeamConfigBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -18489,7 +18489,7 @@ class _$DataSanity extends DataSanity {
   @override
   final DataSanityEnumSane sane;
 
-  factory _$DataSanity([void updates(DataSanityBuilder b)]) =>
+  factory _$DataSanity([void Function(DataSanityBuilder b) updates]) =>
       (DataSanityBuilder()..update(updates)).build();
 
   _$DataSanity._(
@@ -18502,7 +18502,7 @@ class _$DataSanity extends DataSanity {
       : super._();
 
   @override
-  DataSanity rebuild(void updates(DataSanityBuilder b)) =>
+  DataSanity rebuild(void Function(DataSanityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -18614,7 +18614,7 @@ class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(DataSanityBuilder b)) {
+  void update(void Function(DataSanityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -18650,7 +18650,7 @@ class _$RhodamineDye extends RhodamineDye {
   @override
   final double value;
 
-  factory _$RhodamineDye([void updates(RhodamineDyeBuilder b)]) =>
+  factory _$RhodamineDye([void Function(RhodamineDyeBuilder b) updates]) =>
       (RhodamineDyeBuilder()..update(updates)).build();
 
   _$RhodamineDye._(
@@ -18663,7 +18663,7 @@ class _$RhodamineDye extends RhodamineDye {
       : super._();
 
   @override
-  RhodamineDye rebuild(void updates(RhodamineDyeBuilder b)) =>
+  RhodamineDye rebuild(void Function(RhodamineDyeBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -18775,7 +18775,7 @@ class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(RhodamineDyeBuilder b)) {
+  void update(void Function(RhodamineDyeBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -18811,7 +18811,7 @@ class _$CrudeOil extends CrudeOil {
   @override
   final double value;
 
-  factory _$CrudeOil([void updates(CrudeOilBuilder b)]) =>
+  factory _$CrudeOil([void Function(CrudeOilBuilder b) updates]) =>
       (CrudeOilBuilder()..update(updates)).build();
 
   _$CrudeOil._(
@@ -18824,7 +18824,7 @@ class _$CrudeOil extends CrudeOil {
       : super._();
 
   @override
-  CrudeOil rebuild(void updates(CrudeOilBuilder b)) =>
+  CrudeOil rebuild(void Function(CrudeOilBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -18936,7 +18936,7 @@ class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(CrudeOilBuilder b)) {
+  void update(void Function(CrudeOilBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -18972,7 +18972,7 @@ class _$FineOil extends FineOil {
   @override
   final double value;
 
-  factory _$FineOil([void updates(FineOilBuilder b)]) =>
+  factory _$FineOil([void Function(FineOilBuilder b) updates]) =>
       (FineOilBuilder()..update(updates)).build();
 
   _$FineOil._(
@@ -18985,7 +18985,7 @@ class _$FineOil extends FineOil {
       : super._();
 
   @override
-  FineOil rebuild(void updates(FineOilBuilder b)) =>
+  FineOil rebuild(void Function(FineOilBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -19097,7 +19097,7 @@ class FineOilBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(FineOilBuilder b)) {
+  void update(void Function(FineOilBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -19133,7 +19133,7 @@ class _$Turbidity extends Turbidity {
   @override
   final double value;
 
-  factory _$Turbidity([void updates(TurbidityBuilder b)]) =>
+  factory _$Turbidity([void Function(TurbidityBuilder b) updates]) =>
       (TurbidityBuilder()..update(updates)).build();
 
   _$Turbidity._(
@@ -19146,7 +19146,7 @@ class _$Turbidity extends Turbidity {
       : super._();
 
   @override
-  Turbidity rebuild(void updates(TurbidityBuilder b)) =>
+  Turbidity rebuild(void Function(TurbidityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -19258,7 +19258,7 @@ class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(TurbidityBuilder b)) {
+  void update(void Function(TurbidityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -19294,7 +19294,7 @@ class _$Chlorophyll extends Chlorophyll {
   @override
   final double value;
 
-  factory _$Chlorophyll([void updates(ChlorophyllBuilder b)]) =>
+  factory _$Chlorophyll([void Function(ChlorophyllBuilder b) updates]) =>
       (ChlorophyllBuilder()..update(updates)).build();
 
   _$Chlorophyll._(
@@ -19307,7 +19307,7 @@ class _$Chlorophyll extends Chlorophyll {
       : super._();
 
   @override
-  Chlorophyll rebuild(void updates(ChlorophyllBuilder b)) =>
+  Chlorophyll rebuild(void Function(ChlorophyllBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -19419,7 +19419,7 @@ class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(ChlorophyllBuilder b)) {
+  void update(void Function(ChlorophyllBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -19455,7 +19455,7 @@ class _$Fluorescein extends Fluorescein {
   @override
   final double value;
 
-  factory _$Fluorescein([void updates(FluoresceinBuilder b)]) =>
+  factory _$Fluorescein([void Function(FluoresceinBuilder b) updates]) =>
       (FluoresceinBuilder()..update(updates)).build();
 
   _$Fluorescein._(
@@ -19468,7 +19468,7 @@ class _$Fluorescein extends Fluorescein {
       : super._();
 
   @override
-  Fluorescein rebuild(void updates(FluoresceinBuilder b)) =>
+  Fluorescein rebuild(void Function(FluoresceinBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -19580,7 +19580,7 @@ class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(FluoresceinBuilder b)) {
+  void update(void Function(FluoresceinBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -19616,7 +19616,7 @@ class _$Phycocyanin extends Phycocyanin {
   @override
   final double value;
 
-  factory _$Phycocyanin([void updates(PhycocyaninBuilder b)]) =>
+  factory _$Phycocyanin([void Function(PhycocyaninBuilder b) updates]) =>
       (PhycocyaninBuilder()..update(updates)).build();
 
   _$Phycocyanin._(
@@ -19629,7 +19629,7 @@ class _$Phycocyanin extends Phycocyanin {
       : super._();
 
   @override
-  Phycocyanin rebuild(void updates(PhycocyaninBuilder b)) =>
+  Phycocyanin rebuild(void Function(PhycocyaninBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -19741,7 +19741,7 @@ class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(PhycocyaninBuilder b)) {
+  void update(void Function(PhycocyaninBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -19777,7 +19777,7 @@ class _$Phycoerythrin extends Phycoerythrin {
   @override
   final double value;
 
-  factory _$Phycoerythrin([void updates(PhycoerythrinBuilder b)]) =>
+  factory _$Phycoerythrin([void Function(PhycoerythrinBuilder b) updates]) =>
       (PhycoerythrinBuilder()..update(updates)).build();
 
   _$Phycoerythrin._(
@@ -19790,7 +19790,7 @@ class _$Phycoerythrin extends Phycoerythrin {
       : super._();
 
   @override
-  Phycoerythrin rebuild(void updates(PhycoerythrinBuilder b)) =>
+  Phycoerythrin rebuild(void Function(PhycoerythrinBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -19902,7 +19902,7 @@ class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(PhycoerythrinBuilder b)) {
+  void update(void Function(PhycoerythrinBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -19966,7 +19966,7 @@ class _$GpsFixRtk extends GpsFixRtk {
   @override
   final double iarRatio;
 
-  factory _$GpsFixRtk([void updates(GpsFixRtkBuilder b)]) =>
+  factory _$GpsFixRtk([void Function(GpsFixRtkBuilder b) updates]) =>
       (GpsFixRtkBuilder()..update(updates)).build();
 
   _$GpsFixRtk._(
@@ -19993,7 +19993,7 @@ class _$GpsFixRtk extends GpsFixRtk {
       : super._();
 
   @override
-  GpsFixRtk rebuild(void updates(GpsFixRtkBuilder b)) =>
+  GpsFixRtk rebuild(void Function(GpsFixRtkBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -20217,7 +20217,7 @@ class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(GpsFixRtkBuilder b)) {
+  void update(void Function(GpsFixRtkBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -20269,7 +20269,7 @@ class _$ExternalNavData extends ExternalNavData {
   @override
   final ExternalNavDataEnumType type;
 
-  factory _$ExternalNavData([void updates(ExternalNavDataBuilder b)]) =>
+  factory _$ExternalNavData([void Function(ExternalNavDataBuilder b) updates]) =>
       (ExternalNavDataBuilder()..update(updates)).build();
 
   _$ExternalNavData._(
@@ -20283,7 +20283,7 @@ class _$ExternalNavData extends ExternalNavData {
       : super._();
 
   @override
-  ExternalNavData rebuild(void updates(ExternalNavDataBuilder b)) =>
+  ExternalNavData rebuild(void Function(ExternalNavDataBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -20403,7 +20403,7 @@ class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(ExternalNavDataBuilder b)) {
+  void update(void Function(ExternalNavDataBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -20440,7 +20440,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
   @override
   final double value;
 
-  factory _$DissolvedOxygen([void updates(DissolvedOxygenBuilder b)]) =>
+  factory _$DissolvedOxygen([void Function(DissolvedOxygenBuilder b) updates]) =>
       (DissolvedOxygenBuilder()..update(updates)).build();
 
   _$DissolvedOxygen._(
@@ -20453,7 +20453,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
       : super._();
 
   @override
-  DissolvedOxygen rebuild(void updates(DissolvedOxygenBuilder b)) =>
+  DissolvedOxygen rebuild(void Function(DissolvedOxygenBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -20565,7 +20565,7 @@ class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(DissolvedOxygenBuilder b)) {
+  void update(void Function(DissolvedOxygenBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -20601,7 +20601,7 @@ class _$AirSaturation extends AirSaturation {
   @override
   final double value;
 
-  factory _$AirSaturation([void updates(AirSaturationBuilder b)]) =>
+  factory _$AirSaturation([void Function(AirSaturationBuilder b) updates]) =>
       (AirSaturationBuilder()..update(updates)).build();
 
   _$AirSaturation._(
@@ -20614,7 +20614,7 @@ class _$AirSaturation extends AirSaturation {
       : super._();
 
   @override
-  AirSaturation rebuild(void updates(AirSaturationBuilder b)) =>
+  AirSaturation rebuild(void Function(AirSaturationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -20726,7 +20726,7 @@ class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(AirSaturationBuilder b)) {
+  void update(void Function(AirSaturationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -20762,7 +20762,7 @@ class _$Throttle extends Throttle {
   @override
   final double value;
 
-  factory _$Throttle([void updates(ThrottleBuilder b)]) =>
+  factory _$Throttle([void Function(ThrottleBuilder b) updates]) =>
       (ThrottleBuilder()..update(updates)).build();
 
   _$Throttle._(
@@ -20775,7 +20775,7 @@ class _$Throttle extends Throttle {
       : super._();
 
   @override
-  Throttle rebuild(void updates(ThrottleBuilder b)) =>
+  Throttle rebuild(void Function(ThrottleBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -20887,7 +20887,7 @@ class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(ThrottleBuilder b)) {
+  void update(void Function(ThrottleBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -20923,7 +20923,7 @@ class _$PH extends PH {
   @override
   final double value;
 
-  factory _$PH([void updates(PHBuilder b)]) =>
+  factory _$PH([void Function(PHBuilder b) updates]) =>
       (PHBuilder()..update(updates)).build();
 
   _$PH._(
@@ -20936,7 +20936,7 @@ class _$PH extends PH {
       : super._();
 
   @override
-  PH rebuild(void updates(PHBuilder b)) =>
+  PH rebuild(void Function(PHBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -21048,7 +21048,7 @@ class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithI
   }
 
   @override
-  void update(void updates(PHBuilder b)) {
+  void update(void Function(PHBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -21084,7 +21084,7 @@ class _$Redox extends Redox {
   @override
   final double value;
 
-  factory _$Redox([void updates(RedoxBuilder b)]) =>
+  factory _$Redox([void Function(RedoxBuilder b) updates]) =>
       (RedoxBuilder()..update(updates)).build();
 
   _$Redox._(
@@ -21097,7 +21097,7 @@ class _$Redox extends Redox {
       : super._();
 
   @override
-  Redox rebuild(void updates(RedoxBuilder b)) =>
+  Redox rebuild(void Function(RedoxBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -21209,7 +21209,7 @@ class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(RedoxBuilder b)) {
+  void update(void Function(RedoxBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -21249,7 +21249,7 @@ class _$CameraZoom extends CameraZoom {
   @override
   final CameraZoomEnumAction action;
 
-  factory _$CameraZoom([void updates(CameraZoomBuilder b)]) =>
+  factory _$CameraZoom([void Function(CameraZoomBuilder b) updates]) =>
       (CameraZoomBuilder()..update(updates)).build();
 
   _$CameraZoom._(
@@ -21264,7 +21264,7 @@ class _$CameraZoom extends CameraZoom {
       : super._();
 
   @override
-  CameraZoom rebuild(void updates(CameraZoomBuilder b)) =>
+  CameraZoom rebuild(void Function(CameraZoomBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -21392,7 +21392,7 @@ class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(CameraZoomBuilder b)) {
+  void update(void Function(CameraZoomBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -21432,7 +21432,7 @@ class _$SetThrusterActuation extends SetThrusterActuation {
   @override
   final double value;
 
-  factory _$SetThrusterActuation([void updates(SetThrusterActuationBuilder b)]) =>
+  factory _$SetThrusterActuation([void Function(SetThrusterActuationBuilder b) updates]) =>
       (SetThrusterActuationBuilder()..update(updates)).build();
 
   _$SetThrusterActuation._(
@@ -21446,7 +21446,7 @@ class _$SetThrusterActuation extends SetThrusterActuation {
       : super._();
 
   @override
-  SetThrusterActuation rebuild(void updates(SetThrusterActuationBuilder b)) =>
+  SetThrusterActuation rebuild(void Function(SetThrusterActuationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -21566,7 +21566,7 @@ class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(SetThrusterActuationBuilder b)) {
+  void update(void Function(SetThrusterActuationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -21605,7 +21605,7 @@ class _$SetServoPosition extends SetServoPosition {
   @override
   final double value;
 
-  factory _$SetServoPosition([void updates(SetServoPositionBuilder b)]) =>
+  factory _$SetServoPosition([void Function(SetServoPositionBuilder b) updates]) =>
       (SetServoPositionBuilder()..update(updates)).build();
 
   _$SetServoPosition._(
@@ -21619,7 +21619,7 @@ class _$SetServoPosition extends SetServoPosition {
       : super._();
 
   @override
-  SetServoPosition rebuild(void updates(SetServoPositionBuilder b)) =>
+  SetServoPosition rebuild(void Function(SetServoPositionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -21739,7 +21739,7 @@ class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(SetServoPositionBuilder b)) {
+  void update(void Function(SetServoPositionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -21778,7 +21778,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
   @override
   final double angle;
 
-  factory _$SetControlSurfaceDeflection([void updates(SetControlSurfaceDeflectionBuilder b)]) =>
+  factory _$SetControlSurfaceDeflection([void Function(SetControlSurfaceDeflectionBuilder b) updates]) =>
       (SetControlSurfaceDeflectionBuilder()..update(updates)).build();
 
   _$SetControlSurfaceDeflection._(
@@ -21792,7 +21792,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
       : super._();
 
   @override
-  SetControlSurfaceDeflection rebuild(void updates(SetControlSurfaceDeflectionBuilder b)) =>
+  SetControlSurfaceDeflection rebuild(void Function(SetControlSurfaceDeflectionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -21912,7 +21912,7 @@ class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPar
   }
 
   @override
-  void update(void updates(SetControlSurfaceDeflectionBuilder b)) {
+  void update(void Function(SetControlSurfaceDeflectionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -21951,7 +21951,7 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
   @override
   final String actions;
 
-  factory _$RemoteActionsRequest([void updates(RemoteActionsRequestBuilder b)]) =>
+  factory _$RemoteActionsRequest([void Function(RemoteActionsRequestBuilder b) updates]) =>
       (RemoteActionsRequestBuilder()..update(updates)).build();
 
   _$RemoteActionsRequest._(
@@ -21965,7 +21965,7 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
       : super._();
 
   @override
-  RemoteActionsRequest rebuild(void updates(RemoteActionsRequestBuilder b)) =>
+  RemoteActionsRequest rebuild(void Function(RemoteActionsRequestBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -22085,7 +22085,7 @@ class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(RemoteActionsRequestBuilder b)) {
+  void update(void Function(RemoteActionsRequestBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -22122,7 +22122,7 @@ class _$RemoteActions extends RemoteActions {
   @override
   final String actions;
 
-  factory _$RemoteActions([void updates(RemoteActionsBuilder b)]) =>
+  factory _$RemoteActions([void Function(RemoteActionsBuilder b) updates]) =>
       (RemoteActionsBuilder()..update(updates)).build();
 
   _$RemoteActions._(
@@ -22135,7 +22135,7 @@ class _$RemoteActions extends RemoteActions {
       : super._();
 
   @override
-  RemoteActions rebuild(void updates(RemoteActionsBuilder b)) =>
+  RemoteActions rebuild(void Function(RemoteActionsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -22247,7 +22247,7 @@ class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(RemoteActionsBuilder b)) {
+  void update(void Function(RemoteActionsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -22285,7 +22285,7 @@ class _$ButtonEvent extends ButtonEvent {
   @override
   final int value;
 
-  factory _$ButtonEvent([void updates(ButtonEventBuilder b)]) =>
+  factory _$ButtonEvent([void Function(ButtonEventBuilder b) updates]) =>
       (ButtonEventBuilder()..update(updates)).build();
 
   _$ButtonEvent._(
@@ -22299,7 +22299,7 @@ class _$ButtonEvent extends ButtonEvent {
       : super._();
 
   @override
-  ButtonEvent rebuild(void updates(ButtonEventBuilder b)) =>
+  ButtonEvent rebuild(void Function(ButtonEventBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -22419,7 +22419,7 @@ class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(ButtonEventBuilder b)) {
+  void update(void Function(ButtonEventBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -22458,7 +22458,7 @@ class _$LcdControl extends LcdControl {
   @override
   final String text;
 
-  factory _$LcdControl([void updates(LcdControlBuilder b)]) =>
+  factory _$LcdControl([void Function(LcdControlBuilder b) updates]) =>
       (LcdControlBuilder()..update(updates)).build();
 
   _$LcdControl._(
@@ -22472,7 +22472,7 @@ class _$LcdControl extends LcdControl {
       : super._();
 
   @override
-  LcdControl rebuild(void updates(LcdControlBuilder b)) =>
+  LcdControl rebuild(void Function(LcdControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -22592,7 +22592,7 @@ class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(LcdControlBuilder b)) {
+  void update(void Function(LcdControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -22633,7 +22633,7 @@ class _$PowerOperation extends PowerOperation {
   @override
   final double schedTime;
 
-  factory _$PowerOperation([void updates(PowerOperationBuilder b)]) =>
+  factory _$PowerOperation([void Function(PowerOperationBuilder b) updates]) =>
       (PowerOperationBuilder()..update(updates)).build();
 
   _$PowerOperation._(
@@ -22648,7 +22648,7 @@ class _$PowerOperation extends PowerOperation {
       : super._();
 
   @override
-  PowerOperation rebuild(void updates(PowerOperationBuilder b)) =>
+  PowerOperation rebuild(void Function(PowerOperationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -22776,7 +22776,7 @@ class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(PowerOperationBuilder b)) {
+  void update(void Function(PowerOperationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -22818,7 +22818,7 @@ class _$PowerChannelControl extends PowerChannelControl {
   @override
   final double schedTime;
 
-  factory _$PowerChannelControl([void updates(PowerChannelControlBuilder b)]) =>
+  factory _$PowerChannelControl([void Function(PowerChannelControlBuilder b) updates]) =>
       (PowerChannelControlBuilder()..update(updates)).build();
 
   _$PowerChannelControl._(
@@ -22833,7 +22833,7 @@ class _$PowerChannelControl extends PowerChannelControl {
       : super._();
 
   @override
-  PowerChannelControl rebuild(void updates(PowerChannelControlBuilder b)) =>
+  PowerChannelControl rebuild(void Function(PowerChannelControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -22961,7 +22961,7 @@ class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(PowerChannelControlBuilder b)) {
+  void update(void Function(PowerChannelControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -22997,7 +22997,7 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
   final int dstEnt;
 
 
-  factory _$QueryPowerChannelState([void updates(QueryPowerChannelStateBuilder b)]) =>
+  factory _$QueryPowerChannelState([void Function(QueryPowerChannelStateBuilder b) updates]) =>
       (QueryPowerChannelStateBuilder()..update(updates)).build();
 
   _$QueryPowerChannelState._(
@@ -23009,7 +23009,7 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
       : super._();
 
   @override
-  QueryPowerChannelState rebuild(void updates(QueryPowerChannelStateBuilder b)) =>
+  QueryPowerChannelState rebuild(void Function(QueryPowerChannelStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -23113,7 +23113,7 @@ class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  void update(void updates(QueryPowerChannelStateBuilder b)) {
+  void update(void Function(QueryPowerChannelStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -23150,7 +23150,7 @@ class _$PowerChannelState extends PowerChannelState {
   @override
   final PowerChannelStateEnumState state;
 
-  factory _$PowerChannelState([void updates(PowerChannelStateBuilder b)]) =>
+  factory _$PowerChannelState([void Function(PowerChannelStateBuilder b) updates]) =>
       (PowerChannelStateBuilder()..update(updates)).build();
 
   _$PowerChannelState._(
@@ -23164,7 +23164,7 @@ class _$PowerChannelState extends PowerChannelState {
       : super._();
 
   @override
-  PowerChannelState rebuild(void updates(PowerChannelStateBuilder b)) =>
+  PowerChannelState rebuild(void Function(PowerChannelStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -23284,7 +23284,7 @@ class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(PowerChannelStateBuilder b)) {
+  void update(void Function(PowerChannelStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -23323,7 +23323,7 @@ class _$LedBrightness extends LedBrightness {
   @override
   final int value;
 
-  factory _$LedBrightness([void updates(LedBrightnessBuilder b)]) =>
+  factory _$LedBrightness([void Function(LedBrightnessBuilder b) updates]) =>
       (LedBrightnessBuilder()..update(updates)).build();
 
   _$LedBrightness._(
@@ -23337,7 +23337,7 @@ class _$LedBrightness extends LedBrightness {
       : super._();
 
   @override
-  LedBrightness rebuild(void updates(LedBrightnessBuilder b)) =>
+  LedBrightness rebuild(void Function(LedBrightnessBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -23457,7 +23457,7 @@ class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(LedBrightnessBuilder b)) {
+  void update(void Function(LedBrightnessBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -23494,7 +23494,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
   @override
   final String name;
 
-  factory _$QueryLedBrightness([void updates(QueryLedBrightnessBuilder b)]) =>
+  factory _$QueryLedBrightness([void Function(QueryLedBrightnessBuilder b) updates]) =>
       (QueryLedBrightnessBuilder()..update(updates)).build();
 
   _$QueryLedBrightness._(
@@ -23507,7 +23507,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
       : super._();
 
   @override
-  QueryLedBrightness rebuild(void updates(QueryLedBrightnessBuilder b)) =>
+  QueryLedBrightness rebuild(void Function(QueryLedBrightnessBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -23619,7 +23619,7 @@ class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(QueryLedBrightnessBuilder b)) {
+  void update(void Function(QueryLedBrightnessBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -23657,7 +23657,7 @@ class _$SetLedBrightness extends SetLedBrightness {
   @override
   final int value;
 
-  factory _$SetLedBrightness([void updates(SetLedBrightnessBuilder b)]) =>
+  factory _$SetLedBrightness([void Function(SetLedBrightnessBuilder b) updates]) =>
       (SetLedBrightnessBuilder()..update(updates)).build();
 
   _$SetLedBrightness._(
@@ -23671,7 +23671,7 @@ class _$SetLedBrightness extends SetLedBrightness {
       : super._();
 
   @override
-  SetLedBrightness rebuild(void updates(SetLedBrightnessBuilder b)) =>
+  SetLedBrightness rebuild(void Function(SetLedBrightnessBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -23791,7 +23791,7 @@ class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(SetLedBrightnessBuilder b)) {
+  void update(void Function(SetLedBrightnessBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -23832,7 +23832,7 @@ class _$SetPWM extends SetPWM {
   @override
   final int dutyCycle;
 
-  factory _$SetPWM([void updates(SetPWMBuilder b)]) =>
+  factory _$SetPWM([void Function(SetPWMBuilder b) updates]) =>
       (SetPWMBuilder()..update(updates)).build();
 
   _$SetPWM._(
@@ -23847,7 +23847,7 @@ class _$SetPWM extends SetPWM {
       : super._();
 
   @override
-  SetPWM rebuild(void updates(SetPWMBuilder b)) =>
+  SetPWM rebuild(void Function(SetPWMBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -23975,7 +23975,7 @@ class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  void update(void updates(SetPWMBuilder b)) {
+  void update(void Function(SetPWMBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -24017,7 +24017,7 @@ class _$PWM extends PWM {
   @override
   final int dutyCycle;
 
-  factory _$PWM([void updates(PWMBuilder b)]) =>
+  factory _$PWM([void Function(PWMBuilder b) updates]) =>
       (PWMBuilder()..update(updates)).build();
 
   _$PWM._(
@@ -24032,7 +24032,7 @@ class _$PWM extends PWM {
       : super._();
 
   @override
-  PWM rebuild(void updates(PWMBuilder b)) =>
+  PWM rebuild(void Function(PWMBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -24160,7 +24160,7 @@ class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  void update(void updates(PWMBuilder b)) {
+  void update(void Function(PWMBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -24236,7 +24236,7 @@ class _$EstimatedState extends EstimatedState {
   @override
   final double alt;
 
-  factory _$EstimatedState([void updates(EstimatedStateBuilder b)]) =>
+  factory _$EstimatedState([void Function(EstimatedStateBuilder b) updates]) =>
       (EstimatedStateBuilder()..update(updates)).build();
 
   _$EstimatedState._(
@@ -24268,7 +24268,7 @@ class _$EstimatedState extends EstimatedState {
       : super._();
 
   @override
-  EstimatedState rebuild(void updates(EstimatedStateBuilder b)) =>
+  EstimatedState rebuild(void Function(EstimatedStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -24532,7 +24532,7 @@ class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(EstimatedStateBuilder b)) {
+  void update(void Function(EstimatedStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -24591,7 +24591,7 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
   @override
   final double z;
 
-  factory _$EstimatedStreamVelocity([void updates(EstimatedStreamVelocityBuilder b)]) =>
+  factory _$EstimatedStreamVelocity([void Function(EstimatedStreamVelocityBuilder b) updates]) =>
       (EstimatedStreamVelocityBuilder()..update(updates)).build();
 
   _$EstimatedStreamVelocity._(
@@ -24606,7 +24606,7 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
       : super._();
 
   @override
-  EstimatedStreamVelocity rebuild(void updates(EstimatedStreamVelocityBuilder b)) =>
+  EstimatedStreamVelocity rebuild(void Function(EstimatedStreamVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -24734,7 +24734,7 @@ class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart im
   }
 
   @override
-  void update(void updates(EstimatedStreamVelocityBuilder b)) {
+  void update(void Function(EstimatedStreamVelocityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -24772,7 +24772,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
   @override
   final double value;
 
-  factory _$IndicatedSpeed([void updates(IndicatedSpeedBuilder b)]) =>
+  factory _$IndicatedSpeed([void Function(IndicatedSpeedBuilder b) updates]) =>
       (IndicatedSpeedBuilder()..update(updates)).build();
 
   _$IndicatedSpeed._(
@@ -24785,7 +24785,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
       : super._();
 
   @override
-  IndicatedSpeed rebuild(void updates(IndicatedSpeedBuilder b)) =>
+  IndicatedSpeed rebuild(void Function(IndicatedSpeedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -24897,7 +24897,7 @@ class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(IndicatedSpeedBuilder b)) {
+  void update(void Function(IndicatedSpeedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -24933,7 +24933,7 @@ class _$TrueSpeed extends TrueSpeed {
   @override
   final double value;
 
-  factory _$TrueSpeed([void updates(TrueSpeedBuilder b)]) =>
+  factory _$TrueSpeed([void Function(TrueSpeedBuilder b) updates]) =>
       (TrueSpeedBuilder()..update(updates)).build();
 
   _$TrueSpeed._(
@@ -24946,7 +24946,7 @@ class _$TrueSpeed extends TrueSpeed {
       : super._();
 
   @override
-  TrueSpeed rebuild(void updates(TrueSpeedBuilder b)) =>
+  TrueSpeed rebuild(void Function(TrueSpeedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -25058,7 +25058,7 @@ class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(TrueSpeedBuilder b)) {
+  void update(void Function(TrueSpeedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -25120,7 +25120,7 @@ class _$NavigationUncertainty extends NavigationUncertainty {
   @override
   final double biasR;
 
-  factory _$NavigationUncertainty([void updates(NavigationUncertaintyBuilder b)]) =>
+  factory _$NavigationUncertainty([void Function(NavigationUncertaintyBuilder b) updates]) =>
       (NavigationUncertaintyBuilder()..update(updates)).build();
 
   _$NavigationUncertainty._(
@@ -25146,7 +25146,7 @@ class _$NavigationUncertainty extends NavigationUncertainty {
       : super._();
 
   @override
-  NavigationUncertainty rebuild(void updates(NavigationUncertaintyBuilder b)) =>
+  NavigationUncertainty rebuild(void Function(NavigationUncertaintyBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -25362,7 +25362,7 @@ class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  void update(void updates(NavigationUncertaintyBuilder b)) {
+  void update(void Function(NavigationUncertaintyBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -25427,7 +25427,7 @@ class _$NavigationData extends NavigationData {
   @override
   final double customZ;
 
-  factory _$NavigationData([void updates(NavigationDataBuilder b)]) =>
+  factory _$NavigationData([void Function(NavigationDataBuilder b) updates]) =>
       (NavigationDataBuilder()..update(updates)).build();
 
   _$NavigationData._(
@@ -25448,7 +25448,7 @@ class _$NavigationData extends NavigationData {
       : super._();
 
   @override
-  NavigationData rebuild(void updates(NavigationDataBuilder b)) =>
+  NavigationData rebuild(void Function(NavigationDataBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -25624,7 +25624,7 @@ class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(NavigationDataBuilder b)) {
+  void update(void Function(NavigationDataBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -25670,7 +25670,7 @@ class _$GpsFixRejection extends GpsFixRejection {
   @override
   final GpsFixRejectionEnumReason reason;
 
-  factory _$GpsFixRejection([void updates(GpsFixRejectionBuilder b)]) =>
+  factory _$GpsFixRejection([void Function(GpsFixRejectionBuilder b) updates]) =>
       (GpsFixRejectionBuilder()..update(updates)).build();
 
   _$GpsFixRejection._(
@@ -25684,7 +25684,7 @@ class _$GpsFixRejection extends GpsFixRejection {
       : super._();
 
   @override
-  GpsFixRejection rebuild(void updates(GpsFixRejectionBuilder b)) =>
+  GpsFixRejection rebuild(void Function(GpsFixRejectionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -25804,7 +25804,7 @@ class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(GpsFixRejectionBuilder b)) {
+  void update(void Function(GpsFixRejectionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -25845,7 +25845,7 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
   @override
   final LblRangeAcceptanceEnumAcceptance acceptance;
 
-  factory _$LblRangeAcceptance([void updates(LblRangeAcceptanceBuilder b)]) =>
+  factory _$LblRangeAcceptance([void Function(LblRangeAcceptanceBuilder b) updates]) =>
       (LblRangeAcceptanceBuilder()..update(updates)).build();
 
   _$LblRangeAcceptance._(
@@ -25860,7 +25860,7 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
       : super._();
 
   @override
-  LblRangeAcceptance rebuild(void updates(LblRangeAcceptanceBuilder b)) =>
+  LblRangeAcceptance rebuild(void Function(LblRangeAcceptanceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -25988,7 +25988,7 @@ class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(LblRangeAcceptanceBuilder b)) {
+  void update(void Function(LblRangeAcceptanceBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -26032,7 +26032,7 @@ class _$DvlRejection extends DvlRejection {
   @override
   final double timestep;
 
-  factory _$DvlRejection([void updates(DvlRejectionBuilder b)]) =>
+  factory _$DvlRejection([void Function(DvlRejectionBuilder b) updates]) =>
       (DvlRejectionBuilder()..update(updates)).build();
 
   _$DvlRejection._(
@@ -26048,7 +26048,7 @@ class _$DvlRejection extends DvlRejection {
       : super._();
 
   @override
-  DvlRejection rebuild(void updates(DvlRejectionBuilder b)) =>
+  DvlRejection rebuild(void Function(DvlRejectionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -26184,7 +26184,7 @@ class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(DvlRejectionBuilder b)) {
+  void update(void Function(DvlRejectionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -26233,7 +26233,7 @@ class _$LblEstimate extends LblEstimate {
   @override
   final double distance;
 
-  factory _$LblEstimate([void updates(LblEstimateBuilder b)]) =>
+  factory _$LblEstimate([void Function(LblEstimateBuilder b) updates]) =>
       (LblEstimateBuilder()..update(updates)).build();
 
   _$LblEstimate._(
@@ -26251,7 +26251,7 @@ class _$LblEstimate extends LblEstimate {
       : super._();
 
   @override
-  LblEstimate rebuild(void updates(LblEstimateBuilder b)) =>
+  LblEstimate rebuild(void Function(LblEstimateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -26403,7 +26403,7 @@ class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(LblEstimateBuilder b)) {
+  void update(void Function(LblEstimateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -26444,7 +26444,7 @@ class _$AlignmentState extends AlignmentState {
   @override
   final AlignmentStateEnumState state;
 
-  factory _$AlignmentState([void updates(AlignmentStateBuilder b)]) =>
+  factory _$AlignmentState([void Function(AlignmentStateBuilder b) updates]) =>
       (AlignmentStateBuilder()..update(updates)).build();
 
   _$AlignmentState._(
@@ -26457,7 +26457,7 @@ class _$AlignmentState extends AlignmentState {
       : super._();
 
   @override
-  AlignmentState rebuild(void updates(AlignmentStateBuilder b)) =>
+  AlignmentState rebuild(void Function(AlignmentStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -26569,7 +26569,7 @@ class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(AlignmentStateBuilder b)) {
+  void update(void Function(AlignmentStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -26609,7 +26609,7 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
   @override
   final double z;
 
-  factory _$GroupStreamVelocity([void updates(GroupStreamVelocityBuilder b)]) =>
+  factory _$GroupStreamVelocity([void Function(GroupStreamVelocityBuilder b) updates]) =>
       (GroupStreamVelocityBuilder()..update(updates)).build();
 
   _$GroupStreamVelocity._(
@@ -26624,7 +26624,7 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
       : super._();
 
   @override
-  GroupStreamVelocity rebuild(void updates(GroupStreamVelocityBuilder b)) =>
+  GroupStreamVelocity rebuild(void Function(GroupStreamVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -26752,7 +26752,7 @@ class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(GroupStreamVelocityBuilder b)) {
+  void update(void Function(GroupStreamVelocityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -26794,7 +26794,7 @@ class _$Airflow extends Airflow {
   @override
   final double ssa;
 
-  factory _$Airflow([void updates(AirflowBuilder b)]) =>
+  factory _$Airflow([void Function(AirflowBuilder b) updates]) =>
       (AirflowBuilder()..update(updates)).build();
 
   _$Airflow._(
@@ -26809,7 +26809,7 @@ class _$Airflow extends Airflow {
       : super._();
 
   @override
-  Airflow rebuild(void updates(AirflowBuilder b)) =>
+  Airflow rebuild(void Function(AirflowBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -26937,7 +26937,7 @@ class AirflowBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(AirflowBuilder b)) {
+  void update(void Function(AirflowBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -26975,7 +26975,7 @@ class _$DesiredHeading extends DesiredHeading {
   @override
   final double value;
 
-  factory _$DesiredHeading([void updates(DesiredHeadingBuilder b)]) =>
+  factory _$DesiredHeading([void Function(DesiredHeadingBuilder b) updates]) =>
       (DesiredHeadingBuilder()..update(updates)).build();
 
   _$DesiredHeading._(
@@ -26988,7 +26988,7 @@ class _$DesiredHeading extends DesiredHeading {
       : super._();
 
   @override
-  DesiredHeading rebuild(void updates(DesiredHeadingBuilder b)) =>
+  DesiredHeading rebuild(void Function(DesiredHeadingBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -27100,7 +27100,7 @@ class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(DesiredHeadingBuilder b)) {
+  void update(void Function(DesiredHeadingBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -27138,7 +27138,7 @@ class _$DesiredZ extends DesiredZ {
   @override
   final ZUnitsEnum zUnits;
 
-  factory _$DesiredZ([void updates(DesiredZBuilder b)]) =>
+  factory _$DesiredZ([void Function(DesiredZBuilder b) updates]) =>
       (DesiredZBuilder()..update(updates)).build();
 
   _$DesiredZ._(
@@ -27152,7 +27152,7 @@ class _$DesiredZ extends DesiredZ {
       : super._();
 
   @override
-  DesiredZ rebuild(void updates(DesiredZBuilder b)) =>
+  DesiredZ rebuild(void Function(DesiredZBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -27272,7 +27272,7 @@ class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(DesiredZBuilder b)) {
+  void update(void Function(DesiredZBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -27311,7 +27311,7 @@ class _$DesiredSpeed extends DesiredSpeed {
   @override
   final SpeedUnitsEnum speedUnits;
 
-  factory _$DesiredSpeed([void updates(DesiredSpeedBuilder b)]) =>
+  factory _$DesiredSpeed([void Function(DesiredSpeedBuilder b) updates]) =>
       (DesiredSpeedBuilder()..update(updates)).build();
 
   _$DesiredSpeed._(
@@ -27325,7 +27325,7 @@ class _$DesiredSpeed extends DesiredSpeed {
       : super._();
 
   @override
-  DesiredSpeed rebuild(void updates(DesiredSpeedBuilder b)) =>
+  DesiredSpeed rebuild(void Function(DesiredSpeedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -27445,7 +27445,7 @@ class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(DesiredSpeedBuilder b)) {
+  void update(void Function(DesiredSpeedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -27482,7 +27482,7 @@ class _$DesiredRoll extends DesiredRoll {
   @override
   final double value;
 
-  factory _$DesiredRoll([void updates(DesiredRollBuilder b)]) =>
+  factory _$DesiredRoll([void Function(DesiredRollBuilder b) updates]) =>
       (DesiredRollBuilder()..update(updates)).build();
 
   _$DesiredRoll._(
@@ -27495,7 +27495,7 @@ class _$DesiredRoll extends DesiredRoll {
       : super._();
 
   @override
-  DesiredRoll rebuild(void updates(DesiredRollBuilder b)) =>
+  DesiredRoll rebuild(void Function(DesiredRollBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -27607,7 +27607,7 @@ class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(DesiredRollBuilder b)) {
+  void update(void Function(DesiredRollBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -27643,7 +27643,7 @@ class _$DesiredPitch extends DesiredPitch {
   @override
   final double value;
 
-  factory _$DesiredPitch([void updates(DesiredPitchBuilder b)]) =>
+  factory _$DesiredPitch([void Function(DesiredPitchBuilder b) updates]) =>
       (DesiredPitchBuilder()..update(updates)).build();
 
   _$DesiredPitch._(
@@ -27656,7 +27656,7 @@ class _$DesiredPitch extends DesiredPitch {
       : super._();
 
   @override
-  DesiredPitch rebuild(void updates(DesiredPitchBuilder b)) =>
+  DesiredPitch rebuild(void Function(DesiredPitchBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -27768,7 +27768,7 @@ class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(DesiredPitchBuilder b)) {
+  void update(void Function(DesiredPitchBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -27804,7 +27804,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
   @override
   final double value;
 
-  factory _$DesiredVerticalRate([void updates(DesiredVerticalRateBuilder b)]) =>
+  factory _$DesiredVerticalRate([void Function(DesiredVerticalRateBuilder b) updates]) =>
       (DesiredVerticalRateBuilder()..update(updates)).build();
 
   _$DesiredVerticalRate._(
@@ -27817,7 +27817,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
       : super._();
 
   @override
-  DesiredVerticalRate rebuild(void updates(DesiredVerticalRateBuilder b)) =>
+  DesiredVerticalRate rebuild(void Function(DesiredVerticalRateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -27929,7 +27929,7 @@ class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(DesiredVerticalRateBuilder b)) {
+  void update(void Function(DesiredVerticalRateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -27989,7 +27989,7 @@ class _$DesiredPath extends DesiredPath {
   @override
   final DesiredPathBitfieldFlags flags;
 
-  factory _$DesiredPath([void updates(DesiredPathBuilder b)]) =>
+  factory _$DesiredPath([void Function(DesiredPathBuilder b) updates]) =>
       (DesiredPathBuilder()..update(updates)).build();
 
   _$DesiredPath._(
@@ -28014,7 +28014,7 @@ class _$DesiredPath extends DesiredPath {
       : super._();
 
   @override
-  DesiredPath rebuild(void updates(DesiredPathBuilder b)) =>
+  DesiredPath rebuild(void Function(DesiredPathBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -28222,7 +28222,7 @@ class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(DesiredPathBuilder b)) {
+  void update(void Function(DesiredPathBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -28282,7 +28282,7 @@ class _$DesiredControl extends DesiredControl {
   @override
   final DesiredControlBitfieldFlags flags;
 
-  factory _$DesiredControl([void updates(DesiredControlBuilder b)]) =>
+  factory _$DesiredControl([void Function(DesiredControlBuilder b) updates]) =>
       (DesiredControlBuilder()..update(updates)).build();
 
   _$DesiredControl._(
@@ -28301,7 +28301,7 @@ class _$DesiredControl extends DesiredControl {
       : super._();
 
   @override
-  DesiredControl rebuild(void updates(DesiredControlBuilder b)) =>
+  DesiredControl rebuild(void Function(DesiredControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -28461,7 +28461,7 @@ class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(DesiredControlBuilder b)) {
+  void update(void Function(DesiredControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -28503,7 +28503,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
   @override
   final double value;
 
-  factory _$DesiredHeadingRate([void updates(DesiredHeadingRateBuilder b)]) =>
+  factory _$DesiredHeadingRate([void Function(DesiredHeadingRateBuilder b) updates]) =>
       (DesiredHeadingRateBuilder()..update(updates)).build();
 
   _$DesiredHeadingRate._(
@@ -28516,7 +28516,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
       : super._();
 
   @override
-  DesiredHeadingRate rebuild(void updates(DesiredHeadingRateBuilder b)) =>
+  DesiredHeadingRate rebuild(void Function(DesiredHeadingRateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -28628,7 +28628,7 @@ class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(DesiredHeadingRateBuilder b)) {
+  void update(void Function(DesiredHeadingRateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -28676,7 +28676,7 @@ class _$DesiredVelocity extends DesiredVelocity {
   @override
   final DesiredVelocityBitfieldFlags flags;
 
-  factory _$DesiredVelocity([void updates(DesiredVelocityBuilder b)]) =>
+  factory _$DesiredVelocity([void Function(DesiredVelocityBuilder b) updates]) =>
       (DesiredVelocityBuilder()..update(updates)).build();
 
   _$DesiredVelocity._(
@@ -28695,7 +28695,7 @@ class _$DesiredVelocity extends DesiredVelocity {
       : super._();
 
   @override
-  DesiredVelocity rebuild(void updates(DesiredVelocityBuilder b)) =>
+  DesiredVelocity rebuild(void Function(DesiredVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -28855,7 +28855,7 @@ class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(DesiredVelocityBuilder b)) {
+  void update(void Function(DesiredVelocityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -28933,7 +28933,7 @@ class _$PathControlState extends PathControlState {
   @override
   final int eta;
 
-  factory _$PathControlState([void updates(PathControlStateBuilder b)]) =>
+  factory _$PathControlState([void Function(PathControlStateBuilder b) updates]) =>
       (PathControlStateBuilder()..update(updates)).build();
 
   _$PathControlState._(
@@ -28964,7 +28964,7 @@ class _$PathControlState extends PathControlState {
       : super._();
 
   @override
-  PathControlState rebuild(void updates(PathControlStateBuilder b)) =>
+  PathControlState rebuild(void Function(PathControlStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -29220,7 +29220,7 @@ class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(PathControlStateBuilder b)) {
+  void update(void Function(PathControlStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -29278,7 +29278,7 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
   @override
   final double n;
 
-  factory _$AllocatedControlTorques([void updates(AllocatedControlTorquesBuilder b)]) =>
+  factory _$AllocatedControlTorques([void Function(AllocatedControlTorquesBuilder b) updates]) =>
       (AllocatedControlTorquesBuilder()..update(updates)).build();
 
   _$AllocatedControlTorques._(
@@ -29293,7 +29293,7 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
       : super._();
 
   @override
-  AllocatedControlTorques rebuild(void updates(AllocatedControlTorquesBuilder b)) =>
+  AllocatedControlTorques rebuild(void Function(AllocatedControlTorquesBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -29421,7 +29421,7 @@ class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart im
   }
 
   @override
-  void update(void updates(AllocatedControlTorquesBuilder b)) {
+  void update(void Function(AllocatedControlTorquesBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -29465,7 +29465,7 @@ class _$ControlParcel extends ControlParcel {
   @override
   final double a;
 
-  factory _$ControlParcel([void updates(ControlParcelBuilder b)]) =>
+  factory _$ControlParcel([void Function(ControlParcelBuilder b) updates]) =>
       (ControlParcelBuilder()..update(updates)).build();
 
   _$ControlParcel._(
@@ -29481,7 +29481,7 @@ class _$ControlParcel extends ControlParcel {
       : super._();
 
   @override
-  ControlParcel rebuild(void updates(ControlParcelBuilder b)) =>
+  ControlParcel rebuild(void Function(ControlParcelBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -29617,7 +29617,7 @@ class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ControlParcelBuilder b)) {
+  void update(void Function(ControlParcelBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -29656,7 +29656,7 @@ class _$Brake extends Brake {
   @override
   final BrakeEnumOp op;
 
-  factory _$Brake([void updates(BrakeBuilder b)]) =>
+  factory _$Brake([void Function(BrakeBuilder b) updates]) =>
       (BrakeBuilder()..update(updates)).build();
 
   _$Brake._(
@@ -29669,7 +29669,7 @@ class _$Brake extends Brake {
       : super._();
 
   @override
-  Brake rebuild(void updates(BrakeBuilder b)) =>
+  Brake rebuild(void Function(BrakeBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -29781,7 +29781,7 @@ class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(BrakeBuilder b)) {
+  void update(void Function(BrakeBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -29835,7 +29835,7 @@ class _$DesiredLinearState extends DesiredLinearState {
   @override
   final DesiredLinearStateBitfieldFlags flags;
 
-  factory _$DesiredLinearState([void updates(DesiredLinearStateBuilder b)]) =>
+  factory _$DesiredLinearState([void Function(DesiredLinearStateBuilder b) updates]) =>
       (DesiredLinearStateBuilder()..update(updates)).build();
 
   _$DesiredLinearState._(
@@ -29857,7 +29857,7 @@ class _$DesiredLinearState extends DesiredLinearState {
       : super._();
 
   @override
-  DesiredLinearState rebuild(void updates(DesiredLinearStateBuilder b)) =>
+  DesiredLinearState rebuild(void Function(DesiredLinearStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -30041,7 +30041,7 @@ class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(DesiredLinearStateBuilder b)) {
+  void update(void Function(DesiredLinearStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -30086,7 +30086,7 @@ class _$DesiredThrottle extends DesiredThrottle {
   @override
   final double value;
 
-  factory _$DesiredThrottle([void updates(DesiredThrottleBuilder b)]) =>
+  factory _$DesiredThrottle([void Function(DesiredThrottleBuilder b) updates]) =>
       (DesiredThrottleBuilder()..update(updates)).build();
 
   _$DesiredThrottle._(
@@ -30099,7 +30099,7 @@ class _$DesiredThrottle extends DesiredThrottle {
       : super._();
 
   @override
-  DesiredThrottle rebuild(void updates(DesiredThrottleBuilder b)) =>
+  DesiredThrottle rebuild(void Function(DesiredThrottleBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -30211,7 +30211,7 @@ class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(DesiredThrottleBuilder b)) {
+  void update(void Function(DesiredThrottleBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -30267,7 +30267,7 @@ class _$Goto extends Goto {
   @override
   final String custom;
 
-  factory _$Goto([void updates(GotoBuilder b)]) =>
+  factory _$Goto([void Function(GotoBuilder b) updates]) =>
       (GotoBuilder()..update(updates)).build();
 
   _$Goto._(
@@ -30290,7 +30290,7 @@ class _$Goto extends Goto {
       : super._();
 
   @override
-  Goto rebuild(void updates(GotoBuilder b)) =>
+  Goto rebuild(void Function(GotoBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -30482,7 +30482,7 @@ class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  void update(void updates(GotoBuilder b)) {
+  void update(void Function(GotoBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -30548,7 +30548,7 @@ class _$PopUp extends PopUp {
   @override
   final String custom;
 
-  factory _$PopUp([void updates(PopUpBuilder b)]) =>
+  factory _$PopUp([void Function(PopUpBuilder b) updates]) =>
       (PopUpBuilder()..update(updates)).build();
 
   _$PopUp._(
@@ -30571,7 +30571,7 @@ class _$PopUp extends PopUp {
       : super._();
 
   @override
-  PopUp rebuild(void updates(PopUpBuilder b)) =>
+  PopUp rebuild(void Function(PopUpBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -30763,7 +30763,7 @@ class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(PopUpBuilder b)) {
+  void update(void Function(PopUpBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -30809,7 +30809,7 @@ class _$Teleoperation extends Teleoperation {
   @override
   final String custom;
 
-  factory _$Teleoperation([void updates(TeleoperationBuilder b)]) =>
+  factory _$Teleoperation([void Function(TeleoperationBuilder b) updates]) =>
       (TeleoperationBuilder()..update(updates)).build();
 
   _$Teleoperation._(
@@ -30822,7 +30822,7 @@ class _$Teleoperation extends Teleoperation {
       : super._();
 
   @override
-  Teleoperation rebuild(void updates(TeleoperationBuilder b)) =>
+  Teleoperation rebuild(void Function(TeleoperationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -30934,7 +30934,7 @@ class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(TeleoperationBuilder b)) {
+  void update(void Function(TeleoperationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -30996,7 +30996,7 @@ class _$Loiter extends Loiter {
   @override
   final String custom;
 
-  factory _$Loiter([void updates(LoiterBuilder b)]) =>
+  factory _$Loiter([void Function(LoiterBuilder b) updates]) =>
       (LoiterBuilder()..update(updates)).build();
 
   _$Loiter._(
@@ -31022,7 +31022,7 @@ class _$Loiter extends Loiter {
       : super._();
 
   @override
-  Loiter rebuild(void updates(LoiterBuilder b)) =>
+  Loiter rebuild(void Function(LoiterBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -31238,7 +31238,7 @@ class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  void update(void updates(LoiterBuilder b)) {
+  void update(void Function(LoiterBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -31289,7 +31289,7 @@ class _$IdleManeuver extends IdleManeuver {
   @override
   final String custom;
 
-  factory _$IdleManeuver([void updates(IdleManeuverBuilder b)]) =>
+  factory _$IdleManeuver([void Function(IdleManeuverBuilder b) updates]) =>
       (IdleManeuverBuilder()..update(updates)).build();
 
   _$IdleManeuver._(
@@ -31303,7 +31303,7 @@ class _$IdleManeuver extends IdleManeuver {
       : super._();
 
   @override
-  IdleManeuver rebuild(void updates(IdleManeuverBuilder b)) =>
+  IdleManeuver rebuild(void Function(IdleManeuverBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -31423,7 +31423,7 @@ class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(IdleManeuverBuilder b)) {
+  void update(void Function(IdleManeuverBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -31464,7 +31464,7 @@ class _$LowLevelControl extends LowLevelControl {
   @override
   final String custom;
 
-  factory _$LowLevelControl([void updates(LowLevelControlBuilder b)]) =>
+  factory _$LowLevelControl([void Function(LowLevelControlBuilder b) updates]) =>
       (LowLevelControlBuilder()..update(updates)).build();
 
   _$LowLevelControl._(
@@ -31479,7 +31479,7 @@ class _$LowLevelControl extends LowLevelControl {
       : super._();
 
   @override
-  LowLevelControl rebuild(void updates(LowLevelControlBuilder b)) =>
+  LowLevelControl rebuild(void Function(LowLevelControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -31607,7 +31607,7 @@ class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(LowLevelControlBuilder b)) {
+  void update(void Function(LowLevelControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -31675,7 +31675,7 @@ class _$Rows extends Rows {
   @override
   final String custom;
 
-  factory _$Rows([void updates(RowsBuilder b)]) =>
+  factory _$Rows([void Function(RowsBuilder b) updates]) =>
       (RowsBuilder()..update(updates)).build();
 
   _$Rows._(
@@ -31703,7 +31703,7 @@ class _$Rows extends Rows {
       : super._();
 
   @override
-  Rows rebuild(void updates(RowsBuilder b)) =>
+  Rows rebuild(void Function(RowsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -31935,7 +31935,7 @@ class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  void update(void updates(RowsBuilder b)) {
+  void update(void Function(RowsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -32002,7 +32002,7 @@ class _$FollowPath extends FollowPath {
   @override
   final String custom;
 
-  factory _$FollowPath([void updates(FollowPathBuilder b)]) =>
+  factory _$FollowPath([void Function(FollowPathBuilder b) updates]) =>
       (FollowPathBuilder()..update(updates)).build();
 
   _$FollowPath._(
@@ -32023,7 +32023,7 @@ class _$FollowPath extends FollowPath {
       : super._();
 
   @override
-  FollowPath rebuild(void updates(FollowPathBuilder b)) =>
+  FollowPath rebuild(void Function(FollowPathBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -32199,7 +32199,7 @@ class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(FollowPathBuilder b)) {
+  void update(void Function(FollowPathBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -32247,7 +32247,7 @@ class _$PathPoint extends PathPoint {
   @override
   final double z;
 
-  factory _$PathPoint([void updates(PathPointBuilder b)]) =>
+  factory _$PathPoint([void Function(PathPointBuilder b) updates]) =>
       (PathPointBuilder()..update(updates)).build();
 
   _$PathPoint._(
@@ -32262,7 +32262,7 @@ class _$PathPoint extends PathPoint {
       : super._();
 
   @override
-  PathPoint rebuild(void updates(PathPointBuilder b)) =>
+  PathPoint rebuild(void Function(PathPointBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -32390,7 +32390,7 @@ class PathPointBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(PathPointBuilder b)) {
+  void update(void Function(PathPointBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -32446,7 +32446,7 @@ class _$YoYo extends YoYo {
   @override
   final String custom;
 
-  factory _$YoYo([void updates(YoYoBuilder b)]) =>
+  factory _$YoYo([void Function(YoYoBuilder b) updates]) =>
       (YoYoBuilder()..update(updates)).build();
 
   _$YoYo._(
@@ -32468,7 +32468,7 @@ class _$YoYo extends YoYo {
       : super._();
 
   @override
-  YoYo rebuild(void updates(YoYoBuilder b)) =>
+  YoYo rebuild(void Function(YoYoBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -32652,7 +32652,7 @@ class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  void update(void updates(YoYoBuilder b)) {
+  void update(void Function(YoYoBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -32695,7 +32695,7 @@ class _$TeleoperationDone extends TeleoperationDone {
   final int dstEnt;
 
 
-  factory _$TeleoperationDone([void updates(TeleoperationDoneBuilder b)]) =>
+  factory _$TeleoperationDone([void Function(TeleoperationDoneBuilder b) updates]) =>
       (TeleoperationDoneBuilder()..update(updates)).build();
 
   _$TeleoperationDone._(
@@ -32707,7 +32707,7 @@ class _$TeleoperationDone extends TeleoperationDone {
       : super._();
 
   @override
-  TeleoperationDone rebuild(void updates(TeleoperationDoneBuilder b)) =>
+  TeleoperationDone rebuild(void Function(TeleoperationDoneBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -32811,7 +32811,7 @@ class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(TeleoperationDoneBuilder b)) {
+  void update(void Function(TeleoperationDoneBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -32862,7 +32862,7 @@ class _$StationKeeping extends StationKeeping {
   @override
   final String custom;
 
-  factory _$StationKeeping([void updates(StationKeepingBuilder b)]) =>
+  factory _$StationKeeping([void Function(StationKeepingBuilder b) updates]) =>
       (StationKeepingBuilder()..update(updates)).build();
 
   _$StationKeeping._(
@@ -32883,7 +32883,7 @@ class _$StationKeeping extends StationKeeping {
       : super._();
 
   @override
-  StationKeeping rebuild(void updates(StationKeepingBuilder b)) =>
+  StationKeeping rebuild(void Function(StationKeepingBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -33059,7 +33059,7 @@ class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(StationKeepingBuilder b)) {
+  void update(void Function(StationKeepingBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -33125,7 +33125,7 @@ class _$Elevator extends Elevator {
   @override
   final String custom;
 
-  factory _$Elevator([void updates(ElevatorBuilder b)]) =>
+  factory _$Elevator([void Function(ElevatorBuilder b) updates]) =>
       (ElevatorBuilder()..update(updates)).build();
 
   _$Elevator._(
@@ -33149,7 +33149,7 @@ class _$Elevator extends Elevator {
       : super._();
 
   @override
-  Elevator rebuild(void updates(ElevatorBuilder b)) =>
+  Elevator rebuild(void Function(ElevatorBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -33349,7 +33349,7 @@ class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(ElevatorBuilder b)) {
+  void update(void Function(ElevatorBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -33412,7 +33412,7 @@ class _$FollowTrajectory extends FollowTrajectory {
   @override
   final String custom;
 
-  factory _$FollowTrajectory([void updates(FollowTrajectoryBuilder b)]) =>
+  factory _$FollowTrajectory([void Function(FollowTrajectoryBuilder b) updates]) =>
       (FollowTrajectoryBuilder()..update(updates)).build();
 
   _$FollowTrajectory._(
@@ -33433,7 +33433,7 @@ class _$FollowTrajectory extends FollowTrajectory {
       : super._();
 
   @override
-  FollowTrajectory rebuild(void updates(FollowTrajectoryBuilder b)) =>
+  FollowTrajectory rebuild(void Function(FollowTrajectoryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -33609,7 +33609,7 @@ class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(FollowTrajectoryBuilder b)) {
+  void update(void Function(FollowTrajectoryBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -33659,7 +33659,7 @@ class _$TrajectoryPoint extends TrajectoryPoint {
   @override
   final double t;
 
-  factory _$TrajectoryPoint([void updates(TrajectoryPointBuilder b)]) =>
+  factory _$TrajectoryPoint([void Function(TrajectoryPointBuilder b) updates]) =>
       (TrajectoryPointBuilder()..update(updates)).build();
 
   _$TrajectoryPoint._(
@@ -33675,7 +33675,7 @@ class _$TrajectoryPoint extends TrajectoryPoint {
       : super._();
 
   @override
-  TrajectoryPoint rebuild(void updates(TrajectoryPointBuilder b)) =>
+  TrajectoryPoint rebuild(void Function(TrajectoryPointBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -33811,7 +33811,7 @@ class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(TrajectoryPointBuilder b)) {
+  void update(void Function(TrajectoryPointBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -33854,7 +33854,7 @@ class _$CustomManeuver extends CustomManeuver {
   @override
   final String custom;
 
-  factory _$CustomManeuver([void updates(CustomManeuverBuilder b)]) =>
+  factory _$CustomManeuver([void Function(CustomManeuverBuilder b) updates]) =>
       (CustomManeuverBuilder()..update(updates)).build();
 
   _$CustomManeuver._(
@@ -33869,7 +33869,7 @@ class _$CustomManeuver extends CustomManeuver {
       : super._();
 
   @override
-  CustomManeuver rebuild(void updates(CustomManeuverBuilder b)) =>
+  CustomManeuver rebuild(void Function(CustomManeuverBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -33997,7 +33997,7 @@ class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(CustomManeuverBuilder b)) {
+  void update(void Function(CustomManeuverBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -34053,7 +34053,7 @@ class _$VehicleFormation extends VehicleFormation {
   @override
   final String custom;
 
-  factory _$VehicleFormation([void updates(VehicleFormationBuilder b)]) =>
+  factory _$VehicleFormation([void Function(VehicleFormationBuilder b) updates]) =>
       (VehicleFormationBuilder()..update(updates)).build();
 
   _$VehicleFormation._(
@@ -34075,7 +34075,7 @@ class _$VehicleFormation extends VehicleFormation {
       : super._();
 
   @override
-  VehicleFormation rebuild(void updates(VehicleFormationBuilder b)) =>
+  VehicleFormation rebuild(void Function(VehicleFormationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -34259,7 +34259,7 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(VehicleFormationBuilder b)) {
+  void update(void Function(VehicleFormationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -34310,7 +34310,7 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
   @override
   final double offZ;
 
-  factory _$VehicleFormationParticipant([void updates(VehicleFormationParticipantBuilder b)]) =>
+  factory _$VehicleFormationParticipant([void Function(VehicleFormationParticipantBuilder b) updates]) =>
       (VehicleFormationParticipantBuilder()..update(updates)).build();
 
   _$VehicleFormationParticipant._(
@@ -34326,7 +34326,7 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
       : super._();
 
   @override
-  VehicleFormationParticipant rebuild(void updates(VehicleFormationParticipantBuilder b)) =>
+  VehicleFormationParticipant rebuild(void Function(VehicleFormationParticipantBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -34462,7 +34462,7 @@ class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPar
   }
 
   @override
-  void update(void updates(VehicleFormationParticipantBuilder b)) {
+  void update(void Function(VehicleFormationParticipantBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -34499,7 +34499,7 @@ class _$StopManeuver extends StopManeuver {
   final int dstEnt;
 
 
-  factory _$StopManeuver([void updates(StopManeuverBuilder b)]) =>
+  factory _$StopManeuver([void Function(StopManeuverBuilder b) updates]) =>
       (StopManeuverBuilder()..update(updates)).build();
 
   _$StopManeuver._(
@@ -34511,7 +34511,7 @@ class _$StopManeuver extends StopManeuver {
       : super._();
 
   @override
-  StopManeuver rebuild(void updates(StopManeuverBuilder b)) =>
+  StopManeuver rebuild(void Function(StopManeuverBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -34615,7 +34615,7 @@ class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(StopManeuverBuilder b)) {
+  void update(void Function(StopManeuverBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -34650,7 +34650,7 @@ class _$RegisterManeuver extends RegisterManeuver {
   @override
   final int mid;
 
-  factory _$RegisterManeuver([void updates(RegisterManeuverBuilder b)]) =>
+  factory _$RegisterManeuver([void Function(RegisterManeuverBuilder b) updates]) =>
       (RegisterManeuverBuilder()..update(updates)).build();
 
   _$RegisterManeuver._(
@@ -34663,7 +34663,7 @@ class _$RegisterManeuver extends RegisterManeuver {
       : super._();
 
   @override
-  RegisterManeuver rebuild(void updates(RegisterManeuverBuilder b)) =>
+  RegisterManeuver rebuild(void Function(RegisterManeuverBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -34775,7 +34775,7 @@ class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(RegisterManeuverBuilder b)) {
+  void update(void Function(RegisterManeuverBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -34815,7 +34815,7 @@ class _$ManeuverControlState extends ManeuverControlState {
   @override
   final String info;
 
-  factory _$ManeuverControlState([void updates(ManeuverControlStateBuilder b)]) =>
+  factory _$ManeuverControlState([void Function(ManeuverControlStateBuilder b) updates]) =>
       (ManeuverControlStateBuilder()..update(updates)).build();
 
   _$ManeuverControlState._(
@@ -34830,7 +34830,7 @@ class _$ManeuverControlState extends ManeuverControlState {
       : super._();
 
   @override
-  ManeuverControlState rebuild(void updates(ManeuverControlStateBuilder b)) =>
+  ManeuverControlState rebuild(void Function(ManeuverControlStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -34958,7 +34958,7 @@ class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(ManeuverControlStateBuilder b)) {
+  void update(void Function(ManeuverControlStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -35010,7 +35010,7 @@ class _$FollowSystem extends FollowSystem {
   @override
   final ZUnitsEnum zUnits;
 
-  factory _$FollowSystem([void updates(FollowSystemBuilder b)]) =>
+  factory _$FollowSystem([void Function(FollowSystemBuilder b) updates]) =>
       (FollowSystemBuilder()..update(updates)).build();
 
   _$FollowSystem._(
@@ -35030,7 +35030,7 @@ class _$FollowSystem extends FollowSystem {
       : super._();
 
   @override
-  FollowSystem rebuild(void updates(FollowSystemBuilder b)) =>
+  FollowSystem rebuild(void Function(FollowSystemBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -35198,7 +35198,7 @@ class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(FollowSystemBuilder b)) {
+  void update(void Function(FollowSystemBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -35255,7 +35255,7 @@ class _$CommsRelay extends CommsRelay {
   @override
   final double moveThreshold;
 
-  factory _$CommsRelay([void updates(CommsRelayBuilder b)]) =>
+  factory _$CommsRelay([void Function(CommsRelayBuilder b) updates]) =>
       (CommsRelayBuilder()..update(updates)).build();
 
   _$CommsRelay._(
@@ -35275,7 +35275,7 @@ class _$CommsRelay extends CommsRelay {
       : super._();
 
   @override
-  CommsRelay rebuild(void updates(CommsRelayBuilder b)) =>
+  CommsRelay rebuild(void Function(CommsRelayBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -35443,7 +35443,7 @@ class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(CommsRelayBuilder b)) {
+  void update(void Function(CommsRelayBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -35500,7 +35500,7 @@ class _$CoverArea extends CoverArea {
   @override
   final String custom;
 
-  factory _$CoverArea([void updates(CoverAreaBuilder b)]) =>
+  factory _$CoverArea([void Function(CoverAreaBuilder b) updates]) =>
       (CoverAreaBuilder()..update(updates)).build();
 
   _$CoverArea._(
@@ -35520,7 +35520,7 @@ class _$CoverArea extends CoverArea {
       : super._();
 
   @override
-  CoverArea rebuild(void updates(CoverAreaBuilder b)) =>
+  CoverArea rebuild(void Function(CoverAreaBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -35688,7 +35688,7 @@ class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(CoverAreaBuilder b)) {
+  void update(void Function(CoverAreaBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -35733,7 +35733,7 @@ class _$PolygonVertex extends PolygonVertex {
   @override
   final double lon;
 
-  factory _$PolygonVertex([void updates(PolygonVertexBuilder b)]) =>
+  factory _$PolygonVertex([void Function(PolygonVertexBuilder b) updates]) =>
       (PolygonVertexBuilder()..update(updates)).build();
 
   _$PolygonVertex._(
@@ -35747,7 +35747,7 @@ class _$PolygonVertex extends PolygonVertex {
       : super._();
 
   @override
-  PolygonVertex rebuild(void updates(PolygonVertexBuilder b)) =>
+  PolygonVertex rebuild(void Function(PolygonVertexBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -35867,7 +35867,7 @@ class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(PolygonVertexBuilder b)) {
+  void update(void Function(PolygonVertexBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -35928,7 +35928,7 @@ class _$CompassCalibration extends CompassCalibration {
   @override
   final String custom;
 
-  factory _$CompassCalibration([void updates(CompassCalibrationBuilder b)]) =>
+  factory _$CompassCalibration([void Function(CompassCalibrationBuilder b) updates]) =>
       (CompassCalibrationBuilder()..update(updates)).build();
 
   _$CompassCalibration._(
@@ -35953,7 +35953,7 @@ class _$CompassCalibration extends CompassCalibration {
       : super._();
 
   @override
-  CompassCalibration rebuild(void updates(CompassCalibrationBuilder b)) =>
+  CompassCalibration rebuild(void Function(CompassCalibrationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -36161,7 +36161,7 @@ class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(CompassCalibrationBuilder b)) {
+  void update(void Function(CompassCalibrationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -36215,7 +36215,7 @@ class _$FormationParameters extends FormationParameters {
   @override
   final String custom;
 
-  factory _$FormationParameters([void updates(FormationParametersBuilder b)]) =>
+  factory _$FormationParameters([void Function(FormationParametersBuilder b) updates]) =>
       (FormationParametersBuilder()..update(updates)).build();
 
   _$FormationParameters._(
@@ -36231,7 +36231,7 @@ class _$FormationParameters extends FormationParameters {
       : super._();
 
   @override
-  FormationParameters rebuild(void updates(FormationParametersBuilder b)) =>
+  FormationParameters rebuild(void Function(FormationParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -36367,7 +36367,7 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(FormationParametersBuilder b)) {
+  void update(void Function(FormationParametersBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -36432,7 +36432,7 @@ class _$FormationPlanExecution extends FormationPlanExecution {
   @override
   final String custom;
 
-  factory _$FormationPlanExecution([void updates(FormationPlanExecutionBuilder b)]) =>
+  factory _$FormationPlanExecution([void Function(FormationPlanExecutionBuilder b) updates]) =>
       (FormationPlanExecutionBuilder()..update(updates)).build();
 
   _$FormationPlanExecution._(
@@ -36458,7 +36458,7 @@ class _$FormationPlanExecution extends FormationPlanExecution {
       : super._();
 
   @override
-  FormationPlanExecution rebuild(void updates(FormationPlanExecutionBuilder b)) =>
+  FormationPlanExecution rebuild(void Function(FormationPlanExecutionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -36674,7 +36674,7 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  void update(void updates(FormationPlanExecutionBuilder b)) {
+  void update(void Function(FormationPlanExecutionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -36731,7 +36731,7 @@ class _$FollowReference extends FollowReference {
   @override
   final double altitudeInterval;
 
-  factory _$FollowReference([void updates(FollowReferenceBuilder b)]) =>
+  factory _$FollowReference([void Function(FollowReferenceBuilder b) updates]) =>
       (FollowReferenceBuilder()..update(updates)).build();
 
   _$FollowReference._(
@@ -36748,7 +36748,7 @@ class _$FollowReference extends FollowReference {
       : super._();
 
   @override
-  FollowReference rebuild(void updates(FollowReferenceBuilder b)) =>
+  FollowReference rebuild(void Function(FollowReferenceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -36892,7 +36892,7 @@ class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(FollowReferenceBuilder b)) {
+  void update(void Function(FollowReferenceBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -36942,7 +36942,7 @@ class _$Reference extends Reference {
   @override
   final double radius;
 
-  factory _$Reference([void updates(ReferenceBuilder b)]) =>
+  factory _$Reference([void Function(ReferenceBuilder b) updates]) =>
       (ReferenceBuilder()..update(updates)).build();
 
   _$Reference._(
@@ -36960,7 +36960,7 @@ class _$Reference extends Reference {
       : super._();
 
   @override
-  Reference rebuild(void updates(ReferenceBuilder b)) =>
+  Reference rebuild(void Function(ReferenceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -37112,7 +37112,7 @@ class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(ReferenceBuilder b)) {
+  void update(void Function(ReferenceBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -37161,7 +37161,7 @@ class _$FollowRefState extends FollowRefState {
   @override
   final FollowRefStateBitfieldProximity proximity;
 
-  factory _$FollowRefState([void updates(FollowRefStateBuilder b)]) =>
+  factory _$FollowRefState([void Function(FollowRefStateBuilder b) updates]) =>
       (FollowRefStateBuilder()..update(updates)).build();
 
   _$FollowRefState._(
@@ -37178,7 +37178,7 @@ class _$FollowRefState extends FollowRefState {
       : super._();
 
   @override
-  FollowRefState rebuild(void updates(FollowRefStateBuilder b)) =>
+  FollowRefState rebuild(void Function(FollowRefStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -37322,7 +37322,7 @@ class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(FollowRefStateBuilder b)) {
+  void update(void Function(FollowRefStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -37398,7 +37398,7 @@ class _$FormationMonitor extends FormationMonitor {
   @override
   final List<RelativeState> relState;
 
-  factory _$FormationMonitor([void updates(FormationMonitorBuilder b)]) =>
+  factory _$FormationMonitor([void Function(FormationMonitorBuilder b) updates]) =>
       (FormationMonitorBuilder()..update(updates)).build();
 
   _$FormationMonitor._(
@@ -37429,7 +37429,7 @@ class _$FormationMonitor extends FormationMonitor {
       : super._();
 
   @override
-  FormationMonitor rebuild(void updates(FormationMonitorBuilder b)) =>
+  FormationMonitor rebuild(void Function(FormationMonitorBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -37685,7 +37685,7 @@ class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(FormationMonitorBuilder b)) {
+  void update(void Function(FormationMonitorBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -37781,7 +37781,7 @@ class _$RelativeState extends RelativeState {
   @override
   final double virtErrZ;
 
-  factory _$RelativeState([void updates(RelativeStateBuilder b)]) =>
+  factory _$RelativeState([void Function(RelativeStateBuilder b) updates]) =>
       (RelativeStateBuilder()..update(updates)).build();
 
   _$RelativeState._(
@@ -37815,7 +37815,7 @@ class _$RelativeState extends RelativeState {
       : super._();
 
   @override
-  RelativeState rebuild(void updates(RelativeStateBuilder b)) =>
+  RelativeState rebuild(void Function(RelativeStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -38095,7 +38095,7 @@ class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(RelativeStateBuilder b)) {
+  void update(void Function(RelativeStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -38158,7 +38158,7 @@ class _$Dislodge extends Dislodge {
   @override
   final String custom;
 
-  factory _$Dislodge([void updates(DislodgeBuilder b)]) =>
+  factory _$Dislodge([void Function(DislodgeBuilder b) updates]) =>
       (DislodgeBuilder()..update(updates)).build();
 
   _$Dislodge._(
@@ -38174,7 +38174,7 @@ class _$Dislodge extends Dislodge {
       : super._();
 
   @override
-  Dislodge rebuild(void updates(DislodgeBuilder b)) =>
+  Dislodge rebuild(void Function(DislodgeBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -38310,7 +38310,7 @@ class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(DislodgeBuilder b)) {
+  void update(void Function(DislodgeBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -38389,7 +38389,7 @@ class _$Formation extends Formation {
   @override
   final String custom;
 
-  factory _$Formation([void updates(FormationBuilder b)]) =>
+  factory _$Formation([void Function(FormationBuilder b) updates]) =>
       (FormationBuilder()..update(updates)).build();
 
   _$Formation._(
@@ -38422,7 +38422,7 @@ class _$Formation extends Formation {
       : super._();
 
   @override
-  Formation rebuild(void updates(FormationBuilder b)) =>
+  Formation rebuild(void Function(FormationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -38694,7 +38694,7 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(FormationBuilder b)) {
+  void update(void Function(FormationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -38764,7 +38764,7 @@ class _$Launch extends Launch {
   @override
   final String custom;
 
-  factory _$Launch([void updates(LaunchBuilder b)]) =>
+  factory _$Launch([void Function(LaunchBuilder b) updates]) =>
       (LaunchBuilder()..update(updates)).build();
 
   _$Launch._(
@@ -38784,7 +38784,7 @@ class _$Launch extends Launch {
       : super._();
 
   @override
-  Launch rebuild(void updates(LaunchBuilder b)) =>
+  Launch rebuild(void Function(LaunchBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -38952,7 +38952,7 @@ class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  void update(void updates(LaunchBuilder b)) {
+  void update(void Function(LaunchBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -39009,7 +39009,7 @@ class _$Drop extends Drop {
   @override
   final String custom;
 
-  factory _$Drop([void updates(DropBuilder b)]) =>
+  factory _$Drop([void Function(DropBuilder b) updates]) =>
       (DropBuilder()..update(updates)).build();
 
   _$Drop._(
@@ -39029,7 +39029,7 @@ class _$Drop extends Drop {
       : super._();
 
   @override
-  Drop rebuild(void updates(DropBuilder b)) =>
+  Drop rebuild(void Function(DropBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -39197,7 +39197,7 @@ class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  void update(void updates(DropBuilder b)) {
+  void update(void Function(DropBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -39254,7 +39254,7 @@ class _$ScheduledGoto extends ScheduledGoto {
   @override
   final ScheduledGotoEnumDelayed delayed;
 
-  factory _$ScheduledGoto([void updates(ScheduledGotoBuilder b)]) =>
+  factory _$ScheduledGoto([void Function(ScheduledGotoBuilder b) updates]) =>
       (ScheduledGotoBuilder()..update(updates)).build();
 
   _$ScheduledGoto._(
@@ -39274,7 +39274,7 @@ class _$ScheduledGoto extends ScheduledGoto {
       : super._();
 
   @override
-  ScheduledGoto rebuild(void updates(ScheduledGotoBuilder b)) =>
+  ScheduledGoto rebuild(void Function(ScheduledGotoBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -39442,7 +39442,7 @@ class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ScheduledGotoBuilder b)) {
+  void update(void Function(ScheduledGotoBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -39515,7 +39515,7 @@ class _$RowsCoverage extends RowsCoverage {
   @override
   final String custom;
 
-  factory _$RowsCoverage([void updates(RowsCoverageBuilder b)]) =>
+  factory _$RowsCoverage([void Function(RowsCoverageBuilder b) updates]) =>
       (RowsCoverageBuilder()..update(updates)).build();
 
   _$RowsCoverage._(
@@ -39543,7 +39543,7 @@ class _$RowsCoverage extends RowsCoverage {
       : super._();
 
   @override
-  RowsCoverage rebuild(void updates(RowsCoverageBuilder b)) =>
+  RowsCoverage rebuild(void Function(RowsCoverageBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -39775,7 +39775,7 @@ class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(RowsCoverageBuilder b)) {
+  void update(void Function(RowsCoverageBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -39846,7 +39846,7 @@ class _$Sample extends Sample {
   @override
   final String custom;
 
-  factory _$Sample([void updates(SampleBuilder b)]) =>
+  factory _$Sample([void Function(SampleBuilder b) updates]) =>
       (SampleBuilder()..update(updates)).build();
 
   _$Sample._(
@@ -39869,7 +39869,7 @@ class _$Sample extends Sample {
       : super._();
 
   @override
-  Sample rebuild(void updates(SampleBuilder b)) =>
+  Sample rebuild(void Function(SampleBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -40061,7 +40061,7 @@ class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  void update(void updates(SampleBuilder b)) {
+  void update(void Function(SampleBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -40105,7 +40105,7 @@ class _$ImageTracking extends ImageTracking {
   final int dstEnt;
 
 
-  factory _$ImageTracking([void updates(ImageTrackingBuilder b)]) =>
+  factory _$ImageTracking([void Function(ImageTrackingBuilder b) updates]) =>
       (ImageTrackingBuilder()..update(updates)).build();
 
   _$ImageTracking._(
@@ -40117,7 +40117,7 @@ class _$ImageTracking extends ImageTracking {
       : super._();
 
   @override
-  ImageTracking rebuild(void updates(ImageTrackingBuilder b)) =>
+  ImageTracking rebuild(void Function(ImageTrackingBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -40221,7 +40221,7 @@ class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ImageTrackingBuilder b)) {
+  void update(void Function(ImageTrackingBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -40270,7 +40270,7 @@ class _$Takeoff extends Takeoff {
   @override
   final String custom;
 
-  factory _$Takeoff([void updates(TakeoffBuilder b)]) =>
+  factory _$Takeoff([void Function(TakeoffBuilder b) updates]) =>
       (TakeoffBuilder()..update(updates)).build();
 
   _$Takeoff._(
@@ -40290,7 +40290,7 @@ class _$Takeoff extends Takeoff {
       : super._();
 
   @override
-  Takeoff rebuild(void updates(TakeoffBuilder b)) =>
+  Takeoff rebuild(void Function(TakeoffBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -40458,7 +40458,7 @@ class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(TakeoffBuilder b)) {
+  void update(void Function(TakeoffBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -40521,7 +40521,7 @@ class _$Land extends Land {
   @override
   final String custom;
 
-  factory _$Land([void updates(LandBuilder b)]) =>
+  factory _$Land([void Function(LandBuilder b) updates]) =>
       (LandBuilder()..update(updates)).build();
 
   _$Land._(
@@ -40544,7 +40544,7 @@ class _$Land extends Land {
       : super._();
 
   @override
-  Land rebuild(void updates(LandBuilder b)) =>
+  Land rebuild(void Function(LandBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -40736,7 +40736,7 @@ class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  void update(void updates(LandBuilder b)) {
+  void update(void Function(LandBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -40802,7 +40802,7 @@ class _$AutonomousSection extends AutonomousSection {
   @override
   final String custom;
 
-  factory _$AutonomousSection([void updates(AutonomousSectionBuilder b)]) =>
+  factory _$AutonomousSection([void Function(AutonomousSectionBuilder b) updates]) =>
       (AutonomousSectionBuilder()..update(updates)).build();
 
   _$AutonomousSection._(
@@ -40825,7 +40825,7 @@ class _$AutonomousSection extends AutonomousSection {
       : super._();
 
   @override
-  AutonomousSection rebuild(void updates(AutonomousSectionBuilder b)) =>
+  AutonomousSection rebuild(void Function(AutonomousSectionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -41017,7 +41017,7 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(AutonomousSectionBuilder b)) {
+  void update(void Function(AutonomousSectionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -41077,7 +41077,7 @@ class _$FollowPoint extends FollowPoint {
   @override
   final String custom;
 
-  factory _$FollowPoint([void updates(FollowPointBuilder b)]) =>
+  factory _$FollowPoint([void Function(FollowPointBuilder b) updates]) =>
       (FollowPointBuilder()..update(updates)).build();
 
   _$FollowPoint._(
@@ -41097,7 +41097,7 @@ class _$FollowPoint extends FollowPoint {
       : super._();
 
   @override
-  FollowPoint rebuild(void updates(FollowPointBuilder b)) =>
+  FollowPoint rebuild(void Function(FollowPointBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -41265,7 +41265,7 @@ class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(FollowPointBuilder b)) {
+  void update(void Function(FollowPointBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -41318,7 +41318,7 @@ class _$Alignment extends Alignment {
   @override
   final String custom;
 
-  factory _$Alignment([void updates(AlignmentBuilder b)]) =>
+  factory _$Alignment([void Function(AlignmentBuilder b) updates]) =>
       (AlignmentBuilder()..update(updates)).build();
 
   _$Alignment._(
@@ -41336,7 +41336,7 @@ class _$Alignment extends Alignment {
       : super._();
 
   @override
-  Alignment rebuild(void updates(AlignmentBuilder b)) =>
+  Alignment rebuild(void Function(AlignmentBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -41488,7 +41488,7 @@ class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(AlignmentBuilder b)) {
+  void update(void Function(AlignmentBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -41551,7 +41551,7 @@ class _$StationKeepingExtended extends StationKeepingExtended {
   @override
   final String custom;
 
-  factory _$StationKeepingExtended([void updates(StationKeepingExtendedBuilder b)]) =>
+  factory _$StationKeepingExtended([void Function(StationKeepingExtendedBuilder b) updates]) =>
       (StationKeepingExtendedBuilder()..update(updates)).build();
 
   _$StationKeepingExtended._(
@@ -41575,7 +41575,7 @@ class _$StationKeepingExtended extends StationKeepingExtended {
       : super._();
 
   @override
-  StationKeepingExtended rebuild(void updates(StationKeepingExtendedBuilder b)) =>
+  StationKeepingExtended rebuild(void Function(StationKeepingExtendedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -41775,7 +41775,7 @@ class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  void update(void updates(StationKeepingExtendedBuilder b)) {
+  void update(void Function(StationKeepingExtendedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -41842,7 +41842,7 @@ class _$Magnetometer extends Magnetometer {
   @override
   final String custom;
 
-  factory _$Magnetometer([void updates(MagnetometerBuilder b)]) =>
+  factory _$Magnetometer([void Function(MagnetometerBuilder b) updates]) =>
       (MagnetometerBuilder()..update(updates)).build();
 
   _$Magnetometer._(
@@ -41865,7 +41865,7 @@ class _$Magnetometer extends Magnetometer {
       : super._();
 
   @override
-  Magnetometer rebuild(void updates(MagnetometerBuilder b)) =>
+  Magnetometer rebuild(void Function(MagnetometerBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -42057,7 +42057,7 @@ class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(MagnetometerBuilder b)) {
+  void update(void Function(MagnetometerBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -42121,7 +42121,7 @@ class _$VehicleState extends VehicleState {
   @override
   final double lastErrorTime;
 
-  factory _$VehicleState([void updates(VehicleStateBuilder b)]) =>
+  factory _$VehicleState([void Function(VehicleStateBuilder b) updates]) =>
       (VehicleStateBuilder()..update(updates)).build();
 
   _$VehicleState._(
@@ -42143,7 +42143,7 @@ class _$VehicleState extends VehicleState {
       : super._();
 
   @override
-  VehicleState rebuild(void updates(VehicleStateBuilder b)) =>
+  VehicleState rebuild(void Function(VehicleStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -42327,7 +42327,7 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(VehicleStateBuilder b)) {
+  void update(void Function(VehicleStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -42382,7 +42382,7 @@ class _$VehicleCommand extends VehicleCommand {
   @override
   final String info;
 
-  factory _$VehicleCommand([void updates(VehicleCommandBuilder b)]) =>
+  factory _$VehicleCommand([void Function(VehicleCommandBuilder b) updates]) =>
       (VehicleCommandBuilder()..update(updates)).build();
 
   _$VehicleCommand._(
@@ -42400,7 +42400,7 @@ class _$VehicleCommand extends VehicleCommand {
       : super._();
 
   @override
-  VehicleCommand rebuild(void updates(VehicleCommandBuilder b)) =>
+  VehicleCommand rebuild(void Function(VehicleCommandBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -42552,7 +42552,7 @@ class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(VehicleCommandBuilder b)) {
+  void update(void Function(VehicleCommandBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -42595,7 +42595,7 @@ class _$MonitorEntityState extends MonitorEntityState {
   @override
   final String entities;
 
-  factory _$MonitorEntityState([void updates(MonitorEntityStateBuilder b)]) =>
+  factory _$MonitorEntityState([void Function(MonitorEntityStateBuilder b) updates]) =>
       (MonitorEntityStateBuilder()..update(updates)).build();
 
   _$MonitorEntityState._(
@@ -42609,7 +42609,7 @@ class _$MonitorEntityState extends MonitorEntityState {
       : super._();
 
   @override
-  MonitorEntityState rebuild(void updates(MonitorEntityStateBuilder b)) =>
+  MonitorEntityState rebuild(void Function(MonitorEntityStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -42729,7 +42729,7 @@ class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(MonitorEntityStateBuilder b)) {
+  void update(void Function(MonitorEntityStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -42780,7 +42780,7 @@ class _$EntityMonitoringState extends EntityMonitoringState {
   @override
   final double lastErrorTime;
 
-  factory _$EntityMonitoringState([void updates(EntityMonitoringStateBuilder b)]) =>
+  factory _$EntityMonitoringState([void Function(EntityMonitoringStateBuilder b) updates]) =>
       (EntityMonitoringStateBuilder()..update(updates)).build();
 
   _$EntityMonitoringState._(
@@ -42800,7 +42800,7 @@ class _$EntityMonitoringState extends EntityMonitoringState {
       : super._();
 
   @override
-  EntityMonitoringState rebuild(void updates(EntityMonitoringStateBuilder b)) =>
+  EntityMonitoringState rebuild(void Function(EntityMonitoringStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -42968,7 +42968,7 @@ class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  void update(void updates(EntityMonitoringStateBuilder b)) {
+  void update(void Function(EntityMonitoringStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -43033,7 +43033,7 @@ class _$OperationalLimits extends OperationalLimits {
   @override
   final double length;
 
-  factory _$OperationalLimits([void updates(OperationalLimitsBuilder b)]) =>
+  factory _$OperationalLimits([void Function(OperationalLimitsBuilder b) updates]) =>
       (OperationalLimitsBuilder()..update(updates)).build();
 
   _$OperationalLimits._(
@@ -43057,7 +43057,7 @@ class _$OperationalLimits extends OperationalLimits {
       : super._();
 
   @override
-  OperationalLimits rebuild(void updates(OperationalLimitsBuilder b)) =>
+  OperationalLimits rebuild(void Function(OperationalLimitsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -43257,7 +43257,7 @@ class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(OperationalLimitsBuilder b)) {
+  void update(void Function(OperationalLimitsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -43302,7 +43302,7 @@ class _$GetOperationalLimits extends GetOperationalLimits {
   final int dstEnt;
 
 
-  factory _$GetOperationalLimits([void updates(GetOperationalLimitsBuilder b)]) =>
+  factory _$GetOperationalLimits([void Function(GetOperationalLimitsBuilder b) updates]) =>
       (GetOperationalLimitsBuilder()..update(updates)).build();
 
   _$GetOperationalLimits._(
@@ -43314,7 +43314,7 @@ class _$GetOperationalLimits extends GetOperationalLimits {
       : super._();
 
   @override
-  GetOperationalLimits rebuild(void updates(GetOperationalLimitsBuilder b)) =>
+  GetOperationalLimits rebuild(void Function(GetOperationalLimitsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -43418,7 +43418,7 @@ class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(GetOperationalLimitsBuilder b)) {
+  void update(void Function(GetOperationalLimitsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -43453,7 +43453,7 @@ class _$Calibration extends Calibration {
   @override
   final int duration;
 
-  factory _$Calibration([void updates(CalibrationBuilder b)]) =>
+  factory _$Calibration([void Function(CalibrationBuilder b) updates]) =>
       (CalibrationBuilder()..update(updates)).build();
 
   _$Calibration._(
@@ -43466,7 +43466,7 @@ class _$Calibration extends Calibration {
       : super._();
 
   @override
-  Calibration rebuild(void updates(CalibrationBuilder b)) =>
+  Calibration rebuild(void Function(CalibrationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -43578,7 +43578,7 @@ class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(CalibrationBuilder b)) {
+  void update(void Function(CalibrationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -43618,7 +43618,7 @@ class _$ControlLoops extends ControlLoops {
   @override
   final int scopeRef;
 
-  factory _$ControlLoops([void updates(ControlLoopsBuilder b)]) =>
+  factory _$ControlLoops([void Function(ControlLoopsBuilder b) updates]) =>
       (ControlLoopsBuilder()..update(updates)).build();
 
   _$ControlLoops._(
@@ -43633,7 +43633,7 @@ class _$ControlLoops extends ControlLoops {
       : super._();
 
   @override
-  ControlLoops rebuild(void updates(ControlLoopsBuilder b)) =>
+  ControlLoops rebuild(void Function(ControlLoopsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -43761,7 +43761,7 @@ class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(ControlLoopsBuilder b)) {
+  void update(void Function(ControlLoopsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -43799,7 +43799,7 @@ class _$VehicleMedium extends VehicleMedium {
   @override
   final VehicleMediumEnumMedium medium;
 
-  factory _$VehicleMedium([void updates(VehicleMediumBuilder b)]) =>
+  factory _$VehicleMedium([void Function(VehicleMediumBuilder b) updates]) =>
       (VehicleMediumBuilder()..update(updates)).build();
 
   _$VehicleMedium._(
@@ -43812,7 +43812,7 @@ class _$VehicleMedium extends VehicleMedium {
       : super._();
 
   @override
-  VehicleMedium rebuild(void updates(VehicleMediumBuilder b)) =>
+  VehicleMedium rebuild(void Function(VehicleMediumBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -43924,7 +43924,7 @@ class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(VehicleMediumBuilder b)) {
+  void update(void Function(VehicleMediumBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -43962,7 +43962,7 @@ class _$Collision extends Collision {
   @override
   final CollisionBitfieldType type;
 
-  factory _$Collision([void updates(CollisionBuilder b)]) =>
+  factory _$Collision([void Function(CollisionBuilder b) updates]) =>
       (CollisionBuilder()..update(updates)).build();
 
   _$Collision._(
@@ -43976,7 +43976,7 @@ class _$Collision extends Collision {
       : super._();
 
   @override
-  Collision rebuild(void updates(CollisionBuilder b)) =>
+  Collision rebuild(void Function(CollisionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -44096,7 +44096,7 @@ class CollisionBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(CollisionBuilder b)) {
+  void update(void Function(CollisionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -44143,7 +44143,7 @@ class _$FormState extends FormState {
   @override
   final FormStateEnumConvergMon convergMon;
 
-  factory _$FormState([void updates(FormStateBuilder b)]) =>
+  factory _$FormState([void Function(FormStateBuilder b) updates]) =>
       (FormStateBuilder()..update(updates)).build();
 
   _$FormState._(
@@ -44161,7 +44161,7 @@ class _$FormState extends FormState {
       : super._();
 
   @override
-  FormState rebuild(void updates(FormStateBuilder b)) =>
+  FormState rebuild(void Function(FormStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -44313,7 +44313,7 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(FormStateBuilder b)) {
+  void update(void Function(FormStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -44356,7 +44356,7 @@ class _$AutopilotMode extends AutopilotMode {
   @override
   final String mode;
 
-  factory _$AutopilotMode([void updates(AutopilotModeBuilder b)]) =>
+  factory _$AutopilotMode([void Function(AutopilotModeBuilder b) updates]) =>
       (AutopilotModeBuilder()..update(updates)).build();
 
   _$AutopilotMode._(
@@ -44370,7 +44370,7 @@ class _$AutopilotMode extends AutopilotMode {
       : super._();
 
   @override
-  AutopilotMode rebuild(void updates(AutopilotModeBuilder b)) =>
+  AutopilotMode rebuild(void Function(AutopilotModeBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -44490,7 +44490,7 @@ class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(AutopilotModeBuilder b)) {
+  void update(void Function(AutopilotModeBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -44541,7 +44541,7 @@ class _$FormationState extends FormationState {
   @override
   final FormationStateEnumConvergMon convergMon;
 
-  factory _$FormationState([void updates(FormationStateBuilder b)]) =>
+  factory _$FormationState([void Function(FormationStateBuilder b) updates]) =>
       (FormationStateBuilder()..update(updates)).build();
 
   _$FormationState._(
@@ -44561,7 +44561,7 @@ class _$FormationState extends FormationState {
       : super._();
 
   @override
-  FormationState rebuild(void updates(FormationStateBuilder b)) =>
+  FormationState rebuild(void Function(FormationStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -44729,7 +44729,7 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(FormationStateBuilder b)) {
+  void update(void Function(FormationStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -44778,7 +44778,7 @@ class _$ReportControl extends ReportControl {
   @override
   final String sysDst;
 
-  factory _$ReportControl([void updates(ReportControlBuilder b)]) =>
+  factory _$ReportControl([void Function(ReportControlBuilder b) updates]) =>
       (ReportControlBuilder()..update(updates)).build();
 
   _$ReportControl._(
@@ -44794,7 +44794,7 @@ class _$ReportControl extends ReportControl {
       : super._();
 
   @override
-  ReportControl rebuild(void updates(ReportControlBuilder b)) =>
+  ReportControl rebuild(void Function(ReportControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -44930,7 +44930,7 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ReportControlBuilder b)) {
+  void update(void Function(ReportControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -44987,7 +44987,7 @@ class _$StateReport extends StateReport {
   @override
   final int planChecksum;
 
-  factory _$StateReport([void updates(StateReportBuilder b)]) =>
+  factory _$StateReport([void Function(StateReportBuilder b) updates]) =>
       (StateReportBuilder()..update(updates)).build();
 
   _$StateReport._(
@@ -45009,7 +45009,7 @@ class _$StateReport extends StateReport {
       : super._();
 
   @override
-  StateReport rebuild(void updates(StateReportBuilder b)) =>
+  StateReport rebuild(void Function(StateReportBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -45193,7 +45193,7 @@ class StateReportBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(StateReportBuilder b)) {
+  void update(void Function(StateReportBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -45252,7 +45252,7 @@ class _$TransmissionRequest extends TransmissionRequest {
   @override
   final List<int> rawData;
 
-  factory _$TransmissionRequest([void updates(TransmissionRequestBuilder b)]) =>
+  factory _$TransmissionRequest([void Function(TransmissionRequestBuilder b) updates]) =>
       (TransmissionRequestBuilder()..update(updates)).build();
 
   _$TransmissionRequest._(
@@ -45272,7 +45272,7 @@ class _$TransmissionRequest extends TransmissionRequest {
       : super._();
 
   @override
-  TransmissionRequest rebuild(void updates(TransmissionRequestBuilder b)) =>
+  TransmissionRequest rebuild(void Function(TransmissionRequestBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -45440,7 +45440,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(TransmissionRequestBuilder b)) {
+  void update(void Function(TransmissionRequestBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -45487,7 +45487,7 @@ class _$TransmissionStatus extends TransmissionStatus {
   @override
   final String info;
 
-  factory _$TransmissionStatus([void updates(TransmissionStatusBuilder b)]) =>
+  factory _$TransmissionStatus([void Function(TransmissionStatusBuilder b) updates]) =>
       (TransmissionStatusBuilder()..update(updates)).build();
 
   _$TransmissionStatus._(
@@ -45502,7 +45502,7 @@ class _$TransmissionStatus extends TransmissionStatus {
       : super._();
 
   @override
-  TransmissionStatus rebuild(void updates(TransmissionStatusBuilder b)) =>
+  TransmissionStatus rebuild(void Function(TransmissionStatusBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -45630,7 +45630,7 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(TransmissionStatusBuilder b)) {
+  void update(void Function(TransmissionStatusBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -45674,7 +45674,7 @@ class _$SmsRequest extends SmsRequest {
   @override
   final String smsText;
 
-  factory _$SmsRequest([void updates(SmsRequestBuilder b)]) =>
+  factory _$SmsRequest([void Function(SmsRequestBuilder b) updates]) =>
       (SmsRequestBuilder()..update(updates)).build();
 
   _$SmsRequest._(
@@ -45690,7 +45690,7 @@ class _$SmsRequest extends SmsRequest {
       : super._();
 
   @override
-  SmsRequest rebuild(void updates(SmsRequestBuilder b)) =>
+  SmsRequest rebuild(void Function(SmsRequestBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -45826,7 +45826,7 @@ class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(SmsRequestBuilder b)) {
+  void update(void Function(SmsRequestBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -45869,7 +45869,7 @@ class _$SmsStatus extends SmsStatus {
   @override
   final String info;
 
-  factory _$SmsStatus([void updates(SmsStatusBuilder b)]) =>
+  factory _$SmsStatus([void Function(SmsStatusBuilder b) updates]) =>
       (SmsStatusBuilder()..update(updates)).build();
 
   _$SmsStatus._(
@@ -45884,7 +45884,7 @@ class _$SmsStatus extends SmsStatus {
       : super._();
 
   @override
-  SmsStatus rebuild(void updates(SmsStatusBuilder b)) =>
+  SmsStatus rebuild(void Function(SmsStatusBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -46012,7 +46012,7 @@ class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(SmsStatusBuilder b)) {
+  void update(void Function(SmsStatusBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -46050,7 +46050,7 @@ class _$VtolState extends VtolState {
   @override
   final VtolStateEnumState state;
 
-  factory _$VtolState([void updates(VtolStateBuilder b)]) =>
+  factory _$VtolState([void Function(VtolStateBuilder b) updates]) =>
       (VtolStateBuilder()..update(updates)).build();
 
   _$VtolState._(
@@ -46063,7 +46063,7 @@ class _$VtolState extends VtolState {
       : super._();
 
   @override
-  VtolState rebuild(void updates(VtolStateBuilder b)) =>
+  VtolState rebuild(void Function(VtolStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -46175,7 +46175,7 @@ class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(VtolStateBuilder b)) {
+  void update(void Function(VtolStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -46211,7 +46211,7 @@ class _$ArmingState extends ArmingState {
   @override
   final ArmingStateEnumState state;
 
-  factory _$ArmingState([void updates(ArmingStateBuilder b)]) =>
+  factory _$ArmingState([void Function(ArmingStateBuilder b) updates]) =>
       (ArmingStateBuilder()..update(updates)).build();
 
   _$ArmingState._(
@@ -46224,7 +46224,7 @@ class _$ArmingState extends ArmingState {
       : super._();
 
   @override
-  ArmingState rebuild(void updates(ArmingStateBuilder b)) =>
+  ArmingState rebuild(void Function(ArmingStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -46336,7 +46336,7 @@ class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(ArmingStateBuilder b)) {
+  void update(void Function(ArmingStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -46370,7 +46370,7 @@ class _$Abort extends Abort {
   final int dstEnt;
 
 
-  factory _$Abort([void updates(AbortBuilder b)]) =>
+  factory _$Abort([void Function(AbortBuilder b) updates]) =>
       (AbortBuilder()..update(updates)).build();
 
   _$Abort._(
@@ -46382,7 +46382,7 @@ class _$Abort extends Abort {
       : super._();
 
   @override
-  Abort rebuild(void updates(AbortBuilder b)) =>
+  Abort rebuild(void Function(AbortBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -46486,7 +46486,7 @@ class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(AbortBuilder b)) {
+  void update(void Function(AbortBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -46537,7 +46537,7 @@ class _$PlanSpecification extends PlanSpecification {
   @override
   final List<ImcMessage> endActions;
 
-  factory _$PlanSpecification([void updates(PlanSpecificationBuilder b)]) =>
+  factory _$PlanSpecification([void Function(PlanSpecificationBuilder b) updates]) =>
       (PlanSpecificationBuilder()..update(updates)).build();
 
   _$PlanSpecification._(
@@ -46558,7 +46558,7 @@ class _$PlanSpecification extends PlanSpecification {
       : super._();
 
   @override
-  PlanSpecification rebuild(void updates(PlanSpecificationBuilder b)) =>
+  PlanSpecification rebuild(void Function(PlanSpecificationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -46734,7 +46734,7 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(PlanSpecificationBuilder b)) {
+  void update(void Function(PlanSpecificationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -46784,7 +46784,7 @@ class _$PlanManeuver extends PlanManeuver {
   @override
   final List<ImcMessage> endActions;
 
-  factory _$PlanManeuver([void updates(PlanManeuverBuilder b)]) =>
+  factory _$PlanManeuver([void Function(PlanManeuverBuilder b) updates]) =>
       (PlanManeuverBuilder()..update(updates)).build();
 
   _$PlanManeuver._(
@@ -46800,7 +46800,7 @@ class _$PlanManeuver extends PlanManeuver {
       : super._();
 
   @override
-  PlanManeuver rebuild(void updates(PlanManeuverBuilder b)) =>
+  PlanManeuver rebuild(void Function(PlanManeuverBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -46936,7 +46936,7 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(PlanManeuverBuilder b)) {
+  void update(void Function(PlanManeuverBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -46981,7 +46981,7 @@ class _$PlanTransition extends PlanTransition {
   @override
   final List<ImcMessage> actions;
 
-  factory _$PlanTransition([void updates(PlanTransitionBuilder b)]) =>
+  factory _$PlanTransition([void Function(PlanTransitionBuilder b) updates]) =>
       (PlanTransitionBuilder()..update(updates)).build();
 
   _$PlanTransition._(
@@ -46997,7 +46997,7 @@ class _$PlanTransition extends PlanTransition {
       : super._();
 
   @override
-  PlanTransition rebuild(void updates(PlanTransitionBuilder b)) =>
+  PlanTransition rebuild(void Function(PlanTransitionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -47133,7 +47133,7 @@ class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(PlanTransitionBuilder b)) {
+  void update(void Function(PlanTransitionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -47174,7 +47174,7 @@ class _$EmergencyControl extends EmergencyControl {
   @override
   final PlanSpecification plan;
 
-  factory _$EmergencyControl([void updates(EmergencyControlBuilder b)]) =>
+  factory _$EmergencyControl([void Function(EmergencyControlBuilder b) updates]) =>
       (EmergencyControlBuilder()..update(updates)).build();
 
   _$EmergencyControl._(
@@ -47188,7 +47188,7 @@ class _$EmergencyControl extends EmergencyControl {
       : super._();
 
   @override
-  EmergencyControl rebuild(void updates(EmergencyControlBuilder b)) =>
+  EmergencyControl rebuild(void Function(EmergencyControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -47308,7 +47308,7 @@ class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(EmergencyControlBuilder b)) {
+  void update(void Function(EmergencyControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -47349,7 +47349,7 @@ class _$EmergencyControlState extends EmergencyControlState {
   @override
   final int commLevel;
 
-  factory _$EmergencyControlState([void updates(EmergencyControlStateBuilder b)]) =>
+  factory _$EmergencyControlState([void Function(EmergencyControlStateBuilder b) updates]) =>
       (EmergencyControlStateBuilder()..update(updates)).build();
 
   _$EmergencyControlState._(
@@ -47364,7 +47364,7 @@ class _$EmergencyControlState extends EmergencyControlState {
       : super._();
 
   @override
-  EmergencyControlState rebuild(void updates(EmergencyControlStateBuilder b)) =>
+  EmergencyControlState rebuild(void Function(EmergencyControlStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -47492,7 +47492,7 @@ class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  void update(void updates(EmergencyControlStateBuilder b)) {
+  void update(void Function(EmergencyControlStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -47540,7 +47540,7 @@ class _$PlanDB extends PlanDB {
   @override
   final String info;
 
-  factory _$PlanDB([void updates(PlanDBBuilder b)]) =>
+  factory _$PlanDB([void Function(PlanDBBuilder b) updates]) =>
       (PlanDBBuilder()..update(updates)).build();
 
   _$PlanDB._(
@@ -47558,7 +47558,7 @@ class _$PlanDB extends PlanDB {
       : super._();
 
   @override
-  PlanDB rebuild(void updates(PlanDBBuilder b)) =>
+  PlanDB rebuild(void Function(PlanDBBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -47710,7 +47710,7 @@ class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  void update(void updates(PlanDBBuilder b)) {
+  void update(void Function(PlanDBBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -47763,7 +47763,7 @@ class _$PlanDBState extends PlanDBState {
   @override
   final List<PlanDBInformation> plansInfo;
 
-  factory _$PlanDBState([void updates(PlanDBStateBuilder b)]) =>
+  factory _$PlanDBState([void Function(PlanDBStateBuilder b) updates]) =>
       (PlanDBStateBuilder()..update(updates)).build();
 
   _$PlanDBState._(
@@ -47782,7 +47782,7 @@ class _$PlanDBState extends PlanDBState {
       : super._();
 
   @override
-  PlanDBState rebuild(void updates(PlanDBStateBuilder b)) =>
+  PlanDBState rebuild(void Function(PlanDBStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -47942,7 +47942,7 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(PlanDBStateBuilder b)) {
+  void update(void Function(PlanDBStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -47994,7 +47994,7 @@ class _$PlanDBInformation extends PlanDBInformation {
   @override
   final List<int> md5;
 
-  factory _$PlanDBInformation([void updates(PlanDBInformationBuilder b)]) =>
+  factory _$PlanDBInformation([void Function(PlanDBInformationBuilder b) updates]) =>
       (PlanDBInformationBuilder()..update(updates)).build();
 
   _$PlanDBInformation._(
@@ -48012,7 +48012,7 @@ class _$PlanDBInformation extends PlanDBInformation {
       : super._();
 
   @override
-  PlanDBInformation rebuild(void updates(PlanDBInformationBuilder b)) =>
+  PlanDBInformation rebuild(void Function(PlanDBInformationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -48164,7 +48164,7 @@ class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(PlanDBInformationBuilder b)) {
+  void update(void Function(PlanDBInformationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -48217,7 +48217,7 @@ class _$PlanControl extends PlanControl {
   @override
   final String info;
 
-  factory _$PlanControl([void updates(PlanControlBuilder b)]) =>
+  factory _$PlanControl([void Function(PlanControlBuilder b) updates]) =>
       (PlanControlBuilder()..update(updates)).build();
 
   _$PlanControl._(
@@ -48236,7 +48236,7 @@ class _$PlanControl extends PlanControl {
       : super._();
 
   @override
-  PlanControl rebuild(void updates(PlanControlBuilder b)) =>
+  PlanControl rebuild(void Function(PlanControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -48396,7 +48396,7 @@ class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(PlanControlBuilder b)) {
+  void update(void Function(PlanControlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -48452,7 +48452,7 @@ class _$PlanControlState extends PlanControlState {
   @override
   final PlanControlStateEnumLastOutcome lastOutcome;
 
-  factory _$PlanControlState([void updates(PlanControlStateBuilder b)]) =>
+  factory _$PlanControlState([void Function(PlanControlStateBuilder b) updates]) =>
       (PlanControlStateBuilder()..update(updates)).build();
 
   _$PlanControlState._(
@@ -48472,7 +48472,7 @@ class _$PlanControlState extends PlanControlState {
       : super._();
 
   @override
-  PlanControlState rebuild(void updates(PlanControlStateBuilder b)) =>
+  PlanControlState rebuild(void Function(PlanControlStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -48640,7 +48640,7 @@ class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(PlanControlStateBuilder b)) {
+  void update(void Function(PlanControlStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -48689,7 +48689,7 @@ class _$PlanVariable extends PlanVariable {
   @override
   final PlanVariableEnumAccess access;
 
-  factory _$PlanVariable([void updates(PlanVariableBuilder b)]) =>
+  factory _$PlanVariable([void Function(PlanVariableBuilder b) updates]) =>
       (PlanVariableBuilder()..update(updates)).build();
 
   _$PlanVariable._(
@@ -48705,7 +48705,7 @@ class _$PlanVariable extends PlanVariable {
       : super._();
 
   @override
-  PlanVariable rebuild(void updates(PlanVariableBuilder b)) =>
+  PlanVariable rebuild(void Function(PlanVariableBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -48841,7 +48841,7 @@ class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(PlanVariableBuilder b)) {
+  void update(void Function(PlanVariableBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -48886,7 +48886,7 @@ class _$PlanGeneration extends PlanGeneration {
   @override
   final String params;
 
-  factory _$PlanGeneration([void updates(PlanGenerationBuilder b)]) =>
+  factory _$PlanGeneration([void Function(PlanGenerationBuilder b) updates]) =>
       (PlanGenerationBuilder()..update(updates)).build();
 
   _$PlanGeneration._(
@@ -48902,7 +48902,7 @@ class _$PlanGeneration extends PlanGeneration {
       : super._();
 
   @override
-  PlanGeneration rebuild(void updates(PlanGenerationBuilder b)) =>
+  PlanGeneration rebuild(void Function(PlanGenerationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -49038,7 +49038,7 @@ class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(PlanGenerationBuilder b)) {
+  void update(void Function(PlanGenerationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -49115,7 +49115,7 @@ class _$LeaderState extends LeaderState {
   @override
   final double svz;
 
-  factory _$LeaderState([void updates(LeaderStateBuilder b)]) =>
+  factory _$LeaderState([void Function(LeaderStateBuilder b) updates]) =>
       (LeaderStateBuilder()..update(updates)).build();
 
   _$LeaderState._(
@@ -49147,7 +49147,7 @@ class _$LeaderState extends LeaderState {
       : super._();
 
   @override
-  LeaderState rebuild(void updates(LeaderStateBuilder b)) =>
+  LeaderState rebuild(void Function(LeaderStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -49411,7 +49411,7 @@ class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(LeaderStateBuilder b)) {
+  void update(void Function(LeaderStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -49478,7 +49478,7 @@ class _$PlanStatistics extends PlanStatistics {
   @override
   final String fuel;
 
-  factory _$PlanStatistics([void updates(PlanStatisticsBuilder b)]) =>
+  factory _$PlanStatistics([void Function(PlanStatisticsBuilder b) updates]) =>
       (PlanStatisticsBuilder()..update(updates)).build();
 
   _$PlanStatistics._(
@@ -49497,7 +49497,7 @@ class _$PlanStatistics extends PlanStatistics {
       : super._();
 
   @override
-  PlanStatistics rebuild(void updates(PlanStatisticsBuilder b)) =>
+  PlanStatistics rebuild(void Function(PlanStatisticsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -49657,7 +49657,7 @@ class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(PlanStatisticsBuilder b)) {
+  void update(void Function(PlanStatisticsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -49715,7 +49715,7 @@ class _$ReportedState extends ReportedState {
   @override
   final ReportedStateEnumSType sType;
 
-  factory _$ReportedState([void updates(ReportedStateBuilder b)]) =>
+  factory _$ReportedState([void Function(ReportedStateBuilder b) updates]) =>
       (ReportedStateBuilder()..update(updates)).build();
 
   _$ReportedState._(
@@ -49736,7 +49736,7 @@ class _$ReportedState extends ReportedState {
       : super._();
 
   @override
-  ReportedState rebuild(void updates(ReportedStateBuilder b)) =>
+  ReportedState rebuild(void Function(ReportedStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -49912,7 +49912,7 @@ class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ReportedStateBuilder b)) {
+  void update(void Function(ReportedStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -49968,7 +49968,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
   @override
   final String data;
 
-  factory _$RemoteSensorInfo([void updates(RemoteSensorInfoBuilder b)]) =>
+  factory _$RemoteSensorInfo([void Function(RemoteSensorInfoBuilder b) updates]) =>
       (RemoteSensorInfoBuilder()..update(updates)).build();
 
   _$RemoteSensorInfo._(
@@ -49987,7 +49987,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
       : super._();
 
   @override
-  RemoteSensorInfo rebuild(void updates(RemoteSensorInfoBuilder b)) =>
+  RemoteSensorInfo rebuild(void Function(RemoteSensorInfoBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -50147,7 +50147,7 @@ class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(RemoteSensorInfoBuilder b)) {
+  void update(void Function(RemoteSensorInfoBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -50191,7 +50191,7 @@ class _$Map extends Map {
   @override
   final List<MapFeature> features;
 
-  factory _$Map([void updates(MapBuilder b)]) =>
+  factory _$Map([void Function(MapBuilder b) updates]) =>
       (MapBuilder()..update(updates)).build();
 
   _$Map._(
@@ -50205,7 +50205,7 @@ class _$Map extends Map {
       : super._();
 
   @override
-  Map rebuild(void updates(MapBuilder b)) =>
+  Map rebuild(void Function(MapBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -50325,7 +50325,7 @@ class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  void update(void updates(MapBuilder b)) {
+  void update(void Function(MapBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -50372,7 +50372,7 @@ class _$MapFeature extends MapFeature {
   @override
   final List<MapPoint> feature;
 
-  factory _$MapFeature([void updates(MapFeatureBuilder b)]) =>
+  factory _$MapFeature([void Function(MapFeatureBuilder b) updates]) =>
       (MapFeatureBuilder()..update(updates)).build();
 
   _$MapFeature._(
@@ -50390,7 +50390,7 @@ class _$MapFeature extends MapFeature {
       : super._();
 
   @override
-  MapFeature rebuild(void updates(MapFeatureBuilder b)) =>
+  MapFeature rebuild(void Function(MapFeatureBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -50542,7 +50542,7 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(MapFeatureBuilder b)) {
+  void update(void Function(MapFeatureBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -50587,7 +50587,7 @@ class _$MapPoint extends MapPoint {
   @override
   final double alt;
 
-  factory _$MapPoint([void updates(MapPointBuilder b)]) =>
+  factory _$MapPoint([void Function(MapPointBuilder b) updates]) =>
       (MapPointBuilder()..update(updates)).build();
 
   _$MapPoint._(
@@ -50602,7 +50602,7 @@ class _$MapPoint extends MapPoint {
       : super._();
 
   @override
-  MapPoint rebuild(void updates(MapPointBuilder b)) =>
+  MapPoint rebuild(void Function(MapPointBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -50730,7 +50730,7 @@ class MapPointBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(MapPointBuilder b)) {
+  void update(void Function(MapPointBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -50772,7 +50772,7 @@ class _$CcuEvent extends CcuEvent {
   @override
   final ImcMessage arg;
 
-  factory _$CcuEvent([void updates(CcuEventBuilder b)]) =>
+  factory _$CcuEvent([void Function(CcuEventBuilder b) updates]) =>
       (CcuEventBuilder()..update(updates)).build();
 
   _$CcuEvent._(
@@ -50787,7 +50787,7 @@ class _$CcuEvent extends CcuEvent {
       : super._();
 
   @override
-  CcuEvent rebuild(void updates(CcuEventBuilder b)) =>
+  CcuEvent rebuild(void Function(CcuEventBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -50915,7 +50915,7 @@ class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(CcuEventBuilder b)) {
+  void update(void Function(CcuEventBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -50955,7 +50955,7 @@ class _$VehicleLinks extends VehicleLinks {
   @override
   final List<Announce> links;
 
-  factory _$VehicleLinks([void updates(VehicleLinksBuilder b)]) =>
+  factory _$VehicleLinks([void Function(VehicleLinksBuilder b) updates]) =>
       (VehicleLinksBuilder()..update(updates)).build();
 
   _$VehicleLinks._(
@@ -50969,7 +50969,7 @@ class _$VehicleLinks extends VehicleLinks {
       : super._();
 
   @override
-  VehicleLinks rebuild(void updates(VehicleLinksBuilder b)) =>
+  VehicleLinks rebuild(void Function(VehicleLinksBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -51089,7 +51089,7 @@ class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(VehicleLinksBuilder b)) {
+  void update(void Function(VehicleLinksBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -51130,7 +51130,7 @@ class _$TrexObservation extends TrexObservation {
   @override
   final String attributes;
 
-  factory _$TrexObservation([void updates(TrexObservationBuilder b)]) =>
+  factory _$TrexObservation([void Function(TrexObservationBuilder b) updates]) =>
       (TrexObservationBuilder()..update(updates)).build();
 
   _$TrexObservation._(
@@ -51145,7 +51145,7 @@ class _$TrexObservation extends TrexObservation {
       : super._();
 
   @override
-  TrexObservation rebuild(void updates(TrexObservationBuilder b)) =>
+  TrexObservation rebuild(void Function(TrexObservationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -51273,7 +51273,7 @@ class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(TrexObservationBuilder b)) {
+  void update(void Function(TrexObservationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -51315,7 +51315,7 @@ class _$TrexCommand extends TrexCommand {
   @override
   final String goalXml;
 
-  factory _$TrexCommand([void updates(TrexCommandBuilder b)]) =>
+  factory _$TrexCommand([void Function(TrexCommandBuilder b) updates]) =>
       (TrexCommandBuilder()..update(updates)).build();
 
   _$TrexCommand._(
@@ -51330,7 +51330,7 @@ class _$TrexCommand extends TrexCommand {
       : super._();
 
   @override
-  TrexCommand rebuild(void updates(TrexCommandBuilder b)) =>
+  TrexCommand rebuild(void Function(TrexCommandBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -51458,7 +51458,7 @@ class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(TrexCommandBuilder b)) {
+  void update(void Function(TrexCommandBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -51500,7 +51500,7 @@ class _$TrexOperation extends TrexOperation {
   @override
   final TrexToken token;
 
-  factory _$TrexOperation([void updates(TrexOperationBuilder b)]) =>
+  factory _$TrexOperation([void Function(TrexOperationBuilder b) updates]) =>
       (TrexOperationBuilder()..update(updates)).build();
 
   _$TrexOperation._(
@@ -51515,7 +51515,7 @@ class _$TrexOperation extends TrexOperation {
       : super._();
 
   @override
-  TrexOperation rebuild(void updates(TrexOperationBuilder b)) =>
+  TrexOperation rebuild(void Function(TrexOperationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -51643,7 +51643,7 @@ class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(TrexOperationBuilder b)) {
+  void update(void Function(TrexOperationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -51687,7 +51687,7 @@ class _$TrexAttribute extends TrexAttribute {
   @override
   final String max;
 
-  factory _$TrexAttribute([void updates(TrexAttributeBuilder b)]) =>
+  factory _$TrexAttribute([void Function(TrexAttributeBuilder b) updates]) =>
       (TrexAttributeBuilder()..update(updates)).build();
 
   _$TrexAttribute._(
@@ -51703,7 +51703,7 @@ class _$TrexAttribute extends TrexAttribute {
       : super._();
 
   @override
-  TrexAttribute rebuild(void updates(TrexAttributeBuilder b)) =>
+  TrexAttribute rebuild(void Function(TrexAttributeBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -51839,7 +51839,7 @@ class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(TrexAttributeBuilder b)) {
+  void update(void Function(TrexAttributeBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -51882,7 +51882,7 @@ class _$TrexToken extends TrexToken {
   @override
   final List<TrexAttribute> attributes;
 
-  factory _$TrexToken([void updates(TrexTokenBuilder b)]) =>
+  factory _$TrexToken([void Function(TrexTokenBuilder b) updates]) =>
       (TrexTokenBuilder()..update(updates)).build();
 
   _$TrexToken._(
@@ -51897,7 +51897,7 @@ class _$TrexToken extends TrexToken {
       : super._();
 
   @override
-  TrexToken rebuild(void updates(TrexTokenBuilder b)) =>
+  TrexToken rebuild(void Function(TrexTokenBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -52025,7 +52025,7 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(TrexTokenBuilder b)) {
+  void update(void Function(TrexTokenBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -52065,7 +52065,7 @@ class _$TrexPlan extends TrexPlan {
   @override
   final List<TrexToken> tokens;
 
-  factory _$TrexPlan([void updates(TrexPlanBuilder b)]) =>
+  factory _$TrexPlan([void Function(TrexPlanBuilder b) updates]) =>
       (TrexPlanBuilder()..update(updates)).build();
 
   _$TrexPlan._(
@@ -52079,7 +52079,7 @@ class _$TrexPlan extends TrexPlan {
       : super._();
 
   @override
-  TrexPlan rebuild(void updates(TrexPlanBuilder b)) =>
+  TrexPlan rebuild(void Function(TrexPlanBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -52199,7 +52199,7 @@ class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(TrexPlanBuilder b)) {
+  void update(void Function(TrexPlanBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -52238,7 +52238,7 @@ class _$Event extends Event {
   @override
   final String data;
 
-  factory _$Event([void updates(EventBuilder b)]) =>
+  factory _$Event([void Function(EventBuilder b) updates]) =>
       (EventBuilder()..update(updates)).build();
 
   _$Event._(
@@ -52252,7 +52252,7 @@ class _$Event extends Event {
       : super._();
 
   @override
-  Event rebuild(void updates(EventBuilder b)) =>
+  Event rebuild(void Function(EventBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -52372,7 +52372,7 @@ class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  void update(void updates(EventBuilder b)) {
+  void update(void Function(EventBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -52411,7 +52411,7 @@ class _$CompressedImage extends CompressedImage {
   @override
   final List<int> data;
 
-  factory _$CompressedImage([void updates(CompressedImageBuilder b)]) =>
+  factory _$CompressedImage([void Function(CompressedImageBuilder b) updates]) =>
       (CompressedImageBuilder()..update(updates)).build();
 
   _$CompressedImage._(
@@ -52425,7 +52425,7 @@ class _$CompressedImage extends CompressedImage {
       : super._();
 
   @override
-  CompressedImage rebuild(void updates(CompressedImageBuilder b)) =>
+  CompressedImage rebuild(void Function(CompressedImageBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -52545,7 +52545,7 @@ class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(CompressedImageBuilder b)) {
+  void update(void Function(CompressedImageBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -52588,7 +52588,7 @@ class _$ImageTxSettings extends ImageTxSettings {
   @override
   final int tsize;
 
-  factory _$ImageTxSettings([void updates(ImageTxSettingsBuilder b)]) =>
+  factory _$ImageTxSettings([void Function(ImageTxSettingsBuilder b) updates]) =>
       (ImageTxSettingsBuilder()..update(updates)).build();
 
   _$ImageTxSettings._(
@@ -52604,7 +52604,7 @@ class _$ImageTxSettings extends ImageTxSettings {
       : super._();
 
   @override
-  ImageTxSettings rebuild(void updates(ImageTxSettingsBuilder b)) =>
+  ImageTxSettings rebuild(void Function(ImageTxSettingsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -52740,7 +52740,7 @@ class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(ImageTxSettingsBuilder b)) {
+  void update(void Function(ImageTxSettingsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -52787,7 +52787,7 @@ class _$RemoteState extends RemoteState {
   @override
   final double psi;
 
-  factory _$RemoteState([void updates(RemoteStateBuilder b)]) =>
+  factory _$RemoteState([void Function(RemoteStateBuilder b) updates]) =>
       (RemoteStateBuilder()..update(updates)).build();
 
   _$RemoteState._(
@@ -52804,7 +52804,7 @@ class _$RemoteState extends RemoteState {
       : super._();
 
   @override
-  RemoteState rebuild(void updates(RemoteStateBuilder b)) =>
+  RemoteState rebuild(void Function(RemoteStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -52948,7 +52948,7 @@ class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(RemoteStateBuilder b)) {
+  void update(void Function(RemoteStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -53000,7 +53000,7 @@ class _$Target extends Target {
   @override
   final double sog;
 
-  factory _$Target([void updates(TargetBuilder b)]) =>
+  factory _$Target([void Function(TargetBuilder b) updates]) =>
       (TargetBuilder()..update(updates)).build();
 
   _$Target._(
@@ -53019,7 +53019,7 @@ class _$Target extends Target {
       : super._();
 
   @override
-  Target rebuild(void updates(TargetBuilder b)) =>
+  Target rebuild(void Function(TargetBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -53179,7 +53179,7 @@ class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  void update(void updates(TargetBuilder b)) {
+  void update(void Function(TargetBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -53223,7 +53223,7 @@ class _$EntityParameter extends EntityParameter {
   @override
   final String value;
 
-  factory _$EntityParameter([void updates(EntityParameterBuilder b)]) =>
+  factory _$EntityParameter([void Function(EntityParameterBuilder b) updates]) =>
       (EntityParameterBuilder()..update(updates)).build();
 
   _$EntityParameter._(
@@ -53237,7 +53237,7 @@ class _$EntityParameter extends EntityParameter {
       : super._();
 
   @override
-  EntityParameter rebuild(void updates(EntityParameterBuilder b)) =>
+  EntityParameter rebuild(void Function(EntityParameterBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -53357,7 +53357,7 @@ class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(EntityParameterBuilder b)) {
+  void update(void Function(EntityParameterBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -53396,7 +53396,7 @@ class _$EntityParameters extends EntityParameters {
   @override
   final List<EntityParameter> params;
 
-  factory _$EntityParameters([void updates(EntityParametersBuilder b)]) =>
+  factory _$EntityParameters([void Function(EntityParametersBuilder b) updates]) =>
       (EntityParametersBuilder()..update(updates)).build();
 
   _$EntityParameters._(
@@ -53410,7 +53410,7 @@ class _$EntityParameters extends EntityParameters {
       : super._();
 
   @override
-  EntityParameters rebuild(void updates(EntityParametersBuilder b)) =>
+  EntityParameters rebuild(void Function(EntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -53530,7 +53530,7 @@ class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(EntityParametersBuilder b)) {
+  void update(void Function(EntityParametersBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -53571,7 +53571,7 @@ class _$QueryEntityParameters extends QueryEntityParameters {
   @override
   final String scope;
 
-  factory _$QueryEntityParameters([void updates(QueryEntityParametersBuilder b)]) =>
+  factory _$QueryEntityParameters([void Function(QueryEntityParametersBuilder b) updates]) =>
       (QueryEntityParametersBuilder()..update(updates)).build();
 
   _$QueryEntityParameters._(
@@ -53586,7 +53586,7 @@ class _$QueryEntityParameters extends QueryEntityParameters {
       : super._();
 
   @override
-  QueryEntityParameters rebuild(void updates(QueryEntityParametersBuilder b)) =>
+  QueryEntityParameters rebuild(void Function(QueryEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -53714,7 +53714,7 @@ class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  void update(void updates(QueryEntityParametersBuilder b)) {
+  void update(void Function(QueryEntityParametersBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -53754,7 +53754,7 @@ class _$SetEntityParameters extends SetEntityParameters {
   @override
   final List<EntityParameter> params;
 
-  factory _$SetEntityParameters([void updates(SetEntityParametersBuilder b)]) =>
+  factory _$SetEntityParameters([void Function(SetEntityParametersBuilder b) updates]) =>
       (SetEntityParametersBuilder()..update(updates)).build();
 
   _$SetEntityParameters._(
@@ -53768,7 +53768,7 @@ class _$SetEntityParameters extends SetEntityParameters {
       : super._();
 
   @override
-  SetEntityParameters rebuild(void updates(SetEntityParametersBuilder b)) =>
+  SetEntityParameters rebuild(void Function(SetEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -53888,7 +53888,7 @@ class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(SetEntityParametersBuilder b)) {
+  void update(void Function(SetEntityParametersBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -53925,7 +53925,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
   @override
   final String name;
 
-  factory _$SaveEntityParameters([void updates(SaveEntityParametersBuilder b)]) =>
+  factory _$SaveEntityParameters([void Function(SaveEntityParametersBuilder b) updates]) =>
       (SaveEntityParametersBuilder()..update(updates)).build();
 
   _$SaveEntityParameters._(
@@ -53938,7 +53938,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
       : super._();
 
   @override
-  SaveEntityParameters rebuild(void updates(SaveEntityParametersBuilder b)) =>
+  SaveEntityParameters rebuild(void Function(SaveEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -54050,7 +54050,7 @@ class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(SaveEntityParametersBuilder b)) {
+  void update(void Function(SaveEntityParametersBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -54086,7 +54086,7 @@ class _$CreateSession extends CreateSession {
   @override
   final int timeout;
 
-  factory _$CreateSession([void updates(CreateSessionBuilder b)]) =>
+  factory _$CreateSession([void Function(CreateSessionBuilder b) updates]) =>
       (CreateSessionBuilder()..update(updates)).build();
 
   _$CreateSession._(
@@ -54099,7 +54099,7 @@ class _$CreateSession extends CreateSession {
       : super._();
 
   @override
-  CreateSession rebuild(void updates(CreateSessionBuilder b)) =>
+  CreateSession rebuild(void Function(CreateSessionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -54211,7 +54211,7 @@ class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(CreateSessionBuilder b)) {
+  void update(void Function(CreateSessionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -54247,7 +54247,7 @@ class _$CloseSession extends CloseSession {
   @override
   final int sessid;
 
-  factory _$CloseSession([void updates(CloseSessionBuilder b)]) =>
+  factory _$CloseSession([void Function(CloseSessionBuilder b) updates]) =>
       (CloseSessionBuilder()..update(updates)).build();
 
   _$CloseSession._(
@@ -54260,7 +54260,7 @@ class _$CloseSession extends CloseSession {
       : super._();
 
   @override
-  CloseSession rebuild(void updates(CloseSessionBuilder b)) =>
+  CloseSession rebuild(void Function(CloseSessionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -54372,7 +54372,7 @@ class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(CloseSessionBuilder b)) {
+  void update(void Function(CloseSessionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -54410,7 +54410,7 @@ class _$SessionSubscription extends SessionSubscription {
   @override
   final String messages;
 
-  factory _$SessionSubscription([void updates(SessionSubscriptionBuilder b)]) =>
+  factory _$SessionSubscription([void Function(SessionSubscriptionBuilder b) updates]) =>
       (SessionSubscriptionBuilder()..update(updates)).build();
 
   _$SessionSubscription._(
@@ -54424,7 +54424,7 @@ class _$SessionSubscription extends SessionSubscription {
       : super._();
 
   @override
-  SessionSubscription rebuild(void updates(SessionSubscriptionBuilder b)) =>
+  SessionSubscription rebuild(void Function(SessionSubscriptionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -54544,7 +54544,7 @@ class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(SessionSubscriptionBuilder b)) {
+  void update(void Function(SessionSubscriptionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -54581,7 +54581,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
   @override
   final int sessid;
 
-  factory _$SessionKeepAlive([void updates(SessionKeepAliveBuilder b)]) =>
+  factory _$SessionKeepAlive([void Function(SessionKeepAliveBuilder b) updates]) =>
       (SessionKeepAliveBuilder()..update(updates)).build();
 
   _$SessionKeepAlive._(
@@ -54594,7 +54594,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
       : super._();
 
   @override
-  SessionKeepAlive rebuild(void updates(SessionKeepAliveBuilder b)) =>
+  SessionKeepAlive rebuild(void Function(SessionKeepAliveBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -54706,7 +54706,7 @@ class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(SessionKeepAliveBuilder b)) {
+  void update(void Function(SessionKeepAliveBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -54744,7 +54744,7 @@ class _$SessionStatus extends SessionStatus {
   @override
   final SessionStatusEnumStatus status;
 
-  factory _$SessionStatus([void updates(SessionStatusBuilder b)]) =>
+  factory _$SessionStatus([void Function(SessionStatusBuilder b) updates]) =>
       (SessionStatusBuilder()..update(updates)).build();
 
   _$SessionStatus._(
@@ -54758,7 +54758,7 @@ class _$SessionStatus extends SessionStatus {
       : super._();
 
   @override
-  SessionStatus rebuild(void updates(SessionStatusBuilder b)) =>
+  SessionStatus rebuild(void Function(SessionStatusBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -54878,7 +54878,7 @@ class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(SessionStatusBuilder b)) {
+  void update(void Function(SessionStatusBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -54915,7 +54915,7 @@ class _$PushEntityParameters extends PushEntityParameters {
   @override
   final String name;
 
-  factory _$PushEntityParameters([void updates(PushEntityParametersBuilder b)]) =>
+  factory _$PushEntityParameters([void Function(PushEntityParametersBuilder b) updates]) =>
       (PushEntityParametersBuilder()..update(updates)).build();
 
   _$PushEntityParameters._(
@@ -54928,7 +54928,7 @@ class _$PushEntityParameters extends PushEntityParameters {
       : super._();
 
   @override
-  PushEntityParameters rebuild(void updates(PushEntityParametersBuilder b)) =>
+  PushEntityParameters rebuild(void Function(PushEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -55040,7 +55040,7 @@ class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(PushEntityParametersBuilder b)) {
+  void update(void Function(PushEntityParametersBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -55076,7 +55076,7 @@ class _$PopEntityParameters extends PopEntityParameters {
   @override
   final String name;
 
-  factory _$PopEntityParameters([void updates(PopEntityParametersBuilder b)]) =>
+  factory _$PopEntityParameters([void Function(PopEntityParametersBuilder b) updates]) =>
       (PopEntityParametersBuilder()..update(updates)).build();
 
   _$PopEntityParameters._(
@@ -55089,7 +55089,7 @@ class _$PopEntityParameters extends PopEntityParameters {
       : super._();
 
   @override
-  PopEntityParameters rebuild(void updates(PopEntityParametersBuilder b)) =>
+  PopEntityParameters rebuild(void Function(PopEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -55201,7 +55201,7 @@ class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(PopEntityParametersBuilder b)) {
+  void update(void Function(PopEntityParametersBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -55239,7 +55239,7 @@ class _$IoEvent extends IoEvent {
   @override
   final String error;
 
-  factory _$IoEvent([void updates(IoEventBuilder b)]) =>
+  factory _$IoEvent([void Function(IoEventBuilder b) updates]) =>
       (IoEventBuilder()..update(updates)).build();
 
   _$IoEvent._(
@@ -55253,7 +55253,7 @@ class _$IoEvent extends IoEvent {
       : super._();
 
   @override
-  IoEvent rebuild(void updates(IoEventBuilder b)) =>
+  IoEvent rebuild(void Function(IoEventBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -55373,7 +55373,7 @@ class IoEventBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(IoEventBuilder b)) {
+  void update(void Function(IoEventBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -55416,7 +55416,7 @@ class _$UamTxFrame extends UamTxFrame {
   @override
   final List<int> data;
 
-  factory _$UamTxFrame([void updates(UamTxFrameBuilder b)]) =>
+  factory _$UamTxFrame([void Function(UamTxFrameBuilder b) updates]) =>
       (UamTxFrameBuilder()..update(updates)).build();
 
   _$UamTxFrame._(
@@ -55432,7 +55432,7 @@ class _$UamTxFrame extends UamTxFrame {
       : super._();
 
   @override
-  UamTxFrame rebuild(void updates(UamTxFrameBuilder b)) =>
+  UamTxFrame rebuild(void Function(UamTxFrameBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -55568,7 +55568,7 @@ class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(UamTxFrameBuilder b)) {
+  void update(void Function(UamTxFrameBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -55613,7 +55613,7 @@ class _$UamRxFrame extends UamRxFrame {
   @override
   final List<int> data;
 
-  factory _$UamRxFrame([void updates(UamRxFrameBuilder b)]) =>
+  factory _$UamRxFrame([void Function(UamRxFrameBuilder b) updates]) =>
       (UamRxFrameBuilder()..update(updates)).build();
 
   _$UamRxFrame._(
@@ -55629,7 +55629,7 @@ class _$UamRxFrame extends UamRxFrame {
       : super._();
 
   @override
-  UamRxFrame rebuild(void updates(UamRxFrameBuilder b)) =>
+  UamRxFrame rebuild(void Function(UamRxFrameBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -55765,7 +55765,7 @@ class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(UamRxFrameBuilder b)) {
+  void update(void Function(UamRxFrameBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -55808,7 +55808,7 @@ class _$UamTxStatus extends UamTxStatus {
   @override
   final String error;
 
-  factory _$UamTxStatus([void updates(UamTxStatusBuilder b)]) =>
+  factory _$UamTxStatus([void Function(UamTxStatusBuilder b) updates]) =>
       (UamTxStatusBuilder()..update(updates)).build();
 
   _$UamTxStatus._(
@@ -55823,7 +55823,7 @@ class _$UamTxStatus extends UamTxStatus {
       : super._();
 
   @override
-  UamTxStatus rebuild(void updates(UamTxStatusBuilder b)) =>
+  UamTxStatus rebuild(void Function(UamTxStatusBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -55951,7 +55951,7 @@ class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(UamTxStatusBuilder b)) {
+  void update(void Function(UamTxStatusBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -55993,7 +55993,7 @@ class _$UamRxRange extends UamRxRange {
   @override
   final double value;
 
-  factory _$UamRxRange([void updates(UamRxRangeBuilder b)]) =>
+  factory _$UamRxRange([void Function(UamRxRangeBuilder b) updates]) =>
       (UamRxRangeBuilder()..update(updates)).build();
 
   _$UamRxRange._(
@@ -56008,7 +56008,7 @@ class _$UamRxRange extends UamRxRange {
       : super._();
 
   @override
-  UamRxRange rebuild(void updates(UamRxRangeBuilder b)) =>
+  UamRxRange rebuild(void Function(UamRxRangeBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -56136,7 +56136,7 @@ class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(UamRxRangeBuilder b)) {
+  void update(void Function(UamRxRangeBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -56184,7 +56184,7 @@ class _$FormCtrlParam extends FormCtrlParam {
   @override
   final double deconflGain;
 
-  factory _$FormCtrlParam([void updates(FormCtrlParamBuilder b)]) =>
+  factory _$FormCtrlParam([void Function(FormCtrlParamBuilder b) updates]) =>
       (FormCtrlParamBuilder()..update(updates)).build();
 
   _$FormCtrlParam._(
@@ -56202,7 +56202,7 @@ class _$FormCtrlParam extends FormCtrlParam {
       : super._();
 
   @override
-  FormCtrlParam rebuild(void updates(FormCtrlParamBuilder b)) =>
+  FormCtrlParam rebuild(void Function(FormCtrlParamBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -56354,7 +56354,7 @@ class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(FormCtrlParamBuilder b)) {
+  void update(void Function(FormCtrlParamBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -56399,7 +56399,7 @@ class _$FormationEval extends FormationEval {
   @override
   final double distMinMean;
 
-  factory _$FormationEval([void updates(FormationEvalBuilder b)]) =>
+  factory _$FormationEval([void Function(FormationEvalBuilder b) updates]) =>
       (FormationEvalBuilder()..update(updates)).build();
 
   _$FormationEval._(
@@ -56414,7 +56414,7 @@ class _$FormationEval extends FormationEval {
       : super._();
 
   @override
-  FormationEval rebuild(void updates(FormationEvalBuilder b)) =>
+  FormationEval rebuild(void Function(FormationEvalBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -56542,7 +56542,7 @@ class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(FormationEvalBuilder b)) {
+  void update(void Function(FormationEvalBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -56600,7 +56600,7 @@ class _$FormationControlParams extends FormationControlParams {
   @override
   final double accelLimX;
 
-  factory _$FormationControlParams([void updates(FormationControlParamsBuilder b)]) =>
+  factory _$FormationControlParams([void Function(FormationControlParamsBuilder b) updates]) =>
       (FormationControlParamsBuilder()..update(updates)).build();
 
   _$FormationControlParams._(
@@ -56623,7 +56623,7 @@ class _$FormationControlParams extends FormationControlParams {
       : super._();
 
   @override
-  FormationControlParams rebuild(void updates(FormationControlParamsBuilder b)) =>
+  FormationControlParams rebuild(void Function(FormationControlParamsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -56815,7 +56815,7 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  void update(void updates(FormationControlParamsBuilder b)) {
+  void update(void Function(FormationControlParamsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -56875,7 +56875,7 @@ class _$FormationEvaluation extends FormationEvaluation {
   @override
   final FormationControlParams controlParams;
 
-  factory _$FormationEvaluation([void updates(FormationEvaluationBuilder b)]) =>
+  factory _$FormationEvaluation([void Function(FormationEvaluationBuilder b) updates]) =>
       (FormationEvaluationBuilder()..update(updates)).build();
 
   _$FormationEvaluation._(
@@ -56895,7 +56895,7 @@ class _$FormationEvaluation extends FormationEvaluation {
       : super._();
 
   @override
-  FormationEvaluation rebuild(void updates(FormationEvaluationBuilder b)) =>
+  FormationEvaluation rebuild(void Function(FormationEvaluationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -57063,7 +57063,7 @@ class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(FormationEvaluationBuilder b)) {
+  void update(void Function(FormationEvaluationBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -57112,7 +57112,7 @@ class _$SoiWaypoint extends SoiWaypoint {
   @override
   final int duration;
 
-  factory _$SoiWaypoint([void updates(SoiWaypointBuilder b)]) =>
+  factory _$SoiWaypoint([void Function(SoiWaypointBuilder b) updates]) =>
       (SoiWaypointBuilder()..update(updates)).build();
 
   _$SoiWaypoint._(
@@ -57128,7 +57128,7 @@ class _$SoiWaypoint extends SoiWaypoint {
       : super._();
 
   @override
-  SoiWaypoint rebuild(void updates(SoiWaypointBuilder b)) =>
+  SoiWaypoint rebuild(void Function(SoiWaypointBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -57264,7 +57264,7 @@ class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(SoiWaypointBuilder b)) {
+  void update(void Function(SoiWaypointBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -57305,7 +57305,7 @@ class _$SoiPlan extends SoiPlan {
   @override
   final List<SoiWaypoint> waypoints;
 
-  factory _$SoiPlan([void updates(SoiPlanBuilder b)]) =>
+  factory _$SoiPlan([void Function(SoiPlanBuilder b) updates]) =>
       (SoiPlanBuilder()..update(updates)).build();
 
   _$SoiPlan._(
@@ -57319,7 +57319,7 @@ class _$SoiPlan extends SoiPlan {
       : super._();
 
   @override
-  SoiPlan rebuild(void updates(SoiPlanBuilder b)) =>
+  SoiPlan rebuild(void Function(SoiPlanBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -57439,7 +57439,7 @@ class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(SoiPlanBuilder b)) {
+  void update(void Function(SoiPlanBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -57484,7 +57484,7 @@ class _$SoiCommand extends SoiCommand {
   @override
   final String info;
 
-  factory _$SoiCommand([void updates(SoiCommandBuilder b)]) =>
+  factory _$SoiCommand([void Function(SoiCommandBuilder b) updates]) =>
       (SoiCommandBuilder()..update(updates)).build();
 
   _$SoiCommand._(
@@ -57501,7 +57501,7 @@ class _$SoiCommand extends SoiCommand {
       : super._();
 
   @override
-  SoiCommand rebuild(void updates(SoiCommandBuilder b)) =>
+  SoiCommand rebuild(void Function(SoiCommandBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -57645,7 +57645,7 @@ class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(SoiCommandBuilder b)) {
+  void update(void Function(SoiCommandBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -57691,7 +57691,7 @@ class _$SoiState extends SoiState {
   @override
   final int settingsChk;
 
-  factory _$SoiState([void updates(SoiStateBuilder b)]) =>
+  factory _$SoiState([void Function(SoiStateBuilder b) updates]) =>
       (SoiStateBuilder()..update(updates)).build();
 
   _$SoiState._(
@@ -57707,7 +57707,7 @@ class _$SoiState extends SoiState {
       : super._();
 
   @override
-  SoiState rebuild(void updates(SoiStateBuilder b)) =>
+  SoiState rebuild(void Function(SoiStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -57843,7 +57843,7 @@ class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  void update(void updates(SoiStateBuilder b)) {
+  void update(void Function(SoiStateBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -57888,7 +57888,7 @@ class _$MessagePart extends MessagePart {
   @override
   final List<int> data;
 
-  factory _$MessagePart([void updates(MessagePartBuilder b)]) =>
+  factory _$MessagePart([void Function(MessagePartBuilder b) updates]) =>
       (MessagePartBuilder()..update(updates)).build();
 
   _$MessagePart._(
@@ -57904,7 +57904,7 @@ class _$MessagePart extends MessagePart {
       : super._();
 
   @override
-  MessagePart rebuild(void updates(MessagePartBuilder b)) =>
+  MessagePart rebuild(void Function(MessagePartBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -58040,7 +58040,7 @@ class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  void update(void updates(MessagePartBuilder b)) {
+  void update(void Function(MessagePartBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -58081,7 +58081,7 @@ class _$NeptusBlob extends NeptusBlob {
   @override
   final List<int> content;
 
-  factory _$NeptusBlob([void updates(NeptusBlobBuilder b)]) =>
+  factory _$NeptusBlob([void Function(NeptusBlobBuilder b) updates]) =>
       (NeptusBlobBuilder()..update(updates)).build();
 
   _$NeptusBlob._(
@@ -58095,7 +58095,7 @@ class _$NeptusBlob extends NeptusBlob {
       : super._();
 
   @override
-  NeptusBlob rebuild(void updates(NeptusBlobBuilder b)) =>
+  NeptusBlob rebuild(void Function(NeptusBlobBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -58215,7 +58215,7 @@ class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(NeptusBlobBuilder b)) {
+  void update(void Function(NeptusBlobBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -58250,7 +58250,7 @@ class _$Aborted extends Aborted {
   final int dstEnt;
 
 
-  factory _$Aborted([void updates(AbortedBuilder b)]) =>
+  factory _$Aborted([void Function(AbortedBuilder b) updates]) =>
       (AbortedBuilder()..update(updates)).build();
 
   _$Aborted._(
@@ -58262,7 +58262,7 @@ class _$Aborted extends Aborted {
       : super._();
 
   @override
-  Aborted rebuild(void updates(AbortedBuilder b)) =>
+  Aborted rebuild(void Function(AbortedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -58366,7 +58366,7 @@ class AbortedBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(AbortedBuilder b)) {
+  void update(void Function(AbortedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -58405,7 +58405,7 @@ class _$UsblAngles extends UsblAngles {
   @override
   final double elevation;
 
-  factory _$UsblAngles([void updates(UsblAnglesBuilder b)]) =>
+  factory _$UsblAngles([void Function(UsblAnglesBuilder b) updates]) =>
       (UsblAnglesBuilder()..update(updates)).build();
 
   _$UsblAngles._(
@@ -58420,7 +58420,7 @@ class _$UsblAngles extends UsblAngles {
       : super._();
 
   @override
-  UsblAngles rebuild(void updates(UsblAnglesBuilder b)) =>
+  UsblAngles rebuild(void Function(UsblAnglesBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -58548,7 +58548,7 @@ class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(UsblAnglesBuilder b)) {
+  void update(void Function(UsblAnglesBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -58592,7 +58592,7 @@ class _$UsblPosition extends UsblPosition {
   @override
   final double z;
 
-  factory _$UsblPosition([void updates(UsblPositionBuilder b)]) =>
+  factory _$UsblPosition([void Function(UsblPositionBuilder b) updates]) =>
       (UsblPositionBuilder()..update(updates)).build();
 
   _$UsblPosition._(
@@ -58608,7 +58608,7 @@ class _$UsblPosition extends UsblPosition {
       : super._();
 
   @override
-  UsblPosition rebuild(void updates(UsblPositionBuilder b)) =>
+  UsblPosition rebuild(void Function(UsblPositionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -58744,7 +58744,7 @@ class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(UsblPositionBuilder b)) {
+  void update(void Function(UsblPositionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -58791,7 +58791,7 @@ class _$UsblFix extends UsblFix {
   @override
   final double z;
 
-  factory _$UsblFix([void updates(UsblFixBuilder b)]) =>
+  factory _$UsblFix([void Function(UsblFixBuilder b) updates]) =>
       (UsblFixBuilder()..update(updates)).build();
 
   _$UsblFix._(
@@ -58808,7 +58808,7 @@ class _$UsblFix extends UsblFix {
       : super._();
 
   @override
-  UsblFix rebuild(void updates(UsblFixBuilder b)) =>
+  UsblFix rebuild(void Function(UsblFixBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -58952,7 +58952,7 @@ class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  void update(void updates(UsblFixBuilder b)) {
+  void update(void Function(UsblFixBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -58994,7 +58994,7 @@ class _$ParametersXml extends ParametersXml {
   @override
   final List<int> config;
 
-  factory _$ParametersXml([void updates(ParametersXmlBuilder b)]) =>
+  factory _$ParametersXml([void Function(ParametersXmlBuilder b) updates]) =>
       (ParametersXmlBuilder()..update(updates)).build();
 
   _$ParametersXml._(
@@ -59008,7 +59008,7 @@ class _$ParametersXml extends ParametersXml {
       : super._();
 
   @override
-  ParametersXml rebuild(void updates(ParametersXmlBuilder b)) =>
+  ParametersXml rebuild(void Function(ParametersXmlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -59128,7 +59128,7 @@ class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  void update(void updates(ParametersXmlBuilder b)) {
+  void update(void Function(ParametersXmlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -59163,7 +59163,7 @@ class _$GetParametersXml extends GetParametersXml {
   final int dstEnt;
 
 
-  factory _$GetParametersXml([void updates(GetParametersXmlBuilder b)]) =>
+  factory _$GetParametersXml([void Function(GetParametersXmlBuilder b) updates]) =>
       (GetParametersXmlBuilder()..update(updates)).build();
 
   _$GetParametersXml._(
@@ -59175,7 +59175,7 @@ class _$GetParametersXml extends GetParametersXml {
       : super._();
 
   @override
-  GetParametersXml rebuild(void updates(GetParametersXmlBuilder b)) =>
+  GetParametersXml rebuild(void Function(GetParametersXmlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -59279,7 +59279,7 @@ class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  void update(void updates(GetParametersXmlBuilder b)) {
+  void update(void Function(GetParametersXmlBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -59318,7 +59318,7 @@ class _$SetImageCoords extends SetImageCoords {
   @override
   final int y;
 
-  factory _$SetImageCoords([void updates(SetImageCoordsBuilder b)]) =>
+  factory _$SetImageCoords([void Function(SetImageCoordsBuilder b) updates]) =>
       (SetImageCoordsBuilder()..update(updates)).build();
 
   _$SetImageCoords._(
@@ -59333,7 +59333,7 @@ class _$SetImageCoords extends SetImageCoords {
       : super._();
 
   @override
-  SetImageCoords rebuild(void updates(SetImageCoordsBuilder b)) =>
+  SetImageCoords rebuild(void Function(SetImageCoordsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -59461,7 +59461,7 @@ class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(SetImageCoordsBuilder b)) {
+  void update(void Function(SetImageCoordsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -59503,7 +59503,7 @@ class _$GetImageCoords extends GetImageCoords {
   @override
   final int y;
 
-  factory _$GetImageCoords([void updates(GetImageCoordsBuilder b)]) =>
+  factory _$GetImageCoords([void Function(GetImageCoordsBuilder b) updates]) =>
       (GetImageCoordsBuilder()..update(updates)).build();
 
   _$GetImageCoords._(
@@ -59518,7 +59518,7 @@ class _$GetImageCoords extends GetImageCoords {
       : super._();
 
   @override
-  GetImageCoords rebuild(void updates(GetImageCoordsBuilder b)) =>
+  GetImageCoords rebuild(void Function(GetImageCoordsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -59646,7 +59646,7 @@ class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  void update(void updates(GetImageCoordsBuilder b)) {
+  void update(void Function(GetImageCoordsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -59694,7 +59694,7 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
   @override
   final double z;
 
-  factory _$GetWorldCoordinates([void updates(GetWorldCoordinatesBuilder b)]) =>
+  factory _$GetWorldCoordinates([void Function(GetWorldCoordinatesBuilder b) updates]) =>
       (GetWorldCoordinatesBuilder()..update(updates)).build();
 
   _$GetWorldCoordinates._(
@@ -59712,7 +59712,7 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
       : super._();
 
   @override
-  GetWorldCoordinates rebuild(void updates(GetWorldCoordinatesBuilder b)) =>
+  GetWorldCoordinates rebuild(void Function(GetWorldCoordinatesBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -59864,7 +59864,7 @@ class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  void update(void updates(GetWorldCoordinatesBuilder b)) {
+  void update(void Function(GetWorldCoordinatesBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -59921,7 +59921,7 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
   @override
   final double accuracy;
 
-  factory _$UsblAnglesExtended([void updates(UsblAnglesExtendedBuilder b)]) =>
+  factory _$UsblAnglesExtended([void Function(UsblAnglesExtendedBuilder b) updates]) =>
       (UsblAnglesExtendedBuilder()..update(updates)).build();
 
   _$UsblAnglesExtended._(
@@ -59942,7 +59942,7 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
       : super._();
 
   @override
-  UsblAnglesExtended rebuild(void updates(UsblAnglesExtendedBuilder b)) =>
+  UsblAnglesExtended rebuild(void Function(UsblAnglesExtendedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -60118,7 +60118,7 @@ class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(UsblAnglesExtendedBuilder b)) {
+  void update(void Function(UsblAnglesExtendedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -60182,7 +60182,7 @@ class _$UsblPositionExtended extends UsblPositionExtended {
   @override
   final double accuracy;
 
-  factory _$UsblPositionExtended([void updates(UsblPositionExtendedBuilder b)]) =>
+  factory _$UsblPositionExtended([void Function(UsblPositionExtendedBuilder b) updates]) =>
       (UsblPositionExtendedBuilder()..update(updates)).build();
 
   _$UsblPositionExtended._(
@@ -60205,7 +60205,7 @@ class _$UsblPositionExtended extends UsblPositionExtended {
       : super._();
 
   @override
-  UsblPositionExtended rebuild(void updates(UsblPositionExtendedBuilder b)) =>
+  UsblPositionExtended rebuild(void Function(UsblPositionExtendedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -60397,7 +60397,7 @@ class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  void update(void updates(UsblPositionExtendedBuilder b)) {
+  void update(void Function(UsblPositionExtendedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -60453,7 +60453,7 @@ class _$UsblFixExtended extends UsblFixExtended {
   @override
   final double accuracy;
 
-  factory _$UsblFixExtended([void updates(UsblFixExtendedBuilder b)]) =>
+  factory _$UsblFixExtended([void Function(UsblFixExtendedBuilder b) updates]) =>
       (UsblFixExtendedBuilder()..update(updates)).build();
 
   _$UsblFixExtended._(
@@ -60471,7 +60471,7 @@ class _$UsblFixExtended extends UsblFixExtended {
       : super._();
 
   @override
-  UsblFixExtended rebuild(void updates(UsblFixExtendedBuilder b)) =>
+  UsblFixExtended rebuild(void Function(UsblFixExtendedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -60623,7 +60623,7 @@ class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  void update(void updates(UsblFixExtendedBuilder b)) {
+  void update(void Function(UsblFixExtendedBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -60672,7 +60672,7 @@ class _$UsblModem extends UsblModem {
   @override
   final ZUnitsEnum zUnits;
 
-  factory _$UsblModem([void updates(UsblModemBuilder b)]) =>
+  factory _$UsblModem([void Function(UsblModemBuilder b) updates]) =>
       (UsblModemBuilder()..update(updates)).build();
 
   _$UsblModem._(
@@ -60689,7 +60689,7 @@ class _$UsblModem extends UsblModem {
       : super._();
 
   @override
-  UsblModem rebuild(void updates(UsblModemBuilder b)) =>
+  UsblModem rebuild(void Function(UsblModemBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -60833,7 +60833,7 @@ class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(UsblModemBuilder b)) {
+  void update(void Function(UsblModemBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -60875,7 +60875,7 @@ class _$UsblConfig extends UsblConfig {
   @override
   final List<UsblModem> modems;
 
-  factory _$UsblConfig([void updates(UsblConfigBuilder b)]) =>
+  factory _$UsblConfig([void Function(UsblConfigBuilder b) updates]) =>
       (UsblConfigBuilder()..update(updates)).build();
 
   _$UsblConfig._(
@@ -60889,7 +60889,7 @@ class _$UsblConfig extends UsblConfig {
       : super._();
 
   @override
-  UsblConfig rebuild(void updates(UsblConfigBuilder b)) =>
+  UsblConfig rebuild(void Function(UsblConfigBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -61009,7 +61009,7 @@ class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(UsblConfigBuilder b)) {
+  void update(void Function(UsblConfigBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -61048,7 +61048,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
   @override
   final DissolvedOrganicMatterEnumType type;
 
-  factory _$DissolvedOrganicMatter([void updates(DissolvedOrganicMatterBuilder b)]) =>
+  factory _$DissolvedOrganicMatter([void Function(DissolvedOrganicMatterBuilder b) updates]) =>
       (DissolvedOrganicMatterBuilder()..update(updates)).build();
 
   _$DissolvedOrganicMatter._(
@@ -61062,7 +61062,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
       : super._();
 
   @override
-  DissolvedOrganicMatter rebuild(void updates(DissolvedOrganicMatterBuilder b)) =>
+  DissolvedOrganicMatter rebuild(void Function(DissolvedOrganicMatterBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -61182,7 +61182,7 @@ class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  void update(void updates(DissolvedOrganicMatterBuilder b)) {
+  void update(void Function(DissolvedOrganicMatterBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -61219,7 +61219,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
   @override
   final double value;
 
-  factory _$OpticalBackscatter([void updates(OpticalBackscatterBuilder b)]) =>
+  factory _$OpticalBackscatter([void Function(OpticalBackscatterBuilder b) updates]) =>
       (OpticalBackscatterBuilder()..update(updates)).build();
 
   _$OpticalBackscatter._(
@@ -61232,7 +61232,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
       : super._();
 
   @override
-  OpticalBackscatter rebuild(void updates(OpticalBackscatterBuilder b)) =>
+  OpticalBackscatter rebuild(void Function(OpticalBackscatterBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -61344,7 +61344,7 @@ class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  void update(void updates(OpticalBackscatterBuilder b)) {
+  void update(void Function(OpticalBackscatterBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -61410,7 +61410,7 @@ class _$Tachograph extends Tachograph {
   @override
   final double depthMax;
 
-  factory _$Tachograph([void updates(TachographBuilder b)]) =>
+  factory _$Tachograph([void Function(TachographBuilder b) updates]) =>
       (TachographBuilder()..update(updates)).build();
 
   _$Tachograph._(
@@ -61438,7 +61438,7 @@ class _$Tachograph extends Tachograph {
       : super._();
 
   @override
-  Tachograph rebuild(void updates(TachographBuilder b)) =>
+  Tachograph rebuild(void Function(TachographBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -61670,7 +61670,7 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  void update(void updates(TachographBuilder b)) {
+  void update(void Function(TachographBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -61723,7 +61723,7 @@ class _$ApmStatus extends ApmStatus {
   @override
   final String text;
 
-  factory _$ApmStatus([void updates(ApmStatusBuilder b)]) =>
+  factory _$ApmStatus([void Function(ApmStatusBuilder b) updates]) =>
       (ApmStatusBuilder()..update(updates)).build();
 
   _$ApmStatus._(
@@ -61737,7 +61737,7 @@ class _$ApmStatus extends ApmStatus {
       : super._();
 
   @override
-  ApmStatus rebuild(void updates(ApmStatusBuilder b)) =>
+  ApmStatus rebuild(void Function(ApmStatusBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -61857,7 +61857,7 @@ class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  void update(void updates(ApmStatusBuilder b)) {
+  void update(void Function(ApmStatusBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -61898,7 +61898,7 @@ class _$SadcReadings extends SadcReadings {
   @override
   final SadcReadingsEnumGain gain;
 
-  factory _$SadcReadings([void updates(SadcReadingsBuilder b)]) =>
+  factory _$SadcReadings([void Function(SadcReadingsBuilder b) updates]) =>
       (SadcReadingsBuilder()..update(updates)).build();
 
   _$SadcReadings._(
@@ -61913,7 +61913,7 @@ class _$SadcReadings extends SadcReadings {
       : super._();
 
   @override
-  SadcReadings rebuild(void updates(SadcReadingsBuilder b)) =>
+  SadcReadings rebuild(void Function(SadcReadingsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -62041,7 +62041,7 @@ class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(SadcReadingsBuilder b)) {
+  void update(void Function(SadcReadingsBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -62109,7 +62109,7 @@ class _$DmsDetection extends DmsDetection {
   @override
   final double ch16;
 
-  factory _$DmsDetection([void updates(DmsDetectionBuilder b)]) =>
+  factory _$DmsDetection([void Function(DmsDetectionBuilder b) updates]) =>
       (DmsDetectionBuilder()..update(updates)).build();
 
   _$DmsDetection._(
@@ -62137,7 +62137,7 @@ class _$DmsDetection extends DmsDetection {
       : super._();
 
   @override
-  DmsDetection rebuild(void updates(DmsDetectionBuilder b)) =>
+  DmsDetection rebuild(void Function(DmsDetectionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -62369,7 +62369,7 @@ class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  void update(void updates(DmsDetectionBuilder b)) {
+  void update(void Function(DmsDetectionBuilder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -62420,7 +62420,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
   @override
   final double value;
 
-  factory _$TotalMagIntensity([void updates(TotalMagIntensityBuilder b)]) =>
+  factory _$TotalMagIntensity([void Function(TotalMagIntensityBuilder b) updates]) =>
       (TotalMagIntensityBuilder()..update(updates)).build();
 
   _$TotalMagIntensity._(
@@ -62433,7 +62433,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
       : super._();
 
   @override
-  TotalMagIntensity rebuild(void updates(TotalMagIntensityBuilder b)) =>
+  TotalMagIntensity rebuild(void Function(TotalMagIntensityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -62545,7 +62545,7 @@ class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  void update(void updates(TotalMagIntensityBuilder b)) {
+  void update(void Function(TotalMagIntensityBuilder b) updates) {
     if (updates != null) updates(this);
   }
 

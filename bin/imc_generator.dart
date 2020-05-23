@@ -247,7 +247,7 @@ void _writeMessageImmutable(
   });
 
   var msgStringImmutableClass2 = '''\n
-  factory _\$$abbrev([void updates(${abbrev}Builder b)]) =>
+  factory _\$$abbrev([void Function(${abbrev}Builder b) updates]) =>
       (${abbrev}Builder()..update(updates)).build();
 
   _\$$abbrev._(
@@ -268,7 +268,7 @@ void _writeMessageImmutable(
       : super._();
 
   @override
-  $abbrev rebuild(void updates(${abbrev}Builder b)) =>
+  $abbrev rebuild(void Function(${abbrev}Builder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -457,7 +457,7 @@ void _writeMessageBuilder(
   }
 
   @override
-  void update(void updates(${abbrev}Builder b)) {
+  void update(void Function(${abbrev}Builder b) updates) {
     if (updates != null) updates(this);
   }
 
