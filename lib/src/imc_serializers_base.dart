@@ -133,7 +133,7 @@ int serializeHeader(ImcMessage message, ByteData byteData) {
   return byteOffset;
 }
 
-calcAndAddFooter(ByteData byteData, int offset, int lenght) {
+void calcAndAddFooter(ByteData byteData, int offset, int lenght) {
   var crc = calcCrc(byteData, offset, lenght);
   byteData.setUint16(offset + lenght, crc, endian_ser);
 }

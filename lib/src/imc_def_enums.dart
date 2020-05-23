@@ -69,7 +69,7 @@ abstract class BitfieldType {
         testVal |= item.value;
       }
     }
-    return this.value & testVal == testVal;
+    return value & testVal == testVal;
   }
 
   @override
