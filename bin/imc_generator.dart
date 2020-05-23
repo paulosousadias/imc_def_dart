@@ -285,6 +285,7 @@ void _writeMessageImmutable(
         dstEnt == other.dstEnt''';
   sink.write('$msgStringImmutableClass3');
 
+  // Getting prep for hashCode method
   var hashElements = <String>[];
   hashElements.addAll([
     '0',
@@ -295,10 +296,11 @@ void _writeMessageImmutable(
     'dstEnt?.hashCode',
   ]);
 
+  // Writting rest elements to oerator ==
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var fStr =
-        ''' &&\n        ${_convertToFieldName(abbrev)} == this.${_convertToFieldName(abbrev)}''';
+        ''' &&\n        ${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
 
     hashElements.add('${_convertToFieldName(abbrev)}?.hashCode');

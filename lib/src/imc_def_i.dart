@@ -57,9 +57,9 @@ class _$EntityState extends EntityState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state &&
-        flags == this.flags &&
-        description == this.description;
+        state == other.state &&
+        flags == other.flags &&
+        description == other.description;
   }
 
   @override
@@ -143,6 +143,7 @@ class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityStateBuilder()..copyFromHeader(headerFrom);
 
   EntityStateBuilder get _$this {
@@ -297,6 +298,7 @@ class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   QueryEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityStateBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityStateBuilder get _$this {
@@ -395,11 +397,11 @@ class _$EntityInfo extends EntityInfo {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        label == this.label &&
-        component == this.component &&
-        actTime == this.actTime &&
-        deactTime == this.deactTime;
+        id == other.id &&
+        label == other.label &&
+        component == other.component &&
+        actTime == other.actTime &&
+        deactTime == other.deactTime;
   }
 
   @override
@@ -495,6 +497,7 @@ class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityInfoBuilder()..copyFromHeader(headerFrom);
 
   EntityInfoBuilder get _$this {
@@ -591,7 +594,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id;
+        id == other.id;
   }
 
   @override
@@ -663,6 +666,7 @@ class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   QueryEntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityInfoBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityInfoBuilder get _$this {
@@ -754,8 +758,8 @@ class _$EntityList extends EntityList {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        list == this.list;
+        op == other.op &&
+        list == other.list;
   }
 
   @override
@@ -833,6 +837,7 @@ class EntityListBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EntityListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityListBuilder()..copyFromHeader(headerFrom);
 
   EntityListBuilder get _$this {
@@ -923,7 +928,7 @@ class _$CpuUsage extends CpuUsage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -995,6 +1000,7 @@ class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CpuUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CpuUsageBuilder()..copyFromHeader(headerFrom);
 
   CpuUsageBuilder get _$this {
@@ -1086,8 +1092,8 @@ class _$TransportBindings extends TransportBindings {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        consumer == this.consumer &&
-        messageId == this.messageId;
+        consumer == other.consumer &&
+        messageId == other.messageId;
   }
 
   @override
@@ -1165,6 +1171,7 @@ class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TransportBindingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransportBindingsBuilder()..copyFromHeader(headerFrom);
 
   TransportBindingsBuilder get _$this {
@@ -1255,7 +1262,7 @@ class _$RestartSystem extends RestartSystem {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type;
+        type == other.type;
   }
 
   @override
@@ -1327,6 +1334,7 @@ class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RestartSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RestartSystemBuilder()..copyFromHeader(headerFrom);
 
   RestartSystemBuilder get _$this {
@@ -1415,7 +1423,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op;
+        op == other.op;
   }
 
   @override
@@ -1487,6 +1495,7 @@ class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart impl
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DevCalibrationControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevCalibrationControlBuilder()..copyFromHeader(headerFrom);
 
   DevCalibrationControlBuilder get _$this {
@@ -1584,10 +1593,10 @@ class _$DevCalibrationState extends DevCalibrationState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        totalSteps == this.totalSteps &&
-        stepNumber == this.stepNumber &&
-        step == this.step &&
-        flags == this.flags;
+        totalSteps == other.totalSteps &&
+        stepNumber == other.stepNumber &&
+        step == other.step &&
+        flags == other.flags;
   }
 
   @override
@@ -1677,6 +1686,7 @@ class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DevCalibrationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevCalibrationStateBuilder()..copyFromHeader(headerFrom);
 
   DevCalibrationStateBuilder get _$this {
@@ -1774,8 +1784,8 @@ class _$EntityActivationState extends EntityActivationState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state &&
-        error == this.error;
+        state == other.state &&
+        error == other.error;
   }
 
   @override
@@ -1853,6 +1863,7 @@ class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart impl
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EntityActivationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityActivationStateBuilder()..copyFromHeader(headerFrom);
 
   EntityActivationStateBuilder get _$this {
@@ -2005,6 +2016,7 @@ class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   QueryEntityActivationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityActivationStateBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityActivationStateBuilder get _$this {
@@ -2142,24 +2154,24 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        speedMin == this.speedMin &&
-        speedMax == this.speedMax &&
-        longAccel == this.longAccel &&
-        altMaxMsl == this.altMaxMsl &&
-        diveFractionMax == this.diveFractionMax &&
-        climbFractionMax == this.climbFractionMax &&
-        bankMax == this.bankMax &&
-        pMax == this.pMax &&
-        pitchMin == this.pitchMin &&
-        pitchMax == this.pitchMax &&
-        qMax == this.qMax &&
-        gMin == this.gMin &&
-        gMax == this.gMax &&
-        gLatMax == this.gLatMax &&
-        rpmMin == this.rpmMin &&
-        rpmMax == this.rpmMax &&
-        rpmRateMax == this.rpmRateMax;
+        op == other.op &&
+        speedMin == other.speedMin &&
+        speedMax == other.speedMax &&
+        longAccel == other.longAccel &&
+        altMaxMsl == other.altMaxMsl &&
+        diveFractionMax == other.diveFractionMax &&
+        climbFractionMax == other.climbFractionMax &&
+        bankMax == other.bankMax &&
+        pMax == other.pMax &&
+        pitchMin == other.pitchMin &&
+        pitchMax == other.pitchMax &&
+        qMax == other.qMax &&
+        gMin == other.gMin &&
+        gMax == other.gMax &&
+        gLatMax == other.gLatMax &&
+        rpmMin == other.rpmMin &&
+        rpmMax == other.rpmMax &&
+        rpmRateMax == other.rpmRateMax;
   }
 
   @override
@@ -2205,11 +2217,11 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           ..add('altMaxMsl', '$altMaxMsl (m)')
           ..add('diveFractionMax', '$diveFractionMax')
           ..add('climbFractionMax', '$climbFractionMax')
-          ..add('bankMax', '$bankMax (rad)${bankMax != null ? " [${bankMax * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('pMax', '$pMax (rad/s)${pMax != null ? " [${pMax * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('pitchMin', '$pitchMin (rad)${pitchMin != null ? " [${pitchMin * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('pitchMax', '$pitchMax (rad)${pitchMax != null ? " [${pitchMax * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('qMax', '$qMax (rad/s)${qMax != null ? " [${qMax * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('bankMax', '$bankMax (rad)${bankMax != null ? ' [${bankMax * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pMax', '$pMax (rad/s)${pMax != null ? ' [${pMax * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('pitchMin', '$pitchMin (rad)${pitchMin != null ? ' [${pitchMin * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitchMax', '$pitchMax (rad)${pitchMax != null ? ' [${pitchMax * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('qMax', '$qMax (rad/s)${qMax != null ? ' [${qMax * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('gMin', '$gMin (g)')
           ..add('gMax', '$gMax (g)')
           ..add('gLatMax', '$gLatMax (g)')
@@ -2333,6 +2345,7 @@ class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart i
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VehicleOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleOperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   VehicleOperationalLimitsBuilder get _$this {
@@ -2455,7 +2468,7 @@ class _$MsgList extends MsgList {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        msgs == this.msgs;
+        msgs == other.msgs;
   }
 
   @override
@@ -2527,6 +2540,7 @@ class MsgListBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MsgListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MsgListBuilder()..copyFromHeader(headerFrom);
 
   MsgListBuilder get _$this {
@@ -2666,24 +2680,24 @@ class _$SimulatedState extends SimulatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        height == this.height &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi &&
-        u == this.u &&
-        v == this.v &&
-        w == this.w &&
-        p == this.p &&
-        q == this.q &&
-        r == this.r &&
-        svx == this.svx &&
-        svy == this.svy &&
-        svz == this.svz;
+        lat == other.lat &&
+        lon == other.lon &&
+        height == other.height &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi &&
+        u == other.u &&
+        v == other.v &&
+        w == other.w &&
+        p == other.p &&
+        q == other.q &&
+        r == other.r &&
+        svx == other.svx &&
+        svy == other.svy &&
+        svz == other.svz;
   }
 
   @override
@@ -2722,21 +2736,21 @@ class _$SimulatedState extends SimulatedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
-          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('svx', '$svx (m/s)')
           ..add('svy', '$svy (m/s)')
           ..add('svz', '$svz (m/s)'))
@@ -2857,6 +2871,7 @@ class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SimulatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SimulatedStateBuilder()..copyFromHeader(headerFrom);
 
   SimulatedStateBuilder get _$this {
@@ -2982,8 +2997,8 @@ class _$LeakSimulation extends LeakSimulation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        entities == this.entities;
+        op == other.op &&
+        entities == other.entities;
   }
 
   @override
@@ -3061,6 +3076,7 @@ class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LeakSimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LeakSimulationBuilder()..copyFromHeader(headerFrom);
 
   LeakSimulationBuilder get _$this {
@@ -3157,9 +3173,9 @@ class _$UASimulation extends UASimulation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        speed == this.speed &&
-        data == this.data;
+        type == other.type &&
+        speed == other.speed &&
+        data == other.data;
   }
 
   @override
@@ -3243,6 +3259,7 @@ class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UASimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UASimulationBuilder()..copyFromHeader(headerFrom);
 
   UASimulationBuilder get _$this {
@@ -3341,9 +3358,9 @@ class _$DynamicsSimParam extends DynamicsSimParam {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        tas2accPgain == this.tas2accPgain &&
-        bank2pPgain == this.bank2pPgain;
+        op == other.op &&
+        tas2accPgain == other.tas2accPgain &&
+        bank2pPgain == other.bank2pPgain;
   }
 
   @override
@@ -3427,6 +3444,7 @@ class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DynamicsSimParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DynamicsSimParamBuilder()..copyFromHeader(headerFrom);
 
   DynamicsSimParamBuilder get _$this {
@@ -3522,8 +3540,8 @@ class _$StorageUsage extends StorageUsage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        available == this.available &&
-        value == this.value;
+        available == other.available &&
+        value == other.value;
   }
 
   @override
@@ -3601,6 +3619,7 @@ class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   StorageUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StorageUsageBuilder()..copyFromHeader(headerFrom);
 
   StorageUsageBuilder get _$this {
@@ -3697,9 +3716,9 @@ class _$CacheControl extends CacheControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        snapshot == this.snapshot &&
-        message == this.message;
+        op == other.op &&
+        snapshot == other.snapshot &&
+        message == other.message;
   }
 
   @override
@@ -3783,6 +3802,7 @@ class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CacheControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CacheControlBuilder()..copyFromHeader(headerFrom);
 
   CacheControlBuilder get _$this {
@@ -3878,8 +3898,8 @@ class _$LoggingControl extends LoggingControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        name == this.name;
+        op == other.op &&
+        name == other.name;
   }
 
   @override
@@ -3957,6 +3977,7 @@ class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LoggingControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LoggingControlBuilder()..copyFromHeader(headerFrom);
 
   LoggingControlBuilder get _$this {
@@ -4056,10 +4077,10 @@ class _$LogBookEntry extends LogBookEntry {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        htime == this.htime &&
-        context == this.context &&
-        text == this.text;
+        type == other.type &&
+        htime == other.htime &&
+        context == other.context &&
+        text == other.text;
   }
 
   @override
@@ -4149,6 +4170,7 @@ class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LogBookEntryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LogBookEntryBuilder()..copyFromHeader(headerFrom);
 
   LogBookEntryBuilder get _$this {
@@ -4249,9 +4271,9 @@ class _$LogBookControl extends LogBookControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        command == this.command &&
-        htime == this.htime &&
-        msg == this.msg;
+        command == other.command &&
+        htime == other.htime &&
+        msg == other.msg;
   }
 
   @override
@@ -4335,6 +4357,7 @@ class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LogBookControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LogBookControlBuilder()..copyFromHeader(headerFrom);
 
   LogBookControlBuilder get _$this {
@@ -4430,8 +4453,8 @@ class _$ReplayControl extends ReplayControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        file == this.file;
+        op == other.op &&
+        file == other.file;
   }
 
   @override
@@ -4509,6 +4532,7 @@ class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ReplayControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReplayControlBuilder()..copyFromHeader(headerFrom);
 
   ReplayControlBuilder get _$this {
@@ -4605,9 +4629,9 @@ class _$ClockControl extends ClockControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        clock == this.clock &&
-        tz == this.tz;
+        op == other.op &&
+        clock == other.clock &&
+        tz == other.tz;
   }
 
   @override
@@ -4691,6 +4715,7 @@ class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ClockControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ClockControlBuilder()..copyFromHeader(headerFrom);
 
   ClockControlBuilder get _$this {
@@ -4789,9 +4814,9 @@ class _$HistoricCTD extends HistoricCTD {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        conductivity == this.conductivity &&
-        temperature == this.temperature &&
-        depth == this.depth;
+        conductivity == other.conductivity &&
+        temperature == other.temperature &&
+        depth == other.depth;
   }
 
   @override
@@ -4875,6 +4900,7 @@ class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HistoricCTDBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricCTDBuilder()..copyFromHeader(headerFrom);
 
   HistoricCTDBuilder get _$this {
@@ -4979,11 +5005,11 @@ class _$HistoricTelemetry extends HistoricTelemetry {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        altitude == this.altitude &&
-        roll == this.roll &&
-        pitch == this.pitch &&
-        yaw == this.yaw &&
-        speed == this.speed;
+        altitude == other.altitude &&
+        roll == other.roll &&
+        pitch == other.pitch &&
+        yaw == other.yaw &&
+        speed == other.speed;
   }
 
   @override
@@ -5079,6 +5105,7 @@ class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HistoricTelemetryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricTelemetryBuilder()..copyFromHeader(headerFrom);
 
   HistoricTelemetryBuilder get _$this {
@@ -5193,13 +5220,13 @@ class _$HistoricSonarData extends HistoricSonarData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        altitude == this.altitude &&
-        width == this.width &&
-        length == this.length &&
-        bearing == this.bearing &&
-        pxl == this.pxl &&
-        encoding == this.encoding &&
-        sonarData == this.sonarData;
+        altitude == other.altitude &&
+        width == other.width &&
+        length == other.length &&
+        bearing == other.bearing &&
+        pxl == other.pxl &&
+        encoding == other.encoding &&
+        sonarData == other.sonarData;
   }
 
   @override
@@ -5307,6 +5334,7 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HistoricSonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricSonarDataBuilder()..copyFromHeader(headerFrom);
 
   HistoricSonarDataBuilder get _$this {
@@ -5410,8 +5438,8 @@ class _$HistoricEvent extends HistoricEvent {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        text == this.text &&
-        type == this.type;
+        text == other.text &&
+        type == other.type;
   }
 
   @override
@@ -5489,6 +5517,7 @@ class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HistoricEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricEventBuilder()..copyFromHeader(headerFrom);
 
   HistoricEventBuilder get _$this {
@@ -5591,11 +5620,11 @@ class _$VerticalProfile extends VerticalProfile {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        parameter == this.parameter &&
-        numSamples == this.numSamples &&
-        samples == this.samples &&
-        lat == this.lat &&
-        lon == this.lon;
+        parameter == other.parameter &&
+        numSamples == other.numSamples &&
+        samples == other.samples &&
+        lat == other.lat &&
+        lon == other.lon;
   }
 
   @override
@@ -5624,8 +5653,8 @@ class _$VerticalProfile extends VerticalProfile {
           ..add('parameter', '$parameter (Enumerated)')
           ..add('numSamples', '$numSamples')
           ..add('samples', '$samples')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -5691,6 +5720,7 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VerticalProfileBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VerticalProfileBuilder()..copyFromHeader(headerFrom);
 
   VerticalProfileBuilder get _$this {
@@ -5790,8 +5820,8 @@ class _$ProfileSample extends ProfileSample {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        depth == this.depth &&
-        avg == this.avg;
+        depth == other.depth &&
+        avg == other.avg;
   }
 
   @override
@@ -5869,6 +5899,7 @@ class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ProfileSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ProfileSampleBuilder()..copyFromHeader(headerFrom);
 
   ProfileSampleBuilder get _$this {
@@ -6021,6 +6052,7 @@ class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HeartbeatBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HeartbeatBuilder()..copyFromHeader(headerFrom);
 
   HeartbeatBuilder get _$this {
@@ -6125,13 +6157,13 @@ class _$Announce extends Announce {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sysName == this.sysName &&
-        sysType == this.sysType &&
-        owner == this.owner &&
-        lat == this.lat &&
-        lon == this.lon &&
-        height == this.height &&
-        services == this.services;
+        sysName == other.sysName &&
+        sysType == other.sysType &&
+        owner == other.owner &&
+        lat == other.lat &&
+        lon == other.lon &&
+        height == other.height &&
+        services == other.services;
   }
 
   @override
@@ -6162,8 +6194,8 @@ class _$Announce extends Announce {
           ..add('sysName', '$sysName')
           ..add('sysType', '$sysType (Enumerated)')
           ..add('owner', '$owner')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('services', '$services'))
         .toString();
@@ -6239,6 +6271,7 @@ class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AnnounceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AnnounceBuilder()..copyFromHeader(headerFrom);
 
   AnnounceBuilder get _$this {
@@ -6342,8 +6375,8 @@ class _$AnnounceService extends AnnounceService {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        service == this.service &&
-        serviceType == this.serviceType;
+        service == other.service &&
+        serviceType == other.serviceType;
   }
 
   @override
@@ -6421,6 +6454,7 @@ class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AnnounceServiceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AnnounceServiceBuilder()..copyFromHeader(headerFrom);
 
   AnnounceServiceBuilder get _$this {
@@ -6511,7 +6545,7 @@ class _$RSSI extends RSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -6583,6 +6617,7 @@ class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RSSIBuilder()..copyFromHeader(headerFrom);
 
   RSSIBuilder get _$this {
@@ -6671,7 +6706,7 @@ class _$VSWR extends VSWR {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -6743,6 +6778,7 @@ class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VSWRBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VSWRBuilder()..copyFromHeader(headerFrom);
 
   VSWRBuilder get _$this {
@@ -6831,7 +6867,7 @@ class _$LinkLevel extends LinkLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -6903,6 +6939,7 @@ class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LinkLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LinkLevelBuilder()..copyFromHeader(headerFrom);
 
   LinkLevelBuilder get _$this {
@@ -6997,9 +7034,9 @@ class _$Sms extends Sms {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        number == this.number &&
-        timeout == this.timeout &&
-        contents == this.contents;
+        number == other.number &&
+        timeout == other.timeout &&
+        contents == other.contents;
   }
 
   @override
@@ -7083,6 +7120,7 @@ class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SmsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsBuilder()..copyFromHeader(headerFrom);
 
   SmsBuilder get _$this {
@@ -7184,10 +7222,10 @@ class _$SmsTx extends SmsTx {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        seq == this.seq &&
-        destination == this.destination &&
-        timeout == this.timeout &&
-        data == this.data;
+        seq == other.seq &&
+        destination == other.destination &&
+        timeout == other.timeout &&
+        data == other.data;
   }
 
   @override
@@ -7277,6 +7315,7 @@ class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SmsTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsTxBuilder()..copyFromHeader(headerFrom);
 
   SmsTxBuilder get _$this {
@@ -7374,8 +7413,8 @@ class _$SmsRx extends SmsRx {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        source == this.source &&
-        data == this.data;
+        source == other.source &&
+        data == other.data;
   }
 
   @override
@@ -7453,6 +7492,7 @@ class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SmsRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsRxBuilder()..copyFromHeader(headerFrom);
 
   SmsRxBuilder get _$this {
@@ -7549,9 +7589,9 @@ class _$SmsState extends SmsState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        seq == this.seq &&
-        state == this.state &&
-        error == this.error;
+        seq == other.seq &&
+        state == other.state &&
+        error == other.error;
   }
 
   @override
@@ -7635,6 +7675,7 @@ class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SmsStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsStateBuilder()..copyFromHeader(headerFrom);
 
   SmsStateBuilder get _$this {
@@ -7730,8 +7771,8 @@ class _$TextMessage extends TextMessage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        origin == this.origin &&
-        text == this.text;
+        origin == other.origin &&
+        text == other.text;
   }
 
   @override
@@ -7809,6 +7850,7 @@ class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TextMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TextMessageBuilder()..copyFromHeader(headerFrom);
 
   TextMessageBuilder get _$this {
@@ -7911,11 +7953,11 @@ class _$IridiumMsgRx extends IridiumMsgRx {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        origin == this.origin &&
-        htime == this.htime &&
-        lat == this.lat &&
-        lon == this.lon &&
-        data == this.data;
+        origin == other.origin &&
+        htime == other.htime &&
+        lat == other.lat &&
+        lon == other.lon &&
+        data == other.data;
   }
 
   @override
@@ -7943,8 +7985,8 @@ class _$IridiumMsgRx extends IridiumMsgRx {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('origin', '$origin')
           ..add('htime', '$htime (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('data', '$data'))
         .toString();
   }
@@ -8011,6 +8053,7 @@ class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   IridiumMsgRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumMsgRxBuilder()..copyFromHeader(headerFrom);
 
   IridiumMsgRxBuilder get _$this {
@@ -8116,10 +8159,10 @@ class _$IridiumMsgTx extends IridiumMsgTx {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reqId == this.reqId &&
-        ttl == this.ttl &&
-        destination == this.destination &&
-        data == this.data;
+        reqId == other.reqId &&
+        ttl == other.ttl &&
+        destination == other.destination &&
+        data == other.data;
   }
 
   @override
@@ -8209,6 +8252,7 @@ class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   IridiumMsgTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumMsgTxBuilder()..copyFromHeader(headerFrom);
 
   IridiumMsgTxBuilder get _$this {
@@ -8309,9 +8353,9 @@ class _$IridiumTxStatus extends IridiumTxStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reqId == this.reqId &&
-        status == this.status &&
-        text == this.text;
+        reqId == other.reqId &&
+        status == other.status &&
+        text == other.text;
   }
 
   @override
@@ -8395,6 +8439,7 @@ class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   IridiumTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumTxStatusBuilder()..copyFromHeader(headerFrom);
 
   IridiumTxStatusBuilder get _$this {
@@ -8490,8 +8535,8 @@ class _$GroupMembershipState extends GroupMembershipState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        groupName == this.groupName &&
-        links == this.links;
+        groupName == other.groupName &&
+        links == other.links;
   }
 
   @override
@@ -8569,6 +8614,7 @@ class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GroupMembershipStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroupMembershipStateBuilder()..copyFromHeader(headerFrom);
 
   GroupMembershipStateBuilder get _$this {
@@ -8665,9 +8711,9 @@ class _$SystemGroup extends SystemGroup {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        groupName == this.groupName &&
-        action == this.action &&
-        groupList == this.groupList;
+        groupName == other.groupName &&
+        action == other.action &&
+        groupList == other.groupList;
   }
 
   @override
@@ -8751,6 +8797,7 @@ class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SystemGroupBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SystemGroupBuilder()..copyFromHeader(headerFrom);
 
   SystemGroupBuilder get _$this {
@@ -8846,8 +8893,8 @@ class _$LinkLatency extends LinkLatency {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value &&
-        sysSrc == this.sysSrc;
+        value == other.value &&
+        sysSrc == other.sysSrc;
   }
 
   @override
@@ -8925,6 +8972,7 @@ class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LinkLatencyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LinkLatencyBuilder()..copyFromHeader(headerFrom);
 
   LinkLatencyBuilder get _$this {
@@ -9018,8 +9066,8 @@ class _$ExtendedRSSI extends ExtendedRSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value &&
-        units == this.units;
+        value == other.value &&
+        units == other.units;
   }
 
   @override
@@ -9097,6 +9145,7 @@ class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ExtendedRSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ExtendedRSSIBuilder()..copyFromHeader(headerFrom);
 
   ExtendedRSSIBuilder get _$this {
@@ -9196,10 +9245,10 @@ class _$HistoricData extends HistoricData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        baseLat == this.baseLat &&
-        baseLon == this.baseLon &&
-        baseTime == this.baseTime &&
-        data == this.data;
+        baseLat == other.baseLat &&
+        baseLon == other.baseLon &&
+        baseTime == other.baseTime &&
+        data == other.data;
   }
 
   @override
@@ -9289,6 +9338,7 @@ class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HistoricDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricDataBuilder()..copyFromHeader(headerFrom);
 
   HistoricDataBuilder get _$this {
@@ -9392,10 +9442,10 @@ class _$CompressedHistory extends CompressedHistory {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        baseLat == this.baseLat &&
-        baseLon == this.baseLon &&
-        baseTime == this.baseTime &&
-        data == this.data;
+        baseLat == other.baseLat &&
+        baseLon == other.baseLon &&
+        baseTime == other.baseTime &&
+        data == other.data;
   }
 
   @override
@@ -9485,6 +9535,7 @@ class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CompressedHistoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompressedHistoryBuilder()..copyFromHeader(headerFrom);
 
   CompressedHistoryBuilder get _$this {
@@ -9597,13 +9648,13 @@ class _$HistoricSample extends HistoricSample {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sysId == this.sysId &&
-        priority == this.priority &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        t == this.t &&
-        sample == this.sample;
+        sysId == other.sysId &&
+        priority == other.priority &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        t == other.t &&
+        sample == other.sample;
   }
 
   @override
@@ -9711,6 +9762,7 @@ class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HistoricSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricSampleBuilder()..copyFromHeader(headerFrom);
 
   HistoricSampleBuilder get _$this {
@@ -9820,10 +9872,10 @@ class _$HistoricDataQuery extends HistoricDataQuery {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reqId == this.reqId &&
-        type == this.type &&
-        maxSize == this.maxSize &&
-        data == this.data;
+        reqId == other.reqId &&
+        type == other.type &&
+        maxSize == other.maxSize &&
+        data == other.data;
   }
 
   @override
@@ -9913,6 +9965,7 @@ class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   HistoricDataQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricDataQueryBuilder()..copyFromHeader(headerFrom);
 
   HistoricDataQueryBuilder get _$this {
@@ -10016,10 +10069,10 @@ class _$RemoteCommand extends RemoteCommand {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        originalSource == this.originalSource &&
-        destination == this.destination &&
-        timeout == this.timeout &&
-        cmd == this.cmd;
+        originalSource == other.originalSource &&
+        destination == other.destination &&
+        timeout == other.timeout &&
+        cmd == other.cmd;
   }
 
   @override
@@ -10109,6 +10162,7 @@ class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RemoteCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteCommandBuilder()..copyFromHeader(headerFrom);
 
   RemoteCommandBuilder get _$this {
@@ -10212,10 +10266,10 @@ class _$CommSystemsQuery extends CommSystemsQuery {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        commInterface == this.commInterface &&
-        model == this.model &&
-        list == this.list;
+        type == other.type &&
+        commInterface == other.commInterface &&
+        model == other.model &&
+        list == other.list;
   }
 
   @override
@@ -10305,6 +10359,7 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CommSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CommSystemsQueryBuilder()..copyFromHeader(headerFrom);
 
   CommSystemsQueryBuilder get _$this {
@@ -10423,15 +10478,15 @@ class _$TelemetryMsg extends TelemetryMsg {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        reqId == this.reqId &&
-        ttl == this.ttl &&
-        code == this.code &&
-        destination == this.destination &&
-        source == this.source &&
-        acknowledge == this.acknowledge &&
-        status == this.status &&
-        data == this.data;
+        type == other.type &&
+        reqId == other.reqId &&
+        ttl == other.ttl &&
+        code == other.code &&
+        destination == other.destination &&
+        source == other.source &&
+        acknowledge == other.acknowledge &&
+        status == other.status &&
+        data == other.data;
   }
 
   @override
@@ -10551,6 +10606,7 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TelemetryMsgBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TelemetryMsgBuilder()..copyFromHeader(headerFrom);
 
   TelemetryMsgBuilder get _$this {
@@ -10658,8 +10714,8 @@ class _$LblRange extends LblRange {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        range == this.range;
+        id == other.id &&
+        range == other.range;
   }
 
   @override
@@ -10737,6 +10793,7 @@ class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LblRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblRangeBuilder()..copyFromHeader(headerFrom);
 
   LblRangeBuilder get _$this {
@@ -10845,13 +10902,13 @@ class _$LblBeacon extends LblBeacon {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        beacon == this.beacon &&
-        lat == this.lat &&
-        lon == this.lon &&
-        depth == this.depth &&
-        queryChannel == this.queryChannel &&
-        replyChannel == this.replyChannel &&
-        transponderDelay == this.transponderDelay;
+        beacon == other.beacon &&
+        lat == other.lat &&
+        lon == other.lon &&
+        depth == other.depth &&
+        queryChannel == other.queryChannel &&
+        replyChannel == other.replyChannel &&
+        transponderDelay == other.transponderDelay;
   }
 
   @override
@@ -10880,8 +10937,8 @@ class _$LblBeacon extends LblBeacon {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('beacon', '$beacon')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('depth', '$depth (m)')
           ..add('queryChannel', '$queryChannel')
           ..add('replyChannel', '$replyChannel')
@@ -10959,6 +11016,7 @@ class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LblBeaconBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblBeaconBuilder()..copyFromHeader(headerFrom);
 
   LblBeaconBuilder get _$this {
@@ -11062,8 +11120,8 @@ class _$LblConfig extends LblConfig {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        beacons == this.beacons;
+        op == other.op &&
+        beacons == other.beacons;
   }
 
   @override
@@ -11141,6 +11199,7 @@ class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblConfigBuilder()..copyFromHeader(headerFrom);
 
   LblConfigBuilder get _$this {
@@ -11231,7 +11290,7 @@ class _$AcousticMessage extends AcousticMessage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        message == this.message;
+        message == other.message;
   }
 
   @override
@@ -11303,6 +11362,7 @@ class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AcousticMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticMessageBuilder()..copyFromHeader(headerFrom);
 
   AcousticMessageBuilder get _$this {
@@ -11400,10 +11460,10 @@ class _$AcousticOperation extends AcousticOperation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        system == this.system &&
-        range == this.range &&
-        msg == this.msg;
+        op == other.op &&
+        system == other.system &&
+        range == other.range &&
+        msg == other.msg;
   }
 
   @override
@@ -11493,6 +11553,7 @@ class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AcousticOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticOperationBuilder()..copyFromHeader(headerFrom);
 
   AcousticOperationBuilder get _$this {
@@ -11649,6 +11710,7 @@ class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AcousticSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticSystemsQueryBuilder()..copyFromHeader(headerFrom);
 
   AcousticSystemsQueryBuilder get _$this {
@@ -11735,7 +11797,7 @@ class _$AcousticSystems extends AcousticSystems {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        list == this.list;
+        list == other.list;
   }
 
   @override
@@ -11807,6 +11869,7 @@ class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AcousticSystemsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticSystemsBuilder()..copyFromHeader(headerFrom);
 
   AcousticSystemsBuilder get _$this {
@@ -11901,9 +11964,9 @@ class _$AcousticLink extends AcousticLink {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        peer == this.peer &&
-        rssi == this.rssi &&
-        integrity == this.integrity;
+        peer == other.peer &&
+        rssi == other.rssi &&
+        integrity == other.integrity;
   }
 
   @override
@@ -11987,6 +12050,7 @@ class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AcousticLinkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticLinkBuilder()..copyFromHeader(headerFrom);
 
   AcousticLinkBuilder get _$this {
@@ -12079,7 +12143,7 @@ class _$Rpm extends Rpm {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -12151,6 +12215,7 @@ class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RpmBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RpmBuilder()..copyFromHeader(headerFrom);
 
   RpmBuilder get _$this {
@@ -12239,7 +12304,7 @@ class _$Voltage extends Voltage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -12311,6 +12376,7 @@ class VoltageBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VoltageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VoltageBuilder()..copyFromHeader(headerFrom);
 
   VoltageBuilder get _$this {
@@ -12399,7 +12465,7 @@ class _$Current extends Current {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -12471,6 +12537,7 @@ class CurrentBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CurrentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CurrentBuilder()..copyFromHeader(headerFrom);
 
   CurrentBuilder get _$this {
@@ -12604,22 +12671,22 @@ class _$GpsFix extends GpsFix {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        validity == this.validity &&
-        type == this.type &&
-        utcYear == this.utcYear &&
-        utcMonth == this.utcMonth &&
-        utcDay == this.utcDay &&
-        utcTime == this.utcTime &&
-        lat == this.lat &&
-        lon == this.lon &&
-        height == this.height &&
-        satellites == this.satellites &&
-        cog == this.cog &&
-        sog == this.sog &&
-        hdop == this.hdop &&
-        vdop == this.vdop &&
-        hacc == this.hacc &&
-        vacc == this.vacc;
+        validity == other.validity &&
+        type == other.type &&
+        utcYear == other.utcYear &&
+        utcMonth == other.utcMonth &&
+        utcDay == other.utcDay &&
+        utcTime == other.utcTime &&
+        lat == other.lat &&
+        lon == other.lon &&
+        height == other.height &&
+        satellites == other.satellites &&
+        cog == other.cog &&
+        sog == other.sog &&
+        hdop == other.hdop &&
+        vdop == other.vdop &&
+        hacc == other.hacc &&
+        vacc == other.vacc;
   }
 
   @override
@@ -12662,11 +12729,11 @@ class _$GpsFix extends GpsFix {
           ..add('utcMonth', '$utcMonth')
           ..add('utcDay', '$utcDay')
           ..add('utcTime', '$utcTime (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('satellites', '$satellites')
-          ..add('cog', '$cog (rad)${cog != null ? " [${cog * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('cog', '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
           ..add('sog', '$sog (m/s)')
           ..add('hdop', '$hdop')
           ..add('vdop', '$vdop')
@@ -12781,6 +12848,7 @@ class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GpsFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixBuilder()..copyFromHeader(headerFrom);
 
   GpsFixBuilder get _$this {
@@ -12911,11 +12979,11 @@ class _$EulerAngles extends EulerAngles {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        time == this.time &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi &&
-        psiMagnetic == this.psiMagnetic;
+        time == other.time &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi &&
+        psiMagnetic == other.psiMagnetic;
   }
 
   @override
@@ -12942,10 +13010,10 @@ class _$EulerAngles extends EulerAngles {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', '$time (s)')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psiMagnetic', '$psiMagnetic (rad)${psiMagnetic != null ? " [${psiMagnetic * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psiMagnetic', '$psiMagnetic (rad)${psiMagnetic != null ? ' [${psiMagnetic * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -13011,6 +13079,7 @@ class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EulerAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EulerAnglesBuilder()..copyFromHeader(headerFrom);
 
   EulerAnglesBuilder get _$this {
@@ -13119,11 +13188,11 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        time == this.time &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        timestep == this.timestep;
+        time == other.time &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        timestep == other.timestep;
   }
 
   @override
@@ -13150,9 +13219,9 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', '$time (s)')
-          ..add('x', '$x (rad)${x != null ? " [${x * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('y', '$y (rad)${y != null ? " [${y * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('z', '$z (rad)${z != null ? " [${z * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('x', '$x (rad)${x != null ? ' [${x * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('y', '$y (rad)${y != null ? ' [${y * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('z', '$z (rad)${z != null ? ' [${z * 180.0 / math.pi} (deg)]' : ''}')
           ..add('timestep', '$timestep (s)'))
         .toString();
   }
@@ -13219,6 +13288,7 @@ class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EulerAnglesDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EulerAnglesDeltaBuilder()..copyFromHeader(headerFrom);
 
   EulerAnglesDeltaBuilder get _$this {
@@ -13324,10 +13394,10 @@ class _$AngularVelocity extends AngularVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        time == this.time &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        time == other.time &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -13353,9 +13423,9 @@ class _$AngularVelocity extends AngularVelocity {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', '$time (s)')
-          ..add('x', '$x (rad/s)${x != null ? " [${x * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('y', '$y (rad/s)${y != null ? " [${y * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('z', '$z (rad/s)${z != null ? " [${z * 180.0 / math.pi} (deg/s)]" : ""}'))
+          ..add('x', '$x (rad/s)${x != null ? ' [${x * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('y', '$y (rad/s)${y != null ? ' [${y * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('z', '$z (rad/s)${z != null ? ' [${z * 180.0 / math.pi} (deg/s)]' : ''}'))
         .toString();
   }
 }
@@ -13417,6 +13487,7 @@ class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AngularVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AngularVelocityBuilder()..copyFromHeader(headerFrom);
 
   AngularVelocityBuilder get _$this {
@@ -13520,10 +13591,10 @@ class _$Acceleration extends Acceleration {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        time == this.time &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        time == other.time &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -13613,6 +13684,7 @@ class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AccelerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AccelerationBuilder()..copyFromHeader(headerFrom);
 
   AccelerationBuilder get _$this {
@@ -13716,10 +13788,10 @@ class _$MagneticField extends MagneticField {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        time == this.time &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        time == other.time &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -13809,6 +13881,7 @@ class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MagneticFieldBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MagneticFieldBuilder()..copyFromHeader(headerFrom);
 
   MagneticFieldBuilder get _$this {
@@ -13912,10 +13985,10 @@ class _$GroundVelocity extends GroundVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        validity == this.validity &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        validity == other.validity &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -14005,6 +14078,7 @@ class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GroundVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroundVelocityBuilder()..copyFromHeader(headerFrom);
 
   GroundVelocityBuilder get _$this {
@@ -14108,10 +14182,10 @@ class _$WaterVelocity extends WaterVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        validity == this.validity &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        validity == other.validity &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -14201,6 +14275,7 @@ class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   WaterVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WaterVelocityBuilder()..copyFromHeader(headerFrom);
 
   WaterVelocityBuilder get _$this {
@@ -14304,10 +14379,10 @@ class _$VelocityDelta extends VelocityDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        time == this.time &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        time == other.time &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -14397,6 +14472,7 @@ class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VelocityDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VelocityDeltaBuilder()..copyFromHeader(headerFrom);
 
   VelocityDeltaBuilder get _$this {
@@ -14500,10 +14576,10 @@ class _$Distance extends Distance {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        validity == this.validity &&
-        location == this.location &&
-        beamConfig == this.beamConfig &&
-        value == this.value;
+        validity == other.validity &&
+        location == other.location &&
+        beamConfig == other.beamConfig &&
+        value == other.value;
   }
 
   @override
@@ -14593,6 +14669,7 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DistanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DistanceBuilder()..copyFromHeader(headerFrom);
 
   DistanceBuilder get _$this {
@@ -14687,7 +14764,7 @@ class _$Temperature extends Temperature {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -14759,6 +14836,7 @@ class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TemperatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TemperatureBuilder()..copyFromHeader(headerFrom);
 
   TemperatureBuilder get _$this {
@@ -14847,7 +14925,7 @@ class _$Pressure extends Pressure {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -14919,6 +14997,7 @@ class PressureBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PressureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PressureBuilder()..copyFromHeader(headerFrom);
 
   PressureBuilder get _$this {
@@ -15007,7 +15086,7 @@ class _$Depth extends Depth {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -15079,6 +15158,7 @@ class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DepthBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DepthBuilder()..copyFromHeader(headerFrom);
 
   DepthBuilder get _$this {
@@ -15167,7 +15247,7 @@ class _$DepthOffset extends DepthOffset {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -15239,6 +15319,7 @@ class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DepthOffsetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DepthOffsetBuilder()..copyFromHeader(headerFrom);
 
   DepthOffsetBuilder get _$this {
@@ -15327,7 +15408,7 @@ class _$SoundSpeed extends SoundSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -15399,6 +15480,7 @@ class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SoundSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoundSpeedBuilder()..copyFromHeader(headerFrom);
 
   SoundSpeedBuilder get _$this {
@@ -15487,7 +15569,7 @@ class _$WaterDensity extends WaterDensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -15559,6 +15641,7 @@ class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   WaterDensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WaterDensityBuilder()..copyFromHeader(headerFrom);
 
   WaterDensityBuilder get _$this {
@@ -15647,7 +15730,7 @@ class _$Conductivity extends Conductivity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -15719,6 +15802,7 @@ class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ConductivityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ConductivityBuilder()..copyFromHeader(headerFrom);
 
   ConductivityBuilder get _$this {
@@ -15807,7 +15891,7 @@ class _$Salinity extends Salinity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -15879,6 +15963,7 @@ class SalinityBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SalinityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SalinityBuilder()..copyFromHeader(headerFrom);
 
   SalinityBuilder get _$this {
@@ -15973,9 +16058,9 @@ class _$WindSpeed extends WindSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        direction == this.direction &&
-        speed == this.speed &&
-        turbulence == this.turbulence;
+        direction == other.direction &&
+        speed == other.speed &&
+        turbulence == other.turbulence;
   }
 
   @override
@@ -15999,7 +16084,7 @@ class _$WindSpeed extends WindSpeed {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('direction', '$direction (rad)${direction != null ? " [${direction * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('direction', '$direction (rad)${direction != null ? ' [${direction * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed (m/s)')
           ..add('turbulence', '$turbulence (m/s)'))
         .toString();
@@ -16059,6 +16144,7 @@ class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   WindSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WindSpeedBuilder()..copyFromHeader(headerFrom);
 
   WindSpeedBuilder get _$this {
@@ -16151,7 +16237,7 @@ class _$RelativeHumidity extends RelativeHumidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -16223,6 +16309,7 @@ class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RelativeHumidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RelativeHumidityBuilder()..copyFromHeader(headerFrom);
 
   RelativeHumidityBuilder get _$this {
@@ -16311,7 +16398,7 @@ class _$DevDataText extends DevDataText {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -16383,6 +16470,7 @@ class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DevDataTextBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevDataTextBuilder()..copyFromHeader(headerFrom);
 
   DevDataTextBuilder get _$this {
@@ -16471,7 +16559,7 @@ class _$DevDataBinary extends DevDataBinary {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -16543,6 +16631,7 @@ class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DevDataBinaryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevDataBinaryBuilder()..copyFromHeader(headerFrom);
 
   DevDataBinaryBuilder get _$this {
@@ -16631,7 +16720,7 @@ class _$Force extends Force {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -16703,6 +16792,7 @@ class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ForceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ForceBuilder()..copyFromHeader(headerFrom);
 
   ForceBuilder get _$this {
@@ -16812,14 +16902,14 @@ class _$SonarData extends SonarData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        frequency == this.frequency &&
-        minRange == this.minRange &&
-        maxRange == this.maxRange &&
-        bitsPerPoint == this.bitsPerPoint &&
-        scaleFactor == this.scaleFactor &&
-        beamConfig == this.beamConfig &&
-        data == this.data;
+        type == other.type &&
+        frequency == other.frequency &&
+        minRange == other.minRange &&
+        maxRange == other.maxRange &&
+        bitsPerPoint == other.bitsPerPoint &&
+        scaleFactor == other.scaleFactor &&
+        beamConfig == other.beamConfig &&
+        data == other.data;
   }
 
   @override
@@ -16933,6 +17023,7 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SonarDataBuilder()..copyFromHeader(headerFrom);
 
   SonarDataBuilder get _$this {
@@ -17097,6 +17188,7 @@ class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PulseBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PulseBuilder()..copyFromHeader(headerFrom);
 
   PulseBuilder get _$this {
@@ -17183,7 +17275,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op;
+        op == other.op;
   }
 
   @override
@@ -17255,6 +17347,7 @@ class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart impl
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PulseDetectionControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PulseDetectionControlBuilder()..copyFromHeader(headerFrom);
 
   PulseDetectionControlBuilder get _$this {
@@ -17349,9 +17442,9 @@ class _$FuelLevel extends FuelLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value &&
-        confidence == this.confidence &&
-        opmodes == this.opmodes;
+        value == other.value &&
+        confidence == other.confidence &&
+        opmodes == other.opmodes;
   }
 
   @override
@@ -17435,6 +17528,7 @@ class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FuelLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FuelLevelBuilder()..copyFromHeader(headerFrom);
 
   FuelLevelBuilder get _$this {
@@ -17569,21 +17663,21 @@ class _$GpsNavData extends GpsNavData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        itow == this.itow &&
-        lat == this.lat &&
-        lon == this.lon &&
-        heightEll == this.heightEll &&
-        heightSea == this.heightSea &&
-        hacc == this.hacc &&
-        vacc == this.vacc &&
-        velN == this.velN &&
-        velE == this.velE &&
-        velD == this.velD &&
-        speed == this.speed &&
-        gspeed == this.gspeed &&
-        heading == this.heading &&
-        sacc == this.sacc &&
-        cacc == this.cacc;
+        itow == other.itow &&
+        lat == other.lat &&
+        lon == other.lon &&
+        heightEll == other.heightEll &&
+        heightSea == other.heightSea &&
+        hacc == other.hacc &&
+        vacc == other.vacc &&
+        velN == other.velN &&
+        velE == other.velE &&
+        velD == other.velD &&
+        speed == other.speed &&
+        gspeed == other.gspeed &&
+        heading == other.heading &&
+        sacc == other.sacc &&
+        cacc == other.cacc;
   }
 
   @override
@@ -17620,8 +17714,8 @@ class _$GpsNavData extends GpsNavData {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('itow', '$itow (ms)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('heightEll', '$heightEll (m)')
           ..add('heightSea', '$heightSea (m)')
           ..add('hacc', '$hacc (m)')
@@ -17631,9 +17725,9 @@ class _$GpsNavData extends GpsNavData {
           ..add('velD', '$velD (m/s)')
           ..add('speed', '$speed (m/s)')
           ..add('gspeed', '$gspeed (m/s)')
-          ..add('heading', '$heading (rad)${heading != null ? " [${heading * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('heading', '$heading (rad)${heading != null ? ' [${heading * 180.0 / math.pi} (deg)]' : ''}')
           ..add('sacc', '$sacc (m/s)')
-          ..add('cacc', '$cacc (rad)${cacc != null ? " [${cacc * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('cacc', '$cacc (rad)${cacc != null ? ' [${cacc * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -17739,6 +17833,7 @@ class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GpsNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsNavDataBuilder()..copyFromHeader(headerFrom);
 
   GpsNavDataBuilder get _$this {
@@ -17858,8 +17953,8 @@ class _$ServoPosition extends ServoPosition {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        value == this.value;
+        id == other.id &&
+        value == other.value;
   }
 
   @override
@@ -17883,7 +17978,7 @@ class _$ServoPosition extends ServoPosition {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
-          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -17937,6 +18032,7 @@ class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ServoPositionBuilder()..copyFromHeader(headerFrom);
 
   ServoPositionBuilder get _$this {
@@ -18042,12 +18138,12 @@ class _$DeviceState extends DeviceState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi;
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi;
   }
 
   @override
@@ -18077,9 +18173,9 @@ class _$DeviceState extends DeviceState {
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -18149,6 +18245,7 @@ class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DeviceStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DeviceStateBuilder()..copyFromHeader(headerFrom);
 
   DeviceStateBuilder get _$this {
@@ -18250,8 +18347,8 @@ class _$BeamConfig extends BeamConfig {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        beamWidth == this.beamWidth &&
-        beamHeight == this.beamHeight;
+        beamWidth == other.beamWidth &&
+        beamHeight == other.beamHeight;
   }
 
   @override
@@ -18274,8 +18371,8 @@ class _$BeamConfig extends BeamConfig {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('beamWidth', '$beamWidth (rad)${beamWidth != null ? " [${beamWidth * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('beamHeight', '$beamHeight (rad)${beamHeight != null ? " [${beamHeight * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('beamWidth', '$beamWidth (rad)${beamWidth != null ? ' [${beamWidth * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('beamHeight', '$beamHeight (rad)${beamHeight != null ? ' [${beamHeight * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -18329,6 +18426,7 @@ class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   BeamConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => BeamConfigBuilder()..copyFromHeader(headerFrom);
 
   BeamConfigBuilder get _$this {
@@ -18419,7 +18517,7 @@ class _$DataSanity extends DataSanity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sane == this.sane;
+        sane == other.sane;
   }
 
   @override
@@ -18491,6 +18589,7 @@ class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DataSanityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DataSanityBuilder()..copyFromHeader(headerFrom);
 
   DataSanityBuilder get _$this {
@@ -18579,7 +18678,7 @@ class _$RhodamineDye extends RhodamineDye {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -18651,6 +18750,7 @@ class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RhodamineDyeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RhodamineDyeBuilder()..copyFromHeader(headerFrom);
 
   RhodamineDyeBuilder get _$this {
@@ -18739,7 +18839,7 @@ class _$CrudeOil extends CrudeOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -18811,6 +18911,7 @@ class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CrudeOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CrudeOilBuilder()..copyFromHeader(headerFrom);
 
   CrudeOilBuilder get _$this {
@@ -18899,7 +19000,7 @@ class _$FineOil extends FineOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -18971,6 +19072,7 @@ class FineOilBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FineOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FineOilBuilder()..copyFromHeader(headerFrom);
 
   FineOilBuilder get _$this {
@@ -19059,7 +19161,7 @@ class _$Turbidity extends Turbidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -19131,6 +19233,7 @@ class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TurbidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TurbidityBuilder()..copyFromHeader(headerFrom);
 
   TurbidityBuilder get _$this {
@@ -19219,7 +19322,7 @@ class _$Chlorophyll extends Chlorophyll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -19291,6 +19394,7 @@ class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ChlorophyllBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ChlorophyllBuilder()..copyFromHeader(headerFrom);
 
   ChlorophyllBuilder get _$this {
@@ -19379,7 +19483,7 @@ class _$Fluorescein extends Fluorescein {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -19451,6 +19555,7 @@ class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FluoresceinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FluoresceinBuilder()..copyFromHeader(headerFrom);
 
   FluoresceinBuilder get _$this {
@@ -19539,7 +19644,7 @@ class _$Phycocyanin extends Phycocyanin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -19611,6 +19716,7 @@ class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PhycocyaninBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PhycocyaninBuilder()..copyFromHeader(headerFrom);
 
   PhycocyaninBuilder get _$this {
@@ -19699,7 +19805,7 @@ class _$Phycoerythrin extends Phycoerythrin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -19771,6 +19877,7 @@ class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PhycoerythrinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PhycoerythrinBuilder()..copyFromHeader(headerFrom);
 
   PhycoerythrinBuilder get _$this {
@@ -19901,21 +20008,21 @@ class _$GpsFixRtk extends GpsFixRtk {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        validity == this.validity &&
-        type == this.type &&
-        tow == this.tow &&
-        baseLat == this.baseLat &&
-        baseLon == this.baseLon &&
-        baseHeight == this.baseHeight &&
-        n == this.n &&
-        e == this.e &&
-        d == this.d &&
-        vN == this.vN &&
-        vE == this.vE &&
-        vD == this.vD &&
-        satellites == this.satellites &&
-        iarHyp == this.iarHyp &&
-        iarRatio == this.iarRatio;
+        validity == other.validity &&
+        type == other.type &&
+        tow == other.tow &&
+        baseLat == other.baseLat &&
+        baseLon == other.baseLon &&
+        baseHeight == other.baseHeight &&
+        n == other.n &&
+        e == other.e &&
+        d == other.d &&
+        vN == other.vN &&
+        vE == other.vE &&
+        vD == other.vD &&
+        satellites == other.satellites &&
+        iarHyp == other.iarHyp &&
+        iarRatio == other.iarRatio;
   }
 
   @override
@@ -19954,8 +20061,8 @@ class _$GpsFixRtk extends GpsFixRtk {
           ..add('validity', '$validity (Bitfield)')
           ..add('type', '$type (Enumerated)')
           ..add('tow', '$tow')
-          ..add('baseLat', '$baseLat (rad)${baseLat != null ? " [${baseLat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('baseLon', '$baseLon (rad)${baseLon != null ? " [${baseLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('baseLat', '$baseLat (rad)${baseLat != null ? ' [${baseLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('baseLon', '$baseLon (rad)${baseLon != null ? ' [${baseLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('baseHeight', '$baseHeight (m)')
           ..add('n', '$n (m)')
           ..add('e', '$e (m)')
@@ -20071,6 +20178,7 @@ class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GpsFixRtkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixRtkBuilder()..copyFromHeader(headerFrom);
 
   GpsFixRtkBuilder get _$this {
@@ -20190,8 +20298,8 @@ class _$ExternalNavData extends ExternalNavData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state &&
-        type == this.type;
+        state == other.state &&
+        type == other.type;
   }
 
   @override
@@ -20269,6 +20377,7 @@ class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ExternalNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ExternalNavDataBuilder()..copyFromHeader(headerFrom);
 
   ExternalNavDataBuilder get _$this {
@@ -20359,7 +20468,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -20431,6 +20540,7 @@ class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DissolvedOxygenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DissolvedOxygenBuilder()..copyFromHeader(headerFrom);
 
   DissolvedOxygenBuilder get _$this {
@@ -20519,7 +20629,7 @@ class _$AirSaturation extends AirSaturation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -20591,6 +20701,7 @@ class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AirSaturationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AirSaturationBuilder()..copyFromHeader(headerFrom);
 
   AirSaturationBuilder get _$this {
@@ -20679,7 +20790,7 @@ class _$Throttle extends Throttle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -20751,6 +20862,7 @@ class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ThrottleBuilder()..copyFromHeader(headerFrom);
 
   ThrottleBuilder get _$this {
@@ -20839,7 +20951,7 @@ class _$PH extends PH {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -20911,6 +21023,7 @@ class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithI
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PHBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PHBuilder()..copyFromHeader(headerFrom);
 
   PHBuilder get _$this {
@@ -20999,7 +21112,7 @@ class _$Redox extends Redox {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -21071,6 +21184,7 @@ class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RedoxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RedoxBuilder()..copyFromHeader(headerFrom);
 
   RedoxBuilder get _$this {
@@ -21165,9 +21279,9 @@ class _$CameraZoom extends CameraZoom {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        zoom == this.zoom &&
-        action == this.action;
+        id == other.id &&
+        zoom == other.zoom &&
+        action == other.action;
   }
 
   @override
@@ -21251,6 +21365,7 @@ class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CameraZoomBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CameraZoomBuilder()..copyFromHeader(headerFrom);
 
   CameraZoomBuilder get _$this {
@@ -21346,8 +21461,8 @@ class _$SetThrusterActuation extends SetThrusterActuation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        value == this.value;
+        id == other.id &&
+        value == other.value;
   }
 
   @override
@@ -21425,6 +21540,7 @@ class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SetThrusterActuationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetThrusterActuationBuilder()..copyFromHeader(headerFrom);
 
   SetThrusterActuationBuilder get _$this {
@@ -21518,8 +21634,8 @@ class _$SetServoPosition extends SetServoPosition {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        value == this.value;
+        id == other.id &&
+        value == other.value;
   }
 
   @override
@@ -21543,7 +21659,7 @@ class _$SetServoPosition extends SetServoPosition {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
-          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -21597,6 +21713,7 @@ class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SetServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetServoPositionBuilder()..copyFromHeader(headerFrom);
 
   SetServoPositionBuilder get _$this {
@@ -21690,8 +21807,8 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        angle == this.angle;
+        id == other.id &&
+        angle == other.angle;
   }
 
   @override
@@ -21715,7 +21832,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
-          ..add('angle', '$angle (rad)${angle != null ? " [${angle * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('angle', '$angle (rad)${angle != null ? ' [${angle * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -21769,6 +21886,7 @@ class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPar
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SetControlSurfaceDeflectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetControlSurfaceDeflectionBuilder()..copyFromHeader(headerFrom);
 
   SetControlSurfaceDeflectionBuilder get _$this {
@@ -21862,8 +21980,8 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        actions == this.actions;
+        op == other.op &&
+        actions == other.actions;
   }
 
   @override
@@ -21941,6 +22059,7 @@ class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RemoteActionsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteActionsRequestBuilder()..copyFromHeader(headerFrom);
 
   RemoteActionsRequestBuilder get _$this {
@@ -22031,7 +22150,7 @@ class _$RemoteActions extends RemoteActions {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        actions == this.actions;
+        actions == other.actions;
   }
 
   @override
@@ -22103,6 +22222,7 @@ class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RemoteActionsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteActionsBuilder()..copyFromHeader(headerFrom);
 
   RemoteActionsBuilder get _$this {
@@ -22194,8 +22314,8 @@ class _$ButtonEvent extends ButtonEvent {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        button == this.button &&
-        value == this.value;
+        button == other.button &&
+        value == other.value;
   }
 
   @override
@@ -22273,6 +22393,7 @@ class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ButtonEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ButtonEventBuilder()..copyFromHeader(headerFrom);
 
   ButtonEventBuilder get _$this {
@@ -22366,8 +22487,8 @@ class _$LcdControl extends LcdControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        text == this.text;
+        op == other.op &&
+        text == other.text;
   }
 
   @override
@@ -22445,6 +22566,7 @@ class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LcdControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LcdControlBuilder()..copyFromHeader(headerFrom);
 
   LcdControlBuilder get _$this {
@@ -22541,9 +22663,9 @@ class _$PowerOperation extends PowerOperation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        timeRemain == this.timeRemain &&
-        schedTime == this.schedTime;
+        op == other.op &&
+        timeRemain == other.timeRemain &&
+        schedTime == other.schedTime;
   }
 
   @override
@@ -22627,6 +22749,7 @@ class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PowerOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerOperationBuilder()..copyFromHeader(headerFrom);
 
   PowerOperationBuilder get _$this {
@@ -22725,9 +22848,9 @@ class _$PowerChannelControl extends PowerChannelControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        op == this.op &&
-        schedTime == this.schedTime;
+        name == other.name &&
+        op == other.op &&
+        schedTime == other.schedTime;
   }
 
   @override
@@ -22811,6 +22934,7 @@ class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PowerChannelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerChannelControlBuilder()..copyFromHeader(headerFrom);
 
   PowerChannelControlBuilder get _$this {
@@ -22965,6 +23089,7 @@ class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart imp
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   QueryPowerChannelStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryPowerChannelStateBuilder()..copyFromHeader(headerFrom);
 
   QueryPowerChannelStateBuilder get _$this {
@@ -23054,8 +23179,8 @@ class _$PowerChannelState extends PowerChannelState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        state == this.state;
+        name == other.name &&
+        state == other.state;
   }
 
   @override
@@ -23133,6 +23258,7 @@ class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PowerChannelStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerChannelStateBuilder()..copyFromHeader(headerFrom);
 
   PowerChannelStateBuilder get _$this {
@@ -23226,8 +23352,8 @@ class _$LedBrightness extends LedBrightness {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        value == this.value;
+        name == other.name &&
+        value == other.value;
   }
 
   @override
@@ -23305,6 +23431,7 @@ class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   LedBrightnessBuilder get _$this {
@@ -23395,7 +23522,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name;
+        name == other.name;
   }
 
   @override
@@ -23467,6 +23594,7 @@ class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   QueryLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryLedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   QueryLedBrightnessBuilder get _$this {
@@ -23558,8 +23686,8 @@ class _$SetLedBrightness extends SetLedBrightness {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        value == this.value;
+        name == other.name &&
+        value == other.value;
   }
 
   @override
@@ -23637,6 +23765,7 @@ class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SetLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetLedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   SetLedBrightnessBuilder get _$this {
@@ -23733,9 +23862,9 @@ class _$SetPWM extends SetPWM {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        period == this.period &&
-        dutyCycle == this.dutyCycle;
+        id == other.id &&
+        period == other.period &&
+        dutyCycle == other.dutyCycle;
   }
 
   @override
@@ -23819,6 +23948,7 @@ class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SetPWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetPWMBuilder()..copyFromHeader(headerFrom);
 
   SetPWMBuilder get _$this {
@@ -23917,9 +24047,9 @@ class _$PWM extends PWM {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        period == this.period &&
-        dutyCycle == this.dutyCycle;
+        id == other.id &&
+        period == other.period &&
+        dutyCycle == other.dutyCycle;
   }
 
   @override
@@ -24003,6 +24133,7 @@ class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PWMBuilder()..copyFromHeader(headerFrom);
 
   PWMBuilder get _$this {
@@ -24152,26 +24283,26 @@ class _$EstimatedState extends EstimatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        height == this.height &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi &&
-        u == this.u &&
-        v == this.v &&
-        w == this.w &&
-        vx == this.vx &&
-        vy == this.vy &&
-        vz == this.vz &&
-        p == this.p &&
-        q == this.q &&
-        r == this.r &&
-        depth == this.depth &&
-        alt == this.alt;
+        lat == other.lat &&
+        lon == other.lon &&
+        height == other.height &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi &&
+        u == other.u &&
+        v == other.v &&
+        w == other.w &&
+        vx == other.vx &&
+        vy == other.vy &&
+        vz == other.vz &&
+        p == other.p &&
+        q == other.q &&
+        r == other.r &&
+        depth == other.depth &&
+        alt == other.alt;
   }
 
   @override
@@ -24212,24 +24343,24 @@ class _$EstimatedState extends EstimatedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('depth', '$depth (m)')
           ..add('alt', '$alt (m)'))
         .toString();
@@ -24357,6 +24488,7 @@ class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EstimatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EstimatedStateBuilder()..copyFromHeader(headerFrom);
 
   EstimatedStateBuilder get _$this {
@@ -24489,9 +24621,9 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -24575,6 +24707,7 @@ class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart im
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EstimatedStreamVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EstimatedStreamVelocityBuilder()..copyFromHeader(headerFrom);
 
   EstimatedStreamVelocityBuilder get _$this {
@@ -24667,7 +24800,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -24739,6 +24872,7 @@ class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   IndicatedSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IndicatedSpeedBuilder()..copyFromHeader(headerFrom);
 
   IndicatedSpeedBuilder get _$this {
@@ -24827,7 +24961,7 @@ class _$TrueSpeed extends TrueSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -24899,6 +25033,7 @@ class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrueSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrueSpeedBuilder()..copyFromHeader(headerFrom);
 
   TrueSpeedBuilder get _$this {
@@ -25026,20 +25161,20 @@ class _$NavigationUncertainty extends NavigationUncertainty {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi &&
-        p == this.p &&
-        q == this.q &&
-        r == this.r &&
-        u == this.u &&
-        v == this.v &&
-        w == this.w &&
-        biasPsi == this.biasPsi &&
-        biasR == this.biasR;
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi &&
+        p == other.p &&
+        q == other.q &&
+        r == other.r &&
+        u == other.u &&
+        v == other.v &&
+        w == other.w &&
+        biasPsi == other.biasPsi &&
+        biasR == other.biasR;
   }
 
   @override
@@ -25077,17 +25212,17 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
-          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? " [${biasPsi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('biasR', '$biasR (rad/s)${biasR != null ? " [${biasR * 180.0 / math.pi} (deg/s)]" : ""}'))
+          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('biasR', '$biasR (rad/s)${biasR != null ? ' [${biasR * 180.0 / math.pi} (deg/s)]' : ''}'))
         .toString();
   }
 }
@@ -25189,6 +25324,7 @@ class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart impl
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   NavigationUncertaintyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NavigationUncertaintyBuilder()..copyFromHeader(headerFrom);
 
   NavigationUncertaintyBuilder get _$this {
@@ -25327,15 +25463,15 @@ class _$NavigationData extends NavigationData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        biasPsi == this.biasPsi &&
-        biasR == this.biasR &&
-        cog == this.cog &&
-        cyaw == this.cyaw &&
-        lblRejLevel == this.lblRejLevel &&
-        gpsRejLevel == this.gpsRejLevel &&
-        customX == this.customX &&
-        customY == this.customY &&
-        customZ == this.customZ;
+        biasPsi == other.biasPsi &&
+        biasR == other.biasR &&
+        cog == other.cog &&
+        cyaw == other.cyaw &&
+        lblRejLevel == other.lblRejLevel &&
+        gpsRejLevel == other.gpsRejLevel &&
+        customX == other.customX &&
+        customY == other.customY &&
+        customZ == other.customZ;
   }
 
   @override
@@ -25365,10 +25501,10 @@ class _$NavigationData extends NavigationData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? " [${biasPsi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('biasR', '$biasR (rad/s)${biasR != null ? " [${biasR * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('cog', '$cog (rad)${cog != null ? " [${cog * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('cyaw', '$cyaw (rad)${cyaw != null ? " [${cyaw * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('biasR', '$biasR (rad/s)${biasR != null ? ' [${biasR * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('cog', '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('cyaw', '$cyaw (rad)${cyaw != null ? ' [${cyaw * 180.0 / math.pi} (deg)]' : ''}')
           ..add('lblRejLevel', '$lblRejLevel')
           ..add('gpsRejLevel', '$gpsRejLevel')
           ..add('customX', '$customX')
@@ -25455,6 +25591,7 @@ class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   NavigationDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NavigationDataBuilder()..copyFromHeader(headerFrom);
 
   NavigationDataBuilder get _$this {
@@ -25562,8 +25699,8 @@ class _$GpsFixRejection extends GpsFixRejection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        utcTime == this.utcTime &&
-        reason == this.reason;
+        utcTime == other.utcTime &&
+        reason == other.reason;
   }
 
   @override
@@ -25641,6 +25778,7 @@ class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GpsFixRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixRejectionBuilder()..copyFromHeader(headerFrom);
 
   GpsFixRejectionBuilder get _$this {
@@ -25737,9 +25875,9 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        range == this.range &&
-        acceptance == this.acceptance;
+        id == other.id &&
+        range == other.range &&
+        acceptance == other.acceptance;
   }
 
   @override
@@ -25823,6 +25961,7 @@ class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LblRangeAcceptanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblRangeAcceptanceBuilder()..copyFromHeader(headerFrom);
 
   LblRangeAcceptanceBuilder get _$this {
@@ -25924,10 +26063,10 @@ class _$DvlRejection extends DvlRejection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        reason == this.reason &&
-        value == this.value &&
-        timestep == this.timestep;
+        type == other.type &&
+        reason == other.reason &&
+        value == other.value &&
+        timestep == other.timestep;
   }
 
   @override
@@ -26017,6 +26156,7 @@ class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DvlRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DvlRejectionBuilder()..copyFromHeader(headerFrom);
 
   DvlRejectionBuilder get _$this {
@@ -26126,12 +26266,12 @@ class _$LblEstimate extends LblEstimate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        beacon == this.beacon &&
-        x == this.x &&
-        y == this.y &&
-        varX == this.varX &&
-        varY == this.varY &&
-        distance == this.distance;
+        beacon == other.beacon &&
+        x == other.x &&
+        y == other.y &&
+        varX == other.varX &&
+        varY == other.varY &&
+        distance == other.distance;
   }
 
   @override
@@ -26233,6 +26373,7 @@ class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LblEstimateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblEstimateBuilder()..copyFromHeader(headerFrom);
 
   LblEstimateBuilder get _$this {
@@ -26331,7 +26472,7 @@ class _$AlignmentState extends AlignmentState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state;
+        state == other.state;
   }
 
   @override
@@ -26403,6 +26544,7 @@ class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AlignmentStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AlignmentStateBuilder()..copyFromHeader(headerFrom);
 
   AlignmentStateBuilder get _$this {
@@ -26497,9 +26639,9 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -26583,6 +26725,7 @@ class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GroupStreamVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroupStreamVelocityBuilder()..copyFromHeader(headerFrom);
 
   GroupStreamVelocityBuilder get _$this {
@@ -26681,9 +26824,9 @@ class _$Airflow extends Airflow {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        va == this.va &&
-        aoa == this.aoa &&
-        ssa == this.ssa;
+        va == other.va &&
+        aoa == other.aoa &&
+        ssa == other.ssa;
   }
 
   @override
@@ -26708,8 +26851,8 @@ class _$Airflow extends Airflow {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('va', '$va (m/s)')
-          ..add('aoa', '$aoa (rad)${aoa != null ? " [${aoa * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('ssa', '$ssa (rad)${ssa != null ? " [${ssa * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('aoa', '$aoa (rad)${aoa != null ? ' [${aoa * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('ssa', '$ssa (rad)${ssa != null ? ' [${ssa * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -26767,6 +26910,7 @@ class AirflowBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AirflowBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AirflowBuilder()..copyFromHeader(headerFrom);
 
   AirflowBuilder get _$this {
@@ -26859,7 +27003,7 @@ class _$DesiredHeading extends DesiredHeading {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -26881,7 +27025,7 @@ class _$DesiredHeading extends DesiredHeading {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -26931,6 +27075,7 @@ class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredHeadingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredHeadingBuilder()..copyFromHeader(headerFrom);
 
   DesiredHeadingBuilder get _$this {
@@ -27022,8 +27167,8 @@ class _$DesiredZ extends DesiredZ {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value &&
-        zUnits == this.zUnits;
+        value == other.value &&
+        zUnits == other.zUnits;
   }
 
   @override
@@ -27101,6 +27246,7 @@ class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredZBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredZBuilder()..copyFromHeader(headerFrom);
 
   DesiredZBuilder get _$this {
@@ -27194,8 +27340,8 @@ class _$DesiredSpeed extends DesiredSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value &&
-        speedUnits == this.speedUnits;
+        value == other.value &&
+        speedUnits == other.speedUnits;
   }
 
   @override
@@ -27273,6 +27419,7 @@ class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredSpeedBuilder()..copyFromHeader(headerFrom);
 
   DesiredSpeedBuilder get _$this {
@@ -27363,7 +27510,7 @@ class _$DesiredRoll extends DesiredRoll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -27385,7 +27532,7 @@ class _$DesiredRoll extends DesiredRoll {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -27435,6 +27582,7 @@ class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredRollBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredRollBuilder()..copyFromHeader(headerFrom);
 
   DesiredRollBuilder get _$this {
@@ -27523,7 +27671,7 @@ class _$DesiredPitch extends DesiredPitch {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -27545,7 +27693,7 @@ class _$DesiredPitch extends DesiredPitch {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad)${value != null ? " [${value * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -27595,6 +27743,7 @@ class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredPitchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredPitchBuilder()..copyFromHeader(headerFrom);
 
   DesiredPitchBuilder get _$this {
@@ -27683,7 +27832,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -27755,6 +27904,7 @@ class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredVerticalRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredVerticalRateBuilder()..copyFromHeader(headerFrom);
 
   DesiredVerticalRateBuilder get _$this {
@@ -27879,19 +28029,19 @@ class _$DesiredPath extends DesiredPath {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        pathRef == this.pathRef &&
-        startLat == this.startLat &&
-        startLon == this.startLon &&
-        startZ == this.startZ &&
-        startZUnits == this.startZUnits &&
-        endLat == this.endLat &&
-        endLon == this.endLon &&
-        endZ == this.endZ &&
-        endZUnits == this.endZUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        lradius == this.lradius &&
-        flags == this.flags;
+        pathRef == other.pathRef &&
+        startLat == other.startLat &&
+        startLon == other.startLon &&
+        startZ == other.startZ &&
+        startZUnits == other.startZUnits &&
+        endLat == other.endLat &&
+        endLon == other.endLon &&
+        endZ == other.endZ &&
+        endZUnits == other.endZUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        lradius == other.lradius &&
+        flags == other.flags;
   }
 
   @override
@@ -27926,12 +28076,12 @@ class _$DesiredPath extends DesiredPath {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('pathRef', '$pathRef')
-          ..add('startLat', '$startLat (rad)${startLat != null ? " [${startLat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('startLon', '$startLon (rad)${startLon != null ? " [${startLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('startLat', '$startLat (rad)${startLat != null ? ' [${startLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('startLon', '$startLon (rad)${startLon != null ? ' [${startLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
-          ..add('endLat', '$endLat (rad)${endLat != null ? " [${endLat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('endLon', '$endLon (rad)${endLon != null ? " [${endLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('endLat', '$endLat (rad)${endLat != null ? ' [${endLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLon', '$endLon (rad)${endLon != null ? ' [${endLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('endZ', '$endZ (m)')
           ..add('endZUnits', '$endZUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -28035,6 +28185,7 @@ class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredPathBuilder()..copyFromHeader(headerFrom);
 
   DesiredPathBuilder get _$this {
@@ -28165,13 +28316,13 @@ class _$DesiredControl extends DesiredControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        k == this.k &&
-        m == this.m &&
-        n == this.n &&
-        flags == this.flags;
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        k == other.k &&
+        m == other.m &&
+        n == other.n &&
+        flags == other.flags;
   }
 
   @override
@@ -28279,6 +28430,7 @@ class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredControlBuilder()..copyFromHeader(headerFrom);
 
   DesiredControlBuilder get _$this {
@@ -28379,7 +28531,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -28401,7 +28553,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad/s)${value != null ? " [${value * 180.0 / math.pi} (deg/s)]" : ""}'))
+          ..add('value', '$value (rad/s)${value != null ? ' [${value * 180.0 / math.pi} (deg/s)]' : ''}'))
         .toString();
   }
 }
@@ -28451,6 +28603,7 @@ class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredHeadingRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredHeadingRateBuilder()..copyFromHeader(headerFrom);
 
   DesiredHeadingRateBuilder get _$this {
@@ -28557,13 +28710,13 @@ class _$DesiredVelocity extends DesiredVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        u == this.u &&
-        v == this.v &&
-        w == this.w &&
-        p == this.p &&
-        q == this.q &&
-        r == this.r &&
-        flags == this.flags;
+        u == other.u &&
+        v == other.v &&
+        w == other.w &&
+        p == other.p &&
+        q == other.q &&
+        r == other.r &&
+        flags == other.flags;
   }
 
   @override
@@ -28671,6 +28824,7 @@ class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredVelocityBuilder()..copyFromHeader(headerFrom);
 
   DesiredVelocityBuilder get _$this {
@@ -28825,25 +28979,25 @@ class _$PathControlState extends PathControlState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        pathRef == this.pathRef &&
-        startLat == this.startLat &&
-        startLon == this.startLon &&
-        startZ == this.startZ &&
-        startZUnits == this.startZUnits &&
-        endLat == this.endLat &&
-        endLon == this.endLon &&
-        endZ == this.endZ &&
-        endZUnits == this.endZUnits &&
-        lradius == this.lradius &&
-        flags == this.flags &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        vx == this.vx &&
-        vy == this.vy &&
-        vz == this.vz &&
-        courseError == this.courseError &&
-        eta == this.eta;
+        pathRef == other.pathRef &&
+        startLat == other.startLat &&
+        startLon == other.startLon &&
+        startZ == other.startZ &&
+        startZUnits == other.startZUnits &&
+        endLat == other.endLat &&
+        endLon == other.endLon &&
+        endZ == other.endZ &&
+        endZUnits == other.endZUnits &&
+        lradius == other.lradius &&
+        flags == other.flags &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        vx == other.vx &&
+        vy == other.vy &&
+        vz == other.vz &&
+        courseError == other.courseError &&
+        eta == other.eta;
   }
 
   @override
@@ -28884,12 +29038,12 @@ class _$PathControlState extends PathControlState {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('pathRef', '$pathRef')
-          ..add('startLat', '$startLat (rad)${startLat != null ? " [${startLat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('startLon', '$startLon (rad)${startLon != null ? " [${startLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('startLat', '$startLat (rad)${startLat != null ? ' [${startLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('startLon', '$startLon (rad)${startLon != null ? ' [${startLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
-          ..add('endLat', '$endLat (rad)${endLat != null ? " [${endLat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('endLon', '$endLon (rad)${endLon != null ? " [${endLon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('endLat', '$endLat (rad)${endLat != null ? ' [${endLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLon', '$endLon (rad)${endLon != null ? ' [${endLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('endZ', '$endZ (m)')
           ..add('endZUnits', '$endZUnits (Enumerated)')
           ..add('lradius', '$lradius (m)')
@@ -28900,7 +29054,7 @@ class _$PathControlState extends PathControlState {
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('courseError', '$courseError (rad)${courseError != null ? " [${courseError * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('courseError', '$courseError (rad)${courseError != null ? ' [${courseError * 180.0 / math.pi} (deg)]' : ''}')
           ..add('eta', '$eta (s)'))
         .toString();
   }
@@ -29023,6 +29177,7 @@ class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PathControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PathControlStateBuilder()..copyFromHeader(headerFrom);
 
   PathControlStateBuilder get _$this {
@@ -29153,9 +29308,9 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        k == this.k &&
-        m == this.m &&
-        n == this.n;
+        k == other.k &&
+        m == other.m &&
+        n == other.n;
   }
 
   @override
@@ -29239,6 +29394,7 @@ class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart im
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AllocatedControlTorquesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AllocatedControlTorquesBuilder()..copyFromHeader(headerFrom);
 
   AllocatedControlTorquesBuilder get _$this {
@@ -29340,10 +29496,10 @@ class _$ControlParcel extends ControlParcel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        p == this.p &&
-        i == this.i &&
-        d == this.d &&
-        a == this.a;
+        p == other.p &&
+        i == other.i &&
+        d == other.d &&
+        a == other.a;
   }
 
   @override
@@ -29433,6 +29589,7 @@ class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ControlParcelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ControlParcelBuilder()..copyFromHeader(headerFrom);
 
   ControlParcelBuilder get _$this {
@@ -29527,7 +29684,7 @@ class _$Brake extends Brake {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op;
+        op == other.op;
   }
 
   @override
@@ -29599,6 +29756,7 @@ class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   BrakeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => BrakeBuilder()..copyFromHeader(headerFrom);
 
   BrakeBuilder get _$this {
@@ -29714,16 +29872,16 @@ class _$DesiredLinearState extends DesiredLinearState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        vx == this.vx &&
-        vy == this.vy &&
-        vz == this.vz &&
-        ax == this.ax &&
-        ay == this.ay &&
-        az == this.az &&
-        flags == this.flags;
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        vx == other.vx &&
+        vy == other.vy &&
+        vz == other.vz &&
+        ax == other.ax &&
+        ay == other.ay &&
+        az == other.az &&
+        flags == other.flags;
   }
 
   @override
@@ -29849,6 +30007,7 @@ class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredLinearStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredLinearStateBuilder()..copyFromHeader(headerFrom);
 
   DesiredLinearStateBuilder get _$this {
@@ -29955,7 +30114,7 @@ class _$DesiredThrottle extends DesiredThrottle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -30027,6 +30186,7 @@ class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DesiredThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredThrottleBuilder()..copyFromHeader(headerFrom);
 
   DesiredThrottleBuilder get _$this {
@@ -30145,17 +30305,17 @@ class _$Goto extends Goto {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        roll == this.roll &&
-        pitch == this.pitch &&
-        yaw == this.yaw &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        roll == other.roll &&
+        pitch == other.pitch &&
+        yaw == other.yaw &&
+        custom == other.custom;
   }
 
   @override
@@ -30188,15 +30348,15 @@ class _$Goto extends Goto {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('roll', '$roll (rad)${roll != null ? " [${roll * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('yaw', '$yaw (rad)${yaw != null ? " [${yaw * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('roll', '$roll (rad)${roll != null ? ' [${roll * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('yaw', '$yaw (rad)${yaw != null ? ' [${yaw * 180.0 / math.pi} (deg)]' : ''}')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -30287,6 +30447,7 @@ class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GotoBuilder()..copyFromHeader(headerFrom);
 
   GotoBuilder get _$this {
@@ -30425,17 +30586,17 @@ class _$PopUp extends PopUp {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        duration == this.duration &&
-        radius == this.radius &&
-        flags == this.flags &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        duration == other.duration &&
+        radius == other.radius &&
+        flags == other.flags &&
+        custom == other.custom;
   }
 
   @override
@@ -30468,8 +30629,8 @@ class _$PopUp extends PopUp {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -30567,6 +30728,7 @@ class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PopUpBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PopUpBuilder()..copyFromHeader(headerFrom);
 
   PopUpBuilder get _$this {
@@ -30675,7 +30837,7 @@ class _$Teleoperation extends Teleoperation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        custom == this.custom;
+        custom == other.custom;
   }
 
   @override
@@ -30747,6 +30909,7 @@ class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TeleoperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TeleoperationBuilder()..copyFromHeader(headerFrom);
 
   TeleoperationBuilder get _$this {
@@ -30874,20 +31037,20 @@ class _$Loiter extends Loiter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        duration == this.duration &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        type == this.type &&
-        radius == this.radius &&
-        length == this.length &&
-        bearing == this.bearing &&
-        direction == this.direction &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        duration == other.duration &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        type == other.type &&
+        radius == other.radius &&
+        length == other.length &&
+        bearing == other.bearing &&
+        direction == other.direction &&
+        custom == other.custom;
   }
 
   @override
@@ -30923,8 +31086,8 @@ class _$Loiter extends Loiter {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('duration', '$duration (s)')
@@ -30933,7 +31096,7 @@ class _$Loiter extends Loiter {
           ..add('type', '$type (Enumerated)')
           ..add('radius', '$radius (m)')
           ..add('length', '$length (m)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
           ..add('direction', '$direction (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
         .toString();
@@ -31037,6 +31200,7 @@ class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LoiterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LoiterBuilder()..copyFromHeader(headerFrom);
 
   LoiterBuilder get _$this {
@@ -31154,8 +31318,8 @@ class _$IdleManeuver extends IdleManeuver {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        duration == this.duration &&
-        custom == this.custom;
+        duration == other.duration &&
+        custom == other.custom;
   }
 
   @override
@@ -31233,6 +31397,7 @@ class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   IdleManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IdleManeuverBuilder()..copyFromHeader(headerFrom);
 
   IdleManeuverBuilder get _$this {
@@ -31329,9 +31494,9 @@ class _$LowLevelControl extends LowLevelControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        control == this.control &&
-        duration == this.duration &&
-        custom == this.custom;
+        control == other.control &&
+        duration == other.duration &&
+        custom == other.custom;
   }
 
   @override
@@ -31415,6 +31580,7 @@ class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LowLevelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LowLevelControlBuilder()..copyFromHeader(headerFrom);
 
   LowLevelControlBuilder get _$this {
@@ -31552,22 +31718,22 @@ class _$Rows extends Rows {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        bearing == this.bearing &&
-        crossAngle == this.crossAngle &&
-        width == this.width &&
-        length == this.length &&
-        hstep == this.hstep &&
-        coff == this.coff &&
-        alternation == this.alternation &&
-        flags == this.flags &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        bearing == other.bearing &&
+        crossAngle == other.crossAngle &&
+        width == other.width &&
+        length == other.length &&
+        hstep == other.hstep &&
+        coff == other.coff &&
+        alternation == other.alternation &&
+        flags == other.flags &&
+        custom == other.custom;
   }
 
   @override
@@ -31605,14 +31771,14 @@ class _$Rows extends Rows {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? " [${crossAngle * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)')
           ..add('hstep', '$hstep (m)')
@@ -31729,6 +31895,7 @@ class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RowsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RowsBuilder()..copyFromHeader(headerFrom);
 
   RowsBuilder get _$this {
@@ -31871,15 +32038,15 @@ class _$FollowPath extends FollowPath {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        points == this.points &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        points == other.points &&
+        custom == other.custom;
   }
 
   @override
@@ -31910,8 +32077,8 @@ class _$FollowPath extends FollowPath {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -31999,6 +32166,7 @@ class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FollowPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowPathBuilder()..copyFromHeader(headerFrom);
 
   FollowPathBuilder get _$this {
@@ -32109,9 +32277,9 @@ class _$PathPoint extends PathPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -32195,6 +32363,7 @@ class PathPointBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PathPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PathPointBuilder()..copyFromHeader(headerFrom);
 
   PathPointBuilder get _$this {
@@ -32314,16 +32483,16 @@ class _$YoYo extends YoYo {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        amplitude == this.amplitude &&
-        pitch == this.pitch &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        amplitude == other.amplitude &&
+        pitch == other.pitch &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        custom == other.custom;
   }
 
   @override
@@ -32355,12 +32524,12 @@ class _$YoYo extends YoYo {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('amplitude', '$amplitude (m)')
-          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -32449,6 +32618,7 @@ class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   YoYoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => YoYoBuilder()..copyFromHeader(headerFrom);
 
   YoYoBuilder get _$this {
@@ -32617,6 +32787,7 @@ class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TeleoperationDoneBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TeleoperationDoneBuilder()..copyFromHeader(headerFrom);
 
   TeleoperationDoneBuilder get _$this {
@@ -32727,15 +32898,15 @@ class _$StationKeeping extends StationKeeping {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        radius == this.radius &&
-        duration == this.duration &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        radius == other.radius &&
+        duration == other.duration &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        custom == other.custom;
   }
 
   @override
@@ -32765,8 +32936,8 @@ class _$StationKeeping extends StationKeeping {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('radius', '$radius (m)')
@@ -32855,6 +33026,7 @@ class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   StationKeepingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StationKeepingBuilder()..copyFromHeader(headerFrom);
 
   StationKeepingBuilder get _$this {
@@ -32992,18 +33164,18 @@ class _$Elevator extends Elevator {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        flags == this.flags &&
-        lat == this.lat &&
-        lon == this.lon &&
-        startZ == this.startZ &&
-        startZUnits == this.startZUnits &&
-        endZ == this.endZ &&
-        endZUnits == this.endZUnits &&
-        radius == this.radius &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        flags == other.flags &&
+        lat == other.lat &&
+        lon == other.lon &&
+        startZ == other.startZ &&
+        startZUnits == other.startZUnits &&
+        endZ == other.endZ &&
+        endZUnits == other.endZUnits &&
+        radius == other.radius &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        custom == other.custom;
   }
 
   @override
@@ -33038,8 +33210,8 @@ class _$Elevator extends Elevator {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
           ..add('flags', '$flags (Bitfield)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
           ..add('endZ', '$endZ (m)')
@@ -33141,6 +33313,7 @@ class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ElevatorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ElevatorBuilder()..copyFromHeader(headerFrom);
 
   ElevatorBuilder get _$this {
@@ -33275,15 +33448,15 @@ class _$FollowTrajectory extends FollowTrajectory {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        points == this.points &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        points == other.points &&
+        custom == other.custom;
   }
 
   @override
@@ -33314,8 +33487,8 @@ class _$FollowTrajectory extends FollowTrajectory {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -33403,6 +33576,7 @@ class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FollowTrajectoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowTrajectoryBuilder()..copyFromHeader(headerFrom);
 
   FollowTrajectoryBuilder get _$this {
@@ -33516,10 +33690,10 @@ class _$TrajectoryPoint extends TrajectoryPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        t == this.t;
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        t == other.t;
   }
 
   @override
@@ -33609,6 +33783,7 @@ class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrajectoryPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrajectoryPointBuilder()..copyFromHeader(headerFrom);
 
   TrajectoryPointBuilder get _$this {
@@ -33709,9 +33884,9 @@ class _$CustomManeuver extends CustomManeuver {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        name == this.name &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        name == other.name &&
+        custom == other.custom;
   }
 
   @override
@@ -33795,6 +33970,7 @@ class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CustomManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CustomManeuverBuilder()..copyFromHeader(headerFrom);
 
   CustomManeuverBuilder get _$this {
@@ -33914,16 +34090,16 @@ class _$VehicleFormation extends VehicleFormation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        points == this.points &&
-        participants == this.participants &&
-        startTime == this.startTime &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        points == other.points &&
+        participants == other.participants &&
+        startTime == other.startTime &&
+        custom == other.custom;
   }
 
   @override
@@ -33954,8 +34130,8 @@ class _$VehicleFormation extends VehicleFormation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -34049,6 +34225,7 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VehicleFormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleFormationBuilder()..copyFromHeader(headerFrom);
 
   VehicleFormationBuilder get _$this {
@@ -34164,10 +34341,10 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        vid == this.vid &&
-        offX == this.offX &&
-        offY == this.offY &&
-        offZ == this.offZ;
+        vid == other.vid &&
+        offX == other.offX &&
+        offY == other.offY &&
+        offZ == other.offZ;
   }
 
   @override
@@ -34257,6 +34434,7 @@ class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPar
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VehicleFormationParticipantBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleFormationParticipantBuilder()..copyFromHeader(headerFrom);
 
   VehicleFormationParticipantBuilder get _$this {
@@ -34413,6 +34591,7 @@ class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   StopManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StopManeuverBuilder()..copyFromHeader(headerFrom);
 
   StopManeuverBuilder get _$this {
@@ -34499,7 +34678,7 @@ class _$RegisterManeuver extends RegisterManeuver {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        mid == this.mid;
+        mid == other.mid;
   }
 
   @override
@@ -34571,6 +34750,7 @@ class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RegisterManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RegisterManeuverBuilder()..copyFromHeader(headerFrom);
 
   RegisterManeuverBuilder get _$this {
@@ -34665,9 +34845,9 @@ class _$ManeuverControlState extends ManeuverControlState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state &&
-        eta == this.eta &&
-        info == this.info;
+        state == other.state &&
+        eta == other.eta &&
+        info == other.info;
   }
 
   @override
@@ -34751,6 +34931,7 @@ class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ManeuverControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ManeuverControlStateBuilder()..copyFromHeader(headerFrom);
 
   ManeuverControlStateBuilder get _$this {
@@ -34864,14 +35045,14 @@ class _$FollowSystem extends FollowSystem {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        system == this.system &&
-        duration == this.duration &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        zUnits == this.zUnits;
+        system == other.system &&
+        duration == other.duration &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        zUnits == other.zUnits;
   }
 
   @override
@@ -34985,6 +35166,7 @@ class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FollowSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowSystemBuilder()..copyFromHeader(headerFrom);
 
   FollowSystemBuilder get _$this {
@@ -35108,14 +35290,14 @@ class _$CommsRelay extends CommsRelay {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        duration == this.duration &&
-        sysA == this.sysA &&
-        sysB == this.sysB &&
-        moveThreshold == this.moveThreshold;
+        lat == other.lat &&
+        lon == other.lon &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        duration == other.duration &&
+        sysA == other.sysA &&
+        sysB == other.sysB &&
+        moveThreshold == other.moveThreshold;
   }
 
   @override
@@ -35144,8 +35326,8 @@ class _$CommsRelay extends CommsRelay {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('duration', '$duration (s)')
@@ -35229,6 +35411,7 @@ class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CommsRelayBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CommsRelayBuilder()..copyFromHeader(headerFrom);
 
   CommsRelayBuilder get _$this {
@@ -35352,14 +35535,14 @@ class _$CoverArea extends CoverArea {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        polygon == this.polygon &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        polygon == other.polygon &&
+        custom == other.custom;
   }
 
   @override
@@ -35388,8 +35571,8 @@ class _$CoverArea extends CoverArea {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -35473,6 +35656,7 @@ class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CoverAreaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CoverAreaBuilder()..copyFromHeader(headerFrom);
 
   CoverAreaBuilder get _$this {
@@ -35578,8 +35762,8 @@ class _$PolygonVertex extends PolygonVertex {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon;
+        lat == other.lat &&
+        lon == other.lon;
   }
 
   @override
@@ -35602,8 +35786,8 @@ class _$PolygonVertex extends PolygonVertex {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -35657,6 +35841,7 @@ class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PolygonVertexBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PolygonVertexBuilder()..copyFromHeader(headerFrom);
 
   PolygonVertexBuilder get _$this {
@@ -35783,19 +35968,19 @@ class _$CompassCalibration extends CompassCalibration {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        pitch == this.pitch &&
-        amplitude == this.amplitude &&
-        duration == this.duration &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        radius == this.radius &&
-        direction == this.direction &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        pitch == other.pitch &&
+        amplitude == other.amplitude &&
+        duration == other.duration &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        radius == other.radius &&
+        direction == other.direction &&
+        custom == other.custom;
   }
 
   @override
@@ -35830,11 +36015,11 @@ class _$CompassCalibration extends CompassCalibration {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
-          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
           ..add('amplitude', '$amplitude (m)')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
@@ -35939,6 +36124,7 @@ class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CompassCalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompassCalibrationBuilder()..copyFromHeader(headerFrom);
 
   CompassCalibrationBuilder get _$this {
@@ -36060,10 +36246,10 @@ class _$FormationParameters extends FormationParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        formationName == this.formationName &&
-        referenceFrame == this.referenceFrame &&
-        participants == this.participants &&
-        custom == this.custom;
+        formationName == other.formationName &&
+        referenceFrame == other.referenceFrame &&
+        participants == other.participants &&
+        custom == other.custom;
   }
 
   @override
@@ -36153,6 +36339,7 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationParametersBuilder()..copyFromHeader(headerFrom);
 
   FormationParametersBuilder get _$this {
@@ -36286,20 +36473,20 @@ class _$FormationPlanExecution extends FormationPlanExecution {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        groupName == this.groupName &&
-        formationName == this.formationName &&
-        planId == this.planId &&
-        description == this.description &&
-        leaderSpeed == this.leaderSpeed &&
-        leaderBankLim == this.leaderBankLim &&
-        posSimErrLim == this.posSimErrLim &&
-        posSimErrWrn == this.posSimErrWrn &&
-        posSimErrTimeout == this.posSimErrTimeout &&
-        convergMax == this.convergMax &&
-        convergTimeout == this.convergTimeout &&
-        commsTimeout == this.commsTimeout &&
-        turbLim == this.turbLim &&
-        custom == this.custom;
+        groupName == other.groupName &&
+        formationName == other.formationName &&
+        planId == other.planId &&
+        description == other.description &&
+        leaderSpeed == other.leaderSpeed &&
+        leaderBankLim == other.leaderBankLim &&
+        posSimErrLim == other.posSimErrLim &&
+        posSimErrWrn == other.posSimErrWrn &&
+        posSimErrTimeout == other.posSimErrTimeout &&
+        convergMax == other.convergMax &&
+        convergTimeout == other.convergTimeout &&
+        commsTimeout == other.commsTimeout &&
+        turbLim == other.turbLim &&
+        custom == other.custom;
   }
 
   @override
@@ -36449,6 +36636,7 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationPlanExecutionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationPlanExecutionBuilder()..copyFromHeader(headerFrom);
 
   FormationPlanExecutionBuilder get _$this {
@@ -36575,11 +36763,11 @@ class _$FollowReference extends FollowReference {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        controlSrc == this.controlSrc &&
-        controlEnt == this.controlEnt &&
-        timeout == this.timeout &&
-        loiterRadius == this.loiterRadius &&
-        altitudeInterval == this.altitudeInterval;
+        controlSrc == other.controlSrc &&
+        controlEnt == other.controlEnt &&
+        timeout == other.timeout &&
+        loiterRadius == other.loiterRadius &&
+        altitudeInterval == other.altitudeInterval;
   }
 
   @override
@@ -36675,6 +36863,7 @@ class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FollowReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowReferenceBuilder()..copyFromHeader(headerFrom);
 
   FollowReferenceBuilder get _$this {
@@ -36786,12 +36975,12 @@ class _$Reference extends Reference {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        flags == this.flags &&
-        speed == this.speed &&
-        z == this.z &&
-        lat == this.lat &&
-        lon == this.lon &&
-        radius == this.radius;
+        flags == other.flags &&
+        speed == other.speed &&
+        z == other.z &&
+        lat == other.lat &&
+        lon == other.lon &&
+        radius == other.radius;
   }
 
   @override
@@ -36893,6 +37082,7 @@ class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReferenceBuilder()..copyFromHeader(headerFrom);
 
   ReferenceBuilder get _$this {
@@ -37003,11 +37193,11 @@ class _$FollowRefState extends FollowRefState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        controlSrc == this.controlSrc &&
-        controlEnt == this.controlEnt &&
-        reference == this.reference &&
-        state == this.state &&
-        proximity == this.proximity;
+        controlSrc == other.controlSrc &&
+        controlEnt == other.controlEnt &&
+        reference == other.reference &&
+        state == other.state &&
+        proximity == other.proximity;
   }
 
   @override
@@ -37103,6 +37293,7 @@ class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FollowRefStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowRefStateBuilder()..copyFromHeader(headerFrom);
 
   FollowRefStateBuilder get _$this {
@@ -37253,25 +37444,25 @@ class _$FormationMonitor extends FormationMonitor {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        axCmd == this.axCmd &&
-        ayCmd == this.ayCmd &&
-        azCmd == this.azCmd &&
-        axDes == this.axDes &&
-        ayDes == this.ayDes &&
-        azDes == this.azDes &&
-        virtErrX == this.virtErrX &&
-        virtErrY == this.virtErrY &&
-        virtErrZ == this.virtErrZ &&
-        surfFdbkX == this.surfFdbkX &&
-        surfFdbkY == this.surfFdbkY &&
-        surfFdbkZ == this.surfFdbkZ &&
-        surfUnknX == this.surfUnknX &&
-        surfUnknY == this.surfUnknY &&
-        surfUnknZ == this.surfUnknZ &&
-        ssX == this.ssX &&
-        ssY == this.ssY &&
-        ssZ == this.ssZ &&
-        relState == this.relState;
+        axCmd == other.axCmd &&
+        ayCmd == other.ayCmd &&
+        azCmd == other.azCmd &&
+        axDes == other.axDes &&
+        ayDes == other.ayDes &&
+        azDes == other.azDes &&
+        virtErrX == other.virtErrX &&
+        virtErrY == other.virtErrY &&
+        virtErrZ == other.virtErrZ &&
+        surfFdbkX == other.surfFdbkX &&
+        surfFdbkY == other.surfFdbkY &&
+        surfFdbkZ == other.surfFdbkZ &&
+        surfUnknX == other.surfUnknX &&
+        surfUnknY == other.surfUnknY &&
+        surfUnknZ == other.surfUnknZ &&
+        ssX == other.ssX &&
+        ssY == other.ssY &&
+        ssZ == other.ssZ &&
+        relState == other.relState;
   }
 
   @override
@@ -37451,6 +37642,7 @@ class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationMonitorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationMonitorBuilder()..copyFromHeader(headerFrom);
 
   FormationMonitorBuilder get _$this {
@@ -37638,28 +37830,28 @@ class _$RelativeState extends RelativeState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sId == this.sId &&
-        dist == this.dist &&
-        err == this.err &&
-        ctrlImp == this.ctrlImp &&
-        relDirX == this.relDirX &&
-        relDirY == this.relDirY &&
-        relDirZ == this.relDirZ &&
-        errX == this.errX &&
-        errY == this.errY &&
-        errZ == this.errZ &&
-        rfErrX == this.rfErrX &&
-        rfErrY == this.rfErrY &&
-        rfErrZ == this.rfErrZ &&
-        rfErrVx == this.rfErrVx &&
-        rfErrVy == this.rfErrVy &&
-        rfErrVz == this.rfErrVz &&
-        ssX == this.ssX &&
-        ssY == this.ssY &&
-        ssZ == this.ssZ &&
-        virtErrX == this.virtErrX &&
-        virtErrY == this.virtErrY &&
-        virtErrZ == this.virtErrZ;
+        sId == other.sId &&
+        dist == other.dist &&
+        err == other.err &&
+        ctrlImp == other.ctrlImp &&
+        relDirX == other.relDirX &&
+        relDirY == other.relDirY &&
+        relDirZ == other.relDirZ &&
+        errX == other.errX &&
+        errY == other.errY &&
+        errZ == other.errZ &&
+        rfErrX == other.rfErrX &&
+        rfErrY == other.rfErrY &&
+        rfErrZ == other.rfErrZ &&
+        rfErrVx == other.rfErrVx &&
+        rfErrVy == other.rfErrVy &&
+        rfErrVz == other.rfErrVz &&
+        ssX == other.ssX &&
+        ssY == other.ssY &&
+        ssZ == other.ssZ &&
+        virtErrX == other.virtErrX &&
+        virtErrY == other.virtErrY &&
+        virtErrZ == other.virtErrZ;
   }
 
   @override
@@ -37857,6 +38049,7 @@ class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RelativeStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RelativeStateBuilder()..copyFromHeader(headerFrom);
 
   RelativeStateBuilder get _$this {
@@ -37996,10 +38189,10 @@ class _$Dislodge extends Dislodge {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        rpm == this.rpm &&
-        direction == this.direction &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        rpm == other.rpm &&
+        direction == other.direction &&
+        custom == other.custom;
   }
 
   @override
@@ -38089,6 +38282,7 @@ class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DislodgeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DislodgeBuilder()..copyFromHeader(headerFrom);
 
   DislodgeBuilder get _$this {
@@ -38243,27 +38437,27 @@ class _$Formation extends Formation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        formationName == this.formationName &&
-        type == this.type &&
-        op == this.op &&
-        groupName == this.groupName &&
-        planId == this.planId &&
-        description == this.description &&
-        referenceFrame == this.referenceFrame &&
-        participants == this.participants &&
-        leaderBankLim == this.leaderBankLim &&
-        leaderSpeedMin == this.leaderSpeedMin &&
-        leaderSpeedMax == this.leaderSpeedMax &&
-        leaderAltMin == this.leaderAltMin &&
-        leaderAltMax == this.leaderAltMax &&
-        posSimErrLim == this.posSimErrLim &&
-        posSimErrWrn == this.posSimErrWrn &&
-        posSimErrTimeout == this.posSimErrTimeout &&
-        convergMax == this.convergMax &&
-        convergTimeout == this.convergTimeout &&
-        commsTimeout == this.commsTimeout &&
-        turbLim == this.turbLim &&
-        custom == this.custom;
+        formationName == other.formationName &&
+        type == other.type &&
+        op == other.op &&
+        groupName == other.groupName &&
+        planId == other.planId &&
+        description == other.description &&
+        referenceFrame == other.referenceFrame &&
+        participants == other.participants &&
+        leaderBankLim == other.leaderBankLim &&
+        leaderSpeedMin == other.leaderSpeedMin &&
+        leaderSpeedMax == other.leaderSpeedMax &&
+        leaderAltMin == other.leaderAltMin &&
+        leaderAltMax == other.leaderAltMax &&
+        posSimErrLim == other.posSimErrLim &&
+        posSimErrWrn == other.posSimErrWrn &&
+        posSimErrTimeout == other.posSimErrTimeout &&
+        convergMax == other.convergMax &&
+        convergTimeout == other.convergTimeout &&
+        commsTimeout == other.commsTimeout &&
+        turbLim == other.turbLim &&
+        custom == other.custom;
   }
 
   @override
@@ -38313,7 +38507,7 @@ class _$Formation extends Formation {
           ..add('description', '$description')
           ..add('referenceFrame', '$referenceFrame (Enumerated)')
           ..add('participants', '$participants')
-          ..add('leaderBankLim', '$leaderBankLim (rad)${leaderBankLim != null ? " [${leaderBankLim * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('leaderBankLim', '$leaderBankLim (rad)${leaderBankLim != null ? ' [${leaderBankLim * 180.0 / math.pi} (deg)]' : ''}')
           ..add('leaderSpeedMin', '$leaderSpeedMin (m/s)')
           ..add('leaderSpeedMax', '$leaderSpeedMax (m/s)')
           ..add('leaderAltMin', '$leaderAltMin (m)')
@@ -38455,6 +38649,7 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationBuilder()..copyFromHeader(headerFrom);
 
   FormationBuilder get _$this {
@@ -38604,14 +38799,14 @@ class _$Launch extends Launch {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        custom == other.custom;
   }
 
   @override
@@ -38641,8 +38836,8 @@ class _$Launch extends Launch {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -38725,6 +38920,7 @@ class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LaunchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LaunchBuilder()..copyFromHeader(headerFrom);
 
   LaunchBuilder get _$this {
@@ -38848,14 +39044,14 @@ class _$Drop extends Drop {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        custom == other.custom;
   }
 
   @override
@@ -38885,8 +39081,8 @@ class _$Drop extends Drop {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -38969,6 +39165,7 @@ class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DropBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DropBuilder()..copyFromHeader(headerFrom);
 
   DropBuilder get _$this {
@@ -39092,14 +39289,14 @@ class _$ScheduledGoto extends ScheduledGoto {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        arrivalTime == this.arrivalTime &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        travelZ == this.travelZ &&
-        travelZUnits == this.travelZUnits &&
-        delayed == this.delayed;
+        arrivalTime == other.arrivalTime &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        travelZ == other.travelZ &&
+        travelZUnits == other.travelZUnits &&
+        delayed == other.delayed;
   }
 
   @override
@@ -39129,8 +39326,8 @@ class _$ScheduledGoto extends ScheduledGoto {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('arrivalTime', '$arrivalTime (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('travelZ', '$travelZ (m)')
@@ -39213,6 +39410,7 @@ class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ScheduledGotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ScheduledGotoBuilder()..copyFromHeader(headerFrom);
 
   ScheduledGotoBuilder get _$this {
@@ -39360,22 +39558,22 @@ class _$RowsCoverage extends RowsCoverage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        bearing == this.bearing &&
-        crossAngle == this.crossAngle &&
-        width == this.width &&
-        length == this.length &&
-        coff == this.coff &&
-        angAperture == this.angAperture &&
-        range == this.range &&
-        overlap == this.overlap &&
-        flags == this.flags &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        bearing == other.bearing &&
+        crossAngle == other.crossAngle &&
+        width == other.width &&
+        length == other.length &&
+        coff == other.coff &&
+        angAperture == other.angAperture &&
+        range == other.range &&
+        overlap == other.overlap &&
+        flags == other.flags &&
+        custom == other.custom;
   }
 
   @override
@@ -39412,18 +39610,18 @@ class _$RowsCoverage extends RowsCoverage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? " [${crossAngle * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)')
           ..add('coff', '$coff (m)')
-          ..add('angAperture', '$angAperture (rad)${angAperture != null ? " [${angAperture * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('angAperture', '$angAperture (rad)${angAperture != null ? ' [${angAperture * 180.0 / math.pi} (deg)]' : ''}')
           ..add('range', '$range (m)')
           ..add('overlap', '$overlap (%)')
           ..add('flags', '$flags (Bitfield)')
@@ -39537,6 +39735,7 @@ class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RowsCoverageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RowsCoverageBuilder()..copyFromHeader(headerFrom);
 
   RowsCoverageBuilder get _$this {
@@ -39685,17 +39884,17 @@ class _$Sample extends Sample {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        syringe0 == this.syringe0 &&
-        syringe1 == this.syringe1 &&
-        syringe2 == this.syringe2 &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        syringe0 == other.syringe0 &&
+        syringe1 == other.syringe1 &&
+        syringe2 == other.syringe2 &&
+        custom == other.custom;
   }
 
   @override
@@ -39728,8 +39927,8 @@ class _$Sample extends Sample {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -39827,6 +40026,7 @@ class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SampleBuilder()..copyFromHeader(headerFrom);
 
   SampleBuilder get _$this {
@@ -39997,6 +40197,7 @@ class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ImageTrackingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ImageTrackingBuilder()..copyFromHeader(headerFrom);
 
   ImageTrackingBuilder get _$this {
@@ -40104,14 +40305,14 @@ class _$Takeoff extends Takeoff {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        takeoffPitch == this.takeoffPitch &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        takeoffPitch == other.takeoffPitch &&
+        custom == other.custom;
   }
 
   @override
@@ -40140,13 +40341,13 @@ class _$Takeoff extends Takeoff {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('takeoffPitch', '$takeoffPitch (rad)${takeoffPitch != null ? " [${takeoffPitch * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('takeoffPitch', '$takeoffPitch (rad)${takeoffPitch != null ? ' [${takeoffPitch * 180.0 / math.pi} (deg)]' : ''}')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -40225,6 +40426,7 @@ class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TakeoffBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TakeoffBuilder()..copyFromHeader(headerFrom);
 
   TakeoffBuilder get _$this {
@@ -40357,17 +40559,17 @@ class _$Land extends Land {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        abortZ == this.abortZ &&
-        bearing == this.bearing &&
-        glideSlope == this.glideSlope &&
-        glideSlopeAlt == this.glideSlopeAlt &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        abortZ == other.abortZ &&
+        bearing == other.bearing &&
+        glideSlope == other.glideSlope &&
+        glideSlopeAlt == other.glideSlopeAlt &&
+        custom == other.custom;
   }
 
   @override
@@ -40399,14 +40601,14 @@ class _$Land extends Land {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('abortZ', '$abortZ (m)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
           ..add('glideSlope', '$glideSlope (%)')
           ..add('glideSlopeAlt', '$glideSlopeAlt (m)')
           ..add('custom', '$custom (TupleList)'))
@@ -40499,6 +40701,7 @@ class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LandBuilder()..copyFromHeader(headerFrom);
 
   LandBuilder get _$this {
@@ -40637,17 +40840,17 @@ class _$AutonomousSection extends AutonomousSection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        limits == this.limits &&
-        maxDepth == this.maxDepth &&
-        minAlt == this.minAlt &&
-        timeLimit == this.timeLimit &&
-        areaLimits == this.areaLimits &&
-        controller == this.controller &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        limits == other.limits &&
+        maxDepth == other.maxDepth &&
+        minAlt == other.minAlt &&
+        timeLimit == other.timeLimit &&
+        areaLimits == other.areaLimits &&
+        controller == other.controller &&
+        custom == other.custom;
   }
 
   @override
@@ -40679,8 +40882,8 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('limits', '$limits (Bitfield)')
@@ -40779,6 +40982,7 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AutonomousSectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AutonomousSectionBuilder()..copyFromHeader(headerFrom);
 
   AutonomousSectionBuilder get _$this {
@@ -40908,14 +41112,14 @@ class _$FollowPoint extends FollowPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        target == this.target &&
-        maxSpeed == this.maxSpeed &&
-        speedUnits == this.speedUnits &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        custom == this.custom;
+        target == other.target &&
+        maxSpeed == other.maxSpeed &&
+        speedUnits == other.speedUnits &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        custom == other.custom;
   }
 
   @override
@@ -40947,8 +41151,8 @@ class _$FollowPoint extends FollowPoint {
           ..add('target', '$target')
           ..add('maxSpeed', '$maxSpeed (m/s)')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -41029,6 +41233,7 @@ class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FollowPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowPointBuilder()..copyFromHeader(headerFrom);
 
   FollowPointBuilder get _$this {
@@ -41146,12 +41351,12 @@ class _$Alignment extends Alignment {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        custom == other.custom;
   }
 
   @override
@@ -41179,8 +41384,8 @@ class _$Alignment extends Alignment {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -41253,6 +41458,7 @@ class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AlignmentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AlignmentBuilder()..copyFromHeader(headerFrom);
 
   AlignmentBuilder get _$this {
@@ -41384,18 +41590,18 @@ class _$StationKeepingExtended extends StationKeepingExtended {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        radius == this.radius &&
-        duration == this.duration &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        popupPeriod == this.popupPeriod &&
-        popupDuration == this.popupDuration &&
-        flags == this.flags &&
-        custom == this.custom;
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        radius == other.radius &&
+        duration == other.duration &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        popupPeriod == other.popupPeriod &&
+        popupDuration == other.popupDuration &&
+        flags == other.flags &&
+        custom == other.custom;
   }
 
   @override
@@ -41428,8 +41634,8 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('radius', '$radius (m)')
@@ -41533,6 +41739,7 @@ class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart imp
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   StationKeepingExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StationKeepingExtendedBuilder()..copyFromHeader(headerFrom);
 
   StationKeepingExtendedBuilder get _$this {
@@ -41673,17 +41880,17 @@ class _$Magnetometer extends Magnetometer {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        speed == this.speed &&
-        speedUnits == this.speedUnits &&
-        bearing == this.bearing &&
-        width == this.width &&
-        direction == this.direction &&
-        custom == this.custom;
+        timeout == other.timeout &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        speed == other.speed &&
+        speedUnits == other.speedUnits &&
+        bearing == other.bearing &&
+        width == other.width &&
+        direction == other.direction &&
+        custom == other.custom;
   }
 
   @override
@@ -41716,13 +41923,13 @@ class _$Magnetometer extends Magnetometer {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('direction', '$direction (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -41815,6 +42022,7 @@ class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MagnetometerBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MagnetometerBuilder()..copyFromHeader(headerFrom);
 
   MagnetometerBuilder get _$this {
@@ -41950,16 +42158,16 @@ class _$VehicleState extends VehicleState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        opMode == this.opMode &&
-        errorCount == this.errorCount &&
-        errorEnts == this.errorEnts &&
-        maneuverType == this.maneuverType &&
-        maneuverStime == this.maneuverStime &&
-        maneuverEta == this.maneuverEta &&
-        controlLoops == this.controlLoops &&
-        flags == this.flags &&
-        lastError == this.lastError &&
-        lastErrorTime == this.lastErrorTime;
+        opMode == other.opMode &&
+        errorCount == other.errorCount &&
+        errorEnts == other.errorEnts &&
+        maneuverType == other.maneuverType &&
+        maneuverStime == other.maneuverStime &&
+        maneuverEta == other.maneuverEta &&
+        controlLoops == other.controlLoops &&
+        flags == other.flags &&
+        lastError == other.lastError &&
+        lastErrorTime == other.lastErrorTime;
   }
 
   @override
@@ -42085,6 +42293,7 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VehicleStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleStateBuilder()..copyFromHeader(headerFrom);
 
   VehicleStateBuilder get _$this {
@@ -42206,12 +42415,12 @@ class _$VehicleCommand extends VehicleCommand {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        requestId == this.requestId &&
-        command == this.command &&
-        maneuver == this.maneuver &&
-        calibTime == this.calibTime &&
-        info == this.info;
+        type == other.type &&
+        requestId == other.requestId &&
+        command == other.command &&
+        maneuver == other.maneuver &&
+        calibTime == other.calibTime &&
+        info == other.info;
   }
 
   @override
@@ -42313,6 +42522,7 @@ class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VehicleCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleCommandBuilder()..copyFromHeader(headerFrom);
 
   VehicleCommandBuilder get _$this {
@@ -42414,8 +42624,8 @@ class _$MonitorEntityState extends MonitorEntityState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        command == this.command &&
-        entities == this.entities;
+        command == other.command &&
+        entities == other.entities;
   }
 
   @override
@@ -42493,6 +42703,7 @@ class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MonitorEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MonitorEntityStateBuilder()..copyFromHeader(headerFrom);
 
   MonitorEntityStateBuilder get _$this {
@@ -42604,14 +42815,14 @@ class _$EntityMonitoringState extends EntityMonitoringState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        mcount == this.mcount &&
-        mnames == this.mnames &&
-        ecount == this.ecount &&
-        enames == this.enames &&
-        ccount == this.ccount &&
-        cnames == this.cnames &&
-        lastError == this.lastError &&
-        lastErrorTime == this.lastErrorTime;
+        mcount == other.mcount &&
+        mnames == other.mnames &&
+        ecount == other.ecount &&
+        enames == other.enames &&
+        ccount == other.ccount &&
+        cnames == other.cnames &&
+        lastError == other.lastError &&
+        lastErrorTime == other.lastErrorTime;
   }
 
   @override
@@ -42725,6 +42936,7 @@ class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart impl
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EntityMonitoringStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityMonitoringStateBuilder()..copyFromHeader(headerFrom);
 
   EntityMonitoringStateBuilder get _$this {
@@ -42860,18 +43072,18 @@ class _$OperationalLimits extends OperationalLimits {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        mask == this.mask &&
-        maxDepth == this.maxDepth &&
-        minAltitude == this.minAltitude &&
-        maxAltitude == this.maxAltitude &&
-        minSpeed == this.minSpeed &&
-        maxSpeed == this.maxSpeed &&
-        maxVrate == this.maxVrate &&
-        lat == this.lat &&
-        lon == this.lon &&
-        orientation == this.orientation &&
-        width == this.width &&
-        length == this.length;
+        mask == other.mask &&
+        maxDepth == other.maxDepth &&
+        minAltitude == other.minAltitude &&
+        maxAltitude == other.maxAltitude &&
+        minSpeed == other.minSpeed &&
+        maxSpeed == other.maxSpeed &&
+        maxVrate == other.maxVrate &&
+        lat == other.lat &&
+        lon == other.lon &&
+        orientation == other.orientation &&
+        width == other.width &&
+        length == other.length;
   }
 
   @override
@@ -42911,9 +43123,9 @@ class _$OperationalLimits extends OperationalLimits {
           ..add('minSpeed', '$minSpeed (m/s)')
           ..add('maxSpeed', '$maxSpeed (m/s)')
           ..add('maxVrate', '$maxVrate (m/s)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('orientation', '$orientation (rad)${orientation != null ? " [${orientation * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('orientation', '$orientation (rad)${orientation != null ? ' [${orientation * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)'))
         .toString();
@@ -43009,6 +43221,7 @@ class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   OperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => OperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   OperationalLimitsBuilder get _$this {
@@ -43181,6 +43394,7 @@ class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GetOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetOperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   GetOperationalLimitsBuilder get _$this {
@@ -43267,7 +43481,7 @@ class _$Calibration extends Calibration {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        duration == this.duration;
+        duration == other.duration;
   }
 
   @override
@@ -43339,6 +43553,7 @@ class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CalibrationBuilder()..copyFromHeader(headerFrom);
 
   CalibrationBuilder get _$this {
@@ -43433,9 +43648,9 @@ class _$ControlLoops extends ControlLoops {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        enable == this.enable &&
-        mask == this.mask &&
-        scopeRef == this.scopeRef;
+        enable == other.enable &&
+        mask == other.mask &&
+        scopeRef == other.scopeRef;
   }
 
   @override
@@ -43519,6 +43734,7 @@ class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ControlLoopsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ControlLoopsBuilder()..copyFromHeader(headerFrom);
 
   ControlLoopsBuilder get _$this {
@@ -43611,7 +43827,7 @@ class _$VehicleMedium extends VehicleMedium {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        medium == this.medium;
+        medium == other.medium;
   }
 
   @override
@@ -43683,6 +43899,7 @@ class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VehicleMediumBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleMediumBuilder()..copyFromHeader(headerFrom);
 
   VehicleMediumBuilder get _$this {
@@ -43774,8 +43991,8 @@ class _$Collision extends Collision {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value &&
-        type == this.type;
+        value == other.value &&
+        type == other.type;
   }
 
   @override
@@ -43853,6 +44070,7 @@ class CollisionBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CollisionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CollisionBuilder()..copyFromHeader(headerFrom);
 
   CollisionBuilder get _$this {
@@ -43958,12 +44176,12 @@ class _$FormState extends FormState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        posSimErr == this.posSimErr &&
-        converg == this.converg &&
-        turbulence == this.turbulence &&
-        posSimMon == this.posSimMon &&
-        commMon == this.commMon &&
-        convergMon == this.convergMon;
+        posSimErr == other.posSimErr &&
+        converg == other.converg &&
+        turbulence == other.turbulence &&
+        posSimMon == other.posSimMon &&
+        commMon == other.commMon &&
+        convergMon == other.convergMon;
   }
 
   @override
@@ -44065,6 +44283,7 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormStateBuilder()..copyFromHeader(headerFrom);
 
   FormStateBuilder get _$this {
@@ -44166,8 +44385,8 @@ class _$AutopilotMode extends AutopilotMode {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        autonomy == this.autonomy &&
-        mode == this.mode;
+        autonomy == other.autonomy &&
+        mode == other.mode;
   }
 
   @override
@@ -44245,6 +44464,7 @@ class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AutopilotModeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AutopilotModeBuilder()..copyFromHeader(headerFrom);
 
   AutopilotModeBuilder get _$this {
@@ -44356,14 +44576,14 @@ class _$FormationState extends FormationState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        op == this.op &&
-        posSimErr == this.posSimErr &&
-        converg == this.converg &&
-        turbulence == this.turbulence &&
-        posSimMon == this.posSimMon &&
-        commMon == this.commMon &&
-        convergMon == this.convergMon;
+        type == other.type &&
+        op == other.op &&
+        posSimErr == other.posSimErr &&
+        converg == other.converg &&
+        turbulence == other.turbulence &&
+        posSimMon == other.posSimMon &&
+        commMon == other.commMon &&
+        convergMon == other.convergMon;
   }
 
   @override
@@ -44477,6 +44697,7 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationStateBuilder()..copyFromHeader(headerFrom);
 
   FormationStateBuilder get _$this {
@@ -44588,10 +44809,10 @@ class _$ReportControl extends ReportControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        commInterface == this.commInterface &&
-        period == this.period &&
-        sysDst == this.sysDst;
+        op == other.op &&
+        commInterface == other.commInterface &&
+        period == other.period &&
+        sysDst == other.sysDst;
   }
 
   @override
@@ -44681,6 +44902,7 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ReportControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReportControlBuilder()..copyFromHeader(headerFrom);
 
   ReportControlBuilder get _$this {
@@ -44802,16 +45024,16 @@ class _$StateReport extends StateReport {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        stime == this.stime &&
-        latitude == this.latitude &&
-        longitude == this.longitude &&
-        altitude == this.altitude &&
-        depth == this.depth &&
-        heading == this.heading &&
-        speed == this.speed &&
-        fuel == this.fuel &&
-        execState == this.execState &&
-        planChecksum == this.planChecksum;
+        stime == other.stime &&
+        latitude == other.latitude &&
+        longitude == other.longitude &&
+        altitude == other.altitude &&
+        depth == other.depth &&
+        heading == other.heading &&
+        speed == other.speed &&
+        fuel == other.fuel &&
+        execState == other.execState &&
+        planChecksum == other.planChecksum;
   }
 
   @override
@@ -44937,6 +45159,7 @@ class StateReportBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   StateReportBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StateReportBuilder()..copyFromHeader(headerFrom);
 
   StateReportBuilder get _$this {
@@ -45064,14 +45287,14 @@ class _$TransmissionRequest extends TransmissionRequest {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reqId == this.reqId &&
-        commMean == this.commMean &&
-        destination == this.destination &&
-        deadline == this.deadline &&
-        dataMode == this.dataMode &&
-        msgData == this.msgData &&
-        txtData == this.txtData &&
-        rawData == this.rawData;
+        reqId == other.reqId &&
+        commMean == other.commMean &&
+        destination == other.destination &&
+        deadline == other.deadline &&
+        dataMode == other.dataMode &&
+        msgData == other.msgData &&
+        txtData == other.txtData &&
+        rawData == other.rawData;
   }
 
   @override
@@ -45185,6 +45408,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TransmissionRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransmissionRequestBuilder()..copyFromHeader(headerFrom);
 
   TransmissionRequestBuilder get _$this {
@@ -45293,9 +45517,9 @@ class _$TransmissionStatus extends TransmissionStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reqId == this.reqId &&
-        status == this.status &&
-        info == this.info;
+        reqId == other.reqId &&
+        status == other.status &&
+        info == other.info;
   }
 
   @override
@@ -45379,6 +45603,7 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TransmissionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransmissionStatusBuilder()..copyFromHeader(headerFrom);
 
   TransmissionStatusBuilder get _$this {
@@ -45480,10 +45705,10 @@ class _$SmsRequest extends SmsRequest {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reqId == this.reqId &&
-        destination == this.destination &&
-        timeout == this.timeout &&
-        smsText == this.smsText;
+        reqId == other.reqId &&
+        destination == other.destination &&
+        timeout == other.timeout &&
+        smsText == other.smsText;
   }
 
   @override
@@ -45573,6 +45798,7 @@ class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SmsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsRequestBuilder()..copyFromHeader(headerFrom);
 
   SmsRequestBuilder get _$this {
@@ -45673,9 +45899,9 @@ class _$SmsStatus extends SmsStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reqId == this.reqId &&
-        status == this.status &&
-        info == this.info;
+        reqId == other.reqId &&
+        status == other.status &&
+        info == other.info;
   }
 
   @override
@@ -45759,6 +45985,7 @@ class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SmsStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsStatusBuilder()..copyFromHeader(headerFrom);
 
   SmsStatusBuilder get _$this {
@@ -45851,7 +46078,7 @@ class _$VtolState extends VtolState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state;
+        state == other.state;
   }
 
   @override
@@ -45923,6 +46150,7 @@ class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VtolStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VtolStateBuilder()..copyFromHeader(headerFrom);
 
   VtolStateBuilder get _$this {
@@ -46011,7 +46239,7 @@ class _$ArmingState extends ArmingState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state;
+        state == other.state;
   }
 
   @override
@@ -46083,6 +46311,7 @@ class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ArmingStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ArmingStateBuilder()..copyFromHeader(headerFrom);
 
   ArmingStateBuilder get _$this {
@@ -46233,6 +46462,7 @@ class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AbortBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AbortBuilder()..copyFromHeader(headerFrom);
 
   AbortBuilder get _$this {
@@ -46343,15 +46573,15 @@ class _$PlanSpecification extends PlanSpecification {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        planId == this.planId &&
-        description == this.description &&
-        vnamespace == this.vnamespace &&
-        variables == this.variables &&
-        startManId == this.startManId &&
-        maneuvers == this.maneuvers &&
-        transitions == this.transitions &&
-        startActions == this.startActions &&
-        endActions == this.endActions;
+        planId == other.planId &&
+        description == other.description &&
+        vnamespace == other.vnamespace &&
+        variables == other.variables &&
+        startManId == other.startManId &&
+        maneuvers == other.maneuvers &&
+        transitions == other.transitions &&
+        startActions == other.startActions &&
+        endActions == other.endActions;
   }
 
   @override
@@ -46471,6 +46701,7 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanSpecificationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanSpecificationBuilder()..copyFromHeader(headerFrom);
 
   PlanSpecificationBuilder get _$this {
@@ -46584,10 +46815,10 @@ class _$PlanManeuver extends PlanManeuver {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        maneuverId == this.maneuverId &&
-        data == this.data &&
-        startActions == this.startActions &&
-        endActions == this.endActions;
+        maneuverId == other.maneuverId &&
+        data == other.data &&
+        startActions == other.startActions &&
+        endActions == other.endActions;
   }
 
   @override
@@ -46677,6 +46908,7 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanManeuverBuilder()..copyFromHeader(headerFrom);
 
   PlanManeuverBuilder get _$this {
@@ -46780,10 +47012,10 @@ class _$PlanTransition extends PlanTransition {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sourceMan == this.sourceMan &&
-        destMan == this.destMan &&
-        conditions == this.conditions &&
-        actions == this.actions;
+        sourceMan == other.sourceMan &&
+        destMan == other.destMan &&
+        conditions == other.conditions &&
+        actions == other.actions;
   }
 
   @override
@@ -46873,6 +47105,7 @@ class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanTransitionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanTransitionBuilder()..copyFromHeader(headerFrom);
 
   PlanTransitionBuilder get _$this {
@@ -46970,8 +47203,8 @@ class _$EmergencyControl extends EmergencyControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        command == this.command &&
-        plan == this.plan;
+        command == other.command &&
+        plan == other.plan;
   }
 
   @override
@@ -47049,6 +47282,7 @@ class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EmergencyControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EmergencyControlBuilder()..copyFromHeader(headerFrom);
 
   EmergencyControlBuilder get _$this {
@@ -47145,9 +47379,9 @@ class _$EmergencyControlState extends EmergencyControlState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state &&
-        planId == this.planId &&
-        commLevel == this.commLevel;
+        state == other.state &&
+        planId == other.planId &&
+        commLevel == other.commLevel;
   }
 
   @override
@@ -47231,6 +47465,7 @@ class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart impl
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EmergencyControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EmergencyControlStateBuilder()..copyFromHeader(headerFrom);
 
   EmergencyControlStateBuilder get _$this {
@@ -47338,12 +47573,12 @@ class _$PlanDB extends PlanDB {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        op == this.op &&
-        requestId == this.requestId &&
-        planId == this.planId &&
-        arg == this.arg &&
-        info == this.info;
+        type == other.type &&
+        op == other.op &&
+        requestId == other.requestId &&
+        planId == other.planId &&
+        arg == other.arg &&
+        info == other.info;
   }
 
   @override
@@ -47445,6 +47680,7 @@ class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanDBBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBBuilder()..copyFromHeader(headerFrom);
 
   PlanDBBuilder get _$this {
@@ -47561,13 +47797,13 @@ class _$PlanDBState extends PlanDBState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        planCount == this.planCount &&
-        planSize == this.planSize &&
-        changeTime == this.changeTime &&
-        changeSid == this.changeSid &&
-        changeSname == this.changeSname &&
-        md5 == this.md5 &&
-        plansInfo == this.plansInfo;
+        planCount == other.planCount &&
+        planSize == other.planSize &&
+        changeTime == other.changeTime &&
+        changeSid == other.changeSid &&
+        changeSname == other.changeSname &&
+        md5 == other.md5 &&
+        plansInfo == other.plansInfo;
   }
 
   @override
@@ -47675,6 +47911,7 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanDBStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBStateBuilder()..copyFromHeader(headerFrom);
 
   PlanDBStateBuilder get _$this {
@@ -47790,12 +48027,12 @@ class _$PlanDBInformation extends PlanDBInformation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        planId == this.planId &&
-        planSize == this.planSize &&
-        changeTime == this.changeTime &&
-        changeSid == this.changeSid &&
-        changeSname == this.changeSname &&
-        md5 == this.md5;
+        planId == other.planId &&
+        planSize == other.planSize &&
+        changeTime == other.changeTime &&
+        changeSid == other.changeSid &&
+        changeSname == other.changeSname &&
+        md5 == other.md5;
   }
 
   @override
@@ -47897,6 +48134,7 @@ class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanDBInformationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBInformationBuilder()..copyFromHeader(headerFrom);
 
   PlanDBInformationBuilder get _$this {
@@ -48013,13 +48251,13 @@ class _$PlanControl extends PlanControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        op == this.op &&
-        requestId == this.requestId &&
-        planId == this.planId &&
-        flags == this.flags &&
-        arg == this.arg &&
-        info == this.info;
+        type == other.type &&
+        op == other.op &&
+        requestId == other.requestId &&
+        planId == other.planId &&
+        flags == other.flags &&
+        arg == other.arg &&
+        info == other.info;
   }
 
   @override
@@ -48127,6 +48365,7 @@ class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanControlBuilder()..copyFromHeader(headerFrom);
 
   PlanControlBuilder get _$this {
@@ -48248,14 +48487,14 @@ class _$PlanControlState extends PlanControlState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state &&
-        planId == this.planId &&
-        planEta == this.planEta &&
-        planProgress == this.planProgress &&
-        manId == this.manId &&
-        manType == this.manType &&
-        manEta == this.manEta &&
-        lastOutcome == this.lastOutcome;
+        state == other.state &&
+        planId == other.planId &&
+        planEta == other.planEta &&
+        planProgress == other.planProgress &&
+        manId == other.manId &&
+        manType == other.manType &&
+        manEta == other.manEta &&
+        lastOutcome == other.lastOutcome;
   }
 
   @override
@@ -48369,6 +48608,7 @@ class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanControlStateBuilder()..copyFromHeader(headerFrom);
 
   PlanControlStateBuilder get _$this {
@@ -48480,10 +48720,10 @@ class _$PlanVariable extends PlanVariable {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        value == this.value &&
-        type == this.type &&
-        access == this.access;
+        name == other.name &&
+        value == other.value &&
+        type == other.type &&
+        access == other.access;
   }
 
   @override
@@ -48573,6 +48813,7 @@ class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanVariableBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanVariableBuilder()..copyFromHeader(headerFrom);
 
   PlanVariableBuilder get _$this {
@@ -48676,10 +48917,10 @@ class _$PlanGeneration extends PlanGeneration {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        cmd == this.cmd &&
-        op == this.op &&
-        planId == this.planId &&
-        params == this.params;
+        cmd == other.cmd &&
+        op == other.op &&
+        planId == other.planId &&
+        params == other.params;
   }
 
   @override
@@ -48769,6 +49010,7 @@ class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanGenerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanGenerationBuilder()..copyFromHeader(headerFrom);
 
   PlanGenerationBuilder get _$this {
@@ -48920,26 +49162,26 @@ class _$LeaderState extends LeaderState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        groupName == this.groupName &&
-        op == this.op &&
-        lat == this.lat &&
-        lon == this.lon &&
-        height == this.height &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi &&
-        vx == this.vx &&
-        vy == this.vy &&
-        vz == this.vz &&
-        p == this.p &&
-        q == this.q &&
-        r == this.r &&
-        svx == this.svx &&
-        svy == this.svy &&
-        svz == this.svz;
+        groupName == other.groupName &&
+        op == other.op &&
+        lat == other.lat &&
+        lon == other.lon &&
+        height == other.height &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi &&
+        vx == other.vx &&
+        vy == other.vy &&
+        vz == other.vz &&
+        p == other.p &&
+        q == other.q &&
+        r == other.r &&
+        svx == other.svx &&
+        svy == other.svy &&
+        svz == other.svz;
   }
 
   @override
@@ -48982,21 +49224,21 @@ class _$LeaderState extends LeaderState {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('groupName', '$groupName')
           ..add('op', '$op (Enumerated)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('p', '$p (rad/s)${p != null ? " [${p * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('q', '$q (rad/s)${q != null ? " [${q * 180.0 / math.pi} (deg/s)]" : ""}')
-          ..add('r', '$r (rad/s)${r != null ? " [${r * 180.0 / math.pi} (deg/s)]" : ""}')
+          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('svx', '$svx (m/s)')
           ..add('svy', '$svy (m/s)')
           ..add('svz', '$svz (m/s)'))
@@ -49125,6 +49367,7 @@ class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   LeaderStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LeaderStateBuilder()..copyFromHeader(headerFrom);
 
   LeaderStateBuilder get _$this {
@@ -49269,13 +49512,13 @@ class _$PlanStatistics extends PlanStatistics {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        planId == this.planId &&
-        type == this.type &&
-        properties == this.properties &&
-        durations == this.durations &&
-        distances == this.distances &&
-        actions == this.actions &&
-        fuel == this.fuel;
+        planId == other.planId &&
+        type == other.type &&
+        properties == other.properties &&
+        durations == other.durations &&
+        distances == other.distances &&
+        actions == other.actions &&
+        fuel == other.fuel;
   }
 
   @override
@@ -49383,6 +49626,7 @@ class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PlanStatisticsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanStatisticsBuilder()..copyFromHeader(headerFrom);
 
   PlanStatisticsBuilder get _$this {
@@ -49507,15 +49751,15 @@ class _$ReportedState extends ReportedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        depth == this.depth &&
-        roll == this.roll &&
-        pitch == this.pitch &&
-        yaw == this.yaw &&
-        rcpTime == this.rcpTime &&
-        sid == this.sid &&
-        sType == this.sType;
+        lat == other.lat &&
+        lon == other.lon &&
+        depth == other.depth &&
+        roll == other.roll &&
+        pitch == other.pitch &&
+        yaw == other.yaw &&
+        rcpTime == other.rcpTime &&
+        sid == other.sid &&
+        sType == other.sType;
   }
 
   @override
@@ -49545,12 +49789,12 @@ class _$ReportedState extends ReportedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('depth', '$depth (m)')
-          ..add('roll', '$roll (rad)${roll != null ? " [${roll * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('pitch', '$pitch (rad)${pitch != null ? " [${pitch * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('yaw', '$yaw (rad)${yaw != null ? " [${yaw * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('roll', '$roll (rad)${roll != null ? ' [${roll * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('yaw', '$yaw (rad)${yaw != null ? ' [${yaw * 180.0 / math.pi} (deg)]' : ''}')
           ..add('rcpTime', '$rcpTime (s)')
           ..add('sid', '$sid')
           ..add('sType', '$sType (Enumerated)'))
@@ -49635,6 +49879,7 @@ class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ReportedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReportedStateBuilder()..copyFromHeader(headerFrom);
 
   ReportedStateBuilder get _$this {
@@ -49757,13 +50002,13 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        sensorClass == this.sensorClass &&
-        lat == this.lat &&
-        lon == this.lon &&
-        alt == this.alt &&
-        heading == this.heading &&
-        data == this.data;
+        id == other.id &&
+        sensorClass == other.sensorClass &&
+        lat == other.lat &&
+        lon == other.lon &&
+        alt == other.alt &&
+        heading == other.heading &&
+        data == other.data;
   }
 
   @override
@@ -49793,10 +50038,10 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
           ..add('sensorClass', '$sensorClass')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('alt', '$alt (m)')
-          ..add('heading', '$heading (rad)${heading != null ? " [${heading * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('heading', '$heading (rad)${heading != null ? ' [${heading * 180.0 / math.pi} (deg)]' : ''}')
           ..add('data', '$data (TupleList)'))
         .toString();
   }
@@ -49871,6 +50116,7 @@ class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RemoteSensorInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteSensorInfoBuilder()..copyFromHeader(headerFrom);
 
   RemoteSensorInfoBuilder get _$this {
@@ -49974,8 +50220,8 @@ class _$Map extends Map {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        features == this.features;
+        id == other.id &&
+        features == other.features;
   }
 
   @override
@@ -50053,6 +50299,7 @@ class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MapBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapBuilder()..copyFromHeader(headerFrom);
 
   MapBuilder get _$this {
@@ -50158,12 +50405,12 @@ class _$MapFeature extends MapFeature {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        id == this.id &&
-        featureType == this.featureType &&
-        rgbRed == this.rgbRed &&
-        rgbGreen == this.rgbGreen &&
-        rgbBlue == this.rgbBlue &&
-        feature == this.feature;
+        id == other.id &&
+        featureType == other.featureType &&
+        rgbRed == other.rgbRed &&
+        rgbGreen == other.rgbGreen &&
+        rgbBlue == other.rgbBlue &&
+        feature == other.feature;
   }
 
   @override
@@ -50265,6 +50512,7 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MapFeatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapFeatureBuilder()..copyFromHeader(headerFrom);
 
   MapFeatureBuilder get _$this {
@@ -50369,9 +50617,9 @@ class _$MapPoint extends MapPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        alt == this.alt;
+        lat == other.lat &&
+        lon == other.lon &&
+        alt == other.alt;
   }
 
   @override
@@ -50395,8 +50643,8 @@ class _$MapPoint extends MapPoint {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('alt', '$alt (m)'))
         .toString();
   }
@@ -50455,6 +50703,7 @@ class MapPointBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MapPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapPointBuilder()..copyFromHeader(headerFrom);
 
   MapPointBuilder get _$this {
@@ -50553,9 +50802,9 @@ class _$CcuEvent extends CcuEvent {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        id == this.id &&
-        arg == this.arg;
+        type == other.type &&
+        id == other.id &&
+        arg == other.arg;
   }
 
   @override
@@ -50639,6 +50888,7 @@ class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CcuEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CcuEventBuilder()..copyFromHeader(headerFrom);
 
   CcuEventBuilder get _$this {
@@ -50734,8 +50984,8 @@ class _$VehicleLinks extends VehicleLinks {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        localname == this.localname &&
-        links == this.links;
+        localname == other.localname &&
+        links == other.links;
   }
 
   @override
@@ -50813,6 +51063,7 @@ class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   VehicleLinksBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleLinksBuilder()..copyFromHeader(headerFrom);
 
   VehicleLinksBuilder get _$this {
@@ -50909,9 +51160,9 @@ class _$TrexObservation extends TrexObservation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeline == this.timeline &&
-        predicate == this.predicate &&
-        attributes == this.attributes;
+        timeline == other.timeline &&
+        predicate == other.predicate &&
+        attributes == other.attributes;
   }
 
   @override
@@ -50995,6 +51246,7 @@ class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrexObservationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexObservationBuilder()..copyFromHeader(headerFrom);
 
   TrexObservationBuilder get _$this {
@@ -51093,9 +51345,9 @@ class _$TrexCommand extends TrexCommand {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        command == this.command &&
-        goalId == this.goalId &&
-        goalXml == this.goalXml;
+        command == other.command &&
+        goalId == other.goalId &&
+        goalXml == other.goalXml;
   }
 
   @override
@@ -51179,6 +51431,7 @@ class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrexCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexCommandBuilder()..copyFromHeader(headerFrom);
 
   TrexCommandBuilder get _$this {
@@ -51277,9 +51530,9 @@ class _$TrexOperation extends TrexOperation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        goalId == this.goalId &&
-        token == this.token;
+        op == other.op &&
+        goalId == other.goalId &&
+        token == other.token;
   }
 
   @override
@@ -51363,6 +51616,7 @@ class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrexOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexOperationBuilder()..copyFromHeader(headerFrom);
 
   TrexOperationBuilder get _$this {
@@ -51464,10 +51718,10 @@ class _$TrexAttribute extends TrexAttribute {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        attrType == this.attrType &&
-        min == this.min &&
-        max == this.max;
+        name == other.name &&
+        attrType == other.attrType &&
+        min == other.min &&
+        max == other.max;
   }
 
   @override
@@ -51557,6 +51811,7 @@ class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrexAttributeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexAttributeBuilder()..copyFromHeader(headerFrom);
 
   TrexAttributeBuilder get _$this {
@@ -51657,9 +51912,9 @@ class _$TrexToken extends TrexToken {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeline == this.timeline &&
-        predicate == this.predicate &&
-        attributes == this.attributes;
+        timeline == other.timeline &&
+        predicate == other.predicate &&
+        attributes == other.attributes;
   }
 
   @override
@@ -51743,6 +51998,7 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrexTokenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexTokenBuilder()..copyFromHeader(headerFrom);
 
   TrexTokenBuilder get _$this {
@@ -51838,8 +52094,8 @@ class _$TrexPlan extends TrexPlan {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        reactor == this.reactor &&
-        tokens == this.tokens;
+        reactor == other.reactor &&
+        tokens == other.tokens;
   }
 
   @override
@@ -51917,6 +52173,7 @@ class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TrexPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexPlanBuilder()..copyFromHeader(headerFrom);
 
   TrexPlanBuilder get _$this {
@@ -52010,8 +52267,8 @@ class _$Event extends Event {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        topic == this.topic &&
-        data == this.data;
+        topic == other.topic &&
+        data == other.data;
   }
 
   @override
@@ -52089,6 +52346,7 @@ class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EventBuilder()..copyFromHeader(headerFrom);
 
   EventBuilder get _$this {
@@ -52182,8 +52440,8 @@ class _$CompressedImage extends CompressedImage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        frameid == this.frameid &&
-        data == this.data;
+        frameid == other.frameid &&
+        data == other.data;
   }
 
   @override
@@ -52261,6 +52519,7 @@ class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CompressedImageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompressedImageBuilder()..copyFromHeader(headerFrom);
 
   CompressedImageBuilder get _$this {
@@ -52360,10 +52619,10 @@ class _$ImageTxSettings extends ImageTxSettings {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        fps == this.fps &&
-        quality == this.quality &&
-        reps == this.reps &&
-        tsize == this.tsize;
+        fps == other.fps &&
+        quality == other.quality &&
+        reps == other.reps &&
+        tsize == other.tsize;
   }
 
   @override
@@ -52453,6 +52712,7 @@ class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ImageTxSettingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ImageTxSettingsBuilder()..copyFromHeader(headerFrom);
 
   ImageTxSettingsBuilder get _$this {
@@ -52559,11 +52819,11 @@ class _$RemoteState extends RemoteState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        depth == this.depth &&
-        speed == this.speed &&
-        psi == this.psi;
+        lat == other.lat &&
+        lon == other.lon &&
+        depth == other.depth &&
+        speed == other.speed &&
+        psi == other.psi;
   }
 
   @override
@@ -52589,11 +52849,11 @@ class _$RemoteState extends RemoteState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('depth', '$depth (m)')
           ..add('speed', '$speed (m/s)')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -52659,6 +52919,7 @@ class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   RemoteStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteStateBuilder()..copyFromHeader(headerFrom);
 
   RemoteStateBuilder get _$this {
@@ -52773,13 +53034,13 @@ class _$Target extends Target {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        label == this.label &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits &&
-        cog == this.cog &&
-        sog == this.sog;
+        label == other.label &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits &&
+        cog == other.cog &&
+        sog == other.sog;
   }
 
   @override
@@ -52808,11 +53069,11 @@ class _$Target extends Target {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('label', '$label')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
-          ..add('cog', '$cog (rad)${cog != null ? " [${cog * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('cog', '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
           ..add('sog', '$sog (m/s)'))
         .toString();
   }
@@ -52887,6 +53148,7 @@ class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TargetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TargetBuilder()..copyFromHeader(headerFrom);
 
   TargetBuilder get _$this {
@@ -52990,8 +53252,8 @@ class _$EntityParameter extends EntityParameter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        value == this.value;
+        name == other.name &&
+        value == other.value;
   }
 
   @override
@@ -53069,6 +53331,7 @@ class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EntityParameterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityParameterBuilder()..copyFromHeader(headerFrom);
 
   EntityParameterBuilder get _$this {
@@ -53162,8 +53425,8 @@ class _$EntityParameters extends EntityParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        params == this.params;
+        name == other.name &&
+        params == other.params;
   }
 
   @override
@@ -53241,6 +53504,7 @@ class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   EntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityParametersBuilder()..copyFromHeader(headerFrom);
 
   EntityParametersBuilder get _$this {
@@ -53337,9 +53601,9 @@ class _$QueryEntityParameters extends QueryEntityParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        visibility == this.visibility &&
-        scope == this.scope;
+        name == other.name &&
+        visibility == other.visibility &&
+        scope == other.scope;
   }
 
   @override
@@ -53423,6 +53687,7 @@ class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart impl
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   QueryEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityParametersBuilder get _$this {
@@ -53518,8 +53783,8 @@ class _$SetEntityParameters extends SetEntityParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        params == this.params;
+        name == other.name &&
+        params == other.params;
   }
 
   @override
@@ -53597,6 +53862,7 @@ class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SetEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   SetEntityParametersBuilder get _$this {
@@ -53687,7 +53953,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name;
+        name == other.name;
   }
 
   @override
@@ -53759,6 +54025,7 @@ class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SaveEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SaveEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   SaveEntityParametersBuilder get _$this {
@@ -53847,7 +54114,7 @@ class _$CreateSession extends CreateSession {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timeout == this.timeout;
+        timeout == other.timeout;
   }
 
   @override
@@ -53919,6 +54186,7 @@ class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CreateSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CreateSessionBuilder()..copyFromHeader(headerFrom);
 
   CreateSessionBuilder get _$this {
@@ -54007,7 +54275,7 @@ class _$CloseSession extends CloseSession {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sessid == this.sessid;
+        sessid == other.sessid;
   }
 
   @override
@@ -54079,6 +54347,7 @@ class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   CloseSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CloseSessionBuilder()..copyFromHeader(headerFrom);
 
   CloseSessionBuilder get _$this {
@@ -54170,8 +54439,8 @@ class _$SessionSubscription extends SessionSubscription {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sessid == this.sessid &&
-        messages == this.messages;
+        sessid == other.sessid &&
+        messages == other.messages;
   }
 
   @override
@@ -54249,6 +54518,7 @@ class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SessionSubscriptionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionSubscriptionBuilder()..copyFromHeader(headerFrom);
 
   SessionSubscriptionBuilder get _$this {
@@ -54339,7 +54609,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sessid == this.sessid;
+        sessid == other.sessid;
   }
 
   @override
@@ -54411,6 +54681,7 @@ class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SessionKeepAliveBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionKeepAliveBuilder()..copyFromHeader(headerFrom);
 
   SessionKeepAliveBuilder get _$this {
@@ -54502,8 +54773,8 @@ class _$SessionStatus extends SessionStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sessid == this.sessid &&
-        status == this.status;
+        sessid == other.sessid &&
+        status == other.status;
   }
 
   @override
@@ -54581,6 +54852,7 @@ class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SessionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionStatusBuilder()..copyFromHeader(headerFrom);
 
   SessionStatusBuilder get _$this {
@@ -54671,7 +54943,7 @@ class _$PushEntityParameters extends PushEntityParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name;
+        name == other.name;
   }
 
   @override
@@ -54743,6 +55015,7 @@ class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PushEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PushEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   PushEntityParametersBuilder get _$this {
@@ -54831,7 +55104,7 @@ class _$PopEntityParameters extends PopEntityParameters {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name;
+        name == other.name;
   }
 
   @override
@@ -54903,6 +55176,7 @@ class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   PopEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PopEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   PopEntityParametersBuilder get _$this {
@@ -54994,8 +55268,8 @@ class _$IoEvent extends IoEvent {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        error == this.error;
+        type == other.type &&
+        error == other.error;
   }
 
   @override
@@ -55073,6 +55347,7 @@ class IoEventBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   IoEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IoEventBuilder()..copyFromHeader(headerFrom);
 
   IoEventBuilder get _$this {
@@ -55172,10 +55447,10 @@ class _$UamTxFrame extends UamTxFrame {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        seq == this.seq &&
-        sysDst == this.sysDst &&
-        flags == this.flags &&
-        data == this.data;
+        seq == other.seq &&
+        sysDst == other.sysDst &&
+        flags == other.flags &&
+        data == other.data;
   }
 
   @override
@@ -55265,6 +55540,7 @@ class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UamTxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamTxFrameBuilder()..copyFromHeader(headerFrom);
 
   UamTxFrameBuilder get _$this {
@@ -55368,10 +55644,10 @@ class _$UamRxFrame extends UamRxFrame {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        sysSrc == this.sysSrc &&
-        sysDst == this.sysDst &&
-        flags == this.flags &&
-        data == this.data;
+        sysSrc == other.sysSrc &&
+        sysDst == other.sysDst &&
+        flags == other.flags &&
+        data == other.data;
   }
 
   @override
@@ -55461,6 +55737,7 @@ class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UamRxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamRxFrameBuilder()..copyFromHeader(headerFrom);
 
   UamRxFrameBuilder get _$this {
@@ -55561,9 +55838,9 @@ class _$UamTxStatus extends UamTxStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        seq == this.seq &&
-        value == this.value &&
-        error == this.error;
+        seq == other.seq &&
+        value == other.value &&
+        error == other.error;
   }
 
   @override
@@ -55647,6 +55924,7 @@ class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UamTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamTxStatusBuilder()..copyFromHeader(headerFrom);
 
   UamTxStatusBuilder get _$this {
@@ -55745,9 +56023,9 @@ class _$UamRxRange extends UamRxRange {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        seq == this.seq &&
-        sys == this.sys &&
-        value == this.value;
+        seq == other.seq &&
+        sys == other.sys &&
+        value == other.value;
   }
 
   @override
@@ -55831,6 +56109,7 @@ class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UamRxRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamRxRangeBuilder()..copyFromHeader(headerFrom);
 
   UamRxRangeBuilder get _$this {
@@ -55938,12 +56217,12 @@ class _$FormCtrlParam extends FormCtrlParam {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        action == this.action &&
-        lonGain == this.lonGain &&
-        latGain == this.latGain &&
-        bondThick == this.bondThick &&
-        leadGain == this.leadGain &&
-        deconflGain == this.deconflGain;
+        action == other.action &&
+        lonGain == other.lonGain &&
+        latGain == other.latGain &&
+        bondThick == other.bondThick &&
+        leadGain == other.leadGain &&
+        deconflGain == other.deconflGain;
   }
 
   @override
@@ -56045,6 +56324,7 @@ class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormCtrlParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormCtrlParamBuilder()..copyFromHeader(headerFrom);
 
   FormCtrlParamBuilder get _$this {
@@ -56149,9 +56429,9 @@ class _$FormationEval extends FormationEval {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        errMean == this.errMean &&
-        distMinAbs == this.distMinAbs &&
-        distMinMean == this.distMinMean;
+        errMean == other.errMean &&
+        distMinAbs == other.distMinAbs &&
+        distMinMean == other.distMinMean;
   }
 
   @override
@@ -56235,6 +56515,7 @@ class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationEvalBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationEvalBuilder()..copyFromHeader(headerFrom);
 
   FormationEvalBuilder get _$this {
@@ -56357,17 +56638,17 @@ class _$FormationControlParams extends FormationControlParams {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        action == this.action &&
-        lonGain == this.lonGain &&
-        latGain == this.latGain &&
-        bondThick == this.bondThick &&
-        leadGain == this.leadGain &&
-        deconflGain == this.deconflGain &&
-        accelSwitchGain == this.accelSwitchGain &&
-        safeDist == this.safeDist &&
-        deconflictOffset == this.deconflictOffset &&
-        accelSafeMargin == this.accelSafeMargin &&
-        accelLimX == this.accelLimX;
+        action == other.action &&
+        lonGain == other.lonGain &&
+        latGain == other.latGain &&
+        bondThick == other.bondThick &&
+        leadGain == other.leadGain &&
+        deconflGain == other.deconflGain &&
+        accelSwitchGain == other.accelSwitchGain &&
+        safeDist == other.safeDist &&
+        deconflictOffset == other.deconflictOffset &&
+        accelSafeMargin == other.accelSafeMargin &&
+        accelLimX == other.accelLimX;
   }
 
   @override
@@ -56499,6 +56780,7 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationControlParamsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationControlParamsBuilder()..copyFromHeader(headerFrom);
 
   FormationControlParamsBuilder get _$this {
@@ -56628,14 +56910,14 @@ class _$FormationEvaluation extends FormationEvaluation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        op == this.op &&
-        errMean == this.errMean &&
-        distMinAbs == this.distMinAbs &&
-        distMinMean == this.distMinMean &&
-        rollRateMean == this.rollRateMean &&
-        time == this.time &&
-        controlParams == this.controlParams;
+        type == other.type &&
+        op == other.op &&
+        errMean == other.errMean &&
+        distMinAbs == other.distMinAbs &&
+        distMinMean == other.distMinMean &&
+        rollRateMean == other.rollRateMean &&
+        time == other.time &&
+        controlParams == other.controlParams;
   }
 
   @override
@@ -56749,6 +57031,7 @@ class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   FormationEvaluationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationEvaluationBuilder()..copyFromHeader(headerFrom);
 
   FormationEvaluationBuilder get _$this {
@@ -56860,10 +57143,10 @@ class _$SoiWaypoint extends SoiWaypoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        lat == this.lat &&
-        lon == this.lon &&
-        eta == this.eta &&
-        duration == this.duration;
+        lat == other.lat &&
+        lon == other.lon &&
+        eta == other.eta &&
+        duration == other.duration;
   }
 
   @override
@@ -56953,6 +57236,7 @@ class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SoiWaypointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiWaypointBuilder()..copyFromHeader(headerFrom);
 
   SoiWaypointBuilder get _$this {
@@ -57050,8 +57334,8 @@ class _$SoiPlan extends SoiPlan {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        planId == this.planId &&
-        waypoints == this.waypoints;
+        planId == other.planId &&
+        waypoints == other.waypoints;
   }
 
   @override
@@ -57129,6 +57413,7 @@ class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SoiPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiPlanBuilder()..copyFromHeader(headerFrom);
 
   SoiPlanBuilder get _$this {
@@ -57231,11 +57516,11 @@ class _$SoiCommand extends SoiCommand {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        type == this.type &&
-        command == this.command &&
-        settings == this.settings &&
-        plan == this.plan &&
-        info == this.info;
+        type == other.type &&
+        command == other.command &&
+        settings == other.settings &&
+        plan == other.plan &&
+        info == other.info;
   }
 
   @override
@@ -57331,6 +57616,7 @@ class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SoiCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiCommandBuilder()..copyFromHeader(headerFrom);
 
   SoiCommandBuilder get _$this {
@@ -57436,10 +57722,10 @@ class _$SoiState extends SoiState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        state == this.state &&
-        planId == this.planId &&
-        wptId == this.wptId &&
-        settingsChk == this.settingsChk;
+        state == other.state &&
+        planId == other.planId &&
+        wptId == other.wptId &&
+        settingsChk == other.settingsChk;
   }
 
   @override
@@ -57529,6 +57815,7 @@ class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SoiStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiStateBuilder()..copyFromHeader(headerFrom);
 
   SoiStateBuilder get _$this {
@@ -57632,10 +57919,10 @@ class _$MessagePart extends MessagePart {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        uid == this.uid &&
-        fragNumber == this.fragNumber &&
-        numFrags == this.numFrags &&
-        data == this.data;
+        uid == other.uid &&
+        fragNumber == other.fragNumber &&
+        numFrags == other.numFrags &&
+        data == other.data;
   }
 
   @override
@@ -57725,6 +58012,7 @@ class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements Bui
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   MessagePartBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MessagePartBuilder()..copyFromHeader(headerFrom);
 
   MessagePartBuilder get _$this {
@@ -57822,8 +58110,8 @@ class _$NeptusBlob extends NeptusBlob {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        contentType == this.contentType &&
-        content == this.content;
+        contentType == other.contentType &&
+        content == other.content;
   }
 
   @override
@@ -57901,6 +58189,7 @@ class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   NeptusBlobBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NeptusBlobBuilder()..copyFromHeader(headerFrom);
 
   NeptusBlobBuilder get _$this {
@@ -58053,6 +58342,7 @@ class AbortedBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   AbortedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AbortedBuilder()..copyFromHeader(headerFrom);
 
   AbortedBuilder get _$this {
@@ -58145,9 +58435,9 @@ class _$UsblAngles extends UsblAngles {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        target == this.target &&
-        bearing == this.bearing &&
-        elevation == this.elevation;
+        target == other.target &&
+        bearing == other.bearing &&
+        elevation == other.elevation;
   }
 
   @override
@@ -58172,8 +58462,8 @@ class _$UsblAngles extends UsblAngles {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('elevation', '$elevation (rad)${elevation != null ? " [${elevation * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('elevation', '$elevation (rad)${elevation != null ? ' [${elevation * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -58231,6 +58521,7 @@ class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblAnglesBuilder()..copyFromHeader(headerFrom);
 
   UsblAnglesBuilder get _$this {
@@ -58332,10 +58623,10 @@ class _$UsblPosition extends UsblPosition {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        target == this.target &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        target == other.target &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -58425,6 +58716,7 @@ class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblPositionBuilder()..copyFromHeader(headerFrom);
 
   UsblPositionBuilder get _$this {
@@ -58531,11 +58823,11 @@ class _$UsblFix extends UsblFix {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        target == this.target &&
-        lat == this.lat &&
-        lon == this.lon &&
-        zUnits == this.zUnits &&
-        z == this.z;
+        target == other.target &&
+        lat == other.lat &&
+        lon == other.lon &&
+        zUnits == other.zUnits &&
+        z == other.z;
   }
 
   @override
@@ -58562,8 +58854,8 @@ class _$UsblFix extends UsblFix {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('z', '$z (m)'))
         .toString();
@@ -58631,6 +58923,7 @@ class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements Builder
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblFixBuilder()..copyFromHeader(headerFrom);
 
   UsblFixBuilder get _$this {
@@ -58730,8 +59023,8 @@ class _$ParametersXml extends ParametersXml {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        locale == this.locale &&
-        config == this.config;
+        locale == other.locale &&
+        config == other.config;
   }
 
   @override
@@ -58809,6 +59102,7 @@ class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements B
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ParametersXmlBuilder()..copyFromHeader(headerFrom);
 
   ParametersXmlBuilder get _$this {
@@ -58961,6 +59255,7 @@ class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implement
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GetParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetParametersXmlBuilder()..copyFromHeader(headerFrom);
 
   GetParametersXmlBuilder get _$this {
@@ -59053,9 +59348,9 @@ class _$SetImageCoords extends SetImageCoords {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        camId == this.camId &&
-        x == this.x &&
-        y == this.y;
+        camId == other.camId &&
+        x == other.x &&
+        y == other.y;
   }
 
   @override
@@ -59139,6 +59434,7 @@ class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetImageCoordsBuilder()..copyFromHeader(headerFrom);
 
   SetImageCoordsBuilder get _$this {
@@ -59237,9 +59533,9 @@ class _$GetImageCoords extends GetImageCoords {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        camId == this.camId &&
-        x == this.x &&
-        y == this.y;
+        camId == other.camId &&
+        x == other.x &&
+        y == other.y;
   }
 
   @override
@@ -59323,6 +59619,7 @@ class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetImageCoordsBuilder()..copyFromHeader(headerFrom);
 
   GetImageCoordsBuilder get _$this {
@@ -59430,12 +59727,12 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        tracking == this.tracking &&
-        lat == this.lat &&
-        lon == this.lon &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z;
+        tracking == other.tracking &&
+        lat == other.lat &&
+        lon == other.lon &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z;
   }
 
   @override
@@ -59463,8 +59760,8 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('tracking', '$tracking (Enumerated)')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)'))
@@ -59537,6 +59834,7 @@ class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implem
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   GetWorldCoordinatesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetWorldCoordinatesBuilder()..copyFromHeader(headerFrom);
 
   GetWorldCoordinatesBuilder get _$this {
@@ -59659,15 +59957,15 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        target == this.target &&
-        lbearing == this.lbearing &&
-        lelevation == this.lelevation &&
-        bearing == this.bearing &&
-        elevation == this.elevation &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi &&
-        accuracy == this.accuracy;
+        target == other.target &&
+        lbearing == other.lbearing &&
+        lelevation == other.lelevation &&
+        bearing == other.bearing &&
+        elevation == other.elevation &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi &&
+        accuracy == other.accuracy;
   }
 
   @override
@@ -59698,14 +59996,14 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('lbearing', '$lbearing (rad)${lbearing != null ? " [${lbearing * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lelevation', '$lelevation (rad)${lelevation != null ? " [${lelevation * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('bearing', '$bearing (rad)${bearing != null ? " [${bearing * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('elevation', '$elevation (rad)${elevation != null ? " [${elevation * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('accuracy', '$accuracy (rad)${accuracy != null ? " [${accuracy * 180.0 / math.pi} (deg)]" : ""}'))
+          ..add('lbearing', '$lbearing (rad)${lbearing != null ? ' [${lbearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lelevation', '$lelevation (rad)${lelevation != null ? ' [${lelevation * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('elevation', '$elevation (rad)${elevation != null ? ' [${elevation * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('accuracy', '$accuracy (rad)${accuracy != null ? ' [${accuracy * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
@@ -59787,6 +60085,7 @@ class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblAnglesExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblAnglesExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblAnglesExtendedBuilder get _$this {
@@ -59921,17 +60220,17 @@ class _$UsblPositionExtended extends UsblPositionExtended {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        target == this.target &&
-        x == this.x &&
-        y == this.y &&
-        z == this.z &&
-        n == this.n &&
-        e == this.e &&
-        d == this.d &&
-        phi == this.phi &&
-        theta == this.theta &&
-        psi == this.psi &&
-        accuracy == this.accuracy;
+        target == other.target &&
+        x == other.x &&
+        y == other.y &&
+        z == other.z &&
+        n == other.n &&
+        e == other.e &&
+        d == other.d &&
+        phi == other.phi &&
+        theta == other.theta &&
+        psi == other.psi &&
+        accuracy == other.accuracy;
   }
 
   @override
@@ -59970,9 +60269,9 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           ..add('n', '$n (m)')
           ..add('e', '$e (m)')
           ..add('d', '$d (m)')
-          ..add('phi', '$phi (rad)${phi != null ? " [${phi * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('theta', '$theta (rad)${theta != null ? " [${theta * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('psi', '$psi (rad)${psi != null ? " [${psi * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('accuracy', '$accuracy (m)'))
         .toString();
   }
@@ -60063,6 +60362,7 @@ class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart imple
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblPositionExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblPositionExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblPositionExtendedBuilder get _$this {
@@ -60186,12 +60486,12 @@ class _$UsblFixExtended extends UsblFixExtended {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        target == this.target &&
-        lat == this.lat &&
-        lon == this.lon &&
-        zUnits == this.zUnits &&
-        z == this.z &&
-        accuracy == this.accuracy;
+        target == other.target &&
+        lat == other.lat &&
+        lon == other.lon &&
+        zUnits == other.zUnits &&
+        z == other.z &&
+        accuracy == other.accuracy;
   }
 
   @override
@@ -60219,8 +60519,8 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('z', '$z (m)')
           ..add('accuracy', '$accuracy (m)'))
@@ -60293,6 +60593,7 @@ class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblFixExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblFixExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblFixExtendedBuilder get _$this {
@@ -60403,11 +60704,11 @@ class _$UsblModem extends UsblModem {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        name == this.name &&
-        lat == this.lat &&
-        lon == this.lon &&
-        z == this.z &&
-        zUnits == this.zUnits;
+        name == other.name &&
+        lat == other.lat &&
+        lon == other.lon &&
+        z == other.z &&
+        zUnits == other.zUnits;
   }
 
   @override
@@ -60434,8 +60735,8 @@ class _$UsblModem extends UsblModem {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', '$name')
-          ..add('lat', '$lat (rad)${lat != null ? " [${lat * 180.0 / math.pi} (deg)]" : ""}')
-          ..add('lon', '$lon (rad)${lon != null ? " [${lon * 180.0 / math.pi} (deg)]" : ""}')
+          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)'))
         .toString();
@@ -60503,6 +60804,7 @@ class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblModemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblModemBuilder()..copyFromHeader(headerFrom);
 
   UsblModemBuilder get _$this {
@@ -60602,8 +60904,8 @@ class _$UsblConfig extends UsblConfig {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        op == this.op &&
-        modems == this.modems;
+        op == other.op &&
+        modems == other.modems;
   }
 
   @override
@@ -60681,6 +60983,7 @@ class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   UsblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblConfigBuilder()..copyFromHeader(headerFrom);
 
   UsblConfigBuilder get _$this {
@@ -60774,8 +61077,8 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value &&
-        type == this.type;
+        value == other.value &&
+        type == other.type;
   }
 
   @override
@@ -60853,6 +61156,7 @@ class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart imp
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DissolvedOrganicMatterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DissolvedOrganicMatterBuilder()..copyFromHeader(headerFrom);
 
   DissolvedOrganicMatterBuilder get _$this {
@@ -60943,7 +61247,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -61015,6 +61319,7 @@ class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart impleme
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   OpticalBackscatterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => OpticalBackscatterBuilder()..copyFromHeader(headerFrom);
 
   OpticalBackscatterBuilder get _$this {
@@ -61148,22 +61453,22 @@ class _$Tachograph extends Tachograph {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        timestampLastService == this.timestampLastService &&
-        timeNextService == this.timeNextService &&
-        timeMotorNextService == this.timeMotorNextService &&
-        timeIdleGround == this.timeIdleGround &&
-        timeIdleAir == this.timeIdleAir &&
-        timeIdleWater == this.timeIdleWater &&
-        timeIdleUnderwater == this.timeIdleUnderwater &&
-        timeIdleUnknown == this.timeIdleUnknown &&
-        timeMotorGround == this.timeMotorGround &&
-        timeMotorAir == this.timeMotorAir &&
-        timeMotorWater == this.timeMotorWater &&
-        timeMotorUnderwater == this.timeMotorUnderwater &&
-        timeMotorUnknown == this.timeMotorUnknown &&
-        rpmMin == this.rpmMin &&
-        rpmMax == this.rpmMax &&
-        depthMax == this.depthMax;
+        timestampLastService == other.timestampLastService &&
+        timeNextService == other.timeNextService &&
+        timeMotorNextService == other.timeMotorNextService &&
+        timeIdleGround == other.timeIdleGround &&
+        timeIdleAir == other.timeIdleAir &&
+        timeIdleWater == other.timeIdleWater &&
+        timeIdleUnderwater == other.timeIdleUnderwater &&
+        timeIdleUnknown == other.timeIdleUnknown &&
+        timeMotorGround == other.timeMotorGround &&
+        timeMotorAir == other.timeMotorAir &&
+        timeMotorWater == other.timeMotorWater &&
+        timeMotorUnderwater == other.timeMotorUnderwater &&
+        timeMotorUnknown == other.timeMotorUnknown &&
+        rpmMin == other.rpmMin &&
+        rpmMax == other.rpmMax &&
+        depthMax == other.depthMax;
   }
 
   @override
@@ -61325,6 +61630,7 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TachographBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TachographBuilder()..copyFromHeader(headerFrom);
 
   TachographBuilder get _$this {
@@ -61446,8 +61752,8 @@ class _$ApmStatus extends ApmStatus {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        severity == this.severity &&
-        text == this.text;
+        severity == other.severity &&
+        text == other.text;
   }
 
   @override
@@ -61525,6 +61831,7 @@ class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   ApmStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ApmStatusBuilder()..copyFromHeader(headerFrom);
 
   ApmStatusBuilder get _$this {
@@ -61621,9 +61928,9 @@ class _$SadcReadings extends SadcReadings {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        channel == this.channel &&
-        value == this.value &&
-        gain == this.gain;
+        channel == other.channel &&
+        value == other.value &&
+        gain == other.gain;
   }
 
   @override
@@ -61707,6 +62014,7 @@ class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   SadcReadingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SadcReadingsBuilder()..copyFromHeader(headerFrom);
 
   SadcReadingsBuilder get _$this {
@@ -61844,22 +62152,22 @@ class _$DmsDetection extends DmsDetection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        ch01 == this.ch01 &&
-        ch02 == this.ch02 &&
-        ch03 == this.ch03 &&
-        ch04 == this.ch04 &&
-        ch05 == this.ch05 &&
-        ch06 == this.ch06 &&
-        ch07 == this.ch07 &&
-        ch08 == this.ch08 &&
-        ch09 == this.ch09 &&
-        ch10 == this.ch10 &&
-        ch11 == this.ch11 &&
-        ch12 == this.ch12 &&
-        ch13 == this.ch13 &&
-        ch14 == this.ch14 &&
-        ch15 == this.ch15 &&
-        ch16 == this.ch16;
+        ch01 == other.ch01 &&
+        ch02 == other.ch02 &&
+        ch03 == other.ch03 &&
+        ch04 == other.ch04 &&
+        ch05 == other.ch05 &&
+        ch06 == other.ch06 &&
+        ch07 == other.ch07 &&
+        ch08 == other.ch08 &&
+        ch09 == other.ch09 &&
+        ch10 == other.ch10 &&
+        ch11 == other.ch11 &&
+        ch12 == other.ch12 &&
+        ch13 == other.ch13 &&
+        ch14 == other.ch14 &&
+        ch15 == other.ch15 &&
+        ch16 == other.ch16;
   }
 
   @override
@@ -62021,6 +62329,7 @@ class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   DmsDetectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DmsDetectionBuilder()..copyFromHeader(headerFrom);
 
   DmsDetectionBuilder get _$this {
@@ -62139,7 +62448,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == this.value;
+        value == other.value;
   }
 
   @override
@@ -62211,6 +62520,7 @@ class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implemen
     this.copyFromHeader(headerFrom);
   }
 
+  @override
   TotalMagIntensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TotalMagIntensityBuilder()..copyFromHeader(headerFrom);
 
   TotalMagIntensityBuilder get _$this {
