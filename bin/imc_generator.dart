@@ -314,7 +314,10 @@ void _writeMessageImmutable(
         break;
       case 'fp32_t':
       case 'fp64_t':
-        
+        // To account for de/serialize floating point conversions
+        fStr = ''' &&\n        (${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}
+            || ${_convertToFieldName(abbrev)} - other.${_convertToFieldName(abbrev)} <= 1E-7)''';
+        break;
       case 'uint8_t':
       case 'uint16_t':
       case 'uint32_t':
