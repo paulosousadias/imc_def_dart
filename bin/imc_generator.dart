@@ -4,8 +4,8 @@
 
 // To run call "flutter packages pub run bin/imc_generator" with IMC.xml on the base folder.
 
-import "dart:io";
-import "dart:convert";
+import 'dart:io';
+import 'dart:convert';
 
 import 'package:xml/xml.dart' as xml;
 import 'package:crypto/crypto.dart';
@@ -22,6 +22,7 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 const _header_gen = '''$_header
 import 'dart:math' as math;
 import 'package:built_value/built_value.dart';
+import 'package:collection/collection.dart';
 import 'package:imc_def/imc_def_base.dart';
 
 part 'imc_def_e.dart';
@@ -53,100 +54,100 @@ const _idxSerGen = 5;
 
 /// A list of reserved words to not se on enums liks
 const _reservedWords = <String>[
-  "abstract",
-  "as",
-  "assert",
-  "async",
-  "await",
-  "bool",
-  "break",
-  "case",
-  "catch",
-  "class",
-  "const",
-  "continue",
-  "covariant",
-  "default",
-  "deferred",
-  "do",
-  "double",
-  "dynamic",
-  "else",
-  "enum",
-  "export",
-  "extends",
-  "external",
-  "factory",
-  "false",
-  "final",
-  "finally",
-  "for",
-  "Function",
-  "get",
-  "hide",
-  "if",
-  "implements",
-  "import",
-  "in",
-  "int",
-  "interface",
-  "is",
-  "library",
-  "mixin",
-  "new",
-  "null",
-  "on",
-  "operator",
-  "part",
-  "rethrow",
-  "return",
-  "set",
-  "show",
-  "static",
-  "super",
-  "switch",
-  "sync",
-  "this",
-  "throw",
-  "true",
-  "try",
-  "typedef",
-  "var",
-  "void",
-  "while",
-  "with",
-  "yield"
+  'abstract',
+  'as',
+  'assert',
+  'async',
+  'await',
+  'bool',
+  'break',
+  'case',
+  'catch',
+  'class',
+  'const',
+  'continue',
+  'covariant',
+  'default',
+  'deferred',
+  'do',
+  'double',
+  'dynamic',
+  'else',
+  'enum',
+  'export',
+  'extends',
+  'external',
+  'factory',
+  'false',
+  'final',
+  'finally',
+  'for',
+  'Function',
+  'get',
+  'hide',
+  'if',
+  'implements',
+  'import',
+  'in',
+  'int',
+  'interface',
+  'is',
+  'library',
+  'mixin',
+  'new',
+  'null',
+  'on',
+  'operator',
+  'part',
+  'rethrow',
+  'return',
+  'set',
+  'show',
+  'static',
+  'super',
+  'switch',
+  'sync',
+  'this',
+  'throw',
+  'true',
+  'try',
+  'typedef',
+  'var',
+  'void',
+  'while',
+  'with',
+  'yield',
 ];
 
 /// To hold list of messages-groups.
 /// Keys are the messages, and values are the message group it belong.
-var _messagesGroups = Map<String, String>();
+var _messagesGroups = <String, String>{};
 
-String _toSentenceCase(String s) => "${s[0].toUpperCase()}${s.substring(1)}";
+String _toSentenceCase(String s) => '${s[0].toUpperCase()}${s.substring(1)}';
 
 String _replaceMiddleUnderscoreLetterWithUpercaseLetter(String s) =>
     s.split(RegExp(r'_')).reduce((t1, t2) => t1 + _toSentenceCase(t2));
 
 String _convertToFieldName(String s) =>
     _replaceMiddleUnderscoreLetterWithUpercaseLetter(
-        "${s[0].toLowerCase()}${s.substring(1)}");
+        '${s[0].toLowerCase()}${s.substring(1)}');
 
 String _convertToClassName(String s) =>
     _replaceMiddleUnderscoreLetterWithUpercaseLetter(_toSentenceCase(s));
 
 /// Adds 'v' prefix if is a reserved word or starts with numbers
 String _accountForReservedName(String s) {
-  if (_reservedWords.contains(s.trim())) return "${s}Val";
-  if (s.startsWith(RegExp(r'[0-9]'))) return "v$s";
+  if (_reservedWords.contains(s.trim())) return '${s}Val';
+  if (s.startsWith(RegExp(r'[0-9]'))) return 'v$s';
   return s;
 }
 
 /// Looks for 'description' element and writes it to [sink].
 /// The level tells how mush spaces ident.
-_writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
+void _writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
   element
-      .findElements("description")
-      .forEach((d) => d.text.trim().split("\n").forEach((tx) {
+      .findElements('description')
+      .forEach((d) => d.text.trim().split('\n').forEach((tx) {
             for (var i = 0; i < level; i++) {
               sink.write('  ');
             }
@@ -157,9 +158,9 @@ _writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
 /// Writes the empty abstract message group classes from where their
 /// elements can extend instead of [ImcMessage],
 /// Fill also [_messagesGroups] variable.
-_writeMessageGroup(xml.XmlElement g, IOSink sink) {
-  var name = g.getAttribute("name");
-  var abbrev = g.getAttribute("abbrev");
+void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
+  var name = g.getAttribute('name');
+  var abbrev = g.getAttribute('abbrev');
 
   sink.write('/// $name message group class\n///\n');
   _writeDescription(sink, g);
@@ -167,17 +168,17 @@ _writeMessageGroup(xml.XmlElement g, IOSink sink) {
 }\n\n''';
   sink.write('$msgStringClass');
 
-  g.findElements("message-type").forEach((t) {
-    var msg = t.getAttribute("abbrev");
+  g.findElements('message-type').forEach((t) {
+    var msg = t.getAttribute('abbrev');
     _messagesGroups.putIfAbsent(msg, () => abbrev);
   });
 }
 
 /// Writes each message related code
-_writeMessageCode(xml.XmlElement m, List<IOSink> sinks) {
-  var name = m.getAttribute("name");
-  var abbrev = m.getAttribute("abbrev");
-  var msgId = m.getAttribute("id");
+void _writeMessageCode(xml.XmlElement m, List<IOSink> sinks) {
+  var name = m.getAttribute('name');
+  var abbrev = m.getAttribute('abbrev');
+  var msgId = m.getAttribute('id');
 
   // Message class
   _writeMessageClass(name, abbrev, msgId, m, sinks);
@@ -193,32 +194,32 @@ _writeMessageCode(xml.XmlElement m, List<IOSink> sinks) {
 }
 
 /// Writes a message class
-_writeMessageClass(String name, String abbrev, String msgId, xml.XmlElement m,
+void _writeMessageClass(String name, String abbrev, String msgId, xml.XmlElement m,
     List<IOSink> sinks) {
   sinks[_idxMsg].write('/// $name class\n///\n');
   _writeDescription(sinks[_idxMsg], m);
 
-  var extentionClass = _messagesGroups[abbrev] ?? "ImcMessage";
+  var extentionClass = _messagesGroups[abbrev] ?? 'ImcMessage';
 
   var msgStringClass =
       '''abstract class $abbrev extends $extentionClass implements Built<$abbrev, ${abbrev}Builder> {
   static const static_id = $msgId;
   $abbrev._();
-  factory $abbrev([updates(${abbrev}Builder b)]) = _\$$abbrev;
+  factory $abbrev([void Function(${abbrev}Builder b) updates]) = _\$$abbrev;
 
   @override
   int get msgId => static_id;
   @override
-  String get abbrev => "$abbrev";
+  String get abbrev => '$abbrev';
 ''';
   var msgStringClassClose = '''}\n\n''';
   sinks[_idxMsg].write('$msgStringClass');
-  m.findElements("field").forEach((f) => _writeMessageField(f, m, sinks));
+  m.findElements('field').forEach((f) => _writeMessageField(f, m, sinks));
   sinks[_idxMsg].write('$msgStringClassClose');
 }
 
 /// Writes a message class immutable related code
-_writeMessageImmutable(
+void _writeMessageImmutable(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('/// $name immutable class\n///\n');
   var msgStringImmutableClass = '''class _\$$abbrev extends $abbrev {
@@ -234,10 +235,10 @@ _writeMessageImmutable(
   final int dstEnt;\n''';
   sink.write('$msgStringImmutableClass');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
-    var type = f.getAttribute("type");
-    var unit = f.getAttribute("unit");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
 
@@ -247,7 +248,7 @@ _writeMessageImmutable(
   });
 
   var msgStringImmutableClass2 = '''\n
-  factory _\$$abbrev([void updates(${abbrev}Builder b)]) =>
+  factory _\$$abbrev([void Function(${abbrev}Builder b) updates]) =>
       (${abbrev}Builder()..update(updates)).build();
 
   _\$$abbrev._(
@@ -258,8 +259,8 @@ _writeMessageImmutable(
       this.dstEnt = ImcEntityId.nullId''';
   sink.write('$msgStringImmutableClass2');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
     var fStr = ''',\n      this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
@@ -268,7 +269,7 @@ _writeMessageImmutable(
       : super._();
 
   @override
-  $abbrev rebuild(void updates(${abbrev}Builder b)) =>
+  $abbrev rebuild(void Function(${abbrev}Builder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -285,34 +286,66 @@ _writeMessageImmutable(
         dstEnt == other.dstEnt''';
   sink.write('$msgStringImmutableClass3');
 
-  var hashElements = List<String>();
+  // Getting prep for hashCode method
+  var hashElements = <String>[];
   hashElements.addAll([
-    "0",
-    "timestamp?.hashCode",
-    "src?.hashCode",
-    "srcEnt?.hashCode",
-    "dst?.hashCode",
-    "dstEnt?.hashCode"
+    '0',
+    'timestamp?.hashCode',
+    'src?.hashCode',
+    'srcEnt?.hashCode',
+    'dst?.hashCode',
+    'dstEnt?.hashCode',
   ]);
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
-    var fStr =
-        ''' &&\n        ${_convertToFieldName(abbrev)} == this.${_convertToFieldName(abbrev)}''';
+  // Writting rest elements to oerator ==
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var fStr = '';
+    switch (type) {
+      case 'message-list': // List<M extends IMCMessage>
+        // Then this is a List
+        //fStr = ''' &&\n        isMessageListsEqual(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        fStr = ''' &&\n        DeepCollectionEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        break;
+      case 'rawdata': // List<int>
+        //fStr = ''' &&\n        isRawdataEqual(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        fStr = ''' &&\n        ListEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        break;
+      case 'fp32_t':
+      case 'fp64_t':
+        // To account for de/serialize floating point conversions
+        fStr = ''' &&\n        (${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}
+            || ${_convertToFieldName(abbrev)} - other.${_convertToFieldName(abbrev)} <= 1E-7)''';
+        break;
+      case 'uint8_t':
+      case 'uint16_t':
+      case 'uint32_t':
+      case 'uint64_t':
+      case 'int8_t':
+      case 'int16_t':
+      case 'int32_t':
+      case 'int64_t':
+      case 'plaintext':
+      case 'message':
+      default:
+        fStr = ''' &&\n        ${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}''';
+        break;
+    }
     sink.write('$fStr');
 
-    hashElements.add("${_convertToFieldName(abbrev)}?.hashCode");
+    hashElements.add('${_convertToFieldName(abbrev)}?.hashCode');
   });
 
-  var hashStr = "";
+  var hashStr = '';
   for (var i = 0; i < hashElements.length; i++) {
     if (i == 0) {
-      hashStr = "\$jc(${hashElements[i]}, \n        ${hashElements[++i]})";
+      hashStr = '\$jc(${hashElements[i]}, \n        ${hashElements[++i]})';
     } else {
-      hashStr = "\$jc($hashStr, \n        ${hashElements[i]})";
+      hashStr = '\$jc($hashStr, \n        ${hashElements[i]})';
     }
   }
-  hashStr = "\$jf($hashStr)";
+  hashStr = '\$jf($hashStr)';
 
   var msgStringImmutableClass4 = ''';
   }
@@ -336,15 +369,15 @@ _writeMessageImmutable(
           ..add('dstEnt', "0x\${dstEnt?.toRadixString(16)} (\${dstEnt ?? '-'})")''';
   sink.write('$msgStringImmutableClass5');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
-    var unit = f.getAttribute("unit");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var unit = f.getAttribute('unit');
     var unitConv = '';
     if (unit != null && unit.isNotEmpty) {
       if (unit.startsWith('rad')) {
         unitConv = '\${';
         unitConv +=
-            '${_convertToFieldName(abbrev)} != null ? " [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]" : ""';
+            "${_convertToFieldName(abbrev)} != null ? ' [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]' : ''";
         unitConv += '}';
       }
     }
@@ -363,7 +396,7 @@ _writeMessageImmutable(
 }
 
 /// Writes a message class builder related code
-_writeMessageBuilder(
+void _writeMessageBuilder(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('/// $name builder class\n///\n');
   var msgStringImmutableBuilder =
@@ -401,10 +434,10 @@ _writeMessageBuilder(
   set dstEnt(int dstEnt) => _\$this._dstEnt = dstEnt;\n''';
   sink.write('$msgStringImmutableBuilder');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
-    var type = f.getAttribute("type");
-    var unit = f.getAttribute("unit");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
 
@@ -417,9 +450,10 @@ _writeMessageBuilder(
   var msgStringImmutableBuilder1 = '''\n  ${abbrev}Builder();
 
   ${abbrev}Builder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    this.copyFromHeader(headerFrom);
+    copyFromHeader(headerFrom);
   }
 
+  @override
   ${abbrev}Builder newInstance([ImcBuilderHeaderPart headerFrom]) => ${abbrev}Builder()..copyFromHeader(headerFrom);
 
   ${abbrev}Builder get _\$this {
@@ -431,8 +465,8 @@ _writeMessageBuilder(
       _dstEnt = _\$v.dstEnt;\n''';
   sink.write('$msgStringImmutableBuilder1');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
 
     var fStr =
         '''      _${_convertToFieldName(abbrev)} = _\$v.${_convertToFieldName(abbrev)};\n''';
@@ -454,7 +488,7 @@ _writeMessageBuilder(
   }
 
   @override
-  void update(void updates(${abbrev}Builder b)) {
+  void update(void Function(${abbrev}Builder b) updates) {
     if (updates != null) updates(this);
   }
 
@@ -469,13 +503,13 @@ _writeMessageBuilder(
             dstEnt: dstEnt ?? ImcEntityId.nullId''';
   sink.write('$msgStringImmutableBuilder2');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
-    var type = f.getAttribute("type");
-    var unit = f.getAttribute("unit");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
 
-    var ifNullVal = typesData[2] == null ? "" : " ?? ${typesData[2]}";
+    var ifNullVal = typesData[2] == null ? '' : ' ?? ${typesData[2]}';
 
     var fStr =
         ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}$ifNullVal''';
@@ -494,7 +528,7 @@ _writeMessageBuilder(
 }
 
 /// Writes a message class serializer related code
-_writeMessageSerializer(
+void _writeMessageSerializer(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('\n/// $name serializer class\n///\n');
 
@@ -524,18 +558,18 @@ _writeMessageSerializer(
 \n''';
   sink.write('$serClassStart');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
-    var type = f.getAttribute("type");
-    var unit = f.getAttribute("unit");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var unit = f.getAttribute('unit');
     // var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     // var dartType = typesData[1];
 
-    var enumLike = "";
+    var enumLike = '';
     switch (unit) {
-      case "Enumerated":
-      case "Bitfield":
-        enumLike = ".value";
+      case 'Enumerated':
+      case 'Bitfield':
+        enumLike = '.value';
         break;
       default:
         break;
@@ -545,57 +579,57 @@ _writeMessageSerializer(
     sink.write('    // field $fieldName\n');
     var fStr = '';
     switch (type) {
-      case "uint8_t":
+      case 'uint8_t':
         fStr =
             '''    byteData.setUint8(byteOffset, message.$fieldName$enumLike);\n''';
         fStr += '    byteOffset += 1;\n';
         break;
-      case "uint16_t":
+      case 'uint16_t':
         fStr =
             '''    byteData.setUint16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
-      case "uint32_t":
+      case 'uint32_t':
         fStr =
             '''    byteData.setUint32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
-      case "uint64_t":
+      case 'uint64_t':
         fStr =
             '''    byteData.setUint64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
-      case "int8_t":
+      case 'int8_t':
         fStr =
             '''    byteData.setInt8(byteOffset, message.$fieldName$enumLike);\n''';
         fStr += '    byteOffset += 1;\n';
         break;
-      case "int16_t":
+      case 'int16_t':
         fStr =
             '''    byteData.setInt16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
-      case "int32_t":
+      case 'int32_t':
         fStr =
             '''    byteData.setInt32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
-      case "int64_t":
+      case 'int64_t':
         fStr =
             '''    byteData.setInt64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
-      case "fp32_t":
+      case 'fp32_t':
         fStr =
             '''    byteData.setFloat32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
-      case "fp64_t":
+      case 'fp64_t':
         fStr =
             '''    byteData.setFloat64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
-      case "rawdata":
+      case 'rawdata':
         fStr = '''    var ${fieldName}SSize = message.$fieldName.length;\n''';
         fStr +=
             '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
@@ -603,7 +637,7 @@ _writeMessageSerializer(
         fStr +=
             '    message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
         break;
-      case "plaintext":
+      case 'plaintext':
         fStr =
             '    var ${fieldName}Encoded = utf8.encode(message.$fieldName);\n';
         fStr += '''    var ${fieldName}SSize = ${fieldName}Encoded.length;\n''';
@@ -613,7 +647,7 @@ _writeMessageSerializer(
         fStr +=
             '    ${fieldName}Encoded.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
         break;
-      case "message":
+      case 'message':
         fStr = '    if (message.$fieldName == null) {\n';
         fStr +=
             '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);\n';
@@ -631,7 +665,7 @@ _writeMessageSerializer(
         fStr += '      }\n';
         fStr += '    }\n';
         break;
-      case "message-list":
+      case 'message-list':
         fStr =
             '    if (message.$fieldName == null || message.$fieldName.isEmpty) {\n';
         fStr += '      byteData.setUint16(byteOffset, 0, imc.endian_ser);\n';
@@ -640,7 +674,7 @@ _writeMessageSerializer(
         fStr += '      var msgsCounter = 0;\n';
         fStr += '      var bufCounterPos = byteOffset;\n';
         fStr += '      byteOffset += 2;\n';
-        fStr += '      for (int i = 0; i < message.$fieldName.length; i++) {\n';
+        fStr += '      for (var i = 0; i < message.$fieldName.length; i++) {\n';
         fStr += '        var id = message.$fieldName[i]?.msgId;\n';
         fStr +=
             '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();\n';
@@ -705,25 +739,26 @@ _writeMessageSerializer(
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.${abbrev}Builder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 \n''';
   sink.write('$serClass1');
 
-  m.findElements("field").forEach((f) {
-    var abbrev = f.getAttribute("abbrev");
-    var type = f.getAttribute("type");
-    var unit = f.getAttribute("unit");
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
 
-    var enumLike = "";
-    var enumLikeE = "";
+    var enumLike = '';
+    var enumLikeE = '';
     switch (unit) {
-      case "Enumerated":
-      case "Bitfield":
-        enumLike = "imc.$dartType(";
-        enumLikeE = ")";
+      case 'Enumerated':
+      case 'Bitfield':
+        enumLike = 'imc.$dartType(';
+        enumLikeE = ')';
         break;
       default:
         break;
@@ -733,57 +768,57 @@ _writeMessageSerializer(
     sink.write('    // field $fieldName\n');
     var fStr = '';
     switch (type) {
-      case "uint8_t":
+      case 'uint8_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getUint8(byteOffset)$enumLikeE;\n''';
         fStr += '    byteOffset += 1;\n';
         break;
-      case "uint16_t":
+      case 'uint16_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getUint16(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 2;\n';
         break;
-      case "uint32_t":
+      case 'uint32_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getUint32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
-      case "uint64_t":
+      case 'uint64_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getUint64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
-      case "int8_t":
+      case 'int8_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getInt8(byteOffset)$enumLikeE;\n''';
         fStr += '    byteOffset += 1;\n';
         break;
-      case "int16_t":
+      case 'int16_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getInt16(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 2;\n';
         break;
-      case "int32_t":
+      case 'int32_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getInt32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
-      case "int64_t":
+      case 'int64_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getInt64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
-      case "fp32_t":
+      case 'fp32_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getFloat32(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 4;\n';
         break;
-      case "fp64_t":
+      case 'fp64_t':
         fStr =
             '''    builder.$fieldName = ${enumLike}byteData.getFloat64(byteOffset, endianness)$enumLikeE;\n''';
         fStr += '    byteOffset += 8;\n';
         break;
-      case "rawdata":
+      case 'rawdata':
         fStr =
             '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
@@ -794,7 +829,7 @@ _writeMessageSerializer(
         fStr += '    }\n';
         fStr += '    builder.$fieldName = ${fieldName}DData;\n';
         break;
-      case "plaintext":
+      case 'plaintext':
         fStr =
             '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
@@ -807,7 +842,7 @@ _writeMessageSerializer(
             '    var ${fieldName}Decoded = utf8.decode(${fieldName}DData);\n';
         fStr += '    builder.$fieldName = ${fieldName}Decoded;\n';
         break;
-      case "message":
+      case 'message':
         fStr =
             '    var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '    byteOffset += 2;\n';
@@ -826,12 +861,12 @@ _writeMessageSerializer(
         fStr += '      }\n';
         fStr += '    }\n';
         break;
-      case "message-list":
+      case 'message-list':
         fStr =
             '    var ${fieldName}MMsgsNumber = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '    byteOffset += 2;\n';
         fStr += '    builder.$fieldName = [];\n';
-        fStr += '    for (int i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
+        fStr += '    for (var i = 0; i < ${fieldName}MMsgsNumber; i++) {\n';
         fStr +=
             '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
@@ -864,27 +899,27 @@ _writeMessageSerializer(
 }
 
 /// Writes a message field code
-_writeMessageField(
+void _writeMessageField(
     xml.XmlElement field, xml.XmlElement message, List<IOSink> sinks) {
-  var name = field.getAttribute("name");
-  var abbrev = field.getAttribute("abbrev");
-  var type = field.getAttribute("type");
-  var unit = field.getAttribute("unit");
+  var name = field.getAttribute('name');
+  var abbrev = field.getAttribute('abbrev');
+  var type = field.getAttribute('type');
+  var unit = field.getAttribute('unit');
 
   var typesData = getTypesForImcAndDart(abbrev, type, unit, field, message);
   var typeImc = typesData[0];
   var dartType = typesData[1];
 
-  var unitsStr = "";
+  var unitsStr = '';
   switch (unit) {
-    case "Enumerated":
-    case "Bitfield":
+    case 'Enumerated':
+    case 'Bitfield':
       _writeLocalEnumLike(abbrev, field, message, unit, sinks[_idxLocEnum]);
       break;
     default:
-      unitsStr = unit == null ? "" : ', units: "$unit"';
+      unitsStr = unit == null ? '' : ", units: '$unit'";
   }
-  var str = '''  @ImcField("$name", "$abbrev", $typeImc$unitsStr)
+  var str = '''  @ImcField('$name', '$abbrev', $typeImc$unitsStr)
   $dartType get ${_convertToFieldName(abbrev)};
 ''';
 
@@ -900,80 +935,80 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
   var dartType;
   var defaultVal;
   switch (type) {
-    case "uint8_t":
-      typeImc = "ImcType.typeUInt8";
-      dartType = "int";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'uint8_t':
+      typeImc = 'ImcType.typeUInt8';
+      dartType = 'int';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "uint16_t":
-      typeImc = "ImcType.typeUInt16";
-      dartType = "int";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'uint16_t':
+      typeImc = 'ImcType.typeUInt16';
+      dartType = 'int';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "uint32_t":
-      typeImc = "ImcType.typeUint32";
-      dartType = "int";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'uint32_t':
+      typeImc = 'ImcType.typeUint32';
+      dartType = 'int';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "int8_t":
-      typeImc = "ImcType.typeInt8";
-      dartType = "int";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'int8_t':
+      typeImc = 'ImcType.typeInt8';
+      dartType = 'int';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "int16_t":
-      typeImc = "ImcType.typeInt16";
-      dartType = "int";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'int16_t':
+      typeImc = 'ImcType.typeInt16';
+      dartType = 'int';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "int32_t":
-      typeImc = "ImcType.typeInt32";
-      dartType = "int";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'int32_t':
+      typeImc = 'ImcType.typeInt32';
+      dartType = 'int';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "int64_t":
-      typeImc = "ImcType.typeInt64";
-      dartType = "int";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'int64_t':
+      typeImc = 'ImcType.typeInt64';
+      dartType = 'int';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "fp32_t":
-      typeImc = "ImcType.typeFp32";
-      dartType = "double";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'fp32_t':
+      typeImc = 'ImcType.typeFp32';
+      dartType = 'double';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "fp64_t":
-      typeImc = "ImcType.typeFp64";
-      dartType = "double";
-      defaultVal = field.getAttribute("value") ?? "0";
+    case 'fp64_t':
+      typeImc = 'ImcType.typeFp64';
+      dartType = 'double';
+      defaultVal = field.getAttribute('value') ?? '0';
       break;
-    case "rawdata":
-      typeImc = "ImcType.typeRawdata";
-      dartType = "List<int>";
-      defaultVal = "List<int>(0)";
+    case 'rawdata':
+      typeImc = 'ImcType.typeRawdata';
+      dartType = 'List<int>';
+      defaultVal = 'List<int>(0)';
       break;
-    case "plaintext":
-      typeImc = "ImcType.typePlaintext";
-      dartType = "String";
-      defaultVal = field.getAttribute("value") ?? "''";
+    case 'plaintext':
+      typeImc = 'ImcType.typePlaintext';
+      dartType = 'String';
+      defaultVal = field.getAttribute('value') ?? "''";
       break;
-    case "message":
-      typeImc = "ImcType.typeMessage";
-      dartType = field.getAttribute("message-type") ?? "ImcMessage";
+    case 'message':
+      typeImc = 'ImcType.typeMessage';
+      dartType = field.getAttribute('message-type') ?? 'ImcMessage';
       break;
-    case "message-list":
-      typeImc = "ImcType.typeMessageList";
-      dartType = "List<${field.getAttribute("message-type") ?? "ImcMessage"}>";
+    case 'message-list':
+      typeImc = 'ImcType.typeMessageList';
+      dartType = 'List<${field.getAttribute('message-type') ?? 'ImcMessage'}>';
       defaultVal =
-          "List<${field.getAttribute("message-type") ?? "ImcMessage"}>(0)";
+          'List<${field.getAttribute('message-type') ?? 'ImcMessage'}>(0)';
       break;
     default:
       break;
   }
 
   switch (unit) {
-    case "Enumerated":
-    case "Bitfield":
+    case 'Enumerated':
+    case 'Bitfield':
       dartType = _getTypeForEnumLike(abbrev, field, message, unit);
-      defaultVal = "$dartType(${defaultVal ?? '0'})";
+      defaultVal = '$dartType(${defaultVal ?? '0'})';
       break;
     default:
       break;
@@ -983,47 +1018,47 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
 }
 
 /// Gets the name of the type for the enum like class.
-_getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
+String _getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
     xml.XmlElement message, String unit) {
-  var eDef = field.getAttribute("enum-def");
-  if (eDef != null) return "${eDef}Enum";
-  eDef = field.getAttribute("bitfield-def");
-  if (eDef != null) return "${eDef}Bitfield";
+  var eDef = field.getAttribute('enum-def');
+  if (eDef != null) return '${eDef}Enum';
+  eDef = field.getAttribute('bitfield-def');
+  if (eDef != null) return '${eDef}Bitfield';
 
   var sufix;
   switch (unit) {
-    case "Enumerated":
-      sufix = "Enum";
+    case 'Enumerated':
+      sufix = 'Enum';
       break;
     default:
       sufix = unit;
   }
   // Local def
-  var msgAbbrev = message.getAttribute("abbrev");
-  return "$msgAbbrev$sufix${_convertToClassName(fieldAbbrev)}";
+  var msgAbbrev = message.getAttribute('abbrev');
+  return '$msgAbbrev$sufix${_convertToClassName(fieldAbbrev)}';
 }
 
 /// Writes the global enum like code classes.
-_writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
+void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
   var sufix;
   switch (unit) {
-    case "Enumerated":
-      sufix = "Enum";
+    case 'Enumerated':
+      sufix = 'Enum';
       break;
     default:
       sufix = unit;
   }
-  var eName = "${_convertToClassName(def.getAttribute("abbrev"))}$sufix";
+  var eName = '${_convertToClassName(def.getAttribute('abbrev'))}$sufix';
 
   // So writting global enums like
   _writeEnumLikeWorker(eName, def, unit, sink);
 }
 
 /// Writes eath message field local enum like code classes.
-_writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
+void _writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
     String unit, IOSink sink) {
-  if (field.getAttribute("enum-def") != null ||
-      field.getAttribute("bitfield-def") != null) return;
+  if (field.getAttribute('enum-def') != null ||
+      field.getAttribute('bitfield-def') != null) return;
 
   // So writting local enums like
   var eName = _getTypeForEnumLike(abbrev, field, message, unit);
@@ -1031,32 +1066,32 @@ _writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
 }
 
 /// A worker to be used for the enum like code creation.
-_writeEnumLikeWorker(
+void _writeEnumLikeWorker(
     String eName, xml.XmlElement field, String unit, IOSink sink) {
   var eList = '';
   var eNameList = '';
   var c = 0;
-  var prefix = field.getAttribute("prefix")?.toLowerCase() ?? '';
+  var prefix = field.getAttribute('prefix')?.toLowerCase() ?? '';
   if (prefix.isNotEmpty) prefix += '_';
-  var vLst = field.findElements("value");
+  var vLst = field.findElements('value');
   vLst.forEach((f) {
     var commaSep = vLst.length > 1 ? ',' : '';
-    if (++c % 1 == 0) eList += "\n        ";
-    if (++c % 1 == 0) eNameList += "\n        ";
+    if (++c % 1 == 0) eList += '\n        ';
+    if (++c % 1 == 0) eNameList += '\n        ';
     var ab = _accountForReservedName(
         prefix + f.getAttribute('abbrev').toLowerCase());
     eList += '$ab$commaSep';
-    eNameList += "$ab: '''${f.getAttribute("name")}'''$commaSep";
+    eNameList += "$ab: '''${f.getAttribute('name')}'''$commaSep";
   });
   if (vLst.length > 1) {
-    eList += "\n      ";
-    eNameList += "\n      ";
+    eList += '\n      ';
+    eNameList += '\n      ';
   }
 
   var sufix;
   switch (unit) {
-    case "Enumerated":
-      sufix = "Enum";
+    case 'Enumerated':
+      sufix = 'Enum';
       break;
     default:
       sufix = unit;
@@ -1067,10 +1102,10 @@ _writeEnumLikeWorker(
 ''';
   sink.write(body);
 
-  field.findElements("value").forEach((f) {
+  field.findElements('value').forEach((f) {
     var vName = _accountForReservedName(
-        prefix + f.getAttribute("abbrev").toLowerCase());
-    var vVal = f.getAttribute("id");
+        prefix + f.getAttribute('abbrev').toLowerCase());
+    var vVal = f.getAttribute('id');
     var bodyV = '''  static const $vName = $eName($vVal);
 ''';
     _writeDescription(sink, f, level: 1);
@@ -1085,9 +1120,9 @@ _writeEnumLikeWorker(
 ''';
   sink.write(body2);
 
-  var bodyBitfield = "";
+  var bodyBitfield = '';
   switch (unit) {
-    case "Bitfield":
+    case 'Bitfield':
       bodyBitfield = '''\n  @override
   String toPrettyString() {
     var ret;
@@ -1115,7 +1150,7 @@ _writeEnumLikeWorker(
           : bits.reduce((b1, b2) => $eName(b1.value | b2.value));
 ''';
       break;
-    case "Enumerated":
+    case 'Enumerated':
     default:
       bodyBitfield = '''\n  @override
   String toPrettyString() {
@@ -1127,7 +1162,7 @@ _writeEnumLikeWorker(
   }
   sink.write(bodyBitfield);
 
-  if (eName == "BooleanEnum") {
+  if (eName == 'BooleanEnum') {
     var boolStr = '''\n  bool getBool() => value == 1 ? true : false;\n''';
     sink.write(boolStr);
   }
@@ -1138,23 +1173,23 @@ _writeEnumLikeWorker(
 void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   sink.write('''/// Lookup table from message names to IDs''');
   sink.write('''\nconst messagesToIds = {''');
-  msgElm.findElements("message").forEach((m) => sink
-      .write("\n  '${m.getAttribute("abbrev")}': ${m.getAttribute("id")},"));
+  msgElm.findElements('message').forEach((m) => sink
+      .write("\n  '${m.getAttribute('abbrev')}': ${m.getAttribute("id")},"));
   sink.write('''\n};\n''');
 
   sink.write('''\n/// Lookup table from IDs to message names''');
   sink.write('''\nconst idsToMessages = {''');
-  msgElm.findElements("message").forEach((m) => sink
-      .write("\n  ${m.getAttribute("id")}: '${m.getAttribute("abbrev")}',"));
+  msgElm.findElements('message').forEach((m) => sink
+      .write("\n  ${m.getAttribute("id")}: '${m.getAttribute('abbrev')}',"));
   sink.write('''\n};\n''');
 
   sink.write('''\n/// Lookup 2D table from groups to message names''');
   sink.write('''\nconst messageGroups = {''');
-  msgElm.findElements("message-groups").forEach((mg) {
-    mg.findElements("message-group").forEach((m) {
-      sink.write("\n  '${m.getAttribute("abbrev")}': [");
-      m.findElements("message-type").forEach(
-          (mt) => sink.write("\n      '${mt.getAttribute("abbrev")}',"));
+  msgElm.findElements('message-groups').forEach((mg) {
+    mg.findElements('message-group').forEach((m) {
+      sink.write("\n  '${m.getAttribute('abbrev')}': [");
+      m.findElements('message-type').forEach(
+          (mt) => sink.write("\n      '${mt.getAttribute('abbrev')}',"));
       sink.write('''\n    ],''');
     });
   });
@@ -1169,37 +1204,37 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   sink.write('''\n/// Lookup table from message names to builders''');
   sink.write(
       '''\nfinal messagesBuilders = <String, BuilderWithInstanciatorBuilder>{''');
-  msgElm.findElements("message").forEach((m) => sink.write(
-      "\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Builder(),"));
+  msgElm.findElements('message').forEach((m) => sink.write(
+      "\n  '${m.getAttribute('abbrev')}': () => ${m.getAttribute('abbrev')}Builder(),"));
   sink.write('''\n};\n''');
 }
 
 /// Get config from `pubspec.yaml` or `imc_def.yaml`
 Map<String, dynamic> _getConfig() {
   // if `imc_def.yaml` exists use it, otherwise use `pubspec.yaml`
-  String filePath = (FileSystemEntity.typeSync("imc_def.yaml") !=
+  var filePath = (FileSystemEntity.typeSync('imc_def.yaml') !=
           FileSystemEntityType.notFound)
-      ? "imc_def.yaml"
-      : "pubspec.yaml";
+      ? 'imc_def.yaml'
+      : 'pubspec.yaml';
 
-  final File file = File(filePath);
-  final String yamlString = file.readAsStringSync();
-  final Map yamlMap = loadYaml(yamlString);
+  final file = File(filePath);
+  final yamlString = file.readAsStringSync();
+  final yamlMap = loadYaml(yamlString);
 
   if (yamlMap == null || !(yamlMap['imc_def'] is Map)) {
     stderr.writeln(Exception(
-        "Your `$filePath` file does not contain a `imc_def` section."));
+        'Your `$filePath` file does not contain a `imc_def` section.'));
   }
 
   // yamlMap has the type YamlMap, which has several unwanted sideeffects
-  final Map<String, dynamic> config = <String, dynamic>{};
+  final config = <String, dynamic>{};
   for (MapEntry<dynamic, dynamic> entry in yamlMap['imc_def'].entries) {
     config[entry.key] = entry.value;
   }
 
   if (!config.containsKey('imc')) {
     stderr
-        .writeln(Exception("Your `imc_def` section does not contain a `imc`."));
+        .writeln(Exception('Your `imc_def` section does not contain a `imc`.'));
     exit(1);
   }
 
@@ -1225,8 +1260,8 @@ enum _Mode { local, production }
 ///
 /// To run copy the IMC.xml to the base 'xml' folder and run
 /// "flutter packages pub run bin/imc_generator" to (re)generate the code.
-main(List<String> args) async {
-  Map<String, dynamic> config = _getConfig();
+void main(List<String> args) async {
+  var config = _getConfig();
   var localOrProductionMode = config.isEmpty || config['mode'] != null
       ? _Mode.local
       : _Mode.production;
@@ -1275,7 +1310,7 @@ main(List<String> args) async {
 
   var imcAsBytes = utf8.encode(imcXml); // data being hashed
   var imcDigest = md5.convert(imcAsBytes);
-  print("Hash of IMC file is $imcDigest");
+  print('Hash of IMC file is $imcDigest');
 
   var sinkGen = fxGen.openWrite();
   var sinkMessages = fxMessages.openWrite();
@@ -1300,21 +1335,21 @@ main(List<String> args) async {
   sinkLEnums.write('$_header_gen_parts');
   sinkSerGen.write('$_header_ser_gen');
 
-  var msgElm = document.findElements("messages").first;
+  var msgElm = document.findElements('messages').first;
   sinks[_idxMsg]
-      .write('const String VERSION = "${msgElm.getAttribute("version")}";\n');
+      .write("const String VERSION = '${msgElm.getAttribute('version')}';\n");
 
-  var headerElm = msgElm.findElements("header").first;
-  var syncElm = headerElm.findElements("field").first;
+  var headerElm = msgElm.findElements('header').first;
+  var syncElm = headerElm.findElements('field').first;
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
 
-  var sNmbr = int.parse(syncElm.getAttribute("value"));
-  int rSNmbr = ((sNmbr & 0xFF) << 8 | sNmbr >> 8);
+  var sNmbr = int.parse(syncElm.getAttribute('value'));
+  var rSNmbr = ((sNmbr & 0xFF) << 8 | sNmbr >> 8);
   sinks[_idxMsg].write(
       'const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
 
-  sinks[_idxMsg].write('const String MD5_SUM = "$imcDigest";\n');
+  sinks[_idxMsg].write("const String MD5_SUM = '$imcDigest';\n");
 
   sinks[_idxMsg].write('\n');
 
@@ -1329,8 +1364,8 @@ abstract class ImcMessage extends Message {
   sinks[_idxMsg].write('\n');
 
   // Writting message-groups
-  msgElm.findElements("message-groups").forEach((mg) => mg
-      .findElements("message-group")
+  msgElm.findElements('message-groups').forEach((mg) => mg
+      .findElements('message-group')
       .forEach((g) => _writeMessageGroup(g, sinks[_idxMsg])));
 
   sinks[_idxSerGen]
@@ -1342,26 +1377,26 @@ abstract class ImcMessage extends Message {
 
   sinks[_idxSerGen].write(
       '''\nfinal messagesSerializers = <String, ImcSerializerBuilder>{''');
-  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
-      "\n  '${m.getAttribute("abbrev")}': () => ${m.getAttribute("abbrev")}Serializer(),"));
+  msgElm.findElements('message').forEach((m) => sinks[_idxSerGen].write(
+      "\n  '${m.getAttribute('abbrev')}': () => ${m.getAttribute('abbrev')}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
 
   sinks[_idxSerGen].write(
       '''\nfinal messagesIdsSerializers = <int, ImcSerializerBuilder>{''');
-  msgElm.findElements("message").forEach((m) => sinks[_idxSerGen].write(
-      "\n  ${m.getAttribute("id")}: () => ${m.getAttribute("abbrev")}Serializer(),"));
+  msgElm.findElements('message').forEach((m) => sinks[_idxSerGen].write(
+      "\n  ${m.getAttribute("id")}: () => ${m.getAttribute('abbrev')}Serializer(),"));
   sinks[_idxSerGen].write('''\n};\n''');
 
   // Writting messages
-  msgElm.findElements("message").forEach((m) => _writeMessageCode(m, sinks));
+  msgElm.findElements('message').forEach((m) => _writeMessageCode(m, sinks));
 
   // Writting global Enum like
-  msgElm.findElements("enumerations").forEach((e) => e
-      .findElements("def")
-      .forEach((m) => _writeGlobalEnumLike(m, "Enumerated", sinks[_idxEnums])));
-  msgElm.findElements("bitfields").forEach((e) => e
-      .findElements("def")
-      .forEach((m) => _writeGlobalEnumLike(m, "Bitfield", sinks[_idxEnums])));
+  msgElm.findElements('enumerations').forEach((e) => e
+      .findElements('def')
+      .forEach((m) => _writeGlobalEnumLike(m, 'Enumerated', sinks[_idxEnums])));
+  msgElm.findElements('bitfields').forEach((e) => e
+      .findElements('def')
+      .forEach((m) => _writeGlobalEnumLike(m, 'Bitfield', sinks[_idxEnums])));
 
   _writeMsgList(msgElm, sinks[_idxGen]);
 

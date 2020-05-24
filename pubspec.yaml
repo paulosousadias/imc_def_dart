@@ -19,6 +19,8 @@ dependencies:
   crypto: ^2.1.4 # for generator
   yaml: ^2.2.1 # for generator
 
+  collection: ^1.14.12
+
 dev_dependencies:
   flutter_test:
     sdk: flutter  

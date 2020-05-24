@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:imc_def/imc_def.dart' as imc;
 
 String _byteDataToHexString(List<int> serData) {
-  var bytesSerStr = "[";
+  var bytesSerStr = '[';
   serData.forEach((b) {
     var bhs = '${b.toRadixString(16)}';
     var bds = '$b';
@@ -18,7 +18,7 @@ String _byteDataToHexString(List<int> serData) {
     }
     bytesSerStr += "0x${bhs.length == 1 ? '0' : ''}$bhs ($bds), ";
   });
-  bytesSerStr += "]";
+  bytesSerStr += ']';
   return bytesSerStr;
 }
 
@@ -40,12 +40,12 @@ void main() {
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
     
-    print("0x${16.toRadixString(16)}");
+    print('0x${16.toRadixString(16)}');
 
-    print("0x${0xFE54.toRadixString(16)}");
-    print("0x${(0xFE54 >> 8).toRadixString(16)}");
-    print("0x${(0xFE54 & 0xFF).toRadixString(16)}");
-    print("0x${((0xFE54 & 0xFF) << 8 | 0xFE54 >> 8).toRadixString(16)}");
+    print('0x${0xFE54.toRadixString(16)}');
+    print('0x${(0xFE54 >> 8).toRadixString(16)}');
+    print('0x${(0xFE54 & 0xFF).toRadixString(16)}');
+    print('0x${((0xFE54 & 0xFF) << 8 | 0xFE54 >> 8).toRadixString(16)}');
   });
   test('serialize test', () {
     var globalSW = Stopwatch();
@@ -62,13 +62,13 @@ void main() {
       var bufferSer = dataSer.buffer;
       var serData =
           bufferSer.asUint8List(dataSer.offsetInBytes, dataSer.lengthInBytes);
-      String bytesSerStr = _byteDataToHexString(serData);
-      print("msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr");
+      var bytesSerStr = _byteDataToHexString(serData);
+      print('msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr');
 
       var msgD = ser.deserialize(serData);
-      print("msgD=$msgD");
+      print('msgD=$msgD');
       expect(msg == msgD, true);
-      print("Match? ${msg == msgD}");
+      print('Match? ${msg == msgD}');
     });
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
@@ -84,17 +84,17 @@ void main() {
     var bufferSer = dataSer.buffer;
     var serData =
         bufferSer.asUint8List(dataSer.offsetInBytes, dataSer.lengthInBytes);
-    String bytesSerStr = _byteDataToHexString(serData);
-    print("msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr");
+    var bytesSerStr = _byteDataToHexString(serData);
+    print('msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr');
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
 
     var msgD = ser.deserialize(serData);
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
-    print("msgD=$msgD");
+    print('msgD=$msgD');
     expect(msg == msgD, true);
-    print("Match? ${msg == msgD}");
+    print('Match? ${msg == msgD}');
   });
 
   test('serialize crc test', () {
@@ -108,8 +108,8 @@ void main() {
     var bufferSer = dataSer.buffer;
     var serData =
         bufferSer.asUint8List(dataSer.offsetInBytes, dataSer.lengthInBytes);
-    String bytesSerStr = _byteDataToHexString(serData);
-    print("msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr");
+    var bytesSerStr = _byteDataToHexString(serData);
+    print('msg=$msg\nsize=${serData.lengthInBytes} | $bytesSerStr');
     var msgD = ser.deserialize(serData);
     expect(msgD, null);
   });
@@ -117,7 +117,7 @@ void main() {
 //   var list = Utf8.encode('xxx');
 // var data = list is Uint8List ? list.buffer : Uint8List.fromList(list).buffer;
 
-  test("binary loading deserializing", () {
+  test('binary loading deserializing', () {
     // imc.endian_ser = Endian.little;
 
     // RPM
@@ -138,16 +138,16 @@ void main() {
         .build();
     var serializerRpm = imc.RpmSerializer();
     var msgRpmD = serializerRpm.deserialize(Uint8List.fromList(bytes1));
-    print("Msg Id: $msgId");
-    print("msg1: $msgRpm\nmsg2: $msgRpmD\n");
+    print('Msg Id: $msgId');
+    print('msg1: $msgRpm\nmsg2: $msgRpmD\n');
     expect(msgRpm, msgRpmD);
     var byteData2 = serializerRpm.serialize(msgRpm);
     var bytes2 = byteData2.buffer
         .asUint8List(byteData2.offsetInBytes, byteData2.lengthInBytes);
     var msgRpmD2 = serializerRpm.deserialize(bytes2);
     expect(msgRpm, msgRpmD);
-    print("msg2: $msgRpmD\nmsg3: $msgRpmD2\n");
-    print("bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n");
+    print('msg2: $msgRpmD\nmsg3: $msgRpmD2\n');
+    print('bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
     // timestamps might have diferences, so binary may not be identical
     //expect(bytes1, bytes2);
 
@@ -193,16 +193,16 @@ void main() {
         .build();
     var serializerDistance = imc.DistanceSerializer();
     var msgDistanceD = serializerDistance.deserialize(Uint8List.fromList(bytes1));
-    print("Msg Id: $msgId");
-    print("msg1: $msgDistance\nmsg2: $msgDistanceD\n");
+    print('Msg Id: $msgId');
+    print('msg1: $msgDistance\nmsg2: $msgDistanceD\n');
     expect(msgDistance, msgDistanceD);
     byteData2 = serializerDistance.serialize(msgDistance);
     bytes2 = byteData2.buffer
         .asUint8List(byteData2.offsetInBytes, byteData2.lengthInBytes);
     var msgDistanceD2 = serializerDistance.deserialize(bytes2);
     expect(msgDistance, msgDistanceD);
-    print("msg2: $msgDistanceD\nmsg3: $msgDistanceD2\n");
-    print("bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n");
+    print('msg2: $msgDistanceD\nmsg3: $msgDistanceD2\n');
+    print('bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
     // timestamps might have diferences, so binary may not be identical
     //expect(bytes1, bytes2);
 
@@ -255,21 +255,21 @@ void main() {
         .build();
     var serializerEstimatedState = imc.EstimatedStateSerializer();
     var msgEstimatedStateD = serializerEstimatedState.deserialize(Uint8List.fromList(bytes1));
-    print("Msg Id: $msgId");
-    print("msg1: $msgEstimatedState\nmsg2: $msgEstimatedStateD\n");
+    print('Msg Id: $msgId');
+    print('msg1: $msgEstimatedState\nmsg2: $msgEstimatedStateD\n');
     expect(msgEstimatedState, msgEstimatedStateD);
     byteData2 = serializerEstimatedState.serialize(msgEstimatedState);
     bytes2 = byteData2.buffer
         .asUint8List(byteData2.offsetInBytes, byteData2.lengthInBytes);
     var msgEstimatedStateD2 = serializerEstimatedState.deserialize(bytes2);
     expect(msgEstimatedState, msgEstimatedStateD);
-    print("msg2: $msgEstimatedStateD\nmsg3: $msgEstimatedStateD2\n");
-    print("bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n");
+    print('msg2: $msgEstimatedStateD\nmsg3: $msgEstimatedStateD2\n');
+    print('bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
     // timestamps might have diferences, so binary may not be identical
     // expect(bytes1, bytes2);
   });
 
-  test("enum like comparison test", () {
+  test('enum like comparison test', () {
     var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
     expect(su1 == imc.SpeedUnitsEnum.sunits_meters_ps, true);
 
@@ -277,7 +277,7 @@ void main() {
     expect(su2 == imc.SpeedUnitsEnum.sunits_meters_ps, false);
   });
 
-  test("bitfields hasBits test", () {
+  test('bitfields hasBits test', () {
     var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic;
     var su2 = imc.CommSystemsQueryBitfieldCommInterface(imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic.value);
     var su3 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
@@ -319,14 +319,14 @@ void main() {
     expect(su3.hasBits(null), false);
   });
 
-  test("enumerations toPrettyString() test", () {
+  test('enumerations toPrettyString() test', () {
     var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
     expect(su1.toPrettyString() == 'Meters per second', true);
     var su2 = imc.SpeedUnitsEnum(9);
     expect(su2.toPrettyString() == su2.toString(), true);
   });
 
-  test("bitfields toPrettyString() test", () {
+  test('bitfields toPrettyString() test', () {
     var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic;
     var su2 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
       imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
@@ -356,7 +356,7 @@ void main() {
           ..src = 0x4001
           ..timestamp = DateTime.utc(1970))
         .build();
-    imc.Abort msg2 = imc.Abort((b) => b
+    var msg2 = imc.Abort((b) => b
       ..src = 0x4001
     );
 

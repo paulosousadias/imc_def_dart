@@ -133,7 +133,7 @@ int serializeHeader(ImcMessage message, ByteData byteData) {
   return byteOffset;
 }
 
-calcAndAddFooter(ByteData byteData, int offset, int lenght) {
+void calcAndAddFooter(ByteData byteData, int offset, int lenght) {
   var crc = calcCrc(byteData, offset, lenght);
   byteData.setUint16(offset + lenght, crc, endian_ser);
 }
@@ -149,9 +149,9 @@ int calcCrc(ByteData byteData, int offset, int lenght) {
 }
 
 int _crc16(ByteData byteData, int offset, int length) {
-  int crc = 0x0000;
+  var crc = 0x0000;
   var bytes = byteData.buffer.asUint8List();
-  for (int i = offset; i < offset + length; i++) {
+  for (var i = offset; i < offset + length; i++) {
     crc = (crc >> 8) ^ crc_table[(crc ^ bytes[i]) & 0xff];
   }
   return crc;

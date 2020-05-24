@@ -719,6 +719,7 @@ class EntityStateSerializer extends imc.ImcSerializer<imc.EntityState, imc.Entit
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EntityStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -809,6 +810,7 @@ class QueryEntityStateSerializer extends imc.ImcSerializer<imc.QueryEntityState,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.QueryEntityStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -905,6 +907,7 @@ class EntityInfoSerializer extends imc.ImcSerializer<imc.EntityInfo, imc.EntityI
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EntityInfoBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1010,6 +1013,7 @@ class QueryEntityInfoSerializer extends imc.ImcSerializer<imc.QueryEntityInfo, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.QueryEntityInfoBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1097,6 +1101,7 @@ class EntityListSerializer extends imc.ImcSerializer<imc.EntityList, imc.EntityL
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EntityListBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1187,6 +1192,7 @@ class CpuUsageSerializer extends imc.ImcSerializer<imc.CpuUsage, imc.CpuUsageBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CpuUsageBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1274,6 +1280,7 @@ class TransportBindingsSerializer extends imc.ImcSerializer<imc.TransportBinding
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TransportBindingsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1364,6 +1371,7 @@ class RestartSystemSerializer extends imc.ImcSerializer<imc.RestartSystem, imc.R
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RestartSystemBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1445,6 +1453,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<imc.DevCalibrati
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DevCalibrationControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1538,6 +1547,7 @@ class DevCalibrationStateSerializer extends imc.ImcSerializer<imc.DevCalibration
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DevCalibrationStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1640,6 +1650,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<imc.EntityActiva
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EntityActivationStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1727,6 +1738,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<imc.QueryEn
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.QueryEntityActivationStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1856,6 +1868,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<imc.VehicleOp
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VehicleOperationalLimitsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -1951,7 +1964,7 @@ class MsgListSerializer extends imc.ImcSerializer<imc.MsgList, imc.MsgListBuilde
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.msgs.length; i++) {
+      for (var i = 0; i < message.msgs.length; i++) {
         var id = message.msgs[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -2006,6 +2019,7 @@ class MsgListSerializer extends imc.ImcSerializer<imc.MsgList, imc.MsgListBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MsgListBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2013,7 +2027,7 @@ class MsgListSerializer extends imc.ImcSerializer<imc.MsgList, imc.MsgListBuilde
     var msgsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.msgs = [];
-    for (int i = 0; i < msgsMMsgsNumber; i++) {
+    for (var i = 0; i < msgsMMsgsNumber; i++) {
       var msgsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (msgsSId != imc.ImcId.nullId) {
@@ -2152,6 +2166,7 @@ class SimulatedStateSerializer extends imc.ImcSerializer<imc.SimulatedState, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SimulatedStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2290,6 +2305,7 @@ class LeakSimulationSerializer extends imc.ImcSerializer<imc.LeakSimulation, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LeakSimulationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2388,6 +2404,7 @@ class UASimulationSerializer extends imc.ImcSerializer<imc.UASimulation, imc.UAS
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UASimulationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2486,6 +2503,7 @@ class DynamicsSimParamSerializer extends imc.ImcSerializer<imc.DynamicsSimParam,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DynamicsSimParamBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2576,6 +2594,7 @@ class StorageUsageSerializer extends imc.ImcSerializer<imc.StorageUsage, imc.Sto
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.StorageUsageBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2680,6 +2699,7 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl, imc.Cac
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CacheControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2790,6 +2810,7 @@ class LoggingControlSerializer extends imc.ImcSerializer<imc.LoggingControl, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LoggingControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2895,6 +2916,7 @@ class LogBookEntrySerializer extends imc.ImcSerializer<imc.LogBookEntry, imc.Log
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LogBookEntryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -2966,7 +2988,7 @@ class LogBookControlSerializer extends imc.ImcSerializer<imc.LogBookControl, imc
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.msg.length; i++) {
+      for (var i = 0; i < message.msg.length; i++) {
         var id = message.msg[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -3021,6 +3043,7 @@ class LogBookControlSerializer extends imc.ImcSerializer<imc.LogBookControl, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LogBookControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3034,7 +3057,7 @@ class LogBookControlSerializer extends imc.ImcSerializer<imc.LogBookControl, imc
     var msgMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.msg = [];
-    for (int i = 0; i < msgMMsgsNumber; i++) {
+    for (var i = 0; i < msgMMsgsNumber; i++) {
       var msgSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (msgSId != imc.ImcId.nullId) {
@@ -3128,6 +3151,7 @@ class ReplayControlSerializer extends imc.ImcSerializer<imc.ReplayControl, imc.R
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ReplayControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3224,6 +3248,7 @@ class ClockControlSerializer extends imc.ImcSerializer<imc.ClockControl, imc.Clo
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ClockControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3317,6 +3342,7 @@ class HistoricCTDSerializer extends imc.ImcSerializer<imc.HistoricCTD, imc.Histo
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HistoricCTDBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3416,6 +3442,7 @@ class HistoricTelemetrySerializer extends imc.ImcSerializer<imc.HistoricTelemetr
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HistoricTelemetryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3529,6 +3556,7 @@ class HistoricSonarDataSerializer extends imc.ImcSerializer<imc.HistoricSonarDat
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HistoricSonarDataBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3639,6 +3667,7 @@ class HistoricEventSerializer extends imc.ImcSerializer<imc.HistoricEvent, imc.H
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HistoricEventBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3698,7 +3727,7 @@ class VerticalProfileSerializer extends imc.ImcSerializer<imc.VerticalProfile, i
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.samples.length; i++) {
+      for (var i = 0; i < message.samples.length; i++) {
         var id = message.samples[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -3759,6 +3788,7 @@ class VerticalProfileSerializer extends imc.ImcSerializer<imc.VerticalProfile, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VerticalProfileBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3772,7 +3802,7 @@ class VerticalProfileSerializer extends imc.ImcSerializer<imc.VerticalProfile, i
     var samplesMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.samples = [];
-    for (int i = 0; i < samplesMMsgsNumber; i++) {
+    for (var i = 0; i < samplesMMsgsNumber; i++) {
       var samplesSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (samplesSId != imc.ImcId.nullId) {
@@ -3869,6 +3899,7 @@ class ProfileSampleSerializer extends imc.ImcSerializer<imc.ProfileSample, imc.P
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ProfileSampleBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -3950,6 +3981,7 @@ class HeartbeatSerializer extends imc.ImcSerializer<imc.Heartbeat, imc.Heartbeat
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HeartbeatBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4052,6 +4084,7 @@ class AnnounceSerializer extends imc.ImcSerializer<imc.Announce, imc.AnnounceBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AnnounceBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4169,6 +4202,7 @@ class AnnounceServiceSerializer extends imc.ImcSerializer<imc.AnnounceService, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AnnounceServiceBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4259,6 +4293,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RSSIBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4340,6 +4375,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VSWRBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4421,6 +4457,7 @@ class LinkLevelSerializer extends imc.ImcSerializer<imc.LinkLevel, imc.LinkLevel
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LinkLevelBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4514,6 +4551,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SmsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4627,6 +4665,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SmsTxBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4736,6 +4775,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SmsRxBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4840,6 +4880,7 @@ class SmsStateSerializer extends imc.ImcSerializer<imc.SmsState, imc.SmsStateBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SmsStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -4942,6 +4983,7 @@ class TextMessageSerializer extends imc.ImcSerializer<imc.TextMessage, imc.TextM
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TextMessageBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5055,6 +5097,7 @@ class IridiumMsgRxSerializer extends imc.ImcSerializer<imc.IridiumMsgRx, imc.Iri
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.IridiumMsgRxBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5173,6 +5216,7 @@ class IridiumMsgTxSerializer extends imc.ImcSerializer<imc.IridiumMsgTx, imc.Iri
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.IridiumMsgTxBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5283,6 +5327,7 @@ class IridiumTxStatusSerializer extends imc.ImcSerializer<imc.IridiumTxStatus, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.IridiumTxStatusBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5382,6 +5427,7 @@ class GroupMembershipStateSerializer extends imc.ImcSerializer<imc.GroupMembersh
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GroupMembershipStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5484,6 +5530,7 @@ class SystemGroupSerializer extends imc.ImcSerializer<imc.SystemGroup, imc.Syste
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SystemGroupBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5586,6 +5633,7 @@ class LinkLatencySerializer extends imc.ImcSerializer<imc.LinkLatency, imc.LinkL
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LinkLatencyBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5673,6 +5721,7 @@ class ExtendedRSSISerializer extends imc.ImcSerializer<imc.ExtendedRSSI, imc.Ext
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ExtendedRSSIBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5729,7 +5778,7 @@ class HistoricDataSerializer extends imc.ImcSerializer<imc.HistoricData, imc.His
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.data.length; i++) {
+      for (var i = 0; i < message.data.length; i++) {
         var id = message.data[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -5784,6 +5833,7 @@ class HistoricDataSerializer extends imc.ImcSerializer<imc.HistoricData, imc.His
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HistoricDataBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -5800,7 +5850,7 @@ class HistoricDataSerializer extends imc.ImcSerializer<imc.HistoricData, imc.His
     var dataMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.data = [];
-    for (int i = 0; i < dataMMsgsNumber; i++) {
+    for (var i = 0; i < dataMMsgsNumber; i++) {
       var dataSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (dataSId != imc.ImcId.nullId) {
@@ -5899,6 +5949,7 @@ class CompressedHistorySerializer extends imc.ImcSerializer<imc.CompressedHistor
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CompressedHistoryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6023,6 +6074,7 @@ class HistoricSampleSerializer extends imc.ImcSerializer<imc.HistoricSample, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HistoricSampleBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6153,6 +6205,7 @@ class HistoricDataQuerySerializer extends imc.ImcSerializer<imc.HistoricDataQuer
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.HistoricDataQueryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6274,6 +6327,7 @@ class RemoteCommandSerializer extends imc.ImcSerializer<imc.RemoteCommand, imc.R
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RemoteCommandBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6387,6 +6441,7 @@ class CommSystemsQuerySerializer extends imc.ImcSerializer<imc.CommSystemsQuery,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CommSystemsQueryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6515,6 +6570,7 @@ class TelemetryMsgSerializer extends imc.ImcSerializer<imc.TelemetryMsg, imc.Tel
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TelemetryMsgBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6640,6 +6696,7 @@ class LblRangeSerializer extends imc.ImcSerializer<imc.LblRange, imc.LblRangeBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LblRangeBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6745,6 +6802,7 @@ class LblBeaconSerializer extends imc.ImcSerializer<imc.LblBeacon, imc.LblBeacon
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LblBeaconBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6816,7 +6874,7 @@ class LblConfigSerializer extends imc.ImcSerializer<imc.LblConfig, imc.LblConfig
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.beacons.length; i++) {
+      for (var i = 0; i < message.beacons.length; i++) {
         var id = message.beacons[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -6871,6 +6929,7 @@ class LblConfigSerializer extends imc.ImcSerializer<imc.LblConfig, imc.LblConfig
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LblConfigBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -6881,7 +6940,7 @@ class LblConfigSerializer extends imc.ImcSerializer<imc.LblConfig, imc.LblConfig
     var beaconsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.beacons = [];
-    for (int i = 0; i < beaconsMMsgsNumber; i++) {
+    for (var i = 0; i < beaconsMMsgsNumber; i++) {
       var beaconsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (beaconsSId != imc.ImcId.nullId) {
@@ -6980,6 +7039,7 @@ class AcousticMessageSerializer extends imc.ImcSerializer<imc.AcousticMessage, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AcousticMessageBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7095,6 +7155,7 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AcousticOperationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7199,6 +7260,7 @@ class AcousticSystemsQuerySerializer extends imc.ImcSerializer<imc.AcousticSyste
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AcousticSystemsQueryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7280,6 +7342,7 @@ class AcousticSystemsSerializer extends imc.ImcSerializer<imc.AcousticSystems, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AcousticSystemsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7376,6 +7439,7 @@ class AcousticLinkSerializer extends imc.ImcSerializer<imc.AcousticLink, imc.Aco
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AcousticLinkBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7469,6 +7533,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RpmBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7550,6 +7615,7 @@ class VoltageSerializer extends imc.ImcSerializer<imc.Voltage, imc.VoltageBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VoltageBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7631,6 +7697,7 @@ class CurrentSerializer extends imc.ImcSerializer<imc.Current, imc.CurrentBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CurrentBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7757,6 +7824,7 @@ class GpsFixSerializer extends imc.ImcSerializer<imc.GpsFix, imc.GpsFixBuilder> 
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GpsFixBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -7895,6 +7963,7 @@ class EulerAnglesSerializer extends imc.ImcSerializer<imc.EulerAngles, imc.Euler
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EulerAnglesBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8000,6 +8069,7 @@ class EulerAnglesDeltaSerializer extends imc.ImcSerializer<imc.EulerAnglesDelta,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EulerAnglesDeltaBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8102,6 +8172,7 @@ class AngularVelocitySerializer extends imc.ImcSerializer<imc.AngularVelocity, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AngularVelocityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8201,6 +8272,7 @@ class AccelerationSerializer extends imc.ImcSerializer<imc.Acceleration, imc.Acc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AccelerationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8300,6 +8372,7 @@ class MagneticFieldSerializer extends imc.ImcSerializer<imc.MagneticField, imc.M
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MagneticFieldBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8399,6 +8472,7 @@ class GroundVelocitySerializer extends imc.ImcSerializer<imc.GroundVelocity, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GroundVelocityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8498,6 +8572,7 @@ class WaterVelocitySerializer extends imc.ImcSerializer<imc.WaterVelocity, imc.W
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.WaterVelocityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8597,6 +8672,7 @@ class VelocityDeltaSerializer extends imc.ImcSerializer<imc.VelocityDelta, imc.V
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VelocityDeltaBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8653,7 +8729,7 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.location.length; i++) {
+      for (var i = 0; i < message.location.length; i++) {
         var id = message.location[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -8674,7 +8750,7 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.beamConfig.length; i++) {
+      for (var i = 0; i < message.beamConfig.length; i++) {
         var id = message.beamConfig[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -8732,6 +8808,7 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DistanceBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8742,7 +8819,7 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
     var locationMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.location = [];
-    for (int i = 0; i < locationMMsgsNumber; i++) {
+    for (var i = 0; i < locationMMsgsNumber; i++) {
       var locationSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (locationSId != imc.ImcId.nullId) {
@@ -8759,7 +8836,7 @@ class DistanceSerializer extends imc.ImcSerializer<imc.Distance, imc.DistanceBui
     var beamConfigMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.beamConfig = [];
-    for (int i = 0; i < beamConfigMMsgsNumber; i++) {
+    for (var i = 0; i < beamConfigMMsgsNumber; i++) {
       var beamConfigSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (beamConfigSId != imc.ImcId.nullId) {
@@ -8850,6 +8927,7 @@ class TemperatureSerializer extends imc.ImcSerializer<imc.Temperature, imc.Tempe
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TemperatureBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -8931,6 +9009,7 @@ class PressureSerializer extends imc.ImcSerializer<imc.Pressure, imc.PressureBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PressureBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9012,6 +9091,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DepthBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9093,6 +9173,7 @@ class DepthOffsetSerializer extends imc.ImcSerializer<imc.DepthOffset, imc.Depth
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DepthOffsetBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9174,6 +9255,7 @@ class SoundSpeedSerializer extends imc.ImcSerializer<imc.SoundSpeed, imc.SoundSp
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SoundSpeedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9255,6 +9337,7 @@ class WaterDensitySerializer extends imc.ImcSerializer<imc.WaterDensity, imc.Wat
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.WaterDensityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9336,6 +9419,7 @@ class ConductivitySerializer extends imc.ImcSerializer<imc.Conductivity, imc.Con
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ConductivityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9417,6 +9501,7 @@ class SalinitySerializer extends imc.ImcSerializer<imc.Salinity, imc.SalinityBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SalinityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9504,6 +9589,7 @@ class WindSpeedSerializer extends imc.ImcSerializer<imc.WindSpeed, imc.WindSpeed
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.WindSpeedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9591,6 +9677,7 @@ class RelativeHumiditySerializer extends imc.ImcSerializer<imc.RelativeHumidity,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RelativeHumidityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9675,6 +9762,7 @@ class DevDataTextSerializer extends imc.ImcSerializer<imc.DevDataText, imc.DevDa
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DevDataTextBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9764,6 +9852,7 @@ class DevDataBinarySerializer extends imc.ImcSerializer<imc.DevDataBinary, imc.D
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DevDataBinaryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9850,6 +9939,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ForceBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9912,7 +10002,7 @@ class SonarDataSerializer extends imc.ImcSerializer<imc.SonarData, imc.SonarData
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.beamConfig.length; i++) {
+      for (var i = 0; i < message.beamConfig.length; i++) {
         var id = message.beamConfig[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -9972,6 +10062,7 @@ class SonarDataSerializer extends imc.ImcSerializer<imc.SonarData, imc.SonarData
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SonarDataBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -9997,7 +10088,7 @@ class SonarDataSerializer extends imc.ImcSerializer<imc.SonarData, imc.SonarData
     var beamConfigMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.beamConfig = [];
-    for (int i = 0; i < beamConfigMMsgsNumber; i++) {
+    for (var i = 0; i < beamConfigMMsgsNumber; i++) {
       var beamConfigSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (beamConfigSId != imc.ImcId.nullId) {
@@ -10090,6 +10181,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PulseBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10168,6 +10260,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<imc.PulseDetecti
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PulseDetectionControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10258,6 +10351,7 @@ class FuelLevelSerializer extends imc.ImcSerializer<imc.FuelLevel, imc.FuelLevel
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FuelLevelBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10393,6 +10487,7 @@ class GpsNavDataSerializer extends imc.ImcSerializer<imc.GpsNavData, imc.GpsNavD
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GpsNavDataBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10519,6 +10614,7 @@ class ServoPositionSerializer extends imc.ImcSerializer<imc.ServoPosition, imc.S
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ServoPositionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10618,6 +10714,7 @@ class DeviceStateSerializer extends imc.ImcSerializer<imc.DeviceState, imc.Devic
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DeviceStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10717,6 +10814,7 @@ class BeamConfigSerializer extends imc.ImcSerializer<imc.BeamConfig, imc.BeamCon
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.BeamConfigBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10801,6 +10899,7 @@ class DataSanitySerializer extends imc.ImcSerializer<imc.DataSanity, imc.DataSan
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DataSanityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10882,6 +10981,7 @@ class RhodamineDyeSerializer extends imc.ImcSerializer<imc.RhodamineDye, imc.Rho
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RhodamineDyeBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -10963,6 +11063,7 @@ class CrudeOilSerializer extends imc.ImcSerializer<imc.CrudeOil, imc.CrudeOilBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CrudeOilBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11044,6 +11145,7 @@ class FineOilSerializer extends imc.ImcSerializer<imc.FineOil, imc.FineOilBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FineOilBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11125,6 +11227,7 @@ class TurbiditySerializer extends imc.ImcSerializer<imc.Turbidity, imc.Turbidity
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TurbidityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11206,6 +11309,7 @@ class ChlorophyllSerializer extends imc.ImcSerializer<imc.Chlorophyll, imc.Chlor
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ChlorophyllBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11287,6 +11391,7 @@ class FluoresceinSerializer extends imc.ImcSerializer<imc.Fluorescein, imc.Fluor
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FluoresceinBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11368,6 +11473,7 @@ class PhycocyaninSerializer extends imc.ImcSerializer<imc.Phycocyanin, imc.Phyco
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PhycocyaninBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11449,6 +11555,7 @@ class PhycoerythrinSerializer extends imc.ImcSerializer<imc.Phycoerythrin, imc.P
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PhycoerythrinBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11572,6 +11679,7 @@ class GpsFixRtkSerializer extends imc.ImcSerializer<imc.GpsFixRtk, imc.GpsFixRtk
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GpsFixRtkBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11709,6 +11817,7 @@ class ExternalNavDataSerializer extends imc.ImcSerializer<imc.ExternalNavData, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ExternalNavDataBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11804,6 +11913,7 @@ class DissolvedOxygenSerializer extends imc.ImcSerializer<imc.DissolvedOxygen, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DissolvedOxygenBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11885,6 +11995,7 @@ class AirSaturationSerializer extends imc.ImcSerializer<imc.AirSaturation, imc.A
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AirSaturationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -11966,6 +12077,7 @@ class ThrottleSerializer extends imc.ImcSerializer<imc.Throttle, imc.ThrottleBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ThrottleBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12047,6 +12159,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PHBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12128,6 +12241,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RedoxBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12215,6 +12329,7 @@ class CameraZoomSerializer extends imc.ImcSerializer<imc.CameraZoom, imc.CameraZ
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CameraZoomBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12305,6 +12420,7 @@ class SetThrusterActuationSerializer extends imc.ImcSerializer<imc.SetThrusterAc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SetThrusterActuationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12392,6 +12508,7 @@ class SetServoPositionSerializer extends imc.ImcSerializer<imc.SetServoPosition,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SetServoPositionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12479,6 +12596,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<imc.SetCon
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SetControlSurfaceDeflectionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12569,6 +12687,7 @@ class RemoteActionsRequestSerializer extends imc.ImcSerializer<imc.RemoteActions
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RemoteActionsRequestBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12662,6 +12781,7 @@ class RemoteActionsSerializer extends imc.ImcSerializer<imc.RemoteActions, imc.R
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RemoteActionsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12752,6 +12872,7 @@ class ButtonEventSerializer extends imc.ImcSerializer<imc.ButtonEvent, imc.Butto
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ButtonEventBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12842,6 +12963,7 @@ class LcdControlSerializer extends imc.ImcSerializer<imc.LcdControl, imc.LcdCont
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LcdControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -12938,6 +13060,7 @@ class PowerOperationSerializer extends imc.ImcSerializer<imc.PowerOperation, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PowerOperationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13034,6 +13157,7 @@ class PowerChannelControlSerializer extends imc.ImcSerializer<imc.PowerChannelCo
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PowerChannelControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13124,6 +13248,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<imc.QueryPowerC
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.QueryPowerChannelStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13208,6 +13333,7 @@ class PowerChannelStateSerializer extends imc.ImcSerializer<imc.PowerChannelStat
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PowerChannelStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13304,6 +13430,7 @@ class LedBrightnessSerializer extends imc.ImcSerializer<imc.LedBrightness, imc.L
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LedBrightnessBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13397,6 +13524,7 @@ class QueryLedBrightnessSerializer extends imc.ImcSerializer<imc.QueryLedBrightn
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.QueryLedBrightnessBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13490,6 +13618,7 @@ class SetLedBrightnessSerializer extends imc.ImcSerializer<imc.SetLedBrightness,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SetLedBrightnessBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13586,6 +13715,7 @@ class SetPWMSerializer extends imc.ImcSerializer<imc.SetPWM, imc.SetPWMBuilder> 
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SetPWMBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13679,6 +13809,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PWMBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13823,6 +13954,7 @@ class EstimatedStateSerializer extends imc.ImcSerializer<imc.EstimatedState, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EstimatedStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -13967,6 +14099,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<imc.EstimatedS
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EstimatedStreamVelocityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14054,6 +14187,7 @@ class IndicatedSpeedSerializer extends imc.ImcSerializer<imc.IndicatedSpeed, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.IndicatedSpeedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14135,6 +14269,7 @@ class TrueSpeedSerializer extends imc.ImcSerializer<imc.TrueSpeed, imc.TrueSpeed
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrueSpeedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14255,6 +14390,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<imc.NavigationUn
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.NavigationUncertaintyBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14399,6 +14535,7 @@ class NavigationDataSerializer extends imc.ImcSerializer<imc.NavigationData, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.NavigationDataBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14507,6 +14644,7 @@ class GpsFixRejectionSerializer extends imc.ImcSerializer<imc.GpsFixRejection, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GpsFixRejectionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14597,6 +14735,7 @@ class LblRangeAcceptanceSerializer extends imc.ImcSerializer<imc.LblRangeAccepta
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LblRangeAcceptanceBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14693,6 +14832,7 @@ class DvlRejectionSerializer extends imc.ImcSerializer<imc.DvlRejection, imc.Dvl
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DvlRejectionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14809,6 +14949,7 @@ class LblEstimateSerializer extends imc.ImcSerializer<imc.LblEstimate, imc.LblEs
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LblEstimateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -14916,6 +15057,7 @@ class AlignmentStateSerializer extends imc.ImcSerializer<imc.AlignmentState, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AlignmentStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15003,6 +15145,7 @@ class GroupStreamVelocitySerializer extends imc.ImcSerializer<imc.GroupStreamVel
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GroupStreamVelocityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15096,6 +15239,7 @@ class AirflowSerializer extends imc.ImcSerializer<imc.Airflow, imc.AirflowBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AirflowBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15183,6 +15327,7 @@ class DesiredHeadingSerializer extends imc.ImcSerializer<imc.DesiredHeading, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredHeadingBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15267,6 +15412,7 @@ class DesiredZSerializer extends imc.ImcSerializer<imc.DesiredZ, imc.DesiredZBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredZBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15354,6 +15500,7 @@ class DesiredSpeedSerializer extends imc.ImcSerializer<imc.DesiredSpeed, imc.Des
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredSpeedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15438,6 +15585,7 @@ class DesiredRollSerializer extends imc.ImcSerializer<imc.DesiredRoll, imc.Desir
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredRollBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15519,6 +15667,7 @@ class DesiredPitchSerializer extends imc.ImcSerializer<imc.DesiredPitch, imc.Des
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredPitchBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15600,6 +15749,7 @@ class DesiredVerticalRateSerializer extends imc.ImcSerializer<imc.DesiredVertica
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredVerticalRateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15717,6 +15867,7 @@ class DesiredPathSerializer extends imc.ImcSerializer<imc.DesiredPath, imc.Desir
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredPathBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15852,6 +16003,7 @@ class DesiredControlSerializer extends imc.ImcSerializer<imc.DesiredControl, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -15951,6 +16103,7 @@ class DesiredHeadingRateSerializer extends imc.ImcSerializer<imc.DesiredHeadingR
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredHeadingRateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16050,6 +16203,7 @@ class DesiredVelocitySerializer extends imc.ImcSerializer<imc.DesiredVelocity, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredVelocityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16203,6 +16357,7 @@ class PathControlStateSerializer extends imc.ImcSerializer<imc.PathControlState,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PathControlStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16344,6 +16499,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<imc.AllocatedC
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AllocatedControlTorquesBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16440,6 +16596,7 @@ class ControlParcelSerializer extends imc.ImcSerializer<imc.ControlParcel, imc.C
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ControlParcelBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16530,6 +16687,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.BrakeBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16638,6 +16796,7 @@ class DesiredLinearStateSerializer extends imc.ImcSerializer<imc.DesiredLinearSt
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredLinearStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16746,6 +16905,7 @@ class DesiredThrottleSerializer extends imc.ImcSerializer<imc.DesiredThrottle, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DesiredThrottleBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -16860,6 +17020,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GotoBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17010,6 +17171,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PopUpBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17130,6 +17292,7 @@ class TeleoperationSerializer extends imc.ImcSerializer<imc.Teleoperation, imc.T
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TeleoperationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17259,6 +17422,7 @@ class LoiterSerializer extends imc.ImcSerializer<imc.Loiter, imc.LoiterBuilder> 
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LoiterBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17391,6 +17555,7 @@ class IdleManeuverSerializer extends imc.ImcSerializer<imc.IdleManeuver, imc.Idl
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.IdleManeuverBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17501,6 +17666,7 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LowLevelControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17653,6 +17819,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RowsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17769,7 +17936,7 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath, imc.FollowP
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.points.length; i++) {
+      for (var i = 0; i < message.points.length; i++) {
         var id = message.points[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -17830,6 +17997,7 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath, imc.FollowP
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FollowPathBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -17858,7 +18026,7 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath, imc.FollowP
     var pointsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.points = [];
-    for (int i = 0; i < pointsMMsgsNumber; i++) {
+    for (var i = 0; i < pointsMMsgsNumber; i++) {
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
@@ -17961,6 +18129,7 @@ class PathPointSerializer extends imc.ImcSerializer<imc.PathPoint, imc.PathPoint
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PathPointBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18078,6 +18247,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.YoYoBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18189,6 +18359,7 @@ class TeleoperationDoneSerializer extends imc.ImcSerializer<imc.TeleoperationDon
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TeleoperationDoneBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18294,6 +18465,7 @@ class StationKeepingSerializer extends imc.ImcSerializer<imc.StationKeeping, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.StationKeepingBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18441,6 +18613,7 @@ class ElevatorSerializer extends imc.ImcSerializer<imc.Elevator, imc.ElevatorBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ElevatorBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18545,7 +18718,7 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory,
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.points.length; i++) {
+      for (var i = 0; i < message.points.length; i++) {
         var id = message.points[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -18606,6 +18779,7 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FollowTrajectoryBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18634,7 +18808,7 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory,
     var pointsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.points = [];
-    for (int i = 0; i < pointsMMsgsNumber; i++) {
+    for (var i = 0; i < pointsMMsgsNumber; i++) {
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
@@ -18740,6 +18914,7 @@ class TrajectoryPointSerializer extends imc.ImcSerializer<imc.TrajectoryPoint, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrajectoryPointBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18842,6 +19017,7 @@ class CustomManeuverSerializer extends imc.ImcSerializer<imc.CustomManeuver, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CustomManeuverBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -18922,7 +19098,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.points.length; i++) {
+      for (var i = 0; i < message.points.length; i++) {
         var id = message.points[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -18943,7 +19119,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.participants.length; i++) {
+      for (var i = 0; i < message.participants.length; i++) {
         var id = message.participants[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -19007,6 +19183,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VehicleFormationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19032,7 +19209,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
     var pointsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.points = [];
-    for (int i = 0; i < pointsMMsgsNumber; i++) {
+    for (var i = 0; i < pointsMMsgsNumber; i++) {
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
@@ -19049,7 +19226,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
     var participantsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.participants = [];
-    for (int i = 0; i < participantsMMsgsNumber; i++) {
+    for (var i = 0; i < participantsMMsgsNumber; i++) {
       var participantsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
@@ -19158,6 +19335,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<imc.Vehicl
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VehicleFormationParticipantBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19245,6 +19423,7 @@ class StopManeuverSerializer extends imc.ImcSerializer<imc.StopManeuver, imc.Sto
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.StopManeuverBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19323,6 +19502,7 @@ class RegisterManeuverSerializer extends imc.ImcSerializer<imc.RegisterManeuver,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RegisterManeuverBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19413,6 +19593,7 @@ class ManeuverControlStateSerializer extends imc.ImcSerializer<imc.ManeuverContr
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ManeuverControlStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19527,6 +19708,7 @@ class FollowSystemSerializer extends imc.ImcSerializer<imc.FollowSystem, imc.Fol
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FollowSystemBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19650,6 +19832,7 @@ class CommsRelaySerializer extends imc.ImcSerializer<imc.CommsRelay, imc.CommsRe
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CommsRelayBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19733,7 +19916,7 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea, imc.CoverArea
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.polygon.length; i++) {
+      for (var i = 0; i < message.polygon.length; i++) {
         var id = message.polygon[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -19794,6 +19977,7 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea, imc.CoverArea
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CoverAreaBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -19819,7 +20003,7 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea, imc.CoverArea
     var polygonMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.polygon = [];
-    for (int i = 0; i < polygonMMsgsNumber; i++) {
+    for (var i = 0; i < polygonMMsgsNumber; i++) {
       var polygonSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (polygonSId != imc.ImcId.nullId) {
@@ -19919,6 +20103,7 @@ class PolygonVertexSerializer extends imc.ImcSerializer<imc.PolygonVertex, imc.P
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PolygonVertexBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -20042,6 +20227,7 @@ class CompassCalibrationSerializer extends imc.ImcSerializer<imc.CompassCalibrat
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CompassCalibrationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -20137,7 +20323,7 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.participants.length; i++) {
+      for (var i = 0; i < message.participants.length; i++) {
         var id = message.participants[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -20198,6 +20384,7 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationParametersBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -20217,7 +20404,7 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
     var participantsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.participants = [];
-    for (int i = 0; i < participantsMMsgsNumber; i++) {
+    for (var i = 0; i < participantsMMsgsNumber; i++) {
       var participantsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
@@ -20368,6 +20555,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationPlanExecutionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -20530,6 +20718,7 @@ class FollowReferenceSerializer extends imc.ImcSerializer<imc.FollowReference, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FollowReferenceBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -20660,6 +20849,7 @@ class ReferenceSerializer extends imc.ImcSerializer<imc.Reference, imc.Reference
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ReferenceBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -20801,6 +20991,7 @@ class FollowRefStateSerializer extends imc.ImcSerializer<imc.FollowRefState, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FollowRefStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -20922,7 +21113,7 @@ class FormationMonitorSerializer extends imc.ImcSerializer<imc.FormationMonitor,
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.relState.length; i++) {
+      for (var i = 0; i < message.relState.length; i++) {
         var id = message.relState[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -20977,6 +21168,7 @@ class FormationMonitorSerializer extends imc.ImcSerializer<imc.FormationMonitor,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationMonitorBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -21038,7 +21230,7 @@ class FormationMonitorSerializer extends imc.ImcSerializer<imc.FormationMonitor,
     var relStateMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.relState = [];
-    for (int i = 0; i < relStateMMsgsNumber; i++) {
+    for (var i = 0; i < relStateMMsgsNumber; i++) {
       var relStateSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (relStateSId != imc.ImcId.nullId) {
@@ -21192,6 +21384,7 @@ class RelativeStateSerializer extends imc.ImcSerializer<imc.RelativeState, imc.R
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RelativeStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -21354,6 +21547,7 @@ class DislodgeSerializer extends imc.ImcSerializer<imc.Dislodge, imc.DislodgeBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DislodgeBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -21446,7 +21640,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.participants.length; i++) {
+      for (var i = 0; i < message.participants.length; i++) {
         var id = message.participants[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -21543,6 +21737,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -21595,7 +21790,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
     var participantsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.participants = [];
-    for (int i = 0; i < participantsMMsgsNumber; i++) {
+    for (var i = 0; i < participantsMMsgsNumber; i++) {
       var participantsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
@@ -21752,6 +21947,7 @@ class LaunchSerializer extends imc.ImcSerializer<imc.Launch, imc.LaunchBuilder> 
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LaunchBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -21884,6 +22080,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DropBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22013,6 +22210,7 @@ class ScheduledGotoSerializer extends imc.ImcSerializer<imc.ScheduledGoto, imc.S
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ScheduledGotoBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22163,6 +22361,7 @@ class RowsCoverageSerializer extends imc.ImcSerializer<imc.RowsCoverage, imc.Row
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RowsCoverageBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22328,6 +22527,7 @@ class SampleSerializer extends imc.ImcSerializer<imc.Sample, imc.SampleBuilder> 
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SampleBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22442,6 +22642,7 @@ class ImageTrackingSerializer extends imc.ImcSerializer<imc.ImageTracking, imc.I
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ImageTrackingBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22544,6 +22745,7 @@ class TakeoffSerializer extends imc.ImcSerializer<imc.Takeoff, imc.TakeoffBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TakeoffBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22685,6 +22887,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LandBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22789,7 +22992,7 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.areaLimits.length; i++) {
+      for (var i = 0; i < message.areaLimits.length; i++) {
         var id = message.areaLimits[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -22856,6 +23059,7 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AutonomousSectionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -22887,7 +23091,7 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
     var areaLimitsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.areaLimits = [];
-    for (int i = 0; i < areaLimitsMMsgsNumber; i++) {
+    for (var i = 0; i < areaLimitsMMsgsNumber; i++) {
       var areaLimitsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (areaLimitsSId != imc.ImcId.nullId) {
@@ -23020,6 +23224,7 @@ class FollowPointSerializer extends imc.ImcSerializer<imc.FollowPoint, imc.Follo
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FollowPointBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -23152,6 +23357,7 @@ class AlignmentSerializer extends imc.ImcSerializer<imc.Alignment, imc.Alignment
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AlignmentBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -23290,6 +23496,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<imc.StationKeep
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.StationKeepingExtendedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -23443,6 +23650,7 @@ class MagnetometerSerializer extends imc.ImcSerializer<imc.Magnetometer, imc.Mag
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MagnetometerBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -23593,6 +23801,7 @@ class VehicleStateSerializer extends imc.ImcSerializer<imc.VehicleState, imc.Veh
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VehicleStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -23742,6 +23951,7 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VehicleCommandBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -23861,6 +24071,7 @@ class MonitorEntityStateSerializer extends imc.ImcSerializer<imc.MonitorEntitySt
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MonitorEntityStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -23984,6 +24195,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<imc.EntityMonito
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EntityMonitoringStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24143,6 +24355,7 @@ class OperationalLimitsSerializer extends imc.ImcSerializer<imc.OperationalLimit
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.OperationalLimitsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24254,6 +24467,7 @@ class GetOperationalLimitsSerializer extends imc.ImcSerializer<imc.GetOperationa
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GetOperationalLimitsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24332,6 +24546,7 @@ class CalibrationSerializer extends imc.ImcSerializer<imc.Calibration, imc.Calib
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CalibrationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24419,6 +24634,7 @@ class ControlLoopsSerializer extends imc.ImcSerializer<imc.ControlLoops, imc.Con
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ControlLoopsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24506,6 +24722,7 @@ class VehicleMediumSerializer extends imc.ImcSerializer<imc.VehicleMedium, imc.V
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VehicleMediumBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24590,6 +24807,7 @@ class CollisionSerializer extends imc.ImcSerializer<imc.Collision, imc.Collision
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CollisionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24689,6 +24907,7 @@ class FormStateSerializer extends imc.ImcSerializer<imc.FormState, imc.FormState
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24791,6 +25010,7 @@ class AutopilotModeSerializer extends imc.ImcSerializer<imc.AutopilotMode, imc.A
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AutopilotModeBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -24902,6 +25122,7 @@ class FormationStateSerializer extends imc.ImcSerializer<imc.FormationState, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25016,6 +25237,7 @@ class ReportControlSerializer extends imc.ImcSerializer<imc.ReportControl, imc.R
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ReportControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25139,6 +25361,7 @@ class StateReportSerializer extends imc.ImcSerializer<imc.StateReport, imc.State
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.StateReportBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25287,6 +25510,7 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TransmissionRequestBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25426,6 +25650,7 @@ class TransmissionStatusSerializer extends imc.ImcSerializer<imc.TransmissionSta
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TransmissionStatusBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25534,6 +25759,7 @@ class SmsRequestSerializer extends imc.ImcSerializer<imc.SmsRequest, imc.SmsRequ
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SmsRequestBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25645,6 +25871,7 @@ class SmsStatusSerializer extends imc.ImcSerializer<imc.SmsStatus, imc.SmsStatus
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SmsStatusBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25738,6 +25965,7 @@ class VtolStateSerializer extends imc.ImcSerializer<imc.VtolState, imc.VtolState
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VtolStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25819,6 +26047,7 @@ class ArmingStateSerializer extends imc.ImcSerializer<imc.ArmingState, imc.Armin
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ArmingStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25897,6 +26126,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AbortBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -25956,7 +26186,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.variables.length; i++) {
+      for (var i = 0; i < message.variables.length; i++) {
         var id = message.variables[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -25983,7 +26213,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.maneuvers.length; i++) {
+      for (var i = 0; i < message.maneuvers.length; i++) {
         var id = message.maneuvers[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -26004,7 +26234,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.transitions.length; i++) {
+      for (var i = 0; i < message.transitions.length; i++) {
         var id = message.transitions[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -26025,7 +26255,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.startActions.length; i++) {
+      for (var i = 0; i < message.startActions.length; i++) {
         var id = message.startActions[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -26046,7 +26276,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.endActions.length; i++) {
+      for (var i = 0; i < message.endActions.length; i++) {
         var id = message.endActions[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -26101,6 +26331,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanSpecificationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -26135,7 +26366,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     var variablesMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.variables = [];
-    for (int i = 0; i < variablesMMsgsNumber; i++) {
+    for (var i = 0; i < variablesMMsgsNumber; i++) {
       var variablesSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (variablesSId != imc.ImcId.nullId) {
@@ -26161,7 +26392,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     var maneuversMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.maneuvers = [];
-    for (int i = 0; i < maneuversMMsgsNumber; i++) {
+    for (var i = 0; i < maneuversMMsgsNumber; i++) {
       var maneuversSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (maneuversSId != imc.ImcId.nullId) {
@@ -26178,7 +26409,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     var transitionsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.transitions = [];
-    for (int i = 0; i < transitionsMMsgsNumber; i++) {
+    for (var i = 0; i < transitionsMMsgsNumber; i++) {
       var transitionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (transitionsSId != imc.ImcId.nullId) {
@@ -26195,7 +26426,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     var startActionsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.startActions = [];
-    for (int i = 0; i < startActionsMMsgsNumber; i++) {
+    for (var i = 0; i < startActionsMMsgsNumber; i++) {
       var startActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (startActionsSId != imc.ImcId.nullId) {
@@ -26212,7 +26443,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     var endActionsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.endActions = [];
-    for (int i = 0; i < endActionsMMsgsNumber; i++) {
+    for (var i = 0; i < endActionsMMsgsNumber; i++) {
       var endActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (endActionsSId != imc.ImcId.nullId) {
@@ -26283,7 +26514,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.startActions.length; i++) {
+      for (var i = 0; i < message.startActions.length; i++) {
         var id = message.startActions[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -26304,7 +26535,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.endActions.length; i++) {
+      for (var i = 0; i < message.endActions.length; i++) {
         var id = message.endActions[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -26359,6 +26590,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanManeuverBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -26389,7 +26621,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
     var startActionsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.startActions = [];
-    for (int i = 0; i < startActionsMMsgsNumber; i++) {
+    for (var i = 0; i < startActionsMMsgsNumber; i++) {
       var startActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (startActionsSId != imc.ImcId.nullId) {
@@ -26406,7 +26638,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
     var endActionsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.endActions = [];
-    for (int i = 0; i < endActionsMMsgsNumber; i++) {
+    for (var i = 0; i < endActionsMMsgsNumber; i++) {
       var endActionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (endActionsSId != imc.ImcId.nullId) {
@@ -26475,7 +26707,7 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.actions.length; i++) {
+      for (var i = 0; i < message.actions.length; i++) {
         var id = message.actions[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -26530,6 +26762,7 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanTransitionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -26564,7 +26797,7 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
     var actionsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.actions = [];
-    for (int i = 0; i < actionsMMsgsNumber; i++) {
+    for (var i = 0; i < actionsMMsgsNumber; i++) {
       var actionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (actionsSId != imc.ImcId.nullId) {
@@ -26666,6 +26899,7 @@ class EmergencyControlSerializer extends imc.ImcSerializer<imc.EmergencyControl,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EmergencyControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -26770,6 +27004,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<imc.EmergencyCon
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EmergencyControlStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -26895,6 +27130,7 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> 
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanDBBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -27000,7 +27236,7 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState, imc.PlanD
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.plansInfo.length; i++) {
+      for (var i = 0; i < message.plansInfo.length; i++) {
         var id = message.plansInfo[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -27055,6 +27291,7 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState, imc.PlanD
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanDBStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -27091,7 +27328,7 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState, imc.PlanD
     var plansInfoMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.plansInfo = [];
-    for (int i = 0; i < plansInfoMMsgsNumber; i++) {
+    for (var i = 0; i < plansInfoMMsgsNumber; i++) {
       var plansInfoSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (plansInfoSId != imc.ImcId.nullId) {
@@ -27202,6 +27439,7 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanDBInformationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -27350,6 +27588,7 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl, imc.PlanC
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanControlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -27499,6 +27738,7 @@ class PlanControlStateSerializer extends imc.ImcSerializer<imc.PlanControlState,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanControlStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -27628,6 +27868,7 @@ class PlanVariableSerializer extends imc.ImcSerializer<imc.PlanVariable, imc.Pla
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanVariableBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -27745,6 +27986,7 @@ class PlanGenerationSerializer extends imc.ImcSerializer<imc.PlanGeneration, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanGenerationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -27907,6 +28149,7 @@ class LeaderStateSerializer extends imc.ImcSerializer<imc.LeaderState, imc.Leade
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.LeaderStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28084,6 +28327,7 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PlanStatisticsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28240,6 +28484,7 @@ class ReportedStateSerializer extends imc.ImcSerializer<imc.ReportedState, imc.R
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ReportedStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28378,6 +28623,7 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RemoteSensorInfoBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28464,7 +28710,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.features.length; i++) {
+      for (var i = 0; i < message.features.length; i++) {
         var id = message.features[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -28519,6 +28765,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MapBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28535,7 +28782,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
     var featuresMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.features = [];
-    for (int i = 0; i < featuresMMsgsNumber; i++) {
+    for (var i = 0; i < featuresMMsgsNumber; i++) {
       var featuresSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (featuresSId != imc.ImcId.nullId) {
@@ -28604,7 +28851,7 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature, imc.MapFeat
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.feature.length; i++) {
+      for (var i = 0; i < message.feature.length; i++) {
         var id = message.feature[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -28659,6 +28906,7 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature, imc.MapFeat
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MapFeatureBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28687,7 +28935,7 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature, imc.MapFeat
     var featureMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.feature = [];
-    for (int i = 0; i < featureMMsgsNumber; i++) {
+    for (var i = 0; i < featureMMsgsNumber; i++) {
       var featureSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (featureSId != imc.ImcId.nullId) {
@@ -28781,6 +29029,7 @@ class MapPointSerializer extends imc.ImcSerializer<imc.MapPoint, imc.MapPointBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MapPointBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28888,6 +29137,7 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CcuEventBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -28961,7 +29211,7 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks, imc.Veh
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.links.length; i++) {
+      for (var i = 0; i < message.links.length; i++) {
         var id = message.links[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -29016,6 +29266,7 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks, imc.Veh
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.VehicleLinksBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29032,7 +29283,7 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks, imc.Veh
     var linksMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.links = [];
-    for (int i = 0; i < linksMMsgsNumber; i++) {
+    for (var i = 0; i < linksMMsgsNumber; i++) {
       var linksSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (linksSId != imc.ImcId.nullId) {
@@ -29135,6 +29386,7 @@ class TrexObservationSerializer extends imc.ImcSerializer<imc.TrexObservation, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrexObservationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29252,6 +29504,7 @@ class TrexCommandSerializer extends imc.ImcSerializer<imc.TrexCommand, imc.TrexC
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrexCommandBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29371,6 +29624,7 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation, imc.T
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrexOperationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29493,6 +29747,7 @@ class TrexAttributeSerializer extends imc.ImcSerializer<imc.TrexAttribute, imc.T
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrexAttributeBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29576,7 +29831,7 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken, imc.TrexToken
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.attributes.length; i++) {
+      for (var i = 0; i < message.attributes.length; i++) {
         var id = message.attributes[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -29631,6 +29886,7 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken, imc.TrexToken
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrexTokenBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29656,7 +29912,7 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken, imc.TrexToken
     var attributesMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.attributes = [];
-    for (int i = 0; i < attributesMMsgsNumber; i++) {
+    for (var i = 0; i < attributesMMsgsNumber; i++) {
       var attributesSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (attributesSId != imc.ImcId.nullId) {
@@ -29713,7 +29969,7 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBui
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.tokens.length; i++) {
+      for (var i = 0; i < message.tokens.length; i++) {
         var id = message.tokens[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -29768,6 +30024,7 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TrexPlanBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29784,7 +30041,7 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBui
     var tokensMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.tokens = [];
-    for (int i = 0; i < tokensMMsgsNumber; i++) {
+    for (var i = 0; i < tokensMMsgsNumber; i++) {
       var tokensSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (tokensSId != imc.ImcId.nullId) {
@@ -29881,6 +30138,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EventBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -29982,6 +30240,7 @@ class CompressedImageSerializer extends imc.ImcSerializer<imc.CompressedImage, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CompressedImageBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30080,6 +30339,7 @@ class ImageTxSettingsSerializer extends imc.ImcSerializer<imc.ImageTxSettings, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ImageTxSettingsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30182,6 +30442,7 @@ class RemoteStateSerializer extends imc.ImcSerializer<imc.RemoteState, imc.Remot
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.RemoteStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30296,6 +30557,7 @@ class TargetSerializer extends imc.ImcSerializer<imc.Target, imc.TargetBuilder> 
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TargetBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30410,6 +30672,7 @@ class EntityParameterSerializer extends imc.ImcSerializer<imc.EntityParameter, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EntityParameterBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30475,7 +30738,7 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters,
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.params.length; i++) {
+      for (var i = 0; i < message.params.length; i++) {
         var id = message.params[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -30530,6 +30793,7 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.EntityParametersBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30546,7 +30810,7 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters,
     var paramsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.params = [];
-    for (int i = 0; i < paramsMMsgsNumber; i++) {
+    for (var i = 0; i < paramsMMsgsNumber; i++) {
       var paramsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (paramsSId != imc.ImcId.nullId) {
@@ -30649,6 +30913,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<imc.QueryEntityP
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.QueryEntityParametersBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30723,7 +30988,7 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.params.length; i++) {
+      for (var i = 0; i < message.params.length; i++) {
         var id = message.params[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -30778,6 +31043,7 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SetEntityParametersBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30794,7 +31060,7 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
     var paramsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.params = [];
-    for (int i = 0; i < paramsMMsgsNumber; i++) {
+    for (var i = 0; i < paramsMMsgsNumber; i++) {
       var paramsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (paramsSId != imc.ImcId.nullId) {
@@ -30885,6 +31151,7 @@ class SaveEntityParametersSerializer extends imc.ImcSerializer<imc.SaveEntityPar
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SaveEntityParametersBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -30972,6 +31239,7 @@ class CreateSessionSerializer extends imc.ImcSerializer<imc.CreateSession, imc.C
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CreateSessionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31053,6 +31321,7 @@ class CloseSessionSerializer extends imc.ImcSerializer<imc.CloseSession, imc.Clo
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.CloseSessionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31140,6 +31409,7 @@ class SessionSubscriptionSerializer extends imc.ImcSerializer<imc.SessionSubscri
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SessionSubscriptionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31230,6 +31500,7 @@ class SessionKeepAliveSerializer extends imc.ImcSerializer<imc.SessionKeepAlive,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SessionKeepAliveBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31314,6 +31585,7 @@ class SessionStatusSerializer extends imc.ImcSerializer<imc.SessionStatus, imc.S
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SessionStatusBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31401,6 +31673,7 @@ class PushEntityParametersSerializer extends imc.ImcSerializer<imc.PushEntityPar
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PushEntityParametersBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31491,6 +31764,7 @@ class PopEntityParametersSerializer extends imc.ImcSerializer<imc.PopEntityParam
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.PopEntityParametersBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31584,6 +31858,7 @@ class IoEventSerializer extends imc.ImcSerializer<imc.IoEvent, imc.IoEventBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.IoEventBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31688,6 +31963,7 @@ class UamTxFrameSerializer extends imc.ImcSerializer<imc.UamTxFrame, imc.UamTxFr
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UamTxFrameBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31806,6 +32082,7 @@ class UamRxFrameSerializer extends imc.ImcSerializer<imc.UamRxFrame, imc.UamRxFr
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UamRxFrameBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -31922,6 +32199,7 @@ class UamTxStatusSerializer extends imc.ImcSerializer<imc.UamTxStatus, imc.UamTx
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UamTxStatusBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32024,6 +32302,7 @@ class UamRxRangeSerializer extends imc.ImcSerializer<imc.UamRxRange, imc.UamRxRa
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UamRxRangeBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32132,6 +32411,7 @@ class FormCtrlParamSerializer extends imc.ImcSerializer<imc.FormCtrlParam, imc.F
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormCtrlParamBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32234,6 +32514,7 @@ class FormationEvalSerializer extends imc.ImcSerializer<imc.FormationEval, imc.F
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationEvalBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32351,6 +32632,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<imc.FormationCo
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationControlParamsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32494,6 +32776,7 @@ class FormationEvaluationSerializer extends imc.ImcSerializer<imc.FormationEvalu
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.FormationEvaluationBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32616,6 +32899,7 @@ class SoiWaypointSerializer extends imc.ImcSerializer<imc.SoiWaypoint, imc.SoiWa
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SoiWaypointBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32672,7 +32956,7 @@ class SoiPlanSerializer extends imc.ImcSerializer<imc.SoiPlan, imc.SoiPlanBuilde
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.waypoints.length; i++) {
+      for (var i = 0; i < message.waypoints.length; i++) {
         var id = message.waypoints[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -32727,6 +33011,7 @@ class SoiPlanSerializer extends imc.ImcSerializer<imc.SoiPlan, imc.SoiPlanBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SoiPlanBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32737,7 +33022,7 @@ class SoiPlanSerializer extends imc.ImcSerializer<imc.SoiPlan, imc.SoiPlanBuilde
     var waypointsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.waypoints = [];
-    for (int i = 0; i < waypointsMMsgsNumber; i++) {
+    for (var i = 0; i < waypointsMMsgsNumber; i++) {
       var waypointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (waypointsSId != imc.ImcId.nullId) {
@@ -32854,6 +33139,7 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand, imc.SoiComm
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SoiCommandBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -32979,6 +33265,7 @@ class SoiStateSerializer extends imc.ImcSerializer<imc.SoiState, imc.SoiStateBui
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SoiStateBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33080,6 +33367,7 @@ class MessagePartSerializer extends imc.ImcSerializer<imc.MessagePart, imc.Messa
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.MessagePartBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33183,6 +33471,7 @@ class NeptusBlobSerializer extends imc.ImcSerializer<imc.NeptusBlob, imc.NeptusB
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.NeptusBlobBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33275,6 +33564,7 @@ class AbortedSerializer extends imc.ImcSerializer<imc.Aborted, imc.AbortedBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.AbortedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33359,6 +33649,7 @@ class UsblAnglesSerializer extends imc.ImcSerializer<imc.UsblAngles, imc.UsblAng
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblAnglesBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33455,6 +33746,7 @@ class UsblPositionSerializer extends imc.ImcSerializer<imc.UsblPosition, imc.Usb
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblPositionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33557,6 +33849,7 @@ class UsblFixSerializer extends imc.ImcSerializer<imc.UsblFix, imc.UsblFixBuilde
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblFixBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33658,6 +33951,7 @@ class ParametersXmlSerializer extends imc.ImcSerializer<imc.ParametersXml, imc.P
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ParametersXmlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33750,6 +34044,7 @@ class GetParametersXmlSerializer extends imc.ImcSerializer<imc.GetParametersXml,
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GetParametersXmlBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33834,6 +34129,7 @@ class SetImageCoordsSerializer extends imc.ImcSerializer<imc.SetImageCoords, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SetImageCoordsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -33927,6 +34223,7 @@ class GetImageCoordsSerializer extends imc.ImcSerializer<imc.GetImageCoords, imc
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GetImageCoordsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34029,6 +34326,7 @@ class GetWorldCoordinatesSerializer extends imc.ImcSerializer<imc.GetWorldCoordi
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.GetWorldCoordinatesBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34152,6 +34450,7 @@ class UsblAnglesExtendedSerializer extends imc.ImcSerializer<imc.UsblAnglesExten
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblAnglesExtendedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34296,6 +34595,7 @@ class UsblPositionExtendedSerializer extends imc.ImcSerializer<imc.UsblPositionE
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblPositionExtendedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34431,6 +34731,7 @@ class UsblFixExtendedSerializer extends imc.ImcSerializer<imc.UsblFixExtended, i
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblFixExtendedBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34548,6 +34849,7 @@ class UsblModemSerializer extends imc.ImcSerializer<imc.UsblModem, imc.UsblModem
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblModemBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34613,7 +34915,7 @@ class UsblConfigSerializer extends imc.ImcSerializer<imc.UsblConfig, imc.UsblCon
       var msgsCounter = 0;
       var bufCounterPos = byteOffset;
       byteOffset += 2;
-      for (int i = 0; i < message.modems.length; i++) {
+      for (var i = 0; i < message.modems.length; i++) {
         var id = message.modems[i]?.msgId;
         var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();
         if (id != null && pMsgSerializer != null) {
@@ -34668,6 +34970,7 @@ class UsblConfigSerializer extends imc.ImcSerializer<imc.UsblConfig, imc.UsblCon
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.UsblConfigBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34678,7 +34981,7 @@ class UsblConfigSerializer extends imc.ImcSerializer<imc.UsblConfig, imc.UsblCon
     var modemsMMsgsNumber = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     builder.modems = [];
-    for (int i = 0; i < modemsMMsgsNumber; i++) {
+    for (var i = 0; i < modemsMMsgsNumber; i++) {
       var modemsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (modemsSId != imc.ImcId.nullId) {
@@ -34769,6 +35072,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<imc.DissolvedOr
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DissolvedOrganicMatterBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34853,6 +35157,7 @@ class OpticalBackscatterSerializer extends imc.ImcSerializer<imc.OpticalBackscat
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.OpticalBackscatterBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -34979,6 +35284,7 @@ class TachographSerializer extends imc.ImcSerializer<imc.Tachograph, imc.Tachogr
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TachographBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -35111,6 +35417,7 @@ class ApmStatusSerializer extends imc.ImcSerializer<imc.ApmStatus, imc.ApmStatus
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.ApmStatusBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -35207,6 +35514,7 @@ class SadcReadingsSerializer extends imc.ImcSerializer<imc.SadcReadings, imc.Sad
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.SadcReadingsBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -35339,6 +35647,7 @@ class DmsDetectionSerializer extends imc.ImcSerializer<imc.DmsDetection, imc.Dms
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.DmsDetectionBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 
@@ -35465,6 +35774,7 @@ class TotalMagIntensitySerializer extends imc.ImcSerializer<imc.TotalMagIntensit
     return builder.build();
   }
 
+  @override
   int deserializePayload(imc.TotalMagIntensityBuilder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 

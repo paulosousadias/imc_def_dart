@@ -17,10 +17,10 @@ class ImcField {
   final String units;
 
   const ImcField(this.name, this.abbrev, this.type,
-      {this.description = "",
+      {this.description = '',
       this.min = double.nan,
       this.max = double.nan,
-      this.units = ""});
+      this.units = ''});
 }
 
 /// This is the base class for IMC messages
@@ -52,7 +52,7 @@ abstract class ImcBuilderHeaderPart {
   int get dstEnt;
   set dstEnt(int dstEnt);
 
-  copyFromHeader(ImcBuilderHeaderPart other) {
+  void copyFromHeader(ImcBuilderHeaderPart other) {
     if (other == null) return;
 
     timestamp = other.timestamp;
@@ -69,7 +69,7 @@ abstract class BuilderWithInstanciator<V extends Built<V, B>,
   /// Instanciates a new builder
   B newInstance([ImcBuilderHeaderPart headerFrom]);
 
-  copyFromHeader(ImcBuilderHeaderPart other);
+  void copyFromHeader(ImcBuilderHeaderPart other);
 }
 
 // /// Implement this for a Built Value.

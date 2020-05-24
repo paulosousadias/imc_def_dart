@@ -22,21 +22,21 @@ class ImcEntityId {
 
 /// This is the base for Enums types
 abstract class EnumType {
-  static const type = "Enumeration";
+  static const type = 'Enumeration';
 
   final int value;
 
   const EnumType(this.value);
 
   @override
-  String toString() => "E$value";
+  String toString() => 'E$value';
 
   /// Output this as a pretty string. Override for propper text.
   String toPrettyString() => toString();
 
   @override
   bool operator ==(Object other) =>
-      this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
+      runtimeType == other.runtimeType && hashCode == other.hashCode;
 
   @override
   int get hashCode => value;
@@ -44,32 +44,32 @@ abstract class EnumType {
 
 /// This is the base for Bitfield types
 abstract class BitfieldType {
-  static const type = "Bitfield";
+  static const type = 'Bitfield';
 
   final int value;
 
   const BitfieldType(this.value);
 
   @override
-  String toString() => "B0x${value.toRadixString(16)} ($value)";
+  String toString() => 'B0x${value.toRadixString(16)} ($value)';
 
   /// Output this as a pretty string. Override for propper text.
   String toPrettyString() => toString();
 
   @override
   bool operator ==(Object other) =>
-      this.runtimeType == other.runtimeType && this.hashCode == other.hashCode;
+      runtimeType == other.runtimeType && hashCode == other.hashCode;
 
   /// Tests that all 1 bts from all the elements of the elements in [bits].
   bool hasBits<B extends BitfieldType>(List<B> bits) {
     if (bits == null) return false;
     var testVal = 0;
     for (var item in bits) {
-      if (this.runtimeType == item.runtimeType) {
+      if (runtimeType == item.runtimeType) {
         testVal |= item.value;
       }
     }
-    return this.value & testVal == testVal;
+    return value & testVal == testVal;
   }
 
   @override
@@ -78,19 +78,19 @@ abstract class BitfieldType {
 
 /// This contains internal IMC types for fields
 class ImcType extends EnumType {
-  static const typeUInt8 = ImcType._(0, "uint8_t", size: 1);
-  static const typeUInt16 = ImcType._(1, "uint16_t", size: 2);
-  static const typeUint32 = ImcType._(2, "uint32_t", size: 4);
-  static const typeInt8 = ImcType._(3, "int8_t", size: 1);
-  static const typeInt16 = ImcType._(4, "int16_t", size: 2);
-  static const typeInt32 = ImcType._(5, "int32_t", size: 4);
-  static const typeInt64 = ImcType._(6, "int64_t", size: 8);
-  static const typeFp32 = ImcType._(7, "fp32_t", size: 4);
-  static const typeFp64 = ImcType._(8, "fp64_t", size: 8);
-  static const typeRawdata = ImcType._(9, "rawdata", size: -1);
-  static const typePlaintext = ImcType._(10, "plaintext", size: -1);
-  static const typeMessage = ImcType._(11, "message", size: -1);
-  static const typeMessageList = ImcType._(12, "message-list", size: -1);
+  static const typeUInt8 = ImcType._(0, 'uint8_t', size: 1);
+  static const typeUInt16 = ImcType._(1, 'uint16_t', size: 2);
+  static const typeUint32 = ImcType._(2, 'uint32_t', size: 4);
+  static const typeInt8 = ImcType._(3, 'int8_t', size: 1);
+  static const typeInt16 = ImcType._(4, 'int16_t', size: 2);
+  static const typeInt32 = ImcType._(5, 'int32_t', size: 4);
+  static const typeInt64 = ImcType._(6, 'int64_t', size: 8);
+  static const typeFp32 = ImcType._(7, 'fp32_t', size: 4);
+  static const typeFp64 = ImcType._(8, 'fp64_t', size: 8);
+  static const typeRawdata = ImcType._(9, 'rawdata', size: -1);
+  static const typePlaintext = ImcType._(10, 'plaintext', size: -1);
+  static const typeMessage = ImcType._(11, 'message', size: -1);
+  static const typeMessageList = ImcType._(12, 'message-list', size: -1);
 
   static get values => [
         typeUInt8,
@@ -116,22 +116,23 @@ class ImcType extends EnumType {
   String getTypeName() => name;
   int getSizeInBytes() => size;
   bool isSizeKnown() => size != -1;
+  @override
   String toString() => name;
 
   static const types = {
-    "uint8_t": typeUInt8,
-    "uint16_t": typeUInt16,
-    "uint32_t": typeUint32,
-    "int8_t": typeInt8,
-    "int16_t": typeInt16,
-    "int32_t": typeInt32,
-    "int64_t": typeInt64,
-    "fp32_t": typeFp32,
-    "fp64_t": typeFp64,
-    "rawdata": typeRawdata,
-    "plaintext": typePlaintext,
-    "message": typeMessage,
-    "message-list": typeMessageList,
+    'uint8_t': typeUInt8,
+    'uint16_t': typeUInt16,
+    'uint32_t': typeUint32,
+    'int8_t': typeInt8,
+    'int16_t': typeInt16,
+    'int32_t': typeInt32,
+    'int64_t': typeInt64,
+    'fp32_t': typeFp32,
+    'fp64_t': typeFp64,
+    'rawdata': typeRawdata,
+    'plaintext': typePlaintext,
+    'message': typeMessage,
+    'message-list': typeMessageList,
   };
 
   static ImcType getType(String typeName) => types[typeName];
