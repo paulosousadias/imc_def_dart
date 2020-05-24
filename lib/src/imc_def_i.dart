@@ -2468,7 +2468,7 @@ class _$MsgList extends MsgList {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        msgs == other.msgs;
+        DeepCollectionEquality().equals(msgs, other.msgs);
   }
 
   @override
@@ -3175,7 +3175,7 @@ class _$UASimulation extends UASimulation {
         dstEnt == other.dstEnt &&
         type == other.type &&
         speed == other.speed &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -4273,7 +4273,7 @@ class _$LogBookControl extends LogBookControl {
         dstEnt == other.dstEnt &&
         command == other.command &&
         htime == other.htime &&
-        msg == other.msg;
+        DeepCollectionEquality().equals(msg, other.msg);
   }
 
   @override
@@ -5226,7 +5226,7 @@ class _$HistoricSonarData extends HistoricSonarData {
         bearing == other.bearing &&
         pxl == other.pxl &&
         encoding == other.encoding &&
-        sonarData == other.sonarData;
+        ListEquality().equals(sonarData, other.sonarData);
   }
 
   @override
@@ -5622,7 +5622,7 @@ class _$VerticalProfile extends VerticalProfile {
         dstEnt == other.dstEnt &&
         parameter == other.parameter &&
         numSamples == other.numSamples &&
-        samples == other.samples &&
+        DeepCollectionEquality().equals(samples, other.samples) &&
         lat == other.lat &&
         lon == other.lon;
   }
@@ -7225,7 +7225,7 @@ class _$SmsTx extends SmsTx {
         seq == other.seq &&
         destination == other.destination &&
         timeout == other.timeout &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -7414,7 +7414,7 @@ class _$SmsRx extends SmsRx {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         source == other.source &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -7957,7 +7957,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
         htime == other.htime &&
         lat == other.lat &&
         lon == other.lon &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -8162,7 +8162,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
         reqId == other.reqId &&
         ttl == other.ttl &&
         destination == other.destination &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -9248,7 +9248,7 @@ class _$HistoricData extends HistoricData {
         baseLat == other.baseLat &&
         baseLon == other.baseLon &&
         baseTime == other.baseTime &&
-        data == other.data;
+        DeepCollectionEquality().equals(data, other.data);
   }
 
   @override
@@ -9445,7 +9445,7 @@ class _$CompressedHistory extends CompressedHistory {
         baseLat == other.baseLat &&
         baseLon == other.baseLon &&
         baseTime == other.baseTime &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -10486,7 +10486,7 @@ class _$TelemetryMsg extends TelemetryMsg {
         source == other.source &&
         acknowledge == other.acknowledge &&
         status == other.status &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -11121,7 +11121,7 @@ class _$LblConfig extends LblConfig {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        beacons == other.beacons;
+        DeepCollectionEquality().equals(beacons, other.beacons);
   }
 
   @override
@@ -14577,8 +14577,8 @@ class _$Distance extends Distance {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         validity == other.validity &&
-        location == other.location &&
-        beamConfig == other.beamConfig &&
+        DeepCollectionEquality().equals(location, other.location) &&
+        DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
         value == other.value;
   }
 
@@ -16559,7 +16559,7 @@ class _$DevDataBinary extends DevDataBinary {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        value == other.value;
+        ListEquality().equals(value, other.value);
   }
 
   @override
@@ -16908,8 +16908,8 @@ class _$SonarData extends SonarData {
         maxRange == other.maxRange &&
         bitsPerPoint == other.bitsPerPoint &&
         scaleFactor == other.scaleFactor &&
-        beamConfig == other.beamConfig &&
-        data == other.data;
+        DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -32045,7 +32045,7 @@ class _$FollowPath extends FollowPath {
         zUnits == other.zUnits &&
         speed == other.speed &&
         speedUnits == other.speedUnits &&
-        points == other.points &&
+        DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
   }
 
@@ -33455,7 +33455,7 @@ class _$FollowTrajectory extends FollowTrajectory {
         zUnits == other.zUnits &&
         speed == other.speed &&
         speedUnits == other.speedUnits &&
-        points == other.points &&
+        DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
   }
 
@@ -34096,8 +34096,8 @@ class _$VehicleFormation extends VehicleFormation {
         zUnits == other.zUnits &&
         speed == other.speed &&
         speedUnits == other.speedUnits &&
-        points == other.points &&
-        participants == other.participants &&
+        DeepCollectionEquality().equals(points, other.points) &&
+        DeepCollectionEquality().equals(participants, other.participants) &&
         startTime == other.startTime &&
         custom == other.custom;
   }
@@ -35541,7 +35541,7 @@ class _$CoverArea extends CoverArea {
         zUnits == other.zUnits &&
         speed == other.speed &&
         speedUnits == other.speedUnits &&
-        polygon == other.polygon &&
+        DeepCollectionEquality().equals(polygon, other.polygon) &&
         custom == other.custom;
   }
 
@@ -36248,7 +36248,7 @@ class _$FormationParameters extends FormationParameters {
         dstEnt == other.dstEnt &&
         formationName == other.formationName &&
         referenceFrame == other.referenceFrame &&
-        participants == other.participants &&
+        DeepCollectionEquality().equals(participants, other.participants) &&
         custom == other.custom;
   }
 
@@ -37462,7 +37462,7 @@ class _$FormationMonitor extends FormationMonitor {
         ssX == other.ssX &&
         ssY == other.ssY &&
         ssZ == other.ssZ &&
-        relState == other.relState;
+        DeepCollectionEquality().equals(relState, other.relState);
   }
 
   @override
@@ -38444,7 +38444,7 @@ class _$Formation extends Formation {
         planId == other.planId &&
         description == other.description &&
         referenceFrame == other.referenceFrame &&
-        participants == other.participants &&
+        DeepCollectionEquality().equals(participants, other.participants) &&
         leaderBankLim == other.leaderBankLim &&
         leaderSpeedMin == other.leaderSpeedMin &&
         leaderSpeedMax == other.leaderSpeedMax &&
@@ -40848,7 +40848,7 @@ class _$AutonomousSection extends AutonomousSection {
         maxDepth == other.maxDepth &&
         minAlt == other.minAlt &&
         timeLimit == other.timeLimit &&
-        areaLimits == other.areaLimits &&
+        DeepCollectionEquality().equals(areaLimits, other.areaLimits) &&
         controller == other.controller &&
         custom == other.custom;
   }
@@ -45294,7 +45294,7 @@ class _$TransmissionRequest extends TransmissionRequest {
         dataMode == other.dataMode &&
         msgData == other.msgData &&
         txtData == other.txtData &&
-        rawData == other.rawData;
+        ListEquality().equals(rawData, other.rawData);
   }
 
   @override
@@ -46576,12 +46576,12 @@ class _$PlanSpecification extends PlanSpecification {
         planId == other.planId &&
         description == other.description &&
         vnamespace == other.vnamespace &&
-        variables == other.variables &&
+        DeepCollectionEquality().equals(variables, other.variables) &&
         startManId == other.startManId &&
-        maneuvers == other.maneuvers &&
-        transitions == other.transitions &&
-        startActions == other.startActions &&
-        endActions == other.endActions;
+        DeepCollectionEquality().equals(maneuvers, other.maneuvers) &&
+        DeepCollectionEquality().equals(transitions, other.transitions) &&
+        DeepCollectionEquality().equals(startActions, other.startActions) &&
+        DeepCollectionEquality().equals(endActions, other.endActions);
   }
 
   @override
@@ -46817,8 +46817,8 @@ class _$PlanManeuver extends PlanManeuver {
         dstEnt == other.dstEnt &&
         maneuverId == other.maneuverId &&
         data == other.data &&
-        startActions == other.startActions &&
-        endActions == other.endActions;
+        DeepCollectionEquality().equals(startActions, other.startActions) &&
+        DeepCollectionEquality().equals(endActions, other.endActions);
   }
 
   @override
@@ -47015,7 +47015,7 @@ class _$PlanTransition extends PlanTransition {
         sourceMan == other.sourceMan &&
         destMan == other.destMan &&
         conditions == other.conditions &&
-        actions == other.actions;
+        DeepCollectionEquality().equals(actions, other.actions);
   }
 
   @override
@@ -47802,8 +47802,8 @@ class _$PlanDBState extends PlanDBState {
         changeTime == other.changeTime &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
-        md5 == other.md5 &&
-        plansInfo == other.plansInfo;
+        ListEquality().equals(md5, other.md5) &&
+        DeepCollectionEquality().equals(plansInfo, other.plansInfo);
   }
 
   @override
@@ -48032,7 +48032,7 @@ class _$PlanDBInformation extends PlanDBInformation {
         changeTime == other.changeTime &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
-        md5 == other.md5;
+        ListEquality().equals(md5, other.md5);
   }
 
   @override
@@ -50221,7 +50221,7 @@ class _$Map extends Map {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        features == other.features;
+        DeepCollectionEquality().equals(features, other.features);
   }
 
   @override
@@ -50410,7 +50410,7 @@ class _$MapFeature extends MapFeature {
         rgbRed == other.rgbRed &&
         rgbGreen == other.rgbGreen &&
         rgbBlue == other.rgbBlue &&
-        feature == other.feature;
+        DeepCollectionEquality().equals(feature, other.feature);
   }
 
   @override
@@ -50985,7 +50985,7 @@ class _$VehicleLinks extends VehicleLinks {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         localname == other.localname &&
-        links == other.links;
+        DeepCollectionEquality().equals(links, other.links);
   }
 
   @override
@@ -51914,7 +51914,7 @@ class _$TrexToken extends TrexToken {
         dstEnt == other.dstEnt &&
         timeline == other.timeline &&
         predicate == other.predicate &&
-        attributes == other.attributes;
+        DeepCollectionEquality().equals(attributes, other.attributes);
   }
 
   @override
@@ -52095,7 +52095,7 @@ class _$TrexPlan extends TrexPlan {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         reactor == other.reactor &&
-        tokens == other.tokens;
+        DeepCollectionEquality().equals(tokens, other.tokens);
   }
 
   @override
@@ -52441,7 +52441,7 @@ class _$CompressedImage extends CompressedImage {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         frameid == other.frameid &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -53426,7 +53426,7 @@ class _$EntityParameters extends EntityParameters {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         name == other.name &&
-        params == other.params;
+        DeepCollectionEquality().equals(params, other.params);
   }
 
   @override
@@ -53784,7 +53784,7 @@ class _$SetEntityParameters extends SetEntityParameters {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         name == other.name &&
-        params == other.params;
+        DeepCollectionEquality().equals(params, other.params);
   }
 
   @override
@@ -55450,7 +55450,7 @@ class _$UamTxFrame extends UamTxFrame {
         seq == other.seq &&
         sysDst == other.sysDst &&
         flags == other.flags &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -55647,7 +55647,7 @@ class _$UamRxFrame extends UamRxFrame {
         sysSrc == other.sysSrc &&
         sysDst == other.sysDst &&
         flags == other.flags &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -57335,7 +57335,7 @@ class _$SoiPlan extends SoiPlan {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         planId == other.planId &&
-        waypoints == other.waypoints;
+        DeepCollectionEquality().equals(waypoints, other.waypoints);
   }
 
   @override
@@ -57922,7 +57922,7 @@ class _$MessagePart extends MessagePart {
         uid == other.uid &&
         fragNumber == other.fragNumber &&
         numFrags == other.numFrags &&
-        data == other.data;
+        ListEquality().equals(data, other.data);
   }
 
   @override
@@ -58111,7 +58111,7 @@ class _$NeptusBlob extends NeptusBlob {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         contentType == other.contentType &&
-        content == other.content;
+        ListEquality().equals(content, other.content);
   }
 
   @override
@@ -59024,7 +59024,7 @@ class _$ParametersXml extends ParametersXml {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         locale == other.locale &&
-        config == other.config;
+        ListEquality().equals(config, other.config);
   }
 
   @override
@@ -60905,7 +60905,7 @@ class _$UsblConfig extends UsblConfig {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        modems == other.modems;
+        DeepCollectionEquality().equals(modems, other.modems);
   }
 
   @override

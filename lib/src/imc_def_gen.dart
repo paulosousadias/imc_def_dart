@@ -6,6 +6,7 @@
 
 import 'dart:math' as math;
 import 'package:built_value/built_value.dart';
+import 'package:collection/collection.dart';
 import 'package:imc_def/imc_def_base.dart';
 
 part 'imc_def_e.dart';

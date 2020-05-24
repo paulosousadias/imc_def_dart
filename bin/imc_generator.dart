@@ -22,6 +22,7 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 const _header_gen = '''$_header
 import 'dart:math' as math;
 import 'package:built_value/built_value.dart';
+import 'package:collection/collection.dart';
 import 'package:imc_def/imc_def_base.dart';
 
 part 'imc_def_e.dart';
@@ -299,8 +300,35 @@ void _writeMessageImmutable(
   // Writting rest elements to oerator ==
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
-    var fStr =
-        ''' &&\n        ${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}''';
+    var type = f.getAttribute('type');
+    var fStr = '';
+    switch (type) {
+      case 'message-list': // List<M extends IMCMessage>
+        // Then this is a List
+        //fStr = ''' &&\n        isMessageListsEqual(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        fStr = ''' &&\n        DeepCollectionEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        break;
+      case 'rawdata': // List<int>
+        //fStr = ''' &&\n        isRawdataEqual(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        fStr = ''' &&\n        ListEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        break;
+      case 'fp32_t':
+      case 'fp64_t':
+        
+      case 'uint8_t':
+      case 'uint16_t':
+      case 'uint32_t':
+      case 'uint64_t':
+      case 'int8_t':
+      case 'int16_t':
+      case 'int32_t':
+      case 'int64_t':
+      case 'plaintext':
+      case 'message':
+      default:
+        fStr = ''' &&\n        ${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}''';
+        break;
+    }
     sink.write('$fStr');
 
     hashElements.add('${_convertToFieldName(abbrev)}?.hashCode');
