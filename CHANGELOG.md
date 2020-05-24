@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.0] - 24 Mai 2020
+
+* Added dependencies: collection to ^1.14.12.
+* Fix comparing message-list and rawdata. Also comparing doubles with
+  delta error.
+* Cleaning with the help of pedantic package (but not added permanently
+  as dependency).
+
 ## [0.7.2] - 10 Mai 2020
 
 * Updated dependencies: built_value: ^7.0.1, xml: ^3.6.1, crypto: ^2.1.4,
