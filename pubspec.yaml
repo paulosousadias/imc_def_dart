@@ -16,7 +16,7 @@ dependencies:
   
   built_value: ^7.1.0
 
-  xml: ^3.6.1 # for generator
+  xml: ^3.7.0 # for generator
   crypto: ^2.1.5 # for generator
   yaml: ^2.2.1 # for generator
 
