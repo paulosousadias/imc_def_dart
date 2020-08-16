@@ -8,6 +8,7 @@ repository: https://github.com/paulosousadias/imc_def_dart
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
+#  flutter: ">=1.12.0 <2.0.0"
 
 dependencies:
   flutter:
@@ -16,10 +17,10 @@ dependencies:
   built_value: ^7.1.0
 
   xml: ^3.6.1 # for generator
-  crypto: ^2.1.4 # for generator
+  crypto: ^2.1.5 # for generator
   yaml: ^2.2.1 # for generator
 
-  collection: ^1.14.12
+  collection: ^1.14.13
 
 dev_dependencies:
   flutter_test:
