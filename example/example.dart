@@ -32,7 +32,8 @@ void main() async {
         if (msgId == imc.ImcId.nullId) return;
 
         var serializer = imc
-            .messagesSerializers[imc.idsToMessages[msgId] ?? imc.ImcId.nullId]?.call();
+            .messagesSerializers[imc.idsToMessages[msgId] ?? imc.ImcId.nullId]
+            ?.call();
         print("Msg Serializer: $serializer");
         if (serializer == null) return;
 
@@ -48,13 +49,12 @@ void main() async {
       var msg = (hbMsgB..timestamp = DateTime.now()).build();
       //stdout.write("Sending ${msg.abbrev}  \n");
       var dataB = imc.messagesIdsSerializers[msg.msgId]?.call()?.serialize(msg);
-      var bytes = dataB?.buffer?.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);
+      var bytes =
+          dataB?.buffer?.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);
       if (bytes != null) {
-        var bs = socket.send(
-            bytes,
-            InternetAddress("0.0.0.0"),
-            6002);
-        print("Bytes sent $bs | ${dataB.offsetInBytes}, ${dataB.lengthInBytes}");
+        var bs = socket.send(bytes, InternetAddress("0.0.0.0"), 6002);
+        print(
+            "Bytes sent $bs | ${dataB.offsetInBytes}, ${dataB.lengthInBytes}");
       }
     });
   });
