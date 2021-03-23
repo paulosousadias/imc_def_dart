@@ -2595,7 +2595,7 @@ class MsgListBuilder extends Object with ImcBuilderHeaderPart implements Builder
             srcEnt: srcEnt ?? ImcEntityId.nullId,
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
-            msgs: msgs ?? List<ImcMessage>(0));
+            msgs: msgs ?? <ImcMessage>[]);
     replace(_$result);
     return _$result;
   }
@@ -3336,7 +3336,7 @@ class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements Bu
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             type: type ?? UASimulationEnumType(0),
             speed: speed ?? 0,
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -4438,7 +4438,7 @@ class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements 
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             command: command ?? LogBookControlEnumCommand(0),
             htime: htime ?? 0,
-            msg: msg ?? List<LogBookEntry>(0));
+            msg: msg ?? <LogBookEntry>[]);
     replace(_$result);
     return _$result;
   }
@@ -5432,7 +5432,7 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
             bearing: bearing ?? 0,
             pxl: pxl ?? 0,
             encoding: encoding ?? HistoricSonarDataEnumEncoding(0),
-            sonarData: sonarData ?? List<int>(0));
+            sonarData: sonarData ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -5814,7 +5814,7 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             parameter: parameter ?? VerticalProfileEnumParameter(0),
             numSamples: numSamples ?? 0,
-            samples: samples ?? List<ProfileSample>(0),
+            samples: samples ?? <ProfileSample>[],
             lat: lat ?? 0,
             lon: lon ?? 0);
     replace(_$result);
@@ -7416,7 +7416,7 @@ class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
             seq: seq ?? 0,
             destination: destination ?? '',
             timeout: timeout ?? 0,
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -7589,7 +7589,7 @@ class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             source: source ?? '',
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -8159,7 +8159,7 @@ class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements Bu
             htime: htime ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -8356,7 +8356,7 @@ class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements Bu
             reqId: reqId ?? 0,
             ttl: ttl ?? 0,
             destination: destination ?? '',
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -9447,7 +9447,7 @@ class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements Bu
             baseLat: baseLat ?? 0,
             baseLon: baseLon ?? 0,
             baseTime: baseTime ?? 0,
-            data: data ?? List<RemoteData>(0));
+            data: data ?? <RemoteData>[]);
     replace(_$result);
     return _$result;
   }
@@ -9647,7 +9647,7 @@ class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implemen
             baseLat: baseLat ?? 0,
             baseLon: baseLon ?? 0,
             baseTime: baseTime ?? 0,
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -10729,7 +10729,7 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
             source: source ?? '',
             acknowledge: acknowledge ?? TelemetryMsgBitfieldAcknowledge(0),
             status: status ?? TelemetryMsgEnumStatus(0),
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -11312,7 +11312,7 @@ class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements Build
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             op: op ?? LblConfigEnumOp(0),
-            beacons: beacons ?? List<LblBeacon>(0));
+            beacons: beacons ?? <LblBeacon>[]);
     replace(_$result);
     return _$result;
   }
@@ -14831,8 +14831,8 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             validity: validity ?? DistanceEnumValidity(0),
-            location: location ?? List<DeviceState>(0),
-            beamConfig: beamConfig ?? List<BeamConfig>(0),
+            location: location ?? <DeviceState>[],
+            beamConfig: beamConfig ?? <BeamConfig>[],
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -16801,7 +16801,7 @@ class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements B
             srcEnt: srcEnt ?? ImcEntityId.nullId,
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
-            value: value ?? List<int>(0));
+            value: value ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -17208,8 +17208,8 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
             maxRange: maxRange ?? 0,
             bitsPerPoint: bitsPerPoint ?? 0,
             scaleFactor: scaleFactor ?? 0,
-            beamConfig: beamConfig ?? List<BeamConfig>(0),
-            data: data ?? List<int>(0));
+            beamConfig: beamConfig ?? <BeamConfig>[],
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -32560,7 +32560,7 @@ class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements Buil
             zUnits: zUnits ?? ZUnitsEnum(0),
             speed: speed ?? 0,
             speedUnits: speedUnits ?? SpeedUnitsEnum(0),
-            points: points ?? List<PathPoint>(0),
+            points: points ?? <PathPoint>[],
             custom: custom ?? '');
     replace(_$result);
     return _$result;
@@ -33994,7 +33994,7 @@ class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implement
             zUnits: zUnits ?? ZUnitsEnum(0),
             speed: speed ?? 0,
             speedUnits: speedUnits ?? SpeedUnitsEnum(0),
-            points: points ?? List<TrajectoryPoint>(0),
+            points: points ?? <TrajectoryPoint>[],
             custom: custom ?? '');
     replace(_$result);
     return _$result;
@@ -34652,8 +34652,8 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
             zUnits: zUnits ?? ZUnitsEnum(0),
             speed: speed ?? 0,
             speedUnits: speedUnits ?? SpeedUnitsEnum(0),
-            points: points ?? List<TrajectoryPoint>(0),
-            participants: participants ?? List<VehicleFormationParticipant>(0),
+            points: points ?? <TrajectoryPoint>[],
+            participants: participants ?? <VehicleFormationParticipant>[],
             startTime: startTime ?? 0,
             custom: custom ?? '');
     replace(_$result);
@@ -36096,7 +36096,7 @@ class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements Build
             zUnits: zUnits ?? ZUnitsEnum(0),
             speed: speed ?? 0,
             speedUnits: speedUnits ?? SpeedUnitsEnum(0),
-            polygon: polygon ?? List<PolygonVertex>(0),
+            polygon: polygon ?? <PolygonVertex>[],
             custom: custom ?? '');
     replace(_$result);
     return _$result;
@@ -36780,7 +36780,7 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             formationName: formationName ?? '',
             referenceFrame: referenceFrame ?? FormationParametersEnumReferenceFrame(0),
-            participants: participants ?? List<VehicleFormationParticipant>(0),
+            participants: participants ?? <VehicleFormationParticipant>[],
             custom: custom ?? '');
     replace(_$result);
     return _$result;
@@ -38144,7 +38144,7 @@ class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implement
             ssX: ssX ?? 0,
             ssY: ssY ?? 0,
             ssZ: ssZ ?? 0,
-            relState: relState ?? List<RelativeState>(0));
+            relState: relState ?? <RelativeState>[]);
     replace(_$result);
     return _$result;
   }
@@ -39173,7 +39173,7 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
             planId: planId ?? '',
             description: description ?? '',
             referenceFrame: referenceFrame ?? FormationEnumReferenceFrame(0),
-            participants: participants ?? List<VehicleFormationParticipant>(0),
+            participants: participants ?? <VehicleFormationParticipant>[],
             leaderBankLim: leaderBankLim ?? 0,
             leaderSpeedMin: leaderSpeedMin ?? 0,
             leaderSpeedMax: leaderSpeedMax ?? 0,
@@ -41541,7 +41541,7 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
             maxDepth: maxDepth ?? 0,
             minAlt: minAlt ?? 0,
             timeLimit: timeLimit ?? 0,
-            areaLimits: areaLimits ?? List<PolygonVertex>(0),
+            areaLimits: areaLimits ?? <PolygonVertex>[],
             controller: controller ?? '',
             custom: custom ?? '');
     replace(_$result);
@@ -46005,7 +46005,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
             dataMode: dataMode ?? TransmissionRequestEnumDataMode(0),
             msgData: msgData,
             txtData: txtData ?? '',
-            rawData: rawData ?? List<int>(0));
+            rawData: rawData ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -47296,12 +47296,12 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
             planId: planId ?? '',
             description: description ?? '',
             vnamespace: vnamespace ?? '',
-            variables: variables ?? List<PlanVariable>(0),
+            variables: variables ?? <PlanVariable>[],
             startManId: startManId ?? '',
-            maneuvers: maneuvers ?? List<PlanManeuver>(0),
-            transitions: transitions ?? List<PlanTransition>(0),
-            startActions: startActions ?? List<ImcMessage>(0),
-            endActions: endActions ?? List<ImcMessage>(0));
+            maneuvers: maneuvers ?? <PlanManeuver>[],
+            transitions: transitions ?? <PlanTransition>[],
+            startActions: startActions ?? <ImcMessage>[],
+            endActions: endActions ?? <ImcMessage>[]);
     replace(_$result);
     return _$result;
   }
@@ -47497,8 +47497,8 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             maneuverId: maneuverId ?? '',
             data: data,
-            startActions: startActions ?? List<ImcMessage>(0),
-            endActions: endActions ?? List<ImcMessage>(0));
+            startActions: startActions ?? <ImcMessage>[],
+            endActions: endActions ?? <ImcMessage>[]);
     replace(_$result);
     return _$result;
   }
@@ -47695,7 +47695,7 @@ class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements 
             sourceMan: sourceMan ?? '',
             destMan: destMan ?? '',
             conditions: conditions ?? '',
-            actions: actions ?? List<ImcMessage>(0));
+            actions: actions ?? <ImcMessage>[]);
     replace(_$result);
     return _$result;
   }
@@ -48507,8 +48507,8 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
             changeTime: changeTime ?? 0,
             changeSid: changeSid ?? 0,
             changeSname: changeSname ?? '',
-            md5: md5 ?? List<int>(0),
-            plansInfo: plansInfo ?? List<PlanDBInformation>(0));
+            md5: md5 ?? <int>[],
+            plansInfo: plansInfo ?? <PlanDBInformation>[]);
     replace(_$result);
     return _$result;
   }
@@ -48730,7 +48730,7 @@ class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implemen
             changeTime: changeTime ?? 0,
             changeSid: changeSid ?? 0,
             changeSname: changeSname ?? '',
-            md5: md5 ?? List<int>(0));
+            md5: md5 ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -50917,7 +50917,7 @@ class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             id: id ?? '',
-            features: features ?? List<MapFeature>(0));
+            features: features ?? <MapFeature>[]);
     replace(_$result);
     return _$result;
   }
@@ -51138,7 +51138,7 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
             rgbRed: rgbRed ?? 0,
             rgbGreen: rgbGreen ?? 0,
             rgbBlue: rgbBlue ?? 0,
-            feature: feature ?? List<MapPoint>(0));
+            feature: feature ?? <MapPoint>[]);
     replace(_$result);
     return _$result;
   }
@@ -51684,7 +51684,7 @@ class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements Bu
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             localname: localname ?? '',
-            links: links ?? List<Announce>(0));
+            links: links ?? <Announce>[]);
     replace(_$result);
     return _$result;
   }
@@ -52621,7 +52621,7 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             timeline: timeline ?? '',
             predicate: predicate ?? '',
-            attributes: attributes ?? List<TrexAttribute>(0));
+            attributes: attributes ?? <TrexAttribute>[]);
     replace(_$result);
     return _$result;
   }
@@ -52794,7 +52794,7 @@ class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements Builde
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             reactor: reactor ?? '',
-            tokens: tokens ?? List<TrexToken>(0));
+            tokens: tokens ?? <TrexToken>[]);
     replace(_$result);
     return _$result;
   }
@@ -53140,7 +53140,7 @@ class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             frameid: frameid ?? 0,
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -54134,7 +54134,7 @@ class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implement
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             name: name ?? '',
-            params: params ?? List<EntityParameter>(0));
+            params: params ?? <EntityParameter>[]);
     replace(_$result);
     return _$result;
   }
@@ -54492,7 +54492,7 @@ class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             name: name ?? '',
-            params: params ?? List<EntityParameter>(0));
+            params: params ?? <EntityParameter>[]);
     replace(_$result);
     return _$result;
   }
@@ -56174,7 +56174,7 @@ class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
             seq: seq ?? 0,
             sysDst: sysDst ?? '',
             flags: flags ?? UamTxFrameBitfieldFlags(0),
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -56371,7 +56371,7 @@ class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
             sysSrc: sysSrc ?? '',
             sysDst: sysDst ?? '',
             flags: flags ?? UamRxFrameBitfieldFlags(0),
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -58068,7 +58068,7 @@ class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements Builder
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             planId: planId ?? 0,
-            waypoints: waypoints ?? List<SoiWaypoint>(0));
+            waypoints: waypoints ?? <SoiWaypoint>[]);
     replace(_$result);
     return _$result;
   }
@@ -58671,7 +58671,7 @@ class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements Bui
             uid: uid ?? 0,
             fragNumber: fragNumber ?? 0,
             numFrags: numFrags ?? 0,
-            data: data ?? List<int>(0));
+            data: data ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -58844,7 +58844,7 @@ class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements Buil
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             contentType: contentType ?? '',
-            content: content ?? List<int>(0));
+            content: content ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -59765,7 +59765,7 @@ class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements B
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             locale: locale ?? '',
-            config: config ?? List<int>(0));
+            config: config ?? <int>[]);
     replace(_$result);
     return _$result;
   }
@@ -61676,7 +61676,7 @@ class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             op: op ?? UsblConfigEnumOp(0),
-            modems: modems ?? List<UsblModem>(0));
+            modems: modems ?? <UsblModem>[]);
     replace(_$result);
     return _$result;
   }

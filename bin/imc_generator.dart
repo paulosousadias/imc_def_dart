@@ -194,8 +194,8 @@ void _writeMessageCode(xml.XmlElement m, List<IOSink> sinks) {
 }
 
 /// Writes a message class
-void _writeMessageClass(String name, String abbrev, String msgId, xml.XmlElement m,
-    List<IOSink> sinks) {
+void _writeMessageClass(String name, String abbrev, String msgId,
+    xml.XmlElement m, List<IOSink> sinks) {
   sinks[_idxMsg].write('/// $name class\n///\n');
   _writeDescription(sinks[_idxMsg], m);
 
@@ -306,16 +306,19 @@ void _writeMessageImmutable(
       case 'message-list': // List<M extends IMCMessage>
         // Then this is a List
         //fStr = ''' &&\n        isMessageListsEqual(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
-        fStr = ''' &&\n        DeepCollectionEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        fStr =
+            ''' &&\n        DeepCollectionEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
         break;
       case 'rawdata': // List<int>
         //fStr = ''' &&\n        isRawdataEqual(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
-        fStr = ''' &&\n        ListEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
+        fStr =
+            ''' &&\n        ListEquality().equals(${_convertToFieldName(abbrev)}, other.${_convertToFieldName(abbrev)})''';
         break;
       case 'fp32_t':
       case 'fp64_t':
         // To account for de/serialize floating point conversions
-        fStr = ''' &&\n        (${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}
+        fStr =
+            ''' &&\n        (${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}
             || ${_convertToFieldName(abbrev)} - other.${_convertToFieldName(abbrev)} <= 1E-7)''';
         break;
       case 'uint8_t':
@@ -329,7 +332,8 @@ void _writeMessageImmutable(
       case 'plaintext':
       case 'message':
       default:
-        fStr = ''' &&\n        ${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}''';
+        fStr =
+            ''' &&\n        ${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}''';
         break;
     }
     sink.write('$fStr');
@@ -822,7 +826,8 @@ void _writeMessageSerializer(
         fStr =
             '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
-        fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
+        fStr +=
+            '    var ${fieldName}DData = List.filled(${fieldName}SSize, 0);\n';
         fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
         fStr +=
             '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
@@ -833,7 +838,8 @@ void _writeMessageSerializer(
         fStr =
             '''    var ${fieldName}SSize = byteData.getUint16(byteOffset, endianness);\n''';
         fStr += '    byteOffset += 2;\n';
-        fStr += '    var ${fieldName}DData = List<int>(${fieldName}SSize);\n';
+        fStr +=
+            '    var ${fieldName}DData = List.filled(${fieldName}SSize, 0);\n';
         fStr += '    for (var i = 0; i < ${fieldName}SSize; i++) {\n';
         fStr +=
             '      ${fieldName}DData[i] = byteData.getUint8(byteOffset++);\n';
@@ -983,7 +989,7 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
     case 'rawdata':
       typeImc = 'ImcType.typeRawdata';
       dartType = 'List<int>';
-      defaultVal = 'List<int>(0)';
+      defaultVal = '<int>[]';
       break;
     case 'plaintext':
       typeImc = 'ImcType.typePlaintext';
@@ -997,8 +1003,7 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
     case 'message-list':
       typeImc = 'ImcType.typeMessageList';
       dartType = 'List<${field.getAttribute('message-type') ?? 'ImcMessage'}>';
-      defaultVal =
-          'List<${field.getAttribute('message-type') ?? 'ImcMessage'}>(0)';
+      defaultVal = '<${field.getAttribute('message-type') ?? 'ImcMessage'}>[]';
       break;
     default:
       break;
@@ -1055,8 +1060,8 @@ void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
 }
 
 /// Writes eath message field local enum like code classes.
-void _writeLocalEnumLike(String abbrev, xml.XmlElement field, xml.XmlElement message,
-    String unit, IOSink sink) {
+void _writeLocalEnumLike(String abbrev, xml.XmlElement field,
+    xml.XmlElement message, String unit, IOSink sink) {
   if (field.getAttribute('enum-def') != null ||
       field.getAttribute('bitfield-def') != null) return;
 
@@ -1262,9 +1267,8 @@ enum _Mode { local, production }
 /// "flutter packages pub run bin/imc_generator" to (re)generate the code.
 void main(List<String> args) async {
   var config = _getConfig();
-  var localOrProductionMode = config.isEmpty || config['mode'] != null
-      ? _Mode.local
-      : _Mode.production;
+  var localOrProductionMode =
+      config.isEmpty || config['mode'] != null ? _Mode.local : _Mode.production;
   String xmlFilePath;
   String packageName;
   switch (localOrProductionMode) {

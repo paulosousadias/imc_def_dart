@@ -732,7 +732,7 @@ class EntityStateSerializer extends imc.ImcSerializer<imc.EntityState, imc.Entit
     // field description
     var descriptionSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var descriptionDData = List<int>(descriptionSSize);
+    var descriptionDData = List.filled(descriptionSSize, 0);
     for (var i = 0; i < descriptionSSize; i++) {
       descriptionDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -917,7 +917,7 @@ class EntityInfoSerializer extends imc.ImcSerializer<imc.EntityInfo, imc.EntityI
     // field label
     var labelSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var labelDData = List<int>(labelSSize);
+    var labelDData = List.filled(labelSSize, 0);
     for (var i = 0; i < labelSSize; i++) {
       labelDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -926,7 +926,7 @@ class EntityInfoSerializer extends imc.ImcSerializer<imc.EntityInfo, imc.EntityI
     // field component
     var componentSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var componentDData = List<int>(componentSSize);
+    var componentDData = List.filled(componentSSize, 0);
     for (var i = 0; i < componentSSize; i++) {
       componentDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -1111,7 +1111,7 @@ class EntityListSerializer extends imc.ImcSerializer<imc.EntityList, imc.EntityL
     // field list
     var listSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var listDData = List<int>(listSSize);
+    var listDData = List.filled(listSSize, 0);
     for (var i = 0; i < listSSize; i++) {
       listDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -1287,7 +1287,7 @@ class TransportBindingsSerializer extends imc.ImcSerializer<imc.TransportBinding
     // field consumer
     var consumerSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var consumerDData = List<int>(consumerSSize);
+    var consumerDData = List.filled(consumerSSize, 0);
     for (var i = 0; i < consumerSSize; i++) {
       consumerDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -1560,7 +1560,7 @@ class DevCalibrationStateSerializer extends imc.ImcSerializer<imc.DevCalibration
     // field step
     var stepSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var stepDData = List<int>(stepSSize);
+    var stepDData = List.filled(stepSSize, 0);
     for (var i = 0; i < stepSSize; i++) {
       stepDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -1660,7 +1660,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<imc.EntityActiva
     // field error
     var errorSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var errorDData = List<int>(errorSSize);
+    var errorDData = List.filled(errorSSize, 0);
     for (var i = 0; i < errorSSize; i++) {
       errorDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -2315,7 +2315,7 @@ class LeakSimulationSerializer extends imc.ImcSerializer<imc.LeakSimulation, imc
     // field entities
     var entitiesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var entitiesDData = List<int>(entitiesSSize);
+    var entitiesDData = List.filled(entitiesSSize, 0);
     for (var i = 0; i < entitiesSSize; i++) {
       entitiesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -2417,7 +2417,7 @@ class UASimulationSerializer extends imc.ImcSerializer<imc.UASimulation, imc.UAS
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -2709,7 +2709,7 @@ class CacheControlSerializer extends imc.ImcSerializer<imc.CacheControl, imc.Cac
     // field snapshot
     var snapshotSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var snapshotDData = List<int>(snapshotSSize);
+    var snapshotDData = List.filled(snapshotSSize, 0);
     for (var i = 0; i < snapshotSSize; i++) {
       snapshotDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -2820,7 +2820,7 @@ class LoggingControlSerializer extends imc.ImcSerializer<imc.LoggingControl, imc
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -2929,7 +2929,7 @@ class LogBookEntrySerializer extends imc.ImcSerializer<imc.LogBookEntry, imc.Log
     // field context
     var contextSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var contextDData = List<int>(contextSSize);
+    var contextDData = List.filled(contextSSize, 0);
     for (var i = 0; i < contextSSize; i++) {
       contextDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -2938,7 +2938,7 @@ class LogBookEntrySerializer extends imc.ImcSerializer<imc.LogBookEntry, imc.Log
     // field text
     var textSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var textDData = List<int>(textSSize);
+    var textDData = List.filled(textSSize, 0);
     for (var i = 0; i < textSSize; i++) {
       textDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -3161,7 +3161,7 @@ class ReplayControlSerializer extends imc.ImcSerializer<imc.ReplayControl, imc.R
     // field file
     var fileSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var fileDData = List<int>(fileSSize);
+    var fileDData = List.filled(fileSSize, 0);
     for (var i = 0; i < fileSSize; i++) {
       fileDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -3581,7 +3581,7 @@ class HistoricSonarDataSerializer extends imc.ImcSerializer<imc.HistoricSonarDat
     // field sonarData
     var sonarDataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sonarDataDData = List<int>(sonarDataSSize);
+    var sonarDataDData = List.filled(sonarDataSSize, 0);
     for (var i = 0; i < sonarDataSSize; i++) {
       sonarDataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -3674,7 +3674,7 @@ class HistoricEventSerializer extends imc.ImcSerializer<imc.HistoricEvent, imc.H
     // field text
     var textSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var textDData = List<int>(textSSize);
+    var textDData = List.filled(textSSize, 0);
     for (var i = 0; i < textSSize; i++) {
       textDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4091,7 +4091,7 @@ class AnnounceSerializer extends imc.ImcSerializer<imc.Announce, imc.AnnounceBui
     // field sysName
     var sysNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sysNameDData = List<int>(sysNameSSize);
+    var sysNameDData = List.filled(sysNameSSize, 0);
     for (var i = 0; i < sysNameSSize; i++) {
       sysNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4115,7 +4115,7 @@ class AnnounceSerializer extends imc.ImcSerializer<imc.Announce, imc.AnnounceBui
     // field services
     var servicesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var servicesDData = List<int>(servicesSSize);
+    var servicesDData = List.filled(servicesSSize, 0);
     for (var i = 0; i < servicesSSize; i++) {
       servicesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4209,7 +4209,7 @@ class AnnounceServiceSerializer extends imc.ImcSerializer<imc.AnnounceService, i
     // field service
     var serviceSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var serviceDData = List<int>(serviceSSize);
+    var serviceDData = List.filled(serviceSSize, 0);
     for (var i = 0; i < serviceSSize; i++) {
       serviceDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4558,7 +4558,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
     // field number
     var numberSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var numberDData = List<int>(numberSSize);
+    var numberDData = List.filled(numberSSize, 0);
     for (var i = 0; i < numberSSize; i++) {
       numberDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4570,7 +4570,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
     // field contents
     var contentsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var contentsDData = List<int>(contentsSSize);
+    var contentsDData = List.filled(contentsSSize, 0);
     for (var i = 0; i < contentsSSize; i++) {
       contentsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4675,7 +4675,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
     // field destination
     var destinationSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var destinationDData = List<int>(destinationSSize);
+    var destinationDData = List.filled(destinationSSize, 0);
     for (var i = 0; i < destinationSSize; i++) {
       destinationDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4687,7 +4687,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4782,7 +4782,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
     // field source
     var sourceSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sourceDData = List<int>(sourceSSize);
+    var sourceDData = List.filled(sourceSSize, 0);
     for (var i = 0; i < sourceSSize; i++) {
       sourceDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4791,7 +4791,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4893,7 +4893,7 @@ class SmsStateSerializer extends imc.ImcSerializer<imc.SmsState, imc.SmsStateBui
     // field error
     var errorSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var errorDData = List<int>(errorSSize);
+    var errorDData = List.filled(errorSSize, 0);
     for (var i = 0; i < errorSSize; i++) {
       errorDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4990,7 +4990,7 @@ class TextMessageSerializer extends imc.ImcSerializer<imc.TextMessage, imc.TextM
     // field origin
     var originSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var originDData = List<int>(originSSize);
+    var originDData = List.filled(originSSize, 0);
     for (var i = 0; i < originSSize; i++) {
       originDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -4999,7 +4999,7 @@ class TextMessageSerializer extends imc.ImcSerializer<imc.TextMessage, imc.TextM
     // field text
     var textSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var textDData = List<int>(textSSize);
+    var textDData = List.filled(textSSize, 0);
     for (var i = 0; i < textSSize; i++) {
       textDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5104,7 +5104,7 @@ class IridiumMsgRxSerializer extends imc.ImcSerializer<imc.IridiumMsgRx, imc.Iri
     // field origin
     var originSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var originDData = List<int>(originSSize);
+    var originDData = List.filled(originSSize, 0);
     for (var i = 0; i < originSSize; i++) {
       originDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5122,7 +5122,7 @@ class IridiumMsgRxSerializer extends imc.ImcSerializer<imc.IridiumMsgRx, imc.Iri
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5229,7 +5229,7 @@ class IridiumMsgTxSerializer extends imc.ImcSerializer<imc.IridiumMsgTx, imc.Iri
     // field destination
     var destinationSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var destinationDData = List<int>(destinationSSize);
+    var destinationDData = List.filled(destinationSSize, 0);
     for (var i = 0; i < destinationSSize; i++) {
       destinationDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5238,7 +5238,7 @@ class IridiumMsgTxSerializer extends imc.ImcSerializer<imc.IridiumMsgTx, imc.Iri
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5340,7 +5340,7 @@ class IridiumTxStatusSerializer extends imc.ImcSerializer<imc.IridiumTxStatus, i
     // field text
     var textSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var textDData = List<int>(textSSize);
+    var textDData = List.filled(textSSize, 0);
     for (var i = 0; i < textSSize; i++) {
       textDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5434,7 +5434,7 @@ class GroupMembershipStateSerializer extends imc.ImcSerializer<imc.GroupMembersh
     // field groupName
     var groupNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var groupNameDData = List<int>(groupNameSSize);
+    var groupNameDData = List.filled(groupNameSSize, 0);
     for (var i = 0; i < groupNameSSize; i++) {
       groupNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5537,7 +5537,7 @@ class SystemGroupSerializer extends imc.ImcSerializer<imc.SystemGroup, imc.Syste
     // field groupName
     var groupNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var groupNameDData = List<int>(groupNameSSize);
+    var groupNameDData = List.filled(groupNameSSize, 0);
     for (var i = 0; i < groupNameSSize; i++) {
       groupNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5549,7 +5549,7 @@ class SystemGroupSerializer extends imc.ImcSerializer<imc.SystemGroup, imc.Syste
     // field groupList
     var groupListSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var groupListDData = List<int>(groupListSSize);
+    var groupListDData = List.filled(groupListSSize, 0);
     for (var i = 0; i < groupListSSize; i++) {
       groupListDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -5965,7 +5965,7 @@ class CompressedHistorySerializer extends imc.ImcSerializer<imc.CompressedHistor
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -6457,7 +6457,7 @@ class CommSystemsQuerySerializer extends imc.ImcSerializer<imc.CommSystemsQuery,
     // field list
     var listSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var listDData = List<int>(listSSize);
+    var listDData = List.filled(listSSize, 0);
     for (var i = 0; i < listSSize; i++) {
       listDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -6589,7 +6589,7 @@ class TelemetryMsgSerializer extends imc.ImcSerializer<imc.TelemetryMsg, imc.Tel
     // field destination
     var destinationSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var destinationDData = List<int>(destinationSSize);
+    var destinationDData = List.filled(destinationSSize, 0);
     for (var i = 0; i < destinationSSize; i++) {
       destinationDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -6598,7 +6598,7 @@ class TelemetryMsgSerializer extends imc.ImcSerializer<imc.TelemetryMsg, imc.Tel
     // field source
     var sourceSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sourceDData = List<int>(sourceSSize);
+    var sourceDData = List.filled(sourceSSize, 0);
     for (var i = 0; i < sourceSSize; i++) {
       sourceDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -6613,7 +6613,7 @@ class TelemetryMsgSerializer extends imc.ImcSerializer<imc.TelemetryMsg, imc.Tel
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -6809,7 +6809,7 @@ class LblBeaconSerializer extends imc.ImcSerializer<imc.LblBeacon, imc.LblBeacon
     // field beacon
     var beaconSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var beaconDData = List<int>(beaconSSize);
+    var beaconDData = List.filled(beaconSSize, 0);
     for (var i = 0; i < beaconSSize; i++) {
       beaconDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -7165,7 +7165,7 @@ class AcousticOperationSerializer extends imc.ImcSerializer<imc.AcousticOperatio
     // field system
     var systemSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var systemDData = List<int>(systemSSize);
+    var systemDData = List.filled(systemSSize, 0);
     for (var i = 0; i < systemSSize; i++) {
       systemDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -7349,7 +7349,7 @@ class AcousticSystemsSerializer extends imc.ImcSerializer<imc.AcousticSystems, i
     // field list
     var listSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var listDData = List<int>(listSSize);
+    var listDData = List.filled(listSSize, 0);
     for (var i = 0; i < listSSize; i++) {
       listDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -7446,7 +7446,7 @@ class AcousticLinkSerializer extends imc.ImcSerializer<imc.AcousticLink, imc.Aco
     // field peer
     var peerSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var peerDData = List<int>(peerSSize);
+    var peerDData = List.filled(peerSSize, 0);
     for (var i = 0; i < peerSSize; i++) {
       peerDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -9769,7 +9769,7 @@ class DevDataTextSerializer extends imc.ImcSerializer<imc.DevDataText, imc.DevDa
     // field value
     var valueSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var valueDData = List<int>(valueSSize);
+    var valueDData = List.filled(valueSSize, 0);
     for (var i = 0; i < valueSSize; i++) {
       valueDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -9859,7 +9859,7 @@ class DevDataBinarySerializer extends imc.ImcSerializer<imc.DevDataBinary, imc.D
     // field value
     var valueSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var valueDData = List<int>(valueSSize);
+    var valueDData = List.filled(valueSSize, 0);
     for (var i = 0; i < valueSSize; i++) {
       valueDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -10104,7 +10104,7 @@ class SonarDataSerializer extends imc.ImcSerializer<imc.SonarData, imc.SonarData
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -10364,7 +10364,7 @@ class FuelLevelSerializer extends imc.ImcSerializer<imc.FuelLevel, imc.FuelLevel
     // field opmodes
     var opmodesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var opmodesDData = List<int>(opmodesSSize);
+    var opmodesDData = List.filled(opmodesSSize, 0);
     for (var i = 0; i < opmodesSSize; i++) {
       opmodesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -12697,7 +12697,7 @@ class RemoteActionsRequestSerializer extends imc.ImcSerializer<imc.RemoteActions
     // field actions
     var actionsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var actionsDData = List<int>(actionsSSize);
+    var actionsDData = List.filled(actionsSSize, 0);
     for (var i = 0; i < actionsSSize; i++) {
       actionsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -12788,7 +12788,7 @@ class RemoteActionsSerializer extends imc.ImcSerializer<imc.RemoteActions, imc.R
     // field actions
     var actionsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var actionsDData = List<int>(actionsSSize);
+    var actionsDData = List.filled(actionsSSize, 0);
     for (var i = 0; i < actionsSSize; i++) {
       actionsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -12973,7 +12973,7 @@ class LcdControlSerializer extends imc.ImcSerializer<imc.LcdControl, imc.LcdCont
     // field text
     var textSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var textDData = List<int>(textSSize);
+    var textDData = List.filled(textSSize, 0);
     for (var i = 0; i < textSSize; i++) {
       textDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -13164,7 +13164,7 @@ class PowerChannelControlSerializer extends imc.ImcSerializer<imc.PowerChannelCo
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -13340,7 +13340,7 @@ class PowerChannelStateSerializer extends imc.ImcSerializer<imc.PowerChannelStat
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -13437,7 +13437,7 @@ class LedBrightnessSerializer extends imc.ImcSerializer<imc.LedBrightness, imc.L
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -13531,7 +13531,7 @@ class QueryLedBrightnessSerializer extends imc.ImcSerializer<imc.QueryLedBrightn
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -13625,7 +13625,7 @@ class SetLedBrightnessSerializer extends imc.ImcSerializer<imc.SetLedBrightness,
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -17057,7 +17057,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -17208,7 +17208,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -17299,7 +17299,7 @@ class TeleoperationSerializer extends imc.ImcSerializer<imc.Teleoperation, imc.T
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -17468,7 +17468,7 @@ class LoiterSerializer extends imc.ImcSerializer<imc.Loiter, imc.LoiterBuilder> 
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -17565,7 +17565,7 @@ class IdleManeuverSerializer extends imc.ImcSerializer<imc.IdleManeuver, imc.Idl
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -17690,7 +17690,7 @@ class LowLevelControlSerializer extends imc.ImcSerializer<imc.LowLevelControl, i
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -17871,7 +17871,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -18042,7 +18042,7 @@ class FollowPathSerializer extends imc.ImcSerializer<imc.FollowPath, imc.FollowP
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -18281,7 +18281,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -18496,7 +18496,7 @@ class StationKeepingSerializer extends imc.ImcSerializer<imc.StationKeeping, imc
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -18653,7 +18653,7 @@ class ElevatorSerializer extends imc.ImcSerializer<imc.Elevator, imc.ElevatorBui
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -18824,7 +18824,7 @@ class FollowTrajectorySerializer extends imc.ImcSerializer<imc.FollowTrajectory,
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -19027,7 +19027,7 @@ class CustomManeuverSerializer extends imc.ImcSerializer<imc.CustomManeuver, imc
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -19036,7 +19036,7 @@ class CustomManeuverSerializer extends imc.ImcSerializer<imc.CustomManeuver, imc
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -19245,7 +19245,7 @@ class VehicleFormationSerializer extends imc.ImcSerializer<imc.VehicleFormation,
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -19606,7 +19606,7 @@ class ManeuverControlStateSerializer extends imc.ImcSerializer<imc.ManeuverContr
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var infoDData = List<int>(infoSSize);
+    var infoDData = List.filled(infoSSize, 0);
     for (var i = 0; i < infoSSize; i++) {
       infoDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20019,7 +20019,7 @@ class CoverAreaSerializer extends imc.ImcSerializer<imc.CoverArea, imc.CoverArea
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20270,7 +20270,7 @@ class CompassCalibrationSerializer extends imc.ImcSerializer<imc.CompassCalibrat
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20391,7 +20391,7 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
     // field formationName
     var formationNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var formationNameDData = List<int>(formationNameSSize);
+    var formationNameDData = List.filled(formationNameSSize, 0);
     for (var i = 0; i < formationNameSSize; i++) {
       formationNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20420,7 +20420,7 @@ class FormationParametersSerializer extends imc.ImcSerializer<imc.FormationParam
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20562,7 +20562,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     // field groupName
     var groupNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var groupNameDData = List<int>(groupNameSSize);
+    var groupNameDData = List.filled(groupNameSSize, 0);
     for (var i = 0; i < groupNameSSize; i++) {
       groupNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20571,7 +20571,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     // field formationName
     var formationNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var formationNameDData = List<int>(formationNameSSize);
+    var formationNameDData = List.filled(formationNameSSize, 0);
     for (var i = 0; i < formationNameSSize; i++) {
       formationNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20580,7 +20580,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20589,7 +20589,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     // field description
     var descriptionSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var descriptionDData = List<int>(descriptionSSize);
+    var descriptionDData = List.filled(descriptionSSize, 0);
     for (var i = 0; i < descriptionSSize; i++) {
       descriptionDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -20625,7 +20625,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<imc.FormationPl
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21391,7 +21391,7 @@ class RelativeStateSerializer extends imc.ImcSerializer<imc.RelativeState, imc.R
     // field sId
     var sIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sIdDData = List<int>(sIdSSize);
+    var sIdDData = List.filled(sIdSSize, 0);
     for (var i = 0; i < sIdSSize; i++) {
       sIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21563,7 +21563,7 @@ class DislodgeSerializer extends imc.ImcSerializer<imc.Dislodge, imc.DislodgeBui
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21744,7 +21744,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
     // field formationName
     var formationNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var formationNameDData = List<int>(formationNameSSize);
+    var formationNameDData = List.filled(formationNameSSize, 0);
     for (var i = 0; i < formationNameSSize; i++) {
       formationNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21759,7 +21759,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
     // field groupName
     var groupNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var groupNameDData = List<int>(groupNameSSize);
+    var groupNameDData = List.filled(groupNameSSize, 0);
     for (var i = 0; i < groupNameSSize; i++) {
       groupNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21768,7 +21768,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21777,7 +21777,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
     // field description
     var descriptionSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var descriptionDData = List<int>(descriptionSSize);
+    var descriptionDData = List.filled(descriptionSSize, 0);
     for (var i = 0; i < descriptionSSize; i++) {
       descriptionDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21842,7 +21842,7 @@ class FormationSerializer extends imc.ImcSerializer<imc.Formation, imc.Formation
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -21975,7 +21975,7 @@ class LaunchSerializer extends imc.ImcSerializer<imc.Launch, imc.LaunchBuilder> 
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -22108,7 +22108,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -22413,7 +22413,7 @@ class RowsCoverageSerializer extends imc.ImcSerializer<imc.RowsCoverage, imc.Row
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -22564,7 +22564,7 @@ class SampleSerializer extends imc.ImcSerializer<imc.Sample, imc.SampleBuilder> 
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -22773,7 +22773,7 @@ class TakeoffSerializer extends imc.ImcSerializer<imc.Takeoff, imc.TakeoffBuilde
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -22924,7 +22924,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23107,7 +23107,7 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
     // field controller
     var controllerSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var controllerDData = List<int>(controllerSSize);
+    var controllerDData = List.filled(controllerSSize, 0);
     for (var i = 0; i < controllerSSize; i++) {
       controllerDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23116,7 +23116,7 @@ class AutonomousSectionSerializer extends imc.ImcSerializer<imc.AutonomousSectio
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23231,7 +23231,7 @@ class FollowPointSerializer extends imc.ImcSerializer<imc.FollowPoint, imc.Follo
     // field target
     var targetSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var targetDData = List<int>(targetSSize);
+    var targetDData = List.filled(targetSSize, 0);
     for (var i = 0; i < targetSSize; i++) {
       targetDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23258,7 +23258,7 @@ class FollowPointSerializer extends imc.ImcSerializer<imc.FollowPoint, imc.Follo
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23379,7 +23379,7 @@ class AlignmentSerializer extends imc.ImcSerializer<imc.Alignment, imc.Alignment
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23536,7 +23536,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<imc.StationKeep
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23687,7 +23687,7 @@ class MagnetometerSerializer extends imc.ImcSerializer<imc.Magnetometer, imc.Mag
     // field custom
     var customSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var customDData = List<int>(customSSize);
+    var customDData = List.filled(customSSize, 0);
     for (var i = 0; i < customSSize; i++) {
       customDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23814,7 +23814,7 @@ class VehicleStateSerializer extends imc.ImcSerializer<imc.VehicleState, imc.Veh
     // field errorEnts
     var errorEntsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var errorEntsDData = List<int>(errorEntsSSize);
+    var errorEntsDData = List.filled(errorEntsSSize, 0);
     for (var i = 0; i < errorEntsSSize; i++) {
       errorEntsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23838,7 +23838,7 @@ class VehicleStateSerializer extends imc.ImcSerializer<imc.VehicleState, imc.Veh
     // field lastError
     var lastErrorSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var lastErrorDData = List<int>(lastErrorSSize);
+    var lastErrorDData = List.filled(lastErrorSSize, 0);
     for (var i = 0; i < lastErrorSSize; i++) {
       lastErrorDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -23984,7 +23984,7 @@ class VehicleCommandSerializer extends imc.ImcSerializer<imc.VehicleCommand, imc
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var infoDData = List<int>(infoSSize);
+    var infoDData = List.filled(infoSSize, 0);
     for (var i = 0; i < infoSSize; i++) {
       infoDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -24081,7 +24081,7 @@ class MonitorEntityStateSerializer extends imc.ImcSerializer<imc.MonitorEntitySt
     // field entities
     var entitiesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var entitiesDData = List<int>(entitiesSSize);
+    var entitiesDData = List.filled(entitiesSSize, 0);
     for (var i = 0; i < entitiesSSize; i++) {
       entitiesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -24205,7 +24205,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<imc.EntityMonito
     // field mnames
     var mnamesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var mnamesDData = List<int>(mnamesSSize);
+    var mnamesDData = List.filled(mnamesSSize, 0);
     for (var i = 0; i < mnamesSSize; i++) {
       mnamesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -24217,7 +24217,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<imc.EntityMonito
     // field enames
     var enamesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var enamesDData = List<int>(enamesSSize);
+    var enamesDData = List.filled(enamesSSize, 0);
     for (var i = 0; i < enamesSSize; i++) {
       enamesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -24229,7 +24229,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<imc.EntityMonito
     // field cnames
     var cnamesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var cnamesDData = List<int>(cnamesSSize);
+    var cnamesDData = List.filled(cnamesSSize, 0);
     for (var i = 0; i < cnamesSSize; i++) {
       cnamesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -24238,7 +24238,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<imc.EntityMonito
     // field lastError
     var lastErrorSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var lastErrorDData = List<int>(lastErrorSSize);
+    var lastErrorDData = List.filled(lastErrorSSize, 0);
     for (var i = 0; i < lastErrorSSize; i++) {
       lastErrorDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25020,7 +25020,7 @@ class AutopilotModeSerializer extends imc.ImcSerializer<imc.AutopilotMode, imc.A
     // field mode
     var modeSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var modeDData = List<int>(modeSSize);
+    var modeDData = List.filled(modeSSize, 0);
     for (var i = 0; i < modeSSize; i++) {
       modeDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25253,7 +25253,7 @@ class ReportControlSerializer extends imc.ImcSerializer<imc.ReportControl, imc.R
     // field sysDst
     var sysDstSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sysDstDData = List<int>(sysDstSSize);
+    var sysDstDData = List.filled(sysDstSSize, 0);
     for (var i = 0; i < sysDstSSize; i++) {
       sysDstDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25523,7 +25523,7 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     // field destination
     var destinationSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var destinationDData = List<int>(destinationSSize);
+    var destinationDData = List.filled(destinationSSize, 0);
     for (var i = 0; i < destinationSSize; i++) {
       destinationDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25552,7 +25552,7 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     // field txtData
     var txtDataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var txtDataDData = List<int>(txtDataSSize);
+    var txtDataDData = List.filled(txtDataSSize, 0);
     for (var i = 0; i < txtDataSSize; i++) {
       txtDataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25561,7 +25561,7 @@ class TransmissionRequestSerializer extends imc.ImcSerializer<imc.TransmissionRe
     // field rawData
     var rawDataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var rawDataDData = List<int>(rawDataSSize);
+    var rawDataDData = List.filled(rawDataSSize, 0);
     for (var i = 0; i < rawDataSSize; i++) {
       rawDataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25663,7 +25663,7 @@ class TransmissionStatusSerializer extends imc.ImcSerializer<imc.TransmissionSta
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var infoDData = List<int>(infoSSize);
+    var infoDData = List.filled(infoSSize, 0);
     for (var i = 0; i < infoSSize; i++) {
       infoDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25769,7 +25769,7 @@ class SmsRequestSerializer extends imc.ImcSerializer<imc.SmsRequest, imc.SmsRequ
     // field destination
     var destinationSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var destinationDData = List<int>(destinationSSize);
+    var destinationDData = List.filled(destinationSSize, 0);
     for (var i = 0; i < destinationSSize; i++) {
       destinationDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25781,7 +25781,7 @@ class SmsRequestSerializer extends imc.ImcSerializer<imc.SmsRequest, imc.SmsRequ
     // field smsText
     var smsTextSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var smsTextDData = List<int>(smsTextSSize);
+    var smsTextDData = List.filled(smsTextSSize, 0);
     for (var i = 0; i < smsTextSSize; i++) {
       smsTextDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -25884,7 +25884,7 @@ class SmsStatusSerializer extends imc.ImcSerializer<imc.SmsStatus, imc.SmsStatus
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var infoDData = List<int>(infoSSize);
+    var infoDData = List.filled(infoSSize, 0);
     for (var i = 0; i < infoSSize; i++) {
       infoDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26338,7 +26338,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26347,7 +26347,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     // field description
     var descriptionSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var descriptionDData = List<int>(descriptionSSize);
+    var descriptionDData = List.filled(descriptionSSize, 0);
     for (var i = 0; i < descriptionSSize; i++) {
       descriptionDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26356,7 +26356,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     // field vnamespace
     var vnamespaceSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var vnamespaceDData = List<int>(vnamespaceSSize);
+    var vnamespaceDData = List.filled(vnamespaceSSize, 0);
     for (var i = 0; i < vnamespaceSSize; i++) {
       vnamespaceDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26382,7 +26382,7 @@ class PlanSpecificationSerializer extends imc.ImcSerializer<imc.PlanSpecificatio
     // field startManId
     var startManIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var startManIdDData = List<int>(startManIdSSize);
+    var startManIdDData = List.filled(startManIdSSize, 0);
     for (var i = 0; i < startManIdSSize; i++) {
       startManIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26597,7 +26597,7 @@ class PlanManeuverSerializer extends imc.ImcSerializer<imc.PlanManeuver, imc.Pla
     // field maneuverId
     var maneuverIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var maneuverIdDData = List<int>(maneuverIdSSize);
+    var maneuverIdDData = List.filled(maneuverIdSSize, 0);
     for (var i = 0; i < maneuverIdSSize; i++) {
       maneuverIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26769,7 +26769,7 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
     // field sourceMan
     var sourceManSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sourceManDData = List<int>(sourceManSSize);
+    var sourceManDData = List.filled(sourceManSSize, 0);
     for (var i = 0; i < sourceManSSize; i++) {
       sourceManDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26778,7 +26778,7 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
     // field destMan
     var destManSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var destManDData = List<int>(destManSSize);
+    var destManDData = List.filled(destManSSize, 0);
     for (var i = 0; i < destManSSize; i++) {
       destManDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -26787,7 +26787,7 @@ class PlanTransitionSerializer extends imc.ImcSerializer<imc.PlanTransition, imc
     // field conditions
     var conditionsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var conditionsDData = List<int>(conditionsSSize);
+    var conditionsDData = List.filled(conditionsSSize, 0);
     for (var i = 0; i < conditionsSSize; i++) {
       conditionsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27014,7 +27014,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<imc.EmergencyCon
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27146,7 +27146,7 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> 
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27169,7 +27169,7 @@ class PlanDBSerializer extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> 
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var infoDData = List<int>(infoSSize);
+    var infoDData = List.filled(infoSSize, 0);
     for (var i = 0; i < infoSSize; i++) {
       infoDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27310,7 +27310,7 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState, imc.PlanD
     // field changeSname
     var changeSnameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var changeSnameDData = List<int>(changeSnameSSize);
+    var changeSnameDData = List.filled(changeSnameSSize, 0);
     for (var i = 0; i < changeSnameSSize; i++) {
       changeSnameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27319,7 +27319,7 @@ class PlanDBStateSerializer extends imc.ImcSerializer<imc.PlanDBState, imc.PlanD
     // field md5
     var md5SSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var md5DData = List<int>(md5SSize);
+    var md5DData = List.filled(md5SSize, 0);
     for (var i = 0; i < md5SSize; i++) {
       md5DData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27446,7 +27446,7 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27464,7 +27464,7 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
     // field changeSname
     var changeSnameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var changeSnameDData = List<int>(changeSnameSSize);
+    var changeSnameDData = List.filled(changeSnameSSize, 0);
     for (var i = 0; i < changeSnameSSize; i++) {
       changeSnameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27473,7 +27473,7 @@ class PlanDBInformationSerializer extends imc.ImcSerializer<imc.PlanDBInformatio
     // field md5
     var md5SSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var md5DData = List<int>(md5SSize);
+    var md5DData = List.filled(md5SSize, 0);
     for (var i = 0; i < md5SSize; i++) {
       md5DData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27604,7 +27604,7 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl, imc.PlanC
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27630,7 +27630,7 @@ class PlanControlSerializer extends imc.ImcSerializer<imc.PlanControl, imc.PlanC
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var infoDData = List<int>(infoSSize);
+    var infoDData = List.filled(infoSSize, 0);
     for (var i = 0; i < infoSSize; i++) {
       infoDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27748,7 +27748,7 @@ class PlanControlStateSerializer extends imc.ImcSerializer<imc.PlanControlState,
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27763,7 +27763,7 @@ class PlanControlStateSerializer extends imc.ImcSerializer<imc.PlanControlState,
     // field manId
     var manIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var manIdDData = List<int>(manIdSSize);
+    var manIdDData = List.filled(manIdSSize, 0);
     for (var i = 0; i < manIdSSize; i++) {
       manIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27875,7 +27875,7 @@ class PlanVariableSerializer extends imc.ImcSerializer<imc.PlanVariable, imc.Pla
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27884,7 +27884,7 @@ class PlanVariableSerializer extends imc.ImcSerializer<imc.PlanVariable, imc.Pla
     // field value
     var valueSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var valueDData = List<int>(valueSSize);
+    var valueDData = List.filled(valueSSize, 0);
     for (var i = 0; i < valueSSize; i++) {
       valueDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -27999,7 +27999,7 @@ class PlanGenerationSerializer extends imc.ImcSerializer<imc.PlanGeneration, imc
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28008,7 +28008,7 @@ class PlanGenerationSerializer extends imc.ImcSerializer<imc.PlanGeneration, imc
     // field params
     var paramsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var paramsDData = List<int>(paramsSSize);
+    var paramsDData = List.filled(paramsSSize, 0);
     for (var i = 0; i < paramsSSize; i++) {
       paramsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28156,7 +28156,7 @@ class LeaderStateSerializer extends imc.ImcSerializer<imc.LeaderState, imc.Leade
     // field groupName
     var groupNameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var groupNameDData = List<int>(groupNameSSize);
+    var groupNameDData = List.filled(groupNameSSize, 0);
     for (var i = 0; i < groupNameSSize; i++) {
       groupNameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28334,7 +28334,7 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics, imc
     // field planId
     var planIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var planIdDData = List<int>(planIdSSize);
+    var planIdDData = List.filled(planIdSSize, 0);
     for (var i = 0; i < planIdSSize; i++) {
       planIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28349,7 +28349,7 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics, imc
     // field durations
     var durationsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var durationsDData = List<int>(durationsSSize);
+    var durationsDData = List.filled(durationsSSize, 0);
     for (var i = 0; i < durationsSSize; i++) {
       durationsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28358,7 +28358,7 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics, imc
     // field distances
     var distancesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var distancesDData = List<int>(distancesSSize);
+    var distancesDData = List.filled(distancesSSize, 0);
     for (var i = 0; i < distancesSSize; i++) {
       distancesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28367,7 +28367,7 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics, imc
     // field actions
     var actionsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var actionsDData = List<int>(actionsSSize);
+    var actionsDData = List.filled(actionsSSize, 0);
     for (var i = 0; i < actionsSSize; i++) {
       actionsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28376,7 +28376,7 @@ class PlanStatisticsSerializer extends imc.ImcSerializer<imc.PlanStatistics, imc
     // field fuel
     var fuelSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var fuelDData = List<int>(fuelSSize);
+    var fuelDData = List.filled(fuelSSize, 0);
     for (var i = 0; i < fuelSSize; i++) {
       fuelDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28512,7 +28512,7 @@ class ReportedStateSerializer extends imc.ImcSerializer<imc.ReportedState, imc.R
     // field sid
     var sidSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sidDData = List<int>(sidSSize);
+    var sidDData = List.filled(sidSSize, 0);
     for (var i = 0; i < sidSSize; i++) {
       sidDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28630,7 +28630,7 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo,
     // field id
     var idSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var idDData = List<int>(idSSize);
+    var idDData = List.filled(idSSize, 0);
     for (var i = 0; i < idSSize; i++) {
       idDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28639,7 +28639,7 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo,
     // field sensorClass
     var sensorClassSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sensorClassDData = List<int>(sensorClassSSize);
+    var sensorClassDData = List.filled(sensorClassSSize, 0);
     for (var i = 0; i < sensorClassSSize; i++) {
       sensorClassDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28660,7 +28660,7 @@ class RemoteSensorInfoSerializer extends imc.ImcSerializer<imc.RemoteSensorInfo,
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28772,7 +28772,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
     // field id
     var idSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var idDData = List<int>(idSSize);
+    var idDData = List.filled(idSSize, 0);
     for (var i = 0; i < idSSize; i++) {
       idDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -28913,7 +28913,7 @@ class MapFeatureSerializer extends imc.ImcSerializer<imc.MapFeature, imc.MapFeat
     // field id
     var idSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var idDData = List<int>(idSSize);
+    var idDData = List.filled(idSSize, 0);
     for (var i = 0; i < idSSize; i++) {
       idDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29147,7 +29147,7 @@ class CcuEventSerializer extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBui
     // field id
     var idSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var idDData = List<int>(idSSize);
+    var idDData = List.filled(idSSize, 0);
     for (var i = 0; i < idSSize; i++) {
       idDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29273,7 +29273,7 @@ class VehicleLinksSerializer extends imc.ImcSerializer<imc.VehicleLinks, imc.Veh
     // field localname
     var localnameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var localnameDData = List<int>(localnameSSize);
+    var localnameDData = List.filled(localnameSSize, 0);
     for (var i = 0; i < localnameSSize; i++) {
       localnameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29393,7 +29393,7 @@ class TrexObservationSerializer extends imc.ImcSerializer<imc.TrexObservation, i
     // field timeline
     var timelineSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var timelineDData = List<int>(timelineSSize);
+    var timelineDData = List.filled(timelineSSize, 0);
     for (var i = 0; i < timelineSSize; i++) {
       timelineDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29402,7 +29402,7 @@ class TrexObservationSerializer extends imc.ImcSerializer<imc.TrexObservation, i
     // field predicate
     var predicateSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var predicateDData = List<int>(predicateSSize);
+    var predicateDData = List.filled(predicateSSize, 0);
     for (var i = 0; i < predicateSSize; i++) {
       predicateDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29411,7 +29411,7 @@ class TrexObservationSerializer extends imc.ImcSerializer<imc.TrexObservation, i
     // field attributes
     var attributesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var attributesDData = List<int>(attributesSSize);
+    var attributesDData = List.filled(attributesSSize, 0);
     for (var i = 0; i < attributesSSize; i++) {
       attributesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29514,7 +29514,7 @@ class TrexCommandSerializer extends imc.ImcSerializer<imc.TrexCommand, imc.TrexC
     // field goalId
     var goalIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var goalIdDData = List<int>(goalIdSSize);
+    var goalIdDData = List.filled(goalIdSSize, 0);
     for (var i = 0; i < goalIdSSize; i++) {
       goalIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29523,7 +29523,7 @@ class TrexCommandSerializer extends imc.ImcSerializer<imc.TrexCommand, imc.TrexC
     // field goalXml
     var goalXmlSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var goalXmlDData = List<int>(goalXmlSSize);
+    var goalXmlDData = List.filled(goalXmlSSize, 0);
     for (var i = 0; i < goalXmlSSize; i++) {
       goalXmlDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29634,7 +29634,7 @@ class TrexOperationSerializer extends imc.ImcSerializer<imc.TrexOperation, imc.T
     // field goalId
     var goalIdSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var goalIdDData = List<int>(goalIdSSize);
+    var goalIdDData = List.filled(goalIdSSize, 0);
     for (var i = 0; i < goalIdSSize; i++) {
       goalIdDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29754,7 +29754,7 @@ class TrexAttributeSerializer extends imc.ImcSerializer<imc.TrexAttribute, imc.T
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29766,7 +29766,7 @@ class TrexAttributeSerializer extends imc.ImcSerializer<imc.TrexAttribute, imc.T
     // field min
     var minSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var minDData = List<int>(minSSize);
+    var minDData = List.filled(minSSize, 0);
     for (var i = 0; i < minSSize; i++) {
       minDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29775,7 +29775,7 @@ class TrexAttributeSerializer extends imc.ImcSerializer<imc.TrexAttribute, imc.T
     // field max
     var maxSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var maxDData = List<int>(maxSSize);
+    var maxDData = List.filled(maxSSize, 0);
     for (var i = 0; i < maxSSize; i++) {
       maxDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29893,7 +29893,7 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken, imc.TrexToken
     // field timeline
     var timelineSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var timelineDData = List<int>(timelineSSize);
+    var timelineDData = List.filled(timelineSSize, 0);
     for (var i = 0; i < timelineSSize; i++) {
       timelineDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -29902,7 +29902,7 @@ class TrexTokenSerializer extends imc.ImcSerializer<imc.TrexToken, imc.TrexToken
     // field predicate
     var predicateSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var predicateDData = List<int>(predicateSSize);
+    var predicateDData = List.filled(predicateSSize, 0);
     for (var i = 0; i < predicateSSize; i++) {
       predicateDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30031,7 +30031,7 @@ class TrexPlanSerializer extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBui
     // field reactor
     var reactorSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var reactorDData = List<int>(reactorSSize);
+    var reactorDData = List.filled(reactorSSize, 0);
     for (var i = 0; i < reactorSSize; i++) {
       reactorDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30145,7 +30145,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
     // field topic
     var topicSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var topicDData = List<int>(topicSSize);
+    var topicDData = List.filled(topicSSize, 0);
     for (var i = 0; i < topicSSize; i++) {
       topicDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30154,7 +30154,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30250,7 +30250,7 @@ class CompressedImageSerializer extends imc.ImcSerializer<imc.CompressedImage, i
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30564,7 +30564,7 @@ class TargetSerializer extends imc.ImcSerializer<imc.Target, imc.TargetBuilder> 
     // field label
     var labelSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var labelDData = List<int>(labelSSize);
+    var labelDData = List.filled(labelSSize, 0);
     for (var i = 0; i < labelSSize; i++) {
       labelDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30679,7 +30679,7 @@ class EntityParameterSerializer extends imc.ImcSerializer<imc.EntityParameter, i
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30688,7 +30688,7 @@ class EntityParameterSerializer extends imc.ImcSerializer<imc.EntityParameter, i
     // field value
     var valueSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var valueDData = List<int>(valueSSize);
+    var valueDData = List.filled(valueSSize, 0);
     for (var i = 0; i < valueSSize; i++) {
       valueDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30800,7 +30800,7 @@ class EntityParametersSerializer extends imc.ImcSerializer<imc.EntityParameters,
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30920,7 +30920,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<imc.QueryEntityP
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30929,7 +30929,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<imc.QueryEntityP
     // field visibility
     var visibilitySSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var visibilityDData = List<int>(visibilitySSize);
+    var visibilityDData = List.filled(visibilitySSize, 0);
     for (var i = 0; i < visibilitySSize; i++) {
       visibilityDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -30938,7 +30938,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<imc.QueryEntityP
     // field scope
     var scopeSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var scopeDData = List<int>(scopeSSize);
+    var scopeDData = List.filled(scopeSSize, 0);
     for (var i = 0; i < scopeSSize; i++) {
       scopeDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31050,7 +31050,7 @@ class SetEntityParametersSerializer extends imc.ImcSerializer<imc.SetEntityParam
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31158,7 +31158,7 @@ class SaveEntityParametersSerializer extends imc.ImcSerializer<imc.SaveEntityPar
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31419,7 +31419,7 @@ class SessionSubscriptionSerializer extends imc.ImcSerializer<imc.SessionSubscri
     // field messages
     var messagesSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var messagesDData = List<int>(messagesSSize);
+    var messagesDData = List.filled(messagesSSize, 0);
     for (var i = 0; i < messagesSSize; i++) {
       messagesDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31680,7 +31680,7 @@ class PushEntityParametersSerializer extends imc.ImcSerializer<imc.PushEntityPar
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31771,7 +31771,7 @@ class PopEntityParametersSerializer extends imc.ImcSerializer<imc.PopEntityParam
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31868,7 +31868,7 @@ class IoEventSerializer extends imc.ImcSerializer<imc.IoEvent, imc.IoEventBuilde
     // field error
     var errorSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var errorDData = List<int>(errorSSize);
+    var errorDData = List.filled(errorSSize, 0);
     for (var i = 0; i < errorSSize; i++) {
       errorDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31973,7 +31973,7 @@ class UamTxFrameSerializer extends imc.ImcSerializer<imc.UamTxFrame, imc.UamTxFr
     // field sysDst
     var sysDstSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sysDstDData = List<int>(sysDstSSize);
+    var sysDstDData = List.filled(sysDstSSize, 0);
     for (var i = 0; i < sysDstSSize; i++) {
       sysDstDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -31985,7 +31985,7 @@ class UamTxFrameSerializer extends imc.ImcSerializer<imc.UamTxFrame, imc.UamTxFr
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -32089,7 +32089,7 @@ class UamRxFrameSerializer extends imc.ImcSerializer<imc.UamRxFrame, imc.UamRxFr
     // field sysSrc
     var sysSrcSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sysSrcDData = List<int>(sysSrcSSize);
+    var sysSrcDData = List.filled(sysSrcSSize, 0);
     for (var i = 0; i < sysSrcSSize; i++) {
       sysSrcDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -32098,7 +32098,7 @@ class UamRxFrameSerializer extends imc.ImcSerializer<imc.UamRxFrame, imc.UamRxFr
     // field sysDst
     var sysDstSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sysDstDData = List<int>(sysDstSSize);
+    var sysDstDData = List.filled(sysDstSSize, 0);
     for (var i = 0; i < sysDstSSize; i++) {
       sysDstDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -32110,7 +32110,7 @@ class UamRxFrameSerializer extends imc.ImcSerializer<imc.UamRxFrame, imc.UamRxFr
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -32212,7 +32212,7 @@ class UamTxStatusSerializer extends imc.ImcSerializer<imc.UamTxStatus, imc.UamTx
     // field error
     var errorSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var errorDData = List<int>(errorSSize);
+    var errorDData = List.filled(errorSSize, 0);
     for (var i = 0; i < errorSSize; i++) {
       errorDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -32312,7 +32312,7 @@ class UamRxRangeSerializer extends imc.ImcSerializer<imc.UamRxRange, imc.UamRxRa
     // field sys
     var sysSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var sysDData = List<int>(sysSSize);
+    var sysDData = List.filled(sysSSize, 0);
     for (var i = 0; i < sysSSize; i++) {
       sysDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -33152,7 +33152,7 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand, imc.SoiComm
     // field settings
     var settingsSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var settingsDData = List<int>(settingsSSize);
+    var settingsDData = List.filled(settingsSSize, 0);
     for (var i = 0; i < settingsSSize; i++) {
       settingsDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -33175,7 +33175,7 @@ class SoiCommandSerializer extends imc.ImcSerializer<imc.SoiCommand, imc.SoiComm
     // field info
     var infoSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var infoDData = List<int>(infoSSize);
+    var infoDData = List.filled(infoSSize, 0);
     for (var i = 0; i < infoSSize; i++) {
       infoDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -33383,7 +33383,7 @@ class MessagePartSerializer extends imc.ImcSerializer<imc.MessagePart, imc.Messa
     // field data
     var dataSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var dataDData = List<int>(dataSSize);
+    var dataDData = List.filled(dataSSize, 0);
     for (var i = 0; i < dataSSize; i++) {
       dataDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -33478,7 +33478,7 @@ class NeptusBlobSerializer extends imc.ImcSerializer<imc.NeptusBlob, imc.NeptusB
     // field contentType
     var contentTypeSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var contentTypeDData = List<int>(contentTypeSSize);
+    var contentTypeDData = List.filled(contentTypeSSize, 0);
     for (var i = 0; i < contentTypeSSize; i++) {
       contentTypeDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -33487,7 +33487,7 @@ class NeptusBlobSerializer extends imc.ImcSerializer<imc.NeptusBlob, imc.NeptusB
     // field content
     var contentSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var contentDData = List<int>(contentSSize);
+    var contentDData = List.filled(contentSSize, 0);
     for (var i = 0; i < contentSSize; i++) {
       contentDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -33958,7 +33958,7 @@ class ParametersXmlSerializer extends imc.ImcSerializer<imc.ParametersXml, imc.P
     // field locale
     var localeSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var localeDData = List<int>(localeSSize);
+    var localeDData = List.filled(localeSSize, 0);
     for (var i = 0; i < localeSSize; i++) {
       localeDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -33967,7 +33967,7 @@ class ParametersXmlSerializer extends imc.ImcSerializer<imc.ParametersXml, imc.P
     // field config
     var configSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var configDData = List<int>(configSSize);
+    var configDData = List.filled(configSSize, 0);
     for (var i = 0; i < configSSize; i++) {
       configDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -34457,7 +34457,7 @@ class UsblAnglesExtendedSerializer extends imc.ImcSerializer<imc.UsblAnglesExten
     // field target
     var targetSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var targetDData = List<int>(targetSSize);
+    var targetDData = List.filled(targetSSize, 0);
     for (var i = 0; i < targetSSize; i++) {
       targetDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -34602,7 +34602,7 @@ class UsblPositionExtendedSerializer extends imc.ImcSerializer<imc.UsblPositionE
     // field target
     var targetSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var targetDData = List<int>(targetSSize);
+    var targetDData = List.filled(targetSSize, 0);
     for (var i = 0; i < targetSSize; i++) {
       targetDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -34738,7 +34738,7 @@ class UsblFixExtendedSerializer extends imc.ImcSerializer<imc.UsblFixExtended, i
     // field target
     var targetSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var targetDData = List<int>(targetSSize);
+    var targetDData = List.filled(targetSSize, 0);
     for (var i = 0; i < targetSSize; i++) {
       targetDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -34856,7 +34856,7 @@ class UsblModemSerializer extends imc.ImcSerializer<imc.UsblModem, imc.UsblModem
     // field name
     var nameSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var nameDData = List<int>(nameSSize);
+    var nameDData = List.filled(nameSSize, 0);
     for (var i = 0; i < nameSSize; i++) {
       nameDData[i] = byteData.getUint8(byteOffset++);
     }
@@ -35427,7 +35427,7 @@ class ApmStatusSerializer extends imc.ImcSerializer<imc.ApmStatus, imc.ApmStatus
     // field text
     var textSSize = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    var textDData = List<int>(textSSize);
+    var textDData = List.filled(textSSize, 0);
     for (var i = 0; i < textSSize; i++) {
       textDData[i] = byteData.getUint8(byteOffset++);
     }
