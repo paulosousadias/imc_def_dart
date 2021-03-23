@@ -4,6 +4,8 @@ version: 1.0.0+1
 author: Paulo Sousa Dias <pdias@lsts.pt>
 homepage: https://github.com/paulosousadias
 
+publish_to: 'none'
+
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
