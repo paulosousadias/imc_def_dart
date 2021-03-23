@@ -92,7 +92,7 @@ class ImcType extends EnumType {
   static const typeMessage = ImcType._(11, 'message', size: -1);
   static const typeMessageList = ImcType._(12, 'message-list', size: -1);
 
-  static get values => [
+  static List<ImcType> get values => <ImcType>[
         typeUInt8,
         typeUInt16,
         typeUint32,
@@ -143,7 +143,7 @@ class Flags extends EnumType {
   static const periodic = Flags._(0);
   static const deprecated = Flags._(1);
 
-  static get values => [periodic, deprecated];
+  static List<Flags> get values => <Flags>[periodic, deprecated];
 
   const Flags._(int value) : super(value);
 }
