@@ -44,11 +44,10 @@ class EntityStateEnumState extends EnumType {
 class EntityStateBitfieldFlags extends BitfieldType {
   static const efla_human_intervention = EntityStateBitfieldFlags(0x01);
 
-  static get values => [
-        efla_human_intervention];
+  static get values => [efla_human_intervention];
 
-  static get names => {
-        efla_human_intervention: '''Human Intervention Required'''};
+  static get names =>
+      {efla_human_intervention: '''Human Intervention Required'''};
 
   const EntityStateBitfieldFlags(int value) : super(value);
 
@@ -76,7 +75,8 @@ class EntityStateBitfieldFlags extends BitfieldType {
           List<EntityStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? EntityStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => EntityStateBitfieldFlags(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => EntityStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Operation to perform.
@@ -107,6 +107,7 @@ class EntityListEnumOp extends EnumType {
 class RestartSystemEnumType extends EnumType {
   /// Request a DUNE restart
   static const rstype_dune = RestartSystemEnumType(1);
+
   /// Request a system restart.
   static const rstype_system = RestartSystemEnumType(2);
 
@@ -134,10 +135,13 @@ class RestartSystemEnumType extends EnumType {
 class DevCalibrationControlEnumOp extends EnumType {
   /// Start calibration procedure.
   static const dcal_start = DevCalibrationControlEnumOp(0);
+
   /// Stop calibration procedure.
   static const dcal_stop = DevCalibrationControlEnumOp(1);
+
   /// Perform next step of the calibration procedure.
   static const dcal_step_next = DevCalibrationControlEnumOp(2);
+
   /// Perform previous step of the calibration procedure.
   static const dcal_step_previous = DevCalibrationControlEnumOp(3);
 
@@ -168,16 +172,21 @@ class DevCalibrationControlEnumOp extends EnumType {
 /// Additional flags.
 class DevCalibrationStateBitfieldFlags extends BitfieldType {
   /// Jumping to the previous calibration step is not supported.
-  static const dcs_previous_not_supported = DevCalibrationStateBitfieldFlags(0x01);
+  static const dcs_previous_not_supported =
+      DevCalibrationStateBitfieldFlags(0x01);
+
   /// Jumping to the next calibration step is not supported.
   static const dcs_next_not_supported = DevCalibrationStateBitfieldFlags(0x02);
+
   /// The calibration procedure was suspended and must be resumed or
   /// cancelled with a DeviceCalibrationControl message.
   static const dcs_waiting_control = DevCalibrationStateBitfieldFlags(0x04);
+
   /// Calibration was interrupted due to an error and must be
   /// restarted or cancelled with a DeviceCalibrationControl
   /// message.
   static const dcs_error = DevCalibrationStateBitfieldFlags(0x08);
+
   /// The calibration procedure was completed.
   static const dcs_completed = DevCalibrationStateBitfieldFlags(0x10);
 
@@ -222,26 +231,35 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
   static DevCalibrationStateBitfieldFlags fromBits(
           List<DevCalibrationStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DevCalibrationStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DevCalibrationStateBitfieldFlags(b1.value | b2.value));
+          ? DevCalibrationStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              DevCalibrationStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Current state.
 class EntityActivationStateEnumState extends EnumType {
   /// Entity is inactive.
   static const eas_inactive = EntityActivationStateEnumState(0);
+
   /// Entity is active.
   static const eas_active = EntityActivationStateEnumState(1);
+
   /// Activation is in progress.
   static const eas_act_ip = EntityActivationStateEnumState(2);
+
   /// Activation is completed.
   static const eas_act_done = EntityActivationStateEnumState(3);
+
   /// The activation procedure failed and the field 'error' contains the error message.
   static const eas_act_fail = EntityActivationStateEnumState(4);
+
   /// Deactivation is in progress.
   static const eas_deact_ip = EntityActivationStateEnumState(5);
+
   /// Deactivation is in progress.
   static const eas_deact_done = EntityActivationStateEnumState(6);
+
   /// The deactivation procedure failed and the field 'error' contains the error message.
   static const eas_deact_fail = EntityActivationStateEnumState(7);
 
@@ -429,10 +447,12 @@ class LoggingControlEnumOp extends EnumType {
   /// two messages - STOPPED and STARTED). The field 'name'
   /// represents the label that will be appended to the log path.
   static const cop_request_start = LoggingControlEnumOp(0);
+
   /// The logging manager will send a message with this operation
   /// everytime a log is successfully started. The field 'name'
   /// contains the complete name of the log.
   static const cop_started = LoggingControlEnumOp(1);
+
   /// Request the logging manager to stop logging messages. The
   /// logging manager will reply with a STOPPED operation and
   /// logging will be suspended until a message with operation
@@ -441,15 +461,18 @@ class LoggingControlEnumOp extends EnumType {
   /// reply with a STOPPED operation. The field 'name' with this
   /// operation type has no meaning.
   static const cop_request_stop = LoggingControlEnumOp(2);
+
   /// The logging manager will send a message with this operation
   /// when logging is successfully stopped. The field 'name'
   /// contains the complete name of the log that was closed.
   static const cop_stopped = LoggingControlEnumOp(3);
+
   /// This operation instructs the logging manager to send a
   /// message with operation CURRENT_NAME containing the complete
   /// name of the current log in the field 'name'. The field
   /// 'name' with this operation type has no meaning.
   static const cop_request_current_name = LoggingControlEnumOp(4);
+
   /// The logging manager will send a message with this operation
   /// when asked via the REQUEST_CURRENT_NAME operation. The field
   /// 'name' contains the complete name of the log.
@@ -521,10 +544,13 @@ class LogBookEntryEnumType extends EnumType {
 class LogBookControlEnumCommand extends EnumType {
   /// Retrieve log book entries.
   static const lbc_get = LogBookControlEnumCommand(0);
+
   /// Clear log book entries.
   static const lbc_clear = LogBookControlEnumCommand(1);
+
   /// Retrieve log book entries corresponding to errors.
   static const lbc_get_err = LogBookControlEnumCommand(2);
+
   /// Reply to a GET command. Message argument is a MessageList
   /// instance containing LogBookEntry messages.
   static const lbc_reply = LogBookControlEnumCommand(3);
@@ -588,14 +614,19 @@ class ReplayControlEnumOp extends EnumType {
 class ClockControlEnumOp extends EnumType {
   /// Synchronize clock according to given clock value.
   static const cop_sync_exec = ClockControlEnumOp(0);
+
   /// Request autonomous clock synchronization.
   static const cop_sync_request = ClockControlEnumOp(1);
+
   /// Synchronization start notification.
   static const cop_sync_started = ClockControlEnumOp(2);
+
   /// Synchronization completion notification.
   static const cop_sync_done = ClockControlEnumOp(3);
+
   /// Set timezone.
   static const cop_set_tz = ClockControlEnumOp(4);
+
   /// Notification due to timezone modification.
   static const cop_set_tz_done = ClockControlEnumOp(5);
 
@@ -760,8 +791,10 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
   static AnnounceServiceBitfieldServiceType fromBits(
           List<AnnounceServiceBitfieldServiceType> bits) =>
       (bits == null || bits.length < 2)
-          ? AnnounceServiceBitfieldServiceType(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => AnnounceServiceBitfieldServiceType(b1.value | b2.value));
+          ? AnnounceServiceBitfieldServiceType(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              AnnounceServiceBitfieldServiceType(b1.value | b2.value));
 }
 
 /// Current state of an SMS transaction.
@@ -826,7 +859,8 @@ class IridiumTxStatusEnumStatus extends EnumType {
         txstatus_error: '''Error while trying to transmit message''',
         txstatus_queued: '''Message has been queued for transmission''',
         txstatus_transmit: '''Message is currently being transmitted''',
-        txstatus_expired: '''Message's TTL has expired. Transmition cancelled.''',
+        txstatus_expired:
+            '''Message's TTL has expired. Transmition cancelled.''',
         txstatus_empty: '''No more messages to be transmitted or received.''',
       };
 
@@ -880,8 +914,10 @@ class SystemGroupEnumAction extends EnumType {
 class HistoricDataQueryEnumType extends EnumType {
   /// Request data from the Data Store
   static const hrtype_query = HistoricDataQueryEnumType(1);
+
   /// Data Store response with Data (using field 'data')
   static const hrtype_reply = HistoricDataQueryEnumType(2);
+
   /// Clear 'data' from the Data Store
   static const hrtype_clear = HistoricDataQueryEnumType(3);
 
@@ -910,6 +946,7 @@ class HistoricDataQueryEnumType extends EnumType {
 class CommSystemsQueryBitfieldType extends BitfieldType {
   /// Query systems about communication capability
   static const ciq_query = CommSystemsQueryBitfieldType(0x01);
+
   /// Reply systems about communication capability
   static const ciq_reply = CommSystemsQueryBitfieldType(0x02);
 
@@ -948,20 +985,26 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
   static CommSystemsQueryBitfieldType fromBits(
           List<CommSystemsQueryBitfieldType> bits) =>
       (bits == null || bits.length < 2)
-          ? CommSystemsQueryBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => CommSystemsQueryBitfieldType(b1.value | b2.value));
+          ? CommSystemsQueryBitfieldType(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => CommSystemsQueryBitfieldType(b1.value | b2.value));
 }
 
 /// Communication interface to be used for reports.
 class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
   /// Use acoustic communications
   static const ciq_acoustic = CommSystemsQueryBitfieldCommInterface(0x01);
+
   /// Use satellite communications
   static const ciq_satellite = CommSystemsQueryBitfieldCommInterface(0x02);
+
   /// Use Global System for Mobile Communications
   static const ciq_gsm = CommSystemsQueryBitfieldCommInterface(0x04);
+
   /// Use mobile networks
   static const ciq_mobile = CommSystemsQueryBitfieldCommInterface(0x08);
+
   /// Use Radio telemetry
   static const ciq_radio = CommSystemsQueryBitfieldCommInterface(0x10);
 
@@ -1006,15 +1049,19 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
   static CommSystemsQueryBitfieldCommInterface fromBits(
           List<CommSystemsQueryBitfieldCommInterface> bits) =>
       (bits == null || bits.length < 2)
-          ? CommSystemsQueryBitfieldCommInterface(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => CommSystemsQueryBitfieldCommInterface(b1.value | b2.value));
+          ? CommSystemsQueryBitfieldCommInterface(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              CommSystemsQueryBitfieldCommInterface(b1.value | b2.value));
 }
 
 class CommSystemsQueryEnumModel extends EnumType {
   /// Model is not defined
   static const ciq_unknown = CommSystemsQueryEnumModel(0x00);
+
   /// Radio Model 3DR
   static const ciq_m3dr = CommSystemsQueryEnumModel(0x01);
+
   /// Radio Model RDFXXXx point to point
   static const ciq_rdfxxxxptp = CommSystemsQueryEnumModel(0x02);
 
@@ -1044,8 +1091,10 @@ class CommSystemsQueryEnumModel extends EnumType {
 class TelemetryMsgEnumType extends EnumType {
   /// Send telemetry data.
   static const tm_tx = TelemetryMsgEnumType(0x01);
+
   /// Received telemetry data.
   static const tm_rx = TelemetryMsgEnumType(0x02);
+
   /// Status of transmitted data.
   static const tm_txstatus = TelemetryMsgEnumType(0x03);
 
@@ -1075,11 +1124,14 @@ class TelemetryMsgEnumType extends EnumType {
 class TelemetryMsgEnumCode extends EnumType {
   /// Unknown code type
   static const tm_code_unk = TelemetryMsgEnumCode(0x00);
+
   /// Concise representation of entire system state message.
   /// Payload message is a MessageList.
   static const tm_code_report = TelemetryMsgEnumCode(0x01);
+
   /// Payload message is INLINEMSG
   static const tm_code_imc = TelemetryMsgEnumCode(0x02);
+
   /// Payload message is in raw
   static const tm_code_raw = TelemetryMsgEnumCode(0x03);
 
@@ -1111,6 +1163,7 @@ class TelemetryMsgEnumCode extends EnumType {
 class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
   /// Message transmitted without acknowledged reception response
   static const tm_nak = TelemetryMsgBitfieldAcknowledge(0x00);
+
   /// Message transmitted with acknowledged reception response
   static const tm_ak = TelemetryMsgBitfieldAcknowledge(0x01);
 
@@ -1149,8 +1202,10 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
   static TelemetryMsgBitfieldAcknowledge fromBits(
           List<TelemetryMsgBitfieldAcknowledge> bits) =>
       (bits == null || bits.length < 2)
-          ? TelemetryMsgBitfieldAcknowledge(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => TelemetryMsgBitfieldAcknowledge(b1.value | b2.value));
+          ? TelemetryMsgBitfieldAcknowledge(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => TelemetryMsgBitfieldAcknowledge(b1.value | b2.value));
 }
 
 /// State of the transmitted message.
@@ -1203,6 +1258,7 @@ class TelemetryMsgEnumStatus extends EnumType {
 class LblConfigEnumOp extends EnumType {
   /// Set the beacons configuration aboard the vehicle.
   static const op_set_cfg = LblConfigEnumOp(0);
+
   /// Request the vehicle to send its current beacons configuration.
   static const op_get_cfg = LblConfigEnumOp(1);
   static const op_cur_cfg = LblConfigEnumOp(2);
@@ -1234,49 +1290,66 @@ class AcousticOperationEnumOp extends EnumType {
   /// Send an abort through the acoustic channel to the system
   /// specified in the field 'system'.
   static const aop_abort = AcousticOperationEnumOp(0);
+
   /// The latest abort request to the system specified in the
   /// field 'system' is in progress.
   static const aop_abort_ip = AcousticOperationEnumOp(1);
+
   /// The latest abort operation expired without acknowledgment
   /// from the system specified in the field 'system'.
   static const aop_abort_timeout = AcousticOperationEnumOp(2);
+
   /// The latest abort operation was acknowledged by the system
   /// specified in the field 'system'.
   static const aop_abort_acked = AcousticOperationEnumOp(3);
+
   /// Request a range through the acoustic channel to the system
   /// specified in the field 'system'.
   static const aop_range = AcousticOperationEnumOp(4);
+
   /// The latest range request to the system specified in the
   /// field 'system' is in progress.
   static const aop_range_ip = AcousticOperationEnumOp(5);
+
   /// The latest range request operation expired without reply
   /// from the system specified in the field 'system'.
   static const aop_range_timeout = AcousticOperationEnumOp(6);
+
   /// The latest range request operation to the system specified
   /// in the field 'system' was successful and the range is
   /// specified in the field 'range'.
   static const aop_range_recved = AcousticOperationEnumOp(7);
+
   /// The acoustic modem is busy and cannot execute the requested
   /// operation.
   static const aop_busy = AcousticOperationEnumOp(8);
+
   /// The latest requested operation is not supported.
   static const aop_unsupported = AcousticOperationEnumOp(9);
+
   /// The transducer was not detected.
   static const aop_no_txd = AcousticOperationEnumOp(10);
+
   /// Request message over acoustic channel. The message to send
   /// is specified by the 'msg' field.
   static const aop_msg = AcousticOperationEnumOp(11);
+
   /// Message send request has been queued.
   static const aop_msg_queued = AcousticOperationEnumOp(12);
+
   /// Message send request is in progress.
   static const aop_msg_ip = AcousticOperationEnumOp(13);
+
   /// Message send request has been fulfilled.
   static const aop_msg_done = AcousticOperationEnumOp(14);
+
   /// Message send request could not be fulfilled.
   static const aop_msg_failure = AcousticOperationEnumOp(15);
+
   /// Request message over acoustic channel. The message to send
   /// is specified by the 'msg' field.
   static const aop_msg_short = AcousticOperationEnumOp(16);
+
   /// Request sending updated position to remote system so it can be ranged.
   static const aop_reverse_range = AcousticOperationEnumOp(17);
 
@@ -1336,20 +1409,28 @@ class AcousticOperationEnumOp extends EnumType {
 class GpsFixBitfieldValidity extends BitfieldType {
   /// Fields 'utc_year', 'utc_month' and 'utc_day' are valid.
   static const gfv_valid_date = GpsFixBitfieldValidity(0x0001);
+
   /// Field 'utc_time' is valid.
   static const gfv_valid_time = GpsFixBitfieldValidity(0x0002);
+
   /// Fields 'lat', 'lon', 'altitude' and 'satellites' are valid.
   static const gfv_valid_pos = GpsFixBitfieldValidity(0x0004);
+
   /// Field 'cog' is valid.
   static const gfv_valid_cog = GpsFixBitfieldValidity(0x0008);
+
   /// Field 'sog' is valid.
   static const gfv_valid_sog = GpsFixBitfieldValidity(0x0010);
+
   /// Field 'hacc' is valid.
   static const gfv_valid_hacc = GpsFixBitfieldValidity(0x0020);
+
   /// Field 'vacc' is valid.
   static const gfv_valid_vacc = GpsFixBitfieldValidity(0x0040);
+
   /// Field 'hdop' is valid.
   static const gfv_valid_hdop = GpsFixBitfieldValidity(0x0080);
+
   /// Field 'vdop' is valid.
   static const gfv_valid_vdop = GpsFixBitfieldValidity(0x0100);
 
@@ -1399,23 +1480,27 @@ class GpsFixBitfieldValidity extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static GpsFixBitfieldValidity fromBits(
-          List<GpsFixBitfieldValidity> bits) =>
+  static GpsFixBitfieldValidity fromBits(List<GpsFixBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
           ? GpsFixBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => GpsFixBitfieldValidity(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => GpsFixBitfieldValidity(b1.value | b2.value));
 }
 
 /// Type of fix.
 class GpsFixEnumType extends EnumType {
   /// Stand alone solution.
   static const gft_standalone = GpsFixEnumType(0x00);
+
   /// Differential solution.
   static const gft_differential = GpsFixEnumType(0x01);
+
   /// Dead reckoning solution.
   static const gft_dead_reckoning = GpsFixEnumType(0x02);
+
   /// Manual solution.
   static const gft_manual_input = GpsFixEnumType(0x03);
+
   /// Simulated solution.
   static const gft_simulation = GpsFixEnumType(0x04);
 
@@ -1489,8 +1574,10 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
   static GroundVelocityBitfieldValidity fromBits(
           List<GroundVelocityBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
-          ? GroundVelocityBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => GroundVelocityBitfieldValidity(b1.value | b2.value));
+          ? GroundVelocityBitfieldValidity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => GroundVelocityBitfieldValidity(b1.value | b2.value));
 }
 
 /// Each bit of this field represents if a given velocity
@@ -1537,14 +1624,17 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
   static WaterVelocityBitfieldValidity fromBits(
           List<WaterVelocityBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
-          ? WaterVelocityBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => WaterVelocityBitfieldValidity(b1.value | b2.value));
+          ? WaterVelocityBitfieldValidity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => WaterVelocityBitfieldValidity(b1.value | b2.value));
 }
 
 /// Validity of the measurement.
 class DistanceEnumValidity extends EnumType {
   /// Measurement is invalid.
   static const dv_invalid = DistanceEnumValidity(0);
+
   /// Measurement is valid.
   static const dv_valid = DistanceEnumValidity(1);
 
@@ -1625,6 +1715,7 @@ class PulseDetectionControlEnumOp extends EnumType {
 class DataSanityEnumSane extends EnumType {
   /// Data is sane.
   static const ds_sane = DataSanityEnumSane(0);
+
   /// Data is not sane.
   static const ds_not_sane = DataSanityEnumSane(1);
 
@@ -1652,10 +1743,13 @@ class DataSanityEnumSane extends EnumType {
 class GpsFixRtkBitfieldValidity extends BitfieldType {
   /// Field 'tow' is valid.
   static const rfv_valid_time = GpsFixRtkBitfieldValidity(0x0001);
+
   /// Fields 'base_lat', 'base_lon' and 'base_height' are valid.
   static const rfv_valid_base = GpsFixRtkBitfieldValidity(0x0002);
+
   /// Fields 'n', 'e', 'd' are valid.
   static const rfv_valid_pos = GpsFixRtkBitfieldValidity(0x0004);
+
   /// Fields 'v_n', 'v_e', 'v_d' are valid.
   static const rfv_valid_vel = GpsFixRtkBitfieldValidity(0x0008);
 
@@ -1698,18 +1792,23 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
   static GpsFixRtkBitfieldValidity fromBits(
           List<GpsFixRtkBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
-          ? GpsFixRtkBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => GpsFixRtkBitfieldValidity(b1.value | b2.value));
+          ? GpsFixRtkBitfieldValidity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => GpsFixRtkBitfieldValidity(b1.value | b2.value));
 }
 
 /// Type of fix.
 class GpsFixRtkEnumType extends EnumType {
   /// No solution, but RTK task is running.
   static const rtk_none = GpsFixRtkEnumType(0x00);
+
   /// No solution, but receiving observations.
   static const rtk_obs = GpsFixRtkEnumType(0x01);
+
   /// Floating point solution of IAR.
   static const rtk_float = GpsFixRtkEnumType(0x02);
+
   /// Fixed (single) solution of IAR.
   static const rtk_fixed = GpsFixRtkEnumType(0x03);
 
@@ -1861,21 +1960,27 @@ class PowerOperationEnumOp extends EnumType {
   /// it's devices immediately. If the destination entity is the
   /// special entity '0' the whole system will power down.
   static const pop_pwr_down = PowerOperationEnumOp(0);
+
   /// The latest power down request is in progress and the time
   /// remaining until power down is given in field 'time_remain'.
   static const pop_pwr_down_ip = PowerOperationEnumOp(1);
+
   /// The latest power down request was aborted.
   static const pop_pwr_down_aborted = PowerOperationEnumOp(2);
+
   /// Request the destination entity of this message to power down
   /// it's devices at the time given in the field 'sched_time'. If
   /// the destination entity is the special entity '0' the whole
   /// system will power down.
   static const pop_sched_pwr_down = PowerOperationEnumOp(3);
+
   /// Request the destination entity of this message to power up
   /// it's devices.
   static const pop_pwr_up = PowerOperationEnumOp(4);
+
   /// The latest power up request is in progress.
   static const pop_pwr_up_ip = PowerOperationEnumOp(5);
+
   /// Request the destination entity of this message to power up
   /// it's devices at the time given in the field 'sched_time'. If
   /// the destination entity is the special entity '0' the whole
@@ -1916,22 +2021,29 @@ class PowerOperationEnumOp extends EnumType {
 class PowerChannelControlEnumOp extends EnumType {
   /// Turn off power channel specified in field 'id'.
   static const pcc_op_turn_off = PowerChannelControlEnumOp(0);
+
   /// Turn on power channel specified in field 'id'.
   static const pcc_op_turn_on = PowerChannelControlEnumOp(1);
+
   /// Toggle power channel specified in field 'id'.
   static const pcc_op_toggle = PowerChannelControlEnumOp(2);
+
   /// Turn on power channel specified in field 'id' in
   /// 'sched_time' seconds.
   static const pcc_op_sched_on = PowerChannelControlEnumOp(3);
+
   /// Turn off power channel specified in field 'id' in
   /// 'sched_time' seconds.
   static const pcc_op_sched_off = PowerChannelControlEnumOp(4);
+
   /// Reset all scheduled operations for the channel specified in
   /// field 'id'.
   static const pcc_op_sched_reset = PowerChannelControlEnumOp(5);
+
   /// Save the current state of the channel 'id' to persistent
   /// storage.
   static const pcc_op_save = PowerChannelControlEnumOp(6);
+
   /// Restart power channel specified in field 'id'.
   static const pcc_op_restart = PowerChannelControlEnumOp(7);
 
@@ -1971,6 +2083,7 @@ class PowerChannelControlEnumOp extends EnumType {
 class PowerChannelStateEnumState extends EnumType {
   /// Power channel is off.
   static const pcs_off = PowerChannelStateEnumState(0);
+
   /// Power channel is on.
   static const pcs_on = PowerChannelStateEnumState(1);
 
@@ -1998,12 +2111,16 @@ class PowerChannelStateEnumState extends EnumType {
 class GpsFixRejectionEnumReason extends EnumType {
   /// New GPS Fix position is above a computed threshold.
   static const rr_above_threshold = GpsFixRejectionEnumReason(0);
+
   /// Invalid measurement.
   static const rr_invalid = GpsFixRejectionEnumReason(1);
+
   /// Above maximum horizontal dilution of precision.
   static const rr_above_max_hdop = GpsFixRejectionEnumReason(2);
+
   /// Above maximum horizontal accuracy index.
   static const rr_above_max_hacc = GpsFixRejectionEnumReason(3);
+
   /// Lost one of the validity bits between consecutive GPS fixes.
   static const rr_lost_val_bit = GpsFixRejectionEnumReason(4);
 
@@ -2037,12 +2154,16 @@ class GpsFixRejectionEnumReason extends EnumType {
 class LblRangeAcceptanceEnumAcceptance extends EnumType {
   /// This LBL range is accepted by the navigation filter.
   static const rr_accepted = LblRangeAcceptanceEnumAcceptance(0);
+
   /// New LBL Range is above a computed threshold.
   static const rr_above_threshold = LblRangeAcceptanceEnumAcceptance(1);
+
   /// Singular point.
   static const rr_singular = LblRangeAcceptanceEnumAcceptance(2);
+
   /// The filter lacks information to properly use the received LBL range.
   static const rr_no_info = LblRangeAcceptanceEnumAcceptance(3);
+
   /// Vehicle is using only GPS fix when it is at surface.
   static const rr_at_surface = LblRangeAcceptanceEnumAcceptance(4);
 
@@ -2113,7 +2234,8 @@ class DvlRejectionBitfieldType extends BitfieldType {
           List<DvlRejectionBitfieldType> bits) =>
       (bits == null || bits.length < 2)
           ? DvlRejectionBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DvlRejectionBitfieldType(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => DvlRejectionBitfieldType(b1.value | b2.value));
 }
 
 /// Reason for rejection. There are two types of DVL measurement
@@ -2130,16 +2252,19 @@ class DvlRejectionEnumReason extends EnumType {
   /// with a given time window is above a configurable
   /// threshold.
   static const rr_innov_threshold_x = DvlRejectionEnumReason(0);
+
   /// The current DVL y-axis measurement is discarded
   /// because the absolute difference between the
   /// value and the previous accepted DVL measurement
   /// with a given time window is above a configurable
   /// threshold.
   static const rr_innov_threshold_y = DvlRejectionEnumReason(1);
+
   /// The current DVL x-axis measurement is discarded
   /// because the the absolute value is above a
   /// configurable threshold.
   static const rr_abs_threshold_x = DvlRejectionEnumReason(2);
+
   /// The current DVL y-axis measurement is discarded
   /// because the the absolute value is above a
   /// configurable threshold.
@@ -2208,27 +2333,34 @@ class DesiredPathBitfieldFlags extends BitfieldType {
   /// Indicates that the start point specification is given,
   /// therefore it should be considered for tracking.
   static const fl_start = DesiredPathBitfieldFlags(0x01);
+
   /// If start point is not given, ignore also the previous path's
   /// endpoint and take the start point to be the current vehicle
   /// location.
   static const fl_direct = DesiredPathBitfieldFlags(0x02);
+
   /// Ignore altitude/depth setting and let them be controlled
   /// independently.
   static const fl_no_z = DesiredPathBitfieldFlags(0x04);
+
   /// Perform 3D-tracking, i.e., consider the path formed in the
   /// XYZ plane taking into account both the 'start_z' and 'end_z'
   /// values.
   static const fl_3dtrack = DesiredPathBitfieldFlags(0x08);
+
   /// Indicates that loitering, if defined, should be done
   /// counter-clockwise. Clockwise loitering will apply
   /// otherwise.
   static const fl_cclockw = DesiredPathBitfieldFlags(0x10);
+
   /// Indicates that loitering, if defined, should be done from
   /// the current vehicle position. The end_lat and end_lon
   /// fields will be ignored.
   static const fl_loiter_curr = DesiredPathBitfieldFlags(0x20);
+
   /// Indicates that takeoff should be done before going to the end position.
   static const fl_takeoff = DesiredPathBitfieldFlags(0x40);
+
   /// Indicates that the system should land at the end position.
   static const fl_land = DesiredPathBitfieldFlags(0x80);
 
@@ -2280,21 +2412,27 @@ class DesiredPathBitfieldFlags extends BitfieldType {
           List<DesiredPathBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? DesiredPathBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredPathBitfieldFlags(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => DesiredPathBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired Control flags.
 class DesiredControlBitfieldFlags extends BitfieldType {
   /// If enabled then field X has a meaningful value.
   static const fl_x = DesiredControlBitfieldFlags(0x01);
+
   /// If enabled then field Y has a meaningful value.
   static const fl_y = DesiredControlBitfieldFlags(0x02);
+
   /// If enabled then field Z has a meaningful value.
   static const fl_z = DesiredControlBitfieldFlags(0x04);
+
   /// If enabled then field K has a meaningful value.
   static const fl_k = DesiredControlBitfieldFlags(0x08);
+
   /// If enabled then field M has a meaningful value.
   static const fl_m = DesiredControlBitfieldFlags(0x10);
+
   /// If enabled then field N has a meaningful value.
   static const fl_n = DesiredControlBitfieldFlags(0x20);
 
@@ -2341,22 +2479,29 @@ class DesiredControlBitfieldFlags extends BitfieldType {
   static DesiredControlBitfieldFlags fromBits(
           List<DesiredControlBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DesiredControlBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredControlBitfieldFlags(b1.value | b2.value));
+          ? DesiredControlBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => DesiredControlBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired Velocity flags.
 class DesiredVelocityBitfieldFlags extends BitfieldType {
   /// If enabled then field u has a meaningful value.
   static const fl_surge = DesiredVelocityBitfieldFlags(0x01);
+
   /// If enabled then field u has a meaningful value.
   static const fl_sway = DesiredVelocityBitfieldFlags(0x02);
+
   /// If enabled then field w has a meaningful value.
   static const fl_heave = DesiredVelocityBitfieldFlags(0x04);
+
   /// If enabled then field p has a meaningful value.
   static const fl_roll = DesiredVelocityBitfieldFlags(0x08);
+
   /// If enabled then field q has a meaningful value.
   static const fl_pitch = DesiredVelocityBitfieldFlags(0x10);
+
   /// If enabled then field r has a meaningful value.
   static const fl_yaw = DesiredVelocityBitfieldFlags(0x20);
 
@@ -2403,20 +2548,26 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
   static DesiredVelocityBitfieldFlags fromBits(
           List<DesiredVelocityBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DesiredVelocityBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredVelocityBitfieldFlags(b1.value | b2.value));
+          ? DesiredVelocityBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => DesiredVelocityBitfieldFlags(b1.value | b2.value));
 }
 
 /// Path control state flags.
 class PathControlStateBitfieldFlags extends BitfieldType {
   /// Set if near the target endpoint.
   static const fl_near = PathControlStateBitfieldFlags(0x01);
+
   /// Set if loitering.
   static const fl_loitering = PathControlStateBitfieldFlags(0x02);
+
   /// Altitude/depth being controlled independently.
   static const fl_no_z = PathControlStateBitfieldFlags(0x04);
+
   /// 3D-tracking is active.
   static const fl_3dtrack = PathControlStateBitfieldFlags(0x08);
+
   /// Indicates that loitering, if active, is being done
   /// counter-clockwise. Otherwise, clockwise loitering should be
   /// assumed.
@@ -2463,16 +2614,20 @@ class PathControlStateBitfieldFlags extends BitfieldType {
   static PathControlStateBitfieldFlags fromBits(
           List<PathControlStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? PathControlStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => PathControlStateBitfieldFlags(b1.value | b2.value));
+          ? PathControlStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => PathControlStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Brake operation.
 class BrakeEnumOp extends EnumType {
   /// Stop braking procedures.
   static const op_stop = BrakeEnumOp(0);
+
   /// Start braking procedures.
   static const op_start = BrakeEnumOp(1);
+
   /// Revert Actuation.
   static const op_revert = BrakeEnumOp(2);
 
@@ -2502,20 +2657,28 @@ class BrakeEnumOp extends EnumType {
 class DesiredLinearStateBitfieldFlags extends BitfieldType {
   /// If enabled then field x has a meaningful value.
   static const fl_x = DesiredLinearStateBitfieldFlags(0x0001);
+
   /// If enabled then field y has a meaningful value.
   static const fl_y = DesiredLinearStateBitfieldFlags(0x0002);
+
   /// If enabled then field z has a meaningful value.
   static const fl_z = DesiredLinearStateBitfieldFlags(0x0004);
+
   /// If enabled then field vx has a meaningful value.
   static const fl_vx = DesiredLinearStateBitfieldFlags(0x0008);
+
   /// If enabled then field vy has a meaningful value.
   static const fl_vy = DesiredLinearStateBitfieldFlags(0x0010);
+
   /// If enabled then field vz has a meaningful value.
   static const fl_vz = DesiredLinearStateBitfieldFlags(0x0020);
+
   /// If enabled then field ax has a meaningful value.
   static const fl_ax = DesiredLinearStateBitfieldFlags(0x0040);
+
   /// If enabled then field ay has a meaningful value.
   static const fl_ay = DesiredLinearStateBitfieldFlags(0x0080);
+
   /// If enabled then field az has a meaningful value.
   static const fl_az = DesiredLinearStateBitfieldFlags(0x0100);
 
@@ -2568,8 +2731,10 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
   static DesiredLinearStateBitfieldFlags fromBits(
           List<DesiredLinearStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DesiredLinearStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredLinearStateBitfieldFlags(b1.value | b2.value));
+          ? DesiredLinearStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => DesiredLinearStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Flags of the maneuver.
@@ -2578,9 +2743,11 @@ class PopUpBitfieldFlags extends BitfieldType {
   /// ignored and current vehicle position should be considered as
   /// starting point for ascent/descent.
   static const flg_curr_pos = PopUpBitfieldFlags(0x01);
+
   /// If this flag is set, duration field is used to hold position at surface
   /// for that amount of time.
   static const flg_wait_at_surface = PopUpBitfieldFlags(0x02);
+
   /// This flag will only make sense if WAIT_AT_SURFACE is also set.
   /// While holding position at surface the vehicle will assume a
   /// station keeping behavior.
@@ -2620,8 +2787,7 @@ class PopUpBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static PopUpBitfieldFlags fromBits(
-          List<PopUpBitfieldFlags> bits) =>
+  static PopUpBitfieldFlags fromBits(List<PopUpBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? PopUpBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => PopUpBitfieldFlags(b1.value | b2.value));
@@ -2729,8 +2895,7 @@ class RowsBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static RowsBitfieldFlags fromBits(
-          List<RowsBitfieldFlags> bits) =>
+  static RowsBitfieldFlags fromBits(List<RowsBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? RowsBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => RowsBitfieldFlags(b1.value | b2.value));
@@ -2743,11 +2908,9 @@ class ElevatorBitfieldFlags extends BitfieldType {
   /// starting point for ascent/descent.
   static const flg_curr_pos = ElevatorBitfieldFlags(0x01);
 
-  static get values => [
-        flg_curr_pos];
+  static get values => [flg_curr_pos];
 
-  static get names => {
-        flg_curr_pos: '''Start from current position'''};
+  static get names => {flg_curr_pos: '''Start from current position'''};
 
   const ElevatorBitfieldFlags(int value) : super(value);
 
@@ -2771,8 +2934,7 @@ class ElevatorBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static ElevatorBitfieldFlags fromBits(
-          List<ElevatorBitfieldFlags> bits) =>
+  static ElevatorBitfieldFlags fromBits(List<ElevatorBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? ElevatorBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => ElevatorBitfieldFlags(b1.value | b2.value));
@@ -2782,10 +2944,13 @@ class ElevatorBitfieldFlags extends BitfieldType {
 class ManeuverControlStateEnumState extends EnumType {
   /// Maneuver in progress.
   static const mcs_executing = ManeuverControlStateEnumState(0);
+
   /// Maneuver completed.
   static const mcs_done = ManeuverControlStateEnumState(1);
+
   /// Maneuver error.
   static const mcs_error = ManeuverControlStateEnumState(2);
+
   /// Maneuver stopped.
   static const mcs_stopped = ManeuverControlStateEnumState(3);
 
@@ -2896,8 +3061,10 @@ class ReferenceBitfieldFlags extends BitfieldType {
         flag_speed: '''Use Speed Reference''',
         flag_z: '''Use Z Reference''',
         flag_radius: '''Use Radius Reference''',
-        flag_start_point: '''Use this Reference as Start Position for PathControler''',
-        flag_direct: '''Use Current Position as Start Position for PathControler''',
+        flag_start_point:
+            '''Use this Reference as Start Position for PathControler''',
+        flag_direct:
+            '''Use Current Position as Start Position for PathControler''',
         flag_mandone: '''Flag Maneuver Completion''',
       };
 
@@ -2923,11 +3090,11 @@ class ReferenceBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static ReferenceBitfieldFlags fromBits(
-          List<ReferenceBitfieldFlags> bits) =>
+  static ReferenceBitfieldFlags fromBits(List<ReferenceBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? ReferenceBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => ReferenceBitfieldFlags(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => ReferenceBitfieldFlags(b1.value | b2.value));
 }
 
 class FollowRefStateEnumState extends EnumType {
@@ -3014,8 +3181,10 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
   static FollowRefStateBitfieldProximity fromBits(
           List<FollowRefStateBitfieldProximity> bits) =>
       (bits == null || bits.length < 2)
-          ? FollowRefStateBitfieldProximity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => FollowRefStateBitfieldProximity(b1.value | b2.value));
+          ? FollowRefStateBitfieldProximity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => FollowRefStateBitfieldProximity(b1.value | b2.value));
 }
 
 /// Direction to which the vehicle should attempt to unstuck.
@@ -3075,12 +3244,16 @@ class FormationEnumType extends EnumType {
 class FormationEnumOp extends EnumType {
   /// Start the formation maneuver.
   static const op_start = FormationEnumOp(0);
+
   /// Stop the formation maneuver.
   static const op_stop = FormationEnumOp(1);
+
   /// Stop the formation maneuver.
   static const op_ready = FormationEnumOp(2);
+
   /// Stop the formation maneuver.
   static const op_executing = FormationEnumOp(3);
+
   /// Stop the formation maneuver.
   static const op_failure = FormationEnumOp(4);
 
@@ -3143,9 +3316,11 @@ class ScheduledGotoEnumDelayed extends EnumType {
   /// If the vehicle fails to arrive at the specified time, it will keep going to the destination
   /// at top speed and only then consider this maneuver completed.
   static const dbeh_resume = ScheduledGotoEnumDelayed(0);
+
   /// If the vehicle fails to arrive at the specified time, it will stop the current maneuver and
   /// advance to the next one (independently of how far it is from destination).
   static const dbeh_skip = ScheduledGotoEnumDelayed(1);
+
   /// If the vehicle fails to arrive at the specified time, it will stop the execution of this
   /// maneuver with a FAILED result (the entire plan will be stopped).
   static const dbeh_fail = ScheduledGotoEnumDelayed(2);
@@ -3176,6 +3351,7 @@ class ScheduledGotoEnumDelayed extends EnumType {
 class RowsCoverageBitfieldFlags extends BitfieldType {
   /// Whether to move between transects using an additional perpendicular transect.
   static const flg_square_curve = RowsCoverageBitfieldFlags(0x01);
+
   /// Shall the vehicle turn towards the right after the first transect (alternatively it will turn left).
   static const flg_curve_right = RowsCoverageBitfieldFlags(0x02);
 
@@ -3214,8 +3390,10 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
   static RowsCoverageBitfieldFlags fromBits(
           List<RowsCoverageBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? RowsCoverageBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => RowsCoverageBitfieldFlags(b1.value | b2.value));
+          ? RowsCoverageBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => RowsCoverageBitfieldFlags(b1.value | b2.value));
 }
 
 class AutonomousSectionBitfieldLimits extends BitfieldType {
@@ -3263,8 +3441,10 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
   static AutonomousSectionBitfieldLimits fromBits(
           List<AutonomousSectionBitfieldLimits> bits) =>
       (bits == null || bits.length < 2)
-          ? AutonomousSectionBitfieldLimits(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => AutonomousSectionBitfieldLimits(b1.value | b2.value));
+          ? AutonomousSectionBitfieldLimits(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => AutonomousSectionBitfieldLimits(b1.value | b2.value));
 }
 
 /// Flags of the maneuver.
@@ -3273,11 +3453,9 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
   /// It will popup periodically to report position. When it pops up, it will stay at surface in "normal" station keeping behaviour for a certain time (popup_duration).
   static const flg_keep_safe = StationKeepingExtendedBitfieldFlags(0x01);
 
-  static get values => [
-        flg_keep_safe];
+  static get values => [flg_keep_safe];
 
-  static get names => {
-        flg_keep_safe: '''Keep safe behaviour'''};
+  static get names => {flg_keep_safe: '''Keep safe behaviour'''};
 
   const StationKeepingExtendedBitfieldFlags(int value) : super(value);
 
@@ -3304,8 +3482,10 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
   static StationKeepingExtendedBitfieldFlags fromBits(
           List<StationKeepingExtendedBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? StationKeepingExtendedBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => StationKeepingExtendedBitfieldFlags(b1.value | b2.value));
+          ? StationKeepingExtendedBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              StationKeepingExtendedBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired direction.
@@ -3337,14 +3517,19 @@ class MagnetometerEnumDirection extends EnumType {
 class VehicleStateEnumOpMode extends EnumType {
   /// Ready to service requests.
   static const vs_service = VehicleStateEnumOpMode(0);
+
   /// Ongoing vehicle calibration.
   static const vs_calibration = VehicleStateEnumOpMode(1);
+
   /// Errors are set.
   static const vs_error = VehicleStateEnumOpMode(2);
+
   /// A maneuver is executing.
   static const vs_maneuver = VehicleStateEnumOpMode(3);
+
   /// External control is active.
   static const vs_external = VehicleStateEnumOpMode(4);
+
   /// Booting system.
   static const vs_boot = VehicleStateEnumOpMode(5);
 
@@ -3379,11 +3564,9 @@ class VehicleStateEnumOpMode extends EnumType {
 class VehicleStateBitfieldFlags extends BitfieldType {
   static const vflg_maneuver_done = VehicleStateBitfieldFlags(0x01);
 
-  static get values => [
-        vflg_maneuver_done];
+  static get values => [vflg_maneuver_done];
 
-  static get names => {
-        vflg_maneuver_done: '''Maneuver Done'''};
+  static get names => {vflg_maneuver_done: '''Maneuver Done'''};
 
   const VehicleStateBitfieldFlags(int value) : super(value);
 
@@ -3410,8 +3593,10 @@ class VehicleStateBitfieldFlags extends BitfieldType {
   static VehicleStateBitfieldFlags fromBits(
           List<VehicleStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? VehicleStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => VehicleStateBitfieldFlags(b1.value | b2.value));
+          ? VehicleStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => VehicleStateBitfieldFlags(b1.value | b2.value));
 }
 
 class VehicleCommandEnumType extends EnumType {
@@ -3448,10 +3633,13 @@ class VehicleCommandEnumType extends EnumType {
 class VehicleCommandEnumCommand extends EnumType {
   /// Execute the maneuver specified in 'maneuver' field.
   static const vc_exec_maneuver = VehicleCommandEnumCommand(0);
+
   /// Stop 'maneuver' being executed.
   static const vc_stop_maneuver = VehicleCommandEnumCommand(1);
+
   /// Start calibrating vehicle.
   static const vc_start_calibration = VehicleCommandEnumCommand(2);
+
   /// Stop calibrating vehicle.
   static const vc_stop_calibration = VehicleCommandEnumCommand(3);
 
@@ -3499,7 +3687,8 @@ class MonitorEntityStateEnumCommand extends EnumType {
         mes_reset: '''Reset to defaults''',
         mes_enable: '''Enable Monitoring''',
         mes_disable: '''Disable Monitoring''',
-        mes_enable_exclusive: '''Enable Monitoring (exclusive - disables all others)''',
+        mes_enable_exclusive:
+            '''Enable Monitoring (exclusive - disables all others)''',
         mes_status: '''Status Report''',
       };
 
@@ -3541,12 +3730,16 @@ class ControlLoopsEnumEnable extends EnumType {
 class VehicleMediumEnumMedium extends EnumType {
   /// Vehicle is on the ground
   static const vm_ground = VehicleMediumEnumMedium(0);
+
   /// Vehicle is airborne
   static const vm_air = VehicleMediumEnumMedium(1);
+
   /// Vehicle is at water surface
   static const vm_water = VehicleMediumEnumMedium(2);
+
   /// Vehicle is underwater
   static const vm_underwater = VehicleMediumEnumMedium(3);
+
   /// Vehicle medium is unknown
   static const vm_unknown = VehicleMediumEnumMedium(4);
 
@@ -3580,10 +3773,13 @@ class VehicleMediumEnumMedium extends EnumType {
 class CollisionBitfieldType extends BitfieldType {
   /// Collision detected in the x-axis
   static const cd_x = CollisionBitfieldType(0x01);
+
   /// Collision detected in the y-axis
   static const cd_y = CollisionBitfieldType(0x02);
+
   /// Collision detected in the z-axis
   static const cd_z = CollisionBitfieldType(0x04);
+
   /// Sudden impact detected
   static const cd_impact = CollisionBitfieldType(0x08);
 
@@ -3623,8 +3819,7 @@ class CollisionBitfieldType extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static CollisionBitfieldType fromBits(
-          List<CollisionBitfieldType> bits) =>
+  static CollisionBitfieldType fromBits(List<CollisionBitfieldType> bits) =>
       (bits == null || bits.length < 2)
           ? CollisionBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => CollisionBitfieldType(b1.value | b2.value));
@@ -3712,8 +3907,10 @@ class FormStateEnumConvergMon extends EnumType {
 class AutopilotModeEnumAutonomy extends EnumType {
   /// Autopilot has no control
   static const al_manual = AutopilotModeEnumAutonomy(0);
+
   /// Autopilot has some control
   static const al_assisted = AutopilotModeEnumAutonomy(1);
+
   /// Autopilot has full control
   static const al_auto = AutopilotModeEnumAutonomy(2);
 
@@ -3768,6 +3965,7 @@ class FormationStateEnumType extends EnumType {
 class FormationStateEnumOp extends EnumType {
   /// Start the formation maneuver.
   static const op_start = FormationStateEnumOp(0);
+
   /// Stop the formation maneuver.
   static const op_stop = FormationStateEnumOp(1);
 
@@ -3876,26 +4074,31 @@ class ReportControlEnumOp extends EnumType {
   /// will be defined by the field 'period'. If applicable, the destination
   /// address is defined in field 'dst'.
   static const op_request_start = ReportControlEnumOp(0);
+
   /// The destination system will reply a message with this operation
   /// everytime a report is successfully started. The periodicity of
   /// reports is indicated in the field 'period' while the communication
   /// interface to be used is described in field 'interface'. If applicable,
   /// the destination address is defined in field 'dst'.
   static const op_started = ReportControlEnumOp(1);
+
   /// Request a system to stop dispatching reports through a given
   /// communication interface described in 'interface'. The destination
   /// system will reply with a STOPPED command. If applicable, the
   /// destination address is defined in field 'dst'.
   static const op_request_stop = ReportControlEnumOp(2);
+
   /// The destination system will reply a message with this operation
   /// everytime a scheduled report is successfully stopped in a defined
   /// communication interface. If applicable, the destination address
   /// is defined in field 'dst'.
   static const op_stopped = ReportControlEnumOp(3);
+
   /// Request a system to issue a single report in a defined communication
   /// interface. The destination system will reply with a REPORT_ISSUED command.
   /// If applicable, the destination address is defined in field 'dst'.
   static const op_request_report = ReportControlEnumOp(4);
+
   /// The destination system will reply a single report request with
   /// this operation.If applicable, the destination address is defined
   /// in field 'dst'.
@@ -3933,12 +4136,16 @@ class ReportControlEnumOp extends EnumType {
 class ReportControlBitfieldCommInterface extends BitfieldType {
   /// Use acoustic communications
   static const ci_acoustic = ReportControlBitfieldCommInterface(0x01);
+
   /// Use satellite communications
   static const ci_satellite = ReportControlBitfieldCommInterface(0x02);
+
   /// Use Global System for Mobile Communications
   static const ci_gsm = ReportControlBitfieldCommInterface(0x04);
+
   /// Use mobile networks
   static const ci_mobile = ReportControlBitfieldCommInterface(0x08);
+
   /// Use Radio telemetry
   static const ci_radio = ReportControlBitfieldCommInterface(0x10);
 
@@ -3983,8 +4190,10 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
   static ReportControlBitfieldCommInterface fromBits(
           List<ReportControlBitfieldCommInterface> bits) =>
       (bits == null || bits.length < 2)
-          ? ReportControlBitfieldCommInterface(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => ReportControlBitfieldCommInterface(b1.value | b2.value));
+          ? ReportControlBitfieldCommInterface(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              ReportControlBitfieldCommInterface(b1.value | b2.value));
 }
 
 /// Communication mean to be used to transfer these data.
@@ -4118,12 +4327,16 @@ class SmsStatusEnumStatus extends EnumType {
 class VtolStateEnumState extends EnumType {
   /// Vehicle is not configured as VTOL.
   static const vtol_state_undefined = VtolStateEnumState(0);
+
   /// Vehicle is in transition from multicopter to fixed-wing.
   static const vtol_state_transition_to_fw = VtolStateEnumState(1);
+
   /// Vehicle is in transition from fixed-wing to multicopter.
   static const vtol_state_transition_to_mc = VtolStateEnumState(2);
+
   /// Vehicle is in multicopter state.
   static const vtol_state_mc = VtolStateEnumState(3);
+
   /// Vehicle is in fixed-wing state.
   static const vtol_state_fw = VtolStateEnumState(4);
 
@@ -4282,11 +4495,11 @@ class PlanDBEnumType extends EnumType {
 }
 
 /// Indicates the operation affecting the DB.
-/// 
+///
 /// The operation may relate to a single plan or the entire plan DB.
 /// For each request,  a plan DB may reply with any number of 'in progress'
 /// replies followed by a success or a failure reply.
-/// 
+///
 /// The 'op', 'request_id' and 'plan_id' fields of a request will be echoed
 /// in one or more responses to that request.
 /// The operation at stake also determines a certain type of the 'arg' field,
@@ -4297,29 +4510,36 @@ class PlanDBEnumOp extends EnumType {
   /// any will be overwritten. For requests, the 'arg' field must
   /// contain a 'PlanSpecification' message.
   static const dbop_set = PlanDBEnumOp(0);
+
   /// Delete a plan from the DB. The 'plan_id' field identifies
   /// the plan to delete.
   static const dbop_del = PlanDBEnumOp(1);
+
   /// Get a plan stored in the DB.The 'plan_id' field identifies
   /// the plan. Successful replies will yield a
   /// 'PlanSpecification' message in the 'arg' field.
   static const dbop_get = PlanDBEnumOp(2);
+
   /// Get DB state for a stored plan. The 'plan_id' field
   /// identifies the plan. Successful replies will yield a
   /// 'PlanDBInformation' message in the 'arg' field.
   static const dbop_get_info = PlanDBEnumOp(3);
+
   /// Clear the entire DB.
   static const dbop_clear = PlanDBEnumOp(4);
+
   /// Get state of the entire DB. Successful replies will yield a
   /// 'PlanDBState' message in the 'arg' field but without
   /// individual plan information (in the 'plans_info' field of
   /// 'PlanDBState').
   static const dbop_get_state = PlanDBEnumOp(5);
+
   /// Get detailed state of the entire DB. Successful replies
   /// will yield a 'PlanDBState' message in the 'arg' field with
   /// individual plan information (in the 'plans_info' field of
   /// 'PlanDBState').
   static const dbop_get_dstate = PlanDBEnumOp(6);
+
   /// PlanDB replies of this type are sent automatically during
   /// bootstrap.
   static const dbop_boot = PlanDBEnumOp(7);
@@ -4396,19 +4616,22 @@ class PlanControlEnumOp extends EnumType {
   /// try to load the corresponding plan if none is loaded, and in
   /// that case will follow the same discipline as the *LOAD*
   /// command.
-  /// 
+  ///
   /// If the message in *arg* is a :ref:`Maneuver`, a single-maneuver plan
   /// will be generated and executed.
-  /// 
+  ///
   /// This will override any current plan being executed.
   static const pc_start = PlanControlEnumOp(0);
+
   /// Stop current plan being executed if any.
   static const pc_stop = PlanControlEnumOp(1);
+
   /// Load Plan. If a :ref:`PlanSpecification` is given with the
   /// request in the *data* field, then that plan is used and
   /// stored in the Plan DB. Otherwise, the plan is loaded from
   /// the Plan DB.
   static const pc_load = PlanControlEnumOp(2);
+
   /// Get loaded plan. For a successful reply, the *data* field
   /// will contain the :ref:`PlanSpecification` message that
   /// corresponds to the currently loaded plan.
@@ -4441,6 +4664,7 @@ class PlanControlEnumOp extends EnumType {
 class PlanControlBitfieldFlags extends BitfieldType {
   /// Perform vehicle calibration.
   static const flg_calibrate = PlanControlBitfieldFlags(0x0001);
+
   /// Execute current plan while ignoring some errors that might be active.
   static const flg_ignore_errors = PlanControlBitfieldFlags(0x0002);
 
@@ -4480,7 +4704,8 @@ class PlanControlBitfieldFlags extends BitfieldType {
           List<PlanControlBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? PlanControlBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => PlanControlBitfieldFlags(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => PlanControlBitfieldFlags(b1.value | b2.value));
 }
 
 /// Describes overall state.
@@ -4488,10 +4713,13 @@ class PlanControlStateEnumState extends EnumType {
   /// Plan execution is blocked e.g., due to a vehicle error,
   /// or if no plan is loaded.
   static const pcs_blocked = PlanControlStateEnumState(0);
+
   /// Ready to start plan execution.
   static const pcs_ready = PlanControlStateEnumState(1);
+
   /// Initializing plan for execution.
   static const pcs_initializing = PlanControlStateEnumState(2);
+
   /// Executing plan.
   static const pcs_executing = PlanControlStateEnumState(3);
 
@@ -4523,8 +4751,10 @@ class PlanControlStateEnumState extends EnumType {
 class PlanControlStateEnumLastOutcome extends EnumType {
   /// Unknown or not filled.
   static const lpo_none = PlanControlStateEnumLastOutcome(0);
+
   /// Last plan execution was successful.
   static const lpo_success = PlanControlStateEnumLastOutcome(1);
+
   /// Last plan execution was a failure.
   static const lpo_failure = PlanControlStateEnumLastOutcome(2);
 
@@ -4610,6 +4840,7 @@ class PlanVariableEnumAccess extends EnumType {
 class PlanGenerationEnumCmd extends EnumType {
   /// Generate the plan and store it in the PlanDB.
   static const cmd_generate = PlanGenerationEnumCmd(0);
+
   /// Generate (storing it in the PlanDB) and execute it immediately.
   static const cmd_execute = PlanGenerationEnumCmd(1);
 
@@ -4636,10 +4867,12 @@ class PlanGenerationEnumCmd extends EnumType {
 class PlanGenerationEnumOp extends EnumType {
   /// Request the execution of this command.
   static const op_request = PlanGenerationEnumOp(0);
+
   /// Some error has occurred while executing the command. The
   /// error can be found in the 'params' tuplelist (under the
   /// key 'error').
   static const op_error = PlanGenerationEnumOp(1);
+
   /// The requested command was executed successfully.
   static const op_success = PlanGenerationEnumOp(2);
 
@@ -4724,12 +4957,16 @@ class PlanStatisticsEnumType extends EnumType {
 class PlanStatisticsBitfieldProperties extends BitfieldType {
   /// Basic plan, meaning it is Linear, Finite and Noncyclic.
   static const prp_basic = PlanStatisticsBitfieldProperties(0x00);
+
   /// Plan is nonlinear.
   static const prp_nonlinear = PlanStatisticsBitfieldProperties(0x01);
+
   /// Plan is infinite in duration.
   static const prp_infinite = PlanStatisticsBitfieldProperties(0x02);
+
   /// Plan is cyclical.
   static const prp_cyclical = PlanStatisticsBitfieldProperties(0x04);
+
   /// All properties checked.
   static const prp_all = PlanStatisticsBitfieldProperties(0x07);
 
@@ -4774,8 +5011,10 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
   static PlanStatisticsBitfieldProperties fromBits(
           List<PlanStatisticsBitfieldProperties> bits) =>
       (bits == null || bits.length < 2)
-          ? PlanStatisticsBitfieldProperties(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => PlanStatisticsBitfieldProperties(b1.value | b2.value));
+          ? PlanStatisticsBitfieldProperties(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              PlanStatisticsBitfieldProperties(b1.value | b2.value));
 }
 
 /// How the position was received/calculated
@@ -4816,16 +5055,22 @@ class ReportedStateEnumSType extends EnumType {
 class MapFeatureEnumFeatureType extends EnumType {
   /// These features should appear as a point with a label in the map
   static const ftype_poi = MapFeatureEnumFeatureType(0);
+
   /// These features should be represented as a filled polygon (no label)
   static const ftype_filledpoly = MapFeatureEnumFeatureType(1);
+
   /// These features should be represented as a countoured closed polygon (no fill and no label)
   static const ftype_contouredpoly = MapFeatureEnumFeatureType(2);
+
   /// These features should be represented as an open polygon (no label)
   static const ftype_line = MapFeatureEnumFeatureType(3);
+
   /// A transponder location in the map
   static const ftype_transponder = MapFeatureEnumFeatureType(4);
+
   /// Intended vehicle's starting location
   static const ftype_startloc = MapFeatureEnumFeatureType(5);
+
   /// The offsets reference for this map
   static const ftype_homeref = MapFeatureEnumFeatureType(6);
 
@@ -4890,8 +5135,10 @@ class CcuEventEnumType extends EnumType {
         evt_map_feature_added: '''Map feature added''',
         evt_map_feature_removed: '''Map feature removed''',
         evt_map_feature_changed: '''Map feature changed''',
-        evt_teleoperation_started: '''The sender is now teleoperating the vehicle''',
-        evt_teleoperation_ended: '''The sender stopped teleoperating the vehicle''',
+        evt_teleoperation_started:
+            '''The sender is now teleoperating the vehicle''',
+        evt_teleoperation_ended:
+            '''The sender stopped teleoperating the vehicle''',
       };
 
   const CcuEventEnumType(int value) : super(value);
@@ -5091,11 +5338,11 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static UamTxFrameBitfieldFlags fromBits(
-          List<UamTxFrameBitfieldFlags> bits) =>
+  static UamTxFrameBitfieldFlags fromBits(List<UamTxFrameBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? UamTxFrameBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => UamTxFrameBitfieldFlags(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => UamTxFrameBitfieldFlags(b1.value | b2.value));
 }
 
 class UamRxFrameBitfieldFlags extends BitfieldType {
@@ -5134,11 +5381,11 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static UamRxFrameBitfieldFlags fromBits(
-          List<UamRxFrameBitfieldFlags> bits) =>
+  static UamRxFrameBitfieldFlags fromBits(List<UamRxFrameBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? UamRxFrameBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => UamRxFrameBitfieldFlags(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => UamRxFrameBitfieldFlags(b1.value | b2.value));
 }
 
 class UamTxStatusEnumValue extends EnumType {
@@ -5268,12 +5515,16 @@ class FormationEvaluationEnumType extends EnumType {
 class FormationEvaluationEnumOp extends EnumType {
   /// Start the formation maneuver.
   static const op_start = FormationEvaluationEnumOp(0);
+
   /// Stop the formation maneuver.
   static const op_stop = FormationEvaluationEnumOp(1);
+
   /// Stop the formation maneuver.
   static const op_ready = FormationEvaluationEnumOp(2);
+
   /// Stop the formation maneuver.
   static const op_executing = FormationEvaluationEnumOp(3);
+
   /// Stop the formation maneuver.
   static const op_failure = FormationEvaluationEnumOp(4);
 
@@ -5397,6 +5648,7 @@ class SoiStateEnumState extends EnumType {
 class UsblConfigEnumOp extends EnumType {
   /// Set the beacons configuration aboard the vehicle.
   static const op_set_cfg = UsblConfigEnumOp(0);
+
   /// Request the vehicle to send its current beacons configuration.
   static const op_get_cfg = UsblConfigEnumOp(1);
   static const op_cur_cfg = UsblConfigEnumOp(2);
@@ -5518,4 +5770,3 @@ class SadcReadingsEnumGain extends EnumType {
     return super.toPrettyString();
   }
 }
-

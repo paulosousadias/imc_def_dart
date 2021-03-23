@@ -1,5 +1,5 @@
 // Copyright (c) 2019-20, Paulo Sousa Dias. Please see the AUTHORS file for details.
-// All rights reserved. Use of this source code is governed by a BSD-style 
+// All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 import 'dart:typed_data';
@@ -39,7 +39,7 @@ void main() {
     });
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
-    
+
     print('0x${16.toRadixString(16)}');
 
     print('0x${0xFE54.toRadixString(16)}');
@@ -123,9 +123,30 @@ void main() {
     // RPM
     // little endian
     var bytes1 = [
-      0x54, 0xfe, 0xfa, 0x00, 0x02, 0x00, 0x0c, 0xb4, 
-      0xba, 0x6e, 0x89, 0x15, 0xd7, 0x41, 0x1b, 0x00, 
-      0x3c, 0xff, 0xff, 0xff, 0x00, 0x00, 0x68, 0x36,
+      0x54,
+      0xfe,
+      0xfa,
+      0x00,
+      0x02,
+      0x00,
+      0x0c,
+      0xb4,
+      0xba,
+      0x6e,
+      0x89,
+      0x15,
+      0xd7,
+      0x41,
+      0x1b,
+      0x00,
+      0x3c,
+      0xff,
+      0xff,
+      0xff,
+      0x00,
+      0x00,
+      0x68,
+      0x36,
     ];
     var msgId = 250;
     var msgRpm = (imc.RpmBuilder()
@@ -147,22 +168,81 @@ void main() {
     var msgRpmD2 = serializerRpm.deserialize(bytes2);
     expect(msgRpm, msgRpmD);
     print('msg2: $msgRpmD\nmsg3: $msgRpmD2\n');
-    print('bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
+    print(
+        'bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
     // timestamps might have diferences, so binary may not be identical
     //expect(bytes1, bytes2);
 
     // Distance
     // little endian
     bytes1 = [
-      0x54, 0xfe, 0x06, 0x01, 0x2d, 0x00, 0x67, 0xef, 
-      0xcc, 0x6e, 0x89, 0x15, 0xd7, 0x41, 0x1b, 0x00, 
-      0x31, 0xff, 0xff, 0xff, 0x01, 0x01, 0x00, 0x1a, 
-      0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-      0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-      0x00, 0xdb, 0x0f, 0xc9, 0xbf, 0x00, 0x00, 0x00, 
-      0x00, 0x01, 0x00, 0x1b, 0x01, 0x35, 0xfa, 0x8e, 
-      0xbc, 0x35, 0xfa, 0x8e, 0xbc, 0x63, 0xef, 0x8a, 
-      0x40, 0x1c, 0x77,
+      0x54,
+      0xfe,
+      0x06,
+      0x01,
+      0x2d,
+      0x00,
+      0x67,
+      0xef,
+      0xcc,
+      0x6e,
+      0x89,
+      0x15,
+      0xd7,
+      0x41,
+      0x1b,
+      0x00,
+      0x31,
+      0xff,
+      0xff,
+      0xff,
+      0x01,
+      0x01,
+      0x00,
+      0x1a,
+      0x01,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0xdb,
+      0x0f,
+      0xc9,
+      0xbf,
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x01,
+      0x00,
+      0x1b,
+      0x01,
+      0x35,
+      0xfa,
+      0x8e,
+      0xbc,
+      0x35,
+      0xfa,
+      0x8e,
+      0xbc,
+      0x63,
+      0xef,
+      0x8a,
+      0x40,
+      0x1c,
+      0x77,
     ];
     msgId = 262;
     var msgBuilderDistance = imc.DistanceBuilder();
@@ -175,24 +255,25 @@ void main() {
           ..validity = imc.DistanceEnumValidity.dv_valid
           ..location = [
             (imc.DeviceStateBuilder.fromHeader(msgBuilderDistance)
-                ..x = 0
-                ..y = 0
-                ..z = 0
-                ..phi = 0
-                ..theta = -1.5707963705062866
-                ..psi = 0
-              ).build(),
+                  ..x = 0
+                  ..y = 0
+                  ..z = 0
+                  ..phi = 0
+                  ..theta = -1.5707963705062866
+                  ..psi = 0)
+                .build(),
           ]
           ..beamConfig = [
             (imc.BeamConfigBuilder.fromHeader(msgBuilderDistance)
-                ..beamWidth = -0.01745329238474369
-                ..beamHeight = -0.01745329238474369
-              ).build(),
+                  ..beamWidth = -0.01745329238474369
+                  ..beamHeight = -0.01745329238474369)
+                .build(),
           ]
           ..value = 4.341722011566162)
         .build();
     var serializerDistance = imc.DistanceSerializer();
-    var msgDistanceD = serializerDistance.deserialize(Uint8List.fromList(bytes1));
+    var msgDistanceD =
+        serializerDistance.deserialize(Uint8List.fromList(bytes1));
     print('Msg Id: $msgId');
     print('msg1: $msgDistance\nmsg2: $msgDistanceD\n');
     expect(msgDistance, msgDistanceD);
@@ -202,27 +283,124 @@ void main() {
     var msgDistanceD2 = serializerDistance.deserialize(bytes2);
     expect(msgDistance, msgDistanceD);
     print('msg2: $msgDistanceD\nmsg3: $msgDistanceD2\n');
-    print('bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
+    print(
+        'bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
     // timestamps might have diferences, so binary may not be identical
     //expect(bytes1, bytes2);
 
     // EstimatedState
     // little endian
     bytes1 = [
-      0x54, 0xfe, 0x5e, 0x01, 0x58, 0x00, 0x70, 0x14, 
-      0xdc, 0x6e, 0x89, 0x15, 0xd7, 0x41, 0x1b, 0x00, 
-      0x29, 0xff, 0xff, 0xff, 0x48, 0xc5, 0x0c, 0xf2, 
-      0x85, 0x00, 0xe7, 0x3f, 0xde, 0xa7, 0x9e, 0x8c, 
-      0x28, 0x73, 0xc3, 0xbf, 0x33, 0x33, 0x2c, 0xbe, 
-      0x0e, 0x5f, 0x5c, 0x3b, 0x43, 0xbe, 0x09, 0xb9, 
-      0x5d, 0x25, 0xdb, 0xbd, 0x45, 0x1b, 0x72, 0xb7, 
-      0xae, 0x01, 0x0c, 0xbd, 0x01, 0x1a, 0x2e, 0xb9, 
-      0x44, 0xb7, 0xbb, 0x3b, 0xe5, 0x2c, 0xc5, 0x39, 
-      0x03, 0x32, 0x47, 0x3e, 0xc3, 0xd0, 0x17, 0xbb, 
-      0x4a, 0xd9, 0xc6, 0x39, 0x0c, 0x3b, 0x47, 0x3e, 
-      0x55, 0xf0, 0x27, 0x38, 0x64, 0x3f, 0xa5, 0xbd, 
-      0xfc, 0x4a, 0x8f, 0x38, 0x5d, 0x25, 0xdb, 0x3d, 
-      0xb0, 0x76, 0x8a, 0x40, 0x79, 0x24,
+      0x54,
+      0xfe,
+      0x5e,
+      0x01,
+      0x58,
+      0x00,
+      0x70,
+      0x14,
+      0xdc,
+      0x6e,
+      0x89,
+      0x15,
+      0xd7,
+      0x41,
+      0x1b,
+      0x00,
+      0x29,
+      0xff,
+      0xff,
+      0xff,
+      0x48,
+      0xc5,
+      0x0c,
+      0xf2,
+      0x85,
+      0x00,
+      0xe7,
+      0x3f,
+      0xde,
+      0xa7,
+      0x9e,
+      0x8c,
+      0x28,
+      0x73,
+      0xc3,
+      0xbf,
+      0x33,
+      0x33,
+      0x2c,
+      0xbe,
+      0x0e,
+      0x5f,
+      0x5c,
+      0x3b,
+      0x43,
+      0xbe,
+      0x09,
+      0xb9,
+      0x5d,
+      0x25,
+      0xdb,
+      0xbd,
+      0x45,
+      0x1b,
+      0x72,
+      0xb7,
+      0xae,
+      0x01,
+      0x0c,
+      0xbd,
+      0x01,
+      0x1a,
+      0x2e,
+      0xb9,
+      0x44,
+      0xb7,
+      0xbb,
+      0x3b,
+      0xe5,
+      0x2c,
+      0xc5,
+      0x39,
+      0x03,
+      0x32,
+      0x47,
+      0x3e,
+      0xc3,
+      0xd0,
+      0x17,
+      0xbb,
+      0x4a,
+      0xd9,
+      0xc6,
+      0x39,
+      0x0c,
+      0x3b,
+      0x47,
+      0x3e,
+      0x55,
+      0xf0,
+      0x27,
+      0x38,
+      0x64,
+      0x3f,
+      0xa5,
+      0xbd,
+      0xfc,
+      0x4a,
+      0x8f,
+      0x38,
+      0x5d,
+      0x25,
+      0xdb,
+      0x3d,
+      0xb0,
+      0x76,
+      0x8a,
+      0x40,
+      0x79,
+      0x24,
     ];
     msgId = 350;
     var msgBuilderEstimatedState = imc.EstimatedStateBuilder();
@@ -254,7 +432,8 @@ void main() {
           ..alt = 4.326988220214844)
         .build();
     var serializerEstimatedState = imc.EstimatedStateSerializer();
-    var msgEstimatedStateD = serializerEstimatedState.deserialize(Uint8List.fromList(bytes1));
+    var msgEstimatedStateD =
+        serializerEstimatedState.deserialize(Uint8List.fromList(bytes1));
     print('Msg Id: $msgId');
     print('msg1: $msgEstimatedState\nmsg2: $msgEstimatedStateD\n');
     expect(msgEstimatedState, msgEstimatedStateD);
@@ -264,7 +443,8 @@ void main() {
     var msgEstimatedStateD2 = serializerEstimatedState.deserialize(bytes2);
     expect(msgEstimatedState, msgEstimatedStateD);
     print('msg2: $msgEstimatedStateD\nmsg3: $msgEstimatedStateD2\n');
-    print('bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
+    print(
+        'bytes1: ${_byteDataToHexString(bytes1)}\nbytes2: ${_byteDataToHexString(bytes2)}\n');
     // timestamps might have diferences, so binary may not be identical
     // expect(bytes1, bytes2);
   });
@@ -279,43 +459,60 @@ void main() {
 
   test('bitfields hasBits test', () {
     var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic;
-    var su2 = imc.CommSystemsQueryBitfieldCommInterface(imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic.value);
+    var su2 = imc.CommSystemsQueryBitfieldCommInterface(
+        imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic.value);
     var su3 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
       imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
       imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
     ]);
 
-    expect(su1.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-    ]), true);
-    expect(su1.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
-    ]), false);
+    expect(
+        su1.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+        ]),
+        true);
+    expect(
+        su1.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+        ]),
+        false);
     expect(su1.hasBits(null), false);
 
-    expect(su2.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-    ]), true);
-    expect(su2.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
-    ]), false);
+    expect(
+        su2.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+        ]),
+        true);
+    expect(
+        su2.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+        ]),
+        false);
     expect(su2.hasBits(null), false);
 
-    expect(su3.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-    ]), true);
-    expect(su3.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
-    ]), true);
-    expect(su3.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
-    ]), false);
-    expect(su3.hasBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
-    ]), false);
+    expect(
+        su3.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+        ]),
+        true);
+    expect(
+        su3.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+        ]),
+        true);
+    expect(
+        su3.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+        ]),
+        false);
+    expect(
+        su3.hasBits([
+          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+        ]),
+        false);
     expect(su3.hasBits(null), false);
   });
 
@@ -356,9 +553,7 @@ void main() {
           ..src = 0x4001
           ..timestamp = DateTime.utc(1970))
         .build();
-    var msg2 = imc.Abort((b) => b
-      ..src = 0x4001
-    );
+    var msg2 = imc.Abort((b) => b..src = 0x4001);
 
     expect(msg.src, msg2.src);
   });
