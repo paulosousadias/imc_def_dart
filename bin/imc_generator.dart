@@ -1290,7 +1290,7 @@ void main(List<String> args) async {
     exit(1);
   }
 
-  var document = xml.parse(imcXml);
+  var document = xml.XmlDocument.parse(imcXml);
 
   var fxGen = await File('lib/src/${packageName}imc_def_gen.dart')
       .create(recursive: true);
