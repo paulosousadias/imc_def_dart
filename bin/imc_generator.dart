@@ -164,6 +164,11 @@ void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
   var name = g.getAttribute('name');
   var abbrev = g.getAttribute('abbrev');
 
+  if (name == null || name.isEmpty || abbrev == null || abbrev.isEmpty) {
+    throw Exception(
+        'Message group ${g.name} is missing name and/or abbrev! Skipping!');
+  }
+
   sink.write('/// $name message group class\n///\n');
   _writeDescription(sink, g);
   var msgStringClass = '''abstract class $abbrev extends ImcMessage {
@@ -172,6 +177,11 @@ void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
 
   g.findElements('message-type').forEach((t) {
     var msg = t.getAttribute('abbrev');
+    if (msg == null || msg.isEmpty) {
+      throw Exception(
+          'Message group $name, the message type ${t.name} is missing valid abbrev!');
+    }
+
     _messagesGroups.putIfAbsent(msg, () => abbrev);
   });
 }
@@ -179,8 +189,22 @@ void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
 /// Writes each message related code
 void _writeMessageCode(xml.XmlElement m, List<IOSink> sinks) {
   var name = m.getAttribute('name');
+  if (name == null || name.isEmpty) {
+    throw Exception(
+        'Element name is ${name == null ? 'null' : 'empty'} for element ${m.name}! Skipping!');
+  }
+
   var abbrev = m.getAttribute('abbrev');
+  if (abbrev == null || abbrev.isEmpty) {
+    throw Exception(
+        'Element abbrev is ${abbrev == null ? 'null' : 'empty'} for element ${m.name}! Skipping!');
+  }
+
   var msgId = m.getAttribute('id');
+  if (msgId == null || msgId.isEmpty) {
+    throw Exception(
+        'Element msgId is ${msgId == null ? 'null' : 'empty'} for element ${m.name}! Skipping!');
+  }
 
   // Message class
   _writeMessageClass(name, abbrev, msgId, m, sinks);
@@ -240,6 +264,12 @@ void _writeMessageImmutable(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
+    }
+
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
@@ -263,6 +293,10 @@ void _writeMessageImmutable(
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
+    if (abbrev == null || abbrev.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev');
+    }
     var fStr = ''',\n      this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
@@ -303,6 +337,12 @@ void _writeMessageImmutable(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
+    }
+
     var fStr = '';
     switch (type) {
       case 'message-list': // List<M extends IMCMessage>
@@ -377,6 +417,11 @@ void _writeMessageImmutable(
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
+
+    if (abbrev == null || abbrev.isEmpty) {
+      throw Exception('Field ${f.name} is missing a proper abbrev and/or type');
+    }
+
     var unit = f.getAttribute('unit');
     var unitConv = '';
     if (unit != null && unit.isNotEmpty) {
@@ -443,6 +488,12 @@ void _writeMessageBuilder(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
+
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
@@ -473,6 +524,10 @@ void _writeMessageBuilder(
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
+    if (abbrev == null || abbrev.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev! Skipping!');
+    }
 
     var fStr =
         '''      _${_convertToFieldName(abbrev)} = _\$v.${_convertToFieldName(abbrev)};\n''';
@@ -512,6 +567,12 @@ void _writeMessageBuilder(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
+
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
 
@@ -568,6 +629,12 @@ void _writeMessageSerializer(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
+
     var unit = f.getAttribute('unit');
     // var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     // var dartType = typesData[1];
@@ -756,6 +823,12 @@ void _writeMessageSerializer(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
+
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
@@ -914,6 +987,17 @@ void _writeMessageField(
   var name = field.getAttribute('name');
   var abbrev = field.getAttribute('abbrev');
   var type = field.getAttribute('type');
+
+  if (name == null ||
+      name.isEmpty ||
+      abbrev == null ||
+      abbrev.isEmpty ||
+      type == null ||
+      type.isEmpty) {
+    throw Exception(
+        'Field ${field.name} is missing abbrev and/or type! Skipping!');
+  }
+
   var unit = field.getAttribute('unit');
 
   var typesData = getTypesForImcAndDart(abbrev, type, unit, field, message);
@@ -1049,6 +1133,12 @@ String _getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
 
 /// Writes the global enum like code classes.
 void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
+  var abbrev = def.getAttribute('abbrev');
+  if (abbrev == null || abbrev.isEmpty) {
+    throw Exception(
+        'Global enum ${def.name} is missing a correct abbrev! Skipping!');
+  }
+
   var sufix;
   switch (unit) {
     case 'Enumerated':
@@ -1057,7 +1147,7 @@ void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
     default:
       sufix = unit;
   }
-  var eName = '${_convertToClassName(def.getAttribute('abbrev'))}$sufix';
+  var eName = '${_convertToClassName(abbrev)}$sufix';
 
   // So writting global enums like
   _writeEnumLikeWorker(eName, def, unit, sink);
@@ -1084,11 +1174,16 @@ void _writeEnumLikeWorker(
   if (prefix.isNotEmpty) prefix += '_';
   var vLst = field.findElements('value');
   vLst.forEach((f) {
+    var eValueAbbrev = f.getAttribute('abbrev');
+    if (eValueAbbrev == null || eValueAbbrev.isEmpty) {
+      throw Exception(
+          'Enum value ${f.name} of enum $eName is missing abbrev! Skipping!');
+    }
+
     var commaSep = vLst.length > 1 ? ',' : '';
     if (++c % 1 == 0) eList += '\n        ';
     if (++c % 1 == 0) eNameList += '\n        ';
-    var ab = _accountForReservedName(
-        prefix + f.getAttribute('abbrev').toLowerCase());
+    var ab = _accountForReservedName(prefix + eValueAbbrev.toLowerCase());
     eList += '$ab$commaSep';
     eNameList += "$ab: '''${f.getAttribute('name')}'''$commaSep";
   });
@@ -1112,8 +1207,13 @@ void _writeEnumLikeWorker(
   sink.write(body);
 
   field.findElements('value').forEach((f) {
-    var vName = _accountForReservedName(
-        prefix + f.getAttribute('abbrev').toLowerCase());
+    var eValueAbbrev = f.getAttribute('abbrev');
+    if (eValueAbbrev == null || eValueAbbrev.isEmpty) {
+      throw Exception(
+          'Enum value ${f.name} of enum $eName is missing abbrev! Skipping!');
+    }
+
+    var vName = _accountForReservedName(prefix + eValueAbbrev.toLowerCase());
     var vVal = f.getAttribute('id');
     var bodyV = '''  static const $vName = $eName($vVal);
 ''';
@@ -1289,6 +1389,11 @@ void main(List<String> args) async {
   }
   if (packageName.isNotEmpty && !packageName.endsWith('/')) packageName += '/';
 
+  if (xmlFilePath == null || xmlFilePath.isEmpty) {
+    print('The XML of IMC param "imc" must not be null or empty!');
+    exit(1);
+  }
+
   String imcXml;
   try {
     imcXml = await File(xmlFilePath).readAsString();
@@ -1356,7 +1461,13 @@ void main(List<String> args) async {
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
 
-  var sNmbr = int.parse(syncElm.getAttribute('value'));
+  var syncValue = syncElm.getAttribute('value') /*!*/;
+  if (syncValue == null || syncValue.isEmpty) {
+    print('The XML of IMC is missing the sync value!');
+    exit(1);
+  }
+
+  var sNmbr = int.parse(syncValue);
   var rSNmbr = ((sNmbr & 0xFF) << 8 | sNmbr >> 8);
   sinks[_idxMsg].write(
       'const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
