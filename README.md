@@ -38,7 +38,7 @@ imc_def:
 After adding your settings, run the package with
 
 ```bash
-flutter pub pub run imc_def:imc_generator
+flutter pub run imc_def:imc_generator
 ```
 
 In your code just import:
