@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.1] - xx Mar 2021
+## [1.0.1] - 24 Mar 2021
 
 * Updated dependencies: built_value: ^8.0.4, xml: ^5.0.2, crypto: ^3.0.0, yaml: ^3.1.0, collection: ^1.15.0.
 * Added pedantic: ^1.9.2 for formatting warnings.
