@@ -1274,14 +1274,17 @@ void main(List<String> args) async {
   var localOrProductionMode =
       config.isEmpty || config['mode'] != null ? _Mode.local : _Mode.production;
   String xmlFilePath;
+  String xmlGitHash;
   String packageName;
   switch (localOrProductionMode) {
     case _Mode.production:
       xmlFilePath = config['imc'];
+      xmlGitHash = config['githash'] ?? 'unknown';
       packageName = config['package'] ?? '';
       break;
     default:
       xmlFilePath = 'xml/IMC.xml';
+      xmlGitHash = config['githash'] ?? 'unknown';
       packageName = '';
   }
   if (packageName.isNotEmpty && !packageName.endsWith('/')) packageName += '/';
@@ -1318,6 +1321,7 @@ void main(List<String> args) async {
 
   var imcAsBytes = utf8.encode(imcXml); // data being hashed
   var imcDigest = md5.convert(imcAsBytes);
+  print('Git Hash of IMC file is $xmlGitHash');
   print('Hash of IMC file is $imcDigest');
 
   var sinkGen = fxGen.openWrite();
@@ -1357,6 +1361,7 @@ void main(List<String> args) async {
   sinks[_idxMsg].write(
       'const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
 
+  sinks[_idxMsg].write("const String GIT_HASH_STRING = '$xmlGitHash';\n");
   sinks[_idxMsg].write("const String MD5_SUM = '$imcDigest';\n");
 
   sinks[_idxMsg].write('\n');
