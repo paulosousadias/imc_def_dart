@@ -31,6 +31,7 @@ a file in your root project folder named imc_def.yaml with your settings.
 ```yaml
 imc_def:
   imc: <path_to_imc_file_definitions>
+  githash: <git repo owner>@<git hash reduced> # please add this info (example for LSTS would be 'lsts@f19a343')
   # package: imc # optional, will create in src inside the folder(s)
 ```
 
