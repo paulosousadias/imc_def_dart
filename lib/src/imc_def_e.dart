@@ -10,12 +10,12 @@ class BooleanEnum extends EnumType {
   static const bool_false = BooleanEnum(0);
   static const bool_true = BooleanEnum(1);
 
-  static get values => [
+  static List<BooleanEnum> get values => <BooleanEnum>[
         bool_false,
         bool_true,
       ];
 
-  static get names => {
+  static get names => <BooleanEnum, String>{
         bool_false: '''False''',
         bool_true: '''True''',
       };
@@ -37,13 +37,13 @@ class ControlledModeEnum extends EnumType {
   static const ctlmd_request_ctl = ControlledModeEnum(1);
   static const ctlmd_override_ctl = ControlledModeEnum(2);
 
-  static get values => [
+  static List<ControlledModeEnum> get values => <ControlledModeEnum>[
         ctlmd_relinquish_handoff_ctl,
         ctlmd_request_ctl,
         ctlmd_override_ctl,
       ];
 
-  static get names => {
+  static get names => <ControlledModeEnum, String>{
         ctlmd_relinquish_handoff_ctl: '''Relinquish / Handoff Control''',
         ctlmd_request_ctl: '''Request Control''',
         ctlmd_override_ctl: '''Override Control''',
@@ -64,13 +64,13 @@ class SpeedUnitsEnum extends EnumType {
   static const sunits_rpm = SpeedUnitsEnum(1);
   static const sunits_percentage = SpeedUnitsEnum(2);
 
-  static get values => [
+  static List<SpeedUnitsEnum> get values => <SpeedUnitsEnum>[
         sunits_meters_ps,
         sunits_rpm,
         sunits_percentage,
       ];
 
-  static get names => {
+  static get names => <SpeedUnitsEnum, String>{
         sunits_meters_ps: '''Meters per second''',
         sunits_rpm: '''RPM''',
         sunits_percentage: '''Percentage''',
@@ -97,7 +97,7 @@ class SystemTypeEnum extends EnumType {
   static const systemtype_mobilesensor = SystemTypeEnum(7);
   static const systemtype_wsn = SystemTypeEnum(8);
 
-  static get values => [
+  static List<SystemTypeEnum> get values => <SystemTypeEnum>[
         systemtype_ccu,
         systemtype_humansensor,
         systemtype_uuv,
@@ -109,7 +109,7 @@ class SystemTypeEnum extends EnumType {
         systemtype_wsn,
       ];
 
-  static get names => {
+  static get names => <SystemTypeEnum, String>{
         systemtype_ccu: '''CCU''',
         systemtype_humansensor: '''Human-portable Sensor''',
         systemtype_uuv: '''UUV''',
@@ -137,14 +137,14 @@ class ZUnitsEnum extends EnumType {
   static const z_altitude = ZUnitsEnum(2);
   static const z_height = ZUnitsEnum(3);
 
-  static get values => [
+  static List<ZUnitsEnum> get values => <ZUnitsEnum>[
         z_none,
         z_depth,
         z_altitude,
         z_height,
       ];
 
-  static get names => {
+  static get names => <ZUnitsEnum, String>{
         z_none: '''None''',
         z_depth: '''Depth''',
         z_altitude: '''Altitude''',
@@ -165,12 +165,12 @@ class RSSIUnitsEnum extends EnumType {
   static const rssiunits_db = RSSIUnitsEnum(0);
   static const rssiunits_percentage = RSSIUnitsEnum(1);
 
-  static get values => [
+  static List<RSSIUnitsEnum> get values => <RSSIUnitsEnum>[
         rssiunits_db,
         rssiunits_percentage,
       ];
 
-  static get names => {
+  static get names => <RSSIUnitsEnum, String>{
         rssiunits_db: '''Decibel''',
         rssiunits_percentage: '''Percentage''',
       };
@@ -190,13 +190,13 @@ class UAVTypeEnum extends EnumType {
   static const uavtype_copter = UAVTypeEnum(1);
   static const uavtype_vtol = UAVTypeEnum(2);
 
-  static get values => [
+  static List<UAVTypeEnum> get values => <UAVTypeEnum>[
         uavtype_fixedwing,
         uavtype_copter,
         uavtype_vtol,
       ];
 
-  static get names => {
+  static get names => <UAVTypeEnum, String>{
         uavtype_fixedwing: '''Fixed-Wing''',
         uavtype_copter: '''Copter''',
         uavtype_vtol: '''Vtol''',
@@ -232,7 +232,7 @@ class CLoopsMaskBitfield extends BitfieldType {
   static const cl_no_override = CLoopsMaskBitfield(0x80000000);
   static const cl_all = CLoopsMaskBitfield(0xFFFFFFFF);
 
-  static get values => [
+  static List<CLoopsMaskBitfield> get values => <CLoopsMaskBitfield>[
         cl_none,
         cl_path,
         cl_teleoperation,
@@ -253,7 +253,7 @@ class CLoopsMaskBitfield extends BitfieldType {
         cl_all,
       ];
 
-  static get names => {
+  static get names => <CLoopsMaskBitfield, String>{
         cl_none: '''None''',
         cl_path: '''Path Control''',
         cl_teleoperation: '''Teleoperation Control''',
@@ -311,7 +311,7 @@ class OpLimitsMaskBitfield extends BitfieldType {
   static const opl_max_vrate = OpLimitsMaskBitfield(0x20);
   static const opl_area = OpLimitsMaskBitfield(0x40);
 
-  static get values => [
+  static List<OpLimitsMaskBitfield> get values => <OpLimitsMaskBitfield>[
         opl_max_depth,
         opl_min_alt,
         opl_max_alt,
@@ -321,7 +321,7 @@ class OpLimitsMaskBitfield extends BitfieldType {
         opl_area,
       ];
 
-  static get names => {
+  static get names => <OpLimitsMaskBitfield, String>{
         opl_max_depth: '''Maximum Depth''',
         opl_min_alt: '''Minimum Altitude''',
         opl_max_alt: '''Maximum Altitude''',

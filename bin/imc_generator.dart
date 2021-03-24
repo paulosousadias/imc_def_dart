@@ -536,8 +536,8 @@ void _writeMessageSerializer(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('\n/// $name serializer class\n///\n');
 
-  var serClassStart =
-      '''class ${abbrev}Serializer extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
+  var serClassStart = '''class ${abbrev}Serializer
+    extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
   @override
   ByteData serialize(imc.$abbrev message) {
     var byteOffset = 0;
@@ -555,9 +555,10 @@ void _writeMessageSerializer(
     byteOffset += 2;
     return byteData.buffer.asByteData(0, byteOffset);
   }
-  
+
   @override
-  int serializePayload(imc.$abbrev message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.$abbrev message, ByteData byteData, int offset) {
     var byteOffset = offset;
 \n''';
   sink.write('$serClassStart');
@@ -709,13 +710,13 @@ void _writeMessageSerializer(
   imc.$abbrev deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
-    
+
     var endianness = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
     }
-    
+
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
     if (msgId != imc.$abbrev.static_id) {
@@ -735,7 +736,7 @@ void _writeMessageSerializer(
     // Payload
     var payloadSizeRead = deserializePayload(builder, byteData, endianness, byteOffset);
     // End payload
-    
+
     if (payloadSizeRead != payloadSize) {
       return null;
     }
@@ -744,7 +745,8 @@ void _writeMessageSerializer(
   }
 
   @override
-  int deserializePayload(imc.${abbrev}Builder builder, ByteData byteData, Endian endianness, int offset) {
+  int deserializePayload(
+      imc.${abbrev}Builder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 \n''';
   sink.write('$serClass1');
@@ -1117,9 +1119,9 @@ void _writeEnumLikeWorker(
     sink.write(bodyV);
   });
 
-  var body2 = '''\n  static get values => [$eList];
+  var body2 = '''\n  static List<$eName> get values => <$eName>[$eList];
 
-  static get names => {$eNameList};
+  static get names => <$eName, String>{$eNameList};
 
   const $eName(int value) : super(value);
 ''';
