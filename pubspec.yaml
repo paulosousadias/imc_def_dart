@@ -26,6 +26,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter  
 
+  pedantic: ^1.9.2
+
 executables:
   imc_generator: 
 
