@@ -22,7 +22,8 @@ class EntityStateEnumState extends EnumType {
         esta_failure,
       ];
 
-  static get names => <EntityStateEnumState, String>{
+  static core.Map<EntityStateEnumState, String> get names =>
+      <EntityStateEnumState, String>{
         esta_boot: '''Bootstrapping''',
         esta_normal: '''Normal Operation''',
         esta_fault: '''Fault''',
@@ -44,11 +45,13 @@ class EntityStateEnumState extends EnumType {
 class EntityStateBitfieldFlags extends BitfieldType {
   static const efla_human_intervention = EntityStateBitfieldFlags(0x01);
 
-  static List<EntityStateBitfieldFlags> get values => <EntityStateBitfieldFlags>[
-        efla_human_intervention];
+  static List<EntityStateBitfieldFlags> get values =>
+      <EntityStateBitfieldFlags>[efla_human_intervention];
 
-  static get names => <EntityStateBitfieldFlags, String>{
-        efla_human_intervention: '''Human Intervention Required'''};
+  static core.Map<EntityStateBitfieldFlags, String> get names =>
+      <EntityStateBitfieldFlags, String>{
+        efla_human_intervention: '''Human Intervention Required'''
+      };
 
   const EntityStateBitfieldFlags(int value) : super(value);
 
@@ -76,7 +79,8 @@ class EntityStateBitfieldFlags extends BitfieldType {
           List<EntityStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? EntityStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => EntityStateBitfieldFlags(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => EntityStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Operation to perform.
@@ -89,7 +93,8 @@ class EntityListEnumOp extends EnumType {
         op_query,
       ];
 
-  static get names => <EntityListEnumOp, String>{
+  static core.Map<EntityListEnumOp, String> get names =>
+      <EntityListEnumOp, String>{
         op_report: '''Report''',
         op_query: '''Query''',
       };
@@ -107,6 +112,7 @@ class EntityListEnumOp extends EnumType {
 class RestartSystemEnumType extends EnumType {
   /// Request a DUNE restart
   static const rstype_dune = RestartSystemEnumType(1);
+
   /// Request a system restart.
   static const rstype_system = RestartSystemEnumType(2);
 
@@ -115,7 +121,8 @@ class RestartSystemEnumType extends EnumType {
         rstype_system,
       ];
 
-  static get names => <RestartSystemEnumType, String>{
+  static core.Map<RestartSystemEnumType, String> get names =>
+      <RestartSystemEnumType, String>{
         rstype_dune: '''Dune''',
         rstype_system: '''System''',
       };
@@ -134,21 +141,26 @@ class RestartSystemEnumType extends EnumType {
 class DevCalibrationControlEnumOp extends EnumType {
   /// Start calibration procedure.
   static const dcal_start = DevCalibrationControlEnumOp(0);
+
   /// Stop calibration procedure.
   static const dcal_stop = DevCalibrationControlEnumOp(1);
+
   /// Perform next step of the calibration procedure.
   static const dcal_step_next = DevCalibrationControlEnumOp(2);
+
   /// Perform previous step of the calibration procedure.
   static const dcal_step_previous = DevCalibrationControlEnumOp(3);
 
-  static List<DevCalibrationControlEnumOp> get values => <DevCalibrationControlEnumOp>[
+  static List<DevCalibrationControlEnumOp> get values =>
+      <DevCalibrationControlEnumOp>[
         dcal_start,
         dcal_stop,
         dcal_step_next,
         dcal_step_previous,
       ];
 
-  static get names => <DevCalibrationControlEnumOp, String>{
+  static core.Map<DevCalibrationControlEnumOp, String> get names =>
+      <DevCalibrationControlEnumOp, String>{
         dcal_start: '''Start''',
         dcal_stop: '''Stop''',
         dcal_step_next: '''Perform Next Calibration Step''',
@@ -168,20 +180,26 @@ class DevCalibrationControlEnumOp extends EnumType {
 /// Additional flags.
 class DevCalibrationStateBitfieldFlags extends BitfieldType {
   /// Jumping to the previous calibration step is not supported.
-  static const dcs_previous_not_supported = DevCalibrationStateBitfieldFlags(0x01);
+  static const dcs_previous_not_supported =
+      DevCalibrationStateBitfieldFlags(0x01);
+
   /// Jumping to the next calibration step is not supported.
   static const dcs_next_not_supported = DevCalibrationStateBitfieldFlags(0x02);
+
   /// The calibration procedure was suspended and must be resumed or
   /// cancelled with a DeviceCalibrationControl message.
   static const dcs_waiting_control = DevCalibrationStateBitfieldFlags(0x04);
+
   /// Calibration was interrupted due to an error and must be
   /// restarted or cancelled with a DeviceCalibrationControl
   /// message.
   static const dcs_error = DevCalibrationStateBitfieldFlags(0x08);
+
   /// The calibration procedure was completed.
   static const dcs_completed = DevCalibrationStateBitfieldFlags(0x10);
 
-  static List<DevCalibrationStateBitfieldFlags> get values => <DevCalibrationStateBitfieldFlags>[
+  static List<DevCalibrationStateBitfieldFlags> get values =>
+      <DevCalibrationStateBitfieldFlags>[
         dcs_previous_not_supported,
         dcs_next_not_supported,
         dcs_waiting_control,
@@ -189,7 +207,8 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
         dcs_completed,
       ];
 
-  static get names => <DevCalibrationStateBitfieldFlags, String>{
+  static core.Map<DevCalibrationStateBitfieldFlags, String> get names =>
+      <DevCalibrationStateBitfieldFlags, String>{
         dcs_previous_not_supported: '''Previous Step Not Supported''',
         dcs_next_not_supported: '''Next Step Not Supported''',
         dcs_waiting_control: '''Waiting Device Calibration Control''',
@@ -222,30 +241,40 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
   static DevCalibrationStateBitfieldFlags fromBits(
           List<DevCalibrationStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DevCalibrationStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DevCalibrationStateBitfieldFlags(b1.value | b2.value));
+          ? DevCalibrationStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              DevCalibrationStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Current state.
 class EntityActivationStateEnumState extends EnumType {
   /// Entity is inactive.
   static const eas_inactive = EntityActivationStateEnumState(0);
+
   /// Entity is active.
   static const eas_active = EntityActivationStateEnumState(1);
+
   /// Activation is in progress.
   static const eas_act_ip = EntityActivationStateEnumState(2);
+
   /// Activation is completed.
   static const eas_act_done = EntityActivationStateEnumState(3);
+
   /// The activation procedure failed and the field 'error' contains the error message.
   static const eas_act_fail = EntityActivationStateEnumState(4);
+
   /// Deactivation is in progress.
   static const eas_deact_ip = EntityActivationStateEnumState(5);
+
   /// Deactivation is in progress.
   static const eas_deact_done = EntityActivationStateEnumState(6);
+
   /// The deactivation procedure failed and the field 'error' contains the error message.
   static const eas_deact_fail = EntityActivationStateEnumState(7);
 
-  static List<EntityActivationStateEnumState> get values => <EntityActivationStateEnumState>[
+  static List<EntityActivationStateEnumState> get values =>
+      <EntityActivationStateEnumState>[
         eas_inactive,
         eas_active,
         eas_act_ip,
@@ -256,7 +285,8 @@ class EntityActivationStateEnumState extends EnumType {
         eas_deact_fail,
       ];
 
-  static get names => <EntityActivationStateEnumState, String>{
+  static core.Map<EntityActivationStateEnumState, String> get names =>
+      <EntityActivationStateEnumState, String>{
         eas_inactive: '''Entity is Inactive''',
         eas_active: '''Entity is Active''',
         eas_act_ip: '''Activation in Progress''',
@@ -283,13 +313,15 @@ class VehicleOperationalLimitsEnumOp extends EnumType {
   static const op_set = VehicleOperationalLimitsEnumOp(1);
   static const op_report = VehicleOperationalLimitsEnumOp(2);
 
-  static List<VehicleOperationalLimitsEnumOp> get values => <VehicleOperationalLimitsEnumOp>[
+  static List<VehicleOperationalLimitsEnumOp> get values =>
+      <VehicleOperationalLimitsEnumOp>[
         op_request,
         op_set,
         op_report,
       ];
 
-  static get names => <VehicleOperationalLimitsEnumOp, String>{
+  static core.Map<VehicleOperationalLimitsEnumOp, String> get names =>
+      <VehicleOperationalLimitsEnumOp, String>{
         op_request: '''Request''',
         op_set: '''Set''',
         op_report: '''Report''',
@@ -315,7 +347,8 @@ class LeakSimulationEnumOp extends EnumType {
         lsim_on,
       ];
 
-  static get names => <LeakSimulationEnumOp, String>{
+  static core.Map<LeakSimulationEnumOp, String> get names =>
+      <LeakSimulationEnumOp, String>{
         lsim_off: '''Leaks Off''',
         lsim_on: '''Leaks On''',
       };
@@ -342,7 +375,8 @@ class UASimulationEnumType extends EnumType {
         uas_ping_reply,
       ];
 
-  static get names => <UASimulationEnumType, String>{
+  static core.Map<UASimulationEnumType, String> get names =>
+      <UASimulationEnumType, String>{
         uas_data: '''Data Transmission''',
         uas_ping: '''Ping''',
         uas_ping_reply: '''Ping Reply''',
@@ -370,7 +404,8 @@ class DynamicsSimParamEnumOp extends EnumType {
         op_report,
       ];
 
-  static get names => <DynamicsSimParamEnumOp, String>{
+  static core.Map<DynamicsSimParamEnumOp, String> get names =>
+      <DynamicsSimParamEnumOp, String>{
         op_request: '''Request''',
         op_set: '''Set''',
         op_report: '''Report''',
@@ -402,7 +437,8 @@ class CacheControlEnumOp extends EnumType {
         cop_copy_complete,
       ];
 
-  static get names => <CacheControlEnumOp, String>{
+  static core.Map<CacheControlEnumOp, String> get names =>
+      <CacheControlEnumOp, String>{
         cop_store: '''Store''',
         cop_load: '''Load''',
         cop_clear: '''Clear''',
@@ -429,10 +465,12 @@ class LoggingControlEnumOp extends EnumType {
   /// two messages - STOPPED and STARTED). The field 'name'
   /// represents the label that will be appended to the log path.
   static const cop_request_start = LoggingControlEnumOp(0);
+
   /// The logging manager will send a message with this operation
   /// everytime a log is successfully started. The field 'name'
   /// contains the complete name of the log.
   static const cop_started = LoggingControlEnumOp(1);
+
   /// Request the logging manager to stop logging messages. The
   /// logging manager will reply with a STOPPED operation and
   /// logging will be suspended until a message with operation
@@ -441,15 +479,18 @@ class LoggingControlEnumOp extends EnumType {
   /// reply with a STOPPED operation. The field 'name' with this
   /// operation type has no meaning.
   static const cop_request_stop = LoggingControlEnumOp(2);
+
   /// The logging manager will send a message with this operation
   /// when logging is successfully stopped. The field 'name'
   /// contains the complete name of the log that was closed.
   static const cop_stopped = LoggingControlEnumOp(3);
+
   /// This operation instructs the logging manager to send a
   /// message with operation CURRENT_NAME containing the complete
   /// name of the current log in the field 'name'. The field
   /// 'name' with this operation type has no meaning.
   static const cop_request_current_name = LoggingControlEnumOp(4);
+
   /// The logging manager will send a message with this operation
   /// when asked via the REQUEST_CURRENT_NAME operation. The field
   /// 'name' contains the complete name of the log.
@@ -464,7 +505,8 @@ class LoggingControlEnumOp extends EnumType {
         cop_current_name,
       ];
 
-  static get names => <LoggingControlEnumOp, String>{
+  static core.Map<LoggingControlEnumOp, String> get names =>
+      <LoggingControlEnumOp, String>{
         cop_request_start: '''Request Start of Logging''',
         cop_started: '''Logging Started''',
         cop_request_stop: '''Request Logging Stop''',
@@ -499,7 +541,8 @@ class LogBookEntryEnumType extends EnumType {
         lbet_debug,
       ];
 
-  static get names => <LogBookEntryEnumType, String>{
+  static core.Map<LogBookEntryEnumType, String> get names =>
+      <LogBookEntryEnumType, String>{
         lbet_info: '''Information''',
         lbet_warning: '''Warning''',
         lbet_error: '''Error''',
@@ -521,22 +564,27 @@ class LogBookEntryEnumType extends EnumType {
 class LogBookControlEnumCommand extends EnumType {
   /// Retrieve log book entries.
   static const lbc_get = LogBookControlEnumCommand(0);
+
   /// Clear log book entries.
   static const lbc_clear = LogBookControlEnumCommand(1);
+
   /// Retrieve log book entries corresponding to errors.
   static const lbc_get_err = LogBookControlEnumCommand(2);
+
   /// Reply to a GET command. Message argument is a MessageList
   /// instance containing LogBookEntry messages.
   static const lbc_reply = LogBookControlEnumCommand(3);
 
-  static List<LogBookControlEnumCommand> get values => <LogBookControlEnumCommand>[
+  static List<LogBookControlEnumCommand> get values =>
+      <LogBookControlEnumCommand>[
         lbc_get,
         lbc_clear,
         lbc_get_err,
         lbc_reply,
       ];
 
-  static get names => <LogBookControlEnumCommand, String>{
+  static core.Map<LogBookControlEnumCommand, String> get names =>
+      <LogBookControlEnumCommand, String>{
         lbc_get: '''Get''',
         lbc_clear: '''Clear''',
         lbc_get_err: '''Get Errors''',
@@ -567,7 +615,8 @@ class ReplayControlEnumOp extends EnumType {
         rop_resume,
       ];
 
-  static get names => <ReplayControlEnumOp, String>{
+  static core.Map<ReplayControlEnumOp, String> get names =>
+      <ReplayControlEnumOp, String>{
         rop_start: '''Start''',
         rop_stop: '''Stop''',
         rop_pause: '''Pause''',
@@ -588,14 +637,19 @@ class ReplayControlEnumOp extends EnumType {
 class ClockControlEnumOp extends EnumType {
   /// Synchronize clock according to given clock value.
   static const cop_sync_exec = ClockControlEnumOp(0);
+
   /// Request autonomous clock synchronization.
   static const cop_sync_request = ClockControlEnumOp(1);
+
   /// Synchronization start notification.
   static const cop_sync_started = ClockControlEnumOp(2);
+
   /// Synchronization completion notification.
   static const cop_sync_done = ClockControlEnumOp(3);
+
   /// Set timezone.
   static const cop_set_tz = ClockControlEnumOp(4);
+
   /// Notification due to timezone modification.
   static const cop_set_tz_done = ClockControlEnumOp(5);
 
@@ -608,7 +662,8 @@ class ClockControlEnumOp extends EnumType {
         cop_set_tz_done,
       ];
 
-  static get names => <ClockControlEnumOp, String>{
+  static core.Map<ClockControlEnumOp, String> get names =>
+      <ClockControlEnumOp, String>{
         cop_sync_exec: '''Execute Sync.''',
         cop_sync_request: '''Request Sync.''',
         cop_sync_started: '''Sync. Started''',
@@ -632,13 +687,15 @@ class HistoricSonarDataEnumEncoding extends EnumType {
   static const enc_png = HistoricSonarDataEnumEncoding(1);
   static const enc_jpeg = HistoricSonarDataEnumEncoding(2);
 
-  static List<HistoricSonarDataEnumEncoding> get values => <HistoricSonarDataEnumEncoding>[
+  static List<HistoricSonarDataEnumEncoding> get values =>
+      <HistoricSonarDataEnumEncoding>[
         enc_one_byte_per_pixel,
         enc_png,
         enc_jpeg,
       ];
 
-  static get names => <HistoricSonarDataEnumEncoding, String>{
+  static core.Map<HistoricSonarDataEnumEncoding, String> get names =>
+      <HistoricSonarDataEnumEncoding, String>{
         enc_one_byte_per_pixel: '''One Byte Per Pixel''',
         enc_png: '''PNG compressed image''',
         enc_jpeg: '''JPEG compressed image''',
@@ -664,7 +721,8 @@ class HistoricEventEnumType extends EnumType {
         evtype_error,
       ];
 
-  static get names => <HistoricEventEnumType, String>{
+  static core.Map<HistoricEventEnumType, String> get names =>
+      <HistoricEventEnumType, String>{
         evtype_info: '''Information''',
         evtype_error: '''Error''',
       };
@@ -689,7 +747,8 @@ class VerticalProfileEnumParameter extends EnumType {
   static const prof_chlorophyll = VerticalProfileEnumParameter(5);
   static const prof_turbidity = VerticalProfileEnumParameter(6);
 
-  static List<VerticalProfileEnumParameter> get values => <VerticalProfileEnumParameter>[
+  static List<VerticalProfileEnumParameter> get values =>
+      <VerticalProfileEnumParameter>[
         prof_temperature,
         prof_salinity,
         prof_conductivity,
@@ -699,7 +758,8 @@ class VerticalProfileEnumParameter extends EnumType {
         prof_turbidity,
       ];
 
-  static get names => <VerticalProfileEnumParameter, String>{
+  static core.Map<VerticalProfileEnumParameter, String> get names =>
+      <VerticalProfileEnumParameter, String>{
         prof_temperature: '''Temperature''',
         prof_salinity: '''Salinity''',
         prof_conductivity: '''Conductivity''',
@@ -725,12 +785,14 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
   static const srv_type_external = AnnounceServiceBitfieldServiceType(0x01);
   static const srv_type_local = AnnounceServiceBitfieldServiceType(0x02);
 
-  static List<AnnounceServiceBitfieldServiceType> get values => <AnnounceServiceBitfieldServiceType>[
+  static List<AnnounceServiceBitfieldServiceType> get values =>
+      <AnnounceServiceBitfieldServiceType>[
         srv_type_external,
         srv_type_local,
       ];
 
-  static get names => <AnnounceServiceBitfieldServiceType, String>{
+  static core.Map<AnnounceServiceBitfieldServiceType, String> get names =>
+      <AnnounceServiceBitfieldServiceType, String>{
         srv_type_external: '''External''',
         srv_type_local: '''Local''',
       };
@@ -760,8 +822,10 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
   static AnnounceServiceBitfieldServiceType fromBits(
           List<AnnounceServiceBitfieldServiceType> bits) =>
       (bits == null || bits.length < 2)
-          ? AnnounceServiceBitfieldServiceType(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => AnnounceServiceBitfieldServiceType(b1.value | b2.value));
+          ? AnnounceServiceBitfieldServiceType(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              AnnounceServiceBitfieldServiceType(b1.value | b2.value));
 }
 
 /// Current state of an SMS transaction.
@@ -784,7 +848,8 @@ class SmsStateEnumState extends EnumType {
         sms_receiving,
       ];
 
-  static get names => <SmsStateEnumState, String>{
+  static core.Map<SmsStateEnumState, String> get names =>
+      <SmsStateEnumState, String>{
         sms_accepted: '''Accepted''',
         sms_rejected: '''Rejected''',
         sms_interrupted: '''Interrupted''',
@@ -812,7 +877,8 @@ class IridiumTxStatusEnumStatus extends EnumType {
   static const txstatus_expired = IridiumTxStatusEnumStatus(5);
   static const txstatus_empty = IridiumTxStatusEnumStatus(6);
 
-  static List<IridiumTxStatusEnumStatus> get values => <IridiumTxStatusEnumStatus>[
+  static List<IridiumTxStatusEnumStatus> get values =>
+      <IridiumTxStatusEnumStatus>[
         txstatus_ok,
         txstatus_error,
         txstatus_queued,
@@ -821,12 +887,14 @@ class IridiumTxStatusEnumStatus extends EnumType {
         txstatus_empty,
       ];
 
-  static get names => <IridiumTxStatusEnumStatus, String>{
+  static core.Map<IridiumTxStatusEnumStatus, String> get names =>
+      <IridiumTxStatusEnumStatus, String>{
         txstatus_ok: '''Successfull transmission''',
         txstatus_error: '''Error while trying to transmit message''',
         txstatus_queued: '''Message has been queued for transmission''',
         txstatus_transmit: '''Message is currently being transmitted''',
-        txstatus_expired: '''Message's TTL has expired. Transmition cancelled.''',
+        txstatus_expired:
+            '''Message's TTL has expired. Transmition cancelled.''',
         txstatus_empty: '''No more messages to be transmitted or received.''',
       };
 
@@ -858,7 +926,8 @@ class SystemGroupEnumAction extends EnumType {
         op_frc,
       ];
 
-  static get names => <SystemGroupEnumAction, String>{
+  static core.Map<SystemGroupEnumAction, String> get names =>
+      <SystemGroupEnumAction, String>{
         op_dis: '''Disband''',
         op_set: '''Set''',
         op_req: '''Request''',
@@ -880,18 +949,22 @@ class SystemGroupEnumAction extends EnumType {
 class HistoricDataQueryEnumType extends EnumType {
   /// Request data from the Data Store
   static const hrtype_query = HistoricDataQueryEnumType(1);
+
   /// Data Store response with Data (using field 'data')
   static const hrtype_reply = HistoricDataQueryEnumType(2);
+
   /// Clear 'data' from the Data Store
   static const hrtype_clear = HistoricDataQueryEnumType(3);
 
-  static List<HistoricDataQueryEnumType> get values => <HistoricDataQueryEnumType>[
+  static List<HistoricDataQueryEnumType> get values =>
+      <HistoricDataQueryEnumType>[
         hrtype_query,
         hrtype_reply,
         hrtype_clear,
       ];
 
-  static get names => <HistoricDataQueryEnumType, String>{
+  static core.Map<HistoricDataQueryEnumType, String> get names =>
+      <HistoricDataQueryEnumType, String>{
         hrtype_query: '''Query''',
         hrtype_reply: '''Reply''',
         hrtype_clear: '''Clear''',
@@ -910,15 +983,18 @@ class HistoricDataQueryEnumType extends EnumType {
 class CommSystemsQueryBitfieldType extends BitfieldType {
   /// Query systems about communication capability
   static const ciq_query = CommSystemsQueryBitfieldType(0x01);
+
   /// Reply systems about communication capability
   static const ciq_reply = CommSystemsQueryBitfieldType(0x02);
 
-  static List<CommSystemsQueryBitfieldType> get values => <CommSystemsQueryBitfieldType>[
+  static List<CommSystemsQueryBitfieldType> get values =>
+      <CommSystemsQueryBitfieldType>[
         ciq_query,
         ciq_reply,
       ];
 
-  static get names => <CommSystemsQueryBitfieldType, String>{
+  static core.Map<CommSystemsQueryBitfieldType, String> get names =>
+      <CommSystemsQueryBitfieldType, String>{
         ciq_query: '''Query Systems''',
         ciq_reply: '''Reply''',
       };
@@ -948,24 +1024,31 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
   static CommSystemsQueryBitfieldType fromBits(
           List<CommSystemsQueryBitfieldType> bits) =>
       (bits == null || bits.length < 2)
-          ? CommSystemsQueryBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => CommSystemsQueryBitfieldType(b1.value | b2.value));
+          ? CommSystemsQueryBitfieldType(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => CommSystemsQueryBitfieldType(b1.value | b2.value));
 }
 
 /// Communication interface to be used for reports.
 class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
   /// Use acoustic communications
   static const ciq_acoustic = CommSystemsQueryBitfieldCommInterface(0x01);
+
   /// Use satellite communications
   static const ciq_satellite = CommSystemsQueryBitfieldCommInterface(0x02);
+
   /// Use Global System for Mobile Communications
   static const ciq_gsm = CommSystemsQueryBitfieldCommInterface(0x04);
+
   /// Use mobile networks
   static const ciq_mobile = CommSystemsQueryBitfieldCommInterface(0x08);
+
   /// Use Radio telemetry
   static const ciq_radio = CommSystemsQueryBitfieldCommInterface(0x10);
 
-  static List<CommSystemsQueryBitfieldCommInterface> get values => <CommSystemsQueryBitfieldCommInterface>[
+  static List<CommSystemsQueryBitfieldCommInterface> get values =>
+      <CommSystemsQueryBitfieldCommInterface>[
         ciq_acoustic,
         ciq_satellite,
         ciq_gsm,
@@ -973,7 +1056,8 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
         ciq_radio,
       ];
 
-  static get names => <CommSystemsQueryBitfieldCommInterface, String>{
+  static core.Map<CommSystemsQueryBitfieldCommInterface, String> get names =>
+      <CommSystemsQueryBitfieldCommInterface, String>{
         ciq_acoustic: '''Acoustic''',
         ciq_satellite: '''Satellite''',
         ciq_gsm: '''GSM''',
@@ -1006,25 +1090,31 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
   static CommSystemsQueryBitfieldCommInterface fromBits(
           List<CommSystemsQueryBitfieldCommInterface> bits) =>
       (bits == null || bits.length < 2)
-          ? CommSystemsQueryBitfieldCommInterface(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => CommSystemsQueryBitfieldCommInterface(b1.value | b2.value));
+          ? CommSystemsQueryBitfieldCommInterface(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              CommSystemsQueryBitfieldCommInterface(b1.value | b2.value));
 }
 
 class CommSystemsQueryEnumModel extends EnumType {
   /// Model is not defined
   static const ciq_unknown = CommSystemsQueryEnumModel(0x00);
+
   /// Radio Model 3DR
   static const ciq_m3dr = CommSystemsQueryEnumModel(0x01);
+
   /// Radio Model RDFXXXx point to point
   static const ciq_rdfxxxxptp = CommSystemsQueryEnumModel(0x02);
 
-  static List<CommSystemsQueryEnumModel> get values => <CommSystemsQueryEnumModel>[
+  static List<CommSystemsQueryEnumModel> get values =>
+      <CommSystemsQueryEnumModel>[
         ciq_unknown,
         ciq_m3dr,
         ciq_rdfxxxxptp,
       ];
 
-  static get names => <CommSystemsQueryEnumModel, String>{
+  static core.Map<CommSystemsQueryEnumModel, String> get names =>
+      <CommSystemsQueryEnumModel, String>{
         ciq_unknown: '''unknown''',
         ciq_m3dr: '''3DR''',
         ciq_rdfxxxxptp: '''RDFXXXxPtP''',
@@ -1044,8 +1134,10 @@ class CommSystemsQueryEnumModel extends EnumType {
 class TelemetryMsgEnumType extends EnumType {
   /// Send telemetry data.
   static const tm_tx = TelemetryMsgEnumType(0x01);
+
   /// Received telemetry data.
   static const tm_rx = TelemetryMsgEnumType(0x02);
+
   /// Status of transmitted data.
   static const tm_txstatus = TelemetryMsgEnumType(0x03);
 
@@ -1055,7 +1147,8 @@ class TelemetryMsgEnumType extends EnumType {
         tm_txstatus,
       ];
 
-  static get names => <TelemetryMsgEnumType, String>{
+  static core.Map<TelemetryMsgEnumType, String> get names =>
+      <TelemetryMsgEnumType, String>{
         tm_tx: '''Tx''',
         tm_rx: '''Rx''',
         tm_txstatus: '''TxStatus''',
@@ -1075,11 +1168,14 @@ class TelemetryMsgEnumType extends EnumType {
 class TelemetryMsgEnumCode extends EnumType {
   /// Unknown code type
   static const tm_code_unk = TelemetryMsgEnumCode(0x00);
+
   /// Concise representation of entire system state message.
   /// Payload message is a MessageList.
   static const tm_code_report = TelemetryMsgEnumCode(0x01);
+
   /// Payload message is INLINEMSG
   static const tm_code_imc = TelemetryMsgEnumCode(0x02);
+
   /// Payload message is in raw
   static const tm_code_raw = TelemetryMsgEnumCode(0x03);
 
@@ -1090,7 +1186,8 @@ class TelemetryMsgEnumCode extends EnumType {
         tm_code_raw,
       ];
 
-  static get names => <TelemetryMsgEnumCode, String>{
+  static core.Map<TelemetryMsgEnumCode, String> get names =>
+      <TelemetryMsgEnumCode, String>{
         tm_code_unk: '''Code unknown''',
         tm_code_report: '''Code Report''',
         tm_code_imc: '''Code IMC''',
@@ -1111,15 +1208,18 @@ class TelemetryMsgEnumCode extends EnumType {
 class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
   /// Message transmitted without acknowledged reception response
   static const tm_nak = TelemetryMsgBitfieldAcknowledge(0x00);
+
   /// Message transmitted with acknowledged reception response
   static const tm_ak = TelemetryMsgBitfieldAcknowledge(0x01);
 
-  static List<TelemetryMsgBitfieldAcknowledge> get values => <TelemetryMsgBitfieldAcknowledge>[
+  static List<TelemetryMsgBitfieldAcknowledge> get values =>
+      <TelemetryMsgBitfieldAcknowledge>[
         tm_nak,
         tm_ak,
       ];
 
-  static get names => <TelemetryMsgBitfieldAcknowledge, String>{
+  static core.Map<TelemetryMsgBitfieldAcknowledge, String> get names =>
+      <TelemetryMsgBitfieldAcknowledge, String>{
         tm_nak: '''Not acknowledge''',
         tm_ak: '''acknowledge''',
       };
@@ -1149,8 +1249,10 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
   static TelemetryMsgBitfieldAcknowledge fromBits(
           List<TelemetryMsgBitfieldAcknowledge> bits) =>
       (bits == null || bits.length < 2)
-          ? TelemetryMsgBitfieldAcknowledge(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => TelemetryMsgBitfieldAcknowledge(b1.value | b2.value));
+          ? TelemetryMsgBitfieldAcknowledge(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => TelemetryMsgBitfieldAcknowledge(b1.value | b2.value));
 }
 
 /// State of the transmitted message.
@@ -1177,7 +1279,8 @@ class TelemetryMsgEnumStatus extends EnumType {
         tm_inv_size,
       ];
 
-  static get names => <TelemetryMsgEnumStatus, String>{
+  static core.Map<TelemetryMsgEnumStatus, String> get names =>
+      <TelemetryMsgEnumStatus, String>{
         tm_none: '''Does not apply''',
         tm_done: '''Successfull transmission''',
         tm_failed: '''Error while trying to transmit message''',
@@ -1203,6 +1306,7 @@ class TelemetryMsgEnumStatus extends EnumType {
 class LblConfigEnumOp extends EnumType {
   /// Set the beacons configuration aboard the vehicle.
   static const op_set_cfg = LblConfigEnumOp(0);
+
   /// Request the vehicle to send its current beacons configuration.
   static const op_get_cfg = LblConfigEnumOp(1);
   static const op_cur_cfg = LblConfigEnumOp(2);
@@ -1213,7 +1317,8 @@ class LblConfigEnumOp extends EnumType {
         op_cur_cfg,
       ];
 
-  static get names => <LblConfigEnumOp, String>{
+  static core.Map<LblConfigEnumOp, String> get names =>
+      <LblConfigEnumOp, String>{
         op_set_cfg: '''Set LBL Configuration''',
         op_get_cfg: '''Retrieve LBL Configuration''',
         op_cur_cfg: '''Reply to a GET command''',
@@ -1234,49 +1339,66 @@ class AcousticOperationEnumOp extends EnumType {
   /// Send an abort through the acoustic channel to the system
   /// specified in the field 'system'.
   static const aop_abort = AcousticOperationEnumOp(0);
+
   /// The latest abort request to the system specified in the
   /// field 'system' is in progress.
   static const aop_abort_ip = AcousticOperationEnumOp(1);
+
   /// The latest abort operation expired without acknowledgment
   /// from the system specified in the field 'system'.
   static const aop_abort_timeout = AcousticOperationEnumOp(2);
+
   /// The latest abort operation was acknowledged by the system
   /// specified in the field 'system'.
   static const aop_abort_acked = AcousticOperationEnumOp(3);
+
   /// Request a range through the acoustic channel to the system
   /// specified in the field 'system'.
   static const aop_range = AcousticOperationEnumOp(4);
+
   /// The latest range request to the system specified in the
   /// field 'system' is in progress.
   static const aop_range_ip = AcousticOperationEnumOp(5);
+
   /// The latest range request operation expired without reply
   /// from the system specified in the field 'system'.
   static const aop_range_timeout = AcousticOperationEnumOp(6);
+
   /// The latest range request operation to the system specified
   /// in the field 'system' was successful and the range is
   /// specified in the field 'range'.
   static const aop_range_recved = AcousticOperationEnumOp(7);
+
   /// The acoustic modem is busy and cannot execute the requested
   /// operation.
   static const aop_busy = AcousticOperationEnumOp(8);
+
   /// The latest requested operation is not supported.
   static const aop_unsupported = AcousticOperationEnumOp(9);
+
   /// The transducer was not detected.
   static const aop_no_txd = AcousticOperationEnumOp(10);
+
   /// Request message over acoustic channel. The message to send
   /// is specified by the 'msg' field.
   static const aop_msg = AcousticOperationEnumOp(11);
+
   /// Message send request has been queued.
   static const aop_msg_queued = AcousticOperationEnumOp(12);
+
   /// Message send request is in progress.
   static const aop_msg_ip = AcousticOperationEnumOp(13);
+
   /// Message send request has been fulfilled.
   static const aop_msg_done = AcousticOperationEnumOp(14);
+
   /// Message send request could not be fulfilled.
   static const aop_msg_failure = AcousticOperationEnumOp(15);
+
   /// Request message over acoustic channel. The message to send
   /// is specified by the 'msg' field.
   static const aop_msg_short = AcousticOperationEnumOp(16);
+
   /// Request sending updated position to remote system so it can be ranged.
   static const aop_reverse_range = AcousticOperationEnumOp(17);
 
@@ -1301,7 +1423,8 @@ class AcousticOperationEnumOp extends EnumType {
         aop_reverse_range,
       ];
 
-  static get names => <AcousticOperationEnumOp, String>{
+  static core.Map<AcousticOperationEnumOp, String> get names =>
+      <AcousticOperationEnumOp, String>{
         aop_abort: '''Abort''',
         aop_abort_ip: '''Abort in Progress''',
         aop_abort_timeout: '''Abort Timeout''',
@@ -1336,20 +1459,28 @@ class AcousticOperationEnumOp extends EnumType {
 class GpsFixBitfieldValidity extends BitfieldType {
   /// Fields 'utc_year', 'utc_month' and 'utc_day' are valid.
   static const gfv_valid_date = GpsFixBitfieldValidity(0x0001);
+
   /// Field 'utc_time' is valid.
   static const gfv_valid_time = GpsFixBitfieldValidity(0x0002);
+
   /// Fields 'lat', 'lon', 'altitude' and 'satellites' are valid.
   static const gfv_valid_pos = GpsFixBitfieldValidity(0x0004);
+
   /// Field 'cog' is valid.
   static const gfv_valid_cog = GpsFixBitfieldValidity(0x0008);
+
   /// Field 'sog' is valid.
   static const gfv_valid_sog = GpsFixBitfieldValidity(0x0010);
+
   /// Field 'hacc' is valid.
   static const gfv_valid_hacc = GpsFixBitfieldValidity(0x0020);
+
   /// Field 'vacc' is valid.
   static const gfv_valid_vacc = GpsFixBitfieldValidity(0x0040);
+
   /// Field 'hdop' is valid.
   static const gfv_valid_hdop = GpsFixBitfieldValidity(0x0080);
+
   /// Field 'vdop' is valid.
   static const gfv_valid_vdop = GpsFixBitfieldValidity(0x0100);
 
@@ -1365,7 +1496,8 @@ class GpsFixBitfieldValidity extends BitfieldType {
         gfv_valid_vdop,
       ];
 
-  static get names => <GpsFixBitfieldValidity, String>{
+  static core.Map<GpsFixBitfieldValidity, String> get names =>
+      <GpsFixBitfieldValidity, String>{
         gfv_valid_date: '''Valid Date''',
         gfv_valid_time: '''Valid Time''',
         gfv_valid_pos: '''Valid Position''',
@@ -1399,23 +1531,27 @@ class GpsFixBitfieldValidity extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static GpsFixBitfieldValidity fromBits(
-          List<GpsFixBitfieldValidity> bits) =>
+  static GpsFixBitfieldValidity fromBits(List<GpsFixBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
           ? GpsFixBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => GpsFixBitfieldValidity(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => GpsFixBitfieldValidity(b1.value | b2.value));
 }
 
 /// Type of fix.
 class GpsFixEnumType extends EnumType {
   /// Stand alone solution.
   static const gft_standalone = GpsFixEnumType(0x00);
+
   /// Differential solution.
   static const gft_differential = GpsFixEnumType(0x01);
+
   /// Dead reckoning solution.
   static const gft_dead_reckoning = GpsFixEnumType(0x02);
+
   /// Manual solution.
   static const gft_manual_input = GpsFixEnumType(0x03);
+
   /// Simulated solution.
   static const gft_simulation = GpsFixEnumType(0x04);
 
@@ -1427,7 +1563,7 @@ class GpsFixEnumType extends EnumType {
         gft_simulation,
       ];
 
-  static get names => <GpsFixEnumType, String>{
+  static core.Map<GpsFixEnumType, String> get names => <GpsFixEnumType, String>{
         gft_standalone: '''Stand Alone''',
         gft_differential: '''Differential''',
         gft_dead_reckoning: '''Dead Reckoning''',
@@ -1452,13 +1588,15 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
   static const val_vel_y = GroundVelocityBitfieldValidity(0x02);
   static const val_vel_z = GroundVelocityBitfieldValidity(0x04);
 
-  static List<GroundVelocityBitfieldValidity> get values => <GroundVelocityBitfieldValidity>[
+  static List<GroundVelocityBitfieldValidity> get values =>
+      <GroundVelocityBitfieldValidity>[
         val_vel_x,
         val_vel_y,
         val_vel_z,
       ];
 
-  static get names => <GroundVelocityBitfieldValidity, String>{
+  static core.Map<GroundVelocityBitfieldValidity, String> get names =>
+      <GroundVelocityBitfieldValidity, String>{
         val_vel_x: '''X component is valid''',
         val_vel_y: '''Y component is valid''',
         val_vel_z: '''Z component is valid''',
@@ -1489,8 +1627,10 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
   static GroundVelocityBitfieldValidity fromBits(
           List<GroundVelocityBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
-          ? GroundVelocityBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => GroundVelocityBitfieldValidity(b1.value | b2.value));
+          ? GroundVelocityBitfieldValidity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => GroundVelocityBitfieldValidity(b1.value | b2.value));
 }
 
 /// Each bit of this field represents if a given velocity
@@ -1500,13 +1640,15 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
   static const val_vel_y = WaterVelocityBitfieldValidity(0x02);
   static const val_vel_z = WaterVelocityBitfieldValidity(0x04);
 
-  static List<WaterVelocityBitfieldValidity> get values => <WaterVelocityBitfieldValidity>[
+  static List<WaterVelocityBitfieldValidity> get values =>
+      <WaterVelocityBitfieldValidity>[
         val_vel_x,
         val_vel_y,
         val_vel_z,
       ];
 
-  static get names => <WaterVelocityBitfieldValidity, String>{
+  static core.Map<WaterVelocityBitfieldValidity, String> get names =>
+      <WaterVelocityBitfieldValidity, String>{
         val_vel_x: '''X component is valid''',
         val_vel_y: '''Y component is valid''',
         val_vel_z: '''Z component is valid''',
@@ -1537,14 +1679,17 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
   static WaterVelocityBitfieldValidity fromBits(
           List<WaterVelocityBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
-          ? WaterVelocityBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => WaterVelocityBitfieldValidity(b1.value | b2.value));
+          ? WaterVelocityBitfieldValidity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => WaterVelocityBitfieldValidity(b1.value | b2.value));
 }
 
 /// Validity of the measurement.
 class DistanceEnumValidity extends EnumType {
   /// Measurement is invalid.
   static const dv_invalid = DistanceEnumValidity(0);
+
   /// Measurement is valid.
   static const dv_valid = DistanceEnumValidity(1);
 
@@ -1553,7 +1698,8 @@ class DistanceEnumValidity extends EnumType {
         dv_valid,
       ];
 
-  static get names => <DistanceEnumValidity, String>{
+  static core.Map<DistanceEnumValidity, String> get names =>
+      <DistanceEnumValidity, String>{
         dv_invalid: '''Invalid''',
         dv_valid: '''Valid''',
       };
@@ -1580,7 +1726,8 @@ class SonarDataEnumType extends EnumType {
         st_multibeam,
       ];
 
-  static get names => <SonarDataEnumType, String>{
+  static core.Map<SonarDataEnumType, String> get names =>
+      <SonarDataEnumType, String>{
         st_sidescan: '''Sidescan''',
         st_echosounder: '''Echo Sounder''',
         st_multibeam: '''Multibeam''',
@@ -1601,12 +1748,14 @@ class PulseDetectionControlEnumOp extends EnumType {
   static const pop_off = PulseDetectionControlEnumOp(0);
   static const pop_on = PulseDetectionControlEnumOp(1);
 
-  static List<PulseDetectionControlEnumOp> get values => <PulseDetectionControlEnumOp>[
+  static List<PulseDetectionControlEnumOp> get values =>
+      <PulseDetectionControlEnumOp>[
         pop_off,
         pop_on,
       ];
 
-  static get names => <PulseDetectionControlEnumOp, String>{
+  static core.Map<PulseDetectionControlEnumOp, String> get names =>
+      <PulseDetectionControlEnumOp, String>{
         pop_off: '''Pulse Detection OFF''',
         pop_on: '''Pulse Detection ON''',
       };
@@ -1625,6 +1774,7 @@ class PulseDetectionControlEnumOp extends EnumType {
 class DataSanityEnumSane extends EnumType {
   /// Data is sane.
   static const ds_sane = DataSanityEnumSane(0);
+
   /// Data is not sane.
   static const ds_not_sane = DataSanityEnumSane(1);
 
@@ -1633,7 +1783,8 @@ class DataSanityEnumSane extends EnumType {
         ds_not_sane,
       ];
 
-  static get names => <DataSanityEnumSane, String>{
+  static core.Map<DataSanityEnumSane, String> get names =>
+      <DataSanityEnumSane, String>{
         ds_sane: '''Sane''',
         ds_not_sane: '''Not Sane''',
       };
@@ -1652,21 +1803,26 @@ class DataSanityEnumSane extends EnumType {
 class GpsFixRtkBitfieldValidity extends BitfieldType {
   /// Field 'tow' is valid.
   static const rfv_valid_time = GpsFixRtkBitfieldValidity(0x0001);
+
   /// Fields 'base_lat', 'base_lon' and 'base_height' are valid.
   static const rfv_valid_base = GpsFixRtkBitfieldValidity(0x0002);
+
   /// Fields 'n', 'e', 'd' are valid.
   static const rfv_valid_pos = GpsFixRtkBitfieldValidity(0x0004);
+
   /// Fields 'v_n', 'v_e', 'v_d' are valid.
   static const rfv_valid_vel = GpsFixRtkBitfieldValidity(0x0008);
 
-  static List<GpsFixRtkBitfieldValidity> get values => <GpsFixRtkBitfieldValidity>[
+  static List<GpsFixRtkBitfieldValidity> get values =>
+      <GpsFixRtkBitfieldValidity>[
         rfv_valid_time,
         rfv_valid_base,
         rfv_valid_pos,
         rfv_valid_vel,
       ];
 
-  static get names => <GpsFixRtkBitfieldValidity, String>{
+  static core.Map<GpsFixRtkBitfieldValidity, String> get names =>
+      <GpsFixRtkBitfieldValidity, String>{
         rfv_valid_time: '''Valid Time''',
         rfv_valid_base: '''Valid Base LLH''',
         rfv_valid_pos: '''Valid Position''',
@@ -1698,18 +1854,23 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
   static GpsFixRtkBitfieldValidity fromBits(
           List<GpsFixRtkBitfieldValidity> bits) =>
       (bits == null || bits.length < 2)
-          ? GpsFixRtkBitfieldValidity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => GpsFixRtkBitfieldValidity(b1.value | b2.value));
+          ? GpsFixRtkBitfieldValidity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => GpsFixRtkBitfieldValidity(b1.value | b2.value));
 }
 
 /// Type of fix.
 class GpsFixRtkEnumType extends EnumType {
   /// No solution, but RTK task is running.
   static const rtk_none = GpsFixRtkEnumType(0x00);
+
   /// No solution, but receiving observations.
   static const rtk_obs = GpsFixRtkEnumType(0x01);
+
   /// Floating point solution of IAR.
   static const rtk_float = GpsFixRtkEnumType(0x02);
+
   /// Fixed (single) solution of IAR.
   static const rtk_fixed = GpsFixRtkEnumType(0x03);
 
@@ -1720,7 +1881,8 @@ class GpsFixRtkEnumType extends EnumType {
         rtk_fixed,
       ];
 
-  static get names => <GpsFixRtkEnumType, String>{
+  static core.Map<GpsFixRtkEnumType, String> get names =>
+      <GpsFixRtkEnumType, String>{
         rtk_none: '''None''',
         rtk_obs: '''Obs''',
         rtk_float: '''Float''',
@@ -1749,7 +1911,8 @@ class ExternalNavDataEnumType extends EnumType {
         extnav_posref,
       ];
 
-  static get names => <ExternalNavDataEnumType, String>{
+  static core.Map<ExternalNavDataEnumType, String> get names =>
+      <ExternalNavDataEnumType, String>{
         extnav_full: '''Full State''',
         extnav_ahrs: '''Attitude Heading Reference System Only''',
         extnav_posref: '''Position Reference System only''',
@@ -1779,7 +1942,8 @@ class CameraZoomEnumAction extends EnumType {
         action_zoom_stop,
       ];
 
-  static get names => <CameraZoomEnumAction, String>{
+  static core.Map<CameraZoomEnumAction, String> get names =>
+      <CameraZoomEnumAction, String>{
         action_zoom_reset: '''Reset Zoom''',
         action_zoom_in: '''Zoom In''',
         action_zoom_out: '''Zoom Out''',
@@ -1801,12 +1965,14 @@ class RemoteActionsRequestEnumOp extends EnumType {
   static const op_report = RemoteActionsRequestEnumOp(0);
   static const op_query = RemoteActionsRequestEnumOp(1);
 
-  static List<RemoteActionsRequestEnumOp> get values => <RemoteActionsRequestEnumOp>[
+  static List<RemoteActionsRequestEnumOp> get values =>
+      <RemoteActionsRequestEnumOp>[
         op_report,
         op_query,
       ];
 
-  static get names => <RemoteActionsRequestEnumOp, String>{
+  static core.Map<RemoteActionsRequestEnumOp, String> get names =>
+      <RemoteActionsRequestEnumOp, String>{
         op_report: '''Report''',
         op_query: '''Query''',
       };
@@ -1837,7 +2003,8 @@ class LcdControlEnumOp extends EnumType {
         op_write1,
       ];
 
-  static get names => <LcdControlEnumOp, String>{
+  static core.Map<LcdControlEnumOp, String> get names =>
+      <LcdControlEnumOp, String>{
         op_turn_off: '''Turn off display''',
         op_turn_on: '''Turn on display''',
         op_clear: '''Clear display''',
@@ -1861,21 +2028,27 @@ class PowerOperationEnumOp extends EnumType {
   /// it's devices immediately. If the destination entity is the
   /// special entity '0' the whole system will power down.
   static const pop_pwr_down = PowerOperationEnumOp(0);
+
   /// The latest power down request is in progress and the time
   /// remaining until power down is given in field 'time_remain'.
   static const pop_pwr_down_ip = PowerOperationEnumOp(1);
+
   /// The latest power down request was aborted.
   static const pop_pwr_down_aborted = PowerOperationEnumOp(2);
+
   /// Request the destination entity of this message to power down
   /// it's devices at the time given in the field 'sched_time'. If
   /// the destination entity is the special entity '0' the whole
   /// system will power down.
   static const pop_sched_pwr_down = PowerOperationEnumOp(3);
+
   /// Request the destination entity of this message to power up
   /// it's devices.
   static const pop_pwr_up = PowerOperationEnumOp(4);
+
   /// The latest power up request is in progress.
   static const pop_pwr_up_ip = PowerOperationEnumOp(5);
+
   /// Request the destination entity of this message to power up
   /// it's devices at the time given in the field 'sched_time'. If
   /// the destination entity is the special entity '0' the whole
@@ -1892,7 +2065,8 @@ class PowerOperationEnumOp extends EnumType {
         pop_sched_pwr_up,
       ];
 
-  static get names => <PowerOperationEnumOp, String>{
+  static core.Map<PowerOperationEnumOp, String> get names =>
+      <PowerOperationEnumOp, String>{
         pop_pwr_down: '''Power Down''',
         pop_pwr_down_ip: '''Power Down in Progress''',
         pop_pwr_down_aborted: '''Power Down Aborted''',
@@ -1916,26 +2090,34 @@ class PowerOperationEnumOp extends EnumType {
 class PowerChannelControlEnumOp extends EnumType {
   /// Turn off power channel specified in field 'id'.
   static const pcc_op_turn_off = PowerChannelControlEnumOp(0);
+
   /// Turn on power channel specified in field 'id'.
   static const pcc_op_turn_on = PowerChannelControlEnumOp(1);
+
   /// Toggle power channel specified in field 'id'.
   static const pcc_op_toggle = PowerChannelControlEnumOp(2);
+
   /// Turn on power channel specified in field 'id' in
   /// 'sched_time' seconds.
   static const pcc_op_sched_on = PowerChannelControlEnumOp(3);
+
   /// Turn off power channel specified in field 'id' in
   /// 'sched_time' seconds.
   static const pcc_op_sched_off = PowerChannelControlEnumOp(4);
+
   /// Reset all scheduled operations for the channel specified in
   /// field 'id'.
   static const pcc_op_sched_reset = PowerChannelControlEnumOp(5);
+
   /// Save the current state of the channel 'id' to persistent
   /// storage.
   static const pcc_op_save = PowerChannelControlEnumOp(6);
+
   /// Restart power channel specified in field 'id'.
   static const pcc_op_restart = PowerChannelControlEnumOp(7);
 
-  static List<PowerChannelControlEnumOp> get values => <PowerChannelControlEnumOp>[
+  static List<PowerChannelControlEnumOp> get values =>
+      <PowerChannelControlEnumOp>[
         pcc_op_turn_off,
         pcc_op_turn_on,
         pcc_op_toggle,
@@ -1946,7 +2128,8 @@ class PowerChannelControlEnumOp extends EnumType {
         pcc_op_restart,
       ];
 
-  static get names => <PowerChannelControlEnumOp, String>{
+  static core.Map<PowerChannelControlEnumOp, String> get names =>
+      <PowerChannelControlEnumOp, String>{
         pcc_op_turn_off: '''Turn Off''',
         pcc_op_turn_on: '''Turn On''',
         pcc_op_toggle: '''Toggle''',
@@ -1971,15 +2154,18 @@ class PowerChannelControlEnumOp extends EnumType {
 class PowerChannelStateEnumState extends EnumType {
   /// Power channel is off.
   static const pcs_off = PowerChannelStateEnumState(0);
+
   /// Power channel is on.
   static const pcs_on = PowerChannelStateEnumState(1);
 
-  static List<PowerChannelStateEnumState> get values => <PowerChannelStateEnumState>[
+  static List<PowerChannelStateEnumState> get values =>
+      <PowerChannelStateEnumState>[
         pcs_off,
         pcs_on,
       ];
 
-  static get names => <PowerChannelStateEnumState, String>{
+  static core.Map<PowerChannelStateEnumState, String> get names =>
+      <PowerChannelStateEnumState, String>{
         pcs_off: '''Off''',
         pcs_on: '''On''',
       };
@@ -1998,16 +2184,21 @@ class PowerChannelStateEnumState extends EnumType {
 class GpsFixRejectionEnumReason extends EnumType {
   /// New GPS Fix position is above a computed threshold.
   static const rr_above_threshold = GpsFixRejectionEnumReason(0);
+
   /// Invalid measurement.
   static const rr_invalid = GpsFixRejectionEnumReason(1);
+
   /// Above maximum horizontal dilution of precision.
   static const rr_above_max_hdop = GpsFixRejectionEnumReason(2);
+
   /// Above maximum horizontal accuracy index.
   static const rr_above_max_hacc = GpsFixRejectionEnumReason(3);
+
   /// Lost one of the validity bits between consecutive GPS fixes.
   static const rr_lost_val_bit = GpsFixRejectionEnumReason(4);
 
-  static List<GpsFixRejectionEnumReason> get values => <GpsFixRejectionEnumReason>[
+  static List<GpsFixRejectionEnumReason> get values =>
+      <GpsFixRejectionEnumReason>[
         rr_above_threshold,
         rr_invalid,
         rr_above_max_hdop,
@@ -2015,7 +2206,8 @@ class GpsFixRejectionEnumReason extends EnumType {
         rr_lost_val_bit,
       ];
 
-  static get names => <GpsFixRejectionEnumReason, String>{
+  static core.Map<GpsFixRejectionEnumReason, String> get names =>
+      <GpsFixRejectionEnumReason, String>{
         rr_above_threshold: '''Above Threshold''',
         rr_invalid: '''Invalid Fix''',
         rr_above_max_hdop: '''Above Maximum HDOP''',
@@ -2037,16 +2229,21 @@ class GpsFixRejectionEnumReason extends EnumType {
 class LblRangeAcceptanceEnumAcceptance extends EnumType {
   /// This LBL range is accepted by the navigation filter.
   static const rr_accepted = LblRangeAcceptanceEnumAcceptance(0);
+
   /// New LBL Range is above a computed threshold.
   static const rr_above_threshold = LblRangeAcceptanceEnumAcceptance(1);
+
   /// Singular point.
   static const rr_singular = LblRangeAcceptanceEnumAcceptance(2);
+
   /// The filter lacks information to properly use the received LBL range.
   static const rr_no_info = LblRangeAcceptanceEnumAcceptance(3);
+
   /// Vehicle is using only GPS fix when it is at surface.
   static const rr_at_surface = LblRangeAcceptanceEnumAcceptance(4);
 
-  static List<LblRangeAcceptanceEnumAcceptance> get values => <LblRangeAcceptanceEnumAcceptance>[
+  static List<LblRangeAcceptanceEnumAcceptance> get values =>
+      <LblRangeAcceptanceEnumAcceptance>[
         rr_accepted,
         rr_above_threshold,
         rr_singular,
@@ -2054,7 +2251,8 @@ class LblRangeAcceptanceEnumAcceptance extends EnumType {
         rr_at_surface,
       ];
 
-  static get names => <LblRangeAcceptanceEnumAcceptance, String>{
+  static core.Map<LblRangeAcceptanceEnumAcceptance, String> get names =>
+      <LblRangeAcceptanceEnumAcceptance, String>{
         rr_accepted: '''Accepted''',
         rr_above_threshold: '''Rejected - Above Threshold''',
         rr_singular: '''Rejected - Singular Point''',
@@ -2077,12 +2275,14 @@ class DvlRejectionBitfieldType extends BitfieldType {
   static const type_gv = DvlRejectionBitfieldType(0x01);
   static const type_wv = DvlRejectionBitfieldType(0x02);
 
-  static List<DvlRejectionBitfieldType> get values => <DvlRejectionBitfieldType>[
+  static List<DvlRejectionBitfieldType> get values =>
+      <DvlRejectionBitfieldType>[
         type_gv,
         type_wv,
       ];
 
-  static get names => <DvlRejectionBitfieldType, String>{
+  static core.Map<DvlRejectionBitfieldType, String> get names =>
+      <DvlRejectionBitfieldType, String>{
         type_gv: '''Ground velocity''',
         type_wv: '''Water velocity''',
       };
@@ -2113,7 +2313,8 @@ class DvlRejectionBitfieldType extends BitfieldType {
           List<DvlRejectionBitfieldType> bits) =>
       (bits == null || bits.length < 2)
           ? DvlRejectionBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DvlRejectionBitfieldType(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => DvlRejectionBitfieldType(b1.value | b2.value));
 }
 
 /// Reason for rejection. There are two types of DVL measurement
@@ -2130,16 +2331,19 @@ class DvlRejectionEnumReason extends EnumType {
   /// with a given time window is above a configurable
   /// threshold.
   static const rr_innov_threshold_x = DvlRejectionEnumReason(0);
+
   /// The current DVL y-axis measurement is discarded
   /// because the absolute difference between the
   /// value and the previous accepted DVL measurement
   /// with a given time window is above a configurable
   /// threshold.
   static const rr_innov_threshold_y = DvlRejectionEnumReason(1);
+
   /// The current DVL x-axis measurement is discarded
   /// because the the absolute value is above a
   /// configurable threshold.
   static const rr_abs_threshold_x = DvlRejectionEnumReason(2);
+
   /// The current DVL y-axis measurement is discarded
   /// because the the absolute value is above a
   /// configurable threshold.
@@ -2152,7 +2356,8 @@ class DvlRejectionEnumReason extends EnumType {
         rr_abs_threshold_y,
       ];
 
-  static get names => <DvlRejectionEnumReason, String>{
+  static core.Map<DvlRejectionEnumReason, String> get names =>
+      <DvlRejectionEnumReason, String>{
         rr_innov_threshold_x: '''Innovation Threshold - X''',
         rr_innov_threshold_y: '''Innovation Threshold - Y''',
         rr_abs_threshold_x: '''Absolute Threshold - X''',
@@ -2185,7 +2390,8 @@ class AlignmentStateEnumState extends EnumType {
         as_wrong_medium,
       ];
 
-  static get names => <AlignmentStateEnumState, String>{
+  static core.Map<AlignmentStateEnumState, String> get names =>
+      <AlignmentStateEnumState, String>{
         as_not_aligned: '''Not Aligned''',
         as_aligned: '''Aligned''',
         as_not_supported: '''Not Supported''',
@@ -2208,31 +2414,39 @@ class DesiredPathBitfieldFlags extends BitfieldType {
   /// Indicates that the start point specification is given,
   /// therefore it should be considered for tracking.
   static const fl_start = DesiredPathBitfieldFlags(0x01);
+
   /// If start point is not given, ignore also the previous path's
   /// endpoint and take the start point to be the current vehicle
   /// location.
   static const fl_direct = DesiredPathBitfieldFlags(0x02);
+
   /// Ignore altitude/depth setting and let them be controlled
   /// independently.
   static const fl_no_z = DesiredPathBitfieldFlags(0x04);
+
   /// Perform 3D-tracking, i.e., consider the path formed in the
   /// XYZ plane taking into account both the 'start_z' and 'end_z'
   /// values.
   static const fl_3dtrack = DesiredPathBitfieldFlags(0x08);
+
   /// Indicates that loitering, if defined, should be done
   /// counter-clockwise. Clockwise loitering will apply
   /// otherwise.
   static const fl_cclockw = DesiredPathBitfieldFlags(0x10);
+
   /// Indicates that loitering, if defined, should be done from
   /// the current vehicle position. The end_lat and end_lon
   /// fields will be ignored.
   static const fl_loiter_curr = DesiredPathBitfieldFlags(0x20);
+
   /// Indicates that takeoff should be done before going to the end position.
   static const fl_takeoff = DesiredPathBitfieldFlags(0x40);
+
   /// Indicates that the system should land at the end position.
   static const fl_land = DesiredPathBitfieldFlags(0x80);
 
-  static List<DesiredPathBitfieldFlags> get values => <DesiredPathBitfieldFlags>[
+  static List<DesiredPathBitfieldFlags> get values =>
+      <DesiredPathBitfieldFlags>[
         fl_start,
         fl_direct,
         fl_no_z,
@@ -2243,7 +2457,8 @@ class DesiredPathBitfieldFlags extends BitfieldType {
         fl_land,
       ];
 
-  static get names => <DesiredPathBitfieldFlags, String>{
+  static core.Map<DesiredPathBitfieldFlags, String> get names =>
+      <DesiredPathBitfieldFlags, String>{
         fl_start: '''Start Point''',
         fl_direct: '''Direct''',
         fl_no_z: '''No Altitude/Depth control''',
@@ -2280,25 +2495,32 @@ class DesiredPathBitfieldFlags extends BitfieldType {
           List<DesiredPathBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? DesiredPathBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredPathBitfieldFlags(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => DesiredPathBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired Control flags.
 class DesiredControlBitfieldFlags extends BitfieldType {
   /// If enabled then field X has a meaningful value.
   static const fl_x = DesiredControlBitfieldFlags(0x01);
+
   /// If enabled then field Y has a meaningful value.
   static const fl_y = DesiredControlBitfieldFlags(0x02);
+
   /// If enabled then field Z has a meaningful value.
   static const fl_z = DesiredControlBitfieldFlags(0x04);
+
   /// If enabled then field K has a meaningful value.
   static const fl_k = DesiredControlBitfieldFlags(0x08);
+
   /// If enabled then field M has a meaningful value.
   static const fl_m = DesiredControlBitfieldFlags(0x10);
+
   /// If enabled then field N has a meaningful value.
   static const fl_n = DesiredControlBitfieldFlags(0x20);
 
-  static List<DesiredControlBitfieldFlags> get values => <DesiredControlBitfieldFlags>[
+  static List<DesiredControlBitfieldFlags> get values =>
+      <DesiredControlBitfieldFlags>[
         fl_x,
         fl_y,
         fl_z,
@@ -2307,7 +2529,8 @@ class DesiredControlBitfieldFlags extends BitfieldType {
         fl_n,
       ];
 
-  static get names => <DesiredControlBitfieldFlags, String>{
+  static core.Map<DesiredControlBitfieldFlags, String> get names =>
+      <DesiredControlBitfieldFlags, String>{
         fl_x: '''Value of X is meaningful''',
         fl_y: '''Value of Y is meaningful''',
         fl_z: '''Value of Z is meaningful''',
@@ -2341,26 +2564,34 @@ class DesiredControlBitfieldFlags extends BitfieldType {
   static DesiredControlBitfieldFlags fromBits(
           List<DesiredControlBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DesiredControlBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredControlBitfieldFlags(b1.value | b2.value));
+          ? DesiredControlBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => DesiredControlBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired Velocity flags.
 class DesiredVelocityBitfieldFlags extends BitfieldType {
   /// If enabled then field u has a meaningful value.
   static const fl_surge = DesiredVelocityBitfieldFlags(0x01);
+
   /// If enabled then field u has a meaningful value.
   static const fl_sway = DesiredVelocityBitfieldFlags(0x02);
+
   /// If enabled then field w has a meaningful value.
   static const fl_heave = DesiredVelocityBitfieldFlags(0x04);
+
   /// If enabled then field p has a meaningful value.
   static const fl_roll = DesiredVelocityBitfieldFlags(0x08);
+
   /// If enabled then field q has a meaningful value.
   static const fl_pitch = DesiredVelocityBitfieldFlags(0x10);
+
   /// If enabled then field r has a meaningful value.
   static const fl_yaw = DesiredVelocityBitfieldFlags(0x20);
 
-  static List<DesiredVelocityBitfieldFlags> get values => <DesiredVelocityBitfieldFlags>[
+  static List<DesiredVelocityBitfieldFlags> get values =>
+      <DesiredVelocityBitfieldFlags>[
         fl_surge,
         fl_sway,
         fl_heave,
@@ -2369,7 +2600,8 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
         fl_yaw,
       ];
 
-  static get names => <DesiredVelocityBitfieldFlags, String>{
+  static core.Map<DesiredVelocityBitfieldFlags, String> get names =>
+      <DesiredVelocityBitfieldFlags, String>{
         fl_surge: '''Value of u is meaningful''',
         fl_sway: '''Value of v is meaningful''',
         fl_heave: '''Value of w is meaningful''',
@@ -2403,26 +2635,33 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
   static DesiredVelocityBitfieldFlags fromBits(
           List<DesiredVelocityBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DesiredVelocityBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredVelocityBitfieldFlags(b1.value | b2.value));
+          ? DesiredVelocityBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => DesiredVelocityBitfieldFlags(b1.value | b2.value));
 }
 
 /// Path control state flags.
 class PathControlStateBitfieldFlags extends BitfieldType {
   /// Set if near the target endpoint.
   static const fl_near = PathControlStateBitfieldFlags(0x01);
+
   /// Set if loitering.
   static const fl_loitering = PathControlStateBitfieldFlags(0x02);
+
   /// Altitude/depth being controlled independently.
   static const fl_no_z = PathControlStateBitfieldFlags(0x04);
+
   /// 3D-tracking is active.
   static const fl_3dtrack = PathControlStateBitfieldFlags(0x08);
+
   /// Indicates that loitering, if active, is being done
   /// counter-clockwise. Otherwise, clockwise loitering should be
   /// assumed.
   static const fl_cclockw = PathControlStateBitfieldFlags(0x10);
 
-  static List<PathControlStateBitfieldFlags> get values => <PathControlStateBitfieldFlags>[
+  static List<PathControlStateBitfieldFlags> get values =>
+      <PathControlStateBitfieldFlags>[
         fl_near,
         fl_loitering,
         fl_no_z,
@@ -2430,7 +2669,8 @@ class PathControlStateBitfieldFlags extends BitfieldType {
         fl_cclockw,
       ];
 
-  static get names => <PathControlStateBitfieldFlags, String>{
+  static core.Map<PathControlStateBitfieldFlags, String> get names =>
+      <PathControlStateBitfieldFlags, String>{
         fl_near: '''Near Endpoint''',
         fl_loitering: '''Loitering''',
         fl_no_z: '''No Altitude/Depth control''',
@@ -2463,16 +2703,20 @@ class PathControlStateBitfieldFlags extends BitfieldType {
   static PathControlStateBitfieldFlags fromBits(
           List<PathControlStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? PathControlStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => PathControlStateBitfieldFlags(b1.value | b2.value));
+          ? PathControlStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => PathControlStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Brake operation.
 class BrakeEnumOp extends EnumType {
   /// Stop braking procedures.
   static const op_stop = BrakeEnumOp(0);
+
   /// Start braking procedures.
   static const op_start = BrakeEnumOp(1);
+
   /// Revert Actuation.
   static const op_revert = BrakeEnumOp(2);
 
@@ -2482,7 +2726,7 @@ class BrakeEnumOp extends EnumType {
         op_revert,
       ];
 
-  static get names => <BrakeEnumOp, String>{
+  static core.Map<BrakeEnumOp, String> get names => <BrakeEnumOp, String>{
         op_stop: '''Stop Braking''',
         op_start: '''Start Braking''',
         op_revert: '''Revert Actuation''',
@@ -2502,24 +2746,33 @@ class BrakeEnumOp extends EnumType {
 class DesiredLinearStateBitfieldFlags extends BitfieldType {
   /// If enabled then field x has a meaningful value.
   static const fl_x = DesiredLinearStateBitfieldFlags(0x0001);
+
   /// If enabled then field y has a meaningful value.
   static const fl_y = DesiredLinearStateBitfieldFlags(0x0002);
+
   /// If enabled then field z has a meaningful value.
   static const fl_z = DesiredLinearStateBitfieldFlags(0x0004);
+
   /// If enabled then field vx has a meaningful value.
   static const fl_vx = DesiredLinearStateBitfieldFlags(0x0008);
+
   /// If enabled then field vy has a meaningful value.
   static const fl_vy = DesiredLinearStateBitfieldFlags(0x0010);
+
   /// If enabled then field vz has a meaningful value.
   static const fl_vz = DesiredLinearStateBitfieldFlags(0x0020);
+
   /// If enabled then field ax has a meaningful value.
   static const fl_ax = DesiredLinearStateBitfieldFlags(0x0040);
+
   /// If enabled then field ay has a meaningful value.
   static const fl_ay = DesiredLinearStateBitfieldFlags(0x0080);
+
   /// If enabled then field az has a meaningful value.
   static const fl_az = DesiredLinearStateBitfieldFlags(0x0100);
 
-  static List<DesiredLinearStateBitfieldFlags> get values => <DesiredLinearStateBitfieldFlags>[
+  static List<DesiredLinearStateBitfieldFlags> get values =>
+      <DesiredLinearStateBitfieldFlags>[
         fl_x,
         fl_y,
         fl_z,
@@ -2531,7 +2784,8 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
         fl_az,
       ];
 
-  static get names => <DesiredLinearStateBitfieldFlags, String>{
+  static core.Map<DesiredLinearStateBitfieldFlags, String> get names =>
+      <DesiredLinearStateBitfieldFlags, String>{
         fl_x: '''Value of x is meaningful''',
         fl_y: '''Value of y is meaningful''',
         fl_z: '''Value of z is meaningful''',
@@ -2568,8 +2822,10 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
   static DesiredLinearStateBitfieldFlags fromBits(
           List<DesiredLinearStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? DesiredLinearStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => DesiredLinearStateBitfieldFlags(b1.value | b2.value));
+          ? DesiredLinearStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => DesiredLinearStateBitfieldFlags(b1.value | b2.value));
 }
 
 /// Flags of the maneuver.
@@ -2578,9 +2834,11 @@ class PopUpBitfieldFlags extends BitfieldType {
   /// ignored and current vehicle position should be considered as
   /// starting point for ascent/descent.
   static const flg_curr_pos = PopUpBitfieldFlags(0x01);
+
   /// If this flag is set, duration field is used to hold position at surface
   /// for that amount of time.
   static const flg_wait_at_surface = PopUpBitfieldFlags(0x02);
+
   /// This flag will only make sense if WAIT_AT_SURFACE is also set.
   /// While holding position at surface the vehicle will assume a
   /// station keeping behavior.
@@ -2592,7 +2850,8 @@ class PopUpBitfieldFlags extends BitfieldType {
         flg_station_keep,
       ];
 
-  static get names => <PopUpBitfieldFlags, String>{
+  static core.Map<PopUpBitfieldFlags, String> get names =>
+      <PopUpBitfieldFlags, String>{
         flg_curr_pos: '''Start from current position''',
         flg_wait_at_surface: '''Wait at surface''',
         flg_station_keep: '''Station keeping''',
@@ -2620,8 +2879,7 @@ class PopUpBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static PopUpBitfieldFlags fromBits(
-          List<PopUpBitfieldFlags> bits) =>
+  static PopUpBitfieldFlags fromBits(List<PopUpBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? PopUpBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => PopUpBitfieldFlags(b1.value | b2.value));
@@ -2643,7 +2901,7 @@ class LoiterEnumType extends EnumType {
         lt_hover,
       ];
 
-  static get names => <LoiterEnumType, String>{
+  static core.Map<LoiterEnumType, String> get names => <LoiterEnumType, String>{
         lt_default: '''Default''',
         lt_circular: '''Circular''',
         lt_racetrack: '''Race track''',
@@ -2675,7 +2933,8 @@ class LoiterEnumDirection extends EnumType {
         ld_iwindcurr,
       ];
 
-  static get names => <LoiterEnumDirection, String>{
+  static core.Map<LoiterEnumDirection, String> get names =>
+      <LoiterEnumDirection, String>{
         ld_vdep: '''Vehicle Dependent''',
         ld_clockw: '''Clockwise''',
         ld_cclockw: '''Counter Clockwise''',
@@ -2702,7 +2961,8 @@ class RowsBitfieldFlags extends BitfieldType {
         flg_curve_right,
       ];
 
-  static get names => <RowsBitfieldFlags, String>{
+  static core.Map<RowsBitfieldFlags, String> get names =>
+      <RowsBitfieldFlags, String>{
         flg_square_curve: '''Square Curve''',
         flg_curve_right: '''First Curve Right''',
       };
@@ -2729,8 +2989,7 @@ class RowsBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static RowsBitfieldFlags fromBits(
-          List<RowsBitfieldFlags> bits) =>
+  static RowsBitfieldFlags fromBits(List<RowsBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? RowsBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => RowsBitfieldFlags(b1.value | b2.value));
@@ -2743,11 +3002,13 @@ class ElevatorBitfieldFlags extends BitfieldType {
   /// starting point for ascent/descent.
   static const flg_curr_pos = ElevatorBitfieldFlags(0x01);
 
-  static List<ElevatorBitfieldFlags> get values => <ElevatorBitfieldFlags>[
-        flg_curr_pos];
+  static List<ElevatorBitfieldFlags> get values =>
+      <ElevatorBitfieldFlags>[flg_curr_pos];
 
-  static get names => <ElevatorBitfieldFlags, String>{
-        flg_curr_pos: '''Start from current position'''};
+  static core.Map<ElevatorBitfieldFlags, String> get names =>
+      <ElevatorBitfieldFlags, String>{
+        flg_curr_pos: '''Start from current position'''
+      };
 
   const ElevatorBitfieldFlags(int value) : super(value);
 
@@ -2771,8 +3032,7 @@ class ElevatorBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static ElevatorBitfieldFlags fromBits(
-          List<ElevatorBitfieldFlags> bits) =>
+  static ElevatorBitfieldFlags fromBits(List<ElevatorBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? ElevatorBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => ElevatorBitfieldFlags(b1.value | b2.value));
@@ -2782,21 +3042,26 @@ class ElevatorBitfieldFlags extends BitfieldType {
 class ManeuverControlStateEnumState extends EnumType {
   /// Maneuver in progress.
   static const mcs_executing = ManeuverControlStateEnumState(0);
+
   /// Maneuver completed.
   static const mcs_done = ManeuverControlStateEnumState(1);
+
   /// Maneuver error.
   static const mcs_error = ManeuverControlStateEnumState(2);
+
   /// Maneuver stopped.
   static const mcs_stopped = ManeuverControlStateEnumState(3);
 
-  static List<ManeuverControlStateEnumState> get values => <ManeuverControlStateEnumState>[
+  static List<ManeuverControlStateEnumState> get values =>
+      <ManeuverControlStateEnumState>[
         mcs_executing,
         mcs_done,
         mcs_error,
         mcs_stopped,
       ];
 
-  static get names => <ManeuverControlStateEnumState, String>{
+  static core.Map<ManeuverControlStateEnumState, String> get names =>
+      <ManeuverControlStateEnumState, String>{
         mcs_executing: '''Maneuver in progress''',
         mcs_done: '''Maneuver completed''',
         mcs_error: '''Maneuver error''',
@@ -2820,14 +3085,16 @@ class CompassCalibrationEnumDirection extends EnumType {
   static const ld_cclockw = CompassCalibrationEnumDirection(2);
   static const ld_iwindcurr = CompassCalibrationEnumDirection(3);
 
-  static List<CompassCalibrationEnumDirection> get values => <CompassCalibrationEnumDirection>[
+  static List<CompassCalibrationEnumDirection> get values =>
+      <CompassCalibrationEnumDirection>[
         ld_vdep,
         ld_clockw,
         ld_cclockw,
         ld_iwindcurr,
       ];
 
-  static get names => <CompassCalibrationEnumDirection, String>{
+  static core.Map<CompassCalibrationEnumDirection, String> get names =>
+      <CompassCalibrationEnumDirection, String>{
         ld_vdep: '''Vehicle Dependent''',
         ld_clockw: '''Clockwise''',
         ld_cclockw: '''Counter Clockwise''',
@@ -2850,13 +3117,15 @@ class FormationParametersEnumReferenceFrame extends EnumType {
   static const op_path_fixed = FormationParametersEnumReferenceFrame(1);
   static const op_path_curved = FormationParametersEnumReferenceFrame(2);
 
-  static List<FormationParametersEnumReferenceFrame> get values => <FormationParametersEnumReferenceFrame>[
+  static List<FormationParametersEnumReferenceFrame> get values =>
+      <FormationParametersEnumReferenceFrame>[
         op_earth_fixed,
         op_path_fixed,
         op_path_curved,
       ];
 
-  static get names => <FormationParametersEnumReferenceFrame, String>{
+  static core.Map<FormationParametersEnumReferenceFrame, String> get names =>
+      <FormationParametersEnumReferenceFrame, String>{
         op_earth_fixed: '''Earth Fixed''',
         op_path_fixed: '''Path Fixed''',
         op_path_curved: '''Path Curved''',
@@ -2891,13 +3160,16 @@ class ReferenceBitfieldFlags extends BitfieldType {
         flag_mandone,
       ];
 
-  static get names => <ReferenceBitfieldFlags, String>{
+  static core.Map<ReferenceBitfieldFlags, String> get names =>
+      <ReferenceBitfieldFlags, String>{
         flag_location: '''Use Location Reference''',
         flag_speed: '''Use Speed Reference''',
         flag_z: '''Use Z Reference''',
         flag_radius: '''Use Radius Reference''',
-        flag_start_point: '''Use this Reference as Start Position for PathControler''',
-        flag_direct: '''Use Current Position as Start Position for PathControler''',
+        flag_start_point:
+            '''Use this Reference as Start Position for PathControler''',
+        flag_direct:
+            '''Use Current Position as Start Position for PathControler''',
         flag_mandone: '''Flag Maneuver Completion''',
       };
 
@@ -2923,11 +3195,11 @@ class ReferenceBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static ReferenceBitfieldFlags fromBits(
-          List<ReferenceBitfieldFlags> bits) =>
+  static ReferenceBitfieldFlags fromBits(List<ReferenceBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? ReferenceBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => ReferenceBitfieldFlags(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => ReferenceBitfieldFlags(b1.value | b2.value));
 }
 
 class FollowRefStateEnumState extends EnumType {
@@ -2947,7 +3219,8 @@ class FollowRefStateEnumState extends EnumType {
         fr_timeout,
       ];
 
-  static get names => <FollowRefStateEnumState, String>{
+  static core.Map<FollowRefStateEnumState, String> get names =>
+      <FollowRefStateEnumState, String>{
         fr_wait: '''Waiting for first reference''',
         fr_goto: '''Going towards received reference''',
         fr_loiter: '''Loitering after arriving at the reference''',
@@ -2973,7 +3246,8 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
   static const prox_xy_unreachable = FollowRefStateBitfieldProximity(0x08);
   static const prox_z_unreachable = FollowRefStateBitfieldProximity(0x10);
 
-  static List<FollowRefStateBitfieldProximity> get values => <FollowRefStateBitfieldProximity>[
+  static List<FollowRefStateBitfieldProximity> get values =>
+      <FollowRefStateBitfieldProximity>[
         prox_far,
         prox_xy_near,
         prox_z_near,
@@ -2981,7 +3255,8 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
         prox_z_unreachable,
       ];
 
-  static get names => <FollowRefStateBitfieldProximity, String>{
+  static core.Map<FollowRefStateBitfieldProximity, String> get names =>
+      <FollowRefStateBitfieldProximity, String>{
         prox_far: '''Far from the destination''',
         prox_xy_near: '''Near in the horizontal plane''',
         prox_z_near: '''Near in the vertical plane''',
@@ -3014,8 +3289,10 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
   static FollowRefStateBitfieldProximity fromBits(
           List<FollowRefStateBitfieldProximity> bits) =>
       (bits == null || bits.length < 2)
-          ? FollowRefStateBitfieldProximity(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => FollowRefStateBitfieldProximity(b1.value | b2.value));
+          ? FollowRefStateBitfieldProximity(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => FollowRefStateBitfieldProximity(b1.value | b2.value));
 }
 
 /// Direction to which the vehicle should attempt to unstuck.
@@ -3030,7 +3307,8 @@ class DislodgeEnumDirection extends EnumType {
         dir_backward,
       ];
 
-  static get names => <DislodgeEnumDirection, String>{
+  static core.Map<DislodgeEnumDirection, String> get names =>
+      <DislodgeEnumDirection, String>{
         dir_auto: '''Let the vehicle decide''',
         dir_forward: '''Attempt to move forward''',
         dir_backward: '''Attempt to move backward''',
@@ -3056,7 +3334,8 @@ class FormationEnumType extends EnumType {
         fc_report,
       ];
 
-  static get names => <FormationEnumType, String>{
+  static core.Map<FormationEnumType, String> get names =>
+      <FormationEnumType, String>{
         fc_request: '''Request''',
         fc_report: '''Report''',
       };
@@ -3075,12 +3354,16 @@ class FormationEnumType extends EnumType {
 class FormationEnumOp extends EnumType {
   /// Start the formation maneuver.
   static const op_start = FormationEnumOp(0);
+
   /// Stop the formation maneuver.
   static const op_stop = FormationEnumOp(1);
+
   /// Stop the formation maneuver.
   static const op_ready = FormationEnumOp(2);
+
   /// Stop the formation maneuver.
   static const op_executing = FormationEnumOp(3);
+
   /// Stop the formation maneuver.
   static const op_failure = FormationEnumOp(4);
 
@@ -3092,7 +3375,8 @@ class FormationEnumOp extends EnumType {
         op_failure,
       ];
 
-  static get names => <FormationEnumOp, String>{
+  static core.Map<FormationEnumOp, String> get names =>
+      <FormationEnumOp, String>{
         op_start: '''Start''',
         op_stop: '''Stop''',
         op_ready: '''Ready''',
@@ -3116,13 +3400,15 @@ class FormationEnumReferenceFrame extends EnumType {
   static const op_path_fixed = FormationEnumReferenceFrame(1);
   static const op_path_curved = FormationEnumReferenceFrame(2);
 
-  static List<FormationEnumReferenceFrame> get values => <FormationEnumReferenceFrame>[
+  static List<FormationEnumReferenceFrame> get values =>
+      <FormationEnumReferenceFrame>[
         op_earth_fixed,
         op_path_fixed,
         op_path_curved,
       ];
 
-  static get names => <FormationEnumReferenceFrame, String>{
+  static core.Map<FormationEnumReferenceFrame, String> get names =>
+      <FormationEnumReferenceFrame, String>{
         op_earth_fixed: '''Earth Fixed''',
         op_path_fixed: '''Path Fixed''',
         op_path_curved: '''Path Curved''',
@@ -3143,20 +3429,24 @@ class ScheduledGotoEnumDelayed extends EnumType {
   /// If the vehicle fails to arrive at the specified time, it will keep going to the destination
   /// at top speed and only then consider this maneuver completed.
   static const dbeh_resume = ScheduledGotoEnumDelayed(0);
+
   /// If the vehicle fails to arrive at the specified time, it will stop the current maneuver and
   /// advance to the next one (independently of how far it is from destination).
   static const dbeh_skip = ScheduledGotoEnumDelayed(1);
+
   /// If the vehicle fails to arrive at the specified time, it will stop the execution of this
   /// maneuver with a FAILED result (the entire plan will be stopped).
   static const dbeh_fail = ScheduledGotoEnumDelayed(2);
 
-  static List<ScheduledGotoEnumDelayed> get values => <ScheduledGotoEnumDelayed>[
+  static List<ScheduledGotoEnumDelayed> get values =>
+      <ScheduledGotoEnumDelayed>[
         dbeh_resume,
         dbeh_skip,
         dbeh_fail,
       ];
 
-  static get names => <ScheduledGotoEnumDelayed, String>{
+  static core.Map<ScheduledGotoEnumDelayed, String> get names =>
+      <ScheduledGotoEnumDelayed, String>{
         dbeh_resume: '''Resume''',
         dbeh_skip: '''Skip''',
         dbeh_fail: '''Fail''',
@@ -3176,15 +3466,18 @@ class ScheduledGotoEnumDelayed extends EnumType {
 class RowsCoverageBitfieldFlags extends BitfieldType {
   /// Whether to move between transects using an additional perpendicular transect.
   static const flg_square_curve = RowsCoverageBitfieldFlags(0x01);
+
   /// Shall the vehicle turn towards the right after the first transect (alternatively it will turn left).
   static const flg_curve_right = RowsCoverageBitfieldFlags(0x02);
 
-  static List<RowsCoverageBitfieldFlags> get values => <RowsCoverageBitfieldFlags>[
+  static List<RowsCoverageBitfieldFlags> get values =>
+      <RowsCoverageBitfieldFlags>[
         flg_square_curve,
         flg_curve_right,
       ];
 
-  static get names => <RowsCoverageBitfieldFlags, String>{
+  static core.Map<RowsCoverageBitfieldFlags, String> get names =>
+      <RowsCoverageBitfieldFlags, String>{
         flg_square_curve: '''Square Curve''',
         flg_curve_right: '''First Curve Right''',
       };
@@ -3214,8 +3507,10 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
   static RowsCoverageBitfieldFlags fromBits(
           List<RowsCoverageBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? RowsCoverageBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => RowsCoverageBitfieldFlags(b1.value | b2.value));
+          ? RowsCoverageBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => RowsCoverageBitfieldFlags(b1.value | b2.value));
 }
 
 class AutonomousSectionBitfieldLimits extends BitfieldType {
@@ -3224,14 +3519,16 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
   static const enforce_timeout = AutonomousSectionBitfieldLimits(0x04);
   static const enforce_area2d = AutonomousSectionBitfieldLimits(0x08);
 
-  static List<AutonomousSectionBitfieldLimits> get values => <AutonomousSectionBitfieldLimits>[
+  static List<AutonomousSectionBitfieldLimits> get values =>
+      <AutonomousSectionBitfieldLimits>[
         enforce_depth,
         enforce_altitude,
         enforce_timeout,
         enforce_area2d,
       ];
 
-  static get names => <AutonomousSectionBitfieldLimits, String>{
+  static core.Map<AutonomousSectionBitfieldLimits, String> get names =>
+      <AutonomousSectionBitfieldLimits, String>{
         enforce_depth: '''Maximum Depth Limit''',
         enforce_altitude: '''Minimum Altitude Limit''',
         enforce_timeout: '''Time Limit''',
@@ -3263,8 +3560,10 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
   static AutonomousSectionBitfieldLimits fromBits(
           List<AutonomousSectionBitfieldLimits> bits) =>
       (bits == null || bits.length < 2)
-          ? AutonomousSectionBitfieldLimits(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => AutonomousSectionBitfieldLimits(b1.value | b2.value));
+          ? AutonomousSectionBitfieldLimits(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => AutonomousSectionBitfieldLimits(b1.value | b2.value));
 }
 
 /// Flags of the maneuver.
@@ -3273,11 +3572,13 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
   /// It will popup periodically to report position. When it pops up, it will stay at surface in "normal" station keeping behaviour for a certain time (popup_duration).
   static const flg_keep_safe = StationKeepingExtendedBitfieldFlags(0x01);
 
-  static List<StationKeepingExtendedBitfieldFlags> get values => <StationKeepingExtendedBitfieldFlags>[
-        flg_keep_safe];
+  static List<StationKeepingExtendedBitfieldFlags> get values =>
+      <StationKeepingExtendedBitfieldFlags>[flg_keep_safe];
 
-  static get names => <StationKeepingExtendedBitfieldFlags, String>{
-        flg_keep_safe: '''Keep safe behaviour'''};
+  static core.Map<StationKeepingExtendedBitfieldFlags, String> get names =>
+      <StationKeepingExtendedBitfieldFlags, String>{
+        flg_keep_safe: '''Keep safe behaviour'''
+      };
 
   const StationKeepingExtendedBitfieldFlags(int value) : super(value);
 
@@ -3304,8 +3605,10 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
   static StationKeepingExtendedBitfieldFlags fromBits(
           List<StationKeepingExtendedBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? StationKeepingExtendedBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => StationKeepingExtendedBitfieldFlags(b1.value | b2.value));
+          ? StationKeepingExtendedBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              StationKeepingExtendedBitfieldFlags(b1.value | b2.value));
 }
 
 /// Desired direction.
@@ -3313,12 +3616,14 @@ class MagnetometerEnumDirection extends EnumType {
   static const md_clockw_first = MagnetometerEnumDirection(0);
   static const md_cclockw_first = MagnetometerEnumDirection(1);
 
-  static List<MagnetometerEnumDirection> get values => <MagnetometerEnumDirection>[
+  static List<MagnetometerEnumDirection> get values =>
+      <MagnetometerEnumDirection>[
         md_clockw_first,
         md_cclockw_first,
       ];
 
-  static get names => <MagnetometerEnumDirection, String>{
+  static core.Map<MagnetometerEnumDirection, String> get names =>
+      <MagnetometerEnumDirection, String>{
         md_clockw_first: '''Clockwise First''',
         md_cclockw_first: '''Counter Clockwise First''',
       };
@@ -3337,14 +3642,19 @@ class MagnetometerEnumDirection extends EnumType {
 class VehicleStateEnumOpMode extends EnumType {
   /// Ready to service requests.
   static const vs_service = VehicleStateEnumOpMode(0);
+
   /// Ongoing vehicle calibration.
   static const vs_calibration = VehicleStateEnumOpMode(1);
+
   /// Errors are set.
   static const vs_error = VehicleStateEnumOpMode(2);
+
   /// A maneuver is executing.
   static const vs_maneuver = VehicleStateEnumOpMode(3);
+
   /// External control is active.
   static const vs_external = VehicleStateEnumOpMode(4);
+
   /// Booting system.
   static const vs_boot = VehicleStateEnumOpMode(5);
 
@@ -3357,7 +3667,8 @@ class VehicleStateEnumOpMode extends EnumType {
         vs_boot,
       ];
 
-  static get names => <VehicleStateEnumOpMode, String>{
+  static core.Map<VehicleStateEnumOpMode, String> get names =>
+      <VehicleStateEnumOpMode, String>{
         vs_service: '''Service''',
         vs_calibration: '''Calibration''',
         vs_error: '''Error''',
@@ -3379,11 +3690,13 @@ class VehicleStateEnumOpMode extends EnumType {
 class VehicleStateBitfieldFlags extends BitfieldType {
   static const vflg_maneuver_done = VehicleStateBitfieldFlags(0x01);
 
-  static List<VehicleStateBitfieldFlags> get values => <VehicleStateBitfieldFlags>[
-        vflg_maneuver_done];
+  static List<VehicleStateBitfieldFlags> get values =>
+      <VehicleStateBitfieldFlags>[vflg_maneuver_done];
 
-  static get names => <VehicleStateBitfieldFlags, String>{
-        vflg_maneuver_done: '''Maneuver Done'''};
+  static core.Map<VehicleStateBitfieldFlags, String> get names =>
+      <VehicleStateBitfieldFlags, String>{
+        vflg_maneuver_done: '''Maneuver Done'''
+      };
 
   const VehicleStateBitfieldFlags(int value) : super(value);
 
@@ -3410,8 +3723,10 @@ class VehicleStateBitfieldFlags extends BitfieldType {
   static VehicleStateBitfieldFlags fromBits(
           List<VehicleStateBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
-          ? VehicleStateBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => VehicleStateBitfieldFlags(b1.value | b2.value));
+          ? VehicleStateBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => VehicleStateBitfieldFlags(b1.value | b2.value));
 }
 
 class VehicleCommandEnumType extends EnumType {
@@ -3427,7 +3742,8 @@ class VehicleCommandEnumType extends EnumType {
         vc_failure,
       ];
 
-  static get names => <VehicleCommandEnumType, String>{
+  static core.Map<VehicleCommandEnumType, String> get names =>
+      <VehicleCommandEnumType, String>{
         vc_request: '''Request''',
         vc_success: '''Reply -- Success''',
         vc_in_progress: '''Reply -- In Progress''',
@@ -3448,21 +3764,26 @@ class VehicleCommandEnumType extends EnumType {
 class VehicleCommandEnumCommand extends EnumType {
   /// Execute the maneuver specified in 'maneuver' field.
   static const vc_exec_maneuver = VehicleCommandEnumCommand(0);
+
   /// Stop 'maneuver' being executed.
   static const vc_stop_maneuver = VehicleCommandEnumCommand(1);
+
   /// Start calibrating vehicle.
   static const vc_start_calibration = VehicleCommandEnumCommand(2);
+
   /// Stop calibrating vehicle.
   static const vc_stop_calibration = VehicleCommandEnumCommand(3);
 
-  static List<VehicleCommandEnumCommand> get values => <VehicleCommandEnumCommand>[
+  static List<VehicleCommandEnumCommand> get values =>
+      <VehicleCommandEnumCommand>[
         vc_exec_maneuver,
         vc_stop_maneuver,
         vc_start_calibration,
         vc_stop_calibration,
       ];
 
-  static get names => <VehicleCommandEnumCommand, String>{
+  static core.Map<VehicleCommandEnumCommand, String> get names =>
+      <VehicleCommandEnumCommand, String>{
         vc_exec_maneuver: '''Execute Maneuver''',
         vc_stop_maneuver: '''Stop Maneuver''',
         vc_start_calibration: '''Start Calibration''',
@@ -3487,7 +3808,8 @@ class MonitorEntityStateEnumCommand extends EnumType {
   static const mes_enable_exclusive = MonitorEntityStateEnumCommand(3);
   static const mes_status = MonitorEntityStateEnumCommand(4);
 
-  static List<MonitorEntityStateEnumCommand> get values => <MonitorEntityStateEnumCommand>[
+  static List<MonitorEntityStateEnumCommand> get values =>
+      <MonitorEntityStateEnumCommand>[
         mes_reset,
         mes_enable,
         mes_disable,
@@ -3495,11 +3817,13 @@ class MonitorEntityStateEnumCommand extends EnumType {
         mes_status,
       ];
 
-  static get names => <MonitorEntityStateEnumCommand, String>{
+  static core.Map<MonitorEntityStateEnumCommand, String> get names =>
+      <MonitorEntityStateEnumCommand, String>{
         mes_reset: '''Reset to defaults''',
         mes_enable: '''Enable Monitoring''',
         mes_disable: '''Disable Monitoring''',
-        mes_enable_exclusive: '''Enable Monitoring (exclusive - disables all others)''',
+        mes_enable_exclusive:
+            '''Enable Monitoring (exclusive - disables all others)''',
         mes_status: '''Status Report''',
       };
 
@@ -3522,7 +3846,8 @@ class ControlLoopsEnumEnable extends EnumType {
         cl_enable,
       ];
 
-  static get names => <ControlLoopsEnumEnable, String>{
+  static core.Map<ControlLoopsEnumEnable, String> get names =>
+      <ControlLoopsEnumEnable, String>{
         cl_disable: '''Disable''',
         cl_enable: '''Enable''',
       };
@@ -3541,12 +3866,16 @@ class ControlLoopsEnumEnable extends EnumType {
 class VehicleMediumEnumMedium extends EnumType {
   /// Vehicle is on the ground
   static const vm_ground = VehicleMediumEnumMedium(0);
+
   /// Vehicle is airborne
   static const vm_air = VehicleMediumEnumMedium(1);
+
   /// Vehicle is at water surface
   static const vm_water = VehicleMediumEnumMedium(2);
+
   /// Vehicle is underwater
   static const vm_underwater = VehicleMediumEnumMedium(3);
+
   /// Vehicle medium is unknown
   static const vm_unknown = VehicleMediumEnumMedium(4);
 
@@ -3558,7 +3887,8 @@ class VehicleMediumEnumMedium extends EnumType {
         vm_unknown,
       ];
 
-  static get names => <VehicleMediumEnumMedium, String>{
+  static core.Map<VehicleMediumEnumMedium, String> get names =>
+      <VehicleMediumEnumMedium, String>{
         vm_ground: '''Ground''',
         vm_air: '''Air''',
         vm_water: '''Water''',
@@ -3580,10 +3910,13 @@ class VehicleMediumEnumMedium extends EnumType {
 class CollisionBitfieldType extends BitfieldType {
   /// Collision detected in the x-axis
   static const cd_x = CollisionBitfieldType(0x01);
+
   /// Collision detected in the y-axis
   static const cd_y = CollisionBitfieldType(0x02);
+
   /// Collision detected in the z-axis
   static const cd_z = CollisionBitfieldType(0x04);
+
   /// Sudden impact detected
   static const cd_impact = CollisionBitfieldType(0x08);
 
@@ -3594,7 +3927,8 @@ class CollisionBitfieldType extends BitfieldType {
         cd_impact,
       ];
 
-  static get names => <CollisionBitfieldType, String>{
+  static core.Map<CollisionBitfieldType, String> get names =>
+      <CollisionBitfieldType, String>{
         cd_x: '''X-axis''',
         cd_y: '''Y-axis''',
         cd_z: '''Z-axis''',
@@ -3623,8 +3957,7 @@ class CollisionBitfieldType extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static CollisionBitfieldType fromBits(
-          List<CollisionBitfieldType> bits) =>
+  static CollisionBitfieldType fromBits(List<CollisionBitfieldType> bits) =>
       (bits == null || bits.length < 2)
           ? CollisionBitfieldType(bits == null || bits.isEmpty ? 0 : bits[0])
           : bits.reduce((b1, b2) => CollisionBitfieldType(b1.value | b2.value));
@@ -3642,7 +3975,8 @@ class FormStateEnumPosSimMon extends EnumType {
         pos_lim,
       ];
 
-  static get names => <FormStateEnumPosSimMon, String>{
+  static core.Map<FormStateEnumPosSimMon, String> get names =>
+      <FormStateEnumPosSimMon, String>{
         pos_ok: '''Ok''',
         pos_wrn: '''Warning threshold''',
         pos_lim: '''Limit threshold''',
@@ -3668,7 +4002,8 @@ class FormStateEnumCommMon extends EnumType {
         comms_timeout,
       ];
 
-  static get names => <FormStateEnumCommMon, String>{
+  static core.Map<FormStateEnumCommMon, String> get names =>
+      <FormStateEnumCommMon, String>{
         comms_ok: '''Ok''',
         comms_timeout: '''Timeout''',
       };
@@ -3693,7 +4028,8 @@ class FormStateEnumConvergMon extends EnumType {
         conv_timeout,
       ];
 
-  static get names => <FormStateEnumConvergMon, String>{
+  static core.Map<FormStateEnumConvergMon, String> get names =>
+      <FormStateEnumConvergMon, String>{
         conv_ok: '''Ok''',
         conv_timeout: '''Timeout''',
       };
@@ -3712,18 +4048,22 @@ class FormStateEnumConvergMon extends EnumType {
 class AutopilotModeEnumAutonomy extends EnumType {
   /// Autopilot has no control
   static const al_manual = AutopilotModeEnumAutonomy(0);
+
   /// Autopilot has some control
   static const al_assisted = AutopilotModeEnumAutonomy(1);
+
   /// Autopilot has full control
   static const al_auto = AutopilotModeEnumAutonomy(2);
 
-  static List<AutopilotModeEnumAutonomy> get values => <AutopilotModeEnumAutonomy>[
+  static List<AutopilotModeEnumAutonomy> get values =>
+      <AutopilotModeEnumAutonomy>[
         al_manual,
         al_assisted,
         al_auto,
       ];
 
-  static get names => <AutopilotModeEnumAutonomy, String>{
+  static core.Map<AutopilotModeEnumAutonomy, String> get names =>
+      <AutopilotModeEnumAutonomy, String>{
         al_manual: '''Manual''',
         al_assisted: '''Assisted''',
         al_auto: '''Auto''',
@@ -3749,7 +4089,8 @@ class FormationStateEnumType extends EnumType {
         fc_report,
       ];
 
-  static get names => <FormationStateEnumType, String>{
+  static core.Map<FormationStateEnumType, String> get names =>
+      <FormationStateEnumType, String>{
         fc_request: '''Request''',
         fc_report: '''Report''',
       };
@@ -3768,6 +4109,7 @@ class FormationStateEnumType extends EnumType {
 class FormationStateEnumOp extends EnumType {
   /// Start the formation maneuver.
   static const op_start = FormationStateEnumOp(0);
+
   /// Stop the formation maneuver.
   static const op_stop = FormationStateEnumOp(1);
 
@@ -3776,7 +4118,8 @@ class FormationStateEnumOp extends EnumType {
         op_stop,
       ];
 
-  static get names => <FormationStateEnumOp, String>{
+  static core.Map<FormationStateEnumOp, String> get names =>
+      <FormationStateEnumOp, String>{
         op_start: '''Start''',
         op_stop: '''Stop''',
       };
@@ -3797,13 +4140,15 @@ class FormationStateEnumPosSimMon extends EnumType {
   static const pos_wrn = FormationStateEnumPosSimMon(1);
   static const pos_lim = FormationStateEnumPosSimMon(2);
 
-  static List<FormationStateEnumPosSimMon> get values => <FormationStateEnumPosSimMon>[
+  static List<FormationStateEnumPosSimMon> get values =>
+      <FormationStateEnumPosSimMon>[
         pos_ok,
         pos_wrn,
         pos_lim,
       ];
 
-  static get names => <FormationStateEnumPosSimMon, String>{
+  static core.Map<FormationStateEnumPosSimMon, String> get names =>
+      <FormationStateEnumPosSimMon, String>{
         pos_ok: '''Ok''',
         pos_wrn: '''Warning threshold''',
         pos_lim: '''Limit threshold''',
@@ -3824,12 +4169,14 @@ class FormationStateEnumCommMon extends EnumType {
   static const comms_ok = FormationStateEnumCommMon(0);
   static const comms_timeout = FormationStateEnumCommMon(1);
 
-  static List<FormationStateEnumCommMon> get values => <FormationStateEnumCommMon>[
+  static List<FormationStateEnumCommMon> get values =>
+      <FormationStateEnumCommMon>[
         comms_ok,
         comms_timeout,
       ];
 
-  static get names => <FormationStateEnumCommMon, String>{
+  static core.Map<FormationStateEnumCommMon, String> get names =>
+      <FormationStateEnumCommMon, String>{
         comms_ok: '''Ok''',
         comms_timeout: '''Timeout''',
       };
@@ -3849,12 +4196,14 @@ class FormationStateEnumConvergMon extends EnumType {
   static const conv_ok = FormationStateEnumConvergMon(0);
   static const conv_timeout = FormationStateEnumConvergMon(1);
 
-  static List<FormationStateEnumConvergMon> get values => <FormationStateEnumConvergMon>[
+  static List<FormationStateEnumConvergMon> get values =>
+      <FormationStateEnumConvergMon>[
         conv_ok,
         conv_timeout,
       ];
 
-  static get names => <FormationStateEnumConvergMon, String>{
+  static core.Map<FormationStateEnumConvergMon, String> get names =>
+      <FormationStateEnumConvergMon, String>{
         conv_ok: '''Ok''',
         conv_timeout: '''Timeout''',
       };
@@ -3876,26 +4225,31 @@ class ReportControlEnumOp extends EnumType {
   /// will be defined by the field 'period'. If applicable, the destination
   /// address is defined in field 'dst'.
   static const op_request_start = ReportControlEnumOp(0);
+
   /// The destination system will reply a message with this operation
   /// everytime a report is successfully started. The periodicity of
   /// reports is indicated in the field 'period' while the communication
   /// interface to be used is described in field 'interface'. If applicable,
   /// the destination address is defined in field 'dst'.
   static const op_started = ReportControlEnumOp(1);
+
   /// Request a system to stop dispatching reports through a given
   /// communication interface described in 'interface'. The destination
   /// system will reply with a STOPPED command. If applicable, the
   /// destination address is defined in field 'dst'.
   static const op_request_stop = ReportControlEnumOp(2);
+
   /// The destination system will reply a message with this operation
   /// everytime a scheduled report is successfully stopped in a defined
   /// communication interface. If applicable, the destination address
   /// is defined in field 'dst'.
   static const op_stopped = ReportControlEnumOp(3);
+
   /// Request a system to issue a single report in a defined communication
   /// interface. The destination system will reply with a REPORT_ISSUED command.
   /// If applicable, the destination address is defined in field 'dst'.
   static const op_request_report = ReportControlEnumOp(4);
+
   /// The destination system will reply a single report request with
   /// this operation.If applicable, the destination address is defined
   /// in field 'dst'.
@@ -3910,7 +4264,8 @@ class ReportControlEnumOp extends EnumType {
         op_report_sent,
       ];
 
-  static get names => <ReportControlEnumOp, String>{
+  static core.Map<ReportControlEnumOp, String> get names =>
+      <ReportControlEnumOp, String>{
         op_request_start: '''Request Start of Reports''',
         op_started: '''Report Started''',
         op_request_stop: '''Request Stop of Reports''',
@@ -3933,16 +4288,21 @@ class ReportControlEnumOp extends EnumType {
 class ReportControlBitfieldCommInterface extends BitfieldType {
   /// Use acoustic communications
   static const ci_acoustic = ReportControlBitfieldCommInterface(0x01);
+
   /// Use satellite communications
   static const ci_satellite = ReportControlBitfieldCommInterface(0x02);
+
   /// Use Global System for Mobile Communications
   static const ci_gsm = ReportControlBitfieldCommInterface(0x04);
+
   /// Use mobile networks
   static const ci_mobile = ReportControlBitfieldCommInterface(0x08);
+
   /// Use Radio telemetry
   static const ci_radio = ReportControlBitfieldCommInterface(0x10);
 
-  static List<ReportControlBitfieldCommInterface> get values => <ReportControlBitfieldCommInterface>[
+  static List<ReportControlBitfieldCommInterface> get values =>
+      <ReportControlBitfieldCommInterface>[
         ci_acoustic,
         ci_satellite,
         ci_gsm,
@@ -3950,7 +4310,8 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
         ci_radio,
       ];
 
-  static get names => <ReportControlBitfieldCommInterface, String>{
+  static core.Map<ReportControlBitfieldCommInterface, String> get names =>
+      <ReportControlBitfieldCommInterface, String>{
         ci_acoustic: '''Acoustic''',
         ci_satellite: '''Satellite''',
         ci_gsm: '''GSM''',
@@ -3983,8 +4344,10 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
   static ReportControlBitfieldCommInterface fromBits(
           List<ReportControlBitfieldCommInterface> bits) =>
       (bits == null || bits.length < 2)
-          ? ReportControlBitfieldCommInterface(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => ReportControlBitfieldCommInterface(b1.value | b2.value));
+          ? ReportControlBitfieldCommInterface(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              ReportControlBitfieldCommInterface(b1.value | b2.value));
 }
 
 /// Communication mean to be used to transfer these data.
@@ -3994,14 +4357,16 @@ class TransmissionRequestEnumCommMean extends EnumType {
   static const cmean_satellite = TransmissionRequestEnumCommMean(2);
   static const cmean_gsm = TransmissionRequestEnumCommMean(3);
 
-  static List<TransmissionRequestEnumCommMean> get values => <TransmissionRequestEnumCommMean>[
+  static List<TransmissionRequestEnumCommMean> get values =>
+      <TransmissionRequestEnumCommMean>[
         cmean_wifi,
         cmean_acoustic,
         cmean_satellite,
         cmean_gsm,
       ];
 
-  static get names => <TransmissionRequestEnumCommMean, String>{
+  static core.Map<TransmissionRequestEnumCommMean, String> get names =>
+      <TransmissionRequestEnumCommMean, String>{
         cmean_wifi: '''WiFi''',
         cmean_acoustic: '''Acoustic''',
         cmean_satellite: '''Satellite''',
@@ -4024,13 +4389,15 @@ class TransmissionRequestEnumDataMode extends EnumType {
   static const dmode_text = TransmissionRequestEnumDataMode(1);
   static const dmode_raw = TransmissionRequestEnumDataMode(2);
 
-  static List<TransmissionRequestEnumDataMode> get values => <TransmissionRequestEnumDataMode>[
+  static List<TransmissionRequestEnumDataMode> get values =>
+      <TransmissionRequestEnumDataMode>[
         dmode_inlinemsg,
         dmode_text,
         dmode_raw,
       ];
 
-  static get names => <TransmissionRequestEnumDataMode, String>{
+  static core.Map<TransmissionRequestEnumDataMode, String> get names =>
+      <TransmissionRequestEnumDataMode, String>{
         dmode_inlinemsg: '''Inline Message''',
         dmode_text: '''Text''',
         dmode_raw: '''Raw Data''',
@@ -4055,7 +4422,8 @@ class TransmissionStatusEnumStatus extends EnumType {
   static const tstat_temporary_failure = TransmissionStatusEnumStatus(102);
   static const tstat_permanent_failure = TransmissionStatusEnumStatus(103);
 
-  static List<TransmissionStatusEnumStatus> get values => <TransmissionStatusEnumStatus>[
+  static List<TransmissionStatusEnumStatus> get values =>
+      <TransmissionStatusEnumStatus>[
         tstat_in_progress,
         tstat_sent,
         tstat_delivered,
@@ -4065,7 +4433,8 @@ class TransmissionStatusEnumStatus extends EnumType {
         tstat_permanent_failure,
       ];
 
-  static get names => <TransmissionStatusEnumStatus, String>{
+  static core.Map<TransmissionStatusEnumStatus, String> get names =>
+      <TransmissionStatusEnumStatus, String>{
         tstat_in_progress: '''In progress''',
         tstat_sent: '''Sent''',
         tstat_delivered: '''Delivered''',
@@ -4098,7 +4467,8 @@ class SmsStatusEnumStatus extends EnumType {
         smsstat_error,
       ];
 
-  static get names => <SmsStatusEnumStatus, String>{
+  static core.Map<SmsStatusEnumStatus, String> get names =>
+      <SmsStatusEnumStatus, String>{
         smsstat_queued: '''Queued''',
         smsstat_sent: '''Sent''',
         smsstat_input_failure: '''Input Error''',
@@ -4118,12 +4488,16 @@ class SmsStatusEnumStatus extends EnumType {
 class VtolStateEnumState extends EnumType {
   /// Vehicle is not configured as VTOL.
   static const vtol_state_undefined = VtolStateEnumState(0);
+
   /// Vehicle is in transition from multicopter to fixed-wing.
   static const vtol_state_transition_to_fw = VtolStateEnumState(1);
+
   /// Vehicle is in transition from fixed-wing to multicopter.
   static const vtol_state_transition_to_mc = VtolStateEnumState(2);
+
   /// Vehicle is in multicopter state.
   static const vtol_state_mc = VtolStateEnumState(3);
+
   /// Vehicle is in fixed-wing state.
   static const vtol_state_fw = VtolStateEnumState(4);
 
@@ -4135,7 +4509,8 @@ class VtolStateEnumState extends EnumType {
         vtol_state_fw,
       ];
 
-  static get names => <VtolStateEnumState, String>{
+  static core.Map<VtolStateEnumState, String> get names =>
+      <VtolStateEnumState, String>{
         vtol_state_undefined: '''Undefined''',
         vtol_state_transition_to_fw: '''Transition to Fixed-Wing''',
         vtol_state_transition_to_mc: '''Transition to MultiCopter''',
@@ -4162,7 +4537,8 @@ class ArmingStateEnumState extends EnumType {
         motors_disarmed,
       ];
 
-  static get names => <ArmingStateEnumState, String>{
+  static core.Map<ArmingStateEnumState, String> get names =>
+      <ArmingStateEnumState, String>{
         motors_armed: '''Armed''',
         motors_disarmed: '''Disarmed''',
       };
@@ -4185,7 +4561,8 @@ class EmergencyControlEnumCommand extends EnumType {
   static const ectl_query = EmergencyControlEnumCommand(4);
   static const ectl_set_plan = EmergencyControlEnumCommand(5);
 
-  static List<EmergencyControlEnumCommand> get values => <EmergencyControlEnumCommand>[
+  static List<EmergencyControlEnumCommand> get values =>
+      <EmergencyControlEnumCommand>[
         ectl_enable,
         ectl_disable,
         ectl_start,
@@ -4194,7 +4571,8 @@ class EmergencyControlEnumCommand extends EnumType {
         ectl_set_plan,
       ];
 
-  static get names => <EmergencyControlEnumCommand, String>{
+  static core.Map<EmergencyControlEnumCommand, String> get names =>
+      <EmergencyControlEnumCommand, String>{
         ectl_enable: '''Enable''',
         ectl_disable: '''Disable''',
         ectl_start: '''Start''',
@@ -4221,7 +4599,8 @@ class EmergencyControlStateEnumState extends EnumType {
   static const ecs_active = EmergencyControlStateEnumState(4);
   static const ecs_stopping = EmergencyControlStateEnumState(5);
 
-  static List<EmergencyControlStateEnumState> get values => <EmergencyControlStateEnumState>[
+  static List<EmergencyControlStateEnumState> get values =>
+      <EmergencyControlStateEnumState>[
         ecs_not_configured,
         ecs_disabled,
         ecs_enabled,
@@ -4230,7 +4609,8 @@ class EmergencyControlStateEnumState extends EnumType {
         ecs_stopping,
       ];
 
-  static get names => <EmergencyControlStateEnumState, String>{
+  static core.Map<EmergencyControlStateEnumState, String> get names =>
+      <EmergencyControlStateEnumState, String>{
         ecs_not_configured: '''Not Configured''',
         ecs_disabled: '''Disabled''',
         ecs_enabled: '''Enabled''',
@@ -4264,7 +4644,7 @@ class PlanDBEnumType extends EnumType {
         dbt_in_progress,
       ];
 
-  static get names => <PlanDBEnumType, String>{
+  static core.Map<PlanDBEnumType, String> get names => <PlanDBEnumType, String>{
         dbt_request: '''Request''',
         dbt_success: '''Reply -- Success''',
         dbt_failure: '''Reply -- Failure''',
@@ -4282,11 +4662,11 @@ class PlanDBEnumType extends EnumType {
 }
 
 /// Indicates the operation affecting the DB.
-/// 
+///
 /// The operation may relate to a single plan or the entire plan DB.
 /// For each request,  a plan DB may reply with any number of 'in progress'
 /// replies followed by a success or a failure reply.
-/// 
+///
 /// The 'op', 'request_id' and 'plan_id' fields of a request will be echoed
 /// in one or more responses to that request.
 /// The operation at stake also determines a certain type of the 'arg' field,
@@ -4297,29 +4677,36 @@ class PlanDBEnumOp extends EnumType {
   /// any will be overwritten. For requests, the 'arg' field must
   /// contain a 'PlanSpecification' message.
   static const dbop_set = PlanDBEnumOp(0);
+
   /// Delete a plan from the DB. The 'plan_id' field identifies
   /// the plan to delete.
   static const dbop_del = PlanDBEnumOp(1);
+
   /// Get a plan stored in the DB.The 'plan_id' field identifies
   /// the plan. Successful replies will yield a
   /// 'PlanSpecification' message in the 'arg' field.
   static const dbop_get = PlanDBEnumOp(2);
+
   /// Get DB state for a stored plan. The 'plan_id' field
   /// identifies the plan. Successful replies will yield a
   /// 'PlanDBInformation' message in the 'arg' field.
   static const dbop_get_info = PlanDBEnumOp(3);
+
   /// Clear the entire DB.
   static const dbop_clear = PlanDBEnumOp(4);
+
   /// Get state of the entire DB. Successful replies will yield a
   /// 'PlanDBState' message in the 'arg' field but without
   /// individual plan information (in the 'plans_info' field of
   /// 'PlanDBState').
   static const dbop_get_state = PlanDBEnumOp(5);
+
   /// Get detailed state of the entire DB. Successful replies
   /// will yield a 'PlanDBState' message in the 'arg' field with
   /// individual plan information (in the 'plans_info' field of
   /// 'PlanDBState').
   static const dbop_get_dstate = PlanDBEnumOp(6);
+
   /// PlanDB replies of this type are sent automatically during
   /// bootstrap.
   static const dbop_boot = PlanDBEnumOp(7);
@@ -4335,7 +4722,7 @@ class PlanDBEnumOp extends EnumType {
         dbop_boot,
       ];
 
-  static get names => <PlanDBEnumOp, String>{
+  static core.Map<PlanDBEnumOp, String> get names => <PlanDBEnumOp, String>{
         dbop_set: '''Set Plan''',
         dbop_del: '''Delete Plan''',
         dbop_get: '''Get Plan''',
@@ -4373,7 +4760,8 @@ class PlanControlEnumType extends EnumType {
         pc_in_progress,
       ];
 
-  static get names => <PlanControlEnumType, String>{
+  static core.Map<PlanControlEnumType, String> get names =>
+      <PlanControlEnumType, String>{
         pc_request: '''Request''',
         pc_success: '''Reply -- Success''',
         pc_failure: '''Reply -- Failure''',
@@ -4396,19 +4784,22 @@ class PlanControlEnumOp extends EnumType {
   /// try to load the corresponding plan if none is loaded, and in
   /// that case will follow the same discipline as the *LOAD*
   /// command.
-  /// 
+  ///
   /// If the message in *arg* is a :ref:`Maneuver`, a single-maneuver plan
   /// will be generated and executed.
-  /// 
+  ///
   /// This will override any current plan being executed.
   static const pc_start = PlanControlEnumOp(0);
+
   /// Stop current plan being executed if any.
   static const pc_stop = PlanControlEnumOp(1);
+
   /// Load Plan. If a :ref:`PlanSpecification` is given with the
   /// request in the *data* field, then that plan is used and
   /// stored in the Plan DB. Otherwise, the plan is loaded from
   /// the Plan DB.
   static const pc_load = PlanControlEnumOp(2);
+
   /// Get loaded plan. For a successful reply, the *data* field
   /// will contain the :ref:`PlanSpecification` message that
   /// corresponds to the currently loaded plan.
@@ -4421,7 +4812,8 @@ class PlanControlEnumOp extends EnumType {
         pc_get,
       ];
 
-  static get names => <PlanControlEnumOp, String>{
+  static core.Map<PlanControlEnumOp, String> get names =>
+      <PlanControlEnumOp, String>{
         pc_start: '''Start Plan''',
         pc_stop: '''Stop Plan''',
         pc_load: '''Load Plan''',
@@ -4441,15 +4833,18 @@ class PlanControlEnumOp extends EnumType {
 class PlanControlBitfieldFlags extends BitfieldType {
   /// Perform vehicle calibration.
   static const flg_calibrate = PlanControlBitfieldFlags(0x0001);
+
   /// Execute current plan while ignoring some errors that might be active.
   static const flg_ignore_errors = PlanControlBitfieldFlags(0x0002);
 
-  static List<PlanControlBitfieldFlags> get values => <PlanControlBitfieldFlags>[
+  static List<PlanControlBitfieldFlags> get values =>
+      <PlanControlBitfieldFlags>[
         flg_calibrate,
         flg_ignore_errors,
       ];
 
-  static get names => <PlanControlBitfieldFlags, String>{
+  static core.Map<PlanControlBitfieldFlags, String> get names =>
+      <PlanControlBitfieldFlags, String>{
         flg_calibrate: '''Calibrate Vehicle''',
         flg_ignore_errors: '''Ignore Errors''',
       };
@@ -4480,7 +4875,8 @@ class PlanControlBitfieldFlags extends BitfieldType {
           List<PlanControlBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? PlanControlBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => PlanControlBitfieldFlags(b1.value | b2.value));
+          : bits.reduce(
+              (b1, b2) => PlanControlBitfieldFlags(b1.value | b2.value));
 }
 
 /// Describes overall state.
@@ -4488,21 +4884,26 @@ class PlanControlStateEnumState extends EnumType {
   /// Plan execution is blocked e.g., due to a vehicle error,
   /// or if no plan is loaded.
   static const pcs_blocked = PlanControlStateEnumState(0);
+
   /// Ready to start plan execution.
   static const pcs_ready = PlanControlStateEnumState(1);
+
   /// Initializing plan for execution.
   static const pcs_initializing = PlanControlStateEnumState(2);
+
   /// Executing plan.
   static const pcs_executing = PlanControlStateEnumState(3);
 
-  static List<PlanControlStateEnumState> get values => <PlanControlStateEnumState>[
+  static List<PlanControlStateEnumState> get values =>
+      <PlanControlStateEnumState>[
         pcs_blocked,
         pcs_ready,
         pcs_initializing,
         pcs_executing,
       ];
 
-  static get names => <PlanControlStateEnumState, String>{
+  static core.Map<PlanControlStateEnumState, String> get names =>
+      <PlanControlStateEnumState, String>{
         pcs_blocked: '''Blocked''',
         pcs_ready: '''Ready''',
         pcs_initializing: '''Initializing''',
@@ -4523,18 +4924,22 @@ class PlanControlStateEnumState extends EnumType {
 class PlanControlStateEnumLastOutcome extends EnumType {
   /// Unknown or not filled.
   static const lpo_none = PlanControlStateEnumLastOutcome(0);
+
   /// Last plan execution was successful.
   static const lpo_success = PlanControlStateEnumLastOutcome(1);
+
   /// Last plan execution was a failure.
   static const lpo_failure = PlanControlStateEnumLastOutcome(2);
 
-  static List<PlanControlStateEnumLastOutcome> get values => <PlanControlStateEnumLastOutcome>[
+  static List<PlanControlStateEnumLastOutcome> get values =>
+      <PlanControlStateEnumLastOutcome>[
         lpo_none,
         lpo_success,
         lpo_failure,
       ];
 
-  static get names => <PlanControlStateEnumLastOutcome, String>{
+  static core.Map<PlanControlStateEnumLastOutcome, String> get names =>
+      <PlanControlStateEnumLastOutcome, String>{
         lpo_none: '''None''',
         lpo_success: '''Success''',
         lpo_failure: '''Failure''',
@@ -4563,7 +4968,8 @@ class PlanVariableEnumType extends EnumType {
         pvt_message,
       ];
 
-  static get names => <PlanVariableEnumType, String>{
+  static core.Map<PlanVariableEnumType, String> get names =>
+      <PlanVariableEnumType, String>{
         pvt_boolean: '''Boolean''',
         pvt_number: '''Number''',
         pvt_text: '''Text''',
@@ -4591,7 +4997,8 @@ class PlanVariableEnumAccess extends EnumType {
         pva_local,
       ];
 
-  static get names => <PlanVariableEnumAccess, String>{
+  static core.Map<PlanVariableEnumAccess, String> get names =>
+      <PlanVariableEnumAccess, String>{
         pva_input: '''Input''',
         pva_output: '''Output''',
         pva_local: '''Local''',
@@ -4610,6 +5017,7 @@ class PlanVariableEnumAccess extends EnumType {
 class PlanGenerationEnumCmd extends EnumType {
   /// Generate the plan and store it in the PlanDB.
   static const cmd_generate = PlanGenerationEnumCmd(0);
+
   /// Generate (storing it in the PlanDB) and execute it immediately.
   static const cmd_execute = PlanGenerationEnumCmd(1);
 
@@ -4618,7 +5026,8 @@ class PlanGenerationEnumCmd extends EnumType {
         cmd_execute,
       ];
 
-  static get names => <PlanGenerationEnumCmd, String>{
+  static core.Map<PlanGenerationEnumCmd, String> get names =>
+      <PlanGenerationEnumCmd, String>{
         cmd_generate: '''Generate''',
         cmd_execute: '''Execute''',
       };
@@ -4636,10 +5045,12 @@ class PlanGenerationEnumCmd extends EnumType {
 class PlanGenerationEnumOp extends EnumType {
   /// Request the execution of this command.
   static const op_request = PlanGenerationEnumOp(0);
+
   /// Some error has occurred while executing the command. The
   /// error can be found in the 'params' tuplelist (under the
   /// key 'error').
   static const op_error = PlanGenerationEnumOp(1);
+
   /// The requested command was executed successfully.
   static const op_success = PlanGenerationEnumOp(2);
 
@@ -4649,7 +5060,8 @@ class PlanGenerationEnumOp extends EnumType {
         op_success,
       ];
 
-  static get names => <PlanGenerationEnumOp, String>{
+  static core.Map<PlanGenerationEnumOp, String> get names =>
+      <PlanGenerationEnumOp, String>{
         op_request: '''Request''',
         op_error: '''Error''',
         op_success: '''Success''',
@@ -4677,7 +5089,8 @@ class LeaderStateEnumOp extends EnumType {
         op_report,
       ];
 
-  static get names => <LeaderStateEnumOp, String>{
+  static core.Map<LeaderStateEnumOp, String> get names =>
+      <LeaderStateEnumOp, String>{
         op_request: '''Request''',
         op_set: '''Set''',
         op_report: '''Report''',
@@ -4705,7 +5118,8 @@ class PlanStatisticsEnumType extends EnumType {
         tp_postplan,
       ];
 
-  static get names => <PlanStatisticsEnumType, String>{
+  static core.Map<PlanStatisticsEnumType, String> get names =>
+      <PlanStatisticsEnumType, String>{
         tp_preplan: '''Before Plan''',
         tp_inplan: '''During Plan''',
         tp_postplan: '''After Plan''',
@@ -4724,16 +5138,21 @@ class PlanStatisticsEnumType extends EnumType {
 class PlanStatisticsBitfieldProperties extends BitfieldType {
   /// Basic plan, meaning it is Linear, Finite and Noncyclic.
   static const prp_basic = PlanStatisticsBitfieldProperties(0x00);
+
   /// Plan is nonlinear.
   static const prp_nonlinear = PlanStatisticsBitfieldProperties(0x01);
+
   /// Plan is infinite in duration.
   static const prp_infinite = PlanStatisticsBitfieldProperties(0x02);
+
   /// Plan is cyclical.
   static const prp_cyclical = PlanStatisticsBitfieldProperties(0x04);
+
   /// All properties checked.
   static const prp_all = PlanStatisticsBitfieldProperties(0x07);
 
-  static List<PlanStatisticsBitfieldProperties> get values => <PlanStatisticsBitfieldProperties>[
+  static List<PlanStatisticsBitfieldProperties> get values =>
+      <PlanStatisticsBitfieldProperties>[
         prp_basic,
         prp_nonlinear,
         prp_infinite,
@@ -4741,7 +5160,8 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
         prp_all,
       ];
 
-  static get names => <PlanStatisticsBitfieldProperties, String>{
+  static core.Map<PlanStatisticsBitfieldProperties, String> get names =>
+      <PlanStatisticsBitfieldProperties, String>{
         prp_basic: '''Basic Plan''',
         prp_nonlinear: '''Nonlinear''',
         prp_infinite: '''Infinite''',
@@ -4774,8 +5194,10 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
   static PlanStatisticsBitfieldProperties fromBits(
           List<PlanStatisticsBitfieldProperties> bits) =>
       (bits == null || bits.length < 2)
-          ? PlanStatisticsBitfieldProperties(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => PlanStatisticsBitfieldProperties(b1.value | b2.value));
+          ? PlanStatisticsBitfieldProperties(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce((b1, b2) =>
+              PlanStatisticsBitfieldProperties(b1.value | b2.value));
 }
 
 /// How the position was received/calculated
@@ -4794,7 +5216,8 @@ class ReportedStateEnumSType extends EnumType {
         stype_unknown,
       ];
 
-  static get names => <ReportedStateEnumSType, String>{
+  static core.Map<ReportedStateEnumSType, String> get names =>
+      <ReportedStateEnumSType, String>{
         stype_wi_fi: '''Wi-Fi''',
         stype_tracker: '''Tracker''',
         stype_sms: '''SMS''',
@@ -4816,20 +5239,27 @@ class ReportedStateEnumSType extends EnumType {
 class MapFeatureEnumFeatureType extends EnumType {
   /// These features should appear as a point with a label in the map
   static const ftype_poi = MapFeatureEnumFeatureType(0);
+
   /// These features should be represented as a filled polygon (no label)
   static const ftype_filledpoly = MapFeatureEnumFeatureType(1);
+
   /// These features should be represented as a countoured closed polygon (no fill and no label)
   static const ftype_contouredpoly = MapFeatureEnumFeatureType(2);
+
   /// These features should be represented as an open polygon (no label)
   static const ftype_line = MapFeatureEnumFeatureType(3);
+
   /// A transponder location in the map
   static const ftype_transponder = MapFeatureEnumFeatureType(4);
+
   /// Intended vehicle's starting location
   static const ftype_startloc = MapFeatureEnumFeatureType(5);
+
   /// The offsets reference for this map
   static const ftype_homeref = MapFeatureEnumFeatureType(6);
 
-  static List<MapFeatureEnumFeatureType> get values => <MapFeatureEnumFeatureType>[
+  static List<MapFeatureEnumFeatureType> get values =>
+      <MapFeatureEnumFeatureType>[
         ftype_poi,
         ftype_filledpoly,
         ftype_contouredpoly,
@@ -4839,7 +5269,8 @@ class MapFeatureEnumFeatureType extends EnumType {
         ftype_homeref,
       ];
 
-  static get names => <MapFeatureEnumFeatureType, String>{
+  static core.Map<MapFeatureEnumFeatureType, String> get names =>
+      <MapFeatureEnumFeatureType, String>{
         ftype_poi: '''Point of Interest''',
         ftype_filledpoly: '''Filled Polygon''',
         ftype_contouredpoly: '''Countoured Polygon''',
@@ -4882,7 +5313,8 @@ class CcuEventEnumType extends EnumType {
         evt_teleoperation_ended,
       ];
 
-  static get names => <CcuEventEnumType, String>{
+  static core.Map<CcuEventEnumType, String> get names =>
+      <CcuEventEnumType, String>{
         evt_log_entry: '''Log Book Entry Added''',
         evt_plan_added: '''Plan Added''',
         evt_plan_removed: '''Plan Removed''',
@@ -4890,8 +5322,10 @@ class CcuEventEnumType extends EnumType {
         evt_map_feature_added: '''Map feature added''',
         evt_map_feature_removed: '''Map feature removed''',
         evt_map_feature_changed: '''Map feature changed''',
-        evt_teleoperation_started: '''The sender is now teleoperating the vehicle''',
-        evt_teleoperation_ended: '''The sender stopped teleoperating the vehicle''',
+        evt_teleoperation_started:
+            '''The sender is now teleoperating the vehicle''',
+        evt_teleoperation_ended:
+            '''The sender stopped teleoperating the vehicle''',
       };
 
   const CcuEventEnumType(int value) : super(value);
@@ -4921,7 +5355,8 @@ class TrexCommandEnumCommand extends EnumType {
         op_report_plan,
       ];
 
-  static get names => <TrexCommandEnumCommand, String>{
+  static core.Map<TrexCommandEnumCommand, String> get names =>
+      <TrexCommandEnumCommand, String>{
         op_disable: '''Disable TREX''',
         op_enable: '''Enable TREX''',
         op_post_goal: '''Post Goal''',
@@ -4955,7 +5390,8 @@ class TrexOperationEnumOp extends EnumType {
         op_report_plan,
       ];
 
-  static get names => <TrexOperationEnumOp, String>{
+  static core.Map<TrexOperationEnumOp, String> get names =>
+      <TrexOperationEnumOp, String>{
         op_post_token: '''Post Token''',
         op_post_goal: '''Post Goal''',
         op_recall_goal: '''Recall Goal''',
@@ -4980,7 +5416,8 @@ class TrexAttributeEnumAttrType extends EnumType {
   static const type_string = TrexAttributeEnumAttrType(4);
   static const type_enum = TrexAttributeEnumAttrType(5);
 
-  static List<TrexAttributeEnumAttrType> get values => <TrexAttributeEnumAttrType>[
+  static List<TrexAttributeEnumAttrType> get values =>
+      <TrexAttributeEnumAttrType>[
         type_bool,
         type_int,
         type_float,
@@ -4988,7 +5425,8 @@ class TrexAttributeEnumAttrType extends EnumType {
         type_enum,
       ];
 
-  static get names => <TrexAttributeEnumAttrType, String>{
+  static core.Map<TrexAttributeEnumAttrType, String> get names =>
+      <TrexAttributeEnumAttrType, String>{
         type_bool: '''Boolean Domain''',
         type_int: '''Integer Domain''',
         type_float: '''Float Domain''',
@@ -5015,7 +5453,8 @@ class SessionStatusEnumStatus extends EnumType {
         status_closed,
       ];
 
-  static get names => <SessionStatusEnumStatus, String>{
+  static core.Map<SessionStatusEnumStatus, String> get names =>
+      <SessionStatusEnumStatus, String>{
         status_established: '''Established''',
         status_closed: '''Closed''',
       };
@@ -5040,7 +5479,8 @@ class IoEventEnumType extends EnumType {
         iov_type_input_error,
       ];
 
-  static get names => <IoEventEnumType, String>{
+  static core.Map<IoEventEnumType, String> get names =>
+      <IoEventEnumType, String>{
         iov_type_input: '''Input Available''',
         iov_type_input_error: '''Input Error''',
       };
@@ -5064,7 +5504,8 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
         utf_delayed,
       ];
 
-  static get names => <UamTxFrameBitfieldFlags, String>{
+  static core.Map<UamTxFrameBitfieldFlags, String> get names =>
+      <UamTxFrameBitfieldFlags, String>{
         utf_ack: '''Acknowledgement''',
         utf_delayed: '''Delayed''',
       };
@@ -5091,11 +5532,11 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static UamTxFrameBitfieldFlags fromBits(
-          List<UamTxFrameBitfieldFlags> bits) =>
+  static UamTxFrameBitfieldFlags fromBits(List<UamTxFrameBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? UamTxFrameBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => UamTxFrameBitfieldFlags(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => UamTxFrameBitfieldFlags(b1.value | b2.value));
 }
 
 class UamRxFrameBitfieldFlags extends BitfieldType {
@@ -5107,7 +5548,8 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
         urf_delayed,
       ];
 
-  static get names => <UamRxFrameBitfieldFlags, String>{
+  static core.Map<UamRxFrameBitfieldFlags, String> get names =>
+      <UamRxFrameBitfieldFlags, String>{
         urf_promiscuous: '''Promiscuous''',
         urf_delayed: '''Delayed''',
       };
@@ -5134,11 +5576,11 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
-  static UamRxFrameBitfieldFlags fromBits(
-          List<UamRxFrameBitfieldFlags> bits) =>
+  static UamRxFrameBitfieldFlags fromBits(List<UamRxFrameBitfieldFlags> bits) =>
       (bits == null || bits.length < 2)
           ? UamRxFrameBitfieldFlags(bits == null || bits.isEmpty ? 0 : bits[0])
-          : bits.reduce((b1, b2) => UamRxFrameBitfieldFlags(b1.value | b2.value));
+          : bits
+              .reduce((b1, b2) => UamRxFrameBitfieldFlags(b1.value | b2.value));
 }
 
 class UamTxStatusEnumValue extends EnumType {
@@ -5162,7 +5604,8 @@ class UamTxStatusEnumValue extends EnumType {
         uts_inv_size,
       ];
 
-  static get names => <UamTxStatusEnumValue, String>{
+  static core.Map<UamTxStatusEnumValue, String> get names =>
+      <UamTxStatusEnumValue, String>{
         uts_done: '''Transmission Completed''',
         uts_failed: '''Transmission Failed''',
         uts_canceled: '''Transmission Canceled''',
@@ -5195,7 +5638,8 @@ class FormCtrlParamEnumAction extends EnumType {
         op_rep,
       ];
 
-  static get names => <FormCtrlParamEnumAction, String>{
+  static core.Map<FormCtrlParamEnumAction, String> get names =>
+      <FormCtrlParamEnumAction, String>{
         op_req: '''Request''',
         op_set: '''Set''',
         op_rep: '''Report''',
@@ -5217,13 +5661,15 @@ class FormationControlParamsEnumAction extends EnumType {
   static const op_set = FormationControlParamsEnumAction(1);
   static const op_rep = FormationControlParamsEnumAction(2);
 
-  static List<FormationControlParamsEnumAction> get values => <FormationControlParamsEnumAction>[
+  static List<FormationControlParamsEnumAction> get values =>
+      <FormationControlParamsEnumAction>[
         op_req,
         op_set,
         op_rep,
       ];
 
-  static get names => <FormationControlParamsEnumAction, String>{
+  static core.Map<FormationControlParamsEnumAction, String> get names =>
+      <FormationControlParamsEnumAction, String>{
         op_req: '''Request''',
         op_set: '''Set''',
         op_rep: '''Report''',
@@ -5244,12 +5690,14 @@ class FormationEvaluationEnumType extends EnumType {
   static const fc_request = FormationEvaluationEnumType(0);
   static const fc_report = FormationEvaluationEnumType(1);
 
-  static List<FormationEvaluationEnumType> get values => <FormationEvaluationEnumType>[
+  static List<FormationEvaluationEnumType> get values =>
+      <FormationEvaluationEnumType>[
         fc_request,
         fc_report,
       ];
 
-  static get names => <FormationEvaluationEnumType, String>{
+  static core.Map<FormationEvaluationEnumType, String> get names =>
+      <FormationEvaluationEnumType, String>{
         fc_request: '''Request''',
         fc_report: '''Report''',
       };
@@ -5268,16 +5716,21 @@ class FormationEvaluationEnumType extends EnumType {
 class FormationEvaluationEnumOp extends EnumType {
   /// Start the formation maneuver.
   static const op_start = FormationEvaluationEnumOp(0);
+
   /// Stop the formation maneuver.
   static const op_stop = FormationEvaluationEnumOp(1);
+
   /// Stop the formation maneuver.
   static const op_ready = FormationEvaluationEnumOp(2);
+
   /// Stop the formation maneuver.
   static const op_executing = FormationEvaluationEnumOp(3);
+
   /// Stop the formation maneuver.
   static const op_failure = FormationEvaluationEnumOp(4);
 
-  static List<FormationEvaluationEnumOp> get values => <FormationEvaluationEnumOp>[
+  static List<FormationEvaluationEnumOp> get values =>
+      <FormationEvaluationEnumOp>[
         op_start,
         op_stop,
         op_ready,
@@ -5285,7 +5738,8 @@ class FormationEvaluationEnumOp extends EnumType {
         op_failure,
       ];
 
-  static get names => <FormationEvaluationEnumOp, String>{
+  static core.Map<FormationEvaluationEnumOp, String> get names =>
+      <FormationEvaluationEnumOp, String>{
         op_start: '''Start''',
         op_stop: '''Stop''',
         op_ready: '''Ready''',
@@ -5314,7 +5768,8 @@ class SoiCommandEnumType extends EnumType {
         soitype_error,
       ];
 
-  static get names => <SoiCommandEnumType, String>{
+  static core.Map<SoiCommandEnumType, String> get names =>
+      <SoiCommandEnumType, String>{
         soitype_request: '''Request''',
         soitype_success: '''Success''',
         soitype_error: '''Error''',
@@ -5347,7 +5802,8 @@ class SoiCommandEnumCommand extends EnumType {
         soicmd_resume,
       ];
 
-  static get names => <SoiCommandEnumCommand, String>{
+  static core.Map<SoiCommandEnumCommand, String> get names =>
+      <SoiCommandEnumCommand, String>{
         soicmd_exec: '''Execute Plan''',
         soicmd_stop: '''Stop Execution''',
         soicmd_set_params: '''Set Parameters''',
@@ -5377,7 +5833,8 @@ class SoiStateEnumState extends EnumType {
         soistate_inactive,
       ];
 
-  static get names => <SoiStateEnumState, String>{
+  static core.Map<SoiStateEnumState, String> get names =>
+      <SoiStateEnumState, String>{
         soistate_exec: '''Executing''',
         soistate_idle: '''Idle''',
         soistate_inactive: '''Inactive''',
@@ -5397,6 +5854,7 @@ class SoiStateEnumState extends EnumType {
 class UsblConfigEnumOp extends EnumType {
   /// Set the beacons configuration aboard the vehicle.
   static const op_set_cfg = UsblConfigEnumOp(0);
+
   /// Request the vehicle to send its current beacons configuration.
   static const op_get_cfg = UsblConfigEnumOp(1);
   static const op_cur_cfg = UsblConfigEnumOp(2);
@@ -5407,7 +5865,8 @@ class UsblConfigEnumOp extends EnumType {
         op_cur_cfg,
       ];
 
-  static get names => <UsblConfigEnumOp, String>{
+  static core.Map<UsblConfigEnumOp, String> get names =>
+      <UsblConfigEnumOp, String>{
         op_set_cfg: '''Set LBL Configuration''',
         op_get_cfg: '''Retrieve LBL Configuration''',
         op_cur_cfg: '''Reply to a GET command''',
@@ -5428,12 +5887,14 @@ class DissolvedOrganicMatterEnumType extends EnumType {
   static const dt_colored = DissolvedOrganicMatterEnumType(0);
   static const dt_fluorescent = DissolvedOrganicMatterEnumType(1);
 
-  static List<DissolvedOrganicMatterEnumType> get values => <DissolvedOrganicMatterEnumType>[
+  static List<DissolvedOrganicMatterEnumType> get values =>
+      <DissolvedOrganicMatterEnumType>[
         dt_colored,
         dt_fluorescent,
       ];
 
-  static get names => <DissolvedOrganicMatterEnumType, String>{
+  static core.Map<DissolvedOrganicMatterEnumType, String> get names =>
+      <DissolvedOrganicMatterEnumType, String>{
         dt_colored: '''Colored''',
         dt_fluorescent: '''Fluorescent''',
       };
@@ -5470,7 +5931,8 @@ class ApmStatusEnumSeverity extends EnumType {
         apm_debug,
       ];
 
-  static get names => <ApmStatusEnumSeverity, String>{
+  static core.Map<ApmStatusEnumSeverity, String> get names =>
+      <ApmStatusEnumSeverity, String>{
         apm_emergency: '''Emergency''',
         apm_alert: '''Alert''',
         apm_critical: '''Critical''',
@@ -5503,7 +5965,8 @@ class SadcReadingsEnumGain extends EnumType {
         gain_x100,
       ];
 
-  static get names => <SadcReadingsEnumGain, String>{
+  static core.Map<SadcReadingsEnumGain, String> get names =>
+      <SadcReadingsEnumGain, String>{
         gain_x1: '''x1''',
         gain_x10: '''x10''',
         gain_x100: '''x100''',
@@ -5518,4 +5981,3 @@ class SadcReadingsEnumGain extends EnumType {
     return super.toPrettyString();
   }
 }
-

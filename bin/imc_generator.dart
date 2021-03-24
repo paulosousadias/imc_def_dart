@@ -20,6 +20,8 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 ''';
 
 const _header_gen = '''$_header
+import 'dart:core';
+import 'dart:core' as core; // To be used on conflicts like for imc.Map
 import 'dart:math' as math;
 import 'package:built_value/built_value.dart';
 import 'package:collection/collection.dart';
@@ -1121,7 +1123,7 @@ void _writeEnumLikeWorker(
 
   var body2 = '''\n  static List<$eName> get values => <$eName>[$eList];
 
-  static get names => <$eName, String>{$eNameList};
+  static core.Map<$eName, String> get names => <$eName, String>{$eNameList};
 
   const $eName(int value) : super(value);
 ''';

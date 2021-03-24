@@ -15,7 +15,7 @@ class BooleanEnum extends EnumType {
         bool_true,
       ];
 
-  static get names => <BooleanEnum, String>{
+  static core.Map<BooleanEnum, String> get names => <BooleanEnum, String>{
         bool_false: '''False''',
         bool_true: '''True''',
       };
@@ -43,7 +43,8 @@ class ControlledModeEnum extends EnumType {
         ctlmd_override_ctl,
       ];
 
-  static get names => <ControlledModeEnum, String>{
+  static core.Map<ControlledModeEnum, String> get names =>
+      <ControlledModeEnum, String>{
         ctlmd_relinquish_handoff_ctl: '''Relinquish / Handoff Control''',
         ctlmd_request_ctl: '''Request Control''',
         ctlmd_override_ctl: '''Override Control''',
@@ -70,7 +71,7 @@ class SpeedUnitsEnum extends EnumType {
         sunits_percentage,
       ];
 
-  static get names => <SpeedUnitsEnum, String>{
+  static core.Map<SpeedUnitsEnum, String> get names => <SpeedUnitsEnum, String>{
         sunits_meters_ps: '''Meters per second''',
         sunits_rpm: '''RPM''',
         sunits_percentage: '''Percentage''',
@@ -109,7 +110,7 @@ class SystemTypeEnum extends EnumType {
         systemtype_wsn,
       ];
 
-  static get names => <SystemTypeEnum, String>{
+  static core.Map<SystemTypeEnum, String> get names => <SystemTypeEnum, String>{
         systemtype_ccu: '''CCU''',
         systemtype_humansensor: '''Human-portable Sensor''',
         systemtype_uuv: '''UUV''',
@@ -144,7 +145,7 @@ class ZUnitsEnum extends EnumType {
         z_height,
       ];
 
-  static get names => <ZUnitsEnum, String>{
+  static core.Map<ZUnitsEnum, String> get names => <ZUnitsEnum, String>{
         z_none: '''None''',
         z_depth: '''Depth''',
         z_altitude: '''Altitude''',
@@ -170,7 +171,7 @@ class RSSIUnitsEnum extends EnumType {
         rssiunits_percentage,
       ];
 
-  static get names => <RSSIUnitsEnum, String>{
+  static core.Map<RSSIUnitsEnum, String> get names => <RSSIUnitsEnum, String>{
         rssiunits_db: '''Decibel''',
         rssiunits_percentage: '''Percentage''',
       };
@@ -196,7 +197,7 @@ class UAVTypeEnum extends EnumType {
         uavtype_vtol,
       ];
 
-  static get names => <UAVTypeEnum, String>{
+  static core.Map<UAVTypeEnum, String> get names => <UAVTypeEnum, String>{
         uavtype_fixedwing: '''Fixed-Wing''',
         uavtype_copter: '''Copter''',
         uavtype_vtol: '''Vtol''',
@@ -253,7 +254,8 @@ class CLoopsMaskBitfield extends BitfieldType {
         cl_all,
       ];
 
-  static get names => <CLoopsMaskBitfield, String>{
+  static core.Map<CLoopsMaskBitfield, String> get names =>
+      <CLoopsMaskBitfield, String>{
         cl_none: '''None''',
         cl_path: '''Path Control''',
         cl_teleoperation: '''Teleoperation Control''',
@@ -321,7 +323,8 @@ class OpLimitsMaskBitfield extends BitfieldType {
         opl_area,
       ];
 
-  static get names => <OpLimitsMaskBitfield, String>{
+  static core.Map<OpLimitsMaskBitfield, String> get names =>
+      <OpLimitsMaskBitfield, String>{
         opl_max_depth: '''Maximum Depth''',
         opl_min_alt: '''Minimum Altitude''',
         opl_max_alt: '''Maximum Altitude''',
