@@ -64,14 +64,17 @@ class _$EntityState extends EntityState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        state?.hashCode), 
-        flags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                state?.hashCode),
+            flags?.hashCode),
         description?.hashCode));
   }
 
@@ -92,7 +95,9 @@ class _$EntityState extends EntityState {
 
 /// Entity State builder class
 ///
-class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityState, EntityStateBuilder> {
+class EntityStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<EntityState, EntityStateBuilder> {
   _$EntityState _$v;
 
   DateTime _timestamp;
@@ -144,7 +149,8 @@ class EntityStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  EntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityStateBuilder()..copyFromHeader(headerFrom);
+  EntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EntityStateBuilder()..copyFromHeader(headerFrom);
 
   EntityStateBuilder get _$this {
     if (_$v != null) {
@@ -205,8 +211,8 @@ class _$QueryEntityState extends QueryEntityState {
   @override
   final int dstEnt;
 
-
-  factory _$QueryEntityState([void Function(QueryEntityStateBuilder b) updates]) =>
+  factory _$QueryEntityState(
+          [void Function(QueryEntityStateBuilder b) updates]) =>
       (QueryEntityStateBuilder()..update(updates)).build();
 
   _$QueryEntityState._(
@@ -222,7 +228,8 @@ class _$QueryEntityState extends QueryEntityState {
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryEntityStateBuilder toBuilder() => QueryEntityStateBuilder()..replace(this);
+  QueryEntityStateBuilder toBuilder() =>
+      QueryEntityStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -237,11 +244,11 @@ class _$QueryEntityState extends QueryEntityState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -259,7 +266,10 @@ class _$QueryEntityState extends QueryEntityState {
 
 /// Query Entity State builder class
 ///
-class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityState, QueryEntityStateBuilder> {
+class QueryEntityStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<QueryEntityState, QueryEntityStateBuilder> {
   _$QueryEntityState _$v;
 
   DateTime _timestamp;
@@ -299,7 +309,8 @@ class QueryEntityStateBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  QueryEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityStateBuilder()..copyFromHeader(headerFrom);
+  QueryEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      QueryEntityStateBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityStateBuilder get _$this {
     if (_$v != null) {
@@ -406,16 +417,23 @@ class _$EntityInfo extends EntityInfo {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
-        label?.hashCode), 
-        component?.hashCode), 
-        actTime?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        id?.hashCode),
+                    label?.hashCode),
+                component?.hashCode),
+            actTime?.hashCode),
         deactTime?.hashCode));
   }
 
@@ -438,7 +456,9 @@ class _$EntityInfo extends EntityInfo {
 
 /// Entity Information builder class
 ///
-class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityInfo, EntityInfoBuilder> {
+class EntityInfoBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<EntityInfo, EntityInfoBuilder> {
   _$EntityInfo _$v;
 
   DateTime _timestamp;
@@ -498,7 +518,8 @@ class EntityInfoBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  EntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityInfoBuilder()..copyFromHeader(headerFrom);
+  EntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EntityInfoBuilder()..copyFromHeader(headerFrom);
 
   EntityInfoBuilder get _$this {
     if (_$v != null) {
@@ -566,7 +587,8 @@ class _$QueryEntityInfo extends QueryEntityInfo {
   @override
   final int id;
 
-  factory _$QueryEntityInfo([void Function(QueryEntityInfoBuilder b) updates]) =>
+  factory _$QueryEntityInfo(
+          [void Function(QueryEntityInfoBuilder b) updates]) =>
       (QueryEntityInfoBuilder()..update(updates)).build();
 
   _$QueryEntityInfo._(
@@ -599,12 +621,13 @@ class _$QueryEntityInfo extends QueryEntityInfo {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         id?.hashCode));
   }
 
@@ -623,7 +646,10 @@ class _$QueryEntityInfo extends QueryEntityInfo {
 
 /// Query Entity Information builder class
 ///
-class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityInfo, QueryEntityInfoBuilder> {
+class QueryEntityInfoBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<QueryEntityInfo, QueryEntityInfoBuilder> {
   _$QueryEntityInfo _$v;
 
   DateTime _timestamp;
@@ -667,7 +693,8 @@ class QueryEntityInfoBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  QueryEntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityInfoBuilder()..copyFromHeader(headerFrom);
+  QueryEntityInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      QueryEntityInfoBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityInfoBuilder get _$this {
     if (_$v != null) {
@@ -764,13 +791,15 @@ class _$EntityList extends EntityList {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         list?.hashCode));
   }
 
@@ -790,7 +819,9 @@ class _$EntityList extends EntityList {
 
 /// Entity List builder class
 ///
-class EntityListBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityList, EntityListBuilder> {
+class EntityListBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<EntityList, EntityListBuilder> {
   _$EntityList _$v;
 
   DateTime _timestamp;
@@ -838,7 +869,8 @@ class EntityListBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  EntityListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityListBuilder()..copyFromHeader(headerFrom);
+  EntityListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EntityListBuilder()..copyFromHeader(headerFrom);
 
   EntityListBuilder get _$this {
     if (_$v != null) {
@@ -933,12 +965,13 @@ class _$CpuUsage extends CpuUsage {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -957,7 +990,9 @@ class _$CpuUsage extends CpuUsage {
 
 /// CPU Usage builder class
 ///
-class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CpuUsage, CpuUsageBuilder> {
+class CpuUsageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CpuUsage, CpuUsageBuilder> {
   _$CpuUsage _$v;
 
   DateTime _timestamp;
@@ -1001,7 +1036,8 @@ class CpuUsageBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  CpuUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CpuUsageBuilder()..copyFromHeader(headerFrom);
+  CpuUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CpuUsageBuilder()..copyFromHeader(headerFrom);
 
   CpuUsageBuilder get _$this {
     if (_$v != null) {
@@ -1063,7 +1099,8 @@ class _$TransportBindings extends TransportBindings {
   @override
   final int messageId;
 
-  factory _$TransportBindings([void Function(TransportBindingsBuilder b) updates]) =>
+  factory _$TransportBindings(
+          [void Function(TransportBindingsBuilder b) updates]) =>
       (TransportBindingsBuilder()..update(updates)).build();
 
   _$TransportBindings._(
@@ -1077,11 +1114,13 @@ class _$TransportBindings extends TransportBindings {
       : super._();
 
   @override
-  TransportBindings rebuild(void Function(TransportBindingsBuilder b) updates) =>
+  TransportBindings rebuild(
+          void Function(TransportBindingsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TransportBindingsBuilder toBuilder() => TransportBindingsBuilder()..replace(this);
+  TransportBindingsBuilder toBuilder() =>
+      TransportBindingsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1098,13 +1137,15 @@ class _$TransportBindings extends TransportBindings {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        consumer?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            consumer?.hashCode),
         messageId?.hashCode));
   }
 
@@ -1124,7 +1165,10 @@ class _$TransportBindings extends TransportBindings {
 
 /// Transport Bindings builder class
 ///
-class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TransportBindings, TransportBindingsBuilder> {
+class TransportBindingsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<TransportBindings, TransportBindingsBuilder> {
   _$TransportBindings _$v;
 
   DateTime _timestamp;
@@ -1172,7 +1216,8 @@ class TransportBindingsBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  TransportBindingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransportBindingsBuilder()..copyFromHeader(headerFrom);
+  TransportBindingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TransportBindingsBuilder()..copyFromHeader(headerFrom);
 
   TransportBindingsBuilder get _$this {
     if (_$v != null) {
@@ -1267,12 +1312,13 @@ class _$RestartSystem extends RestartSystem {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         type?.hashCode));
   }
 
@@ -1291,7 +1337,9 @@ class _$RestartSystem extends RestartSystem {
 
 /// Restart System builder class
 ///
-class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RestartSystem, RestartSystemBuilder> {
+class RestartSystemBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RestartSystem, RestartSystemBuilder> {
   _$RestartSystem _$v;
 
   DateTime _timestamp;
@@ -1335,7 +1383,8 @@ class RestartSystemBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  RestartSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RestartSystemBuilder()..copyFromHeader(headerFrom);
+  RestartSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RestartSystemBuilder()..copyFromHeader(headerFrom);
 
   RestartSystemBuilder get _$this {
     if (_$v != null) {
@@ -1395,7 +1444,8 @@ class _$DevCalibrationControl extends DevCalibrationControl {
   @override
   final DevCalibrationControlEnumOp op;
 
-  factory _$DevCalibrationControl([void Function(DevCalibrationControlBuilder b) updates]) =>
+  factory _$DevCalibrationControl(
+          [void Function(DevCalibrationControlBuilder b) updates]) =>
       (DevCalibrationControlBuilder()..update(updates)).build();
 
   _$DevCalibrationControl._(
@@ -1408,11 +1458,13 @@ class _$DevCalibrationControl extends DevCalibrationControl {
       : super._();
 
   @override
-  DevCalibrationControl rebuild(void Function(DevCalibrationControlBuilder b) updates) =>
+  DevCalibrationControl rebuild(
+          void Function(DevCalibrationControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DevCalibrationControlBuilder toBuilder() => DevCalibrationControlBuilder()..replace(this);
+  DevCalibrationControlBuilder toBuilder() =>
+      DevCalibrationControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1428,12 +1480,13 @@ class _$DevCalibrationControl extends DevCalibrationControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         op?.hashCode));
   }
 
@@ -1452,7 +1505,12 @@ class _$DevCalibrationControl extends DevCalibrationControl {
 
 /// Device Calibration Control builder class
 ///
-class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevCalibrationControl, DevCalibrationControlBuilder> {
+class DevCalibrationControlBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DevCalibrationControl,
+            DevCalibrationControlBuilder> {
   _$DevCalibrationControl _$v;
 
   DateTime _timestamp;
@@ -1496,7 +1554,8 @@ class DevCalibrationControlBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  DevCalibrationControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevCalibrationControlBuilder()..copyFromHeader(headerFrom);
+  DevCalibrationControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DevCalibrationControlBuilder()..copyFromHeader(headerFrom);
 
   DevCalibrationControlBuilder get _$this {
     if (_$v != null) {
@@ -1562,7 +1621,8 @@ class _$DevCalibrationState extends DevCalibrationState {
   @override
   final DevCalibrationStateBitfieldFlags flags;
 
-  factory _$DevCalibrationState([void Function(DevCalibrationStateBuilder b) updates]) =>
+  factory _$DevCalibrationState(
+          [void Function(DevCalibrationStateBuilder b) updates]) =>
       (DevCalibrationStateBuilder()..update(updates)).build();
 
   _$DevCalibrationState._(
@@ -1578,11 +1638,13 @@ class _$DevCalibrationState extends DevCalibrationState {
       : super._();
 
   @override
-  DevCalibrationState rebuild(void Function(DevCalibrationStateBuilder b) updates) =>
+  DevCalibrationState rebuild(
+          void Function(DevCalibrationStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DevCalibrationStateBuilder toBuilder() => DevCalibrationStateBuilder()..replace(this);
+  DevCalibrationStateBuilder toBuilder() =>
+      DevCalibrationStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1601,15 +1663,19 @@ class _$DevCalibrationState extends DevCalibrationState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        totalSteps?.hashCode), 
-        stepNumber?.hashCode), 
-        step?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    totalSteps?.hashCode),
+                stepNumber?.hashCode),
+            step?.hashCode),
         flags?.hashCode));
   }
 
@@ -1631,7 +1697,12 @@ class _$DevCalibrationState extends DevCalibrationState {
 
 /// Device Calibration State builder class
 ///
-class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevCalibrationState, DevCalibrationStateBuilder> {
+class DevCalibrationStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DevCalibrationState,
+            DevCalibrationStateBuilder> {
   _$DevCalibrationState _$v;
 
   DateTime _timestamp;
@@ -1687,7 +1758,8 @@ class DevCalibrationStateBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  DevCalibrationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevCalibrationStateBuilder()..copyFromHeader(headerFrom);
+  DevCalibrationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DevCalibrationStateBuilder()..copyFromHeader(headerFrom);
 
   DevCalibrationStateBuilder get _$this {
     if (_$v != null) {
@@ -1755,7 +1827,8 @@ class _$EntityActivationState extends EntityActivationState {
   @override
   final String error;
 
-  factory _$EntityActivationState([void Function(EntityActivationStateBuilder b) updates]) =>
+  factory _$EntityActivationState(
+          [void Function(EntityActivationStateBuilder b) updates]) =>
       (EntityActivationStateBuilder()..update(updates)).build();
 
   _$EntityActivationState._(
@@ -1769,11 +1842,13 @@ class _$EntityActivationState extends EntityActivationState {
       : super._();
 
   @override
-  EntityActivationState rebuild(void Function(EntityActivationStateBuilder b) updates) =>
+  EntityActivationState rebuild(
+          void Function(EntityActivationStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityActivationStateBuilder toBuilder() => EntityActivationStateBuilder()..replace(this);
+  EntityActivationStateBuilder toBuilder() =>
+      EntityActivationStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1790,13 +1865,15 @@ class _$EntityActivationState extends EntityActivationState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        state?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            state?.hashCode),
         error?.hashCode));
   }
 
@@ -1816,7 +1893,12 @@ class _$EntityActivationState extends EntityActivationState {
 
 /// Entity Activation State builder class
 ///
-class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityActivationState, EntityActivationStateBuilder> {
+class EntityActivationStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EntityActivationState,
+            EntityActivationStateBuilder> {
   _$EntityActivationState _$v;
 
   DateTime _timestamp;
@@ -1864,7 +1946,8 @@ class EntityActivationStateBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  EntityActivationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityActivationStateBuilder()..copyFromHeader(headerFrom);
+  EntityActivationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EntityActivationStateBuilder()..copyFromHeader(headerFrom);
 
   EntityActivationStateBuilder get _$this {
     if (_$v != null) {
@@ -1923,8 +2006,8 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
   @override
   final int dstEnt;
 
-
-  factory _$QueryEntityActivationState([void Function(QueryEntityActivationStateBuilder b) updates]) =>
+  factory _$QueryEntityActivationState(
+          [void Function(QueryEntityActivationStateBuilder b) updates]) =>
       (QueryEntityActivationStateBuilder()..update(updates)).build();
 
   _$QueryEntityActivationState._(
@@ -1936,11 +2019,13 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
       : super._();
 
   @override
-  QueryEntityActivationState rebuild(void Function(QueryEntityActivationStateBuilder b) updates) =>
+  QueryEntityActivationState rebuild(
+          void Function(QueryEntityActivationStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryEntityActivationStateBuilder toBuilder() => QueryEntityActivationStateBuilder()..replace(this);
+  QueryEntityActivationStateBuilder toBuilder() =>
+      QueryEntityActivationStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1955,11 +2040,11 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -1977,7 +2062,12 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
 
 /// Query Entity Activation State builder class
 ///
-class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityActivationState, QueryEntityActivationStateBuilder> {
+class QueryEntityActivationStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<QueryEntityActivationState,
+            QueryEntityActivationStateBuilder> {
   _$QueryEntityActivationState _$v;
 
   DateTime _timestamp;
@@ -2012,12 +2102,15 @@ class QueryEntityActivationStateBuilder extends Object with ImcBuilderHeaderPart
 
   QueryEntityActivationStateBuilder();
 
-  QueryEntityActivationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+  QueryEntityActivationStateBuilder.fromHeader(
+      ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
 
   @override
-  QueryEntityActivationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityActivationStateBuilder()..copyFromHeader(headerFrom);
+  QueryEntityActivationStateBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      QueryEntityActivationStateBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityActivationStateBuilder get _$this {
     if (_$v != null) {
@@ -2109,7 +2202,8 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
   @override
   final double rpmRateMax;
 
-  factory _$VehicleOperationalLimits([void Function(VehicleOperationalLimitsBuilder b) updates]) =>
+  factory _$VehicleOperationalLimits(
+          [void Function(VehicleOperationalLimitsBuilder b) updates]) =>
       (VehicleOperationalLimitsBuilder()..update(updates)).build();
 
   _$VehicleOperationalLimits._(
@@ -2139,11 +2233,13 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
       : super._();
 
   @override
-  VehicleOperationalLimits rebuild(void Function(VehicleOperationalLimitsBuilder b) updates) =>
+  VehicleOperationalLimits rebuild(
+          void Function(VehicleOperationalLimitsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleOperationalLimitsBuilder toBuilder() => VehicleOperationalLimitsBuilder()..replace(this);
+  VehicleOperationalLimitsBuilder toBuilder() =>
+      VehicleOperationalLimitsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2155,67 +2251,67 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (speedMin == other.speedMin
-            || speedMin - other.speedMin <= 1E-7) &&
-        (speedMax == other.speedMax
-            || speedMax - other.speedMax <= 1E-7) &&
-        (longAccel == other.longAccel
-            || longAccel - other.longAccel <= 1E-7) &&
-        (altMaxMsl == other.altMaxMsl
-            || altMaxMsl - other.altMaxMsl <= 1E-7) &&
-        (diveFractionMax == other.diveFractionMax
-            || diveFractionMax - other.diveFractionMax <= 1E-7) &&
-        (climbFractionMax == other.climbFractionMax
-            || climbFractionMax - other.climbFractionMax <= 1E-7) &&
-        (bankMax == other.bankMax
-            || bankMax - other.bankMax <= 1E-7) &&
-        (pMax == other.pMax
-            || pMax - other.pMax <= 1E-7) &&
-        (pitchMin == other.pitchMin
-            || pitchMin - other.pitchMin <= 1E-7) &&
-        (pitchMax == other.pitchMax
-            || pitchMax - other.pitchMax <= 1E-7) &&
-        (qMax == other.qMax
-            || qMax - other.qMax <= 1E-7) &&
-        (gMin == other.gMin
-            || gMin - other.gMin <= 1E-7) &&
-        (gMax == other.gMax
-            || gMax - other.gMax <= 1E-7) &&
-        (gLatMax == other.gLatMax
-            || gLatMax - other.gLatMax <= 1E-7) &&
-        (rpmMin == other.rpmMin
-            || rpmMin - other.rpmMin <= 1E-7) &&
-        (rpmMax == other.rpmMax
-            || rpmMax - other.rpmMax <= 1E-7) &&
-        (rpmRateMax == other.rpmRateMax
-            || rpmRateMax - other.rpmRateMax <= 1E-7);
+        (speedMin == other.speedMin || speedMin - other.speedMin <= 1E-7) &&
+        (speedMax == other.speedMax || speedMax - other.speedMax <= 1E-7) &&
+        (longAccel == other.longAccel || longAccel - other.longAccel <= 1E-7) &&
+        (altMaxMsl == other.altMaxMsl || altMaxMsl - other.altMaxMsl <= 1E-7) &&
+        (diveFractionMax == other.diveFractionMax ||
+            diveFractionMax - other.diveFractionMax <= 1E-7) &&
+        (climbFractionMax == other.climbFractionMax ||
+            climbFractionMax - other.climbFractionMax <= 1E-7) &&
+        (bankMax == other.bankMax || bankMax - other.bankMax <= 1E-7) &&
+        (pMax == other.pMax || pMax - other.pMax <= 1E-7) &&
+        (pitchMin == other.pitchMin || pitchMin - other.pitchMin <= 1E-7) &&
+        (pitchMax == other.pitchMax || pitchMax - other.pitchMax <= 1E-7) &&
+        (qMax == other.qMax || qMax - other.qMax <= 1E-7) &&
+        (gMin == other.gMin || gMin - other.gMin <= 1E-7) &&
+        (gMax == other.gMax || gMax - other.gMax <= 1E-7) &&
+        (gLatMax == other.gLatMax || gLatMax - other.gLatMax <= 1E-7) &&
+        (rpmMin == other.rpmMin || rpmMin - other.rpmMin <= 1E-7) &&
+        (rpmMax == other.rpmMax || rpmMax - other.rpmMax <= 1E-7) &&
+        (rpmRateMax == other.rpmRateMax ||
+            rpmRateMax - other.rpmRateMax <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        speedMin?.hashCode), 
-        speedMax?.hashCode), 
-        longAccel?.hashCode), 
-        altMaxMsl?.hashCode), 
-        diveFractionMax?.hashCode), 
-        climbFractionMax?.hashCode), 
-        bankMax?.hashCode), 
-        pMax?.hashCode), 
-        pitchMin?.hashCode), 
-        pitchMax?.hashCode), 
-        qMax?.hashCode), 
-        gMin?.hashCode), 
-        gMax?.hashCode), 
-        gLatMax?.hashCode), 
-        rpmMin?.hashCode), 
-        rpmMax?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode),
+                                                                                dstEnt?.hashCode),
+                                                                            op?.hashCode),
+                                                                        speedMin?.hashCode),
+                                                                    speedMax?.hashCode),
+                                                                longAccel?.hashCode),
+                                                            altMaxMsl?.hashCode),
+                                                        diveFractionMax?.hashCode),
+                                                    climbFractionMax?.hashCode),
+                                                bankMax?.hashCode),
+                                            pMax?.hashCode),
+                                        pitchMin?.hashCode),
+                                    pitchMax?.hashCode),
+                                qMax?.hashCode),
+                            gMin?.hashCode),
+                        gMax?.hashCode),
+                    gLatMax?.hashCode),
+                rpmMin?.hashCode),
+            rpmMax?.hashCode),
         rpmRateMax?.hashCode));
   }
 
@@ -2234,11 +2330,16 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           ..add('altMaxMsl', '$altMaxMsl (m)')
           ..add('diveFractionMax', '$diveFractionMax')
           ..add('climbFractionMax', '$climbFractionMax')
-          ..add('bankMax', '$bankMax (rad)${bankMax != null ? ' [${bankMax * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('pMax', '$pMax (rad/s)${pMax != null ? ' [${pMax * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('pitchMin', '$pitchMin (rad)${pitchMin != null ? ' [${pitchMin * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('pitchMax', '$pitchMax (rad)${pitchMax != null ? ' [${pitchMax * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('qMax', '$qMax (rad/s)${qMax != null ? ' [${qMax * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('bankMax',
+              '$bankMax (rad)${bankMax != null ? ' [${bankMax * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pMax',
+              '$pMax (rad/s)${pMax != null ? ' [${pMax * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('pitchMin',
+              '$pitchMin (rad)${pitchMin != null ? ' [${pitchMin * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitchMax',
+              '$pitchMax (rad)${pitchMax != null ? ' [${pitchMax * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('qMax',
+              '$qMax (rad/s)${qMax != null ? ' [${qMax * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('gMin', '$gMin (g)')
           ..add('gMax', '$gMax (g)')
           ..add('gLatMax', '$gLatMax (g)')
@@ -2251,7 +2352,12 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
 
 /// Vehicle Operational Limits builder class
 ///
-class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleOperationalLimits, VehicleOperationalLimitsBuilder> {
+class VehicleOperationalLimitsBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<VehicleOperationalLimits,
+            VehicleOperationalLimitsBuilder> {
   _$VehicleOperationalLimits _$v;
 
   DateTime _timestamp;
@@ -2306,11 +2412,13 @@ class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart i
 
   double _diveFractionMax;
   double get diveFractionMax => _$this._diveFractionMax;
-  set diveFractionMax(double diveFractionMax) => _$this._diveFractionMax = diveFractionMax;
+  set diveFractionMax(double diveFractionMax) =>
+      _$this._diveFractionMax = diveFractionMax;
 
   double _climbFractionMax;
   double get climbFractionMax => _$this._climbFractionMax;
-  set climbFractionMax(double climbFractionMax) => _$this._climbFractionMax = climbFractionMax;
+  set climbFractionMax(double climbFractionMax) =>
+      _$this._climbFractionMax = climbFractionMax;
 
   double _bankMax;
   double get bankMax => _$this._bankMax;
@@ -2363,7 +2471,9 @@ class VehicleOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart i
   }
 
   @override
-  VehicleOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleOperationalLimitsBuilder()..copyFromHeader(headerFrom);
+  VehicleOperationalLimitsBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      VehicleOperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   VehicleOperationalLimitsBuilder get _$this {
     if (_$v != null) {
@@ -2490,12 +2600,13 @@ class _$MsgList extends MsgList {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         msgs?.hashCode));
   }
 
@@ -2514,7 +2625,9 @@ class _$MsgList extends MsgList {
 
 /// Message List builder class
 ///
-class MsgListBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MsgList, MsgListBuilder> {
+class MsgListBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<MsgList, MsgListBuilder> {
   _$MsgList _$v;
 
   DateTime _timestamp;
@@ -2558,7 +2671,8 @@ class MsgListBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  MsgListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MsgListBuilder()..copyFromHeader(headerFrom);
+  MsgListBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MsgListBuilder()..copyFromHeader(headerFrom);
 
   MsgListBuilder get _$this {
     if (_$v != null) {
@@ -2697,69 +2811,65 @@ class _$SimulatedState extends SimulatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (height == other.height
-            || height - other.height <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7) &&
-        (u == other.u
-            || u - other.u <= 1E-7) &&
-        (v == other.v
-            || v - other.v <= 1E-7) &&
-        (w == other.w
-            || w - other.w <= 1E-7) &&
-        (p == other.p
-            || p - other.p <= 1E-7) &&
-        (q == other.q
-            || q - other.q <= 1E-7) &&
-        (r == other.r
-            || r - other.r <= 1E-7) &&
-        (svx == other.svx
-            || svx - other.svx <= 1E-7) &&
-        (svy == other.svy
-            || svy - other.svy <= 1E-7) &&
-        (svz == other.svz
-            || svz - other.svz <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (svx == other.svx || svx - other.svx <= 1E-7) &&
+        (svy == other.svy || svy - other.svy <= 1E-7) &&
+        (svz == other.svz || svz - other.svz <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        height?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
-        psi?.hashCode), 
-        u?.hashCode), 
-        v?.hashCode), 
-        w?.hashCode), 
-        p?.hashCode), 
-        q?.hashCode), 
-        r?.hashCode), 
-        svx?.hashCode), 
-        svy?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode),
+                                                                                dstEnt?.hashCode),
+                                                                            lat?.hashCode),
+                                                                        lon?.hashCode),
+                                                                    height?.hashCode),
+                                                                x?.hashCode),
+                                                            y?.hashCode),
+                                                        z?.hashCode),
+                                                    phi?.hashCode),
+                                                theta?.hashCode),
+                                            psi?.hashCode),
+                                        u?.hashCode),
+                                    v?.hashCode),
+                                w?.hashCode),
+                            p?.hashCode),
+                        q?.hashCode),
+                    r?.hashCode),
+                svx?.hashCode),
+            svy?.hashCode),
         svz?.hashCode));
   }
 
@@ -2771,21 +2881,29 @@ class _$SimulatedState extends SimulatedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
-          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('p',
+              '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q',
+              '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r',
+              '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('svx', '$svx (m/s)')
           ..add('svy', '$svy (m/s)')
           ..add('svz', '$svz (m/s)'))
@@ -2795,7 +2913,9 @@ class _$SimulatedState extends SimulatedState {
 
 /// Simulated State builder class
 ///
-class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SimulatedState, SimulatedStateBuilder> {
+class SimulatedStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SimulatedState, SimulatedStateBuilder> {
   _$SimulatedState _$v;
 
   DateTime _timestamp;
@@ -2907,7 +3027,8 @@ class SimulatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  SimulatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SimulatedStateBuilder()..copyFromHeader(headerFrom);
+  SimulatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SimulatedStateBuilder()..copyFromHeader(headerFrom);
 
   SimulatedStateBuilder get _$this {
     if (_$v != null) {
@@ -3038,13 +3159,15 @@ class _$LeakSimulation extends LeakSimulation {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         entities?.hashCode));
   }
 
@@ -3064,7 +3187,9 @@ class _$LeakSimulation extends LeakSimulation {
 
 /// Leak Simulation builder class
 ///
-class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LeakSimulation, LeakSimulationBuilder> {
+class LeakSimulationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LeakSimulation, LeakSimulationBuilder> {
   _$LeakSimulation _$v;
 
   DateTime _timestamp;
@@ -3112,7 +3237,8 @@ class LeakSimulationBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  LeakSimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LeakSimulationBuilder()..copyFromHeader(headerFrom);
+  LeakSimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LeakSimulationBuilder()..copyFromHeader(headerFrom);
 
   LeakSimulationBuilder get _$this {
     if (_$v != null) {
@@ -3215,14 +3341,17 @@ class _$UASimulation extends UASimulation {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        speed?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                type?.hashCode),
+            speed?.hashCode),
         data?.hashCode));
   }
 
@@ -3243,7 +3372,9 @@ class _$UASimulation extends UASimulation {
 
 /// Underwater Acoustics Simulation builder class
 ///
-class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UASimulation, UASimulationBuilder> {
+class UASimulationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UASimulation, UASimulationBuilder> {
   _$UASimulation _$v;
 
   DateTime _timestamp;
@@ -3295,7 +3426,8 @@ class UASimulationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  UASimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UASimulationBuilder()..copyFromHeader(headerFrom);
+  UASimulationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UASimulationBuilder()..copyFromHeader(headerFrom);
 
   UASimulationBuilder get _$this {
     if (_$v != null) {
@@ -3363,7 +3495,8 @@ class _$DynamicsSimParam extends DynamicsSimParam {
   @override
   final double bank2pPgain;
 
-  factory _$DynamicsSimParam([void Function(DynamicsSimParamBuilder b) updates]) =>
+  factory _$DynamicsSimParam(
+          [void Function(DynamicsSimParamBuilder b) updates]) =>
       (DynamicsSimParamBuilder()..update(updates)).build();
 
   _$DynamicsSimParam._(
@@ -3382,7 +3515,8 @@ class _$DynamicsSimParam extends DynamicsSimParam {
       (toBuilder()..update(updates)).build();
 
   @override
-  DynamicsSimParamBuilder toBuilder() => DynamicsSimParamBuilder()..replace(this);
+  DynamicsSimParamBuilder toBuilder() =>
+      DynamicsSimParamBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3394,22 +3528,25 @@ class _$DynamicsSimParam extends DynamicsSimParam {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (tas2accPgain == other.tas2accPgain
-            || tas2accPgain - other.tas2accPgain <= 1E-7) &&
-        (bank2pPgain == other.bank2pPgain
-            || bank2pPgain - other.bank2pPgain <= 1E-7);
+        (tas2accPgain == other.tas2accPgain ||
+            tas2accPgain - other.tas2accPgain <= 1E-7) &&
+        (bank2pPgain == other.bank2pPgain ||
+            bank2pPgain - other.bank2pPgain <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        tas2accPgain?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                op?.hashCode),
+            tas2accPgain?.hashCode),
         bank2pPgain?.hashCode));
   }
 
@@ -3430,7 +3567,10 @@ class _$DynamicsSimParam extends DynamicsSimParam {
 
 /// Dynamics Simulation Parameters builder class
 ///
-class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DynamicsSimParam, DynamicsSimParamBuilder> {
+class DynamicsSimParamBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DynamicsSimParam, DynamicsSimParamBuilder> {
   _$DynamicsSimParam _$v;
 
   DateTime _timestamp;
@@ -3482,7 +3622,8 @@ class DynamicsSimParamBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  DynamicsSimParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DynamicsSimParamBuilder()..copyFromHeader(headerFrom);
+  DynamicsSimParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DynamicsSimParamBuilder()..copyFromHeader(headerFrom);
 
   DynamicsSimParamBuilder get _$this {
     if (_$v != null) {
@@ -3583,13 +3724,15 @@ class _$StorageUsage extends StorageUsage {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        available?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            available?.hashCode),
         value?.hashCode));
   }
 
@@ -3609,7 +3752,9 @@ class _$StorageUsage extends StorageUsage {
 
 /// Storage Usage builder class
 ///
-class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StorageUsage, StorageUsageBuilder> {
+class StorageUsageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<StorageUsage, StorageUsageBuilder> {
   _$StorageUsage _$v;
 
   DateTime _timestamp;
@@ -3657,7 +3802,8 @@ class StorageUsageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  StorageUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StorageUsageBuilder()..copyFromHeader(headerFrom);
+  StorageUsageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      StorageUsageBuilder()..copyFromHeader(headerFrom);
 
   StorageUsageBuilder get _$this {
     if (_$v != null) {
@@ -3760,14 +3906,17 @@ class _$CacheControl extends CacheControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        snapshot?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                op?.hashCode),
+            snapshot?.hashCode),
         message?.hashCode));
   }
 
@@ -3788,7 +3937,9 @@ class _$CacheControl extends CacheControl {
 
 /// Cache Control builder class
 ///
-class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CacheControl, CacheControlBuilder> {
+class CacheControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CacheControl, CacheControlBuilder> {
   _$CacheControl _$v;
 
   DateTime _timestamp;
@@ -3840,7 +3991,8 @@ class CacheControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  CacheControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CacheControlBuilder()..copyFromHeader(headerFrom);
+  CacheControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CacheControlBuilder()..copyFromHeader(headerFrom);
 
   CacheControlBuilder get _$this {
     if (_$v != null) {
@@ -3941,13 +4093,15 @@ class _$LoggingControl extends LoggingControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         name?.hashCode));
   }
 
@@ -3967,7 +4121,9 @@ class _$LoggingControl extends LoggingControl {
 
 /// Logging Control builder class
 ///
-class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LoggingControl, LoggingControlBuilder> {
+class LoggingControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LoggingControl, LoggingControlBuilder> {
   _$LoggingControl _$v;
 
   DateTime _timestamp;
@@ -4015,7 +4171,8 @@ class LoggingControlBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  LoggingControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LoggingControlBuilder()..copyFromHeader(headerFrom);
+  LoggingControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LoggingControlBuilder()..copyFromHeader(headerFrom);
 
   LoggingControlBuilder get _$this {
     if (_$v != null) {
@@ -4115,23 +4272,26 @@ class _$LogBookEntry extends LogBookEntry {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         type == other.type &&
-        (htime == other.htime
-            || htime - other.htime <= 1E-7) &&
+        (htime == other.htime || htime - other.htime <= 1E-7) &&
         context == other.context &&
         text == other.text;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        htime?.hashCode), 
-        context?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    type?.hashCode),
+                htime?.hashCode),
+            context?.hashCode),
         text?.hashCode));
   }
 
@@ -4153,7 +4313,9 @@ class _$LogBookEntry extends LogBookEntry {
 
 /// Log Book Entry builder class
 ///
-class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LogBookEntry, LogBookEntryBuilder> {
+class LogBookEntryBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LogBookEntry, LogBookEntryBuilder> {
   _$LogBookEntry _$v;
 
   DateTime _timestamp;
@@ -4209,7 +4371,8 @@ class LogBookEntryBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  LogBookEntryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LogBookEntryBuilder()..copyFromHeader(headerFrom);
+  LogBookEntryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LogBookEntryBuilder()..copyFromHeader(headerFrom);
 
   LogBookEntryBuilder get _$this {
     if (_$v != null) {
@@ -4310,21 +4473,23 @@ class _$LogBookControl extends LogBookControl {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         command == other.command &&
-        (htime == other.htime
-            || htime - other.htime <= 1E-7) &&
+        (htime == other.htime || htime - other.htime <= 1E-7) &&
         DeepCollectionEquality().equals(msg, other.msg);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        command?.hashCode), 
-        htime?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                command?.hashCode),
+            htime?.hashCode),
         msg?.hashCode));
   }
 
@@ -4345,7 +4510,9 @@ class _$LogBookControl extends LogBookControl {
 
 /// Log Book Control builder class
 ///
-class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LogBookControl, LogBookControlBuilder> {
+class LogBookControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LogBookControl, LogBookControlBuilder> {
   _$LogBookControl _$v;
 
   DateTime _timestamp;
@@ -4397,7 +4564,8 @@ class LogBookControlBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  LogBookControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LogBookControlBuilder()..copyFromHeader(headerFrom);
+  LogBookControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LogBookControlBuilder()..copyFromHeader(headerFrom);
 
   LogBookControlBuilder get _$this {
     if (_$v != null) {
@@ -4498,13 +4666,15 @@ class _$ReplayControl extends ReplayControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         file?.hashCode));
   }
 
@@ -4524,7 +4694,9 @@ class _$ReplayControl extends ReplayControl {
 
 /// Replay Control builder class
 ///
-class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ReplayControl, ReplayControlBuilder> {
+class ReplayControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ReplayControl, ReplayControlBuilder> {
   _$ReplayControl _$v;
 
   DateTime _timestamp;
@@ -4572,7 +4744,8 @@ class ReplayControlBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ReplayControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReplayControlBuilder()..copyFromHeader(headerFrom);
+  ReplayControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ReplayControlBuilder()..copyFromHeader(headerFrom);
 
   ReplayControlBuilder get _$this {
     if (_$v != null) {
@@ -4669,21 +4842,23 @@ class _$ClockControl extends ClockControl {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (clock == other.clock
-            || clock - other.clock <= 1E-7) &&
+        (clock == other.clock || clock - other.clock <= 1E-7) &&
         tz == other.tz;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        clock?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                op?.hashCode),
+            clock?.hashCode),
         tz?.hashCode));
   }
 
@@ -4704,7 +4879,9 @@ class _$ClockControl extends ClockControl {
 
 /// Clock Control builder class
 ///
-class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ClockControl, ClockControlBuilder> {
+class ClockControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ClockControl, ClockControlBuilder> {
   _$ClockControl _$v;
 
   DateTime _timestamp;
@@ -4756,7 +4933,8 @@ class ClockControlBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  ClockControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ClockControlBuilder()..copyFromHeader(headerFrom);
+  ClockControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ClockControlBuilder()..copyFromHeader(headerFrom);
 
   ClockControlBuilder get _$this {
     if (_$v != null) {
@@ -4854,24 +5032,26 @@ class _$HistoricCTD extends HistoricCTD {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (conductivity == other.conductivity
-            || conductivity - other.conductivity <= 1E-7) &&
-        (temperature == other.temperature
-            || temperature - other.temperature <= 1E-7) &&
-        (depth == other.depth
-            || depth - other.depth <= 1E-7);
+        (conductivity == other.conductivity ||
+            conductivity - other.conductivity <= 1E-7) &&
+        (temperature == other.temperature ||
+            temperature - other.temperature <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        conductivity?.hashCode), 
-        temperature?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                conductivity?.hashCode),
+            temperature?.hashCode),
         depth?.hashCode));
   }
 
@@ -4892,7 +5072,9 @@ class _$HistoricCTD extends HistoricCTD {
 
 /// Historic CTD builder class
 ///
-class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricCTD, HistoricCTDBuilder> {
+class HistoricCTDBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<HistoricCTD, HistoricCTDBuilder> {
   _$HistoricCTD _$v;
 
   DateTime _timestamp;
@@ -4944,7 +5126,8 @@ class HistoricCTDBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  HistoricCTDBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricCTDBuilder()..copyFromHeader(headerFrom);
+  HistoricCTDBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HistoricCTDBuilder()..copyFromHeader(headerFrom);
 
   HistoricCTDBuilder get _$this {
     if (_$v != null) {
@@ -5016,7 +5199,8 @@ class _$HistoricTelemetry extends HistoricTelemetry {
   @override
   final int speed;
 
-  factory _$HistoricTelemetry([void Function(HistoricTelemetryBuilder b) updates]) =>
+  factory _$HistoricTelemetry(
+          [void Function(HistoricTelemetryBuilder b) updates]) =>
       (HistoricTelemetryBuilder()..update(updates)).build();
 
   _$HistoricTelemetry._(
@@ -5033,11 +5217,13 @@ class _$HistoricTelemetry extends HistoricTelemetry {
       : super._();
 
   @override
-  HistoricTelemetry rebuild(void Function(HistoricTelemetryBuilder b) updates) =>
+  HistoricTelemetry rebuild(
+          void Function(HistoricTelemetryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricTelemetryBuilder toBuilder() => HistoricTelemetryBuilder()..replace(this);
+  HistoricTelemetryBuilder toBuilder() =>
+      HistoricTelemetryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5048,8 +5234,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (altitude == other.altitude
-            || altitude - other.altitude <= 1E-7) &&
+        (altitude == other.altitude || altitude - other.altitude <= 1E-7) &&
         roll == other.roll &&
         pitch == other.pitch &&
         yaw == other.yaw &&
@@ -5058,16 +5243,23 @@ class _$HistoricTelemetry extends HistoricTelemetry {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        altitude?.hashCode), 
-        roll?.hashCode), 
-        pitch?.hashCode), 
-        yaw?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        altitude?.hashCode),
+                    roll?.hashCode),
+                pitch?.hashCode),
+            yaw?.hashCode),
         speed?.hashCode));
   }
 
@@ -5090,7 +5282,10 @@ class _$HistoricTelemetry extends HistoricTelemetry {
 
 /// Historic Telemetry builder class
 ///
-class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricTelemetry, HistoricTelemetryBuilder> {
+class HistoricTelemetryBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<HistoricTelemetry, HistoricTelemetryBuilder> {
   _$HistoricTelemetry _$v;
 
   DateTime _timestamp;
@@ -5150,7 +5345,8 @@ class HistoricTelemetryBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  HistoricTelemetryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricTelemetryBuilder()..copyFromHeader(headerFrom);
+  HistoricTelemetryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HistoricTelemetryBuilder()..copyFromHeader(headerFrom);
 
   HistoricTelemetryBuilder get _$this {
     if (_$v != null) {
@@ -5230,7 +5426,8 @@ class _$HistoricSonarData extends HistoricSonarData {
   @override
   final List<int> sonarData;
 
-  factory _$HistoricSonarData([void Function(HistoricSonarDataBuilder b) updates]) =>
+  factory _$HistoricSonarData(
+          [void Function(HistoricSonarDataBuilder b) updates]) =>
       (HistoricSonarDataBuilder()..update(updates)).build();
 
   _$HistoricSonarData._(
@@ -5249,11 +5446,13 @@ class _$HistoricSonarData extends HistoricSonarData {
       : super._();
 
   @override
-  HistoricSonarData rebuild(void Function(HistoricSonarDataBuilder b) updates) =>
+  HistoricSonarData rebuild(
+          void Function(HistoricSonarDataBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricSonarDataBuilder toBuilder() => HistoricSonarDataBuilder()..replace(this);
+  HistoricSonarDataBuilder toBuilder() =>
+      HistoricSonarDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5264,14 +5463,10 @@ class _$HistoricSonarData extends HistoricSonarData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (altitude == other.altitude
-            || altitude - other.altitude <= 1E-7) &&
-        (width == other.width
-            || width - other.width <= 1E-7) &&
-        (length == other.length
-            || length - other.length <= 1E-7) &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
+        (altitude == other.altitude || altitude - other.altitude <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         pxl == other.pxl &&
         encoding == other.encoding &&
         ListEquality().equals(sonarData, other.sonarData);
@@ -5279,18 +5474,27 @@ class _$HistoricSonarData extends HistoricSonarData {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        altitude?.hashCode), 
-        width?.hashCode), 
-        length?.hashCode), 
-        bearing?.hashCode), 
-        pxl?.hashCode), 
-        encoding?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                altitude?.hashCode),
+                            width?.hashCode),
+                        length?.hashCode),
+                    bearing?.hashCode),
+                pxl?.hashCode),
+            encoding?.hashCode),
         sonarData?.hashCode));
   }
 
@@ -5315,7 +5519,10 @@ class _$HistoricSonarData extends HistoricSonarData {
 
 /// Historic Sonar Data builder class
 ///
-class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricSonarData, HistoricSonarDataBuilder> {
+class HistoricSonarDataBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<HistoricSonarData, HistoricSonarDataBuilder> {
   _$HistoricSonarData _$v;
 
   DateTime _timestamp;
@@ -5370,7 +5577,8 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
 
   HistoricSonarDataEnumEncoding _encoding;
   HistoricSonarDataEnumEncoding get encoding => _$this._encoding;
-  set encoding(HistoricSonarDataEnumEncoding encoding) => _$this._encoding = encoding;
+  set encoding(HistoricSonarDataEnumEncoding encoding) =>
+      _$this._encoding = encoding;
 
   List<int> _sonarData;
   List<int> get sonarData => _$this._sonarData;
@@ -5383,7 +5591,8 @@ class HistoricSonarDataBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  HistoricSonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricSonarDataBuilder()..copyFromHeader(headerFrom);
+  HistoricSonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HistoricSonarDataBuilder()..copyFromHeader(headerFrom);
 
   HistoricSonarDataBuilder get _$this {
     if (_$v != null) {
@@ -5492,13 +5701,15 @@ class _$HistoricEvent extends HistoricEvent {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        text?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            text?.hashCode),
         type?.hashCode));
   }
 
@@ -5518,7 +5729,9 @@ class _$HistoricEvent extends HistoricEvent {
 
 /// Historic Event builder class
 ///
-class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricEvent, HistoricEventBuilder> {
+class HistoricEventBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<HistoricEvent, HistoricEventBuilder> {
   _$HistoricEvent _$v;
 
   DateTime _timestamp;
@@ -5566,7 +5779,8 @@ class HistoricEventBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  HistoricEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricEventBuilder()..copyFromHeader(headerFrom);
+  HistoricEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HistoricEventBuilder()..copyFromHeader(headerFrom);
 
   HistoricEventBuilder get _$this {
     if (_$v != null) {
@@ -5636,7 +5850,8 @@ class _$VerticalProfile extends VerticalProfile {
   @override
   final double lon;
 
-  factory _$VerticalProfile([void Function(VerticalProfileBuilder b) updates]) =>
+  factory _$VerticalProfile(
+          [void Function(VerticalProfileBuilder b) updates]) =>
       (VerticalProfileBuilder()..update(updates)).build();
 
   _$VerticalProfile._(
@@ -5671,24 +5886,29 @@ class _$VerticalProfile extends VerticalProfile {
         parameter == other.parameter &&
         numSamples == other.numSamples &&
         DeepCollectionEquality().equals(samples, other.samples) &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        parameter?.hashCode), 
-        numSamples?.hashCode), 
-        samples?.hashCode), 
-        lat?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        parameter?.hashCode),
+                    numSamples?.hashCode),
+                samples?.hashCode),
+            lat?.hashCode),
         lon?.hashCode));
   }
 
@@ -5703,15 +5923,20 @@ class _$VerticalProfile extends VerticalProfile {
           ..add('parameter', '$parameter (Enumerated)')
           ..add('numSamples', '$numSamples')
           ..add('samples', '$samples')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Vertical Profile builder class
 ///
-class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VerticalProfile, VerticalProfileBuilder> {
+class VerticalProfileBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<VerticalProfile, VerticalProfileBuilder> {
   _$VerticalProfile _$v;
 
   DateTime _timestamp;
@@ -5746,7 +5971,8 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
 
   VerticalProfileEnumParameter _parameter;
   VerticalProfileEnumParameter get parameter => _$this._parameter;
-  set parameter(VerticalProfileEnumParameter parameter) => _$this._parameter = parameter;
+  set parameter(VerticalProfileEnumParameter parameter) =>
+      _$this._parameter = parameter;
 
   int _numSamples;
   int get numSamples => _$this._numSamples;
@@ -5771,7 +5997,8 @@ class VerticalProfileBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  VerticalProfileBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VerticalProfileBuilder()..copyFromHeader(headerFrom);
+  VerticalProfileBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VerticalProfileBuilder()..copyFromHeader(headerFrom);
 
   VerticalProfileBuilder get _$this {
     if (_$v != null) {
@@ -5871,19 +6098,20 @@ class _$ProfileSample extends ProfileSample {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         depth == other.depth &&
-        (avg == other.avg
-            || avg - other.avg <= 1E-7);
+        (avg == other.avg || avg - other.avg <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        depth?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            depth?.hashCode),
         avg?.hashCode));
   }
 
@@ -5903,7 +6131,9 @@ class _$ProfileSample extends ProfileSample {
 
 /// Profile Sample builder class
 ///
-class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ProfileSample, ProfileSampleBuilder> {
+class ProfileSampleBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ProfileSample, ProfileSampleBuilder> {
   _$ProfileSample _$v;
 
   DateTime _timestamp;
@@ -5951,7 +6181,8 @@ class ProfileSampleBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ProfileSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ProfileSampleBuilder()..copyFromHeader(headerFrom);
+  ProfileSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ProfileSampleBuilder()..copyFromHeader(headerFrom);
 
   ProfileSampleBuilder get _$this {
     if (_$v != null) {
@@ -6010,7 +6241,6 @@ class _$Heartbeat extends Heartbeat {
   @override
   final int dstEnt;
 
-
   factory _$Heartbeat([void Function(HeartbeatBuilder b) updates]) =>
       (HeartbeatBuilder()..update(updates)).build();
 
@@ -6042,11 +6272,11 @@ class _$Heartbeat extends Heartbeat {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -6064,7 +6294,9 @@ class _$Heartbeat extends Heartbeat {
 
 /// Heartbeat builder class
 ///
-class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Heartbeat, HeartbeatBuilder> {
+class HeartbeatBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Heartbeat, HeartbeatBuilder> {
   _$Heartbeat _$v;
 
   DateTime _timestamp;
@@ -6104,7 +6336,8 @@ class HeartbeatBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  HeartbeatBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HeartbeatBuilder()..copyFromHeader(headerFrom);
+  HeartbeatBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HeartbeatBuilder()..copyFromHeader(headerFrom);
 
   HeartbeatBuilder get _$this {
     if (_$v != null) {
@@ -6211,29 +6444,35 @@ class _$Announce extends Announce {
         sysName == other.sysName &&
         sysType == other.sysType &&
         owner == other.owner &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (height == other.height
-            || height - other.height <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
         services == other.services;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        sysName?.hashCode), 
-        sysType?.hashCode), 
-        owner?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        height?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                sysName?.hashCode),
+                            sysType?.hashCode),
+                        owner?.hashCode),
+                    lat?.hashCode),
+                lon?.hashCode),
+            height?.hashCode),
         services?.hashCode));
   }
 
@@ -6248,8 +6487,10 @@ class _$Announce extends Announce {
           ..add('sysName', '$sysName')
           ..add('sysType', '$sysType (Enumerated)')
           ..add('owner', '$owner')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('services', '$services'))
         .toString();
@@ -6258,7 +6499,9 @@ class _$Announce extends Announce {
 
 /// Announce builder class
 ///
-class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Announce, AnnounceBuilder> {
+class AnnounceBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Announce, AnnounceBuilder> {
   _$Announce _$v;
 
   DateTime _timestamp;
@@ -6326,7 +6569,8 @@ class AnnounceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  AnnounceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AnnounceBuilder()..copyFromHeader(headerFrom);
+  AnnounceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AnnounceBuilder()..copyFromHeader(headerFrom);
 
   AnnounceBuilder get _$this {
     if (_$v != null) {
@@ -6400,7 +6644,8 @@ class _$AnnounceService extends AnnounceService {
   @override
   final AnnounceServiceBitfieldServiceType serviceType;
 
-  factory _$AnnounceService([void Function(AnnounceServiceBuilder b) updates]) =>
+  factory _$AnnounceService(
+          [void Function(AnnounceServiceBuilder b) updates]) =>
       (AnnounceServiceBuilder()..update(updates)).build();
 
   _$AnnounceService._(
@@ -6435,13 +6680,15 @@ class _$AnnounceService extends AnnounceService {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        service?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            service?.hashCode),
         serviceType?.hashCode));
   }
 
@@ -6461,7 +6708,10 @@ class _$AnnounceService extends AnnounceService {
 
 /// Announce Service builder class
 ///
-class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AnnounceService, AnnounceServiceBuilder> {
+class AnnounceServiceBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AnnounceService, AnnounceServiceBuilder> {
   _$AnnounceService _$v;
 
   DateTime _timestamp;
@@ -6500,7 +6750,8 @@ class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements
 
   AnnounceServiceBitfieldServiceType _serviceType;
   AnnounceServiceBitfieldServiceType get serviceType => _$this._serviceType;
-  set serviceType(AnnounceServiceBitfieldServiceType serviceType) => _$this._serviceType = serviceType;
+  set serviceType(AnnounceServiceBitfieldServiceType serviceType) =>
+      _$this._serviceType = serviceType;
 
   AnnounceServiceBuilder();
 
@@ -6509,7 +6760,8 @@ class AnnounceServiceBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  AnnounceServiceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AnnounceServiceBuilder()..copyFromHeader(headerFrom);
+  AnnounceServiceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AnnounceServiceBuilder()..copyFromHeader(headerFrom);
 
   AnnounceServiceBuilder get _$this {
     if (_$v != null) {
@@ -6599,18 +6851,18 @@ class _$RSSI extends RSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -6629,7 +6881,9 @@ class _$RSSI extends RSSI {
 
 /// Receive Signal Strength Information builder class
 ///
-class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RSSI, RSSIBuilder> {
+class RSSIBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RSSI, RSSIBuilder> {
   _$RSSI _$v;
 
   DateTime _timestamp;
@@ -6673,7 +6927,8 @@ class RSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  RSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RSSIBuilder()..copyFromHeader(headerFrom);
+  RSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RSSIBuilder()..copyFromHeader(headerFrom);
 
   RSSIBuilder get _$this {
     if (_$v != null) {
@@ -6761,18 +7016,18 @@ class _$VSWR extends VSWR {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -6791,7 +7046,9 @@ class _$VSWR extends VSWR {
 
 /// Voltage Standing Wave Ratio builder class
 ///
-class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VSWR, VSWRBuilder> {
+class VSWRBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<VSWR, VSWRBuilder> {
   _$VSWR _$v;
 
   DateTime _timestamp;
@@ -6835,7 +7092,8 @@ class VSWRBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  VSWRBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VSWRBuilder()..copyFromHeader(headerFrom);
+  VSWRBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VSWRBuilder()..copyFromHeader(headerFrom);
 
   VSWRBuilder get _$this {
     if (_$v != null) {
@@ -6923,18 +7181,18 @@ class _$LinkLevel extends LinkLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -6953,7 +7211,9 @@ class _$LinkLevel extends LinkLevel {
 
 /// Link Level builder class
 ///
-class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LinkLevel, LinkLevelBuilder> {
+class LinkLevelBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LinkLevel, LinkLevelBuilder> {
   _$LinkLevel _$v;
 
   DateTime _timestamp;
@@ -6997,7 +7257,8 @@ class LinkLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  LinkLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LinkLevelBuilder()..copyFromHeader(headerFrom);
+  LinkLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LinkLevelBuilder()..copyFromHeader(headerFrom);
 
   LinkLevelBuilder get _$this {
     if (_$v != null) {
@@ -7098,14 +7359,17 @@ class _$Sms extends Sms {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        number?.hashCode), 
-        timeout?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                number?.hashCode),
+            timeout?.hashCode),
         contents?.hashCode));
   }
 
@@ -7126,7 +7390,9 @@ class _$Sms extends Sms {
 
 /// SMS builder class
 ///
-class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Sms, SmsBuilder> {
+class SmsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Sms, SmsBuilder> {
   _$Sms _$v;
 
   DateTime _timestamp;
@@ -7178,7 +7444,8 @@ class SmsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  SmsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsBuilder()..copyFromHeader(headerFrom);
+  SmsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SmsBuilder()..copyFromHeader(headerFrom);
 
   SmsBuilder get _$this {
     if (_$v != null) {
@@ -7287,15 +7554,19 @@ class _$SmsTx extends SmsTx {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        seq?.hashCode), 
-        destination?.hashCode), 
-        timeout?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    seq?.hashCode),
+                destination?.hashCode),
+            timeout?.hashCode),
         data?.hashCode));
   }
 
@@ -7317,7 +7588,9 @@ class _$SmsTx extends SmsTx {
 
 /// SMS Transmit builder class
 ///
-class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsTx, SmsTxBuilder> {
+class SmsTxBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SmsTx, SmsTxBuilder> {
   _$SmsTx _$v;
 
   DateTime _timestamp;
@@ -7373,7 +7646,8 @@ class SmsTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  SmsTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsTxBuilder()..copyFromHeader(headerFrom);
+  SmsTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SmsTxBuilder()..copyFromHeader(headerFrom);
 
   SmsTxBuilder get _$this {
     if (_$v != null) {
@@ -7476,13 +7750,15 @@ class _$SmsRx extends SmsRx {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        source?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            source?.hashCode),
         data?.hashCode));
   }
 
@@ -7502,7 +7778,9 @@ class _$SmsRx extends SmsRx {
 
 /// SMS Receive builder class
 ///
-class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsRx, SmsRxBuilder> {
+class SmsRxBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SmsRx, SmsRxBuilder> {
   _$SmsRx _$v;
 
   DateTime _timestamp;
@@ -7550,7 +7828,8 @@ class SmsRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  SmsRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsRxBuilder()..copyFromHeader(headerFrom);
+  SmsRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SmsRxBuilder()..copyFromHeader(headerFrom);
 
   SmsRxBuilder get _$this {
     if (_$v != null) {
@@ -7653,14 +7932,17 @@ class _$SmsState extends SmsState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        seq?.hashCode), 
-        state?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                seq?.hashCode),
+            state?.hashCode),
         error?.hashCode));
   }
 
@@ -7681,7 +7963,9 @@ class _$SmsState extends SmsState {
 
 /// SMS State builder class
 ///
-class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsState, SmsStateBuilder> {
+class SmsStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SmsState, SmsStateBuilder> {
   _$SmsState _$v;
 
   DateTime _timestamp;
@@ -7733,7 +8017,8 @@ class SmsStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  SmsStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsStateBuilder()..copyFromHeader(headerFrom);
+  SmsStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SmsStateBuilder()..copyFromHeader(headerFrom);
 
   SmsStateBuilder get _$this {
     if (_$v != null) {
@@ -7834,13 +8119,15 @@ class _$TextMessage extends TextMessage {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        origin?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            origin?.hashCode),
         text?.hashCode));
   }
 
@@ -7860,7 +8147,9 @@ class _$TextMessage extends TextMessage {
 
 /// Text Message builder class
 ///
-class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TextMessage, TextMessageBuilder> {
+class TextMessageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TextMessage, TextMessageBuilder> {
   _$TextMessage _$v;
 
   DateTime _timestamp;
@@ -7908,7 +8197,8 @@ class TextMessageBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  TextMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TextMessageBuilder()..copyFromHeader(headerFrom);
+  TextMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TextMessageBuilder()..copyFromHeader(headerFrom);
 
   TextMessageBuilder get _$this {
     if (_$v != null) {
@@ -8011,27 +8301,31 @@ class _$IridiumMsgRx extends IridiumMsgRx {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         origin == other.origin &&
-        (htime == other.htime
-            || htime - other.htime <= 1E-7) &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
+        (htime == other.htime || htime - other.htime <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         ListEquality().equals(data, other.data);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        origin?.hashCode), 
-        htime?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        origin?.hashCode),
+                    htime?.hashCode),
+                lat?.hashCode),
+            lon?.hashCode),
         data?.hashCode));
   }
 
@@ -8045,8 +8339,10 @@ class _$IridiumMsgRx extends IridiumMsgRx {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('origin', '$origin')
           ..add('htime', '$htime (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('data', '$data'))
         .toString();
   }
@@ -8054,7 +8350,9 @@ class _$IridiumMsgRx extends IridiumMsgRx {
 
 /// Received Iridium Message builder class
 ///
-class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IridiumMsgRx, IridiumMsgRxBuilder> {
+class IridiumMsgRxBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<IridiumMsgRx, IridiumMsgRxBuilder> {
   _$IridiumMsgRx _$v;
 
   DateTime _timestamp;
@@ -8114,7 +8412,8 @@ class IridiumMsgRxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  IridiumMsgRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumMsgRxBuilder()..copyFromHeader(headerFrom);
+  IridiumMsgRxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      IridiumMsgRxBuilder()..copyFromHeader(headerFrom);
 
   IridiumMsgRxBuilder get _$this {
     if (_$v != null) {
@@ -8227,15 +8526,19 @@ class _$IridiumMsgTx extends IridiumMsgTx {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reqId?.hashCode), 
-        ttl?.hashCode), 
-        destination?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    reqId?.hashCode),
+                ttl?.hashCode),
+            destination?.hashCode),
         data?.hashCode));
   }
 
@@ -8257,7 +8560,9 @@ class _$IridiumMsgTx extends IridiumMsgTx {
 
 /// Transmit Iridium Message builder class
 ///
-class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IridiumMsgTx, IridiumMsgTxBuilder> {
+class IridiumMsgTxBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<IridiumMsgTx, IridiumMsgTxBuilder> {
   _$IridiumMsgTx _$v;
 
   DateTime _timestamp;
@@ -8313,7 +8618,8 @@ class IridiumMsgTxBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  IridiumMsgTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumMsgTxBuilder()..copyFromHeader(headerFrom);
+  IridiumMsgTxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      IridiumMsgTxBuilder()..copyFromHeader(headerFrom);
 
   IridiumMsgTxBuilder get _$this {
     if (_$v != null) {
@@ -8383,7 +8689,8 @@ class _$IridiumTxStatus extends IridiumTxStatus {
   @override
   final String text;
 
-  factory _$IridiumTxStatus([void Function(IridiumTxStatusBuilder b) updates]) =>
+  factory _$IridiumTxStatus(
+          [void Function(IridiumTxStatusBuilder b) updates]) =>
       (IridiumTxStatusBuilder()..update(updates)).build();
 
   _$IridiumTxStatus._(
@@ -8420,14 +8727,17 @@ class _$IridiumTxStatus extends IridiumTxStatus {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reqId?.hashCode), 
-        status?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                reqId?.hashCode),
+            status?.hashCode),
         text?.hashCode));
   }
 
@@ -8448,7 +8758,10 @@ class _$IridiumTxStatus extends IridiumTxStatus {
 
 /// Iridium Transmission Status builder class
 ///
-class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IridiumTxStatus, IridiumTxStatusBuilder> {
+class IridiumTxStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<IridiumTxStatus, IridiumTxStatusBuilder> {
   _$IridiumTxStatus _$v;
 
   DateTime _timestamp;
@@ -8500,7 +8813,8 @@ class IridiumTxStatusBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  IridiumTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IridiumTxStatusBuilder()..copyFromHeader(headerFrom);
+  IridiumTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      IridiumTxStatusBuilder()..copyFromHeader(headerFrom);
 
   IridiumTxStatusBuilder get _$this {
     if (_$v != null) {
@@ -8566,7 +8880,8 @@ class _$GroupMembershipState extends GroupMembershipState {
   @override
   final int links;
 
-  factory _$GroupMembershipState([void Function(GroupMembershipStateBuilder b) updates]) =>
+  factory _$GroupMembershipState(
+          [void Function(GroupMembershipStateBuilder b) updates]) =>
       (GroupMembershipStateBuilder()..update(updates)).build();
 
   _$GroupMembershipState._(
@@ -8580,11 +8895,13 @@ class _$GroupMembershipState extends GroupMembershipState {
       : super._();
 
   @override
-  GroupMembershipState rebuild(void Function(GroupMembershipStateBuilder b) updates) =>
+  GroupMembershipState rebuild(
+          void Function(GroupMembershipStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GroupMembershipStateBuilder toBuilder() => GroupMembershipStateBuilder()..replace(this);
+  GroupMembershipStateBuilder toBuilder() =>
+      GroupMembershipStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8601,13 +8918,15 @@ class _$GroupMembershipState extends GroupMembershipState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        groupName?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            groupName?.hashCode),
         links?.hashCode));
   }
 
@@ -8627,7 +8946,12 @@ class _$GroupMembershipState extends GroupMembershipState {
 
 /// Group Membership State builder class
 ///
-class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GroupMembershipState, GroupMembershipStateBuilder> {
+class GroupMembershipStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<GroupMembershipState,
+            GroupMembershipStateBuilder> {
   _$GroupMembershipState _$v;
 
   DateTime _timestamp;
@@ -8675,7 +8999,8 @@ class GroupMembershipStateBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  GroupMembershipStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroupMembershipStateBuilder()..copyFromHeader(headerFrom);
+  GroupMembershipStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GroupMembershipStateBuilder()..copyFromHeader(headerFrom);
 
   GroupMembershipStateBuilder get _$this {
     if (_$v != null) {
@@ -8778,14 +9103,17 @@ class _$SystemGroup extends SystemGroup {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        groupName?.hashCode), 
-        action?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                groupName?.hashCode),
+            action?.hashCode),
         groupList?.hashCode));
   }
 
@@ -8806,7 +9134,9 @@ class _$SystemGroup extends SystemGroup {
 
 /// System Group builder class
 ///
-class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SystemGroup, SystemGroupBuilder> {
+class SystemGroupBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SystemGroup, SystemGroupBuilder> {
   _$SystemGroup _$v;
 
   DateTime _timestamp;
@@ -8858,7 +9188,8 @@ class SystemGroupBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  SystemGroupBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SystemGroupBuilder()..copyFromHeader(headerFrom);
+  SystemGroupBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SystemGroupBuilder()..copyFromHeader(headerFrom);
 
   SystemGroupBuilder get _$this {
     if (_$v != null) {
@@ -8953,20 +9284,21 @@ class _$LinkLatency extends LinkLatency {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         sysSrc == other.sysSrc;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            value?.hashCode),
         sysSrc?.hashCode));
   }
 
@@ -8986,7 +9318,9 @@ class _$LinkLatency extends LinkLatency {
 
 /// Link Latency builder class
 ///
-class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LinkLatency, LinkLatencyBuilder> {
+class LinkLatencyBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LinkLatency, LinkLatencyBuilder> {
   _$LinkLatency _$v;
 
   DateTime _timestamp;
@@ -9034,7 +9368,8 @@ class LinkLatencyBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  LinkLatencyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LinkLatencyBuilder()..copyFromHeader(headerFrom);
+  LinkLatencyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LinkLatencyBuilder()..copyFromHeader(headerFrom);
 
   LinkLatencyBuilder get _$this {
     if (_$v != null) {
@@ -9127,20 +9462,21 @@ class _$ExtendedRSSI extends ExtendedRSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         units == other.units;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            value?.hashCode),
         units?.hashCode));
   }
 
@@ -9160,7 +9496,9 @@ class _$ExtendedRSSI extends ExtendedRSSI {
 
 /// Extended Receive Signal Strength Information builder class
 ///
-class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ExtendedRSSI, ExtendedRSSIBuilder> {
+class ExtendedRSSIBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ExtendedRSSI, ExtendedRSSIBuilder> {
   _$ExtendedRSSI _$v;
 
   DateTime _timestamp;
@@ -9208,7 +9546,8 @@ class ExtendedRSSIBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  ExtendedRSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ExtendedRSSIBuilder()..copyFromHeader(headerFrom);
+  ExtendedRSSIBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ExtendedRSSIBuilder()..copyFromHeader(headerFrom);
 
   ExtendedRSSIBuilder get _$this {
     if (_$v != null) {
@@ -9307,26 +9646,27 @@ class _$HistoricData extends HistoricData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (baseLat == other.baseLat
-            || baseLat - other.baseLat <= 1E-7) &&
-        (baseLon == other.baseLon
-            || baseLon - other.baseLon <= 1E-7) &&
-        (baseTime == other.baseTime
-            || baseTime - other.baseTime <= 1E-7) &&
+        (baseLat == other.baseLat || baseLat - other.baseLat <= 1E-7) &&
+        (baseLon == other.baseLon || baseLon - other.baseLon <= 1E-7) &&
+        (baseTime == other.baseTime || baseTime - other.baseTime <= 1E-7) &&
         DeepCollectionEquality().equals(data, other.data);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        baseLat?.hashCode), 
-        baseLon?.hashCode), 
-        baseTime?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    baseLat?.hashCode),
+                baseLon?.hashCode),
+            baseTime?.hashCode),
         data?.hashCode));
   }
 
@@ -9348,7 +9688,9 @@ class _$HistoricData extends HistoricData {
 
 /// Historic Data Series builder class
 ///
-class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricData, HistoricDataBuilder> {
+class HistoricDataBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<HistoricData, HistoricDataBuilder> {
   _$HistoricData _$v;
 
   DateTime _timestamp;
@@ -9404,7 +9746,8 @@ class HistoricDataBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  HistoricDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricDataBuilder()..copyFromHeader(headerFrom);
+  HistoricDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HistoricDataBuilder()..copyFromHeader(headerFrom);
 
   HistoricDataBuilder get _$this {
     if (_$v != null) {
@@ -9476,7 +9819,8 @@ class _$CompressedHistory extends CompressedHistory {
   @override
   final List<int> data;
 
-  factory _$CompressedHistory([void Function(CompressedHistoryBuilder b) updates]) =>
+  factory _$CompressedHistory(
+          [void Function(CompressedHistoryBuilder b) updates]) =>
       (CompressedHistoryBuilder()..update(updates)).build();
 
   _$CompressedHistory._(
@@ -9492,11 +9836,13 @@ class _$CompressedHistory extends CompressedHistory {
       : super._();
 
   @override
-  CompressedHistory rebuild(void Function(CompressedHistoryBuilder b) updates) =>
+  CompressedHistory rebuild(
+          void Function(CompressedHistoryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CompressedHistoryBuilder toBuilder() => CompressedHistoryBuilder()..replace(this);
+  CompressedHistoryBuilder toBuilder() =>
+      CompressedHistoryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -9507,26 +9853,27 @@ class _$CompressedHistory extends CompressedHistory {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (baseLat == other.baseLat
-            || baseLat - other.baseLat <= 1E-7) &&
-        (baseLon == other.baseLon
-            || baseLon - other.baseLon <= 1E-7) &&
-        (baseTime == other.baseTime
-            || baseTime - other.baseTime <= 1E-7) &&
+        (baseLat == other.baseLat || baseLat - other.baseLat <= 1E-7) &&
+        (baseLon == other.baseLon || baseLon - other.baseLon <= 1E-7) &&
+        (baseTime == other.baseTime || baseTime - other.baseTime <= 1E-7) &&
         ListEquality().equals(data, other.data);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        baseLat?.hashCode), 
-        baseLon?.hashCode), 
-        baseTime?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    baseLat?.hashCode),
+                baseLon?.hashCode),
+            baseTime?.hashCode),
         data?.hashCode));
   }
 
@@ -9548,7 +9895,10 @@ class _$CompressedHistory extends CompressedHistory {
 
 /// Compressed Historic Data Series builder class
 ///
-class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CompressedHistory, CompressedHistoryBuilder> {
+class CompressedHistoryBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<CompressedHistory, CompressedHistoryBuilder> {
   _$CompressedHistory _$v;
 
   DateTime _timestamp;
@@ -9604,7 +9954,8 @@ class CompressedHistoryBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  CompressedHistoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompressedHistoryBuilder()..copyFromHeader(headerFrom);
+  CompressedHistoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CompressedHistoryBuilder()..copyFromHeader(headerFrom);
 
   CompressedHistoryBuilder get _$this {
     if (_$v != null) {
@@ -9727,18 +10078,27 @@ class _$HistoricSample extends HistoricSample {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        sysId?.hashCode), 
-        priority?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        t?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                sysId?.hashCode),
+                            priority?.hashCode),
+                        x?.hashCode),
+                    y?.hashCode),
+                z?.hashCode),
+            t?.hashCode),
         sample?.hashCode));
   }
 
@@ -9763,7 +10123,9 @@ class _$HistoricSample extends HistoricSample {
 
 /// Historic Data Sample builder class
 ///
-class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricSample, HistoricSampleBuilder> {
+class HistoricSampleBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<HistoricSample, HistoricSampleBuilder> {
   _$HistoricSample _$v;
 
   DateTime _timestamp;
@@ -9831,7 +10193,8 @@ class HistoricSampleBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  HistoricSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricSampleBuilder()..copyFromHeader(headerFrom);
+  HistoricSampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HistoricSampleBuilder()..copyFromHeader(headerFrom);
 
   HistoricSampleBuilder get _$this {
     if (_$v != null) {
@@ -9909,7 +10272,8 @@ class _$HistoricDataQuery extends HistoricDataQuery {
   @override
   final HistoricData data;
 
-  factory _$HistoricDataQuery([void Function(HistoricDataQueryBuilder b) updates]) =>
+  factory _$HistoricDataQuery(
+          [void Function(HistoricDataQueryBuilder b) updates]) =>
       (HistoricDataQueryBuilder()..update(updates)).build();
 
   _$HistoricDataQuery._(
@@ -9925,11 +10289,13 @@ class _$HistoricDataQuery extends HistoricDataQuery {
       : super._();
 
   @override
-  HistoricDataQuery rebuild(void Function(HistoricDataQueryBuilder b) updates) =>
+  HistoricDataQuery rebuild(
+          void Function(HistoricDataQueryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  HistoricDataQueryBuilder toBuilder() => HistoricDataQueryBuilder()..replace(this);
+  HistoricDataQueryBuilder toBuilder() =>
+      HistoricDataQueryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -9948,15 +10314,19 @@ class _$HistoricDataQuery extends HistoricDataQuery {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reqId?.hashCode), 
-        type?.hashCode), 
-        maxSize?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    reqId?.hashCode),
+                type?.hashCode),
+            maxSize?.hashCode),
         data?.hashCode));
   }
 
@@ -9978,7 +10348,10 @@ class _$HistoricDataQuery extends HistoricDataQuery {
 
 /// Historic Data Query builder class
 ///
-class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<HistoricDataQuery, HistoricDataQueryBuilder> {
+class HistoricDataQueryBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<HistoricDataQuery, HistoricDataQueryBuilder> {
   _$HistoricDataQuery _$v;
 
   DateTime _timestamp;
@@ -10034,7 +10407,8 @@ class HistoricDataQueryBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  HistoricDataQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => HistoricDataQueryBuilder()..copyFromHeader(headerFrom);
+  HistoricDataQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HistoricDataQueryBuilder()..copyFromHeader(headerFrom);
 
   HistoricDataQueryBuilder get _$this {
     if (_$v != null) {
@@ -10139,22 +10513,25 @@ class _$RemoteCommand extends RemoteCommand {
         dstEnt == other.dstEnt &&
         originalSource == other.originalSource &&
         destination == other.destination &&
-        (timeout == other.timeout
-            || timeout - other.timeout <= 1E-7) &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
         cmd == other.cmd;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        originalSource?.hashCode), 
-        destination?.hashCode), 
-        timeout?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    originalSource?.hashCode),
+                destination?.hashCode),
+            timeout?.hashCode),
         cmd?.hashCode));
   }
 
@@ -10176,7 +10553,9 @@ class _$RemoteCommand extends RemoteCommand {
 
 /// Remote Command builder class
 ///
-class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteCommand, RemoteCommandBuilder> {
+class RemoteCommandBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RemoteCommand, RemoteCommandBuilder> {
   _$RemoteCommand _$v;
 
   DateTime _timestamp;
@@ -10211,7 +10590,8 @@ class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements B
 
   int _originalSource;
   int get originalSource => _$this._originalSource;
-  set originalSource(int originalSource) => _$this._originalSource = originalSource;
+  set originalSource(int originalSource) =>
+      _$this._originalSource = originalSource;
 
   int _destination;
   int get destination => _$this._destination;
@@ -10232,7 +10612,8 @@ class RemoteCommandBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  RemoteCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteCommandBuilder()..copyFromHeader(headerFrom);
+  RemoteCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RemoteCommandBuilder()..copyFromHeader(headerFrom);
 
   RemoteCommandBuilder get _$this {
     if (_$v != null) {
@@ -10304,7 +10685,8 @@ class _$CommSystemsQuery extends CommSystemsQuery {
   @override
   final String list;
 
-  factory _$CommSystemsQuery([void Function(CommSystemsQueryBuilder b) updates]) =>
+  factory _$CommSystemsQuery(
+          [void Function(CommSystemsQueryBuilder b) updates]) =>
       (CommSystemsQueryBuilder()..update(updates)).build();
 
   _$CommSystemsQuery._(
@@ -10324,7 +10706,8 @@ class _$CommSystemsQuery extends CommSystemsQuery {
       (toBuilder()..update(updates)).build();
 
   @override
-  CommSystemsQueryBuilder toBuilder() => CommSystemsQueryBuilder()..replace(this);
+  CommSystemsQueryBuilder toBuilder() =>
+      CommSystemsQueryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10343,15 +10726,19 @@ class _$CommSystemsQuery extends CommSystemsQuery {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        commInterface?.hashCode), 
-        model?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    type?.hashCode),
+                commInterface?.hashCode),
+            model?.hashCode),
         list?.hashCode));
   }
 
@@ -10373,7 +10760,10 @@ class _$CommSystemsQuery extends CommSystemsQuery {
 
 /// Communication Systems Query builder class
 ///
-class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CommSystemsQuery, CommSystemsQueryBuilder> {
+class CommSystemsQueryBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<CommSystemsQuery, CommSystemsQueryBuilder> {
   _$CommSystemsQuery _$v;
 
   DateTime _timestamp;
@@ -10411,8 +10801,10 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
   set type(CommSystemsQueryBitfieldType type) => _$this._type = type;
 
   CommSystemsQueryBitfieldCommInterface _commInterface;
-  CommSystemsQueryBitfieldCommInterface get commInterface => _$this._commInterface;
-  set commInterface(CommSystemsQueryBitfieldCommInterface commInterface) => _$this._commInterface = commInterface;
+  CommSystemsQueryBitfieldCommInterface get commInterface =>
+      _$this._commInterface;
+  set commInterface(CommSystemsQueryBitfieldCommInterface commInterface) =>
+      _$this._commInterface = commInterface;
 
   CommSystemsQueryEnumModel _model;
   CommSystemsQueryEnumModel get model => _$this._model;
@@ -10429,7 +10821,8 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  CommSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CommSystemsQueryBuilder()..copyFromHeader(headerFrom);
+  CommSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CommSystemsQueryBuilder()..copyFromHeader(headerFrom);
 
   CommSystemsQueryBuilder get _$this {
     if (_$v != null) {
@@ -10470,7 +10863,8 @@ class CommSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implement
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             type: type ?? CommSystemsQueryBitfieldType(0),
-            commInterface: commInterface ?? CommSystemsQueryBitfieldCommInterface(0),
+            commInterface:
+                commInterface ?? CommSystemsQueryBitfieldCommInterface(0),
             model: model ?? CommSystemsQueryEnumModel(0),
             list: list ?? '');
     replace(_$result);
@@ -10560,20 +10954,35 @@ class _$TelemetryMsg extends TelemetryMsg {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        reqId?.hashCode), 
-        ttl?.hashCode), 
-        code?.hashCode), 
-        destination?.hashCode), 
-        source?.hashCode), 
-        acknowledge?.hashCode), 
-        status?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        type?.hashCode),
+                                    reqId?.hashCode),
+                                ttl?.hashCode),
+                            code?.hashCode),
+                        destination?.hashCode),
+                    source?.hashCode),
+                acknowledge?.hashCode),
+            status?.hashCode),
         data?.hashCode));
   }
 
@@ -10600,7 +11009,9 @@ class _$TelemetryMsg extends TelemetryMsg {
 
 /// Telemetry Message builder class
 ///
-class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TelemetryMsg, TelemetryMsgBuilder> {
+class TelemetryMsgBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TelemetryMsg, TelemetryMsgBuilder> {
   _$TelemetryMsg _$v;
 
   DateTime _timestamp;
@@ -10659,7 +11070,8 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
 
   TelemetryMsgBitfieldAcknowledge _acknowledge;
   TelemetryMsgBitfieldAcknowledge get acknowledge => _$this._acknowledge;
-  set acknowledge(TelemetryMsgBitfieldAcknowledge acknowledge) => _$this._acknowledge = acknowledge;
+  set acknowledge(TelemetryMsgBitfieldAcknowledge acknowledge) =>
+      _$this._acknowledge = acknowledge;
 
   TelemetryMsgEnumStatus _status;
   TelemetryMsgEnumStatus get status => _$this._status;
@@ -10676,7 +11088,8 @@ class TelemetryMsgBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  TelemetryMsgBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TelemetryMsgBuilder()..copyFromHeader(headerFrom);
+  TelemetryMsgBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TelemetryMsgBuilder()..copyFromHeader(headerFrom);
 
   TelemetryMsgBuilder get _$this {
     if (_$v != null) {
@@ -10784,19 +11197,20 @@ class _$LblRange extends LblRange {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (range == other.range
-            || range - other.range <= 1E-7);
+        (range == other.range || range - other.range <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            id?.hashCode),
         range?.hashCode));
   }
 
@@ -10816,7 +11230,9 @@ class _$LblRange extends LblRange {
 
 /// LBL Range builder class
 ///
-class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblRange, LblRangeBuilder> {
+class LblRangeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LblRange, LblRangeBuilder> {
   _$LblRange _$v;
 
   DateTime _timestamp;
@@ -10864,7 +11280,8 @@ class LblRangeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  LblRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblRangeBuilder()..copyFromHeader(headerFrom);
+  LblRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LblRangeBuilder()..copyFromHeader(headerFrom);
 
   LblRangeBuilder get _$this {
     if (_$v != null) {
@@ -10973,12 +11390,9 @@ class _$LblBeacon extends LblBeacon {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         beacon == other.beacon &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (depth == other.depth
-            || depth - other.depth <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
         queryChannel == other.queryChannel &&
         replyChannel == other.replyChannel &&
         transponderDelay == other.transponderDelay;
@@ -10986,18 +11400,27 @@ class _$LblBeacon extends LblBeacon {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        beacon?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        depth?.hashCode), 
-        queryChannel?.hashCode), 
-        replyChannel?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                beacon?.hashCode),
+                            lat?.hashCode),
+                        lon?.hashCode),
+                    depth?.hashCode),
+                queryChannel?.hashCode),
+            replyChannel?.hashCode),
         transponderDelay?.hashCode));
   }
 
@@ -11010,8 +11433,10 @@ class _$LblBeacon extends LblBeacon {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('beacon', '$beacon')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('depth', '$depth (m)')
           ..add('queryChannel', '$queryChannel')
           ..add('replyChannel', '$replyChannel')
@@ -11022,7 +11447,9 @@ class _$LblBeacon extends LblBeacon {
 
 /// LBL Beacon Configuration builder class
 ///
-class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblBeacon, LblBeaconBuilder> {
+class LblBeaconBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LblBeacon, LblBeaconBuilder> {
   _$LblBeacon _$v;
 
   DateTime _timestamp;
@@ -11081,7 +11508,8 @@ class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   int _transponderDelay;
   int get transponderDelay => _$this._transponderDelay;
-  set transponderDelay(int transponderDelay) => _$this._transponderDelay = transponderDelay;
+  set transponderDelay(int transponderDelay) =>
+      _$this._transponderDelay = transponderDelay;
 
   LblBeaconBuilder();
 
@@ -11090,7 +11518,8 @@ class LblBeaconBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  LblBeaconBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblBeaconBuilder()..copyFromHeader(headerFrom);
+  LblBeaconBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LblBeaconBuilder()..copyFromHeader(headerFrom);
 
   LblBeaconBuilder get _$this {
     if (_$v != null) {
@@ -11199,13 +11628,15 @@ class _$LblConfig extends LblConfig {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         beacons?.hashCode));
   }
 
@@ -11225,7 +11656,9 @@ class _$LblConfig extends LblConfig {
 
 /// LBL Configuration builder class
 ///
-class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblConfig, LblConfigBuilder> {
+class LblConfigBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LblConfig, LblConfigBuilder> {
   _$LblConfig _$v;
 
   DateTime _timestamp;
@@ -11273,7 +11706,8 @@ class LblConfigBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  LblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblConfigBuilder()..copyFromHeader(headerFrom);
+  LblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LblConfigBuilder()..copyFromHeader(headerFrom);
 
   LblConfigBuilder get _$this {
     if (_$v != null) {
@@ -11335,7 +11769,8 @@ class _$AcousticMessage extends AcousticMessage {
   @override
   final ImcMessage message;
 
-  factory _$AcousticMessage([void Function(AcousticMessageBuilder b) updates]) =>
+  factory _$AcousticMessage(
+          [void Function(AcousticMessageBuilder b) updates]) =>
       (AcousticMessageBuilder()..update(updates)).build();
 
   _$AcousticMessage._(
@@ -11368,12 +11803,13 @@ class _$AcousticMessage extends AcousticMessage {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         message?.hashCode));
   }
 
@@ -11392,7 +11828,10 @@ class _$AcousticMessage extends AcousticMessage {
 
 /// Acoustic Message builder class
 ///
-class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticMessage, AcousticMessageBuilder> {
+class AcousticMessageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AcousticMessage, AcousticMessageBuilder> {
   _$AcousticMessage _$v;
 
   DateTime _timestamp;
@@ -11436,7 +11875,8 @@ class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  AcousticMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticMessageBuilder()..copyFromHeader(headerFrom);
+  AcousticMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AcousticMessageBuilder()..copyFromHeader(headerFrom);
 
   AcousticMessageBuilder get _$this {
     if (_$v != null) {
@@ -11479,6 +11919,311 @@ class AcousticMessageBuilder extends Object with ImcBuilderHeaderPart implements
   }
 }
 
+/// Simulated Acoustic Message immutable class
+///
+class _$SimAcousticMessage extends SimAcousticMessage {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final double lat;
+  @override
+  final double lon;
+  @override
+  final double depth;
+  @override
+  final String sentence;
+  @override
+  final double txtime;
+  @override
+  final String modemType;
+  @override
+  final String sysSrc;
+  @override
+  final int seq;
+  @override
+  final String sysDst;
+  @override
+  final SimAcousticMessageBitfieldFlags flags;
+  @override
+  final List<int> data;
+
+  factory _$SimAcousticMessage(
+          [void Function(SimAcousticMessageBuilder b) updates]) =>
+      (SimAcousticMessageBuilder()..update(updates)).build();
+
+  _$SimAcousticMessage._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      this.lat,
+      this.lon,
+      this.depth,
+      this.sentence,
+      this.txtime,
+      this.modemType,
+      this.sysSrc,
+      this.seq,
+      this.sysDst,
+      this.flags,
+      this.data})
+      : super._();
+
+  @override
+  SimAcousticMessage rebuild(
+          void Function(SimAcousticMessageBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  SimAcousticMessageBuilder toBuilder() =>
+      SimAcousticMessageBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is SimAcousticMessage &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        sentence == other.sentence &&
+        (txtime == other.txtime || txtime - other.txtime <= 1E-7) &&
+        modemType == other.modemType &&
+        sysSrc == other.sysSrc &&
+        seq == other.seq &&
+        sysDst == other.sysDst &&
+        flags == other.flags &&
+        ListEquality().equals(data, other.data);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                lat?.hashCode),
+                                            lon?.hashCode),
+                                        depth?.hashCode),
+                                    sentence?.hashCode),
+                                txtime?.hashCode),
+                            modemType?.hashCode),
+                        sysSrc?.hashCode),
+                    seq?.hashCode),
+                sysDst?.hashCode),
+            flags?.hashCode),
+        data?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('SimAcousticMessage')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
+          ..add('lat', '$lat')
+          ..add('lon', '$lon')
+          ..add('depth', '$depth')
+          ..add('sentence', '$sentence')
+          ..add('txtime', '$txtime (s)')
+          ..add('modemType', '$modemType')
+          ..add('sysSrc', '$sysSrc')
+          ..add('seq', '$seq')
+          ..add('sysDst', '$sysDst')
+          ..add('flags', '$flags (Bitfield)')
+          ..add('data', '$data'))
+        .toString();
+  }
+}
+
+/// Simulated Acoustic Message builder class
+///
+class SimAcousticMessageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SimAcousticMessage, SimAcousticMessageBuilder> {
+  _$SimAcousticMessage _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  double _lat;
+  double get lat => _$this._lat;
+  set lat(double lat) => _$this._lat = lat;
+
+  double _lon;
+  double get lon => _$this._lon;
+  set lon(double lon) => _$this._lon = lon;
+
+  double _depth;
+  double get depth => _$this._depth;
+  set depth(double depth) => _$this._depth = depth;
+
+  String _sentence;
+  String get sentence => _$this._sentence;
+  set sentence(String sentence) => _$this._sentence = sentence;
+
+  double _txtime;
+  double get txtime => _$this._txtime;
+  set txtime(double txtime) => _$this._txtime = txtime;
+
+  String _modemType;
+  String get modemType => _$this._modemType;
+  set modemType(String modemType) => _$this._modemType = modemType;
+
+  String _sysSrc;
+  String get sysSrc => _$this._sysSrc;
+  set sysSrc(String sysSrc) => _$this._sysSrc = sysSrc;
+
+  int _seq;
+  int get seq => _$this._seq;
+  set seq(int seq) => _$this._seq = seq;
+
+  String _sysDst;
+  String get sysDst => _$this._sysDst;
+  set sysDst(String sysDst) => _$this._sysDst = sysDst;
+
+  SimAcousticMessageBitfieldFlags _flags;
+  SimAcousticMessageBitfieldFlags get flags => _$this._flags;
+  set flags(SimAcousticMessageBitfieldFlags flags) => _$this._flags = flags;
+
+  List<int> _data;
+  List<int> get data => _$this._data;
+  set data(List<int> data) => _$this._data = data;
+
+  SimAcousticMessageBuilder();
+
+  SimAcousticMessageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  SimAcousticMessageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SimAcousticMessageBuilder()..copyFromHeader(headerFrom);
+
+  SimAcousticMessageBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _lat = _$v.lat;
+      _lon = _$v.lon;
+      _depth = _$v.depth;
+      _sentence = _$v.sentence;
+      _txtime = _$v.txtime;
+      _modemType = _$v.modemType;
+      _sysSrc = _$v.sysSrc;
+      _seq = _$v.seq;
+      _sysDst = _$v.sysDst;
+      _flags = _$v.flags;
+      _data = _$v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(SimAcousticMessage other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$SimAcousticMessage;
+  }
+
+  @override
+  void update(void Function(SimAcousticMessageBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$SimAcousticMessage build() {
+    final _$result = _$v ??
+        _$SimAcousticMessage._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            depth: depth ?? 0,
+            sentence: sentence ?? '',
+            txtime: txtime ?? 0,
+            modemType: modemType ?? '',
+            sysSrc: sysSrc ?? '',
+            seq: seq ?? 0,
+            sysDst: sysDst ?? '',
+            flags: flags ?? SimAcousticMessageBitfieldFlags(0),
+            data: data ?? <int>[]);
+    replace(_$result);
+    return _$result;
+  }
+}
+
 /// Acoustic Operation immutable class
 ///
 class _$AcousticOperation extends AcousticOperation {
@@ -11502,7 +12247,8 @@ class _$AcousticOperation extends AcousticOperation {
   @override
   final ImcMessage msg;
 
-  factory _$AcousticOperation([void Function(AcousticOperationBuilder b) updates]) =>
+  factory _$AcousticOperation(
+          [void Function(AcousticOperationBuilder b) updates]) =>
       (AcousticOperationBuilder()..update(updates)).build();
 
   _$AcousticOperation._(
@@ -11518,11 +12264,13 @@ class _$AcousticOperation extends AcousticOperation {
       : super._();
 
   @override
-  AcousticOperation rebuild(void Function(AcousticOperationBuilder b) updates) =>
+  AcousticOperation rebuild(
+          void Function(AcousticOperationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AcousticOperationBuilder toBuilder() => AcousticOperationBuilder()..replace(this);
+  AcousticOperationBuilder toBuilder() =>
+      AcousticOperationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11535,22 +12283,25 @@ class _$AcousticOperation extends AcousticOperation {
         dstEnt == other.dstEnt &&
         op == other.op &&
         system == other.system &&
-        (range == other.range
-            || range - other.range <= 1E-7) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         msg == other.msg;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        system?.hashCode), 
-        range?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    op?.hashCode),
+                system?.hashCode),
+            range?.hashCode),
         msg?.hashCode));
   }
 
@@ -11572,7 +12323,10 @@ class _$AcousticOperation extends AcousticOperation {
 
 /// Acoustic Operation builder class
 ///
-class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticOperation, AcousticOperationBuilder> {
+class AcousticOperationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AcousticOperation, AcousticOperationBuilder> {
   _$AcousticOperation _$v;
 
   DateTime _timestamp;
@@ -11628,7 +12382,8 @@ class AcousticOperationBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  AcousticOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticOperationBuilder()..copyFromHeader(headerFrom);
+  AcousticOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AcousticOperationBuilder()..copyFromHeader(headerFrom);
 
   AcousticOperationBuilder get _$this {
     if (_$v != null) {
@@ -11691,8 +12446,8 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
   @override
   final int dstEnt;
 
-
-  factory _$AcousticSystemsQuery([void Function(AcousticSystemsQueryBuilder b) updates]) =>
+  factory _$AcousticSystemsQuery(
+          [void Function(AcousticSystemsQueryBuilder b) updates]) =>
       (AcousticSystemsQueryBuilder()..update(updates)).build();
 
   _$AcousticSystemsQuery._(
@@ -11704,11 +12459,13 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
       : super._();
 
   @override
-  AcousticSystemsQuery rebuild(void Function(AcousticSystemsQueryBuilder b) updates) =>
+  AcousticSystemsQuery rebuild(
+          void Function(AcousticSystemsQueryBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AcousticSystemsQueryBuilder toBuilder() => AcousticSystemsQueryBuilder()..replace(this);
+  AcousticSystemsQueryBuilder toBuilder() =>
+      AcousticSystemsQueryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11723,11 +12480,11 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -11745,7 +12502,12 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
 
 /// Acoustic Systems Query builder class
 ///
-class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticSystemsQuery, AcousticSystemsQueryBuilder> {
+class AcousticSystemsQueryBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AcousticSystemsQuery,
+            AcousticSystemsQueryBuilder> {
   _$AcousticSystemsQuery _$v;
 
   DateTime _timestamp;
@@ -11785,7 +12547,8 @@ class AcousticSystemsQueryBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  AcousticSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticSystemsQueryBuilder()..copyFromHeader(headerFrom);
+  AcousticSystemsQueryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AcousticSystemsQueryBuilder()..copyFromHeader(headerFrom);
 
   AcousticSystemsQueryBuilder get _$this {
     if (_$v != null) {
@@ -11843,7 +12606,8 @@ class _$AcousticSystems extends AcousticSystems {
   @override
   final String list;
 
-  factory _$AcousticSystems([void Function(AcousticSystemsBuilder b) updates]) =>
+  factory _$AcousticSystems(
+          [void Function(AcousticSystemsBuilder b) updates]) =>
       (AcousticSystemsBuilder()..update(updates)).build();
 
   _$AcousticSystems._(
@@ -11876,12 +12640,13 @@ class _$AcousticSystems extends AcousticSystems {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         list?.hashCode));
   }
 
@@ -11900,7 +12665,10 @@ class _$AcousticSystems extends AcousticSystems {
 
 /// Acoustic Systems builder class
 ///
-class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticSystems, AcousticSystemsBuilder> {
+class AcousticSystemsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AcousticSystems, AcousticSystemsBuilder> {
   _$AcousticSystems _$v;
 
   DateTime _timestamp;
@@ -11944,7 +12712,8 @@ class AcousticSystemsBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  AcousticSystemsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticSystemsBuilder()..copyFromHeader(headerFrom);
+  AcousticSystemsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AcousticSystemsBuilder()..copyFromHeader(headerFrom);
 
   AcousticSystemsBuilder get _$this {
     if (_$v != null) {
@@ -12039,21 +12808,23 @@ class _$AcousticLink extends AcousticLink {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         peer == other.peer &&
-        (rssi == other.rssi
-            || rssi - other.rssi <= 1E-7) &&
+        (rssi == other.rssi || rssi - other.rssi <= 1E-7) &&
         integrity == other.integrity;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        peer?.hashCode), 
-        rssi?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                peer?.hashCode),
+            rssi?.hashCode),
         integrity?.hashCode));
   }
 
@@ -12074,7 +12845,9 @@ class _$AcousticLink extends AcousticLink {
 
 /// Acoustic Link Quality builder class
 ///
-class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AcousticLink, AcousticLinkBuilder> {
+class AcousticLinkBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<AcousticLink, AcousticLinkBuilder> {
   _$AcousticLink _$v;
 
   DateTime _timestamp;
@@ -12126,7 +12899,8 @@ class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  AcousticLinkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AcousticLinkBuilder()..copyFromHeader(headerFrom);
+  AcousticLinkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AcousticLinkBuilder()..copyFromHeader(headerFrom);
 
   AcousticLinkBuilder get _$this {
     if (_$v != null) {
@@ -12168,6 +12942,459 @@ class AcousticLinkBuilder extends Object with ImcBuilderHeaderPart implements Bu
             peer: peer ?? '',
             rssi: rssi ?? 0,
             integrity: integrity ?? 0);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+/// Acoustic Transmission Request immutable class
+///
+class _$AcousticRequest extends AcousticRequest {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final int reqId;
+  @override
+  final String destination;
+  @override
+  final double timeout;
+  @override
+  final double range;
+  @override
+  final AcousticRequestEnumType type;
+  @override
+  final ImcMessage msg;
+
+  factory _$AcousticRequest(
+          [void Function(AcousticRequestBuilder b) updates]) =>
+      (AcousticRequestBuilder()..update(updates)).build();
+
+  _$AcousticRequest._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      this.reqId,
+      this.destination,
+      this.timeout,
+      this.range,
+      this.type,
+      this.msg})
+      : super._();
+
+  @override
+  AcousticRequest rebuild(void Function(AcousticRequestBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AcousticRequestBuilder toBuilder() => AcousticRequestBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AcousticRequest &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        reqId == other.reqId &&
+        destination == other.destination &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
+        (range == other.range || range - other.range <= 1E-7) &&
+        type == other.type &&
+        msg == other.msg;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            reqId?.hashCode),
+                        destination?.hashCode),
+                    timeout?.hashCode),
+                range?.hashCode),
+            type?.hashCode),
+        msg?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('AcousticRequest')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
+          ..add('reqId', '$reqId')
+          ..add('destination', '$destination')
+          ..add('timeout', '$timeout (s)')
+          ..add('range', '$range (m)')
+          ..add('type', '$type (Enumerated)')
+          ..add('msg', '$msg'))
+        .toString();
+  }
+}
+
+/// Acoustic Transmission Request builder class
+///
+class AcousticRequestBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AcousticRequest, AcousticRequestBuilder> {
+  _$AcousticRequest _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
+
+  String _destination;
+  String get destination => _$this._destination;
+  set destination(String destination) => _$this._destination = destination;
+
+  double _timeout;
+  double get timeout => _$this._timeout;
+  set timeout(double timeout) => _$this._timeout = timeout;
+
+  double _range;
+  double get range => _$this._range;
+  set range(double range) => _$this._range = range;
+
+  AcousticRequestEnumType _type;
+  AcousticRequestEnumType get type => _$this._type;
+  set type(AcousticRequestEnumType type) => _$this._type = type;
+
+  ImcMessage _msg;
+  ImcMessage get msg => _$this._msg;
+  set msg(ImcMessage msg) => _$this._msg = msg;
+
+  AcousticRequestBuilder();
+
+  AcousticRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  AcousticRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AcousticRequestBuilder()..copyFromHeader(headerFrom);
+
+  AcousticRequestBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _reqId = _$v.reqId;
+      _destination = _$v.destination;
+      _timeout = _$v.timeout;
+      _range = _$v.range;
+      _type = _$v.type;
+      _msg = _$v.msg;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(AcousticRequest other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$AcousticRequest;
+  }
+
+  @override
+  void update(void Function(AcousticRequestBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$AcousticRequest build() {
+    final _$result = _$v ??
+        _$AcousticRequest._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            destination: destination ?? '',
+            timeout: timeout ?? 0,
+            range: range ?? 0,
+            type: type ?? AcousticRequestEnumType(0),
+            msg: msg);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+/// Acoustic Transmission Status immutable class
+///
+class _$AcousticStatus extends AcousticStatus {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final int reqId;
+  @override
+  final AcousticStatusEnumType type;
+  @override
+  final AcousticStatusEnumStatus status;
+  @override
+  final String info;
+  @override
+  final double range;
+
+  factory _$AcousticStatus([void Function(AcousticStatusBuilder b) updates]) =>
+      (AcousticStatusBuilder()..update(updates)).build();
+
+  _$AcousticStatus._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      this.reqId,
+      this.type,
+      this.status,
+      this.info,
+      this.range})
+      : super._();
+
+  @override
+  AcousticStatus rebuild(void Function(AcousticStatusBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AcousticStatusBuilder toBuilder() => AcousticStatusBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AcousticStatus &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        reqId == other.reqId &&
+        type == other.type &&
+        status == other.status &&
+        info == other.info &&
+        (range == other.range || range - other.range <= 1E-7);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        reqId?.hashCode),
+                    type?.hashCode),
+                status?.hashCode),
+            info?.hashCode),
+        range?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('AcousticStatus')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
+          ..add('reqId', '$reqId')
+          ..add('type', '$type (Enumerated)')
+          ..add('status', '$status (Enumerated)')
+          ..add('info', '$info')
+          ..add('range', '$range (m)'))
+        .toString();
+  }
+}
+
+/// Acoustic Transmission Status builder class
+///
+class AcousticStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<AcousticStatus, AcousticStatusBuilder> {
+  _$AcousticStatus _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
+
+  AcousticStatusEnumType _type;
+  AcousticStatusEnumType get type => _$this._type;
+  set type(AcousticStatusEnumType type) => _$this._type = type;
+
+  AcousticStatusEnumStatus _status;
+  AcousticStatusEnumStatus get status => _$this._status;
+  set status(AcousticStatusEnumStatus status) => _$this._status = status;
+
+  String _info;
+  String get info => _$this._info;
+  set info(String info) => _$this._info = info;
+
+  double _range;
+  double get range => _$this._range;
+  set range(double range) => _$this._range = range;
+
+  AcousticStatusBuilder();
+
+  AcousticStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  AcousticStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AcousticStatusBuilder()..copyFromHeader(headerFrom);
+
+  AcousticStatusBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _reqId = _$v.reqId;
+      _type = _$v.type;
+      _status = _$v.status;
+      _info = _$v.info;
+      _range = _$v.range;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(AcousticStatus other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$AcousticStatus;
+  }
+
+  @override
+  void update(void Function(AcousticStatusBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$AcousticStatus build() {
+    final _$result = _$v ??
+        _$AcousticStatus._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            type: type ?? AcousticStatusEnumType(0),
+            status: status ?? AcousticStatusEnumStatus(0),
+            info: info ?? '',
+            range: range ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -12223,12 +13450,13 @@ class _$Rpm extends Rpm {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -12247,7 +13475,9 @@ class _$Rpm extends Rpm {
 
 /// Revolutions Per Minute builder class
 ///
-class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Rpm, RpmBuilder> {
+class RpmBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Rpm, RpmBuilder> {
   _$Rpm _$v;
 
   DateTime _timestamp;
@@ -12291,7 +13521,8 @@ class RpmBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  RpmBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RpmBuilder()..copyFromHeader(headerFrom);
+  RpmBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RpmBuilder()..copyFromHeader(headerFrom);
 
   RpmBuilder get _$this {
     if (_$v != null) {
@@ -12379,18 +13610,18 @@ class _$Voltage extends Voltage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -12409,7 +13640,9 @@ class _$Voltage extends Voltage {
 
 /// Voltage builder class
 ///
-class VoltageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Voltage, VoltageBuilder> {
+class VoltageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Voltage, VoltageBuilder> {
   _$Voltage _$v;
 
   DateTime _timestamp;
@@ -12453,7 +13686,8 @@ class VoltageBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  VoltageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VoltageBuilder()..copyFromHeader(headerFrom);
+  VoltageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VoltageBuilder()..copyFromHeader(headerFrom);
 
   VoltageBuilder get _$this {
     if (_$v != null) {
@@ -12541,18 +13775,18 @@ class _$Current extends Current {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -12571,7 +13805,9 @@ class _$Current extends Current {
 
 /// Current builder class
 ///
-class CurrentBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Current, CurrentBuilder> {
+class CurrentBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Current, CurrentBuilder> {
   _$Current _$v;
 
   DateTime _timestamp;
@@ -12615,7 +13851,8 @@ class CurrentBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  CurrentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CurrentBuilder()..copyFromHeader(headerFrom);
+  CurrentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CurrentBuilder()..copyFromHeader(headerFrom);
 
   CurrentBuilder get _$this {
     if (_$v != null) {
@@ -12753,52 +13990,58 @@ class _$GpsFix extends GpsFix {
         utcYear == other.utcYear &&
         utcMonth == other.utcMonth &&
         utcDay == other.utcDay &&
-        (utcTime == other.utcTime
-            || utcTime - other.utcTime <= 1E-7) &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (height == other.height
-            || height - other.height <= 1E-7) &&
+        (utcTime == other.utcTime || utcTime - other.utcTime <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
         satellites == other.satellites &&
-        (cog == other.cog
-            || cog - other.cog <= 1E-7) &&
-        (sog == other.sog
-            || sog - other.sog <= 1E-7) &&
-        (hdop == other.hdop
-            || hdop - other.hdop <= 1E-7) &&
-        (vdop == other.vdop
-            || vdop - other.vdop <= 1E-7) &&
-        (hacc == other.hacc
-            || hacc - other.hacc <= 1E-7) &&
-        (vacc == other.vacc
-            || vacc - other.vacc <= 1E-7);
+        (cog == other.cog || cog - other.cog <= 1E-7) &&
+        (sog == other.sog || sog - other.sog <= 1E-7) &&
+        (hdop == other.hdop || hdop - other.hdop <= 1E-7) &&
+        (vdop == other.vdop || vdop - other.vdop <= 1E-7) &&
+        (hacc == other.hacc || hacc - other.hacc <= 1E-7) &&
+        (vacc == other.vacc || vacc - other.vacc <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        validity?.hashCode), 
-        type?.hashCode), 
-        utcYear?.hashCode), 
-        utcMonth?.hashCode), 
-        utcDay?.hashCode), 
-        utcTime?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        height?.hashCode), 
-        satellites?.hashCode), 
-        cog?.hashCode), 
-        sog?.hashCode), 
-        hdop?.hashCode), 
-        vdop?.hashCode), 
-        hacc?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                                                                srcEnt?.hashCode),
+                                                                            dst?.hashCode),
+                                                                        dstEnt?.hashCode),
+                                                                    validity?.hashCode),
+                                                                type?.hashCode),
+                                                            utcYear?.hashCode),
+                                                        utcMonth?.hashCode),
+                                                    utcDay?.hashCode),
+                                                utcTime?.hashCode),
+                                            lat?.hashCode),
+                                        lon?.hashCode),
+                                    height?.hashCode),
+                                satellites?.hashCode),
+                            cog?.hashCode),
+                        sog?.hashCode),
+                    hdop?.hashCode),
+                vdop?.hashCode),
+            hacc?.hashCode),
         vacc?.hashCode));
   }
 
@@ -12816,11 +14059,14 @@ class _$GpsFix extends GpsFix {
           ..add('utcMonth', '$utcMonth')
           ..add('utcDay', '$utcDay')
           ..add('utcTime', '$utcTime (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('satellites', '$satellites')
-          ..add('cog', '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('cog',
+              '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
           ..add('sog', '$sog (m/s)')
           ..add('hdop', '$hdop')
           ..add('vdop', '$vdop')
@@ -12832,7 +14078,9 @@ class _$GpsFix extends GpsFix {
 
 /// GPS Fix builder class
 ///
-class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsFix, GpsFixBuilder> {
+class GpsFixBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GpsFix, GpsFixBuilder> {
   _$GpsFix _$v;
 
   DateTime _timestamp;
@@ -12936,7 +14184,8 @@ class GpsFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  GpsFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixBuilder()..copyFromHeader(headerFrom);
+  GpsFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GpsFixBuilder()..copyFromHeader(headerFrom);
 
   GpsFixBuilder get _$this {
     if (_$v != null) {
@@ -13066,30 +14315,33 @@ class _$EulerAngles extends EulerAngles {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time
-            || time - other.time <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7) &&
-        (psiMagnetic == other.psiMagnetic
-            || psiMagnetic - other.psiMagnetic <= 1E-7);
+        (time == other.time || time - other.time <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (psiMagnetic == other.psiMagnetic ||
+            psiMagnetic - other.psiMagnetic <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        time?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
-        psi?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        time?.hashCode),
+                    phi?.hashCode),
+                theta?.hashCode),
+            psi?.hashCode),
         psiMagnetic?.hashCode));
   }
 
@@ -13102,17 +14354,23 @@ class _$EulerAngles extends EulerAngles {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', '$time (s)')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psiMagnetic', '$psiMagnetic (rad)${psiMagnetic != null ? ' [${psiMagnetic * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psiMagnetic',
+              '$psiMagnetic (rad)${psiMagnetic != null ? ' [${psiMagnetic * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Euler Angles builder class
 ///
-class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EulerAngles, EulerAnglesBuilder> {
+class EulerAnglesBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<EulerAngles, EulerAnglesBuilder> {
   _$EulerAngles _$v;
 
   DateTime _timestamp;
@@ -13172,7 +14430,8 @@ class EulerAnglesBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  EulerAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EulerAnglesBuilder()..copyFromHeader(headerFrom);
+  EulerAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EulerAnglesBuilder()..copyFromHeader(headerFrom);
 
   EulerAnglesBuilder get _$this {
     if (_$v != null) {
@@ -13248,7 +14507,8 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
   @override
   final double timestep;
 
-  factory _$EulerAnglesDelta([void Function(EulerAnglesDeltaBuilder b) updates]) =>
+  factory _$EulerAnglesDelta(
+          [void Function(EulerAnglesDeltaBuilder b) updates]) =>
       (EulerAnglesDeltaBuilder()..update(updates)).build();
 
   _$EulerAnglesDelta._(
@@ -13269,7 +14529,8 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
       (toBuilder()..update(updates)).build();
 
   @override
-  EulerAnglesDeltaBuilder toBuilder() => EulerAnglesDeltaBuilder()..replace(this);
+  EulerAnglesDeltaBuilder toBuilder() =>
+      EulerAnglesDeltaBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -13280,30 +14541,32 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time
-            || time - other.time <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (timestep == other.timestep
-            || timestep - other.timestep <= 1E-7);
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (timestep == other.timestep || timestep - other.timestep <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        time?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        time?.hashCode),
+                    x?.hashCode),
+                y?.hashCode),
+            z?.hashCode),
         timestep?.hashCode));
   }
 
@@ -13316,9 +14579,12 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', '$time (s)')
-          ..add('x', '$x (rad)${x != null ? ' [${x * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('y', '$y (rad)${y != null ? ' [${y * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('z', '$z (rad)${z != null ? ' [${z * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('x',
+              '$x (rad)${x != null ? ' [${x * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('y',
+              '$y (rad)${y != null ? ' [${y * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('z',
+              '$z (rad)${z != null ? ' [${z * 180.0 / math.pi} (deg)]' : ''}')
           ..add('timestep', '$timestep (s)'))
         .toString();
   }
@@ -13326,7 +14592,10 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
 
 /// Euler Angles Delta builder class
 ///
-class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
+class EulerAnglesDeltaBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
   _$EulerAnglesDelta _$v;
 
   DateTime _timestamp;
@@ -13386,7 +14655,8 @@ class EulerAnglesDeltaBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  EulerAnglesDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EulerAnglesDeltaBuilder()..copyFromHeader(headerFrom);
+  EulerAnglesDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EulerAnglesDeltaBuilder()..copyFromHeader(headerFrom);
 
   EulerAnglesDeltaBuilder get _$this {
     if (_$v != null) {
@@ -13460,7 +14730,8 @@ class _$AngularVelocity extends AngularVelocity {
   @override
   final double z;
 
-  factory _$AngularVelocity([void Function(AngularVelocityBuilder b) updates]) =>
+  factory _$AngularVelocity(
+          [void Function(AngularVelocityBuilder b) updates]) =>
       (AngularVelocityBuilder()..update(updates)).build();
 
   _$AngularVelocity._(
@@ -13491,27 +14762,27 @@ class _$AngularVelocity extends AngularVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time
-            || time - other.time <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        time?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    time?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -13524,16 +14795,22 @@ class _$AngularVelocity extends AngularVelocity {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('time', '$time (s)')
-          ..add('x', '$x (rad/s)${x != null ? ' [${x * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('y', '$y (rad/s)${y != null ? ' [${y * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('z', '$z (rad/s)${z != null ? ' [${z * 180.0 / math.pi} (deg/s)]' : ''}'))
+          ..add('x',
+              '$x (rad/s)${x != null ? ' [${x * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('y',
+              '$y (rad/s)${y != null ? ' [${y * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('z',
+              '$z (rad/s)${z != null ? ' [${z * 180.0 / math.pi} (deg/s)]' : ''}'))
         .toString();
   }
 }
 
 /// Angular Velocity builder class
 ///
-class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AngularVelocity, AngularVelocityBuilder> {
+class AngularVelocityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AngularVelocity, AngularVelocityBuilder> {
   _$AngularVelocity _$v;
 
   DateTime _timestamp;
@@ -13589,7 +14866,8 @@ class AngularVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  AngularVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AngularVelocityBuilder()..copyFromHeader(headerFrom);
+  AngularVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AngularVelocityBuilder()..copyFromHeader(headerFrom);
 
   AngularVelocityBuilder get _$this {
     if (_$v != null) {
@@ -13692,27 +14970,27 @@ class _$Acceleration extends Acceleration {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time
-            || time - other.time <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        time?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    time?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -13734,7 +15012,9 @@ class _$Acceleration extends Acceleration {
 
 /// Acceleration builder class
 ///
-class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Acceleration, AccelerationBuilder> {
+class AccelerationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Acceleration, AccelerationBuilder> {
   _$Acceleration _$v;
 
   DateTime _timestamp;
@@ -13790,7 +15070,8 @@ class AccelerationBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  AccelerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AccelerationBuilder()..copyFromHeader(headerFrom);
+  AccelerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AccelerationBuilder()..copyFromHeader(headerFrom);
 
   AccelerationBuilder get _$this {
     if (_$v != null) {
@@ -13893,27 +15174,27 @@ class _$MagneticField extends MagneticField {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time
-            || time - other.time <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        time?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    time?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -13935,7 +15216,9 @@ class _$MagneticField extends MagneticField {
 
 /// Magnetic Field builder class
 ///
-class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MagneticField, MagneticFieldBuilder> {
+class MagneticFieldBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<MagneticField, MagneticFieldBuilder> {
   _$MagneticField _$v;
 
   DateTime _timestamp;
@@ -13991,7 +15274,8 @@ class MagneticFieldBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  MagneticFieldBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MagneticFieldBuilder()..copyFromHeader(headerFrom);
+  MagneticFieldBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MagneticFieldBuilder()..copyFromHeader(headerFrom);
 
   MagneticFieldBuilder get _$this {
     if (_$v != null) {
@@ -14095,25 +15379,26 @@ class _$GroundVelocity extends GroundVelocity {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         validity == other.validity &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        validity?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    validity?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -14135,7 +15420,9 @@ class _$GroundVelocity extends GroundVelocity {
 
 /// Ground Velocity builder class
 ///
-class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GroundVelocity, GroundVelocityBuilder> {
+class GroundVelocityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GroundVelocity, GroundVelocityBuilder> {
   _$GroundVelocity _$v;
 
   DateTime _timestamp;
@@ -14170,7 +15457,8 @@ class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements 
 
   GroundVelocityBitfieldValidity _validity;
   GroundVelocityBitfieldValidity get validity => _$this._validity;
-  set validity(GroundVelocityBitfieldValidity validity) => _$this._validity = validity;
+  set validity(GroundVelocityBitfieldValidity validity) =>
+      _$this._validity = validity;
 
   double _x;
   double get x => _$this._x;
@@ -14191,7 +15479,8 @@ class GroundVelocityBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  GroundVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroundVelocityBuilder()..copyFromHeader(headerFrom);
+  GroundVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GroundVelocityBuilder()..copyFromHeader(headerFrom);
 
   GroundVelocityBuilder get _$this {
     if (_$v != null) {
@@ -14295,25 +15584,26 @@ class _$WaterVelocity extends WaterVelocity {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         validity == other.validity &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        validity?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    validity?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -14335,7 +15625,9 @@ class _$WaterVelocity extends WaterVelocity {
 
 /// Water Velocity builder class
 ///
-class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<WaterVelocity, WaterVelocityBuilder> {
+class WaterVelocityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<WaterVelocity, WaterVelocityBuilder> {
   _$WaterVelocity _$v;
 
   DateTime _timestamp;
@@ -14370,7 +15662,8 @@ class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements B
 
   WaterVelocityBitfieldValidity _validity;
   WaterVelocityBitfieldValidity get validity => _$this._validity;
-  set validity(WaterVelocityBitfieldValidity validity) => _$this._validity = validity;
+  set validity(WaterVelocityBitfieldValidity validity) =>
+      _$this._validity = validity;
 
   double _x;
   double get x => _$this._x;
@@ -14391,7 +15684,8 @@ class WaterVelocityBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  WaterVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WaterVelocityBuilder()..copyFromHeader(headerFrom);
+  WaterVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      WaterVelocityBuilder()..copyFromHeader(headerFrom);
 
   WaterVelocityBuilder get _$this {
     if (_$v != null) {
@@ -14494,27 +15788,27 @@ class _$VelocityDelta extends VelocityDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time
-            || time - other.time <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        time?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    time?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -14536,7 +15830,9 @@ class _$VelocityDelta extends VelocityDelta {
 
 /// Velocity Delta builder class
 ///
-class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VelocityDelta, VelocityDeltaBuilder> {
+class VelocityDeltaBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<VelocityDelta, VelocityDeltaBuilder> {
   _$VelocityDelta _$v;
 
   DateTime _timestamp;
@@ -14592,7 +15888,8 @@ class VelocityDeltaBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  VelocityDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VelocityDeltaBuilder()..copyFromHeader(headerFrom);
+  VelocityDeltaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VelocityDeltaBuilder()..copyFromHeader(headerFrom);
 
   VelocityDeltaBuilder get _$this {
     if (_$v != null) {
@@ -14698,21 +15995,24 @@ class _$Distance extends Distance {
         validity == other.validity &&
         DeepCollectionEquality().equals(location, other.location) &&
         DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        validity?.hashCode), 
-        location?.hashCode), 
-        beamConfig?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    validity?.hashCode),
+                location?.hashCode),
+            beamConfig?.hashCode),
         value?.hashCode));
   }
 
@@ -14734,7 +16034,9 @@ class _$Distance extends Distance {
 
 /// Distance builder class
 ///
-class DistanceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Distance, DistanceBuilder> {
+class DistanceBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Distance, DistanceBuilder> {
   _$Distance _$v;
 
   DateTime _timestamp;
@@ -14777,7 +16079,8 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
 
   List<BeamConfig> _beamConfig;
   List<BeamConfig> get beamConfig => _$this._beamConfig;
-  set beamConfig(List<BeamConfig> beamConfig) => _$this._beamConfig = beamConfig;
+  set beamConfig(List<BeamConfig> beamConfig) =>
+      _$this._beamConfig = beamConfig;
 
   double _value;
   double get value => _$this._value;
@@ -14790,7 +16093,8 @@ class DistanceBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  DistanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DistanceBuilder()..copyFromHeader(headerFrom);
+  DistanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DistanceBuilder()..copyFromHeader(headerFrom);
 
   DistanceBuilder get _$this {
     if (_$v != null) {
@@ -14884,18 +16188,18 @@ class _$Temperature extends Temperature {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -14914,7 +16218,9 @@ class _$Temperature extends Temperature {
 
 /// Temperature builder class
 ///
-class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Temperature, TemperatureBuilder> {
+class TemperatureBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Temperature, TemperatureBuilder> {
   _$Temperature _$v;
 
   DateTime _timestamp;
@@ -14958,7 +16264,8 @@ class TemperatureBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  TemperatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TemperatureBuilder()..copyFromHeader(headerFrom);
+  TemperatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TemperatureBuilder()..copyFromHeader(headerFrom);
 
   TemperatureBuilder get _$this {
     if (_$v != null) {
@@ -15046,18 +16353,18 @@ class _$Pressure extends Pressure {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -15076,7 +16383,9 @@ class _$Pressure extends Pressure {
 
 /// Pressure builder class
 ///
-class PressureBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Pressure, PressureBuilder> {
+class PressureBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Pressure, PressureBuilder> {
   _$Pressure _$v;
 
   DateTime _timestamp;
@@ -15120,7 +16429,8 @@ class PressureBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  PressureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PressureBuilder()..copyFromHeader(headerFrom);
+  PressureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PressureBuilder()..copyFromHeader(headerFrom);
 
   PressureBuilder get _$this {
     if (_$v != null) {
@@ -15208,18 +16518,18 @@ class _$Depth extends Depth {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -15238,7 +16548,9 @@ class _$Depth extends Depth {
 
 /// Depth builder class
 ///
-class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Depth, DepthBuilder> {
+class DepthBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Depth, DepthBuilder> {
   _$Depth _$v;
 
   DateTime _timestamp;
@@ -15282,7 +16594,8 @@ class DepthBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  DepthBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DepthBuilder()..copyFromHeader(headerFrom);
+  DepthBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DepthBuilder()..copyFromHeader(headerFrom);
 
   DepthBuilder get _$this {
     if (_$v != null) {
@@ -15370,18 +16683,18 @@ class _$DepthOffset extends DepthOffset {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -15400,7 +16713,9 @@ class _$DepthOffset extends DepthOffset {
 
 /// Depth Offset builder class
 ///
-class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DepthOffset, DepthOffsetBuilder> {
+class DepthOffsetBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DepthOffset, DepthOffsetBuilder> {
   _$DepthOffset _$v;
 
   DateTime _timestamp;
@@ -15444,7 +16759,8 @@ class DepthOffsetBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  DepthOffsetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DepthOffsetBuilder()..copyFromHeader(headerFrom);
+  DepthOffsetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DepthOffsetBuilder()..copyFromHeader(headerFrom);
 
   DepthOffsetBuilder get _$this {
     if (_$v != null) {
@@ -15532,18 +16848,18 @@ class _$SoundSpeed extends SoundSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -15562,7 +16878,9 @@ class _$SoundSpeed extends SoundSpeed {
 
 /// Sound Speed builder class
 ///
-class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoundSpeed, SoundSpeedBuilder> {
+class SoundSpeedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SoundSpeed, SoundSpeedBuilder> {
   _$SoundSpeed _$v;
 
   DateTime _timestamp;
@@ -15606,7 +16924,8 @@ class SoundSpeedBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  SoundSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoundSpeedBuilder()..copyFromHeader(headerFrom);
+  SoundSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SoundSpeedBuilder()..copyFromHeader(headerFrom);
 
   SoundSpeedBuilder get _$this {
     if (_$v != null) {
@@ -15694,18 +17013,18 @@ class _$WaterDensity extends WaterDensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -15724,7 +17043,9 @@ class _$WaterDensity extends WaterDensity {
 
 /// Water Density builder class
 ///
-class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<WaterDensity, WaterDensityBuilder> {
+class WaterDensityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<WaterDensity, WaterDensityBuilder> {
   _$WaterDensity _$v;
 
   DateTime _timestamp;
@@ -15768,7 +17089,8 @@ class WaterDensityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  WaterDensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WaterDensityBuilder()..copyFromHeader(headerFrom);
+  WaterDensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      WaterDensityBuilder()..copyFromHeader(headerFrom);
 
   WaterDensityBuilder get _$this {
     if (_$v != null) {
@@ -15856,18 +17178,18 @@ class _$Conductivity extends Conductivity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -15886,7 +17208,9 @@ class _$Conductivity extends Conductivity {
 
 /// Conductivity builder class
 ///
-class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Conductivity, ConductivityBuilder> {
+class ConductivityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Conductivity, ConductivityBuilder> {
   _$Conductivity _$v;
 
   DateTime _timestamp;
@@ -15930,7 +17254,8 @@ class ConductivityBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  ConductivityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ConductivityBuilder()..copyFromHeader(headerFrom);
+  ConductivityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ConductivityBuilder()..copyFromHeader(headerFrom);
 
   ConductivityBuilder get _$this {
     if (_$v != null) {
@@ -16018,18 +17343,18 @@ class _$Salinity extends Salinity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -16048,7 +17373,9 @@ class _$Salinity extends Salinity {
 
 /// Salinity builder class
 ///
-class SalinityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Salinity, SalinityBuilder> {
+class SalinityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Salinity, SalinityBuilder> {
   _$Salinity _$v;
 
   DateTime _timestamp;
@@ -16092,7 +17419,8 @@ class SalinityBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  SalinityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SalinityBuilder()..copyFromHeader(headerFrom);
+  SalinityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SalinityBuilder()..copyFromHeader(headerFrom);
 
   SalinityBuilder get _$this {
     if (_$v != null) {
@@ -16186,24 +17514,25 @@ class _$WindSpeed extends WindSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (direction == other.direction
-            || direction - other.direction <= 1E-7) &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
-        (turbulence == other.turbulence
-            || turbulence - other.turbulence <= 1E-7);
+        (direction == other.direction || direction - other.direction <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
+        (turbulence == other.turbulence ||
+            turbulence - other.turbulence <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        direction?.hashCode), 
-        speed?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                direction?.hashCode),
+            speed?.hashCode),
         turbulence?.hashCode));
   }
 
@@ -16215,7 +17544,8 @@ class _$WindSpeed extends WindSpeed {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('direction', '$direction (rad)${direction != null ? ' [${direction * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('direction',
+              '$direction (rad)${direction != null ? ' [${direction * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed (m/s)')
           ..add('turbulence', '$turbulence (m/s)'))
         .toString();
@@ -16224,7 +17554,9 @@ class _$WindSpeed extends WindSpeed {
 
 /// Wind Speed builder class
 ///
-class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<WindSpeed, WindSpeedBuilder> {
+class WindSpeedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<WindSpeed, WindSpeedBuilder> {
   _$WindSpeed _$v;
 
   DateTime _timestamp;
@@ -16276,7 +17608,8 @@ class WindSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  WindSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => WindSpeedBuilder()..copyFromHeader(headerFrom);
+  WindSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      WindSpeedBuilder()..copyFromHeader(headerFrom);
 
   WindSpeedBuilder get _$this {
     if (_$v != null) {
@@ -16340,7 +17673,8 @@ class _$RelativeHumidity extends RelativeHumidity {
   @override
   final double value;
 
-  factory _$RelativeHumidity([void Function(RelativeHumidityBuilder b) updates]) =>
+  factory _$RelativeHumidity(
+          [void Function(RelativeHumidityBuilder b) updates]) =>
       (RelativeHumidityBuilder()..update(updates)).build();
 
   _$RelativeHumidity._(
@@ -16357,7 +17691,8 @@ class _$RelativeHumidity extends RelativeHumidity {
       (toBuilder()..update(updates)).build();
 
   @override
-  RelativeHumidityBuilder toBuilder() => RelativeHumidityBuilder()..replace(this);
+  RelativeHumidityBuilder toBuilder() =>
+      RelativeHumidityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -16368,18 +17703,18 @@ class _$RelativeHumidity extends RelativeHumidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -16398,7 +17733,10 @@ class _$RelativeHumidity extends RelativeHumidity {
 
 /// Relative Humidity builder class
 ///
-class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RelativeHumidity, RelativeHumidityBuilder> {
+class RelativeHumidityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<RelativeHumidity, RelativeHumidityBuilder> {
   _$RelativeHumidity _$v;
 
   DateTime _timestamp;
@@ -16442,7 +17780,8 @@ class RelativeHumidityBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  RelativeHumidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RelativeHumidityBuilder()..copyFromHeader(headerFrom);
+  RelativeHumidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RelativeHumidityBuilder()..copyFromHeader(headerFrom);
 
   RelativeHumidityBuilder get _$this {
     if (_$v != null) {
@@ -16535,12 +17874,13 @@ class _$DevDataText extends DevDataText {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -16559,7 +17899,9 @@ class _$DevDataText extends DevDataText {
 
 /// Device Data (Text) builder class
 ///
-class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevDataText, DevDataTextBuilder> {
+class DevDataTextBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DevDataText, DevDataTextBuilder> {
   _$DevDataText _$v;
 
   DateTime _timestamp;
@@ -16603,7 +17945,8 @@ class DevDataTextBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  DevDataTextBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevDataTextBuilder()..copyFromHeader(headerFrom);
+  DevDataTextBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DevDataTextBuilder()..copyFromHeader(headerFrom);
 
   DevDataTextBuilder get _$this {
     if (_$v != null) {
@@ -16696,12 +18039,13 @@ class _$DevDataBinary extends DevDataBinary {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -16720,7 +18064,9 @@ class _$DevDataBinary extends DevDataBinary {
 
 /// Device Data (Binary) builder class
 ///
-class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DevDataBinary, DevDataBinaryBuilder> {
+class DevDataBinaryBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DevDataBinary, DevDataBinaryBuilder> {
   _$DevDataBinary _$v;
 
   DateTime _timestamp;
@@ -16764,7 +18110,8 @@ class DevDataBinaryBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  DevDataBinaryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DevDataBinaryBuilder()..copyFromHeader(headerFrom);
+  DevDataBinaryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DevDataBinaryBuilder()..copyFromHeader(headerFrom);
 
   DevDataBinaryBuilder get _$this {
     if (_$v != null) {
@@ -16852,18 +18199,18 @@ class _$Force extends Force {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -16882,7 +18229,9 @@ class _$Force extends Force {
 
 /// Force builder class
 ///
-class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Force, ForceBuilder> {
+class ForceBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Force, ForceBuilder> {
   _$Force _$v;
 
   DateTime _timestamp;
@@ -16926,7 +18275,8 @@ class ForceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  ForceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ForceBuilder()..copyFromHeader(headerFrom);
+  ForceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ForceBuilder()..copyFromHeader(headerFrom);
 
   ForceBuilder get _$this {
     if (_$v != null) {
@@ -17040,27 +18390,37 @@ class _$SonarData extends SonarData {
         minRange == other.minRange &&
         maxRange == other.maxRange &&
         bitsPerPoint == other.bitsPerPoint &&
-        (scaleFactor == other.scaleFactor
-            || scaleFactor - other.scaleFactor <= 1E-7) &&
+        (scaleFactor == other.scaleFactor ||
+            scaleFactor - other.scaleFactor <= 1E-7) &&
         DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
         ListEquality().equals(data, other.data);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        frequency?.hashCode), 
-        minRange?.hashCode), 
-        maxRange?.hashCode), 
-        bitsPerPoint?.hashCode), 
-        scaleFactor?.hashCode), 
-        beamConfig?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    type?.hashCode),
+                                frequency?.hashCode),
+                            minRange?.hashCode),
+                        maxRange?.hashCode),
+                    bitsPerPoint?.hashCode),
+                scaleFactor?.hashCode),
+            beamConfig?.hashCode),
         data?.hashCode));
   }
 
@@ -17086,7 +18446,9 @@ class _$SonarData extends SonarData {
 
 /// Sonar Data builder class
 ///
-class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SonarData, SonarDataBuilder> {
+class SonarDataBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SonarData, SonarDataBuilder> {
   _$SonarData _$v;
 
   DateTime _timestamp;
@@ -17145,7 +18507,8 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   List<BeamConfig> _beamConfig;
   List<BeamConfig> get beamConfig => _$this._beamConfig;
-  set beamConfig(List<BeamConfig> beamConfig) => _$this._beamConfig = beamConfig;
+  set beamConfig(List<BeamConfig> beamConfig) =>
+      _$this._beamConfig = beamConfig;
 
   List<int> _data;
   List<int> get data => _$this._data;
@@ -17158,7 +18521,8 @@ class SonarDataBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  SonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SonarDataBuilder()..copyFromHeader(headerFrom);
+  SonarDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SonarDataBuilder()..copyFromHeader(headerFrom);
 
   SonarDataBuilder get _$this {
     if (_$v != null) {
@@ -17229,7 +18593,6 @@ class _$Pulse extends Pulse {
   @override
   final int dstEnt;
 
-
   factory _$Pulse([void Function(PulseBuilder b) updates]) =>
       (PulseBuilder()..update(updates)).build();
 
@@ -17261,11 +18624,11 @@ class _$Pulse extends Pulse {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -17283,7 +18646,9 @@ class _$Pulse extends Pulse {
 
 /// Pulse builder class
 ///
-class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Pulse, PulseBuilder> {
+class PulseBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Pulse, PulseBuilder> {
   _$Pulse _$v;
 
   DateTime _timestamp;
@@ -17323,7 +18688,8 @@ class PulseBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  PulseBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PulseBuilder()..copyFromHeader(headerFrom);
+  PulseBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PulseBuilder()..copyFromHeader(headerFrom);
 
   PulseBuilder get _$this {
     if (_$v != null) {
@@ -17381,7 +18747,8 @@ class _$PulseDetectionControl extends PulseDetectionControl {
   @override
   final PulseDetectionControlEnumOp op;
 
-  factory _$PulseDetectionControl([void Function(PulseDetectionControlBuilder b) updates]) =>
+  factory _$PulseDetectionControl(
+          [void Function(PulseDetectionControlBuilder b) updates]) =>
       (PulseDetectionControlBuilder()..update(updates)).build();
 
   _$PulseDetectionControl._(
@@ -17394,11 +18761,13 @@ class _$PulseDetectionControl extends PulseDetectionControl {
       : super._();
 
   @override
-  PulseDetectionControl rebuild(void Function(PulseDetectionControlBuilder b) updates) =>
+  PulseDetectionControl rebuild(
+          void Function(PulseDetectionControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PulseDetectionControlBuilder toBuilder() => PulseDetectionControlBuilder()..replace(this);
+  PulseDetectionControlBuilder toBuilder() =>
+      PulseDetectionControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -17414,12 +18783,13 @@ class _$PulseDetectionControl extends PulseDetectionControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         op?.hashCode));
   }
 
@@ -17438,7 +18808,12 @@ class _$PulseDetectionControl extends PulseDetectionControl {
 
 /// Pulse Detection Control builder class
 ///
-class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PulseDetectionControl, PulseDetectionControlBuilder> {
+class PulseDetectionControlBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PulseDetectionControl,
+            PulseDetectionControlBuilder> {
   _$PulseDetectionControl _$v;
 
   DateTime _timestamp;
@@ -17482,7 +18857,8 @@ class PulseDetectionControlBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  PulseDetectionControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PulseDetectionControlBuilder()..copyFromHeader(headerFrom);
+  PulseDetectionControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PulseDetectionControlBuilder()..copyFromHeader(headerFrom);
 
   PulseDetectionControlBuilder get _$this {
     if (_$v != null) {
@@ -17576,23 +18952,25 @@ class _$FuelLevel extends FuelLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
-        (confidence == other.confidence
-            || confidence - other.confidence <= 1E-7) &&
+        (value == other.value || value - other.value <= 1E-7) &&
+        (confidence == other.confidence ||
+            confidence - other.confidence <= 1E-7) &&
         opmodes == other.opmodes;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        value?.hashCode), 
-        confidence?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                value?.hashCode),
+            confidence?.hashCode),
         opmodes?.hashCode));
   }
 
@@ -17613,7 +18991,9 @@ class _$FuelLevel extends FuelLevel {
 
 /// Fuel Level builder class
 ///
-class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FuelLevel, FuelLevelBuilder> {
+class FuelLevelBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FuelLevel, FuelLevelBuilder> {
   _$FuelLevel _$v;
 
   DateTime _timestamp;
@@ -17665,7 +19045,8 @@ class FuelLevelBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  FuelLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FuelLevelBuilder()..copyFromHeader(headerFrom);
+  FuelLevelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FuelLevelBuilder()..copyFromHeader(headerFrom);
 
   FuelLevelBuilder get _$this {
     if (_$v != null) {
@@ -17800,58 +19181,61 @@ class _$GpsNavData extends GpsNavData {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         itow == other.itow &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (heightEll == other.heightEll
-            || heightEll - other.heightEll <= 1E-7) &&
-        (heightSea == other.heightSea
-            || heightSea - other.heightSea <= 1E-7) &&
-        (hacc == other.hacc
-            || hacc - other.hacc <= 1E-7) &&
-        (vacc == other.vacc
-            || vacc - other.vacc <= 1E-7) &&
-        (velN == other.velN
-            || velN - other.velN <= 1E-7) &&
-        (velE == other.velE
-            || velE - other.velE <= 1E-7) &&
-        (velD == other.velD
-            || velD - other.velD <= 1E-7) &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
-        (gspeed == other.gspeed
-            || gspeed - other.gspeed <= 1E-7) &&
-        (heading == other.heading
-            || heading - other.heading <= 1E-7) &&
-        (sacc == other.sacc
-            || sacc - other.sacc <= 1E-7) &&
-        (cacc == other.cacc
-            || cacc - other.cacc <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (heightEll == other.heightEll || heightEll - other.heightEll <= 1E-7) &&
+        (heightSea == other.heightSea || heightSea - other.heightSea <= 1E-7) &&
+        (hacc == other.hacc || hacc - other.hacc <= 1E-7) &&
+        (vacc == other.vacc || vacc - other.vacc <= 1E-7) &&
+        (velN == other.velN || velN - other.velN <= 1E-7) &&
+        (velE == other.velE || velE - other.velE <= 1E-7) &&
+        (velD == other.velD || velD - other.velD <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
+        (gspeed == other.gspeed || gspeed - other.gspeed <= 1E-7) &&
+        (heading == other.heading || heading - other.heading <= 1E-7) &&
+        (sacc == other.sacc || sacc - other.sacc <= 1E-7) &&
+        (cacc == other.cacc || cacc - other.cacc <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        itow?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        heightEll?.hashCode), 
-        heightSea?.hashCode), 
-        hacc?.hashCode), 
-        vacc?.hashCode), 
-        velN?.hashCode), 
-        velE?.hashCode), 
-        velD?.hashCode), 
-        speed?.hashCode), 
-        gspeed?.hashCode), 
-        heading?.hashCode), 
-        sacc?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc(0, timestamp?.hashCode),
+                                                                                src?.hashCode),
+                                                                            srcEnt?.hashCode),
+                                                                        dst?.hashCode),
+                                                                    dstEnt?.hashCode),
+                                                                itow?.hashCode),
+                                                            lat?.hashCode),
+                                                        lon?.hashCode),
+                                                    heightEll?.hashCode),
+                                                heightSea?.hashCode),
+                                            hacc?.hashCode),
+                                        vacc?.hashCode),
+                                    velN?.hashCode),
+                                velE?.hashCode),
+                            velD?.hashCode),
+                        speed?.hashCode),
+                    gspeed?.hashCode),
+                heading?.hashCode),
+            sacc?.hashCode),
         cacc?.hashCode));
   }
 
@@ -17864,8 +19248,10 @@ class _$GpsNavData extends GpsNavData {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('itow', '$itow (ms)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('heightEll', '$heightEll (m)')
           ..add('heightSea', '$heightSea (m)')
           ..add('hacc', '$hacc (m)')
@@ -17875,16 +19261,20 @@ class _$GpsNavData extends GpsNavData {
           ..add('velD', '$velD (m/s)')
           ..add('speed', '$speed (m/s)')
           ..add('gspeed', '$gspeed (m/s)')
-          ..add('heading', '$heading (rad)${heading != null ? ' [${heading * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('heading',
+              '$heading (rad)${heading != null ? ' [${heading * 180.0 / math.pi} (deg)]' : ''}')
           ..add('sacc', '$sacc (m/s)')
-          ..add('cacc', '$cacc (rad)${cacc != null ? ' [${cacc * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('cacc',
+              '$cacc (rad)${cacc != null ? ' [${cacc * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// GPS Navigation Data builder class
 ///
-class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsNavData, GpsNavDataBuilder> {
+class GpsNavDataBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GpsNavData, GpsNavDataBuilder> {
   _$GpsNavData _$v;
 
   DateTime _timestamp;
@@ -17984,7 +19374,8 @@ class GpsNavDataBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  GpsNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsNavDataBuilder()..copyFromHeader(headerFrom);
+  GpsNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GpsNavDataBuilder()..copyFromHeader(headerFrom);
 
   GpsNavDataBuilder get _$this {
     if (_$v != null) {
@@ -18104,19 +19495,20 @@ class _$ServoPosition extends ServoPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            id?.hashCode),
         value?.hashCode));
   }
 
@@ -18129,14 +19521,17 @@ class _$ServoPosition extends ServoPosition {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
-          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value',
+              '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Servo Position builder class
 ///
-class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ServoPosition, ServoPositionBuilder> {
+class ServoPositionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ServoPosition, ServoPositionBuilder> {
   _$ServoPosition _$v;
 
   DateTime _timestamp;
@@ -18184,7 +19579,8 @@ class ServoPositionBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ServoPositionBuilder()..copyFromHeader(headerFrom);
+  ServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ServoPositionBuilder()..copyFromHeader(headerFrom);
 
   ServoPositionBuilder get _$this {
     if (_$v != null) {
@@ -18289,33 +19685,35 @@ class _$DeviceState extends DeviceState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            x?.hashCode),
+                        y?.hashCode),
+                    z?.hashCode),
+                phi?.hashCode),
+            theta?.hashCode),
         psi?.hashCode));
   }
 
@@ -18330,16 +19728,21 @@ class _$DeviceState extends DeviceState {
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Device State builder class
 ///
-class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DeviceState, DeviceStateBuilder> {
+class DeviceStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DeviceState, DeviceStateBuilder> {
   _$DeviceState _$v;
 
   DateTime _timestamp;
@@ -18403,7 +19806,8 @@ class DeviceStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  DeviceStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DeviceStateBuilder()..copyFromHeader(headerFrom);
+  DeviceStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DeviceStateBuilder()..copyFromHeader(headerFrom);
 
   DeviceStateBuilder get _$this {
     if (_$v != null) {
@@ -18504,21 +19908,22 @@ class _$BeamConfig extends BeamConfig {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (beamWidth == other.beamWidth
-            || beamWidth - other.beamWidth <= 1E-7) &&
-        (beamHeight == other.beamHeight
-            || beamHeight - other.beamHeight <= 1E-7);
+        (beamWidth == other.beamWidth || beamWidth - other.beamWidth <= 1E-7) &&
+        (beamHeight == other.beamHeight ||
+            beamHeight - other.beamHeight <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        beamWidth?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            beamWidth?.hashCode),
         beamHeight?.hashCode));
   }
 
@@ -18530,15 +19935,19 @@ class _$BeamConfig extends BeamConfig {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('beamWidth', '$beamWidth (rad)${beamWidth != null ? ' [${beamWidth * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('beamHeight', '$beamHeight (rad)${beamHeight != null ? ' [${beamHeight * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('beamWidth',
+              '$beamWidth (rad)${beamWidth != null ? ' [${beamWidth * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('beamHeight',
+              '$beamHeight (rad)${beamHeight != null ? ' [${beamHeight * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Beam Configuration builder class
 ///
-class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<BeamConfig, BeamConfigBuilder> {
+class BeamConfigBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<BeamConfig, BeamConfigBuilder> {
   _$BeamConfig _$v;
 
   DateTime _timestamp;
@@ -18586,7 +19995,8 @@ class BeamConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  BeamConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => BeamConfigBuilder()..copyFromHeader(headerFrom);
+  BeamConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      BeamConfigBuilder()..copyFromHeader(headerFrom);
 
   BeamConfigBuilder get _$this {
     if (_$v != null) {
@@ -18681,12 +20091,13 @@ class _$DataSanity extends DataSanity {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         sane?.hashCode));
   }
 
@@ -18705,7 +20116,9 @@ class _$DataSanity extends DataSanity {
 
 /// Data Sanity builder class
 ///
-class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DataSanity, DataSanityBuilder> {
+class DataSanityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DataSanity, DataSanityBuilder> {
   _$DataSanity _$v;
 
   DateTime _timestamp;
@@ -18749,7 +20162,8 @@ class DataSanityBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  DataSanityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DataSanityBuilder()..copyFromHeader(headerFrom);
+  DataSanityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DataSanityBuilder()..copyFromHeader(headerFrom);
 
   DataSanityBuilder get _$this {
     if (_$v != null) {
@@ -18837,18 +20251,18 @@ class _$RhodamineDye extends RhodamineDye {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -18867,7 +20281,9 @@ class _$RhodamineDye extends RhodamineDye {
 
 /// Rhodamine Dye builder class
 ///
-class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RhodamineDye, RhodamineDyeBuilder> {
+class RhodamineDyeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RhodamineDye, RhodamineDyeBuilder> {
   _$RhodamineDye _$v;
 
   DateTime _timestamp;
@@ -18911,7 +20327,8 @@ class RhodamineDyeBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  RhodamineDyeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RhodamineDyeBuilder()..copyFromHeader(headerFrom);
+  RhodamineDyeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RhodamineDyeBuilder()..copyFromHeader(headerFrom);
 
   RhodamineDyeBuilder get _$this {
     if (_$v != null) {
@@ -18999,18 +20416,18 @@ class _$CrudeOil extends CrudeOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -19029,7 +20446,9 @@ class _$CrudeOil extends CrudeOil {
 
 /// Crude Oil builder class
 ///
-class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CrudeOil, CrudeOilBuilder> {
+class CrudeOilBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CrudeOil, CrudeOilBuilder> {
   _$CrudeOil _$v;
 
   DateTime _timestamp;
@@ -19073,7 +20492,8 @@ class CrudeOilBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  CrudeOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CrudeOilBuilder()..copyFromHeader(headerFrom);
+  CrudeOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CrudeOilBuilder()..copyFromHeader(headerFrom);
 
   CrudeOilBuilder get _$this {
     if (_$v != null) {
@@ -19161,18 +20581,18 @@ class _$FineOil extends FineOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -19191,7 +20611,9 @@ class _$FineOil extends FineOil {
 
 /// Fine Oil builder class
 ///
-class FineOilBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FineOil, FineOilBuilder> {
+class FineOilBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FineOil, FineOilBuilder> {
   _$FineOil _$v;
 
   DateTime _timestamp;
@@ -19235,7 +20657,8 @@ class FineOilBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  FineOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FineOilBuilder()..copyFromHeader(headerFrom);
+  FineOilBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FineOilBuilder()..copyFromHeader(headerFrom);
 
   FineOilBuilder get _$this {
     if (_$v != null) {
@@ -19323,18 +20746,18 @@ class _$Turbidity extends Turbidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -19353,7 +20776,9 @@ class _$Turbidity extends Turbidity {
 
 /// Turbidity builder class
 ///
-class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Turbidity, TurbidityBuilder> {
+class TurbidityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Turbidity, TurbidityBuilder> {
   _$Turbidity _$v;
 
   DateTime _timestamp;
@@ -19397,7 +20822,8 @@ class TurbidityBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  TurbidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TurbidityBuilder()..copyFromHeader(headerFrom);
+  TurbidityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TurbidityBuilder()..copyFromHeader(headerFrom);
 
   TurbidityBuilder get _$this {
     if (_$v != null) {
@@ -19485,18 +20911,18 @@ class _$Chlorophyll extends Chlorophyll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -19515,7 +20941,9 @@ class _$Chlorophyll extends Chlorophyll {
 
 /// Chlorophyll builder class
 ///
-class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Chlorophyll, ChlorophyllBuilder> {
+class ChlorophyllBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Chlorophyll, ChlorophyllBuilder> {
   _$Chlorophyll _$v;
 
   DateTime _timestamp;
@@ -19559,7 +20987,8 @@ class ChlorophyllBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  ChlorophyllBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ChlorophyllBuilder()..copyFromHeader(headerFrom);
+  ChlorophyllBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ChlorophyllBuilder()..copyFromHeader(headerFrom);
 
   ChlorophyllBuilder get _$this {
     if (_$v != null) {
@@ -19647,18 +21076,18 @@ class _$Fluorescein extends Fluorescein {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -19677,7 +21106,9 @@ class _$Fluorescein extends Fluorescein {
 
 /// Fluorescein builder class
 ///
-class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Fluorescein, FluoresceinBuilder> {
+class FluoresceinBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Fluorescein, FluoresceinBuilder> {
   _$Fluorescein _$v;
 
   DateTime _timestamp;
@@ -19721,7 +21152,8 @@ class FluoresceinBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  FluoresceinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FluoresceinBuilder()..copyFromHeader(headerFrom);
+  FluoresceinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FluoresceinBuilder()..copyFromHeader(headerFrom);
 
   FluoresceinBuilder get _$this {
     if (_$v != null) {
@@ -19809,18 +21241,18 @@ class _$Phycocyanin extends Phycocyanin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -19839,7 +21271,9 @@ class _$Phycocyanin extends Phycocyanin {
 
 /// Phycocyanin builder class
 ///
-class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Phycocyanin, PhycocyaninBuilder> {
+class PhycocyaninBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Phycocyanin, PhycocyaninBuilder> {
   _$Phycocyanin _$v;
 
   DateTime _timestamp;
@@ -19883,7 +21317,8 @@ class PhycocyaninBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  PhycocyaninBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PhycocyaninBuilder()..copyFromHeader(headerFrom);
+  PhycocyaninBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PhycocyaninBuilder()..copyFromHeader(headerFrom);
 
   PhycocyaninBuilder get _$this {
     if (_$v != null) {
@@ -19971,18 +21406,18 @@ class _$Phycoerythrin extends Phycoerythrin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -20001,7 +21436,9 @@ class _$Phycoerythrin extends Phycoerythrin {
 
 /// Phycoerythrin builder class
 ///
-class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Phycoerythrin, PhycoerythrinBuilder> {
+class PhycoerythrinBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Phycoerythrin, PhycoerythrinBuilder> {
   _$Phycoerythrin _$v;
 
   DateTime _timestamp;
@@ -20045,7 +21482,8 @@ class PhycoerythrinBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  PhycoerythrinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PhycoerythrinBuilder()..copyFromHeader(headerFrom);
+  PhycoerythrinBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PhycoerythrinBuilder()..copyFromHeader(headerFrom);
 
   PhycoerythrinBuilder get _$this {
     if (_$v != null) {
@@ -20178,52 +21616,60 @@ class _$GpsFixRtk extends GpsFixRtk {
         validity == other.validity &&
         type == other.type &&
         tow == other.tow &&
-        (baseLat == other.baseLat
-            || baseLat - other.baseLat <= 1E-7) &&
-        (baseLon == other.baseLon
-            || baseLon - other.baseLon <= 1E-7) &&
-        (baseHeight == other.baseHeight
-            || baseHeight - other.baseHeight <= 1E-7) &&
-        (n == other.n
-            || n - other.n <= 1E-7) &&
-        (e == other.e
-            || e - other.e <= 1E-7) &&
-        (d == other.d
-            || d - other.d <= 1E-7) &&
-        (vN == other.vN
-            || vN - other.vN <= 1E-7) &&
-        (vE == other.vE
-            || vE - other.vE <= 1E-7) &&
-        (vD == other.vD
-            || vD - other.vD <= 1E-7) &&
+        (baseLat == other.baseLat || baseLat - other.baseLat <= 1E-7) &&
+        (baseLon == other.baseLon || baseLon - other.baseLon <= 1E-7) &&
+        (baseHeight == other.baseHeight ||
+            baseHeight - other.baseHeight <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7) &&
+        (e == other.e || e - other.e <= 1E-7) &&
+        (d == other.d || d - other.d <= 1E-7) &&
+        (vN == other.vN || vN - other.vN <= 1E-7) &&
+        (vE == other.vE || vE - other.vE <= 1E-7) &&
+        (vD == other.vD || vD - other.vD <= 1E-7) &&
         satellites == other.satellites &&
         iarHyp == other.iarHyp &&
-        (iarRatio == other.iarRatio
-            || iarRatio - other.iarRatio <= 1E-7);
+        (iarRatio == other.iarRatio || iarRatio - other.iarRatio <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        validity?.hashCode), 
-        type?.hashCode), 
-        tow?.hashCode), 
-        baseLat?.hashCode), 
-        baseLon?.hashCode), 
-        baseHeight?.hashCode), 
-        n?.hashCode), 
-        e?.hashCode), 
-        d?.hashCode), 
-        vN?.hashCode), 
-        vE?.hashCode), 
-        vD?.hashCode), 
-        satellites?.hashCode), 
-        iarHyp?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc(0, timestamp?.hashCode),
+                                                                                src?.hashCode),
+                                                                            srcEnt?.hashCode),
+                                                                        dst?.hashCode),
+                                                                    dstEnt?.hashCode),
+                                                                validity?.hashCode),
+                                                            type?.hashCode),
+                                                        tow?.hashCode),
+                                                    baseLat?.hashCode),
+                                                baseLon?.hashCode),
+                                            baseHeight?.hashCode),
+                                        n?.hashCode),
+                                    e?.hashCode),
+                                d?.hashCode),
+                            vN?.hashCode),
+                        vE?.hashCode),
+                    vD?.hashCode),
+                satellites?.hashCode),
+            iarHyp?.hashCode),
         iarRatio?.hashCode));
   }
 
@@ -20238,8 +21684,10 @@ class _$GpsFixRtk extends GpsFixRtk {
           ..add('validity', '$validity (Bitfield)')
           ..add('type', '$type (Enumerated)')
           ..add('tow', '$tow')
-          ..add('baseLat', '$baseLat (rad)${baseLat != null ? ' [${baseLat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('baseLon', '$baseLon (rad)${baseLon != null ? ' [${baseLon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('baseLat',
+              '$baseLat (rad)${baseLat != null ? ' [${baseLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('baseLon',
+              '$baseLon (rad)${baseLon != null ? ' [${baseLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('baseHeight', '$baseHeight (m)')
           ..add('n', '$n (m)')
           ..add('e', '$e (m)')
@@ -20256,7 +21704,9 @@ class _$GpsFixRtk extends GpsFixRtk {
 
 /// GPS Fix RTK builder class
 ///
-class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsFixRtk, GpsFixRtkBuilder> {
+class GpsFixRtkBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GpsFixRtk, GpsFixRtkBuilder> {
   _$GpsFixRtk _$v;
 
   DateTime _timestamp;
@@ -20291,7 +21741,8 @@ class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   GpsFixRtkBitfieldValidity _validity;
   GpsFixRtkBitfieldValidity get validity => _$this._validity;
-  set validity(GpsFixRtkBitfieldValidity validity) => _$this._validity = validity;
+  set validity(GpsFixRtkBitfieldValidity validity) =>
+      _$this._validity = validity;
 
   GpsFixRtkEnumType _type;
   GpsFixRtkEnumType get type => _$this._type;
@@ -20356,7 +21807,8 @@ class GpsFixRtkBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  GpsFixRtkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixRtkBuilder()..copyFromHeader(headerFrom);
+  GpsFixRtkBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GpsFixRtkBuilder()..copyFromHeader(headerFrom);
 
   GpsFixRtkBuilder get _$this {
     if (_$v != null) {
@@ -20446,7 +21898,8 @@ class _$ExternalNavData extends ExternalNavData {
   @override
   final ExternalNavDataEnumType type;
 
-  factory _$ExternalNavData([void Function(ExternalNavDataBuilder b) updates]) =>
+  factory _$ExternalNavData(
+          [void Function(ExternalNavDataBuilder b) updates]) =>
       (ExternalNavDataBuilder()..update(updates)).build();
 
   _$ExternalNavData._(
@@ -20481,13 +21934,15 @@ class _$ExternalNavData extends ExternalNavData {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        state?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            state?.hashCode),
         type?.hashCode));
   }
 
@@ -20507,7 +21962,10 @@ class _$ExternalNavData extends ExternalNavData {
 
 /// External Navigation Data builder class
 ///
-class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ExternalNavData, ExternalNavDataBuilder> {
+class ExternalNavDataBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<ExternalNavData, ExternalNavDataBuilder> {
   _$ExternalNavData _$v;
 
   DateTime _timestamp;
@@ -20555,7 +22013,8 @@ class ExternalNavDataBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  ExternalNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ExternalNavDataBuilder()..copyFromHeader(headerFrom);
+  ExternalNavDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ExternalNavDataBuilder()..copyFromHeader(headerFrom);
 
   ExternalNavDataBuilder get _$this {
     if (_$v != null) {
@@ -20617,7 +22076,8 @@ class _$DissolvedOxygen extends DissolvedOxygen {
   @override
   final double value;
 
-  factory _$DissolvedOxygen([void Function(DissolvedOxygenBuilder b) updates]) =>
+  factory _$DissolvedOxygen(
+          [void Function(DissolvedOxygenBuilder b) updates]) =>
       (DissolvedOxygenBuilder()..update(updates)).build();
 
   _$DissolvedOxygen._(
@@ -20645,18 +22105,18 @@ class _$DissolvedOxygen extends DissolvedOxygen {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -20675,7 +22135,10 @@ class _$DissolvedOxygen extends DissolvedOxygen {
 
 /// Dissolved Oxygen builder class
 ///
-class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DissolvedOxygen, DissolvedOxygenBuilder> {
+class DissolvedOxygenBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DissolvedOxygen, DissolvedOxygenBuilder> {
   _$DissolvedOxygen _$v;
 
   DateTime _timestamp;
@@ -20719,7 +22182,8 @@ class DissolvedOxygenBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  DissolvedOxygenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DissolvedOxygenBuilder()..copyFromHeader(headerFrom);
+  DissolvedOxygenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DissolvedOxygenBuilder()..copyFromHeader(headerFrom);
 
   DissolvedOxygenBuilder get _$this {
     if (_$v != null) {
@@ -20807,18 +22271,18 @@ class _$AirSaturation extends AirSaturation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -20837,7 +22301,9 @@ class _$AirSaturation extends AirSaturation {
 
 /// Air Saturation builder class
 ///
-class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AirSaturation, AirSaturationBuilder> {
+class AirSaturationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<AirSaturation, AirSaturationBuilder> {
   _$AirSaturation _$v;
 
   DateTime _timestamp;
@@ -20881,7 +22347,8 @@ class AirSaturationBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  AirSaturationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AirSaturationBuilder()..copyFromHeader(headerFrom);
+  AirSaturationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AirSaturationBuilder()..copyFromHeader(headerFrom);
 
   AirSaturationBuilder get _$this {
     if (_$v != null) {
@@ -20969,18 +22436,18 @@ class _$Throttle extends Throttle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -20999,7 +22466,9 @@ class _$Throttle extends Throttle {
 
 /// Throttle builder class
 ///
-class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Throttle, ThrottleBuilder> {
+class ThrottleBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Throttle, ThrottleBuilder> {
   _$Throttle _$v;
 
   DateTime _timestamp;
@@ -21043,7 +22512,8 @@ class ThrottleBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  ThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ThrottleBuilder()..copyFromHeader(headerFrom);
+  ThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ThrottleBuilder()..copyFromHeader(headerFrom);
 
   ThrottleBuilder get _$this {
     if (_$v != null) {
@@ -21131,18 +22601,18 @@ class _$PH extends PH {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -21161,7 +22631,9 @@ class _$PH extends PH {
 
 /// pH builder class
 ///
-class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PH, PHBuilder> {
+class PHBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PH, PHBuilder> {
   _$PH _$v;
 
   DateTime _timestamp;
@@ -21205,7 +22677,8 @@ class PHBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithI
   }
 
   @override
-  PHBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PHBuilder()..copyFromHeader(headerFrom);
+  PHBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PHBuilder()..copyFromHeader(headerFrom);
 
   PHBuilder get _$this {
     if (_$v != null) {
@@ -21293,18 +22766,18 @@ class _$Redox extends Redox {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -21323,7 +22796,9 @@ class _$Redox extends Redox {
 
 /// Redox Potential builder class
 ///
-class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Redox, RedoxBuilder> {
+class RedoxBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Redox, RedoxBuilder> {
   _$Redox _$v;
 
   DateTime _timestamp;
@@ -21367,7 +22842,8 @@ class RedoxBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  RedoxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RedoxBuilder()..copyFromHeader(headerFrom);
+  RedoxBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RedoxBuilder()..copyFromHeader(headerFrom);
 
   RedoxBuilder get _$this {
     if (_$v != null) {
@@ -21468,14 +22944,17 @@ class _$CameraZoom extends CameraZoom {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
-        zoom?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                id?.hashCode),
+            zoom?.hashCode),
         action?.hashCode));
   }
 
@@ -21496,7 +22975,9 @@ class _$CameraZoom extends CameraZoom {
 
 /// Camera Zoom builder class
 ///
-class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CameraZoom, CameraZoomBuilder> {
+class CameraZoomBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CameraZoom, CameraZoomBuilder> {
   _$CameraZoom _$v;
 
   DateTime _timestamp;
@@ -21548,7 +23029,8 @@ class CameraZoomBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  CameraZoomBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CameraZoomBuilder()..copyFromHeader(headerFrom);
+  CameraZoomBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CameraZoomBuilder()..copyFromHeader(headerFrom);
 
   CameraZoomBuilder get _$this {
     if (_$v != null) {
@@ -21614,7 +23096,8 @@ class _$SetThrusterActuation extends SetThrusterActuation {
   @override
   final double value;
 
-  factory _$SetThrusterActuation([void Function(SetThrusterActuationBuilder b) updates]) =>
+  factory _$SetThrusterActuation(
+          [void Function(SetThrusterActuationBuilder b) updates]) =>
       (SetThrusterActuationBuilder()..update(updates)).build();
 
   _$SetThrusterActuation._(
@@ -21628,11 +23111,13 @@ class _$SetThrusterActuation extends SetThrusterActuation {
       : super._();
 
   @override
-  SetThrusterActuation rebuild(void Function(SetThrusterActuationBuilder b) updates) =>
+  SetThrusterActuation rebuild(
+          void Function(SetThrusterActuationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SetThrusterActuationBuilder toBuilder() => SetThrusterActuationBuilder()..replace(this);
+  SetThrusterActuationBuilder toBuilder() =>
+      SetThrusterActuationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21644,19 +23129,20 @@ class _$SetThrusterActuation extends SetThrusterActuation {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            id?.hashCode),
         value?.hashCode));
   }
 
@@ -21676,7 +23162,12 @@ class _$SetThrusterActuation extends SetThrusterActuation {
 
 /// Set Thruster Actuation builder class
 ///
-class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetThrusterActuation, SetThrusterActuationBuilder> {
+class SetThrusterActuationBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SetThrusterActuation,
+            SetThrusterActuationBuilder> {
   _$SetThrusterActuation _$v;
 
   DateTime _timestamp;
@@ -21724,7 +23215,8 @@ class SetThrusterActuationBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  SetThrusterActuationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetThrusterActuationBuilder()..copyFromHeader(headerFrom);
+  SetThrusterActuationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SetThrusterActuationBuilder()..copyFromHeader(headerFrom);
 
   SetThrusterActuationBuilder get _$this {
     if (_$v != null) {
@@ -21788,7 +23280,8 @@ class _$SetServoPosition extends SetServoPosition {
   @override
   final double value;
 
-  factory _$SetServoPosition([void Function(SetServoPositionBuilder b) updates]) =>
+  factory _$SetServoPosition(
+          [void Function(SetServoPositionBuilder b) updates]) =>
       (SetServoPositionBuilder()..update(updates)).build();
 
   _$SetServoPosition._(
@@ -21806,7 +23299,8 @@ class _$SetServoPosition extends SetServoPosition {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetServoPositionBuilder toBuilder() => SetServoPositionBuilder()..replace(this);
+  SetServoPositionBuilder toBuilder() =>
+      SetServoPositionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21818,19 +23312,20 @@ class _$SetServoPosition extends SetServoPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            id?.hashCode),
         value?.hashCode));
   }
 
@@ -21843,14 +23338,18 @@ class _$SetServoPosition extends SetServoPosition {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
-          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value',
+              '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Set Servo Position builder class
 ///
-class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetServoPosition, SetServoPositionBuilder> {
+class SetServoPositionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SetServoPosition, SetServoPositionBuilder> {
   _$SetServoPosition _$v;
 
   DateTime _timestamp;
@@ -21898,7 +23397,8 @@ class SetServoPositionBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  SetServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetServoPositionBuilder()..copyFromHeader(headerFrom);
+  SetServoPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SetServoPositionBuilder()..copyFromHeader(headerFrom);
 
   SetServoPositionBuilder get _$this {
     if (_$v != null) {
@@ -21962,7 +23462,8 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
   @override
   final double angle;
 
-  factory _$SetControlSurfaceDeflection([void Function(SetControlSurfaceDeflectionBuilder b) updates]) =>
+  factory _$SetControlSurfaceDeflection(
+          [void Function(SetControlSurfaceDeflectionBuilder b) updates]) =>
       (SetControlSurfaceDeflectionBuilder()..update(updates)).build();
 
   _$SetControlSurfaceDeflection._(
@@ -21976,11 +23477,13 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
       : super._();
 
   @override
-  SetControlSurfaceDeflection rebuild(void Function(SetControlSurfaceDeflectionBuilder b) updates) =>
+  SetControlSurfaceDeflection rebuild(
+          void Function(SetControlSurfaceDeflectionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SetControlSurfaceDeflectionBuilder toBuilder() => SetControlSurfaceDeflectionBuilder()..replace(this);
+  SetControlSurfaceDeflectionBuilder toBuilder() =>
+      SetControlSurfaceDeflectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -21992,19 +23495,20 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (angle == other.angle
-            || angle - other.angle <= 1E-7);
+        (angle == other.angle || angle - other.angle <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            id?.hashCode),
         angle?.hashCode));
   }
 
@@ -22017,14 +23521,20 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
-          ..add('angle', '$angle (rad)${angle != null ? ' [${angle * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('angle',
+              '$angle (rad)${angle != null ? ' [${angle * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Set Control Surface Deflection builder class
 ///
-class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder> {
+class SetControlSurfaceDeflectionBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SetControlSurfaceDeflection,
+            SetControlSurfaceDeflectionBuilder> {
   _$SetControlSurfaceDeflection _$v;
 
   DateTime _timestamp;
@@ -22067,12 +23577,15 @@ class SetControlSurfaceDeflectionBuilder extends Object with ImcBuilderHeaderPar
 
   SetControlSurfaceDeflectionBuilder();
 
-  SetControlSurfaceDeflectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+  SetControlSurfaceDeflectionBuilder.fromHeader(
+      ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
 
   @override
-  SetControlSurfaceDeflectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetControlSurfaceDeflectionBuilder()..copyFromHeader(headerFrom);
+  SetControlSurfaceDeflectionBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      SetControlSurfaceDeflectionBuilder()..copyFromHeader(headerFrom);
 
   SetControlSurfaceDeflectionBuilder get _$this {
     if (_$v != null) {
@@ -22136,7 +23649,8 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
   @override
   final String actions;
 
-  factory _$RemoteActionsRequest([void Function(RemoteActionsRequestBuilder b) updates]) =>
+  factory _$RemoteActionsRequest(
+          [void Function(RemoteActionsRequestBuilder b) updates]) =>
       (RemoteActionsRequestBuilder()..update(updates)).build();
 
   _$RemoteActionsRequest._(
@@ -22150,11 +23664,13 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
       : super._();
 
   @override
-  RemoteActionsRequest rebuild(void Function(RemoteActionsRequestBuilder b) updates) =>
+  RemoteActionsRequest rebuild(
+          void Function(RemoteActionsRequestBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  RemoteActionsRequestBuilder toBuilder() => RemoteActionsRequestBuilder()..replace(this);
+  RemoteActionsRequestBuilder toBuilder() =>
+      RemoteActionsRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -22171,13 +23687,15 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         actions?.hashCode));
   }
 
@@ -22197,7 +23715,12 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
 
 /// Remote Actions Request builder class
 ///
-class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteActionsRequest, RemoteActionsRequestBuilder> {
+class RemoteActionsRequestBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<RemoteActionsRequest,
+            RemoteActionsRequestBuilder> {
   _$RemoteActionsRequest _$v;
 
   DateTime _timestamp;
@@ -22245,7 +23768,8 @@ class RemoteActionsRequestBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  RemoteActionsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteActionsRequestBuilder()..copyFromHeader(headerFrom);
+  RemoteActionsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RemoteActionsRequestBuilder()..copyFromHeader(headerFrom);
 
   RemoteActionsRequestBuilder get _$this {
     if (_$v != null) {
@@ -22340,12 +23864,13 @@ class _$RemoteActions extends RemoteActions {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         actions?.hashCode));
   }
 
@@ -22364,7 +23889,9 @@ class _$RemoteActions extends RemoteActions {
 
 /// Remote Actions builder class
 ///
-class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteActions, RemoteActionsBuilder> {
+class RemoteActionsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RemoteActions, RemoteActionsBuilder> {
   _$RemoteActions _$v;
 
   DateTime _timestamp;
@@ -22408,7 +23935,8 @@ class RemoteActionsBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  RemoteActionsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteActionsBuilder()..copyFromHeader(headerFrom);
+  RemoteActionsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RemoteActionsBuilder()..copyFromHeader(headerFrom);
 
   RemoteActionsBuilder get _$this {
     if (_$v != null) {
@@ -22505,13 +24033,15 @@ class _$ButtonEvent extends ButtonEvent {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        button?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            button?.hashCode),
         value?.hashCode));
   }
 
@@ -22531,7 +24061,9 @@ class _$ButtonEvent extends ButtonEvent {
 
 /// Button Event builder class
 ///
-class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ButtonEvent, ButtonEventBuilder> {
+class ButtonEventBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ButtonEvent, ButtonEventBuilder> {
   _$ButtonEvent _$v;
 
   DateTime _timestamp;
@@ -22579,7 +24111,8 @@ class ButtonEventBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  ButtonEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ButtonEventBuilder()..copyFromHeader(headerFrom);
+  ButtonEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ButtonEventBuilder()..copyFromHeader(headerFrom);
 
   ButtonEventBuilder get _$this {
     if (_$v != null) {
@@ -22678,13 +24211,15 @@ class _$LcdControl extends LcdControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         text?.hashCode));
   }
 
@@ -22704,7 +24239,9 @@ class _$LcdControl extends LcdControl {
 
 /// LCD Control builder class
 ///
-class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LcdControl, LcdControlBuilder> {
+class LcdControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LcdControl, LcdControlBuilder> {
   _$LcdControl _$v;
 
   DateTime _timestamp;
@@ -22752,7 +24289,8 @@ class LcdControlBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  LcdControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LcdControlBuilder()..copyFromHeader(headerFrom);
+  LcdControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LcdControlBuilder()..copyFromHeader(headerFrom);
 
   LcdControlBuilder get _$this {
     if (_$v != null) {
@@ -22849,22 +24387,24 @@ class _$PowerOperation extends PowerOperation {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (timeRemain == other.timeRemain
-            || timeRemain - other.timeRemain <= 1E-7) &&
-        (schedTime == other.schedTime
-            || schedTime - other.schedTime <= 1E-7);
+        (timeRemain == other.timeRemain ||
+            timeRemain - other.timeRemain <= 1E-7) &&
+        (schedTime == other.schedTime || schedTime - other.schedTime <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        timeRemain?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                op?.hashCode),
+            timeRemain?.hashCode),
         schedTime?.hashCode));
   }
 
@@ -22885,7 +24425,9 @@ class _$PowerOperation extends PowerOperation {
 
 /// Power Operation builder class
 ///
-class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PowerOperation, PowerOperationBuilder> {
+class PowerOperationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PowerOperation, PowerOperationBuilder> {
   _$PowerOperation _$v;
 
   DateTime _timestamp;
@@ -22937,7 +24479,8 @@ class PowerOperationBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  PowerOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerOperationBuilder()..copyFromHeader(headerFrom);
+  PowerOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PowerOperationBuilder()..copyFromHeader(headerFrom);
 
   PowerOperationBuilder get _$this {
     if (_$v != null) {
@@ -23005,7 +24548,8 @@ class _$PowerChannelControl extends PowerChannelControl {
   @override
   final double schedTime;
 
-  factory _$PowerChannelControl([void Function(PowerChannelControlBuilder b) updates]) =>
+  factory _$PowerChannelControl(
+          [void Function(PowerChannelControlBuilder b) updates]) =>
       (PowerChannelControlBuilder()..update(updates)).build();
 
   _$PowerChannelControl._(
@@ -23020,11 +24564,13 @@ class _$PowerChannelControl extends PowerChannelControl {
       : super._();
 
   @override
-  PowerChannelControl rebuild(void Function(PowerChannelControlBuilder b) updates) =>
+  PowerChannelControl rebuild(
+          void Function(PowerChannelControlBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PowerChannelControlBuilder toBuilder() => PowerChannelControlBuilder()..replace(this);
+  PowerChannelControlBuilder toBuilder() =>
+      PowerChannelControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23037,20 +24583,22 @@ class _$PowerChannelControl extends PowerChannelControl {
         dstEnt == other.dstEnt &&
         name == other.name &&
         op == other.op &&
-        (schedTime == other.schedTime
-            || schedTime - other.schedTime <= 1E-7);
+        (schedTime == other.schedTime || schedTime - other.schedTime <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                name?.hashCode),
+            op?.hashCode),
         schedTime?.hashCode));
   }
 
@@ -23071,7 +24619,12 @@ class _$PowerChannelControl extends PowerChannelControl {
 
 /// Power Channel Control builder class
 ///
-class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PowerChannelControl, PowerChannelControlBuilder> {
+class PowerChannelControlBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PowerChannelControl,
+            PowerChannelControlBuilder> {
   _$PowerChannelControl _$v;
 
   DateTime _timestamp;
@@ -23123,7 +24676,8 @@ class PowerChannelControlBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  PowerChannelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerChannelControlBuilder()..copyFromHeader(headerFrom);
+  PowerChannelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PowerChannelControlBuilder()..copyFromHeader(headerFrom);
 
   PowerChannelControlBuilder get _$this {
     if (_$v != null) {
@@ -23184,8 +24738,8 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
   @override
   final int dstEnt;
 
-
-  factory _$QueryPowerChannelState([void Function(QueryPowerChannelStateBuilder b) updates]) =>
+  factory _$QueryPowerChannelState(
+          [void Function(QueryPowerChannelStateBuilder b) updates]) =>
       (QueryPowerChannelStateBuilder()..update(updates)).build();
 
   _$QueryPowerChannelState._(
@@ -23197,11 +24751,13 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
       : super._();
 
   @override
-  QueryPowerChannelState rebuild(void Function(QueryPowerChannelStateBuilder b) updates) =>
+  QueryPowerChannelState rebuild(
+          void Function(QueryPowerChannelStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryPowerChannelStateBuilder toBuilder() => QueryPowerChannelStateBuilder()..replace(this);
+  QueryPowerChannelStateBuilder toBuilder() =>
+      QueryPowerChannelStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23216,11 +24772,11 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -23238,7 +24794,12 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
 
 /// Query Power Channel State builder class
 ///
-class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryPowerChannelState, QueryPowerChannelStateBuilder> {
+class QueryPowerChannelStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<QueryPowerChannelState,
+            QueryPowerChannelStateBuilder> {
   _$QueryPowerChannelState _$v;
 
   DateTime _timestamp;
@@ -23278,7 +24839,9 @@ class QueryPowerChannelStateBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  QueryPowerChannelStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryPowerChannelStateBuilder()..copyFromHeader(headerFrom);
+  QueryPowerChannelStateBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      QueryPowerChannelStateBuilder()..copyFromHeader(headerFrom);
 
   QueryPowerChannelStateBuilder get _$this {
     if (_$v != null) {
@@ -23338,7 +24901,8 @@ class _$PowerChannelState extends PowerChannelState {
   @override
   final PowerChannelStateEnumState state;
 
-  factory _$PowerChannelState([void Function(PowerChannelStateBuilder b) updates]) =>
+  factory _$PowerChannelState(
+          [void Function(PowerChannelStateBuilder b) updates]) =>
       (PowerChannelStateBuilder()..update(updates)).build();
 
   _$PowerChannelState._(
@@ -23352,11 +24916,13 @@ class _$PowerChannelState extends PowerChannelState {
       : super._();
 
   @override
-  PowerChannelState rebuild(void Function(PowerChannelStateBuilder b) updates) =>
+  PowerChannelState rebuild(
+          void Function(PowerChannelStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PowerChannelStateBuilder toBuilder() => PowerChannelStateBuilder()..replace(this);
+  PowerChannelStateBuilder toBuilder() =>
+      PowerChannelStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23373,13 +24939,15 @@ class _$PowerChannelState extends PowerChannelState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            name?.hashCode),
         state?.hashCode));
   }
 
@@ -23399,7 +24967,10 @@ class _$PowerChannelState extends PowerChannelState {
 
 /// Power Channel State builder class
 ///
-class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PowerChannelState, PowerChannelStateBuilder> {
+class PowerChannelStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PowerChannelState, PowerChannelStateBuilder> {
   _$PowerChannelState _$v;
 
   DateTime _timestamp;
@@ -23447,7 +25018,8 @@ class PowerChannelStateBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  PowerChannelStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PowerChannelStateBuilder()..copyFromHeader(headerFrom);
+  PowerChannelStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PowerChannelStateBuilder()..copyFromHeader(headerFrom);
 
   PowerChannelStateBuilder get _$this {
     if (_$v != null) {
@@ -23546,13 +25118,15 @@ class _$LedBrightness extends LedBrightness {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            name?.hashCode),
         value?.hashCode));
   }
 
@@ -23572,7 +25146,9 @@ class _$LedBrightness extends LedBrightness {
 
 /// LED Brightness builder class
 ///
-class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LedBrightness, LedBrightnessBuilder> {
+class LedBrightnessBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LedBrightness, LedBrightnessBuilder> {
   _$LedBrightness _$v;
 
   DateTime _timestamp;
@@ -23620,7 +25196,8 @@ class LedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  LedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LedBrightnessBuilder()..copyFromHeader(headerFrom);
+  LedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   LedBrightnessBuilder get _$this {
     if (_$v != null) {
@@ -23682,7 +25259,8 @@ class _$QueryLedBrightness extends QueryLedBrightness {
   @override
   final String name;
 
-  factory _$QueryLedBrightness([void Function(QueryLedBrightnessBuilder b) updates]) =>
+  factory _$QueryLedBrightness(
+          [void Function(QueryLedBrightnessBuilder b) updates]) =>
       (QueryLedBrightnessBuilder()..update(updates)).build();
 
   _$QueryLedBrightness._(
@@ -23695,11 +25273,13 @@ class _$QueryLedBrightness extends QueryLedBrightness {
       : super._();
 
   @override
-  QueryLedBrightness rebuild(void Function(QueryLedBrightnessBuilder b) updates) =>
+  QueryLedBrightness rebuild(
+          void Function(QueryLedBrightnessBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryLedBrightnessBuilder toBuilder() => QueryLedBrightnessBuilder()..replace(this);
+  QueryLedBrightnessBuilder toBuilder() =>
+      QueryLedBrightnessBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23715,12 +25295,13 @@ class _$QueryLedBrightness extends QueryLedBrightness {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         name?.hashCode));
   }
 
@@ -23739,7 +25320,10 @@ class _$QueryLedBrightness extends QueryLedBrightness {
 
 /// Query LED Brightness builder class
 ///
-class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryLedBrightness, QueryLedBrightnessBuilder> {
+class QueryLedBrightnessBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<QueryLedBrightness, QueryLedBrightnessBuilder> {
   _$QueryLedBrightness _$v;
 
   DateTime _timestamp;
@@ -23783,7 +25367,8 @@ class QueryLedBrightnessBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  QueryLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryLedBrightnessBuilder()..copyFromHeader(headerFrom);
+  QueryLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      QueryLedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   QueryLedBrightnessBuilder get _$this {
     if (_$v != null) {
@@ -23845,7 +25430,8 @@ class _$SetLedBrightness extends SetLedBrightness {
   @override
   final int value;
 
-  factory _$SetLedBrightness([void Function(SetLedBrightnessBuilder b) updates]) =>
+  factory _$SetLedBrightness(
+          [void Function(SetLedBrightnessBuilder b) updates]) =>
       (SetLedBrightnessBuilder()..update(updates)).build();
 
   _$SetLedBrightness._(
@@ -23863,7 +25449,8 @@ class _$SetLedBrightness extends SetLedBrightness {
       (toBuilder()..update(updates)).build();
 
   @override
-  SetLedBrightnessBuilder toBuilder() => SetLedBrightnessBuilder()..replace(this);
+  SetLedBrightnessBuilder toBuilder() =>
+      SetLedBrightnessBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -23880,13 +25467,15 @@ class _$SetLedBrightness extends SetLedBrightness {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            name?.hashCode),
         value?.hashCode));
   }
 
@@ -23906,7 +25495,10 @@ class _$SetLedBrightness extends SetLedBrightness {
 
 /// Set LED Brightness builder class
 ///
-class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetLedBrightness, SetLedBrightnessBuilder> {
+class SetLedBrightnessBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SetLedBrightness, SetLedBrightnessBuilder> {
   _$SetLedBrightness _$v;
 
   DateTime _timestamp;
@@ -23954,7 +25546,8 @@ class SetLedBrightnessBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  SetLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetLedBrightnessBuilder()..copyFromHeader(headerFrom);
+  SetLedBrightnessBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SetLedBrightnessBuilder()..copyFromHeader(headerFrom);
 
   SetLedBrightnessBuilder get _$this {
     if (_$v != null) {
@@ -24057,14 +25650,17 @@ class _$SetPWM extends SetPWM {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
-        period?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                id?.hashCode),
+            period?.hashCode),
         dutyCycle?.hashCode));
   }
 
@@ -24085,7 +25681,9 @@ class _$SetPWM extends SetPWM {
 
 /// Set PWM builder class
 ///
-class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetPWM, SetPWMBuilder> {
+class SetPWMBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SetPWM, SetPWMBuilder> {
   _$SetPWM _$v;
 
   DateTime _timestamp;
@@ -24137,7 +25735,8 @@ class SetPWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  SetPWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetPWMBuilder()..copyFromHeader(headerFrom);
+  SetPWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SetPWMBuilder()..copyFromHeader(headerFrom);
 
   SetPWMBuilder get _$this {
     if (_$v != null) {
@@ -24242,14 +25841,17 @@ class _$PWM extends PWM {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
-        period?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                id?.hashCode),
+            period?.hashCode),
         dutyCycle?.hashCode));
   }
 
@@ -24270,7 +25872,9 @@ class _$PWM extends PWM {
 
 /// PWM builder class
 ///
-class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PWM, PWMBuilder> {
+class PWMBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PWM, PWMBuilder> {
   _$PWM _$v;
 
   DateTime _timestamp;
@@ -24322,7 +25926,8 @@ class PWMBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  PWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PWMBuilder()..copyFromHeader(headerFrom);
+  PWMBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PWMBuilder()..copyFromHeader(headerFrom);
 
   PWMBuilder get _$this {
     if (_$v != null) {
@@ -24471,75 +26076,67 @@ class _$EstimatedState extends EstimatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (height == other.height
-            || height - other.height <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7) &&
-        (u == other.u
-            || u - other.u <= 1E-7) &&
-        (v == other.v
-            || v - other.v <= 1E-7) &&
-        (w == other.w
-            || w - other.w <= 1E-7) &&
-        (vx == other.vx
-            || vx - other.vx <= 1E-7) &&
-        (vy == other.vy
-            || vy - other.vy <= 1E-7) &&
-        (vz == other.vz
-            || vz - other.vz <= 1E-7) &&
-        (p == other.p
-            || p - other.p <= 1E-7) &&
-        (q == other.q
-            || q - other.q <= 1E-7) &&
-        (r == other.r
-            || r - other.r <= 1E-7) &&
-        (depth == other.depth
-            || depth - other.depth <= 1E-7) &&
-        (alt == other.alt
-            || alt - other.alt <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        height?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
-        psi?.hashCode), 
-        u?.hashCode), 
-        v?.hashCode), 
-        w?.hashCode), 
-        vx?.hashCode), 
-        vy?.hashCode), 
-        vz?.hashCode), 
-        p?.hashCode), 
-        q?.hashCode), 
-        r?.hashCode), 
-        depth?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), lat?.hashCode),
+                                                                                lon?.hashCode),
+                                                                            height?.hashCode),
+                                                                        x?.hashCode),
+                                                                    y?.hashCode),
+                                                                z?.hashCode),
+                                                            phi?.hashCode),
+                                                        theta?.hashCode),
+                                                    psi?.hashCode),
+                                                u?.hashCode),
+                                            v?.hashCode),
+                                        w?.hashCode),
+                                    vx?.hashCode),
+                                vy?.hashCode),
+                            vz?.hashCode),
+                        p?.hashCode),
+                    q?.hashCode),
+                r?.hashCode),
+            depth?.hashCode),
         alt?.hashCode));
   }
 
@@ -24551,24 +26148,32 @@ class _$EstimatedState extends EstimatedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('p',
+              '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q',
+              '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r',
+              '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('depth', '$depth (m)')
           ..add('alt', '$alt (m)'))
         .toString();
@@ -24577,7 +26182,9 @@ class _$EstimatedState extends EstimatedState {
 
 /// Estimated State builder class
 ///
-class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EstimatedState, EstimatedStateBuilder> {
+class EstimatedStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<EstimatedState, EstimatedStateBuilder> {
   _$EstimatedState _$v;
 
   DateTime _timestamp;
@@ -24697,7 +26304,8 @@ class EstimatedStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  EstimatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EstimatedStateBuilder()..copyFromHeader(headerFrom);
+  EstimatedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EstimatedStateBuilder()..copyFromHeader(headerFrom);
 
   EstimatedStateBuilder get _$this {
     if (_$v != null) {
@@ -24799,7 +26407,8 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
   @override
   final double z;
 
-  factory _$EstimatedStreamVelocity([void Function(EstimatedStreamVelocityBuilder b) updates]) =>
+  factory _$EstimatedStreamVelocity(
+          [void Function(EstimatedStreamVelocityBuilder b) updates]) =>
       (EstimatedStreamVelocityBuilder()..update(updates)).build();
 
   _$EstimatedStreamVelocity._(
@@ -24814,11 +26423,13 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
       : super._();
 
   @override
-  EstimatedStreamVelocity rebuild(void Function(EstimatedStreamVelocityBuilder b) updates) =>
+  EstimatedStreamVelocity rebuild(
+          void Function(EstimatedStreamVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  EstimatedStreamVelocityBuilder toBuilder() => EstimatedStreamVelocityBuilder()..replace(this);
+  EstimatedStreamVelocityBuilder toBuilder() =>
+      EstimatedStreamVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -24829,24 +26440,24 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -24867,7 +26478,12 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
 
 /// Estimated Stream Velocity builder class
 ///
-class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder> {
+class EstimatedStreamVelocityBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EstimatedStreamVelocity,
+            EstimatedStreamVelocityBuilder> {
   _$EstimatedStreamVelocity _$v;
 
   DateTime _timestamp;
@@ -24919,7 +26535,9 @@ class EstimatedStreamVelocityBuilder extends Object with ImcBuilderHeaderPart im
   }
 
   @override
-  EstimatedStreamVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EstimatedStreamVelocityBuilder()..copyFromHeader(headerFrom);
+  EstimatedStreamVelocityBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      EstimatedStreamVelocityBuilder()..copyFromHeader(headerFrom);
 
   EstimatedStreamVelocityBuilder get _$this {
     if (_$v != null) {
@@ -25011,18 +26629,18 @@ class _$IndicatedSpeed extends IndicatedSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -25041,7 +26659,9 @@ class _$IndicatedSpeed extends IndicatedSpeed {
 
 /// Indicated Speed builder class
 ///
-class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IndicatedSpeed, IndicatedSpeedBuilder> {
+class IndicatedSpeedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<IndicatedSpeed, IndicatedSpeedBuilder> {
   _$IndicatedSpeed _$v;
 
   DateTime _timestamp;
@@ -25085,7 +26705,8 @@ class IndicatedSpeedBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  IndicatedSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IndicatedSpeedBuilder()..copyFromHeader(headerFrom);
+  IndicatedSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      IndicatedSpeedBuilder()..copyFromHeader(headerFrom);
 
   IndicatedSpeedBuilder get _$this {
     if (_$v != null) {
@@ -25173,18 +26794,18 @@ class _$TrueSpeed extends TrueSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -25203,7 +26824,9 @@ class _$TrueSpeed extends TrueSpeed {
 
 /// True Speed builder class
 ///
-class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrueSpeed, TrueSpeedBuilder> {
+class TrueSpeedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TrueSpeed, TrueSpeedBuilder> {
   _$TrueSpeed _$v;
 
   DateTime _timestamp;
@@ -25247,7 +26870,8 @@ class TrueSpeedBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  TrueSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrueSpeedBuilder()..copyFromHeader(headerFrom);
+  TrueSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrueSpeedBuilder()..copyFromHeader(headerFrom);
 
   TrueSpeedBuilder get _$this {
     if (_$v != null) {
@@ -25333,7 +26957,8 @@ class _$NavigationUncertainty extends NavigationUncertainty {
   @override
   final double biasR;
 
-  factory _$NavigationUncertainty([void Function(NavigationUncertaintyBuilder b) updates]) =>
+  factory _$NavigationUncertainty(
+          [void Function(NavigationUncertaintyBuilder b) updates]) =>
       (NavigationUncertaintyBuilder()..update(updates)).build();
 
   _$NavigationUncertainty._(
@@ -25359,11 +26984,13 @@ class _$NavigationUncertainty extends NavigationUncertainty {
       : super._();
 
   @override
-  NavigationUncertainty rebuild(void Function(NavigationUncertaintyBuilder b) updates) =>
+  NavigationUncertainty rebuild(
+          void Function(NavigationUncertaintyBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  NavigationUncertaintyBuilder toBuilder() => NavigationUncertaintyBuilder()..replace(this);
+  NavigationUncertaintyBuilder toBuilder() =>
+      NavigationUncertaintyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -25374,57 +27001,61 @@ class _$NavigationUncertainty extends NavigationUncertainty {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7) &&
-        (p == other.p
-            || p - other.p <= 1E-7) &&
-        (q == other.q
-            || q - other.q <= 1E-7) &&
-        (r == other.r
-            || r - other.r <= 1E-7) &&
-        (u == other.u
-            || u - other.u <= 1E-7) &&
-        (v == other.v
-            || v - other.v <= 1E-7) &&
-        (w == other.w
-            || w - other.w <= 1E-7) &&
-        (biasPsi == other.biasPsi
-            || biasPsi - other.biasPsi <= 1E-7) &&
-        (biasR == other.biasR
-            || biasR - other.biasR <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (biasPsi == other.biasPsi || biasPsi - other.biasPsi <= 1E-7) &&
+        (biasR == other.biasR || biasR - other.biasR <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
-        psi?.hashCode), 
-        p?.hashCode), 
-        q?.hashCode), 
-        r?.hashCode), 
-        u?.hashCode), 
-        v?.hashCode), 
-        w?.hashCode), 
-        biasPsi?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc(0,
+                                                                                timestamp?.hashCode),
+                                                                            src?.hashCode),
+                                                                        srcEnt?.hashCode),
+                                                                    dst?.hashCode),
+                                                                dstEnt?.hashCode),
+                                                            x?.hashCode),
+                                                        y?.hashCode),
+                                                    z?.hashCode),
+                                                phi?.hashCode),
+                                            theta?.hashCode),
+                                        psi?.hashCode),
+                                    p?.hashCode),
+                                q?.hashCode),
+                            r?.hashCode),
+                        u?.hashCode),
+                    v?.hashCode),
+                w?.hashCode),
+            biasPsi?.hashCode),
         biasR?.hashCode));
   }
 
@@ -25439,24 +27070,37 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('p',
+              '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q',
+              '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r',
+              '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
-          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('biasR', '$biasR (rad/s)${biasR != null ? ' [${biasR * 180.0 / math.pi} (deg/s)]' : ''}'))
+          ..add('biasPsi',
+              '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('biasR',
+              '$biasR (rad/s)${biasR != null ? ' [${biasR * 180.0 / math.pi} (deg/s)]' : ''}'))
         .toString();
   }
 }
 
 /// Navigation Uncertainty builder class
 ///
-class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<NavigationUncertainty, NavigationUncertaintyBuilder> {
+class NavigationUncertaintyBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<NavigationUncertainty,
+            NavigationUncertaintyBuilder> {
   _$NavigationUncertainty _$v;
 
   DateTime _timestamp;
@@ -25552,7 +27196,8 @@ class NavigationUncertaintyBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  NavigationUncertaintyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NavigationUncertaintyBuilder()..copyFromHeader(headerFrom);
+  NavigationUncertaintyBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      NavigationUncertaintyBuilder()..copyFromHeader(headerFrom);
 
   NavigationUncertaintyBuilder get _$this {
     if (_$v != null) {
@@ -25690,42 +27335,50 @@ class _$NavigationData extends NavigationData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (biasPsi == other.biasPsi
-            || biasPsi - other.biasPsi <= 1E-7) &&
-        (biasR == other.biasR
-            || biasR - other.biasR <= 1E-7) &&
-        (cog == other.cog
-            || cog - other.cog <= 1E-7) &&
-        (cyaw == other.cyaw
-            || cyaw - other.cyaw <= 1E-7) &&
-        (lblRejLevel == other.lblRejLevel
-            || lblRejLevel - other.lblRejLevel <= 1E-7) &&
-        (gpsRejLevel == other.gpsRejLevel
-            || gpsRejLevel - other.gpsRejLevel <= 1E-7) &&
-        (customX == other.customX
-            || customX - other.customX <= 1E-7) &&
-        (customY == other.customY
-            || customY - other.customY <= 1E-7) &&
-        (customZ == other.customZ
-            || customZ - other.customZ <= 1E-7);
+        (biasPsi == other.biasPsi || biasPsi - other.biasPsi <= 1E-7) &&
+        (biasR == other.biasR || biasR - other.biasR <= 1E-7) &&
+        (cog == other.cog || cog - other.cog <= 1E-7) &&
+        (cyaw == other.cyaw || cyaw - other.cyaw <= 1E-7) &&
+        (lblRejLevel == other.lblRejLevel ||
+            lblRejLevel - other.lblRejLevel <= 1E-7) &&
+        (gpsRejLevel == other.gpsRejLevel ||
+            gpsRejLevel - other.gpsRejLevel <= 1E-7) &&
+        (customX == other.customX || customX - other.customX <= 1E-7) &&
+        (customY == other.customY || customY - other.customY <= 1E-7) &&
+        (customZ == other.customZ || customZ - other.customZ <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        biasPsi?.hashCode), 
-        biasR?.hashCode), 
-        cog?.hashCode), 
-        cyaw?.hashCode), 
-        lblRejLevel?.hashCode), 
-        gpsRejLevel?.hashCode), 
-        customX?.hashCode), 
-        customY?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        biasPsi?.hashCode),
+                                    biasR?.hashCode),
+                                cog?.hashCode),
+                            cyaw?.hashCode),
+                        lblRejLevel?.hashCode),
+                    gpsRejLevel?.hashCode),
+                customX?.hashCode),
+            customY?.hashCode),
         customZ?.hashCode));
   }
 
@@ -25737,10 +27390,14 @@ class _$NavigationData extends NavigationData {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('biasPsi', '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('biasR', '$biasR (rad/s)${biasR != null ? ' [${biasR * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('cog', '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('cyaw', '$cyaw (rad)${cyaw != null ? ' [${cyaw * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('biasPsi',
+              '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('biasR',
+              '$biasR (rad/s)${biasR != null ? ' [${biasR * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('cog',
+              '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('cyaw',
+              '$cyaw (rad)${cyaw != null ? ' [${cyaw * 180.0 / math.pi} (deg)]' : ''}')
           ..add('lblRejLevel', '$lblRejLevel')
           ..add('gpsRejLevel', '$gpsRejLevel')
           ..add('customX', '$customX')
@@ -25752,7 +27409,9 @@ class _$NavigationData extends NavigationData {
 
 /// Navigation Data builder class
 ///
-class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<NavigationData, NavigationDataBuilder> {
+class NavigationDataBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<NavigationData, NavigationDataBuilder> {
   _$NavigationData _$v;
 
   DateTime _timestamp;
@@ -25828,7 +27487,8 @@ class NavigationDataBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  NavigationDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NavigationDataBuilder()..copyFromHeader(headerFrom);
+  NavigationDataBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      NavigationDataBuilder()..copyFromHeader(headerFrom);
 
   NavigationDataBuilder get _$this {
     if (_$v != null) {
@@ -25906,7 +27566,8 @@ class _$GpsFixRejection extends GpsFixRejection {
   @override
   final GpsFixRejectionEnumReason reason;
 
-  factory _$GpsFixRejection([void Function(GpsFixRejectionBuilder b) updates]) =>
+  factory _$GpsFixRejection(
+          [void Function(GpsFixRejectionBuilder b) updates]) =>
       (GpsFixRejectionBuilder()..update(updates)).build();
 
   _$GpsFixRejection._(
@@ -25935,20 +27596,21 @@ class _$GpsFixRejection extends GpsFixRejection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (utcTime == other.utcTime
-            || utcTime - other.utcTime <= 1E-7) &&
+        (utcTime == other.utcTime || utcTime - other.utcTime <= 1E-7) &&
         reason == other.reason;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        utcTime?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            utcTime?.hashCode),
         reason?.hashCode));
   }
 
@@ -25968,7 +27630,10 @@ class _$GpsFixRejection extends GpsFixRejection {
 
 /// GPS Fix Rejection builder class
 ///
-class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GpsFixRejection, GpsFixRejectionBuilder> {
+class GpsFixRejectionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<GpsFixRejection, GpsFixRejectionBuilder> {
   _$GpsFixRejection _$v;
 
   DateTime _timestamp;
@@ -26016,7 +27681,8 @@ class GpsFixRejectionBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  GpsFixRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GpsFixRejectionBuilder()..copyFromHeader(headerFrom);
+  GpsFixRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GpsFixRejectionBuilder()..copyFromHeader(headerFrom);
 
   GpsFixRejectionBuilder get _$this {
     if (_$v != null) {
@@ -26082,7 +27748,8 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
   @override
   final LblRangeAcceptanceEnumAcceptance acceptance;
 
-  factory _$LblRangeAcceptance([void Function(LblRangeAcceptanceBuilder b) updates]) =>
+  factory _$LblRangeAcceptance(
+          [void Function(LblRangeAcceptanceBuilder b) updates]) =>
       (LblRangeAcceptanceBuilder()..update(updates)).build();
 
   _$LblRangeAcceptance._(
@@ -26097,11 +27764,13 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
       : super._();
 
   @override
-  LblRangeAcceptance rebuild(void Function(LblRangeAcceptanceBuilder b) updates) =>
+  LblRangeAcceptance rebuild(
+          void Function(LblRangeAcceptanceBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LblRangeAcceptanceBuilder toBuilder() => LblRangeAcceptanceBuilder()..replace(this);
+  LblRangeAcceptanceBuilder toBuilder() =>
+      LblRangeAcceptanceBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26113,21 +27782,23 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (range == other.range
-            || range - other.range <= 1E-7) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         acceptance == other.acceptance;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
-        range?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                id?.hashCode),
+            range?.hashCode),
         acceptance?.hashCode));
   }
 
@@ -26148,7 +27819,10 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
 
 /// LBL Range Acceptance builder class
 ///
-class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblRangeAcceptance, LblRangeAcceptanceBuilder> {
+class LblRangeAcceptanceBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<LblRangeAcceptance, LblRangeAcceptanceBuilder> {
   _$LblRangeAcceptance _$v;
 
   DateTime _timestamp;
@@ -26191,7 +27865,8 @@ class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart impleme
 
   LblRangeAcceptanceEnumAcceptance _acceptance;
   LblRangeAcceptanceEnumAcceptance get acceptance => _$this._acceptance;
-  set acceptance(LblRangeAcceptanceEnumAcceptance acceptance) => _$this._acceptance = acceptance;
+  set acceptance(LblRangeAcceptanceEnumAcceptance acceptance) =>
+      _$this._acceptance = acceptance;
 
   LblRangeAcceptanceBuilder();
 
@@ -26200,7 +27875,8 @@ class LblRangeAcceptanceBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  LblRangeAcceptanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblRangeAcceptanceBuilder()..copyFromHeader(headerFrom);
+  LblRangeAcceptanceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LblRangeAcceptanceBuilder()..copyFromHeader(headerFrom);
 
   LblRangeAcceptanceBuilder get _$this {
     if (_$v != null) {
@@ -26303,23 +27979,25 @@ class _$DvlRejection extends DvlRejection {
         dstEnt == other.dstEnt &&
         type == other.type &&
         reason == other.reason &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
-        (timestep == other.timestep
-            || timestep - other.timestep <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7) &&
+        (timestep == other.timestep || timestep - other.timestep <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        reason?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    type?.hashCode),
+                reason?.hashCode),
+            value?.hashCode),
         timestep?.hashCode));
   }
 
@@ -26341,7 +28019,9 @@ class _$DvlRejection extends DvlRejection {
 
 /// DVL Rejection builder class
 ///
-class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DvlRejection, DvlRejectionBuilder> {
+class DvlRejectionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DvlRejection, DvlRejectionBuilder> {
   _$DvlRejection _$v;
 
   DateTime _timestamp;
@@ -26397,7 +28077,8 @@ class DvlRejectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  DvlRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DvlRejectionBuilder()..copyFromHeader(headerFrom);
+  DvlRejectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DvlRejectionBuilder()..copyFromHeader(headerFrom);
 
   DvlRejectionBuilder get _$this {
     if (_$v != null) {
@@ -26507,31 +28188,34 @@ class _$LblEstimate extends LblEstimate {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         beacon == other.beacon &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (varX == other.varX
-            || varX - other.varX <= 1E-7) &&
-        (varY == other.varY
-            || varY - other.varY <= 1E-7) &&
-        (distance == other.distance
-            || distance - other.distance <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (varX == other.varX || varX - other.varX <= 1E-7) &&
+        (varY == other.varY || varY - other.varY <= 1E-7) &&
+        (distance == other.distance || distance - other.distance <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        beacon?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        varX?.hashCode), 
-        varY?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            beacon?.hashCode),
+                        x?.hashCode),
+                    y?.hashCode),
+                varX?.hashCode),
+            varY?.hashCode),
         distance?.hashCode));
   }
 
@@ -26555,7 +28239,9 @@ class _$LblEstimate extends LblEstimate {
 
 /// LBL Beacon Position Estimate builder class
 ///
-class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LblEstimate, LblEstimateBuilder> {
+class LblEstimateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LblEstimate, LblEstimateBuilder> {
   _$LblEstimate _$v;
 
   DateTime _timestamp;
@@ -26619,7 +28305,8 @@ class LblEstimateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  LblEstimateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LblEstimateBuilder()..copyFromHeader(headerFrom);
+  LblEstimateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LblEstimateBuilder()..copyFromHeader(headerFrom);
 
   LblEstimateBuilder get _$this {
     if (_$v != null) {
@@ -26722,12 +28409,13 @@ class _$AlignmentState extends AlignmentState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         state?.hashCode));
   }
 
@@ -26746,7 +28434,9 @@ class _$AlignmentState extends AlignmentState {
 
 /// Alignment State builder class
 ///
-class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AlignmentState, AlignmentStateBuilder> {
+class AlignmentStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<AlignmentState, AlignmentStateBuilder> {
   _$AlignmentState _$v;
 
   DateTime _timestamp;
@@ -26790,7 +28480,8 @@ class AlignmentStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  AlignmentStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AlignmentStateBuilder()..copyFromHeader(headerFrom);
+  AlignmentStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AlignmentStateBuilder()..copyFromHeader(headerFrom);
 
   AlignmentStateBuilder get _$this {
     if (_$v != null) {
@@ -26854,7 +28545,8 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
   @override
   final double z;
 
-  factory _$GroupStreamVelocity([void Function(GroupStreamVelocityBuilder b) updates]) =>
+  factory _$GroupStreamVelocity(
+          [void Function(GroupStreamVelocityBuilder b) updates]) =>
       (GroupStreamVelocityBuilder()..update(updates)).build();
 
   _$GroupStreamVelocity._(
@@ -26869,11 +28561,13 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
       : super._();
 
   @override
-  GroupStreamVelocity rebuild(void Function(GroupStreamVelocityBuilder b) updates) =>
+  GroupStreamVelocity rebuild(
+          void Function(GroupStreamVelocityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GroupStreamVelocityBuilder toBuilder() => GroupStreamVelocityBuilder()..replace(this);
+  GroupStreamVelocityBuilder toBuilder() =>
+      GroupStreamVelocityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -26884,24 +28578,24 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -26922,7 +28616,12 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
 
 /// GroupStreamVelocity builder class
 ///
-class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GroupStreamVelocity, GroupStreamVelocityBuilder> {
+class GroupStreamVelocityBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<GroupStreamVelocity,
+            GroupStreamVelocityBuilder> {
   _$GroupStreamVelocity _$v;
 
   DateTime _timestamp;
@@ -26974,7 +28673,8 @@ class GroupStreamVelocityBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  GroupStreamVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GroupStreamVelocityBuilder()..copyFromHeader(headerFrom);
+  GroupStreamVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GroupStreamVelocityBuilder()..copyFromHeader(headerFrom);
 
   GroupStreamVelocityBuilder get _$this {
     if (_$v != null) {
@@ -27072,24 +28772,24 @@ class _$Airflow extends Airflow {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (va == other.va
-            || va - other.va <= 1E-7) &&
-        (aoa == other.aoa
-            || aoa - other.aoa <= 1E-7) &&
-        (ssa == other.ssa
-            || ssa - other.ssa <= 1E-7);
+        (va == other.va || va - other.va <= 1E-7) &&
+        (aoa == other.aoa || aoa - other.aoa <= 1E-7) &&
+        (ssa == other.ssa || ssa - other.ssa <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        va?.hashCode), 
-        aoa?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                va?.hashCode),
+            aoa?.hashCode),
         ssa?.hashCode));
   }
 
@@ -27102,15 +28802,19 @@ class _$Airflow extends Airflow {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('va', '$va (m/s)')
-          ..add('aoa', '$aoa (rad)${aoa != null ? ' [${aoa * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('ssa', '$ssa (rad)${ssa != null ? ' [${ssa * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('aoa',
+              '$aoa (rad)${aoa != null ? ' [${aoa * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('ssa',
+              '$ssa (rad)${ssa != null ? ' [${ssa * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Airflow builder class
 ///
-class AirflowBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Airflow, AirflowBuilder> {
+class AirflowBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Airflow, AirflowBuilder> {
   _$Airflow _$v;
 
   DateTime _timestamp;
@@ -27162,7 +28866,8 @@ class AirflowBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  AirflowBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AirflowBuilder()..copyFromHeader(headerFrom);
+  AirflowBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AirflowBuilder()..copyFromHeader(headerFrom);
 
   AirflowBuilder get _$this {
     if (_$v != null) {
@@ -27254,18 +28959,18 @@ class _$DesiredHeading extends DesiredHeading {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -27277,14 +28982,17 @@ class _$DesiredHeading extends DesiredHeading {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value',
+              '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Desired Heading builder class
 ///
-class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredHeading, DesiredHeadingBuilder> {
+class DesiredHeadingBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DesiredHeading, DesiredHeadingBuilder> {
   _$DesiredHeading _$v;
 
   DateTime _timestamp;
@@ -27328,7 +29036,8 @@ class DesiredHeadingBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  DesiredHeadingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredHeadingBuilder()..copyFromHeader(headerFrom);
+  DesiredHeadingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredHeadingBuilder()..copyFromHeader(headerFrom);
 
   DesiredHeadingBuilder get _$this {
     if (_$v != null) {
@@ -27419,20 +29128,21 @@ class _$DesiredZ extends DesiredZ {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         zUnits == other.zUnits;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            value?.hashCode),
         zUnits?.hashCode));
   }
 
@@ -27452,7 +29162,9 @@ class _$DesiredZ extends DesiredZ {
 
 /// Desired Z builder class
 ///
-class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredZ, DesiredZBuilder> {
+class DesiredZBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DesiredZ, DesiredZBuilder> {
   _$DesiredZ _$v;
 
   DateTime _timestamp;
@@ -27500,7 +29212,8 @@ class DesiredZBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  DesiredZBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredZBuilder()..copyFromHeader(headerFrom);
+  DesiredZBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredZBuilder()..copyFromHeader(headerFrom);
 
   DesiredZBuilder get _$this {
     if (_$v != null) {
@@ -27593,20 +29306,21 @@ class _$DesiredSpeed extends DesiredSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         speedUnits == other.speedUnits;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            value?.hashCode),
         speedUnits?.hashCode));
   }
 
@@ -27626,7 +29340,9 @@ class _$DesiredSpeed extends DesiredSpeed {
 
 /// Desired Speed builder class
 ///
-class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredSpeed, DesiredSpeedBuilder> {
+class DesiredSpeedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DesiredSpeed, DesiredSpeedBuilder> {
   _$DesiredSpeed _$v;
 
   DateTime _timestamp;
@@ -27674,7 +29390,8 @@ class DesiredSpeedBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  DesiredSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredSpeedBuilder()..copyFromHeader(headerFrom);
+  DesiredSpeedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredSpeedBuilder()..copyFromHeader(headerFrom);
 
   DesiredSpeedBuilder get _$this {
     if (_$v != null) {
@@ -27764,18 +29481,18 @@ class _$DesiredRoll extends DesiredRoll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -27787,14 +29504,17 @@ class _$DesiredRoll extends DesiredRoll {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value',
+              '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Desired Roll builder class
 ///
-class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredRoll, DesiredRollBuilder> {
+class DesiredRollBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DesiredRoll, DesiredRollBuilder> {
   _$DesiredRoll _$v;
 
   DateTime _timestamp;
@@ -27838,7 +29558,8 @@ class DesiredRollBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  DesiredRollBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredRollBuilder()..copyFromHeader(headerFrom);
+  DesiredRollBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredRollBuilder()..copyFromHeader(headerFrom);
 
   DesiredRollBuilder get _$this {
     if (_$v != null) {
@@ -27926,18 +29647,18 @@ class _$DesiredPitch extends DesiredPitch {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -27949,14 +29670,17 @@ class _$DesiredPitch extends DesiredPitch {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value',
+              '$value (rad)${value != null ? ' [${value * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Desired Pitch builder class
 ///
-class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredPitch, DesiredPitchBuilder> {
+class DesiredPitchBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DesiredPitch, DesiredPitchBuilder> {
   _$DesiredPitch _$v;
 
   DateTime _timestamp;
@@ -28000,7 +29724,8 @@ class DesiredPitchBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  DesiredPitchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredPitchBuilder()..copyFromHeader(headerFrom);
+  DesiredPitchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredPitchBuilder()..copyFromHeader(headerFrom);
 
   DesiredPitchBuilder get _$this {
     if (_$v != null) {
@@ -28060,7 +29785,8 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
   @override
   final double value;
 
-  factory _$DesiredVerticalRate([void Function(DesiredVerticalRateBuilder b) updates]) =>
+  factory _$DesiredVerticalRate(
+          [void Function(DesiredVerticalRateBuilder b) updates]) =>
       (DesiredVerticalRateBuilder()..update(updates)).build();
 
   _$DesiredVerticalRate._(
@@ -28073,11 +29799,13 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
       : super._();
 
   @override
-  DesiredVerticalRate rebuild(void Function(DesiredVerticalRateBuilder b) updates) =>
+  DesiredVerticalRate rebuild(
+          void Function(DesiredVerticalRateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredVerticalRateBuilder toBuilder() => DesiredVerticalRateBuilder()..replace(this);
+  DesiredVerticalRateBuilder toBuilder() =>
+      DesiredVerticalRateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -28088,18 +29816,18 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -28118,7 +29846,12 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
 
 /// Desired Vertical Rate builder class
 ///
-class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredVerticalRate, DesiredVerticalRateBuilder> {
+class DesiredVerticalRateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DesiredVerticalRate,
+            DesiredVerticalRateBuilder> {
   _$DesiredVerticalRate _$v;
 
   DateTime _timestamp;
@@ -28162,7 +29895,8 @@ class DesiredVerticalRateBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  DesiredVerticalRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredVerticalRateBuilder()..copyFromHeader(headerFrom);
+  DesiredVerticalRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredVerticalRateBuilder()..copyFromHeader(headerFrom);
 
   DesiredVerticalRateBuilder get _$this {
     if (_$v != null) {
@@ -28287,48 +30021,61 @@ class _$DesiredPath extends DesiredPath {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         pathRef == other.pathRef &&
-        (startLat == other.startLat
-            || startLat - other.startLat <= 1E-7) &&
-        (startLon == other.startLon
-            || startLon - other.startLon <= 1E-7) &&
-        (startZ == other.startZ
-            || startZ - other.startZ <= 1E-7) &&
+        (startLat == other.startLat || startLat - other.startLat <= 1E-7) &&
+        (startLon == other.startLon || startLon - other.startLon <= 1E-7) &&
+        (startZ == other.startZ || startZ - other.startZ <= 1E-7) &&
         startZUnits == other.startZUnits &&
-        (endLat == other.endLat
-            || endLat - other.endLat <= 1E-7) &&
-        (endLon == other.endLon
-            || endLon - other.endLon <= 1E-7) &&
-        (endZ == other.endZ
-            || endZ - other.endZ <= 1E-7) &&
+        (endLat == other.endLat || endLat - other.endLat <= 1E-7) &&
+        (endLon == other.endLon || endLon - other.endLon <= 1E-7) &&
+        (endZ == other.endZ || endZ - other.endZ <= 1E-7) &&
         endZUnits == other.endZUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (lradius == other.lradius
-            || lradius - other.lradius <= 1E-7) &&
+        (lradius == other.lradius || lradius - other.lradius <= 1E-7) &&
         flags == other.flags;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        pathRef?.hashCode), 
-        startLat?.hashCode), 
-        startLon?.hashCode), 
-        startZ?.hashCode), 
-        startZUnits?.hashCode), 
-        endLat?.hashCode), 
-        endLon?.hashCode), 
-        endZ?.hashCode), 
-        endZUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        lradius?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            0,
+                                                                            timestamp
+                                                                                ?.hashCode),
+                                                                        src
+                                                                            ?.hashCode),
+                                                                    srcEnt
+                                                                        ?.hashCode),
+                                                                dst?.hashCode),
+                                                            dstEnt?.hashCode),
+                                                        pathRef?.hashCode),
+                                                    startLat?.hashCode),
+                                                startLon?.hashCode),
+                                            startZ?.hashCode),
+                                        startZUnits?.hashCode),
+                                    endLat?.hashCode),
+                                endLon?.hashCode),
+                            endZ?.hashCode),
+                        endZUnits?.hashCode),
+                    speed?.hashCode),
+                speedUnits?.hashCode),
+            lradius?.hashCode),
         flags?.hashCode));
   }
 
@@ -28341,12 +30088,16 @@ class _$DesiredPath extends DesiredPath {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('pathRef', '$pathRef')
-          ..add('startLat', '$startLat (rad)${startLat != null ? ' [${startLat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('startLon', '$startLon (rad)${startLon != null ? ' [${startLon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('startLat',
+              '$startLat (rad)${startLat != null ? ' [${startLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('startLon',
+              '$startLon (rad)${startLon != null ? ' [${startLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
-          ..add('endLat', '$endLat (rad)${endLat != null ? ' [${endLat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('endLon', '$endLon (rad)${endLon != null ? ' [${endLon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLat',
+              '$endLat (rad)${endLat != null ? ' [${endLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLon',
+              '$endLon (rad)${endLon != null ? ' [${endLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('endZ', '$endZ (m)')
           ..add('endZUnits', '$endZUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -28359,7 +30110,9 @@ class _$DesiredPath extends DesiredPath {
 
 /// Desired Path builder class
 ///
-class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredPath, DesiredPathBuilder> {
+class DesiredPathBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DesiredPath, DesiredPathBuilder> {
   _$DesiredPath _$v;
 
   DateTime _timestamp;
@@ -28451,7 +30204,8 @@ class DesiredPathBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  DesiredPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredPathBuilder()..copyFromHeader(headerFrom);
+  DesiredPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredPathBuilder()..copyFromHeader(headerFrom);
 
   DesiredPathBuilder get _$this {
     if (_$v != null) {
@@ -28581,35 +30335,38 @@ class _$DesiredControl extends DesiredControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (k == other.k
-            || k - other.k <= 1E-7) &&
-        (m == other.m
-            || m - other.m <= 1E-7) &&
-        (n == other.n
-            || n - other.n <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (k == other.k || k - other.k <= 1E-7) &&
+        (m == other.m || m - other.m <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7) &&
         flags == other.flags;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        k?.hashCode), 
-        m?.hashCode), 
-        n?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                x?.hashCode),
+                            y?.hashCode),
+                        z?.hashCode),
+                    k?.hashCode),
+                m?.hashCode),
+            n?.hashCode),
         flags?.hashCode));
   }
 
@@ -28634,7 +30391,9 @@ class _$DesiredControl extends DesiredControl {
 
 /// Desired Control builder class
 ///
-class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredControl, DesiredControlBuilder> {
+class DesiredControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DesiredControl, DesiredControlBuilder> {
   _$DesiredControl _$v;
 
   DateTime _timestamp;
@@ -28702,7 +30461,8 @@ class DesiredControlBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  DesiredControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredControlBuilder()..copyFromHeader(headerFrom);
+  DesiredControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredControlBuilder()..copyFromHeader(headerFrom);
 
   DesiredControlBuilder get _$this {
     if (_$v != null) {
@@ -28774,7 +30534,8 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
   @override
   final double value;
 
-  factory _$DesiredHeadingRate([void Function(DesiredHeadingRateBuilder b) updates]) =>
+  factory _$DesiredHeadingRate(
+          [void Function(DesiredHeadingRateBuilder b) updates]) =>
       (DesiredHeadingRateBuilder()..update(updates)).build();
 
   _$DesiredHeadingRate._(
@@ -28787,11 +30548,13 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
       : super._();
 
   @override
-  DesiredHeadingRate rebuild(void Function(DesiredHeadingRateBuilder b) updates) =>
+  DesiredHeadingRate rebuild(
+          void Function(DesiredHeadingRateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredHeadingRateBuilder toBuilder() => DesiredHeadingRateBuilder()..replace(this);
+  DesiredHeadingRateBuilder toBuilder() =>
+      DesiredHeadingRateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -28802,18 +30565,18 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -28825,14 +30588,18 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('value', '$value (rad/s)${value != null ? ' [${value * 180.0 / math.pi} (deg/s)]' : ''}'))
+          ..add('value',
+              '$value (rad/s)${value != null ? ' [${value * 180.0 / math.pi} (deg/s)]' : ''}'))
         .toString();
   }
 }
 
 /// Desired Heading Rate builder class
 ///
-class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredHeadingRate, DesiredHeadingRateBuilder> {
+class DesiredHeadingRateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DesiredHeadingRate, DesiredHeadingRateBuilder> {
   _$DesiredHeadingRate _$v;
 
   DateTime _timestamp;
@@ -28876,7 +30643,8 @@ class DesiredHeadingRateBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  DesiredHeadingRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredHeadingRateBuilder()..copyFromHeader(headerFrom);
+  DesiredHeadingRateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredHeadingRateBuilder()..copyFromHeader(headerFrom);
 
   DesiredHeadingRateBuilder get _$this {
     if (_$v != null) {
@@ -28948,7 +30716,8 @@ class _$DesiredVelocity extends DesiredVelocity {
   @override
   final DesiredVelocityBitfieldFlags flags;
 
-  factory _$DesiredVelocity([void Function(DesiredVelocityBuilder b) updates]) =>
+  factory _$DesiredVelocity(
+          [void Function(DesiredVelocityBuilder b) updates]) =>
       (DesiredVelocityBuilder()..update(updates)).build();
 
   _$DesiredVelocity._(
@@ -28982,35 +30751,38 @@ class _$DesiredVelocity extends DesiredVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (u == other.u
-            || u - other.u <= 1E-7) &&
-        (v == other.v
-            || v - other.v <= 1E-7) &&
-        (w == other.w
-            || w - other.w <= 1E-7) &&
-        (p == other.p
-            || p - other.p <= 1E-7) &&
-        (q == other.q
-            || q - other.q <= 1E-7) &&
-        (r == other.r
-            || r - other.r <= 1E-7) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
         flags == other.flags;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        u?.hashCode), 
-        v?.hashCode), 
-        w?.hashCode), 
-        p?.hashCode), 
-        q?.hashCode), 
-        r?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                u?.hashCode),
+                            v?.hashCode),
+                        w?.hashCode),
+                    p?.hashCode),
+                q?.hashCode),
+            r?.hashCode),
         flags?.hashCode));
   }
 
@@ -29035,7 +30807,10 @@ class _$DesiredVelocity extends DesiredVelocity {
 
 /// Desired Velocity builder class
 ///
-class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredVelocity, DesiredVelocityBuilder> {
+class DesiredVelocityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DesiredVelocity, DesiredVelocityBuilder> {
   _$DesiredVelocity _$v;
 
   DateTime _timestamp;
@@ -29103,7 +30878,8 @@ class DesiredVelocityBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  DesiredVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredVelocityBuilder()..copyFromHeader(headerFrom);
+  DesiredVelocityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredVelocityBuilder()..copyFromHeader(headerFrom);
 
   DesiredVelocityBuilder get _$this {
     if (_$v != null) {
@@ -29211,7 +30987,8 @@ class _$PathControlState extends PathControlState {
   @override
   final int eta;
 
-  factory _$PathControlState([void Function(PathControlStateBuilder b) updates]) =>
+  factory _$PathControlState(
+          [void Function(PathControlStateBuilder b) updates]) =>
       (PathControlStateBuilder()..update(updates)).build();
 
   _$PathControlState._(
@@ -29246,7 +31023,8 @@ class _$PathControlState extends PathControlState {
       (toBuilder()..update(updates)).build();
 
   @override
-  PathControlStateBuilder toBuilder() => PathControlStateBuilder()..replace(this);
+  PathControlStateBuilder toBuilder() =>
+      PathControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -29258,66 +31036,66 @@ class _$PathControlState extends PathControlState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         pathRef == other.pathRef &&
-        (startLat == other.startLat
-            || startLat - other.startLat <= 1E-7) &&
-        (startLon == other.startLon
-            || startLon - other.startLon <= 1E-7) &&
-        (startZ == other.startZ
-            || startZ - other.startZ <= 1E-7) &&
+        (startLat == other.startLat || startLat - other.startLat <= 1E-7) &&
+        (startLon == other.startLon || startLon - other.startLon <= 1E-7) &&
+        (startZ == other.startZ || startZ - other.startZ <= 1E-7) &&
         startZUnits == other.startZUnits &&
-        (endLat == other.endLat
-            || endLat - other.endLat <= 1E-7) &&
-        (endLon == other.endLon
-            || endLon - other.endLon <= 1E-7) &&
-        (endZ == other.endZ
-            || endZ - other.endZ <= 1E-7) &&
+        (endLat == other.endLat || endLat - other.endLat <= 1E-7) &&
+        (endLon == other.endLon || endLon - other.endLon <= 1E-7) &&
+        (endZ == other.endZ || endZ - other.endZ <= 1E-7) &&
         endZUnits == other.endZUnits &&
-        (lradius == other.lradius
-            || lradius - other.lradius <= 1E-7) &&
+        (lradius == other.lradius || lradius - other.lradius <= 1E-7) &&
         flags == other.flags &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (vx == other.vx
-            || vx - other.vx <= 1E-7) &&
-        (vy == other.vy
-            || vy - other.vy <= 1E-7) &&
-        (vz == other.vz
-            || vz - other.vz <= 1E-7) &&
-        (courseError == other.courseError
-            || courseError - other.courseError <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
+        (courseError == other.courseError ||
+            courseError - other.courseError <= 1E-7) &&
         eta == other.eta;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        pathRef?.hashCode), 
-        startLat?.hashCode), 
-        startLon?.hashCode), 
-        startZ?.hashCode), 
-        startZUnits?.hashCode), 
-        endLat?.hashCode), 
-        endLon?.hashCode), 
-        endZ?.hashCode), 
-        endZUnits?.hashCode), 
-        lradius?.hashCode), 
-        flags?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        vx?.hashCode), 
-        vy?.hashCode), 
-        vz?.hashCode), 
-        courseError?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode),
+                                                                                pathRef?.hashCode),
+                                                                            startLat?.hashCode),
+                                                                        startLon?.hashCode),
+                                                                    startZ?.hashCode),
+                                                                startZUnits?.hashCode),
+                                                            endLat?.hashCode),
+                                                        endLon?.hashCode),
+                                                    endZ?.hashCode),
+                                                endZUnits?.hashCode),
+                                            lradius?.hashCode),
+                                        flags?.hashCode),
+                                    x?.hashCode),
+                                y?.hashCode),
+                            z?.hashCode),
+                        vx?.hashCode),
+                    vy?.hashCode),
+                vz?.hashCode),
+            courseError?.hashCode),
         eta?.hashCode));
   }
 
@@ -29330,12 +31108,16 @@ class _$PathControlState extends PathControlState {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('pathRef', '$pathRef')
-          ..add('startLat', '$startLat (rad)${startLat != null ? ' [${startLat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('startLon', '$startLon (rad)${startLon != null ? ' [${startLon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('startLat',
+              '$startLat (rad)${startLat != null ? ' [${startLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('startLon',
+              '$startLon (rad)${startLon != null ? ' [${startLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
-          ..add('endLat', '$endLat (rad)${endLat != null ? ' [${endLat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('endLon', '$endLon (rad)${endLon != null ? ' [${endLon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLat',
+              '$endLat (rad)${endLat != null ? ' [${endLat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLon',
+              '$endLon (rad)${endLon != null ? ' [${endLon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('endZ', '$endZ (m)')
           ..add('endZUnits', '$endZUnits (Enumerated)')
           ..add('lradius', '$lradius (m)')
@@ -29346,7 +31128,8 @@ class _$PathControlState extends PathControlState {
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('courseError', '$courseError (rad)${courseError != null ? ' [${courseError * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('courseError',
+              '$courseError (rad)${courseError != null ? ' [${courseError * 180.0 / math.pi} (deg)]' : ''}')
           ..add('eta', '$eta (s)'))
         .toString();
   }
@@ -29354,7 +31137,10 @@ class _$PathControlState extends PathControlState {
 
 /// Path Control State builder class
 ///
-class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PathControlState, PathControlStateBuilder> {
+class PathControlStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PathControlState, PathControlStateBuilder> {
   _$PathControlState _$v;
 
   DateTime _timestamp;
@@ -29470,7 +31256,8 @@ class PathControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  PathControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PathControlStateBuilder()..copyFromHeader(headerFrom);
+  PathControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PathControlStateBuilder()..copyFromHeader(headerFrom);
 
   PathControlStateBuilder get _$this {
     if (_$v != null) {
@@ -29570,7 +31357,8 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
   @override
   final double n;
 
-  factory _$AllocatedControlTorques([void Function(AllocatedControlTorquesBuilder b) updates]) =>
+  factory _$AllocatedControlTorques(
+          [void Function(AllocatedControlTorquesBuilder b) updates]) =>
       (AllocatedControlTorquesBuilder()..update(updates)).build();
 
   _$AllocatedControlTorques._(
@@ -29585,11 +31373,13 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
       : super._();
 
   @override
-  AllocatedControlTorques rebuild(void Function(AllocatedControlTorquesBuilder b) updates) =>
+  AllocatedControlTorques rebuild(
+          void Function(AllocatedControlTorquesBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AllocatedControlTorquesBuilder toBuilder() => AllocatedControlTorquesBuilder()..replace(this);
+  AllocatedControlTorquesBuilder toBuilder() =>
+      AllocatedControlTorquesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -29600,24 +31390,24 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (k == other.k
-            || k - other.k <= 1E-7) &&
-        (m == other.m
-            || m - other.m <= 1E-7) &&
-        (n == other.n
-            || n - other.n <= 1E-7);
+        (k == other.k || k - other.k <= 1E-7) &&
+        (m == other.m || m - other.m <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        k?.hashCode), 
-        m?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                k?.hashCode),
+            m?.hashCode),
         n?.hashCode));
   }
 
@@ -29638,7 +31428,12 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
 
 /// Allocated Control Torques builder class
 ///
-class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AllocatedControlTorques, AllocatedControlTorquesBuilder> {
+class AllocatedControlTorquesBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AllocatedControlTorques,
+            AllocatedControlTorquesBuilder> {
   _$AllocatedControlTorques _$v;
 
   DateTime _timestamp;
@@ -29690,7 +31485,9 @@ class AllocatedControlTorquesBuilder extends Object with ImcBuilderHeaderPart im
   }
 
   @override
-  AllocatedControlTorquesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AllocatedControlTorquesBuilder()..copyFromHeader(headerFrom);
+  AllocatedControlTorquesBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      AllocatedControlTorquesBuilder()..copyFromHeader(headerFrom);
 
   AllocatedControlTorquesBuilder get _$this {
     if (_$v != null) {
@@ -29791,27 +31588,27 @@ class _$ControlParcel extends ControlParcel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (p == other.p
-            || p - other.p <= 1E-7) &&
-        (i == other.i
-            || i - other.i <= 1E-7) &&
-        (d == other.d
-            || d - other.d <= 1E-7) &&
-        (a == other.a
-            || a - other.a <= 1E-7);
+        (p == other.p || p - other.p <= 1E-7) &&
+        (i == other.i || i - other.i <= 1E-7) &&
+        (d == other.d || d - other.d <= 1E-7) &&
+        (a == other.a || a - other.a <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        p?.hashCode), 
-        i?.hashCode), 
-        d?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    p?.hashCode),
+                i?.hashCode),
+            d?.hashCode),
         a?.hashCode));
   }
 
@@ -29833,7 +31630,9 @@ class _$ControlParcel extends ControlParcel {
 
 /// Control Parcel builder class
 ///
-class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ControlParcel, ControlParcelBuilder> {
+class ControlParcelBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ControlParcel, ControlParcelBuilder> {
   _$ControlParcel _$v;
 
   DateTime _timestamp;
@@ -29889,7 +31688,8 @@ class ControlParcelBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ControlParcelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ControlParcelBuilder()..copyFromHeader(headerFrom);
+  ControlParcelBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ControlParcelBuilder()..copyFromHeader(headerFrom);
 
   ControlParcelBuilder get _$this {
     if (_$v != null) {
@@ -29988,12 +31788,13 @@ class _$Brake extends Brake {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         op?.hashCode));
   }
 
@@ -30012,7 +31813,9 @@ class _$Brake extends Brake {
 
 /// Brake builder class
 ///
-class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Brake, BrakeBuilder> {
+class BrakeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Brake, BrakeBuilder> {
   _$Brake _$v;
 
   DateTime _timestamp;
@@ -30056,7 +31859,8 @@ class BrakeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  BrakeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => BrakeBuilder()..copyFromHeader(headerFrom);
+  BrakeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      BrakeBuilder()..copyFromHeader(headerFrom);
 
   BrakeBuilder get _$this {
     if (_$v != null) {
@@ -30134,7 +31938,8 @@ class _$DesiredLinearState extends DesiredLinearState {
   @override
   final DesiredLinearStateBitfieldFlags flags;
 
-  factory _$DesiredLinearState([void Function(DesiredLinearStateBuilder b) updates]) =>
+  factory _$DesiredLinearState(
+          [void Function(DesiredLinearStateBuilder b) updates]) =>
       (DesiredLinearStateBuilder()..update(updates)).build();
 
   _$DesiredLinearState._(
@@ -30156,11 +31961,13 @@ class _$DesiredLinearState extends DesiredLinearState {
       : super._();
 
   @override
-  DesiredLinearState rebuild(void Function(DesiredLinearStateBuilder b) updates) =>
+  DesiredLinearState rebuild(
+          void Function(DesiredLinearStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DesiredLinearStateBuilder toBuilder() => DesiredLinearStateBuilder()..replace(this);
+  DesiredLinearStateBuilder toBuilder() =>
+      DesiredLinearStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -30171,44 +31978,51 @@ class _$DesiredLinearState extends DesiredLinearState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (vx == other.vx
-            || vx - other.vx <= 1E-7) &&
-        (vy == other.vy
-            || vy - other.vy <= 1E-7) &&
-        (vz == other.vz
-            || vz - other.vz <= 1E-7) &&
-        (ax == other.ax
-            || ax - other.ax <= 1E-7) &&
-        (ay == other.ay
-            || ay - other.ay <= 1E-7) &&
-        (az == other.az
-            || az - other.az <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
+        (ax == other.ax || ax - other.ax <= 1E-7) &&
+        (ay == other.ay || ay - other.ay <= 1E-7) &&
+        (az == other.az || az - other.az <= 1E-7) &&
         flags == other.flags;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        vx?.hashCode), 
-        vy?.hashCode), 
-        vz?.hashCode), 
-        ax?.hashCode), 
-        ay?.hashCode), 
-        az?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                0,
+                                                                timestamp
+                                                                    ?.hashCode),
+                                                            src?.hashCode),
+                                                        srcEnt?.hashCode),
+                                                    dst?.hashCode),
+                                                dstEnt?.hashCode),
+                                            x?.hashCode),
+                                        y?.hashCode),
+                                    z?.hashCode),
+                                vx?.hashCode),
+                            vy?.hashCode),
+                        vz?.hashCode),
+                    ax?.hashCode),
+                ay?.hashCode),
+            az?.hashCode),
         flags?.hashCode));
   }
 
@@ -30236,7 +32050,10 @@ class _$DesiredLinearState extends DesiredLinearState {
 
 /// Desired Linear State builder class
 ///
-class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredLinearState, DesiredLinearStateBuilder> {
+class DesiredLinearStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DesiredLinearState, DesiredLinearStateBuilder> {
   _$DesiredLinearState _$v;
 
   DateTime _timestamp;
@@ -30316,7 +32133,8 @@ class DesiredLinearStateBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  DesiredLinearStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredLinearStateBuilder()..copyFromHeader(headerFrom);
+  DesiredLinearStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredLinearStateBuilder()..copyFromHeader(headerFrom);
 
   DesiredLinearStateBuilder get _$this {
     if (_$v != null) {
@@ -30394,7 +32212,8 @@ class _$DesiredThrottle extends DesiredThrottle {
   @override
   final double value;
 
-  factory _$DesiredThrottle([void Function(DesiredThrottleBuilder b) updates]) =>
+  factory _$DesiredThrottle(
+          [void Function(DesiredThrottleBuilder b) updates]) =>
       (DesiredThrottleBuilder()..update(updates)).build();
 
   _$DesiredThrottle._(
@@ -30422,18 +32241,18 @@ class _$DesiredThrottle extends DesiredThrottle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -30452,7 +32271,10 @@ class _$DesiredThrottle extends DesiredThrottle {
 
 /// Desired Throttle builder class
 ///
-class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DesiredThrottle, DesiredThrottleBuilder> {
+class DesiredThrottleBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DesiredThrottle, DesiredThrottleBuilder> {
   _$DesiredThrottle _$v;
 
   DateTime _timestamp;
@@ -30496,7 +32318,8 @@ class DesiredThrottleBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  DesiredThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DesiredThrottleBuilder()..copyFromHeader(headerFrom);
+  DesiredThrottleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DesiredThrottleBuilder()..copyFromHeader(headerFrom);
 
   DesiredThrottleBuilder get _$this {
     if (_$v != null) {
@@ -30615,43 +32438,53 @@ class _$Goto extends Goto {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (roll == other.roll
-            || roll - other.roll <= 1E-7) &&
-        (pitch == other.pitch
-            || pitch - other.pitch <= 1E-7) &&
-        (yaw == other.yaw
-            || yaw - other.yaw <= 1E-7) &&
+        (roll == other.roll || roll - other.roll <= 1E-7) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (yaw == other.yaw || yaw - other.yaw <= 1E-7) &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        roll?.hashCode), 
-        pitch?.hashCode), 
-        yaw?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                timeout?.hashCode),
+                                            lat?.hashCode),
+                                        lon?.hashCode),
+                                    z?.hashCode),
+                                zUnits?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    roll?.hashCode),
+                pitch?.hashCode),
+            yaw?.hashCode),
         custom?.hashCode));
   }
 
@@ -30664,15 +32497,20 @@ class _$Goto extends Goto {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('roll', '$roll (rad)${roll != null ? ' [${roll * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('yaw', '$yaw (rad)${yaw != null ? ' [${yaw * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('roll',
+              '$roll (rad)${roll != null ? ' [${roll * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch',
+              '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('yaw',
+              '$yaw (rad)${yaw != null ? ' [${yaw * 180.0 / math.pi} (deg)]' : ''}')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -30680,7 +32518,9 @@ class _$Goto extends Goto {
 
 /// Goto Maneuver builder class
 ///
-class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Goto, GotoBuilder> {
+class GotoBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Goto, GotoBuilder> {
   _$Goto _$v;
 
   DateTime _timestamp;
@@ -30764,7 +32604,8 @@ class GotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  GotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GotoBuilder()..copyFromHeader(headerFrom);
+  GotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GotoBuilder()..copyFromHeader(headerFrom);
 
   GotoBuilder get _$this {
     if (_$v != null) {
@@ -30903,41 +32744,53 @@ class _$PopUp extends PopUp {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         duration == other.duration &&
-        (radius == other.radius
-            || radius - other.radius <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         flags == other.flags &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        duration?.hashCode), 
-        radius?.hashCode), 
-        flags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                timeout?.hashCode),
+                                            lat?.hashCode),
+                                        lon?.hashCode),
+                                    z?.hashCode),
+                                zUnits?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    duration?.hashCode),
+                radius?.hashCode),
+            flags?.hashCode),
         custom?.hashCode));
   }
 
@@ -30950,8 +32803,10 @@ class _$PopUp extends PopUp {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -30966,7 +32821,9 @@ class _$PopUp extends PopUp {
 
 /// PopUp Maneuver builder class
 ///
-class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PopUp, PopUpBuilder> {
+class PopUpBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PopUp, PopUpBuilder> {
   _$PopUp _$v;
 
   DateTime _timestamp;
@@ -31050,7 +32907,8 @@ class PopUpBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  PopUpBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PopUpBuilder()..copyFromHeader(headerFrom);
+  PopUpBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PopUpBuilder()..copyFromHeader(headerFrom);
 
   PopUpBuilder get _$this {
     if (_$v != null) {
@@ -31163,12 +33021,13 @@ class _$Teleoperation extends Teleoperation {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         custom?.hashCode));
   }
 
@@ -31187,7 +33046,9 @@ class _$Teleoperation extends Teleoperation {
 
 /// Teleoperation Maneuver builder class
 ///
-class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Teleoperation, TeleoperationBuilder> {
+class TeleoperationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Teleoperation, TeleoperationBuilder> {
   _$Teleoperation _$v;
 
   DateTime _timestamp;
@@ -31231,7 +33092,8 @@ class TeleoperationBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  TeleoperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TeleoperationBuilder()..copyFromHeader(headerFrom);
+  TeleoperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TeleoperationBuilder()..copyFromHeader(headerFrom);
 
   TeleoperationBuilder get _$this {
     if (_$v != null) {
@@ -31359,49 +33221,60 @@ class _$Loiter extends Loiter {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
         duration == other.duration &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         type == other.type &&
-        (radius == other.radius
-            || radius - other.radius <= 1E-7) &&
-        (length == other.length
-            || length - other.length <= 1E-7) &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        duration?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        type?.hashCode), 
-        radius?.hashCode), 
-        length?.hashCode), 
-        bearing?.hashCode), 
-        direction?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc(0,
+                                                                                timestamp?.hashCode),
+                                                                            src?.hashCode),
+                                                                        srcEnt?.hashCode),
+                                                                    dst?.hashCode),
+                                                                dstEnt?.hashCode),
+                                                            timeout?.hashCode),
+                                                        lat?.hashCode),
+                                                    lon?.hashCode),
+                                                z?.hashCode),
+                                            zUnits?.hashCode),
+                                        duration?.hashCode),
+                                    speed?.hashCode),
+                                speedUnits?.hashCode),
+                            type?.hashCode),
+                        radius?.hashCode),
+                    length?.hashCode),
+                bearing?.hashCode),
+            direction?.hashCode),
         custom?.hashCode));
   }
 
@@ -31414,8 +33287,10 @@ class _$Loiter extends Loiter {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('duration', '$duration (s)')
@@ -31424,7 +33299,8 @@ class _$Loiter extends Loiter {
           ..add('type', '$type (Enumerated)')
           ..add('radius', '$radius (m)')
           ..add('length', '$length (m)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('bearing',
+              '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
           ..add('direction', '$direction (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
         .toString();
@@ -31433,7 +33309,9 @@ class _$Loiter extends Loiter {
 
 /// Loiter Maneuver builder class
 ///
-class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Loiter, LoiterBuilder> {
+class LoiterBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Loiter, LoiterBuilder> {
   _$Loiter _$v;
 
   DateTime _timestamp;
@@ -31529,7 +33407,8 @@ class LoiterBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  LoiterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LoiterBuilder()..copyFromHeader(headerFrom);
+  LoiterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LoiterBuilder()..copyFromHeader(headerFrom);
 
   LoiterBuilder get _$this {
     if (_$v != null) {
@@ -31652,13 +33531,15 @@ class _$IdleManeuver extends IdleManeuver {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        duration?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            duration?.hashCode),
         custom?.hashCode));
   }
 
@@ -31678,7 +33559,9 @@ class _$IdleManeuver extends IdleManeuver {
 
 /// Idle Maneuver builder class
 ///
-class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IdleManeuver, IdleManeuverBuilder> {
+class IdleManeuverBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<IdleManeuver, IdleManeuverBuilder> {
   _$IdleManeuver _$v;
 
   DateTime _timestamp;
@@ -31726,7 +33609,8 @@ class IdleManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  IdleManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IdleManeuverBuilder()..copyFromHeader(headerFrom);
+  IdleManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      IdleManeuverBuilder()..copyFromHeader(headerFrom);
 
   IdleManeuverBuilder get _$this {
     if (_$v != null) {
@@ -31792,7 +33676,8 @@ class _$LowLevelControl extends LowLevelControl {
   @override
   final String custom;
 
-  factory _$LowLevelControl([void Function(LowLevelControlBuilder b) updates]) =>
+  factory _$LowLevelControl(
+          [void Function(LowLevelControlBuilder b) updates]) =>
       (LowLevelControlBuilder()..update(updates)).build();
 
   _$LowLevelControl._(
@@ -31829,14 +33714,17 @@ class _$LowLevelControl extends LowLevelControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        control?.hashCode), 
-        duration?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                control?.hashCode),
+            duration?.hashCode),
         custom?.hashCode));
   }
 
@@ -31857,7 +33745,10 @@ class _$LowLevelControl extends LowLevelControl {
 
 /// Low Level Control Maneuver builder class
 ///
-class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LowLevelControl, LowLevelControlBuilder> {
+class LowLevelControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<LowLevelControl, LowLevelControlBuilder> {
   _$LowLevelControl _$v;
 
   DateTime _timestamp;
@@ -31909,7 +33800,8 @@ class LowLevelControlBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  LowLevelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LowLevelControlBuilder()..copyFromHeader(headerFrom);
+  LowLevelControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LowLevelControlBuilder()..copyFromHeader(headerFrom);
 
   LowLevelControlBuilder get _$this {
     if (_$v != null) {
@@ -32047,26 +33939,18 @@ class _$Rows extends Rows {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
-        (crossAngle == other.crossAngle
-            || crossAngle - other.crossAngle <= 1E-7) &&
-        (width == other.width
-            || width - other.width <= 1E-7) &&
-        (length == other.length
-            || length - other.length <= 1E-7) &&
-        (hstep == other.hstep
-            || hstep - other.hstep <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (crossAngle == other.crossAngle ||
+            crossAngle - other.crossAngle <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
+        (hstep == other.hstep || hstep - other.hstep <= 1E-7) &&
         coff == other.coff &&
         alternation == other.alternation &&
         flags == other.flags &&
@@ -32075,27 +33959,43 @@ class _$Rows extends Rows {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        bearing?.hashCode), 
-        crossAngle?.hashCode), 
-        width?.hashCode), 
-        length?.hashCode), 
-        hstep?.hashCode), 
-        coff?.hashCode), 
-        alternation?.hashCode), 
-        flags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                                                                srcEnt?.hashCode),
+                                                                            dst?.hashCode),
+                                                                        dstEnt?.hashCode),
+                                                                    timeout?.hashCode),
+                                                                lat?.hashCode),
+                                                            lon?.hashCode),
+                                                        z?.hashCode),
+                                                    zUnits?.hashCode),
+                                                speed?.hashCode),
+                                            speedUnits?.hashCode),
+                                        bearing?.hashCode),
+                                    crossAngle?.hashCode),
+                                width?.hashCode),
+                            length?.hashCode),
+                        hstep?.hashCode),
+                    coff?.hashCode),
+                alternation?.hashCode),
+            flags?.hashCode),
         custom?.hashCode));
   }
 
@@ -32108,14 +34008,18 @@ class _$Rows extends Rows {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('bearing',
+              '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('crossAngle',
+              '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)')
           ..add('hstep', '$hstep (m)')
@@ -32129,7 +34033,9 @@ class _$Rows extends Rows {
 
 /// Rows Maneuver builder class
 ///
-class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Rows, RowsBuilder> {
+class RowsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Rows, RowsBuilder> {
   _$Rows _$v;
 
   DateTime _timestamp;
@@ -32233,7 +34139,8 @@ class RowsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  RowsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RowsBuilder()..copyFromHeader(headerFrom);
+  RowsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RowsBuilder()..copyFromHeader(headerFrom);
 
   RowsBuilder get _$this {
     if (_$v != null) {
@@ -32376,15 +34283,11 @@ class _$FollowPath extends FollowPath {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
@@ -32392,20 +34295,35 @@ class _$FollowPath extends FollowPath {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        points?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        timeout?.hashCode),
+                                    lat?.hashCode),
+                                lon?.hashCode),
+                            z?.hashCode),
+                        zUnits?.hashCode),
+                    speed?.hashCode),
+                speedUnits?.hashCode),
+            points?.hashCode),
         custom?.hashCode));
   }
 
@@ -32418,8 +34336,10 @@ class _$FollowPath extends FollowPath {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -32432,7 +34352,9 @@ class _$FollowPath extends FollowPath {
 
 /// Follow Path Maneuver builder class
 ///
-class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowPath, FollowPathBuilder> {
+class FollowPathBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FollowPath, FollowPathBuilder> {
   _$FollowPath _$v;
 
   DateTime _timestamp;
@@ -32508,7 +34430,8 @@ class FollowPathBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  FollowPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowPathBuilder()..copyFromHeader(headerFrom);
+  FollowPathBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FollowPathBuilder()..copyFromHeader(headerFrom);
 
   FollowPathBuilder get _$this {
     if (_$v != null) {
@@ -32618,24 +34541,24 @@ class _$PathPoint extends PathPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -32656,7 +34579,9 @@ class _$PathPoint extends PathPoint {
 
 /// Path Point builder class
 ///
-class PathPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PathPoint, PathPointBuilder> {
+class PathPointBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PathPoint, PathPointBuilder> {
   _$PathPoint _$v;
 
   DateTime _timestamp;
@@ -32708,7 +34633,8 @@ class PathPointBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  PathPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PathPointBuilder()..copyFromHeader(headerFrom);
+  PathPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PathPointBuilder()..copyFromHeader(headerFrom);
 
   PathPointBuilder get _$this {
     if (_$v != null) {
@@ -32828,40 +34754,50 @@ class _$YoYo extends YoYo {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (amplitude == other.amplitude
-            || amplitude - other.amplitude <= 1E-7) &&
-        (pitch == other.pitch
-            || pitch - other.pitch <= 1E-7) &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (amplitude == other.amplitude || amplitude - other.amplitude <= 1E-7) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        amplitude?.hashCode), 
-        pitch?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                0,
+                                                                timestamp
+                                                                    ?.hashCode),
+                                                            src?.hashCode),
+                                                        srcEnt?.hashCode),
+                                                    dst?.hashCode),
+                                                dstEnt?.hashCode),
+                                            timeout?.hashCode),
+                                        lat?.hashCode),
+                                    lon?.hashCode),
+                                z?.hashCode),
+                            zUnits?.hashCode),
+                        amplitude?.hashCode),
+                    pitch?.hashCode),
+                speed?.hashCode),
+            speedUnits?.hashCode),
         custom?.hashCode));
   }
 
@@ -32874,12 +34810,15 @@ class _$YoYo extends YoYo {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('amplitude', '$amplitude (m)')
-          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch',
+              '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -32889,7 +34828,9 @@ class _$YoYo extends YoYo {
 
 /// Yo-Yo Maneuver builder class
 ///
-class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<YoYo, YoYoBuilder> {
+class YoYoBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<YoYo, YoYoBuilder> {
   _$YoYo _$v;
 
   DateTime _timestamp;
@@ -32969,7 +34910,8 @@ class YoYoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  YoYoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => YoYoBuilder()..copyFromHeader(headerFrom);
+  YoYoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      YoYoBuilder()..copyFromHeader(headerFrom);
 
   YoYoBuilder get _$this {
     if (_$v != null) {
@@ -33044,8 +34986,8 @@ class _$TeleoperationDone extends TeleoperationDone {
   @override
   final int dstEnt;
 
-
-  factory _$TeleoperationDone([void Function(TeleoperationDoneBuilder b) updates]) =>
+  factory _$TeleoperationDone(
+          [void Function(TeleoperationDoneBuilder b) updates]) =>
       (TeleoperationDoneBuilder()..update(updates)).build();
 
   _$TeleoperationDone._(
@@ -33057,11 +34999,13 @@ class _$TeleoperationDone extends TeleoperationDone {
       : super._();
 
   @override
-  TeleoperationDone rebuild(void Function(TeleoperationDoneBuilder b) updates) =>
+  TeleoperationDone rebuild(
+          void Function(TeleoperationDoneBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TeleoperationDoneBuilder toBuilder() => TeleoperationDoneBuilder()..replace(this);
+  TeleoperationDoneBuilder toBuilder() =>
+      TeleoperationDoneBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -33076,11 +35020,11 @@ class _$TeleoperationDone extends TeleoperationDone {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -33098,7 +35042,10 @@ class _$TeleoperationDone extends TeleoperationDone {
 
 /// Teleoperation Done builder class
 ///
-class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TeleoperationDone, TeleoperationDoneBuilder> {
+class TeleoperationDoneBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<TeleoperationDone, TeleoperationDoneBuilder> {
   _$TeleoperationDone _$v;
 
   DateTime _timestamp;
@@ -33138,7 +35085,8 @@ class TeleoperationDoneBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  TeleoperationDoneBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TeleoperationDoneBuilder()..copyFromHeader(headerFrom);
+  TeleoperationDoneBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TeleoperationDoneBuilder()..copyFromHeader(headerFrom);
 
   TeleoperationDoneBuilder get _$this {
     if (_$v != null) {
@@ -33248,38 +35196,48 @@ class _$StationKeeping extends StationKeeping {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (radius == other.radius
-            || radius - other.radius <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         duration == other.duration &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        radius?.hashCode), 
-        duration?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        lat?.hashCode),
+                                    lon?.hashCode),
+                                z?.hashCode),
+                            zUnits?.hashCode),
+                        radius?.hashCode),
+                    duration?.hashCode),
+                speed?.hashCode),
+            speedUnits?.hashCode),
         custom?.hashCode));
   }
 
@@ -33291,8 +35249,10 @@ class _$StationKeeping extends StationKeeping {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('radius', '$radius (m)')
@@ -33306,7 +35266,9 @@ class _$StationKeeping extends StationKeeping {
 
 /// Station Keeping builder class
 ///
-class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StationKeeping, StationKeepingBuilder> {
+class StationKeepingBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<StationKeeping, StationKeepingBuilder> {
   _$StationKeeping _$v;
 
   DateTime _timestamp;
@@ -33382,7 +35344,8 @@ class StationKeepingBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  StationKeepingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StationKeepingBuilder()..copyFromHeader(headerFrom);
+  StationKeepingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      StationKeepingBuilder()..copyFromHeader(headerFrom);
 
   StationKeepingBuilder get _$this {
     if (_$v != null) {
@@ -33521,43 +35484,57 @@ class _$Elevator extends Elevator {
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
         flags == other.flags &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (startZ == other.startZ
-            || startZ - other.startZ <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (startZ == other.startZ || startZ - other.startZ <= 1E-7) &&
         startZUnits == other.startZUnits &&
-        (endZ == other.endZ
-            || endZ - other.endZ <= 1E-7) &&
+        (endZ == other.endZ || endZ - other.endZ <= 1E-7) &&
         endZUnits == other.endZUnits &&
-        (radius == other.radius
-            || radius - other.radius <= 1E-7) &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        flags?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        startZ?.hashCode), 
-        startZUnits?.hashCode), 
-        endZ?.hashCode), 
-        endZUnits?.hashCode), 
-        radius?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        0,
+                                                                        timestamp
+                                                                            ?.hashCode),
+                                                                    src
+                                                                        ?.hashCode),
+                                                                srcEnt
+                                                                    ?.hashCode),
+                                                            dst?.hashCode),
+                                                        dstEnt?.hashCode),
+                                                    timeout?.hashCode),
+                                                flags?.hashCode),
+                                            lat?.hashCode),
+                                        lon?.hashCode),
+                                    startZ?.hashCode),
+                                startZUnits?.hashCode),
+                            endZ?.hashCode),
+                        endZUnits?.hashCode),
+                    radius?.hashCode),
+                speed?.hashCode),
+            speedUnits?.hashCode),
         custom?.hashCode));
   }
 
@@ -33571,8 +35548,10 @@ class _$Elevator extends Elevator {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
           ..add('flags', '$flags (Bitfield)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
           ..add('endZ', '$endZ (m)')
@@ -33587,7 +35566,9 @@ class _$Elevator extends Elevator {
 
 /// Elevator Maneuver builder class
 ///
-class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Elevator, ElevatorBuilder> {
+class ElevatorBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Elevator, ElevatorBuilder> {
   _$Elevator _$v;
 
   DateTime _timestamp;
@@ -33675,7 +35656,8 @@ class ElevatorBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  ElevatorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ElevatorBuilder()..copyFromHeader(headerFrom);
+  ElevatorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ElevatorBuilder()..copyFromHeader(headerFrom);
 
   ElevatorBuilder get _$this {
     if (_$v != null) {
@@ -33773,7 +35755,8 @@ class _$FollowTrajectory extends FollowTrajectory {
   @override
   final String custom;
 
-  factory _$FollowTrajectory([void Function(FollowTrajectoryBuilder b) updates]) =>
+  factory _$FollowTrajectory(
+          [void Function(FollowTrajectoryBuilder b) updates]) =>
       (FollowTrajectoryBuilder()..update(updates)).build();
 
   _$FollowTrajectory._(
@@ -33798,7 +35781,8 @@ class _$FollowTrajectory extends FollowTrajectory {
       (toBuilder()..update(updates)).build();
 
   @override
-  FollowTrajectoryBuilder toBuilder() => FollowTrajectoryBuilder()..replace(this);
+  FollowTrajectoryBuilder toBuilder() =>
+      FollowTrajectoryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -33810,15 +35794,11 @@ class _$FollowTrajectory extends FollowTrajectory {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
@@ -33826,20 +35806,35 @@ class _$FollowTrajectory extends FollowTrajectory {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        points?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        timeout?.hashCode),
+                                    lat?.hashCode),
+                                lon?.hashCode),
+                            z?.hashCode),
+                        zUnits?.hashCode),
+                    speed?.hashCode),
+                speedUnits?.hashCode),
+            points?.hashCode),
         custom?.hashCode));
   }
 
@@ -33852,8 +35847,10 @@ class _$FollowTrajectory extends FollowTrajectory {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -33866,7 +35863,10 @@ class _$FollowTrajectory extends FollowTrajectory {
 
 /// Follow Trajectory builder class
 ///
-class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowTrajectory, FollowTrajectoryBuilder> {
+class FollowTrajectoryBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FollowTrajectory, FollowTrajectoryBuilder> {
   _$FollowTrajectory _$v;
 
   DateTime _timestamp;
@@ -33942,7 +35942,8 @@ class FollowTrajectoryBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  FollowTrajectoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowTrajectoryBuilder()..copyFromHeader(headerFrom);
+  FollowTrajectoryBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FollowTrajectoryBuilder()..copyFromHeader(headerFrom);
 
   FollowTrajectoryBuilder get _$this {
     if (_$v != null) {
@@ -34024,7 +36025,8 @@ class _$TrajectoryPoint extends TrajectoryPoint {
   @override
   final double t;
 
-  factory _$TrajectoryPoint([void Function(TrajectoryPointBuilder b) updates]) =>
+  factory _$TrajectoryPoint(
+          [void Function(TrajectoryPointBuilder b) updates]) =>
       (TrajectoryPointBuilder()..update(updates)).build();
 
   _$TrajectoryPoint._(
@@ -34055,27 +36057,27 @@ class _$TrajectoryPoint extends TrajectoryPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (t == other.t
-            || t - other.t <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (t == other.t || t - other.t <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    x?.hashCode),
+                y?.hashCode),
+            z?.hashCode),
         t?.hashCode));
   }
 
@@ -34097,7 +36099,10 @@ class _$TrajectoryPoint extends TrajectoryPoint {
 
 /// Trajectory Point builder class
 ///
-class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrajectoryPoint, TrajectoryPointBuilder> {
+class TrajectoryPointBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<TrajectoryPoint, TrajectoryPointBuilder> {
   _$TrajectoryPoint _$v;
 
   DateTime _timestamp;
@@ -34153,7 +36158,8 @@ class TrajectoryPointBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  TrajectoryPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrajectoryPointBuilder()..copyFromHeader(headerFrom);
+  TrajectoryPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrajectoryPointBuilder()..copyFromHeader(headerFrom);
 
   TrajectoryPointBuilder get _$this {
     if (_$v != null) {
@@ -34260,14 +36266,17 @@ class _$CustomManeuver extends CustomManeuver {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        name?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                timeout?.hashCode),
+            name?.hashCode),
         custom?.hashCode));
   }
 
@@ -34288,7 +36297,9 @@ class _$CustomManeuver extends CustomManeuver {
 
 /// Custom Maneuver builder class
 ///
-class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CustomManeuver, CustomManeuverBuilder> {
+class CustomManeuverBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CustomManeuver, CustomManeuverBuilder> {
   _$CustomManeuver _$v;
 
   DateTime _timestamp;
@@ -34340,7 +36351,8 @@ class CustomManeuverBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  CustomManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CustomManeuverBuilder()..copyFromHeader(headerFrom);
+  CustomManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CustomManeuverBuilder()..copyFromHeader(headerFrom);
 
   CustomManeuverBuilder get _$this {
     if (_$v != null) {
@@ -34422,7 +36434,8 @@ class _$VehicleFormation extends VehicleFormation {
   @override
   final String custom;
 
-  factory _$VehicleFormation([void Function(VehicleFormationBuilder b) updates]) =>
+  factory _$VehicleFormation(
+          [void Function(VehicleFormationBuilder b) updates]) =>
       (VehicleFormationBuilder()..update(updates)).build();
 
   _$VehicleFormation._(
@@ -34448,7 +36461,8 @@ class _$VehicleFormation extends VehicleFormation {
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleFormationBuilder toBuilder() => VehicleFormationBuilder()..replace(this);
+  VehicleFormationBuilder toBuilder() =>
+      VehicleFormationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -34459,40 +36473,51 @@ class _$VehicleFormation extends VehicleFormation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         DeepCollectionEquality().equals(participants, other.participants) &&
-        (startTime == other.startTime
-            || startTime - other.startTime <= 1E-7) &&
+        (startTime == other.startTime || startTime - other.startTime <= 1E-7) &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        points?.hashCode), 
-        participants?.hashCode), 
-        startTime?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                0,
+                                                                timestamp
+                                                                    ?.hashCode),
+                                                            src?.hashCode),
+                                                        srcEnt?.hashCode),
+                                                    dst?.hashCode),
+                                                dstEnt?.hashCode),
+                                            lat?.hashCode),
+                                        lon?.hashCode),
+                                    z?.hashCode),
+                                zUnits?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    points?.hashCode),
+                participants?.hashCode),
+            startTime?.hashCode),
         custom?.hashCode));
   }
 
@@ -34504,8 +36529,10 @@ class _$VehicleFormation extends VehicleFormation {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -34520,7 +36547,10 @@ class _$VehicleFormation extends VehicleFormation {
 
 /// Vehicle Formation builder class
 ///
-class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleFormation, VehicleFormationBuilder> {
+class VehicleFormationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<VehicleFormation, VehicleFormationBuilder> {
   _$VehicleFormation _$v;
 
   DateTime _timestamp;
@@ -34583,7 +36613,8 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
 
   List<VehicleFormationParticipant> _participants;
   List<VehicleFormationParticipant> get participants => _$this._participants;
-  set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
+  set participants(List<VehicleFormationParticipant> participants) =>
+      _$this._participants = participants;
 
   double _startTime;
   double get startTime => _$this._startTime;
@@ -34600,7 +36631,8 @@ class VehicleFormationBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  VehicleFormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleFormationBuilder()..copyFromHeader(headerFrom);
+  VehicleFormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VehicleFormationBuilder()..copyFromHeader(headerFrom);
 
   VehicleFormationBuilder get _$this {
     if (_$v != null) {
@@ -34684,7 +36716,8 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
   @override
   final double offZ;
 
-  factory _$VehicleFormationParticipant([void Function(VehicleFormationParticipantBuilder b) updates]) =>
+  factory _$VehicleFormationParticipant(
+          [void Function(VehicleFormationParticipantBuilder b) updates]) =>
       (VehicleFormationParticipantBuilder()..update(updates)).build();
 
   _$VehicleFormationParticipant._(
@@ -34700,11 +36733,13 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
       : super._();
 
   @override
-  VehicleFormationParticipant rebuild(void Function(VehicleFormationParticipantBuilder b) updates) =>
+  VehicleFormationParticipant rebuild(
+          void Function(VehicleFormationParticipantBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  VehicleFormationParticipantBuilder toBuilder() => VehicleFormationParticipantBuilder()..replace(this);
+  VehicleFormationParticipantBuilder toBuilder() =>
+      VehicleFormationParticipantBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -34716,25 +36751,26 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         vid == other.vid &&
-        (offX == other.offX
-            || offX - other.offX <= 1E-7) &&
-        (offY == other.offY
-            || offY - other.offY <= 1E-7) &&
-        (offZ == other.offZ
-            || offZ - other.offZ <= 1E-7);
+        (offX == other.offX || offX - other.offX <= 1E-7) &&
+        (offY == other.offY || offY - other.offY <= 1E-7) &&
+        (offZ == other.offZ || offZ - other.offZ <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        vid?.hashCode), 
-        offX?.hashCode), 
-        offY?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    vid?.hashCode),
+                offX?.hashCode),
+            offY?.hashCode),
         offZ?.hashCode));
   }
 
@@ -34756,7 +36792,12 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
 
 /// Vehicle Formation Participant builder class
 ///
-class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleFormationParticipant, VehicleFormationParticipantBuilder> {
+class VehicleFormationParticipantBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<VehicleFormationParticipant,
+            VehicleFormationParticipantBuilder> {
   _$VehicleFormationParticipant _$v;
 
   DateTime _timestamp;
@@ -34807,12 +36848,15 @@ class VehicleFormationParticipantBuilder extends Object with ImcBuilderHeaderPar
 
   VehicleFormationParticipantBuilder();
 
-  VehicleFormationParticipantBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+  VehicleFormationParticipantBuilder.fromHeader(
+      ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
 
   @override
-  VehicleFormationParticipantBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleFormationParticipantBuilder()..copyFromHeader(headerFrom);
+  VehicleFormationParticipantBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      VehicleFormationParticipantBuilder()..copyFromHeader(headerFrom);
 
   VehicleFormationParticipantBuilder get _$this {
     if (_$v != null) {
@@ -34875,7 +36919,6 @@ class _$StopManeuver extends StopManeuver {
   @override
   final int dstEnt;
 
-
   factory _$StopManeuver([void Function(StopManeuverBuilder b) updates]) =>
       (StopManeuverBuilder()..update(updates)).build();
 
@@ -34907,11 +36950,11 @@ class _$StopManeuver extends StopManeuver {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -34929,7 +36972,9 @@ class _$StopManeuver extends StopManeuver {
 
 /// Stop Maneuver builder class
 ///
-class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StopManeuver, StopManeuverBuilder> {
+class StopManeuverBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<StopManeuver, StopManeuverBuilder> {
   _$StopManeuver _$v;
 
   DateTime _timestamp;
@@ -34969,7 +37014,8 @@ class StopManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  StopManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StopManeuverBuilder()..copyFromHeader(headerFrom);
+  StopManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      StopManeuverBuilder()..copyFromHeader(headerFrom);
 
   StopManeuverBuilder get _$this {
     if (_$v != null) {
@@ -35027,7 +37073,8 @@ class _$RegisterManeuver extends RegisterManeuver {
   @override
   final int mid;
 
-  factory _$RegisterManeuver([void Function(RegisterManeuverBuilder b) updates]) =>
+  factory _$RegisterManeuver(
+          [void Function(RegisterManeuverBuilder b) updates]) =>
       (RegisterManeuverBuilder()..update(updates)).build();
 
   _$RegisterManeuver._(
@@ -35044,7 +37091,8 @@ class _$RegisterManeuver extends RegisterManeuver {
       (toBuilder()..update(updates)).build();
 
   @override
-  RegisterManeuverBuilder toBuilder() => RegisterManeuverBuilder()..replace(this);
+  RegisterManeuverBuilder toBuilder() =>
+      RegisterManeuverBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -35060,12 +37108,13 @@ class _$RegisterManeuver extends RegisterManeuver {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         mid?.hashCode));
   }
 
@@ -35084,7 +37133,10 @@ class _$RegisterManeuver extends RegisterManeuver {
 
 /// Register Maneuver builder class
 ///
-class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RegisterManeuver, RegisterManeuverBuilder> {
+class RegisterManeuverBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<RegisterManeuver, RegisterManeuverBuilder> {
   _$RegisterManeuver _$v;
 
   DateTime _timestamp;
@@ -35128,7 +37180,8 @@ class RegisterManeuverBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  RegisterManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RegisterManeuverBuilder()..copyFromHeader(headerFrom);
+  RegisterManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RegisterManeuverBuilder()..copyFromHeader(headerFrom);
 
   RegisterManeuverBuilder get _$this {
     if (_$v != null) {
@@ -35192,7 +37245,8 @@ class _$ManeuverControlState extends ManeuverControlState {
   @override
   final String info;
 
-  factory _$ManeuverControlState([void Function(ManeuverControlStateBuilder b) updates]) =>
+  factory _$ManeuverControlState(
+          [void Function(ManeuverControlStateBuilder b) updates]) =>
       (ManeuverControlStateBuilder()..update(updates)).build();
 
   _$ManeuverControlState._(
@@ -35207,11 +37261,13 @@ class _$ManeuverControlState extends ManeuverControlState {
       : super._();
 
   @override
-  ManeuverControlState rebuild(void Function(ManeuverControlStateBuilder b) updates) =>
+  ManeuverControlState rebuild(
+          void Function(ManeuverControlStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ManeuverControlStateBuilder toBuilder() => ManeuverControlStateBuilder()..replace(this);
+  ManeuverControlStateBuilder toBuilder() =>
+      ManeuverControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -35229,14 +37285,17 @@ class _$ManeuverControlState extends ManeuverControlState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        state?.hashCode), 
-        eta?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                state?.hashCode),
+            eta?.hashCode),
         info?.hashCode));
   }
 
@@ -35257,7 +37316,12 @@ class _$ManeuverControlState extends ManeuverControlState {
 
 /// Maneuver Control State builder class
 ///
-class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ManeuverControlState, ManeuverControlStateBuilder> {
+class ManeuverControlStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<ManeuverControlState,
+            ManeuverControlStateBuilder> {
   _$ManeuverControlState _$v;
 
   DateTime _timestamp;
@@ -35309,7 +37373,8 @@ class ManeuverControlStateBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  ManeuverControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ManeuverControlStateBuilder()..copyFromHeader(headerFrom);
+  ManeuverControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ManeuverControlStateBuilder()..copyFromHeader(headerFrom);
 
   ManeuverControlStateBuilder get _$this {
     if (_$v != null) {
@@ -35424,33 +37489,39 @@ class _$FollowSystem extends FollowSystem {
         dstEnt == other.dstEnt &&
         system == other.system &&
         duration == other.duration &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        system?.hashCode), 
-        duration?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    system?.hashCode),
+                                duration?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    x?.hashCode),
+                y?.hashCode),
+            z?.hashCode),
         zUnits?.hashCode));
   }
 
@@ -35476,7 +37547,9 @@ class _$FollowSystem extends FollowSystem {
 
 /// Follow System builder class
 ///
-class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowSystem, FollowSystemBuilder> {
+class FollowSystemBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FollowSystem, FollowSystemBuilder> {
   _$FollowSystem _$v;
 
   DateTime _timestamp;
@@ -35548,7 +37621,8 @@ class FollowSystemBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  FollowSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowSystemBuilder()..copyFromHeader(headerFrom);
+  FollowSystemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FollowSystemBuilder()..copyFromHeader(headerFrom);
 
   FollowSystemBuilder get _$this {
     if (_$v != null) {
@@ -35671,35 +37745,42 @@ class _$CommsRelay extends CommsRelay {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         duration == other.duration &&
         sysA == other.sysA &&
         sysB == other.sysB &&
-        (moveThreshold == other.moveThreshold
-            || moveThreshold - other.moveThreshold <= 1E-7);
+        (moveThreshold == other.moveThreshold ||
+            moveThreshold - other.moveThreshold <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        duration?.hashCode), 
-        sysA?.hashCode), 
-        sysB?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    lat?.hashCode),
+                                lon?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    duration?.hashCode),
+                sysA?.hashCode),
+            sysB?.hashCode),
         moveThreshold?.hashCode));
   }
 
@@ -35711,8 +37792,10 @@ class _$CommsRelay extends CommsRelay {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('duration', '$duration (s)')
@@ -35725,7 +37808,9 @@ class _$CommsRelay extends CommsRelay {
 
 /// Communications Relay builder class
 ///
-class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CommsRelay, CommsRelayBuilder> {
+class CommsRelayBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CommsRelay, CommsRelayBuilder> {
   _$CommsRelay _$v;
 
   DateTime _timestamp;
@@ -35788,7 +37873,8 @@ class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements Buil
 
   double _moveThreshold;
   double get moveThreshold => _$this._moveThreshold;
-  set moveThreshold(double moveThreshold) => _$this._moveThreshold = moveThreshold;
+  set moveThreshold(double moveThreshold) =>
+      _$this._moveThreshold = moveThreshold;
 
   CommsRelayBuilder();
 
@@ -35797,7 +37883,8 @@ class CommsRelayBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  CommsRelayBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CommsRelayBuilder()..copyFromHeader(headerFrom);
+  CommsRelayBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CommsRelayBuilder()..copyFromHeader(headerFrom);
 
   CommsRelayBuilder get _$this {
     if (_$v != null) {
@@ -35920,15 +38007,11 @@ class _$CoverArea extends CoverArea {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(polygon, other.polygon) &&
         custom == other.custom;
@@ -35936,19 +38019,29 @@ class _$CoverArea extends CoverArea {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        polygon?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    lat?.hashCode),
+                                lon?.hashCode),
+                            z?.hashCode),
+                        zUnits?.hashCode),
+                    speed?.hashCode),
+                speedUnits?.hashCode),
+            polygon?.hashCode),
         custom?.hashCode));
   }
 
@@ -35960,8 +38053,10 @@ class _$CoverArea extends CoverArea {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -35974,7 +38069,9 @@ class _$CoverArea extends CoverArea {
 
 /// Cover Area builder class
 ///
-class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CoverArea, CoverAreaBuilder> {
+class CoverAreaBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CoverArea, CoverAreaBuilder> {
   _$CoverArea _$v;
 
   DateTime _timestamp;
@@ -36046,7 +38143,8 @@ class CoverAreaBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  CoverAreaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CoverAreaBuilder()..copyFromHeader(headerFrom);
+  CoverAreaBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CoverAreaBuilder()..copyFromHeader(headerFrom);
 
   CoverAreaBuilder get _$this {
     if (_$v != null) {
@@ -36151,21 +38249,21 @@ class _$PolygonVertex extends PolygonVertex {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            lat?.hashCode),
         lon?.hashCode));
   }
 
@@ -36177,15 +38275,19 @@ class _$PolygonVertex extends PolygonVertex {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Polygon Vertex builder class
 ///
-class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PolygonVertex, PolygonVertexBuilder> {
+class PolygonVertexBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PolygonVertex, PolygonVertexBuilder> {
   _$PolygonVertex _$v;
 
   DateTime _timestamp;
@@ -36233,7 +38335,8 @@ class PolygonVertexBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  PolygonVertexBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PolygonVertexBuilder()..copyFromHeader(headerFrom);
+  PolygonVertexBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PolygonVertexBuilder()..copyFromHeader(headerFrom);
 
   PolygonVertexBuilder get _$this {
     if (_$v != null) {
@@ -36319,7 +38422,8 @@ class _$CompassCalibration extends CompassCalibration {
   @override
   final String custom;
 
-  factory _$CompassCalibration([void Function(CompassCalibrationBuilder b) updates]) =>
+  factory _$CompassCalibration(
+          [void Function(CompassCalibrationBuilder b) updates]) =>
       (CompassCalibrationBuilder()..update(updates)).build();
 
   _$CompassCalibration._(
@@ -36344,11 +38448,13 @@ class _$CompassCalibration extends CompassCalibration {
       : super._();
 
   @override
-  CompassCalibration rebuild(void Function(CompassCalibrationBuilder b) updates) =>
+  CompassCalibration rebuild(
+          void Function(CompassCalibrationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CompassCalibrationBuilder toBuilder() => CompassCalibrationBuilder()..replace(this);
+  CompassCalibrationBuilder toBuilder() =>
+      CompassCalibrationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -36360,47 +38466,61 @@ class _$CompassCalibration extends CompassCalibration {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (pitch == other.pitch
-            || pitch - other.pitch <= 1E-7) &&
-        (amplitude == other.amplitude
-            || amplitude - other.amplitude <= 1E-7) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (amplitude == other.amplitude || amplitude - other.amplitude <= 1E-7) &&
         duration == other.duration &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (radius == other.radius
-            || radius - other.radius <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        pitch?.hashCode), 
-        amplitude?.hashCode), 
-        duration?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        radius?.hashCode), 
-        direction?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            0,
+                                                                            timestamp
+                                                                                ?.hashCode),
+                                                                        src
+                                                                            ?.hashCode),
+                                                                    srcEnt
+                                                                        ?.hashCode),
+                                                                dst?.hashCode),
+                                                            dstEnt?.hashCode),
+                                                        timeout?.hashCode),
+                                                    lat?.hashCode),
+                                                lon?.hashCode),
+                                            z?.hashCode),
+                                        zUnits?.hashCode),
+                                    pitch?.hashCode),
+                                amplitude?.hashCode),
+                            duration?.hashCode),
+                        speed?.hashCode),
+                    speedUnits?.hashCode),
+                radius?.hashCode),
+            direction?.hashCode),
         custom?.hashCode));
   }
 
@@ -36413,11 +38533,14 @@ class _$CompassCalibration extends CompassCalibration {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
-          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch',
+              '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
           ..add('amplitude', '$amplitude (m)')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
@@ -36431,7 +38554,10 @@ class _$CompassCalibration extends CompassCalibration {
 
 /// Compass Calibration Maneuver builder class
 ///
-class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CompassCalibration, CompassCalibrationBuilder> {
+class CompassCalibrationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<CompassCalibration, CompassCalibrationBuilder> {
   _$CompassCalibration _$v;
 
   DateTime _timestamp;
@@ -36510,7 +38636,8 @@ class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart impleme
 
   CompassCalibrationEnumDirection _direction;
   CompassCalibrationEnumDirection get direction => _$this._direction;
-  set direction(CompassCalibrationEnumDirection direction) => _$this._direction = direction;
+  set direction(CompassCalibrationEnumDirection direction) =>
+      _$this._direction = direction;
 
   String _custom;
   String get custom => _$this._custom;
@@ -36523,7 +38650,8 @@ class CompassCalibrationBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  CompassCalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompassCalibrationBuilder()..copyFromHeader(headerFrom);
+  CompassCalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CompassCalibrationBuilder()..copyFromHeader(headerFrom);
 
   CompassCalibrationBuilder get _$this {
     if (_$v != null) {
@@ -36613,7 +38741,8 @@ class _$FormationParameters extends FormationParameters {
   @override
   final String custom;
 
-  factory _$FormationParameters([void Function(FormationParametersBuilder b) updates]) =>
+  factory _$FormationParameters(
+          [void Function(FormationParametersBuilder b) updates]) =>
       (FormationParametersBuilder()..update(updates)).build();
 
   _$FormationParameters._(
@@ -36629,11 +38758,13 @@ class _$FormationParameters extends FormationParameters {
       : super._();
 
   @override
-  FormationParameters rebuild(void Function(FormationParametersBuilder b) updates) =>
+  FormationParameters rebuild(
+          void Function(FormationParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationParametersBuilder toBuilder() => FormationParametersBuilder()..replace(this);
+  FormationParametersBuilder toBuilder() =>
+      FormationParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -36652,15 +38783,19 @@ class _$FormationParameters extends FormationParameters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        formationName?.hashCode), 
-        referenceFrame?.hashCode), 
-        participants?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    formationName?.hashCode),
+                referenceFrame?.hashCode),
+            participants?.hashCode),
         custom?.hashCode));
   }
 
@@ -36682,7 +38817,12 @@ class _$FormationParameters extends FormationParameters {
 
 /// Formation Parameters builder class
 ///
-class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationParameters, FormationParametersBuilder> {
+class FormationParametersBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FormationParameters,
+            FormationParametersBuilder> {
   _$FormationParameters _$v;
 
   DateTime _timestamp;
@@ -36717,15 +38857,19 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
 
   String _formationName;
   String get formationName => _$this._formationName;
-  set formationName(String formationName) => _$this._formationName = formationName;
+  set formationName(String formationName) =>
+      _$this._formationName = formationName;
 
   FormationParametersEnumReferenceFrame _referenceFrame;
-  FormationParametersEnumReferenceFrame get referenceFrame => _$this._referenceFrame;
-  set referenceFrame(FormationParametersEnumReferenceFrame referenceFrame) => _$this._referenceFrame = referenceFrame;
+  FormationParametersEnumReferenceFrame get referenceFrame =>
+      _$this._referenceFrame;
+  set referenceFrame(FormationParametersEnumReferenceFrame referenceFrame) =>
+      _$this._referenceFrame = referenceFrame;
 
   List<VehicleFormationParticipant> _participants;
   List<VehicleFormationParticipant> get participants => _$this._participants;
-  set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
+  set participants(List<VehicleFormationParticipant> participants) =>
+      _$this._participants = participants;
 
   String _custom;
   String get custom => _$this._custom;
@@ -36738,7 +38882,8 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  FormationParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationParametersBuilder()..copyFromHeader(headerFrom);
+  FormationParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormationParametersBuilder()..copyFromHeader(headerFrom);
 
   FormationParametersBuilder get _$this {
     if (_$v != null) {
@@ -36779,7 +38924,8 @@ class FormationParametersBuilder extends Object with ImcBuilderHeaderPart implem
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             formationName: formationName ?? '',
-            referenceFrame: referenceFrame ?? FormationParametersEnumReferenceFrame(0),
+            referenceFrame:
+                referenceFrame ?? FormationParametersEnumReferenceFrame(0),
             participants: participants ?? <VehicleFormationParticipant>[],
             custom: custom ?? '');
     replace(_$result);
@@ -36830,7 +38976,8 @@ class _$FormationPlanExecution extends FormationPlanExecution {
   @override
   final String custom;
 
-  factory _$FormationPlanExecution([void Function(FormationPlanExecutionBuilder b) updates]) =>
+  factory _$FormationPlanExecution(
+          [void Function(FormationPlanExecutionBuilder b) updates]) =>
       (FormationPlanExecutionBuilder()..update(updates)).build();
 
   _$FormationPlanExecution._(
@@ -36856,11 +39003,13 @@ class _$FormationPlanExecution extends FormationPlanExecution {
       : super._();
 
   @override
-  FormationPlanExecution rebuild(void Function(FormationPlanExecutionBuilder b) updates) =>
+  FormationPlanExecution rebuild(
+          void Function(FormationPlanExecutionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationPlanExecutionBuilder toBuilder() => FormationPlanExecutionBuilder()..replace(this);
+  FormationPlanExecutionBuilder toBuilder() =>
+      FormationPlanExecutionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -36875,45 +39024,62 @@ class _$FormationPlanExecution extends FormationPlanExecution {
         formationName == other.formationName &&
         planId == other.planId &&
         description == other.description &&
-        (leaderSpeed == other.leaderSpeed
-            || leaderSpeed - other.leaderSpeed <= 1E-7) &&
-        (leaderBankLim == other.leaderBankLim
-            || leaderBankLim - other.leaderBankLim <= 1E-7) &&
-        (posSimErrLim == other.posSimErrLim
-            || posSimErrLim - other.posSimErrLim <= 1E-7) &&
-        (posSimErrWrn == other.posSimErrWrn
-            || posSimErrWrn - other.posSimErrWrn <= 1E-7) &&
+        (leaderSpeed == other.leaderSpeed ||
+            leaderSpeed - other.leaderSpeed <= 1E-7) &&
+        (leaderBankLim == other.leaderBankLim ||
+            leaderBankLim - other.leaderBankLim <= 1E-7) &&
+        (posSimErrLim == other.posSimErrLim ||
+            posSimErrLim - other.posSimErrLim <= 1E-7) &&
+        (posSimErrWrn == other.posSimErrWrn ||
+            posSimErrWrn - other.posSimErrWrn <= 1E-7) &&
         posSimErrTimeout == other.posSimErrTimeout &&
-        (convergMax == other.convergMax
-            || convergMax - other.convergMax <= 1E-7) &&
+        (convergMax == other.convergMax ||
+            convergMax - other.convergMax <= 1E-7) &&
         convergTimeout == other.convergTimeout &&
         commsTimeout == other.commsTimeout &&
-        (turbLim == other.turbLim
-            || turbLim - other.turbLim <= 1E-7) &&
+        (turbLim == other.turbLim || turbLim - other.turbLim <= 1E-7) &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        groupName?.hashCode), 
-        formationName?.hashCode), 
-        planId?.hashCode), 
-        description?.hashCode), 
-        leaderSpeed?.hashCode), 
-        leaderBankLim?.hashCode), 
-        posSimErrLim?.hashCode), 
-        posSimErrWrn?.hashCode), 
-        posSimErrTimeout?.hashCode), 
-        convergMax?.hashCode), 
-        convergTimeout?.hashCode), 
-        commsTimeout?.hashCode), 
-        turbLim?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc(0,
+                                                                                timestamp?.hashCode),
+                                                                            src?.hashCode),
+                                                                        srcEnt?.hashCode),
+                                                                    dst?.hashCode),
+                                                                dstEnt?.hashCode),
+                                                            groupName?.hashCode),
+                                                        formationName?.hashCode),
+                                                    planId?.hashCode),
+                                                description?.hashCode),
+                                            leaderSpeed?.hashCode),
+                                        leaderBankLim?.hashCode),
+                                    posSimErrLim?.hashCode),
+                                posSimErrWrn?.hashCode),
+                            posSimErrTimeout?.hashCode),
+                        convergMax?.hashCode),
+                    convergTimeout?.hashCode),
+                commsTimeout?.hashCode),
+            turbLim?.hashCode),
         custom?.hashCode));
   }
 
@@ -36945,7 +39111,12 @@ class _$FormationPlanExecution extends FormationPlanExecution {
 
 /// Formation Plan Execution builder class
 ///
-class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationPlanExecution, FormationPlanExecutionBuilder> {
+class FormationPlanExecutionBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FormationPlanExecution,
+            FormationPlanExecutionBuilder> {
   _$FormationPlanExecution _$v;
 
   DateTime _timestamp;
@@ -36984,7 +39155,8 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
 
   String _formationName;
   String get formationName => _$this._formationName;
-  set formationName(String formationName) => _$this._formationName = formationName;
+  set formationName(String formationName) =>
+      _$this._formationName = formationName;
 
   String _planId;
   String get planId => _$this._planId;
@@ -37000,7 +39172,8 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
 
   double _leaderBankLim;
   double get leaderBankLim => _$this._leaderBankLim;
-  set leaderBankLim(double leaderBankLim) => _$this._leaderBankLim = leaderBankLim;
+  set leaderBankLim(double leaderBankLim) =>
+      _$this._leaderBankLim = leaderBankLim;
 
   double _posSimErrLim;
   double get posSimErrLim => _$this._posSimErrLim;
@@ -37012,7 +39185,8 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
 
   int _posSimErrTimeout;
   int get posSimErrTimeout => _$this._posSimErrTimeout;
-  set posSimErrTimeout(int posSimErrTimeout) => _$this._posSimErrTimeout = posSimErrTimeout;
+  set posSimErrTimeout(int posSimErrTimeout) =>
+      _$this._posSimErrTimeout = posSimErrTimeout;
 
   double _convergMax;
   double get convergMax => _$this._convergMax;
@@ -37020,7 +39194,8 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
 
   int _convergTimeout;
   int get convergTimeout => _$this._convergTimeout;
-  set convergTimeout(int convergTimeout) => _$this._convergTimeout = convergTimeout;
+  set convergTimeout(int convergTimeout) =>
+      _$this._convergTimeout = convergTimeout;
 
   int _commsTimeout;
   int get commsTimeout => _$this._commsTimeout;
@@ -37041,7 +39216,9 @@ class FormationPlanExecutionBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  FormationPlanExecutionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationPlanExecutionBuilder()..copyFromHeader(headerFrom);
+  FormationPlanExecutionBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      FormationPlanExecutionBuilder()..copyFromHeader(headerFrom);
 
   FormationPlanExecutionBuilder get _$this {
     if (_$v != null) {
@@ -37135,7 +39312,8 @@ class _$FollowReference extends FollowReference {
   @override
   final double altitudeInterval;
 
-  factory _$FollowReference([void Function(FollowReferenceBuilder b) updates]) =>
+  factory _$FollowReference(
+          [void Function(FollowReferenceBuilder b) updates]) =>
       (FollowReferenceBuilder()..update(updates)).build();
 
   _$FollowReference._(
@@ -37169,26 +39347,32 @@ class _$FollowReference extends FollowReference {
         dstEnt == other.dstEnt &&
         controlSrc == other.controlSrc &&
         controlEnt == other.controlEnt &&
-        (timeout == other.timeout
-            || timeout - other.timeout <= 1E-7) &&
-        (loiterRadius == other.loiterRadius
-            || loiterRadius - other.loiterRadius <= 1E-7) &&
-        (altitudeInterval == other.altitudeInterval
-            || altitudeInterval - other.altitudeInterval <= 1E-7);
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
+        (loiterRadius == other.loiterRadius ||
+            loiterRadius - other.loiterRadius <= 1E-7) &&
+        (altitudeInterval == other.altitudeInterval ||
+            altitudeInterval - other.altitudeInterval <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        controlSrc?.hashCode), 
-        controlEnt?.hashCode), 
-        timeout?.hashCode), 
-        loiterRadius?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        controlSrc?.hashCode),
+                    controlEnt?.hashCode),
+                timeout?.hashCode),
+            loiterRadius?.hashCode),
         altitudeInterval?.hashCode));
   }
 
@@ -37211,7 +39395,10 @@ class _$FollowReference extends FollowReference {
 
 /// Follow Reference Maneuver builder class
 ///
-class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowReference, FollowReferenceBuilder> {
+class FollowReferenceBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FollowReference, FollowReferenceBuilder> {
   _$FollowReference _$v;
 
   DateTime _timestamp;
@@ -37262,7 +39449,8 @@ class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements
 
   double _altitudeInterval;
   double get altitudeInterval => _$this._altitudeInterval;
-  set altitudeInterval(double altitudeInterval) => _$this._altitudeInterval = altitudeInterval;
+  set altitudeInterval(double altitudeInterval) =>
+      _$this._altitudeInterval = altitudeInterval;
 
   FollowReferenceBuilder();
 
@@ -37271,7 +39459,8 @@ class FollowReferenceBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  FollowReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowReferenceBuilder()..copyFromHeader(headerFrom);
+  FollowReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FollowReferenceBuilder()..copyFromHeader(headerFrom);
 
   FollowReferenceBuilder get _$this {
     if (_$v != null) {
@@ -37385,27 +39574,32 @@ class _$Reference extends Reference {
         flags == other.flags &&
         speed == other.speed &&
         z == other.z &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (radius == other.radius
-            || radius - other.radius <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        flags?.hashCode), 
-        speed?.hashCode), 
-        z?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            flags?.hashCode),
+                        speed?.hashCode),
+                    z?.hashCode),
+                lat?.hashCode),
+            lon?.hashCode),
         radius?.hashCode));
   }
 
@@ -37429,7 +39623,9 @@ class _$Reference extends Reference {
 
 /// Reference To Follow builder class
 ///
-class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Reference, ReferenceBuilder> {
+class ReferenceBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Reference, ReferenceBuilder> {
   _$Reference _$v;
 
   DateTime _timestamp;
@@ -37493,7 +39689,8 @@ class ReferenceBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  ReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReferenceBuilder()..copyFromHeader(headerFrom);
+  ReferenceBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ReferenceBuilder()..copyFromHeader(headerFrom);
 
   ReferenceBuilder get _$this {
     if (_$v != null) {
@@ -37612,16 +39809,23 @@ class _$FollowRefState extends FollowRefState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        controlSrc?.hashCode), 
-        controlEnt?.hashCode), 
-        reference?.hashCode), 
-        state?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        controlSrc?.hashCode),
+                    controlEnt?.hashCode),
+                reference?.hashCode),
+            state?.hashCode),
         proximity?.hashCode));
   }
 
@@ -37644,7 +39848,9 @@ class _$FollowRefState extends FollowRefState {
 
 /// Follow Reference State builder class
 ///
-class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowRefState, FollowRefStateBuilder> {
+class FollowRefStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FollowRefState, FollowRefStateBuilder> {
   _$FollowRefState _$v;
 
   DateTime _timestamp;
@@ -37695,7 +39901,8 @@ class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements 
 
   FollowRefStateBitfieldProximity _proximity;
   FollowRefStateBitfieldProximity get proximity => _$this._proximity;
-  set proximity(FollowRefStateBitfieldProximity proximity) => _$this._proximity = proximity;
+  set proximity(FollowRefStateBitfieldProximity proximity) =>
+      _$this._proximity = proximity;
 
   FollowRefStateBuilder();
 
@@ -37704,7 +39911,8 @@ class FollowRefStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  FollowRefStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowRefStateBuilder()..copyFromHeader(headerFrom);
+  FollowRefStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FollowRefStateBuilder()..copyFromHeader(headerFrom);
 
   FollowRefStateBuilder get _$this {
     if (_$v != null) {
@@ -37808,7 +40016,8 @@ class _$FormationMonitor extends FormationMonitor {
   @override
   final List<RelativeState> relState;
 
-  factory _$FormationMonitor([void Function(FormationMonitorBuilder b) updates]) =>
+  factory _$FormationMonitor(
+          [void Function(FormationMonitorBuilder b) updates]) =>
       (FormationMonitorBuilder()..update(updates)).build();
 
   _$FormationMonitor._(
@@ -37843,7 +40052,8 @@ class _$FormationMonitor extends FormationMonitor {
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationMonitorBuilder toBuilder() => FormationMonitorBuilder()..replace(this);
+  FormationMonitorBuilder toBuilder() =>
+      FormationMonitorBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -37854,71 +40064,66 @@ class _$FormationMonitor extends FormationMonitor {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (axCmd == other.axCmd
-            || axCmd - other.axCmd <= 1E-7) &&
-        (ayCmd == other.ayCmd
-            || ayCmd - other.ayCmd <= 1E-7) &&
-        (azCmd == other.azCmd
-            || azCmd - other.azCmd <= 1E-7) &&
-        (axDes == other.axDes
-            || axDes - other.axDes <= 1E-7) &&
-        (ayDes == other.ayDes
-            || ayDes - other.ayDes <= 1E-7) &&
-        (azDes == other.azDes
-            || azDes - other.azDes <= 1E-7) &&
-        (virtErrX == other.virtErrX
-            || virtErrX - other.virtErrX <= 1E-7) &&
-        (virtErrY == other.virtErrY
-            || virtErrY - other.virtErrY <= 1E-7) &&
-        (virtErrZ == other.virtErrZ
-            || virtErrZ - other.virtErrZ <= 1E-7) &&
-        (surfFdbkX == other.surfFdbkX
-            || surfFdbkX - other.surfFdbkX <= 1E-7) &&
-        (surfFdbkY == other.surfFdbkY
-            || surfFdbkY - other.surfFdbkY <= 1E-7) &&
-        (surfFdbkZ == other.surfFdbkZ
-            || surfFdbkZ - other.surfFdbkZ <= 1E-7) &&
-        (surfUnknX == other.surfUnknX
-            || surfUnknX - other.surfUnknX <= 1E-7) &&
-        (surfUnknY == other.surfUnknY
-            || surfUnknY - other.surfUnknY <= 1E-7) &&
-        (surfUnknZ == other.surfUnknZ
-            || surfUnknZ - other.surfUnknZ <= 1E-7) &&
-        (ssX == other.ssX
-            || ssX - other.ssX <= 1E-7) &&
-        (ssY == other.ssY
-            || ssY - other.ssY <= 1E-7) &&
-        (ssZ == other.ssZ
-            || ssZ - other.ssZ <= 1E-7) &&
+        (axCmd == other.axCmd || axCmd - other.axCmd <= 1E-7) &&
+        (ayCmd == other.ayCmd || ayCmd - other.ayCmd <= 1E-7) &&
+        (azCmd == other.azCmd || azCmd - other.azCmd <= 1E-7) &&
+        (axDes == other.axDes || axDes - other.axDes <= 1E-7) &&
+        (ayDes == other.ayDes || ayDes - other.ayDes <= 1E-7) &&
+        (azDes == other.azDes || azDes - other.azDes <= 1E-7) &&
+        (virtErrX == other.virtErrX || virtErrX - other.virtErrX <= 1E-7) &&
+        (virtErrY == other.virtErrY || virtErrY - other.virtErrY <= 1E-7) &&
+        (virtErrZ == other.virtErrZ || virtErrZ - other.virtErrZ <= 1E-7) &&
+        (surfFdbkX == other.surfFdbkX || surfFdbkX - other.surfFdbkX <= 1E-7) &&
+        (surfFdbkY == other.surfFdbkY || surfFdbkY - other.surfFdbkY <= 1E-7) &&
+        (surfFdbkZ == other.surfFdbkZ || surfFdbkZ - other.surfFdbkZ <= 1E-7) &&
+        (surfUnknX == other.surfUnknX || surfUnknX - other.surfUnknX <= 1E-7) &&
+        (surfUnknY == other.surfUnknY || surfUnknY - other.surfUnknY <= 1E-7) &&
+        (surfUnknZ == other.surfUnknZ || surfUnknZ - other.surfUnknZ <= 1E-7) &&
+        (ssX == other.ssX || ssX - other.ssX <= 1E-7) &&
+        (ssY == other.ssY || ssY - other.ssY <= 1E-7) &&
+        (ssZ == other.ssZ || ssZ - other.ssZ <= 1E-7) &&
         DeepCollectionEquality().equals(relState, other.relState);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        axCmd?.hashCode), 
-        ayCmd?.hashCode), 
-        azCmd?.hashCode), 
-        axDes?.hashCode), 
-        ayDes?.hashCode), 
-        azDes?.hashCode), 
-        virtErrX?.hashCode), 
-        virtErrY?.hashCode), 
-        virtErrZ?.hashCode), 
-        surfFdbkX?.hashCode), 
-        surfFdbkY?.hashCode), 
-        surfFdbkZ?.hashCode), 
-        surfUnknX?.hashCode), 
-        surfUnknY?.hashCode), 
-        surfUnknZ?.hashCode), 
-        ssX?.hashCode), 
-        ssY?.hashCode), 
-        ssZ?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode),
+                                                                                axCmd?.hashCode),
+                                                                            ayCmd?.hashCode),
+                                                                        azCmd?.hashCode),
+                                                                    axDes?.hashCode),
+                                                                ayDes?.hashCode),
+                                                            azDes?.hashCode),
+                                                        virtErrX?.hashCode),
+                                                    virtErrY?.hashCode),
+                                                virtErrZ?.hashCode),
+                                            surfFdbkX?.hashCode),
+                                        surfFdbkY?.hashCode),
+                                    surfFdbkZ?.hashCode),
+                                surfUnknX?.hashCode),
+                            surfUnknY?.hashCode),
+                        surfUnknZ?.hashCode),
+                    ssX?.hashCode),
+                ssY?.hashCode),
+            ssZ?.hashCode),
         relState?.hashCode));
   }
 
@@ -37955,7 +40160,10 @@ class _$FormationMonitor extends FormationMonitor {
 
 /// Formation Monitoring Data builder class
 ///
-class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationMonitor, FormationMonitorBuilder> {
+class FormationMonitorBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FormationMonitor, FormationMonitorBuilder> {
   _$FormationMonitor _$v;
 
   DateTime _timestamp;
@@ -38071,7 +40279,8 @@ class FormationMonitorBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  FormationMonitorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationMonitorBuilder()..copyFromHeader(headerFrom);
+  FormationMonitorBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormationMonitorBuilder()..copyFromHeader(headerFrom);
 
   FormationMonitorBuilder get _$this {
     if (_$v != null) {
@@ -38259,79 +40468,68 @@ class _$RelativeState extends RelativeState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         sId == other.sId &&
-        (dist == other.dist
-            || dist - other.dist <= 1E-7) &&
-        (err == other.err
-            || err - other.err <= 1E-7) &&
-        (ctrlImp == other.ctrlImp
-            || ctrlImp - other.ctrlImp <= 1E-7) &&
-        (relDirX == other.relDirX
-            || relDirX - other.relDirX <= 1E-7) &&
-        (relDirY == other.relDirY
-            || relDirY - other.relDirY <= 1E-7) &&
-        (relDirZ == other.relDirZ
-            || relDirZ - other.relDirZ <= 1E-7) &&
-        (errX == other.errX
-            || errX - other.errX <= 1E-7) &&
-        (errY == other.errY
-            || errY - other.errY <= 1E-7) &&
-        (errZ == other.errZ
-            || errZ - other.errZ <= 1E-7) &&
-        (rfErrX == other.rfErrX
-            || rfErrX - other.rfErrX <= 1E-7) &&
-        (rfErrY == other.rfErrY
-            || rfErrY - other.rfErrY <= 1E-7) &&
-        (rfErrZ == other.rfErrZ
-            || rfErrZ - other.rfErrZ <= 1E-7) &&
-        (rfErrVx == other.rfErrVx
-            || rfErrVx - other.rfErrVx <= 1E-7) &&
-        (rfErrVy == other.rfErrVy
-            || rfErrVy - other.rfErrVy <= 1E-7) &&
-        (rfErrVz == other.rfErrVz
-            || rfErrVz - other.rfErrVz <= 1E-7) &&
-        (ssX == other.ssX
-            || ssX - other.ssX <= 1E-7) &&
-        (ssY == other.ssY
-            || ssY - other.ssY <= 1E-7) &&
-        (ssZ == other.ssZ
-            || ssZ - other.ssZ <= 1E-7) &&
-        (virtErrX == other.virtErrX
-            || virtErrX - other.virtErrX <= 1E-7) &&
-        (virtErrY == other.virtErrY
-            || virtErrY - other.virtErrY <= 1E-7) &&
-        (virtErrZ == other.virtErrZ
-            || virtErrZ - other.virtErrZ <= 1E-7);
+        (dist == other.dist || dist - other.dist <= 1E-7) &&
+        (err == other.err || err - other.err <= 1E-7) &&
+        (ctrlImp == other.ctrlImp || ctrlImp - other.ctrlImp <= 1E-7) &&
+        (relDirX == other.relDirX || relDirX - other.relDirX <= 1E-7) &&
+        (relDirY == other.relDirY || relDirY - other.relDirY <= 1E-7) &&
+        (relDirZ == other.relDirZ || relDirZ - other.relDirZ <= 1E-7) &&
+        (errX == other.errX || errX - other.errX <= 1E-7) &&
+        (errY == other.errY || errY - other.errY <= 1E-7) &&
+        (errZ == other.errZ || errZ - other.errZ <= 1E-7) &&
+        (rfErrX == other.rfErrX || rfErrX - other.rfErrX <= 1E-7) &&
+        (rfErrY == other.rfErrY || rfErrY - other.rfErrY <= 1E-7) &&
+        (rfErrZ == other.rfErrZ || rfErrZ - other.rfErrZ <= 1E-7) &&
+        (rfErrVx == other.rfErrVx || rfErrVx - other.rfErrVx <= 1E-7) &&
+        (rfErrVy == other.rfErrVy || rfErrVy - other.rfErrVy <= 1E-7) &&
+        (rfErrVz == other.rfErrVz || rfErrVz - other.rfErrVz <= 1E-7) &&
+        (ssX == other.ssX || ssX - other.ssX <= 1E-7) &&
+        (ssY == other.ssY || ssY - other.ssY <= 1E-7) &&
+        (ssZ == other.ssZ || ssZ - other.ssZ <= 1E-7) &&
+        (virtErrX == other.virtErrX || virtErrX - other.virtErrX <= 1E-7) &&
+        (virtErrY == other.virtErrY || virtErrY - other.virtErrY <= 1E-7) &&
+        (virtErrZ == other.virtErrZ || virtErrZ - other.virtErrZ <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        sId?.hashCode), 
-        dist?.hashCode), 
-        err?.hashCode), 
-        ctrlImp?.hashCode), 
-        relDirX?.hashCode), 
-        relDirY?.hashCode), 
-        relDirZ?.hashCode), 
-        errX?.hashCode), 
-        errY?.hashCode), 
-        errZ?.hashCode), 
-        rfErrX?.hashCode), 
-        rfErrY?.hashCode), 
-        rfErrZ?.hashCode), 
-        rfErrVx?.hashCode), 
-        rfErrVy?.hashCode), 
-        rfErrVz?.hashCode), 
-        ssX?.hashCode), 
-        ssY?.hashCode), 
-        ssZ?.hashCode), 
-        virtErrX?.hashCode), 
-        virtErrY?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), sId?.hashCode), dist?.hashCode), err?.hashCode),
+                                                                                ctrlImp?.hashCode),
+                                                                            relDirX?.hashCode),
+                                                                        relDirY?.hashCode),
+                                                                    relDirZ?.hashCode),
+                                                                errX?.hashCode),
+                                                            errY?.hashCode),
+                                                        errZ?.hashCode),
+                                                    rfErrX?.hashCode),
+                                                rfErrY?.hashCode),
+                                            rfErrZ?.hashCode),
+                                        rfErrVx?.hashCode),
+                                    rfErrVy?.hashCode),
+                                rfErrVz?.hashCode),
+                            ssX?.hashCode),
+                        ssY?.hashCode),
+                    ssZ?.hashCode),
+                virtErrX?.hashCode),
+            virtErrY?.hashCode),
         virtErrZ?.hashCode));
   }
 
@@ -38371,7 +40569,9 @@ class _$RelativeState extends RelativeState {
 
 /// Relative State builder class
 ///
-class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RelativeState, RelativeStateBuilder> {
+class RelativeStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RelativeState, RelativeStateBuilder> {
   _$RelativeState _$v;
 
   DateTime _timestamp;
@@ -38499,7 +40699,8 @@ class RelativeStateBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  RelativeStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RelativeStateBuilder()..copyFromHeader(headerFrom);
+  RelativeStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RelativeStateBuilder()..copyFromHeader(headerFrom);
 
   RelativeStateBuilder get _$this {
     if (_$v != null) {
@@ -38639,23 +40840,26 @@ class _$Dislodge extends Dislodge {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (rpm == other.rpm
-            || rpm - other.rpm <= 1E-7) &&
+        (rpm == other.rpm || rpm - other.rpm <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        rpm?.hashCode), 
-        direction?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    timeout?.hashCode),
+                rpm?.hashCode),
+            direction?.hashCode),
         custom?.hashCode));
   }
 
@@ -38677,7 +40881,9 @@ class _$Dislodge extends Dislodge {
 
 /// Dislodge Maneuver builder class
 ///
-class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Dislodge, DislodgeBuilder> {
+class DislodgeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Dislodge, DislodgeBuilder> {
   _$Dislodge _$v;
 
   DateTime _timestamp;
@@ -38720,7 +40926,8 @@ class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements Builde
 
   DislodgeEnumDirection _direction;
   DislodgeEnumDirection get direction => _$this._direction;
-  set direction(DislodgeEnumDirection direction) => _$this._direction = direction;
+  set direction(DislodgeEnumDirection direction) =>
+      _$this._direction = direction;
 
   String _custom;
   String get custom => _$this._custom;
@@ -38733,7 +40940,8 @@ class DislodgeBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  DislodgeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DislodgeBuilder()..copyFromHeader(headerFrom);
+  DislodgeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DislodgeBuilder()..copyFromHeader(headerFrom);
 
   DislodgeBuilder get _$this {
     if (_$v != null) {
@@ -38895,58 +41103,68 @@ class _$Formation extends Formation {
         description == other.description &&
         referenceFrame == other.referenceFrame &&
         DeepCollectionEquality().equals(participants, other.participants) &&
-        (leaderBankLim == other.leaderBankLim
-            || leaderBankLim - other.leaderBankLim <= 1E-7) &&
-        (leaderSpeedMin == other.leaderSpeedMin
-            || leaderSpeedMin - other.leaderSpeedMin <= 1E-7) &&
-        (leaderSpeedMax == other.leaderSpeedMax
-            || leaderSpeedMax - other.leaderSpeedMax <= 1E-7) &&
-        (leaderAltMin == other.leaderAltMin
-            || leaderAltMin - other.leaderAltMin <= 1E-7) &&
-        (leaderAltMax == other.leaderAltMax
-            || leaderAltMax - other.leaderAltMax <= 1E-7) &&
-        (posSimErrLim == other.posSimErrLim
-            || posSimErrLim - other.posSimErrLim <= 1E-7) &&
-        (posSimErrWrn == other.posSimErrWrn
-            || posSimErrWrn - other.posSimErrWrn <= 1E-7) &&
+        (leaderBankLim == other.leaderBankLim ||
+            leaderBankLim - other.leaderBankLim <= 1E-7) &&
+        (leaderSpeedMin == other.leaderSpeedMin ||
+            leaderSpeedMin - other.leaderSpeedMin <= 1E-7) &&
+        (leaderSpeedMax == other.leaderSpeedMax ||
+            leaderSpeedMax - other.leaderSpeedMax <= 1E-7) &&
+        (leaderAltMin == other.leaderAltMin ||
+            leaderAltMin - other.leaderAltMin <= 1E-7) &&
+        (leaderAltMax == other.leaderAltMax ||
+            leaderAltMax - other.leaderAltMax <= 1E-7) &&
+        (posSimErrLim == other.posSimErrLim ||
+            posSimErrLim - other.posSimErrLim <= 1E-7) &&
+        (posSimErrWrn == other.posSimErrWrn ||
+            posSimErrWrn - other.posSimErrWrn <= 1E-7) &&
         posSimErrTimeout == other.posSimErrTimeout &&
-        (convergMax == other.convergMax
-            || convergMax - other.convergMax <= 1E-7) &&
+        (convergMax == other.convergMax ||
+            convergMax - other.convergMax <= 1E-7) &&
         convergTimeout == other.convergTimeout &&
         commsTimeout == other.commsTimeout &&
-        (turbLim == other.turbLim
-            || turbLim - other.turbLim <= 1E-7) &&
+        (turbLim == other.turbLim || turbLim - other.turbLim <= 1E-7) &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        formationName?.hashCode), 
-        type?.hashCode), 
-        op?.hashCode), 
-        groupName?.hashCode), 
-        planId?.hashCode), 
-        description?.hashCode), 
-        referenceFrame?.hashCode), 
-        participants?.hashCode), 
-        leaderBankLim?.hashCode), 
-        leaderSpeedMin?.hashCode), 
-        leaderSpeedMax?.hashCode), 
-        leaderAltMin?.hashCode), 
-        leaderAltMax?.hashCode), 
-        posSimErrLim?.hashCode), 
-        posSimErrWrn?.hashCode), 
-        posSimErrTimeout?.hashCode), 
-        convergMax?.hashCode), 
-        convergTimeout?.hashCode), 
-        commsTimeout?.hashCode), 
-        turbLim?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), formationName?.hashCode), type?.hashCode),
+                                                                                op?.hashCode),
+                                                                            groupName?.hashCode),
+                                                                        planId?.hashCode),
+                                                                    description?.hashCode),
+                                                                referenceFrame?.hashCode),
+                                                            participants?.hashCode),
+                                                        leaderBankLim?.hashCode),
+                                                    leaderSpeedMin?.hashCode),
+                                                leaderSpeedMax?.hashCode),
+                                            leaderAltMin?.hashCode),
+                                        leaderAltMax?.hashCode),
+                                    posSimErrLim?.hashCode),
+                                posSimErrWrn?.hashCode),
+                            posSimErrTimeout?.hashCode),
+                        convergMax?.hashCode),
+                    convergTimeout?.hashCode),
+                commsTimeout?.hashCode),
+            turbLim?.hashCode),
         custom?.hashCode));
   }
 
@@ -38966,7 +41184,8 @@ class _$Formation extends Formation {
           ..add('description', '$description')
           ..add('referenceFrame', '$referenceFrame (Enumerated)')
           ..add('participants', '$participants')
-          ..add('leaderBankLim', '$leaderBankLim (rad)${leaderBankLim != null ? ' [${leaderBankLim * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('leaderBankLim',
+              '$leaderBankLim (rad)${leaderBankLim != null ? ' [${leaderBankLim * 180.0 / math.pi} (deg)]' : ''}')
           ..add('leaderSpeedMin', '$leaderSpeedMin (m/s)')
           ..add('leaderSpeedMax', '$leaderSpeedMax (m/s)')
           ..add('leaderAltMin', '$leaderAltMin (m)')
@@ -38985,7 +41204,9 @@ class _$Formation extends Formation {
 
 /// Formation builder class
 ///
-class FormationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Formation, FormationBuilder> {
+class FormationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Formation, FormationBuilder> {
   _$Formation _$v;
 
   DateTime _timestamp;
@@ -39020,7 +41241,8 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   String _formationName;
   String get formationName => _$this._formationName;
-  set formationName(String formationName) => _$this._formationName = formationName;
+  set formationName(String formationName) =>
+      _$this._formationName = formationName;
 
   FormationEnumType _type;
   FormationEnumType get type => _$this._type;
@@ -39044,23 +41266,28 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   FormationEnumReferenceFrame _referenceFrame;
   FormationEnumReferenceFrame get referenceFrame => _$this._referenceFrame;
-  set referenceFrame(FormationEnumReferenceFrame referenceFrame) => _$this._referenceFrame = referenceFrame;
+  set referenceFrame(FormationEnumReferenceFrame referenceFrame) =>
+      _$this._referenceFrame = referenceFrame;
 
   List<VehicleFormationParticipant> _participants;
   List<VehicleFormationParticipant> get participants => _$this._participants;
-  set participants(List<VehicleFormationParticipant> participants) => _$this._participants = participants;
+  set participants(List<VehicleFormationParticipant> participants) =>
+      _$this._participants = participants;
 
   double _leaderBankLim;
   double get leaderBankLim => _$this._leaderBankLim;
-  set leaderBankLim(double leaderBankLim) => _$this._leaderBankLim = leaderBankLim;
+  set leaderBankLim(double leaderBankLim) =>
+      _$this._leaderBankLim = leaderBankLim;
 
   double _leaderSpeedMin;
   double get leaderSpeedMin => _$this._leaderSpeedMin;
-  set leaderSpeedMin(double leaderSpeedMin) => _$this._leaderSpeedMin = leaderSpeedMin;
+  set leaderSpeedMin(double leaderSpeedMin) =>
+      _$this._leaderSpeedMin = leaderSpeedMin;
 
   double _leaderSpeedMax;
   double get leaderSpeedMax => _$this._leaderSpeedMax;
-  set leaderSpeedMax(double leaderSpeedMax) => _$this._leaderSpeedMax = leaderSpeedMax;
+  set leaderSpeedMax(double leaderSpeedMax) =>
+      _$this._leaderSpeedMax = leaderSpeedMax;
 
   double _leaderAltMin;
   double get leaderAltMin => _$this._leaderAltMin;
@@ -39080,7 +41307,8 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   int _posSimErrTimeout;
   int get posSimErrTimeout => _$this._posSimErrTimeout;
-  set posSimErrTimeout(int posSimErrTimeout) => _$this._posSimErrTimeout = posSimErrTimeout;
+  set posSimErrTimeout(int posSimErrTimeout) =>
+      _$this._posSimErrTimeout = posSimErrTimeout;
 
   double _convergMax;
   double get convergMax => _$this._convergMax;
@@ -39088,7 +41316,8 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   int _convergTimeout;
   int get convergTimeout => _$this._convergTimeout;
-  set convergTimeout(int convergTimeout) => _$this._convergTimeout = convergTimeout;
+  set convergTimeout(int convergTimeout) =>
+      _$this._convergTimeout = convergTimeout;
 
   int _commsTimeout;
   int get commsTimeout => _$this._commsTimeout;
@@ -39109,7 +41338,8 @@ class FormationBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  FormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationBuilder()..copyFromHeader(headerFrom);
+  FormationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormationBuilder()..copyFromHeader(headerFrom);
 
   FormationBuilder get _$this {
     if (_$v != null) {
@@ -39259,34 +41489,40 @@ class _$Launch extends Launch {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    timeout?.hashCode),
+                                lat?.hashCode),
+                            lon?.hashCode),
+                        z?.hashCode),
+                    zUnits?.hashCode),
+                speed?.hashCode),
+            speedUnits?.hashCode),
         custom?.hashCode));
   }
 
@@ -39299,8 +41535,10 @@ class _$Launch extends Launch {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -39312,7 +41550,9 @@ class _$Launch extends Launch {
 
 /// Launch Maneuver builder class
 ///
-class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Launch, LaunchBuilder> {
+class LaunchBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Launch, LaunchBuilder> {
   _$Launch _$v;
 
   DateTime _timestamp;
@@ -39384,7 +41624,8 @@ class LaunchBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  LaunchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LaunchBuilder()..copyFromHeader(headerFrom);
+  LaunchBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LaunchBuilder()..copyFromHeader(headerFrom);
 
   LaunchBuilder get _$this {
     if (_$v != null) {
@@ -39508,34 +41749,40 @@ class _$Drop extends Drop {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    timeout?.hashCode),
+                                lat?.hashCode),
+                            lon?.hashCode),
+                        z?.hashCode),
+                    zUnits?.hashCode),
+                speed?.hashCode),
+            speedUnits?.hashCode),
         custom?.hashCode));
   }
 
@@ -39548,8 +41795,10 @@ class _$Drop extends Drop {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -39561,7 +41810,9 @@ class _$Drop extends Drop {
 
 /// Drop Maneuver builder class
 ///
-class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Drop, DropBuilder> {
+class DropBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Drop, DropBuilder> {
   _$Drop _$v;
 
   DateTime _timestamp;
@@ -39633,7 +41884,8 @@ class DropBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  DropBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DropBuilder()..copyFromHeader(headerFrom);
+  DropBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DropBuilder()..copyFromHeader(headerFrom);
 
   DropBuilder get _$this {
     if (_$v != null) {
@@ -39756,36 +42008,42 @@ class _$ScheduledGoto extends ScheduledGoto {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (arrivalTime == other.arrivalTime
-            || arrivalTime - other.arrivalTime <= 1E-7) &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (arrivalTime == other.arrivalTime ||
+            arrivalTime - other.arrivalTime <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (travelZ == other.travelZ
-            || travelZ - other.travelZ <= 1E-7) &&
+        (travelZ == other.travelZ || travelZ - other.travelZ <= 1E-7) &&
         travelZUnits == other.travelZUnits &&
         delayed == other.delayed;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        arrivalTime?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        travelZ?.hashCode), 
-        travelZUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    arrivalTime?.hashCode),
+                                lat?.hashCode),
+                            lon?.hashCode),
+                        z?.hashCode),
+                    zUnits?.hashCode),
+                travelZ?.hashCode),
+            travelZUnits?.hashCode),
         delayed?.hashCode));
   }
 
@@ -39798,8 +42056,10 @@ class _$ScheduledGoto extends ScheduledGoto {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('arrivalTime', '$arrivalTime (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('travelZ', '$travelZ (m)')
@@ -39811,7 +42071,9 @@ class _$ScheduledGoto extends ScheduledGoto {
 
 /// Scheduled Goto builder class
 ///
-class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ScheduledGoto, ScheduledGotoBuilder> {
+class ScheduledGotoBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ScheduledGoto, ScheduledGotoBuilder> {
   _$ScheduledGoto _$v;
 
   DateTime _timestamp;
@@ -39870,7 +42132,8 @@ class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements B
 
   ZUnitsEnum _travelZUnits;
   ZUnitsEnum get travelZUnits => _$this._travelZUnits;
-  set travelZUnits(ZUnitsEnum travelZUnits) => _$this._travelZUnits = travelZUnits;
+  set travelZUnits(ZUnitsEnum travelZUnits) =>
+      _$this._travelZUnits = travelZUnits;
 
   ScheduledGotoEnumDelayed _delayed;
   ScheduledGotoEnumDelayed get delayed => _$this._delayed;
@@ -39883,7 +42146,8 @@ class ScheduledGotoBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ScheduledGotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ScheduledGotoBuilder()..copyFromHeader(headerFrom);
+  ScheduledGotoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ScheduledGotoBuilder()..copyFromHeader(headerFrom);
 
   ScheduledGotoBuilder get _$this {
     if (_$v != null) {
@@ -40030,27 +42294,20 @@ class _$RowsCoverage extends RowsCoverage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
-        (crossAngle == other.crossAngle
-            || crossAngle - other.crossAngle <= 1E-7) &&
-        (width == other.width
-            || width - other.width <= 1E-7) &&
-        (length == other.length
-            || length - other.length <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (crossAngle == other.crossAngle ||
+            crossAngle - other.crossAngle <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
         coff == other.coff &&
-        (angAperture == other.angAperture
-            || angAperture - other.angAperture <= 1E-7) &&
+        (angAperture == other.angAperture ||
+            angAperture - other.angAperture <= 1E-7) &&
         range == other.range &&
         overlap == other.overlap &&
         flags == other.flags &&
@@ -40059,27 +42316,43 @@ class _$RowsCoverage extends RowsCoverage {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        bearing?.hashCode), 
-        crossAngle?.hashCode), 
-        width?.hashCode), 
-        length?.hashCode), 
-        coff?.hashCode), 
-        angAperture?.hashCode), 
-        range?.hashCode), 
-        overlap?.hashCode), 
-        flags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                                                                srcEnt?.hashCode),
+                                                                            dst?.hashCode),
+                                                                        dstEnt?.hashCode),
+                                                                    lat?.hashCode),
+                                                                lon?.hashCode),
+                                                            z?.hashCode),
+                                                        zUnits?.hashCode),
+                                                    speed?.hashCode),
+                                                speedUnits?.hashCode),
+                                            bearing?.hashCode),
+                                        crossAngle?.hashCode),
+                                    width?.hashCode),
+                                length?.hashCode),
+                            coff?.hashCode),
+                        angAperture?.hashCode),
+                    range?.hashCode),
+                overlap?.hashCode),
+            flags?.hashCode),
         custom?.hashCode));
   }
 
@@ -40091,18 +42364,23 @@ class _$RowsCoverage extends RowsCoverage {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('crossAngle', '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('bearing',
+              '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('crossAngle',
+              '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)')
           ..add('coff', '$coff (m)')
-          ..add('angAperture', '$angAperture (rad)${angAperture != null ? ' [${angAperture * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('angAperture',
+              '$angAperture (rad)${angAperture != null ? ' [${angAperture * 180.0 / math.pi} (deg)]' : ''}')
           ..add('range', '$range (m)')
           ..add('overlap', '$overlap (%)')
           ..add('flags', '$flags (Bitfield)')
@@ -40113,7 +42391,9 @@ class _$RowsCoverage extends RowsCoverage {
 
 /// Rows Coverage builder class
 ///
-class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RowsCoverage, RowsCoverageBuilder> {
+class RowsCoverageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RowsCoverage, RowsCoverageBuilder> {
   _$RowsCoverage _$v;
 
   DateTime _timestamp;
@@ -40217,7 +42497,8 @@ class RowsCoverageBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  RowsCoverageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RowsCoverageBuilder()..copyFromHeader(headerFrom);
+  RowsCoverageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RowsCoverageBuilder()..copyFromHeader(headerFrom);
 
   RowsCoverageBuilder get _$this {
     if (_$v != null) {
@@ -40366,15 +42647,11 @@ class _$Sample extends Sample {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         syringe0 == other.syringe0 &&
         syringe1 == other.syringe1 &&
@@ -40384,22 +42661,39 @@ class _$Sample extends Sample {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        syringe0?.hashCode), 
-        syringe1?.hashCode), 
-        syringe2?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                timeout?.hashCode),
+                                            lat?.hashCode),
+                                        lon?.hashCode),
+                                    z?.hashCode),
+                                zUnits?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    syringe0?.hashCode),
+                syringe1?.hashCode),
+            syringe2?.hashCode),
         custom?.hashCode));
   }
 
@@ -40412,8 +42706,10 @@ class _$Sample extends Sample {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -40428,7 +42724,9 @@ class _$Sample extends Sample {
 
 /// Sample Maneuver builder class
 ///
-class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Sample, SampleBuilder> {
+class SampleBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Sample, SampleBuilder> {
   _$Sample _$v;
 
   DateTime _timestamp;
@@ -40512,7 +42810,8 @@ class SampleBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  SampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SampleBuilder()..copyFromHeader(headerFrom);
+  SampleBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SampleBuilder()..copyFromHeader(headerFrom);
 
   SampleBuilder get _$this {
     if (_$v != null) {
@@ -40589,7 +42888,6 @@ class _$ImageTracking extends ImageTracking {
   @override
   final int dstEnt;
 
-
   factory _$ImageTracking([void Function(ImageTrackingBuilder b) updates]) =>
       (ImageTrackingBuilder()..update(updates)).build();
 
@@ -40621,11 +42919,11 @@ class _$ImageTracking extends ImageTracking {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -40643,7 +42941,9 @@ class _$ImageTracking extends ImageTracking {
 
 /// Image Tracking builder class
 ///
-class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ImageTracking, ImageTrackingBuilder> {
+class ImageTrackingBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ImageTracking, ImageTrackingBuilder> {
   _$ImageTracking _$v;
 
   DateTime _timestamp;
@@ -40683,7 +42983,8 @@ class ImageTrackingBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ImageTrackingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ImageTrackingBuilder()..copyFromHeader(headerFrom);
+  ImageTrackingBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ImageTrackingBuilder()..copyFromHeader(headerFrom);
 
   ImageTrackingBuilder get _$this {
     if (_$v != null) {
@@ -40790,36 +43091,42 @@ class _$Takeoff extends Takeoff {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (takeoffPitch == other.takeoffPitch
-            || takeoffPitch - other.takeoffPitch <= 1E-7) &&
+        (takeoffPitch == other.takeoffPitch ||
+            takeoffPitch - other.takeoffPitch <= 1E-7) &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        takeoffPitch?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    lat?.hashCode),
+                                lon?.hashCode),
+                            z?.hashCode),
+                        zUnits?.hashCode),
+                    speed?.hashCode),
+                speedUnits?.hashCode),
+            takeoffPitch?.hashCode),
         custom?.hashCode));
   }
 
@@ -40831,13 +43138,16 @@ class _$Takeoff extends Takeoff {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('takeoffPitch', '$takeoffPitch (rad)${takeoffPitch != null ? ' [${takeoffPitch * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('takeoffPitch',
+              '$takeoffPitch (rad)${takeoffPitch != null ? ' [${takeoffPitch * 180.0 / math.pi} (deg)]' : ''}')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -40845,7 +43155,9 @@ class _$Takeoff extends Takeoff {
 
 /// Takeoff Maneuver builder class
 ///
-class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Takeoff, TakeoffBuilder> {
+class TakeoffBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Takeoff, TakeoffBuilder> {
   _$Takeoff _$v;
 
   DateTime _timestamp;
@@ -40917,7 +43229,8 @@ class TakeoffBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  TakeoffBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TakeoffBuilder()..copyFromHeader(headerFrom);
+  TakeoffBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TakeoffBuilder()..copyFromHeader(headerFrom);
 
   TakeoffBuilder get _$this {
     if (_$v != null) {
@@ -41049,44 +43362,55 @@ class _$Land extends Land {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (abortZ == other.abortZ
-            || abortZ - other.abortZ <= 1E-7) &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
+        (abortZ == other.abortZ || abortZ - other.abortZ <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         glideSlope == other.glideSlope &&
-        (glideSlopeAlt == other.glideSlopeAlt
-            || glideSlopeAlt - other.glideSlopeAlt <= 1E-7) &&
+        (glideSlopeAlt == other.glideSlopeAlt ||
+            glideSlopeAlt - other.glideSlopeAlt <= 1E-7) &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        abortZ?.hashCode), 
-        bearing?.hashCode), 
-        glideSlope?.hashCode), 
-        glideSlopeAlt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                lat?.hashCode),
+                                            lon?.hashCode),
+                                        z?.hashCode),
+                                    zUnits?.hashCode),
+                                speed?.hashCode),
+                            speedUnits?.hashCode),
+                        abortZ?.hashCode),
+                    bearing?.hashCode),
+                glideSlope?.hashCode),
+            glideSlopeAlt?.hashCode),
         custom?.hashCode));
   }
 
@@ -41098,14 +43422,17 @@ class _$Land extends Land {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('abortZ', '$abortZ (m)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('bearing',
+              '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
           ..add('glideSlope', '$glideSlope (%)')
           ..add('glideSlopeAlt', '$glideSlopeAlt (m)')
           ..add('custom', '$custom (TupleList)'))
@@ -41115,7 +43442,9 @@ class _$Land extends Land {
 
 /// Land Maneuver builder class
 ///
-class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Land, LandBuilder> {
+class LandBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Land, LandBuilder> {
   _$Land _$v;
 
   DateTime _timestamp;
@@ -41186,7 +43515,8 @@ class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
 
   double _glideSlopeAlt;
   double get glideSlopeAlt => _$this._glideSlopeAlt;
-  set glideSlopeAlt(double glideSlopeAlt) => _$this._glideSlopeAlt = glideSlopeAlt;
+  set glideSlopeAlt(double glideSlopeAlt) =>
+      _$this._glideSlopeAlt = glideSlopeAlt;
 
   String _custom;
   String get custom => _$this._custom;
@@ -41199,7 +43529,8 @@ class LandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWit
   }
 
   @override
-  LandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LandBuilder()..copyFromHeader(headerFrom);
+  LandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LandBuilder()..copyFromHeader(headerFrom);
 
   LandBuilder get _$this {
     if (_$v != null) {
@@ -41299,7 +43630,8 @@ class _$AutonomousSection extends AutonomousSection {
   @override
   final String custom;
 
-  factory _$AutonomousSection([void Function(AutonomousSectionBuilder b) updates]) =>
+  factory _$AutonomousSection(
+          [void Function(AutonomousSectionBuilder b) updates]) =>
       (AutonomousSectionBuilder()..update(updates)).build();
 
   _$AutonomousSection._(
@@ -41322,11 +43654,13 @@ class _$AutonomousSection extends AutonomousSection {
       : super._();
 
   @override
-  AutonomousSection rebuild(void Function(AutonomousSectionBuilder b) updates) =>
+  AutonomousSection rebuild(
+          void Function(AutonomousSectionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AutonomousSectionBuilder toBuilder() => AutonomousSectionBuilder()..replace(this);
+  AutonomousSectionBuilder toBuilder() =>
+      AutonomousSectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -41337,20 +43671,14 @@ class _$AutonomousSection extends AutonomousSection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         limits == other.limits &&
-        (maxDepth == other.maxDepth
-            || maxDepth - other.maxDepth <= 1E-7) &&
-        (minAlt == other.minAlt
-            || minAlt - other.minAlt <= 1E-7) &&
-        (timeLimit == other.timeLimit
-            || timeLimit - other.timeLimit <= 1E-7) &&
+        (maxDepth == other.maxDepth || maxDepth - other.maxDepth <= 1E-7) &&
+        (minAlt == other.minAlt || minAlt - other.minAlt <= 1E-7) &&
+        (timeLimit == other.timeLimit || timeLimit - other.timeLimit <= 1E-7) &&
         DeepCollectionEquality().equals(areaLimits, other.areaLimits) &&
         controller == other.controller &&
         custom == other.custom;
@@ -41358,22 +43686,39 @@ class _$AutonomousSection extends AutonomousSection {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        limits?.hashCode), 
-        maxDepth?.hashCode), 
-        minAlt?.hashCode), 
-        timeLimit?.hashCode), 
-        areaLimits?.hashCode), 
-        controller?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                lat?.hashCode),
+                                            lon?.hashCode),
+                                        speed?.hashCode),
+                                    speedUnits?.hashCode),
+                                limits?.hashCode),
+                            maxDepth?.hashCode),
+                        minAlt?.hashCode),
+                    timeLimit?.hashCode),
+                areaLimits?.hashCode),
+            controller?.hashCode),
         custom?.hashCode));
   }
 
@@ -41385,8 +43730,10 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('limits', '$limits (Bitfield)')
@@ -41402,7 +43749,10 @@ class _$AutonomousSection extends AutonomousSection {
 
 /// Autonomous Section builder class
 ///
-class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AutonomousSection, AutonomousSectionBuilder> {
+class AutonomousSectionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AutonomousSection, AutonomousSectionBuilder> {
   _$AutonomousSection _$v;
 
   DateTime _timestamp;
@@ -41469,7 +43819,8 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
 
   List<PolygonVertex> _areaLimits;
   List<PolygonVertex> get areaLimits => _$this._areaLimits;
-  set areaLimits(List<PolygonVertex> areaLimits) => _$this._areaLimits = areaLimits;
+  set areaLimits(List<PolygonVertex> areaLimits) =>
+      _$this._areaLimits = areaLimits;
 
   String _controller;
   String get controller => _$this._controller;
@@ -41486,7 +43837,8 @@ class AutonomousSectionBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  AutonomousSectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AutonomousSectionBuilder()..copyFromHeader(headerFrom);
+  AutonomousSectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AutonomousSectionBuilder()..copyFromHeader(headerFrom);
 
   AutonomousSectionBuilder get _$this {
     if (_$v != null) {
@@ -41616,34 +43968,40 @@ class _$FollowPoint extends FollowPoint {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (maxSpeed == other.maxSpeed
-            || maxSpeed - other.maxSpeed <= 1E-7) &&
+        (maxSpeed == other.maxSpeed || maxSpeed - other.maxSpeed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        target?.hashCode), 
-        maxSpeed?.hashCode), 
-        speedUnits?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    target?.hashCode),
+                                maxSpeed?.hashCode),
+                            speedUnits?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                z?.hashCode),
+            zUnits?.hashCode),
         custom?.hashCode));
   }
 
@@ -41658,8 +44016,10 @@ class _$FollowPoint extends FollowPoint {
           ..add('target', '$target')
           ..add('maxSpeed', '$maxSpeed (m/s)')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -41669,7 +44029,9 @@ class _$FollowPoint extends FollowPoint {
 
 /// Follow Point Maneuver builder class
 ///
-class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FollowPoint, FollowPointBuilder> {
+class FollowPointBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FollowPoint, FollowPointBuilder> {
   _$FollowPoint _$v;
 
   DateTime _timestamp;
@@ -41741,7 +44103,8 @@ class FollowPointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  FollowPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FollowPointBuilder()..copyFromHeader(headerFrom);
+  FollowPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FollowPointBuilder()..copyFromHeader(headerFrom);
 
   FollowPointBuilder get _$this {
     if (_$v != null) {
@@ -41859,29 +44222,34 @@ class _$Alignment extends Alignment {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            timeout?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                speed?.hashCode),
+            speedUnits?.hashCode),
         custom?.hashCode));
   }
 
@@ -41894,8 +44262,10 @@ class _$Alignment extends Alignment {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -41905,7 +44275,9 @@ class _$Alignment extends Alignment {
 
 /// Alignment Maneuver builder class
 ///
-class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Alignment, AlignmentBuilder> {
+class AlignmentBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Alignment, AlignmentBuilder> {
   _$Alignment _$v;
 
   DateTime _timestamp;
@@ -41969,7 +44341,8 @@ class AlignmentBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  AlignmentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AlignmentBuilder()..copyFromHeader(headerFrom);
+  AlignmentBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AlignmentBuilder()..copyFromHeader(headerFrom);
 
   AlignmentBuilder get _$this {
     if (_$v != null) {
@@ -42061,7 +44434,8 @@ class _$StationKeepingExtended extends StationKeepingExtended {
   @override
   final String custom;
 
-  factory _$StationKeepingExtended([void Function(StationKeepingExtendedBuilder b) updates]) =>
+  factory _$StationKeepingExtended(
+          [void Function(StationKeepingExtendedBuilder b) updates]) =>
       (StationKeepingExtendedBuilder()..update(updates)).build();
 
   _$StationKeepingExtended._(
@@ -42085,11 +44459,13 @@ class _$StationKeepingExtended extends StationKeepingExtended {
       : super._();
 
   @override
-  StationKeepingExtended rebuild(void Function(StationKeepingExtendedBuilder b) updates) =>
+  StationKeepingExtended rebuild(
+          void Function(StationKeepingExtendedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  StationKeepingExtendedBuilder toBuilder() => StationKeepingExtendedBuilder()..replace(this);
+  StationKeepingExtendedBuilder toBuilder() =>
+      StationKeepingExtendedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -42100,18 +44476,13 @@ class _$StationKeepingExtended extends StationKeepingExtended {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (radius == other.radius
-            || radius - other.radius <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         duration == other.duration &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         popupPeriod == other.popupPeriod &&
         popupDuration == other.popupDuration &&
@@ -42121,23 +44492,43 @@ class _$StationKeepingExtended extends StationKeepingExtended {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        radius?.hashCode), 
-        duration?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        popupPeriod?.hashCode), 
-        popupDuration?.hashCode), 
-        flags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        0,
+                                                                        timestamp
+                                                                            ?.hashCode),
+                                                                    src
+                                                                        ?.hashCode),
+                                                                srcEnt
+                                                                    ?.hashCode),
+                                                            dst?.hashCode),
+                                                        dstEnt?.hashCode),
+                                                    lat?.hashCode),
+                                                lon?.hashCode),
+                                            z?.hashCode),
+                                        zUnits?.hashCode),
+                                    radius?.hashCode),
+                                duration?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    popupPeriod?.hashCode),
+                popupDuration?.hashCode),
+            flags?.hashCode),
         custom?.hashCode));
   }
 
@@ -42149,8 +44540,10 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('radius', '$radius (m)')
@@ -42167,7 +44560,12 @@ class _$StationKeepingExtended extends StationKeepingExtended {
 
 /// Station Keeping Extended builder class
 ///
-class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StationKeepingExtended, StationKeepingExtendedBuilder> {
+class StationKeepingExtendedBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<StationKeepingExtended,
+            StationKeepingExtendedBuilder> {
   _$StationKeepingExtended _$v;
 
   DateTime _timestamp;
@@ -42255,7 +44653,9 @@ class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  StationKeepingExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StationKeepingExtendedBuilder()..copyFromHeader(headerFrom);
+  StationKeepingExtendedBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      StationKeepingExtendedBuilder()..copyFromHeader(headerFrom);
 
   StationKeepingExtendedBuilder get _$this {
     if (_$v != null) {
@@ -42315,6 +44715,157 @@ class StationKeepingExtendedBuilder extends Object with ImcBuilderHeaderPart imp
             popupDuration: popupDuration ?? 0,
             flags: flags ?? StationKeepingExtendedBitfieldFlags(0),
             custom: custom ?? '');
+    replace(_$result);
+    return _$result;
+  }
+}
+
+/// Maneuver Done immutable class
+///
+class _$ManeuverDone extends ManeuverDone {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  factory _$ManeuverDone([void Function(ManeuverDoneBuilder b) updates]) =>
+      (ManeuverDoneBuilder()..update(updates)).build();
+
+  _$ManeuverDone._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId})
+      : super._();
+
+  @override
+  ManeuverDone rebuild(void Function(ManeuverDoneBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ManeuverDoneBuilder toBuilder() => ManeuverDoneBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ManeuverDone &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
+        dstEnt?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('ManeuverDone')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})"))
+        .toString();
+  }
+}
+
+/// Maneuver Done builder class
+///
+class ManeuverDoneBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ManeuverDone, ManeuverDoneBuilder> {
+  _$ManeuverDone _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  ManeuverDoneBuilder();
+
+  ManeuverDoneBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  ManeuverDoneBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ManeuverDoneBuilder()..copyFromHeader(headerFrom);
+
+  ManeuverDoneBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(ManeuverDone other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$ManeuverDone;
+  }
+
+  @override
+  void update(void Function(ManeuverDoneBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$ManeuverDone build() {
+    final _$result = _$v ??
+        _$ManeuverDone._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId);
     replace(_$result);
     return _$result;
   }
@@ -42396,42 +44947,53 @@ class _$Magnetometer extends Magnetometer {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
-        (width == other.width
-            || width - other.width <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeout?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        speed?.hashCode), 
-        speedUnits?.hashCode), 
-        bearing?.hashCode), 
-        width?.hashCode), 
-        direction?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                timeout?.hashCode),
+                                            lat?.hashCode),
+                                        lon?.hashCode),
+                                    z?.hashCode),
+                                zUnits?.hashCode),
+                            speed?.hashCode),
+                        speedUnits?.hashCode),
+                    bearing?.hashCode),
+                width?.hashCode),
+            direction?.hashCode),
         custom?.hashCode));
   }
 
@@ -42444,13 +45006,16 @@ class _$Magnetometer extends Magnetometer {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('timeout', '$timeout (s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('bearing',
+              '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('direction', '$direction (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -42460,7 +45025,9 @@ class _$Magnetometer extends Magnetometer {
 
 /// Magnetometer Maneuver builder class
 ///
-class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Magnetometer, MagnetometerBuilder> {
+class MagnetometerBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Magnetometer, MagnetometerBuilder> {
   _$Magnetometer _$v;
 
   DateTime _timestamp;
@@ -42531,7 +45098,8 @@ class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements Bu
 
   MagnetometerEnumDirection _direction;
   MagnetometerEnumDirection get direction => _$this._direction;
-  set direction(MagnetometerEnumDirection direction) => _$this._direction = direction;
+  set direction(MagnetometerEnumDirection direction) =>
+      _$this._direction = direction;
 
   String _custom;
   String get custom => _$this._custom;
@@ -42544,7 +45112,8 @@ class MagnetometerBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  MagnetometerBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MagnetometerBuilder()..copyFromHeader(headerFrom);
+  MagnetometerBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MagnetometerBuilder()..copyFromHeader(headerFrom);
 
   MagnetometerBuilder get _$this {
     if (_$v != null) {
@@ -42683,33 +45252,49 @@ class _$VehicleState extends VehicleState {
         errorCount == other.errorCount &&
         errorEnts == other.errorEnts &&
         maneuverType == other.maneuverType &&
-        (maneuverStime == other.maneuverStime
-            || maneuverStime - other.maneuverStime <= 1E-7) &&
+        (maneuverStime == other.maneuverStime ||
+            maneuverStime - other.maneuverStime <= 1E-7) &&
         maneuverEta == other.maneuverEta &&
         controlLoops == other.controlLoops &&
         flags == other.flags &&
         lastError == other.lastError &&
-        (lastErrorTime == other.lastErrorTime
-            || lastErrorTime - other.lastErrorTime <= 1E-7);
+        (lastErrorTime == other.lastErrorTime ||
+            lastErrorTime - other.lastErrorTime <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        opMode?.hashCode), 
-        errorCount?.hashCode), 
-        errorEnts?.hashCode), 
-        maneuverType?.hashCode), 
-        maneuverStime?.hashCode), 
-        maneuverEta?.hashCode), 
-        controlLoops?.hashCode), 
-        flags?.hashCode), 
-        lastError?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                0,
+                                                                timestamp
+                                                                    ?.hashCode),
+                                                            src?.hashCode),
+                                                        srcEnt?.hashCode),
+                                                    dst?.hashCode),
+                                                dstEnt?.hashCode),
+                                            opMode?.hashCode),
+                                        errorCount?.hashCode),
+                                    errorEnts?.hashCode),
+                                maneuverType?.hashCode),
+                            maneuverStime?.hashCode),
+                        maneuverEta?.hashCode),
+                    controlLoops?.hashCode),
+                flags?.hashCode),
+            lastError?.hashCode),
         lastErrorTime?.hashCode));
   }
 
@@ -42737,7 +45322,9 @@ class _$VehicleState extends VehicleState {
 
 /// Vehicle State builder class
 ///
-class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleState, VehicleStateBuilder> {
+class VehicleStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<VehicleState, VehicleStateBuilder> {
   _$VehicleState _$v;
 
   DateTime _timestamp;
@@ -42788,7 +45375,8 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
 
   double _maneuverStime;
   double get maneuverStime => _$this._maneuverStime;
-  set maneuverStime(double maneuverStime) => _$this._maneuverStime = maneuverStime;
+  set maneuverStime(double maneuverStime) =>
+      _$this._maneuverStime = maneuverStime;
 
   int _maneuverEta;
   int get maneuverEta => _$this._maneuverEta;
@@ -42796,7 +45384,8 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
 
   CLoopsMaskBitfield _controlLoops;
   CLoopsMaskBitfield get controlLoops => _$this._controlLoops;
-  set controlLoops(CLoopsMaskBitfield controlLoops) => _$this._controlLoops = controlLoops;
+  set controlLoops(CLoopsMaskBitfield controlLoops) =>
+      _$this._controlLoops = controlLoops;
 
   VehicleStateBitfieldFlags _flags;
   VehicleStateBitfieldFlags get flags => _$this._flags;
@@ -42808,7 +45397,8 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
 
   double _lastErrorTime;
   double get lastErrorTime => _$this._lastErrorTime;
-  set lastErrorTime(double lastErrorTime) => _$this._lastErrorTime = lastErrorTime;
+  set lastErrorTime(double lastErrorTime) =>
+      _$this._lastErrorTime = lastErrorTime;
 
   VehicleStateBuilder();
 
@@ -42817,7 +45407,8 @@ class VehicleStateBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  VehicleStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleStateBuilder()..copyFromHeader(headerFrom);
+  VehicleStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VehicleStateBuilder()..copyFromHeader(headerFrom);
 
   VehicleStateBuilder get _$this {
     if (_$v != null) {
@@ -42948,17 +45539,25 @@ class _$VehicleCommand extends VehicleCommand {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        requestId?.hashCode), 
-        command?.hashCode), 
-        maneuver?.hashCode), 
-        calibTime?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            type?.hashCode),
+                        requestId?.hashCode),
+                    command?.hashCode),
+                maneuver?.hashCode),
+            calibTime?.hashCode),
         info?.hashCode));
   }
 
@@ -42982,7 +45581,9 @@ class _$VehicleCommand extends VehicleCommand {
 
 /// Vehicle Command builder class
 ///
-class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleCommand, VehicleCommandBuilder> {
+class VehicleCommandBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<VehicleCommand, VehicleCommandBuilder> {
   _$VehicleCommand _$v;
 
   DateTime _timestamp;
@@ -43046,7 +45647,8 @@ class VehicleCommandBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  VehicleCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleCommandBuilder()..copyFromHeader(headerFrom);
+  VehicleCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VehicleCommandBuilder()..copyFromHeader(headerFrom);
 
   VehicleCommandBuilder get _$this {
     if (_$v != null) {
@@ -43118,7 +45720,8 @@ class _$MonitorEntityState extends MonitorEntityState {
   @override
   final String entities;
 
-  factory _$MonitorEntityState([void Function(MonitorEntityStateBuilder b) updates]) =>
+  factory _$MonitorEntityState(
+          [void Function(MonitorEntityStateBuilder b) updates]) =>
       (MonitorEntityStateBuilder()..update(updates)).build();
 
   _$MonitorEntityState._(
@@ -43132,11 +45735,13 @@ class _$MonitorEntityState extends MonitorEntityState {
       : super._();
 
   @override
-  MonitorEntityState rebuild(void Function(MonitorEntityStateBuilder b) updates) =>
+  MonitorEntityState rebuild(
+          void Function(MonitorEntityStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  MonitorEntityStateBuilder toBuilder() => MonitorEntityStateBuilder()..replace(this);
+  MonitorEntityStateBuilder toBuilder() =>
+      MonitorEntityStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43153,13 +45758,15 @@ class _$MonitorEntityState extends MonitorEntityState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        command?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            command?.hashCode),
         entities?.hashCode));
   }
 
@@ -43179,7 +45786,10 @@ class _$MonitorEntityState extends MonitorEntityState {
 
 /// Monitor Entity State builder class
 ///
-class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MonitorEntityState, MonitorEntityStateBuilder> {
+class MonitorEntityStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<MonitorEntityState, MonitorEntityStateBuilder> {
   _$MonitorEntityState _$v;
 
   DateTime _timestamp;
@@ -43214,7 +45824,8 @@ class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart impleme
 
   MonitorEntityStateEnumCommand _command;
   MonitorEntityStateEnumCommand get command => _$this._command;
-  set command(MonitorEntityStateEnumCommand command) => _$this._command = command;
+  set command(MonitorEntityStateEnumCommand command) =>
+      _$this._command = command;
 
   String _entities;
   String get entities => _$this._entities;
@@ -43227,7 +45838,8 @@ class MonitorEntityStateBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  MonitorEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MonitorEntityStateBuilder()..copyFromHeader(headerFrom);
+  MonitorEntityStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MonitorEntityStateBuilder()..copyFromHeader(headerFrom);
 
   MonitorEntityStateBuilder get _$this {
     if (_$v != null) {
@@ -43303,7 +45915,8 @@ class _$EntityMonitoringState extends EntityMonitoringState {
   @override
   final double lastErrorTime;
 
-  factory _$EntityMonitoringState([void Function(EntityMonitoringStateBuilder b) updates]) =>
+  factory _$EntityMonitoringState(
+          [void Function(EntityMonitoringStateBuilder b) updates]) =>
       (EntityMonitoringStateBuilder()..update(updates)).build();
 
   _$EntityMonitoringState._(
@@ -43323,11 +45936,13 @@ class _$EntityMonitoringState extends EntityMonitoringState {
       : super._();
 
   @override
-  EntityMonitoringState rebuild(void Function(EntityMonitoringStateBuilder b) updates) =>
+  EntityMonitoringState rebuild(
+          void Function(EntityMonitoringStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityMonitoringStateBuilder toBuilder() => EntityMonitoringStateBuilder()..replace(this);
+  EntityMonitoringStateBuilder toBuilder() =>
+      EntityMonitoringStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43345,25 +45960,35 @@ class _$EntityMonitoringState extends EntityMonitoringState {
         ccount == other.ccount &&
         cnames == other.cnames &&
         lastError == other.lastError &&
-        (lastErrorTime == other.lastErrorTime
-            || lastErrorTime - other.lastErrorTime <= 1E-7);
+        (lastErrorTime == other.lastErrorTime ||
+            lastErrorTime - other.lastErrorTime <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        mcount?.hashCode), 
-        mnames?.hashCode), 
-        ecount?.hashCode), 
-        enames?.hashCode), 
-        ccount?.hashCode), 
-        cnames?.hashCode), 
-        lastError?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    mcount?.hashCode),
+                                mnames?.hashCode),
+                            ecount?.hashCode),
+                        enames?.hashCode),
+                    ccount?.hashCode),
+                cnames?.hashCode),
+            lastError?.hashCode),
         lastErrorTime?.hashCode));
   }
 
@@ -43389,7 +46014,12 @@ class _$EntityMonitoringState extends EntityMonitoringState {
 
 /// Entity Monitoring State builder class
 ///
-class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityMonitoringState, EntityMonitoringStateBuilder> {
+class EntityMonitoringStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EntityMonitoringState,
+            EntityMonitoringStateBuilder> {
   _$EntityMonitoringState _$v;
 
   DateTime _timestamp;
@@ -43452,7 +46082,8 @@ class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart impl
 
   double _lastErrorTime;
   double get lastErrorTime => _$this._lastErrorTime;
-  set lastErrorTime(double lastErrorTime) => _$this._lastErrorTime = lastErrorTime;
+  set lastErrorTime(double lastErrorTime) =>
+      _$this._lastErrorTime = lastErrorTime;
 
   EntityMonitoringStateBuilder();
 
@@ -43461,7 +46092,8 @@ class EntityMonitoringStateBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  EntityMonitoringStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityMonitoringStateBuilder()..copyFromHeader(headerFrom);
+  EntityMonitoringStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EntityMonitoringStateBuilder()..copyFromHeader(headerFrom);
 
   EntityMonitoringStateBuilder get _$this {
     if (_$v != null) {
@@ -43557,7 +46189,8 @@ class _$OperationalLimits extends OperationalLimits {
   @override
   final double length;
 
-  factory _$OperationalLimits([void Function(OperationalLimitsBuilder b) updates]) =>
+  factory _$OperationalLimits(
+          [void Function(OperationalLimitsBuilder b) updates]) =>
       (OperationalLimitsBuilder()..update(updates)).build();
 
   _$OperationalLimits._(
@@ -43581,11 +46214,13 @@ class _$OperationalLimits extends OperationalLimits {
       : super._();
 
   @override
-  OperationalLimits rebuild(void Function(OperationalLimitsBuilder b) updates) =>
+  OperationalLimits rebuild(
+          void Function(OperationalLimitsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  OperationalLimitsBuilder toBuilder() => OperationalLimitsBuilder()..replace(this);
+  OperationalLimitsBuilder toBuilder() =>
+      OperationalLimitsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43597,49 +46232,61 @@ class _$OperationalLimits extends OperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         mask == other.mask &&
-        (maxDepth == other.maxDepth
-            || maxDepth - other.maxDepth <= 1E-7) &&
-        (minAltitude == other.minAltitude
-            || minAltitude - other.minAltitude <= 1E-7) &&
-        (maxAltitude == other.maxAltitude
-            || maxAltitude - other.maxAltitude <= 1E-7) &&
-        (minSpeed == other.minSpeed
-            || minSpeed - other.minSpeed <= 1E-7) &&
-        (maxSpeed == other.maxSpeed
-            || maxSpeed - other.maxSpeed <= 1E-7) &&
-        (maxVrate == other.maxVrate
-            || maxVrate - other.maxVrate <= 1E-7) &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (orientation == other.orientation
-            || orientation - other.orientation <= 1E-7) &&
-        (width == other.width
-            || width - other.width <= 1E-7) &&
-        (length == other.length
-            || length - other.length <= 1E-7);
+        (maxDepth == other.maxDepth || maxDepth - other.maxDepth <= 1E-7) &&
+        (minAltitude == other.minAltitude ||
+            minAltitude - other.minAltitude <= 1E-7) &&
+        (maxAltitude == other.maxAltitude ||
+            maxAltitude - other.maxAltitude <= 1E-7) &&
+        (minSpeed == other.minSpeed || minSpeed - other.minSpeed <= 1E-7) &&
+        (maxSpeed == other.maxSpeed || maxSpeed - other.maxSpeed <= 1E-7) &&
+        (maxVrate == other.maxVrate || maxVrate - other.maxVrate <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (orientation == other.orientation ||
+            orientation - other.orientation <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        mask?.hashCode), 
-        maxDepth?.hashCode), 
-        minAltitude?.hashCode), 
-        maxAltitude?.hashCode), 
-        minSpeed?.hashCode), 
-        maxSpeed?.hashCode), 
-        maxVrate?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        orientation?.hashCode), 
-        width?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        0,
+                                                                        timestamp
+                                                                            ?.hashCode),
+                                                                    src
+                                                                        ?.hashCode),
+                                                                srcEnt
+                                                                    ?.hashCode),
+                                                            dst?.hashCode),
+                                                        dstEnt?.hashCode),
+                                                    mask?.hashCode),
+                                                maxDepth?.hashCode),
+                                            minAltitude?.hashCode),
+                                        maxAltitude?.hashCode),
+                                    minSpeed?.hashCode),
+                                maxSpeed?.hashCode),
+                            maxVrate?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                orientation?.hashCode),
+            width?.hashCode),
         length?.hashCode));
   }
 
@@ -43658,9 +46305,12 @@ class _$OperationalLimits extends OperationalLimits {
           ..add('minSpeed', '$minSpeed (m/s)')
           ..add('maxSpeed', '$maxSpeed (m/s)')
           ..add('maxVrate', '$maxVrate (m/s)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('orientation', '$orientation (rad)${orientation != null ? ' [${orientation * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('orientation',
+              '$orientation (rad)${orientation != null ? ' [${orientation * 180.0 / math.pi} (deg)]' : ''}')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)'))
         .toString();
@@ -43669,7 +46319,10 @@ class _$OperationalLimits extends OperationalLimits {
 
 /// Operational Limits builder class
 ///
-class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<OperationalLimits, OperationalLimitsBuilder> {
+class OperationalLimitsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<OperationalLimits, OperationalLimitsBuilder> {
   _$OperationalLimits _$v;
 
   DateTime _timestamp;
@@ -43757,7 +46410,8 @@ class OperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  OperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => OperationalLimitsBuilder()..copyFromHeader(headerFrom);
+  OperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      OperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   OperationalLimitsBuilder get _$this {
     if (_$v != null) {
@@ -43836,8 +46490,8 @@ class _$GetOperationalLimits extends GetOperationalLimits {
   @override
   final int dstEnt;
 
-
-  factory _$GetOperationalLimits([void Function(GetOperationalLimitsBuilder b) updates]) =>
+  factory _$GetOperationalLimits(
+          [void Function(GetOperationalLimitsBuilder b) updates]) =>
       (GetOperationalLimitsBuilder()..update(updates)).build();
 
   _$GetOperationalLimits._(
@@ -43849,11 +46503,13 @@ class _$GetOperationalLimits extends GetOperationalLimits {
       : super._();
 
   @override
-  GetOperationalLimits rebuild(void Function(GetOperationalLimitsBuilder b) updates) =>
+  GetOperationalLimits rebuild(
+          void Function(GetOperationalLimitsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GetOperationalLimitsBuilder toBuilder() => GetOperationalLimitsBuilder()..replace(this);
+  GetOperationalLimitsBuilder toBuilder() =>
+      GetOperationalLimitsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -43868,11 +46524,11 @@ class _$GetOperationalLimits extends GetOperationalLimits {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -43890,7 +46546,12 @@ class _$GetOperationalLimits extends GetOperationalLimits {
 
 /// Get Operational Limits builder class
 ///
-class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetOperationalLimits, GetOperationalLimitsBuilder> {
+class GetOperationalLimitsBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<GetOperationalLimits,
+            GetOperationalLimitsBuilder> {
   _$GetOperationalLimits _$v;
 
   DateTime _timestamp;
@@ -43930,7 +46591,8 @@ class GetOperationalLimitsBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  GetOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetOperationalLimitsBuilder()..copyFromHeader(headerFrom);
+  GetOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GetOperationalLimitsBuilder()..copyFromHeader(headerFrom);
 
   GetOperationalLimitsBuilder get _$this {
     if (_$v != null) {
@@ -44021,12 +46683,13 @@ class _$Calibration extends Calibration {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         duration?.hashCode));
   }
 
@@ -44045,7 +46708,9 @@ class _$Calibration extends Calibration {
 
 /// Calibration builder class
 ///
-class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Calibration, CalibrationBuilder> {
+class CalibrationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Calibration, CalibrationBuilder> {
   _$Calibration _$v;
 
   DateTime _timestamp;
@@ -44089,7 +46754,8 @@ class CalibrationBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  CalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CalibrationBuilder()..copyFromHeader(headerFrom);
+  CalibrationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CalibrationBuilder()..copyFromHeader(headerFrom);
 
   CalibrationBuilder get _$this {
     if (_$v != null) {
@@ -44190,14 +46856,17 @@ class _$ControlLoops extends ControlLoops {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        enable?.hashCode), 
-        mask?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                enable?.hashCode),
+            mask?.hashCode),
         scopeRef?.hashCode));
   }
 
@@ -44218,7 +46887,9 @@ class _$ControlLoops extends ControlLoops {
 
 /// Control Loops builder class
 ///
-class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ControlLoops, ControlLoopsBuilder> {
+class ControlLoopsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ControlLoops, ControlLoopsBuilder> {
   _$ControlLoops _$v;
 
   DateTime _timestamp;
@@ -44270,7 +46941,8 @@ class ControlLoopsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  ControlLoopsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ControlLoopsBuilder()..copyFromHeader(headerFrom);
+  ControlLoopsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ControlLoopsBuilder()..copyFromHeader(headerFrom);
 
   ControlLoopsBuilder get _$this {
     if (_$v != null) {
@@ -44367,12 +47039,13 @@ class _$VehicleMedium extends VehicleMedium {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         medium?.hashCode));
   }
 
@@ -44391,7 +47064,9 @@ class _$VehicleMedium extends VehicleMedium {
 
 /// Vehicle Medium builder class
 ///
-class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleMedium, VehicleMediumBuilder> {
+class VehicleMediumBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<VehicleMedium, VehicleMediumBuilder> {
   _$VehicleMedium _$v;
 
   DateTime _timestamp;
@@ -44435,7 +47110,8 @@ class VehicleMediumBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  VehicleMediumBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleMediumBuilder()..copyFromHeader(headerFrom);
+  VehicleMediumBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VehicleMediumBuilder()..copyFromHeader(headerFrom);
 
   VehicleMediumBuilder get _$this {
     if (_$v != null) {
@@ -44526,20 +47202,21 @@ class _$Collision extends Collision {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         type == other.type;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            value?.hashCode),
         type?.hashCode));
   }
 
@@ -44559,7 +47236,9 @@ class _$Collision extends Collision {
 
 /// Collision builder class
 ///
-class CollisionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Collision, CollisionBuilder> {
+class CollisionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Collision, CollisionBuilder> {
   _$Collision _$v;
 
   DateTime _timestamp;
@@ -44607,7 +47286,8 @@ class CollisionBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  CollisionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CollisionBuilder()..copyFromHeader(headerFrom);
+  CollisionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CollisionBuilder()..copyFromHeader(headerFrom);
 
   CollisionBuilder get _$this {
     if (_$v != null) {
@@ -44712,12 +47392,10 @@ class _$FormState extends FormState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (posSimErr == other.posSimErr
-            || posSimErr - other.posSimErr <= 1E-7) &&
-        (converg == other.converg
-            || converg - other.converg <= 1E-7) &&
-        (turbulence == other.turbulence
-            || turbulence - other.turbulence <= 1E-7) &&
+        (posSimErr == other.posSimErr || posSimErr - other.posSimErr <= 1E-7) &&
+        (converg == other.converg || converg - other.converg <= 1E-7) &&
+        (turbulence == other.turbulence ||
+            turbulence - other.turbulence <= 1E-7) &&
         posSimMon == other.posSimMon &&
         commMon == other.commMon &&
         convergMon == other.convergMon;
@@ -44725,17 +47403,25 @@ class _$FormState extends FormState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        posSimErr?.hashCode), 
-        converg?.hashCode), 
-        turbulence?.hashCode), 
-        posSimMon?.hashCode), 
-        commMon?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            posSimErr?.hashCode),
+                        converg?.hashCode),
+                    turbulence?.hashCode),
+                posSimMon?.hashCode),
+            commMon?.hashCode),
         convergMon?.hashCode));
   }
 
@@ -44759,7 +47445,9 @@ class _$FormState extends FormState {
 
 /// Formation Tracking State builder class
 ///
-class FormStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormState, FormStateBuilder> {
+class FormStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FormState, FormStateBuilder> {
   _$FormState _$v;
 
   DateTime _timestamp;
@@ -44806,7 +47494,8 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   FormStateEnumPosSimMon _posSimMon;
   FormStateEnumPosSimMon get posSimMon => _$this._posSimMon;
-  set posSimMon(FormStateEnumPosSimMon posSimMon) => _$this._posSimMon = posSimMon;
+  set posSimMon(FormStateEnumPosSimMon posSimMon) =>
+      _$this._posSimMon = posSimMon;
 
   FormStateEnumCommMon _commMon;
   FormStateEnumCommMon get commMon => _$this._commMon;
@@ -44814,7 +47503,8 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   FormStateEnumConvergMon _convergMon;
   FormStateEnumConvergMon get convergMon => _$this._convergMon;
-  set convergMon(FormStateEnumConvergMon convergMon) => _$this._convergMon = convergMon;
+  set convergMon(FormStateEnumConvergMon convergMon) =>
+      _$this._convergMon = convergMon;
 
   FormStateBuilder();
 
@@ -44823,7 +47513,8 @@ class FormStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  FormStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormStateBuilder()..copyFromHeader(headerFrom);
+  FormStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormStateBuilder()..copyFromHeader(headerFrom);
 
   FormStateBuilder get _$this {
     if (_$v != null) {
@@ -44930,13 +47621,15 @@ class _$AutopilotMode extends AutopilotMode {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        autonomy?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            autonomy?.hashCode),
         mode?.hashCode));
   }
 
@@ -44956,7 +47649,9 @@ class _$AutopilotMode extends AutopilotMode {
 
 /// Autopilot Mode builder class
 ///
-class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<AutopilotMode, AutopilotModeBuilder> {
+class AutopilotModeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<AutopilotMode, AutopilotModeBuilder> {
   _$AutopilotMode _$v;
 
   DateTime _timestamp;
@@ -44991,7 +47686,8 @@ class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements B
 
   AutopilotModeEnumAutonomy _autonomy;
   AutopilotModeEnumAutonomy get autonomy => _$this._autonomy;
-  set autonomy(AutopilotModeEnumAutonomy autonomy) => _$this._autonomy = autonomy;
+  set autonomy(AutopilotModeEnumAutonomy autonomy) =>
+      _$this._autonomy = autonomy;
 
   String _mode;
   String get mode => _$this._mode;
@@ -45004,7 +47700,8 @@ class AutopilotModeBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  AutopilotModeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AutopilotModeBuilder()..copyFromHeader(headerFrom);
+  AutopilotModeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AutopilotModeBuilder()..copyFromHeader(headerFrom);
 
   AutopilotModeBuilder get _$this {
     if (_$v != null) {
@@ -45117,12 +47814,10 @@ class _$FormationState extends FormationState {
         dstEnt == other.dstEnt &&
         type == other.type &&
         op == other.op &&
-        (posSimErr == other.posSimErr
-            || posSimErr - other.posSimErr <= 1E-7) &&
-        (converg == other.converg
-            || converg - other.converg <= 1E-7) &&
-        (turbulence == other.turbulence
-            || turbulence - other.turbulence <= 1E-7) &&
+        (posSimErr == other.posSimErr || posSimErr - other.posSimErr <= 1E-7) &&
+        (converg == other.converg || converg - other.converg <= 1E-7) &&
+        (turbulence == other.turbulence ||
+            turbulence - other.turbulence <= 1E-7) &&
         posSimMon == other.posSimMon &&
         commMon == other.commMon &&
         convergMon == other.convergMon;
@@ -45130,19 +47825,29 @@ class _$FormationState extends FormationState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        op?.hashCode), 
-        posSimErr?.hashCode), 
-        converg?.hashCode), 
-        turbulence?.hashCode), 
-        posSimMon?.hashCode), 
-        commMon?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    type?.hashCode),
+                                op?.hashCode),
+                            posSimErr?.hashCode),
+                        converg?.hashCode),
+                    turbulence?.hashCode),
+                posSimMon?.hashCode),
+            commMon?.hashCode),
         convergMon?.hashCode));
   }
 
@@ -45168,7 +47873,9 @@ class _$FormationState extends FormationState {
 
 /// Formation Tracking State builder class
 ///
-class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationState, FormationStateBuilder> {
+class FormationStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FormationState, FormationStateBuilder> {
   _$FormationState _$v;
 
   DateTime _timestamp;
@@ -45223,7 +47930,8 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
 
   FormationStateEnumPosSimMon _posSimMon;
   FormationStateEnumPosSimMon get posSimMon => _$this._posSimMon;
-  set posSimMon(FormationStateEnumPosSimMon posSimMon) => _$this._posSimMon = posSimMon;
+  set posSimMon(FormationStateEnumPosSimMon posSimMon) =>
+      _$this._posSimMon = posSimMon;
 
   FormationStateEnumCommMon _commMon;
   FormationStateEnumCommMon get commMon => _$this._commMon;
@@ -45231,7 +47939,8 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
 
   FormationStateEnumConvergMon _convergMon;
   FormationStateEnumConvergMon get convergMon => _$this._convergMon;
-  set convergMon(FormationStateEnumConvergMon convergMon) => _$this._convergMon = convergMon;
+  set convergMon(FormationStateEnumConvergMon convergMon) =>
+      _$this._convergMon = convergMon;
 
   FormationStateBuilder();
 
@@ -45240,7 +47949,8 @@ class FormationStateBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  FormationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationStateBuilder()..copyFromHeader(headerFrom);
+  FormationStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormationStateBuilder()..copyFromHeader(headerFrom);
 
   FormationStateBuilder get _$this {
     if (_$v != null) {
@@ -45359,15 +48069,19 @@ class _$ReportControl extends ReportControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        commInterface?.hashCode), 
-        period?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    op?.hashCode),
+                commInterface?.hashCode),
+            period?.hashCode),
         sysDst?.hashCode));
   }
 
@@ -45389,7 +48103,9 @@ class _$ReportControl extends ReportControl {
 
 /// Report Control builder class
 ///
-class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ReportControl, ReportControlBuilder> {
+class ReportControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ReportControl, ReportControlBuilder> {
   _$ReportControl _$v;
 
   DateTime _timestamp;
@@ -45428,7 +48144,8 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
 
   ReportControlBitfieldCommInterface _commInterface;
   ReportControlBitfieldCommInterface get commInterface => _$this._commInterface;
-  set commInterface(ReportControlBitfieldCommInterface commInterface) => _$this._commInterface = commInterface;
+  set commInterface(ReportControlBitfieldCommInterface commInterface) =>
+      _$this._commInterface = commInterface;
 
   int _period;
   int get period => _$this._period;
@@ -45445,7 +48162,8 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ReportControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReportControlBuilder()..copyFromHeader(headerFrom);
+  ReportControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ReportControlBuilder()..copyFromHeader(headerFrom);
 
   ReportControlBuilder get _$this {
     if (_$v != null) {
@@ -45486,7 +48204,8 @@ class ReportControlBuilder extends Object with ImcBuilderHeaderPart implements B
             dst: dst ?? ImcId.nullId,
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             op: op ?? ReportControlEnumOp(0),
-            commInterface: commInterface ?? ReportControlBitfieldCommInterface(0),
+            commInterface:
+                commInterface ?? ReportControlBitfieldCommInterface(0),
             period: period ?? 0,
             sysDst: sysDst ?? '');
     replace(_$result);
@@ -45567,10 +48286,8 @@ class _$StateReport extends StateReport {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         stime == other.stime &&
-        (latitude == other.latitude
-            || latitude - other.latitude <= 1E-7) &&
-        (longitude == other.longitude
-            || longitude - other.longitude <= 1E-7) &&
+        (latitude == other.latitude || latitude - other.latitude <= 1E-7) &&
+        (longitude == other.longitude || longitude - other.longitude <= 1E-7) &&
         altitude == other.altitude &&
         depth == other.depth &&
         heading == other.heading &&
@@ -45582,21 +48299,37 @@ class _$StateReport extends StateReport {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        stime?.hashCode), 
-        latitude?.hashCode), 
-        longitude?.hashCode), 
-        altitude?.hashCode), 
-        depth?.hashCode), 
-        heading?.hashCode), 
-        speed?.hashCode), 
-        fuel?.hashCode), 
-        execState?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                0,
+                                                                timestamp
+                                                                    ?.hashCode),
+                                                            src?.hashCode),
+                                                        srcEnt?.hashCode),
+                                                    dst?.hashCode),
+                                                dstEnt?.hashCode),
+                                            stime?.hashCode),
+                                        latitude?.hashCode),
+                                    longitude?.hashCode),
+                                altitude?.hashCode),
+                            depth?.hashCode),
+                        heading?.hashCode),
+                    speed?.hashCode),
+                fuel?.hashCode),
+            execState?.hashCode),
         planChecksum?.hashCode));
   }
 
@@ -45624,7 +48357,9 @@ class _$StateReport extends StateReport {
 
 /// State Report builder class
 ///
-class StateReportBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<StateReport, StateReportBuilder> {
+class StateReportBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<StateReport, StateReportBuilder> {
   _$StateReport _$v;
 
   DateTime _timestamp;
@@ -45704,7 +48439,8 @@ class StateReportBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  StateReportBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => StateReportBuilder()..copyFromHeader(headerFrom);
+  StateReportBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      StateReportBuilder()..copyFromHeader(headerFrom);
 
   StateReportBuilder get _$this {
     if (_$v != null) {
@@ -45788,6 +48524,8 @@ class _$TransmissionRequest extends TransmissionRequest {
   @override
   final double deadline;
   @override
+  final double range;
+  @override
   final TransmissionRequestEnumDataMode dataMode;
   @override
   final ImcMessage msgData;
@@ -45796,7 +48534,8 @@ class _$TransmissionRequest extends TransmissionRequest {
   @override
   final List<int> rawData;
 
-  factory _$TransmissionRequest([void Function(TransmissionRequestBuilder b) updates]) =>
+  factory _$TransmissionRequest(
+          [void Function(TransmissionRequestBuilder b) updates]) =>
       (TransmissionRequestBuilder()..update(updates)).build();
 
   _$TransmissionRequest._(
@@ -45809,6 +48548,7 @@ class _$TransmissionRequest extends TransmissionRequest {
       this.commMean,
       this.destination,
       this.deadline,
+      this.range,
       this.dataMode,
       this.msgData,
       this.txtData,
@@ -45816,11 +48556,13 @@ class _$TransmissionRequest extends TransmissionRequest {
       : super._();
 
   @override
-  TransmissionRequest rebuild(void Function(TransmissionRequestBuilder b) updates) =>
+  TransmissionRequest rebuild(
+          void Function(TransmissionRequestBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TransmissionRequestBuilder toBuilder() => TransmissionRequestBuilder()..replace(this);
+  TransmissionRequestBuilder toBuilder() =>
+      TransmissionRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -45834,8 +48576,8 @@ class _$TransmissionRequest extends TransmissionRequest {
         reqId == other.reqId &&
         commMean == other.commMean &&
         destination == other.destination &&
-        (deadline == other.deadline
-            || deadline - other.deadline <= 1E-7) &&
+        (deadline == other.deadline || deadline - other.deadline <= 1E-7) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         dataMode == other.dataMode &&
         msgData == other.msgData &&
         txtData == other.txtData &&
@@ -45844,19 +48586,35 @@ class _$TransmissionRequest extends TransmissionRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reqId?.hashCode), 
-        commMean?.hashCode), 
-        destination?.hashCode), 
-        deadline?.hashCode), 
-        dataMode?.hashCode), 
-        msgData?.hashCode), 
-        txtData?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        reqId?.hashCode),
+                                    commMean?.hashCode),
+                                destination?.hashCode),
+                            deadline?.hashCode),
+                        range?.hashCode),
+                    dataMode?.hashCode),
+                msgData?.hashCode),
+            txtData?.hashCode),
         rawData?.hashCode));
   }
 
@@ -45872,6 +48630,7 @@ class _$TransmissionRequest extends TransmissionRequest {
           ..add('commMean', '$commMean (Enumerated)')
           ..add('destination', '$destination')
           ..add('deadline', '$deadline')
+          ..add('range', '$range (m)')
           ..add('dataMode', '$dataMode (Enumerated)')
           ..add('msgData', '$msgData')
           ..add('txtData', '$txtData')
@@ -45882,7 +48641,12 @@ class _$TransmissionRequest extends TransmissionRequest {
 
 /// Transmission Request builder class
 ///
-class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TransmissionRequest, TransmissionRequestBuilder> {
+class TransmissionRequestBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<TransmissionRequest,
+            TransmissionRequestBuilder> {
   _$TransmissionRequest _$v;
 
   DateTime _timestamp;
@@ -45921,7 +48685,8 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
 
   TransmissionRequestEnumCommMean _commMean;
   TransmissionRequestEnumCommMean get commMean => _$this._commMean;
-  set commMean(TransmissionRequestEnumCommMean commMean) => _$this._commMean = commMean;
+  set commMean(TransmissionRequestEnumCommMean commMean) =>
+      _$this._commMean = commMean;
 
   String _destination;
   String get destination => _$this._destination;
@@ -45931,9 +48696,14 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
   double get deadline => _$this._deadline;
   set deadline(double deadline) => _$this._deadline = deadline;
 
+  double _range;
+  double get range => _$this._range;
+  set range(double range) => _$this._range = range;
+
   TransmissionRequestEnumDataMode _dataMode;
   TransmissionRequestEnumDataMode get dataMode => _$this._dataMode;
-  set dataMode(TransmissionRequestEnumDataMode dataMode) => _$this._dataMode = dataMode;
+  set dataMode(TransmissionRequestEnumDataMode dataMode) =>
+      _$this._dataMode = dataMode;
 
   ImcMessage _msgData;
   ImcMessage get msgData => _$this._msgData;
@@ -45954,7 +48724,8 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  TransmissionRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransmissionRequestBuilder()..copyFromHeader(headerFrom);
+  TransmissionRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TransmissionRequestBuilder()..copyFromHeader(headerFrom);
 
   TransmissionRequestBuilder get _$this {
     if (_$v != null) {
@@ -45967,6 +48738,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
       _commMean = _$v.commMean;
       _destination = _$v.destination;
       _deadline = _$v.deadline;
+      _range = _$v.range;
       _dataMode = _$v.dataMode;
       _msgData = _$v.msgData;
       _txtData = _$v.txtData;
@@ -46002,6 +48774,7 @@ class TransmissionRequestBuilder extends Object with ImcBuilderHeaderPart implem
             commMean: commMean ?? TransmissionRequestEnumCommMean(0),
             destination: destination ?? '',
             deadline: deadline ?? 0,
+            range: range ?? 0,
             dataMode: dataMode ?? TransmissionRequestEnumDataMode(0),
             msgData: msgData,
             txtData: txtData ?? '',
@@ -46030,9 +48803,12 @@ class _$TransmissionStatus extends TransmissionStatus {
   @override
   final TransmissionStatusEnumStatus status;
   @override
+  final double range;
+  @override
   final String info;
 
-  factory _$TransmissionStatus([void Function(TransmissionStatusBuilder b) updates]) =>
+  factory _$TransmissionStatus(
+          [void Function(TransmissionStatusBuilder b) updates]) =>
       (TransmissionStatusBuilder()..update(updates)).build();
 
   _$TransmissionStatus._(
@@ -46043,15 +48819,18 @@ class _$TransmissionStatus extends TransmissionStatus {
       this.dstEnt = ImcEntityId.nullId,
       this.reqId,
       this.status,
+      this.range,
       this.info})
       : super._();
 
   @override
-  TransmissionStatus rebuild(void Function(TransmissionStatusBuilder b) updates) =>
+  TransmissionStatus rebuild(
+          void Function(TransmissionStatusBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TransmissionStatusBuilder toBuilder() => TransmissionStatusBuilder()..replace(this);
+  TransmissionStatusBuilder toBuilder() =>
+      TransmissionStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -46064,19 +48843,25 @@ class _$TransmissionStatus extends TransmissionStatus {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         status == other.status &&
+        (range == other.range || range - other.range <= 1E-7) &&
         info == other.info;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reqId?.hashCode), 
-        status?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    reqId?.hashCode),
+                status?.hashCode),
+            range?.hashCode),
         info?.hashCode));
   }
 
@@ -46090,6 +48875,7 @@ class _$TransmissionStatus extends TransmissionStatus {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('reqId', '$reqId')
           ..add('status', '$status (Enumerated)')
+          ..add('range', '$range (m)')
           ..add('info', '$info'))
         .toString();
   }
@@ -46097,7 +48883,10 @@ class _$TransmissionStatus extends TransmissionStatus {
 
 /// Transmission Status builder class
 ///
-class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TransmissionStatus, TransmissionStatusBuilder> {
+class TransmissionStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<TransmissionStatus, TransmissionStatusBuilder> {
   _$TransmissionStatus _$v;
 
   DateTime _timestamp;
@@ -46138,6 +48927,10 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
   TransmissionStatusEnumStatus get status => _$this._status;
   set status(TransmissionStatusEnumStatus status) => _$this._status = status;
 
+  double _range;
+  double get range => _$this._range;
+  set range(double range) => _$this._range = range;
+
   String _info;
   String get info => _$this._info;
   set info(String info) => _$this._info = info;
@@ -46149,7 +48942,8 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  TransmissionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TransmissionStatusBuilder()..copyFromHeader(headerFrom);
+  TransmissionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TransmissionStatusBuilder()..copyFromHeader(headerFrom);
 
   TransmissionStatusBuilder get _$this {
     if (_$v != null) {
@@ -46160,6 +48954,7 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
       _dstEnt = _$v.dstEnt;
       _reqId = _$v.reqId;
       _status = _$v.status;
+      _range = _$v.range;
       _info = _$v.info;
       _$v = null;
     }
@@ -46190,6 +48985,7 @@ class TransmissionStatusBuilder extends Object with ImcBuilderHeaderPart impleme
             dstEnt: dstEnt ?? ImcEntityId.nullId,
             reqId: reqId ?? 0,
             status: status ?? TransmissionStatusEnumStatus(0),
+            range: range ?? 0,
             info: info ?? '');
     replace(_$result);
     return _$result;
@@ -46252,22 +49048,25 @@ class _$SmsRequest extends SmsRequest {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         destination == other.destination &&
-        (timeout == other.timeout
-            || timeout - other.timeout <= 1E-7) &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
         smsText == other.smsText;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reqId?.hashCode), 
-        destination?.hashCode), 
-        timeout?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    reqId?.hashCode),
+                destination?.hashCode),
+            timeout?.hashCode),
         smsText?.hashCode));
   }
 
@@ -46289,7 +49088,9 @@ class _$SmsRequest extends SmsRequest {
 
 /// SMS Transmission Request builder class
 ///
-class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsRequest, SmsRequestBuilder> {
+class SmsRequestBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SmsRequest, SmsRequestBuilder> {
   _$SmsRequest _$v;
 
   DateTime _timestamp;
@@ -46345,7 +49146,8 @@ class SmsRequestBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  SmsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsRequestBuilder()..copyFromHeader(headerFrom);
+  SmsRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SmsRequestBuilder()..copyFromHeader(headerFrom);
 
   SmsRequestBuilder get _$this {
     if (_$v != null) {
@@ -46452,14 +49254,17 @@ class _$SmsStatus extends SmsStatus {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reqId?.hashCode), 
-        status?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                reqId?.hashCode),
+            status?.hashCode),
         info?.hashCode));
   }
 
@@ -46480,7 +49285,9 @@ class _$SmsStatus extends SmsStatus {
 
 /// SMS Transmission Status builder class
 ///
-class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SmsStatus, SmsStatusBuilder> {
+class SmsStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SmsStatus, SmsStatusBuilder> {
   _$SmsStatus _$v;
 
   DateTime _timestamp;
@@ -46532,7 +49339,8 @@ class SmsStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  SmsStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SmsStatusBuilder()..copyFromHeader(headerFrom);
+  SmsStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SmsStatusBuilder()..copyFromHeader(headerFrom);
 
   SmsStatusBuilder get _$this {
     if (_$v != null) {
@@ -46629,12 +49437,13 @@ class _$VtolState extends VtolState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         state?.hashCode));
   }
 
@@ -46653,7 +49462,9 @@ class _$VtolState extends VtolState {
 
 /// VTOL State builder class
 ///
-class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VtolState, VtolStateBuilder> {
+class VtolStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<VtolState, VtolStateBuilder> {
   _$VtolState _$v;
 
   DateTime _timestamp;
@@ -46697,7 +49508,8 @@ class VtolStateBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  VtolStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VtolStateBuilder()..copyFromHeader(headerFrom);
+  VtolStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VtolStateBuilder()..copyFromHeader(headerFrom);
 
   VtolStateBuilder get _$this {
     if (_$v != null) {
@@ -46790,12 +49602,13 @@ class _$ArmingState extends ArmingState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         state?.hashCode));
   }
 
@@ -46814,7 +49627,9 @@ class _$ArmingState extends ArmingState {
 
 /// Arming State builder class
 ///
-class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ArmingState, ArmingStateBuilder> {
+class ArmingStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ArmingState, ArmingStateBuilder> {
   _$ArmingState _$v;
 
   DateTime _timestamp;
@@ -46858,7 +49673,8 @@ class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  ArmingStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ArmingStateBuilder()..copyFromHeader(headerFrom);
+  ArmingStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ArmingStateBuilder()..copyFromHeader(headerFrom);
 
   ArmingStateBuilder get _$this {
     if (_$v != null) {
@@ -46901,6 +49717,401 @@ class ArmingStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 }
 
+/// TCP Transmission Request immutable class
+///
+class _$TCPRequest extends TCPRequest {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final int reqId;
+  @override
+  final String destination;
+  @override
+  final double timeout;
+  @override
+  final ImcMessage msgData;
+
+  factory _$TCPRequest([void Function(TCPRequestBuilder b) updates]) =>
+      (TCPRequestBuilder()..update(updates)).build();
+
+  _$TCPRequest._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      this.reqId,
+      this.destination,
+      this.timeout,
+      this.msgData})
+      : super._();
+
+  @override
+  TCPRequest rebuild(void Function(TCPRequestBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  TCPRequestBuilder toBuilder() => TCPRequestBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is TCPRequest &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        reqId == other.reqId &&
+        destination == other.destination &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
+        msgData == other.msgData;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    reqId?.hashCode),
+                destination?.hashCode),
+            timeout?.hashCode),
+        msgData?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('TCPRequest')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
+          ..add('reqId', '$reqId')
+          ..add('destination', '$destination')
+          ..add('timeout', '$timeout (s)')
+          ..add('msgData', '$msgData'))
+        .toString();
+  }
+}
+
+/// TCP Transmission Request builder class
+///
+class TCPRequestBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TCPRequest, TCPRequestBuilder> {
+  _$TCPRequest _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
+
+  String _destination;
+  String get destination => _$this._destination;
+  set destination(String destination) => _$this._destination = destination;
+
+  double _timeout;
+  double get timeout => _$this._timeout;
+  set timeout(double timeout) => _$this._timeout = timeout;
+
+  ImcMessage _msgData;
+  ImcMessage get msgData => _$this._msgData;
+  set msgData(ImcMessage msgData) => _$this._msgData = msgData;
+
+  TCPRequestBuilder();
+
+  TCPRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  TCPRequestBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TCPRequestBuilder()..copyFromHeader(headerFrom);
+
+  TCPRequestBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _reqId = _$v.reqId;
+      _destination = _$v.destination;
+      _timeout = _$v.timeout;
+      _msgData = _$v.msgData;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(TCPRequest other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$TCPRequest;
+  }
+
+  @override
+  void update(void Function(TCPRequestBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$TCPRequest build() {
+    final _$result = _$v ??
+        _$TCPRequest._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            destination: destination ?? '',
+            timeout: timeout ?? 0,
+            msgData: msgData);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+/// TCP Transmission Status immutable class
+///
+class _$TCPStatus extends TCPStatus {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final int reqId;
+  @override
+  final TCPStatusEnumStatus status;
+  @override
+  final String info;
+
+  factory _$TCPStatus([void Function(TCPStatusBuilder b) updates]) =>
+      (TCPStatusBuilder()..update(updates)).build();
+
+  _$TCPStatus._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      this.reqId,
+      this.status,
+      this.info})
+      : super._();
+
+  @override
+  TCPStatus rebuild(void Function(TCPStatusBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  TCPStatusBuilder toBuilder() => TCPStatusBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is TCPStatus &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        reqId == other.reqId &&
+        status == other.status &&
+        info == other.info;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                reqId?.hashCode),
+            status?.hashCode),
+        info?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('TCPStatus')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
+          ..add('reqId', '$reqId')
+          ..add('status', '$status (Enumerated)')
+          ..add('info', '$info'))
+        .toString();
+  }
+}
+
+/// TCP Transmission Status builder class
+///
+class TCPStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TCPStatus, TCPStatusBuilder> {
+  _$TCPStatus _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  int _reqId;
+  int get reqId => _$this._reqId;
+  set reqId(int reqId) => _$this._reqId = reqId;
+
+  TCPStatusEnumStatus _status;
+  TCPStatusEnumStatus get status => _$this._status;
+  set status(TCPStatusEnumStatus status) => _$this._status = status;
+
+  String _info;
+  String get info => _$this._info;
+  set info(String info) => _$this._info = info;
+
+  TCPStatusBuilder();
+
+  TCPStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  TCPStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TCPStatusBuilder()..copyFromHeader(headerFrom);
+
+  TCPStatusBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _reqId = _$v.reqId;
+      _status = _$v.status;
+      _info = _$v.info;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(TCPStatus other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$TCPStatus;
+  }
+
+  @override
+  void update(void Function(TCPStatusBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$TCPStatus build() {
+    final _$result = _$v ??
+        _$TCPStatus._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            reqId: reqId ?? 0,
+            status: status ?? TCPStatusEnumStatus(0),
+            info: info ?? '');
+    replace(_$result);
+    return _$result;
+  }
+}
+
 /// Abort immutable class
 ///
 class _$Abort extends Abort {
@@ -46914,7 +50125,6 @@ class _$Abort extends Abort {
   final int dst;
   @override
   final int dstEnt;
-
 
   factory _$Abort([void Function(AbortBuilder b) updates]) =>
       (AbortBuilder()..update(updates)).build();
@@ -46947,11 +50157,11 @@ class _$Abort extends Abort {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -46969,7 +50179,9 @@ class _$Abort extends Abort {
 
 /// Abort builder class
 ///
-class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Abort, AbortBuilder> {
+class AbortBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Abort, AbortBuilder> {
   _$Abort _$v;
 
   DateTime _timestamp;
@@ -47009,7 +50221,8 @@ class AbortBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  AbortBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AbortBuilder()..copyFromHeader(headerFrom);
+  AbortBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AbortBuilder()..copyFromHeader(headerFrom);
 
   AbortBuilder get _$this {
     if (_$v != null) {
@@ -47083,7 +50296,8 @@ class _$PlanSpecification extends PlanSpecification {
   @override
   final List<ImcMessage> endActions;
 
-  factory _$PlanSpecification([void Function(PlanSpecificationBuilder b) updates]) =>
+  factory _$PlanSpecification(
+          [void Function(PlanSpecificationBuilder b) updates]) =>
       (PlanSpecificationBuilder()..update(updates)).build();
 
   _$PlanSpecification._(
@@ -47104,11 +50318,13 @@ class _$PlanSpecification extends PlanSpecification {
       : super._();
 
   @override
-  PlanSpecification rebuild(void Function(PlanSpecificationBuilder b) updates) =>
+  PlanSpecification rebuild(
+          void Function(PlanSpecificationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanSpecificationBuilder toBuilder() => PlanSpecificationBuilder()..replace(this);
+  PlanSpecificationBuilder toBuilder() =>
+      PlanSpecificationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47132,20 +50348,35 @@ class _$PlanSpecification extends PlanSpecification {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        planId?.hashCode), 
-        description?.hashCode), 
-        vnamespace?.hashCode), 
-        variables?.hashCode), 
-        startManId?.hashCode), 
-        maneuvers?.hashCode), 
-        transitions?.hashCode), 
-        startActions?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        planId?.hashCode),
+                                    description?.hashCode),
+                                vnamespace?.hashCode),
+                            variables?.hashCode),
+                        startManId?.hashCode),
+                    maneuvers?.hashCode),
+                transitions?.hashCode),
+            startActions?.hashCode),
         endActions?.hashCode));
   }
 
@@ -47172,7 +50403,10 @@ class _$PlanSpecification extends PlanSpecification {
 
 /// Plan Specification builder class
 ///
-class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanSpecification, PlanSpecificationBuilder> {
+class PlanSpecificationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PlanSpecification, PlanSpecificationBuilder> {
   _$PlanSpecification _$v;
 
   DateTime _timestamp;
@@ -47231,15 +50465,18 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
 
   List<PlanTransition> _transitions;
   List<PlanTransition> get transitions => _$this._transitions;
-  set transitions(List<PlanTransition> transitions) => _$this._transitions = transitions;
+  set transitions(List<PlanTransition> transitions) =>
+      _$this._transitions = transitions;
 
   List<ImcMessage> _startActions;
   List<ImcMessage> get startActions => _$this._startActions;
-  set startActions(List<ImcMessage> startActions) => _$this._startActions = startActions;
+  set startActions(List<ImcMessage> startActions) =>
+      _$this._startActions = startActions;
 
   List<ImcMessage> _endActions;
   List<ImcMessage> get endActions => _$this._endActions;
-  set endActions(List<ImcMessage> endActions) => _$this._endActions = endActions;
+  set endActions(List<ImcMessage> endActions) =>
+      _$this._endActions = endActions;
 
   PlanSpecificationBuilder();
 
@@ -47248,7 +50485,8 @@ class PlanSpecificationBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  PlanSpecificationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanSpecificationBuilder()..copyFromHeader(headerFrom);
+  PlanSpecificationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanSpecificationBuilder()..copyFromHeader(headerFrom);
 
   PlanSpecificationBuilder get _$this {
     if (_$v != null) {
@@ -47369,15 +50607,19 @@ class _$PlanManeuver extends PlanManeuver {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        maneuverId?.hashCode), 
-        data?.hashCode), 
-        startActions?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    maneuverId?.hashCode),
+                data?.hashCode),
+            startActions?.hashCode),
         endActions?.hashCode));
   }
 
@@ -47399,7 +50641,9 @@ class _$PlanManeuver extends PlanManeuver {
 
 /// Plan Maneuver builder class
 ///
-class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanManeuver, PlanManeuverBuilder> {
+class PlanManeuverBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanManeuver, PlanManeuverBuilder> {
   _$PlanManeuver _$v;
 
   DateTime _timestamp;
@@ -47442,11 +50686,13 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
 
   List<ImcMessage> _startActions;
   List<ImcMessage> get startActions => _$this._startActions;
-  set startActions(List<ImcMessage> startActions) => _$this._startActions = startActions;
+  set startActions(List<ImcMessage> startActions) =>
+      _$this._startActions = startActions;
 
   List<ImcMessage> _endActions;
   List<ImcMessage> get endActions => _$this._endActions;
-  set endActions(List<ImcMessage> endActions) => _$this._endActions = endActions;
+  set endActions(List<ImcMessage> endActions) =>
+      _$this._endActions = endActions;
 
   PlanManeuverBuilder();
 
@@ -47455,7 +50701,8 @@ class PlanManeuverBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  PlanManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanManeuverBuilder()..copyFromHeader(headerFrom);
+  PlanManeuverBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanManeuverBuilder()..copyFromHeader(headerFrom);
 
   PlanManeuverBuilder get _$this {
     if (_$v != null) {
@@ -47566,15 +50813,19 @@ class _$PlanTransition extends PlanTransition {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        sourceMan?.hashCode), 
-        destMan?.hashCode), 
-        conditions?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    sourceMan?.hashCode),
+                destMan?.hashCode),
+            conditions?.hashCode),
         actions?.hashCode));
   }
 
@@ -47596,7 +50847,9 @@ class _$PlanTransition extends PlanTransition {
 
 /// Plan Transition builder class
 ///
-class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanTransition, PlanTransitionBuilder> {
+class PlanTransitionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanTransition, PlanTransitionBuilder> {
   _$PlanTransition _$v;
 
   DateTime _timestamp;
@@ -47652,7 +50905,8 @@ class PlanTransitionBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  PlanTransitionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanTransitionBuilder()..copyFromHeader(headerFrom);
+  PlanTransitionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanTransitionBuilder()..copyFromHeader(headerFrom);
 
   PlanTransitionBuilder get _$this {
     if (_$v != null) {
@@ -47720,7 +50974,8 @@ class _$EmergencyControl extends EmergencyControl {
   @override
   final PlanSpecification plan;
 
-  factory _$EmergencyControl([void Function(EmergencyControlBuilder b) updates]) =>
+  factory _$EmergencyControl(
+          [void Function(EmergencyControlBuilder b) updates]) =>
       (EmergencyControlBuilder()..update(updates)).build();
 
   _$EmergencyControl._(
@@ -47738,7 +50993,8 @@ class _$EmergencyControl extends EmergencyControl {
       (toBuilder()..update(updates)).build();
 
   @override
-  EmergencyControlBuilder toBuilder() => EmergencyControlBuilder()..replace(this);
+  EmergencyControlBuilder toBuilder() =>
+      EmergencyControlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47755,13 +51011,15 @@ class _$EmergencyControl extends EmergencyControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        command?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            command?.hashCode),
         plan?.hashCode));
   }
 
@@ -47781,7 +51039,10 @@ class _$EmergencyControl extends EmergencyControl {
 
 /// Emergency Control builder class
 ///
-class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EmergencyControl, EmergencyControlBuilder> {
+class EmergencyControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EmergencyControl, EmergencyControlBuilder> {
   _$EmergencyControl _$v;
 
   DateTime _timestamp;
@@ -47829,7 +51090,8 @@ class EmergencyControlBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  EmergencyControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EmergencyControlBuilder()..copyFromHeader(headerFrom);
+  EmergencyControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EmergencyControlBuilder()..copyFromHeader(headerFrom);
 
   EmergencyControlBuilder get _$this {
     if (_$v != null) {
@@ -47895,7 +51157,8 @@ class _$EmergencyControlState extends EmergencyControlState {
   @override
   final int commLevel;
 
-  factory _$EmergencyControlState([void Function(EmergencyControlStateBuilder b) updates]) =>
+  factory _$EmergencyControlState(
+          [void Function(EmergencyControlStateBuilder b) updates]) =>
       (EmergencyControlStateBuilder()..update(updates)).build();
 
   _$EmergencyControlState._(
@@ -47910,11 +51173,13 @@ class _$EmergencyControlState extends EmergencyControlState {
       : super._();
 
   @override
-  EmergencyControlState rebuild(void Function(EmergencyControlStateBuilder b) updates) =>
+  EmergencyControlState rebuild(
+          void Function(EmergencyControlStateBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  EmergencyControlStateBuilder toBuilder() => EmergencyControlStateBuilder()..replace(this);
+  EmergencyControlStateBuilder toBuilder() =>
+      EmergencyControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -47932,14 +51197,17 @@ class _$EmergencyControlState extends EmergencyControlState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        state?.hashCode), 
-        planId?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                state?.hashCode),
+            planId?.hashCode),
         commLevel?.hashCode));
   }
 
@@ -47960,7 +51228,12 @@ class _$EmergencyControlState extends EmergencyControlState {
 
 /// Emergency Control State builder class
 ///
-class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EmergencyControlState, EmergencyControlStateBuilder> {
+class EmergencyControlStateBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EmergencyControlState,
+            EmergencyControlStateBuilder> {
   _$EmergencyControlState _$v;
 
   DateTime _timestamp;
@@ -48012,7 +51285,8 @@ class EmergencyControlStateBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  EmergencyControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EmergencyControlStateBuilder()..copyFromHeader(headerFrom);
+  EmergencyControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EmergencyControlStateBuilder()..copyFromHeader(headerFrom);
 
   EmergencyControlStateBuilder get _$this {
     if (_$v != null) {
@@ -48129,17 +51403,25 @@ class _$PlanDB extends PlanDB {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        op?.hashCode), 
-        requestId?.hashCode), 
-        planId?.hashCode), 
-        arg?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            type?.hashCode),
+                        op?.hashCode),
+                    requestId?.hashCode),
+                planId?.hashCode),
+            arg?.hashCode),
         info?.hashCode));
   }
 
@@ -48163,7 +51445,9 @@ class _$PlanDB extends PlanDB {
 
 /// Plan DB builder class
 ///
-class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanDB, PlanDBBuilder> {
+class PlanDBBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanDB, PlanDBBuilder> {
   _$PlanDB _$v;
 
   DateTime _timestamp;
@@ -48227,7 +51511,8 @@ class PlanDBBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  PlanDBBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBBuilder()..copyFromHeader(headerFrom);
+  PlanDBBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanDBBuilder()..copyFromHeader(headerFrom);
 
   PlanDBBuilder get _$this {
     if (_$v != null) {
@@ -48345,8 +51630,8 @@ class _$PlanDBState extends PlanDBState {
         dstEnt == other.dstEnt &&
         planCount == other.planCount &&
         planSize == other.planSize &&
-        (changeTime == other.changeTime
-            || changeTime - other.changeTime <= 1E-7) &&
+        (changeTime == other.changeTime ||
+            changeTime - other.changeTime <= 1E-7) &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
         ListEquality().equals(md5, other.md5) &&
@@ -48355,18 +51640,27 @@ class _$PlanDBState extends PlanDBState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        planCount?.hashCode), 
-        planSize?.hashCode), 
-        changeTime?.hashCode), 
-        changeSid?.hashCode), 
-        changeSname?.hashCode), 
-        md5?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                planCount?.hashCode),
+                            planSize?.hashCode),
+                        changeTime?.hashCode),
+                    changeSid?.hashCode),
+                changeSname?.hashCode),
+            md5?.hashCode),
         plansInfo?.hashCode));
   }
 
@@ -48391,7 +51685,9 @@ class _$PlanDBState extends PlanDBState {
 
 /// Plan DB State builder class
 ///
-class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanDBState, PlanDBStateBuilder> {
+class PlanDBStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanDBState, PlanDBStateBuilder> {
   _$PlanDBState _$v;
 
   DateTime _timestamp;
@@ -48450,7 +51746,8 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
 
   List<PlanDBInformation> _plansInfo;
   List<PlanDBInformation> get plansInfo => _$this._plansInfo;
-  set plansInfo(List<PlanDBInformation> plansInfo) => _$this._plansInfo = plansInfo;
+  set plansInfo(List<PlanDBInformation> plansInfo) =>
+      _$this._plansInfo = plansInfo;
 
   PlanDBStateBuilder();
 
@@ -48459,7 +51756,8 @@ class PlanDBStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  PlanDBStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBStateBuilder()..copyFromHeader(headerFrom);
+  PlanDBStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanDBStateBuilder()..copyFromHeader(headerFrom);
 
   PlanDBStateBuilder get _$this {
     if (_$v != null) {
@@ -48541,7 +51839,8 @@ class _$PlanDBInformation extends PlanDBInformation {
   @override
   final List<int> md5;
 
-  factory _$PlanDBInformation([void Function(PlanDBInformationBuilder b) updates]) =>
+  factory _$PlanDBInformation(
+          [void Function(PlanDBInformationBuilder b) updates]) =>
       (PlanDBInformationBuilder()..update(updates)).build();
 
   _$PlanDBInformation._(
@@ -48559,11 +51858,13 @@ class _$PlanDBInformation extends PlanDBInformation {
       : super._();
 
   @override
-  PlanDBInformation rebuild(void Function(PlanDBInformationBuilder b) updates) =>
+  PlanDBInformation rebuild(
+          void Function(PlanDBInformationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanDBInformationBuilder toBuilder() => PlanDBInformationBuilder()..replace(this);
+  PlanDBInformationBuilder toBuilder() =>
+      PlanDBInformationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -48576,8 +51877,8 @@ class _$PlanDBInformation extends PlanDBInformation {
         dstEnt == other.dstEnt &&
         planId == other.planId &&
         planSize == other.planSize &&
-        (changeTime == other.changeTime
-            || changeTime - other.changeTime <= 1E-7) &&
+        (changeTime == other.changeTime ||
+            changeTime - other.changeTime <= 1E-7) &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
         ListEquality().equals(md5, other.md5);
@@ -48585,17 +51886,25 @@ class _$PlanDBInformation extends PlanDBInformation {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        planId?.hashCode), 
-        planSize?.hashCode), 
-        changeTime?.hashCode), 
-        changeSid?.hashCode), 
-        changeSname?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            planId?.hashCode),
+                        planSize?.hashCode),
+                    changeTime?.hashCode),
+                changeSid?.hashCode),
+            changeSname?.hashCode),
         md5?.hashCode));
   }
 
@@ -48619,7 +51928,10 @@ class _$PlanDBInformation extends PlanDBInformation {
 
 /// Plan DB Information builder class
 ///
-class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanDBInformation, PlanDBInformationBuilder> {
+class PlanDBInformationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PlanDBInformation, PlanDBInformationBuilder> {
   _$PlanDBInformation _$v;
 
   DateTime _timestamp;
@@ -48683,7 +51995,8 @@ class PlanDBInformationBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  PlanDBInformationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanDBInformationBuilder()..copyFromHeader(headerFrom);
+  PlanDBInformationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanDBInformationBuilder()..copyFromHeader(headerFrom);
 
   PlanDBInformationBuilder get _$this {
     if (_$v != null) {
@@ -48810,18 +52123,27 @@ class _$PlanControl extends PlanControl {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        op?.hashCode), 
-        requestId?.hashCode), 
-        planId?.hashCode), 
-        flags?.hashCode), 
-        arg?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                type?.hashCode),
+                            op?.hashCode),
+                        requestId?.hashCode),
+                    planId?.hashCode),
+                flags?.hashCode),
+            arg?.hashCode),
         info?.hashCode));
   }
 
@@ -48846,7 +52168,9 @@ class _$PlanControl extends PlanControl {
 
 /// Plan Control builder class
 ///
-class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanControl, PlanControlBuilder> {
+class PlanControlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanControl, PlanControlBuilder> {
   _$PlanControl _$v;
 
   DateTime _timestamp;
@@ -48914,7 +52238,8 @@ class PlanControlBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  PlanControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanControlBuilder()..copyFromHeader(headerFrom);
+  PlanControlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanControlBuilder()..copyFromHeader(headerFrom);
 
   PlanControlBuilder get _$this {
     if (_$v != null) {
@@ -49000,7 +52325,8 @@ class _$PlanControlState extends PlanControlState {
   @override
   final PlanControlStateEnumLastOutcome lastOutcome;
 
-  factory _$PlanControlState([void Function(PlanControlStateBuilder b) updates]) =>
+  factory _$PlanControlState(
+          [void Function(PlanControlStateBuilder b) updates]) =>
       (PlanControlStateBuilder()..update(updates)).build();
 
   _$PlanControlState._(
@@ -49024,7 +52350,8 @@ class _$PlanControlState extends PlanControlState {
       (toBuilder()..update(updates)).build();
 
   @override
-  PlanControlStateBuilder toBuilder() => PlanControlStateBuilder()..replace(this);
+  PlanControlStateBuilder toBuilder() =>
+      PlanControlStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -49038,8 +52365,8 @@ class _$PlanControlState extends PlanControlState {
         state == other.state &&
         planId == other.planId &&
         planEta == other.planEta &&
-        (planProgress == other.planProgress
-            || planProgress - other.planProgress <= 1E-7) &&
+        (planProgress == other.planProgress ||
+            planProgress - other.planProgress <= 1E-7) &&
         manId == other.manId &&
         manType == other.manType &&
         manEta == other.manEta &&
@@ -49048,19 +52375,29 @@ class _$PlanControlState extends PlanControlState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        state?.hashCode), 
-        planId?.hashCode), 
-        planEta?.hashCode), 
-        planProgress?.hashCode), 
-        manId?.hashCode), 
-        manType?.hashCode), 
-        manEta?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    state?.hashCode),
+                                planId?.hashCode),
+                            planEta?.hashCode),
+                        planProgress?.hashCode),
+                    manId?.hashCode),
+                manType?.hashCode),
+            manEta?.hashCode),
         lastOutcome?.hashCode));
   }
 
@@ -49086,7 +52423,10 @@ class _$PlanControlState extends PlanControlState {
 
 /// Plan Control State builder class
 ///
-class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanControlState, PlanControlStateBuilder> {
+class PlanControlStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PlanControlState, PlanControlStateBuilder> {
   _$PlanControlState _$v;
 
   DateTime _timestamp;
@@ -49149,7 +52489,8 @@ class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implement
 
   PlanControlStateEnumLastOutcome _lastOutcome;
   PlanControlStateEnumLastOutcome get lastOutcome => _$this._lastOutcome;
-  set lastOutcome(PlanControlStateEnumLastOutcome lastOutcome) => _$this._lastOutcome = lastOutcome;
+  set lastOutcome(PlanControlStateEnumLastOutcome lastOutcome) =>
+      _$this._lastOutcome = lastOutcome;
 
   PlanControlStateBuilder();
 
@@ -49158,7 +52499,8 @@ class PlanControlStateBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  PlanControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanControlStateBuilder()..copyFromHeader(headerFrom);
+  PlanControlStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanControlStateBuilder()..copyFromHeader(headerFrom);
 
   PlanControlStateBuilder get _$this {
     if (_$v != null) {
@@ -49277,15 +52619,19 @@ class _$PlanVariable extends PlanVariable {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
-        value?.hashCode), 
-        type?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    name?.hashCode),
+                value?.hashCode),
+            type?.hashCode),
         access?.hashCode));
   }
 
@@ -49307,7 +52653,9 @@ class _$PlanVariable extends PlanVariable {
 
 /// Plan Variable builder class
 ///
-class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanVariable, PlanVariableBuilder> {
+class PlanVariableBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanVariable, PlanVariableBuilder> {
   _$PlanVariable _$v;
 
   DateTime _timestamp;
@@ -49363,7 +52711,8 @@ class PlanVariableBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  PlanVariableBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanVariableBuilder()..copyFromHeader(headerFrom);
+  PlanVariableBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanVariableBuilder()..copyFromHeader(headerFrom);
 
   PlanVariableBuilder get _$this {
     if (_$v != null) {
@@ -49474,15 +52823,19 @@ class _$PlanGeneration extends PlanGeneration {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        cmd?.hashCode), 
-        op?.hashCode), 
-        planId?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    cmd?.hashCode),
+                op?.hashCode),
+            planId?.hashCode),
         params?.hashCode));
   }
 
@@ -49504,7 +52857,9 @@ class _$PlanGeneration extends PlanGeneration {
 
 /// Plan Generation builder class
 ///
-class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanGeneration, PlanGenerationBuilder> {
+class PlanGenerationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanGeneration, PlanGenerationBuilder> {
   _$PlanGeneration _$v;
 
   DateTime _timestamp;
@@ -49560,7 +52915,8 @@ class PlanGenerationBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  PlanGenerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanGenerationBuilder()..copyFromHeader(headerFrom);
+  PlanGenerationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanGenerationBuilder()..copyFromHeader(headerFrom);
 
   PlanGenerationBuilder get _$this {
     if (_$v != null) {
@@ -49713,71 +53069,65 @@ class _$LeaderState extends LeaderState {
         dstEnt == other.dstEnt &&
         groupName == other.groupName &&
         op == other.op &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (height == other.height
-            || height - other.height <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7) &&
-        (vx == other.vx
-            || vx - other.vx <= 1E-7) &&
-        (vy == other.vy
-            || vy - other.vy <= 1E-7) &&
-        (vz == other.vz
-            || vz - other.vz <= 1E-7) &&
-        (p == other.p
-            || p - other.p <= 1E-7) &&
-        (q == other.q
-            || q - other.q <= 1E-7) &&
-        (r == other.r
-            || r - other.r <= 1E-7) &&
-        (svx == other.svx
-            || svx - other.svx <= 1E-7) &&
-        (svy == other.svy
-            || svy - other.svy <= 1E-7) &&
-        (svz == other.svz
-            || svz - other.svz <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (svx == other.svx || svx - other.svx <= 1E-7) &&
+        (svy == other.svy || svy - other.svy <= 1E-7) &&
+        (svz == other.svz || svz - other.svz <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        groupName?.hashCode), 
-        op?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        height?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
-        psi?.hashCode), 
-        vx?.hashCode), 
-        vy?.hashCode), 
-        vz?.hashCode), 
-        p?.hashCode), 
-        q?.hashCode), 
-        r?.hashCode), 
-        svx?.hashCode), 
-        svy?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), groupName?.hashCode),
+                                                                                op?.hashCode),
+                                                                            lat?.hashCode),
+                                                                        lon?.hashCode),
+                                                                    height?.hashCode),
+                                                                x?.hashCode),
+                                                            y?.hashCode),
+                                                        z?.hashCode),
+                                                    phi?.hashCode),
+                                                theta?.hashCode),
+                                            psi?.hashCode),
+                                        vx?.hashCode),
+                                    vy?.hashCode),
+                                vz?.hashCode),
+                            p?.hashCode),
+                        q?.hashCode),
+                    r?.hashCode),
+                svx?.hashCode),
+            svy?.hashCode),
         svz?.hashCode));
   }
 
@@ -49791,21 +53141,29 @@ class _$LeaderState extends LeaderState {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('groupName', '$groupName')
           ..add('op', '$op (Enumerated)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('p', '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q', '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r', '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('p',
+              '$p (rad/s)${p != null ? ' [${p * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('q',
+              '$q (rad/s)${q != null ? ' [${q * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('r',
+              '$r (rad/s)${r != null ? ' [${r * 180.0 / math.pi} (deg/s)]' : ''}')
           ..add('svx', '$svx (m/s)')
           ..add('svy', '$svy (m/s)')
           ..add('svz', '$svz (m/s)'))
@@ -49815,7 +53173,9 @@ class _$LeaderState extends LeaderState {
 
 /// Leader State builder class
 ///
-class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<LeaderState, LeaderStateBuilder> {
+class LeaderStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<LeaderState, LeaderStateBuilder> {
   _$LeaderState _$v;
 
   DateTime _timestamp;
@@ -49935,7 +53295,8 @@ class LeaderStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  LeaderStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => LeaderStateBuilder()..copyFromHeader(headerFrom);
+  LeaderStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      LeaderStateBuilder()..copyFromHeader(headerFrom);
 
   LeaderStateBuilder get _$this {
     if (_$v != null) {
@@ -50090,18 +53451,27 @@ class _$PlanStatistics extends PlanStatistics {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        planId?.hashCode), 
-        type?.hashCode), 
-        properties?.hashCode), 
-        durations?.hashCode), 
-        distances?.hashCode), 
-        actions?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                planId?.hashCode),
+                            type?.hashCode),
+                        properties?.hashCode),
+                    durations?.hashCode),
+                distances?.hashCode),
+            actions?.hashCode),
         fuel?.hashCode));
   }
 
@@ -50126,7 +53496,9 @@ class _$PlanStatistics extends PlanStatistics {
 
 /// Plan Statistics builder class
 ///
-class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PlanStatistics, PlanStatisticsBuilder> {
+class PlanStatisticsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<PlanStatistics, PlanStatisticsBuilder> {
   _$PlanStatistics _$v;
 
   DateTime _timestamp;
@@ -50169,7 +53541,8 @@ class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements 
 
   PlanStatisticsBitfieldProperties _properties;
   PlanStatisticsBitfieldProperties get properties => _$this._properties;
-  set properties(PlanStatisticsBitfieldProperties properties) => _$this._properties = properties;
+  set properties(PlanStatisticsBitfieldProperties properties) =>
+      _$this._properties = properties;
 
   String _durations;
   String get durations => _$this._durations;
@@ -50194,7 +53567,8 @@ class PlanStatisticsBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  PlanStatisticsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PlanStatisticsBuilder()..copyFromHeader(headerFrom);
+  PlanStatisticsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PlanStatisticsBuilder()..copyFromHeader(headerFrom);
 
   PlanStatisticsBuilder get _$this {
     if (_$v != null) {
@@ -50318,40 +53692,48 @@ class _$ReportedState extends ReportedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (depth == other.depth
-            || depth - other.depth <= 1E-7) &&
-        (roll == other.roll
-            || roll - other.roll <= 1E-7) &&
-        (pitch == other.pitch
-            || pitch - other.pitch <= 1E-7) &&
-        (yaw == other.yaw
-            || yaw - other.yaw <= 1E-7) &&
-        (rcpTime == other.rcpTime
-            || rcpTime - other.rcpTime <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (roll == other.roll || roll - other.roll <= 1E-7) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (yaw == other.yaw || yaw - other.yaw <= 1E-7) &&
+        (rcpTime == other.rcpTime || rcpTime - other.rcpTime <= 1E-7) &&
         sid == other.sid &&
         sType == other.sType;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        depth?.hashCode), 
-        roll?.hashCode), 
-        pitch?.hashCode), 
-        yaw?.hashCode), 
-        rcpTime?.hashCode), 
-        sid?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        lat?.hashCode),
+                                    lon?.hashCode),
+                                depth?.hashCode),
+                            roll?.hashCode),
+                        pitch?.hashCode),
+                    yaw?.hashCode),
+                rcpTime?.hashCode),
+            sid?.hashCode),
         sType?.hashCode));
   }
 
@@ -50363,12 +53745,17 @@ class _$ReportedState extends ReportedState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('depth', '$depth (m)')
-          ..add('roll', '$roll (rad)${roll != null ? ' [${roll * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('pitch', '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('yaw', '$yaw (rad)${yaw != null ? ' [${yaw * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('roll',
+              '$roll (rad)${roll != null ? ' [${roll * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch',
+              '$pitch (rad)${pitch != null ? ' [${pitch * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('yaw',
+              '$yaw (rad)${yaw != null ? ' [${yaw * 180.0 / math.pi} (deg)]' : ''}')
           ..add('rcpTime', '$rcpTime (s)')
           ..add('sid', '$sid')
           ..add('sType', '$sType (Enumerated)'))
@@ -50378,7 +53765,9 @@ class _$ReportedState extends ReportedState {
 
 /// Reported State builder class
 ///
-class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ReportedState, ReportedStateBuilder> {
+class ReportedStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ReportedState, ReportedStateBuilder> {
   _$ReportedState _$v;
 
   DateTime _timestamp;
@@ -50454,7 +53843,8 @@ class ReportedStateBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ReportedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ReportedStateBuilder()..copyFromHeader(headerFrom);
+  ReportedStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ReportedStateBuilder()..copyFromHeader(headerFrom);
 
   ReportedStateBuilder get _$this {
     if (_$v != null) {
@@ -50542,7 +53932,8 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
   @override
   final String data;
 
-  factory _$RemoteSensorInfo([void Function(RemoteSensorInfoBuilder b) updates]) =>
+  factory _$RemoteSensorInfo(
+          [void Function(RemoteSensorInfoBuilder b) updates]) =>
       (RemoteSensorInfoBuilder()..update(updates)).build();
 
   _$RemoteSensorInfo._(
@@ -50565,7 +53956,8 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
       (toBuilder()..update(updates)).build();
 
   @override
-  RemoteSensorInfoBuilder toBuilder() => RemoteSensorInfoBuilder()..replace(this);
+  RemoteSensorInfoBuilder toBuilder() =>
+      RemoteSensorInfoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -50578,31 +53970,36 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
         dstEnt == other.dstEnt &&
         id == other.id &&
         sensorClass == other.sensorClass &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (alt == other.alt
-            || alt - other.alt <= 1E-7) &&
-        (heading == other.heading
-            || heading - other.heading <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7) &&
+        (heading == other.heading || heading - other.heading <= 1E-7) &&
         data == other.data;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
-        sensorClass?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        alt?.hashCode), 
-        heading?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                id?.hashCode),
+                            sensorClass?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                alt?.hashCode),
+            heading?.hashCode),
         data?.hashCode));
   }
 
@@ -50616,10 +54013,13 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('id', '$id')
           ..add('sensorClass', '$sensorClass')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('alt', '$alt (m)')
-          ..add('heading', '$heading (rad)${heading != null ? ' [${heading * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('heading',
+              '$heading (rad)${heading != null ? ' [${heading * 180.0 / math.pi} (deg)]' : ''}')
           ..add('data', '$data (TupleList)'))
         .toString();
   }
@@ -50627,7 +54027,10 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
 
 /// Remote Sensor Info builder class
 ///
-class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteSensorInfo, RemoteSensorInfoBuilder> {
+class RemoteSensorInfoBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<RemoteSensorInfo, RemoteSensorInfoBuilder> {
   _$RemoteSensorInfo _$v;
 
   DateTime _timestamp;
@@ -50695,7 +54098,8 @@ class RemoteSensorInfoBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  RemoteSensorInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteSensorInfoBuilder()..copyFromHeader(headerFrom);
+  RemoteSensorInfoBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RemoteSensorInfoBuilder()..copyFromHeader(headerFrom);
 
   RemoteSensorInfoBuilder get _$this {
     if (_$v != null) {
@@ -50804,13 +54208,15 @@ class _$Map extends Map {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            id?.hashCode),
         features?.hashCode));
   }
 
@@ -50830,7 +54236,9 @@ class _$Map extends Map {
 
 /// Map builder class
 ///
-class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Map, MapBuilder> {
+class MapBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Map, MapBuilder> {
   _$Map _$v;
 
   DateTime _timestamp;
@@ -50878,7 +54286,8 @@ class MapBuilder extends Object with ImcBuilderHeaderPart implements BuilderWith
   }
 
   @override
-  MapBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapBuilder()..copyFromHeader(headerFrom);
+  MapBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MapBuilder()..copyFromHeader(headerFrom);
 
   MapBuilder get _$this {
     if (_$v != null) {
@@ -50993,17 +54402,25 @@ class _$MapFeature extends MapFeature {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        id?.hashCode), 
-        featureType?.hashCode), 
-        rgbRed?.hashCode), 
-        rgbGreen?.hashCode), 
-        rgbBlue?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            id?.hashCode),
+                        featureType?.hashCode),
+                    rgbRed?.hashCode),
+                rgbGreen?.hashCode),
+            rgbBlue?.hashCode),
         feature?.hashCode));
   }
 
@@ -51027,7 +54444,9 @@ class _$MapFeature extends MapFeature {
 
 /// Map Feature builder class
 ///
-class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MapFeature, MapFeatureBuilder> {
+class MapFeatureBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<MapFeature, MapFeatureBuilder> {
   _$MapFeature _$v;
 
   DateTime _timestamp;
@@ -51066,7 +54485,8 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
 
   MapFeatureEnumFeatureType _featureType;
   MapFeatureEnumFeatureType get featureType => _$this._featureType;
-  set featureType(MapFeatureEnumFeatureType featureType) => _$this._featureType = featureType;
+  set featureType(MapFeatureEnumFeatureType featureType) =>
+      _$this._featureType = featureType;
 
   int _rgbRed;
   int get rgbRed => _$this._rgbRed;
@@ -51091,7 +54511,8 @@ class MapFeatureBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  MapFeatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapFeatureBuilder()..copyFromHeader(headerFrom);
+  MapFeatureBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MapFeatureBuilder()..copyFromHeader(headerFrom);
 
   MapFeatureBuilder get _$this {
     if (_$v != null) {
@@ -51195,24 +54616,24 @@ class _$MapPoint extends MapPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (alt == other.alt
-            || alt - other.alt <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                lat?.hashCode),
+            lon?.hashCode),
         alt?.hashCode));
   }
 
@@ -51224,8 +54645,10 @@ class _$MapPoint extends MapPoint {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('alt', '$alt (m)'))
         .toString();
   }
@@ -51233,7 +54656,9 @@ class _$MapPoint extends MapPoint {
 
 /// MapPoint builder class
 ///
-class MapPointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MapPoint, MapPointBuilder> {
+class MapPointBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<MapPoint, MapPointBuilder> {
   _$MapPoint _$v;
 
   DateTime _timestamp;
@@ -51285,7 +54710,8 @@ class MapPointBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  MapPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MapPointBuilder()..copyFromHeader(headerFrom);
+  MapPointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MapPointBuilder()..copyFromHeader(headerFrom);
 
   MapPointBuilder get _$this {
     if (_$v != null) {
@@ -51390,14 +54816,17 @@ class _$CcuEvent extends CcuEvent {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        id?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                type?.hashCode),
+            id?.hashCode),
         arg?.hashCode));
   }
 
@@ -51418,7 +54847,9 @@ class _$CcuEvent extends CcuEvent {
 
 /// CCU Event builder class
 ///
-class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CcuEvent, CcuEventBuilder> {
+class CcuEventBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CcuEvent, CcuEventBuilder> {
   _$CcuEvent _$v;
 
   DateTime _timestamp;
@@ -51470,7 +54901,8 @@ class CcuEventBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  CcuEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CcuEventBuilder()..copyFromHeader(headerFrom);
+  CcuEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CcuEventBuilder()..copyFromHeader(headerFrom);
 
   CcuEventBuilder get _$this {
     if (_$v != null) {
@@ -51571,13 +55003,15 @@ class _$VehicleLinks extends VehicleLinks {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        localname?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            localname?.hashCode),
         links?.hashCode));
   }
 
@@ -51597,7 +55031,9 @@ class _$VehicleLinks extends VehicleLinks {
 
 /// Vehicle Links builder class
 ///
-class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<VehicleLinks, VehicleLinksBuilder> {
+class VehicleLinksBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<VehicleLinks, VehicleLinksBuilder> {
   _$VehicleLinks _$v;
 
   DateTime _timestamp;
@@ -51645,7 +55081,8 @@ class VehicleLinksBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  VehicleLinksBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => VehicleLinksBuilder()..copyFromHeader(headerFrom);
+  VehicleLinksBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      VehicleLinksBuilder()..copyFromHeader(headerFrom);
 
   VehicleLinksBuilder get _$this {
     if (_$v != null) {
@@ -51711,7 +55148,8 @@ class _$TrexObservation extends TrexObservation {
   @override
   final String attributes;
 
-  factory _$TrexObservation([void Function(TrexObservationBuilder b) updates]) =>
+  factory _$TrexObservation(
+          [void Function(TrexObservationBuilder b) updates]) =>
       (TrexObservationBuilder()..update(updates)).build();
 
   _$TrexObservation._(
@@ -51748,14 +55186,17 @@ class _$TrexObservation extends TrexObservation {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeline?.hashCode), 
-        predicate?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                timeline?.hashCode),
+            predicate?.hashCode),
         attributes?.hashCode));
   }
 
@@ -51776,7 +55217,10 @@ class _$TrexObservation extends TrexObservation {
 
 /// TREX Observation builder class
 ///
-class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexObservation, TrexObservationBuilder> {
+class TrexObservationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<TrexObservation, TrexObservationBuilder> {
   _$TrexObservation _$v;
 
   DateTime _timestamp;
@@ -51828,7 +55272,8 @@ class TrexObservationBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  TrexObservationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexObservationBuilder()..copyFromHeader(headerFrom);
+  TrexObservationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrexObservationBuilder()..copyFromHeader(headerFrom);
 
   TrexObservationBuilder get _$this {
     if (_$v != null) {
@@ -51933,14 +55378,17 @@ class _$TrexCommand extends TrexCommand {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        command?.hashCode), 
-        goalId?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                command?.hashCode),
+            goalId?.hashCode),
         goalXml?.hashCode));
   }
 
@@ -51961,7 +55409,9 @@ class _$TrexCommand extends TrexCommand {
 
 /// TREX Command builder class
 ///
-class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexCommand, TrexCommandBuilder> {
+class TrexCommandBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TrexCommand, TrexCommandBuilder> {
   _$TrexCommand _$v;
 
   DateTime _timestamp;
@@ -52013,7 +55463,8 @@ class TrexCommandBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  TrexCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexCommandBuilder()..copyFromHeader(headerFrom);
+  TrexCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrexCommandBuilder()..copyFromHeader(headerFrom);
 
   TrexCommandBuilder get _$this {
     if (_$v != null) {
@@ -52118,14 +55569,17 @@ class _$TrexOperation extends TrexOperation {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
-        goalId?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                op?.hashCode),
+            goalId?.hashCode),
         token?.hashCode));
   }
 
@@ -52146,7 +55600,9 @@ class _$TrexOperation extends TrexOperation {
 
 /// TREX Operation builder class
 ///
-class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexOperation, TrexOperationBuilder> {
+class TrexOperationBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TrexOperation, TrexOperationBuilder> {
   _$TrexOperation _$v;
 
   DateTime _timestamp;
@@ -52198,7 +55654,8 @@ class TrexOperationBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  TrexOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexOperationBuilder()..copyFromHeader(headerFrom);
+  TrexOperationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrexOperationBuilder()..copyFromHeader(headerFrom);
 
   TrexOperationBuilder get _$this {
     if (_$v != null) {
@@ -52307,15 +55764,19 @@ class _$TrexAttribute extends TrexAttribute {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
-        attrType?.hashCode), 
-        min?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    name?.hashCode),
+                attrType?.hashCode),
+            min?.hashCode),
         max?.hashCode));
   }
 
@@ -52337,7 +55798,9 @@ class _$TrexAttribute extends TrexAttribute {
 
 /// TREX Attribute builder class
 ///
-class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexAttribute, TrexAttributeBuilder> {
+class TrexAttributeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TrexAttribute, TrexAttributeBuilder> {
   _$TrexAttribute _$v;
 
   DateTime _timestamp;
@@ -52376,7 +55839,8 @@ class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements B
 
   TrexAttributeEnumAttrType _attrType;
   TrexAttributeEnumAttrType get attrType => _$this._attrType;
-  set attrType(TrexAttributeEnumAttrType attrType) => _$this._attrType = attrType;
+  set attrType(TrexAttributeEnumAttrType attrType) =>
+      _$this._attrType = attrType;
 
   String _min;
   String get min => _$this._min;
@@ -52393,7 +55857,8 @@ class TrexAttributeBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  TrexAttributeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexAttributeBuilder()..copyFromHeader(headerFrom);
+  TrexAttributeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrexAttributeBuilder()..copyFromHeader(headerFrom);
 
   TrexAttributeBuilder get _$this {
     if (_$v != null) {
@@ -52500,14 +55965,17 @@ class _$TrexToken extends TrexToken {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timeline?.hashCode), 
-        predicate?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                timeline?.hashCode),
+            predicate?.hashCode),
         attributes?.hashCode));
   }
 
@@ -52528,7 +55996,9 @@ class _$TrexToken extends TrexToken {
 
 /// TREX Token builder class
 ///
-class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexToken, TrexTokenBuilder> {
+class TrexTokenBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TrexToken, TrexTokenBuilder> {
   _$TrexToken _$v;
 
   DateTime _timestamp;
@@ -52571,7 +56041,8 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
 
   List<TrexAttribute> _attributes;
   List<TrexAttribute> get attributes => _$this._attributes;
-  set attributes(List<TrexAttribute> attributes) => _$this._attributes = attributes;
+  set attributes(List<TrexAttribute> attributes) =>
+      _$this._attributes = attributes;
 
   TrexTokenBuilder();
 
@@ -52580,7 +56051,8 @@ class TrexTokenBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  TrexTokenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexTokenBuilder()..copyFromHeader(headerFrom);
+  TrexTokenBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrexTokenBuilder()..copyFromHeader(headerFrom);
 
   TrexTokenBuilder get _$this {
     if (_$v != null) {
@@ -52681,13 +56153,15 @@ class _$TrexPlan extends TrexPlan {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        reactor?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            reactor?.hashCode),
         tokens?.hashCode));
   }
 
@@ -52707,7 +56181,9 @@ class _$TrexPlan extends TrexPlan {
 
 /// TREX Plan builder class
 ///
-class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TrexPlan, TrexPlanBuilder> {
+class TrexPlanBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<TrexPlan, TrexPlanBuilder> {
   _$TrexPlan _$v;
 
   DateTime _timestamp;
@@ -52755,7 +56231,8 @@ class TrexPlanBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  TrexPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TrexPlanBuilder()..copyFromHeader(headerFrom);
+  TrexPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TrexPlanBuilder()..copyFromHeader(headerFrom);
 
   TrexPlanBuilder get _$this {
     if (_$v != null) {
@@ -52854,13 +56331,15 @@ class _$Event extends Event {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        topic?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            topic?.hashCode),
         data?.hashCode));
   }
 
@@ -52880,7 +56359,9 @@ class _$Event extends Event {
 
 /// Event builder class
 ///
-class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Event, EventBuilder> {
+class EventBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Event, EventBuilder> {
   _$Event _$v;
 
   DateTime _timestamp;
@@ -52928,7 +56409,8 @@ class EventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWi
   }
 
   @override
-  EventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EventBuilder()..copyFromHeader(headerFrom);
+  EventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EventBuilder()..copyFromHeader(headerFrom);
 
   EventBuilder get _$this {
     if (_$v != null) {
@@ -52992,7 +56474,8 @@ class _$CompressedImage extends CompressedImage {
   @override
   final List<int> data;
 
-  factory _$CompressedImage([void Function(CompressedImageBuilder b) updates]) =>
+  factory _$CompressedImage(
+          [void Function(CompressedImageBuilder b) updates]) =>
       (CompressedImageBuilder()..update(updates)).build();
 
   _$CompressedImage._(
@@ -53027,13 +56510,15 @@ class _$CompressedImage extends CompressedImage {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        frameid?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            frameid?.hashCode),
         data?.hashCode));
   }
 
@@ -53053,7 +56538,10 @@ class _$CompressedImage extends CompressedImage {
 
 /// Compressed Image builder class
 ///
-class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CompressedImage, CompressedImageBuilder> {
+class CompressedImageBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<CompressedImage, CompressedImageBuilder> {
   _$CompressedImage _$v;
 
   DateTime _timestamp;
@@ -53101,7 +56589,8 @@ class CompressedImageBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  CompressedImageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CompressedImageBuilder()..copyFromHeader(headerFrom);
+  CompressedImageBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CompressedImageBuilder()..copyFromHeader(headerFrom);
 
   CompressedImageBuilder get _$this {
     if (_$v != null) {
@@ -53169,7 +56658,8 @@ class _$ImageTxSettings extends ImageTxSettings {
   @override
   final int tsize;
 
-  factory _$ImageTxSettings([void Function(ImageTxSettingsBuilder b) updates]) =>
+  factory _$ImageTxSettings(
+          [void Function(ImageTxSettingsBuilder b) updates]) =>
       (ImageTxSettingsBuilder()..update(updates)).build();
 
   _$ImageTxSettings._(
@@ -53208,15 +56698,19 @@ class _$ImageTxSettings extends ImageTxSettings {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        fps?.hashCode), 
-        quality?.hashCode), 
-        reps?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    fps?.hashCode),
+                quality?.hashCode),
+            reps?.hashCode),
         tsize?.hashCode));
   }
 
@@ -53238,7 +56732,10 @@ class _$ImageTxSettings extends ImageTxSettings {
 
 /// Image Transmission Settings builder class
 ///
-class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ImageTxSettings, ImageTxSettingsBuilder> {
+class ImageTxSettingsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<ImageTxSettings, ImageTxSettingsBuilder> {
   _$ImageTxSettings _$v;
 
   DateTime _timestamp;
@@ -53294,7 +56791,8 @@ class ImageTxSettingsBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  ImageTxSettingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ImageTxSettingsBuilder()..copyFromHeader(headerFrom);
+  ImageTxSettingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ImageTxSettingsBuilder()..copyFromHeader(headerFrom);
 
   ImageTxSettingsBuilder get _$this {
     if (_$v != null) {
@@ -53400,29 +56898,32 @@ class _$RemoteState extends RemoteState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         depth == other.depth &&
-        (speed == other.speed
-            || speed - other.speed <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7);
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        depth?.hashCode), 
-        speed?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                depth?.hashCode),
+            speed?.hashCode),
         psi?.hashCode));
   }
 
@@ -53434,18 +56935,23 @@ class _$RemoteState extends RemoteState {
           ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('depth', '$depth (m)')
           ..add('speed', '$speed (m/s)')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// Remote State builder class
 ///
-class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<RemoteState, RemoteStateBuilder> {
+class RemoteStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<RemoteState, RemoteStateBuilder> {
   _$RemoteState _$v;
 
   DateTime _timestamp;
@@ -53505,7 +57011,8 @@ class RemoteStateBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  RemoteStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => RemoteStateBuilder()..copyFromHeader(headerFrom);
+  RemoteStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      RemoteStateBuilder()..copyFromHeader(headerFrom);
 
   RemoteStateBuilder get _$this {
     if (_$v != null) {
@@ -53620,33 +57127,37 @@ class _$Target extends Target {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         label == other.label &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (cog == other.cog
-            || cog - other.cog <= 1E-7) &&
-        (sog == other.sog
-            || sog - other.sog <= 1E-7);
+        (cog == other.cog || cog - other.cog <= 1E-7) &&
+        (sog == other.sog || sog - other.sog <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        label?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
-        zUnits?.hashCode), 
-        cog?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, timestamp?.hashCode),
+                                                src?.hashCode),
+                                            srcEnt?.hashCode),
+                                        dst?.hashCode),
+                                    dstEnt?.hashCode),
+                                label?.hashCode),
+                            lat?.hashCode),
+                        lon?.hashCode),
+                    z?.hashCode),
+                zUnits?.hashCode),
+            cog?.hashCode),
         sog?.hashCode));
   }
 
@@ -53659,11 +57170,14 @@ class _$Target extends Target {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('label', '$label')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
-          ..add('cog', '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('cog',
+              '$cog (rad)${cog != null ? ' [${cog * 180.0 / math.pi} (deg)]' : ''}')
           ..add('sog', '$sog (m/s)'))
         .toString();
   }
@@ -53671,7 +57185,9 @@ class _$Target extends Target {
 
 /// Target builder class
 ///
-class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Target, TargetBuilder> {
+class TargetBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Target, TargetBuilder> {
   _$Target _$v;
 
   DateTime _timestamp;
@@ -53739,7 +57255,8 @@ class TargetBuilder extends Object with ImcBuilderHeaderPart implements BuilderW
   }
 
   @override
-  TargetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TargetBuilder()..copyFromHeader(headerFrom);
+  TargetBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TargetBuilder()..copyFromHeader(headerFrom);
 
   TargetBuilder get _$this {
     if (_$v != null) {
@@ -53813,7 +57330,8 @@ class _$EntityParameter extends EntityParameter {
   @override
   final String value;
 
-  factory _$EntityParameter([void Function(EntityParameterBuilder b) updates]) =>
+  factory _$EntityParameter(
+          [void Function(EntityParameterBuilder b) updates]) =>
       (EntityParameterBuilder()..update(updates)).build();
 
   _$EntityParameter._(
@@ -53848,13 +57366,15 @@ class _$EntityParameter extends EntityParameter {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            name?.hashCode),
         value?.hashCode));
   }
 
@@ -53874,7 +57394,10 @@ class _$EntityParameter extends EntityParameter {
 
 /// EntityParameter builder class
 ///
-class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityParameter, EntityParameterBuilder> {
+class EntityParameterBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EntityParameter, EntityParameterBuilder> {
   _$EntityParameter _$v;
 
   DateTime _timestamp;
@@ -53922,7 +57445,8 @@ class EntityParameterBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  EntityParameterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityParameterBuilder()..copyFromHeader(headerFrom);
+  EntityParameterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EntityParameterBuilder()..copyFromHeader(headerFrom);
 
   EntityParameterBuilder get _$this {
     if (_$v != null) {
@@ -53986,7 +57510,8 @@ class _$EntityParameters extends EntityParameters {
   @override
   final List<EntityParameter> params;
 
-  factory _$EntityParameters([void Function(EntityParametersBuilder b) updates]) =>
+  factory _$EntityParameters(
+          [void Function(EntityParametersBuilder b) updates]) =>
       (EntityParametersBuilder()..update(updates)).build();
 
   _$EntityParameters._(
@@ -54004,7 +57529,8 @@ class _$EntityParameters extends EntityParameters {
       (toBuilder()..update(updates)).build();
 
   @override
-  EntityParametersBuilder toBuilder() => EntityParametersBuilder()..replace(this);
+  EntityParametersBuilder toBuilder() =>
+      EntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54021,13 +57547,15 @@ class _$EntityParameters extends EntityParameters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            name?.hashCode),
         params?.hashCode));
   }
 
@@ -54047,7 +57575,10 @@ class _$EntityParameters extends EntityParameters {
 
 /// EntityParameters builder class
 ///
-class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<EntityParameters, EntityParametersBuilder> {
+class EntityParametersBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<EntityParameters, EntityParametersBuilder> {
   _$EntityParameters _$v;
 
   DateTime _timestamp;
@@ -54095,7 +57626,8 @@ class EntityParametersBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  EntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => EntityParametersBuilder()..copyFromHeader(headerFrom);
+  EntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      EntityParametersBuilder()..copyFromHeader(headerFrom);
 
   EntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -54161,7 +57693,8 @@ class _$QueryEntityParameters extends QueryEntityParameters {
   @override
   final String scope;
 
-  factory _$QueryEntityParameters([void Function(QueryEntityParametersBuilder b) updates]) =>
+  factory _$QueryEntityParameters(
+          [void Function(QueryEntityParametersBuilder b) updates]) =>
       (QueryEntityParametersBuilder()..update(updates)).build();
 
   _$QueryEntityParameters._(
@@ -54176,11 +57709,13 @@ class _$QueryEntityParameters extends QueryEntityParameters {
       : super._();
 
   @override
-  QueryEntityParameters rebuild(void Function(QueryEntityParametersBuilder b) updates) =>
+  QueryEntityParameters rebuild(
+          void Function(QueryEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  QueryEntityParametersBuilder toBuilder() => QueryEntityParametersBuilder()..replace(this);
+  QueryEntityParametersBuilder toBuilder() =>
+      QueryEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54198,14 +57733,17 @@ class _$QueryEntityParameters extends QueryEntityParameters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
-        visibility?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                name?.hashCode),
+            visibility?.hashCode),
         scope?.hashCode));
   }
 
@@ -54226,7 +57764,12 @@ class _$QueryEntityParameters extends QueryEntityParameters {
 
 /// QueryEntityParameters builder class
 ///
-class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<QueryEntityParameters, QueryEntityParametersBuilder> {
+class QueryEntityParametersBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<QueryEntityParameters,
+            QueryEntityParametersBuilder> {
   _$QueryEntityParameters _$v;
 
   DateTime _timestamp;
@@ -54278,7 +57821,8 @@ class QueryEntityParametersBuilder extends Object with ImcBuilderHeaderPart impl
   }
 
   @override
-  QueryEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => QueryEntityParametersBuilder()..copyFromHeader(headerFrom);
+  QueryEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      QueryEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -54344,7 +57888,8 @@ class _$SetEntityParameters extends SetEntityParameters {
   @override
   final List<EntityParameter> params;
 
-  factory _$SetEntityParameters([void Function(SetEntityParametersBuilder b) updates]) =>
+  factory _$SetEntityParameters(
+          [void Function(SetEntityParametersBuilder b) updates]) =>
       (SetEntityParametersBuilder()..update(updates)).build();
 
   _$SetEntityParameters._(
@@ -54358,11 +57903,13 @@ class _$SetEntityParameters extends SetEntityParameters {
       : super._();
 
   @override
-  SetEntityParameters rebuild(void Function(SetEntityParametersBuilder b) updates) =>
+  SetEntityParameters rebuild(
+          void Function(SetEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SetEntityParametersBuilder toBuilder() => SetEntityParametersBuilder()..replace(this);
+  SetEntityParametersBuilder toBuilder() =>
+      SetEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54379,13 +57926,15 @@ class _$SetEntityParameters extends SetEntityParameters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            name?.hashCode),
         params?.hashCode));
   }
 
@@ -54405,7 +57954,12 @@ class _$SetEntityParameters extends SetEntityParameters {
 
 /// SetEntityParameters builder class
 ///
-class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetEntityParameters, SetEntityParametersBuilder> {
+class SetEntityParametersBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SetEntityParameters,
+            SetEntityParametersBuilder> {
   _$SetEntityParameters _$v;
 
   DateTime _timestamp;
@@ -54453,7 +58007,8 @@ class SetEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  SetEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetEntityParametersBuilder()..copyFromHeader(headerFrom);
+  SetEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SetEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   SetEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -54515,7 +58070,8 @@ class _$SaveEntityParameters extends SaveEntityParameters {
   @override
   final String name;
 
-  factory _$SaveEntityParameters([void Function(SaveEntityParametersBuilder b) updates]) =>
+  factory _$SaveEntityParameters(
+          [void Function(SaveEntityParametersBuilder b) updates]) =>
       (SaveEntityParametersBuilder()..update(updates)).build();
 
   _$SaveEntityParameters._(
@@ -54528,11 +58084,13 @@ class _$SaveEntityParameters extends SaveEntityParameters {
       : super._();
 
   @override
-  SaveEntityParameters rebuild(void Function(SaveEntityParametersBuilder b) updates) =>
+  SaveEntityParameters rebuild(
+          void Function(SaveEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SaveEntityParametersBuilder toBuilder() => SaveEntityParametersBuilder()..replace(this);
+  SaveEntityParametersBuilder toBuilder() =>
+      SaveEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -54548,12 +58106,13 @@ class _$SaveEntityParameters extends SaveEntityParameters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         name?.hashCode));
   }
 
@@ -54572,7 +58131,12 @@ class _$SaveEntityParameters extends SaveEntityParameters {
 
 /// SaveEntityParameters builder class
 ///
-class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SaveEntityParameters, SaveEntityParametersBuilder> {
+class SaveEntityParametersBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SaveEntityParameters,
+            SaveEntityParametersBuilder> {
   _$SaveEntityParameters _$v;
 
   DateTime _timestamp;
@@ -54616,7 +58180,8 @@ class SaveEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  SaveEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SaveEntityParametersBuilder()..copyFromHeader(headerFrom);
+  SaveEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SaveEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   SaveEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -54709,12 +58274,13 @@ class _$CreateSession extends CreateSession {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         timeout?.hashCode));
   }
 
@@ -54733,7 +58299,9 @@ class _$CreateSession extends CreateSession {
 
 /// Create Session builder class
 ///
-class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CreateSession, CreateSessionBuilder> {
+class CreateSessionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CreateSession, CreateSessionBuilder> {
   _$CreateSession _$v;
 
   DateTime _timestamp;
@@ -54777,7 +58345,8 @@ class CreateSessionBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  CreateSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CreateSessionBuilder()..copyFromHeader(headerFrom);
+  CreateSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CreateSessionBuilder()..copyFromHeader(headerFrom);
 
   CreateSessionBuilder get _$this {
     if (_$v != null) {
@@ -54870,12 +58439,13 @@ class _$CloseSession extends CloseSession {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         sessid?.hashCode));
   }
 
@@ -54894,7 +58464,9 @@ class _$CloseSession extends CloseSession {
 
 /// Close Session builder class
 ///
-class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<CloseSession, CloseSessionBuilder> {
+class CloseSessionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CloseSession, CloseSessionBuilder> {
   _$CloseSession _$v;
 
   DateTime _timestamp;
@@ -54938,7 +58510,8 @@ class CloseSessionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  CloseSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => CloseSessionBuilder()..copyFromHeader(headerFrom);
+  CloseSessionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      CloseSessionBuilder()..copyFromHeader(headerFrom);
 
   CloseSessionBuilder get _$this {
     if (_$v != null) {
@@ -55000,7 +58573,8 @@ class _$SessionSubscription extends SessionSubscription {
   @override
   final String messages;
 
-  factory _$SessionSubscription([void Function(SessionSubscriptionBuilder b) updates]) =>
+  factory _$SessionSubscription(
+          [void Function(SessionSubscriptionBuilder b) updates]) =>
       (SessionSubscriptionBuilder()..update(updates)).build();
 
   _$SessionSubscription._(
@@ -55014,11 +58588,13 @@ class _$SessionSubscription extends SessionSubscription {
       : super._();
 
   @override
-  SessionSubscription rebuild(void Function(SessionSubscriptionBuilder b) updates) =>
+  SessionSubscription rebuild(
+          void Function(SessionSubscriptionBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SessionSubscriptionBuilder toBuilder() => SessionSubscriptionBuilder()..replace(this);
+  SessionSubscriptionBuilder toBuilder() =>
+      SessionSubscriptionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55035,13 +58611,15 @@ class _$SessionSubscription extends SessionSubscription {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        sessid?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            sessid?.hashCode),
         messages?.hashCode));
   }
 
@@ -55061,7 +58639,12 @@ class _$SessionSubscription extends SessionSubscription {
 
 /// Session Subscription builder class
 ///
-class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SessionSubscription, SessionSubscriptionBuilder> {
+class SessionSubscriptionBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SessionSubscription,
+            SessionSubscriptionBuilder> {
   _$SessionSubscription _$v;
 
   DateTime _timestamp;
@@ -55109,7 +58692,8 @@ class SessionSubscriptionBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  SessionSubscriptionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionSubscriptionBuilder()..copyFromHeader(headerFrom);
+  SessionSubscriptionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SessionSubscriptionBuilder()..copyFromHeader(headerFrom);
 
   SessionSubscriptionBuilder get _$this {
     if (_$v != null) {
@@ -55171,7 +58755,8 @@ class _$SessionKeepAlive extends SessionKeepAlive {
   @override
   final int sessid;
 
-  factory _$SessionKeepAlive([void Function(SessionKeepAliveBuilder b) updates]) =>
+  factory _$SessionKeepAlive(
+          [void Function(SessionKeepAliveBuilder b) updates]) =>
       (SessionKeepAliveBuilder()..update(updates)).build();
 
   _$SessionKeepAlive._(
@@ -55188,7 +58773,8 @@ class _$SessionKeepAlive extends SessionKeepAlive {
       (toBuilder()..update(updates)).build();
 
   @override
-  SessionKeepAliveBuilder toBuilder() => SessionKeepAliveBuilder()..replace(this);
+  SessionKeepAliveBuilder toBuilder() =>
+      SessionKeepAliveBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55204,12 +58790,13 @@ class _$SessionKeepAlive extends SessionKeepAlive {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         sessid?.hashCode));
   }
 
@@ -55228,7 +58815,10 @@ class _$SessionKeepAlive extends SessionKeepAlive {
 
 /// Session Keep-Alive builder class
 ///
-class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SessionKeepAlive, SessionKeepAliveBuilder> {
+class SessionKeepAliveBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<SessionKeepAlive, SessionKeepAliveBuilder> {
   _$SessionKeepAlive _$v;
 
   DateTime _timestamp;
@@ -55272,7 +58862,8 @@ class SessionKeepAliveBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  SessionKeepAliveBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionKeepAliveBuilder()..copyFromHeader(headerFrom);
+  SessionKeepAliveBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SessionKeepAliveBuilder()..copyFromHeader(headerFrom);
 
   SessionKeepAliveBuilder get _$this {
     if (_$v != null) {
@@ -55369,13 +58960,15 @@ class _$SessionStatus extends SessionStatus {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        sessid?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            sessid?.hashCode),
         status?.hashCode));
   }
 
@@ -55395,7 +58988,9 @@ class _$SessionStatus extends SessionStatus {
 
 /// Session Status builder class
 ///
-class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SessionStatus, SessionStatusBuilder> {
+class SessionStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SessionStatus, SessionStatusBuilder> {
   _$SessionStatus _$v;
 
   DateTime _timestamp;
@@ -55443,7 +59038,8 @@ class SessionStatusBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  SessionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SessionStatusBuilder()..copyFromHeader(headerFrom);
+  SessionStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SessionStatusBuilder()..copyFromHeader(headerFrom);
 
   SessionStatusBuilder get _$this {
     if (_$v != null) {
@@ -55505,7 +59101,8 @@ class _$PushEntityParameters extends PushEntityParameters {
   @override
   final String name;
 
-  factory _$PushEntityParameters([void Function(PushEntityParametersBuilder b) updates]) =>
+  factory _$PushEntityParameters(
+          [void Function(PushEntityParametersBuilder b) updates]) =>
       (PushEntityParametersBuilder()..update(updates)).build();
 
   _$PushEntityParameters._(
@@ -55518,11 +59115,13 @@ class _$PushEntityParameters extends PushEntityParameters {
       : super._();
 
   @override
-  PushEntityParameters rebuild(void Function(PushEntityParametersBuilder b) updates) =>
+  PushEntityParameters rebuild(
+          void Function(PushEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PushEntityParametersBuilder toBuilder() => PushEntityParametersBuilder()..replace(this);
+  PushEntityParametersBuilder toBuilder() =>
+      PushEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55538,12 +59137,13 @@ class _$PushEntityParameters extends PushEntityParameters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         name?.hashCode));
   }
 
@@ -55562,7 +59162,12 @@ class _$PushEntityParameters extends PushEntityParameters {
 
 /// Push Entity Parameters builder class
 ///
-class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PushEntityParameters, PushEntityParametersBuilder> {
+class PushEntityParametersBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PushEntityParameters,
+            PushEntityParametersBuilder> {
   _$PushEntityParameters _$v;
 
   DateTime _timestamp;
@@ -55606,7 +59211,8 @@ class PushEntityParametersBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  PushEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PushEntityParametersBuilder()..copyFromHeader(headerFrom);
+  PushEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PushEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   PushEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -55666,7 +59272,8 @@ class _$PopEntityParameters extends PopEntityParameters {
   @override
   final String name;
 
-  factory _$PopEntityParameters([void Function(PopEntityParametersBuilder b) updates]) =>
+  factory _$PopEntityParameters(
+          [void Function(PopEntityParametersBuilder b) updates]) =>
       (PopEntityParametersBuilder()..update(updates)).build();
 
   _$PopEntityParameters._(
@@ -55679,11 +59286,13 @@ class _$PopEntityParameters extends PopEntityParameters {
       : super._();
 
   @override
-  PopEntityParameters rebuild(void Function(PopEntityParametersBuilder b) updates) =>
+  PopEntityParameters rebuild(
+          void Function(PopEntityParametersBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PopEntityParametersBuilder toBuilder() => PopEntityParametersBuilder()..replace(this);
+  PopEntityParametersBuilder toBuilder() =>
+      PopEntityParametersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55699,12 +59308,13 @@ class _$PopEntityParameters extends PopEntityParameters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         name?.hashCode));
   }
 
@@ -55723,7 +59333,12 @@ class _$PopEntityParameters extends PopEntityParameters {
 
 /// Pop Entity Parameters builder class
 ///
-class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<PopEntityParameters, PopEntityParametersBuilder> {
+class PopEntityParametersBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<PopEntityParameters,
+            PopEntityParametersBuilder> {
   _$PopEntityParameters _$v;
 
   DateTime _timestamp;
@@ -55767,7 +59382,8 @@ class PopEntityParametersBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  PopEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => PopEntityParametersBuilder()..copyFromHeader(headerFrom);
+  PopEntityParametersBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      PopEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   PopEntityParametersBuilder get _$this {
     if (_$v != null) {
@@ -55864,13 +59480,15 @@ class _$IoEvent extends IoEvent {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            type?.hashCode),
         error?.hashCode));
   }
 
@@ -55890,7 +59508,9 @@ class _$IoEvent extends IoEvent {
 
 /// I/O Event builder class
 ///
-class IoEventBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<IoEvent, IoEventBuilder> {
+class IoEventBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<IoEvent, IoEventBuilder> {
   _$IoEvent _$v;
 
   DateTime _timestamp;
@@ -55938,7 +59558,8 @@ class IoEventBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  IoEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => IoEventBuilder()..copyFromHeader(headerFrom);
+  IoEventBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      IoEventBuilder()..copyFromHeader(headerFrom);
 
   IoEventBuilder get _$this {
     if (_$v != null) {
@@ -56045,15 +59666,19 @@ class _$UamTxFrame extends UamTxFrame {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        seq?.hashCode), 
-        sysDst?.hashCode), 
-        flags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    seq?.hashCode),
+                sysDst?.hashCode),
+            flags?.hashCode),
         data?.hashCode));
   }
 
@@ -56075,7 +59700,9 @@ class _$UamTxFrame extends UamTxFrame {
 
 /// UamTxFrame builder class
 ///
-class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamTxFrame, UamTxFrameBuilder> {
+class UamTxFrameBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UamTxFrame, UamTxFrameBuilder> {
   _$UamTxFrame _$v;
 
   DateTime _timestamp;
@@ -56131,7 +59758,8 @@ class UamTxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  UamTxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamTxFrameBuilder()..copyFromHeader(headerFrom);
+  UamTxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UamTxFrameBuilder()..copyFromHeader(headerFrom);
 
   UamTxFrameBuilder get _$this {
     if (_$v != null) {
@@ -56242,15 +59870,19 @@ class _$UamRxFrame extends UamRxFrame {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        sysSrc?.hashCode), 
-        sysDst?.hashCode), 
-        flags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    sysSrc?.hashCode),
+                sysDst?.hashCode),
+            flags?.hashCode),
         data?.hashCode));
   }
 
@@ -56272,7 +59904,9 @@ class _$UamRxFrame extends UamRxFrame {
 
 /// UamRxFrame builder class
 ///
-class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamRxFrame, UamRxFrameBuilder> {
+class UamRxFrameBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UamRxFrame, UamRxFrameBuilder> {
   _$UamRxFrame _$v;
 
   DateTime _timestamp;
@@ -56328,7 +59962,8 @@ class UamRxFrameBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  UamRxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamRxFrameBuilder()..copyFromHeader(headerFrom);
+  UamRxFrameBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UamRxFrameBuilder()..copyFromHeader(headerFrom);
 
   UamRxFrameBuilder get _$this {
     if (_$v != null) {
@@ -56435,14 +60070,17 @@ class _$UamTxStatus extends UamTxStatus {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        seq?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                seq?.hashCode),
+            value?.hashCode),
         error?.hashCode));
   }
 
@@ -56463,7 +60101,9 @@ class _$UamTxStatus extends UamTxStatus {
 
 /// UamTxStatus builder class
 ///
-class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamTxStatus, UamTxStatusBuilder> {
+class UamTxStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UamTxStatus, UamTxStatusBuilder> {
   _$UamTxStatus _$v;
 
   DateTime _timestamp;
@@ -56515,7 +60155,8 @@ class UamTxStatusBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  UamTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamTxStatusBuilder()..copyFromHeader(headerFrom);
+  UamTxStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UamTxStatusBuilder()..copyFromHeader(headerFrom);
 
   UamTxStatusBuilder get _$this {
     if (_$v != null) {
@@ -56615,20 +60256,22 @@ class _$UamRxRange extends UamRxRange {
         dstEnt == other.dstEnt &&
         seq == other.seq &&
         sys == other.sys &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        seq?.hashCode), 
-        sys?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                seq?.hashCode),
+            sys?.hashCode),
         value?.hashCode));
   }
 
@@ -56649,7 +60292,9 @@ class _$UamRxRange extends UamRxRange {
 
 /// UamRxRange builder class
 ///
-class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UamRxRange, UamRxRangeBuilder> {
+class UamRxRangeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UamRxRange, UamRxRangeBuilder> {
   _$UamRxRange _$v;
 
   DateTime _timestamp;
@@ -56701,7 +60346,8 @@ class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  UamRxRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UamRxRangeBuilder()..copyFromHeader(headerFrom);
+  UamRxRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UamRxRangeBuilder()..copyFromHeader(headerFrom);
 
   UamRxRangeBuilder get _$this {
     if (_$v != null) {
@@ -56743,6 +60389,197 @@ class UamRxRangeBuilder extends Object with ImcBuilderHeaderPart implements Buil
             seq: seq ?? 0,
             sys: sys ?? '',
             value: value ?? 0);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+/// UamTxRange immutable class
+///
+class _$UamTxRange extends UamTxRange {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final int seq;
+  @override
+  final String sysDst;
+  @override
+  final double timeout;
+
+  factory _$UamTxRange([void Function(UamTxRangeBuilder b) updates]) =>
+      (UamTxRangeBuilder()..update(updates)).build();
+
+  _$UamTxRange._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      this.seq,
+      this.sysDst,
+      this.timeout})
+      : super._();
+
+  @override
+  UamTxRange rebuild(void Function(UamTxRangeBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  UamTxRangeBuilder toBuilder() => UamTxRangeBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is UamTxRange &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        seq == other.seq &&
+        sysDst == other.sysDst &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                seq?.hashCode),
+            sysDst?.hashCode),
+        timeout?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('UamTxRange')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
+          ..add('seq', '$seq')
+          ..add('sysDst', '$sysDst')
+          ..add('timeout', '$timeout (s)'))
+        .toString();
+  }
+}
+
+/// UamTxRange builder class
+///
+class UamTxRangeBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UamTxRange, UamTxRangeBuilder> {
+  _$UamTxRange _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  int _seq;
+  int get seq => _$this._seq;
+  set seq(int seq) => _$this._seq = seq;
+
+  String _sysDst;
+  String get sysDst => _$this._sysDst;
+  set sysDst(String sysDst) => _$this._sysDst = sysDst;
+
+  double _timeout;
+  double get timeout => _$this._timeout;
+  set timeout(double timeout) => _$this._timeout = timeout;
+
+  UamTxRangeBuilder();
+
+  UamTxRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  UamTxRangeBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UamTxRangeBuilder()..copyFromHeader(headerFrom);
+
+  UamTxRangeBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _seq = _$v.seq;
+      _sysDst = _$v.sysDst;
+      _timeout = _$v.timeout;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(UamTxRange other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$UamTxRange;
+  }
+
+  @override
+  void update(void Function(UamTxRangeBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$UamTxRange build() {
+    final _$result = _$v ??
+        _$UamTxRange._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            seq: seq ?? 0,
+            sysDst: sysDst ?? '',
+            timeout: timeout ?? 0);
     replace(_$result);
     return _$result;
   }
@@ -56809,30 +60646,35 @@ class _$FormCtrlParam extends FormCtrlParam {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         action == other.action &&
-        (lonGain == other.lonGain
-            || lonGain - other.lonGain <= 1E-7) &&
-        (latGain == other.latGain
-            || latGain - other.latGain <= 1E-7) &&
+        (lonGain == other.lonGain || lonGain - other.lonGain <= 1E-7) &&
+        (latGain == other.latGain || latGain - other.latGain <= 1E-7) &&
         bondThick == other.bondThick &&
-        (leadGain == other.leadGain
-            || leadGain - other.leadGain <= 1E-7) &&
-        (deconflGain == other.deconflGain
-            || deconflGain - other.deconflGain <= 1E-7);
+        (leadGain == other.leadGain || leadGain - other.leadGain <= 1E-7) &&
+        (deconflGain == other.deconflGain ||
+            deconflGain - other.deconflGain <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        action?.hashCode), 
-        lonGain?.hashCode), 
-        latGain?.hashCode), 
-        bondThick?.hashCode), 
-        leadGain?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            action?.hashCode),
+                        lonGain?.hashCode),
+                    latGain?.hashCode),
+                bondThick?.hashCode),
+            leadGain?.hashCode),
         deconflGain?.hashCode));
   }
 
@@ -56856,7 +60698,9 @@ class _$FormCtrlParam extends FormCtrlParam {
 
 /// Formation Control Parameters builder class
 ///
-class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormCtrlParam, FormCtrlParamBuilder> {
+class FormCtrlParamBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FormCtrlParam, FormCtrlParamBuilder> {
   _$FormCtrlParam _$v;
 
   DateTime _timestamp;
@@ -56920,7 +60764,8 @@ class FormCtrlParamBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  FormCtrlParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormCtrlParamBuilder()..copyFromHeader(headerFrom);
+  FormCtrlParamBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormCtrlParamBuilder()..copyFromHeader(headerFrom);
 
   FormCtrlParamBuilder get _$this {
     if (_$v != null) {
@@ -57024,24 +60869,26 @@ class _$FormationEval extends FormationEval {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (errMean == other.errMean
-            || errMean - other.errMean <= 1E-7) &&
-        (distMinAbs == other.distMinAbs
-            || distMinAbs - other.distMinAbs <= 1E-7) &&
-        (distMinMean == other.distMinMean
-            || distMinMean - other.distMinMean <= 1E-7);
+        (errMean == other.errMean || errMean - other.errMean <= 1E-7) &&
+        (distMinAbs == other.distMinAbs ||
+            distMinAbs - other.distMinAbs <= 1E-7) &&
+        (distMinMean == other.distMinMean ||
+            distMinMean - other.distMinMean <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        errMean?.hashCode), 
-        distMinAbs?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                errMean?.hashCode),
+            distMinAbs?.hashCode),
         distMinMean?.hashCode));
   }
 
@@ -57062,7 +60909,9 @@ class _$FormationEval extends FormationEval {
 
 /// Formation Evaluation Data builder class
 ///
-class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationEval, FormationEvalBuilder> {
+class FormationEvalBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<FormationEval, FormationEvalBuilder> {
   _$FormationEval _$v;
 
   DateTime _timestamp;
@@ -57114,7 +60963,8 @@ class FormationEvalBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  FormationEvalBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationEvalBuilder()..copyFromHeader(headerFrom);
+  FormationEvalBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormationEvalBuilder()..copyFromHeader(headerFrom);
 
   FormationEvalBuilder get _$this {
     if (_$v != null) {
@@ -57198,7 +61048,8 @@ class _$FormationControlParams extends FormationControlParams {
   @override
   final double accelLimX;
 
-  factory _$FormationControlParams([void Function(FormationControlParamsBuilder b) updates]) =>
+  factory _$FormationControlParams(
+          [void Function(FormationControlParamsBuilder b) updates]) =>
       (FormationControlParamsBuilder()..update(updates)).build();
 
   _$FormationControlParams._(
@@ -57221,11 +61072,13 @@ class _$FormationControlParams extends FormationControlParams {
       : super._();
 
   @override
-  FormationControlParams rebuild(void Function(FormationControlParamsBuilder b) updates) =>
+  FormationControlParams rebuild(
+          void Function(FormationControlParamsBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationControlParamsBuilder toBuilder() => FormationControlParamsBuilder()..replace(this);
+  FormationControlParamsBuilder toBuilder() =>
+      FormationControlParamsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57237,46 +61090,57 @@ class _$FormationControlParams extends FormationControlParams {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         action == other.action &&
-        (lonGain == other.lonGain
-            || lonGain - other.lonGain <= 1E-7) &&
-        (latGain == other.latGain
-            || latGain - other.latGain <= 1E-7) &&
-        (bondThick == other.bondThick
-            || bondThick - other.bondThick <= 1E-7) &&
-        (leadGain == other.leadGain
-            || leadGain - other.leadGain <= 1E-7) &&
-        (deconflGain == other.deconflGain
-            || deconflGain - other.deconflGain <= 1E-7) &&
-        (accelSwitchGain == other.accelSwitchGain
-            || accelSwitchGain - other.accelSwitchGain <= 1E-7) &&
-        (safeDist == other.safeDist
-            || safeDist - other.safeDist <= 1E-7) &&
-        (deconflictOffset == other.deconflictOffset
-            || deconflictOffset - other.deconflictOffset <= 1E-7) &&
-        (accelSafeMargin == other.accelSafeMargin
-            || accelSafeMargin - other.accelSafeMargin <= 1E-7) &&
-        (accelLimX == other.accelLimX
-            || accelLimX - other.accelLimX <= 1E-7);
+        (lonGain == other.lonGain || lonGain - other.lonGain <= 1E-7) &&
+        (latGain == other.latGain || latGain - other.latGain <= 1E-7) &&
+        (bondThick == other.bondThick || bondThick - other.bondThick <= 1E-7) &&
+        (leadGain == other.leadGain || leadGain - other.leadGain <= 1E-7) &&
+        (deconflGain == other.deconflGain ||
+            deconflGain - other.deconflGain <= 1E-7) &&
+        (accelSwitchGain == other.accelSwitchGain ||
+            accelSwitchGain - other.accelSwitchGain <= 1E-7) &&
+        (safeDist == other.safeDist || safeDist - other.safeDist <= 1E-7) &&
+        (deconflictOffset == other.deconflictOffset ||
+            deconflictOffset - other.deconflictOffset <= 1E-7) &&
+        (accelSafeMargin == other.accelSafeMargin ||
+            accelSafeMargin - other.accelSafeMargin <= 1E-7) &&
+        (accelLimX == other.accelLimX || accelLimX - other.accelLimX <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        action?.hashCode), 
-        lonGain?.hashCode), 
-        latGain?.hashCode), 
-        bondThick?.hashCode), 
-        leadGain?.hashCode), 
-        deconflGain?.hashCode), 
-        accelSwitchGain?.hashCode), 
-        safeDist?.hashCode), 
-        deconflictOffset?.hashCode), 
-        accelSafeMargin?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                action?.hashCode),
+                                            lonGain?.hashCode),
+                                        latGain?.hashCode),
+                                    bondThick?.hashCode),
+                                leadGain?.hashCode),
+                            deconflGain?.hashCode),
+                        accelSwitchGain?.hashCode),
+                    safeDist?.hashCode),
+                deconflictOffset?.hashCode),
+            accelSafeMargin?.hashCode),
         accelLimX?.hashCode));
   }
 
@@ -57305,7 +61169,12 @@ class _$FormationControlParams extends FormationControlParams {
 
 /// Formation Control Parameters builder class
 ///
-class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationControlParams, FormationControlParamsBuilder> {
+class FormationControlParamsBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FormationControlParams,
+            FormationControlParamsBuilder> {
   _$FormationControlParams _$v;
 
   DateTime _timestamp;
@@ -57340,7 +61209,8 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
 
   FormationControlParamsEnumAction _action;
   FormationControlParamsEnumAction get action => _$this._action;
-  set action(FormationControlParamsEnumAction action) => _$this._action = action;
+  set action(FormationControlParamsEnumAction action) =>
+      _$this._action = action;
 
   double _lonGain;
   double get lonGain => _$this._lonGain;
@@ -57364,7 +61234,8 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
 
   double _accelSwitchGain;
   double get accelSwitchGain => _$this._accelSwitchGain;
-  set accelSwitchGain(double accelSwitchGain) => _$this._accelSwitchGain = accelSwitchGain;
+  set accelSwitchGain(double accelSwitchGain) =>
+      _$this._accelSwitchGain = accelSwitchGain;
 
   double _safeDist;
   double get safeDist => _$this._safeDist;
@@ -57372,11 +61243,13 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
 
   double _deconflictOffset;
   double get deconflictOffset => _$this._deconflictOffset;
-  set deconflictOffset(double deconflictOffset) => _$this._deconflictOffset = deconflictOffset;
+  set deconflictOffset(double deconflictOffset) =>
+      _$this._deconflictOffset = deconflictOffset;
 
   double _accelSafeMargin;
   double get accelSafeMargin => _$this._accelSafeMargin;
-  set accelSafeMargin(double accelSafeMargin) => _$this._accelSafeMargin = accelSafeMargin;
+  set accelSafeMargin(double accelSafeMargin) =>
+      _$this._accelSafeMargin = accelSafeMargin;
 
   double _accelLimX;
   double get accelLimX => _$this._accelLimX;
@@ -57389,7 +61262,9 @@ class FormationControlParamsBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  FormationControlParamsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationControlParamsBuilder()..copyFromHeader(headerFrom);
+  FormationControlParamsBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      FormationControlParamsBuilder()..copyFromHeader(headerFrom);
 
   FormationControlParamsBuilder get _$this {
     if (_$v != null) {
@@ -57483,7 +61358,8 @@ class _$FormationEvaluation extends FormationEvaluation {
   @override
   final FormationControlParams controlParams;
 
-  factory _$FormationEvaluation([void Function(FormationEvaluationBuilder b) updates]) =>
+  factory _$FormationEvaluation(
+          [void Function(FormationEvaluationBuilder b) updates]) =>
       (FormationEvaluationBuilder()..update(updates)).build();
 
   _$FormationEvaluation._(
@@ -57503,11 +61379,13 @@ class _$FormationEvaluation extends FormationEvaluation {
       : super._();
 
   @override
-  FormationEvaluation rebuild(void Function(FormationEvaluationBuilder b) updates) =>
+  FormationEvaluation rebuild(
+          void Function(FormationEvaluationBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FormationEvaluationBuilder toBuilder() => FormationEvaluationBuilder()..replace(this);
+  FormationEvaluationBuilder toBuilder() =>
+      FormationEvaluationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57520,34 +61398,42 @@ class _$FormationEvaluation extends FormationEvaluation {
         dstEnt == other.dstEnt &&
         type == other.type &&
         op == other.op &&
-        (errMean == other.errMean
-            || errMean - other.errMean <= 1E-7) &&
-        (distMinAbs == other.distMinAbs
-            || distMinAbs - other.distMinAbs <= 1E-7) &&
-        (distMinMean == other.distMinMean
-            || distMinMean - other.distMinMean <= 1E-7) &&
-        (rollRateMean == other.rollRateMean
-            || rollRateMean - other.rollRateMean <= 1E-7) &&
-        (time == other.time
-            || time - other.time <= 1E-7) &&
+        (errMean == other.errMean || errMean - other.errMean <= 1E-7) &&
+        (distMinAbs == other.distMinAbs ||
+            distMinAbs - other.distMinAbs <= 1E-7) &&
+        (distMinMean == other.distMinMean ||
+            distMinMean - other.distMinMean <= 1E-7) &&
+        (rollRateMean == other.rollRateMean ||
+            rollRateMean - other.rollRateMean <= 1E-7) &&
+        (time == other.time || time - other.time <= 1E-7) &&
         controlParams == other.controlParams;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        op?.hashCode), 
-        errMean?.hashCode), 
-        distMinAbs?.hashCode), 
-        distMinMean?.hashCode), 
-        rollRateMean?.hashCode), 
-        time?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc($jc(0, timestamp?.hashCode),
+                                                    src?.hashCode),
+                                                srcEnt?.hashCode),
+                                            dst?.hashCode),
+                                        dstEnt?.hashCode),
+                                    type?.hashCode),
+                                op?.hashCode),
+                            errMean?.hashCode),
+                        distMinAbs?.hashCode),
+                    distMinMean?.hashCode),
+                rollRateMean?.hashCode),
+            time?.hashCode),
         controlParams?.hashCode));
   }
 
@@ -57573,7 +61459,12 @@ class _$FormationEvaluation extends FormationEvaluation {
 
 /// Formation Evaluation Data builder class
 ///
-class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<FormationEvaluation, FormationEvaluationBuilder> {
+class FormationEvaluationBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FormationEvaluation,
+            FormationEvaluationBuilder> {
   _$FormationEvaluation _$v;
 
   DateTime _timestamp;
@@ -57636,7 +61527,8 @@ class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implem
 
   FormationControlParams _controlParams;
   FormationControlParams get controlParams => _$this._controlParams;
-  set controlParams(FormationControlParams controlParams) => _$this._controlParams = controlParams;
+  set controlParams(FormationControlParams controlParams) =>
+      _$this._controlParams = controlParams;
 
   FormationEvaluationBuilder();
 
@@ -57645,7 +61537,8 @@ class FormationEvaluationBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  FormationEvaluationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => FormationEvaluationBuilder()..copyFromHeader(headerFrom);
+  FormationEvaluationBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      FormationEvaluationBuilder()..copyFromHeader(headerFrom);
 
   FormationEvaluationBuilder get _$this {
     if (_$v != null) {
@@ -57756,25 +61649,27 @@ class _$SoiWaypoint extends SoiWaypoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         eta == other.eta &&
         duration == other.duration;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        eta?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    lat?.hashCode),
+                lon?.hashCode),
+            eta?.hashCode),
         duration?.hashCode));
   }
 
@@ -57796,7 +61691,9 @@ class _$SoiWaypoint extends SoiWaypoint {
 
 /// SOI Waypoint builder class
 ///
-class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiWaypoint, SoiWaypointBuilder> {
+class SoiWaypointBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SoiWaypoint, SoiWaypointBuilder> {
   _$SoiWaypoint _$v;
 
   DateTime _timestamp;
@@ -57852,7 +61749,8 @@ class SoiWaypointBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  SoiWaypointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiWaypointBuilder()..copyFromHeader(headerFrom);
+  SoiWaypointBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SoiWaypointBuilder()..copyFromHeader(headerFrom);
 
   SoiWaypointBuilder get _$this {
     if (_$v != null) {
@@ -57955,13 +61853,15 @@ class _$SoiPlan extends SoiPlan {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        planId?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            planId?.hashCode),
         waypoints?.hashCode));
   }
 
@@ -57981,7 +61881,9 @@ class _$SoiPlan extends SoiPlan {
 
 /// SOI Plan builder class
 ///
-class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiPlan, SoiPlanBuilder> {
+class SoiPlanBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SoiPlan, SoiPlanBuilder> {
   _$SoiPlan _$v;
 
   DateTime _timestamp;
@@ -58029,7 +61931,8 @@ class SoiPlanBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  SoiPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiPlanBuilder()..copyFromHeader(headerFrom);
+  SoiPlanBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SoiPlanBuilder()..copyFromHeader(headerFrom);
 
   SoiPlanBuilder get _$this {
     if (_$v != null) {
@@ -58140,16 +62043,23 @@ class _$SoiCommand extends SoiCommand {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        type?.hashCode), 
-        command?.hashCode), 
-        settings?.hashCode), 
-        plan?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        type?.hashCode),
+                    command?.hashCode),
+                settings?.hashCode),
+            plan?.hashCode),
         info?.hashCode));
   }
 
@@ -58172,7 +62082,9 @@ class _$SoiCommand extends SoiCommand {
 
 /// SOI Command builder class
 ///
-class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiCommand, SoiCommandBuilder> {
+class SoiCommandBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SoiCommand, SoiCommandBuilder> {
   _$SoiCommand _$v;
 
   DateTime _timestamp;
@@ -58232,7 +62144,8 @@ class SoiCommandBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  SoiCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiCommandBuilder()..copyFromHeader(headerFrom);
+  SoiCommandBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SoiCommandBuilder()..copyFromHeader(headerFrom);
 
   SoiCommandBuilder get _$this {
     if (_$v != null) {
@@ -58345,15 +62258,19 @@ class _$SoiState extends SoiState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        state?.hashCode), 
-        planId?.hashCode), 
-        wptId?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    state?.hashCode),
+                planId?.hashCode),
+            wptId?.hashCode),
         settingsChk?.hashCode));
   }
 
@@ -58375,7 +62292,9 @@ class _$SoiState extends SoiState {
 
 /// SOI State builder class
 ///
-class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SoiState, SoiStateBuilder> {
+class SoiStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SoiState, SoiStateBuilder> {
   _$SoiState _$v;
 
   DateTime _timestamp;
@@ -58431,7 +62350,8 @@ class SoiStateBuilder extends Object with ImcBuilderHeaderPart implements Builde
   }
 
   @override
-  SoiStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SoiStateBuilder()..copyFromHeader(headerFrom);
+  SoiStateBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SoiStateBuilder()..copyFromHeader(headerFrom);
 
   SoiStateBuilder get _$this {
     if (_$v != null) {
@@ -58542,15 +62462,19 @@ class _$MessagePart extends MessagePart {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        uid?.hashCode), 
-        fragNumber?.hashCode), 
-        numFrags?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    uid?.hashCode),
+                fragNumber?.hashCode),
+            numFrags?.hashCode),
         data?.hashCode));
   }
 
@@ -58572,7 +62496,9 @@ class _$MessagePart extends MessagePart {
 
 /// Message Fragment builder class
 ///
-class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<MessagePart, MessagePartBuilder> {
+class MessagePartBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<MessagePart, MessagePartBuilder> {
   _$MessagePart _$v;
 
   DateTime _timestamp;
@@ -58628,7 +62554,8 @@ class MessagePartBuilder extends Object with ImcBuilderHeaderPart implements Bui
   }
 
   @override
-  MessagePartBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => MessagePartBuilder()..copyFromHeader(headerFrom);
+  MessagePartBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      MessagePartBuilder()..copyFromHeader(headerFrom);
 
   MessagePartBuilder get _$this {
     if (_$v != null) {
@@ -58731,13 +62658,15 @@ class _$NeptusBlob extends NeptusBlob {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        contentType?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            contentType?.hashCode),
         content?.hashCode));
   }
 
@@ -58757,7 +62686,9 @@ class _$NeptusBlob extends NeptusBlob {
 
 /// Neptus Blob builder class
 ///
-class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<NeptusBlob, NeptusBlobBuilder> {
+class NeptusBlobBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<NeptusBlob, NeptusBlobBuilder> {
   _$NeptusBlob _$v;
 
   DateTime _timestamp;
@@ -58805,7 +62736,8 @@ class NeptusBlobBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  NeptusBlobBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => NeptusBlobBuilder()..copyFromHeader(headerFrom);
+  NeptusBlobBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      NeptusBlobBuilder()..copyFromHeader(headerFrom);
 
   NeptusBlobBuilder get _$this {
     if (_$v != null) {
@@ -58864,7 +62796,6 @@ class _$Aborted extends Aborted {
   @override
   final int dstEnt;
 
-
   factory _$Aborted([void Function(AbortedBuilder b) updates]) =>
       (AbortedBuilder()..update(updates)).build();
 
@@ -58896,11 +62827,11 @@ class _$Aborted extends Aborted {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -58918,7 +62849,9 @@ class _$Aborted extends Aborted {
 
 /// Aborted builder class
 ///
-class AbortedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Aborted, AbortedBuilder> {
+class AbortedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Aborted, AbortedBuilder> {
   _$Aborted _$v;
 
   DateTime _timestamp;
@@ -58958,7 +62891,8 @@ class AbortedBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  AbortedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => AbortedBuilder()..copyFromHeader(headerFrom);
+  AbortedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      AbortedBuilder()..copyFromHeader(headerFrom);
 
   AbortedBuilder get _$this {
     if (_$v != null) {
@@ -59051,22 +62985,23 @@ class _$UsblAngles extends UsblAngles {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
-        (elevation == other.elevation
-            || elevation - other.elevation <= 1E-7);
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (elevation == other.elevation || elevation - other.elevation <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        target?.hashCode), 
-        bearing?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                target?.hashCode),
+            bearing?.hashCode),
         elevation?.hashCode));
   }
 
@@ -59079,15 +63014,19 @@ class _$UsblAngles extends UsblAngles {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('elevation', '$elevation (rad)${elevation != null ? ' [${elevation * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('bearing',
+              '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('elevation',
+              '$elevation (rad)${elevation != null ? ' [${elevation * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// USBL Angles builder class
 ///
-class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblAngles, UsblAnglesBuilder> {
+class UsblAnglesBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UsblAngles, UsblAnglesBuilder> {
   _$UsblAngles _$v;
 
   DateTime _timestamp;
@@ -59139,7 +63078,8 @@ class UsblAnglesBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  UsblAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblAnglesBuilder()..copyFromHeader(headerFrom);
+  UsblAnglesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblAnglesBuilder()..copyFromHeader(headerFrom);
 
   UsblAnglesBuilder get _$this {
     if (_$v != null) {
@@ -59241,25 +63181,26 @@ class _$UsblPosition extends UsblPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        target?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                srcEnt?.hashCode),
+                            dst?.hashCode),
+                        dstEnt?.hashCode),
+                    target?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -59281,7 +63222,9 @@ class _$UsblPosition extends UsblPosition {
 
 /// USBL Position builder class
 ///
-class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblPosition, UsblPositionBuilder> {
+class UsblPositionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UsblPosition, UsblPositionBuilder> {
   _$UsblPosition _$v;
 
   DateTime _timestamp;
@@ -59337,7 +63280,8 @@ class UsblPositionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  UsblPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblPositionBuilder()..copyFromHeader(headerFrom);
+  UsblPositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblPositionBuilder()..copyFromHeader(headerFrom);
 
   UsblPositionBuilder get _$this {
     if (_$v != null) {
@@ -59444,27 +63388,31 @@ class _$UsblFix extends UsblFix {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         zUnits == other.zUnits &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        target?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        zUnits?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        target?.hashCode),
+                    lat?.hashCode),
+                lon?.hashCode),
+            zUnits?.hashCode),
         z?.hashCode));
   }
 
@@ -59477,8 +63425,10 @@ class _$UsblFix extends UsblFix {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('z', '$z (m)'))
         .toString();
@@ -59487,7 +63437,9 @@ class _$UsblFix extends UsblFix {
 
 /// USBL Fix builder class
 ///
-class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblFix, UsblFixBuilder> {
+class UsblFixBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UsblFix, UsblFixBuilder> {
   _$UsblFix _$v;
 
   DateTime _timestamp;
@@ -59547,7 +63499,8 @@ class UsblFixBuilder extends Object with ImcBuilderHeaderPart implements Builder
   }
 
   @override
-  UsblFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblFixBuilder()..copyFromHeader(headerFrom);
+  UsblFixBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblFixBuilder()..copyFromHeader(headerFrom);
 
   UsblFixBuilder get _$this {
     if (_$v != null) {
@@ -59652,13 +63605,15 @@ class _$ParametersXml extends ParametersXml {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        locale?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            locale?.hashCode),
         config?.hashCode));
   }
 
@@ -59678,7 +63633,9 @@ class _$ParametersXml extends ParametersXml {
 
 /// Parameters XML builder class
 ///
-class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ParametersXml, ParametersXmlBuilder> {
+class ParametersXmlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ParametersXml, ParametersXmlBuilder> {
   _$ParametersXml _$v;
 
   DateTime _timestamp;
@@ -59726,7 +63683,8 @@ class ParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements B
   }
 
   @override
-  ParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ParametersXmlBuilder()..copyFromHeader(headerFrom);
+  ParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ParametersXmlBuilder()..copyFromHeader(headerFrom);
 
   ParametersXmlBuilder get _$this {
     if (_$v != null) {
@@ -59785,8 +63743,8 @@ class _$GetParametersXml extends GetParametersXml {
   @override
   final int dstEnt;
 
-
-  factory _$GetParametersXml([void Function(GetParametersXmlBuilder b) updates]) =>
+  factory _$GetParametersXml(
+          [void Function(GetParametersXmlBuilder b) updates]) =>
       (GetParametersXmlBuilder()..update(updates)).build();
 
   _$GetParametersXml._(
@@ -59802,7 +63760,8 @@ class _$GetParametersXml extends GetParametersXml {
       (toBuilder()..update(updates)).build();
 
   @override
-  GetParametersXmlBuilder toBuilder() => GetParametersXmlBuilder()..replace(this);
+  GetParametersXmlBuilder toBuilder() =>
+      GetParametersXmlBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -59817,11 +63776,11 @@ class _$GetParametersXml extends GetParametersXml {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                srcEnt?.hashCode),
+            dst?.hashCode),
         dstEnt?.hashCode));
   }
 
@@ -59839,7 +63798,10 @@ class _$GetParametersXml extends GetParametersXml {
 
 /// Get Parameters XML builder class
 ///
-class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetParametersXml, GetParametersXmlBuilder> {
+class GetParametersXmlBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<GetParametersXml, GetParametersXmlBuilder> {
   _$GetParametersXml _$v;
 
   DateTime _timestamp;
@@ -59879,7 +63841,8 @@ class GetParametersXmlBuilder extends Object with ImcBuilderHeaderPart implement
   }
 
   @override
-  GetParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetParametersXmlBuilder()..copyFromHeader(headerFrom);
+  GetParametersXmlBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GetParametersXmlBuilder()..copyFromHeader(headerFrom);
 
   GetParametersXmlBuilder get _$this {
     if (_$v != null) {
@@ -59978,14 +63941,17 @@ class _$SetImageCoords extends SetImageCoords {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        camId?.hashCode), 
-        x?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                camId?.hashCode),
+            x?.hashCode),
         y?.hashCode));
   }
 
@@ -60006,7 +63972,9 @@ class _$SetImageCoords extends SetImageCoords {
 
 /// Set Image Coordinates builder class
 ///
-class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SetImageCoords, SetImageCoordsBuilder> {
+class SetImageCoordsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SetImageCoords, SetImageCoordsBuilder> {
   _$SetImageCoords _$v;
 
   DateTime _timestamp;
@@ -60058,7 +64026,8 @@ class SetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  SetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SetImageCoordsBuilder()..copyFromHeader(headerFrom);
+  SetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SetImageCoordsBuilder()..copyFromHeader(headerFrom);
 
   SetImageCoordsBuilder get _$this {
     if (_$v != null) {
@@ -60163,14 +64132,17 @@ class _$GetImageCoords extends GetImageCoords {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        camId?.hashCode), 
-        x?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                camId?.hashCode),
+            x?.hashCode),
         y?.hashCode));
   }
 
@@ -60191,7 +64163,9 @@ class _$GetImageCoords extends GetImageCoords {
 
 /// Get Image Coordinates builder class
 ///
-class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetImageCoords, GetImageCoordsBuilder> {
+class GetImageCoordsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GetImageCoords, GetImageCoordsBuilder> {
   _$GetImageCoords _$v;
 
   DateTime _timestamp;
@@ -60243,7 +64217,8 @@ class GetImageCoordsBuilder extends Object with ImcBuilderHeaderPart implements 
   }
 
   @override
-  GetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetImageCoordsBuilder()..copyFromHeader(headerFrom);
+  GetImageCoordsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GetImageCoordsBuilder()..copyFromHeader(headerFrom);
 
   GetImageCoordsBuilder get _$this {
     if (_$v != null) {
@@ -60317,7 +64292,8 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
   @override
   final double z;
 
-  factory _$GetWorldCoordinates([void Function(GetWorldCoordinatesBuilder b) updates]) =>
+  factory _$GetWorldCoordinates(
+          [void Function(GetWorldCoordinatesBuilder b) updates]) =>
       (GetWorldCoordinatesBuilder()..update(updates)).build();
 
   _$GetWorldCoordinates._(
@@ -60335,11 +64311,13 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
       : super._();
 
   @override
-  GetWorldCoordinates rebuild(void Function(GetWorldCoordinatesBuilder b) updates) =>
+  GetWorldCoordinates rebuild(
+          void Function(GetWorldCoordinatesBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GetWorldCoordinatesBuilder toBuilder() => GetWorldCoordinatesBuilder()..replace(this);
+  GetWorldCoordinatesBuilder toBuilder() =>
+      GetWorldCoordinatesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60351,31 +64329,34 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         tracking == other.tracking &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7);
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        tracking?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            tracking?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                x?.hashCode),
+            y?.hashCode),
         z?.hashCode));
   }
 
@@ -60388,8 +64369,10 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('tracking', '$tracking (Enumerated)')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)'))
@@ -60399,7 +64382,12 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
 
 /// Get World Coordinates builder class
 ///
-class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<GetWorldCoordinates, GetWorldCoordinatesBuilder> {
+class GetWorldCoordinatesBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<GetWorldCoordinates,
+            GetWorldCoordinatesBuilder> {
   _$GetWorldCoordinates _$v;
 
   DateTime _timestamp;
@@ -60463,7 +64451,8 @@ class GetWorldCoordinatesBuilder extends Object with ImcBuilderHeaderPart implem
   }
 
   @override
-  GetWorldCoordinatesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => GetWorldCoordinatesBuilder()..copyFromHeader(headerFrom);
+  GetWorldCoordinatesBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      GetWorldCoordinatesBuilder()..copyFromHeader(headerFrom);
 
   GetWorldCoordinatesBuilder get _$this {
     if (_$v != null) {
@@ -60549,7 +64538,8 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
   @override
   final double accuracy;
 
-  factory _$UsblAnglesExtended([void Function(UsblAnglesExtendedBuilder b) updates]) =>
+  factory _$UsblAnglesExtended(
+          [void Function(UsblAnglesExtendedBuilder b) updates]) =>
       (UsblAnglesExtendedBuilder()..update(updates)).build();
 
   _$UsblAnglesExtended._(
@@ -60570,11 +64560,13 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
       : super._();
 
   @override
-  UsblAnglesExtended rebuild(void Function(UsblAnglesExtendedBuilder b) updates) =>
+  UsblAnglesExtended rebuild(
+          void Function(UsblAnglesExtendedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblAnglesExtendedBuilder toBuilder() => UsblAnglesExtendedBuilder()..replace(this);
+  UsblAnglesExtendedBuilder toBuilder() =>
+      UsblAnglesExtendedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60586,40 +64578,48 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lbearing == other.lbearing
-            || lbearing - other.lbearing <= 1E-7) &&
-        (lelevation == other.lelevation
-            || lelevation - other.lelevation <= 1E-7) &&
-        (bearing == other.bearing
-            || bearing - other.bearing <= 1E-7) &&
-        (elevation == other.elevation
-            || elevation - other.elevation <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7) &&
-        (accuracy == other.accuracy
-            || accuracy - other.accuracy <= 1E-7);
+        (lbearing == other.lbearing || lbearing - other.lbearing <= 1E-7) &&
+        (lelevation == other.lelevation ||
+            lelevation - other.lelevation <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (elevation == other.elevation || elevation - other.elevation <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (accuracy == other.accuracy || accuracy - other.accuracy <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        target?.hashCode), 
-        lbearing?.hashCode), 
-        lelevation?.hashCode), 
-        bearing?.hashCode), 
-        elevation?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
-        psi?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            timestamp
+                                                                ?.hashCode),
+                                                        src?.hashCode),
+                                                    srcEnt?.hashCode),
+                                                dst?.hashCode),
+                                            dstEnt?.hashCode),
+                                        target?.hashCode),
+                                    lbearing?.hashCode),
+                                lelevation?.hashCode),
+                            bearing?.hashCode),
+                        elevation?.hashCode),
+                    phi?.hashCode),
+                theta?.hashCode),
+            psi?.hashCode),
         accuracy?.hashCode));
   }
 
@@ -60632,21 +64632,32 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('lbearing', '$lbearing (rad)${lbearing != null ? ' [${lbearing * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lelevation', '$lelevation (rad)${lelevation != null ? ' [${lelevation * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('bearing', '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('elevation', '$elevation (rad)${elevation != null ? ' [${elevation * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('accuracy', '$accuracy (rad)${accuracy != null ? ' [${accuracy * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('lbearing',
+              '$lbearing (rad)${lbearing != null ? ' [${lbearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lelevation',
+              '$lelevation (rad)${lelevation != null ? ' [${lelevation * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('bearing',
+              '$bearing (rad)${bearing != null ? ' [${bearing * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('elevation',
+              '$elevation (rad)${elevation != null ? ' [${elevation * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('accuracy',
+              '$accuracy (rad)${accuracy != null ? ' [${accuracy * 180.0 / math.pi} (deg)]' : ''}'))
         .toString();
   }
 }
 
 /// USBL Angles Extended builder class
 ///
-class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblAnglesExtended, UsblAnglesExtendedBuilder> {
+class UsblAnglesExtendedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<UsblAnglesExtended, UsblAnglesExtendedBuilder> {
   _$UsblAnglesExtended _$v;
 
   DateTime _timestamp;
@@ -60722,7 +64733,8 @@ class UsblAnglesExtendedBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  UsblAnglesExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblAnglesExtendedBuilder()..copyFromHeader(headerFrom);
+  UsblAnglesExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblAnglesExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblAnglesExtendedBuilder get _$this {
     if (_$v != null) {
@@ -60818,7 +64830,8 @@ class _$UsblPositionExtended extends UsblPositionExtended {
   @override
   final double accuracy;
 
-  factory _$UsblPositionExtended([void Function(UsblPositionExtendedBuilder b) updates]) =>
+  factory _$UsblPositionExtended(
+          [void Function(UsblPositionExtendedBuilder b) updates]) =>
       (UsblPositionExtendedBuilder()..update(updates)).build();
 
   _$UsblPositionExtended._(
@@ -60841,11 +64854,13 @@ class _$UsblPositionExtended extends UsblPositionExtended {
       : super._();
 
   @override
-  UsblPositionExtended rebuild(void Function(UsblPositionExtendedBuilder b) updates) =>
+  UsblPositionExtended rebuild(
+          void Function(UsblPositionExtendedBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UsblPositionExtendedBuilder toBuilder() => UsblPositionExtendedBuilder()..replace(this);
+  UsblPositionExtendedBuilder toBuilder() =>
+      UsblPositionExtendedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -60857,46 +64872,53 @@ class _$UsblPositionExtended extends UsblPositionExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (x == other.x
-            || x - other.x <= 1E-7) &&
-        (y == other.y
-            || y - other.y <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (n == other.n
-            || n - other.n <= 1E-7) &&
-        (e == other.e
-            || e - other.e <= 1E-7) &&
-        (d == other.d
-            || d - other.d <= 1E-7) &&
-        (phi == other.phi
-            || phi - other.phi <= 1E-7) &&
-        (theta == other.theta
-            || theta - other.theta <= 1E-7) &&
-        (psi == other.psi
-            || psi - other.psi <= 1E-7) &&
-        (accuracy == other.accuracy
-            || accuracy - other.accuracy <= 1E-7);
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7) &&
+        (e == other.e || e - other.e <= 1E-7) &&
+        (d == other.d || d - other.d <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (accuracy == other.accuracy || accuracy - other.accuracy <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        target?.hashCode), 
-        x?.hashCode), 
-        y?.hashCode), 
-        z?.hashCode), 
-        n?.hashCode), 
-        e?.hashCode), 
-        d?.hashCode), 
-        phi?.hashCode), 
-        theta?.hashCode), 
-        psi?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    timestamp
+                                                                        ?.hashCode),
+                                                                src?.hashCode),
+                                                            srcEnt?.hashCode),
+                                                        dst?.hashCode),
+                                                    dstEnt?.hashCode),
+                                                target?.hashCode),
+                                            x?.hashCode),
+                                        y?.hashCode),
+                                    z?.hashCode),
+                                n?.hashCode),
+                            e?.hashCode),
+                        d?.hashCode),
+                    phi?.hashCode),
+                theta?.hashCode),
+            psi?.hashCode),
         accuracy?.hashCode));
   }
 
@@ -60915,9 +64937,12 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           ..add('n', '$n (m)')
           ..add('e', '$e (m)')
           ..add('d', '$d (m)')
-          ..add('phi', '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta', '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi', '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi',
+              '$phi (rad)${phi != null ? ' [${phi * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('theta',
+              '$theta (rad)${theta != null ? ' [${theta * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('psi',
+              '$psi (rad)${psi != null ? ' [${psi * 180.0 / math.pi} (deg)]' : ''}')
           ..add('accuracy', '$accuracy (m)'))
         .toString();
   }
@@ -60925,7 +64950,12 @@ class _$UsblPositionExtended extends UsblPositionExtended {
 
 /// USBL Position Extended builder class
 ///
-class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblPositionExtended, UsblPositionExtendedBuilder> {
+class UsblPositionExtendedBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<UsblPositionExtended,
+            UsblPositionExtendedBuilder> {
   _$UsblPositionExtended _$v;
 
   DateTime _timestamp;
@@ -61009,7 +65039,8 @@ class UsblPositionExtendedBuilder extends Object with ImcBuilderHeaderPart imple
   }
 
   @override
-  UsblPositionExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblPositionExtendedBuilder()..copyFromHeader(headerFrom);
+  UsblPositionExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblPositionExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblPositionExtendedBuilder get _$this {
     if (_$v != null) {
@@ -61099,7 +65130,8 @@ class _$UsblFixExtended extends UsblFixExtended {
   @override
   final double accuracy;
 
-  factory _$UsblFixExtended([void Function(UsblFixExtendedBuilder b) updates]) =>
+  factory _$UsblFixExtended(
+          [void Function(UsblFixExtendedBuilder b) updates]) =>
       (UsblFixExtendedBuilder()..update(updates)).build();
 
   _$UsblFixExtended._(
@@ -61133,30 +65165,34 @@ class _$UsblFixExtended extends UsblFixExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         zUnits == other.zUnits &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
-        (accuracy == other.accuracy
-            || accuracy - other.accuracy <= 1E-7);
+        (z == other.z || z - other.z <= 1E-7) &&
+        (accuracy == other.accuracy || accuracy - other.accuracy <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        target?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        zUnits?.hashCode), 
-        z?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            target?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                zUnits?.hashCode),
+            z?.hashCode),
         accuracy?.hashCode));
   }
 
@@ -61169,8 +65205,10 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('target', '$target')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('z', '$z (m)')
           ..add('accuracy', '$accuracy (m)'))
@@ -61180,7 +65218,10 @@ class _$UsblFixExtended extends UsblFixExtended {
 
 /// USBL Fix Extended builder class
 ///
-class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblFixExtended, UsblFixExtendedBuilder> {
+class UsblFixExtendedBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<UsblFixExtended, UsblFixExtendedBuilder> {
   _$UsblFixExtended _$v;
 
   DateTime _timestamp;
@@ -61244,7 +65285,8 @@ class UsblFixExtendedBuilder extends Object with ImcBuilderHeaderPart implements
   }
 
   @override
-  UsblFixExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblFixExtendedBuilder()..copyFromHeader(headerFrom);
+  UsblFixExtendedBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblFixExtendedBuilder()..copyFromHeader(headerFrom);
 
   UsblFixExtendedBuilder get _$this {
     if (_$v != null) {
@@ -61355,27 +65397,31 @@ class _$UsblModem extends UsblModem {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         name == other.name &&
-        (lat == other.lat
-            || lat - other.lat <= 1E-7) &&
-        (lon == other.lon
-            || lon - other.lon <= 1E-7) &&
-        (z == other.z
-            || z - other.z <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        name?.hashCode), 
-        lat?.hashCode), 
-        lon?.hashCode), 
-        z?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, timestamp?.hashCode),
+                                        src?.hashCode),
+                                    srcEnt?.hashCode),
+                                dst?.hashCode),
+                            dstEnt?.hashCode),
+                        name?.hashCode),
+                    lat?.hashCode),
+                lon?.hashCode),
+            z?.hashCode),
         zUnits?.hashCode));
   }
 
@@ -61388,8 +65434,10 @@ class _$UsblModem extends UsblModem {
           ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
           ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
           ..add('name', '$name')
-          ..add('lat', '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon', '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)'))
         .toString();
@@ -61398,7 +65446,9 @@ class _$UsblModem extends UsblModem {
 
 /// USBL Modem Configuration builder class
 ///
-class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblModem, UsblModemBuilder> {
+class UsblModemBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UsblModem, UsblModemBuilder> {
   _$UsblModem _$v;
 
   DateTime _timestamp;
@@ -61458,7 +65508,8 @@ class UsblModemBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  UsblModemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblModemBuilder()..copyFromHeader(headerFrom);
+  UsblModemBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblModemBuilder()..copyFromHeader(headerFrom);
 
   UsblModemBuilder get _$this {
     if (_$v != null) {
@@ -61563,13 +65614,15 @@ class _$UsblConfig extends UsblConfig {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        op?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            op?.hashCode),
         modems?.hashCode));
   }
 
@@ -61589,7 +65642,9 @@ class _$UsblConfig extends UsblConfig {
 
 /// USBL Configuration builder class
 ///
-class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<UsblConfig, UsblConfigBuilder> {
+class UsblConfigBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<UsblConfig, UsblConfigBuilder> {
   _$UsblConfig _$v;
 
   DateTime _timestamp;
@@ -61637,7 +65692,8 @@ class UsblConfigBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  UsblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => UsblConfigBuilder()..copyFromHeader(headerFrom);
+  UsblConfigBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      UsblConfigBuilder()..copyFromHeader(headerFrom);
 
   UsblConfigBuilder get _$this {
     if (_$v != null) {
@@ -61701,7 +65757,8 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
   @override
   final DissolvedOrganicMatterEnumType type;
 
-  factory _$DissolvedOrganicMatter([void Function(DissolvedOrganicMatterBuilder b) updates]) =>
+  factory _$DissolvedOrganicMatter(
+          [void Function(DissolvedOrganicMatterBuilder b) updates]) =>
       (DissolvedOrganicMatterBuilder()..update(updates)).build();
 
   _$DissolvedOrganicMatter._(
@@ -61715,11 +65772,13 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
       : super._();
 
   @override
-  DissolvedOrganicMatter rebuild(void Function(DissolvedOrganicMatterBuilder b) updates) =>
+  DissolvedOrganicMatter rebuild(
+          void Function(DissolvedOrganicMatterBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DissolvedOrganicMatterBuilder toBuilder() => DissolvedOrganicMatterBuilder()..replace(this);
+  DissolvedOrganicMatterBuilder toBuilder() =>
+      DissolvedOrganicMatterBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -61730,20 +65789,21 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         type == other.type;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            value?.hashCode),
         type?.hashCode));
   }
 
@@ -61763,7 +65823,12 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
 
 /// Dissolved Organic Matter builder class
 ///
-class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder> {
+class DissolvedOrganicMatterBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<DissolvedOrganicMatter,
+            DissolvedOrganicMatterBuilder> {
   _$DissolvedOrganicMatter _$v;
 
   DateTime _timestamp;
@@ -61811,7 +65876,9 @@ class DissolvedOrganicMatterBuilder extends Object with ImcBuilderHeaderPart imp
   }
 
   @override
-  DissolvedOrganicMatterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DissolvedOrganicMatterBuilder()..copyFromHeader(headerFrom);
+  DissolvedOrganicMatterBuilder newInstance(
+          [ImcBuilderHeaderPart headerFrom]) =>
+      DissolvedOrganicMatterBuilder()..copyFromHeader(headerFrom);
 
   DissolvedOrganicMatterBuilder get _$this {
     if (_$v != null) {
@@ -61873,7 +65940,8 @@ class _$OpticalBackscatter extends OpticalBackscatter {
   @override
   final double value;
 
-  factory _$OpticalBackscatter([void Function(OpticalBackscatterBuilder b) updates]) =>
+  factory _$OpticalBackscatter(
+          [void Function(OpticalBackscatterBuilder b) updates]) =>
       (OpticalBackscatterBuilder()..update(updates)).build();
 
   _$OpticalBackscatter._(
@@ -61886,11 +65954,13 @@ class _$OpticalBackscatter extends OpticalBackscatter {
       : super._();
 
   @override
-  OpticalBackscatter rebuild(void Function(OpticalBackscatterBuilder b) updates) =>
+  OpticalBackscatter rebuild(
+          void Function(OpticalBackscatterBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  OpticalBackscatterBuilder toBuilder() => OpticalBackscatterBuilder()..replace(this);
+  OpticalBackscatterBuilder toBuilder() =>
+      OpticalBackscatterBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -61901,18 +65971,18 @@ class _$OpticalBackscatter extends OpticalBackscatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -61931,7 +66001,10 @@ class _$OpticalBackscatter extends OpticalBackscatter {
 
 /// Optical Backscattering Coefficient builder class
 ///
-class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<OpticalBackscatter, OpticalBackscatterBuilder> {
+class OpticalBackscatterBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<OpticalBackscatter, OpticalBackscatterBuilder> {
   _$OpticalBackscatter _$v;
 
   DateTime _timestamp;
@@ -61975,7 +66048,8 @@ class OpticalBackscatterBuilder extends Object with ImcBuilderHeaderPart impleme
   }
 
   @override
-  OpticalBackscatterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => OpticalBackscatterBuilder()..copyFromHeader(headerFrom);
+  OpticalBackscatterBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      OpticalBackscatterBuilder()..copyFromHeader(headerFrom);
 
   OpticalBackscatterBuilder get _$this {
     if (_$v != null) {
@@ -62108,61 +66182,76 @@ class _$Tachograph extends Tachograph {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (timestampLastService == other.timestampLastService
-            || timestampLastService - other.timestampLastService <= 1E-7) &&
-        (timeNextService == other.timeNextService
-            || timeNextService - other.timeNextService <= 1E-7) &&
-        (timeMotorNextService == other.timeMotorNextService
-            || timeMotorNextService - other.timeMotorNextService <= 1E-7) &&
-        (timeIdleGround == other.timeIdleGround
-            || timeIdleGround - other.timeIdleGround <= 1E-7) &&
-        (timeIdleAir == other.timeIdleAir
-            || timeIdleAir - other.timeIdleAir <= 1E-7) &&
-        (timeIdleWater == other.timeIdleWater
-            || timeIdleWater - other.timeIdleWater <= 1E-7) &&
-        (timeIdleUnderwater == other.timeIdleUnderwater
-            || timeIdleUnderwater - other.timeIdleUnderwater <= 1E-7) &&
-        (timeIdleUnknown == other.timeIdleUnknown
-            || timeIdleUnknown - other.timeIdleUnknown <= 1E-7) &&
-        (timeMotorGround == other.timeMotorGround
-            || timeMotorGround - other.timeMotorGround <= 1E-7) &&
-        (timeMotorAir == other.timeMotorAir
-            || timeMotorAir - other.timeMotorAir <= 1E-7) &&
-        (timeMotorWater == other.timeMotorWater
-            || timeMotorWater - other.timeMotorWater <= 1E-7) &&
-        (timeMotorUnderwater == other.timeMotorUnderwater
-            || timeMotorUnderwater - other.timeMotorUnderwater <= 1E-7) &&
-        (timeMotorUnknown == other.timeMotorUnknown
-            || timeMotorUnknown - other.timeMotorUnknown <= 1E-7) &&
+        (timestampLastService == other.timestampLastService ||
+            timestampLastService - other.timestampLastService <= 1E-7) &&
+        (timeNextService == other.timeNextService ||
+            timeNextService - other.timeNextService <= 1E-7) &&
+        (timeMotorNextService == other.timeMotorNextService ||
+            timeMotorNextService - other.timeMotorNextService <= 1E-7) &&
+        (timeIdleGround == other.timeIdleGround ||
+            timeIdleGround - other.timeIdleGround <= 1E-7) &&
+        (timeIdleAir == other.timeIdleAir ||
+            timeIdleAir - other.timeIdleAir <= 1E-7) &&
+        (timeIdleWater == other.timeIdleWater ||
+            timeIdleWater - other.timeIdleWater <= 1E-7) &&
+        (timeIdleUnderwater == other.timeIdleUnderwater ||
+            timeIdleUnderwater - other.timeIdleUnderwater <= 1E-7) &&
+        (timeIdleUnknown == other.timeIdleUnknown ||
+            timeIdleUnknown - other.timeIdleUnknown <= 1E-7) &&
+        (timeMotorGround == other.timeMotorGround ||
+            timeMotorGround - other.timeMotorGround <= 1E-7) &&
+        (timeMotorAir == other.timeMotorAir ||
+            timeMotorAir - other.timeMotorAir <= 1E-7) &&
+        (timeMotorWater == other.timeMotorWater ||
+            timeMotorWater - other.timeMotorWater <= 1E-7) &&
+        (timeMotorUnderwater == other.timeMotorUnderwater ||
+            timeMotorUnderwater - other.timeMotorUnderwater <= 1E-7) &&
+        (timeMotorUnknown == other.timeMotorUnknown ||
+            timeMotorUnknown - other.timeMotorUnknown <= 1E-7) &&
         rpmMin == other.rpmMin &&
         rpmMax == other.rpmMax &&
-        (depthMax == other.depthMax
-            || depthMax - other.depthMax <= 1E-7);
+        (depthMax == other.depthMax || depthMax - other.depthMax <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        timestampLastService?.hashCode), 
-        timeNextService?.hashCode), 
-        timeMotorNextService?.hashCode), 
-        timeIdleGround?.hashCode), 
-        timeIdleAir?.hashCode), 
-        timeIdleWater?.hashCode), 
-        timeIdleUnderwater?.hashCode), 
-        timeIdleUnknown?.hashCode), 
-        timeMotorGround?.hashCode), 
-        timeMotorAir?.hashCode), 
-        timeMotorWater?.hashCode), 
-        timeMotorUnderwater?.hashCode), 
-        timeMotorUnknown?.hashCode), 
-        rpmMin?.hashCode), 
-        rpmMax?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                                                                srcEnt?.hashCode),
+                                                                            dst?.hashCode),
+                                                                        dstEnt?.hashCode),
+                                                                    timestampLastService?.hashCode),
+                                                                timeNextService?.hashCode),
+                                                            timeMotorNextService?.hashCode),
+                                                        timeIdleGround?.hashCode),
+                                                    timeIdleAir?.hashCode),
+                                                timeIdleWater?.hashCode),
+                                            timeIdleUnderwater?.hashCode),
+                                        timeIdleUnknown?.hashCode),
+                                    timeMotorGround?.hashCode),
+                                timeMotorAir?.hashCode),
+                            timeMotorWater?.hashCode),
+                        timeMotorUnderwater?.hashCode),
+                    timeMotorUnknown?.hashCode),
+                rpmMin?.hashCode),
+            rpmMax?.hashCode),
         depthMax?.hashCode));
   }
 
@@ -62196,7 +66285,9 @@ class _$Tachograph extends Tachograph {
 
 /// Tachograph builder class
 ///
-class TachographBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<Tachograph, TachographBuilder> {
+class TachographBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<Tachograph, TachographBuilder> {
   _$Tachograph _$v;
 
   DateTime _timestamp;
@@ -62231,19 +66322,23 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
 
   double _timestampLastService;
   double get timestampLastService => _$this._timestampLastService;
-  set timestampLastService(double timestampLastService) => _$this._timestampLastService = timestampLastService;
+  set timestampLastService(double timestampLastService) =>
+      _$this._timestampLastService = timestampLastService;
 
   double _timeNextService;
   double get timeNextService => _$this._timeNextService;
-  set timeNextService(double timeNextService) => _$this._timeNextService = timeNextService;
+  set timeNextService(double timeNextService) =>
+      _$this._timeNextService = timeNextService;
 
   double _timeMotorNextService;
   double get timeMotorNextService => _$this._timeMotorNextService;
-  set timeMotorNextService(double timeMotorNextService) => _$this._timeMotorNextService = timeMotorNextService;
+  set timeMotorNextService(double timeMotorNextService) =>
+      _$this._timeMotorNextService = timeMotorNextService;
 
   double _timeIdleGround;
   double get timeIdleGround => _$this._timeIdleGround;
-  set timeIdleGround(double timeIdleGround) => _$this._timeIdleGround = timeIdleGround;
+  set timeIdleGround(double timeIdleGround) =>
+      _$this._timeIdleGround = timeIdleGround;
 
   double _timeIdleAir;
   double get timeIdleAir => _$this._timeIdleAir;
@@ -62251,19 +66346,23 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
 
   double _timeIdleWater;
   double get timeIdleWater => _$this._timeIdleWater;
-  set timeIdleWater(double timeIdleWater) => _$this._timeIdleWater = timeIdleWater;
+  set timeIdleWater(double timeIdleWater) =>
+      _$this._timeIdleWater = timeIdleWater;
 
   double _timeIdleUnderwater;
   double get timeIdleUnderwater => _$this._timeIdleUnderwater;
-  set timeIdleUnderwater(double timeIdleUnderwater) => _$this._timeIdleUnderwater = timeIdleUnderwater;
+  set timeIdleUnderwater(double timeIdleUnderwater) =>
+      _$this._timeIdleUnderwater = timeIdleUnderwater;
 
   double _timeIdleUnknown;
   double get timeIdleUnknown => _$this._timeIdleUnknown;
-  set timeIdleUnknown(double timeIdleUnknown) => _$this._timeIdleUnknown = timeIdleUnknown;
+  set timeIdleUnknown(double timeIdleUnknown) =>
+      _$this._timeIdleUnknown = timeIdleUnknown;
 
   double _timeMotorGround;
   double get timeMotorGround => _$this._timeMotorGround;
-  set timeMotorGround(double timeMotorGround) => _$this._timeMotorGround = timeMotorGround;
+  set timeMotorGround(double timeMotorGround) =>
+      _$this._timeMotorGround = timeMotorGround;
 
   double _timeMotorAir;
   double get timeMotorAir => _$this._timeMotorAir;
@@ -62271,15 +66370,18 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
 
   double _timeMotorWater;
   double get timeMotorWater => _$this._timeMotorWater;
-  set timeMotorWater(double timeMotorWater) => _$this._timeMotorWater = timeMotorWater;
+  set timeMotorWater(double timeMotorWater) =>
+      _$this._timeMotorWater = timeMotorWater;
 
   double _timeMotorUnderwater;
   double get timeMotorUnderwater => _$this._timeMotorUnderwater;
-  set timeMotorUnderwater(double timeMotorUnderwater) => _$this._timeMotorUnderwater = timeMotorUnderwater;
+  set timeMotorUnderwater(double timeMotorUnderwater) =>
+      _$this._timeMotorUnderwater = timeMotorUnderwater;
 
   double _timeMotorUnknown;
   double get timeMotorUnknown => _$this._timeMotorUnknown;
-  set timeMotorUnknown(double timeMotorUnknown) => _$this._timeMotorUnknown = timeMotorUnknown;
+  set timeMotorUnknown(double timeMotorUnknown) =>
+      _$this._timeMotorUnknown = timeMotorUnknown;
 
   int _rpmMin;
   int get rpmMin => _$this._rpmMin;
@@ -62300,7 +66402,8 @@ class TachographBuilder extends Object with ImcBuilderHeaderPart implements Buil
   }
 
   @override
-  TachographBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TachographBuilder()..copyFromHeader(headerFrom);
+  TachographBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TachographBuilder()..copyFromHeader(headerFrom);
 
   TachographBuilder get _$this {
     if (_$v != null) {
@@ -62427,13 +66530,15 @@ class _$ApmStatus extends ApmStatus {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        severity?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                        srcEnt?.hashCode),
+                    dst?.hashCode),
+                dstEnt?.hashCode),
+            severity?.hashCode),
         text?.hashCode));
   }
 
@@ -62453,7 +66558,9 @@ class _$ApmStatus extends ApmStatus {
 
 /// APM Status builder class
 ///
-class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<ApmStatus, ApmStatusBuilder> {
+class ApmStatusBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ApmStatus, ApmStatusBuilder> {
   _$ApmStatus _$v;
 
   DateTime _timestamp;
@@ -62501,7 +66608,8 @@ class ApmStatusBuilder extends Object with ImcBuilderHeaderPart implements Build
   }
 
   @override
-  ApmStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => ApmStatusBuilder()..copyFromHeader(headerFrom);
+  ApmStatusBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      ApmStatusBuilder()..copyFromHeader(headerFrom);
 
   ApmStatusBuilder get _$this {
     if (_$v != null) {
@@ -62604,14 +66712,17 @@ class _$SadcReadings extends SadcReadings {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        channel?.hashCode), 
-        value?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                            srcEnt?.hashCode),
+                        dst?.hashCode),
+                    dstEnt?.hashCode),
+                channel?.hashCode),
+            value?.hashCode),
         gain?.hashCode));
   }
 
@@ -62632,7 +66743,9 @@ class _$SadcReadings extends SadcReadings {
 
 /// SADC Readings builder class
 ///
-class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<SadcReadings, SadcReadingsBuilder> {
+class SadcReadingsBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<SadcReadings, SadcReadingsBuilder> {
   _$SadcReadings _$v;
 
   DateTime _timestamp;
@@ -62684,7 +66797,8 @@ class SadcReadingsBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  SadcReadingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => SadcReadingsBuilder()..copyFromHeader(headerFrom);
+  SadcReadingsBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      SadcReadingsBuilder()..copyFromHeader(headerFrom);
 
   SadcReadingsBuilder get _$this {
     if (_$v != null) {
@@ -62821,63 +66935,63 @@ class _$DmsDetection extends DmsDetection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (ch01 == other.ch01
-            || ch01 - other.ch01 <= 1E-7) &&
-        (ch02 == other.ch02
-            || ch02 - other.ch02 <= 1E-7) &&
-        (ch03 == other.ch03
-            || ch03 - other.ch03 <= 1E-7) &&
-        (ch04 == other.ch04
-            || ch04 - other.ch04 <= 1E-7) &&
-        (ch05 == other.ch05
-            || ch05 - other.ch05 <= 1E-7) &&
-        (ch06 == other.ch06
-            || ch06 - other.ch06 <= 1E-7) &&
-        (ch07 == other.ch07
-            || ch07 - other.ch07 <= 1E-7) &&
-        (ch08 == other.ch08
-            || ch08 - other.ch08 <= 1E-7) &&
-        (ch09 == other.ch09
-            || ch09 - other.ch09 <= 1E-7) &&
-        (ch10 == other.ch10
-            || ch10 - other.ch10 <= 1E-7) &&
-        (ch11 == other.ch11
-            || ch11 - other.ch11 <= 1E-7) &&
-        (ch12 == other.ch12
-            || ch12 - other.ch12 <= 1E-7) &&
-        (ch13 == other.ch13
-            || ch13 - other.ch13 <= 1E-7) &&
-        (ch14 == other.ch14
-            || ch14 - other.ch14 <= 1E-7) &&
-        (ch15 == other.ch15
-            || ch15 - other.ch15 <= 1E-7) &&
-        (ch16 == other.ch16
-            || ch16 - other.ch16 <= 1E-7);
+        (ch01 == other.ch01 || ch01 - other.ch01 <= 1E-7) &&
+        (ch02 == other.ch02 || ch02 - other.ch02 <= 1E-7) &&
+        (ch03 == other.ch03 || ch03 - other.ch03 <= 1E-7) &&
+        (ch04 == other.ch04 || ch04 - other.ch04 <= 1E-7) &&
+        (ch05 == other.ch05 || ch05 - other.ch05 <= 1E-7) &&
+        (ch06 == other.ch06 || ch06 - other.ch06 <= 1E-7) &&
+        (ch07 == other.ch07 || ch07 - other.ch07 <= 1E-7) &&
+        (ch08 == other.ch08 || ch08 - other.ch08 <= 1E-7) &&
+        (ch09 == other.ch09 || ch09 - other.ch09 <= 1E-7) &&
+        (ch10 == other.ch10 || ch10 - other.ch10 <= 1E-7) &&
+        (ch11 == other.ch11 || ch11 - other.ch11 <= 1E-7) &&
+        (ch12 == other.ch12 || ch12 - other.ch12 <= 1E-7) &&
+        (ch13 == other.ch13 || ch13 - other.ch13 <= 1E-7) &&
+        (ch14 == other.ch14 || ch14 - other.ch14 <= 1E-7) &&
+        (ch15 == other.ch15 || ch15 - other.ch15 <= 1E-7) &&
+        (ch16 == other.ch16 || ch16 - other.ch16 <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
-        ch01?.hashCode), 
-        ch02?.hashCode), 
-        ch03?.hashCode), 
-        ch04?.hashCode), 
-        ch05?.hashCode), 
-        ch06?.hashCode), 
-        ch07?.hashCode), 
-        ch08?.hashCode), 
-        ch09?.hashCode), 
-        ch10?.hashCode), 
-        ch11?.hashCode), 
-        ch12?.hashCode), 
-        ch13?.hashCode), 
-        ch14?.hashCode), 
-        ch15?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                                                                                srcEnt?.hashCode),
+                                                                            dst?.hashCode),
+                                                                        dstEnt?.hashCode),
+                                                                    ch01?.hashCode),
+                                                                ch02?.hashCode),
+                                                            ch03?.hashCode),
+                                                        ch04?.hashCode),
+                                                    ch05?.hashCode),
+                                                ch06?.hashCode),
+                                            ch07?.hashCode),
+                                        ch08?.hashCode),
+                                    ch09?.hashCode),
+                                ch10?.hashCode),
+                            ch11?.hashCode),
+                        ch12?.hashCode),
+                    ch13?.hashCode),
+                ch14?.hashCode),
+            ch15?.hashCode),
         ch16?.hashCode));
   }
 
@@ -62911,7 +67025,9 @@ class _$DmsDetection extends DmsDetection {
 
 /// DMS Detection builder class
 ///
-class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<DmsDetection, DmsDetectionBuilder> {
+class DmsDetectionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<DmsDetection, DmsDetectionBuilder> {
   _$DmsDetection _$v;
 
   DateTime _timestamp;
@@ -63015,7 +67131,8 @@ class DmsDetectionBuilder extends Object with ImcBuilderHeaderPart implements Bu
   }
 
   @override
-  DmsDetectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => DmsDetectionBuilder()..copyFromHeader(headerFrom);
+  DmsDetectionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      DmsDetectionBuilder()..copyFromHeader(headerFrom);
 
   DmsDetectionBuilder get _$this {
     if (_$v != null) {
@@ -63105,7 +67222,8 @@ class _$TotalMagIntensity extends TotalMagIntensity {
   @override
   final double value;
 
-  factory _$TotalMagIntensity([void Function(TotalMagIntensityBuilder b) updates]) =>
+  factory _$TotalMagIntensity(
+          [void Function(TotalMagIntensityBuilder b) updates]) =>
       (TotalMagIntensityBuilder()..update(updates)).build();
 
   _$TotalMagIntensity._(
@@ -63118,11 +67236,13 @@ class _$TotalMagIntensity extends TotalMagIntensity {
       : super._();
 
   @override
-  TotalMagIntensity rebuild(void Function(TotalMagIntensityBuilder b) updates) =>
+  TotalMagIntensity rebuild(
+          void Function(TotalMagIntensityBuilder b) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TotalMagIntensityBuilder toBuilder() => TotalMagIntensityBuilder()..replace(this);
+  TotalMagIntensityBuilder toBuilder() =>
+      TotalMagIntensityBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -63133,18 +67253,18 @@ class _$TotalMagIntensity extends TotalMagIntensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value
-            || value - other.value <= 1E-7);
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc($jc($jc(0, 
-        timestamp?.hashCode), 
-        src?.hashCode), 
-        srcEnt?.hashCode), 
-        dst?.hashCode), 
-        dstEnt?.hashCode), 
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
+                    srcEnt?.hashCode),
+                dst?.hashCode),
+            dstEnt?.hashCode),
         value?.hashCode));
   }
 
@@ -63163,7 +67283,10 @@ class _$TotalMagIntensity extends TotalMagIntensity {
 
 /// Total Magnetic Field Intensity builder class
 ///
-class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<TotalMagIntensity, TotalMagIntensityBuilder> {
+class TotalMagIntensityBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<TotalMagIntensity, TotalMagIntensityBuilder> {
   _$TotalMagIntensity _$v;
 
   DateTime _timestamp;
@@ -63207,7 +67330,8 @@ class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 
   @override
-  TotalMagIntensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) => TotalMagIntensityBuilder()..copyFromHeader(headerFrom);
+  TotalMagIntensityBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      TotalMagIntensityBuilder()..copyFromHeader(headerFrom);
 
   TotalMagIntensityBuilder get _$this {
     if (_$v != null) {
@@ -63250,3 +67374,236 @@ class TotalMagIntensityBuilder extends Object with ImcBuilderHeaderPart implemen
   }
 }
 
+/// Home Position immutable class
+///
+class _$HomePosition extends HomePosition {
+  @override
+  final DateTime timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final HomePositionEnumOp op;
+  @override
+  final double lat;
+  @override
+  final double lon;
+  @override
+  final double height;
+  @override
+  final double depth;
+  @override
+  final double alt;
+
+  factory _$HomePosition([void Function(HomePositionBuilder b) updates]) =>
+      (HomePositionBuilder()..update(updates)).build();
+
+  _$HomePosition._(
+      {this.timestamp,
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      this.op,
+      this.lat,
+      this.lon,
+      this.height,
+      this.depth,
+      this.alt})
+      : super._();
+
+  @override
+  HomePosition rebuild(void Function(HomePositionBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  HomePositionBuilder toBuilder() => HomePositionBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is HomePosition &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        op == other.op &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, timestamp?.hashCode),
+                                            src?.hashCode),
+                                        srcEnt?.hashCode),
+                                    dst?.hashCode),
+                                dstEnt?.hashCode),
+                            op?.hashCode),
+                        lat?.hashCode),
+                    lon?.hashCode),
+                height?.hashCode),
+            depth?.hashCode),
+        alt?.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('HomePosition')
+          ..add('timestamp', timestamp)
+          ..add('src', "0x${src?.toRadixString(16)} (${src ?? '-'})")
+          ..add('srcEnt', "0x${srcEnt?.toRadixString(16)} (${srcEnt ?? '-'})")
+          ..add('dst', "0x${dst?.toRadixString(16)} (${dst ?? '-'})")
+          ..add('dstEnt', "0x${dstEnt?.toRadixString(16)} (${dstEnt ?? '-'})")
+          ..add('op', '$op (Enumerated)')
+          ..add('lat',
+              '$lat (rad)${lat != null ? ' [${lat * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lon',
+              '$lon (rad)${lon != null ? ' [${lon * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('height', '$height (m)')
+          ..add('depth', '$depth (m)')
+          ..add('alt', '$alt (m)'))
+        .toString();
+  }
+}
+
+/// Home Position builder class
+///
+class HomePositionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<HomePosition, HomePositionBuilder> {
+  _$HomePosition _$v;
+
+  DateTime _timestamp;
+  @override
+  DateTime get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime timestamp) => _$this._timestamp = timestamp;
+
+  int _src;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  HomePositionEnumOp _op;
+  HomePositionEnumOp get op => _$this._op;
+  set op(HomePositionEnumOp op) => _$this._op = op;
+
+  double _lat;
+  double get lat => _$this._lat;
+  set lat(double lat) => _$this._lat = lat;
+
+  double _lon;
+  double get lon => _$this._lon;
+  set lon(double lon) => _$this._lon = lon;
+
+  double _height;
+  double get height => _$this._height;
+  set height(double height) => _$this._height = height;
+
+  double _depth;
+  double get depth => _$this._depth;
+  set depth(double depth) => _$this._depth = depth;
+
+  double _alt;
+  double get alt => _$this._alt;
+  set alt(double alt) => _$this._alt = alt;
+
+  HomePositionBuilder();
+
+  HomePositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  HomePositionBuilder newInstance([ImcBuilderHeaderPart headerFrom]) =>
+      HomePositionBuilder()..copyFromHeader(headerFrom);
+
+  HomePositionBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v.timestamp;
+      _src = _$v.src;
+      _srcEnt = _$v.srcEnt;
+      _dst = _$v.dst;
+      _dstEnt = _$v.dstEnt;
+      _op = _$v.op;
+      _lat = _$v.lat;
+      _lon = _$v.lon;
+      _height = _$v.height;
+      _depth = _$v.depth;
+      _alt = _$v.alt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(HomePosition other) {
+    if (other == null) {
+      throw ArgumentError.notNull('other');
+    }
+    _$v = other as _$HomePosition;
+  }
+
+  @override
+  void update(void Function(HomePositionBuilder b) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$HomePosition build() {
+    final _$result = _$v ??
+        _$HomePosition._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src ?? ImcId.nullId,
+            srcEnt: srcEnt ?? ImcEntityId.nullId,
+            dst: dst ?? ImcId.nullId,
+            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            op: op ?? HomePositionEnumOp(0),
+            lat: lat ?? 0,
+            lon: lon ?? 0,
+            height: height ?? 0,
+            depth: depth ?? 0,
+            alt: alt ?? 0);
+    replace(_$result);
+    return _$result;
+  }
+}

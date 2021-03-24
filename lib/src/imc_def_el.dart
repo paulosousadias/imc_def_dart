@@ -1334,6 +1334,56 @@ class LblConfigEnumOp extends EnumType {
   }
 }
 
+class SimAcousticMessageBitfieldFlags extends BitfieldType {
+  static const sam_ack = SimAcousticMessageBitfieldFlags(0x01);
+  static const sam_delayed = SimAcousticMessageBitfieldFlags(0x02);
+  static const sam_reply = SimAcousticMessageBitfieldFlags(0x03);
+
+  static List<SimAcousticMessageBitfieldFlags> get values =>
+      <SimAcousticMessageBitfieldFlags>[
+        sam_ack,
+        sam_delayed,
+        sam_reply,
+      ];
+
+  static core.Map<SimAcousticMessageBitfieldFlags, String> get names =>
+      <SimAcousticMessageBitfieldFlags, String>{
+        sam_ack: '''Acknowledgement''',
+        sam_delayed: '''Delayed''',
+        sam_reply: '''Reply''',
+      };
+
+  const SimAcousticMessageBitfieldFlags(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    var ret;
+    if (value == 0) return '';
+
+    var valNot = value;
+    for (var item in values) {
+      if (hasBits(<SimAcousticMessageBitfieldFlags>[item])) {
+        ret ??= '';
+        ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
+        valNot &= ~item.value;
+      }
+    }
+    if (valNot != 0) {
+      ret ??= '';
+      ret += '${ret.isNotEmpty ? '|' : ''}?';
+    }
+    return ret ?? super.toPrettyString();
+  }
+
+  static SimAcousticMessageBitfieldFlags fromBits(
+          List<SimAcousticMessageBitfieldFlags> bits) =>
+      (bits == null || bits.length < 2)
+          ? SimAcousticMessageBitfieldFlags(
+              bits == null || bits.isEmpty ? 0 : bits[0])
+          : bits.reduce(
+              (b1, b2) => SimAcousticMessageBitfieldFlags(b1.value | b2.value));
+}
+
 /// Operation type.
 class AcousticOperationEnumOp extends EnumType {
   /// Send an abort through the acoustic channel to the system
@@ -1446,6 +1496,121 @@ class AcousticOperationEnumOp extends EnumType {
       };
 
   const AcousticOperationEnumOp(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if (ret != null) return ret;
+    return super.toPrettyString();
+  }
+}
+
+class AcousticRequestEnumType extends EnumType {
+  static const type_abort = AcousticRequestEnumType(0);
+  static const type_range = AcousticRequestEnumType(1);
+  static const type_reverse_range = AcousticRequestEnumType(2);
+  static const type_msg = AcousticRequestEnumType(3);
+  static const type_raw = AcousticRequestEnumType(4);
+
+  static List<AcousticRequestEnumType> get values => <AcousticRequestEnumType>[
+        type_abort,
+        type_range,
+        type_reverse_range,
+        type_msg,
+        type_raw,
+      ];
+
+  static core.Map<AcousticRequestEnumType, String> get names =>
+      <AcousticRequestEnumType, String>{
+        type_abort: '''Abort''',
+        type_range: '''Range''',
+        type_reverse_range: '''Reverse Range''',
+        type_msg: '''Message''',
+        type_raw: '''Raw''',
+      };
+
+  const AcousticRequestEnumType(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if (ret != null) return ret;
+    return super.toPrettyString();
+  }
+}
+
+class AcousticStatusEnumType extends EnumType {
+  static const type_abort = AcousticStatusEnumType(0);
+  static const type_range = AcousticStatusEnumType(1);
+  static const type_reverse_range = AcousticStatusEnumType(2);
+  static const type_msg = AcousticStatusEnumType(3);
+  static const type_raw = AcousticStatusEnumType(4);
+
+  static List<AcousticStatusEnumType> get values => <AcousticStatusEnumType>[
+        type_abort,
+        type_range,
+        type_reverse_range,
+        type_msg,
+        type_raw,
+      ];
+
+  static core.Map<AcousticStatusEnumType, String> get names =>
+      <AcousticStatusEnumType, String>{
+        type_abort: '''Abort''',
+        type_range: '''Range''',
+        type_reverse_range: '''Reverse Range''',
+        type_msg: '''Message''',
+        type_raw: '''Raw''',
+      };
+
+  const AcousticStatusEnumType(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if (ret != null) return ret;
+    return super.toPrettyString();
+  }
+}
+
+class AcousticStatusEnumStatus extends EnumType {
+  static const status_queued = AcousticStatusEnumStatus(0);
+  static const status_in_progress = AcousticStatusEnumStatus(1);
+  static const status_sent = AcousticStatusEnumStatus(2);
+  static const status_range_received = AcousticStatusEnumStatus(3);
+  static const status_delivered = AcousticStatusEnumStatus(4);
+  static const status_busy = AcousticStatusEnumStatus(100);
+  static const status_input_failure = AcousticStatusEnumStatus(101);
+  static const status_error = AcousticStatusEnumStatus(102);
+  static const status_unsupported = AcousticStatusEnumStatus(666);
+
+  static List<AcousticStatusEnumStatus> get values =>
+      <AcousticStatusEnumStatus>[
+        status_queued,
+        status_in_progress,
+        status_sent,
+        status_range_received,
+        status_delivered,
+        status_busy,
+        status_input_failure,
+        status_error,
+        status_unsupported,
+      ];
+
+  static core.Map<AcousticStatusEnumStatus, String> get names =>
+      <AcousticStatusEnumStatus, String>{
+        status_queued: '''Queued''',
+        status_in_progress: '''In Progress''',
+        status_sent: '''Sent''',
+        status_range_received: '''Range Received''',
+        status_delivered: '''Delivered''',
+        status_busy: '''Busy''',
+        status_input_failure: '''Input Error''',
+        status_error: '''Error trying to send acoustic text''',
+        status_unsupported: '''Message Type is not defined or is unsupported''',
+      };
+
+  const AcousticStatusEnumStatus(int value) : super(value);
 
   @override
   String toPrettyString() {
@@ -4356,6 +4521,8 @@ class TransmissionRequestEnumCommMean extends EnumType {
   static const cmean_acoustic = TransmissionRequestEnumCommMean(1);
   static const cmean_satellite = TransmissionRequestEnumCommMean(2);
   static const cmean_gsm = TransmissionRequestEnumCommMean(3);
+  static const cmean_any = TransmissionRequestEnumCommMean(4);
+  static const cmean_all = TransmissionRequestEnumCommMean(5);
 
   static List<TransmissionRequestEnumCommMean> get values =>
       <TransmissionRequestEnumCommMean>[
@@ -4363,6 +4530,8 @@ class TransmissionRequestEnumCommMean extends EnumType {
         cmean_acoustic,
         cmean_satellite,
         cmean_gsm,
+        cmean_any,
+        cmean_all,
       ];
 
   static core.Map<TransmissionRequestEnumCommMean, String> get names =>
@@ -4371,6 +4540,8 @@ class TransmissionRequestEnumCommMean extends EnumType {
         cmean_acoustic: '''Acoustic''',
         cmean_satellite: '''Satellite''',
         cmean_gsm: '''GSM''',
+        cmean_any: '''Any''',
+        cmean_all: '''All''',
       };
 
   const TransmissionRequestEnumCommMean(int value) : super(value);
@@ -4384,16 +4555,23 @@ class TransmissionRequestEnumCommMean extends EnumType {
 }
 
 /// Type of data to be transmitted.
+/// Abort and Range mode can only be used with comm_mean=ACOUSTIC
 class TransmissionRequestEnumDataMode extends EnumType {
   static const dmode_inlinemsg = TransmissionRequestEnumDataMode(0);
   static const dmode_text = TransmissionRequestEnumDataMode(1);
   static const dmode_raw = TransmissionRequestEnumDataMode(2);
+  static const dmode_abort = TransmissionRequestEnumDataMode(3);
+  static const dmode_range = TransmissionRequestEnumDataMode(4);
+  static const dmode_reverse_range = TransmissionRequestEnumDataMode(5);
 
   static List<TransmissionRequestEnumDataMode> get values =>
       <TransmissionRequestEnumDataMode>[
         dmode_inlinemsg,
         dmode_text,
         dmode_raw,
+        dmode_abort,
+        dmode_range,
+        dmode_reverse_range,
       ];
 
   static core.Map<TransmissionRequestEnumDataMode, String> get names =>
@@ -4401,6 +4579,9 @@ class TransmissionRequestEnumDataMode extends EnumType {
         dmode_inlinemsg: '''Inline Message''',
         dmode_text: '''Text''',
         dmode_raw: '''Raw Data''',
+        dmode_abort: '''Abort''',
+        dmode_range: '''Range''',
+        dmode_reverse_range: '''Reverse Range''',
       };
 
   const TransmissionRequestEnumDataMode(int value) : super(value);
@@ -4418,6 +4599,7 @@ class TransmissionStatusEnumStatus extends EnumType {
   static const tstat_sent = TransmissionStatusEnumStatus(1);
   static const tstat_delivered = TransmissionStatusEnumStatus(51);
   static const tstat_maybe_delivered = TransmissionStatusEnumStatus(52);
+  static const tstat_range_received = TransmissionStatusEnumStatus(60);
   static const tstat_input_failure = TransmissionStatusEnumStatus(101);
   static const tstat_temporary_failure = TransmissionStatusEnumStatus(102);
   static const tstat_permanent_failure = TransmissionStatusEnumStatus(103);
@@ -4428,6 +4610,7 @@ class TransmissionStatusEnumStatus extends EnumType {
         tstat_sent,
         tstat_delivered,
         tstat_maybe_delivered,
+        tstat_range_received,
         tstat_input_failure,
         tstat_temporary_failure,
         tstat_permanent_failure,
@@ -4439,6 +4622,7 @@ class TransmissionStatusEnumStatus extends EnumType {
         tstat_sent: '''Sent''',
         tstat_delivered: '''Delivered''',
         tstat_maybe_delivered: '''Delivery is unknown''',
+        tstat_range_received: '''Range received''',
         tstat_input_failure: '''Input Error''',
         tstat_temporary_failure: '''Temporary Error''',
         tstat_permanent_failure: '''Permanent Failure''',
@@ -4544,6 +4728,43 @@ class ArmingStateEnumState extends EnumType {
       };
 
   const ArmingStateEnumState(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if (ret != null) return ret;
+    return super.toPrettyString();
+  }
+}
+
+class TCPStatusEnumStatus extends EnumType {
+  static const tcpstat_queued = TCPStatusEnumStatus(0);
+  static const tcpstat_sent = TCPStatusEnumStatus(1);
+  static const tcpstat_input_failure = TCPStatusEnumStatus(100);
+  static const tcpstat_host_unknown = TCPStatusEnumStatus(101);
+  static const tcpstat_cant_connect = TCPStatusEnumStatus(102);
+  static const tcpstat_error = TCPStatusEnumStatus(103);
+
+  static List<TCPStatusEnumStatus> get values => <TCPStatusEnumStatus>[
+        tcpstat_queued,
+        tcpstat_sent,
+        tcpstat_input_failure,
+        tcpstat_host_unknown,
+        tcpstat_cant_connect,
+        tcpstat_error,
+      ];
+
+  static core.Map<TCPStatusEnumStatus, String> get names =>
+      <TCPStatusEnumStatus, String>{
+        tcpstat_queued: '''Queued''',
+        tcpstat_sent: '''Sent''',
+        tcpstat_input_failure: '''Input Error''',
+        tcpstat_host_unknown: '''Host Unknown''',
+        tcpstat_cant_connect: '''Can't Connect''',
+        tcpstat_error: '''Error trying to send sms''',
+      };
+
+  const TCPStatusEnumStatus(int value) : super(value);
 
   @override
   String toPrettyString() {
@@ -5592,6 +5813,8 @@ class UamTxStatusEnumValue extends EnumType {
   static const uts_ip = UamTxStatusEnumValue(5);
   static const uts_unsupported = UamTxStatusEnumValue(6);
   static const uts_inv_size = UamTxStatusEnumValue(7);
+  static const uts_sent = UamTxStatusEnumValue(8);
+  static const uts_delivered = UamTxStatusEnumValue(9);
 
   static List<UamTxStatusEnumValue> get values => <UamTxStatusEnumValue>[
         uts_done,
@@ -5602,6 +5825,8 @@ class UamTxStatusEnumValue extends EnumType {
         uts_ip,
         uts_unsupported,
         uts_inv_size,
+        uts_sent,
+        uts_delivered,
       ];
 
   static core.Map<UamTxStatusEnumValue, String> get names =>
@@ -5614,6 +5839,8 @@ class UamTxStatusEnumValue extends EnumType {
         uts_ip: '''In Progress''',
         uts_unsupported: '''Unsupported operation''',
         uts_inv_size: '''Invalid transmission size''',
+        uts_sent: '''Message has been sent''',
+        uts_delivered: '''Message has been acknowledged by the destination''',
       };
 
   const UamTxStatusEnumValue(int value) : super(value);
@@ -5973,6 +6200,32 @@ class SadcReadingsEnumGain extends EnumType {
       };
 
   const SadcReadingsEnumGain(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if (ret != null) return ret;
+    return super.toPrettyString();
+  }
+}
+
+/// Action on the vehicle home
+class HomePositionEnumOp extends EnumType {
+  static const op_set = HomePositionEnumOp(1);
+  static const op_report = HomePositionEnumOp(2);
+
+  static List<HomePositionEnumOp> get values => <HomePositionEnumOp>[
+        op_set,
+        op_report,
+      ];
+
+  static core.Map<HomePositionEnumOp, String> get names =>
+      <HomePositionEnumOp, String>{
+        op_set: '''Set''',
+        op_report: '''Report''',
+      };
+
+  const HomePositionEnumOp(int value) : super(value);
 
   @override
   String toPrettyString() {

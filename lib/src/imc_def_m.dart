@@ -9,7 +9,8 @@ part of 'imc_def_gen.dart';
 const String VERSION = '5.4.11';
 const int SYNC_NUMBER = 0xFE54;
 const int SYNC_NUMBER_REVERSED = 0x54FE;
-const String MD5_SUM = 'cdc4c6dfe2baed8395138f0b1b8e1910';
+const String GIT_HASH_STRING = 'lsts@f19a343';
+const String MD5_SUM = '5563261871977bdb0b45e3d1e53b575b';
 
 /// The base IMCMessage
 ///
@@ -20,27 +21,26 @@ abstract class ImcMessage extends Message {
 
 /// Maneuver message group class
 ///
-abstract class Maneuver extends ImcMessage {
-}
+abstract class Maneuver extends ImcMessage {}
 
 /// Control Command message group class
 ///
-abstract class ControlCommand extends ImcMessage {
-}
+abstract class ControlCommand extends ImcMessage {}
 
 /// RemoteData message group class
 ///
-abstract class RemoteData extends ImcMessage {
-}
+abstract class RemoteData extends ImcMessage {}
 
 /// Entity State class
 ///
 /// State reported by an entity in the vehicle. The source entity is
 /// identified in the message header.
-abstract class EntityState extends ImcMessage implements Built<EntityState, EntityStateBuilder> {
+abstract class EntityState extends ImcMessage
+    implements Built<EntityState, EntityStateBuilder> {
   static const static_id = 1;
   EntityState._();
-  factory EntityState([void Function(EntityStateBuilder b) updates]) = _$EntityState;
+  factory EntityState([void Function(EntityStateBuilder b) updates]) =
+      _$EntityState;
 
   @override
   int get msgId => static_id;
@@ -64,10 +64,12 @@ abstract class EntityState extends ImcMessage implements Built<EntityState, Enti
 ///
 /// Request entities to report their state. Entities should respond
 /// by issuing an appropriate EntityState message.
-abstract class QueryEntityState extends ImcMessage implements Built<QueryEntityState, QueryEntityStateBuilder> {
+abstract class QueryEntityState extends ImcMessage
+    implements Built<QueryEntityState, QueryEntityStateBuilder> {
   static const static_id = 2;
   QueryEntityState._();
-  factory QueryEntityState([void Function(QueryEntityStateBuilder b) updates]) = _$QueryEntityState;
+  factory QueryEntityState([void Function(QueryEntityStateBuilder b) updates]) =
+      _$QueryEntityState;
 
   @override
   int get msgId => static_id;
@@ -78,10 +80,12 @@ abstract class QueryEntityState extends ImcMessage implements Built<QueryEntityS
 /// Entity Information class
 ///
 /// This message describes an entity.
-abstract class EntityInfo extends ImcMessage implements Built<EntityInfo, EntityInfoBuilder> {
+abstract class EntityInfo extends ImcMessage
+    implements Built<EntityInfo, EntityInfoBuilder> {
   static const static_id = 3;
   EntityInfo._();
-  factory EntityInfo([void Function(EntityInfoBuilder b) updates]) = _$EntityInfo;
+  factory EntityInfo([void Function(EntityInfoBuilder b) updates]) =
+      _$EntityInfo;
 
   @override
   int get msgId => static_id;
@@ -115,10 +119,12 @@ abstract class EntityInfo extends ImcMessage implements Built<EntityInfo, Entity
 /// Request information about an entity identifier. The receiving
 /// system shall reply with an EntityInfo message with the details
 /// of that entity.
-abstract class QueryEntityInfo extends ImcMessage implements Built<QueryEntityInfo, QueryEntityInfoBuilder> {
+abstract class QueryEntityInfo extends ImcMessage
+    implements Built<QueryEntityInfo, QueryEntityInfoBuilder> {
   static const static_id = 4;
   QueryEntityInfo._();
-  factory QueryEntityInfo([void Function(QueryEntityInfoBuilder b) updates]) = _$QueryEntityInfo;
+  factory QueryEntityInfo([void Function(QueryEntityInfoBuilder b) updates]) =
+      _$QueryEntityInfo;
 
   @override
   int get msgId => static_id;
@@ -134,10 +140,12 @@ abstract class QueryEntityInfo extends ImcMessage implements Built<QueryEntityIn
 ///
 /// This message describes the names and identification numbers of
 /// all entities in the system.
-abstract class EntityList extends ImcMessage implements Built<EntityList, EntityListBuilder> {
+abstract class EntityList extends ImcMessage
+    implements Built<EntityList, EntityListBuilder> {
   static const static_id = 5;
   EntityList._();
-  factory EntityList([void Function(EntityListBuilder b) updates]) = _$EntityList;
+  factory EntityList([void Function(EntityListBuilder b) updates]) =
+      _$EntityList;
 
   @override
   int get msgId => static_id;
@@ -156,7 +164,8 @@ abstract class EntityList extends ImcMessage implements Built<EntityList, Entity
 /// CPU Usage class
 ///
 /// Report of software CPU usage.
-abstract class CpuUsage extends ImcMessage implements Built<CpuUsage, CpuUsageBuilder> {
+abstract class CpuUsage extends ImcMessage
+    implements Built<CpuUsage, CpuUsageBuilder> {
   static const static_id = 7;
   CpuUsage._();
   factory CpuUsage([void Function(CpuUsageBuilder b) updates]) = _$CpuUsage;
@@ -174,10 +183,13 @@ abstract class CpuUsage extends ImcMessage implements Built<CpuUsage, CpuUsageBu
 /// Transport Bindings class
 ///
 /// Message generated when tasks bind to messages.
-abstract class TransportBindings extends ImcMessage implements Built<TransportBindings, TransportBindingsBuilder> {
+abstract class TransportBindings extends ImcMessage
+    implements Built<TransportBindings, TransportBindingsBuilder> {
   static const static_id = 8;
   TransportBindings._();
-  factory TransportBindings([void Function(TransportBindingsBuilder b) updates]) = _$TransportBindings;
+  factory TransportBindings(
+          [void Function(TransportBindingsBuilder b) updates]) =
+      _$TransportBindings;
 
   @override
   int get msgId => static_id;
@@ -196,10 +208,12 @@ abstract class TransportBindings extends ImcMessage implements Built<TransportBi
 /// Restart System class
 ///
 /// Request the destination system to restart itself.
-abstract class RestartSystem extends ImcMessage implements Built<RestartSystem, RestartSystemBuilder> {
+abstract class RestartSystem extends ImcMessage
+    implements Built<RestartSystem, RestartSystemBuilder> {
   static const static_id = 9;
   RestartSystem._();
-  factory RestartSystem([void Function(RestartSystemBuilder b) updates]) = _$RestartSystem;
+  factory RestartSystem([void Function(RestartSystemBuilder b) updates]) =
+      _$RestartSystem;
 
   @override
   int get msgId => static_id;
@@ -215,10 +229,13 @@ abstract class RestartSystem extends ImcMessage implements Built<RestartSystem, 
 /// This message controls the calibration procedure of a given
 /// device. The destination device is selected using the destination
 /// entity identification number.
-abstract class DevCalibrationControl extends ImcMessage implements Built<DevCalibrationControl, DevCalibrationControlBuilder> {
+abstract class DevCalibrationControl extends ImcMessage
+    implements Built<DevCalibrationControl, DevCalibrationControlBuilder> {
   static const static_id = 12;
   DevCalibrationControl._();
-  factory DevCalibrationControl([void Function(DevCalibrationControlBuilder b) updates]) = _$DevCalibrationControl;
+  factory DevCalibrationControl(
+          [void Function(DevCalibrationControlBuilder b) updates]) =
+      _$DevCalibrationControl;
 
   @override
   int get msgId => static_id;
@@ -233,10 +250,13 @@ abstract class DevCalibrationControl extends ImcMessage implements Built<DevCali
 /// Device Calibration State class
 ///
 /// State of the calibration procedure.
-abstract class DevCalibrationState extends ImcMessage implements Built<DevCalibrationState, DevCalibrationStateBuilder> {
+abstract class DevCalibrationState extends ImcMessage
+    implements Built<DevCalibrationState, DevCalibrationStateBuilder> {
   static const static_id = 13;
   DevCalibrationState._();
-  factory DevCalibrationState([void Function(DevCalibrationStateBuilder b) updates]) = _$DevCalibrationState;
+  factory DevCalibrationState(
+          [void Function(DevCalibrationStateBuilder b) updates]) =
+      _$DevCalibrationState;
 
   @override
   int get msgId => static_id;
@@ -263,10 +283,13 @@ abstract class DevCalibrationState extends ImcMessage implements Built<DevCalibr
 /// Entity Activation State class
 ///
 /// State of entity activation/deactivation.
-abstract class EntityActivationState extends ImcMessage implements Built<EntityActivationState, EntityActivationStateBuilder> {
+abstract class EntityActivationState extends ImcMessage
+    implements Built<EntityActivationState, EntityActivationStateBuilder> {
   static const static_id = 14;
   EntityActivationState._();
-  factory EntityActivationState([void Function(EntityActivationStateBuilder b) updates]) = _$EntityActivationState;
+  factory EntityActivationState(
+          [void Function(EntityActivationStateBuilder b) updates]) =
+      _$EntityActivationState;
 
   @override
   int get msgId => static_id;
@@ -286,10 +309,14 @@ abstract class EntityActivationState extends ImcMessage implements Built<EntityA
 ///
 /// Query the activation/deactivation state of an entity. The
 /// recipient shall reply with an EntityActivationState message.
-abstract class QueryEntityActivationState extends ImcMessage implements Built<QueryEntityActivationState, QueryEntityActivationStateBuilder> {
+abstract class QueryEntityActivationState extends ImcMessage
+    implements
+        Built<QueryEntityActivationState, QueryEntityActivationStateBuilder> {
   static const static_id = 15;
   QueryEntityActivationState._();
-  factory QueryEntityActivationState([void Function(QueryEntityActivationStateBuilder b) updates]) = _$QueryEntityActivationState;
+  factory QueryEntityActivationState(
+          [void Function(QueryEntityActivationStateBuilder b) updates]) =
+      _$QueryEntityActivationState;
 
   @override
   int get msgId => static_id;
@@ -301,10 +328,14 @@ abstract class QueryEntityActivationState extends ImcMessage implements Built<Qu
 ///
 /// Vehicle opertional limits.
 /// For aircraft this should represent the flight envelope and the dynamic contraints.
-abstract class VehicleOperationalLimits extends ImcMessage implements Built<VehicleOperationalLimits, VehicleOperationalLimitsBuilder> {
+abstract class VehicleOperationalLimits extends ImcMessage
+    implements
+        Built<VehicleOperationalLimits, VehicleOperationalLimitsBuilder> {
   static const static_id = 16;
   VehicleOperationalLimits._();
-  factory VehicleOperationalLimits([void Function(VehicleOperationalLimitsBuilder b) updates]) = _$VehicleOperationalLimits;
+  factory VehicleOperationalLimits(
+          [void Function(VehicleOperationalLimitsBuilder b) updates]) =
+      _$VehicleOperationalLimits;
 
   @override
   int get msgId => static_id;
@@ -326,7 +357,8 @@ abstract class VehicleOperationalLimits extends ImcMessage implements Built<Vehi
   double get speedMax;
 
   /// Maximum longitudinal acceleration.
-  @ImcField('Longitudinal maximum acceleration', 'long_accel', ImcType.typeFp32, units: 'm/s/s')
+  @ImcField('Longitudinal maximum acceleration', 'long_accel', ImcType.typeFp32,
+      units: 'm/s/s')
   double get longAccel;
 
   /// Maximum altitude above mean-sea-level.
@@ -334,11 +366,13 @@ abstract class VehicleOperationalLimits extends ImcMessage implements Built<Vehi
   double get altMaxMsl;
 
   /// Maximum dive rate (negative vertical speed) as a fraction of the longitudinal speed.
-  @ImcField('Maximum Dive Rate Speed Fraction', 'dive_fraction_max', ImcType.typeFp32)
+  @ImcField(
+      'Maximum Dive Rate Speed Fraction', 'dive_fraction_max', ImcType.typeFp32)
   double get diveFractionMax;
 
   /// Maximum climb rate (positive vertical speed) as a fraction of the longitudinal speed.
-  @ImcField('Maximum Climb Rate Speed Fraction', 'climb_fraction_max', ImcType.typeFp32)
+  @ImcField('Maximum Climb Rate Speed Fraction', 'climb_fraction_max',
+      ImcType.typeFp32)
   double get climbFractionMax;
 
   /// Limit to the bank angle (roll; angle over the xx body-axis).
@@ -373,7 +407,8 @@ abstract class VehicleOperationalLimits extends ImcMessage implements Built<Vehi
 
   /// Maximum lateral load factor, i.e., maximum acceleration in the yy body-axis
   /// as a factor of the gravity acceleration at mean-sea-level.
-  @ImcField('Maximum lateral load factor', 'g_lat_max', ImcType.typeFp32, units: 'g')
+  @ImcField('Maximum lateral load factor', 'g_lat_max', ImcType.typeFp32,
+      units: 'g')
   double get gLatMax;
 
   /// Minimum motor RPMs.
@@ -385,13 +420,15 @@ abstract class VehicleOperationalLimits extends ImcMessage implements Built<Vehi
   double get rpmMax;
 
   /// Maximum motor RPMs' rate of change.
-  @ImcField('Maximum RPM rate', 'rpm_rate_max', ImcType.typeFp32, units: 'rpm/s')
+  @ImcField('Maximum RPM rate', 'rpm_rate_max', ImcType.typeFp32,
+      units: 'rpm/s')
   double get rpmRateMax;
 }
 
 /// Message List class
 ///
-abstract class MsgList extends ImcMessage implements Built<MsgList, MsgListBuilder> {
+abstract class MsgList extends ImcMessage
+    implements Built<MsgList, MsgListBuilder> {
   static const static_id = 20;
   MsgList._();
   factory MsgList([void Function(MsgListBuilder b) updates]) = _$MsgList;
@@ -410,10 +447,12 @@ abstract class MsgList extends ImcMessage implements Built<MsgList, MsgListBuild
 /// This message presents the simulated state of the vehicle. The simulated
 /// state attempts to provide a realistic state interpretation of operating
 /// various kinds of vehicles.
-abstract class SimulatedState extends ImcMessage implements Built<SimulatedState, SimulatedStateBuilder> {
+abstract class SimulatedState extends ImcMessage
+    implements Built<SimulatedState, SimulatedStateBuilder> {
   static const static_id = 50;
   SimulatedState._();
-  factory SimulatedState([void Function(SimulatedStateBuilder b) updates]) = _$SimulatedState;
+  factory SimulatedState([void Function(SimulatedStateBuilder b) updates]) =
+      _$SimulatedState;
 
   @override
   int get msgId => static_id;
@@ -457,15 +496,18 @@ abstract class SimulatedState extends ImcMessage implements Built<SimulatedState
   double get psi;
 
   /// Body-fixed frame xx axis linear velocity component.
-  @ImcField('Body-Fixed xx Linear Velocity', 'u', ImcType.typeFp32, units: 'm/s')
+  @ImcField('Body-Fixed xx Linear Velocity', 'u', ImcType.typeFp32,
+      units: 'm/s')
   double get u;
 
   /// Body-fixed frame yy axis linear velocity component.
-  @ImcField('Body-Fixed yy Linear Velocity', 'v', ImcType.typeFp32, units: 'm/s')
+  @ImcField('Body-Fixed yy Linear Velocity', 'v', ImcType.typeFp32,
+      units: 'm/s')
   double get v;
 
   /// Body-fixed frame zz axis linear velocity component.
-  @ImcField('Body-Fixed zz Linear Velocity', 'w', ImcType.typeFp32, units: 'm/s')
+  @ImcField('Body-Fixed zz Linear Velocity', 'w', ImcType.typeFp32,
+      units: 'm/s')
   double get w;
 
   /// The angular velocity over body-fixed xx axis (roll rate).
@@ -496,10 +538,12 @@ abstract class SimulatedState extends ImcMessage implements Built<SimulatedState
 /// Leak Simulation class
 ///
 /// Simulate leak behavior.
-abstract class LeakSimulation extends ImcMessage implements Built<LeakSimulation, LeakSimulationBuilder> {
+abstract class LeakSimulation extends ImcMessage
+    implements Built<LeakSimulation, LeakSimulationBuilder> {
   static const static_id = 51;
   LeakSimulation._();
-  factory LeakSimulation([void Function(LeakSimulationBuilder b) updates]) = _$LeakSimulation;
+  factory LeakSimulation([void Function(LeakSimulationBuilder b) updates]) =
+      _$LeakSimulation;
 
   @override
   int get msgId => static_id;
@@ -519,10 +563,12 @@ abstract class LeakSimulation extends ImcMessage implements Built<LeakSimulation
 /// Underwater Acoustics Simulation class
 ///
 /// Underwater acoustics simulation request.
-abstract class UASimulation extends ImcMessage implements Built<UASimulation, UASimulationBuilder> {
+abstract class UASimulation extends ImcMessage
+    implements Built<UASimulation, UASimulationBuilder> {
   static const static_id = 52;
   UASimulation._();
-  factory UASimulation([void Function(UASimulationBuilder b) updates]) = _$UASimulation;
+  factory UASimulation([void Function(UASimulationBuilder b) updates]) =
+      _$UASimulation;
 
   @override
   int get msgId => static_id;
@@ -545,10 +591,12 @@ abstract class UASimulation extends ImcMessage implements Built<UASimulation, UA
 /// Dynamics Simulation Parameters class
 ///
 /// Vehicle dynamics parameters for 3DOF, 4DOF or 5DOF simulations.
-abstract class DynamicsSimParam extends ImcMessage implements Built<DynamicsSimParam, DynamicsSimParamBuilder> {
+abstract class DynamicsSimParam extends ImcMessage
+    implements Built<DynamicsSimParam, DynamicsSimParamBuilder> {
   static const static_id = 53;
   DynamicsSimParam._();
-  factory DynamicsSimParam([void Function(DynamicsSimParamBuilder b) updates]) = _$DynamicsSimParam;
+  factory DynamicsSimParam([void Function(DynamicsSimParamBuilder b) updates]) =
+      _$DynamicsSimParam;
 
   @override
   int get msgId => static_id;
@@ -556,11 +604,13 @@ abstract class DynamicsSimParam extends ImcMessage implements Built<DynamicsSimP
   String get abbrev => 'DynamicsSimParam';
 
   /// Action on the vehicle simulation parameters for the formation control
-  @ImcField('Action on the Vehicle Simulation Parameters', 'op', ImcType.typeUInt8)
+  @ImcField(
+      'Action on the Vehicle Simulation Parameters', 'op', ImcType.typeUInt8)
   DynamicsSimParamEnumOp get op;
 
   /// Proportional gain from the TAS (True Airspeed) error to the longitudinal acceleration.
-  @ImcField('TAS to Longitudinal Acceleration Gain', 'tas2acc_pgain', ImcType.typeFp32)
+  @ImcField('TAS to Longitudinal Acceleration Gain', 'tas2acc_pgain',
+      ImcType.typeFp32)
   double get tas2accPgain;
 
   /// Proportional gain from the bank angle error to the bank angular rate.
@@ -571,10 +621,12 @@ abstract class DynamicsSimParam extends ImcMessage implements Built<DynamicsSimP
 /// Storage Usage class
 ///
 /// Report of storage usage.
-abstract class StorageUsage extends ImcMessage implements Built<StorageUsage, StorageUsageBuilder> {
+abstract class StorageUsage extends ImcMessage
+    implements Built<StorageUsage, StorageUsageBuilder> {
   static const static_id = 100;
   StorageUsage._();
-  factory StorageUsage([void Function(StorageUsageBuilder b) updates]) = _$StorageUsage;
+  factory StorageUsage([void Function(StorageUsageBuilder b) updates]) =
+      _$StorageUsage;
 
   @override
   int get msgId => static_id;
@@ -593,10 +645,12 @@ abstract class StorageUsage extends ImcMessage implements Built<StorageUsage, St
 /// Cache Control class
 ///
 /// Control caching of messages to persistent storage.
-abstract class CacheControl extends ImcMessage implements Built<CacheControl, CacheControlBuilder> {
+abstract class CacheControl extends ImcMessage
+    implements Built<CacheControl, CacheControlBuilder> {
   static const static_id = 101;
   CacheControl._();
-  factory CacheControl([void Function(CacheControlBuilder b) updates]) = _$CacheControl;
+  factory CacheControl([void Function(CacheControlBuilder b) updates]) =
+      _$CacheControl;
 
   @override
   int get msgId => static_id;
@@ -619,10 +673,12 @@ abstract class CacheControl extends ImcMessage implements Built<CacheControl, Ca
 /// Logging Control class
 ///
 /// Control logging of messages to persistent storage.
-abstract class LoggingControl extends ImcMessage implements Built<LoggingControl, LoggingControlBuilder> {
+abstract class LoggingControl extends ImcMessage
+    implements Built<LoggingControl, LoggingControlBuilder> {
   static const static_id = 102;
   LoggingControl._();
-  factory LoggingControl([void Function(LoggingControlBuilder b) updates]) = _$LoggingControl;
+  factory LoggingControl([void Function(LoggingControlBuilder b) updates]) =
+      _$LoggingControl;
 
   @override
   int get msgId => static_id;
@@ -642,10 +698,12 @@ abstract class LoggingControl extends ImcMessage implements Built<LoggingControl
 /// Log Book Entry class
 ///
 /// Human readable message reporting an event of interest.
-abstract class LogBookEntry extends ImcMessage implements Built<LogBookEntry, LogBookEntryBuilder> {
+abstract class LogBookEntry extends ImcMessage
+    implements Built<LogBookEntry, LogBookEntryBuilder> {
   static const static_id = 103;
   LogBookEntry._();
-  factory LogBookEntry([void Function(LogBookEntryBuilder b) updates]) = _$LogBookEntry;
+  factory LogBookEntry([void Function(LogBookEntryBuilder b) updates]) =
+      _$LogBookEntry;
 
   @override
   int get msgId => static_id;
@@ -672,10 +730,12 @@ abstract class LogBookEntry extends ImcMessage implements Built<LogBookEntry, Lo
 /// Log Book Control class
 ///
 /// Control history log.
-abstract class LogBookControl extends ImcMessage implements Built<LogBookControl, LogBookControlBuilder> {
+abstract class LogBookControl extends ImcMessage
+    implements Built<LogBookControl, LogBookControlBuilder> {
   static const static_id = 104;
   LogBookControl._();
-  factory LogBookControl([void Function(LogBookControlBuilder b) updates]) = _$LogBookControl;
+  factory LogBookControl([void Function(LogBookControlBuilder b) updates]) =
+      _$LogBookControl;
 
   @override
   int get msgId => static_id;
@@ -698,10 +758,12 @@ abstract class LogBookControl extends ImcMessage implements Built<LogBookControl
 /// Replay Control class
 ///
 /// Control replay of LSF logged data.
-abstract class ReplayControl extends ImcMessage implements Built<ReplayControl, ReplayControlBuilder> {
+abstract class ReplayControl extends ImcMessage
+    implements Built<ReplayControl, ReplayControlBuilder> {
   static const static_id = 105;
   ReplayControl._();
-  factory ReplayControl([void Function(ReplayControlBuilder b) updates]) = _$ReplayControl;
+  factory ReplayControl([void Function(ReplayControlBuilder b) updates]) =
+      _$ReplayControl;
 
   @override
   int get msgId => static_id;
@@ -720,10 +782,12 @@ abstract class ReplayControl extends ImcMessage implements Built<ReplayControl, 
 /// Clock Control class
 ///
 /// Clock control.
-abstract class ClockControl extends ImcMessage implements Built<ClockControl, ClockControlBuilder> {
+abstract class ClockControl extends ImcMessage
+    implements Built<ClockControl, ClockControlBuilder> {
   static const static_id = 106;
   ClockControl._();
-  factory ClockControl([void Function(ClockControlBuilder b) updates]) = _$ClockControl;
+  factory ClockControl([void Function(ClockControlBuilder b) updates]) =
+      _$ClockControl;
 
   @override
   int get msgId => static_id;
@@ -746,10 +810,12 @@ abstract class ClockControl extends ImcMessage implements Built<ClockControl, Cl
 /// Historic CTD class
 ///
 /// This message is used to store historic (transmitted afterwards) CTD data .
-abstract class HistoricCTD extends ImcMessage implements Built<HistoricCTD, HistoricCTDBuilder> {
+abstract class HistoricCTD extends ImcMessage
+    implements Built<HistoricCTD, HistoricCTDBuilder> {
   static const static_id = 107;
   HistoricCTD._();
-  factory HistoricCTD([void Function(HistoricCTDBuilder b) updates]) = _$HistoricCTD;
+  factory HistoricCTD([void Function(HistoricCTDBuilder b) updates]) =
+      _$HistoricCTD;
 
   @override
   int get msgId => static_id;
@@ -769,10 +835,13 @@ abstract class HistoricCTD extends ImcMessage implements Built<HistoricCTD, Hist
 /// Historic Telemetry class
 ///
 /// This message is used to store historic (transmitted afterwards) telemetry information.
-abstract class HistoricTelemetry extends ImcMessage implements Built<HistoricTelemetry, HistoricTelemetryBuilder> {
+abstract class HistoricTelemetry extends ImcMessage
+    implements Built<HistoricTelemetry, HistoricTelemetryBuilder> {
   static const static_id = 108;
   HistoricTelemetry._();
-  factory HistoricTelemetry([void Function(HistoricTelemetryBuilder b) updates]) = _$HistoricTelemetry;
+  factory HistoricTelemetry(
+          [void Function(HistoricTelemetryBuilder b) updates]) =
+      _$HistoricTelemetry;
 
   @override
   int get msgId => static_id;
@@ -801,10 +870,13 @@ abstract class HistoricTelemetry extends ImcMessage implements Built<HistoricTel
 /// Historic Sonar Data class
 ///
 /// This message is used to store historic (transmitted afterwards) sonar data.
-abstract class HistoricSonarData extends ImcMessage implements Built<HistoricSonarData, HistoricSonarDataBuilder> {
+abstract class HistoricSonarData extends ImcMessage
+    implements Built<HistoricSonarData, HistoricSonarDataBuilder> {
   static const static_id = 109;
   HistoricSonarData._();
-  factory HistoricSonarData([void Function(HistoricSonarDataBuilder b) updates]) = _$HistoricSonarData;
+  factory HistoricSonarData(
+          [void Function(HistoricSonarDataBuilder b) updates]) =
+      _$HistoricSonarData;
 
   @override
   int get msgId => static_id;
@@ -839,10 +911,12 @@ abstract class HistoricSonarData extends ImcMessage implements Built<HistoricSon
 /// Historic Event class
 ///
 /// This message is used to store historic event log entries.
-abstract class HistoricEvent extends ImcMessage implements Built<HistoricEvent, HistoricEventBuilder> {
+abstract class HistoricEvent extends ImcMessage
+    implements Built<HistoricEvent, HistoricEventBuilder> {
   static const static_id = 110;
   HistoricEvent._();
-  factory HistoricEvent([void Function(HistoricEventBuilder b) updates]) = _$HistoricEvent;
+  factory HistoricEvent([void Function(HistoricEventBuilder b) updates]) =
+      _$HistoricEvent;
 
   @override
   int get msgId => static_id;
@@ -860,10 +934,12 @@ abstract class HistoricEvent extends ImcMessage implements Built<HistoricEvent, 
 /// Vertical Profile class
 ///
 /// This message is used to store historic profiles for water parameters: Temperature, Salinity, Chlorophyll...
-abstract class VerticalProfile extends ImcMessage implements Built<VerticalProfile, VerticalProfileBuilder> {
+abstract class VerticalProfile extends ImcMessage
+    implements Built<VerticalProfile, VerticalProfileBuilder> {
   static const static_id = 111;
   VerticalProfile._();
-  factory VerticalProfile([void Function(VerticalProfileBuilder b) updates]) = _$VerticalProfile;
+  factory VerticalProfile([void Function(VerticalProfileBuilder b) updates]) =
+      _$VerticalProfile;
 
   @override
   int get msgId => static_id;
@@ -892,10 +968,12 @@ abstract class VerticalProfile extends ImcMessage implements Built<VerticalProfi
 /// Profile Sample class
 ///
 /// Samples to calculate a vertical profile.
-abstract class ProfileSample extends ImcMessage implements Built<ProfileSample, ProfileSampleBuilder> {
+abstract class ProfileSample extends ImcMessage
+    implements Built<ProfileSample, ProfileSampleBuilder> {
   static const static_id = 112;
   ProfileSample._();
-  factory ProfileSample([void Function(ProfileSampleBuilder b) updates]) = _$ProfileSample;
+  factory ProfileSample([void Function(ProfileSampleBuilder b) updates]) =
+      _$ProfileSample;
 
   @override
   int get msgId => static_id;
@@ -914,7 +992,8 @@ abstract class ProfileSample extends ImcMessage implements Built<ProfileSample, 
 /// The Heartbeat message is used to inform other modules that the
 /// sending entity's system is running normally and communications
 /// are alive.
-abstract class Heartbeat extends ImcMessage implements Built<Heartbeat, HeartbeatBuilder> {
+abstract class Heartbeat extends ImcMessage
+    implements Built<Heartbeat, HeartbeatBuilder> {
   static const static_id = 150;
   Heartbeat._();
   factory Heartbeat([void Function(HeartbeatBuilder b) updates]) = _$Heartbeat;
@@ -928,7 +1007,8 @@ abstract class Heartbeat extends ImcMessage implements Built<Heartbeat, Heartbea
 /// Announce class
 ///
 /// A system description that is to be broadcasted to other systems.
-abstract class Announce extends ImcMessage implements Built<Announce, AnnounceBuilder> {
+abstract class Announce extends ImcMessage
+    implements Built<Announce, AnnounceBuilder> {
   static const static_id = 151;
   Announce._();
   factory Announce([void Function(AnnounceBuilder b) updates]) = _$Announce;
@@ -963,7 +1043,7 @@ abstract class Announce extends ImcMessage implements Built<Announce, AnnounceBu
   double get height;
 
   /// Semicolon separated list of URLs. Examples of such URLs are:
-  /// 
+  ///
   /// - *imc+udp://192.168.106.34:6002/*
   /// - *dune://0.0.0.0/uid/1294925553839635/*
   /// - *http://192.168.106.34/dune/*.
@@ -974,10 +1054,12 @@ abstract class Announce extends ImcMessage implements Built<Announce, AnnounceBu
 /// Announce Service class
 ///
 /// Announcement about the existence of a service.
-abstract class AnnounceService extends ImcMessage implements Built<AnnounceService, AnnounceServiceBuilder> {
+abstract class AnnounceService extends ImcMessage
+    implements Built<AnnounceService, AnnounceServiceBuilder> {
   static const static_id = 152;
   AnnounceService._();
-  factory AnnounceService([void Function(AnnounceServiceBuilder b) updates]) = _$AnnounceService;
+  factory AnnounceService([void Function(AnnounceServiceBuilder b) updates]) =
+      _$AnnounceService;
 
   @override
   int get msgId => static_id;
@@ -1036,7 +1118,8 @@ abstract class VSWR extends ImcMessage implements Built<VSWR, VSWRBuilder> {
 /// Measurement of link level quality. For instance, this may
 /// correspond to the acknowledgment ratio of a link. But,
 /// generally, the measure is link-dependent.
-abstract class LinkLevel extends ImcMessage implements Built<LinkLevel, LinkLevelBuilder> {
+abstract class LinkLevel extends ImcMessage
+    implements Built<LinkLevel, LinkLevelBuilder> {
   static const static_id = 155;
   LinkLevel._();
   factory LinkLevel([void Function(LinkLevelBuilder b) updates]) = _$LinkLevel;
@@ -1131,7 +1214,8 @@ abstract class SmsRx extends ImcMessage implements Built<SmsRx, SmsRxBuilder> {
 
 /// SMS State class
 ///
-abstract class SmsState extends ImcMessage implements Built<SmsState, SmsStateBuilder> {
+abstract class SmsState extends ImcMessage
+    implements Built<SmsState, SmsStateBuilder> {
   static const static_id = 159;
   SmsState._();
   factory SmsState([void Function(SmsStateBuilder b) updates]) = _$SmsState;
@@ -1156,10 +1240,12 @@ abstract class SmsState extends ImcMessage implements Built<SmsState, SmsStateBu
 /// Text Message class
 ///
 /// A text message has been received.
-abstract class TextMessage extends ImcMessage implements Built<TextMessage, TextMessageBuilder> {
+abstract class TextMessage extends ImcMessage
+    implements Built<TextMessage, TextMessageBuilder> {
   static const static_id = 160;
   TextMessage._();
-  factory TextMessage([void Function(TextMessageBuilder b) updates]) = _$TextMessage;
+  factory TextMessage([void Function(TextMessageBuilder b) updates]) =
+      _$TextMessage;
 
   @override
   int get msgId => static_id;
@@ -1177,10 +1263,12 @@ abstract class TextMessage extends ImcMessage implements Built<TextMessage, Text
 
 /// Received Iridium Message class
 ///
-abstract class IridiumMsgRx extends ImcMessage implements Built<IridiumMsgRx, IridiumMsgRxBuilder> {
+abstract class IridiumMsgRx extends ImcMessage
+    implements Built<IridiumMsgRx, IridiumMsgRxBuilder> {
   static const static_id = 170;
   IridiumMsgRx._();
-  factory IridiumMsgRx([void Function(IridiumMsgRxBuilder b) updates]) = _$IridiumMsgRx;
+  factory IridiumMsgRx([void Function(IridiumMsgRxBuilder b) updates]) =
+      _$IridiumMsgRx;
 
   @override
   int get msgId => static_id;
@@ -1208,10 +1296,12 @@ abstract class IridiumMsgRx extends ImcMessage implements Built<IridiumMsgRx, Ir
 
 /// Transmit Iridium Message class
 ///
-abstract class IridiumMsgTx extends ImcMessage implements Built<IridiumMsgTx, IridiumMsgTxBuilder> {
+abstract class IridiumMsgTx extends ImcMessage
+    implements Built<IridiumMsgTx, IridiumMsgTxBuilder> {
   static const static_id = 171;
   IridiumMsgTx._();
-  factory IridiumMsgTx([void Function(IridiumMsgTxBuilder b) updates]) = _$IridiumMsgTx;
+  factory IridiumMsgTx([void Function(IridiumMsgTxBuilder b) updates]) =
+      _$IridiumMsgTx;
 
   @override
   int get msgId => static_id;
@@ -1237,10 +1327,12 @@ abstract class IridiumMsgTx extends ImcMessage implements Built<IridiumMsgTx, Ir
 
 /// Iridium Transmission Status class
 ///
-abstract class IridiumTxStatus extends ImcMessage implements Built<IridiumTxStatus, IridiumTxStatusBuilder> {
+abstract class IridiumTxStatus extends ImcMessage
+    implements Built<IridiumTxStatus, IridiumTxStatusBuilder> {
   static const static_id = 172;
   IridiumTxStatus._();
-  factory IridiumTxStatus([void Function(IridiumTxStatusBuilder b) updates]) = _$IridiumTxStatus;
+  factory IridiumTxStatus([void Function(IridiumTxStatusBuilder b) updates]) =
+      _$IridiumTxStatus;
 
   @override
   int get msgId => static_id;
@@ -1261,10 +1353,13 @@ abstract class IridiumTxStatus extends ImcMessage implements Built<IridiumTxStat
 /// Group Membership State class
 ///
 /// Group communication link assertion.
-abstract class GroupMembershipState extends ImcMessage implements Built<GroupMembershipState, GroupMembershipStateBuilder> {
+abstract class GroupMembershipState extends ImcMessage
+    implements Built<GroupMembershipState, GroupMembershipStateBuilder> {
   static const static_id = 180;
   GroupMembershipState._();
-  factory GroupMembershipState([void Function(GroupMembershipStateBuilder b) updates]) = _$GroupMembershipState;
+  factory GroupMembershipState(
+          [void Function(GroupMembershipStateBuilder b) updates]) =
+      _$GroupMembershipState;
 
   @override
   int get msgId => static_id;
@@ -1284,10 +1379,12 @@ abstract class GroupMembershipState extends ImcMessage implements Built<GroupMem
 /// System Group class
 ///
 /// Group of systems configuration.
-abstract class SystemGroup extends ImcMessage implements Built<SystemGroup, SystemGroupBuilder> {
+abstract class SystemGroup extends ImcMessage
+    implements Built<SystemGroup, SystemGroupBuilder> {
   static const static_id = 181;
   SystemGroup._();
-  factory SystemGroup([void Function(SystemGroupBuilder b) updates]) = _$SystemGroup;
+  factory SystemGroup([void Function(SystemGroupBuilder b) updates]) =
+      _$SystemGroup;
 
   @override
   int get msgId => static_id;
@@ -1310,10 +1407,12 @@ abstract class SystemGroup extends ImcMessage implements Built<SystemGroup, Syst
 /// Link Latency class
 ///
 /// Communications latency between two systems.
-abstract class LinkLatency extends ImcMessage implements Built<LinkLatency, LinkLatencyBuilder> {
+abstract class LinkLatency extends ImcMessage
+    implements Built<LinkLatency, LinkLatencyBuilder> {
   static const static_id = 182;
   LinkLatency._();
-  factory LinkLatency([void Function(LinkLatencyBuilder b) updates]) = _$LinkLatency;
+  factory LinkLatency([void Function(LinkLatencyBuilder b) updates]) =
+      _$LinkLatency;
 
   @override
   int get msgId => static_id;
@@ -1335,10 +1434,12 @@ abstract class LinkLatency extends ImcMessage implements Built<LinkLatency, Link
 /// Measure of the RSSI by a networking device.
 /// Indicates the gain or loss in the signal strenght due to the transmission
 /// and reception equipment and the transmission medium and distance.
-abstract class ExtendedRSSI extends ImcMessage implements Built<ExtendedRSSI, ExtendedRSSIBuilder> {
+abstract class ExtendedRSSI extends ImcMessage
+    implements Built<ExtendedRSSI, ExtendedRSSIBuilder> {
   static const static_id = 183;
   ExtendedRSSI._();
-  factory ExtendedRSSI([void Function(ExtendedRSSIBuilder b) updates]) = _$ExtendedRSSI;
+  factory ExtendedRSSI([void Function(ExtendedRSSIBuilder b) updates]) =
+      _$ExtendedRSSI;
 
   @override
   int get msgId => static_id;
@@ -1358,10 +1459,12 @@ abstract class ExtendedRSSI extends ImcMessage implements Built<ExtendedRSSI, Ex
 ///
 /// This message holds a list of inline data samples produced by one or more vehicles in the past.
 /// It is used to transfer data over disruption tolerant networks.
-abstract class HistoricData extends ImcMessage implements Built<HistoricData, HistoricDataBuilder> {
+abstract class HistoricData extends ImcMessage
+    implements Built<HistoricData, HistoricDataBuilder> {
   static const static_id = 184;
   HistoricData._();
-  factory HistoricData([void Function(HistoricDataBuilder b) updates]) = _$HistoricData;
+  factory HistoricData([void Function(HistoricDataBuilder b) updates]) =
+      _$HistoricData;
 
   @override
   int get msgId => static_id;
@@ -1388,10 +1491,13 @@ abstract class HistoricData extends ImcMessage implements Built<HistoricData, Hi
 ///
 /// This message holds a list of inline data samples produced by one or more vehicles in the past.
 /// It is used to transfer data over disruption tolerant networks.
-abstract class CompressedHistory extends ImcMessage implements Built<CompressedHistory, CompressedHistoryBuilder> {
+abstract class CompressedHistory extends ImcMessage
+    implements Built<CompressedHistory, CompressedHistoryBuilder> {
   static const static_id = 185;
   CompressedHistory._();
-  factory CompressedHistory([void Function(CompressedHistoryBuilder b) updates]) = _$CompressedHistory;
+  factory CompressedHistory(
+          [void Function(CompressedHistoryBuilder b) updates]) =
+      _$CompressedHistory;
 
   @override
   int get msgId => static_id;
@@ -1417,10 +1523,12 @@ abstract class CompressedHistory extends ImcMessage implements Built<CompressedH
 
 /// Historic Data Sample class
 ///
-abstract class HistoricSample extends RemoteData implements Built<HistoricSample, HistoricSampleBuilder> {
+abstract class HistoricSample extends RemoteData
+    implements Built<HistoricSample, HistoricSampleBuilder> {
   static const static_id = 186;
   HistoricSample._();
-  factory HistoricSample([void Function(HistoricSampleBuilder b) updates]) = _$HistoricSample;
+  factory HistoricSample([void Function(HistoricSampleBuilder b) updates]) =
+      _$HistoricSample;
 
   @override
   int get msgId => static_id;
@@ -1461,10 +1569,13 @@ abstract class HistoricSample extends RemoteData implements Built<HistoricSample
 
 /// Historic Data Query class
 ///
-abstract class HistoricDataQuery extends ImcMessage implements Built<HistoricDataQuery, HistoricDataQueryBuilder> {
+abstract class HistoricDataQuery extends ImcMessage
+    implements Built<HistoricDataQuery, HistoricDataQueryBuilder> {
   static const static_id = 187;
   HistoricDataQuery._();
-  factory HistoricDataQuery([void Function(HistoricDataQueryBuilder b) updates]) = _$HistoricDataQuery;
+  factory HistoricDataQuery(
+          [void Function(HistoricDataQueryBuilder b) updates]) =
+      _$HistoricDataQuery;
 
   @override
   int get msgId => static_id;
@@ -1488,10 +1599,12 @@ abstract class HistoricDataQuery extends ImcMessage implements Built<HistoricDat
 ///
 /// Command to remote system. If a system receives a RemoteCommand and it isn't the intended recipient, then it should
 /// resend it.
-abstract class RemoteCommand extends RemoteData implements Built<RemoteCommand, RemoteCommandBuilder> {
+abstract class RemoteCommand extends RemoteData
+    implements Built<RemoteCommand, RemoteCommandBuilder> {
   static const static_id = 188;
   RemoteCommand._();
-  factory RemoteCommand([void Function(RemoteCommandBuilder b) updates]) = _$RemoteCommand;
+  factory RemoteCommand([void Function(RemoteCommandBuilder b) updates]) =
+      _$RemoteCommand;
 
   @override
   int get msgId => static_id;
@@ -1519,10 +1632,12 @@ abstract class RemoteCommand extends RemoteData implements Built<RemoteCommand, 
 /// Communication Systems Query class
 ///
 /// Presence of Communication Interfaces query.
-abstract class CommSystemsQuery extends ImcMessage implements Built<CommSystemsQuery, CommSystemsQueryBuilder> {
+abstract class CommSystemsQuery extends ImcMessage
+    implements Built<CommSystemsQuery, CommSystemsQueryBuilder> {
   static const static_id = 189;
   CommSystemsQuery._();
-  factory CommSystemsQuery([void Function(CommSystemsQueryBuilder b) updates]) = _$CommSystemsQuery;
+  factory CommSystemsQuery([void Function(CommSystemsQueryBuilder b) updates]) =
+      _$CommSystemsQuery;
 
   @override
   int get msgId => static_id;
@@ -1547,10 +1662,12 @@ abstract class CommSystemsQuery extends ImcMessage implements Built<CommSystemsQ
 /// Telemetry Message class
 ///
 /// Message to handle telemetry transmissions.
-abstract class TelemetryMsg extends ImcMessage implements Built<TelemetryMsg, TelemetryMsgBuilder> {
+abstract class TelemetryMsg extends ImcMessage
+    implements Built<TelemetryMsg, TelemetryMsgBuilder> {
   static const static_id = 190;
   TelemetryMsg._();
-  factory TelemetryMsg([void Function(TelemetryMsgBuilder b) updates]) = _$TelemetryMsg;
+  factory TelemetryMsg([void Function(TelemetryMsgBuilder b) updates]) =
+      _$TelemetryMsg;
 
   @override
   int get msgId => static_id;
@@ -1599,7 +1716,8 @@ abstract class TelemetryMsg extends ImcMessage implements Built<TelemetryMsg, Te
 /// notifies that a new range was received from one of the acoustics
 /// transponders. The message fields are used to identify the range
 /// value and the transponder name.
-abstract class LblRange extends ImcMessage implements Built<LblRange, LblRangeBuilder> {
+abstract class LblRange extends ImcMessage
+    implements Built<LblRange, LblRangeBuilder> {
   static const static_id = 200;
   LblRange._();
   factory LblRange([void Function(LblRangeBuilder b) updates]) = _$LblRange;
@@ -1622,7 +1740,8 @@ abstract class LblRange extends ImcMessage implements Built<LblRange, LblRangeBu
 /// LBL Beacon Configuration class
 ///
 /// Position and configuration of an LBL transponder (beacon).
-abstract class LblBeacon extends ImcMessage implements Built<LblBeacon, LblBeaconBuilder> {
+abstract class LblBeacon extends ImcMessage
+    implements Built<LblBeacon, LblBeaconBuilder> {
   static const static_id = 202;
   LblBeacon._();
   factory LblBeacon([void Function(LblBeaconBuilder b) updates]) = _$LblBeacon;
@@ -1657,14 +1776,16 @@ abstract class LblBeacon extends ImcMessage implements Built<LblBeacon, LblBeaco
   int get replyChannel;
 
   /// Transponder delay.
-  @ImcField('Transponder delay', 'transponder_delay', ImcType.typeUInt8, units: 'ms')
+  @ImcField('Transponder delay', 'transponder_delay', ImcType.typeUInt8,
+      units: 'ms')
   int get transponderDelay;
 }
 
 /// LBL Configuration class
 ///
 /// Long Base Line configuration.
-abstract class LblConfig extends ImcMessage implements Built<LblConfig, LblConfigBuilder> {
+abstract class LblConfig extends ImcMessage
+    implements Built<LblConfig, LblConfigBuilder> {
   static const static_id = 203;
   LblConfig._();
   factory LblConfig([void Function(LblConfigBuilder b) updates]) = _$LblConfig;
@@ -1686,10 +1807,12 @@ abstract class LblConfig extends ImcMessage implements Built<LblConfig, LblConfi
 /// Acoustic Message class
 ///
 /// Send an acoustic message.
-abstract class AcousticMessage extends ImcMessage implements Built<AcousticMessage, AcousticMessageBuilder> {
+abstract class AcousticMessage extends ImcMessage
+    implements Built<AcousticMessage, AcousticMessageBuilder> {
   static const static_id = 206;
   AcousticMessage._();
-  factory AcousticMessage([void Function(AcousticMessageBuilder b) updates]) = _$AcousticMessage;
+  factory AcousticMessage([void Function(AcousticMessageBuilder b) updates]) =
+      _$AcousticMessage;
 
   @override
   int get msgId => static_id;
@@ -1701,13 +1824,73 @@ abstract class AcousticMessage extends ImcMessage implements Built<AcousticMessa
   ImcMessage get message;
 }
 
+/// Simulated Acoustic Message class
+///
+/// Send an acoustic message.
+abstract class SimAcousticMessage extends ImcMessage
+    implements Built<SimAcousticMessage, SimAcousticMessageBuilder> {
+  static const static_id = 207;
+  SimAcousticMessage._();
+  factory SimAcousticMessage(
+          [void Function(SimAcousticMessageBuilder b) updates]) =
+      _$SimAcousticMessage;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'SimAcousticMessage';
+
+  /// Absolute latitude of sending vehicle.
+  @ImcField('Latitude', 'lat', ImcType.typeFp64)
+  double get lat;
+
+  /// Absolute longitude of sending vehicle.
+  @ImcField('Longitude', 'lon', ImcType.typeFp64)
+  double get lon;
+
+  /// Depth of sending vehicle.
+  @ImcField('Depth', 'depth', ImcType.typeFp32)
+  double get depth;
+
+  /// Sentence string sent/received by the modem
+  @ImcField('Sentence', 'sentence', ImcType.typePlaintext)
+  String get sentence;
+
+  /// Transmission time.
+  @ImcField('Transmission Time', 'txtime', ImcType.typeFp64, units: 's')
+  double get txtime;
+
+  /// The modem being used.
+  @ImcField('Modem Type', 'modem_type', ImcType.typePlaintext)
+  String get modemType;
+
+  /// Name of source system.
+  @ImcField('Source system', 'sys_src', ImcType.typePlaintext)
+  String get sysSrc;
+
+  @ImcField('Sequence Id', 'seq', ImcType.typeUInt16)
+  int get seq;
+
+  @ImcField('Destination System', 'sys_dst', ImcType.typePlaintext)
+  String get sysDst;
+
+  @ImcField('Flags', 'flags', ImcType.typeUInt8)
+  SimAcousticMessageBitfieldFlags get flags;
+
+  @ImcField('Data', 'data', ImcType.typeRawdata)
+  List<int> get data;
+}
+
 /// Acoustic Operation class
 ///
 /// Acoustic operation.
-abstract class AcousticOperation extends ImcMessage implements Built<AcousticOperation, AcousticOperationBuilder> {
+abstract class AcousticOperation extends ImcMessage
+    implements Built<AcousticOperation, AcousticOperationBuilder> {
   static const static_id = 211;
   AcousticOperation._();
-  factory AcousticOperation([void Function(AcousticOperationBuilder b) updates]) = _$AcousticOperation;
+  factory AcousticOperation(
+          [void Function(AcousticOperationBuilder b) updates]) =
+      _$AcousticOperation;
 
   @override
   int get msgId => static_id;
@@ -1738,10 +1921,13 @@ abstract class AcousticOperation extends ImcMessage implements Built<AcousticOpe
 /// Request a list of known underwater acoustic systems. The
 /// recipient of this message shall reply with an AcousticSystems
 /// message.
-abstract class AcousticSystemsQuery extends ImcMessage implements Built<AcousticSystemsQuery, AcousticSystemsQueryBuilder> {
+abstract class AcousticSystemsQuery extends ImcMessage
+    implements Built<AcousticSystemsQuery, AcousticSystemsQueryBuilder> {
   static const static_id = 212;
   AcousticSystemsQuery._();
-  factory AcousticSystemsQuery([void Function(AcousticSystemsQueryBuilder b) updates]) = _$AcousticSystemsQuery;
+  factory AcousticSystemsQuery(
+          [void Function(AcousticSystemsQueryBuilder b) updates]) =
+      _$AcousticSystemsQuery;
 
   @override
   int get msgId => static_id;
@@ -1754,10 +1940,12 @@ abstract class AcousticSystemsQuery extends ImcMessage implements Built<Acoustic
 /// This message is sent in reply to an AcousticSystemsQuery message
 /// and lists all known underwater acoustic systems (modems, narrow
 /// band transponders, etc).
-abstract class AcousticSystems extends ImcMessage implements Built<AcousticSystems, AcousticSystemsBuilder> {
+abstract class AcousticSystems extends ImcMessage
+    implements Built<AcousticSystems, AcousticSystemsBuilder> {
   static const static_id = 213;
   AcousticSystems._();
-  factory AcousticSystems([void Function(AcousticSystemsBuilder b) updates]) = _$AcousticSystems;
+  factory AcousticSystems([void Function(AcousticSystemsBuilder b) updates]) =
+      _$AcousticSystems;
 
   @override
   int get msgId => static_id;
@@ -1773,10 +1961,12 @@ abstract class AcousticSystems extends ImcMessage implements Built<AcousticSyste
 ///
 /// This message is used to report the perceived link quality to other
 /// acoustic peers.
-abstract class AcousticLink extends ImcMessage implements Built<AcousticLink, AcousticLinkBuilder> {
+abstract class AcousticLink extends ImcMessage
+    implements Built<AcousticLink, AcousticLinkBuilder> {
   static const static_id = 214;
   AcousticLink._();
-  factory AcousticLink([void Function(AcousticLinkBuilder b) updates]) = _$AcousticLink;
+  factory AcousticLink([void Function(AcousticLinkBuilder b) updates]) =
+      _$AcousticLink;
 
   @override
   int get msgId => static_id;
@@ -1791,7 +1981,8 @@ abstract class AcousticLink extends ImcMessage implements Built<AcousticLink, Ac
   /// stronger signals.
   /// The signal strength is acceptable when measured RSSI values lie between
   /// -20 dB and -85 dB.
-  @ImcField('Received Signal Strength Indicator', 'rssi', ImcType.typeFp32, units: 'dB')
+  @ImcField('Received Signal Strength Indicator', 'rssi', ImcType.typeFp32,
+      units: 'dB')
   double get rssi;
 
   /// Signal Integrity value illustrates distortion of the last received
@@ -1802,6 +1993,79 @@ abstract class AcousticLink extends ImcMessage implements Built<AcousticLink, Ac
   /// Level* value is less than 100.
   @ImcField('Signal Integrity Level', 'integrity', ImcType.typeUInt16)
   int get integrity;
+}
+
+/// Acoustic Transmission Request class
+///
+/// Request Acoustic sending.
+abstract class AcousticRequest extends ImcMessage
+    implements Built<AcousticRequest, AcousticRequestBuilder> {
+  static const static_id = 215;
+  AcousticRequest._();
+  factory AcousticRequest([void Function(AcousticRequestBuilder b) updates]) =
+      _$AcousticRequest;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'AcousticRequest';
+
+  @ImcField('Request Identifier', 'req_id', ImcType.typeUInt16)
+  int get reqId;
+
+  /// The name of the system where to send this message.
+  @ImcField('Destination System', 'destination', ImcType.typePlaintext)
+  String get destination;
+
+  /// Period of time to send message (in seconds).
+  @ImcField('Timeout', 'timeout', ImcType.typeFp64, units: 's')
+  double get timeout;
+
+  /// The meaning of this field depends on the operation and is
+  /// explained in the operation's description.
+  @ImcField('Range', 'range', ImcType.typeFp32, units: 'm')
+  double get range;
+
+  @ImcField('Type', 'type', ImcType.typeUInt8)
+  AcousticRequestEnumType get type;
+
+  /// Argument for message send ('MSG') or ('RAW') but in this case expects DevDataBinary message requests.
+  @ImcField('Message To Send', 'msg', ImcType.typeMessage)
+  ImcMessage get msg;
+}
+
+/// Acoustic Transmission Status class
+///
+/// Reply sent in response to a Acoustic Text sending request.
+abstract class AcousticStatus extends ImcMessage
+    implements Built<AcousticStatus, AcousticStatusBuilder> {
+  static const static_id = 216;
+  AcousticStatus._();
+  factory AcousticStatus([void Function(AcousticStatusBuilder b) updates]) =
+      _$AcousticStatus;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'AcousticStatus';
+
+  @ImcField('Request Identifier', 'req_id', ImcType.typeUInt16)
+  int get reqId;
+
+  @ImcField('Type', 'type', ImcType.typeUInt8)
+  AcousticStatusEnumType get type;
+
+  @ImcField('Status', 'status', ImcType.typeUInt8)
+  AcousticStatusEnumStatus get status;
+
+  /// Status description.
+  @ImcField('Information', 'info', ImcType.typePlaintext)
+  String get info;
+
+  /// The meaning of this field depends on the operation and is
+  /// explained in the operation's description.
+  @ImcField('Range', 'range', ImcType.typeFp32, units: 'm')
+  double get range;
 }
 
 /// Revolutions Per Minute class
@@ -1825,7 +2089,8 @@ abstract class Rpm extends ImcMessage implements Built<Rpm, RpmBuilder> {
 /// Voltage class
 ///
 /// Report of electrical voltage.
-abstract class Voltage extends ImcMessage implements Built<Voltage, VoltageBuilder> {
+abstract class Voltage extends ImcMessage
+    implements Built<Voltage, VoltageBuilder> {
   static const static_id = 251;
   Voltage._();
   factory Voltage([void Function(VoltageBuilder b) updates]) = _$Voltage;
@@ -1844,7 +2109,8 @@ abstract class Voltage extends ImcMessage implements Built<Voltage, VoltageBuild
 /// Current class
 ///
 /// Report of electrical current.
-abstract class Current extends ImcMessage implements Built<Current, CurrentBuilder> {
+abstract class Current extends ImcMessage
+    implements Built<Current, CurrentBuilder> {
   static const static_id = 252;
   Current._();
   factory Current([void Function(CurrentBuilder b) updates]) = _$Current;
@@ -1863,7 +2129,8 @@ abstract class Current extends ImcMessage implements Built<Current, CurrentBuild
 /// GPS Fix class
 ///
 /// Report of a GPS fix.
-abstract class GpsFix extends ImcMessage implements Built<GpsFix, GpsFixBuilder> {
+abstract class GpsFix extends ImcMessage
+    implements Built<GpsFix, GpsFixBuilder> {
   static const static_id = 253;
   GpsFix._();
   factory GpsFix([void Function(GpsFixBuilder b) updates]) = _$GpsFix;
@@ -1906,7 +2173,8 @@ abstract class GpsFix extends ImcMessage implements Built<GpsFix, GpsFixBuilder>
   double get lon;
 
   /// Height above WGS-84 ellipsoid.
-  @ImcField('Height above WGS-84 ellipsoid', 'height', ImcType.typeFp32, units: 'm')
+  @ImcField('Height above WGS-84 ellipsoid', 'height', ImcType.typeFp32,
+      units: 'm')
   double get height;
 
   /// Number of satellites used by the GPS device to compute the
@@ -1931,7 +2199,8 @@ abstract class GpsFix extends ImcMessage implements Built<GpsFix, GpsFixBuilder>
   double get vdop;
 
   /// Horizontal Accuracy Estimate.
-  @ImcField('Horizontal Accuracy Estimate', 'hacc', ImcType.typeFp32, units: 'm')
+  @ImcField('Horizontal Accuracy Estimate', 'hacc', ImcType.typeFp32,
+      units: 'm')
   double get hacc;
 
   /// Vertical Accuracy Estimate.
@@ -1943,10 +2212,12 @@ abstract class GpsFix extends ImcMessage implements Built<GpsFix, GpsFixBuilder>
 ///
 /// Report of spatial orientation according to SNAME's notation
 /// (1950).
-abstract class EulerAngles extends ImcMessage implements Built<EulerAngles, EulerAnglesBuilder> {
+abstract class EulerAngles extends ImcMessage
+    implements Built<EulerAngles, EulerAnglesBuilder> {
   static const static_id = 254;
   EulerAngles._();
-  factory EulerAngles([void Function(EulerAnglesBuilder b) updates]) = _$EulerAngles;
+  factory EulerAngles([void Function(EulerAnglesBuilder b) updates]) =
+      _$EulerAngles;
 
   @override
   int get msgId => static_id;
@@ -1976,17 +2247,20 @@ abstract class EulerAngles extends ImcMessage implements Built<EulerAngles, Eule
   /// the vehicle is oriented towards magnetic north. In cases where
   /// the sensor cannot measure the magnetic heading, this field
   /// will have the same value as Yaw (True).
-  @ImcField('Yaw Angle (Magnetic)', 'psi_magnetic', ImcType.typeFp64, units: 'rad')
+  @ImcField('Yaw Angle (Magnetic)', 'psi_magnetic', ImcType.typeFp64,
+      units: 'rad')
   double get psiMagnetic;
 }
 
 /// Euler Angles Delta class
 ///
 /// Component of incremetal orientation vector over a period of time.
-abstract class EulerAnglesDelta extends ImcMessage implements Built<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
+abstract class EulerAnglesDelta extends ImcMessage
+    implements Built<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
   static const static_id = 255;
   EulerAnglesDelta._();
-  factory EulerAnglesDelta([void Function(EulerAnglesDeltaBuilder b) updates]) = _$EulerAnglesDelta;
+  factory EulerAnglesDelta([void Function(EulerAnglesDeltaBuilder b) updates]) =
+      _$EulerAnglesDelta;
 
   @override
   int get msgId => static_id;
@@ -2018,10 +2292,12 @@ abstract class EulerAnglesDelta extends ImcMessage implements Built<EulerAnglesD
 ///
 /// Vector quantifying the direction and magnitude of the measured
 /// angular velocity that a device is exposed to.
-abstract class AngularVelocity extends ImcMessage implements Built<AngularVelocity, AngularVelocityBuilder> {
+abstract class AngularVelocity extends ImcMessage
+    implements Built<AngularVelocity, AngularVelocityBuilder> {
   static const static_id = 256;
   AngularVelocity._();
-  factory AngularVelocity([void Function(AngularVelocityBuilder b) updates]) = _$AngularVelocity;
+  factory AngularVelocity([void Function(AngularVelocityBuilder b) updates]) =
+      _$AngularVelocity;
 
   @override
   int get msgId => static_id;
@@ -2049,10 +2325,12 @@ abstract class AngularVelocity extends ImcMessage implements Built<AngularVeloci
 ///
 /// Vector quantifying the direction and magnitude of the measured
 /// acceleration that a device is exposed to.
-abstract class Acceleration extends ImcMessage implements Built<Acceleration, AccelerationBuilder> {
+abstract class Acceleration extends ImcMessage
+    implements Built<Acceleration, AccelerationBuilder> {
   static const static_id = 257;
   Acceleration._();
-  factory Acceleration([void Function(AccelerationBuilder b) updates]) = _$Acceleration;
+  factory Acceleration([void Function(AccelerationBuilder b) updates]) =
+      _$Acceleration;
 
   @override
   int get msgId => static_id;
@@ -2080,10 +2358,12 @@ abstract class Acceleration extends ImcMessage implements Built<Acceleration, Ac
 ///
 /// Vector quantifying the direction and magnitude of the measured
 /// magnetic field that a device is exposed to.
-abstract class MagneticField extends ImcMessage implements Built<MagneticField, MagneticFieldBuilder> {
+abstract class MagneticField extends ImcMessage
+    implements Built<MagneticField, MagneticFieldBuilder> {
   static const static_id = 258;
   MagneticField._();
-  factory MagneticField([void Function(MagneticFieldBuilder b) updates]) = _$MagneticField;
+  factory MagneticField([void Function(MagneticFieldBuilder b) updates]) =
+      _$MagneticField;
 
   @override
   int get msgId => static_id;
@@ -2111,10 +2391,12 @@ abstract class MagneticField extends ImcMessage implements Built<MagneticField, 
 ///
 /// Vector quantifying the direction and magnitude of the measured
 /// velocity relative to the ground that a device is exposed to.
-abstract class GroundVelocity extends ImcMessage implements Built<GroundVelocity, GroundVelocityBuilder> {
+abstract class GroundVelocity extends ImcMessage
+    implements Built<GroundVelocity, GroundVelocityBuilder> {
   static const static_id = 259;
   GroundVelocity._();
-  factory GroundVelocity([void Function(GroundVelocityBuilder b) updates]) = _$GroundVelocity;
+  factory GroundVelocity([void Function(GroundVelocityBuilder b) updates]) =
+      _$GroundVelocity;
 
   @override
   int get msgId => static_id;
@@ -2143,10 +2425,12 @@ abstract class GroundVelocity extends ImcMessage implements Built<GroundVelocity
 ///
 /// Vector quantifying the direction and magnitude of the measured
 /// velocity relative to the water that a device is exposed to.
-abstract class WaterVelocity extends ImcMessage implements Built<WaterVelocity, WaterVelocityBuilder> {
+abstract class WaterVelocity extends ImcMessage
+    implements Built<WaterVelocity, WaterVelocityBuilder> {
   static const static_id = 260;
   WaterVelocity._();
-  factory WaterVelocity([void Function(WaterVelocityBuilder b) updates]) = _$WaterVelocity;
+  factory WaterVelocity([void Function(WaterVelocityBuilder b) updates]) =
+      _$WaterVelocity;
 
   @override
   int get msgId => static_id;
@@ -2174,10 +2458,12 @@ abstract class WaterVelocity extends ImcMessage implements Built<WaterVelocity, 
 /// Velocity Delta class
 ///
 /// Component of incremetal velocity vector.
-abstract class VelocityDelta extends ImcMessage implements Built<VelocityDelta, VelocityDeltaBuilder> {
+abstract class VelocityDelta extends ImcMessage
+    implements Built<VelocityDelta, VelocityDeltaBuilder> {
   static const static_id = 261;
   VelocityDelta._();
-  factory VelocityDelta([void Function(VelocityDeltaBuilder b) updates]) = _$VelocityDelta;
+  factory VelocityDelta([void Function(VelocityDeltaBuilder b) updates]) =
+      _$VelocityDelta;
 
   @override
   int get msgId => static_id;
@@ -2204,7 +2490,8 @@ abstract class VelocityDelta extends ImcMessage implements Built<VelocityDelta, 
 /// Distance class
 ///
 /// Distance measurement detected by the device.
-abstract class Distance extends ImcMessage implements Built<Distance, DistanceBuilder> {
+abstract class Distance extends ImcMessage
+    implements Built<Distance, DistanceBuilder> {
   static const static_id = 262;
   Distance._();
   factory Distance([void Function(DistanceBuilder b) updates]) = _$Distance;
@@ -2234,10 +2521,12 @@ abstract class Distance extends ImcMessage implements Built<Distance, DistanceBu
 /// Temperature class
 ///
 /// Report of temperature.
-abstract class Temperature extends ImcMessage implements Built<Temperature, TemperatureBuilder> {
+abstract class Temperature extends ImcMessage
+    implements Built<Temperature, TemperatureBuilder> {
   static const static_id = 263;
   Temperature._();
-  factory Temperature([void Function(TemperatureBuilder b) updates]) = _$Temperature;
+  factory Temperature([void Function(TemperatureBuilder b) updates]) =
+      _$Temperature;
 
   @override
   int get msgId => static_id;
@@ -2252,7 +2541,8 @@ abstract class Temperature extends ImcMessage implements Built<Temperature, Temp
 /// Pressure class
 ///
 /// Report of external pressure.
-abstract class Pressure extends ImcMessage implements Built<Pressure, PressureBuilder> {
+abstract class Pressure extends ImcMessage
+    implements Built<Pressure, PressureBuilder> {
   static const static_id = 264;
   Pressure._();
   factory Pressure([void Function(PressureBuilder b) updates]) = _$Pressure;
@@ -2288,10 +2578,12 @@ abstract class Depth extends ImcMessage implements Built<Depth, DepthBuilder> {
 /// Depth Offset class
 ///
 /// Report of Depth Offset.
-abstract class DepthOffset extends ImcMessage implements Built<DepthOffset, DepthOffsetBuilder> {
+abstract class DepthOffset extends ImcMessage
+    implements Built<DepthOffset, DepthOffsetBuilder> {
   static const static_id = 266;
   DepthOffset._();
-  factory DepthOffset([void Function(DepthOffsetBuilder b) updates]) = _$DepthOffset;
+  factory DepthOffset([void Function(DepthOffsetBuilder b) updates]) =
+      _$DepthOffset;
 
   @override
   int get msgId => static_id;
@@ -2306,10 +2598,12 @@ abstract class DepthOffset extends ImcMessage implements Built<DepthOffset, Dept
 /// Sound Speed class
 ///
 /// Sound Speed report.
-abstract class SoundSpeed extends ImcMessage implements Built<SoundSpeed, SoundSpeedBuilder> {
+abstract class SoundSpeed extends ImcMessage
+    implements Built<SoundSpeed, SoundSpeedBuilder> {
   static const static_id = 267;
   SoundSpeed._();
-  factory SoundSpeed([void Function(SoundSpeedBuilder b) updates]) = _$SoundSpeed;
+  factory SoundSpeed([void Function(SoundSpeedBuilder b) updates]) =
+      _$SoundSpeed;
 
   @override
   int get msgId => static_id;
@@ -2324,10 +2618,12 @@ abstract class SoundSpeed extends ImcMessage implements Built<SoundSpeed, SoundS
 /// Water Density class
 ///
 /// Water Density report.
-abstract class WaterDensity extends ImcMessage implements Built<WaterDensity, WaterDensityBuilder> {
+abstract class WaterDensity extends ImcMessage
+    implements Built<WaterDensity, WaterDensityBuilder> {
   static const static_id = 268;
   WaterDensity._();
-  factory WaterDensity([void Function(WaterDensityBuilder b) updates]) = _$WaterDensity;
+  factory WaterDensity([void Function(WaterDensityBuilder b) updates]) =
+      _$WaterDensity;
 
   @override
   int get msgId => static_id;
@@ -2335,17 +2631,20 @@ abstract class WaterDensity extends ImcMessage implements Built<WaterDensity, Wa
   String get abbrev => 'WaterDensity';
 
   /// Computed Water Density.
-  @ImcField('Computed Water Density', 'value', ImcType.typeFp32, units: 'kg/m/m/m')
+  @ImcField('Computed Water Density', 'value', ImcType.typeFp32,
+      units: 'kg/m/m/m')
   double get value;
 }
 
 /// Conductivity class
 ///
 /// Report of conductivity.
-abstract class Conductivity extends ImcMessage implements Built<Conductivity, ConductivityBuilder> {
+abstract class Conductivity extends ImcMessage
+    implements Built<Conductivity, ConductivityBuilder> {
   static const static_id = 269;
   Conductivity._();
-  factory Conductivity([void Function(ConductivityBuilder b) updates]) = _$Conductivity;
+  factory Conductivity([void Function(ConductivityBuilder b) updates]) =
+      _$Conductivity;
 
   @override
   int get msgId => static_id;
@@ -2360,7 +2659,8 @@ abstract class Conductivity extends ImcMessage implements Built<Conductivity, Co
 /// Salinity class
 ///
 /// Report of salinity.
-abstract class Salinity extends ImcMessage implements Built<Salinity, SalinityBuilder> {
+abstract class Salinity extends ImcMessage
+    implements Built<Salinity, SalinityBuilder> {
   static const static_id = 270;
   Salinity._();
   factory Salinity([void Function(SalinityBuilder b) updates]) = _$Salinity;
@@ -2378,7 +2678,8 @@ abstract class Salinity extends ImcMessage implements Built<Salinity, SalinityBu
 /// Wind Speed class
 ///
 /// Measurement of wind speed.
-abstract class WindSpeed extends ImcMessage implements Built<WindSpeed, WindSpeedBuilder> {
+abstract class WindSpeed extends ImcMessage
+    implements Built<WindSpeed, WindSpeedBuilder> {
   static const static_id = 271;
   WindSpeed._();
   factory WindSpeed([void Function(WindSpeedBuilder b) updates]) = _$WindSpeed;
@@ -2404,10 +2705,12 @@ abstract class WindSpeed extends ImcMessage implements Built<WindSpeed, WindSpee
 /// Relative Humidity class
 ///
 /// Measurement of relative humidity.
-abstract class RelativeHumidity extends ImcMessage implements Built<RelativeHumidity, RelativeHumidityBuilder> {
+abstract class RelativeHumidity extends ImcMessage
+    implements Built<RelativeHumidity, RelativeHumidityBuilder> {
   static const static_id = 272;
   RelativeHumidity._();
-  factory RelativeHumidity([void Function(RelativeHumidityBuilder b) updates]) = _$RelativeHumidity;
+  factory RelativeHumidity([void Function(RelativeHumidityBuilder b) updates]) =
+      _$RelativeHumidity;
 
   @override
   int get msgId => static_id;
@@ -2422,10 +2725,12 @@ abstract class RelativeHumidity extends ImcMessage implements Built<RelativeHumi
 /// Device Data (Text) class
 ///
 /// Verbatim representation of device data in plain text format.
-abstract class DevDataText extends ImcMessage implements Built<DevDataText, DevDataTextBuilder> {
+abstract class DevDataText extends ImcMessage
+    implements Built<DevDataText, DevDataTextBuilder> {
   static const static_id = 273;
   DevDataText._();
-  factory DevDataText([void Function(DevDataTextBuilder b) updates]) = _$DevDataText;
+  factory DevDataText([void Function(DevDataTextBuilder b) updates]) =
+      _$DevDataText;
 
   @override
   int get msgId => static_id;
@@ -2440,10 +2745,12 @@ abstract class DevDataText extends ImcMessage implements Built<DevDataText, DevD
 /// Device Data (Binary) class
 ///
 /// Verbatim representation of device data in binary format.
-abstract class DevDataBinary extends ImcMessage implements Built<DevDataBinary, DevDataBinaryBuilder> {
+abstract class DevDataBinary extends ImcMessage
+    implements Built<DevDataBinary, DevDataBinaryBuilder> {
   static const static_id = 274;
   DevDataBinary._();
-  factory DevDataBinary([void Function(DevDataBinaryBuilder b) updates]) = _$DevDataBinary;
+  factory DevDataBinary([void Function(DevDataBinaryBuilder b) updates]) =
+      _$DevDataBinary;
 
   @override
   int get msgId => static_id;
@@ -2479,22 +2786,22 @@ abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
 /// measurement. The following describes the format used to
 /// fill the data field used in this message. (Byte order is
 /// little endian.)
-/// 
+///
 /// **Sidescan:**
-/// 
+///
 /// +------+-------------------+-----------+
 /// | Data | Name              | Type      |
 /// +======+===================+===========+
 /// | A    | Ranges data       |   uintX_t |
 /// +------+-------------------+-----------+
-/// 
+///
 /// .. figure:: ../images/imc_sidescan.png
-/// 
+///
 /// * The type *uintX_t* will depend on the number of bits per unit, and it should be a multiple of 8.
 /// * Furthermore, for now, 32 bits is the highest value of bits per unit supported.
-/// 
+///
 /// **Multibeam:**
-/// 
+///
 /// +------+--------+-------------------------+---------+----------------------------------------------------------------------+
 /// | Index| Section| Name                    | Type    | Comments                                                             |
 /// +======+========+=========================+=========+======================================================================+
@@ -2514,7 +2821,7 @@ abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
 /// +------+--------+-------------------------+---------+----------------------------------------------------------------------+
 /// | 8    | D3 ?   | Intensities[H1]         | uintX_t | Intensities data points                                              |
 /// +------+--------+-------------------------+---------+----------------------------------------------------------------------+
-/// 
+///
 /// +--------+------------------+-----+
 /// | Section| Flag Label       | Bit |
 /// +========+==================+=====+
@@ -2522,37 +2829,38 @@ abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
 /// +--------+------------------+-----+
 /// | H4.2   | Angle step flag  | 1   |
 /// +--------+------------------+-----+
-/// 
+///
 /// .. figure:: ../images/imc_multibeam.png
-/// 
+///
 /// *Notes:*
-/// 
+///
 /// * Each angle at step *i* can be calculated is defined by:
-/// 
+///
 /// .. code-block:: python
-/// 
+///
 /// angle[i] = H2_start_angle + (32-bit sum of D1_angle_step[0] through D1_angle_step[i]) * H4_scaling_factor
-/// 
+///
 /// * If bit H4.1 is not set then sections H5 and D3 won't exist.
 /// * If bit H4.2 is not set then sections H4 and D1 won't exist. In case this bit is set, then the angle steps is read from field "Beam Width" from "Beam Configuration".
 /// * The type *uintX_t* will depend on the number of bits per unit, and it should be a multiple of 8.
 /// * Furthermore, for now, 32 bits is the highest value of bits per unit supported.
-/// 
+///
 /// *How to write ranges and intensities data:*
-/// 
+///
 /// .. code-block:: python
 /// :linenos:
-/// 
-/// 
+///
+///
 /// data_unit = (Integer) (data_value / scale_factor);
 /// bytes_per_unit = bits_per_unit / 8;
 /// LOOP: i = 0, until i = bytes_per_unit
 /// byte[i] = (data_unit >> 8 * i) & 0xFF);
-/// 
+///
 /// write(byte);
-/// 
+///
 /// **Common:**
-abstract class SonarData extends ImcMessage implements Built<SonarData, SonarDataBuilder> {
+abstract class SonarData extends ImcMessage
+    implements Built<SonarData, SonarDataBuilder> {
   static const static_id = 276;
   SonarData._();
   factory SonarData([void Function(SonarDataBuilder b) updates]) = _$SonarData;
@@ -2579,7 +2887,8 @@ abstract class SonarData extends ImcMessage implements Built<SonarData, SonarDat
   int get maxRange;
 
   /// Size of the data unit. (Should be multiple of 8)
-  @ImcField('Bits Per Data Point', 'bits_per_point', ImcType.typeUInt8, units: 'bit')
+  @ImcField('Bits Per Data Point', 'bits_per_point', ImcType.typeUInt8,
+      units: 'bit')
   int get bitsPerPoint;
 
   /// Scaling factor used to multiply each data unit to restore the
@@ -2613,10 +2922,13 @@ abstract class Pulse extends ImcMessage implements Built<Pulse, PulseBuilder> {
 /// Pulse Detection Control class
 ///
 /// Control of hardware pulse detection.
-abstract class PulseDetectionControl extends ImcMessage implements Built<PulseDetectionControl, PulseDetectionControlBuilder> {
+abstract class PulseDetectionControl extends ImcMessage
+    implements Built<PulseDetectionControl, PulseDetectionControlBuilder> {
   static const static_id = 278;
   PulseDetectionControl._();
-  factory PulseDetectionControl([void Function(PulseDetectionControlBuilder b) updates]) = _$PulseDetectionControl;
+  factory PulseDetectionControl(
+          [void Function(PulseDetectionControlBuilder b) updates]) =
+      _$PulseDetectionControl;
 
   @override
   int get msgId => static_id;
@@ -2631,7 +2943,8 @@ abstract class PulseDetectionControl extends ImcMessage implements Built<PulseDe
 /// Fuel Level class
 ///
 /// Report of fuel level.
-abstract class FuelLevel extends ImcMessage implements Built<FuelLevel, FuelLevelBuilder> {
+abstract class FuelLevel extends ImcMessage
+    implements Built<FuelLevel, FuelLevelBuilder> {
   static const static_id = 279;
   FuelLevel._();
   factory FuelLevel([void Function(FuelLevelBuilder b) updates]) = _$FuelLevel;
@@ -2652,17 +2965,20 @@ abstract class FuelLevel extends ImcMessage implements Built<FuelLevel, FuelLeve
 
   /// Operation mode name and the estimated time available in that
   /// mode in hours. Example: "Motion=1.5"
-  @ImcField('Operation Modes', 'opmodes', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Operation Modes', 'opmodes', ImcType.typePlaintext,
+      units: 'TupleList')
   String get opmodes;
 }
 
 /// GPS Navigation Data class
 ///
 /// Report of GPS navigation data.
-abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNavDataBuilder> {
+abstract class GpsNavData extends ImcMessage
+    implements Built<GpsNavData, GpsNavDataBuilder> {
   static const static_id = 280;
   GpsNavData._();
-  factory GpsNavData([void Function(GpsNavDataBuilder b) updates]) = _$GpsNavData;
+  factory GpsNavData([void Function(GpsNavDataBuilder b) updates]) =
+      _$GpsNavData;
 
   @override
   int get msgId => static_id;
@@ -2670,7 +2986,8 @@ abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNav
   String get abbrev => 'GpsNavData';
 
   /// GPS Millisecond Time of Week.
-  @ImcField('GPS Millisecond Time of Week', 'itow', ImcType.typeUint32, units: 'ms')
+  @ImcField('GPS Millisecond Time of Week', 'itow', ImcType.typeUint32,
+      units: 'ms')
   int get itow;
 
   /// Latitude.
@@ -2682,15 +2999,18 @@ abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNav
   double get lon;
 
   /// Height Above Ellipsoid.
-  @ImcField('Height above ellipsoid', 'height_ell', ImcType.typeFp32, units: 'm')
+  @ImcField('Height above ellipsoid', 'height_ell', ImcType.typeFp32,
+      units: 'm')
   double get heightEll;
 
   /// Height Above Sea Level.
-  @ImcField('Height above sea level', 'height_sea', ImcType.typeFp32, units: 'm')
+  @ImcField('Height above sea level', 'height_sea', ImcType.typeFp32,
+      units: 'm')
   double get heightSea;
 
   /// Horizontal Accuracy Estimate.
-  @ImcField('Horizontal Accuracy Estimate', 'hacc', ImcType.typeFp32, units: 'm')
+  @ImcField('Horizontal Accuracy Estimate', 'hacc', ImcType.typeFp32,
+      units: 'm')
   double get hacc;
 
   /// Vertical Accuracy Estimate.
@@ -2726,17 +3046,20 @@ abstract class GpsNavData extends ImcMessage implements Built<GpsNavData, GpsNav
   double get sacc;
 
   /// Course / Heading Accuracy Estimate.
-  @ImcField('Course / Heading Accuracy Estimate', 'cacc', ImcType.typeFp32, units: 'rad')
+  @ImcField('Course / Heading Accuracy Estimate', 'cacc', ImcType.typeFp32,
+      units: 'rad')
   double get cacc;
 }
 
 /// Servo Position class
 ///
 /// Actual position of a servo.
-abstract class ServoPosition extends ImcMessage implements Built<ServoPosition, ServoPositionBuilder> {
+abstract class ServoPosition extends ImcMessage
+    implements Built<ServoPosition, ServoPositionBuilder> {
   static const static_id = 281;
   ServoPosition._();
-  factory ServoPosition([void Function(ServoPositionBuilder b) updates]) = _$ServoPosition;
+  factory ServoPosition([void Function(ServoPositionBuilder b) updates]) =
+      _$ServoPosition;
 
   @override
   int get msgId => static_id;
@@ -2755,10 +3078,12 @@ abstract class ServoPosition extends ImcMessage implements Built<ServoPosition, 
 /// Device State class
 ///
 /// Location of a specific device in the system infrastructure.
-abstract class DeviceState extends ImcMessage implements Built<DeviceState, DeviceStateBuilder> {
+abstract class DeviceState extends ImcMessage
+    implements Built<DeviceState, DeviceStateBuilder> {
   static const static_id = 282;
   DeviceState._();
-  factory DeviceState([void Function(DeviceStateBuilder b) updates]) = _$DeviceState;
+  factory DeviceState([void Function(DeviceStateBuilder b) updates]) =
+      _$DeviceState;
 
   @override
   int get msgId => static_id;
@@ -2793,10 +3118,12 @@ abstract class DeviceState extends ImcMessage implements Built<DeviceState, Devi
 /// Beam Configuration class
 ///
 /// Beam configuration of the device.
-abstract class BeamConfig extends ImcMessage implements Built<BeamConfig, BeamConfigBuilder> {
+abstract class BeamConfig extends ImcMessage
+    implements Built<BeamConfig, BeamConfigBuilder> {
   static const static_id = 283;
   BeamConfig._();
-  factory BeamConfig([void Function(BeamConfigBuilder b) updates]) = _$BeamConfig;
+  factory BeamConfig([void Function(BeamConfigBuilder b) updates]) =
+      _$BeamConfig;
 
   @override
   int get msgId => static_id;
@@ -2817,10 +3144,12 @@ abstract class BeamConfig extends ImcMessage implements Built<BeamConfig, BeamCo
 /// Data Sanity class
 ///
 /// Report sanity or lack of it in the data output by a sensor.
-abstract class DataSanity extends ImcMessage implements Built<DataSanity, DataSanityBuilder> {
+abstract class DataSanity extends ImcMessage
+    implements Built<DataSanity, DataSanityBuilder> {
   static const static_id = 284;
   DataSanity._();
-  factory DataSanity([void Function(DataSanityBuilder b) updates]) = _$DataSanity;
+  factory DataSanity([void Function(DataSanityBuilder b) updates]) =
+      _$DataSanity;
 
   @override
   int get msgId => static_id;
@@ -2835,10 +3164,12 @@ abstract class DataSanity extends ImcMessage implements Built<DataSanity, DataSa
 /// Rhodamine Dye class
 ///
 /// Rhodamine Dye measurement.
-abstract class RhodamineDye extends ImcMessage implements Built<RhodamineDye, RhodamineDyeBuilder> {
+abstract class RhodamineDye extends ImcMessage
+    implements Built<RhodamineDye, RhodamineDyeBuilder> {
   static const static_id = 285;
   RhodamineDye._();
-  factory RhodamineDye([void Function(RhodamineDyeBuilder b) updates]) = _$RhodamineDye;
+  factory RhodamineDye([void Function(RhodamineDyeBuilder b) updates]) =
+      _$RhodamineDye;
 
   @override
   int get msgId => static_id;
@@ -2853,7 +3184,8 @@ abstract class RhodamineDye extends ImcMessage implements Built<RhodamineDye, Rh
 /// Crude Oil class
 ///
 /// Crude oil measurement.
-abstract class CrudeOil extends ImcMessage implements Built<CrudeOil, CrudeOilBuilder> {
+abstract class CrudeOil extends ImcMessage
+    implements Built<CrudeOil, CrudeOilBuilder> {
   static const static_id = 286;
   CrudeOil._();
   factory CrudeOil([void Function(CrudeOilBuilder b) updates]) = _$CrudeOil;
@@ -2871,7 +3203,8 @@ abstract class CrudeOil extends ImcMessage implements Built<CrudeOil, CrudeOilBu
 /// Fine Oil class
 ///
 /// Fine oil measurement.
-abstract class FineOil extends ImcMessage implements Built<FineOil, FineOilBuilder> {
+abstract class FineOil extends ImcMessage
+    implements Built<FineOil, FineOilBuilder> {
   static const static_id = 287;
   FineOil._();
   factory FineOil([void Function(FineOilBuilder b) updates]) = _$FineOil;
@@ -2889,7 +3222,8 @@ abstract class FineOil extends ImcMessage implements Built<FineOil, FineOilBuild
 /// Turbidity class
 ///
 /// Turbidity measurement.
-abstract class Turbidity extends ImcMessage implements Built<Turbidity, TurbidityBuilder> {
+abstract class Turbidity extends ImcMessage
+    implements Built<Turbidity, TurbidityBuilder> {
   static const static_id = 288;
   Turbidity._();
   factory Turbidity([void Function(TurbidityBuilder b) updates]) = _$Turbidity;
@@ -2907,10 +3241,12 @@ abstract class Turbidity extends ImcMessage implements Built<Turbidity, Turbidit
 /// Chlorophyll class
 ///
 /// Chlorophyll measurement.
-abstract class Chlorophyll extends ImcMessage implements Built<Chlorophyll, ChlorophyllBuilder> {
+abstract class Chlorophyll extends ImcMessage
+    implements Built<Chlorophyll, ChlorophyllBuilder> {
   static const static_id = 289;
   Chlorophyll._();
-  factory Chlorophyll([void Function(ChlorophyllBuilder b) updates]) = _$Chlorophyll;
+  factory Chlorophyll([void Function(ChlorophyllBuilder b) updates]) =
+      _$Chlorophyll;
 
   @override
   int get msgId => static_id;
@@ -2925,10 +3261,12 @@ abstract class Chlorophyll extends ImcMessage implements Built<Chlorophyll, Chlo
 /// Fluorescein class
 ///
 /// Fluorescein measurement.
-abstract class Fluorescein extends ImcMessage implements Built<Fluorescein, FluoresceinBuilder> {
+abstract class Fluorescein extends ImcMessage
+    implements Built<Fluorescein, FluoresceinBuilder> {
   static const static_id = 290;
   Fluorescein._();
-  factory Fluorescein([void Function(FluoresceinBuilder b) updates]) = _$Fluorescein;
+  factory Fluorescein([void Function(FluoresceinBuilder b) updates]) =
+      _$Fluorescein;
 
   @override
   int get msgId => static_id;
@@ -2943,10 +3281,12 @@ abstract class Fluorescein extends ImcMessage implements Built<Fluorescein, Fluo
 /// Phycocyanin class
 ///
 /// Phycocyanin measurement.
-abstract class Phycocyanin extends ImcMessage implements Built<Phycocyanin, PhycocyaninBuilder> {
+abstract class Phycocyanin extends ImcMessage
+    implements Built<Phycocyanin, PhycocyaninBuilder> {
   static const static_id = 291;
   Phycocyanin._();
-  factory Phycocyanin([void Function(PhycocyaninBuilder b) updates]) = _$Phycocyanin;
+  factory Phycocyanin([void Function(PhycocyaninBuilder b) updates]) =
+      _$Phycocyanin;
 
   @override
   int get msgId => static_id;
@@ -2961,10 +3301,12 @@ abstract class Phycocyanin extends ImcMessage implements Built<Phycocyanin, Phyc
 /// Phycoerythrin class
 ///
 /// Phycoerythrin measurement.
-abstract class Phycoerythrin extends ImcMessage implements Built<Phycoerythrin, PhycoerythrinBuilder> {
+abstract class Phycoerythrin extends ImcMessage
+    implements Built<Phycoerythrin, PhycoerythrinBuilder> {
   static const static_id = 292;
   Phycoerythrin._();
-  factory Phycoerythrin([void Function(PhycoerythrinBuilder b) updates]) = _$Phycoerythrin;
+  factory Phycoerythrin([void Function(PhycoerythrinBuilder b) updates]) =
+      _$Phycoerythrin;
 
   @override
   int get msgId => static_id;
@@ -2979,7 +3321,8 @@ abstract class Phycoerythrin extends ImcMessage implements Built<Phycoerythrin, 
 /// GPS Fix RTK class
 ///
 /// Report of an RTK-GPS fix.
-abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRtkBuilder> {
+abstract class GpsFixRtk extends ImcMessage
+    implements Built<GpsFixRtk, GpsFixRtkBuilder> {
   static const static_id = 293;
   GpsFixRtk._();
   factory GpsFixRtk([void Function(GpsFixRtkBuilder b) updates]) = _$GpsFixRtk;
@@ -3010,7 +3353,9 @@ abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRt
   double get baseLon;
 
   /// Height above WGS-84 ellipsoid of the base.
-  @ImcField('Base Height above WGS-84 ellipsoid', 'base_height', ImcType.typeFp32, units: 'm')
+  @ImcField(
+      'Base Height above WGS-84 ellipsoid', 'base_height', ImcType.typeFp32,
+      units: 'm')
   double get baseHeight;
 
   /// Baseline North coordinate.
@@ -3054,23 +3399,25 @@ abstract class GpsFixRtk extends ImcMessage implements Built<GpsFixRtk, GpsFixRt
 ///
 /// This message is a representation of the state of the vehicle,
 /// as seen by an external navigation computer.
-/// 
+///
 /// An example usage is when DUNE is used with ardupilot. The
 /// data gathered from the autopilot is a complete navigation
 /// solution.
-/// 
+///
 /// ExternalNavData contains an inline Estimated State, which
 /// is a complete description of the system
 /// in terms of parameters such as position, orientation and
 /// velocities at a particular moment in time.
-/// 
+///
 /// The Type field selects wether the navigation data is a
 /// full state estimation, or only concerns attitude or
 /// position/velocity.
-abstract class ExternalNavData extends ImcMessage implements Built<ExternalNavData, ExternalNavDataBuilder> {
+abstract class ExternalNavData extends ImcMessage
+    implements Built<ExternalNavData, ExternalNavDataBuilder> {
   static const static_id = 294;
   ExternalNavData._();
-  factory ExternalNavData([void Function(ExternalNavDataBuilder b) updates]) = _$ExternalNavData;
+  factory ExternalNavData([void Function(ExternalNavDataBuilder b) updates]) =
+      _$ExternalNavData;
 
   @override
   int get msgId => static_id;
@@ -3089,10 +3436,12 @@ abstract class ExternalNavData extends ImcMessage implements Built<ExternalNavDa
 /// Dissolved Oxygen class
 ///
 /// Dissolved Oxygen measurement.
-abstract class DissolvedOxygen extends ImcMessage implements Built<DissolvedOxygen, DissolvedOxygenBuilder> {
+abstract class DissolvedOxygen extends ImcMessage
+    implements Built<DissolvedOxygen, DissolvedOxygenBuilder> {
   static const static_id = 295;
   DissolvedOxygen._();
-  factory DissolvedOxygen([void Function(DissolvedOxygenBuilder b) updates]) = _$DissolvedOxygen;
+  factory DissolvedOxygen([void Function(DissolvedOxygenBuilder b) updates]) =
+      _$DissolvedOxygen;
 
   @override
   int get msgId => static_id;
@@ -3107,10 +3456,12 @@ abstract class DissolvedOxygen extends ImcMessage implements Built<DissolvedOxyg
 /// Air Saturation class
 ///
 /// Air Saturation measurement.
-abstract class AirSaturation extends ImcMessage implements Built<AirSaturation, AirSaturationBuilder> {
+abstract class AirSaturation extends ImcMessage
+    implements Built<AirSaturation, AirSaturationBuilder> {
   static const static_id = 296;
   AirSaturation._();
-  factory AirSaturation([void Function(AirSaturationBuilder b) updates]) = _$AirSaturation;
+  factory AirSaturation([void Function(AirSaturationBuilder b) updates]) =
+      _$AirSaturation;
 
   @override
   int get msgId => static_id;
@@ -3125,7 +3476,8 @@ abstract class AirSaturation extends ImcMessage implements Built<AirSaturation, 
 /// Throttle class
 ///
 /// Throttle e.g. for Plane/Copter .
-abstract class Throttle extends ImcMessage implements Built<Throttle, ThrottleBuilder> {
+abstract class Throttle extends ImcMessage
+    implements Built<Throttle, ThrottleBuilder> {
   static const static_id = 297;
   Throttle._();
   factory Throttle([void Function(ThrottleBuilder b) updates]) = _$Throttle;
@@ -3179,10 +3531,12 @@ abstract class Redox extends ImcMessage implements Built<Redox, RedoxBuilder> {
 /// Camera Zoom class
 ///
 /// Camera Zoom.
-abstract class CameraZoom extends ImcMessage implements Built<CameraZoom, CameraZoomBuilder> {
+abstract class CameraZoom extends ImcMessage
+    implements Built<CameraZoom, CameraZoomBuilder> {
   static const static_id = 300;
   CameraZoom._();
-  factory CameraZoom([void Function(CameraZoomBuilder b) updates]) = _$CameraZoom;
+  factory CameraZoom([void Function(CameraZoomBuilder b) updates]) =
+      _$CameraZoom;
 
   @override
   int get msgId => static_id;
@@ -3205,10 +3559,13 @@ abstract class CameraZoom extends ImcMessage implements Built<CameraZoom, Camera
 /// Set Thruster Actuation class
 ///
 /// Actuate directly on a thruster.
-abstract class SetThrusterActuation extends ImcMessage implements Built<SetThrusterActuation, SetThrusterActuationBuilder> {
+abstract class SetThrusterActuation extends ImcMessage
+    implements Built<SetThrusterActuation, SetThrusterActuationBuilder> {
   static const static_id = 301;
   SetThrusterActuation._();
-  factory SetThrusterActuation([void Function(SetThrusterActuationBuilder b) updates]) = _$SetThrusterActuation;
+  factory SetThrusterActuation(
+          [void Function(SetThrusterActuationBuilder b) updates]) =
+      _$SetThrusterActuation;
 
   @override
   int get msgId => static_id;
@@ -3227,10 +3584,12 @@ abstract class SetThrusterActuation extends ImcMessage implements Built<SetThrus
 /// Set Servo Position class
 ///
 /// Set the position of a servo.
-abstract class SetServoPosition extends ImcMessage implements Built<SetServoPosition, SetServoPositionBuilder> {
+abstract class SetServoPosition extends ImcMessage
+    implements Built<SetServoPosition, SetServoPositionBuilder> {
   static const static_id = 302;
   SetServoPosition._();
-  factory SetServoPosition([void Function(SetServoPositionBuilder b) updates]) = _$SetServoPosition;
+  factory SetServoPosition([void Function(SetServoPositionBuilder b) updates]) =
+      _$SetServoPosition;
 
   @override
   int get msgId => static_id;
@@ -3249,10 +3608,14 @@ abstract class SetServoPosition extends ImcMessage implements Built<SetServoPosi
 /// Set Control Surface Deflection class
 ///
 /// Set the deflection angle of a control surface.
-abstract class SetControlSurfaceDeflection extends ImcMessage implements Built<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder> {
+abstract class SetControlSurfaceDeflection extends ImcMessage
+    implements
+        Built<SetControlSurfaceDeflection, SetControlSurfaceDeflectionBuilder> {
   static const static_id = 303;
   SetControlSurfaceDeflection._();
-  factory SetControlSurfaceDeflection([void Function(SetControlSurfaceDeflectionBuilder b) updates]) = _$SetControlSurfaceDeflection;
+  factory SetControlSurfaceDeflection(
+          [void Function(SetControlSurfaceDeflectionBuilder b) updates]) =
+      _$SetControlSurfaceDeflection;
 
   @override
   int get msgId => static_id;
@@ -3276,10 +3639,13 @@ abstract class SetControlSurfaceDeflection extends ImcMessage implements Built<S
 /// returning the tuplelist with the pairs: Action,Type
 /// (operation=REPORT). The type of action can be Axis, Hat or
 /// Button.
-abstract class RemoteActionsRequest extends ImcMessage implements Built<RemoteActionsRequest, RemoteActionsRequestBuilder> {
+abstract class RemoteActionsRequest extends ImcMessage
+    implements Built<RemoteActionsRequest, RemoteActionsRequestBuilder> {
   static const static_id = 304;
   RemoteActionsRequest._();
-  factory RemoteActionsRequest([void Function(RemoteActionsRequestBuilder b) updates]) = _$RemoteActionsRequest;
+  factory RemoteActionsRequest(
+          [void Function(RemoteActionsRequestBuilder b) updates]) =
+      _$RemoteActionsRequest;
 
   @override
   int get msgId => static_id;
@@ -3300,10 +3666,12 @@ abstract class RemoteActionsRequest extends ImcMessage implements Built<RemoteAc
 /// This message is used to send a periodic update of values for
 /// each remote action. If the action is not on the list the assumed
 /// value is 0.
-abstract class RemoteActions extends ImcMessage implements Built<RemoteActions, RemoteActionsBuilder> {
+abstract class RemoteActions extends ImcMessage
+    implements Built<RemoteActions, RemoteActionsBuilder> {
   static const static_id = 305;
   RemoteActions._();
-  factory RemoteActions([void Function(RemoteActionsBuilder b) updates]) = _$RemoteActions;
+  factory RemoteActions([void Function(RemoteActionsBuilder b) updates]) =
+      _$RemoteActions;
 
   @override
   int get msgId => static_id;
@@ -3318,10 +3686,12 @@ abstract class RemoteActions extends ImcMessage implements Built<RemoteActions, 
 /// Button Event class
 ///
 /// Event of a specific hardware button.
-abstract class ButtonEvent extends ImcMessage implements Built<ButtonEvent, ButtonEventBuilder> {
+abstract class ButtonEvent extends ImcMessage
+    implements Built<ButtonEvent, ButtonEventBuilder> {
   static const static_id = 306;
   ButtonEvent._();
-  factory ButtonEvent([void Function(ButtonEventBuilder b) updates]) = _$ButtonEvent;
+  factory ButtonEvent([void Function(ButtonEventBuilder b) updates]) =
+      _$ButtonEvent;
 
   @override
   int get msgId => static_id;
@@ -3340,10 +3710,12 @@ abstract class ButtonEvent extends ImcMessage implements Built<ButtonEvent, Butt
 /// LCD Control class
 ///
 /// Control LCD.
-abstract class LcdControl extends ImcMessage implements Built<LcdControl, LcdControlBuilder> {
+abstract class LcdControl extends ImcMessage
+    implements Built<LcdControl, LcdControlBuilder> {
   static const static_id = 307;
   LcdControl._();
-  factory LcdControl([void Function(LcdControlBuilder b) updates]) = _$LcdControl;
+  factory LcdControl([void Function(LcdControlBuilder b) updates]) =
+      _$LcdControl;
 
   @override
   int get msgId => static_id;
@@ -3362,10 +3734,12 @@ abstract class LcdControl extends ImcMessage implements Built<LcdControl, LcdCon
 /// Power Operation class
 ///
 /// This message allows controlling the system's power lines.
-abstract class PowerOperation extends ImcMessage implements Built<PowerOperation, PowerOperationBuilder> {
+abstract class PowerOperation extends ImcMessage
+    implements Built<PowerOperation, PowerOperationBuilder> {
   static const static_id = 308;
   PowerOperation._();
-  factory PowerOperation([void Function(PowerOperationBuilder b) updates]) = _$PowerOperation;
+  factory PowerOperation([void Function(PowerOperationBuilder b) updates]) =
+      _$PowerOperation;
 
   @override
   int get msgId => static_id;
@@ -3388,10 +3762,13 @@ abstract class PowerOperation extends ImcMessage implements Built<PowerOperation
 /// Power Channel Control class
 ///
 /// This message allows controlling power channels.
-abstract class PowerChannelControl extends ImcMessage implements Built<PowerChannelControl, PowerChannelControlBuilder> {
+abstract class PowerChannelControl extends ImcMessage
+    implements Built<PowerChannelControl, PowerChannelControlBuilder> {
   static const static_id = 309;
   PowerChannelControl._();
-  factory PowerChannelControl([void Function(PowerChannelControlBuilder b) updates]) = _$PowerChannelControl;
+  factory PowerChannelControl(
+          [void Function(PowerChannelControlBuilder b) updates]) =
+      _$PowerChannelControl;
 
   @override
   int get msgId => static_id;
@@ -3414,10 +3791,13 @@ abstract class PowerChannelControl extends ImcMessage implements Built<PowerChan
 /// Query Power Channel State class
 ///
 /// Request the state of power channels.
-abstract class QueryPowerChannelState extends ImcMessage implements Built<QueryPowerChannelState, QueryPowerChannelStateBuilder> {
+abstract class QueryPowerChannelState extends ImcMessage
+    implements Built<QueryPowerChannelState, QueryPowerChannelStateBuilder> {
   static const static_id = 310;
   QueryPowerChannelState._();
-  factory QueryPowerChannelState([void Function(QueryPowerChannelStateBuilder b) updates]) = _$QueryPowerChannelState;
+  factory QueryPowerChannelState(
+          [void Function(QueryPowerChannelStateBuilder b) updates]) =
+      _$QueryPowerChannelState;
 
   @override
   int get msgId => static_id;
@@ -3428,10 +3808,13 @@ abstract class QueryPowerChannelState extends ImcMessage implements Built<QueryP
 /// Power Channel State class
 ///
 /// Message conveying the state of a power channel.
-abstract class PowerChannelState extends ImcMessage implements Built<PowerChannelState, PowerChannelStateBuilder> {
+abstract class PowerChannelState extends ImcMessage
+    implements Built<PowerChannelState, PowerChannelStateBuilder> {
   static const static_id = 311;
   PowerChannelState._();
-  factory PowerChannelState([void Function(PowerChannelStateBuilder b) updates]) = _$PowerChannelState;
+  factory PowerChannelState(
+          [void Function(PowerChannelStateBuilder b) updates]) =
+      _$PowerChannelState;
 
   @override
   int get msgId => static_id;
@@ -3450,10 +3833,12 @@ abstract class PowerChannelState extends ImcMessage implements Built<PowerChanne
 /// LED Brightness class
 ///
 /// Brightness value of an LED (Light-Emitting Diode).
-abstract class LedBrightness extends ImcMessage implements Built<LedBrightness, LedBrightnessBuilder> {
+abstract class LedBrightness extends ImcMessage
+    implements Built<LedBrightness, LedBrightnessBuilder> {
   static const static_id = 312;
   LedBrightness._();
-  factory LedBrightness([void Function(LedBrightnessBuilder b) updates]) = _$LedBrightness;
+  factory LedBrightness([void Function(LedBrightnessBuilder b) updates]) =
+      _$LedBrightness;
 
   @override
   int get msgId => static_id;
@@ -3473,10 +3858,13 @@ abstract class LedBrightness extends ImcMessage implements Built<LedBrightness, 
 ///
 /// Query the brightness of an LED (Light-Emitting Diode). The
 /// recipient of this message shall reply with 'LedBrightness'.
-abstract class QueryLedBrightness extends ImcMessage implements Built<QueryLedBrightness, QueryLedBrightnessBuilder> {
+abstract class QueryLedBrightness extends ImcMessage
+    implements Built<QueryLedBrightness, QueryLedBrightnessBuilder> {
   static const static_id = 313;
   QueryLedBrightness._();
-  factory QueryLedBrightness([void Function(QueryLedBrightnessBuilder b) updates]) = _$QueryLedBrightness;
+  factory QueryLedBrightness(
+          [void Function(QueryLedBrightnessBuilder b) updates]) =
+      _$QueryLedBrightness;
 
   @override
   int get msgId => static_id;
@@ -3493,10 +3881,12 @@ abstract class QueryLedBrightness extends ImcMessage implements Built<QueryLedBr
 /// Control the brightness of an LED (Light-Emitting Diode). The
 /// recipient of this message shall set the intensity of the LED to
 /// the desired 'value' and reply with 'LedBrightness'.
-abstract class SetLedBrightness extends ImcMessage implements Built<SetLedBrightness, SetLedBrightnessBuilder> {
+abstract class SetLedBrightness extends ImcMessage
+    implements Built<SetLedBrightness, SetLedBrightnessBuilder> {
   static const static_id = 314;
   SetLedBrightness._();
-  factory SetLedBrightness([void Function(SetLedBrightnessBuilder b) updates]) = _$SetLedBrightness;
+  factory SetLedBrightness([void Function(SetLedBrightnessBuilder b) updates]) =
+      _$SetLedBrightness;
 
   @override
   int get msgId => static_id;
@@ -3515,7 +3905,8 @@ abstract class SetLedBrightness extends ImcMessage implements Built<SetLedBright
 /// Set PWM class
 ///
 /// Set properties of a PWM signal channel.
-abstract class SetPWM extends ImcMessage implements Built<SetPWM, SetPWMBuilder> {
+abstract class SetPWM extends ImcMessage
+    implements Built<SetPWM, SetPWMBuilder> {
   static const static_id = 315;
   SetPWM._();
   factory SetPWM([void Function(SetPWMBuilder b) updates]) = _$SetPWM;
@@ -3571,29 +3962,31 @@ abstract class PWM extends ImcMessage implements Built<PWM, PWMBuilder> {
 /// Estimated State class
 ///
 /// This message presents the estimated state of the vehicle.
-/// 
+///
 /// EstimatedState is a complete description of the system
 /// in terms of parameters such as position, orientation and
 /// velocities at a particular moment in time.
-/// 
+///
 /// The system position is given by a North-East-Down (NED)
 /// local tangent plane displacement (x, y, z) relative to
 /// an absolute WGS-84 coordinate (latitude, longitude,
 /// height above ellipsoid).
-/// 
+///
 /// The symbols for position and attitude as well as linear and
 /// angular velocities were chosen according to SNAME's notation (1950).
 /// The body-fixed reference frame and Euler angles are depicted
 /// next:
-/// 
+///
 /// .. figure:: ../images/euler-lauv.png
 /// :align:  center
-/// 
+///
 /// Euler angles
-abstract class EstimatedState extends ImcMessage implements Built<EstimatedState, EstimatedStateBuilder> {
+abstract class EstimatedState extends ImcMessage
+    implements Built<EstimatedState, EstimatedStateBuilder> {
   static const static_id = 350;
   EstimatedState._();
-  factory EstimatedState([void Function(EstimatedStateBuilder b) updates]) = _$EstimatedState;
+  factory EstimatedState([void Function(EstimatedStateBuilder b) updates]) =
+      _$EstimatedState;
 
   @override
   int get msgId => static_id;
@@ -3689,10 +4082,13 @@ abstract class EstimatedState extends ImcMessage implements Built<EstimatedState
 ///
 /// The estimated stream velocity, typically for water or air
 /// streams.
-abstract class EstimatedStreamVelocity extends ImcMessage implements Built<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder> {
+abstract class EstimatedStreamVelocity extends ImcMessage
+    implements Built<EstimatedStreamVelocity, EstimatedStreamVelocityBuilder> {
   static const static_id = 351;
   EstimatedStreamVelocity._();
-  factory EstimatedStreamVelocity([void Function(EstimatedStreamVelocityBuilder b) updates]) = _$EstimatedStreamVelocity;
+  factory EstimatedStreamVelocity(
+          [void Function(EstimatedStreamVelocityBuilder b) updates]) =
+      _$EstimatedStreamVelocity;
 
   @override
   int get msgId => static_id;
@@ -3715,10 +4111,12 @@ abstract class EstimatedStreamVelocity extends ImcMessage implements Built<Estim
 /// Indicated Speed class
 ///
 /// Speed measured by the navigation filter.
-abstract class IndicatedSpeed extends ImcMessage implements Built<IndicatedSpeed, IndicatedSpeedBuilder> {
+abstract class IndicatedSpeed extends ImcMessage
+    implements Built<IndicatedSpeed, IndicatedSpeedBuilder> {
   static const static_id = 352;
   IndicatedSpeed._();
-  factory IndicatedSpeed([void Function(IndicatedSpeedBuilder b) updates]) = _$IndicatedSpeed;
+  factory IndicatedSpeed([void Function(IndicatedSpeedBuilder b) updates]) =
+      _$IndicatedSpeed;
 
   @override
   int get msgId => static_id;
@@ -3732,7 +4130,8 @@ abstract class IndicatedSpeed extends ImcMessage implements Built<IndicatedSpeed
 /// True Speed class
 ///
 /// Ground true speed.
-abstract class TrueSpeed extends ImcMessage implements Built<TrueSpeed, TrueSpeedBuilder> {
+abstract class TrueSpeed extends ImcMessage
+    implements Built<TrueSpeed, TrueSpeedBuilder> {
   static const static_id = 353;
   TrueSpeed._();
   factory TrueSpeed([void Function(TrueSpeedBuilder b) updates]) = _$TrueSpeed;
@@ -3751,10 +4150,13 @@ abstract class TrueSpeed extends ImcMessage implements Built<TrueSpeed, TrueSpee
 /// Report of navigation uncertainty.
 /// This is usually given by the output of the state
 /// covariance matrix of an Extended Kalman Filter.
-abstract class NavigationUncertainty extends ImcMessage implements Built<NavigationUncertainty, NavigationUncertaintyBuilder> {
+abstract class NavigationUncertainty extends ImcMessage
+    implements Built<NavigationUncertainty, NavigationUncertaintyBuilder> {
   static const static_id = 354;
   NavigationUncertainty._();
-  factory NavigationUncertainty([void Function(NavigationUncertaintyBuilder b) updates]) = _$NavigationUncertainty;
+  factory NavigationUncertainty(
+          [void Function(NavigationUncertaintyBuilder b) updates]) =
+      _$NavigationUncertainty;
 
   @override
   int get msgId => static_id;
@@ -3793,7 +4195,8 @@ abstract class NavigationUncertainty extends ImcMessage implements Built<Navigat
   double get p;
 
   /// The angular velocity variance over body-fixed yy axis (pitch).
-  @ImcField('Variance - Gyro. Pitch Rate', 'q', ImcType.typeFp32, units: 'rad/s')
+  @ImcField('Variance - Gyro. Pitch Rate', 'q', ImcType.typeFp32,
+      units: 'rad/s')
   double get q;
 
   /// The angular velocity variance over body-fixed zz axis (yaw).
@@ -3801,15 +4204,18 @@ abstract class NavigationUncertainty extends ImcMessage implements Built<Navigat
   double get r;
 
   /// Body-fixed frame xx axis velocity variance component.
-  @ImcField('Variance - Body-Fixed xx Velocity', 'u', ImcType.typeFp32, units: 'm/s')
+  @ImcField('Variance - Body-Fixed xx Velocity', 'u', ImcType.typeFp32,
+      units: 'm/s')
   double get u;
 
   /// Body-fixed frame yy axis velocity variance component.
-  @ImcField('Variance - Body-Fixed yy Velocity', 'v', ImcType.typeFp32, units: 'm/s')
+  @ImcField('Variance - Body-Fixed yy Velocity', 'v', ImcType.typeFp32,
+      units: 'm/s')
   double get v;
 
   /// Body-fixed frame zz axis velocity variance component.
-  @ImcField('Variance - Body-Fixed ww Velocity', 'w', ImcType.typeFp32, units: 'm/s')
+  @ImcField('Variance - Body-Fixed ww Velocity', 'w', ImcType.typeFp32,
+      units: 'm/s')
   double get w;
 
   /// The psi Euler angle bias variance from the vehicle's sensed attitude.
@@ -3817,7 +4223,8 @@ abstract class NavigationUncertainty extends ImcMessage implements Built<Navigat
   double get biasPsi;
 
   /// The angular velocity over body-fixed zz axis bias variance from sensor.
-  @ImcField('Variance - Gyro. Yaw Rate Bias', 'bias_r', ImcType.typeFp32, units: 'rad/s')
+  @ImcField('Variance - Gyro. Yaw Rate Bias', 'bias_r', ImcType.typeFp32,
+      units: 'rad/s')
   double get biasR;
 }
 
@@ -3827,10 +4234,12 @@ abstract class NavigationUncertainty extends ImcMessage implements Built<Navigat
 /// This is constituted by data which is not
 /// part of the vehicle estimated state but
 /// that the user may refer for more information.
-abstract class NavigationData extends ImcMessage implements Built<NavigationData, NavigationDataBuilder> {
+abstract class NavigationData extends ImcMessage
+    implements Built<NavigationData, NavigationDataBuilder> {
   static const static_id = 355;
   NavigationData._();
-  factory NavigationData([void Function(NavigationDataBuilder b) updates]) = _$NavigationData;
+  factory NavigationData([void Function(NavigationDataBuilder b) updates]) =
+      _$NavigationData;
 
   @override
   int get msgId => static_id;
@@ -3876,10 +4285,12 @@ abstract class NavigationData extends ImcMessage implements Built<NavigationData
 
 /// GPS Fix Rejection class
 ///
-abstract class GpsFixRejection extends ImcMessage implements Built<GpsFixRejection, GpsFixRejectionBuilder> {
+abstract class GpsFixRejection extends ImcMessage
+    implements Built<GpsFixRejection, GpsFixRejectionBuilder> {
   static const static_id = 356;
   GpsFixRejection._();
-  factory GpsFixRejection([void Function(GpsFixRejectionBuilder b) updates]) = _$GpsFixRejection;
+  factory GpsFixRejection([void Function(GpsFixRejectionBuilder b) updates]) =
+      _$GpsFixRejection;
 
   @override
   int get msgId => static_id;
@@ -3904,10 +4315,13 @@ abstract class GpsFixRejection extends ImcMessage implements Built<GpsFixRejecti
 /// value and the transponder name. Also, this message has an
 /// acceptance field that indicates whether a LBL range was accepted
 /// or rejected, and if rejected, the reason why.
-abstract class LblRangeAcceptance extends ImcMessage implements Built<LblRangeAcceptance, LblRangeAcceptanceBuilder> {
+abstract class LblRangeAcceptance extends ImcMessage
+    implements Built<LblRangeAcceptance, LblRangeAcceptanceBuilder> {
   static const static_id = 357;
   LblRangeAcceptance._();
-  factory LblRangeAcceptance([void Function(LblRangeAcceptanceBuilder b) updates]) = _$LblRangeAcceptance;
+  factory LblRangeAcceptance(
+          [void Function(LblRangeAcceptanceBuilder b) updates]) =
+      _$LblRangeAcceptance;
 
   @override
   int get msgId => static_id;
@@ -3933,10 +4347,12 @@ abstract class LblRangeAcceptance extends ImcMessage implements Built<LblRangeAc
 /// When the vehicle uses Doppler Velocity Log sensor, this message
 /// notifies that a new measurement was locally rejected by the
 /// navigation filter.
-abstract class DvlRejection extends ImcMessage implements Built<DvlRejection, DvlRejectionBuilder> {
+abstract class DvlRejection extends ImcMessage
+    implements Built<DvlRejection, DvlRejectionBuilder> {
   static const static_id = 358;
   DvlRejection._();
-  factory DvlRejection([void Function(DvlRejectionBuilder b) updates]) = _$DvlRejection;
+  factory DvlRejection([void Function(DvlRejectionBuilder b) updates]) =
+      _$DvlRejection;
 
   @override
   int get msgId => static_id;
@@ -3979,10 +4395,12 @@ abstract class DvlRejection extends ImcMessage implements Built<DvlRejection, Dv
 /// LBL Beacon Position Estimate class
 ///
 /// LBL Beacon position estimate.
-abstract class LblEstimate extends ImcMessage implements Built<LblEstimate, LblEstimateBuilder> {
+abstract class LblEstimate extends ImcMessage
+    implements Built<LblEstimate, LblEstimateBuilder> {
   static const static_id = 360;
   LblEstimate._();
-  factory LblEstimate([void Function(LblEstimateBuilder b) updates]) = _$LblEstimate;
+  factory LblEstimate([void Function(LblEstimateBuilder b) updates]) =
+      _$LblEstimate;
 
   @override
   int get msgId => static_id;
@@ -4019,10 +4437,12 @@ abstract class LblEstimate extends ImcMessage implements Built<LblEstimate, LblE
 /// Alignment State class
 ///
 /// This message notifies the vehicle is ready for dead-reckoning missions.
-abstract class AlignmentState extends ImcMessage implements Built<AlignmentState, AlignmentStateBuilder> {
+abstract class AlignmentState extends ImcMessage
+    implements Built<AlignmentState, AlignmentStateBuilder> {
   static const static_id = 361;
   AlignmentState._();
-  factory AlignmentState([void Function(AlignmentStateBuilder b) updates]) = _$AlignmentState;
+  factory AlignmentState([void Function(AlignmentStateBuilder b) updates]) =
+      _$AlignmentState;
 
   @override
   int get msgId => static_id;
@@ -4038,10 +4458,13 @@ abstract class AlignmentState extends ImcMessage implements Built<AlignmentState
 ///
 /// The stream velocity estimated by a group of systems.
 /// Typically for water or air streams.
-abstract class GroupStreamVelocity extends ImcMessage implements Built<GroupStreamVelocity, GroupStreamVelocityBuilder> {
+abstract class GroupStreamVelocity extends ImcMessage
+    implements Built<GroupStreamVelocity, GroupStreamVelocityBuilder> {
   static const static_id = 362;
   GroupStreamVelocity._();
-  factory GroupStreamVelocity([void Function(GroupStreamVelocityBuilder b) updates]) = _$GroupStreamVelocity;
+  factory GroupStreamVelocity(
+          [void Function(GroupStreamVelocityBuilder b) updates]) =
+      _$GroupStreamVelocity;
 
   @override
   int get msgId => static_id;
@@ -4064,7 +4487,8 @@ abstract class GroupStreamVelocity extends ImcMessage implements Built<GroupStre
 /// Airflow class
 ///
 /// Airspeed along with airflow angles.
-abstract class Airflow extends ImcMessage implements Built<Airflow, AirflowBuilder> {
+abstract class Airflow extends ImcMessage
+    implements Built<Airflow, AirflowBuilder> {
   static const static_id = 363;
   Airflow._();
   factory Airflow([void Function(AirflowBuilder b) updates]) = _$Airflow;
@@ -4090,10 +4514,12 @@ abstract class Airflow extends ImcMessage implements Built<Airflow, AirflowBuild
 /// Desired Heading class
 ///
 /// Desired Heading angle reference value for the control layer.
-abstract class DesiredHeading extends ControlCommand implements Built<DesiredHeading, DesiredHeadingBuilder> {
+abstract class DesiredHeading extends ControlCommand
+    implements Built<DesiredHeading, DesiredHeadingBuilder> {
   static const static_id = 400;
   DesiredHeading._();
-  factory DesiredHeading([void Function(DesiredHeadingBuilder b) updates]) = _$DesiredHeading;
+  factory DesiredHeading([void Function(DesiredHeadingBuilder b) updates]) =
+      _$DesiredHeading;
 
   @override
   int get msgId => static_id;
@@ -4109,7 +4535,8 @@ abstract class DesiredHeading extends ControlCommand implements Built<DesiredHea
 /// Desired Z class
 ///
 /// Desired Z reference value for the control layer.
-abstract class DesiredZ extends ControlCommand implements Built<DesiredZ, DesiredZBuilder> {
+abstract class DesiredZ extends ControlCommand
+    implements Built<DesiredZ, DesiredZBuilder> {
   static const static_id = 401;
   DesiredZ._();
   factory DesiredZ([void Function(DesiredZBuilder b) updates]) = _$DesiredZ;
@@ -4131,10 +4558,12 @@ abstract class DesiredZ extends ControlCommand implements Built<DesiredZ, Desire
 /// Desired Speed class
 ///
 /// Desired Speed reference value for the control layer.
-abstract class DesiredSpeed extends ControlCommand implements Built<DesiredSpeed, DesiredSpeedBuilder> {
+abstract class DesiredSpeed extends ControlCommand
+    implements Built<DesiredSpeed, DesiredSpeedBuilder> {
   static const static_id = 402;
   DesiredSpeed._();
-  factory DesiredSpeed([void Function(DesiredSpeedBuilder b) updates]) = _$DesiredSpeed;
+  factory DesiredSpeed([void Function(DesiredSpeedBuilder b) updates]) =
+      _$DesiredSpeed;
 
   @override
   int get msgId => static_id;
@@ -4154,10 +4583,12 @@ abstract class DesiredSpeed extends ControlCommand implements Built<DesiredSpeed
 /// Desired Roll class
 ///
 /// Desired Roll angle reference value for the control layer.
-abstract class DesiredRoll extends ControlCommand implements Built<DesiredRoll, DesiredRollBuilder> {
+abstract class DesiredRoll extends ControlCommand
+    implements Built<DesiredRoll, DesiredRollBuilder> {
   static const static_id = 403;
   DesiredRoll._();
-  factory DesiredRoll([void Function(DesiredRollBuilder b) updates]) = _$DesiredRoll;
+  factory DesiredRoll([void Function(DesiredRollBuilder b) updates]) =
+      _$DesiredRoll;
 
   @override
   int get msgId => static_id;
@@ -4172,10 +4603,12 @@ abstract class DesiredRoll extends ControlCommand implements Built<DesiredRoll, 
 /// Desired Pitch class
 ///
 /// Desired Pitch angle reference value for the control layer.
-abstract class DesiredPitch extends ControlCommand implements Built<DesiredPitch, DesiredPitchBuilder> {
+abstract class DesiredPitch extends ControlCommand
+    implements Built<DesiredPitch, DesiredPitchBuilder> {
   static const static_id = 404;
   DesiredPitch._();
-  factory DesiredPitch([void Function(DesiredPitchBuilder b) updates]) = _$DesiredPitch;
+  factory DesiredPitch([void Function(DesiredPitchBuilder b) updates]) =
+      _$DesiredPitch;
 
   @override
   int get msgId => static_id;
@@ -4190,10 +4623,13 @@ abstract class DesiredPitch extends ControlCommand implements Built<DesiredPitch
 /// Desired Vertical Rate class
 ///
 /// Desired Vertical Rate speed reference value for the control layer.
-abstract class DesiredVerticalRate extends ImcMessage implements Built<DesiredVerticalRate, DesiredVerticalRateBuilder> {
+abstract class DesiredVerticalRate extends ImcMessage
+    implements Built<DesiredVerticalRate, DesiredVerticalRateBuilder> {
   static const static_id = 405;
   DesiredVerticalRate._();
-  factory DesiredVerticalRate([void Function(DesiredVerticalRateBuilder b) updates]) = _$DesiredVerticalRate;
+  factory DesiredVerticalRate(
+          [void Function(DesiredVerticalRateBuilder b) updates]) =
+      _$DesiredVerticalRate;
 
   @override
   int get msgId => static_id;
@@ -4209,36 +4645,38 @@ abstract class DesiredVerticalRate extends ImcMessage implements Built<DesiredVe
 /// Desired Path class
 ///
 /// Perform path control.
-/// 
+///
 /// The path is specified by two WGS-84 waypoints, respective
 /// altitude / depth settings, optional loitering at the end point,
 /// and some control flags.
-/// 
+///
 /// The start and end waypoints are defined by the specified end point fields
 /// ('end_{lat/lon/z}') plus:
-/// 
+///
 /// 1. the start waypoint fields ('start_{lat|lon|z}') if the
 /// 'START' flag (bit in 'flags' field) is set; or
 /// 2. the end point of the previous path recently tracked; or
 /// 3. the current location is the 'DIRECT' flag is set or if
 /// the tracker has been idle for some time.
-/// 
+///
 /// Altitude and depth control can be performed as follows:
-/// 
+///
 /// 1. by default, the tracker will just transmit an altitude/depth
 /// reference value equal to 'end_z' to the appropriate controller;
 /// 2. if the 'NO_Z' flag is set no altitude/depth control will take
 /// place, hence they can be controlled independently;
 /// 3. if the '3DTRACK' flag is set, 3D-tracking will be done
 /// (if supported by the active controller).
-/// 
+///
 /// Loitering can be specified at the end point with a certain
 /// radius ('lradius'), duration ('lduration'), and clockwise or
 /// counter-clockwise direction ('CCLOCKW' flag).
-abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, DesiredPathBuilder> {
+abstract class DesiredPath extends ControlCommand
+    implements Built<DesiredPath, DesiredPathBuilder> {
   static const static_id = 406;
   DesiredPath._();
-  factory DesiredPath([void Function(DesiredPathBuilder b) updates]) = _$DesiredPath;
+  factory DesiredPath([void Function(DesiredPathBuilder b) updates]) =
+      _$DesiredPath;
 
   @override
   int get msgId => static_id;
@@ -4254,18 +4692,21 @@ abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, 
 
   /// WGS-84 latitude of start point. This will be ignored unless
   /// the 'START' flag is set.
-  @ImcField('Start Point -- Latitude WGS-84', 'start_lat', ImcType.typeFp64, units: 'rad')
+  @ImcField('Start Point -- Latitude WGS-84', 'start_lat', ImcType.typeFp64,
+      units: 'rad')
   double get startLat;
 
   /// WGS-84 longitude of start point. This will be ignored unless
   /// the 'START' flag is set.
-  @ImcField('Start Point -- WGS-84 Longitude', 'start_lon', ImcType.typeFp64, units: 'rad')
+  @ImcField('Start Point -- WGS-84 Longitude', 'start_lon', ImcType.typeFp64,
+      units: 'rad')
   double get startLon;
 
   /// Altitude or depth of start point. This parameter will be
   /// ignored if the 'NO_Z' flag is set, or if the 'START' flag is
   /// not set.
-  @ImcField('Start Point -- Z Reference', 'start_z', ImcType.typeFp32, units: 'm')
+  @ImcField('Start Point -- Z Reference', 'start_z', ImcType.typeFp32,
+      units: 'm')
   double get startZ;
 
   /// Units of the start point's z reference.
@@ -4273,11 +4714,13 @@ abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, 
   ZUnitsEnum get startZUnits;
 
   /// WGS-84 latitude of end point.
-  @ImcField('End Point -- WGS84 Latitude', 'end_lat', ImcType.typeFp64, units: 'rad')
+  @ImcField('End Point -- WGS84 Latitude', 'end_lat', ImcType.typeFp64,
+      units: 'rad')
   double get endLat;
 
   /// WGS-84 longitude of end point.
-  @ImcField('End Point -- WGS-84 Longitude', 'end_lon', ImcType.typeFp64, units: 'rad')
+  @ImcField('End Point -- WGS-84 Longitude', 'end_lon', ImcType.typeFp64,
+      units: 'rad')
   double get endLon;
 
   /// Depth or altitude for the end point. This parameter will be
@@ -4311,10 +4754,12 @@ abstract class DesiredPath extends ControlCommand implements Built<DesiredPath, 
 ///
 /// Set the desired virtual forces and torques to be applied to the
 /// vehicle.
-abstract class DesiredControl extends ImcMessage implements Built<DesiredControl, DesiredControlBuilder> {
+abstract class DesiredControl extends ImcMessage
+    implements Built<DesiredControl, DesiredControlBuilder> {
   static const static_id = 407;
   DesiredControl._();
-  factory DesiredControl([void Function(DesiredControlBuilder b) updates]) = _$DesiredControl;
+  factory DesiredControl([void Function(DesiredControlBuilder b) updates]) =
+      _$DesiredControl;
 
   @override
   int get msgId => static_id;
@@ -4353,10 +4798,13 @@ abstract class DesiredControl extends ImcMessage implements Built<DesiredControl
 /// Desired Heading Rate class
 ///
 /// Desired Heading Rate speed reference value for the control layer.
-abstract class DesiredHeadingRate extends ImcMessage implements Built<DesiredHeadingRate, DesiredHeadingRateBuilder> {
+abstract class DesiredHeadingRate extends ImcMessage
+    implements Built<DesiredHeadingRate, DesiredHeadingRateBuilder> {
   static const static_id = 408;
   DesiredHeadingRate._();
-  factory DesiredHeadingRate([void Function(DesiredHeadingRateBuilder b) updates]) = _$DesiredHeadingRate;
+  factory DesiredHeadingRate(
+          [void Function(DesiredHeadingRateBuilder b) updates]) =
+      _$DesiredHeadingRate;
 
   @override
   int get msgId => static_id;
@@ -4372,10 +4820,12 @@ abstract class DesiredHeadingRate extends ImcMessage implements Built<DesiredHea
 /// Desired Velocity class
 ///
 /// Desired value for each linear and angular speeds.
-abstract class DesiredVelocity extends ImcMessage implements Built<DesiredVelocity, DesiredVelocityBuilder> {
+abstract class DesiredVelocity extends ImcMessage
+    implements Built<DesiredVelocity, DesiredVelocityBuilder> {
   static const static_id = 409;
   DesiredVelocity._();
-  factory DesiredVelocity([void Function(DesiredVelocityBuilder b) updates]) = _$DesiredVelocity;
+  factory DesiredVelocity([void Function(DesiredVelocityBuilder b) updates]) =
+      _$DesiredVelocity;
 
   @override
   int get msgId => static_id;
@@ -4414,10 +4864,12 @@ abstract class DesiredVelocity extends ImcMessage implements Built<DesiredVeloci
 /// Path Control State class
 ///
 /// Path control state issued by Path Controller.
-abstract class PathControlState extends ImcMessage implements Built<PathControlState, PathControlStateBuilder> {
+abstract class PathControlState extends ImcMessage
+    implements Built<PathControlState, PathControlStateBuilder> {
   static const static_id = 410;
   PathControlState._();
-  factory PathControlState([void Function(PathControlStateBuilder b) updates]) = _$PathControlState;
+  factory PathControlState([void Function(PathControlStateBuilder b) updates]) =
+      _$PathControlState;
 
   @override
   int get msgId => static_id;
@@ -4431,17 +4883,20 @@ abstract class PathControlState extends ImcMessage implements Built<PathControlS
   int get pathRef;
 
   /// WGS-84 latitude of start point.
-  @ImcField('Start Point -- Latitude WGS-84', 'start_lat', ImcType.typeFp64, units: 'rad')
+  @ImcField('Start Point -- Latitude WGS-84', 'start_lat', ImcType.typeFp64,
+      units: 'rad')
   double get startLat;
 
   /// WGS-84 longitude of start point.
-  @ImcField('Start Point -- WGS-84 Longitude', 'start_lon', ImcType.typeFp64, units: 'rad')
+  @ImcField('Start Point -- WGS-84 Longitude', 'start_lon', ImcType.typeFp64,
+      units: 'rad')
   double get startLon;
 
   /// Altitude or depth of start point. This parameter will be
   /// ignored if the 'NO_Z' flag is set, or if the 'START' flag is
   /// not set.
-  @ImcField('Start Point -- Z Reference', 'start_z', ImcType.typeFp32, units: 'm')
+  @ImcField('Start Point -- Z Reference', 'start_z', ImcType.typeFp32,
+      units: 'm')
   double get startZ;
 
   /// Units of the start point's z reference.
@@ -4449,11 +4904,13 @@ abstract class PathControlState extends ImcMessage implements Built<PathControlS
   ZUnitsEnum get startZUnits;
 
   /// WGS-84 latitude of end point.
-  @ImcField('End Point -- Latitude WGS-84', 'end_lat', ImcType.typeFp64, units: 'rad')
+  @ImcField('End Point -- Latitude WGS-84', 'end_lat', ImcType.typeFp64,
+      units: 'rad')
   double get endLat;
 
   /// WGS-84 longitude of end point.
-  @ImcField('End Point -- WGS-84 Longitude', 'end_lon', ImcType.typeFp64, units: 'rad')
+  @ImcField('End Point -- WGS-84 Longitude', 'end_lon', ImcType.typeFp64,
+      units: 'rad')
   double get endLon;
 
   /// Depth or altitude for the end point. This parameter should be
@@ -4505,17 +4962,21 @@ abstract class PathControlState extends ImcMessage implements Built<PathControlS
   /// Estimated time to reach target waypoint. The value will be
   /// 65535 if the time is unknown or undefined, and 0 when
   /// loitering.
-  @ImcField('Estimated Time to Arrival (ETA)', 'eta', ImcType.typeUInt16, units: 's')
+  @ImcField('Estimated Time to Arrival (ETA)', 'eta', ImcType.typeUInt16,
+      units: 's')
   int get eta;
 }
 
 /// Allocated Control Torques class
 ///
 /// Control torques allocated to the actuators.
-abstract class AllocatedControlTorques extends ImcMessage implements Built<AllocatedControlTorques, AllocatedControlTorquesBuilder> {
+abstract class AllocatedControlTorques extends ImcMessage
+    implements Built<AllocatedControlTorques, AllocatedControlTorquesBuilder> {
   static const static_id = 411;
   AllocatedControlTorques._();
-  factory AllocatedControlTorques([void Function(AllocatedControlTorquesBuilder b) updates]) = _$AllocatedControlTorques;
+  factory AllocatedControlTorques(
+          [void Function(AllocatedControlTorquesBuilder b) updates]) =
+      _$AllocatedControlTorques;
 
   @override
   int get msgId => static_id;
@@ -4538,10 +4999,12 @@ abstract class AllocatedControlTorques extends ImcMessage implements Built<Alloc
 /// Control Parcel class
 ///
 /// Report of PID control parcels.
-abstract class ControlParcel extends ImcMessage implements Built<ControlParcel, ControlParcelBuilder> {
+abstract class ControlParcel extends ImcMessage
+    implements Built<ControlParcel, ControlParcelBuilder> {
   static const static_id = 412;
   ControlParcel._();
-  factory ControlParcel([void Function(ControlParcelBuilder b) updates]) = _$ControlParcel;
+  factory ControlParcel([void Function(ControlParcelBuilder b) updates]) =
+      _$ControlParcel;
 
   @override
   int get msgId => static_id;
@@ -4586,10 +5049,13 @@ abstract class Brake extends ImcMessage implements Built<Brake, BrakeBuilder> {
 /// Desired Linear State class
 ///
 /// Position, velocity and acceleration setpoints in NED
-abstract class DesiredLinearState extends ImcMessage implements Built<DesiredLinearState, DesiredLinearStateBuilder> {
+abstract class DesiredLinearState extends ImcMessage
+    implements Built<DesiredLinearState, DesiredLinearStateBuilder> {
   static const static_id = 414;
   DesiredLinearState._();
-  factory DesiredLinearState([void Function(DesiredLinearStateBuilder b) updates]) = _$DesiredLinearState;
+  factory DesiredLinearState(
+          [void Function(DesiredLinearStateBuilder b) updates]) =
+      _$DesiredLinearState;
 
   @override
   int get msgId => static_id;
@@ -4621,15 +5087,18 @@ abstract class DesiredLinearState extends ImcMessage implements Built<DesiredLin
   double get vz;
 
   /// Desired acceleration along NED x axis.
-  @ImcField('Desired Linear Acceleration in xx', 'ax', ImcType.typeFp64, units: 'm/s/s')
+  @ImcField('Desired Linear Acceleration in xx', 'ax', ImcType.typeFp64,
+      units: 'm/s/s')
   double get ax;
 
   /// Desired acceleration along NED y axis.
-  @ImcField('Desired Linear Acceleration in yy', 'ay', ImcType.typeFp64, units: 'm/s/s')
+  @ImcField('Desired Linear Acceleration in yy', 'ay', ImcType.typeFp64,
+      units: 'm/s/s')
   double get ay;
 
   /// Desired acceleration along NED z axis.
-  @ImcField('Desired Linear Acceleration in zz', 'az', ImcType.typeFp64, units: 'm/s/s')
+  @ImcField('Desired Linear Acceleration in zz', 'az', ImcType.typeFp64,
+      units: 'm/s/s')
   double get az;
 
   /// Setpoint Flags
@@ -4640,10 +5109,12 @@ abstract class DesiredLinearState extends ImcMessage implements Built<DesiredLin
 /// Desired Throttle class
 ///
 /// Desired throttle e.g. for Plane in FBWA-mode.
-abstract class DesiredThrottle extends ControlCommand implements Built<DesiredThrottle, DesiredThrottleBuilder> {
+abstract class DesiredThrottle extends ControlCommand
+    implements Built<DesiredThrottle, DesiredThrottleBuilder> {
   static const static_id = 415;
   DesiredThrottle._();
-  factory DesiredThrottle([void Function(DesiredThrottleBuilder b) updates]) = _$DesiredThrottle;
+  factory DesiredThrottle([void Function(DesiredThrottleBuilder b) updates]) =
+      _$DesiredThrottle;
 
   @override
   int get msgId => static_id;
@@ -4660,10 +5131,10 @@ abstract class DesiredThrottle extends ControlCommand implements Built<DesiredTh
 /// A "Goto" is a maneuver specifying a movement of the vehicle to a
 /// target waypoint. The waypoint is described by the WGS-84
 /// waypoint coordinate and target Z reference.
-/// 
+///
 /// Mandatory parameters defined for a "Goto" are
 /// timeout, speed and speed units.
-/// 
+///
 /// Optional parameters may be defined for the target Euler
 /// Angles (roll, pitch and yaw) though these parameters may
 /// not be considered by all maneuver controllers in charge
@@ -4726,7 +5197,8 @@ abstract class Goto extends Maneuver implements Built<Goto, GotoBuilder> {
   double get yaw;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -4790,7 +5262,8 @@ abstract class PopUp extends Maneuver implements Built<PopUp, PopUpBuilder> {
   PopUpBitfieldFlags get flags;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -4798,10 +5271,12 @@ abstract class PopUp extends Maneuver implements Built<PopUp, PopUpBuilder> {
 ///
 /// The Teleoperation Maneuver lets the vehicle be controlled by an
 /// external human operator.
-abstract class Teleoperation extends Maneuver implements Built<Teleoperation, TeleoperationBuilder> {
+abstract class Teleoperation extends Maneuver
+    implements Built<Teleoperation, TeleoperationBuilder> {
   static const static_id = 452;
   Teleoperation._();
-  factory Teleoperation([void Function(TeleoperationBuilder b) updates]) = _$Teleoperation;
+  factory Teleoperation([void Function(TeleoperationBuilder b) updates]) =
+      _$Teleoperation;
 
   @override
   int get msgId => static_id;
@@ -4809,7 +5284,8 @@ abstract class Teleoperation extends Maneuver implements Built<Teleoperation, Te
   String get abbrev => 'Teleoperation';
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -4883,17 +5359,20 @@ abstract class Loiter extends Maneuver implements Built<Loiter, LoiterBuilder> {
   LoiterEnumDirection get direction;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Idle Maneuver class
 ///
 /// Causes the vehicle to stay idle for some time.
-abstract class IdleManeuver extends Maneuver implements Built<IdleManeuver, IdleManeuverBuilder> {
+abstract class IdleManeuver extends Maneuver
+    implements Built<IdleManeuver, IdleManeuverBuilder> {
   static const static_id = 454;
   IdleManeuver._();
-  factory IdleManeuver([void Function(IdleManeuverBuilder b) updates]) = _$IdleManeuver;
+  factory IdleManeuver([void Function(IdleManeuverBuilder b) updates]) =
+      _$IdleManeuver;
 
   @override
   int get msgId => static_id;
@@ -4906,7 +5385,8 @@ abstract class IdleManeuver extends Maneuver implements Built<IdleManeuver, Idle
   int get duration;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -4915,10 +5395,12 @@ abstract class IdleManeuver extends Maneuver implements Built<IdleManeuver, Idle
 /// Low level maneuver that sends a (heading, roll, speed, ...)
 /// reference to a controller of the vehicle and then optionally
 /// lingers for some time.
-abstract class LowLevelControl extends Maneuver implements Built<LowLevelControl, LowLevelControlBuilder> {
+abstract class LowLevelControl extends Maneuver
+    implements Built<LowLevelControl, LowLevelControlBuilder> {
   static const static_id = 455;
   LowLevelControl._();
-  factory LowLevelControl([void Function(LowLevelControlBuilder b) updates]) = _$LowLevelControl;
+  factory LowLevelControl([void Function(LowLevelControlBuilder b) updates]) =
+      _$LowLevelControl;
 
   @override
   int get msgId => static_id;
@@ -4935,7 +5417,8 @@ abstract class LowLevelControl extends Maneuver implements Built<LowLevelControl
   int get duration;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -5006,7 +5489,8 @@ abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
   int get coff;
 
   /// Alternation parameter.
-  @ImcField('Alternation Parameter', 'alternation', ImcType.typeUInt8, units: '%')
+  @ImcField('Alternation Parameter', 'alternation', ImcType.typeUInt8,
+      units: '%')
   int get alternation;
 
   /// Maneuver flags.
@@ -5014,17 +5498,20 @@ abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
   RowsBitfieldFlags get flags;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Follow Path Maneuver class
 ///
 /// Maneuver constituted by a list of Path Points.
-abstract class FollowPath extends Maneuver implements Built<FollowPath, FollowPathBuilder> {
+abstract class FollowPath extends Maneuver
+    implements Built<FollowPath, FollowPathBuilder> {
   static const static_id = 457;
   FollowPath._();
-  factory FollowPath([void Function(FollowPathBuilder b) updates]) = _$FollowPath;
+  factory FollowPath([void Function(FollowPathBuilder b) updates]) =
+      _$FollowPath;
 
   @override
   int get msgId => static_id;
@@ -5065,14 +5552,16 @@ abstract class FollowPath extends Maneuver implements Built<FollowPath, FollowPa
   List<PathPoint> get points;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Path Point class
 ///
 /// Waypoint coordinate of a Follow Path maneuver.
-abstract class PathPoint extends ImcMessage implements Built<PathPoint, PathPointBuilder> {
+abstract class PathPoint extends ImcMessage
+    implements Built<PathPoint, PathPointBuilder> {
   static const static_id = 458;
   PathPoint._();
   factory PathPoint([void Function(PathPointBuilder b) updates]) = _$PathPoint;
@@ -5151,17 +5640,21 @@ abstract class YoYo extends Maneuver implements Built<YoYo, YoYoBuilder> {
   SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Teleoperation Done class
 ///
 /// Notification of completion of a Teleoperation maneuver.
-abstract class TeleoperationDone extends ImcMessage implements Built<TeleoperationDone, TeleoperationDoneBuilder> {
+abstract class TeleoperationDone extends ImcMessage
+    implements Built<TeleoperationDone, TeleoperationDoneBuilder> {
   static const static_id = 460;
   TeleoperationDone._();
-  factory TeleoperationDone([void Function(TeleoperationDoneBuilder b) updates]) = _$TeleoperationDone;
+  factory TeleoperationDone(
+          [void Function(TeleoperationDoneBuilder b) updates]) =
+      _$TeleoperationDone;
 
   @override
   int get msgId => static_id;
@@ -5174,10 +5667,12 @@ abstract class TeleoperationDone extends ImcMessage implements Built<Teleoperati
 /// The Station Keeping maneuver makes the vehicle come to the surface
 /// and then enter a given circular perimeter around a waypoint coordinate
 /// for a certain amount of time.
-abstract class StationKeeping extends Maneuver implements Built<StationKeeping, StationKeepingBuilder> {
+abstract class StationKeeping extends Maneuver
+    implements Built<StationKeeping, StationKeepingBuilder> {
   static const static_id = 461;
   StationKeeping._();
-  factory StationKeeping([void Function(StationKeepingBuilder b) updates]) = _$StationKeeping;
+  factory StationKeeping([void Function(StationKeepingBuilder b) updates]) =
+      _$StationKeeping;
 
   @override
   int get msgId => static_id;
@@ -5219,7 +5714,8 @@ abstract class StationKeeping extends Maneuver implements Built<StationKeeping, 
   SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -5229,7 +5725,8 @@ abstract class StationKeeping extends Maneuver implements Built<StationKeeping, 
 /// waypoint using a cruise altitude/depth and then ascend or
 /// descend to another target altitude/depth. The ascent/descent
 /// slope and radius can also be optionally specified.
-abstract class Elevator extends Maneuver implements Built<Elevator, ElevatorBuilder> {
+abstract class Elevator extends Maneuver
+    implements Built<Elevator, ElevatorBuilder> {
   static const static_id = 462;
   Elevator._();
   factory Elevator([void Function(ElevatorBuilder b) updates]) = _$Elevator;
@@ -5260,7 +5757,8 @@ abstract class Elevator extends Maneuver implements Built<Elevator, ElevatorBuil
   /// Altitude or depth of start point. This parameter will be
   /// ignored if the 'NO_Z' flag is set, or if the 'START' flag is
   /// not set.
-  @ImcField('Start Point -- Z Reference', 'start_z', ImcType.typeFp32, units: 'm')
+  @ImcField('Start Point -- Z Reference', 'start_z', ImcType.typeFp32,
+      units: 'm')
   double get startZ;
 
   /// Units of the start point's z reference.
@@ -5290,17 +5788,20 @@ abstract class Elevator extends Maneuver implements Built<Elevator, ElevatorBuil
   SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Follow Trajectory class
 ///
 /// Maneuver constituted by a list of Trajectory Points.
-abstract class FollowTrajectory extends Maneuver implements Built<FollowTrajectory, FollowTrajectoryBuilder> {
+abstract class FollowTrajectory extends Maneuver
+    implements Built<FollowTrajectory, FollowTrajectoryBuilder> {
   static const static_id = 463;
   FollowTrajectory._();
-  factory FollowTrajectory([void Function(FollowTrajectoryBuilder b) updates]) = _$FollowTrajectory;
+  factory FollowTrajectory([void Function(FollowTrajectoryBuilder b) updates]) =
+      _$FollowTrajectory;
 
   @override
   int get msgId => static_id;
@@ -5341,17 +5842,20 @@ abstract class FollowTrajectory extends Maneuver implements Built<FollowTrajecto
   List<TrajectoryPoint> get points;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Trajectory Point class
 ///
 /// Waypoint coordinate of a Follow Trajectory maneuver.
-abstract class TrajectoryPoint extends ImcMessage implements Built<TrajectoryPoint, TrajectoryPointBuilder> {
+abstract class TrajectoryPoint extends ImcMessage
+    implements Built<TrajectoryPoint, TrajectoryPointBuilder> {
   static const static_id = 464;
   TrajectoryPoint._();
-  factory TrajectoryPoint([void Function(TrajectoryPointBuilder b) updates]) = _$TrajectoryPoint;
+  factory TrajectoryPoint([void Function(TrajectoryPointBuilder b) updates]) =
+      _$TrajectoryPoint;
 
   @override
   int get msgId => static_id;
@@ -5384,10 +5888,12 @@ abstract class TrajectoryPoint extends ImcMessage implements Built<TrajectoryPoi
 /// very specific maneuver not covered by the IMC scope. The
 /// settings of the maneuver are just its id, timeout and other
 /// settings encoded as a tuple list.
-abstract class CustomManeuver extends Maneuver implements Built<CustomManeuver, CustomManeuverBuilder> {
+abstract class CustomManeuver extends Maneuver
+    implements Built<CustomManeuver, CustomManeuverBuilder> {
   static const static_id = 465;
   CustomManeuver._();
-  factory CustomManeuver([void Function(CustomManeuverBuilder b) updates]) = _$CustomManeuver;
+  factory CustomManeuver([void Function(CustomManeuverBuilder b) updates]) =
+      _$CustomManeuver;
 
   @override
   int get msgId => static_id;
@@ -5406,17 +5912,20 @@ abstract class CustomManeuver extends Maneuver implements Built<CustomManeuver, 
   String get name;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Vehicle Formation class
 ///
 /// Coordinate maneuver using two or more cooperating systems.
-abstract class VehicleFormation extends Maneuver implements Built<VehicleFormation, VehicleFormationBuilder> {
+abstract class VehicleFormation extends Maneuver
+    implements Built<VehicleFormation, VehicleFormationBuilder> {
   static const static_id = 466;
   VehicleFormation._();
-  factory VehicleFormation([void Function(VehicleFormationBuilder b) updates]) = _$VehicleFormation;
+  factory VehicleFormation([void Function(VehicleFormationBuilder b) updates]) =
+      _$VehicleFormation;
 
   @override
   int get msgId => static_id;
@@ -5461,17 +5970,22 @@ abstract class VehicleFormation extends Maneuver implements Built<VehicleFormati
   double get startTime;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Vehicle Formation Participant class
 ///
 /// Definition of a vehicle participant in a VehicleFormation maneuver.
-abstract class VehicleFormationParticipant extends ImcMessage implements Built<VehicleFormationParticipant, VehicleFormationParticipantBuilder> {
+abstract class VehicleFormationParticipant extends ImcMessage
+    implements
+        Built<VehicleFormationParticipant, VehicleFormationParticipantBuilder> {
   static const static_id = 467;
   VehicleFormationParticipant._();
-  factory VehicleFormationParticipant([void Function(VehicleFormationParticipantBuilder b) updates]) = _$VehicleFormationParticipant;
+  factory VehicleFormationParticipant(
+          [void Function(VehicleFormationParticipantBuilder b) updates]) =
+      _$VehicleFormationParticipant;
 
   @override
   int get msgId => static_id;
@@ -5483,25 +5997,30 @@ abstract class VehicleFormationParticipant extends ImcMessage implements Built<V
   int get vid;
 
   /// Distance that the system must respect along the xx axis.
-  @ImcField('Formation offset -- Along-track', 'off_x', ImcType.typeFp32, units: 'm')
+  @ImcField('Formation offset -- Along-track', 'off_x', ImcType.typeFp32,
+      units: 'm')
   double get offX;
 
   /// Distance that the system must respect along the yy axis.
-  @ImcField('Formation offset -- Cross-track', 'off_y', ImcType.typeFp32, units: 'm')
+  @ImcField('Formation offset -- Cross-track', 'off_y', ImcType.typeFp32,
+      units: 'm')
   double get offY;
 
   /// Distance that the system must respect along the zz axis.
-  @ImcField('Formation offset -- Depth/Altitude', 'off_z', ImcType.typeFp32, units: 'm')
+  @ImcField('Formation offset -- Depth/Altitude', 'off_z', ImcType.typeFp32,
+      units: 'm')
   double get offZ;
 }
 
 /// Stop Maneuver class
 ///
 /// Command used to stop currently executing maneuver.
-abstract class StopManeuver extends ImcMessage implements Built<StopManeuver, StopManeuverBuilder> {
+abstract class StopManeuver extends ImcMessage
+    implements Built<StopManeuver, StopManeuverBuilder> {
   static const static_id = 468;
   StopManeuver._();
-  factory StopManeuver([void Function(StopManeuverBuilder b) updates]) = _$StopManeuver;
+  factory StopManeuver([void Function(StopManeuverBuilder b) updates]) =
+      _$StopManeuver;
 
   @override
   int get msgId => static_id;
@@ -5513,10 +6032,12 @@ abstract class StopManeuver extends ImcMessage implements Built<StopManeuver, St
 ///
 /// Command used to indicate maneuver can be executed in the
 /// vehicle.
-abstract class RegisterManeuver extends ImcMessage implements Built<RegisterManeuver, RegisterManeuverBuilder> {
+abstract class RegisterManeuver extends ImcMessage
+    implements Built<RegisterManeuver, RegisterManeuverBuilder> {
   static const static_id = 469;
   RegisterManeuver._();
-  factory RegisterManeuver([void Function(RegisterManeuverBuilder b) updates]) = _$RegisterManeuver;
+  factory RegisterManeuver([void Function(RegisterManeuverBuilder b) updates]) =
+      _$RegisterManeuver;
 
   @override
   int get msgId => static_id;
@@ -5531,10 +6052,13 @@ abstract class RegisterManeuver extends ImcMessage implements Built<RegisterMane
 /// Maneuver Control State class
 ///
 /// Maneuver control state.
-abstract class ManeuverControlState extends ImcMessage implements Built<ManeuverControlState, ManeuverControlStateBuilder> {
+abstract class ManeuverControlState extends ImcMessage
+    implements Built<ManeuverControlState, ManeuverControlStateBuilder> {
   static const static_id = 470;
   ManeuverControlState._();
-  factory ManeuverControlState([void Function(ManeuverControlStateBuilder b) updates]) = _$ManeuverControlState;
+  factory ManeuverControlState(
+          [void Function(ManeuverControlStateBuilder b) updates]) =
+      _$ManeuverControlState;
 
   @override
   int get msgId => static_id;
@@ -5558,10 +6082,12 @@ abstract class ManeuverControlState extends ImcMessage implements Built<Maneuver
 /// Follow System class
 ///
 /// System-following maneuver.
-abstract class FollowSystem extends ImcMessage implements Built<FollowSystem, FollowSystemBuilder> {
+abstract class FollowSystem extends ImcMessage
+    implements Built<FollowSystem, FollowSystemBuilder> {
   static const static_id = 471;
   FollowSystem._();
-  factory FollowSystem([void Function(FollowSystemBuilder b) updates]) = _$FollowSystem;
+  factory FollowSystem([void Function(FollowSystemBuilder b) updates]) =
+      _$FollowSystem;
 
   @override
   int get msgId => static_id;
@@ -5606,10 +6132,12 @@ abstract class FollowSystem extends ImcMessage implements Built<FollowSystem, Fo
 ///
 /// In this maneuver, a vehicle drives to the center of two other
 /// systems (a, b) in order to be used as a communications relay.
-abstract class CommsRelay extends Maneuver implements Built<CommsRelay, CommsRelayBuilder> {
+abstract class CommsRelay extends Maneuver
+    implements Built<CommsRelay, CommsRelayBuilder> {
   static const static_id = 472;
   CommsRelay._();
-  factory CommsRelay([void Function(CommsRelayBuilder b) updates]) = _$CommsRelay;
+  factory CommsRelay([void Function(CommsRelayBuilder b) updates]) =
+      _$CommsRelay;
 
   @override
   int get msgId => static_id;
@@ -5654,7 +6182,8 @@ abstract class CommsRelay extends Maneuver implements Built<CommsRelay, CommsRel
 ///
 /// Given a polygonal area, generates trajectories to cover the
 /// area.
-abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaBuilder> {
+abstract class CoverArea extends Maneuver
+    implements Built<CoverArea, CoverAreaBuilder> {
   static const static_id = 473;
   CoverArea._();
   factory CoverArea([void Function(CoverAreaBuilder b) updates]) = _$CoverArea;
@@ -5694,7 +6223,8 @@ abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaB
   List<PolygonVertex> get polygon;
 
   /// Additional parameters to be used by the controller.
-  @ImcField('CustomParameters', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('CustomParameters', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -5702,10 +6232,12 @@ abstract class CoverArea extends Maneuver implements Built<CoverArea, CoverAreaB
 ///
 /// This message is used to store the various polygon vertices for
 /// CoverArea maneuvers.
-abstract class PolygonVertex extends ImcMessage implements Built<PolygonVertex, PolygonVertexBuilder> {
+abstract class PolygonVertex extends ImcMessage
+    implements Built<PolygonVertex, PolygonVertexBuilder> {
   static const static_id = 474;
   PolygonVertex._();
-  factory PolygonVertex([void Function(PolygonVertexBuilder b) updates]) = _$PolygonVertex;
+  factory PolygonVertex([void Function(PolygonVertexBuilder b) updates]) =
+      _$PolygonVertex;
 
   @override
   int get msgId => static_id;
@@ -5726,10 +6258,13 @@ abstract class PolygonVertex extends ImcMessage implements Built<PolygonVertex, 
 /// This maneuver is a mix between the Loiter maneuver and the YoYo maneuver.
 /// The vehicle cirlcles around a specific waypoint with a variable Z
 /// reference between a minimum and maximum value.
-abstract class CompassCalibration extends Maneuver implements Built<CompassCalibration, CompassCalibrationBuilder> {
+abstract class CompassCalibration extends Maneuver
+    implements Built<CompassCalibration, CompassCalibrationBuilder> {
   static const static_id = 475;
   CompassCalibration._();
-  factory CompassCalibration([void Function(CompassCalibrationBuilder b) updates]) = _$CompassCalibration;
+  factory CompassCalibration(
+          [void Function(CompassCalibrationBuilder b) updates]) =
+      _$CompassCalibration;
 
   @override
   int get msgId => static_id;
@@ -5787,7 +6322,8 @@ abstract class CompassCalibration extends Maneuver implements Built<CompassCalib
   CompassCalibrationEnumDirection get direction;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -5795,7 +6331,7 @@ abstract class CompassCalibration extends Maneuver implements Built<CompassCalib
 ///
 /// A "Formation" is defined by the relative positions of the vehicles
 /// inside the formation, and the reference frame where this positions are defined.
-/// 
+///
 /// The formation reference frame may be:
 /// - Earth Fixed: Where the vehicles relative position do not depend on the followed path.
 /// This results in all UAVs following the same path with an offset relative to each other;
@@ -5807,10 +6343,13 @@ abstract class CompassCalibration extends Maneuver implements Built<CompassCalib
 /// An offset in the xx axis results in a distance over the curved path line.
 /// An offset in the yy axis results in an offset of the vehicle path line relative to the
 /// formation center path line.
-abstract class FormationParameters extends ImcMessage implements Built<FormationParameters, FormationParametersBuilder> {
+abstract class FormationParameters extends ImcMessage
+    implements Built<FormationParameters, FormationParametersBuilder> {
   static const static_id = 476;
   FormationParameters._();
-  factory FormationParameters([void Function(FormationParametersBuilder b) updates]) = _$FormationParameters;
+  factory FormationParameters(
+          [void Function(FormationParametersBuilder b) updates]) =
+      _$FormationParameters;
 
   @override
   int get msgId => static_id;
@@ -5830,7 +6369,8 @@ abstract class FormationParameters extends ImcMessage implements Built<Formation
   List<VehicleFormationParticipant> get participants;
 
   /// Custom settings for the formation configuration.
-  @ImcField('Custom settings for formation', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for formation', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -5844,10 +6384,13 @@ abstract class FormationParameters extends ImcMessage implements Built<Formation
 /// - Speed at which that plan is followed
 /// - Path contrains (virtual leader bank limit)
 /// - Supervision settings
-abstract class FormationPlanExecution extends Maneuver implements Built<FormationPlanExecution, FormationPlanExecutionBuilder> {
+abstract class FormationPlanExecution extends Maneuver
+    implements Built<FormationPlanExecution, FormationPlanExecutionBuilder> {
   static const static_id = 477;
   FormationPlanExecution._();
-  factory FormationPlanExecution([void Function(FormationPlanExecutionBuilder b) updates]) = _$FormationPlanExecution;
+  factory FormationPlanExecution(
+          [void Function(FormationPlanExecutionBuilder b) updates]) =
+      _$FormationPlanExecution;
 
   @override
   int get msgId => static_id;
@@ -5872,37 +6415,48 @@ abstract class FormationPlanExecution extends Maneuver implements Built<Formatio
   String get description;
 
   /// Formation leader flight airspeed during the plan tracking.
-  @ImcField('Formation Leader Flight Airspeed', 'leader_speed', ImcType.typeFp32, units: 'm/s')
+  @ImcField(
+      'Formation Leader Flight Airspeed', 'leader_speed', ImcType.typeFp32,
+      units: 'm/s')
   double get leaderSpeed;
 
   /// Formation leader flight bank limit during the plan tracking.
-  @ImcField('Formation leader flight bank limit', 'leader_bank_lim', ImcType.typeFp32, units: 'm/s')
+  @ImcField(
+      'Formation leader flight bank limit', 'leader_bank_lim', ImcType.typeFp32,
+      units: 'm/s')
   double get leaderBankLim;
 
   /// Limit for the position mismatch between real and simulated position, before a maneuver abort is asserted.
-  @ImcField('Position mismatch limit', 'pos_sim_err_lim', ImcType.typeFp32, units: 'm')
+  @ImcField('Position mismatch limit', 'pos_sim_err_lim', ImcType.typeFp32,
+      units: 'm')
   double get posSimErrLim;
 
   /// Warning threshold for the position mismatch between real and simulated position.
   /// Above this threshold a time-out limit is evaluated to assert a maneuver abort state.
-  @ImcField('Position mismatch threshold', 'pos_sim_err_wrn', ImcType.typeFp32, units: 'm')
+  @ImcField('Position mismatch threshold', 'pos_sim_err_wrn', ImcType.typeFp32,
+      units: 'm')
   double get posSimErrWrn;
 
   /// The amount of time the maneuver is allowed to run after the position mismatch threshold is surpassed.
-  @ImcField('Position mismatch time-out', 'pos_sim_err_timeout', ImcType.typeUInt16, units: 's')
+  @ImcField(
+      'Position mismatch time-out', 'pos_sim_err_timeout', ImcType.typeUInt16,
+      units: 's')
   int get posSimErrTimeout;
 
   /// Threshold for the convergence measure, above which a time-out limit
   /// is evaluated to assert a maneuver abort state.
-  @ImcField('Convergence threshold', 'converg_max', ImcType.typeFp32, units: 'm')
+  @ImcField('Convergence threshold', 'converg_max', ImcType.typeFp32,
+      units: 'm')
   double get convergMax;
 
   /// The amount of time the maneuver is allowed to run after the convergence threshold is surpassed.
-  @ImcField('Convergence time-out', 'converg_timeout', ImcType.typeUInt16, units: 's')
+  @ImcField('Convergence time-out', 'converg_timeout', ImcType.typeUInt16,
+      units: 's')
   int get convergTimeout;
 
   /// The amount of time the maneuver is allowed to run without any update on the other formation vehicles states.
-  @ImcField('Communications time-out', 'comms_timeout', ImcType.typeUInt16, units: 's')
+  @ImcField('Communications time-out', 'comms_timeout', ImcType.typeUInt16,
+      units: 's')
   int get commsTimeout;
 
   /// Turbulence limit above which a maneuver abort is asserted.
@@ -5910,17 +6464,20 @@ abstract class FormationPlanExecution extends Maneuver implements Built<Formatio
   double get turbLim;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Follow Reference Maneuver class
 ///
 /// This maneuver follows a reference given by an external entity.
-abstract class FollowReference extends Maneuver implements Built<FollowReference, FollowReferenceBuilder> {
+abstract class FollowReference extends Maneuver
+    implements Built<FollowReference, FollowReferenceBuilder> {
   static const static_id = 478;
   FollowReference._();
-  factory FollowReference([void Function(FollowReferenceBuilder b) updates]) = _$FollowReference;
+  factory FollowReference([void Function(FollowReferenceBuilder b) updates]) =
+      _$FollowReference;
 
   @override
   int get msgId => static_id;
@@ -5957,7 +6514,8 @@ abstract class FollowReference extends Maneuver implements Built<FollowReference
 
 /// Reference To Follow class
 ///
-abstract class Reference extends ImcMessage implements Built<Reference, ReferenceBuilder> {
+abstract class Reference extends ImcMessage
+    implements Built<Reference, ReferenceBuilder> {
   static const static_id = 479;
   Reference._();
   factory Reference([void Function(ReferenceBuilder b) updates]) = _$Reference;
@@ -5988,10 +6546,12 @@ abstract class Reference extends ImcMessage implements Built<Reference, Referenc
 
 /// Follow Reference State class
 ///
-abstract class FollowRefState extends ImcMessage implements Built<FollowRefState, FollowRefStateBuilder> {
+abstract class FollowRefState extends ImcMessage
+    implements Built<FollowRefState, FollowRefStateBuilder> {
   static const static_id = 480;
   FollowRefState._();
-  factory FollowRefState([void Function(FollowRefStateBuilder b) updates]) = _$FollowRefState;
+  factory FollowRefState([void Function(FollowRefStateBuilder b) updates]) =
+      _$FollowRefState;
 
   @override
   int get msgId => static_id;
@@ -6022,10 +6582,12 @@ abstract class FollowRefState extends ImcMessage implements Built<FollowRefState
 /// Formation Monitoring Data class
 ///
 /// Monitoring variables for the formation state and performance.
-abstract class FormationMonitor extends ImcMessage implements Built<FormationMonitor, FormationMonitorBuilder> {
+abstract class FormationMonitor extends ImcMessage
+    implements Built<FormationMonitor, FormationMonitorBuilder> {
   static const static_id = 481;
   FormationMonitor._();
-  factory FormationMonitor([void Function(FormationMonitorBuilder b) updates]) = _$FormationMonitor;
+  factory FormationMonitor([void Function(FormationMonitorBuilder b) updates]) =
+      _$FormationMonitor;
 
   @override
   int get msgId => static_id;
@@ -6086,34 +6648,40 @@ abstract class FormationMonitor extends ImcMessage implements Built<FormationMon
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined sliding surface feedback: northward direction.
   /// On the fixed reference frame.
-  @ImcField('X Sliding Surface Feedback (North)', 'surf_fdbk_x', ImcType.typeFp32)
+  @ImcField(
+      'X Sliding Surface Feedback (North)', 'surf_fdbk_x', ImcType.typeFp32)
   double get surfFdbkX;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined sliding surface feedback: eastward direction.
   /// On the fixed reference frame.
-  @ImcField('Y Sliding Surface Feedback (East)', 'surf_fdbk_y', ImcType.typeFp32)
+  @ImcField(
+      'Y Sliding Surface Feedback (East)', 'surf_fdbk_y', ImcType.typeFp32)
   double get surfFdbkY;
 
   /// Components of the vehicle desired acceleration.
   /// Overall formation combined sliding surface feedback: downward direction.
   /// On the fixed reference frame.
-  @ImcField('Z Sliding Surface Feedback (Down)', 'surf_fdbk_z', ImcType.typeFp32)
+  @ImcField(
+      'Z Sliding Surface Feedback (Down)', 'surf_fdbk_z', ImcType.typeFp32)
   double get surfFdbkZ;
 
   /// Components of the vehicle desired acceleration.
   /// Dynamics uncertainty compensation: northward direction.
-  @ImcField('X Uncertainty Compensation (North)', 'surf_unkn_x', ImcType.typeFp32)
+  @ImcField(
+      'X Uncertainty Compensation (North)', 'surf_unkn_x', ImcType.typeFp32)
   double get surfUnknX;
 
   /// Components of the vehicle desired acceleration.
   /// Dynamics uncertainty compensation: eastward direction.
-  @ImcField('Y Uncertainty Compensation (East)', 'surf_unkn_y', ImcType.typeFp32)
+  @ImcField(
+      'Y Uncertainty Compensation (East)', 'surf_unkn_y', ImcType.typeFp32)
   double get surfUnknY;
 
   /// Components of the vehicle desired acceleration.
   /// Dynamics uncertainty compensation: downward direction.
-  @ImcField('Z Uncertainty Compensation (Down)', 'surf_unkn_z', ImcType.typeFp32)
+  @ImcField(
+      'Z Uncertainty Compensation (Down)', 'surf_unkn_z', ImcType.typeFp32)
   double get surfUnknZ;
 
   /// Combined deviation from convergence (sliding surface): North component.
@@ -6136,10 +6704,12 @@ abstract class FormationMonitor extends ImcMessage implements Built<FormationMon
 /// Relative State class
 ///
 /// Inter-vehicle formation state.
-abstract class RelativeState extends ImcMessage implements Built<RelativeState, RelativeStateBuilder> {
+abstract class RelativeState extends ImcMessage
+    implements Built<RelativeState, RelativeStateBuilder> {
   static const static_id = 482;
   RelativeState._();
-  factory RelativeState([void Function(RelativeStateBuilder b) updates]) = _$RelativeState;
+  factory RelativeState([void Function(RelativeStateBuilder b) updates]) =
+      _$RelativeState;
 
   @override
   int get msgId => static_id;
@@ -6187,27 +6757,33 @@ abstract class RelativeState extends ImcMessage implements Built<RelativeState, 
   double get errZ;
 
   /// Relative position error: X component on the inter-vehicle reference frame.
-  @ImcField('X Position Error In Relative Frame (North)', 'rf_err_x', ImcType.typeFp32)
+  @ImcField('X Position Error In Relative Frame (North)', 'rf_err_x',
+      ImcType.typeFp32)
   double get rfErrX;
 
   /// Relative position error: Y component on the inter-vehicle reference frame.
-  @ImcField('Y Position Error In Relative Frame (East)', 'rf_err_y', ImcType.typeFp32)
+  @ImcField(
+      'Y Position Error In Relative Frame (East)', 'rf_err_y', ImcType.typeFp32)
   double get rfErrY;
 
   /// Relative position error: Z component on the inter-vehicle reference frame.
-  @ImcField('Z Position Error In Relative Frame (Down)', 'rf_err_z', ImcType.typeFp32)
+  @ImcField(
+      'Z Position Error In Relative Frame (Down)', 'rf_err_z', ImcType.typeFp32)
   double get rfErrZ;
 
   /// Relative veloctity error: X component in the inter-vehicle reference frame.
-  @ImcField('X Velocity Error In Relative Frame (North)', 'rf_err_vx', ImcType.typeFp32)
+  @ImcField('X Velocity Error In Relative Frame (North)', 'rf_err_vx',
+      ImcType.typeFp32)
   double get rfErrVx;
 
   /// Relative velocity error: Y component on the inter-vehicle reference frame.
-  @ImcField('Y Velocity Error In Relative Frame (East)', 'rf_err_vy', ImcType.typeFp32)
+  @ImcField('Y Velocity Error In Relative Frame (East)', 'rf_err_vy',
+      ImcType.typeFp32)
   double get rfErrVy;
 
   /// Relative velocity error: Z component on the inter-vehicle reference frame.
-  @ImcField('Z Velocity Error In Relative Frame (Down)', 'rf_err_vz', ImcType.typeFp32)
+  @ImcField('Z Velocity Error In Relative Frame (Down)', 'rf_err_vz',
+      ImcType.typeFp32)
   double get rfErrVz;
 
   /// Deviation from convergence (sliding surface): X component on the inter-vehicle reference frame.
@@ -6243,11 +6819,12 @@ abstract class RelativeState extends ImcMessage implements Built<RelativeState, 
 /// A "Dislodge" is a maneuver ordering the vehicle to attempt a
 /// series of thruster operations that will hopefully get it
 /// unstuck from an entangled condition.
-/// 
+///
 /// Parameters are RPMs for the motor when attempting dislodge and
 /// and a flag specifying whether the thrust burst should be attempted
 /// forward, backward or auto (letting the vehicle decide).
-abstract class Dislodge extends Maneuver implements Built<Dislodge, DislodgeBuilder> {
+abstract class Dislodge extends Maneuver
+    implements Built<Dislodge, DislodgeBuilder> {
   static const static_id = 483;
   Dislodge._();
   factory Dislodge([void Function(DislodgeBuilder b) updates]) = _$Dislodge;
@@ -6270,7 +6847,8 @@ abstract class Dislodge extends Maneuver implements Built<Dislodge, DislodgeBuil
   DislodgeEnumDirection get direction;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6285,7 +6863,7 @@ abstract class Dislodge extends Maneuver implements Built<Dislodge, DislodgeBuil
 /// - Plan (set of maneuvers) to be followed by the formation center
 /// - Plan contrains (virtual leader speed and bank limits)
 /// - Supervision settings
-/// 
+///
 /// The formation reference frame may be:
 /// - Earth Fixed: Where the vehicles relative position do not depend on the followed path.
 /// This results in all UAVs following the same path with an offset relative to each other;
@@ -6297,7 +6875,8 @@ abstract class Dislodge extends Maneuver implements Built<Dislodge, DislodgeBuil
 /// An offset in the xx axis results in a distance over the curved path line.
 /// An offset in the yy axis results in an offset of the vehicle path line relative to the
 /// formation center path line.
-abstract class Formation extends ImcMessage implements Built<Formation, FormationBuilder> {
+abstract class Formation extends ImcMessage
+    implements Built<Formation, FormationBuilder> {
   static const static_id = 484;
   Formation._();
   factory Formation([void Function(FormationBuilder b) updates]) = _$Formation;
@@ -6341,49 +6920,65 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
   List<VehicleFormationParticipant> get participants;
 
   /// Maximum absolute bank allowed for the formation leader.
-  @ImcField('Formation Leader Bank Limit', 'leader_bank_lim', ImcType.typeFp32, units: 'rad')
+  @ImcField('Formation Leader Bank Limit', 'leader_bank_lim', ImcType.typeFp32,
+      units: 'rad')
   double get leaderBankLim;
 
   /// Minimum speed allowed for the formation leader flight.
-  @ImcField('Formation Leader Minimum Speed', 'leader_speed_min', ImcType.typeFp32, units: 'm/s')
+  @ImcField(
+      'Formation Leader Minimum Speed', 'leader_speed_min', ImcType.typeFp32,
+      units: 'm/s')
   double get leaderSpeedMin;
 
   /// Maximum speed allowed for the formation leader flight.
-  @ImcField('Formation Leader Maximum Speed', 'leader_speed_max', ImcType.typeFp32, units: 'm/s')
+  @ImcField(
+      'Formation Leader Maximum Speed', 'leader_speed_max', ImcType.typeFp32,
+      units: 'm/s')
   double get leaderSpeedMax;
 
   /// Minimum altitude allowed for the formation leader flight.
-  @ImcField('Formation Leader Minimum Altitude', 'leader_alt_min', ImcType.typeFp32, units: 'm')
+  @ImcField(
+      'Formation Leader Minimum Altitude', 'leader_alt_min', ImcType.typeFp32,
+      units: 'm')
   double get leaderAltMin;
 
   /// Maximum altitude allowed for the formation leader flight.
-  @ImcField('Formation Leader Maximum Altitude', 'leader_alt_max', ImcType.typeFp32, units: 'm')
+  @ImcField(
+      'Formation Leader Maximum Altitude', 'leader_alt_max', ImcType.typeFp32,
+      units: 'm')
   double get leaderAltMax;
 
   /// Limit for the position mismatch between real and simulated position, before a maneuver abort is asserted.
-  @ImcField('Position mismatch limit', 'pos_sim_err_lim', ImcType.typeFp32, units: 'm')
+  @ImcField('Position mismatch limit', 'pos_sim_err_lim', ImcType.typeFp32,
+      units: 'm')
   double get posSimErrLim;
 
   /// Warning threshold for the position mismatch between real and simulated position.
   /// Above this threshold a time-out limit is evaluated to assert a maneuver abort state.
-  @ImcField('Position mismatch threshold', 'pos_sim_err_wrn', ImcType.typeFp32, units: 'm')
+  @ImcField('Position mismatch threshold', 'pos_sim_err_wrn', ImcType.typeFp32,
+      units: 'm')
   double get posSimErrWrn;
 
   /// The amount of time the maneuver is allowed to run after the position mismatch threshold is surpassed.
-  @ImcField('Position mismatch time-out', 'pos_sim_err_timeout', ImcType.typeUInt16, units: 's')
+  @ImcField(
+      'Position mismatch time-out', 'pos_sim_err_timeout', ImcType.typeUInt16,
+      units: 's')
   int get posSimErrTimeout;
 
   /// Threshold for the convergence measure, above which a time-out limit
   /// is evaluated to assert a maneuver abort state.
-  @ImcField('Convergence threshold', 'converg_max', ImcType.typeFp32, units: 'm')
+  @ImcField('Convergence threshold', 'converg_max', ImcType.typeFp32,
+      units: 'm')
   double get convergMax;
 
   /// The amount of time the maneuver is allowed to run after the convergence threshold is surpassed.
-  @ImcField('Convergence time-out', 'converg_timeout', ImcType.typeUInt16, units: 's')
+  @ImcField('Convergence time-out', 'converg_timeout', ImcType.typeUInt16,
+      units: 's')
   int get convergTimeout;
 
   /// The amount of time the maneuver is allowed to run without any update on the other formation vehicles states.
-  @ImcField('Communications time-out', 'comms_timeout', ImcType.typeUInt16, units: 's')
+  @ImcField('Communications time-out', 'comms_timeout', ImcType.typeUInt16,
+      units: 's')
   int get commsTimeout;
 
   /// Turbulence limit above which a maneuver abort is asserted.
@@ -6391,7 +6986,8 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
   double get turbLim;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6401,7 +6997,7 @@ abstract class Formation extends ImcMessage implements Built<Formation, Formatio
 /// target waypoint after being launched from a ship or pier.
 /// The waypoint is described by the WGS-84 waypoint coordinate and
 /// target Z reference.
-/// 
+///
 /// Mandatory parameters defined for a "Launch" are
 /// timeout, speed and speed units.
 abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
@@ -6444,7 +7040,8 @@ abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
   SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6453,7 +7050,7 @@ abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
 /// A "Drop" is a maneuver specifying a movement of the vehicle to a
 /// target waypoint. The waypoint is described by the WGS-84
 /// waypoint coordinate and target Z reference.
-/// 
+///
 /// Mandatory parameters defined for a "Goto" are
 /// timeout, speed and speed units.
 abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
@@ -6496,7 +7093,8 @@ abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
   SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6504,12 +7102,14 @@ abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
 ///
 /// This maneuver is used to command the vehicle to arrive at some destination at
 /// a specified absolute time.
-/// 
+///
 /// The vehicle's speed will vary according to environment conditions and/or maneuver start time.
-abstract class ScheduledGoto extends Maneuver implements Built<ScheduledGoto, ScheduledGotoBuilder> {
+abstract class ScheduledGoto extends Maneuver
+    implements Built<ScheduledGoto, ScheduledGotoBuilder> {
   static const static_id = 487;
   ScheduledGoto._();
-  factory ScheduledGoto([void Function(ScheduledGotoBuilder b) updates]) = _$ScheduledGoto;
+  factory ScheduledGoto([void Function(ScheduledGotoBuilder b) updates]) =
+      _$ScheduledGoto;
 
   @override
   int get msgId => static_id;
@@ -6521,11 +7121,13 @@ abstract class ScheduledGoto extends Maneuver implements Built<ScheduledGoto, Sc
   double get arrivalTime;
 
   /// WGS-84 Latitude of target waypoint.
-  @ImcField('Destination Latitude WGS-84', 'lat', ImcType.typeFp64, units: 'rad')
+  @ImcField('Destination Latitude WGS-84', 'lat', ImcType.typeFp64,
+      units: 'rad')
   double get lat;
 
   /// WGS-84 Longitude of target waypoint.
-  @ImcField('Destination Longitude WGS-84', 'lon', ImcType.typeFp64, units: 'rad')
+  @ImcField('Destination Longitude WGS-84', 'lon', ImcType.typeFp64,
+      units: 'rad')
   double get lon;
 
   /// Target reference in the z axis. Use z_units to specify
@@ -6553,10 +7155,12 @@ abstract class ScheduledGoto extends Maneuver implements Built<ScheduledGoto, Sc
 /// Rows Coverage class
 ///
 /// Rows coverage (i.e: lawn mower type maneuver) but with adaptive cover
-abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, RowsCoverageBuilder> {
+abstract class RowsCoverage extends Maneuver
+    implements Built<RowsCoverage, RowsCoverageBuilder> {
   static const static_id = 488;
   RowsCoverage._();
-  factory RowsCoverage([void Function(RowsCoverageBuilder b) updates]) = _$RowsCoverage;
+  factory RowsCoverage([void Function(RowsCoverageBuilder b) updates]) =
+      _$RowsCoverage;
 
   @override
   int get msgId => static_id;
@@ -6625,7 +7229,8 @@ abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, Rows
   RowsCoverageBitfieldFlags get flags;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6634,7 +7239,7 @@ abstract class RowsCoverage extends Maneuver implements Built<RowsCoverage, Rows
 /// A "Sample" is a maneuver specifying a movement of the vehicle to a
 /// target waypoint. The waypoint is described by the WGS-84
 /// waypoint coordinate and target Z reference.
-/// 
+///
 /// Mandatory parameters defined for a "Goto" are
 /// timeout, speed and speed units.
 abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
@@ -6689,7 +7294,8 @@ abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
   BooleanEnum get syringe2;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6697,10 +7303,12 @@ abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
 ///
 /// A "ImageTracking" is a maneuver specifying a particular heading to the
 /// detected object.
-abstract class ImageTracking extends Maneuver implements Built<ImageTracking, ImageTrackingBuilder> {
+abstract class ImageTracking extends Maneuver
+    implements Built<ImageTracking, ImageTrackingBuilder> {
   static const static_id = 490;
   ImageTracking._();
-  factory ImageTracking([void Function(ImageTrackingBuilder b) updates]) = _$ImageTracking;
+  factory ImageTracking([void Function(ImageTrackingBuilder b) updates]) =
+      _$ImageTracking;
 
   @override
   int get msgId => static_id;
@@ -6712,10 +7320,11 @@ abstract class ImageTracking extends Maneuver implements Built<ImageTracking, Im
 ///
 /// Automatic takeoff for UAVs.
 /// This maneuver specifies a target waypoint where to takeoff.
-/// 
+///
 /// Takeoff direction is set from the direction the plane is pointing when the auto takeoff command is started.
 /// It will remain that way until the vehicle reaches the target z reference. After that it will go to the target waypoint.
-abstract class Takeoff extends Maneuver implements Built<Takeoff, TakeoffBuilder> {
+abstract class Takeoff extends Maneuver
+    implements Built<Takeoff, TakeoffBuilder> {
   static const static_id = 491;
   Takeoff._();
   factory Takeoff([void Function(TakeoffBuilder b) updates]) = _$Takeoff;
@@ -6754,7 +7363,8 @@ abstract class Takeoff extends Maneuver implements Built<Takeoff, TakeoffBuilder
   double get takeoffPitch;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6809,11 +7419,13 @@ abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
   int get glideSlope;
 
   /// Height difference between the last waypoint to the landing point (touchdown).
-  @ImcField('Glide Slope Altitude', 'glide_slope_alt', ImcType.typeFp32, units: 'm')
+  @ImcField('Glide Slope Altitude', 'glide_slope_alt', ImcType.typeFp32,
+      units: 'm')
   double get glideSlopeAlt;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6822,10 +7434,13 @@ abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
 /// This maneuver triggers an external controller that will guide the vehicle during a specified duration
 /// of time or until it relinquishes control using (ManeuverDone). The external controller is allowed to
 /// drive the vehicle only inside the specified boundaries.
-abstract class AutonomousSection extends Maneuver implements Built<AutonomousSection, AutonomousSectionBuilder> {
+abstract class AutonomousSection extends Maneuver
+    implements Built<AutonomousSection, AutonomousSectionBuilder> {
   static const static_id = 493;
   AutonomousSection._();
-  factory AutonomousSection([void Function(AutonomousSectionBuilder b) updates]) = _$AutonomousSection;
+  factory AutonomousSection(
+          [void Function(AutonomousSectionBuilder b) updates]) =
+      _$AutonomousSection;
 
   @override
   int get msgId => static_id;
@@ -6872,17 +7487,20 @@ abstract class AutonomousSection extends Maneuver implements Built<AutonomousSec
   String get controller;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
 /// Follow Point Maneuver class
 ///
 /// This maneuver behaves by following a point.
-abstract class FollowPoint extends Maneuver implements Built<FollowPoint, FollowPointBuilder> {
+abstract class FollowPoint extends Maneuver
+    implements Built<FollowPoint, FollowPointBuilder> {
   static const static_id = 494;
   FollowPoint._();
-  factory FollowPoint([void Function(FollowPointBuilder b) updates]) = _$FollowPoint;
+  factory FollowPoint([void Function(FollowPointBuilder b) updates]) =
+      _$FollowPoint;
 
   @override
   int get msgId => static_id;
@@ -6918,7 +7536,8 @@ abstract class FollowPoint extends Maneuver implements Built<FollowPoint, Follow
   ZUnitsEnum get zUnits;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6927,7 +7546,8 @@ abstract class FollowPoint extends Maneuver implements Built<FollowPoint, Follow
 /// An "Alignment" is a maneuver specifying a movement of the vehicle to a
 /// target waypoint intended to control activation of an IMU/INS in order
 /// to start aligning navigation for more precise dead reckoning operation.
-abstract class Alignment extends Maneuver implements Built<Alignment, AlignmentBuilder> {
+abstract class Alignment extends Maneuver
+    implements Built<Alignment, AlignmentBuilder> {
   static const static_id = 495;
   Alignment._();
   factory Alignment([void Function(AlignmentBuilder b) updates]) = _$Alignment;
@@ -6958,7 +7578,8 @@ abstract class Alignment extends Maneuver implements Built<Alignment, AlignmentB
   SpeedUnitsEnum get speedUnits;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -6969,10 +7590,13 @@ abstract class Alignment extends Maneuver implements Built<Alignment, AlignmentB
 /// for a certain amount of time. It extends the Station Keeping maneuver with the feature
 /// 'Keep Safe', which allows for the vehicle to hold position underwater and popup periodically
 /// to communicate.
-abstract class StationKeepingExtended extends Maneuver implements Built<StationKeepingExtended, StationKeepingExtendedBuilder> {
+abstract class StationKeepingExtended extends Maneuver
+    implements Built<StationKeepingExtended, StationKeepingExtendedBuilder> {
   static const static_id = 496;
   StationKeepingExtended._();
-  factory StationKeepingExtended([void Function(StationKeepingExtendedBuilder b) updates]) = _$StationKeepingExtended;
+  factory StationKeepingExtended(
+          [void Function(StationKeepingExtendedBuilder b) updates]) =
+      _$StationKeepingExtended;
 
   @override
   int get msgId => static_id;
@@ -7028,18 +7652,37 @@ abstract class StationKeepingExtended extends Maneuver implements Built<StationK
   StationKeepingExtendedBitfieldFlags get flags;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
+}
+
+/// Maneuver Done class
+///
+/// Notification of completion of a maneuver (optional use).
+abstract class ManeuverDone extends ImcMessage
+    implements Built<ManeuverDone, ManeuverDoneBuilder> {
+  static const static_id = 497;
+  ManeuverDone._();
+  factory ManeuverDone([void Function(ManeuverDoneBuilder b) updates]) =
+      _$ManeuverDone;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'ManeuverDone';
 }
 
 /// Magnetometer Maneuver class
 ///
 /// Magnetometer calibration maneuver (i.e: one square pattern
 /// in one direction, a second square in the opposite direction)
-abstract class Magnetometer extends Maneuver implements Built<Magnetometer, MagnetometerBuilder> {
+abstract class Magnetometer extends Maneuver
+    implements Built<Magnetometer, MagnetometerBuilder> {
   static const static_id = 499;
   Magnetometer._();
-  factory Magnetometer([void Function(MagnetometerBuilder b) updates]) = _$Magnetometer;
+  factory Magnetometer([void Function(MagnetometerBuilder b) updates]) =
+      _$Magnetometer;
 
   @override
   int get msgId => static_id;
@@ -7088,7 +7731,8 @@ abstract class Magnetometer extends Maneuver implements Built<Magnetometer, Magn
   MagnetometerEnumDirection get direction;
 
   /// Custom settings for maneuver.
-  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
+      units: 'TupleList')
   String get custom;
 }
 
@@ -7096,15 +7740,17 @@ abstract class Magnetometer extends Maneuver implements Built<Magnetometer, Magn
 ///
 /// This message summarizes the overall state of the vehicle. It can
 /// contains information regarding:
-/// 
+///
 /// - The overall operation mode.
 /// - Any error conditions.
 /// - Current maneuver execution.
 /// - Active control loops.
-abstract class VehicleState extends ImcMessage implements Built<VehicleState, VehicleStateBuilder> {
+abstract class VehicleState extends ImcMessage
+    implements Built<VehicleState, VehicleStateBuilder> {
   static const static_id = 500;
   VehicleState._();
-  factory VehicleState([void Function(VehicleStateBuilder b) updates]) = _$VehicleState;
+  factory VehicleState([void Function(VehicleStateBuilder b) updates]) =
+      _$VehicleState;
 
   @override
   int get msgId => static_id;
@@ -7132,7 +7778,8 @@ abstract class VehicleState extends ImcMessage implements Built<VehicleState, Ve
 
   /// Start time of maneuver being executed (Epoch time), when in
   /// MANEUVER mode.
-  @ImcField('Maneuver -- Start Time', 'maneuver_stime', ImcType.typeFp64, units: 's')
+  @ImcField('Maneuver -- Start Time', 'maneuver_stime', ImcType.typeFp64,
+      units: 's')
   double get maneuverStime;
 
   /// Estimated time for maneuver completion. The value will be
@@ -7152,17 +7799,20 @@ abstract class VehicleState extends ImcMessage implements Built<VehicleState, Ve
   String get lastError;
 
   /// Time of last error (Epoch time).
-  @ImcField('Last Error -- Time', 'last_error_time', ImcType.typeFp64, units: 's')
+  @ImcField('Last Error -- Time', 'last_error_time', ImcType.typeFp64,
+      units: 's')
   double get lastErrorTime;
 }
 
 /// Vehicle Command class
 ///
 /// Vehicle command.
-abstract class VehicleCommand extends ImcMessage implements Built<VehicleCommand, VehicleCommandBuilder> {
+abstract class VehicleCommand extends ImcMessage
+    implements Built<VehicleCommand, VehicleCommandBuilder> {
   static const static_id = 501;
   VehicleCommand._();
-  factory VehicleCommand([void Function(VehicleCommandBuilder b) updates]) = _$VehicleCommand;
+  factory VehicleCommand([void Function(VehicleCommandBuilder b) updates]) =
+      _$VehicleCommand;
 
   @override
   int get msgId => static_id;
@@ -7196,10 +7846,13 @@ abstract class VehicleCommand extends ImcMessage implements Built<VehicleCommand
 /// Monitor Entity State class
 ///
 /// Controls monitoring of entity states in the vehicle.
-abstract class MonitorEntityState extends ImcMessage implements Built<MonitorEntityState, MonitorEntityStateBuilder> {
+abstract class MonitorEntityState extends ImcMessage
+    implements Built<MonitorEntityState, MonitorEntityStateBuilder> {
   static const static_id = 502;
   MonitorEntityState._();
-  factory MonitorEntityState([void Function(MonitorEntityStateBuilder b) updates]) = _$MonitorEntityState;
+  factory MonitorEntityState(
+          [void Function(MonitorEntityStateBuilder b) updates]) =
+      _$MonitorEntityState;
 
   @override
   int get msgId => static_id;
@@ -7217,10 +7870,13 @@ abstract class MonitorEntityState extends ImcMessage implements Built<MonitorEnt
 
 /// Entity Monitoring State class
 ///
-abstract class EntityMonitoringState extends ImcMessage implements Built<EntityMonitoringState, EntityMonitoringStateBuilder> {
+abstract class EntityMonitoringState extends ImcMessage
+    implements Built<EntityMonitoringState, EntityMonitoringStateBuilder> {
   static const static_id = 503;
   EntityMonitoringState._();
-  factory EntityMonitoringState([void Function(EntityMonitoringStateBuilder b) updates]) = _$EntityMonitoringState;
+  factory EntityMonitoringState(
+          [void Function(EntityMonitoringStateBuilder b) updates]) =
+      _$EntityMonitoringState;
 
   @override
   int get msgId => static_id;
@@ -7245,11 +7901,13 @@ abstract class EntityMonitoringState extends ImcMessage implements Built<EntityM
   String get enames;
 
   /// Number of entitities with critical errors.
-  @ImcField('Entities with critical errors - Count', 'ccount', ImcType.typeUInt8)
+  @ImcField(
+      'Entities with critical errors - Count', 'ccount', ImcType.typeUInt8)
   int get ccount;
 
   /// Comma separated list of all entity names with critical errors.
-  @ImcField('Entities with critical errors - Names', 'cnames', ImcType.typePlaintext)
+  @ImcField(
+      'Entities with critical errors - Names', 'cnames', ImcType.typePlaintext)
   String get cnames;
 
   /// Description of last error.
@@ -7257,17 +7915,21 @@ abstract class EntityMonitoringState extends ImcMessage implements Built<EntityM
   String get lastError;
 
   /// Time of last error (Epoch time).
-  @ImcField('Last Error -- Time', 'last_error_time', ImcType.typeFp64, units: 's')
+  @ImcField('Last Error -- Time', 'last_error_time', ImcType.typeFp64,
+      units: 's')
   double get lastErrorTime;
 }
 
 /// Operational Limits class
 ///
 /// Definition of operational limits.
-abstract class OperationalLimits extends ImcMessage implements Built<OperationalLimits, OperationalLimitsBuilder> {
+abstract class OperationalLimits extends ImcMessage
+    implements Built<OperationalLimits, OperationalLimitsBuilder> {
   static const static_id = 504;
   OperationalLimits._();
-  factory OperationalLimits([void Function(OperationalLimitsBuilder b) updates]) = _$OperationalLimits;
+  factory OperationalLimits(
+          [void Function(OperationalLimitsBuilder b) updates]) =
+      _$OperationalLimits;
 
   @override
   int get msgId => static_id;
@@ -7292,7 +7954,8 @@ abstract class OperationalLimits extends ImcMessage implements Built<Operational
   @ImcField('Maximum Speed', 'max_speed', ImcType.typeFp32, units: 'm/s')
   double get maxSpeed;
 
-  @ImcField('Maximum Vertical Rate', 'max_vrate', ImcType.typeFp32, units: 'm/s')
+  @ImcField('Maximum Vertical Rate', 'max_vrate', ImcType.typeFp32,
+      units: 'm/s')
   double get maxVrate;
 
   @ImcField('Area -- WGS-84 Latitude', 'lat', ImcType.typeFp64, units: 'rad')
@@ -7301,7 +7964,8 @@ abstract class OperationalLimits extends ImcMessage implements Built<Operational
   @ImcField('Area -- WGS-84 Longitude', 'lon', ImcType.typeFp64, units: 'rad')
   double get lon;
 
-  @ImcField('Area -- Orientation', 'orientation', ImcType.typeFp32, units: 'rad')
+  @ImcField('Area -- Orientation', 'orientation', ImcType.typeFp32,
+      units: 'rad')
   double get orientation;
 
   @ImcField('Area -- Width', 'width', ImcType.typeFp32, units: 'm')
@@ -7314,10 +7978,13 @@ abstract class OperationalLimits extends ImcMessage implements Built<Operational
 /// Get Operational Limits class
 ///
 /// Command to obtain the operational limits in use by the vehicle.
-abstract class GetOperationalLimits extends ImcMessage implements Built<GetOperationalLimits, GetOperationalLimitsBuilder> {
+abstract class GetOperationalLimits extends ImcMessage
+    implements Built<GetOperationalLimits, GetOperationalLimitsBuilder> {
   static const static_id = 505;
   GetOperationalLimits._();
-  factory GetOperationalLimits([void Function(GetOperationalLimitsBuilder b) updates]) = _$GetOperationalLimits;
+  factory GetOperationalLimits(
+          [void Function(GetOperationalLimitsBuilder b) updates]) =
+      _$GetOperationalLimits;
 
   @override
   int get msgId => static_id;
@@ -7328,10 +7995,12 @@ abstract class GetOperationalLimits extends ImcMessage implements Built<GetOpera
 /// Calibration class
 ///
 /// Initiate overall calibration of a vehicle.
-abstract class Calibration extends ImcMessage implements Built<Calibration, CalibrationBuilder> {
+abstract class Calibration extends ImcMessage
+    implements Built<Calibration, CalibrationBuilder> {
   static const static_id = 506;
   Calibration._();
-  factory Calibration([void Function(CalibrationBuilder b) updates]) = _$Calibration;
+  factory Calibration([void Function(CalibrationBuilder b) updates]) =
+      _$Calibration;
 
   @override
   int get msgId => static_id;
@@ -7346,10 +8015,12 @@ abstract class Calibration extends ImcMessage implements Built<Calibration, Cali
 /// Control Loops class
 ///
 /// Enable or disable control loops.
-abstract class ControlLoops extends ImcMessage implements Built<ControlLoops, ControlLoopsBuilder> {
+abstract class ControlLoops extends ImcMessage
+    implements Built<ControlLoops, ControlLoopsBuilder> {
   static const static_id = 507;
   ControlLoops._();
-  factory ControlLoops([void Function(ControlLoopsBuilder b) updates]) = _$ControlLoops;
+  factory ControlLoops([void Function(ControlLoopsBuilder b) updates]) =
+      _$ControlLoops;
 
   @override
   int get msgId => static_id;
@@ -7375,10 +8046,12 @@ abstract class ControlLoops extends ImcMessage implements Built<ControlLoops, Co
 /// Vehicle Medium class
 ///
 /// Detect current vehicle medium.
-abstract class VehicleMedium extends ImcMessage implements Built<VehicleMedium, VehicleMediumBuilder> {
+abstract class VehicleMedium extends ImcMessage
+    implements Built<VehicleMedium, VehicleMediumBuilder> {
   static const static_id = 508;
   VehicleMedium._();
-  factory VehicleMedium([void Function(VehicleMediumBuilder b) updates]) = _$VehicleMedium;
+  factory VehicleMedium([void Function(VehicleMediumBuilder b) updates]) =
+      _$VehicleMedium;
 
   @override
   int get msgId => static_id;
@@ -7393,7 +8066,8 @@ abstract class VehicleMedium extends ImcMessage implements Built<VehicleMedium, 
 /// Collision class
 ///
 /// Detected collision.
-abstract class Collision extends ImcMessage implements Built<Collision, CollisionBuilder> {
+abstract class Collision extends ImcMessage
+    implements Built<Collision, CollisionBuilder> {
   static const static_id = 509;
   Collision._();
   factory Collision([void Function(CollisionBuilder b) updates]) = _$Collision;
@@ -7415,7 +8089,8 @@ abstract class Collision extends ImcMessage implements Built<Collision, Collisio
 /// Formation Tracking State class
 ///
 /// Monitoring variables to assert the formation tracking state, i.e., the mismatch between the real and the simulated aircraft position, the convergence state, etc.
-abstract class FormState extends ImcMessage implements Built<FormState, FormStateBuilder> {
+abstract class FormState extends ImcMessage
+    implements Built<FormState, FormStateBuilder> {
   static const static_id = 510;
   FormState._();
   factory FormState([void Function(FormStateBuilder b) updates]) = _$FormState;
@@ -7454,10 +8129,12 @@ abstract class FormState extends ImcMessage implements Built<FormState, FormStat
 /// Autopilot Mode class
 ///
 /// Reports autopilot mode.
-abstract class AutopilotMode extends ImcMessage implements Built<AutopilotMode, AutopilotModeBuilder> {
+abstract class AutopilotMode extends ImcMessage
+    implements Built<AutopilotMode, AutopilotModeBuilder> {
   static const static_id = 511;
   AutopilotMode._();
-  factory AutopilotMode([void Function(AutopilotModeBuilder b) updates]) = _$AutopilotMode;
+  factory AutopilotMode([void Function(AutopilotModeBuilder b) updates]) =
+      _$AutopilotMode;
 
   @override
   int get msgId => static_id;
@@ -7476,10 +8153,12 @@ abstract class AutopilotMode extends ImcMessage implements Built<AutopilotMode, 
 /// Formation Tracking State class
 ///
 /// Monitoring variables to assert the formation tracking state, i.e., the mismatch between the real and the simulated aircraft position, the convergence state, etc.
-abstract class FormationState extends ImcMessage implements Built<FormationState, FormationStateBuilder> {
+abstract class FormationState extends ImcMessage
+    implements Built<FormationState, FormationStateBuilder> {
   static const static_id = 512;
   FormationState._();
-  factory FormationState([void Function(FormationStateBuilder b) updates]) = _$FormationState;
+  factory FormationState([void Function(FormationStateBuilder b) updates]) =
+      _$FormationState;
 
   @override
   int get msgId => static_id;
@@ -7523,10 +8202,12 @@ abstract class FormationState extends ImcMessage implements Built<FormationState
 /// Report Control class
 ///
 /// This message is sent to trigger reports to a destination system.
-abstract class ReportControl extends ImcMessage implements Built<ReportControl, ReportControlBuilder> {
+abstract class ReportControl extends ImcMessage
+    implements Built<ReportControl, ReportControlBuilder> {
   static const static_id = 513;
   ReportControl._();
-  factory ReportControl([void Function(ReportControlBuilder b) updates]) = _$ReportControl;
+  factory ReportControl([void Function(ReportControlBuilder b) updates]) =
+      _$ReportControl;
 
   @override
   int get msgId => static_id;
@@ -7554,10 +8235,12 @@ abstract class ReportControl extends ImcMessage implements Built<ReportControl, 
 /// State Report class
 ///
 /// Concise representation of entire system state.
-abstract class StateReport extends ImcMessage implements Built<StateReport, StateReportBuilder> {
+abstract class StateReport extends ImcMessage
+    implements Built<StateReport, StateReportBuilder> {
   static const static_id = 514;
   StateReport._();
-  factory StateReport([void Function(StateReportBuilder b) updates]) = _$StateReport;
+  factory StateReport([void Function(StateReportBuilder b) updates]) =
+      _$StateReport;
 
   @override
   int get msgId => static_id;
@@ -7615,10 +8298,13 @@ abstract class StateReport extends ImcMessage implements Built<StateReport, Stat
 /// Transmission Request class
 ///
 /// Request data to be sent over a specified communication mean.
-abstract class TransmissionRequest extends ImcMessage implements Built<TransmissionRequest, TransmissionRequestBuilder> {
+abstract class TransmissionRequest extends ImcMessage
+    implements Built<TransmissionRequest, TransmissionRequestBuilder> {
   static const static_id = 515;
   TransmissionRequest._();
-  factory TransmissionRequest([void Function(TransmissionRequestBuilder b) updates]) = _$TransmissionRequest;
+  factory TransmissionRequest(
+          [void Function(TransmissionRequestBuilder b) updates]) =
+      _$TransmissionRequest;
 
   @override
   int get msgId => static_id;
@@ -7641,7 +8327,13 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
   @ImcField('Deadline', 'deadline', ImcType.typeFp64)
   double get deadline;
 
+  /// The meaning of this field depends on the operation and is
+  /// explained in the operation's description.
+  @ImcField('Range', 'range', ImcType.typeFp32, units: 'm')
+  double get range;
+
   /// Type of data to be transmitted.
+  /// Abort and Range mode can only be used with comm_mean=ACOUSTIC
   @ImcField('Data Mode', 'data_mode', ImcType.typeUInt8)
   TransmissionRequestEnumDataMode get dataMode;
 
@@ -7661,10 +8353,13 @@ abstract class TransmissionRequest extends ImcMessage implements Built<Transmiss
 /// Transmission Status class
 ///
 /// Reply sent in response to a communications request.
-abstract class TransmissionStatus extends ImcMessage implements Built<TransmissionStatus, TransmissionStatusBuilder> {
+abstract class TransmissionStatus extends ImcMessage
+    implements Built<TransmissionStatus, TransmissionStatusBuilder> {
   static const static_id = 516;
   TransmissionStatus._();
-  factory TransmissionStatus([void Function(TransmissionStatusBuilder b) updates]) = _$TransmissionStatus;
+  factory TransmissionStatus(
+          [void Function(TransmissionStatusBuilder b) updates]) =
+      _$TransmissionStatus;
 
   @override
   int get msgId => static_id;
@@ -7677,6 +8372,11 @@ abstract class TransmissionStatus extends ImcMessage implements Built<Transmissi
   @ImcField('Status', 'status', ImcType.typeUInt8)
   TransmissionStatusEnumStatus get status;
 
+  /// The meaning of this field depends on the operation and is
+  /// explained in the operation's description.
+  @ImcField('Range', 'range', ImcType.typeFp32, units: 'm')
+  double get range;
+
   @ImcField('Information', 'info', ImcType.typePlaintext)
   String get info;
 }
@@ -7684,10 +8384,12 @@ abstract class TransmissionStatus extends ImcMessage implements Built<Transmissi
 /// SMS Transmission Request class
 ///
 /// Request SMS Text sending.
-abstract class SmsRequest extends ImcMessage implements Built<SmsRequest, SmsRequestBuilder> {
+abstract class SmsRequest extends ImcMessage
+    implements Built<SmsRequest, SmsRequestBuilder> {
   static const static_id = 517;
   SmsRequest._();
-  factory SmsRequest([void Function(SmsRequestBuilder b) updates]) = _$SmsRequest;
+  factory SmsRequest([void Function(SmsRequestBuilder b) updates]) =
+      _$SmsRequest;
 
   @override
   int get msgId => static_id;
@@ -7712,7 +8414,8 @@ abstract class SmsRequest extends ImcMessage implements Built<SmsRequest, SmsReq
 /// SMS Transmission Status class
 ///
 /// Reply sent in response to a SMS sending request.
-abstract class SmsStatus extends ImcMessage implements Built<SmsStatus, SmsStatusBuilder> {
+abstract class SmsStatus extends ImcMessage
+    implements Built<SmsStatus, SmsStatusBuilder> {
   static const static_id = 518;
   SmsStatus._();
   factory SmsStatus([void Function(SmsStatusBuilder b) updates]) = _$SmsStatus;
@@ -7736,7 +8439,8 @@ abstract class SmsStatus extends ImcMessage implements Built<SmsStatus, SmsStatu
 /// VTOL State class
 ///
 /// Reports VTOL current state.
-abstract class VtolState extends ImcMessage implements Built<VtolState, VtolStateBuilder> {
+abstract class VtolState extends ImcMessage
+    implements Built<VtolState, VtolStateBuilder> {
   static const static_id = 519;
   VtolState._();
   factory VtolState([void Function(VtolStateBuilder b) updates]) = _$VtolState;
@@ -7753,10 +8457,12 @@ abstract class VtolState extends ImcMessage implements Built<VtolState, VtolStat
 /// Arming State class
 ///
 /// Reports if motors are currently armed or disarmed.
-abstract class ArmingState extends ImcMessage implements Built<ArmingState, ArmingStateBuilder> {
+abstract class ArmingState extends ImcMessage
+    implements Built<ArmingState, ArmingStateBuilder> {
   static const static_id = 520;
   ArmingState._();
-  factory ArmingState([void Function(ArmingStateBuilder b) updates]) = _$ArmingState;
+  factory ArmingState([void Function(ArmingStateBuilder b) updates]) =
+      _$ArmingState;
 
   @override
   int get msgId => static_id;
@@ -7765,6 +8471,62 @@ abstract class ArmingState extends ImcMessage implements Built<ArmingState, Armi
 
   @ImcField('State', 'state', ImcType.typeUInt8)
   ArmingStateEnumState get state;
+}
+
+/// TCP Transmission Request class
+///
+/// Request data to be sent over a TCP connection
+abstract class TCPRequest extends ImcMessage
+    implements Built<TCPRequest, TCPRequestBuilder> {
+  static const static_id = 521;
+  TCPRequest._();
+  factory TCPRequest([void Function(TCPRequestBuilder b) updates]) =
+      _$TCPRequest;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'TCPRequest';
+
+  @ImcField('Request Identifier', 'req_id', ImcType.typeUInt16)
+  int get reqId;
+
+  /// Recipient identifier (number or name).
+  @ImcField('Destination', 'destination', ImcType.typePlaintext)
+  String get destination;
+
+  /// Period of time to send message (in seconds).
+  @ImcField('Timeout', 'timeout', ImcType.typeFp64, units: 's')
+  double get timeout;
+
+  /// IMC message to be transmitted .
+  @ImcField('Message Data', 'msg_data', ImcType.typeMessage)
+  ImcMessage get msgData;
+}
+
+/// TCP Transmission Status class
+///
+/// Reply sent in response to a TCP sending request.
+abstract class TCPStatus extends ImcMessage
+    implements Built<TCPStatus, TCPStatusBuilder> {
+  static const static_id = 522;
+  TCPStatus._();
+  factory TCPStatus([void Function(TCPStatusBuilder b) updates]) = _$TCPStatus;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'TCPStatus';
+
+  @ImcField('Request Identifier', 'req_id', ImcType.typeUInt16)
+  int get reqId;
+
+  @ImcField('Status', 'status', ImcType.typeUInt8)
+  TCPStatusEnumStatus get status;
+
+  /// Error description.
+  @ImcField('Information', 'info', ImcType.typePlaintext)
+  String get info;
 }
 
 /// Abort class
@@ -7786,16 +8548,19 @@ abstract class Abort extends ImcMessage implements Built<Abort, AbortBuilder> {
 /// Identity and description of a plan's general parameters,
 /// associated with plan loading (i.e. load plan command in
 /// *PlanCommand*).
-/// 
+///
 /// A plan specification is defined by a plan identifier, a set of
 /// maneuver specifications and a start maneuver from that set.
-/// 
+///
 /// See the :ref:`PlanManeuver` message for details on maneuver
 /// specification.
-abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecification, PlanSpecificationBuilder> {
+abstract class PlanSpecification extends ImcMessage
+    implements Built<PlanSpecification, PlanSpecificationBuilder> {
   static const static_id = 551;
   PlanSpecification._();
-  factory PlanSpecification([void Function(PlanSpecificationBuilder b) updates]) = _$PlanSpecification;
+  factory PlanSpecification(
+          [void Function(PlanSpecificationBuilder b) updates]) =
+      _$PlanSpecification;
 
   @override
   int get msgId => static_id;
@@ -7844,10 +8609,12 @@ abstract class PlanSpecification extends ImcMessage implements Built<PlanSpecifi
 /// Plan Maneuver class
 ///
 /// Named plan maneuver.
-abstract class PlanManeuver extends ImcMessage implements Built<PlanManeuver, PlanManeuverBuilder> {
+abstract class PlanManeuver extends ImcMessage
+    implements Built<PlanManeuver, PlanManeuverBuilder> {
   static const static_id = 552;
   PlanManeuver._();
-  factory PlanManeuver([void Function(PlanManeuverBuilder b) updates]) = _$PlanManeuver;
+  factory PlanManeuver([void Function(PlanManeuverBuilder b) updates]) =
+      _$PlanManeuver;
 
   @override
   int get msgId => static_id;
@@ -7880,10 +8647,12 @@ abstract class PlanManeuver extends ImcMessage implements Built<PlanManeuver, Pl
 /// signal the transition, the maneuver that should be started as a
 /// result, and an optional set of actions triggered by the
 /// transition.
-abstract class PlanTransition extends ImcMessage implements Built<PlanTransition, PlanTransitionBuilder> {
+abstract class PlanTransition extends ImcMessage
+    implements Built<PlanTransition, PlanTransitionBuilder> {
   static const static_id = 553;
   PlanTransition._();
-  factory PlanTransition([void Function(PlanTransitionBuilder b) updates]) = _$PlanTransition;
+  factory PlanTransition([void Function(PlanTransitionBuilder b) updates]) =
+      _$PlanTransition;
 
   @override
   int get msgId => static_id;
@@ -7916,10 +8685,12 @@ abstract class PlanTransition extends ImcMessage implements Built<PlanTransition
 
 /// Emergency Control class
 ///
-abstract class EmergencyControl extends ImcMessage implements Built<EmergencyControl, EmergencyControlBuilder> {
+abstract class EmergencyControl extends ImcMessage
+    implements Built<EmergencyControl, EmergencyControlBuilder> {
   static const static_id = 554;
   EmergencyControl._();
-  factory EmergencyControl([void Function(EmergencyControlBuilder b) updates]) = _$EmergencyControl;
+  factory EmergencyControl([void Function(EmergencyControlBuilder b) updates]) =
+      _$EmergencyControl;
 
   @override
   int get msgId => static_id;
@@ -7935,10 +8706,13 @@ abstract class EmergencyControl extends ImcMessage implements Built<EmergencyCon
 
 /// Emergency Control State class
 ///
-abstract class EmergencyControlState extends ImcMessage implements Built<EmergencyControlState, EmergencyControlStateBuilder> {
+abstract class EmergencyControlState extends ImcMessage
+    implements Built<EmergencyControlState, EmergencyControlStateBuilder> {
   static const static_id = 555;
   EmergencyControlState._();
-  factory EmergencyControlState([void Function(EmergencyControlStateBuilder b) updates]) = _$EmergencyControlState;
+  factory EmergencyControlState(
+          [void Function(EmergencyControlStateBuilder b) updates]) =
+      _$EmergencyControlState;
 
   @override
   int get msgId => static_id;
@@ -7958,7 +8732,8 @@ abstract class EmergencyControlState extends ImcMessage implements Built<Emergen
 /// Plan DB class
 ///
 /// Request/reply to plan database.
-abstract class PlanDB extends ImcMessage implements Built<PlanDB, PlanDBBuilder> {
+abstract class PlanDB extends ImcMessage
+    implements Built<PlanDB, PlanDBBuilder> {
   static const static_id = 556;
   PlanDB._();
   factory PlanDB([void Function(PlanDBBuilder b) updates]) = _$PlanDB;
@@ -7974,11 +8749,11 @@ abstract class PlanDB extends ImcMessage implements Built<PlanDB, PlanDBBuilder>
   PlanDBEnumType get type;
 
   /// Indicates the operation affecting the DB.
-  /// 
+  ///
   /// The operation may relate to a single plan or the entire plan DB.
   /// For each request,  a plan DB may reply with any number of 'in progress'
   /// replies followed by a success or a failure reply.
-  /// 
+  ///
   /// The 'op', 'request_id' and 'plan_id' fields of a request will be echoed
   /// in one or more responses to that request.
   /// The operation at stake also determines a certain type of the 'arg' field,
@@ -8010,10 +8785,12 @@ abstract class PlanDB extends ImcMessage implements Built<PlanDB, PlanDBBuilder>
 /// Plan DB State class
 ///
 /// Characterizes the state of the entire plan database.
-abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, PlanDBStateBuilder> {
+abstract class PlanDBState extends ImcMessage
+    implements Built<PlanDBState, PlanDBStateBuilder> {
   static const static_id = 557;
   PlanDBState._();
-  factory PlanDBState([void Function(PlanDBStateBuilder b) updates]) = _$PlanDBState;
+  factory PlanDBState([void Function(PlanDBStateBuilder b) updates]) =
+      _$PlanDBState;
 
   @override
   int get msgId => static_id;
@@ -8054,10 +8831,13 @@ abstract class PlanDBState extends ImcMessage implements Built<PlanDBState, Plan
 
 /// Plan DB Information class
 ///
-abstract class PlanDBInformation extends ImcMessage implements Built<PlanDBInformation, PlanDBInformationBuilder> {
+abstract class PlanDBInformation extends ImcMessage
+    implements Built<PlanDBInformation, PlanDBInformationBuilder> {
   static const static_id = 558;
   PlanDBInformation._();
-  factory PlanDBInformation([void Function(PlanDBInformationBuilder b) updates]) = _$PlanDBInformation;
+  factory PlanDBInformation(
+          [void Function(PlanDBInformationBuilder b) updates]) =
+      _$PlanDBInformation;
 
   @override
   int get msgId => static_id;
@@ -8095,10 +8875,12 @@ abstract class PlanDBInformation extends ImcMessage implements Built<PlanDBInfor
 /// Plan Control class
 ///
 /// Plan control request/reply.
-abstract class PlanControl extends ImcMessage implements Built<PlanControl, PlanControlBuilder> {
+abstract class PlanControl extends ImcMessage
+    implements Built<PlanControl, PlanControlBuilder> {
   static const static_id = 559;
   PlanControl._();
-  factory PlanControl([void Function(PlanControlBuilder b) updates]) = _$PlanControl;
+  factory PlanControl([void Function(PlanControlBuilder b) updates]) =
+      _$PlanControl;
 
   @override
   int get msgId => static_id;
@@ -8143,10 +8925,12 @@ abstract class PlanControl extends ImcMessage implements Built<PlanControl, Plan
 /// Plan Control State class
 ///
 /// State of plan control.
-abstract class PlanControlState extends ImcMessage implements Built<PlanControlState, PlanControlStateBuilder> {
+abstract class PlanControlState extends ImcMessage
+    implements Built<PlanControlState, PlanControlStateBuilder> {
   static const static_id = 560;
   PlanControlState._();
-  factory PlanControlState([void Function(PlanControlStateBuilder b) updates]) = _$PlanControlState;
+  factory PlanControlState([void Function(PlanControlStateBuilder b) updates]) =
+      _$PlanControlState;
 
   @override
   int get msgId => static_id;
@@ -8193,10 +8977,12 @@ abstract class PlanControlState extends ImcMessage implements Built<PlanControlS
 /// Plan Variable class
 ///
 /// A plan variable.
-abstract class PlanVariable extends ImcMessage implements Built<PlanVariable, PlanVariableBuilder> {
+abstract class PlanVariable extends ImcMessage
+    implements Built<PlanVariable, PlanVariableBuilder> {
   static const static_id = 561;
   PlanVariable._();
-  factory PlanVariable([void Function(PlanVariableBuilder b) updates]) = _$PlanVariable;
+  factory PlanVariable([void Function(PlanVariableBuilder b) updates]) =
+      _$PlanVariable;
 
   @override
   int get msgId => static_id;
@@ -8220,10 +9006,12 @@ abstract class PlanVariable extends ImcMessage implements Built<PlanVariable, Pl
 ///
 /// This message is used to order the generation of plans based on
 /// id and set of parameters.
-abstract class PlanGeneration extends ImcMessage implements Built<PlanGeneration, PlanGenerationBuilder> {
+abstract class PlanGeneration extends ImcMessage
+    implements Built<PlanGeneration, PlanGenerationBuilder> {
   static const static_id = 562;
   PlanGeneration._();
-  factory PlanGeneration([void Function(PlanGenerationBuilder b) updates]) = _$PlanGeneration;
+  factory PlanGeneration([void Function(PlanGenerationBuilder b) updates]) =
+      _$PlanGeneration;
 
   @override
   int get msgId => static_id;
@@ -8249,30 +9037,32 @@ abstract class PlanGeneration extends ImcMessage implements Built<PlanGeneration
 /// Leader State class
 ///
 /// This message defines the formation leader state.
-/// 
+///
 /// LeaderState is a complete description of the leader state
 /// in terms of parameters such as position, orientation and
 /// velocities at a particular moment in time.
-/// 
+///
 /// The system position is given by a North-East-Down (NED)
 /// local tangent plane displacement (x, y, z) relative to
 /// an absolute WGS-84 coordinate (latitude, longitude,
 /// height above ellipsoid).
-/// 
+///
 /// The symbols for position and attitude as well as linear and
 /// angular velocities were chosen according to SNAME's notation (1950).
 /// The body-fixed reference frame and Euler angles are depicted
 /// next:
-/// 
+///
 /// .. figure:: ../images/euler-lauv.png
-/// 
+///
 /// :align:  center
-/// 
+///
 /// Euler angles
-abstract class LeaderState extends ImcMessage implements Built<LeaderState, LeaderStateBuilder> {
+abstract class LeaderState extends ImcMessage
+    implements Built<LeaderState, LeaderStateBuilder> {
   static const static_id = 563;
   LeaderState._();
-  factory LeaderState([void Function(LeaderStateBuilder b) updates]) = _$LeaderState;
+  factory LeaderState([void Function(LeaderStateBuilder b) updates]) =
+      _$LeaderState;
 
   @override
   int get msgId => static_id;
@@ -8365,10 +9155,12 @@ abstract class LeaderState extends ImcMessage implements Built<LeaderState, Lead
 
 /// Plan Statistics class
 ///
-abstract class PlanStatistics extends ImcMessage implements Built<PlanStatistics, PlanStatisticsBuilder> {
+abstract class PlanStatistics extends ImcMessage
+    implements Built<PlanStatistics, PlanStatisticsBuilder> {
   static const static_id = 564;
   PlanStatistics._();
-  factory PlanStatistics([void Function(PlanStatisticsBuilder b) updates]) = _$PlanStatistics;
+  factory PlanStatistics([void Function(PlanStatisticsBuilder b) updates]) =
+      _$PlanStatistics;
 
   @override
   int get msgId => static_id;
@@ -8406,10 +9198,12 @@ abstract class PlanStatistics extends ImcMessage implements Built<PlanStatistics
 /// Reported State class
 ///
 /// A vehicle state that is reported to other consoles (including PDAConsole). Source can be acoustic tracker, SMS, Wi-Fi, etc...
-abstract class ReportedState extends ImcMessage implements Built<ReportedState, ReportedStateBuilder> {
+abstract class ReportedState extends ImcMessage
+    implements Built<ReportedState, ReportedStateBuilder> {
   static const static_id = 600;
   ReportedState._();
-  factory ReportedState([void Function(ReportedStateBuilder b) updates]) = _$ReportedState;
+  factory ReportedState([void Function(ReportedStateBuilder b) updates]) =
+      _$ReportedState;
 
   @override
   int get msgId => static_id;
@@ -8458,10 +9252,12 @@ abstract class ReportedState extends ImcMessage implements Built<ReportedState, 
 /// Remote Sensor Info class
 ///
 /// Whenever the CUCS receives a message from one of the existing sensors (through SMS, ZigBee, Acoustic Comms, ...) it disseminates that info recurring to this message.
-abstract class RemoteSensorInfo extends ImcMessage implements Built<RemoteSensorInfo, RemoteSensorInfoBuilder> {
+abstract class RemoteSensorInfo extends ImcMessage
+    implements Built<RemoteSensorInfo, RemoteSensorInfoBuilder> {
   static const static_id = 601;
   RemoteSensorInfo._();
-  factory RemoteSensorInfo([void Function(RemoteSensorInfoBuilder b) updates]) = _$RemoteSensorInfo;
+  factory RemoteSensorInfo([void Function(RemoteSensorInfoBuilder b) updates]) =
+      _$RemoteSensorInfo;
 
   @override
   int get msgId => static_id;
@@ -8517,10 +9313,12 @@ abstract class Map extends ImcMessage implements Built<Map, MapBuilder> {
 /// Map Feature class
 ///
 /// A feature to appear on the map
-abstract class MapFeature extends ImcMessage implements Built<MapFeature, MapFeatureBuilder> {
+abstract class MapFeature extends ImcMessage
+    implements Built<MapFeature, MapFeatureBuilder> {
   static const static_id = 603;
   MapFeature._();
-  factory MapFeature([void Function(MapFeatureBuilder b) updates]) = _$MapFeature;
+  factory MapFeature([void Function(MapFeatureBuilder b) updates]) =
+      _$MapFeature;
 
   @override
   int get msgId => static_id;
@@ -8555,7 +9353,8 @@ abstract class MapFeature extends ImcMessage implements Built<MapFeature, MapFea
 /// MapPoint class
 ///
 /// This message represents a point in the world.
-abstract class MapPoint extends ImcMessage implements Built<MapPoint, MapPointBuilder> {
+abstract class MapPoint extends ImcMessage
+    implements Built<MapPoint, MapPointBuilder> {
   static const static_id = 604;
   MapPoint._();
   factory MapPoint([void Function(MapPointBuilder b) updates]) = _$MapPoint;
@@ -8578,7 +9377,8 @@ abstract class MapPoint extends ImcMessage implements Built<MapPoint, MapPointBu
 /// CCU Event class
 ///
 /// This message is used to signal events among running CCUs.
-abstract class CcuEvent extends ImcMessage implements Built<CcuEvent, CcuEventBuilder> {
+abstract class CcuEvent extends ImcMessage
+    implements Built<CcuEvent, CcuEventBuilder> {
   static const static_id = 606;
   CcuEvent._();
   factory CcuEvent([void Function(CcuEventBuilder b) updates]) = _$CcuEvent;
@@ -8601,10 +9401,12 @@ abstract class CcuEvent extends ImcMessage implements Built<CcuEvent, CcuEventBu
 /// Vehicle Links class
 ///
 /// This message is sent by the TREX task which gives further information to a TREX instance about connected IMC nodes
-abstract class VehicleLinks extends ImcMessage implements Built<VehicleLinks, VehicleLinksBuilder> {
+abstract class VehicleLinks extends ImcMessage
+    implements Built<VehicleLinks, VehicleLinksBuilder> {
   static const static_id = 650;
   VehicleLinks._();
-  factory VehicleLinks([void Function(VehicleLinksBuilder b) updates]) = _$VehicleLinks;
+  factory VehicleLinks([void Function(VehicleLinksBuilder b) updates]) =
+      _$VehicleLinks;
 
   @override
   int get msgId => static_id;
@@ -8623,10 +9425,12 @@ abstract class VehicleLinks extends ImcMessage implements Built<VehicleLinks, Ve
 /// TREX Observation class
 ///
 /// This message is sent to TREX to post timeline observations
-abstract class TrexObservation extends ImcMessage implements Built<TrexObservation, TrexObservationBuilder> {
+abstract class TrexObservation extends ImcMessage
+    implements Built<TrexObservation, TrexObservationBuilder> {
   static const static_id = 651;
   TrexObservation._();
-  factory TrexObservation([void Function(TrexObservationBuilder b) updates]) = _$TrexObservation;
+  factory TrexObservation([void Function(TrexObservationBuilder b) updates]) =
+      _$TrexObservation;
 
   @override
   int get msgId => static_id;
@@ -8639,17 +9443,20 @@ abstract class TrexObservation extends ImcMessage implements Built<TrexObservati
   @ImcField('Predicate', 'predicate', ImcType.typePlaintext)
   String get predicate;
 
-  @ImcField('Attributes', 'attributes', ImcType.typePlaintext, units: 'TupleList')
+  @ImcField('Attributes', 'attributes', ImcType.typePlaintext,
+      units: 'TupleList')
   String get attributes;
 }
 
 /// TREX Command class
 ///
 /// This message is used to control TREX execution
-abstract class TrexCommand extends ImcMessage implements Built<TrexCommand, TrexCommandBuilder> {
+abstract class TrexCommand extends ImcMessage
+    implements Built<TrexCommand, TrexCommandBuilder> {
   static const static_id = 652;
   TrexCommand._();
-  factory TrexCommand([void Function(TrexCommandBuilder b) updates]) = _$TrexCommand;
+  factory TrexCommand([void Function(TrexCommandBuilder b) updates]) =
+      _$TrexCommand;
 
   @override
   int get msgId => static_id;
@@ -8671,10 +9478,12 @@ abstract class TrexCommand extends ImcMessage implements Built<TrexCommand, Trex
 /// TREX Operation class
 ///
 /// This message is used to control TREX execution
-abstract class TrexOperation extends ImcMessage implements Built<TrexOperation, TrexOperationBuilder> {
+abstract class TrexOperation extends ImcMessage
+    implements Built<TrexOperation, TrexOperationBuilder> {
   static const static_id = 655;
   TrexOperation._();
-  factory TrexOperation([void Function(TrexOperationBuilder b) updates]) = _$TrexOperation;
+  factory TrexOperation([void Function(TrexOperationBuilder b) updates]) =
+      _$TrexOperation;
 
   @override
   int get msgId => static_id;
@@ -8695,10 +9504,12 @@ abstract class TrexOperation extends ImcMessage implements Built<TrexOperation, 
 
 /// TREX Attribute class
 ///
-abstract class TrexAttribute extends ImcMessage implements Built<TrexAttribute, TrexAttributeBuilder> {
+abstract class TrexAttribute extends ImcMessage
+    implements Built<TrexAttribute, TrexAttributeBuilder> {
   static const static_id = 656;
   TrexAttribute._();
-  factory TrexAttribute([void Function(TrexAttributeBuilder b) updates]) = _$TrexAttribute;
+  factory TrexAttribute([void Function(TrexAttributeBuilder b) updates]) =
+      _$TrexAttribute;
 
   @override
   int get msgId => static_id;
@@ -8723,7 +9534,8 @@ abstract class TrexAttribute extends ImcMessage implements Built<TrexAttribute, 
 
 /// TREX Token class
 ///
-abstract class TrexToken extends ImcMessage implements Built<TrexToken, TrexTokenBuilder> {
+abstract class TrexToken extends ImcMessage
+    implements Built<TrexToken, TrexTokenBuilder> {
   static const static_id = 657;
   TrexToken._();
   factory TrexToken([void Function(TrexTokenBuilder b) updates]) = _$TrexToken;
@@ -8745,7 +9557,8 @@ abstract class TrexToken extends ImcMessage implements Built<TrexToken, TrexToke
 
 /// TREX Plan class
 ///
-abstract class TrexPlan extends ImcMessage implements Built<TrexPlan, TrexPlanBuilder> {
+abstract class TrexPlan extends ImcMessage
+    implements Built<TrexPlan, TrexPlanBuilder> {
   static const static_id = 658;
   TrexPlan._();
   factory TrexPlan([void Function(TrexPlanBuilder b) updates]) = _$TrexPlan;
@@ -8786,11 +9599,13 @@ abstract class Event extends ImcMessage implements Built<Event, EventBuilder> {
 
 /// Compressed Image class
 ///
-/// 
-abstract class CompressedImage extends ImcMessage implements Built<CompressedImage, CompressedImageBuilder> {
+///
+abstract class CompressedImage extends ImcMessage
+    implements Built<CompressedImage, CompressedImageBuilder> {
   static const static_id = 702;
   CompressedImage._();
-  factory CompressedImage([void Function(CompressedImageBuilder b) updates]) = _$CompressedImage;
+  factory CompressedImage([void Function(CompressedImageBuilder b) updates]) =
+      _$CompressedImage;
 
   @override
   int get msgId => static_id;
@@ -8806,11 +9621,13 @@ abstract class CompressedImage extends ImcMessage implements Built<CompressedIma
 
 /// Image Transmission Settings class
 ///
-/// 
-abstract class ImageTxSettings extends ImcMessage implements Built<ImageTxSettings, ImageTxSettingsBuilder> {
+///
+abstract class ImageTxSettings extends ImcMessage
+    implements Built<ImageTxSettings, ImageTxSettingsBuilder> {
   static const static_id = 703;
   ImageTxSettings._();
-  factory ImageTxSettings([void Function(ImageTxSettingsBuilder b) updates]) = _$ImageTxSettings;
+  factory ImageTxSettings([void Function(ImageTxSettingsBuilder b) updates]) =
+      _$ImageTxSettings;
 
   @override
   int get msgId => static_id;
@@ -8833,10 +9650,12 @@ abstract class ImageTxSettings extends ImcMessage implements Built<ImageTxSettin
 /// Remote State class
 ///
 /// State summary for a remote vehicle.
-abstract class RemoteState extends ImcMessage implements Built<RemoteState, RemoteStateBuilder> {
+abstract class RemoteState extends ImcMessage
+    implements Built<RemoteState, RemoteStateBuilder> {
   static const static_id = 750;
   RemoteState._();
-  factory RemoteState([void Function(RemoteStateBuilder b) updates]) = _$RemoteState;
+  factory RemoteState([void Function(RemoteStateBuilder b) updates]) =
+      _$RemoteState;
 
   @override
   int get msgId => static_id;
@@ -8867,7 +9686,8 @@ abstract class RemoteState extends ImcMessage implements Built<RemoteState, Remo
 /// Target class
 ///
 /// Target.
-abstract class Target extends ImcMessage implements Built<Target, TargetBuilder> {
+abstract class Target extends ImcMessage
+    implements Built<Target, TargetBuilder> {
   static const static_id = 800;
   Target._();
   factory Target([void Function(TargetBuilder b) updates]) = _$Target;
@@ -8910,10 +9730,12 @@ abstract class Target extends ImcMessage implements Built<Target, TargetBuilder>
 /// EntityParameter class
 ///
 /// Entity parameter.
-abstract class EntityParameter extends ImcMessage implements Built<EntityParameter, EntityParameterBuilder> {
+abstract class EntityParameter extends ImcMessage
+    implements Built<EntityParameter, EntityParameterBuilder> {
   static const static_id = 801;
   EntityParameter._();
-  factory EntityParameter([void Function(EntityParameterBuilder b) updates]) = _$EntityParameter;
+  factory EntityParameter([void Function(EntityParameterBuilder b) updates]) =
+      _$EntityParameter;
 
   @override
   int get msgId => static_id;
@@ -8932,10 +9754,12 @@ abstract class EntityParameter extends ImcMessage implements Built<EntityParamet
 /// EntityParameters class
 ///
 /// List of entity parameters.
-abstract class EntityParameters extends ImcMessage implements Built<EntityParameters, EntityParametersBuilder> {
+abstract class EntityParameters extends ImcMessage
+    implements Built<EntityParameters, EntityParametersBuilder> {
   static const static_id = 802;
   EntityParameters._();
-  factory EntityParameters([void Function(EntityParametersBuilder b) updates]) = _$EntityParameters;
+  factory EntityParameters([void Function(EntityParametersBuilder b) updates]) =
+      _$EntityParameters;
 
   @override
   int get msgId => static_id;
@@ -8953,10 +9777,13 @@ abstract class EntityParameters extends ImcMessage implements Built<EntityParame
 
 /// QueryEntityParameters class
 ///
-abstract class QueryEntityParameters extends ImcMessage implements Built<QueryEntityParameters, QueryEntityParametersBuilder> {
+abstract class QueryEntityParameters extends ImcMessage
+    implements Built<QueryEntityParameters, QueryEntityParametersBuilder> {
   static const static_id = 803;
   QueryEntityParameters._();
-  factory QueryEntityParameters([void Function(QueryEntityParametersBuilder b) updates]) = _$QueryEntityParameters;
+  factory QueryEntityParameters(
+          [void Function(QueryEntityParametersBuilder b) updates]) =
+      _$QueryEntityParameters;
 
   @override
   int get msgId => static_id;
@@ -8975,10 +9802,13 @@ abstract class QueryEntityParameters extends ImcMessage implements Built<QueryEn
 
 /// SetEntityParameters class
 ///
-abstract class SetEntityParameters extends ImcMessage implements Built<SetEntityParameters, SetEntityParametersBuilder> {
+abstract class SetEntityParameters extends ImcMessage
+    implements Built<SetEntityParameters, SetEntityParametersBuilder> {
   static const static_id = 804;
   SetEntityParameters._();
-  factory SetEntityParameters([void Function(SetEntityParametersBuilder b) updates]) = _$SetEntityParameters;
+  factory SetEntityParameters(
+          [void Function(SetEntityParametersBuilder b) updates]) =
+      _$SetEntityParameters;
 
   @override
   int get msgId => static_id;
@@ -8994,10 +9824,13 @@ abstract class SetEntityParameters extends ImcMessage implements Built<SetEntity
 
 /// SaveEntityParameters class
 ///
-abstract class SaveEntityParameters extends ImcMessage implements Built<SaveEntityParameters, SaveEntityParametersBuilder> {
+abstract class SaveEntityParameters extends ImcMessage
+    implements Built<SaveEntityParameters, SaveEntityParametersBuilder> {
   static const static_id = 805;
   SaveEntityParameters._();
-  factory SaveEntityParameters([void Function(SaveEntityParametersBuilder b) updates]) = _$SaveEntityParameters;
+  factory SaveEntityParameters(
+          [void Function(SaveEntityParametersBuilder b) updates]) =
+      _$SaveEntityParameters;
 
   @override
   int get msgId => static_id;
@@ -9012,14 +9845,16 @@ abstract class SaveEntityParameters extends ImcMessage implements Built<SaveEnti
 ///
 /// Request creating a new session with this remote peer. Example
 /// session sequence is shown in the following diagram.
-/// 
+///
 /// .. figure:: ../images/session_sequence.png
-/// 
+///
 /// :align:  center
-abstract class CreateSession extends ImcMessage implements Built<CreateSession, CreateSessionBuilder> {
+abstract class CreateSession extends ImcMessage
+    implements Built<CreateSession, CreateSessionBuilder> {
   static const static_id = 806;
   CreateSession._();
-  factory CreateSession([void Function(CreateSessionBuilder b) updates]) = _$CreateSession;
+  factory CreateSession([void Function(CreateSessionBuilder b) updates]) =
+      _$CreateSession;
 
   @override
   int get msgId => static_id;
@@ -9036,10 +9871,12 @@ abstract class CreateSession extends ImcMessage implements Built<CreateSession, 
 /// Close Session class
 ///
 /// Request closing of an ongoing session
-abstract class CloseSession extends ImcMessage implements Built<CloseSession, CloseSessionBuilder> {
+abstract class CloseSession extends ImcMessage
+    implements Built<CloseSession, CloseSessionBuilder> {
   static const static_id = 807;
   CloseSession._();
-  factory CloseSession([void Function(CloseSessionBuilder b) updates]) = _$CloseSession;
+  factory CloseSession([void Function(CloseSessionBuilder b) updates]) =
+      _$CloseSession;
 
   @override
   int get msgId => static_id;
@@ -9052,10 +9889,13 @@ abstract class CloseSession extends ImcMessage implements Built<CloseSession, Cl
 
 /// Session Subscription class
 ///
-abstract class SessionSubscription extends ImcMessage implements Built<SessionSubscription, SessionSubscriptionBuilder> {
+abstract class SessionSubscription extends ImcMessage
+    implements Built<SessionSubscription, SessionSubscriptionBuilder> {
   static const static_id = 808;
   SessionSubscription._();
-  factory SessionSubscription([void Function(SessionSubscriptionBuilder b) updates]) = _$SessionSubscription;
+  factory SessionSubscription(
+          [void Function(SessionSubscriptionBuilder b) updates]) =
+      _$SessionSubscription;
 
   @override
   int get msgId => static_id;
@@ -9074,10 +9914,12 @@ abstract class SessionSubscription extends ImcMessage implements Built<SessionSu
 /// Session Keep-Alive class
 ///
 /// Message exchanged to prevent a session from timing out
-abstract class SessionKeepAlive extends ImcMessage implements Built<SessionKeepAlive, SessionKeepAliveBuilder> {
+abstract class SessionKeepAlive extends ImcMessage
+    implements Built<SessionKeepAlive, SessionKeepAliveBuilder> {
   static const static_id = 809;
   SessionKeepAlive._();
-  factory SessionKeepAlive([void Function(SessionKeepAliveBuilder b) updates]) = _$SessionKeepAlive;
+  factory SessionKeepAlive([void Function(SessionKeepAliveBuilder b) updates]) =
+      _$SessionKeepAlive;
 
   @override
   int get msgId => static_id;
@@ -9091,10 +9933,12 @@ abstract class SessionKeepAlive extends ImcMessage implements Built<SessionKeepA
 /// Session Status class
 ///
 /// Message transmitted periodically to inform the state of a communication session
-abstract class SessionStatus extends ImcMessage implements Built<SessionStatus, SessionStatusBuilder> {
+abstract class SessionStatus extends ImcMessage
+    implements Built<SessionStatus, SessionStatusBuilder> {
   static const static_id = 810;
   SessionStatus._();
-  factory SessionStatus([void Function(SessionStatusBuilder b) updates]) = _$SessionStatus;
+  factory SessionStatus([void Function(SessionStatusBuilder b) updates]) =
+      _$SessionStatus;
 
   @override
   int get msgId => static_id;
@@ -9110,10 +9954,13 @@ abstract class SessionStatus extends ImcMessage implements Built<SessionStatus, 
 
 /// Push Entity Parameters class
 ///
-abstract class PushEntityParameters extends ImcMessage implements Built<PushEntityParameters, PushEntityParametersBuilder> {
+abstract class PushEntityParameters extends ImcMessage
+    implements Built<PushEntityParameters, PushEntityParametersBuilder> {
   static const static_id = 811;
   PushEntityParameters._();
-  factory PushEntityParameters([void Function(PushEntityParametersBuilder b) updates]) = _$PushEntityParameters;
+  factory PushEntityParameters(
+          [void Function(PushEntityParametersBuilder b) updates]) =
+      _$PushEntityParameters;
 
   @override
   int get msgId => static_id;
@@ -9126,10 +9973,13 @@ abstract class PushEntityParameters extends ImcMessage implements Built<PushEnti
 
 /// Pop Entity Parameters class
 ///
-abstract class PopEntityParameters extends ImcMessage implements Built<PopEntityParameters, PopEntityParametersBuilder> {
+abstract class PopEntityParameters extends ImcMessage
+    implements Built<PopEntityParameters, PopEntityParametersBuilder> {
   static const static_id = 812;
   PopEntityParameters._();
-  factory PopEntityParameters([void Function(PopEntityParametersBuilder b) updates]) = _$PopEntityParameters;
+  factory PopEntityParameters(
+          [void Function(PopEntityParametersBuilder b) updates]) =
+      _$PopEntityParameters;
 
   @override
   int get msgId => static_id;
@@ -9143,7 +9993,8 @@ abstract class PopEntityParameters extends ImcMessage implements Built<PopEntity
 /// I/O Event class
 ///
 /// Notification of an I/O event.
-abstract class IoEvent extends ImcMessage implements Built<IoEvent, IoEventBuilder> {
+abstract class IoEvent extends ImcMessage
+    implements Built<IoEvent, IoEventBuilder> {
   static const static_id = 813;
   IoEvent._();
   factory IoEvent([void Function(IoEventBuilder b) updates]) = _$IoEvent;
@@ -9164,10 +10015,12 @@ abstract class IoEvent extends ImcMessage implements Built<IoEvent, IoEventBuild
 
 /// UamTxFrame class
 ///
-abstract class UamTxFrame extends ImcMessage implements Built<UamTxFrame, UamTxFrameBuilder> {
+abstract class UamTxFrame extends ImcMessage
+    implements Built<UamTxFrame, UamTxFrameBuilder> {
   static const static_id = 814;
   UamTxFrame._();
-  factory UamTxFrame([void Function(UamTxFrameBuilder b) updates]) = _$UamTxFrame;
+  factory UamTxFrame([void Function(UamTxFrameBuilder b) updates]) =
+      _$UamTxFrame;
 
   @override
   int get msgId => static_id;
@@ -9189,10 +10042,12 @@ abstract class UamTxFrame extends ImcMessage implements Built<UamTxFrame, UamTxF
 
 /// UamRxFrame class
 ///
-abstract class UamRxFrame extends ImcMessage implements Built<UamRxFrame, UamRxFrameBuilder> {
+abstract class UamRxFrame extends ImcMessage
+    implements Built<UamRxFrame, UamRxFrameBuilder> {
   static const static_id = 815;
   UamRxFrame._();
-  factory UamRxFrame([void Function(UamRxFrameBuilder b) updates]) = _$UamRxFrame;
+  factory UamRxFrame([void Function(UamRxFrameBuilder b) updates]) =
+      _$UamRxFrame;
 
   @override
   int get msgId => static_id;
@@ -9214,10 +10069,12 @@ abstract class UamRxFrame extends ImcMessage implements Built<UamRxFrame, UamRxF
 
 /// UamTxStatus class
 ///
-abstract class UamTxStatus extends ImcMessage implements Built<UamTxStatus, UamTxStatusBuilder> {
+abstract class UamTxStatus extends ImcMessage
+    implements Built<UamTxStatus, UamTxStatusBuilder> {
   static const static_id = 816;
   UamTxStatus._();
-  factory UamTxStatus([void Function(UamTxStatusBuilder b) updates]) = _$UamTxStatus;
+  factory UamTxStatus([void Function(UamTxStatusBuilder b) updates]) =
+      _$UamTxStatus;
 
   @override
   int get msgId => static_id;
@@ -9236,10 +10093,12 @@ abstract class UamTxStatus extends ImcMessage implements Built<UamTxStatus, UamT
 
 /// UamRxRange class
 ///
-abstract class UamRxRange extends ImcMessage implements Built<UamRxRange, UamRxRangeBuilder> {
+abstract class UamRxRange extends ImcMessage
+    implements Built<UamRxRange, UamRxRangeBuilder> {
   static const static_id = 817;
   UamRxRange._();
-  factory UamRxRange([void Function(UamRxRangeBuilder b) updates]) = _$UamRxRange;
+  factory UamRxRange([void Function(UamRxRangeBuilder b) updates]) =
+      _$UamRxRange;
 
   @override
   int get msgId => static_id;
@@ -9256,13 +10115,45 @@ abstract class UamRxRange extends ImcMessage implements Built<UamRxRange, UamRxR
   double get value;
 }
 
+/// UamTxRange class
+///
+/// Request an acoustic modem driver to measure the distance to another system.
+abstract class UamTxRange extends ImcMessage
+    implements Built<UamTxRange, UamTxRangeBuilder> {
+  static const static_id = 818;
+  UamTxRange._();
+  factory UamTxRange([void Function(UamTxRangeBuilder b) updates]) =
+      _$UamTxRange;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'UamTxRange';
+
+  /// A sequence identifier that should be incremented for each
+  /// request. This number will then be used to issue transmission
+  /// status updates via the message UamTxStatus.
+  @ImcField('Sequence Id', 'seq', ImcType.typeUInt16)
+  int get seq;
+
+  /// The canonical name of the target system.
+  @ImcField('Destination System', 'sys_dst', ImcType.typePlaintext)
+  String get sysDst;
+
+  /// Maximum amount of time to wait for a reply.
+  @ImcField('Timeout', 'timeout', ImcType.typeFp32, units: 's')
+  double get timeout;
+}
+
 /// Formation Control Parameters class
 ///
 /// Formation controller paramenters, as: trajectory gains, control boundary layer thickness, and formation shape gains.
-abstract class FormCtrlParam extends ImcMessage implements Built<FormCtrlParam, FormCtrlParamBuilder> {
+abstract class FormCtrlParam extends ImcMessage
+    implements Built<FormCtrlParam, FormCtrlParamBuilder> {
   static const static_id = 820;
   FormCtrlParam._();
-  factory FormCtrlParam([void Function(FormCtrlParamBuilder b) updates]) = _$FormCtrlParam;
+  factory FormCtrlParam([void Function(FormCtrlParamBuilder b) updates]) =
+      _$FormCtrlParam;
 
   @override
   int get msgId => static_id;
@@ -9299,10 +10190,12 @@ abstract class FormCtrlParam extends ImcMessage implements Built<FormCtrlParam, 
 /// Formation Evaluation Data class
 ///
 /// Formation control performance evaluation variables.
-abstract class FormationEval extends ImcMessage implements Built<FormationEval, FormationEvalBuilder> {
+abstract class FormationEval extends ImcMessage
+    implements Built<FormationEval, FormationEvalBuilder> {
   static const static_id = 821;
   FormationEval._();
-  factory FormationEval([void Function(FormationEvalBuilder b) updates]) = _$FormationEval;
+  factory FormationEval([void Function(FormationEvalBuilder b) updates]) =
+      _$FormationEval;
 
   @override
   int get msgId => static_id;
@@ -9326,10 +10219,13 @@ abstract class FormationEval extends ImcMessage implements Built<FormationEval, 
 ///
 /// Formation controller paramenters, as: trajectory gains,
 /// control boundary layer thickness, and formation shape gains.
-abstract class FormationControlParams extends ImcMessage implements Built<FormationControlParams, FormationControlParamsBuilder> {
+abstract class FormationControlParams extends ImcMessage
+    implements Built<FormationControlParams, FormationControlParamsBuilder> {
   static const static_id = 822;
   FormationControlParams._();
-  factory FormationControlParams([void Function(FormationControlParamsBuilder b) updates]) = _$FormationControlParams;
+  factory FormationControlParams(
+          [void Function(FormationControlParamsBuilder b) updates]) =
+      _$FormationControlParams;
 
   @override
   int get msgId => static_id;
@@ -9379,17 +10275,21 @@ abstract class FormationControlParams extends ImcMessage implements Built<Format
   double get accelSafeMargin;
 
   /// Maximum predicted longitudinal acceleration a vehicle can generate.
-  @ImcField('Maximum Longitudinal Acceleration', 'accel_lim_x', ImcType.typeFp32)
+  @ImcField(
+      'Maximum Longitudinal Acceleration', 'accel_lim_x', ImcType.typeFp32)
   double get accelLimX;
 }
 
 /// Formation Evaluation Data class
 ///
 /// Formation control performance evaluation variables.
-abstract class FormationEvaluation extends ImcMessage implements Built<FormationEvaluation, FormationEvaluationBuilder> {
+abstract class FormationEvaluation extends ImcMessage
+    implements Built<FormationEvaluation, FormationEvaluationBuilder> {
   static const static_id = 823;
   FormationEvaluation._();
-  factory FormationEvaluation([void Function(FormationEvaluationBuilder b) updates]) = _$FormationEvaluation;
+  factory FormationEvaluation(
+          [void Function(FormationEvaluationBuilder b) updates]) =
+      _$FormationEvaluation;
 
   @override
   int get msgId => static_id;
@@ -9425,16 +10325,19 @@ abstract class FormationEvaluation extends ImcMessage implements Built<Formation
   double get time;
 
   /// Formation controller paramenters during the evaluation period.
-  @ImcField('Formation Control Parameters', 'ControlParams', ImcType.typeMessage)
+  @ImcField(
+      'Formation Control Parameters', 'ControlParams', ImcType.typeMessage)
   FormationControlParams get controlParams;
 }
 
 /// SOI Waypoint class
 ///
-abstract class SoiWaypoint extends ImcMessage implements Built<SoiWaypoint, SoiWaypointBuilder> {
+abstract class SoiWaypoint extends ImcMessage
+    implements Built<SoiWaypoint, SoiWaypointBuilder> {
   static const static_id = 850;
   SoiWaypoint._();
-  factory SoiWaypoint([void Function(SoiWaypointBuilder b) updates]) = _$SoiWaypoint;
+  factory SoiWaypoint([void Function(SoiWaypointBuilder b) updates]) =
+      _$SoiWaypoint;
 
   @override
   int get msgId => static_id;
@@ -9456,7 +10359,8 @@ abstract class SoiWaypoint extends ImcMessage implements Built<SoiWaypoint, SoiW
 
 /// SOI Plan class
 ///
-abstract class SoiPlan extends ImcMessage implements Built<SoiPlan, SoiPlanBuilder> {
+abstract class SoiPlan extends ImcMessage
+    implements Built<SoiPlan, SoiPlanBuilder> {
   static const static_id = 851;
   SoiPlan._();
   factory SoiPlan([void Function(SoiPlanBuilder b) updates]) = _$SoiPlan;
@@ -9475,10 +10379,12 @@ abstract class SoiPlan extends ImcMessage implements Built<SoiPlan, SoiPlanBuild
 
 /// SOI Command class
 ///
-abstract class SoiCommand extends ImcMessage implements Built<SoiCommand, SoiCommandBuilder> {
+abstract class SoiCommand extends ImcMessage
+    implements Built<SoiCommand, SoiCommandBuilder> {
   static const static_id = 852;
   SoiCommand._();
-  factory SoiCommand([void Function(SoiCommandBuilder b) updates]) = _$SoiCommand;
+  factory SoiCommand([void Function(SoiCommandBuilder b) updates]) =
+      _$SoiCommand;
 
   @override
   int get msgId => static_id;
@@ -9503,7 +10409,8 @@ abstract class SoiCommand extends ImcMessage implements Built<SoiCommand, SoiCom
 
 /// SOI State class
 ///
-abstract class SoiState extends ImcMessage implements Built<SoiState, SoiStateBuilder> {
+abstract class SoiState extends ImcMessage
+    implements Built<SoiState, SoiStateBuilder> {
   static const static_id = 853;
   SoiState._();
   factory SoiState([void Function(SoiStateBuilder b) updates]) = _$SoiState;
@@ -9528,10 +10435,12 @@ abstract class SoiState extends ImcMessage implements Built<SoiState, SoiStateBu
 
 /// Message Fragment class
 ///
-abstract class MessagePart extends ImcMessage implements Built<MessagePart, MessagePartBuilder> {
+abstract class MessagePart extends ImcMessage
+    implements Built<MessagePart, MessagePartBuilder> {
   static const static_id = 877;
   MessagePart._();
-  factory MessagePart([void Function(MessagePartBuilder b) updates]) = _$MessagePart;
+  factory MessagePart([void Function(MessagePartBuilder b) updates]) =
+      _$MessagePart;
 
   @override
   int get msgId => static_id;
@@ -9553,10 +10462,12 @@ abstract class MessagePart extends ImcMessage implements Built<MessagePart, Mess
 
 /// Neptus Blob class
 ///
-abstract class NeptusBlob extends ImcMessage implements Built<NeptusBlob, NeptusBlobBuilder> {
+abstract class NeptusBlob extends ImcMessage
+    implements Built<NeptusBlob, NeptusBlobBuilder> {
   static const static_id = 888;
   NeptusBlob._();
-  factory NeptusBlob([void Function(NeptusBlobBuilder b) updates]) = _$NeptusBlob;
+  factory NeptusBlob([void Function(NeptusBlobBuilder b) updates]) =
+      _$NeptusBlob;
 
   @override
   int get msgId => static_id;
@@ -9573,7 +10484,8 @@ abstract class NeptusBlob extends ImcMessage implements Built<NeptusBlob, Neptus
 /// Aborted class
 ///
 /// This message signals that an :ref:`Abort` message was received and acted upon.
-abstract class Aborted extends ImcMessage implements Built<Aborted, AbortedBuilder> {
+abstract class Aborted extends ImcMessage
+    implements Built<Aborted, AbortedBuilder> {
   static const static_id = 889;
   Aborted._();
   factory Aborted([void Function(AbortedBuilder b) updates]) = _$Aborted;
@@ -9588,10 +10500,12 @@ abstract class Aborted extends ImcMessage implements Built<Aborted, AbortedBuild
 ///
 /// This message contains information, collected using USBL, about the
 /// bearing and elevation of a target.
-abstract class UsblAngles extends ImcMessage implements Built<UsblAngles, UsblAnglesBuilder> {
+abstract class UsblAngles extends ImcMessage
+    implements Built<UsblAngles, UsblAnglesBuilder> {
   static const static_id = 890;
   UsblAngles._();
-  factory UsblAngles([void Function(UsblAnglesBuilder b) updates]) = _$UsblAngles;
+  factory UsblAngles([void Function(UsblAnglesBuilder b) updates]) =
+      _$UsblAngles;
 
   @override
   int get msgId => static_id;
@@ -9615,10 +10529,12 @@ abstract class UsblAngles extends ImcMessage implements Built<UsblAngles, UsblAn
 ///
 /// This message contains information, collected using USBL, about a
 /// target's position.
-abstract class UsblPosition extends ImcMessage implements Built<UsblPosition, UsblPositionBuilder> {
+abstract class UsblPosition extends ImcMessage
+    implements Built<UsblPosition, UsblPositionBuilder> {
   static const static_id = 891;
   UsblPosition._();
-  factory UsblPosition([void Function(UsblPositionBuilder b) updates]) = _$UsblPosition;
+  factory UsblPosition([void Function(UsblPositionBuilder b) updates]) =
+      _$UsblPosition;
 
   @override
   int get msgId => static_id;
@@ -9646,7 +10562,8 @@ abstract class UsblPosition extends ImcMessage implements Built<UsblPosition, Us
 ///
 /// This message contains the WGS-84 position of a target computed using
 /// USBL.
-abstract class UsblFix extends ImcMessage implements Built<UsblFix, UsblFixBuilder> {
+abstract class UsblFix extends ImcMessage
+    implements Built<UsblFix, UsblFixBuilder> {
   static const static_id = 892;
   UsblFix._();
   factory UsblFix([void Function(UsblFixBuilder b) updates]) = _$UsblFix;
@@ -9681,10 +10598,12 @@ abstract class UsblFix extends ImcMessage implements Built<UsblFix, UsblFixBuild
 /// Parameters XML class
 ///
 /// Message containing the parameters XML of the source system.
-abstract class ParametersXml extends ImcMessage implements Built<ParametersXml, ParametersXmlBuilder> {
+abstract class ParametersXml extends ImcMessage
+    implements Built<ParametersXml, ParametersXmlBuilder> {
   static const static_id = 893;
   ParametersXml._();
-  factory ParametersXml([void Function(ParametersXmlBuilder b) updates]) = _$ParametersXml;
+  factory ParametersXml([void Function(ParametersXmlBuilder b) updates]) =
+      _$ParametersXml;
 
   @override
   int get msgId => static_id;
@@ -9704,10 +10623,12 @@ abstract class ParametersXml extends ImcMessage implements Built<ParametersXml, 
 ///
 /// Request the destination system to send its parameters XML file via a
 /// :ref:`ParametersXml` message.
-abstract class GetParametersXml extends ImcMessage implements Built<GetParametersXml, GetParametersXmlBuilder> {
+abstract class GetParametersXml extends ImcMessage
+    implements Built<GetParametersXml, GetParametersXmlBuilder> {
   static const static_id = 894;
   GetParametersXml._();
-  factory GetParametersXml([void Function(GetParametersXmlBuilder b) updates]) = _$GetParametersXml;
+  factory GetParametersXml([void Function(GetParametersXmlBuilder b) updates]) =
+      _$GetParametersXml;
 
   @override
   int get msgId => static_id;
@@ -9718,10 +10639,12 @@ abstract class GetParametersXml extends ImcMessage implements Built<GetParameter
 /// Set Image Coordinates class
 ///
 /// Message containing the x and y coordinates of object to track in remote peer.
-abstract class SetImageCoords extends ImcMessage implements Built<SetImageCoords, SetImageCoordsBuilder> {
+abstract class SetImageCoords extends ImcMessage
+    implements Built<SetImageCoords, SetImageCoordsBuilder> {
   static const static_id = 895;
   SetImageCoords._();
-  factory SetImageCoords([void Function(SetImageCoordsBuilder b) updates]) = _$SetImageCoords;
+  factory SetImageCoords([void Function(SetImageCoordsBuilder b) updates]) =
+      _$SetImageCoords;
 
   @override
   int get msgId => static_id;
@@ -9744,10 +10667,12 @@ abstract class SetImageCoords extends ImcMessage implements Built<SetImageCoords
 /// Get Image Coordinates class
 ///
 /// Message containing the x and y coordinates of object to track in image slave.
-abstract class GetImageCoords extends ImcMessage implements Built<GetImageCoords, GetImageCoordsBuilder> {
+abstract class GetImageCoords extends ImcMessage
+    implements Built<GetImageCoords, GetImageCoordsBuilder> {
   static const static_id = 896;
   GetImageCoords._();
-  factory GetImageCoords([void Function(GetImageCoordsBuilder b) updates]) = _$GetImageCoords;
+  factory GetImageCoords([void Function(GetImageCoordsBuilder b) updates]) =
+      _$GetImageCoords;
 
   @override
   int get msgId => static_id;
@@ -9770,10 +10695,13 @@ abstract class GetImageCoords extends ImcMessage implements Built<GetImageCoords
 /// Get World Coordinates class
 ///
 /// Message containing the x, y and z coordinates of object in the real world.
-abstract class GetWorldCoordinates extends ImcMessage implements Built<GetWorldCoordinates, GetWorldCoordinatesBuilder> {
+abstract class GetWorldCoordinates extends ImcMessage
+    implements Built<GetWorldCoordinates, GetWorldCoordinatesBuilder> {
   static const static_id = 897;
   GetWorldCoordinates._();
-  factory GetWorldCoordinates([void Function(GetWorldCoordinatesBuilder b) updates]) = _$GetWorldCoordinates;
+  factory GetWorldCoordinates(
+          [void Function(GetWorldCoordinatesBuilder b) updates]) =
+      _$GetWorldCoordinates;
 
   @override
   int get msgId => static_id;
@@ -9809,10 +10737,13 @@ abstract class GetWorldCoordinates extends ImcMessage implements Built<GetWorldC
 ///
 /// This message contains information, collected using USBL, about the
 /// bearing and elevation of a target.
-abstract class UsblAnglesExtended extends ImcMessage implements Built<UsblAnglesExtended, UsblAnglesExtendedBuilder> {
+abstract class UsblAnglesExtended extends ImcMessage
+    implements Built<UsblAnglesExtended, UsblAnglesExtendedBuilder> {
   static const static_id = 898;
   UsblAnglesExtended._();
-  factory UsblAnglesExtended([void Function(UsblAnglesExtendedBuilder b) updates]) = _$UsblAnglesExtended;
+  factory UsblAnglesExtended(
+          [void Function(UsblAnglesExtendedBuilder b) updates]) =
+      _$UsblAnglesExtended;
 
   @override
   int get msgId => static_id;
@@ -9860,10 +10791,13 @@ abstract class UsblAnglesExtended extends ImcMessage implements Built<UsblAngles
 ///
 /// This message contains information, collected using USBL, about a
 /// target's position.
-abstract class UsblPositionExtended extends ImcMessage implements Built<UsblPositionExtended, UsblPositionExtendedBuilder> {
+abstract class UsblPositionExtended extends ImcMessage
+    implements Built<UsblPositionExtended, UsblPositionExtendedBuilder> {
   static const static_id = 899;
   UsblPositionExtended._();
-  factory UsblPositionExtended([void Function(UsblPositionExtendedBuilder b) updates]) = _$UsblPositionExtended;
+  factory UsblPositionExtended(
+          [void Function(UsblPositionExtendedBuilder b) updates]) =
+      _$UsblPositionExtended;
 
   @override
   int get msgId => static_id;
@@ -9919,10 +10853,12 @@ abstract class UsblPositionExtended extends ImcMessage implements Built<UsblPosi
 ///
 /// This message contains the WGS-84 position of a target computed using
 /// USBL.
-abstract class UsblFixExtended extends ImcMessage implements Built<UsblFixExtended, UsblFixExtendedBuilder> {
+abstract class UsblFixExtended extends ImcMessage
+    implements Built<UsblFixExtended, UsblFixExtendedBuilder> {
   static const static_id = 900;
   UsblFixExtended._();
-  factory UsblFixExtended([void Function(UsblFixExtendedBuilder b) updates]) = _$UsblFixExtended;
+  factory UsblFixExtended([void Function(UsblFixExtendedBuilder b) updates]) =
+      _$UsblFixExtended;
 
   @override
   int get msgId => static_id;
@@ -9958,7 +10894,8 @@ abstract class UsblFixExtended extends ImcMessage implements Built<UsblFixExtend
 /// USBL Modem Configuration class
 ///
 /// Position and configuration of an Ultra-Short Base Line modem.
-abstract class UsblModem extends ImcMessage implements Built<UsblModem, UsblModemBuilder> {
+abstract class UsblModem extends ImcMessage
+    implements Built<UsblModem, UsblModemBuilder> {
   static const static_id = 901;
   UsblModem._();
   factory UsblModem([void Function(UsblModemBuilder b) updates]) = _$UsblModem;
@@ -9993,10 +10930,12 @@ abstract class UsblModem extends ImcMessage implements Built<UsblModem, UsblMode
 /// USBL Configuration class
 ///
 /// Ultra-Short Base Line configuration.
-abstract class UsblConfig extends ImcMessage implements Built<UsblConfig, UsblConfigBuilder> {
+abstract class UsblConfig extends ImcMessage
+    implements Built<UsblConfig, UsblConfigBuilder> {
   static const static_id = 902;
   UsblConfig._();
-  factory UsblConfig([void Function(UsblConfigBuilder b) updates]) = _$UsblConfig;
+  factory UsblConfig([void Function(UsblConfigBuilder b) updates]) =
+      _$UsblConfig;
 
   @override
   int get msgId => static_id;
@@ -10015,10 +10954,13 @@ abstract class UsblConfig extends ImcMessage implements Built<UsblConfig, UsblCo
 /// Dissolved Organic Matter class
 ///
 /// Dissolved Organic Matter measurement.
-abstract class DissolvedOrganicMatter extends ImcMessage implements Built<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder> {
+abstract class DissolvedOrganicMatter extends ImcMessage
+    implements Built<DissolvedOrganicMatter, DissolvedOrganicMatterBuilder> {
   static const static_id = 903;
   DissolvedOrganicMatter._();
-  factory DissolvedOrganicMatter([void Function(DissolvedOrganicMatterBuilder b) updates]) = _$DissolvedOrganicMatter;
+  factory DissolvedOrganicMatter(
+          [void Function(DissolvedOrganicMatterBuilder b) updates]) =
+      _$DissolvedOrganicMatter;
 
   @override
   int get msgId => static_id;
@@ -10038,10 +10980,13 @@ abstract class DissolvedOrganicMatter extends ImcMessage implements Built<Dissol
 ///
 /// The optical backscattering coefficient refers to all the photons that have been redirected in the backward directions
 /// when a photon of light propagates in water and interacts with a "particle" (varying from water molecules to fish).
-abstract class OpticalBackscatter extends ImcMessage implements Built<OpticalBackscatter, OpticalBackscatterBuilder> {
+abstract class OpticalBackscatter extends ImcMessage
+    implements Built<OpticalBackscatter, OpticalBackscatterBuilder> {
   static const static_id = 904;
   OpticalBackscatter._();
-  factory OpticalBackscatter([void Function(OpticalBackscatterBuilder b) updates]) = _$OpticalBackscatter;
+  factory OpticalBackscatter(
+          [void Function(OpticalBackscatterBuilder b) updates]) =
+      _$OpticalBackscatter;
 
   @override
   int get msgId => static_id;
@@ -10057,10 +11002,12 @@ abstract class OpticalBackscatter extends ImcMessage implements Built<OpticalBac
 ///
 /// This messages is used to record system activity parameters. These
 /// parameters are mainly used for used for maintenance purposes.
-abstract class Tachograph extends ImcMessage implements Built<Tachograph, TachographBuilder> {
+abstract class Tachograph extends ImcMessage
+    implements Built<Tachograph, TachographBuilder> {
   static const static_id = 905;
   Tachograph._();
-  factory Tachograph([void Function(TachographBuilder b) updates]) = _$Tachograph;
+  factory Tachograph([void Function(TachographBuilder b) updates]) =
+      _$Tachograph;
 
   @override
   int get msgId => static_id;
@@ -10070,19 +11017,25 @@ abstract class Tachograph extends ImcMessage implements Built<Tachograph, Tachog
   /// The time when the last service was performed. The number of
   /// seconds is represented in Universal Coordinated Time (UCT) in
   /// seconds since Jan 1, 1970.
-  @ImcField('Last Service Timestamp', 'timestamp_last_service', ImcType.typeFp64, units: 's')
+  @ImcField(
+      'Last Service Timestamp', 'timestamp_last_service', ImcType.typeFp64,
+      units: 's')
   double get timestampLastService;
 
   /// Amount of time until the next recommended service.
-  @ImcField('Time - Next Service', 'time_next_service', ImcType.typeFp32, units: 's')
+  @ImcField('Time - Next Service', 'time_next_service', ImcType.typeFp32,
+      units: 's')
   double get timeNextService;
 
   /// Amount of time the motor can run until the next recommended service.
-  @ImcField('Time Motor - Next Service', 'time_motor_next_service', ImcType.typeFp32, units: 's')
+  @ImcField(
+      'Time Motor - Next Service', 'time_motor_next_service', ImcType.typeFp32,
+      units: 's')
   double get timeMotorNextService;
 
   /// Amount of time the system spent idle on the ground.
-  @ImcField('Time Idle - Ground', 'time_idle_ground', ImcType.typeFp32, units: 's')
+  @ImcField('Time Idle - Ground', 'time_idle_ground', ImcType.typeFp32,
+      units: 's')
   double get timeIdleGround;
 
   /// Amount of time the system spent idle in the air.
@@ -10090,19 +11043,23 @@ abstract class Tachograph extends ImcMessage implements Built<Tachograph, Tachog
   double get timeIdleAir;
 
   /// Amount of time the system spent idle on the water (not submerged).
-  @ImcField('Time Idle - Water', 'time_idle_water', ImcType.typeFp32, units: 's')
+  @ImcField('Time Idle - Water', 'time_idle_water', ImcType.typeFp32,
+      units: 's')
   double get timeIdleWater;
 
   /// Amount of time the system spent idle underwater.
-  @ImcField('Time Idle - Underwater', 'time_idle_underwater', ImcType.typeFp32, units: 's')
+  @ImcField('Time Idle - Underwater', 'time_idle_underwater', ImcType.typeFp32,
+      units: 's')
   double get timeIdleUnderwater;
 
   /// Amount of time the system spent idle in an unknown medium.
-  @ImcField('Time Idle - Unknown', 'time_idle_unknown', ImcType.typeFp32, units: 's')
+  @ImcField('Time Idle - Unknown', 'time_idle_unknown', ImcType.typeFp32,
+      units: 's')
   double get timeIdleUnknown;
 
   /// Amount of time the system spent on the ground with the motor running.
-  @ImcField('Time Motor - Ground', 'time_motor_ground', ImcType.typeFp32, units: 's')
+  @ImcField('Time Motor - Ground', 'time_motor_ground', ImcType.typeFp32,
+      units: 's')
   double get timeMotorGround;
 
   /// Amount of time the system spent in the air with the motor running.
@@ -10110,34 +11067,42 @@ abstract class Tachograph extends ImcMessage implements Built<Tachograph, Tachog
   double get timeMotorAir;
 
   /// Amount of time the system spent on the water (not submerged) with the motor running.
-  @ImcField('Time Motor - Water', 'time_motor_water', ImcType.typeFp32, units: 's')
+  @ImcField('Time Motor - Water', 'time_motor_water', ImcType.typeFp32,
+      units: 's')
   double get timeMotorWater;
 
   /// Amount of time the system spent underwater with the motor running.
-  @ImcField('Time Motor - Underwater', 'time_motor_underwater', ImcType.typeFp32, units: 's')
+  @ImcField(
+      'Time Motor - Underwater', 'time_motor_underwater', ImcType.typeFp32,
+      units: 's')
   double get timeMotorUnderwater;
 
   /// Amount of time the system spent in an unknown medium with the motor running.
-  @ImcField('Time Motor - Unknown', 'time_motor_unknown', ImcType.typeFp32, units: 's')
+  @ImcField('Time Motor - Unknown', 'time_motor_unknown', ImcType.typeFp32,
+      units: 's')
   double get timeMotorUnknown;
 
   /// The minimum recorded RPM value.
-  @ImcField('Recorded RPMs - Minimum', 'rpm_min', ImcType.typeInt16, units: 'rpm')
+  @ImcField('Recorded RPMs - Minimum', 'rpm_min', ImcType.typeInt16,
+      units: 'rpm')
   int get rpmMin;
 
   /// The maximum recorded RPM value.
-  @ImcField('Recorded RPMs - Maximum', 'rpm_max', ImcType.typeInt16, units: 'rpm')
+  @ImcField('Recorded RPMs - Maximum', 'rpm_max', ImcType.typeInt16,
+      units: 'rpm')
   int get rpmMax;
 
   /// The maximum recorded depth value.
-  @ImcField('Recorded Depth - Maximum', 'depth_max', ImcType.typeFp32, units: 'm')
+  @ImcField('Recorded Depth - Maximum', 'depth_max', ImcType.typeFp32,
+      units: 'm')
   double get depthMax;
 }
 
 /// APM Status class
 ///
 /// StatusText message from ardupilot.
-abstract class ApmStatus extends ImcMessage implements Built<ApmStatus, ApmStatusBuilder> {
+abstract class ApmStatus extends ImcMessage
+    implements Built<ApmStatus, ApmStatusBuilder> {
   static const static_id = 906;
   ApmStatus._();
   factory ApmStatus([void Function(ApmStatusBuilder b) updates]) = _$ApmStatus;
@@ -10159,10 +11124,12 @@ abstract class ApmStatus extends ImcMessage implements Built<ApmStatus, ApmStatu
 /// SADC Readings class
 ///
 /// Readings from SADC board.
-abstract class SadcReadings extends ImcMessage implements Built<SadcReadings, SadcReadingsBuilder> {
+abstract class SadcReadings extends ImcMessage
+    implements Built<SadcReadings, SadcReadingsBuilder> {
   static const static_id = 907;
   SadcReadings._();
-  factory SadcReadings([void Function(SadcReadingsBuilder b) updates]) = _$SadcReadings;
+  factory SadcReadings([void Function(SadcReadingsBuilder b) updates]) =
+      _$SadcReadings;
 
   @override
   int get msgId => static_id;
@@ -10186,10 +11153,12 @@ abstract class SadcReadings extends ImcMessage implements Built<SadcReadings, Sa
 ///
 /// Presence of DMS (Dimethyl Sulphide).
 /// If the value of the channel is greater than zero, it means DMS was detected.
-abstract class DmsDetection extends ImcMessage implements Built<DmsDetection, DmsDetectionBuilder> {
+abstract class DmsDetection extends ImcMessage
+    implements Built<DmsDetection, DmsDetectionBuilder> {
   static const static_id = 908;
   DmsDetection._();
-  factory DmsDetection([void Function(DmsDetectionBuilder b) updates]) = _$DmsDetection;
+  factory DmsDetection([void Function(DmsDetectionBuilder b) updates]) =
+      _$DmsDetection;
 
   @override
   int get msgId => static_id;
@@ -10247,10 +11216,13 @@ abstract class DmsDetection extends ImcMessage implements Built<DmsDetection, Dm
 
 /// Total Magnetic Field Intensity class
 ///
-abstract class TotalMagIntensity extends ImcMessage implements Built<TotalMagIntensity, TotalMagIntensityBuilder> {
+abstract class TotalMagIntensity extends ImcMessage
+    implements Built<TotalMagIntensity, TotalMagIntensityBuilder> {
   static const static_id = 2006;
   TotalMagIntensity._();
-  factory TotalMagIntensity([void Function(TotalMagIntensityBuilder b) updates]) = _$TotalMagIntensity;
+  factory TotalMagIntensity(
+          [void Function(TotalMagIntensityBuilder b) updates]) =
+      _$TotalMagIntensity;
 
   @override
   int get msgId => static_id;
@@ -10262,3 +11234,43 @@ abstract class TotalMagIntensity extends ImcMessage implements Built<TotalMagInt
   double get value;
 }
 
+/// Home Position class
+///
+/// Vehicle Home Position.
+abstract class HomePosition extends ImcMessage
+    implements Built<HomePosition, HomePositionBuilder> {
+  static const static_id = 909;
+  HomePosition._();
+  factory HomePosition([void Function(HomePositionBuilder b) updates]) =
+      _$HomePosition;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'HomePosition';
+
+  /// Action on the vehicle home
+  @ImcField('Action on the vehicle home position', 'op', ImcType.typeUInt8)
+  HomePositionEnumOp get op;
+
+  /// WGS-84 Latitude.
+  @ImcField('Latitude (WGS-84)', 'lat', ImcType.typeFp64, units: 'rad')
+  double get lat;
+
+  /// WGS-84 Longitude.
+  @ImcField('Longitude (WGS-84)', 'lon', ImcType.typeFp64, units: 'rad')
+  double get lon;
+
+  /// Height above the WGS-84 ellipsoid.
+  @ImcField('Height (WGS-84)', 'height', ImcType.typeFp32, units: 'm')
+  double get height;
+
+  /// Depth, in meters. To be used by underwater vehicles. Negative
+  /// values denote invalid estimates.
+  @ImcField('Depth', 'depth', ImcType.typeFp32, units: 'm')
+  double get depth;
+
+  /// Altitude, in meters. Negative values denote invalid estimates.
+  @ImcField('Altitude', 'alt', ImcType.typeFp32, units: 'm')
+  double get alt;
+}
