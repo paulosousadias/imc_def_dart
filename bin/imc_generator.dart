@@ -1046,7 +1046,7 @@ void _writeMessageField(
 }
 
 /// Returns the field [imc related type, type for dart, null if no default value].
-List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
+List<String?> getTypesForImcAndDart(String abbrev, String type, String? unit,
     xml.XmlElement field, xml.XmlElement message) {
   var typeImc;
   var dartType;
@@ -1135,7 +1135,7 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
 
 /// Gets the name of the type for the enum like class.
 String _getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
-    xml.XmlElement message, String unit) {
+    xml.XmlElement message, String? unit) {
   var eDef = field.getAttribute('enum-def');
   if (eDef != null) return '${eDef}Enum';
   eDef = field.getAttribute('bitfield-def');
@@ -1178,7 +1178,7 @@ void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
 
 /// Writes eath message field local enum like code classes.
 void _writeLocalEnumLike(String abbrev, xml.XmlElement field,
-    xml.XmlElement message, String unit, IOSink sink) {
+    xml.XmlElement message, String? unit, IOSink sink) {
   if (field.getAttribute('enum-def') != null ||
       field.getAttribute('bitfield-def') != null) return;
 
@@ -1189,7 +1189,7 @@ void _writeLocalEnumLike(String abbrev, xml.XmlElement field,
 
 /// A worker to be used for the enum like code creation.
 void _writeEnumLikeWorker(
-    String eName, xml.XmlElement field, String unit, IOSink sink) {
+    String eName, xml.XmlElement field, String? unit, IOSink sink) {
   var eList = '';
   var eNameList = '';
   var c = 0;
@@ -1396,7 +1396,7 @@ void main(List<String> args) async {
   var config = _getConfig();
   var localOrProductionMode =
       config.isEmpty || config['mode'] != null ? _Mode.local : _Mode.production;
-  String xmlFilePath;
+  String? xmlFilePath;
   String xmlGitHash;
   String packageName;
   switch (localOrProductionMode) {
@@ -1417,7 +1417,7 @@ void main(List<String> args) async {
     exit(1);
   }
 
-  String imcXml;
+  late String imcXml;
   try {
     imcXml = await File(xmlFilePath).readAsString();
   } catch (e) {
@@ -1484,7 +1484,7 @@ void main(List<String> args) async {
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
 
-  var syncValue = syncElm.getAttribute('value') /*?*/;
+  var syncValue = syncElm.getAttribute('value')! /*?*/;
   if (syncValue == null || syncValue.isEmpty) {
     print('The XML of IMC is missing the sync value!');
     exit(1);

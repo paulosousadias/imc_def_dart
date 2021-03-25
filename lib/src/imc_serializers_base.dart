@@ -270,7 +270,7 @@ const crc_table = <int>[
 ];
 
 /// This is the interface for serializing the IMC messages
-abstract class ImcSerializer<M extends Message, B> {
+abstract class ImcSerializer<M extends Message?, B> {
   /// Call to serialize the all message, returns a [ByteData] with a serialized message
   ByteData serialize(M message);
 
@@ -295,14 +295,14 @@ abstract class ImcSerializer<M extends Message, B> {
 //       buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
 // }
 
-int getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
+int? getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
   var endianness = getEndianness(data, offset);
   if (endianness == null) return null;
   var msgId = data.getUint16(offset + 2, endianness);
   return msgId;
 }
 
-int deserializeHeader(
+int? deserializeHeader(
     ImcBuilderHeaderPart builder, ByteData byteData, Endian endianness,
     [int headerStartoffset = 0]) {
   try {
@@ -336,7 +336,7 @@ int deserializeHeader(
   }
 }
 
-Endian getEndianness(ByteData byteData, [int offset = 0]) {
+Endian? getEndianness(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
   if (syncBE == SYNC_NUMBER) return Endian.big;
   if (syncBE == SYNC_NUMBER_REVERSED) return Endian.little;

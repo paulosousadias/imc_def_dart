@@ -27,7 +27,7 @@ class ImcField {
 abstract class Message {
   int get sync;
   int get msgId;
-  DateTime get timestamp;
+  DateTime? get timestamp;
   int get src;
   int get srcEnt;
   int get dst;
@@ -37,8 +37,8 @@ abstract class Message {
 
 /// Is a mixin in the messages to get and set header fields
 abstract class ImcBuilderHeaderPart {
-  DateTime get timestamp;
-  set timestamp(DateTime timestamp);
+  DateTime? get timestamp;
+  set timestamp(DateTime? timestamp);
 
   int get src;
   set src(int src);
@@ -52,7 +52,7 @@ abstract class ImcBuilderHeaderPart {
   int get dstEnt;
   set dstEnt(int dstEnt);
 
-  void copyFromHeader(ImcBuilderHeaderPart other) {
+  void copyFromHeader(ImcBuilderHeaderPart? other) {
     if (other == null) return;
 
     timestamp = other.timestamp;
@@ -67,7 +67,7 @@ abstract class ImcBuilderHeaderPart {
 abstract class BuilderWithInstanciator<V extends Built<V, B>,
     B extends Builder<V, B>> extends Builder<V, B> {
   /// Instanciates a new builder
-  B newInstance([ImcBuilderHeaderPart headerFrom]);
+  B newInstance([ImcBuilderHeaderPart? headerFrom]);
 
   void copyFromHeader(ImcBuilderHeaderPart other);
 }

@@ -61,7 +61,7 @@ abstract class BitfieldType {
       runtimeType == other.runtimeType && hashCode == other.hashCode;
 
   /// Tests that all 1 bts from all the elements of the elements in [bits].
-  bool hasBits<B extends BitfieldType>(List<B> bits) {
+  bool hasBits<B extends BitfieldType>(List<B>? bits) {
     if (bits == null) return false;
     var testVal = 0;
     for (var item in bits) {
@@ -135,7 +135,7 @@ class ImcType extends EnumType {
     'message-list': typeMessageList,
   };
 
-  static ImcType getType(String typeName) => types[typeName];
+  static ImcType? getType(String typeName) => types[typeName];
 }
 
 /// This contains internal IMC flags for messages
