@@ -69,13 +69,15 @@ class _$EntityState extends EntityState {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                state?.hashCode),
-            flags?.hashCode),
-        description?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                state?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        description?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -246,10 +248,12 @@ class _$QueryEntityState extends QueryEntityState {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -425,16 +429,20 @@ class _$EntityInfo extends EntityInfo {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        id?.hashCode),
-                    label?.hashCode),
-                component?.hashCode),
-            actTime?.hashCode),
-        deactTime?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        id?.hashCode ?? null.hashCode),
+                    label?.hashCode ?? null.hashCode),
+                component?.hashCode ?? null.hashCode),
+            actTime?.hashCode ?? null.hashCode),
+        deactTime?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -624,11 +632,13 @@ class _$QueryEntityInfo extends QueryEntityInfo {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        id?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        id?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -795,12 +805,14 @@ class _$EntityList extends EntityList {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        list?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        list?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -968,11 +980,13 @@ class _$CpuUsage extends CpuUsage {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -1141,12 +1155,14 @@ class _$TransportBindings extends TransportBindings {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            consumer?.hashCode),
-        messageId?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            consumer?.hashCode ?? null.hashCode),
+        messageId?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -1315,11 +1331,13 @@ class _$RestartSystem extends RestartSystem {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        type?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        type?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -1483,11 +1501,13 @@ class _$DevCalibrationControl extends DevCalibrationControl {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        op?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        op?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -1669,14 +1689,18 @@ class _$DevCalibrationState extends DevCalibrationState {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    totalSteps?.hashCode),
-                stepNumber?.hashCode),
-            step?.hashCode),
-        flags?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    totalSteps?.hashCode ?? null.hashCode),
+                stepNumber?.hashCode ?? null.hashCode),
+            step?.hashCode ?? null.hashCode),
+        flags?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -1869,12 +1893,14 @@ class _$EntityActivationState extends EntityActivationState {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            state?.hashCode),
-        error?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            state?.hashCode ?? null.hashCode),
+        error?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -2042,10 +2068,12 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -2293,26 +2321,26 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode),
-                                                                                dstEnt?.hashCode),
-                                                                            op?.hashCode),
-                                                                        speedMin?.hashCode),
-                                                                    speedMax?.hashCode),
-                                                                longAccel?.hashCode),
-                                                            altMaxMsl?.hashCode),
-                                                        diveFractionMax?.hashCode),
-                                                    climbFractionMax?.hashCode),
-                                                bankMax?.hashCode),
-                                            pMax?.hashCode),
-                                        pitchMin?.hashCode),
-                                    pitchMax?.hashCode),
-                                qMax?.hashCode),
-                            gMin?.hashCode),
-                        gMax?.hashCode),
-                    gLatMax?.hashCode),
-                rpmMin?.hashCode),
-            rpmMax?.hashCode),
-        rpmRateMax?.hashCode));
+                                                                            $jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode),
+                                                                                dstEnt?.hashCode ?? null.hashCode),
+                                                                            op?.hashCode ?? null.hashCode),
+                                                                        speedMin?.hashCode ?? null.hashCode),
+                                                                    speedMax?.hashCode ?? null.hashCode),
+                                                                longAccel?.hashCode ?? null.hashCode),
+                                                            altMaxMsl?.hashCode ?? null.hashCode),
+                                                        diveFractionMax?.hashCode ?? null.hashCode),
+                                                    climbFractionMax?.hashCode ?? null.hashCode),
+                                                bankMax?.hashCode ?? null.hashCode),
+                                            pMax?.hashCode ?? null.hashCode),
+                                        pitchMin?.hashCode ?? null.hashCode),
+                                    pitchMax?.hashCode ?? null.hashCode),
+                                qMax?.hashCode ?? null.hashCode),
+                            gMin?.hashCode ?? null.hashCode),
+                        gMax?.hashCode ?? null.hashCode),
+                    gLatMax?.hashCode ?? null.hashCode),
+                rpmMin?.hashCode ?? null.hashCode),
+            rpmMax?.hashCode ?? null.hashCode),
+        rpmRateMax?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -2603,11 +2631,13 @@ class _$MsgList extends MsgList {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        msgs?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        msgs?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -2851,26 +2881,26 @@ class _$SimulatedState extends SimulatedState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode),
-                                                                                dstEnt?.hashCode),
-                                                                            lat?.hashCode),
-                                                                        lon?.hashCode),
-                                                                    height?.hashCode),
-                                                                x?.hashCode),
-                                                            y?.hashCode),
-                                                        z?.hashCode),
-                                                    phi?.hashCode),
-                                                theta?.hashCode),
-                                            psi?.hashCode),
-                                        u?.hashCode),
-                                    v?.hashCode),
-                                w?.hashCode),
-                            p?.hashCode),
-                        q?.hashCode),
-                    r?.hashCode),
-                svx?.hashCode),
-            svy?.hashCode),
-        svz?.hashCode));
+                                                                            $jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode),
+                                                                                dstEnt?.hashCode ?? null.hashCode),
+                                                                            lat?.hashCode ?? null.hashCode),
+                                                                        lon?.hashCode ?? null.hashCode),
+                                                                    height?.hashCode ?? null.hashCode),
+                                                                x?.hashCode ?? null.hashCode),
+                                                            y?.hashCode ?? null.hashCode),
+                                                        z?.hashCode ?? null.hashCode),
+                                                    phi?.hashCode ?? null.hashCode),
+                                                theta?.hashCode ?? null.hashCode),
+                                            psi?.hashCode ?? null.hashCode),
+                                        u?.hashCode ?? null.hashCode),
+                                    v?.hashCode ?? null.hashCode),
+                                w?.hashCode ?? null.hashCode),
+                            p?.hashCode ?? null.hashCode),
+                        q?.hashCode ?? null.hashCode),
+                    r?.hashCode ?? null.hashCode),
+                svx?.hashCode ?? null.hashCode),
+            svy?.hashCode ?? null.hashCode),
+        svz?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -3163,12 +3193,14 @@ class _$LeakSimulation extends LeakSimulation {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        entities?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        entities?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -3346,13 +3378,15 @@ class _$UASimulation extends UASimulation {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                type?.hashCode),
-            speed?.hashCode),
-        data?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                type?.hashCode ?? null.hashCode),
+            speed?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -3541,13 +3575,15 @@ class _$DynamicsSimParam extends DynamicsSimParam {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                op?.hashCode),
-            tas2accPgain?.hashCode),
-        bank2pPgain?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                op?.hashCode ?? null.hashCode),
+            tas2accPgain?.hashCode ?? null.hashCode),
+        bank2pPgain?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -3728,12 +3764,14 @@ class _$StorageUsage extends StorageUsage {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            available?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            available?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -3911,13 +3949,15 @@ class _$CacheControl extends CacheControl {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                op?.hashCode),
-            snapshot?.hashCode),
-        message?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                op?.hashCode ?? null.hashCode),
+            snapshot?.hashCode ?? null.hashCode),
+        message?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -4097,12 +4137,14 @@ class _$LoggingControl extends LoggingControl {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        name?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        name?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -4285,14 +4327,18 @@ class _$LogBookEntry extends LogBookEntry {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    type?.hashCode),
-                htime?.hashCode),
-            context?.hashCode),
-        text?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    type?.hashCode ?? null.hashCode),
+                htime?.hashCode ?? null.hashCode),
+            context?.hashCode ?? null.hashCode),
+        text?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -4484,13 +4530,15 @@ class _$LogBookControl extends LogBookControl {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                command?.hashCode),
-            htime?.hashCode),
-        msg?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                command?.hashCode ?? null.hashCode),
+            htime?.hashCode ?? null.hashCode),
+        msg?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -4670,12 +4718,14 @@ class _$ReplayControl extends ReplayControl {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        file?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        file?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -4853,13 +4903,15 @@ class _$ClockControl extends ClockControl {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                op?.hashCode),
-            clock?.hashCode),
-        tz?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                op?.hashCode ?? null.hashCode),
+            clock?.hashCode ?? null.hashCode),
+        tz?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -5046,13 +5098,15 @@ class _$HistoricCTD extends HistoricCTD {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                conductivity?.hashCode),
-            temperature?.hashCode),
-        depth?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                conductivity?.hashCode ?? null.hashCode),
+            temperature?.hashCode ?? null.hashCode),
+        depth?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -5251,16 +5305,20 @@ class _$HistoricTelemetry extends HistoricTelemetry {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        altitude?.hashCode),
-                    roll?.hashCode),
-                pitch?.hashCode),
-            yaw?.hashCode),
-        speed?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        altitude?.hashCode ?? null.hashCode),
+                    roll?.hashCode ?? null.hashCode),
+                pitch?.hashCode ?? null.hashCode),
+            yaw?.hashCode ?? null.hashCode),
+        speed?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -5484,18 +5542,22 @@ class _$HistoricSonarData extends HistoricSonarData {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                altitude?.hashCode),
-                            width?.hashCode),
-                        length?.hashCode),
-                    bearing?.hashCode),
-                pxl?.hashCode),
-            encoding?.hashCode),
-        sonarData?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                altitude?.hashCode ?? null.hashCode),
+                            width?.hashCode ?? null.hashCode),
+                        length?.hashCode ?? null.hashCode),
+                    bearing?.hashCode ?? null.hashCode),
+                pxl?.hashCode ?? null.hashCode),
+            encoding?.hashCode ?? null.hashCode),
+        sonarData?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -5705,12 +5767,14 @@ class _$HistoricEvent extends HistoricEvent {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            text?.hashCode),
-        type?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            text?.hashCode ?? null.hashCode),
+        type?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -5900,16 +5964,20 @@ class _$VerticalProfile extends VerticalProfile {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        parameter?.hashCode),
-                    numSamples?.hashCode),
-                samples?.hashCode),
-            lat?.hashCode),
-        lon?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        parameter?.hashCode ?? null.hashCode),
+                    numSamples?.hashCode ?? null.hashCode),
+                samples?.hashCode ?? null.hashCode),
+            lat?.hashCode ?? null.hashCode),
+        lon?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -6107,12 +6175,14 @@ class _$ProfileSample extends ProfileSample {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            depth?.hashCode),
-        avg?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            depth?.hashCode ?? null.hashCode),
+        avg?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -6274,10 +6344,12 @@ class _$Heartbeat extends Heartbeat {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -6462,18 +6534,22 @@ class _$Announce extends Announce {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                sysName?.hashCode),
-                            sysType?.hashCode),
-                        owner?.hashCode),
-                    lat?.hashCode),
-                lon?.hashCode),
-            height?.hashCode),
-        services?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                sysName?.hashCode ?? null.hashCode),
+                            sysType?.hashCode ?? null.hashCode),
+                        owner?.hashCode ?? null.hashCode),
+                    lat?.hashCode ?? null.hashCode),
+                lon?.hashCode ?? null.hashCode),
+            height?.hashCode ?? null.hashCode),
+        services?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -6684,12 +6760,14 @@ class _$AnnounceService extends AnnounceService {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            service?.hashCode),
-        serviceType?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            service?.hashCode ?? null.hashCode),
+        serviceType?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -6860,11 +6938,13 @@ class _$RSSI extends RSSI {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -7025,11 +7105,13 @@ class _$VSWR extends VSWR {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -7190,11 +7272,13 @@ class _$LinkLevel extends LinkLevel {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -7365,13 +7449,15 @@ class _$Sms extends Sms {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                number?.hashCode),
-            timeout?.hashCode),
-        contents?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                number?.hashCode ?? null.hashCode),
+            timeout?.hashCode ?? null.hashCode),
+        contents?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -7561,14 +7647,18 @@ class _$SmsTx extends SmsTx {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    seq?.hashCode),
-                destination?.hashCode),
-            timeout?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    seq?.hashCode ?? null.hashCode),
+                destination?.hashCode ?? null.hashCode),
+            timeout?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -7755,12 +7845,14 @@ class _$SmsRx extends SmsRx {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            source?.hashCode),
-        data?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            source?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -7938,13 +8030,15 @@ class _$SmsState extends SmsState {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                seq?.hashCode),
-            state?.hashCode),
-        error?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                seq?.hashCode ?? null.hashCode),
+            state?.hashCode ?? null.hashCode),
+        error?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -8124,12 +8218,14 @@ class _$TextMessage extends TextMessage {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            origin?.hashCode),
-        text?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            origin?.hashCode ?? null.hashCode),
+        text?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -8318,16 +8414,20 @@ class _$IridiumMsgRx extends IridiumMsgRx {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        origin?.hashCode),
-                    htime?.hashCode),
-                lat?.hashCode),
-            lon?.hashCode),
-        data?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        origin?.hashCode ?? null.hashCode),
+                    htime?.hashCode ?? null.hashCode),
+                lat?.hashCode ?? null.hashCode),
+            lon?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -8533,14 +8633,18 @@ class _$IridiumMsgTx extends IridiumMsgTx {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    reqId?.hashCode),
-                ttl?.hashCode),
-            destination?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    reqId?.hashCode ?? null.hashCode),
+                ttl?.hashCode ?? null.hashCode),
+            destination?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -8733,13 +8837,15 @@ class _$IridiumTxStatus extends IridiumTxStatus {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                reqId?.hashCode),
-            status?.hashCode),
-        text?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                reqId?.hashCode ?? null.hashCode),
+            status?.hashCode ?? null.hashCode),
+        text?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -8923,12 +9029,14 @@ class _$GroupMembershipState extends GroupMembershipState {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            groupName?.hashCode),
-        links?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            groupName?.hashCode ?? null.hashCode),
+        links?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -9109,13 +9217,15 @@ class _$SystemGroup extends SystemGroup {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                groupName?.hashCode),
-            action?.hashCode),
-        groupList?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                groupName?.hashCode ?? null.hashCode),
+            action?.hashCode ?? null.hashCode),
+        groupList?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -9295,12 +9405,14 @@ class _$LinkLatency extends LinkLatency {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            value?.hashCode),
-        sysSrc?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        sysSrc?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -9473,12 +9585,14 @@ class _$ExtendedRSSI extends ExtendedRSSI {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            value?.hashCode),
-        units?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        units?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -9661,14 +9775,18 @@ class _$HistoricData extends HistoricData {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    baseLat?.hashCode),
-                baseLon?.hashCode),
-            baseTime?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    baseLat?.hashCode ?? null.hashCode),
+                baseLon?.hashCode ?? null.hashCode),
+            baseTime?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -9868,14 +9986,18 @@ class _$CompressedHistory extends CompressedHistory {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    baseLat?.hashCode),
-                baseLon?.hashCode),
-            baseTime?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    baseLat?.hashCode ?? null.hashCode),
+                baseLon?.hashCode ?? null.hashCode),
+            baseTime?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -10089,18 +10211,22 @@ class _$HistoricSample extends HistoricSample {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                sysId?.hashCode),
-                            priority?.hashCode),
-                        x?.hashCode),
-                    y?.hashCode),
-                z?.hashCode),
-            t?.hashCode),
-        sample?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                sysId?.hashCode ?? null.hashCode),
+                            priority?.hashCode ?? null.hashCode),
+                        x?.hashCode ?? null.hashCode),
+                    y?.hashCode ?? null.hashCode),
+                z?.hashCode ?? null.hashCode),
+            t?.hashCode ?? null.hashCode),
+        sample?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -10321,14 +10447,18 @@ class _$HistoricDataQuery extends HistoricDataQuery {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    reqId?.hashCode),
-                type?.hashCode),
-            maxSize?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    reqId?.hashCode ?? null.hashCode),
+                type?.hashCode ?? null.hashCode),
+            maxSize?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -10526,14 +10656,18 @@ class _$RemoteCommand extends RemoteCommand {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    originalSource?.hashCode),
-                destination?.hashCode),
-            timeout?.hashCode),
-        cmd?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    originalSource?.hashCode ?? null.hashCode),
+                destination?.hashCode ?? null.hashCode),
+            timeout?.hashCode ?? null.hashCode),
+        cmd?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -10733,14 +10867,18 @@ class _$CommSystemsQuery extends CommSystemsQuery {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    type?.hashCode),
-                commInterface?.hashCode),
-            model?.hashCode),
-        list?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    type?.hashCode ?? null.hashCode),
+                commInterface?.hashCode ?? null.hashCode),
+            model?.hashCode ?? null.hashCode),
+        list?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -10972,20 +11110,23 @@ class _$TelemetryMsg extends TelemetryMsg {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        type?.hashCode),
-                                    reqId?.hashCode),
-                                ttl?.hashCode),
-                            code?.hashCode),
-                        destination?.hashCode),
-                    source?.hashCode),
-                acknowledge?.hashCode),
-            status?.hashCode),
-        data?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        type?.hashCode ?? null.hashCode),
+                                    reqId?.hashCode ?? null.hashCode),
+                                ttl?.hashCode ?? null.hashCode),
+                            code?.hashCode ?? null.hashCode),
+                        destination?.hashCode ?? null.hashCode),
+                    source?.hashCode ?? null.hashCode),
+                acknowledge?.hashCode ?? null.hashCode),
+            status?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -11209,12 +11350,14 @@ class _$LblRange extends LblRange {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            id?.hashCode),
-        range?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            id?.hashCode ?? null.hashCode),
+        range?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -11413,18 +11556,22 @@ class _$LblBeacon extends LblBeacon {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                beacon?.hashCode),
-                            lat?.hashCode),
-                        lon?.hashCode),
-                    depth?.hashCode),
-                queryChannel?.hashCode),
-            replyChannel?.hashCode),
-        transponderDelay?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                beacon?.hashCode ?? null.hashCode),
+                            lat?.hashCode ?? null.hashCode),
+                        lon?.hashCode ?? null.hashCode),
+                    depth?.hashCode ?? null.hashCode),
+                queryChannel?.hashCode ?? null.hashCode),
+            replyChannel?.hashCode ?? null.hashCode),
+        transponderDelay?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -11635,12 +11782,14 @@ class _$LblConfig extends LblConfig {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        beacons?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        beacons?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -11809,11 +11958,13 @@ class _$AcousticMessage extends AcousticMessage {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        message?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        message?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -12033,22 +12184,29 @@ class _$SimAcousticMessage extends SimAcousticMessage {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                lat?.hashCode),
-                                            lon?.hashCode),
-                                        depth?.hashCode),
-                                    sentence?.hashCode),
-                                txtime?.hashCode),
-                            modemType?.hashCode),
-                        sysSrc?.hashCode),
-                    seq?.hashCode),
-                sysDst?.hashCode),
-            flags?.hashCode),
-        data?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                lat?.hashCode ?? null.hashCode),
+                                            lon?.hashCode ?? null.hashCode),
+                                        depth?.hashCode ?? null.hashCode),
+                                    sentence?.hashCode ?? null.hashCode),
+                                txtime?.hashCode ?? null.hashCode),
+                            modemType?.hashCode ?? null.hashCode),
+                        sysSrc?.hashCode ?? null.hashCode),
+                    seq?.hashCode ?? null.hashCode),
+                sysDst?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -12298,14 +12456,18 @@ class _$AcousticOperation extends AcousticOperation {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    op?.hashCode),
-                system?.hashCode),
-            range?.hashCode),
-        msg?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    op?.hashCode ?? null.hashCode),
+                system?.hashCode ?? null.hashCode),
+            range?.hashCode ?? null.hashCode),
+        msg?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -12485,10 +12647,12 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -12646,11 +12810,13 @@ class _$AcousticSystems extends AcousticSystems {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        list?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        list?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -12822,13 +12988,15 @@ class _$AcousticLink extends AcousticLink {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                peer?.hashCode),
-            rssi?.hashCode),
-        integrity?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                peer?.hashCode ?? null.hashCode),
+            rssi?.hashCode ?? null.hashCode),
+        integrity?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -13030,17 +13198,21 @@ class _$AcousticRequest extends AcousticRequest {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            reqId?.hashCode),
-                        destination?.hashCode),
-                    timeout?.hashCode),
-                range?.hashCode),
-            type?.hashCode),
-        msg?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            reqId?.hashCode ?? null.hashCode),
+                        destination?.hashCode ?? null.hashCode),
+                    timeout?.hashCode ?? null.hashCode),
+                range?.hashCode ?? null.hashCode),
+            type?.hashCode ?? null.hashCode),
+        msg?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -13258,16 +13430,20 @@ class _$AcousticStatus extends AcousticStatus {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        reqId?.hashCode),
-                    type?.hashCode),
-                status?.hashCode),
-            info?.hashCode),
-        range?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        reqId?.hashCode ?? null.hashCode),
+                    type?.hashCode ?? null.hashCode),
+                status?.hashCode ?? null.hashCode),
+            info?.hashCode ?? null.hashCode),
+        range?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -13456,11 +13632,13 @@ class _$Rpm extends Rpm {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -13621,11 +13799,13 @@ class _$Voltage extends Voltage {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -13786,11 +13966,13 @@ class _$Current extends Current {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -14026,26 +14208,26 @@ class _$GpsFix extends GpsFix {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                                                                srcEnt?.hashCode),
-                                                                            dst?.hashCode),
-                                                                        dstEnt?.hashCode),
-                                                                    validity?.hashCode),
-                                                                type?.hashCode),
-                                                            utcYear?.hashCode),
-                                                        utcMonth?.hashCode),
-                                                    utcDay?.hashCode),
-                                                utcTime?.hashCode),
-                                            lat?.hashCode),
-                                        lon?.hashCode),
-                                    height?.hashCode),
-                                satellites?.hashCode),
-                            cog?.hashCode),
-                        sog?.hashCode),
-                    hdop?.hashCode),
-                vdop?.hashCode),
-            hacc?.hashCode),
-        vacc?.hashCode));
+                                                                            $jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode),
+                                                                                srcEnt?.hashCode ?? null.hashCode),
+                                                                            dst?.hashCode ?? null.hashCode),
+                                                                        dstEnt?.hashCode ?? null.hashCode),
+                                                                    validity?.hashCode ?? null.hashCode),
+                                                                type?.hashCode ?? null.hashCode),
+                                                            utcYear?.hashCode ?? null.hashCode),
+                                                        utcMonth?.hashCode ?? null.hashCode),
+                                                    utcDay?.hashCode ?? null.hashCode),
+                                                utcTime?.hashCode ?? null.hashCode),
+                                            lat?.hashCode ?? null.hashCode),
+                                        lon?.hashCode ?? null.hashCode),
+                                    height?.hashCode ?? null.hashCode),
+                                satellites?.hashCode ?? null.hashCode),
+                            cog?.hashCode ?? null.hashCode),
+                        sog?.hashCode ?? null.hashCode),
+                    hdop?.hashCode ?? null.hashCode),
+                vdop?.hashCode ?? null.hashCode),
+            hacc?.hashCode ?? null.hashCode),
+        vacc?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -14336,16 +14518,20 @@ class _$EulerAngles extends EulerAngles {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        time?.hashCode),
-                    phi?.hashCode),
-                theta?.hashCode),
-            psi?.hashCode),
-        psiMagnetic?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        time?.hashCode ?? null.hashCode),
+                    phi?.hashCode ?? null.hashCode),
+                theta?.hashCode ?? null.hashCode),
+            psi?.hashCode ?? null.hashCode),
+        psiMagnetic?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -14561,16 +14747,20 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        time?.hashCode),
-                    x?.hashCode),
-                y?.hashCode),
-            z?.hashCode),
-        timestep?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        time?.hashCode ?? null.hashCode),
+                    x?.hashCode ?? null.hashCode),
+                y?.hashCode ?? null.hashCode),
+            z?.hashCode ?? null.hashCode),
+        timestep?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -14779,14 +14969,18 @@ class _$AngularVelocity extends AngularVelocity {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    time?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    time?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -14987,14 +15181,18 @@ class _$Acceleration extends Acceleration {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    time?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    time?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -15191,14 +15389,18 @@ class _$MagneticField extends MagneticField {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    time?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    time?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -15395,14 +15597,18 @@ class _$GroundVelocity extends GroundVelocity {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    validity?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    validity?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -15600,14 +15806,18 @@ class _$WaterVelocity extends WaterVelocity {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    validity?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    validity?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -15805,14 +16015,18 @@ class _$VelocityDelta extends VelocityDelta {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    time?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    time?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -16009,14 +16223,18 @@ class _$Distance extends Distance {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    validity?.hashCode),
-                location?.hashCode),
-            beamConfig?.hashCode),
-        value?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    validity?.hashCode ?? null.hashCode),
+                location?.hashCode ?? null.hashCode),
+            beamConfig?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -16199,11 +16417,13 @@ class _$Temperature extends Temperature {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -16364,11 +16584,13 @@ class _$Pressure extends Pressure {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -16529,11 +16751,13 @@ class _$Depth extends Depth {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -16694,11 +16918,13 @@ class _$DepthOffset extends DepthOffset {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -16859,11 +17085,13 @@ class _$SoundSpeed extends SoundSpeed {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -17024,11 +17252,13 @@ class _$WaterDensity extends WaterDensity {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -17189,11 +17419,13 @@ class _$Conductivity extends Conductivity {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -17354,11 +17586,13 @@ class _$Salinity extends Salinity {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -17530,13 +17764,15 @@ class _$WindSpeed extends WindSpeed {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                direction?.hashCode),
-            speed?.hashCode),
-        turbulence?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                direction?.hashCode ?? null.hashCode),
+            speed?.hashCode ?? null.hashCode),
+        turbulence?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -17714,11 +17950,13 @@ class _$RelativeHumidity extends RelativeHumidity {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -17880,11 +18118,13 @@ class _$DevDataText extends DevDataText {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -18045,11 +18285,13 @@ class _$DevDataBinary extends DevDataBinary {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -18210,11 +18452,13 @@ class _$Force extends Force {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -18412,19 +18656,25 @@ class _$SonarData extends SonarData {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    type?.hashCode),
-                                frequency?.hashCode),
-                            minRange?.hashCode),
-                        maxRange?.hashCode),
-                    bitsPerPoint?.hashCode),
-                scaleFactor?.hashCode),
-            beamConfig?.hashCode),
-        data?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    type?.hashCode ?? null.hashCode),
+                                frequency?.hashCode ?? null.hashCode),
+                            minRange?.hashCode ?? null.hashCode),
+                        maxRange?.hashCode ?? null.hashCode),
+                    bitsPerPoint?.hashCode ?? null.hashCode),
+                scaleFactor?.hashCode ?? null.hashCode),
+            beamConfig?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -18629,10 +18879,12 @@ class _$Pulse extends Pulse {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -18789,11 +19041,13 @@ class _$PulseDetectionControl extends PulseDetectionControl {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        op?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        op?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -18968,13 +19222,15 @@ class _$FuelLevel extends FuelLevel {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                value?.hashCode),
-            confidence?.hashCode),
-        opmodes?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                value?.hashCode ?? null.hashCode),
+            confidence?.hashCode ?? null.hashCode),
+        opmodes?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -19220,26 +19476,45 @@ class _$GpsNavData extends GpsNavData {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc(0, timestamp?.hashCode),
-                                                                                src?.hashCode),
-                                                                            srcEnt?.hashCode),
-                                                                        dst?.hashCode),
-                                                                    dstEnt?.hashCode),
-                                                                itow?.hashCode),
-                                                            lat?.hashCode),
-                                                        lon?.hashCode),
-                                                    heightEll?.hashCode),
-                                                heightSea?.hashCode),
-                                            hacc?.hashCode),
-                                        vacc?.hashCode),
-                                    velN?.hashCode),
-                                velE?.hashCode),
-                            velD?.hashCode),
-                        speed?.hashCode),
-                    gspeed?.hashCode),
-                heading?.hashCode),
-            sacc?.hashCode),
-        cacc?.hashCode));
+                                                                            $jc(
+                                                                                $jc(
+                                                                                    0,
+                                                                                    timestamp?.hashCode ??
+                                                                                        null
+                                                                                            .hashCode),
+                                                                                src?.hashCode ??
+                                                                                    null
+                                                                                        .hashCode),
+                                                                            srcEnt?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        dst?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    dstEnt?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                itow?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            lat?.hashCode ??
+                                                                null.hashCode),
+                                                        lon?.hashCode ??
+                                                            null.hashCode),
+                                                    heightEll?.hashCode ??
+                                                        null.hashCode),
+                                                heightSea?.hashCode ??
+                                                    null.hashCode),
+                                            hacc?.hashCode ?? null.hashCode),
+                                        vacc?.hashCode ?? null.hashCode),
+                                    velN?.hashCode ?? null.hashCode),
+                                velE?.hashCode ?? null.hashCode),
+                            velD?.hashCode ?? null.hashCode),
+                        speed?.hashCode ?? null.hashCode),
+                    gspeed?.hashCode ?? null.hashCode),
+                heading?.hashCode ?? null.hashCode),
+            sacc?.hashCode ?? null.hashCode),
+        cacc?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -19507,12 +19782,14 @@ class _$ServoPosition extends ServoPosition {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            id?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            id?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -19707,17 +19984,21 @@ class _$DeviceState extends DeviceState {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            x?.hashCode),
-                        y?.hashCode),
-                    z?.hashCode),
-                phi?.hashCode),
-            theta?.hashCode),
-        psi?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            x?.hashCode ?? null.hashCode),
+                        y?.hashCode ?? null.hashCode),
+                    z?.hashCode ?? null.hashCode),
+                phi?.hashCode ?? null.hashCode),
+            theta?.hashCode ?? null.hashCode),
+        psi?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -19922,12 +20203,14 @@ class _$BeamConfig extends BeamConfig {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            beamWidth?.hashCode),
-        beamHeight?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            beamWidth?.hashCode ?? null.hashCode),
+        beamHeight?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -20097,11 +20380,13 @@ class _$DataSanity extends DataSanity {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        sane?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        sane?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -20262,11 +20547,13 @@ class _$RhodamineDye extends RhodamineDye {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -20427,11 +20714,13 @@ class _$CrudeOil extends CrudeOil {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -20592,11 +20881,13 @@ class _$FineOil extends FineOil {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -20757,11 +21048,13 @@ class _$Turbidity extends Turbidity {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -20922,11 +21215,13 @@ class _$Chlorophyll extends Chlorophyll {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -21087,11 +21382,13 @@ class _$Fluorescein extends Fluorescein {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -21252,11 +21549,13 @@ class _$Phycocyanin extends Phycocyanin {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -21417,11 +21716,13 @@ class _$Phycoerythrin extends Phycoerythrin {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -21654,26 +21955,46 @@ class _$GpsFixRtk extends GpsFixRtk {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc(0, timestamp?.hashCode),
-                                                                                src?.hashCode),
-                                                                            srcEnt?.hashCode),
-                                                                        dst?.hashCode),
-                                                                    dstEnt?.hashCode),
-                                                                validity?.hashCode),
-                                                            type?.hashCode),
-                                                        tow?.hashCode),
-                                                    baseLat?.hashCode),
-                                                baseLon?.hashCode),
-                                            baseHeight?.hashCode),
-                                        n?.hashCode),
-                                    e?.hashCode),
-                                d?.hashCode),
-                            vN?.hashCode),
-                        vE?.hashCode),
-                    vD?.hashCode),
-                satellites?.hashCode),
-            iarHyp?.hashCode),
-        iarRatio?.hashCode));
+                                                                            $jc(
+                                                                                $jc(
+                                                                                    0,
+                                                                                    timestamp?.hashCode ??
+                                                                                        null
+                                                                                            .hashCode),
+                                                                                src?.hashCode ??
+                                                                                    null
+                                                                                        .hashCode),
+                                                                            srcEnt?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        dst?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    dstEnt?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                validity?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            type?.hashCode ??
+                                                                null.hashCode),
+                                                        tow?.hashCode ??
+                                                            null.hashCode),
+                                                    baseLat?.hashCode ??
+                                                        null.hashCode),
+                                                baseLon?.hashCode ??
+                                                    null.hashCode),
+                                            baseHeight?.hashCode ??
+                                                null.hashCode),
+                                        n?.hashCode ?? null.hashCode),
+                                    e?.hashCode ?? null.hashCode),
+                                d?.hashCode ?? null.hashCode),
+                            vN?.hashCode ?? null.hashCode),
+                        vE?.hashCode ?? null.hashCode),
+                    vD?.hashCode ?? null.hashCode),
+                satellites?.hashCode ?? null.hashCode),
+            iarHyp?.hashCode ?? null.hashCode),
+        iarRatio?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -21941,12 +22262,14 @@ class _$ExternalNavData extends ExternalNavData {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            state?.hashCode),
-        type?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            state?.hashCode ?? null.hashCode),
+        type?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -22116,11 +22439,13 @@ class _$DissolvedOxygen extends DissolvedOxygen {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -22282,11 +22607,13 @@ class _$AirSaturation extends AirSaturation {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -22447,11 +22774,13 @@ class _$Throttle extends Throttle {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -22612,11 +22941,13 @@ class _$PH extends PH {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -22777,11 +23108,13 @@ class _$Redox extends Redox {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -22952,13 +23285,15 @@ class _$CameraZoom extends CameraZoom {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                id?.hashCode),
-            zoom?.hashCode),
-        action?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                id?.hashCode ?? null.hashCode),
+            zoom?.hashCode ?? null.hashCode),
+        action?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -23141,12 +23476,14 @@ class _$SetThrusterActuation extends SetThrusterActuation {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            id?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            id?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -23324,12 +23661,14 @@ class _$SetServoPosition extends SetServoPosition {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            id?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            id?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -23507,12 +23846,14 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            id?.hashCode),
-        angle?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            id?.hashCode ?? null.hashCode),
+        angle?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -23694,12 +24035,14 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        actions?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        actions?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -23870,11 +24213,13 @@ class _$RemoteActions extends RemoteActions {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        actions?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        actions?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -24040,12 +24385,14 @@ class _$ButtonEvent extends ButtonEvent {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            button?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            button?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -24218,12 +24565,14 @@ class _$LcdControl extends LcdControl {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        text?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        text?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -24402,13 +24751,15 @@ class _$PowerOperation extends PowerOperation {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                op?.hashCode),
-            timeRemain?.hashCode),
-        schedTime?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                op?.hashCode ?? null.hashCode),
+            timeRemain?.hashCode ?? null.hashCode),
+        schedTime?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -24596,13 +24947,15 @@ class _$PowerChannelControl extends PowerChannelControl {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                name?.hashCode),
-            op?.hashCode),
-        schedTime?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                name?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        schedTime?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -24777,10 +25130,12 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -24946,12 +25301,14 @@ class _$PowerChannelState extends PowerChannelState {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            name?.hashCode),
-        state?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            name?.hashCode ?? null.hashCode),
+        state?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -25125,12 +25482,14 @@ class _$LedBrightness extends LedBrightness {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            name?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            name?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -25301,11 +25660,13 @@ class _$QueryLedBrightness extends QueryLedBrightness {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        name?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        name?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -25474,12 +25835,14 @@ class _$SetLedBrightness extends SetLedBrightness {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            name?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            name?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -25658,13 +26021,15 @@ class _$SetPWM extends SetPWM {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                id?.hashCode),
-            period?.hashCode),
-        dutyCycle?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                id?.hashCode ?? null.hashCode),
+            period?.hashCode ?? null.hashCode),
+        dutyCycle?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -25849,13 +26214,15 @@ class _$PWM extends PWM {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                id?.hashCode),
-            period?.hashCode),
-        dutyCycle?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                id?.hashCode ?? null.hashCode),
+            period?.hashCode ?? null.hashCode),
+        dutyCycle?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -26121,26 +26488,26 @@ class _$EstimatedState extends EstimatedState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), lat?.hashCode),
-                                                                                lon?.hashCode),
-                                                                            height?.hashCode),
-                                                                        x?.hashCode),
-                                                                    y?.hashCode),
-                                                                z?.hashCode),
-                                                            phi?.hashCode),
-                                                        theta?.hashCode),
-                                                    psi?.hashCode),
-                                                u?.hashCode),
-                                            v?.hashCode),
-                                        w?.hashCode),
-                                    vx?.hashCode),
-                                vy?.hashCode),
-                            vz?.hashCode),
-                        p?.hashCode),
-                    q?.hashCode),
-                r?.hashCode),
-            depth?.hashCode),
-        alt?.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode), dstEnt?.hashCode ?? null.hashCode), lat?.hashCode ?? null.hashCode),
+                                                                                lon?.hashCode ?? null.hashCode),
+                                                                            height?.hashCode ?? null.hashCode),
+                                                                        x?.hashCode ?? null.hashCode),
+                                                                    y?.hashCode ?? null.hashCode),
+                                                                z?.hashCode ?? null.hashCode),
+                                                            phi?.hashCode ?? null.hashCode),
+                                                        theta?.hashCode ?? null.hashCode),
+                                                    psi?.hashCode ?? null.hashCode),
+                                                u?.hashCode ?? null.hashCode),
+                                            v?.hashCode ?? null.hashCode),
+                                        w?.hashCode ?? null.hashCode),
+                                    vx?.hashCode ?? null.hashCode),
+                                vy?.hashCode ?? null.hashCode),
+                            vz?.hashCode ?? null.hashCode),
+                        p?.hashCode ?? null.hashCode),
+                    q?.hashCode ?? null.hashCode),
+                r?.hashCode ?? null.hashCode),
+            depth?.hashCode ?? null.hashCode),
+        alt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -26455,13 +26822,15 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -26640,11 +27009,13 @@ class _$IndicatedSpeed extends IndicatedSpeed {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -26805,11 +27176,13 @@ class _$TrueSpeed extends TrueSpeed {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -27040,26 +27413,40 @@ class _$NavigationUncertainty extends NavigationUncertainty {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(0,
-                                                                                timestamp?.hashCode),
-                                                                            src?.hashCode),
-                                                                        srcEnt?.hashCode),
-                                                                    dst?.hashCode),
-                                                                dstEnt?.hashCode),
-                                                            x?.hashCode),
-                                                        y?.hashCode),
-                                                    z?.hashCode),
-                                                phi?.hashCode),
-                                            theta?.hashCode),
-                                        psi?.hashCode),
-                                    p?.hashCode),
-                                q?.hashCode),
-                            r?.hashCode),
-                        u?.hashCode),
-                    v?.hashCode),
-                w?.hashCode),
-            biasPsi?.hashCode),
-        biasR?.hashCode));
+                                                                            $jc(
+                                                                                0,
+                                                                                timestamp?.hashCode ??
+                                                                                    null
+                                                                                        .hashCode),
+                                                                            src?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        srcEnt?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    dst?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                dstEnt?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            x?.hashCode ??
+                                                                null.hashCode),
+                                                        y?.hashCode ??
+                                                            null.hashCode),
+                                                    z?.hashCode ??
+                                                        null.hashCode),
+                                                phi?.hashCode ?? null.hashCode),
+                                            theta?.hashCode ?? null.hashCode),
+                                        psi?.hashCode ?? null.hashCode),
+                                    p?.hashCode ?? null.hashCode),
+                                q?.hashCode ?? null.hashCode),
+                            r?.hashCode ?? null.hashCode),
+                        u?.hashCode ?? null.hashCode),
+                    v?.hashCode ?? null.hashCode),
+                w?.hashCode ?? null.hashCode),
+            biasPsi?.hashCode ?? null.hashCode),
+        biasR?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -27369,20 +27756,23 @@ class _$NavigationData extends NavigationData {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        biasPsi?.hashCode),
-                                    biasR?.hashCode),
-                                cog?.hashCode),
-                            cyaw?.hashCode),
-                        lblRejLevel?.hashCode),
-                    gpsRejLevel?.hashCode),
-                customX?.hashCode),
-            customY?.hashCode),
-        customZ?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        biasPsi?.hashCode ?? null.hashCode),
+                                    biasR?.hashCode ?? null.hashCode),
+                                cog?.hashCode ?? null.hashCode),
+                            cyaw?.hashCode ?? null.hashCode),
+                        lblRejLevel?.hashCode ?? null.hashCode),
+                    gpsRejLevel?.hashCode ?? null.hashCode),
+                customX?.hashCode ?? null.hashCode),
+            customY?.hashCode ?? null.hashCode),
+        customZ?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -27609,12 +27999,14 @@ class _$GpsFixRejection extends GpsFixRejection {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            utcTime?.hashCode),
-        reason?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            utcTime?.hashCode ?? null.hashCode),
+        reason?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -27796,13 +28188,15 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                id?.hashCode),
-            range?.hashCode),
-        acceptance?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                id?.hashCode ?? null.hashCode),
+            range?.hashCode ?? null.hashCode),
+        acceptance?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -27995,14 +28389,18 @@ class _$DvlRejection extends DvlRejection {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    type?.hashCode),
-                reason?.hashCode),
-            value?.hashCode),
-        timestep?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    type?.hashCode ?? null.hashCode),
+                reason?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        timestep?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -28210,17 +28608,21 @@ class _$LblEstimate extends LblEstimate {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            beacon?.hashCode),
-                        x?.hashCode),
-                    y?.hashCode),
-                varX?.hashCode),
-            varY?.hashCode),
-        distance?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            beacon?.hashCode ?? null.hashCode),
+                        x?.hashCode ?? null.hashCode),
+                    y?.hashCode ?? null.hashCode),
+                varX?.hashCode ?? null.hashCode),
+            varY?.hashCode ?? null.hashCode),
+        distance?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -28416,11 +28818,13 @@ class _$AlignmentState extends AlignmentState {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        state?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        state?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -28594,13 +28998,15 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -28788,13 +29194,15 @@ class _$Airflow extends Airflow {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                va?.hashCode),
-            aoa?.hashCode),
-        ssa?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                va?.hashCode ?? null.hashCode),
+            aoa?.hashCode ?? null.hashCode),
+        ssa?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -28971,11 +29379,13 @@ class _$DesiredHeading extends DesiredHeading {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -29142,12 +29552,14 @@ class _$DesiredZ extends DesiredZ {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            value?.hashCode),
-        zUnits?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        zUnits?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -29320,12 +29732,14 @@ class _$DesiredSpeed extends DesiredSpeed {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            value?.hashCode),
-        speedUnits?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        speedUnits?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -29493,11 +29907,13 @@ class _$DesiredRoll extends DesiredRoll {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -29659,11 +30075,13 @@ class _$DesiredPitch extends DesiredPitch {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -29828,11 +30246,13 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -30060,27 +30480,36 @@ class _$DesiredPath extends DesiredPath {
                                                                     $jc(
                                                                         $jc(
                                                                             0,
-                                                                            timestamp
-                                                                                ?.hashCode),
-                                                                        src
-                                                                            ?.hashCode),
-                                                                    srcEnt
-                                                                        ?.hashCode),
-                                                                dst?.hashCode),
-                                                            dstEnt?.hashCode),
-                                                        pathRef?.hashCode),
-                                                    startLat?.hashCode),
-                                                startLon?.hashCode),
-                                            startZ?.hashCode),
-                                        startZUnits?.hashCode),
-                                    endLat?.hashCode),
-                                endLon?.hashCode),
-                            endZ?.hashCode),
-                        endZUnits?.hashCode),
-                    speed?.hashCode),
-                speedUnits?.hashCode),
-            lradius?.hashCode),
-        flags?.hashCode));
+                                                                            timestamp?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        src?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    srcEnt?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                dst?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            dstEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        pathRef?.hashCode ??
+                                                            null.hashCode),
+                                                    startLat?.hashCode ??
+                                                        null.hashCode),
+                                                startLon?.hashCode ??
+                                                    null.hashCode),
+                                            startZ?.hashCode ?? null.hashCode),
+                                        startZUnits?.hashCode ?? null.hashCode),
+                                    endLat?.hashCode ?? null.hashCode),
+                                endLon?.hashCode ?? null.hashCode),
+                            endZ?.hashCode ?? null.hashCode),
+                        endZUnits?.hashCode ?? null.hashCode),
+                    speed?.hashCode ?? null.hashCode),
+                speedUnits?.hashCode ?? null.hashCode),
+            lradius?.hashCode ?? null.hashCode),
+        flags?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -30360,18 +30789,22 @@ class _$DesiredControl extends DesiredControl {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                x?.hashCode),
-                            y?.hashCode),
-                        z?.hashCode),
-                    k?.hashCode),
-                m?.hashCode),
-            n?.hashCode),
-        flags?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                x?.hashCode ?? null.hashCode),
+                            y?.hashCode ?? null.hashCode),
+                        z?.hashCode ?? null.hashCode),
+                    k?.hashCode ?? null.hashCode),
+                m?.hashCode ?? null.hashCode),
+            n?.hashCode ?? null.hashCode),
+        flags?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -30577,11 +31010,13 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -30776,18 +31211,22 @@ class _$DesiredVelocity extends DesiredVelocity {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                u?.hashCode),
-                            v?.hashCode),
-                        w?.hashCode),
-                    p?.hashCode),
-                q?.hashCode),
-            r?.hashCode),
-        flags?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                u?.hashCode ?? null.hashCode),
+                            v?.hashCode ?? null.hashCode),
+                        w?.hashCode ?? null.hashCode),
+                    p?.hashCode ?? null.hashCode),
+                q?.hashCode ?? null.hashCode),
+            r?.hashCode ?? null.hashCode),
+        flags?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -31081,26 +31520,26 @@ class _$PathControlState extends PathControlState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode),
-                                                                                pathRef?.hashCode),
-                                                                            startLat?.hashCode),
-                                                                        startLon?.hashCode),
-                                                                    startZ?.hashCode),
-                                                                startZUnits?.hashCode),
-                                                            endLat?.hashCode),
-                                                        endLon?.hashCode),
-                                                    endZ?.hashCode),
-                                                endZUnits?.hashCode),
-                                            lradius?.hashCode),
-                                        flags?.hashCode),
-                                    x?.hashCode),
-                                y?.hashCode),
-                            z?.hashCode),
-                        vx?.hashCode),
-                    vy?.hashCode),
-                vz?.hashCode),
-            courseError?.hashCode),
-        eta?.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode), dstEnt?.hashCode ?? null.hashCode),
+                                                                                pathRef?.hashCode ?? null.hashCode),
+                                                                            startLat?.hashCode ?? null.hashCode),
+                                                                        startLon?.hashCode ?? null.hashCode),
+                                                                    startZ?.hashCode ?? null.hashCode),
+                                                                startZUnits?.hashCode ?? null.hashCode),
+                                                            endLat?.hashCode ?? null.hashCode),
+                                                        endLon?.hashCode ?? null.hashCode),
+                                                    endZ?.hashCode ?? null.hashCode),
+                                                endZUnits?.hashCode ?? null.hashCode),
+                                            lradius?.hashCode ?? null.hashCode),
+                                        flags?.hashCode ?? null.hashCode),
+                                    x?.hashCode ?? null.hashCode),
+                                y?.hashCode ?? null.hashCode),
+                            z?.hashCode ?? null.hashCode),
+                        vx?.hashCode ?? null.hashCode),
+                    vy?.hashCode ?? null.hashCode),
+                vz?.hashCode ?? null.hashCode),
+            courseError?.hashCode ?? null.hashCode),
+        eta?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -31406,13 +31845,15 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                k?.hashCode),
-            m?.hashCode),
-        n?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                k?.hashCode ?? null.hashCode),
+            m?.hashCode ?? null.hashCode),
+        n?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -31606,14 +32047,18 @@ class _$ControlParcel extends ControlParcel {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    p?.hashCode),
-                i?.hashCode),
-            d?.hashCode),
-        a?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    p?.hashCode ?? null.hashCode),
+                i?.hashCode ?? null.hashCode),
+            d?.hashCode ?? null.hashCode),
+        a?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -31795,11 +32240,13 @@ class _$Brake extends Brake {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        op?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        op?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -32013,21 +32460,27 @@ class _$DesiredLinearState extends DesiredLinearState {
                                                             $jc(
                                                                 0,
                                                                 timestamp
-                                                                    ?.hashCode),
-                                                            src?.hashCode),
-                                                        srcEnt?.hashCode),
-                                                    dst?.hashCode),
-                                                dstEnt?.hashCode),
-                                            x?.hashCode),
-                                        y?.hashCode),
-                                    z?.hashCode),
-                                vx?.hashCode),
-                            vy?.hashCode),
-                        vz?.hashCode),
-                    ax?.hashCode),
-                ay?.hashCode),
-            az?.hashCode),
-        flags?.hashCode));
+                                                                        ?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            src?.hashCode ??
+                                                                null.hashCode),
+                                                        srcEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    dst?.hashCode ??
+                                                        null.hashCode),
+                                                dstEnt?.hashCode ??
+                                                    null.hashCode),
+                                            x?.hashCode ?? null.hashCode),
+                                        y?.hashCode ?? null.hashCode),
+                                    z?.hashCode ?? null.hashCode),
+                                vx?.hashCode ?? null.hashCode),
+                            vy?.hashCode ?? null.hashCode),
+                        vz?.hashCode ?? null.hashCode),
+                    ax?.hashCode ?? null.hashCode),
+                ay?.hashCode ?? null.hashCode),
+            az?.hashCode ?? null.hashCode),
+        flags?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -32253,11 +32706,13 @@ class _$DesiredThrottle extends DesiredThrottle {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -32474,22 +32929,30 @@ class _$Goto extends Goto {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                timeout?.hashCode),
-                                            lat?.hashCode),
-                                        lon?.hashCode),
-                                    z?.hashCode),
-                                zUnits?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    roll?.hashCode),
-                pitch?.hashCode),
-            yaw?.hashCode),
-        custom?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                timeout?.hashCode ??
+                                                    null.hashCode),
+                                            lat?.hashCode ?? null.hashCode),
+                                        lon?.hashCode ?? null.hashCode),
+                                    z?.hashCode ?? null.hashCode),
+                                zUnits?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    roll?.hashCode ?? null.hashCode),
+                pitch?.hashCode ?? null.hashCode),
+            yaw?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -32780,22 +33243,30 @@ class _$PopUp extends PopUp {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                timeout?.hashCode),
-                                            lat?.hashCode),
-                                        lon?.hashCode),
-                                    z?.hashCode),
-                                zUnits?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    duration?.hashCode),
-                radius?.hashCode),
-            flags?.hashCode),
-        custom?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                timeout?.hashCode ??
+                                                    null.hashCode),
+                                            lat?.hashCode ?? null.hashCode),
+                                        lon?.hashCode ?? null.hashCode),
+                                    z?.hashCode ?? null.hashCode),
+                                zUnits?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    duration?.hashCode ?? null.hashCode),
+                radius?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -33028,11 +33499,13 @@ class _$Teleoperation extends Teleoperation {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        custom?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -33260,26 +33733,40 @@ class _$Loiter extends Loiter {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(0,
-                                                                                timestamp?.hashCode),
-                                                                            src?.hashCode),
-                                                                        srcEnt?.hashCode),
-                                                                    dst?.hashCode),
-                                                                dstEnt?.hashCode),
-                                                            timeout?.hashCode),
-                                                        lat?.hashCode),
-                                                    lon?.hashCode),
-                                                z?.hashCode),
-                                            zUnits?.hashCode),
-                                        duration?.hashCode),
-                                    speed?.hashCode),
-                                speedUnits?.hashCode),
-                            type?.hashCode),
-                        radius?.hashCode),
-                    length?.hashCode),
-                bearing?.hashCode),
-            direction?.hashCode),
-        custom?.hashCode));
+                                                                            $jc(
+                                                                                0,
+                                                                                timestamp?.hashCode ??
+                                                                                    null
+                                                                                        .hashCode),
+                                                                            src?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        srcEnt?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    dst?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                dstEnt?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            timeout?.hashCode ??
+                                                                null.hashCode),
+                                                        lat?.hashCode ??
+                                                            null.hashCode),
+                                                    lon?.hashCode ??
+                                                        null.hashCode),
+                                                z?.hashCode ?? null.hashCode),
+                                            zUnits?.hashCode ?? null.hashCode),
+                                        duration?.hashCode ?? null.hashCode),
+                                    speed?.hashCode ?? null.hashCode),
+                                speedUnits?.hashCode ?? null.hashCode),
+                            type?.hashCode ?? null.hashCode),
+                        radius?.hashCode ?? null.hashCode),
+                    length?.hashCode ?? null.hashCode),
+                bearing?.hashCode ?? null.hashCode),
+            direction?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -33539,12 +34026,14 @@ class _$IdleManeuver extends IdleManeuver {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            duration?.hashCode),
-        custom?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            duration?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -33723,13 +34212,15 @@ class _$LowLevelControl extends LowLevelControl {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                control?.hashCode),
-            duration?.hashCode),
-        custom?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                control?.hashCode ?? null.hashCode),
+            duration?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -33981,26 +34472,26 @@ class _$Rows extends Rows {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                                                                srcEnt?.hashCode),
-                                                                            dst?.hashCode),
-                                                                        dstEnt?.hashCode),
-                                                                    timeout?.hashCode),
-                                                                lat?.hashCode),
-                                                            lon?.hashCode),
-                                                        z?.hashCode),
-                                                    zUnits?.hashCode),
-                                                speed?.hashCode),
-                                            speedUnits?.hashCode),
-                                        bearing?.hashCode),
-                                    crossAngle?.hashCode),
-                                width?.hashCode),
-                            length?.hashCode),
-                        hstep?.hashCode),
-                    coff?.hashCode),
-                alternation?.hashCode),
-            flags?.hashCode),
-        custom?.hashCode));
+                                                                            $jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode),
+                                                                                srcEnt?.hashCode ?? null.hashCode),
+                                                                            dst?.hashCode ?? null.hashCode),
+                                                                        dstEnt?.hashCode ?? null.hashCode),
+                                                                    timeout?.hashCode ?? null.hashCode),
+                                                                lat?.hashCode ?? null.hashCode),
+                                                            lon?.hashCode ?? null.hashCode),
+                                                        z?.hashCode ?? null.hashCode),
+                                                    zUnits?.hashCode ?? null.hashCode),
+                                                speed?.hashCode ?? null.hashCode),
+                                            speedUnits?.hashCode ?? null.hashCode),
+                                        bearing?.hashCode ?? null.hashCode),
+                                    crossAngle?.hashCode ?? null.hashCode),
+                                width?.hashCode ?? null.hashCode),
+                            length?.hashCode ?? null.hashCode),
+                        hstep?.hashCode ?? null.hashCode),
+                    coff?.hashCode ?? null.hashCode),
+                alternation?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -34315,20 +34806,23 @@ class _$FollowPath extends FollowPath {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        timeout?.hashCode),
-                                    lat?.hashCode),
-                                lon?.hashCode),
-                            z?.hashCode),
-                        zUnits?.hashCode),
-                    speed?.hashCode),
-                speedUnits?.hashCode),
-            points?.hashCode),
-        custom?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        timeout?.hashCode ?? null.hashCode),
+                                    lat?.hashCode ?? null.hashCode),
+                                lon?.hashCode ?? null.hashCode),
+                            z?.hashCode ?? null.hashCode),
+                        zUnits?.hashCode ?? null.hashCode),
+                    speed?.hashCode ?? null.hashCode),
+                speedUnits?.hashCode ?? null.hashCode),
+            points?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -34557,13 +35051,15 @@ class _$PathPoint extends PathPoint {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -34788,21 +35284,27 @@ class _$YoYo extends YoYo {
                                                             $jc(
                                                                 0,
                                                                 timestamp
-                                                                    ?.hashCode),
-                                                            src?.hashCode),
-                                                        srcEnt?.hashCode),
-                                                    dst?.hashCode),
-                                                dstEnt?.hashCode),
-                                            timeout?.hashCode),
-                                        lat?.hashCode),
-                                    lon?.hashCode),
-                                z?.hashCode),
-                            zUnits?.hashCode),
-                        amplitude?.hashCode),
-                    pitch?.hashCode),
-                speed?.hashCode),
-            speedUnits?.hashCode),
-        custom?.hashCode));
+                                                                        ?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            src?.hashCode ??
+                                                                null.hashCode),
+                                                        srcEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    dst?.hashCode ??
+                                                        null.hashCode),
+                                                dstEnt?.hashCode ??
+                                                    null.hashCode),
+                                            timeout?.hashCode ?? null.hashCode),
+                                        lat?.hashCode ?? null.hashCode),
+                                    lon?.hashCode ?? null.hashCode),
+                                z?.hashCode ?? null.hashCode),
+                            zUnits?.hashCode ?? null.hashCode),
+                        amplitude?.hashCode ?? null.hashCode),
+                    pitch?.hashCode ?? null.hashCode),
+                speed?.hashCode ?? null.hashCode),
+            speedUnits?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -35026,10 +35528,12 @@ class _$TeleoperationDone extends TeleoperationDone {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -35229,20 +35733,23 @@ class _$StationKeeping extends StationKeeping {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        lat?.hashCode),
-                                    lon?.hashCode),
-                                z?.hashCode),
-                            zUnits?.hashCode),
-                        radius?.hashCode),
-                    duration?.hashCode),
-                speed?.hashCode),
-            speedUnits?.hashCode),
-        custom?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        lat?.hashCode ?? null.hashCode),
+                                    lon?.hashCode ?? null.hashCode),
+                                z?.hashCode ?? null.hashCode),
+                            zUnits?.hashCode ?? null.hashCode),
+                        radius?.hashCode ?? null.hashCode),
+                    duration?.hashCode ?? null.hashCode),
+                speed?.hashCode ?? null.hashCode),
+            speedUnits?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -35520,26 +36027,33 @@ class _$Elevator extends Elevator {
                                                                 $jc(
                                                                     $jc(
                                                                         0,
-                                                                        timestamp
-                                                                            ?.hashCode),
-                                                                    src
-                                                                        ?.hashCode),
-                                                                srcEnt
-                                                                    ?.hashCode),
-                                                            dst?.hashCode),
-                                                        dstEnt?.hashCode),
-                                                    timeout?.hashCode),
-                                                flags?.hashCode),
-                                            lat?.hashCode),
-                                        lon?.hashCode),
-                                    startZ?.hashCode),
-                                startZUnits?.hashCode),
-                            endZ?.hashCode),
-                        endZUnits?.hashCode),
-                    radius?.hashCode),
-                speed?.hashCode),
-            speedUnits?.hashCode),
-        custom?.hashCode));
+                                                                        timestamp?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    src?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                srcEnt?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            dst?.hashCode ??
+                                                                null.hashCode),
+                                                        dstEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    timeout?.hashCode ??
+                                                        null.hashCode),
+                                                flags?.hashCode ??
+                                                    null.hashCode),
+                                            lat?.hashCode ?? null.hashCode),
+                                        lon?.hashCode ?? null.hashCode),
+                                    startZ?.hashCode ?? null.hashCode),
+                                startZUnits?.hashCode ?? null.hashCode),
+                            endZ?.hashCode ?? null.hashCode),
+                        endZUnits?.hashCode ?? null.hashCode),
+                    radius?.hashCode ?? null.hashCode),
+                speed?.hashCode ?? null.hashCode),
+            speedUnits?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -35826,20 +36340,23 @@ class _$FollowTrajectory extends FollowTrajectory {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        timeout?.hashCode),
-                                    lat?.hashCode),
-                                lon?.hashCode),
-                            z?.hashCode),
-                        zUnits?.hashCode),
-                    speed?.hashCode),
-                speedUnits?.hashCode),
-            points?.hashCode),
-        custom?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        timeout?.hashCode ?? null.hashCode),
+                                    lat?.hashCode ?? null.hashCode),
+                                lon?.hashCode ?? null.hashCode),
+                            z?.hashCode ?? null.hashCode),
+                        zUnits?.hashCode ?? null.hashCode),
+                    speed?.hashCode ?? null.hashCode),
+                speedUnits?.hashCode ?? null.hashCode),
+            points?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -36075,14 +36592,18 @@ class _$TrajectoryPoint extends TrajectoryPoint {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    x?.hashCode),
-                y?.hashCode),
-            z?.hashCode),
-        t?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    x?.hashCode ?? null.hashCode),
+                y?.hashCode ?? null.hashCode),
+            z?.hashCode ?? null.hashCode),
+        t?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -36275,13 +36796,15 @@ class _$CustomManeuver extends CustomManeuver {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                timeout?.hashCode),
-            name?.hashCode),
-        custom?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                timeout?.hashCode ?? null.hashCode),
+            name?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -36508,21 +37031,27 @@ class _$VehicleFormation extends VehicleFormation {
                                                             $jc(
                                                                 0,
                                                                 timestamp
-                                                                    ?.hashCode),
-                                                            src?.hashCode),
-                                                        srcEnt?.hashCode),
-                                                    dst?.hashCode),
-                                                dstEnt?.hashCode),
-                                            lat?.hashCode),
-                                        lon?.hashCode),
-                                    z?.hashCode),
-                                zUnits?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    points?.hashCode),
-                participants?.hashCode),
-            startTime?.hashCode),
-        custom?.hashCode));
+                                                                        ?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            src?.hashCode ??
+                                                                null.hashCode),
+                                                        srcEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    dst?.hashCode ??
+                                                        null.hashCode),
+                                                dstEnt?.hashCode ??
+                                                    null.hashCode),
+                                            lat?.hashCode ?? null.hashCode),
+                                        lon?.hashCode ?? null.hashCode),
+                                    z?.hashCode ?? null.hashCode),
+                                zUnits?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    points?.hashCode ?? null.hashCode),
+                participants?.hashCode ?? null.hashCode),
+            startTime?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -36769,14 +37298,18 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    vid?.hashCode),
-                offX?.hashCode),
-            offY?.hashCode),
-        offZ?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    vid?.hashCode ?? null.hashCode),
+                offX?.hashCode ?? null.hashCode),
+            offY?.hashCode ?? null.hashCode),
+        offZ?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -36957,10 +37490,12 @@ class _$StopManeuver extends StopManeuver {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -37116,11 +37651,13 @@ class _$RegisterManeuver extends RegisterManeuver {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        mid?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        mid?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -37295,13 +37832,15 @@ class _$ManeuverControlState extends ManeuverControlState {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                state?.hashCode),
-            eta?.hashCode),
-        info?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                state?.hashCode ?? null.hashCode),
+            eta?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -37515,19 +38054,25 @@ class _$FollowSystem extends FollowSystem {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    system?.hashCode),
-                                duration?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    x?.hashCode),
-                y?.hashCode),
-            z?.hashCode),
-        zUnits?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    system?.hashCode ?? null.hashCode),
+                                duration?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    x?.hashCode ?? null.hashCode),
+                y?.hashCode ?? null.hashCode),
+            z?.hashCode ?? null.hashCode),
+        zUnits?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -37774,19 +38319,25 @@ class _$CommsRelay extends CommsRelay {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    lat?.hashCode),
-                                lon?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    duration?.hashCode),
-                sysA?.hashCode),
-            sysB?.hashCode),
-        moveThreshold?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    lat?.hashCode ?? null.hashCode),
+                                lon?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    duration?.hashCode ?? null.hashCode),
+                sysA?.hashCode ?? null.hashCode),
+            sysB?.hashCode ?? null.hashCode),
+        moveThreshold?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -38035,19 +38586,25 @@ class _$CoverArea extends CoverArea {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    lat?.hashCode),
-                                lon?.hashCode),
-                            z?.hashCode),
-                        zUnits?.hashCode),
-                    speed?.hashCode),
-                speedUnits?.hashCode),
-            polygon?.hashCode),
-        custom?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    lat?.hashCode ?? null.hashCode),
+                                lon?.hashCode ?? null.hashCode),
+                            z?.hashCode ?? null.hashCode),
+                        zUnits?.hashCode ?? null.hashCode),
+                    speed?.hashCode ?? null.hashCode),
+                speedUnits?.hashCode ?? null.hashCode),
+            polygon?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -38264,12 +38821,14 @@ class _$PolygonVertex extends PolygonVertex {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            lat?.hashCode),
-        lon?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            lat?.hashCode ?? null.hashCode),
+        lon?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -38506,27 +39065,35 @@ class _$CompassCalibration extends CompassCalibration {
                                                                     $jc(
                                                                         $jc(
                                                                             0,
-                                                                            timestamp
-                                                                                ?.hashCode),
-                                                                        src
-                                                                            ?.hashCode),
-                                                                    srcEnt
-                                                                        ?.hashCode),
-                                                                dst?.hashCode),
-                                                            dstEnt?.hashCode),
-                                                        timeout?.hashCode),
-                                                    lat?.hashCode),
-                                                lon?.hashCode),
-                                            z?.hashCode),
-                                        zUnits?.hashCode),
-                                    pitch?.hashCode),
-                                amplitude?.hashCode),
-                            duration?.hashCode),
-                        speed?.hashCode),
-                    speedUnits?.hashCode),
-                radius?.hashCode),
-            direction?.hashCode),
-        custom?.hashCode));
+                                                                            timestamp?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        src?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    srcEnt?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                dst?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            dstEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        timeout?.hashCode ??
+                                                            null.hashCode),
+                                                    lat?.hashCode ??
+                                                        null.hashCode),
+                                                lon?.hashCode ?? null.hashCode),
+                                            z?.hashCode ?? null.hashCode),
+                                        zUnits?.hashCode ?? null.hashCode),
+                                    pitch?.hashCode ?? null.hashCode),
+                                amplitude?.hashCode ?? null.hashCode),
+                            duration?.hashCode ?? null.hashCode),
+                        speed?.hashCode ?? null.hashCode),
+                    speedUnits?.hashCode ?? null.hashCode),
+                radius?.hashCode ?? null.hashCode),
+            direction?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -38795,14 +39362,18 @@ class _$FormationParameters extends FormationParameters {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    formationName?.hashCode),
-                referenceFrame?.hashCode),
-            participants?.hashCode),
-        custom?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    formationName?.hashCode ?? null.hashCode),
+                referenceFrame?.hashCode ?? null.hashCode),
+            participants?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -39069,26 +39640,45 @@ class _$FormationPlanExecution extends FormationPlanExecution {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(0,
-                                                                                timestamp?.hashCode),
-                                                                            src?.hashCode),
-                                                                        srcEnt?.hashCode),
-                                                                    dst?.hashCode),
-                                                                dstEnt?.hashCode),
-                                                            groupName?.hashCode),
-                                                        formationName?.hashCode),
-                                                    planId?.hashCode),
-                                                description?.hashCode),
-                                            leaderSpeed?.hashCode),
-                                        leaderBankLim?.hashCode),
-                                    posSimErrLim?.hashCode),
-                                posSimErrWrn?.hashCode),
-                            posSimErrTimeout?.hashCode),
-                        convergMax?.hashCode),
-                    convergTimeout?.hashCode),
-                commsTimeout?.hashCode),
-            turbLim?.hashCode),
-        custom?.hashCode));
+                                                                            $jc(
+                                                                                0,
+                                                                                timestamp?.hashCode ??
+                                                                                    null
+                                                                                        .hashCode),
+                                                                            src?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        srcEnt?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    dst?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                dstEnt?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            groupName
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        formationName
+                                                                ?.hashCode ??
+                                                            null.hashCode),
+                                                    planId?.hashCode ??
+                                                        null.hashCode),
+                                                description?.hashCode ??
+                                                    null.hashCode),
+                                            leaderSpeed?.hashCode ??
+                                                null.hashCode),
+                                        leaderBankLim?.hashCode ??
+                                            null.hashCode),
+                                    posSimErrLim?.hashCode ?? null.hashCode),
+                                posSimErrWrn?.hashCode ?? null.hashCode),
+                            posSimErrTimeout?.hashCode ?? null.hashCode),
+                        convergMax?.hashCode ?? null.hashCode),
+                    convergTimeout?.hashCode ?? null.hashCode),
+                commsTimeout?.hashCode ?? null.hashCode),
+            turbLim?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -39372,16 +39962,20 @@ class _$FollowReference extends FollowReference {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        controlSrc?.hashCode),
-                    controlEnt?.hashCode),
-                timeout?.hashCode),
-            loiterRadius?.hashCode),
-        altitudeInterval?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        controlSrc?.hashCode ?? null.hashCode),
+                    controlEnt?.hashCode ?? null.hashCode),
+                timeout?.hashCode ?? null.hashCode),
+            loiterRadius?.hashCode ?? null.hashCode),
+        altitudeInterval?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -39598,17 +40192,21 @@ class _$Reference extends Reference {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            flags?.hashCode),
-                        speed?.hashCode),
-                    z?.hashCode),
-                lat?.hashCode),
-            lon?.hashCode),
-        radius?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            flags?.hashCode ?? null.hashCode),
+                        speed?.hashCode ?? null.hashCode),
+                    z?.hashCode ?? null.hashCode),
+                lat?.hashCode ?? null.hashCode),
+            lon?.hashCode ?? null.hashCode),
+        radius?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -39825,16 +40423,20 @@ class _$FollowRefState extends FollowRefState {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        controlSrc?.hashCode),
-                    controlEnt?.hashCode),
-                reference?.hashCode),
-            state?.hashCode),
-        proximity?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        controlSrc?.hashCode ?? null.hashCode),
+                    controlEnt?.hashCode ?? null.hashCode),
+                reference?.hashCode ?? null.hashCode),
+            state?.hashCode ?? null.hashCode),
+        proximity?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -40114,26 +40716,26 @@ class _$FormationMonitor extends FormationMonitor {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode),
-                                                                                axCmd?.hashCode),
-                                                                            ayCmd?.hashCode),
-                                                                        azCmd?.hashCode),
-                                                                    axDes?.hashCode),
-                                                                ayDes?.hashCode),
-                                                            azDes?.hashCode),
-                                                        virtErrX?.hashCode),
-                                                    virtErrY?.hashCode),
-                                                virtErrZ?.hashCode),
-                                            surfFdbkX?.hashCode),
-                                        surfFdbkY?.hashCode),
-                                    surfFdbkZ?.hashCode),
-                                surfUnknX?.hashCode),
-                            surfUnknY?.hashCode),
-                        surfUnknZ?.hashCode),
-                    ssX?.hashCode),
-                ssY?.hashCode),
-            ssZ?.hashCode),
-        relState?.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode), dstEnt?.hashCode ?? null.hashCode),
+                                                                                axCmd?.hashCode ?? null.hashCode),
+                                                                            ayCmd?.hashCode ?? null.hashCode),
+                                                                        azCmd?.hashCode ?? null.hashCode),
+                                                                    axDes?.hashCode ?? null.hashCode),
+                                                                ayDes?.hashCode ?? null.hashCode),
+                                                            azDes?.hashCode ?? null.hashCode),
+                                                        virtErrX?.hashCode ?? null.hashCode),
+                                                    virtErrY?.hashCode ?? null.hashCode),
+                                                virtErrZ?.hashCode ?? null.hashCode),
+                                            surfFdbkX?.hashCode ?? null.hashCode),
+                                        surfFdbkY?.hashCode ?? null.hashCode),
+                                    surfFdbkZ?.hashCode ?? null.hashCode),
+                                surfUnknX?.hashCode ?? null.hashCode),
+                            surfUnknY?.hashCode ?? null.hashCode),
+                        surfUnknZ?.hashCode ?? null.hashCode),
+                    ssX?.hashCode ?? null.hashCode),
+                ssY?.hashCode ?? null.hashCode),
+            ssZ?.hashCode ?? null.hashCode),
+        relState?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -40520,26 +41122,26 @@ class _$RelativeState extends RelativeState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), sId?.hashCode), dist?.hashCode), err?.hashCode),
-                                                                                ctrlImp?.hashCode),
-                                                                            relDirX?.hashCode),
-                                                                        relDirY?.hashCode),
-                                                                    relDirZ?.hashCode),
-                                                                errX?.hashCode),
-                                                            errY?.hashCode),
-                                                        errZ?.hashCode),
-                                                    rfErrX?.hashCode),
-                                                rfErrY?.hashCode),
-                                            rfErrZ?.hashCode),
-                                        rfErrVx?.hashCode),
-                                    rfErrVy?.hashCode),
-                                rfErrVz?.hashCode),
-                            ssX?.hashCode),
-                        ssY?.hashCode),
-                    ssZ?.hashCode),
-                virtErrX?.hashCode),
-            virtErrY?.hashCode),
-        virtErrZ?.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode), dstEnt?.hashCode ?? null.hashCode), sId?.hashCode ?? null.hashCode), dist?.hashCode ?? null.hashCode), err?.hashCode ?? null.hashCode),
+                                                                                ctrlImp?.hashCode ?? null.hashCode),
+                                                                            relDirX?.hashCode ?? null.hashCode),
+                                                                        relDirY?.hashCode ?? null.hashCode),
+                                                                    relDirZ?.hashCode ?? null.hashCode),
+                                                                errX?.hashCode ?? null.hashCode),
+                                                            errY?.hashCode ?? null.hashCode),
+                                                        errZ?.hashCode ?? null.hashCode),
+                                                    rfErrX?.hashCode ?? null.hashCode),
+                                                rfErrY?.hashCode ?? null.hashCode),
+                                            rfErrZ?.hashCode ?? null.hashCode),
+                                        rfErrVx?.hashCode ?? null.hashCode),
+                                    rfErrVy?.hashCode ?? null.hashCode),
+                                rfErrVz?.hashCode ?? null.hashCode),
+                            ssX?.hashCode ?? null.hashCode),
+                        ssY?.hashCode ?? null.hashCode),
+                    ssZ?.hashCode ?? null.hashCode),
+                virtErrX?.hashCode ?? null.hashCode),
+            virtErrY?.hashCode ?? null.hashCode),
+        virtErrZ?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -40862,14 +41464,18 @@ class _$Dislodge extends Dislodge {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    timeout?.hashCode),
-                rpm?.hashCode),
-            direction?.hashCode),
-        custom?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    timeout?.hashCode ?? null.hashCode),
+                rpm?.hashCode ?? null.hashCode),
+            direction?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -41155,26 +41761,26 @@ class _$Formation extends Formation {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), formationName?.hashCode), type?.hashCode),
-                                                                                op?.hashCode),
-                                                                            groupName?.hashCode),
-                                                                        planId?.hashCode),
-                                                                    description?.hashCode),
-                                                                referenceFrame?.hashCode),
-                                                            participants?.hashCode),
-                                                        leaderBankLim?.hashCode),
-                                                    leaderSpeedMin?.hashCode),
-                                                leaderSpeedMax?.hashCode),
-                                            leaderAltMin?.hashCode),
-                                        leaderAltMax?.hashCode),
-                                    posSimErrLim?.hashCode),
-                                posSimErrWrn?.hashCode),
-                            posSimErrTimeout?.hashCode),
-                        convergMax?.hashCode),
-                    convergTimeout?.hashCode),
-                commsTimeout?.hashCode),
-            turbLim?.hashCode),
-        custom?.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode), dstEnt?.hashCode ?? null.hashCode), formationName?.hashCode ?? null.hashCode), type?.hashCode ?? null.hashCode),
+                                                                                op?.hashCode ?? null.hashCode),
+                                                                            groupName?.hashCode ?? null.hashCode),
+                                                                        planId?.hashCode ?? null.hashCode),
+                                                                    description?.hashCode ?? null.hashCode),
+                                                                referenceFrame?.hashCode ?? null.hashCode),
+                                                            participants?.hashCode ?? null.hashCode),
+                                                        leaderBankLim?.hashCode ?? null.hashCode),
+                                                    leaderSpeedMin?.hashCode ?? null.hashCode),
+                                                leaderSpeedMax?.hashCode ?? null.hashCode),
+                                            leaderAltMin?.hashCode ?? null.hashCode),
+                                        leaderAltMax?.hashCode ?? null.hashCode),
+                                    posSimErrLim?.hashCode ?? null.hashCode),
+                                posSimErrWrn?.hashCode ?? null.hashCode),
+                            posSimErrTimeout?.hashCode ?? null.hashCode),
+                        convergMax?.hashCode ?? null.hashCode),
+                    convergTimeout?.hashCode ?? null.hashCode),
+                commsTimeout?.hashCode ?? null.hashCode),
+            turbLim?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -41521,19 +42127,25 @@ class _$Launch extends Launch {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    timeout?.hashCode),
-                                lat?.hashCode),
-                            lon?.hashCode),
-                        z?.hashCode),
-                    zUnits?.hashCode),
-                speed?.hashCode),
-            speedUnits?.hashCode),
-        custom?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    timeout?.hashCode ?? null.hashCode),
+                                lat?.hashCode ?? null.hashCode),
+                            lon?.hashCode ?? null.hashCode),
+                        z?.hashCode ?? null.hashCode),
+                    zUnits?.hashCode ?? null.hashCode),
+                speed?.hashCode ?? null.hashCode),
+            speedUnits?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -41781,19 +42393,25 @@ class _$Drop extends Drop {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    timeout?.hashCode),
-                                lat?.hashCode),
-                            lon?.hashCode),
-                        z?.hashCode),
-                    zUnits?.hashCode),
-                speed?.hashCode),
-            speedUnits?.hashCode),
-        custom?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    timeout?.hashCode ?? null.hashCode),
+                                lat?.hashCode ?? null.hashCode),
+                            lon?.hashCode ?? null.hashCode),
+                        z?.hashCode ?? null.hashCode),
+                    zUnits?.hashCode ?? null.hashCode),
+                speed?.hashCode ?? null.hashCode),
+            speedUnits?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -42042,19 +42660,25 @@ class _$ScheduledGoto extends ScheduledGoto {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    arrivalTime?.hashCode),
-                                lat?.hashCode),
-                            lon?.hashCode),
-                        z?.hashCode),
-                    zUnits?.hashCode),
-                travelZ?.hashCode),
-            travelZUnits?.hashCode),
-        delayed?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    arrivalTime?.hashCode ?? null.hashCode),
+                                lat?.hashCode ?? null.hashCode),
+                            lon?.hashCode ?? null.hashCode),
+                        z?.hashCode ?? null.hashCode),
+                    zUnits?.hashCode ?? null.hashCode),
+                travelZ?.hashCode ?? null.hashCode),
+            travelZUnits?.hashCode ?? null.hashCode),
+        delayed?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -42344,26 +42968,26 @@ class _$RowsCoverage extends RowsCoverage {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                                                                srcEnt?.hashCode),
-                                                                            dst?.hashCode),
-                                                                        dstEnt?.hashCode),
-                                                                    lat?.hashCode),
-                                                                lon?.hashCode),
-                                                            z?.hashCode),
-                                                        zUnits?.hashCode),
-                                                    speed?.hashCode),
-                                                speedUnits?.hashCode),
-                                            bearing?.hashCode),
-                                        crossAngle?.hashCode),
-                                    width?.hashCode),
-                                length?.hashCode),
-                            coff?.hashCode),
-                        angAperture?.hashCode),
-                    range?.hashCode),
-                overlap?.hashCode),
-            flags?.hashCode),
-        custom?.hashCode));
+                                                                            $jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode),
+                                                                                srcEnt?.hashCode ?? null.hashCode),
+                                                                            dst?.hashCode ?? null.hashCode),
+                                                                        dstEnt?.hashCode ?? null.hashCode),
+                                                                    lat?.hashCode ?? null.hashCode),
+                                                                lon?.hashCode ?? null.hashCode),
+                                                            z?.hashCode ?? null.hashCode),
+                                                        zUnits?.hashCode ?? null.hashCode),
+                                                    speed?.hashCode ?? null.hashCode),
+                                                speedUnits?.hashCode ?? null.hashCode),
+                                            bearing?.hashCode ?? null.hashCode),
+                                        crossAngle?.hashCode ?? null.hashCode),
+                                    width?.hashCode ?? null.hashCode),
+                                length?.hashCode ?? null.hashCode),
+                            coff?.hashCode ?? null.hashCode),
+                        angAperture?.hashCode ?? null.hashCode),
+                    range?.hashCode ?? null.hashCode),
+                overlap?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -42689,22 +43313,30 @@ class _$Sample extends Sample {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                timeout?.hashCode),
-                                            lat?.hashCode),
-                                        lon?.hashCode),
-                                    z?.hashCode),
-                                zUnits?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    syringe0?.hashCode),
-                syringe1?.hashCode),
-            syringe2?.hashCode),
-        custom?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                timeout?.hashCode ??
+                                                    null.hashCode),
+                                            lat?.hashCode ?? null.hashCode),
+                                        lon?.hashCode ?? null.hashCode),
+                                    z?.hashCode ?? null.hashCode),
+                                zUnits?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    syringe0?.hashCode ?? null.hashCode),
+                syringe1?.hashCode ?? null.hashCode),
+            syringe2?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -42931,10 +43563,12 @@ class _$ImageTracking extends ImageTracking {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -43125,19 +43759,25 @@ class _$Takeoff extends Takeoff {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    lat?.hashCode),
-                                lon?.hashCode),
-                            z?.hashCode),
-                        zUnits?.hashCode),
-                    speed?.hashCode),
-                speedUnits?.hashCode),
-            takeoffPitch?.hashCode),
-        custom?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    lat?.hashCode ?? null.hashCode),
+                                lon?.hashCode ?? null.hashCode),
+                            z?.hashCode ?? null.hashCode),
+                        zUnits?.hashCode ?? null.hashCode),
+                    speed?.hashCode ?? null.hashCode),
+                speedUnits?.hashCode ?? null.hashCode),
+            takeoffPitch?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -43406,22 +44046,29 @@ class _$Land extends Land {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                lat?.hashCode),
-                                            lon?.hashCode),
-                                        z?.hashCode),
-                                    zUnits?.hashCode),
-                                speed?.hashCode),
-                            speedUnits?.hashCode),
-                        abortZ?.hashCode),
-                    bearing?.hashCode),
-                glideSlope?.hashCode),
-            glideSlopeAlt?.hashCode),
-        custom?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                lat?.hashCode ?? null.hashCode),
+                                            lon?.hashCode ?? null.hashCode),
+                                        z?.hashCode ?? null.hashCode),
+                                    zUnits?.hashCode ?? null.hashCode),
+                                speed?.hashCode ?? null.hashCode),
+                            speedUnits?.hashCode ?? null.hashCode),
+                        abortZ?.hashCode ?? null.hashCode),
+                    bearing?.hashCode ?? null.hashCode),
+                glideSlope?.hashCode ?? null.hashCode),
+            glideSlopeAlt?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -43714,22 +44361,29 @@ class _$AutonomousSection extends AutonomousSection {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                lat?.hashCode),
-                                            lon?.hashCode),
-                                        speed?.hashCode),
-                                    speedUnits?.hashCode),
-                                limits?.hashCode),
-                            maxDepth?.hashCode),
-                        minAlt?.hashCode),
-                    timeLimit?.hashCode),
-                areaLimits?.hashCode),
-            controller?.hashCode),
-        custom?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                lat?.hashCode ?? null.hashCode),
+                                            lon?.hashCode ?? null.hashCode),
+                                        speed?.hashCode ?? null.hashCode),
+                                    speedUnits?.hashCode ?? null.hashCode),
+                                limits?.hashCode ?? null.hashCode),
+                            maxDepth?.hashCode ?? null.hashCode),
+                        minAlt?.hashCode ?? null.hashCode),
+                    timeLimit?.hashCode ?? null.hashCode),
+                areaLimits?.hashCode ?? null.hashCode),
+            controller?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -44000,19 +44654,25 @@ class _$FollowPoint extends FollowPoint {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    target?.hashCode),
-                                maxSpeed?.hashCode),
-                            speedUnits?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                z?.hashCode),
-            zUnits?.hashCode),
-        custom?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    target?.hashCode ?? null.hashCode),
+                                maxSpeed?.hashCode ?? null.hashCode),
+                            speedUnits?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                z?.hashCode ?? null.hashCode),
+            zUnits?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -44250,17 +44910,21 @@ class _$Alignment extends Alignment {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            timeout?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                speed?.hashCode),
-            speedUnits?.hashCode),
-        custom?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            timeout?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                speed?.hashCode ?? null.hashCode),
+            speedUnits?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -44520,26 +45184,32 @@ class _$StationKeepingExtended extends StationKeepingExtended {
                                                                 $jc(
                                                                     $jc(
                                                                         0,
-                                                                        timestamp
-                                                                            ?.hashCode),
-                                                                    src
-                                                                        ?.hashCode),
-                                                                srcEnt
-                                                                    ?.hashCode),
-                                                            dst?.hashCode),
-                                                        dstEnt?.hashCode),
-                                                    lat?.hashCode),
-                                                lon?.hashCode),
-                                            z?.hashCode),
-                                        zUnits?.hashCode),
-                                    radius?.hashCode),
-                                duration?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    popupPeriod?.hashCode),
-                popupDuration?.hashCode),
-            flags?.hashCode),
-        custom?.hashCode));
+                                                                        timestamp?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    src?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                srcEnt?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            dst?.hashCode ??
+                                                                null.hashCode),
+                                                        dstEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    lat?.hashCode ??
+                                                        null.hashCode),
+                                                lon?.hashCode ?? null.hashCode),
+                                            z?.hashCode ?? null.hashCode),
+                                        zUnits?.hashCode ?? null.hashCode),
+                                    radius?.hashCode ?? null.hashCode),
+                                duration?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    popupPeriod?.hashCode ?? null.hashCode),
+                popupDuration?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -44778,10 +45448,12 @@ class _$ManeuverDone extends ManeuverDone {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -44990,22 +45662,30 @@ class _$Magnetometer extends Magnetometer {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                timeout?.hashCode),
-                                            lat?.hashCode),
-                                        lon?.hashCode),
-                                    z?.hashCode),
-                                zUnits?.hashCode),
-                            speed?.hashCode),
-                        speedUnits?.hashCode),
-                    bearing?.hashCode),
-                width?.hashCode),
-            direction?.hashCode),
-        custom?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                timeout?.hashCode ??
+                                                    null.hashCode),
+                                            lat?.hashCode ?? null.hashCode),
+                                        lon?.hashCode ?? null.hashCode),
+                                    z?.hashCode ?? null.hashCode),
+                                zUnits?.hashCode ?? null.hashCode),
+                            speed?.hashCode ?? null.hashCode),
+                        speedUnits?.hashCode ?? null.hashCode),
+                    bearing?.hashCode ?? null.hashCode),
+                width?.hashCode ?? null.hashCode),
+            direction?.hashCode ?? null.hashCode),
+        custom?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -45292,21 +45972,27 @@ class _$VehicleState extends VehicleState {
                                                             $jc(
                                                                 0,
                                                                 timestamp
-                                                                    ?.hashCode),
-                                                            src?.hashCode),
-                                                        srcEnt?.hashCode),
-                                                    dst?.hashCode),
-                                                dstEnt?.hashCode),
-                                            opMode?.hashCode),
-                                        errorCount?.hashCode),
-                                    errorEnts?.hashCode),
-                                maneuverType?.hashCode),
-                            maneuverStime?.hashCode),
-                        maneuverEta?.hashCode),
-                    controlLoops?.hashCode),
-                flags?.hashCode),
-            lastError?.hashCode),
-        lastErrorTime?.hashCode));
+                                                                        ?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            src?.hashCode ??
+                                                                null.hashCode),
+                                                        srcEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    dst?.hashCode ??
+                                                        null.hashCode),
+                                                dstEnt?.hashCode ??
+                                                    null.hashCode),
+                                            opMode?.hashCode ?? null.hashCode),
+                                        errorCount?.hashCode ?? null.hashCode),
+                                    errorEnts?.hashCode ?? null.hashCode),
+                                maneuverType?.hashCode ?? null.hashCode),
+                            maneuverStime?.hashCode ?? null.hashCode),
+                        maneuverEta?.hashCode ?? null.hashCode),
+                    controlLoops?.hashCode ?? null.hashCode),
+                flags?.hashCode ?? null.hashCode),
+            lastError?.hashCode ?? null.hashCode),
+        lastErrorTime?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -45559,17 +46245,21 @@ class _$VehicleCommand extends VehicleCommand {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            type?.hashCode),
-                        requestId?.hashCode),
-                    command?.hashCode),
-                maneuver?.hashCode),
-            calibTime?.hashCode),
-        info?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            type?.hashCode ?? null.hashCode),
+                        requestId?.hashCode ?? null.hashCode),
+                    command?.hashCode ?? null.hashCode),
+                maneuver?.hashCode ?? null.hashCode),
+            calibTime?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -45773,12 +46463,14 @@ class _$MonitorEntityState extends MonitorEntityState {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            command?.hashCode),
-        entities?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            command?.hashCode ?? null.hashCode),
+        entities?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -45988,19 +46680,25 @@ class _$EntityMonitoringState extends EntityMonitoringState {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    mcount?.hashCode),
-                                mnames?.hashCode),
-                            ecount?.hashCode),
-                        enames?.hashCode),
-                    ccount?.hashCode),
-                cnames?.hashCode),
-            lastError?.hashCode),
-        lastErrorTime?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    mcount?.hashCode ?? null.hashCode),
+                                mnames?.hashCode ?? null.hashCode),
+                            ecount?.hashCode ?? null.hashCode),
+                        enames?.hashCode ?? null.hashCode),
+                    ccount?.hashCode ?? null.hashCode),
+                cnames?.hashCode ?? null.hashCode),
+            lastError?.hashCode ?? null.hashCode),
+        lastErrorTime?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -46279,26 +46977,34 @@ class _$OperationalLimits extends OperationalLimits {
                                                                 $jc(
                                                                     $jc(
                                                                         0,
-                                                                        timestamp
-                                                                            ?.hashCode),
-                                                                    src
-                                                                        ?.hashCode),
-                                                                srcEnt
-                                                                    ?.hashCode),
-                                                            dst?.hashCode),
-                                                        dstEnt?.hashCode),
-                                                    mask?.hashCode),
-                                                maxDepth?.hashCode),
-                                            minAltitude?.hashCode),
-                                        maxAltitude?.hashCode),
-                                    minSpeed?.hashCode),
-                                maxSpeed?.hashCode),
-                            maxVrate?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                orientation?.hashCode),
-            width?.hashCode),
-        length?.hashCode));
+                                                                        timestamp?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    src?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                srcEnt?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            dst?.hashCode ??
+                                                                null.hashCode),
+                                                        dstEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    mask?.hashCode ??
+                                                        null.hashCode),
+                                                maxDepth?.hashCode ??
+                                                    null.hashCode),
+                                            minAltitude?.hashCode ??
+                                                null.hashCode),
+                                        maxAltitude?.hashCode ?? null.hashCode),
+                                    minSpeed?.hashCode ?? null.hashCode),
+                                maxSpeed?.hashCode ?? null.hashCode),
+                            maxVrate?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                orientation?.hashCode ?? null.hashCode),
+            width?.hashCode ?? null.hashCode),
+        length?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -46537,10 +47243,12 @@ class _$GetOperationalLimits extends GetOperationalLimits {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -46697,11 +47405,13 @@ class _$Calibration extends Calibration {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        duration?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        duration?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -46872,13 +47582,15 @@ class _$ControlLoops extends ControlLoops {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                enable?.hashCode),
-            mask?.hashCode),
-        scopeRef?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                enable?.hashCode ?? null.hashCode),
+            mask?.hashCode ?? null.hashCode),
+        scopeRef?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -47053,11 +47765,13 @@ class _$VehicleMedium extends VehicleMedium {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        medium?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        medium?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -47223,12 +47937,14 @@ class _$Collision extends Collision {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            value?.hashCode),
-        type?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        type?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -47423,17 +48139,21 @@ class _$FormState extends FormState {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            posSimErr?.hashCode),
-                        converg?.hashCode),
-                    turbulence?.hashCode),
-                posSimMon?.hashCode),
-            commMon?.hashCode),
-        convergMon?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            posSimErr?.hashCode ?? null.hashCode),
+                        converg?.hashCode ?? null.hashCode),
+                    turbulence?.hashCode ?? null.hashCode),
+                posSimMon?.hashCode ?? null.hashCode),
+            commMon?.hashCode ?? null.hashCode),
+        convergMon?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -47636,12 +48356,14 @@ class _$AutopilotMode extends AutopilotMode {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            autonomy?.hashCode),
-        mode?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            autonomy?.hashCode ?? null.hashCode),
+        mode?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -47847,19 +48569,25 @@ class _$FormationState extends FormationState {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    type?.hashCode),
-                                op?.hashCode),
-                            posSimErr?.hashCode),
-                        converg?.hashCode),
-                    turbulence?.hashCode),
-                posSimMon?.hashCode),
-            commMon?.hashCode),
-        convergMon?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    type?.hashCode ?? null.hashCode),
+                                op?.hashCode ?? null.hashCode),
+                            posSimErr?.hashCode ?? null.hashCode),
+                        converg?.hashCode ?? null.hashCode),
+                    turbulence?.hashCode ?? null.hashCode),
+                posSimMon?.hashCode ?? null.hashCode),
+            commMon?.hashCode ?? null.hashCode),
+        convergMon?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -48086,14 +48814,18 @@ class _$ReportControl extends ReportControl {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    op?.hashCode),
-                commInterface?.hashCode),
-            period?.hashCode),
-        sysDst?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    op?.hashCode ?? null.hashCode),
+                commInterface?.hashCode ?? null.hashCode),
+            period?.hashCode ?? null.hashCode),
+        sysDst?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -48328,21 +49060,27 @@ class _$StateReport extends StateReport {
                                                             $jc(
                                                                 0,
                                                                 timestamp
-                                                                    ?.hashCode),
-                                                            src?.hashCode),
-                                                        srcEnt?.hashCode),
-                                                    dst?.hashCode),
-                                                dstEnt?.hashCode),
-                                            stime?.hashCode),
-                                        latitude?.hashCode),
-                                    longitude?.hashCode),
-                                altitude?.hashCode),
-                            depth?.hashCode),
-                        heading?.hashCode),
-                    speed?.hashCode),
-                fuel?.hashCode),
-            execState?.hashCode),
-        planChecksum?.hashCode));
+                                                                        ?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            src?.hashCode ??
+                                                                null.hashCode),
+                                                        srcEnt?.hashCode ??
+                                                            null.hashCode),
+                                                    dst?.hashCode ??
+                                                        null.hashCode),
+                                                dstEnt?.hashCode ??
+                                                    null.hashCode),
+                                            stime?.hashCode ?? null.hashCode),
+                                        latitude?.hashCode ?? null.hashCode),
+                                    longitude?.hashCode ?? null.hashCode),
+                                altitude?.hashCode ?? null.hashCode),
+                            depth?.hashCode ?? null.hashCode),
+                        heading?.hashCode ?? null.hashCode),
+                    speed?.hashCode ?? null.hashCode),
+                fuel?.hashCode ?? null.hashCode),
+            execState?.hashCode ?? null.hashCode),
+        planChecksum?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -48614,20 +49352,23 @@ class _$TransmissionRequest extends TransmissionRequest {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        reqId?.hashCode),
-                                    commMean?.hashCode),
-                                destination?.hashCode),
-                            deadline?.hashCode),
-                        range?.hashCode),
-                    dataMode?.hashCode),
-                msgData?.hashCode),
-            txtData?.hashCode),
-        rawData?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        reqId?.hashCode ?? null.hashCode),
+                                    commMean?.hashCode ?? null.hashCode),
+                                destination?.hashCode ?? null.hashCode),
+                            deadline?.hashCode ?? null.hashCode),
+                        range?.hashCode ?? null.hashCode),
+                    dataMode?.hashCode ?? null.hashCode),
+                msgData?.hashCode ?? null.hashCode),
+            txtData?.hashCode ?? null.hashCode),
+        rawData?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -48869,14 +49610,18 @@ class _$TransmissionStatus extends TransmissionStatus {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    reqId?.hashCode),
-                status?.hashCode),
-            range?.hashCode),
-        info?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    reqId?.hashCode ?? null.hashCode),
+                status?.hashCode ?? null.hashCode),
+            range?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -49074,14 +49819,18 @@ class _$SmsRequest extends SmsRequest {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    reqId?.hashCode),
-                destination?.hashCode),
-            timeout?.hashCode),
-        smsText?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    reqId?.hashCode ?? null.hashCode),
+                destination?.hashCode ?? null.hashCode),
+            timeout?.hashCode ?? null.hashCode),
+        smsText?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -49273,13 +50022,15 @@ class _$SmsStatus extends SmsStatus {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                reqId?.hashCode),
-            status?.hashCode),
-        info?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                reqId?.hashCode ?? null.hashCode),
+            status?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -49454,11 +50205,13 @@ class _$VtolState extends VtolState {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        state?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        state?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -49619,11 +50372,13 @@ class _$ArmingState extends ArmingState {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        state?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        state?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -49799,14 +50554,18 @@ class _$TCPRequest extends TCPRequest {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    reqId?.hashCode),
-                destination?.hashCode),
-            timeout?.hashCode),
-        msgData?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    reqId?.hashCode ?? null.hashCode),
+                destination?.hashCode ?? null.hashCode),
+            timeout?.hashCode ?? null.hashCode),
+        msgData?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -49998,13 +50757,15 @@ class _$TCPStatus extends TCPStatus {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                reqId?.hashCode),
-            status?.hashCode),
-        info?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                reqId?.hashCode ?? null.hashCode),
+            status?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -50173,10 +50934,12 @@ class _$Abort extends Abort {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -50378,20 +51141,23 @@ class _$PlanSpecification extends PlanSpecification {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        planId?.hashCode),
-                                    description?.hashCode),
-                                vnamespace?.hashCode),
-                            variables?.hashCode),
-                        startManId?.hashCode),
-                    maneuvers?.hashCode),
-                transitions?.hashCode),
-            startActions?.hashCode),
-        endActions?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        planId?.hashCode ?? null.hashCode),
+                                    description?.hashCode ?? null.hashCode),
+                                vnamespace?.hashCode ?? null.hashCode),
+                            variables?.hashCode ?? null.hashCode),
+                        startManId?.hashCode ?? null.hashCode),
+                    maneuvers?.hashCode ?? null.hashCode),
+                transitions?.hashCode ?? null.hashCode),
+            startActions?.hashCode ?? null.hashCode),
+        endActions?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -50627,14 +51393,18 @@ class _$PlanManeuver extends PlanManeuver {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    maneuverId?.hashCode),
-                data?.hashCode),
-            startActions?.hashCode),
-        endActions?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    maneuverId?.hashCode ?? null.hashCode),
+                data?.hashCode ?? null.hashCode),
+            startActions?.hashCode ?? null.hashCode),
+        endActions?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -50833,14 +51603,18 @@ class _$PlanTransition extends PlanTransition {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    sourceMan?.hashCode),
-                destMan?.hashCode),
-            conditions?.hashCode),
-        actions?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    sourceMan?.hashCode ?? null.hashCode),
+                destMan?.hashCode ?? null.hashCode),
+            conditions?.hashCode ?? null.hashCode),
+        actions?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -51029,12 +51803,14 @@ class _$EmergencyControl extends EmergencyControl {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            command?.hashCode),
-        plan?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            command?.hashCode ?? null.hashCode),
+        plan?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -51216,13 +51992,15 @@ class _$EmergencyControlState extends EmergencyControlState {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                state?.hashCode),
-            planId?.hashCode),
-        commLevel?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                state?.hashCode ?? null.hashCode),
+            planId?.hashCode ?? null.hashCode),
+        commLevel?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -51426,17 +52204,21 @@ class _$PlanDB extends PlanDB {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            type?.hashCode),
-                        op?.hashCode),
-                    requestId?.hashCode),
-                planId?.hashCode),
-            arg?.hashCode),
-        info?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            type?.hashCode ?? null.hashCode),
+                        op?.hashCode ?? null.hashCode),
+                    requestId?.hashCode ?? null.hashCode),
+                planId?.hashCode ?? null.hashCode),
+            arg?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -51664,18 +52446,22 @@ class _$PlanDBState extends PlanDBState {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                planCount?.hashCode),
-                            planSize?.hashCode),
-                        changeTime?.hashCode),
-                    changeSid?.hashCode),
-                changeSname?.hashCode),
-            md5?.hashCode),
-        plansInfo?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                planCount?.hashCode ?? null.hashCode),
+                            planSize?.hashCode ?? null.hashCode),
+                        changeTime?.hashCode ?? null.hashCode),
+                    changeSid?.hashCode ?? null.hashCode),
+                changeSname?.hashCode ?? null.hashCode),
+            md5?.hashCode ?? null.hashCode),
+        plansInfo?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -51909,17 +52695,21 @@ class _$PlanDBInformation extends PlanDBInformation {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            planId?.hashCode),
-                        planSize?.hashCode),
-                    changeTime?.hashCode),
-                changeSid?.hashCode),
-            changeSname?.hashCode),
-        md5?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            planId?.hashCode ?? null.hashCode),
+                        planSize?.hashCode ?? null.hashCode),
+                    changeTime?.hashCode ?? null.hashCode),
+                changeSid?.hashCode ?? null.hashCode),
+            changeSname?.hashCode ?? null.hashCode),
+        md5?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -52147,18 +52937,22 @@ class _$PlanControl extends PlanControl {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                type?.hashCode),
-                            op?.hashCode),
-                        requestId?.hashCode),
-                    planId?.hashCode),
-                flags?.hashCode),
-            arg?.hashCode),
-        info?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                type?.hashCode ?? null.hashCode),
+                            op?.hashCode ?? null.hashCode),
+                        requestId?.hashCode ?? null.hashCode),
+                    planId?.hashCode ?? null.hashCode),
+                flags?.hashCode ?? null.hashCode),
+            arg?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -52400,19 +53194,25 @@ class _$PlanControlState extends PlanControlState {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    state?.hashCode),
-                                planId?.hashCode),
-                            planEta?.hashCode),
-                        planProgress?.hashCode),
-                    manId?.hashCode),
-                manType?.hashCode),
-            manEta?.hashCode),
-        lastOutcome?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    state?.hashCode ?? null.hashCode),
+                                planId?.hashCode ?? null.hashCode),
+                            planEta?.hashCode ?? null.hashCode),
+                        planProgress?.hashCode ?? null.hashCode),
+                    manId?.hashCode ?? null.hashCode),
+                manType?.hashCode ?? null.hashCode),
+            manEta?.hashCode ?? null.hashCode),
+        lastOutcome?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -52640,14 +53440,18 @@ class _$PlanVariable extends PlanVariable {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    name?.hashCode),
-                value?.hashCode),
-            type?.hashCode),
-        access?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    name?.hashCode ?? null.hashCode),
+                value?.hashCode ?? null.hashCode),
+            type?.hashCode ?? null.hashCode),
+        access?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -52844,14 +53648,18 @@ class _$PlanGeneration extends PlanGeneration {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    cmd?.hashCode),
-                op?.hashCode),
-            planId?.hashCode),
-        params?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    cmd?.hashCode ?? null.hashCode),
+                op?.hashCode ?? null.hashCode),
+            planId?.hashCode ?? null.hashCode),
+        params?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -53124,26 +53932,26 @@ class _$LeaderState extends LeaderState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode), src?.hashCode), srcEnt?.hashCode), dst?.hashCode), dstEnt?.hashCode), groupName?.hashCode),
-                                                                                op?.hashCode),
-                                                                            lat?.hashCode),
-                                                                        lon?.hashCode),
-                                                                    height?.hashCode),
-                                                                x?.hashCode),
-                                                            y?.hashCode),
-                                                        z?.hashCode),
-                                                    phi?.hashCode),
-                                                theta?.hashCode),
-                                            psi?.hashCode),
-                                        vx?.hashCode),
-                                    vy?.hashCode),
-                                vz?.hashCode),
-                            p?.hashCode),
-                        q?.hashCode),
-                    r?.hashCode),
-                svx?.hashCode),
-            svy?.hashCode),
-        svz?.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode), srcEnt?.hashCode ?? null.hashCode), dst?.hashCode ?? null.hashCode), dstEnt?.hashCode ?? null.hashCode), groupName?.hashCode ?? null.hashCode),
+                                                                                op?.hashCode ?? null.hashCode),
+                                                                            lat?.hashCode ?? null.hashCode),
+                                                                        lon?.hashCode ?? null.hashCode),
+                                                                    height?.hashCode ?? null.hashCode),
+                                                                x?.hashCode ?? null.hashCode),
+                                                            y?.hashCode ?? null.hashCode),
+                                                        z?.hashCode ?? null.hashCode),
+                                                    phi?.hashCode ?? null.hashCode),
+                                                theta?.hashCode ?? null.hashCode),
+                                            psi?.hashCode ?? null.hashCode),
+                                        vx?.hashCode ?? null.hashCode),
+                                    vy?.hashCode ?? null.hashCode),
+                                vz?.hashCode ?? null.hashCode),
+                            p?.hashCode ?? null.hashCode),
+                        q?.hashCode ?? null.hashCode),
+                    r?.hashCode ?? null.hashCode),
+                svx?.hashCode ?? null.hashCode),
+            svy?.hashCode ?? null.hashCode),
+        svz?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -53476,18 +54284,22 @@ class _$PlanStatistics extends PlanStatistics {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                planId?.hashCode),
-                            type?.hashCode),
-                        properties?.hashCode),
-                    durations?.hashCode),
-                distances?.hashCode),
-            actions?.hashCode),
-        fuel?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                planId?.hashCode ?? null.hashCode),
+                            type?.hashCode ?? null.hashCode),
+                        properties?.hashCode ?? null.hashCode),
+                    durations?.hashCode ?? null.hashCode),
+                distances?.hashCode ?? null.hashCode),
+            actions?.hashCode ?? null.hashCode),
+        fuel?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -53737,20 +54549,23 @@ class _$ReportedState extends ReportedState {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        lat?.hashCode),
-                                    lon?.hashCode),
-                                depth?.hashCode),
-                            roll?.hashCode),
-                        pitch?.hashCode),
-                    yaw?.hashCode),
-                rcpTime?.hashCode),
-            sid?.hashCode),
-        sType?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        lat?.hashCode ?? null.hashCode),
+                                    lon?.hashCode ?? null.hashCode),
+                                depth?.hashCode ?? null.hashCode),
+                            roll?.hashCode ?? null.hashCode),
+                        pitch?.hashCode ?? null.hashCode),
+                    yaw?.hashCode ?? null.hashCode),
+                rcpTime?.hashCode ?? null.hashCode),
+            sid?.hashCode ?? null.hashCode),
+        sType?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -54005,18 +54820,22 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                id?.hashCode),
-                            sensorClass?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                alt?.hashCode),
-            heading?.hashCode),
-        data?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                id?.hashCode ?? null.hashCode),
+                            sensorClass?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                alt?.hashCode ?? null.hashCode),
+            heading?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -54228,12 +55047,14 @@ class _$Map extends Map {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            id?.hashCode),
-        features?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            id?.hashCode ?? null.hashCode),
+        features?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -54427,17 +55248,21 @@ class _$MapFeature extends MapFeature {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            id?.hashCode),
-                        featureType?.hashCode),
-                    rgbRed?.hashCode),
-                rgbGreen?.hashCode),
-            rgbBlue?.hashCode),
-        feature?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            id?.hashCode ?? null.hashCode),
+                        featureType?.hashCode ?? null.hashCode),
+                    rgbRed?.hashCode ?? null.hashCode),
+                rgbGreen?.hashCode ?? null.hashCode),
+            rgbBlue?.hashCode ?? null.hashCode),
+        feature?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -54644,13 +55469,15 @@ class _$MapPoint extends MapPoint {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                lat?.hashCode),
-            lon?.hashCode),
-        alt?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                lat?.hashCode ?? null.hashCode),
+            lon?.hashCode ?? null.hashCode),
+        alt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -54837,13 +55664,15 @@ class _$CcuEvent extends CcuEvent {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                type?.hashCode),
-            id?.hashCode),
-        arg?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                type?.hashCode ?? null.hashCode),
+            id?.hashCode ?? null.hashCode),
+        arg?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -55023,12 +55852,14 @@ class _$VehicleLinks extends VehicleLinks {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            localname?.hashCode),
-        links?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            localname?.hashCode ?? null.hashCode),
+        links?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -55207,13 +56038,15 @@ class _$TrexObservation extends TrexObservation {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                timeline?.hashCode),
-            predicate?.hashCode),
-        attributes?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                timeline?.hashCode ?? null.hashCode),
+            predicate?.hashCode ?? null.hashCode),
+        attributes?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -55399,13 +56232,15 @@ class _$TrexCommand extends TrexCommand {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                command?.hashCode),
-            goalId?.hashCode),
-        goalXml?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                command?.hashCode ?? null.hashCode),
+            goalId?.hashCode ?? null.hashCode),
+        goalXml?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -55590,13 +56425,15 @@ class _$TrexOperation extends TrexOperation {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                op?.hashCode),
-            goalId?.hashCode),
-        token?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                op?.hashCode ?? null.hashCode),
+            goalId?.hashCode ?? null.hashCode),
+        token?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -55786,14 +56623,18 @@ class _$TrexAttribute extends TrexAttribute {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    name?.hashCode),
-                attrType?.hashCode),
-            min?.hashCode),
-        max?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    name?.hashCode ?? null.hashCode),
+                attrType?.hashCode ?? null.hashCode),
+            min?.hashCode ?? null.hashCode),
+        max?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -55986,13 +56827,15 @@ class _$TrexToken extends TrexToken {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                timeline?.hashCode),
-            predicate?.hashCode),
-        attributes?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                timeline?.hashCode ?? null.hashCode),
+            predicate?.hashCode ?? null.hashCode),
+        attributes?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -56173,12 +57016,14 @@ class _$TrexPlan extends TrexPlan {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            reactor?.hashCode),
-        tokens?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            reactor?.hashCode ?? null.hashCode),
+        tokens?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -56351,12 +57196,14 @@ class _$Event extends Event {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            topic?.hashCode),
-        data?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            topic?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -56530,12 +57377,14 @@ class _$CompressedImage extends CompressedImage {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            frameid?.hashCode),
-        data?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            frameid?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -56720,14 +57569,18 @@ class _$ImageTxSettings extends ImageTxSettings {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    fps?.hashCode),
-                quality?.hashCode),
-            reps?.hashCode),
-        tsize?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    fps?.hashCode ?? null.hashCode),
+                quality?.hashCode ?? null.hashCode),
+            reps?.hashCode ?? null.hashCode),
+        tsize?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -56931,16 +57784,20 @@ class _$RemoteState extends RemoteState {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                depth?.hashCode),
-            speed?.hashCode),
-        psi?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                depth?.hashCode ?? null.hashCode),
+            speed?.hashCode ?? null.hashCode),
+        psi?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -57163,18 +58020,22 @@ class _$Target extends Target {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, timestamp?.hashCode),
-                                                src?.hashCode),
-                                            srcEnt?.hashCode),
-                                        dst?.hashCode),
-                                    dstEnt?.hashCode),
-                                label?.hashCode),
-                            lat?.hashCode),
-                        lon?.hashCode),
-                    z?.hashCode),
-                zUnits?.hashCode),
-            cog?.hashCode),
-        sog?.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    0,
+                                                    timestamp?.hashCode ??
+                                                        null.hashCode),
+                                                src?.hashCode ?? null.hashCode),
+                                            srcEnt?.hashCode ?? null.hashCode),
+                                        dst?.hashCode ?? null.hashCode),
+                                    dstEnt?.hashCode ?? null.hashCode),
+                                label?.hashCode ?? null.hashCode),
+                            lat?.hashCode ?? null.hashCode),
+                        lon?.hashCode ?? null.hashCode),
+                    z?.hashCode ?? null.hashCode),
+                zUnits?.hashCode ?? null.hashCode),
+            cog?.hashCode ?? null.hashCode),
+        sog?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -57386,12 +58247,14 @@ class _$EntityParameter extends EntityParameter {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            name?.hashCode),
-        value?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            name?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -57567,12 +58430,14 @@ class _$EntityParameters extends EntityParameters {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            name?.hashCode),
-        params?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            name?.hashCode ?? null.hashCode),
+        params?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -57754,13 +58619,15 @@ class _$QueryEntityParameters extends QueryEntityParameters {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                name?.hashCode),
-            visibility?.hashCode),
-        scope?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                name?.hashCode ?? null.hashCode),
+            visibility?.hashCode ?? null.hashCode),
+        scope?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -57946,12 +58813,14 @@ class _$SetEntityParameters extends SetEntityParameters {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            name?.hashCode),
-        params?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            name?.hashCode ?? null.hashCode),
+        params?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -58125,11 +58994,13 @@ class _$SaveEntityParameters extends SaveEntityParameters {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        name?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        name?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -58293,11 +59164,13 @@ class _$CreateSession extends CreateSession {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        timeout?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        timeout?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -58458,11 +59331,13 @@ class _$CloseSession extends CloseSession {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        sessid?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        sessid?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -58631,12 +59506,14 @@ class _$SessionSubscription extends SessionSubscription {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            sessid?.hashCode),
-        messages?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            sessid?.hashCode ?? null.hashCode),
+        messages?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -58809,11 +59686,13 @@ class _$SessionKeepAlive extends SessionKeepAlive {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        sessid?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        sessid?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -58980,12 +59859,14 @@ class _$SessionStatus extends SessionStatus {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            sessid?.hashCode),
-        status?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            sessid?.hashCode ?? null.hashCode),
+        status?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -59156,11 +60037,13 @@ class _$PushEntityParameters extends PushEntityParameters {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        name?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        name?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -59327,11 +60210,13 @@ class _$PopEntityParameters extends PopEntityParameters {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        name?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        name?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -59500,12 +60385,14 @@ class _$IoEvent extends IoEvent {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            type?.hashCode),
-        error?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            type?.hashCode ?? null.hashCode),
+        error?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -59688,14 +60575,18 @@ class _$UamTxFrame extends UamTxFrame {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    seq?.hashCode),
-                sysDst?.hashCode),
-            flags?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    seq?.hashCode ?? null.hashCode),
+                sysDst?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -59892,14 +60783,18 @@ class _$UamRxFrame extends UamRxFrame {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    sysSrc?.hashCode),
-                sysDst?.hashCode),
-            flags?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    sysSrc?.hashCode ?? null.hashCode),
+                sysDst?.hashCode ?? null.hashCode),
+            flags?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -60091,13 +60986,15 @@ class _$UamTxStatus extends UamTxStatus {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                seq?.hashCode),
-            value?.hashCode),
-        error?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                seq?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        error?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -60282,13 +61179,15 @@ class _$UamRxRange extends UamRxRange {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                seq?.hashCode),
-            sys?.hashCode),
-        value?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                seq?.hashCode ?? null.hashCode),
+            sys?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -60473,13 +61372,15 @@ class _$UamTxRange extends UamTxRange {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                seq?.hashCode),
-            sysDst?.hashCode),
-        timeout?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                seq?.hashCode ?? null.hashCode),
+            sysDst?.hashCode ?? null.hashCode),
+        timeout?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -60681,17 +61582,21 @@ class _$FormCtrlParam extends FormCtrlParam {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            action?.hashCode),
-                        lonGain?.hashCode),
-                    latGain?.hashCode),
-                bondThick?.hashCode),
-            leadGain?.hashCode),
-        deconflGain?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            action?.hashCode ?? null.hashCode),
+                        lonGain?.hashCode ?? null.hashCode),
+                    latGain?.hashCode ?? null.hashCode),
+                bondThick?.hashCode ?? null.hashCode),
+            leadGain?.hashCode ?? null.hashCode),
+        deconflGain?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -60899,13 +61804,15 @@ class _$FormationEval extends FormationEval {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                errMean?.hashCode),
-            distMinAbs?.hashCode),
-        distMinMean?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                errMean?.hashCode ?? null.hashCode),
+            distMinAbs?.hashCode ?? null.hashCode),
+        distMinMean?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -61142,22 +62049,30 @@ class _$FormationControlParams extends FormationControlParams {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                action?.hashCode),
-                                            lonGain?.hashCode),
-                                        latGain?.hashCode),
-                                    bondThick?.hashCode),
-                                leadGain?.hashCode),
-                            deconflGain?.hashCode),
-                        accelSwitchGain?.hashCode),
-                    safeDist?.hashCode),
-                deconflictOffset?.hashCode),
-            accelSafeMargin?.hashCode),
-        accelLimX?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                action?.hashCode ??
+                                                    null.hashCode),
+                                            lonGain?.hashCode ?? null.hashCode),
+                                        latGain?.hashCode ?? null.hashCode),
+                                    bondThick?.hashCode ?? null.hashCode),
+                                leadGain?.hashCode ?? null.hashCode),
+                            deconflGain?.hashCode ?? null.hashCode),
+                        accelSwitchGain?.hashCode ?? null.hashCode),
+                    safeDist?.hashCode ?? null.hashCode),
+                deconflictOffset?.hashCode ?? null.hashCode),
+            accelSafeMargin?.hashCode ?? null.hashCode),
+        accelLimX?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -61439,19 +62354,25 @@ class _$FormationEvaluation extends FormationEvaluation {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, timestamp?.hashCode),
-                                                    src?.hashCode),
-                                                srcEnt?.hashCode),
-                                            dst?.hashCode),
-                                        dstEnt?.hashCode),
-                                    type?.hashCode),
-                                op?.hashCode),
-                            errMean?.hashCode),
-                        distMinAbs?.hashCode),
-                    distMinMean?.hashCode),
-                rollRateMean?.hashCode),
-            time?.hashCode),
-        controlParams?.hashCode));
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        timestamp?.hashCode ??
+                                                            null.hashCode),
+                                                    src?.hashCode ??
+                                                        null.hashCode),
+                                                srcEnt?.hashCode ??
+                                                    null.hashCode),
+                                            dst?.hashCode ?? null.hashCode),
+                                        dstEnt?.hashCode ?? null.hashCode),
+                                    type?.hashCode ?? null.hashCode),
+                                op?.hashCode ?? null.hashCode),
+                            errMean?.hashCode ?? null.hashCode),
+                        distMinAbs?.hashCode ?? null.hashCode),
+                    distMinMean?.hashCode ?? null.hashCode),
+                rollRateMean?.hashCode ?? null.hashCode),
+            time?.hashCode ?? null.hashCode),
+        controlParams?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -61680,14 +62601,18 @@ class _$SoiWaypoint extends SoiWaypoint {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    lat?.hashCode),
-                lon?.hashCode),
-            eta?.hashCode),
-        duration?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    lat?.hashCode ?? null.hashCode),
+                lon?.hashCode ?? null.hashCode),
+            eta?.hashCode ?? null.hashCode),
+        duration?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -61874,12 +62799,14 @@ class _$SoiPlan extends SoiPlan {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            planId?.hashCode),
-        waypoints?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            planId?.hashCode ?? null.hashCode),
+        waypoints?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -62068,16 +62995,20 @@ class _$SoiCommand extends SoiCommand {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        type?.hashCode),
-                    command?.hashCode),
-                settings?.hashCode),
-            plan?.hashCode),
-        info?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        type?.hashCode ?? null.hashCode),
+                    command?.hashCode ?? null.hashCode),
+                settings?.hashCode ?? null.hashCode),
+            plan?.hashCode ?? null.hashCode),
+        info?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -62281,14 +63212,18 @@ class _$SoiState extends SoiState {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    state?.hashCode),
-                planId?.hashCode),
-            wptId?.hashCode),
-        settingsChk?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    state?.hashCode ?? null.hashCode),
+                planId?.hashCode ?? null.hashCode),
+            wptId?.hashCode ?? null.hashCode),
+        settingsChk?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -62485,14 +63420,18 @@ class _$MessagePart extends MessagePart {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    uid?.hashCode),
-                fragNumber?.hashCode),
-            numFrags?.hashCode),
-        data?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    uid?.hashCode ?? null.hashCode),
+                fragNumber?.hashCode ?? null.hashCode),
+            numFrags?.hashCode ?? null.hashCode),
+        data?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -62679,12 +63618,14 @@ class _$NeptusBlob extends NeptusBlob {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            contentType?.hashCode),
-        content?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            contentType?.hashCode ?? null.hashCode),
+        content?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -62846,10 +63787,12 @@ class _$Aborted extends Aborted {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -63013,13 +63956,15 @@ class _$UsblAngles extends UsblAngles {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                target?.hashCode),
-            bearing?.hashCode),
-        elevation?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                target?.hashCode ?? null.hashCode),
+            bearing?.hashCode ?? null.hashCode),
+        elevation?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -63211,14 +64156,18 @@ class _$UsblPosition extends UsblPosition {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                srcEnt?.hashCode),
-                            dst?.hashCode),
-                        dstEnt?.hashCode),
-                    target?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src?.hashCode ?? null.hashCode),
+                                srcEnt?.hashCode ?? null.hashCode),
+                            dst?.hashCode ?? null.hashCode),
+                        dstEnt?.hashCode ?? null.hashCode),
+                    target?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -63421,16 +64370,20 @@ class _$UsblFix extends UsblFix {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        target?.hashCode),
-                    lat?.hashCode),
-                lon?.hashCode),
-            zUnits?.hashCode),
-        z?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        target?.hashCode ?? null.hashCode),
+                    lat?.hashCode ?? null.hashCode),
+                lon?.hashCode ?? null.hashCode),
+            zUnits?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -63626,12 +64579,14 @@ class _$ParametersXml extends ParametersXml {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            locale?.hashCode),
-        config?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            locale?.hashCode ?? null.hashCode),
+        config?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -63795,10 +64750,12 @@ class _$GetParametersXml extends GetParametersXml {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                srcEnt?.hashCode),
-            dst?.hashCode),
-        dstEnt?.hashCode));
+            $jc(
+                $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                    src?.hashCode ?? null.hashCode),
+                srcEnt?.hashCode ?? null.hashCode),
+            dst?.hashCode ?? null.hashCode),
+        dstEnt?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -63963,13 +64920,15 @@ class _$SetImageCoords extends SetImageCoords {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                camId?.hashCode),
-            x?.hashCode),
-        y?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                camId?.hashCode ?? null.hashCode),
+            x?.hashCode ?? null.hashCode),
+        y?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -64154,13 +65113,15 @@ class _$GetImageCoords extends GetImageCoords {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                camId?.hashCode),
-            x?.hashCode),
-        y?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                camId?.hashCode ?? null.hashCode),
+            x?.hashCode ?? null.hashCode),
+        y?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -64364,17 +65325,21 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            tracking?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                x?.hashCode),
-            y?.hashCode),
-        z?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            tracking?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                x?.hashCode ?? null.hashCode),
+            y?.hashCode ?? null.hashCode),
+        z?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -64624,20 +65589,23 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
                                                         $jc(
                                                             0,
                                                             timestamp
-                                                                ?.hashCode),
-                                                        src?.hashCode),
-                                                    srcEnt?.hashCode),
-                                                dst?.hashCode),
-                                            dstEnt?.hashCode),
-                                        target?.hashCode),
-                                    lbearing?.hashCode),
-                                lelevation?.hashCode),
-                            bearing?.hashCode),
-                        elevation?.hashCode),
-                    phi?.hashCode),
-                theta?.hashCode),
-            psi?.hashCode),
-        accuracy?.hashCode));
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        src?.hashCode ??
+                                                            null.hashCode),
+                                                    srcEnt?.hashCode ??
+                                                        null.hashCode),
+                                                dst?.hashCode ?? null.hashCode),
+                                            dstEnt?.hashCode ?? null.hashCode),
+                                        target?.hashCode ?? null.hashCode),
+                                    lbearing?.hashCode ?? null.hashCode),
+                                lelevation?.hashCode ?? null.hashCode),
+                            bearing?.hashCode ?? null.hashCode),
+                        elevation?.hashCode ?? null.hashCode),
+                    phi?.hashCode ?? null.hashCode),
+                theta?.hashCode ?? null.hashCode),
+            psi?.hashCode ?? null.hashCode),
+        accuracy?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -64921,22 +65889,30 @@ class _$UsblPositionExtended extends UsblPositionExtended {
                                                                 $jc(
                                                                     0,
                                                                     timestamp
-                                                                        ?.hashCode),
-                                                                src?.hashCode),
-                                                            srcEnt?.hashCode),
-                                                        dst?.hashCode),
-                                                    dstEnt?.hashCode),
-                                                target?.hashCode),
-                                            x?.hashCode),
-                                        y?.hashCode),
-                                    z?.hashCode),
-                                n?.hashCode),
-                            e?.hashCode),
-                        d?.hashCode),
-                    phi?.hashCode),
-                theta?.hashCode),
-            psi?.hashCode),
-        accuracy?.hashCode));
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                src?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            srcEnt?.hashCode ??
+                                                                null.hashCode),
+                                                        dst?.hashCode ??
+                                                            null.hashCode),
+                                                    dstEnt?.hashCode ??
+                                                        null.hashCode),
+                                                target?.hashCode ??
+                                                    null.hashCode),
+                                            x?.hashCode ?? null.hashCode),
+                                        y?.hashCode ?? null.hashCode),
+                                    z?.hashCode ?? null.hashCode),
+                                n?.hashCode ?? null.hashCode),
+                            e?.hashCode ?? null.hashCode),
+                        d?.hashCode ?? null.hashCode),
+                    phi?.hashCode ?? null.hashCode),
+                theta?.hashCode ?? null.hashCode),
+            psi?.hashCode ?? null.hashCode),
+        accuracy?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -65200,17 +66176,21 @@ class _$UsblFixExtended extends UsblFixExtended {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            target?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                zUnits?.hashCode),
-            z?.hashCode),
-        accuracy?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            target?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                zUnits?.hashCode ?? null.hashCode),
+            z?.hashCode ?? null.hashCode),
+        accuracy?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -65430,16 +66410,20 @@ class _$UsblModem extends UsblModem {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, timestamp?.hashCode),
-                                        src?.hashCode),
-                                    srcEnt?.hashCode),
-                                dst?.hashCode),
-                            dstEnt?.hashCode),
-                        name?.hashCode),
-                    lat?.hashCode),
-                lon?.hashCode),
-            z?.hashCode),
-        zUnits?.hashCode));
+                                    $jc(
+                                        $jc(
+                                            0,
+                                            timestamp?.hashCode ??
+                                                null.hashCode),
+                                        src?.hashCode ?? null.hashCode),
+                                    srcEnt?.hashCode ?? null.hashCode),
+                                dst?.hashCode ?? null.hashCode),
+                            dstEnt?.hashCode ?? null.hashCode),
+                        name?.hashCode ?? null.hashCode),
+                    lat?.hashCode ?? null.hashCode),
+                lon?.hashCode ?? null.hashCode),
+            z?.hashCode ?? null.hashCode),
+        zUnits?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -65635,12 +66619,14 @@ class _$UsblConfig extends UsblConfig {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            op?.hashCode),
-        modems?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            op?.hashCode ?? null.hashCode),
+        modems?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -65816,12 +66802,14 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            value?.hashCode),
-        type?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        type?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -65996,11 +66984,13 @@ class _$OpticalBackscatter extends OpticalBackscatter {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -66250,26 +67240,55 @@ class _$Tachograph extends Tachograph {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                                                                srcEnt?.hashCode),
-                                                                            dst?.hashCode),
-                                                                        dstEnt?.hashCode),
-                                                                    timestampLastService?.hashCode),
-                                                                timeNextService?.hashCode),
-                                                            timeMotorNextService?.hashCode),
-                                                        timeIdleGround?.hashCode),
-                                                    timeIdleAir?.hashCode),
-                                                timeIdleWater?.hashCode),
-                                            timeIdleUnderwater?.hashCode),
-                                        timeIdleUnknown?.hashCode),
-                                    timeMotorGround?.hashCode),
-                                timeMotorAir?.hashCode),
-                            timeMotorWater?.hashCode),
-                        timeMotorUnderwater?.hashCode),
-                    timeMotorUnknown?.hashCode),
-                rpmMin?.hashCode),
-            rpmMax?.hashCode),
-        depthMax?.hashCode));
+                                                                            $jc(
+                                                                                $jc(
+                                                                                    $jc(
+                                                                                        0,
+                                                                                        timestamp?.hashCode ??
+                                                                                            null
+                                                                                                .hashCode),
+                                                                                    src?.hashCode ??
+                                                                                        null
+                                                                                            .hashCode),
+                                                                                srcEnt?.hashCode ??
+                                                                                    null
+                                                                                        .hashCode),
+                                                                            dst?.hashCode ??
+                                                                                null
+                                                                                    .hashCode),
+                                                                        dstEnt?.hashCode ??
+                                                                            null
+                                                                                .hashCode),
+                                                                    timestampLastService
+                                                                            ?.hashCode ??
+                                                                        null
+                                                                            .hashCode),
+                                                                timeNextService
+                                                                        ?.hashCode ??
+                                                                    null
+                                                                        .hashCode),
+                                                            timeMotorNextService
+                                                                    ?.hashCode ??
+                                                                null.hashCode),
+                                                        timeIdleGround
+                                                                ?.hashCode ??
+                                                            null.hashCode),
+                                                    timeIdleAir?.hashCode ??
+                                                        null.hashCode),
+                                                timeIdleWater?.hashCode ??
+                                                    null.hashCode),
+                                            timeIdleUnderwater?.hashCode ??
+                                                null.hashCode),
+                                        timeIdleUnknown?.hashCode ??
+                                            null.hashCode),
+                                    timeMotorGround?.hashCode ?? null.hashCode),
+                                timeMotorAir?.hashCode ?? null.hashCode),
+                            timeMotorWater?.hashCode ?? null.hashCode),
+                        timeMotorUnderwater?.hashCode ?? null.hashCode),
+                    timeMotorUnknown?.hashCode ?? null.hashCode),
+                rpmMin?.hashCode ?? null.hashCode),
+            rpmMax?.hashCode ?? null.hashCode),
+        depthMax?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -66551,12 +67570,14 @@ class _$ApmStatus extends ApmStatus {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                        srcEnt?.hashCode),
-                    dst?.hashCode),
-                dstEnt?.hashCode),
-            severity?.hashCode),
-        text?.hashCode));
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src?.hashCode ?? null.hashCode),
+                        srcEnt?.hashCode ?? null.hashCode),
+                    dst?.hashCode ?? null.hashCode),
+                dstEnt?.hashCode ?? null.hashCode),
+            severity?.hashCode ?? null.hashCode),
+        text?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -66734,13 +67755,15 @@ class _$SadcReadings extends SadcReadings {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                            srcEnt?.hashCode),
-                        dst?.hashCode),
-                    dstEnt?.hashCode),
-                channel?.hashCode),
-            value?.hashCode),
-        gain?.hashCode));
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src?.hashCode ?? null.hashCode),
+                            srcEnt?.hashCode ?? null.hashCode),
+                        dst?.hashCode ?? null.hashCode),
+                    dstEnt?.hashCode ?? null.hashCode),
+                channel?.hashCode ?? null.hashCode),
+            value?.hashCode ?? null.hashCode),
+        gain?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -66990,26 +68013,26 @@ class _$DmsDetection extends DmsDetection {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                                                                                srcEnt?.hashCode),
-                                                                            dst?.hashCode),
-                                                                        dstEnt?.hashCode),
-                                                                    ch01?.hashCode),
-                                                                ch02?.hashCode),
-                                                            ch03?.hashCode),
-                                                        ch04?.hashCode),
-                                                    ch05?.hashCode),
-                                                ch06?.hashCode),
-                                            ch07?.hashCode),
-                                        ch08?.hashCode),
-                                    ch09?.hashCode),
-                                ch10?.hashCode),
-                            ch11?.hashCode),
-                        ch12?.hashCode),
-                    ch13?.hashCode),
-                ch14?.hashCode),
-            ch15?.hashCode),
-        ch16?.hashCode));
+                                                                            $jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src?.hashCode ?? null.hashCode),
+                                                                                srcEnt?.hashCode ?? null.hashCode),
+                                                                            dst?.hashCode ?? null.hashCode),
+                                                                        dstEnt?.hashCode ?? null.hashCode),
+                                                                    ch01?.hashCode ?? null.hashCode),
+                                                                ch02?.hashCode ?? null.hashCode),
+                                                            ch03?.hashCode ?? null.hashCode),
+                                                        ch04?.hashCode ?? null.hashCode),
+                                                    ch05?.hashCode ?? null.hashCode),
+                                                ch06?.hashCode ?? null.hashCode),
+                                            ch07?.hashCode ?? null.hashCode),
+                                        ch08?.hashCode ?? null.hashCode),
+                                    ch09?.hashCode ?? null.hashCode),
+                                ch10?.hashCode ?? null.hashCode),
+                            ch11?.hashCode ?? null.hashCode),
+                        ch12?.hashCode ?? null.hashCode),
+                    ch13?.hashCode ?? null.hashCode),
+                ch14?.hashCode ?? null.hashCode),
+            ch15?.hashCode ?? null.hashCode),
+        ch16?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -67278,11 +68301,13 @@ class _$TotalMagIntensity extends TotalMagIntensity {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, timestamp?.hashCode), src?.hashCode),
-                    srcEnt?.hashCode),
-                dst?.hashCode),
-            dstEnt?.hashCode),
-        value?.hashCode));
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src?.hashCode ?? null.hashCode),
+                    srcEnt?.hashCode ?? null.hashCode),
+                dst?.hashCode ?? null.hashCode),
+            dstEnt?.hashCode ?? null.hashCode),
+        value?.hashCode ?? null.hashCode));
   }
 
   @override
@@ -67470,17 +68495,21 @@ class _$HomePosition extends HomePosition {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, timestamp?.hashCode),
-                                            src?.hashCode),
-                                        srcEnt?.hashCode),
-                                    dst?.hashCode),
-                                dstEnt?.hashCode),
-                            op?.hashCode),
-                        lat?.hashCode),
-                    lon?.hashCode),
-                height?.hashCode),
-            depth?.hashCode),
-        alt?.hashCode));
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src?.hashCode ?? null.hashCode),
+                                        srcEnt?.hashCode ?? null.hashCode),
+                                    dst?.hashCode ?? null.hashCode),
+                                dstEnt?.hashCode ?? null.hashCode),
+                            op?.hashCode ?? null.hashCode),
+                        lat?.hashCode ?? null.hashCode),
+                    lon?.hashCode ?? null.hashCode),
+                height?.hashCode ?? null.hashCode),
+            depth?.hashCode ?? null.hashCode),
+        alt?.hashCode ?? null.hashCode));
   }
 
   @override

@@ -326,11 +326,11 @@ void _writeMessageImmutable(
   var hashElements = <String>[];
   hashElements.addAll([
     '0',
-    'timestamp?.hashCode',
-    'src?.hashCode',
-    'srcEnt?.hashCode',
-    'dst?.hashCode',
-    'dstEnt?.hashCode',
+    'timestamp?.hashCode ?? null.hashCode',
+    'src?.hashCode ?? null.hashCode',
+    'srcEnt?.hashCode ?? null.hashCode',
+    'dst?.hashCode ?? null.hashCode',
+    'dstEnt?.hashCode ?? null.hashCode',
   ]);
 
   // Writting rest elements to oerator ==
@@ -380,7 +380,8 @@ void _writeMessageImmutable(
     }
     sink.write('$fStr');
 
-    hashElements.add('${_convertToFieldName(abbrev)}?.hashCode');
+    hashElements
+        .add('${_convertToFieldName(abbrev)}?.hashCode ?? null.hashCode');
   });
 
   var hashStr = '';
@@ -603,7 +604,7 @@ void _writeMessageSerializer(
   var serClassStart = '''class ${abbrev}Serializer
     extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
   @override
-  ByteData serialize(imc.$abbrev/*!*/ message) {
+  ByteData serialize(imc.$abbrev message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -622,7 +623,7 @@ void _writeMessageSerializer(
 
   @override
   int serializePayload(
-      imc.$abbrev/*!*/ message, ByteData byteData, int offset) {
+      imc.$abbrev message, ByteData byteData, int offset) {
     var byteOffset = offset;
 \n''';
   sink.write('$serClassStart');
