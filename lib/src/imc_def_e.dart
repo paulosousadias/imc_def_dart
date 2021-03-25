@@ -300,7 +300,7 @@ class CLoopsMaskBitfield extends BitfieldType {
 
   static CLoopsMaskBitfield fromBits(List<CLoopsMaskBitfield> bits) =>
       (bits == null || bits.length < 2)
-          ? CLoopsMaskBitfield(bits == null || bits.isEmpty ? 0 : bits[0])
+          ? CLoopsMaskBitfield(bits == null || bits.isEmpty ? 0 : bits[0].value)
           : bits.reduce((b1, b2) => CLoopsMaskBitfield(b1.value | b2.value));
 }
 
@@ -358,6 +358,7 @@ class OpLimitsMaskBitfield extends BitfieldType {
 
   static OpLimitsMaskBitfield fromBits(List<OpLimitsMaskBitfield> bits) =>
       (bits == null || bits.length < 2)
-          ? OpLimitsMaskBitfield(bits == null || bits.isEmpty ? 0 : bits[0])
+          ? OpLimitsMaskBitfield(
+              bits == null || bits.isEmpty ? 0 : bits[0].value)
           : bits.reduce((b1, b2) => OpLimitsMaskBitfield(b1.value | b2.value));
 }

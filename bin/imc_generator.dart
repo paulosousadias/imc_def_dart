@@ -1255,7 +1255,7 @@ void _writeEnumLikeWorker(
   static $eName fromBits(
           List<$eName> bits) =>
       (bits == null || bits.length < 2)
-          ? $eName(bits == null || bits.isEmpty ? 0 : bits[0])
+          ? $eName(bits == null || bits.isEmpty ? 0 : bits[0].value)
           : bits.reduce((b1, b2) => $eName(b1.value | b2.value));
 ''';
       break;
