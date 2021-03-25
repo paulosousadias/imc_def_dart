@@ -661,7 +661,7 @@ final messagesIdsSerializers = <int, ImcSerializerBuilder>{
 class EntityStateSerializer
     extends imc.ImcSerializer<imc.EntityState, imc.EntityStateBuilder> {
   @override
-  ByteData serialize(imc.EntityState /*!*/ message) {
+  ByteData serialize(imc.EntityState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -679,8 +679,7 @@ class EntityStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.EntityState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.EntityState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -779,7 +778,7 @@ class EntityStateSerializer
 class QueryEntityStateSerializer extends imc
     .ImcSerializer<imc.QueryEntityState, imc.QueryEntityStateBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityState /*!*/ message) {
+  ByteData serialize(imc.QueryEntityState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -798,7 +797,7 @@ class QueryEntityStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.QueryEntityState /*!*/ message, ByteData byteData, int offset) {
+      imc.QueryEntityState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -868,7 +867,7 @@ class QueryEntityStateSerializer extends imc
 class EntityInfoSerializer
     extends imc.ImcSerializer<imc.EntityInfo, imc.EntityInfoBuilder> {
   @override
-  ByteData serialize(imc.EntityInfo /*!*/ message) {
+  ByteData serialize(imc.EntityInfo message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -886,8 +885,7 @@ class EntityInfoSerializer
   }
 
   @override
-  int serializePayload(
-      imc.EntityInfo /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.EntityInfo message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -1007,7 +1005,7 @@ class EntityInfoSerializer
 class QueryEntityInfoSerializer
     extends imc.ImcSerializer<imc.QueryEntityInfo, imc.QueryEntityInfoBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityInfo /*!*/ message) {
+  ByteData serialize(imc.QueryEntityInfo message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1026,7 +1024,7 @@ class QueryEntityInfoSerializer
 
   @override
   int serializePayload(
-      imc.QueryEntityInfo /*!*/ message, ByteData byteData, int offset) {
+      imc.QueryEntityInfo message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -1104,7 +1102,7 @@ class QueryEntityInfoSerializer
 class EntityListSerializer
     extends imc.ImcSerializer<imc.EntityList, imc.EntityListBuilder> {
   @override
-  ByteData serialize(imc.EntityList /*!*/ message) {
+  ByteData serialize(imc.EntityList message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1122,8 +1120,7 @@ class EntityListSerializer
   }
 
   @override
-  int serializePayload(
-      imc.EntityList /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.EntityList message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -1216,7 +1213,7 @@ class EntityListSerializer
 class CpuUsageSerializer
     extends imc.ImcSerializer<imc.CpuUsage, imc.CpuUsageBuilder> {
   @override
-  ByteData serialize(imc.CpuUsage /*!*/ message) {
+  ByteData serialize(imc.CpuUsage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1234,8 +1231,7 @@ class CpuUsageSerializer
   }
 
   @override
-  int serializePayload(
-      imc.CpuUsage /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.CpuUsage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -1313,7 +1309,7 @@ class CpuUsageSerializer
 class TransportBindingsSerializer extends imc
     .ImcSerializer<imc.TransportBindings, imc.TransportBindingsBuilder> {
   @override
-  ByteData serialize(imc.TransportBindings /*!*/ message) {
+  ByteData serialize(imc.TransportBindings message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1332,7 +1328,7 @@ class TransportBindingsSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TransportBindings /*!*/ message, ByteData byteData, int offset) {
+      imc.TransportBindings message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field consumer
@@ -1425,7 +1421,7 @@ class TransportBindingsSerializer extends imc
 class RestartSystemSerializer
     extends imc.ImcSerializer<imc.RestartSystem, imc.RestartSystemBuilder> {
   @override
-  ByteData serialize(imc.RestartSystem /*!*/ message) {
+  ByteData serialize(imc.RestartSystem message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1444,7 +1440,7 @@ class RestartSystemSerializer
 
   @override
   int serializePayload(
-      imc.RestartSystem /*!*/ message, ByteData byteData, int offset) {
+      imc.RestartSystem message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -1522,7 +1518,7 @@ class RestartSystemSerializer
 class DevCalibrationControlSerializer extends imc.ImcSerializer<
     imc.DevCalibrationControl, imc.DevCalibrationControlBuilder> {
   @override
-  ByteData serialize(imc.DevCalibrationControl /*!*/ message) {
+  ByteData serialize(imc.DevCalibrationControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1541,7 +1537,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.DevCalibrationControl /*!*/ message, ByteData byteData, int offset) {
+      imc.DevCalibrationControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -1619,7 +1615,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
 class DevCalibrationStateSerializer extends imc
     .ImcSerializer<imc.DevCalibrationState, imc.DevCalibrationStateBuilder> {
   @override
-  ByteData serialize(imc.DevCalibrationState /*!*/ message) {
+  ByteData serialize(imc.DevCalibrationState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1638,7 +1634,7 @@ class DevCalibrationStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DevCalibrationState /*!*/ message, ByteData byteData, int offset) {
+      imc.DevCalibrationState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field totalSteps
@@ -1744,7 +1740,7 @@ class DevCalibrationStateSerializer extends imc
 class EntityActivationStateSerializer extends imc.ImcSerializer<
     imc.EntityActivationState, imc.EntityActivationStateBuilder> {
   @override
-  ByteData serialize(imc.EntityActivationState /*!*/ message) {
+  ByteData serialize(imc.EntityActivationState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1763,7 +1759,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.EntityActivationState /*!*/ message, ByteData byteData, int offset) {
+      imc.EntityActivationState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -1857,7 +1853,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
 class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
     imc.QueryEntityActivationState, imc.QueryEntityActivationStateBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityActivationState /*!*/ message) {
+  ByteData serialize(imc.QueryEntityActivationState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1875,8 +1871,8 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
   }
 
   @override
-  int serializePayload(imc.QueryEntityActivationState /*!*/ message,
-      ByteData byteData, int offset) {
+  int serializePayload(
+      imc.QueryEntityActivationState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -1946,7 +1942,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
 class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     imc.VehicleOperationalLimits, imc.VehicleOperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.VehicleOperationalLimits /*!*/ message) {
+  ByteData serialize(imc.VehicleOperationalLimits message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -1964,8 +1960,8 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
   }
 
   @override
-  int serializePayload(imc.VehicleOperationalLimits /*!*/ message,
-      ByteData byteData, int offset) {
+  int serializePayload(
+      imc.VehicleOperationalLimits message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -2146,7 +2142,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
 class MsgListSerializer
     extends imc.ImcSerializer<imc.MsgList, imc.MsgListBuilder> {
   @override
-  ByteData serialize(imc.MsgList /*!*/ message) {
+  ByteData serialize(imc.MsgList message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -2164,8 +2160,7 @@ class MsgListSerializer
   }
 
   @override
-  int serializePayload(
-      imc.MsgList /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.MsgList message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field msgs
@@ -2285,7 +2280,7 @@ class MsgListSerializer
 class SimulatedStateSerializer
     extends imc.ImcSerializer<imc.SimulatedState, imc.SimulatedStateBuilder> {
   @override
-  ByteData serialize(imc.SimulatedState /*!*/ message) {
+  ByteData serialize(imc.SimulatedState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -2304,7 +2299,7 @@ class SimulatedStateSerializer
 
   @override
   int serializePayload(
-      imc.SimulatedState /*!*/ message, ByteData byteData, int offset) {
+      imc.SimulatedState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -2484,7 +2479,7 @@ class SimulatedStateSerializer
 class LeakSimulationSerializer
     extends imc.ImcSerializer<imc.LeakSimulation, imc.LeakSimulationBuilder> {
   @override
-  ByteData serialize(imc.LeakSimulation /*!*/ message) {
+  ByteData serialize(imc.LeakSimulation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -2503,7 +2498,7 @@ class LeakSimulationSerializer
 
   @override
   int serializePayload(
-      imc.LeakSimulation /*!*/ message, ByteData byteData, int offset) {
+      imc.LeakSimulation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -2596,7 +2591,7 @@ class LeakSimulationSerializer
 class UASimulationSerializer
     extends imc.ImcSerializer<imc.UASimulation, imc.UASimulationBuilder> {
   @override
-  ByteData serialize(imc.UASimulation /*!*/ message) {
+  ByteData serialize(imc.UASimulation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -2615,7 +2610,7 @@ class UASimulationSerializer
 
   @override
   int serializePayload(
-      imc.UASimulation /*!*/ message, ByteData byteData, int offset) {
+      imc.UASimulation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -2712,7 +2707,7 @@ class UASimulationSerializer
 class DynamicsSimParamSerializer extends imc
     .ImcSerializer<imc.DynamicsSimParam, imc.DynamicsSimParamBuilder> {
   @override
-  ByteData serialize(imc.DynamicsSimParam /*!*/ message) {
+  ByteData serialize(imc.DynamicsSimParam message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -2731,7 +2726,7 @@ class DynamicsSimParamSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DynamicsSimParam /*!*/ message, ByteData byteData, int offset) {
+      imc.DynamicsSimParam message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -2821,7 +2816,7 @@ class DynamicsSimParamSerializer extends imc
 class StorageUsageSerializer
     extends imc.ImcSerializer<imc.StorageUsage, imc.StorageUsageBuilder> {
   @override
-  ByteData serialize(imc.StorageUsage /*!*/ message) {
+  ByteData serialize(imc.StorageUsage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -2840,7 +2835,7 @@ class StorageUsageSerializer
 
   @override
   int serializePayload(
-      imc.StorageUsage /*!*/ message, ByteData byteData, int offset) {
+      imc.StorageUsage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field available
@@ -2924,7 +2919,7 @@ class StorageUsageSerializer
 class CacheControlSerializer
     extends imc.ImcSerializer<imc.CacheControl, imc.CacheControlBuilder> {
   @override
-  ByteData serialize(imc.CacheControl /*!*/ message) {
+  ByteData serialize(imc.CacheControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -2943,7 +2938,7 @@ class CacheControlSerializer
 
   @override
   int serializePayload(
-      imc.CacheControl /*!*/ message, ByteData byteData, int offset) {
+      imc.CacheControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -3073,7 +3068,7 @@ class CacheControlSerializer
 class LoggingControlSerializer
     extends imc.ImcSerializer<imc.LoggingControl, imc.LoggingControlBuilder> {
   @override
-  ByteData serialize(imc.LoggingControl /*!*/ message) {
+  ByteData serialize(imc.LoggingControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3092,7 +3087,7 @@ class LoggingControlSerializer
 
   @override
   int serializePayload(
-      imc.LoggingControl /*!*/ message, ByteData byteData, int offset) {
+      imc.LoggingControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -3185,7 +3180,7 @@ class LoggingControlSerializer
 class LogBookEntrySerializer
     extends imc.ImcSerializer<imc.LogBookEntry, imc.LogBookEntryBuilder> {
   @override
-  ByteData serialize(imc.LogBookEntry /*!*/ message) {
+  ByteData serialize(imc.LogBookEntry message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3204,7 +3199,7 @@ class LogBookEntrySerializer
 
   @override
   int serializePayload(
-      imc.LogBookEntry /*!*/ message, ByteData byteData, int offset) {
+      imc.LogBookEntry message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -3318,7 +3313,7 @@ class LogBookEntrySerializer
 class LogBookControlSerializer
     extends imc.ImcSerializer<imc.LogBookControl, imc.LogBookControlBuilder> {
   @override
-  ByteData serialize(imc.LogBookControl /*!*/ message) {
+  ByteData serialize(imc.LogBookControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3337,7 +3332,7 @@ class LogBookControlSerializer
 
   @override
   int serializePayload(
-      imc.LogBookControl /*!*/ message, ByteData byteData, int offset) {
+      imc.LogBookControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field command
@@ -3470,7 +3465,7 @@ class LogBookControlSerializer
 class ReplayControlSerializer
     extends imc.ImcSerializer<imc.ReplayControl, imc.ReplayControlBuilder> {
   @override
-  ByteData serialize(imc.ReplayControl /*!*/ message) {
+  ByteData serialize(imc.ReplayControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3489,7 +3484,7 @@ class ReplayControlSerializer
 
   @override
   int serializePayload(
-      imc.ReplayControl /*!*/ message, ByteData byteData, int offset) {
+      imc.ReplayControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -3582,7 +3577,7 @@ class ReplayControlSerializer
 class ClockControlSerializer
     extends imc.ImcSerializer<imc.ClockControl, imc.ClockControlBuilder> {
   @override
-  ByteData serialize(imc.ClockControl /*!*/ message) {
+  ByteData serialize(imc.ClockControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3601,7 +3596,7 @@ class ClockControlSerializer
 
   @override
   int serializePayload(
-      imc.ClockControl /*!*/ message, ByteData byteData, int offset) {
+      imc.ClockControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -3691,7 +3686,7 @@ class ClockControlSerializer
 class HistoricCTDSerializer
     extends imc.ImcSerializer<imc.HistoricCTD, imc.HistoricCTDBuilder> {
   @override
-  ByteData serialize(imc.HistoricCTD /*!*/ message) {
+  ByteData serialize(imc.HistoricCTD message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3709,8 +3704,7 @@ class HistoricCTDSerializer
   }
 
   @override
-  int serializePayload(
-      imc.HistoricCTD /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.HistoricCTD message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field conductivity
@@ -3800,7 +3794,7 @@ class HistoricCTDSerializer
 class HistoricTelemetrySerializer extends imc
     .ImcSerializer<imc.HistoricTelemetry, imc.HistoricTelemetryBuilder> {
   @override
-  ByteData serialize(imc.HistoricTelemetry /*!*/ message) {
+  ByteData serialize(imc.HistoricTelemetry message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3819,7 +3813,7 @@ class HistoricTelemetrySerializer extends imc
 
   @override
   int serializePayload(
-      imc.HistoricTelemetry /*!*/ message, ByteData byteData, int offset) {
+      imc.HistoricTelemetry message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field altitude
@@ -3921,7 +3915,7 @@ class HistoricTelemetrySerializer extends imc
 class HistoricSonarDataSerializer extends imc
     .ImcSerializer<imc.HistoricSonarData, imc.HistoricSonarDataBuilder> {
   @override
-  ByteData serialize(imc.HistoricSonarData /*!*/ message) {
+  ByteData serialize(imc.HistoricSonarData message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -3940,7 +3934,7 @@ class HistoricSonarDataSerializer extends imc
 
   @override
   int serializePayload(
-      imc.HistoricSonarData /*!*/ message, ByteData byteData, int offset) {
+      imc.HistoricSonarData message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field altitude
@@ -4062,7 +4056,7 @@ class HistoricSonarDataSerializer extends imc
 class HistoricEventSerializer
     extends imc.ImcSerializer<imc.HistoricEvent, imc.HistoricEventBuilder> {
   @override
-  ByteData serialize(imc.HistoricEvent /*!*/ message) {
+  ByteData serialize(imc.HistoricEvent message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4081,7 +4075,7 @@ class HistoricEventSerializer
 
   @override
   int serializePayload(
-      imc.HistoricEvent /*!*/ message, ByteData byteData, int offset) {
+      imc.HistoricEvent message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field text
@@ -4174,7 +4168,7 @@ class HistoricEventSerializer
 class VerticalProfileSerializer
     extends imc.ImcSerializer<imc.VerticalProfile, imc.VerticalProfileBuilder> {
   @override
-  ByteData serialize(imc.VerticalProfile /*!*/ message) {
+  ByteData serialize(imc.VerticalProfile message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4193,7 +4187,7 @@ class VerticalProfileSerializer
 
   @override
   int serializePayload(
-      imc.VerticalProfile /*!*/ message, ByteData byteData, int offset) {
+      imc.VerticalProfile message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field parameter
@@ -4338,7 +4332,7 @@ class VerticalProfileSerializer
 class ProfileSampleSerializer
     extends imc.ImcSerializer<imc.ProfileSample, imc.ProfileSampleBuilder> {
   @override
-  ByteData serialize(imc.ProfileSample /*!*/ message) {
+  ByteData serialize(imc.ProfileSample message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4357,7 +4351,7 @@ class ProfileSampleSerializer
 
   @override
   int serializePayload(
-      imc.ProfileSample /*!*/ message, ByteData byteData, int offset) {
+      imc.ProfileSample message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field depth
@@ -4441,7 +4435,7 @@ class ProfileSampleSerializer
 class HeartbeatSerializer
     extends imc.ImcSerializer<imc.Heartbeat, imc.HeartbeatBuilder> {
   @override
-  ByteData serialize(imc.Heartbeat /*!*/ message) {
+  ByteData serialize(imc.Heartbeat message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4459,8 +4453,7 @@ class HeartbeatSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Heartbeat /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Heartbeat message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -4530,7 +4523,7 @@ class HeartbeatSerializer
 class AnnounceSerializer
     extends imc.ImcSerializer<imc.Announce, imc.AnnounceBuilder> {
   @override
-  ByteData serialize(imc.Announce /*!*/ message) {
+  ByteData serialize(imc.Announce message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4548,8 +4541,7 @@ class AnnounceSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Announce /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Announce message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sysName
@@ -4681,7 +4673,7 @@ class AnnounceSerializer
 class AnnounceServiceSerializer
     extends imc.ImcSerializer<imc.AnnounceService, imc.AnnounceServiceBuilder> {
   @override
-  ByteData serialize(imc.AnnounceService /*!*/ message) {
+  ByteData serialize(imc.AnnounceService message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4700,7 +4692,7 @@ class AnnounceServiceSerializer
 
   @override
   int serializePayload(
-      imc.AnnounceService /*!*/ message, ByteData byteData, int offset) {
+      imc.AnnounceService message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field service
@@ -4793,7 +4785,7 @@ class AnnounceServiceSerializer
 ///
 class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
   @override
-  ByteData serialize(imc.RSSI /*!*/ message) {
+  ByteData serialize(imc.RSSI message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4811,7 +4803,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
   }
 
   @override
-  int serializePayload(imc.RSSI /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.RSSI message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -4888,7 +4880,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
 ///
 class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
   @override
-  ByteData serialize(imc.VSWR /*!*/ message) {
+  ByteData serialize(imc.VSWR message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -4906,7 +4898,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
   }
 
   @override
-  int serializePayload(imc.VSWR /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.VSWR message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -4984,7 +4976,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
 class LinkLevelSerializer
     extends imc.ImcSerializer<imc.LinkLevel, imc.LinkLevelBuilder> {
   @override
-  ByteData serialize(imc.LinkLevel /*!*/ message) {
+  ByteData serialize(imc.LinkLevel message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5002,8 +4994,7 @@ class LinkLevelSerializer
   }
 
   @override
-  int serializePayload(
-      imc.LinkLevel /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LinkLevel message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -5080,7 +5071,7 @@ class LinkLevelSerializer
 ///
 class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
   @override
-  ByteData serialize(imc.Sms /*!*/ message) {
+  ByteData serialize(imc.Sms message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5098,7 +5089,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
   }
 
   @override
-  int serializePayload(imc.Sms /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Sms message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field number
@@ -5205,7 +5196,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
 ///
 class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
   @override
-  ByteData serialize(imc.SmsTx /*!*/ message) {
+  ByteData serialize(imc.SmsTx message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5223,7 +5214,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
   }
 
   @override
-  int serializePayload(imc.SmsTx /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsTx message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field seq
@@ -5334,7 +5325,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
 ///
 class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
   @override
-  ByteData serialize(imc.SmsRx /*!*/ message) {
+  ByteData serialize(imc.SmsRx message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5352,7 +5343,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
   }
 
   @override
-  int serializePayload(imc.SmsRx /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsRx message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field source
@@ -5452,7 +5443,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
 class SmsStateSerializer
     extends imc.ImcSerializer<imc.SmsState, imc.SmsStateBuilder> {
   @override
-  ByteData serialize(imc.SmsState /*!*/ message) {
+  ByteData serialize(imc.SmsState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5470,8 +5461,7 @@ class SmsStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SmsState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field seq
@@ -5570,7 +5560,7 @@ class SmsStateSerializer
 class TextMessageSerializer
     extends imc.ImcSerializer<imc.TextMessage, imc.TextMessageBuilder> {
   @override
-  ByteData serialize(imc.TextMessage /*!*/ message) {
+  ByteData serialize(imc.TextMessage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5588,8 +5578,7 @@ class TextMessageSerializer
   }
 
   @override
-  int serializePayload(
-      imc.TextMessage /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.TextMessage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field origin
@@ -5691,7 +5680,7 @@ class TextMessageSerializer
 class IridiumMsgRxSerializer
     extends imc.ImcSerializer<imc.IridiumMsgRx, imc.IridiumMsgRxBuilder> {
   @override
-  ByteData serialize(imc.IridiumMsgRx /*!*/ message) {
+  ByteData serialize(imc.IridiumMsgRx message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5710,7 +5699,7 @@ class IridiumMsgRxSerializer
 
   @override
   int serializePayload(
-      imc.IridiumMsgRx /*!*/ message, ByteData byteData, int offset) {
+      imc.IridiumMsgRx message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field origin
@@ -5828,7 +5817,7 @@ class IridiumMsgRxSerializer
 class IridiumMsgTxSerializer
     extends imc.ImcSerializer<imc.IridiumMsgTx, imc.IridiumMsgTxBuilder> {
   @override
-  ByteData serialize(imc.IridiumMsgTx /*!*/ message) {
+  ByteData serialize(imc.IridiumMsgTx message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5847,7 +5836,7 @@ class IridiumMsgTxSerializer
 
   @override
   int serializePayload(
-      imc.IridiumMsgTx /*!*/ message, ByteData byteData, int offset) {
+      imc.IridiumMsgTx message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -5959,7 +5948,7 @@ class IridiumMsgTxSerializer
 class IridiumTxStatusSerializer
     extends imc.ImcSerializer<imc.IridiumTxStatus, imc.IridiumTxStatusBuilder> {
   @override
-  ByteData serialize(imc.IridiumTxStatus /*!*/ message) {
+  ByteData serialize(imc.IridiumTxStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -5978,7 +5967,7 @@ class IridiumTxStatusSerializer
 
   @override
   int serializePayload(
-      imc.IridiumTxStatus /*!*/ message, ByteData byteData, int offset) {
+      imc.IridiumTxStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -6078,7 +6067,7 @@ class IridiumTxStatusSerializer
 class GroupMembershipStateSerializer extends imc
     .ImcSerializer<imc.GroupMembershipState, imc.GroupMembershipStateBuilder> {
   @override
-  ByteData serialize(imc.GroupMembershipState /*!*/ message) {
+  ByteData serialize(imc.GroupMembershipState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6097,7 +6086,7 @@ class GroupMembershipStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GroupMembershipState /*!*/ message, ByteData byteData, int offset) {
+      imc.GroupMembershipState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field groupName
@@ -6190,7 +6179,7 @@ class GroupMembershipStateSerializer extends imc
 class SystemGroupSerializer
     extends imc.ImcSerializer<imc.SystemGroup, imc.SystemGroupBuilder> {
   @override
-  ByteData serialize(imc.SystemGroup /*!*/ message) {
+  ByteData serialize(imc.SystemGroup message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6208,8 +6197,7 @@ class SystemGroupSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SystemGroup /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SystemGroup message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field groupName
@@ -6317,7 +6305,7 @@ class SystemGroupSerializer
 class LinkLatencySerializer
     extends imc.ImcSerializer<imc.LinkLatency, imc.LinkLatencyBuilder> {
   @override
-  ByteData serialize(imc.LinkLatency /*!*/ message) {
+  ByteData serialize(imc.LinkLatency message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6335,8 +6323,7 @@ class LinkLatencySerializer
   }
 
   @override
-  int serializePayload(
-      imc.LinkLatency /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LinkLatency message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -6420,7 +6407,7 @@ class LinkLatencySerializer
 class ExtendedRSSISerializer
     extends imc.ImcSerializer<imc.ExtendedRSSI, imc.ExtendedRSSIBuilder> {
   @override
-  ByteData serialize(imc.ExtendedRSSI /*!*/ message) {
+  ByteData serialize(imc.ExtendedRSSI message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6439,7 +6426,7 @@ class ExtendedRSSISerializer
 
   @override
   int serializePayload(
-      imc.ExtendedRSSI /*!*/ message, ByteData byteData, int offset) {
+      imc.ExtendedRSSI message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -6523,7 +6510,7 @@ class ExtendedRSSISerializer
 class HistoricDataSerializer
     extends imc.ImcSerializer<imc.HistoricData, imc.HistoricDataBuilder> {
   @override
-  ByteData serialize(imc.HistoricData /*!*/ message) {
+  ByteData serialize(imc.HistoricData message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6542,7 +6529,7 @@ class HistoricDataSerializer
 
   @override
   int serializePayload(
-      imc.HistoricData /*!*/ message, ByteData byteData, int offset) {
+      imc.HistoricData message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field baseLat
@@ -6680,7 +6667,7 @@ class HistoricDataSerializer
 class CompressedHistorySerializer extends imc
     .ImcSerializer<imc.CompressedHistory, imc.CompressedHistoryBuilder> {
   @override
-  ByteData serialize(imc.CompressedHistory /*!*/ message) {
+  ByteData serialize(imc.CompressedHistory message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6699,7 +6686,7 @@ class CompressedHistorySerializer extends imc
 
   @override
   int serializePayload(
-      imc.CompressedHistory /*!*/ message, ByteData byteData, int offset) {
+      imc.CompressedHistory message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field baseLat
@@ -6802,7 +6789,7 @@ class CompressedHistorySerializer extends imc
 class HistoricSampleSerializer
     extends imc.ImcSerializer<imc.HistoricSample, imc.HistoricSampleBuilder> {
   @override
-  ByteData serialize(imc.HistoricSample /*!*/ message) {
+  ByteData serialize(imc.HistoricSample message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6821,7 +6808,7 @@ class HistoricSampleSerializer
 
   @override
   int serializePayload(
-      imc.HistoricSample /*!*/ message, ByteData byteData, int offset) {
+      imc.HistoricSample message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sysId
@@ -6966,7 +6953,7 @@ class HistoricSampleSerializer
 class HistoricDataQuerySerializer extends imc
     .ImcSerializer<imc.HistoricDataQuery, imc.HistoricDataQueryBuilder> {
   @override
-  ByteData serialize(imc.HistoricDataQuery /*!*/ message) {
+  ByteData serialize(imc.HistoricDataQuery message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -6985,7 +6972,7 @@ class HistoricDataQuerySerializer extends imc
 
   @override
   int serializePayload(
-      imc.HistoricDataQuery /*!*/ message, ByteData byteData, int offset) {
+      imc.HistoricDataQuery message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -7112,7 +7099,7 @@ class HistoricDataQuerySerializer extends imc
 class RemoteCommandSerializer
     extends imc.ImcSerializer<imc.RemoteCommand, imc.RemoteCommandBuilder> {
   @override
-  ByteData serialize(imc.RemoteCommand /*!*/ message) {
+  ByteData serialize(imc.RemoteCommand message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -7131,7 +7118,7 @@ class RemoteCommandSerializer
 
   @override
   int serializePayload(
-      imc.RemoteCommand /*!*/ message, ByteData byteData, int offset) {
+      imc.RemoteCommand message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field originalSource
@@ -7258,7 +7245,7 @@ class RemoteCommandSerializer
 class CommSystemsQuerySerializer extends imc
     .ImcSerializer<imc.CommSystemsQuery, imc.CommSystemsQueryBuilder> {
   @override
-  ByteData serialize(imc.CommSystemsQuery /*!*/ message) {
+  ByteData serialize(imc.CommSystemsQuery message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -7277,7 +7264,7 @@ class CommSystemsQuerySerializer extends imc
 
   @override
   int serializePayload(
-      imc.CommSystemsQuery /*!*/ message, ByteData byteData, int offset) {
+      imc.CommSystemsQuery message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -7385,7 +7372,7 @@ class CommSystemsQuerySerializer extends imc
 class TelemetryMsgSerializer
     extends imc.ImcSerializer<imc.TelemetryMsg, imc.TelemetryMsgBuilder> {
   @override
-  ByteData serialize(imc.TelemetryMsg /*!*/ message) {
+  ByteData serialize(imc.TelemetryMsg message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -7404,7 +7391,7 @@ class TelemetryMsgSerializer
 
   @override
   int serializePayload(
-      imc.TelemetryMsg /*!*/ message, ByteData byteData, int offset) {
+      imc.TelemetryMsg message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -7556,7 +7543,7 @@ class TelemetryMsgSerializer
 class LblRangeSerializer
     extends imc.ImcSerializer<imc.LblRange, imc.LblRangeBuilder> {
   @override
-  ByteData serialize(imc.LblRange /*!*/ message) {
+  ByteData serialize(imc.LblRange message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -7574,8 +7561,7 @@ class LblRangeSerializer
   }
 
   @override
-  int serializePayload(
-      imc.LblRange /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LblRange message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -7659,7 +7645,7 @@ class LblRangeSerializer
 class LblBeaconSerializer
     extends imc.ImcSerializer<imc.LblBeacon, imc.LblBeaconBuilder> {
   @override
-  ByteData serialize(imc.LblBeacon /*!*/ message) {
+  ByteData serialize(imc.LblBeacon message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -7677,8 +7663,7 @@ class LblBeaconSerializer
   }
 
   @override
-  int serializePayload(
-      imc.LblBeacon /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LblBeacon message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field beacon
@@ -7801,7 +7786,7 @@ class LblBeaconSerializer
 class LblConfigSerializer
     extends imc.ImcSerializer<imc.LblConfig, imc.LblConfigBuilder> {
   @override
-  ByteData serialize(imc.LblConfig /*!*/ message) {
+  ByteData serialize(imc.LblConfig message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -7819,8 +7804,7 @@ class LblConfigSerializer
   }
 
   @override
-  int serializePayload(
-      imc.LblConfig /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LblConfig message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -7946,7 +7930,7 @@ class LblConfigSerializer
 class AcousticMessageSerializer
     extends imc.ImcSerializer<imc.AcousticMessage, imc.AcousticMessageBuilder> {
   @override
-  ByteData serialize(imc.AcousticMessage /*!*/ message) {
+  ByteData serialize(imc.AcousticMessage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -7965,7 +7949,7 @@ class AcousticMessageSerializer
 
   @override
   int serializePayload(
-      imc.AcousticMessage /*!*/ message, ByteData byteData, int offset) {
+      imc.AcousticMessage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field message
@@ -8074,7 +8058,7 @@ class AcousticMessageSerializer
 class SimAcousticMessageSerializer extends imc
     .ImcSerializer<imc.SimAcousticMessage, imc.SimAcousticMessageBuilder> {
   @override
-  ByteData serialize(imc.SimAcousticMessage /*!*/ message) {
+  ByteData serialize(imc.SimAcousticMessage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -8093,7 +8077,7 @@ class SimAcousticMessageSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SimAcousticMessage /*!*/ message, ByteData byteData, int offset) {
+      imc.SimAcousticMessage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -8275,7 +8259,7 @@ class SimAcousticMessageSerializer extends imc
 class AcousticOperationSerializer extends imc
     .ImcSerializer<imc.AcousticOperation, imc.AcousticOperationBuilder> {
   @override
-  ByteData serialize(imc.AcousticOperation /*!*/ message) {
+  ByteData serialize(imc.AcousticOperation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -8294,7 +8278,7 @@ class AcousticOperationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.AcousticOperation /*!*/ message, ByteData byteData, int offset) {
+      imc.AcousticOperation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -8430,7 +8414,7 @@ class AcousticOperationSerializer extends imc
 class AcousticSystemsQuerySerializer extends imc
     .ImcSerializer<imc.AcousticSystemsQuery, imc.AcousticSystemsQueryBuilder> {
   @override
-  ByteData serialize(imc.AcousticSystemsQuery /*!*/ message) {
+  ByteData serialize(imc.AcousticSystemsQuery message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -8449,7 +8433,7 @@ class AcousticSystemsQuerySerializer extends imc
 
   @override
   int serializePayload(
-      imc.AcousticSystemsQuery /*!*/ message, ByteData byteData, int offset) {
+      imc.AcousticSystemsQuery message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -8519,7 +8503,7 @@ class AcousticSystemsQuerySerializer extends imc
 class AcousticSystemsSerializer
     extends imc.ImcSerializer<imc.AcousticSystems, imc.AcousticSystemsBuilder> {
   @override
-  ByteData serialize(imc.AcousticSystems /*!*/ message) {
+  ByteData serialize(imc.AcousticSystems message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -8538,7 +8522,7 @@ class AcousticSystemsSerializer
 
   @override
   int serializePayload(
-      imc.AcousticSystems /*!*/ message, ByteData byteData, int offset) {
+      imc.AcousticSystems message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field list
@@ -8625,7 +8609,7 @@ class AcousticSystemsSerializer
 class AcousticLinkSerializer
     extends imc.ImcSerializer<imc.AcousticLink, imc.AcousticLinkBuilder> {
   @override
-  ByteData serialize(imc.AcousticLink /*!*/ message) {
+  ByteData serialize(imc.AcousticLink message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -8644,7 +8628,7 @@ class AcousticLinkSerializer
 
   @override
   int serializePayload(
-      imc.AcousticLink /*!*/ message, ByteData byteData, int offset) {
+      imc.AcousticLink message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field peer
@@ -8743,7 +8727,7 @@ class AcousticLinkSerializer
 class AcousticRequestSerializer
     extends imc.ImcSerializer<imc.AcousticRequest, imc.AcousticRequestBuilder> {
   @override
-  ByteData serialize(imc.AcousticRequest /*!*/ message) {
+  ByteData serialize(imc.AcousticRequest message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -8762,7 +8746,7 @@ class AcousticRequestSerializer
 
   @override
   int serializePayload(
-      imc.AcousticRequest /*!*/ message, ByteData byteData, int offset) {
+      imc.AcousticRequest message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -8910,7 +8894,7 @@ class AcousticRequestSerializer
 class AcousticStatusSerializer
     extends imc.ImcSerializer<imc.AcousticStatus, imc.AcousticStatusBuilder> {
   @override
-  ByteData serialize(imc.AcousticStatus /*!*/ message) {
+  ByteData serialize(imc.AcousticStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -8929,7 +8913,7 @@ class AcousticStatusSerializer
 
   @override
   int serializePayload(
-      imc.AcousticStatus /*!*/ message, ByteData byteData, int offset) {
+      imc.AcousticStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -9040,7 +9024,7 @@ class AcousticStatusSerializer
 ///
 class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
   @override
-  ByteData serialize(imc.Rpm /*!*/ message) {
+  ByteData serialize(imc.Rpm message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9058,7 +9042,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
   }
 
   @override
-  int serializePayload(imc.Rpm /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Rpm message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -9136,7 +9120,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
 class VoltageSerializer
     extends imc.ImcSerializer<imc.Voltage, imc.VoltageBuilder> {
   @override
-  ByteData serialize(imc.Voltage /*!*/ message) {
+  ByteData serialize(imc.Voltage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9154,8 +9138,7 @@ class VoltageSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Voltage /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Voltage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -9233,7 +9216,7 @@ class VoltageSerializer
 class CurrentSerializer
     extends imc.ImcSerializer<imc.Current, imc.CurrentBuilder> {
   @override
-  ByteData serialize(imc.Current /*!*/ message) {
+  ByteData serialize(imc.Current message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9251,8 +9234,7 @@ class CurrentSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Current /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Current message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -9330,7 +9312,7 @@ class CurrentSerializer
 class GpsFixSerializer
     extends imc.ImcSerializer<imc.GpsFix, imc.GpsFixBuilder> {
   @override
-  ByteData serialize(imc.GpsFix /*!*/ message) {
+  ByteData serialize(imc.GpsFix message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9348,8 +9330,7 @@ class GpsFixSerializer
   }
 
   @override
-  int serializePayload(
-      imc.GpsFix /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.GpsFix message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field validity
@@ -9518,7 +9499,7 @@ class GpsFixSerializer
 class EulerAnglesSerializer
     extends imc.ImcSerializer<imc.EulerAngles, imc.EulerAnglesBuilder> {
   @override
-  ByteData serialize(imc.EulerAngles /*!*/ message) {
+  ByteData serialize(imc.EulerAngles message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9536,8 +9517,7 @@ class EulerAnglesSerializer
   }
 
   @override
-  int serializePayload(
-      imc.EulerAngles /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.EulerAngles message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field time
@@ -9639,7 +9619,7 @@ class EulerAnglesSerializer
 class EulerAnglesDeltaSerializer extends imc
     .ImcSerializer<imc.EulerAnglesDelta, imc.EulerAnglesDeltaBuilder> {
   @override
-  ByteData serialize(imc.EulerAnglesDelta /*!*/ message) {
+  ByteData serialize(imc.EulerAnglesDelta message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9658,7 +9638,7 @@ class EulerAnglesDeltaSerializer extends imc
 
   @override
   int serializePayload(
-      imc.EulerAnglesDelta /*!*/ message, ByteData byteData, int offset) {
+      imc.EulerAnglesDelta message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field time
@@ -9760,7 +9740,7 @@ class EulerAnglesDeltaSerializer extends imc
 class AngularVelocitySerializer
     extends imc.ImcSerializer<imc.AngularVelocity, imc.AngularVelocityBuilder> {
   @override
-  ByteData serialize(imc.AngularVelocity /*!*/ message) {
+  ByteData serialize(imc.AngularVelocity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9779,7 +9759,7 @@ class AngularVelocitySerializer
 
   @override
   int serializePayload(
-      imc.AngularVelocity /*!*/ message, ByteData byteData, int offset) {
+      imc.AngularVelocity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field time
@@ -9875,7 +9855,7 @@ class AngularVelocitySerializer
 class AccelerationSerializer
     extends imc.ImcSerializer<imc.Acceleration, imc.AccelerationBuilder> {
   @override
-  ByteData serialize(imc.Acceleration /*!*/ message) {
+  ByteData serialize(imc.Acceleration message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -9894,7 +9874,7 @@ class AccelerationSerializer
 
   @override
   int serializePayload(
-      imc.Acceleration /*!*/ message, ByteData byteData, int offset) {
+      imc.Acceleration message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field time
@@ -9990,7 +9970,7 @@ class AccelerationSerializer
 class MagneticFieldSerializer
     extends imc.ImcSerializer<imc.MagneticField, imc.MagneticFieldBuilder> {
   @override
-  ByteData serialize(imc.MagneticField /*!*/ message) {
+  ByteData serialize(imc.MagneticField message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10009,7 +9989,7 @@ class MagneticFieldSerializer
 
   @override
   int serializePayload(
-      imc.MagneticField /*!*/ message, ByteData byteData, int offset) {
+      imc.MagneticField message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field time
@@ -10105,7 +10085,7 @@ class MagneticFieldSerializer
 class GroundVelocitySerializer
     extends imc.ImcSerializer<imc.GroundVelocity, imc.GroundVelocityBuilder> {
   @override
-  ByteData serialize(imc.GroundVelocity /*!*/ message) {
+  ByteData serialize(imc.GroundVelocity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10124,7 +10104,7 @@ class GroundVelocitySerializer
 
   @override
   int serializePayload(
-      imc.GroundVelocity /*!*/ message, ByteData byteData, int offset) {
+      imc.GroundVelocity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field validity
@@ -10221,7 +10201,7 @@ class GroundVelocitySerializer
 class WaterVelocitySerializer
     extends imc.ImcSerializer<imc.WaterVelocity, imc.WaterVelocityBuilder> {
   @override
-  ByteData serialize(imc.WaterVelocity /*!*/ message) {
+  ByteData serialize(imc.WaterVelocity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10240,7 +10220,7 @@ class WaterVelocitySerializer
 
   @override
   int serializePayload(
-      imc.WaterVelocity /*!*/ message, ByteData byteData, int offset) {
+      imc.WaterVelocity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field validity
@@ -10337,7 +10317,7 @@ class WaterVelocitySerializer
 class VelocityDeltaSerializer
     extends imc.ImcSerializer<imc.VelocityDelta, imc.VelocityDeltaBuilder> {
   @override
-  ByteData serialize(imc.VelocityDelta /*!*/ message) {
+  ByteData serialize(imc.VelocityDelta message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10356,7 +10336,7 @@ class VelocityDeltaSerializer
 
   @override
   int serializePayload(
-      imc.VelocityDelta /*!*/ message, ByteData byteData, int offset) {
+      imc.VelocityDelta message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field time
@@ -10452,7 +10432,7 @@ class VelocityDeltaSerializer
 class DistanceSerializer
     extends imc.ImcSerializer<imc.Distance, imc.DistanceBuilder> {
   @override
-  ByteData serialize(imc.Distance /*!*/ message) {
+  ByteData serialize(imc.Distance message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10470,8 +10450,7 @@ class DistanceSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Distance /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Distance message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field validity
@@ -10651,7 +10630,7 @@ class DistanceSerializer
 class TemperatureSerializer
     extends imc.ImcSerializer<imc.Temperature, imc.TemperatureBuilder> {
   @override
-  ByteData serialize(imc.Temperature /*!*/ message) {
+  ByteData serialize(imc.Temperature message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10669,8 +10648,7 @@ class TemperatureSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Temperature /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Temperature message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -10748,7 +10726,7 @@ class TemperatureSerializer
 class PressureSerializer
     extends imc.ImcSerializer<imc.Pressure, imc.PressureBuilder> {
   @override
-  ByteData serialize(imc.Pressure /*!*/ message) {
+  ByteData serialize(imc.Pressure message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10766,8 +10744,7 @@ class PressureSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Pressure /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Pressure message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -10844,7 +10821,7 @@ class PressureSerializer
 ///
 class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
   @override
-  ByteData serialize(imc.Depth /*!*/ message) {
+  ByteData serialize(imc.Depth message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10862,7 +10839,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
   }
 
   @override
-  int serializePayload(imc.Depth /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Depth message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -10940,7 +10917,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
 class DepthOffsetSerializer
     extends imc.ImcSerializer<imc.DepthOffset, imc.DepthOffsetBuilder> {
   @override
-  ByteData serialize(imc.DepthOffset /*!*/ message) {
+  ByteData serialize(imc.DepthOffset message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -10958,8 +10935,7 @@ class DepthOffsetSerializer
   }
 
   @override
-  int serializePayload(
-      imc.DepthOffset /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DepthOffset message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11037,7 +11013,7 @@ class DepthOffsetSerializer
 class SoundSpeedSerializer
     extends imc.ImcSerializer<imc.SoundSpeed, imc.SoundSpeedBuilder> {
   @override
-  ByteData serialize(imc.SoundSpeed /*!*/ message) {
+  ByteData serialize(imc.SoundSpeed message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11055,8 +11031,7 @@ class SoundSpeedSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SoundSpeed /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoundSpeed message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11134,7 +11109,7 @@ class SoundSpeedSerializer
 class WaterDensitySerializer
     extends imc.ImcSerializer<imc.WaterDensity, imc.WaterDensityBuilder> {
   @override
-  ByteData serialize(imc.WaterDensity /*!*/ message) {
+  ByteData serialize(imc.WaterDensity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11153,7 +11128,7 @@ class WaterDensitySerializer
 
   @override
   int serializePayload(
-      imc.WaterDensity /*!*/ message, ByteData byteData, int offset) {
+      imc.WaterDensity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11231,7 +11206,7 @@ class WaterDensitySerializer
 class ConductivitySerializer
     extends imc.ImcSerializer<imc.Conductivity, imc.ConductivityBuilder> {
   @override
-  ByteData serialize(imc.Conductivity /*!*/ message) {
+  ByteData serialize(imc.Conductivity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11250,7 +11225,7 @@ class ConductivitySerializer
 
   @override
   int serializePayload(
-      imc.Conductivity /*!*/ message, ByteData byteData, int offset) {
+      imc.Conductivity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11328,7 +11303,7 @@ class ConductivitySerializer
 class SalinitySerializer
     extends imc.ImcSerializer<imc.Salinity, imc.SalinityBuilder> {
   @override
-  ByteData serialize(imc.Salinity /*!*/ message) {
+  ByteData serialize(imc.Salinity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11346,8 +11321,7 @@ class SalinitySerializer
   }
 
   @override
-  int serializePayload(
-      imc.Salinity /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Salinity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11425,7 +11399,7 @@ class SalinitySerializer
 class WindSpeedSerializer
     extends imc.ImcSerializer<imc.WindSpeed, imc.WindSpeedBuilder> {
   @override
-  ByteData serialize(imc.WindSpeed /*!*/ message) {
+  ByteData serialize(imc.WindSpeed message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11443,8 +11417,7 @@ class WindSpeedSerializer
   }
 
   @override
-  int serializePayload(
-      imc.WindSpeed /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.WindSpeed message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field direction
@@ -11534,7 +11507,7 @@ class WindSpeedSerializer
 class RelativeHumiditySerializer extends imc
     .ImcSerializer<imc.RelativeHumidity, imc.RelativeHumidityBuilder> {
   @override
-  ByteData serialize(imc.RelativeHumidity /*!*/ message) {
+  ByteData serialize(imc.RelativeHumidity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11553,7 +11526,7 @@ class RelativeHumiditySerializer extends imc
 
   @override
   int serializePayload(
-      imc.RelativeHumidity /*!*/ message, ByteData byteData, int offset) {
+      imc.RelativeHumidity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11631,7 +11604,7 @@ class RelativeHumiditySerializer extends imc
 class DevDataTextSerializer
     extends imc.ImcSerializer<imc.DevDataText, imc.DevDataTextBuilder> {
   @override
-  ByteData serialize(imc.DevDataText /*!*/ message) {
+  ByteData serialize(imc.DevDataText message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11649,8 +11622,7 @@ class DevDataTextSerializer
   }
 
   @override
-  int serializePayload(
-      imc.DevDataText /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DevDataText message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11737,7 +11709,7 @@ class DevDataTextSerializer
 class DevDataBinarySerializer
     extends imc.ImcSerializer<imc.DevDataBinary, imc.DevDataBinaryBuilder> {
   @override
-  ByteData serialize(imc.DevDataBinary /*!*/ message) {
+  ByteData serialize(imc.DevDataBinary message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11756,7 +11728,7 @@ class DevDataBinarySerializer
 
   @override
   int serializePayload(
-      imc.DevDataBinary /*!*/ message, ByteData byteData, int offset) {
+      imc.DevDataBinary message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11840,7 +11812,7 @@ class DevDataBinarySerializer
 ///
 class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
   @override
-  ByteData serialize(imc.Force /*!*/ message) {
+  ByteData serialize(imc.Force message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11858,7 +11830,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
   }
 
   @override
-  int serializePayload(imc.Force /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Force message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -11936,7 +11908,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
 class SonarDataSerializer
     extends imc.ImcSerializer<imc.SonarData, imc.SonarDataBuilder> {
   @override
-  ByteData serialize(imc.SonarData /*!*/ message) {
+  ByteData serialize(imc.SonarData message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -11954,8 +11926,7 @@ class SonarDataSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SonarData /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SonarData message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -12123,7 +12094,7 @@ class SonarDataSerializer
 ///
 class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
   @override
-  ByteData serialize(imc.Pulse /*!*/ message) {
+  ByteData serialize(imc.Pulse message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12141,7 +12112,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
   }
 
   @override
-  int serializePayload(imc.Pulse /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Pulse message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -12211,7 +12182,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
 class PulseDetectionControlSerializer extends imc.ImcSerializer<
     imc.PulseDetectionControl, imc.PulseDetectionControlBuilder> {
   @override
-  ByteData serialize(imc.PulseDetectionControl /*!*/ message) {
+  ByteData serialize(imc.PulseDetectionControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12230,7 +12201,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.PulseDetectionControl /*!*/ message, ByteData byteData, int offset) {
+      imc.PulseDetectionControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -12308,7 +12279,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
 class FuelLevelSerializer
     extends imc.ImcSerializer<imc.FuelLevel, imc.FuelLevelBuilder> {
   @override
-  ByteData serialize(imc.FuelLevel /*!*/ message) {
+  ByteData serialize(imc.FuelLevel message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12326,8 +12297,7 @@ class FuelLevelSerializer
   }
 
   @override
-  int serializePayload(
-      imc.FuelLevel /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.FuelLevel message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -12426,7 +12396,7 @@ class FuelLevelSerializer
 class GpsNavDataSerializer
     extends imc.ImcSerializer<imc.GpsNavData, imc.GpsNavDataBuilder> {
   @override
-  ByteData serialize(imc.GpsNavData /*!*/ message) {
+  ByteData serialize(imc.GpsNavData message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12444,8 +12414,7 @@ class GpsNavDataSerializer
   }
 
   @override
-  int serializePayload(
-      imc.GpsNavData /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.GpsNavData message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field itow
@@ -12607,7 +12576,7 @@ class GpsNavDataSerializer
 class ServoPositionSerializer
     extends imc.ImcSerializer<imc.ServoPosition, imc.ServoPositionBuilder> {
   @override
-  ByteData serialize(imc.ServoPosition /*!*/ message) {
+  ByteData serialize(imc.ServoPosition message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12626,7 +12595,7 @@ class ServoPositionSerializer
 
   @override
   int serializePayload(
-      imc.ServoPosition /*!*/ message, ByteData byteData, int offset) {
+      imc.ServoPosition message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -12710,7 +12679,7 @@ class ServoPositionSerializer
 class DeviceStateSerializer
     extends imc.ImcSerializer<imc.DeviceState, imc.DeviceStateBuilder> {
   @override
-  ByteData serialize(imc.DeviceState /*!*/ message) {
+  ByteData serialize(imc.DeviceState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12728,8 +12697,7 @@ class DeviceStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.DeviceState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DeviceState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -12837,7 +12805,7 @@ class DeviceStateSerializer
 class BeamConfigSerializer
     extends imc.ImcSerializer<imc.BeamConfig, imc.BeamConfigBuilder> {
   @override
-  ByteData serialize(imc.BeamConfig /*!*/ message) {
+  ByteData serialize(imc.BeamConfig message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12855,8 +12823,7 @@ class BeamConfigSerializer
   }
 
   @override
-  int serializePayload(
-      imc.BeamConfig /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.BeamConfig message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field beamWidth
@@ -12940,7 +12907,7 @@ class BeamConfigSerializer
 class DataSanitySerializer
     extends imc.ImcSerializer<imc.DataSanity, imc.DataSanityBuilder> {
   @override
-  ByteData serialize(imc.DataSanity /*!*/ message) {
+  ByteData serialize(imc.DataSanity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -12958,8 +12925,7 @@ class DataSanitySerializer
   }
 
   @override
-  int serializePayload(
-      imc.DataSanity /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DataSanity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sane
@@ -13037,7 +13003,7 @@ class DataSanitySerializer
 class RhodamineDyeSerializer
     extends imc.ImcSerializer<imc.RhodamineDye, imc.RhodamineDyeBuilder> {
   @override
-  ByteData serialize(imc.RhodamineDye /*!*/ message) {
+  ByteData serialize(imc.RhodamineDye message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13056,7 +13022,7 @@ class RhodamineDyeSerializer
 
   @override
   int serializePayload(
-      imc.RhodamineDye /*!*/ message, ByteData byteData, int offset) {
+      imc.RhodamineDye message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13134,7 +13100,7 @@ class RhodamineDyeSerializer
 class CrudeOilSerializer
     extends imc.ImcSerializer<imc.CrudeOil, imc.CrudeOilBuilder> {
   @override
-  ByteData serialize(imc.CrudeOil /*!*/ message) {
+  ByteData serialize(imc.CrudeOil message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13152,8 +13118,7 @@ class CrudeOilSerializer
   }
 
   @override
-  int serializePayload(
-      imc.CrudeOil /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.CrudeOil message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13231,7 +13196,7 @@ class CrudeOilSerializer
 class FineOilSerializer
     extends imc.ImcSerializer<imc.FineOil, imc.FineOilBuilder> {
   @override
-  ByteData serialize(imc.FineOil /*!*/ message) {
+  ByteData serialize(imc.FineOil message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13249,8 +13214,7 @@ class FineOilSerializer
   }
 
   @override
-  int serializePayload(
-      imc.FineOil /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.FineOil message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13328,7 +13292,7 @@ class FineOilSerializer
 class TurbiditySerializer
     extends imc.ImcSerializer<imc.Turbidity, imc.TurbidityBuilder> {
   @override
-  ByteData serialize(imc.Turbidity /*!*/ message) {
+  ByteData serialize(imc.Turbidity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13346,8 +13310,7 @@ class TurbiditySerializer
   }
 
   @override
-  int serializePayload(
-      imc.Turbidity /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Turbidity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13425,7 +13388,7 @@ class TurbiditySerializer
 class ChlorophyllSerializer
     extends imc.ImcSerializer<imc.Chlorophyll, imc.ChlorophyllBuilder> {
   @override
-  ByteData serialize(imc.Chlorophyll /*!*/ message) {
+  ByteData serialize(imc.Chlorophyll message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13443,8 +13406,7 @@ class ChlorophyllSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Chlorophyll /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Chlorophyll message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13522,7 +13484,7 @@ class ChlorophyllSerializer
 class FluoresceinSerializer
     extends imc.ImcSerializer<imc.Fluorescein, imc.FluoresceinBuilder> {
   @override
-  ByteData serialize(imc.Fluorescein /*!*/ message) {
+  ByteData serialize(imc.Fluorescein message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13540,8 +13502,7 @@ class FluoresceinSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Fluorescein /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Fluorescein message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13619,7 +13580,7 @@ class FluoresceinSerializer
 class PhycocyaninSerializer
     extends imc.ImcSerializer<imc.Phycocyanin, imc.PhycocyaninBuilder> {
   @override
-  ByteData serialize(imc.Phycocyanin /*!*/ message) {
+  ByteData serialize(imc.Phycocyanin message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13637,8 +13598,7 @@ class PhycocyaninSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Phycocyanin /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Phycocyanin message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13716,7 +13676,7 @@ class PhycocyaninSerializer
 class PhycoerythrinSerializer
     extends imc.ImcSerializer<imc.Phycoerythrin, imc.PhycoerythrinBuilder> {
   @override
-  ByteData serialize(imc.Phycoerythrin /*!*/ message) {
+  ByteData serialize(imc.Phycoerythrin message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13735,7 +13695,7 @@ class PhycoerythrinSerializer
 
   @override
   int serializePayload(
-      imc.Phycoerythrin /*!*/ message, ByteData byteData, int offset) {
+      imc.Phycoerythrin message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -13813,7 +13773,7 @@ class PhycoerythrinSerializer
 class GpsFixRtkSerializer
     extends imc.ImcSerializer<imc.GpsFixRtk, imc.GpsFixRtkBuilder> {
   @override
-  ByteData serialize(imc.GpsFixRtk /*!*/ message) {
+  ByteData serialize(imc.GpsFixRtk message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -13831,8 +13791,7 @@ class GpsFixRtkSerializer
   }
 
   @override
-  int serializePayload(
-      imc.GpsFixRtk /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.GpsFixRtk message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field validity
@@ -13995,7 +13954,7 @@ class GpsFixRtkSerializer
 class ExternalNavDataSerializer
     extends imc.ImcSerializer<imc.ExternalNavData, imc.ExternalNavDataBuilder> {
   @override
-  ByteData serialize(imc.ExternalNavData /*!*/ message) {
+  ByteData serialize(imc.ExternalNavData message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14014,7 +13973,7 @@ class ExternalNavDataSerializer
 
   @override
   int serializePayload(
-      imc.ExternalNavData /*!*/ message, ByteData byteData, int offset) {
+      imc.ExternalNavData message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -14129,7 +14088,7 @@ class ExternalNavDataSerializer
 class DissolvedOxygenSerializer
     extends imc.ImcSerializer<imc.DissolvedOxygen, imc.DissolvedOxygenBuilder> {
   @override
-  ByteData serialize(imc.DissolvedOxygen /*!*/ message) {
+  ByteData serialize(imc.DissolvedOxygen message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14148,7 +14107,7 @@ class DissolvedOxygenSerializer
 
   @override
   int serializePayload(
-      imc.DissolvedOxygen /*!*/ message, ByteData byteData, int offset) {
+      imc.DissolvedOxygen message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -14226,7 +14185,7 @@ class DissolvedOxygenSerializer
 class AirSaturationSerializer
     extends imc.ImcSerializer<imc.AirSaturation, imc.AirSaturationBuilder> {
   @override
-  ByteData serialize(imc.AirSaturation /*!*/ message) {
+  ByteData serialize(imc.AirSaturation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14245,7 +14204,7 @@ class AirSaturationSerializer
 
   @override
   int serializePayload(
-      imc.AirSaturation /*!*/ message, ByteData byteData, int offset) {
+      imc.AirSaturation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -14323,7 +14282,7 @@ class AirSaturationSerializer
 class ThrottleSerializer
     extends imc.ImcSerializer<imc.Throttle, imc.ThrottleBuilder> {
   @override
-  ByteData serialize(imc.Throttle /*!*/ message) {
+  ByteData serialize(imc.Throttle message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14341,8 +14300,7 @@ class ThrottleSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Throttle /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Throttle message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -14419,7 +14377,7 @@ class ThrottleSerializer
 ///
 class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
   @override
-  ByteData serialize(imc.PH /*!*/ message) {
+  ByteData serialize(imc.PH message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14437,7 +14395,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
   }
 
   @override
-  int serializePayload(imc.PH /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.PH message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -14514,7 +14472,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
 ///
 class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
   @override
-  ByteData serialize(imc.Redox /*!*/ message) {
+  ByteData serialize(imc.Redox message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14532,7 +14490,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
   }
 
   @override
-  int serializePayload(imc.Redox /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Redox message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -14610,7 +14568,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
 class CameraZoomSerializer
     extends imc.ImcSerializer<imc.CameraZoom, imc.CameraZoomBuilder> {
   @override
-  ByteData serialize(imc.CameraZoom /*!*/ message) {
+  ByteData serialize(imc.CameraZoom message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14628,8 +14586,7 @@ class CameraZoomSerializer
   }
 
   @override
-  int serializePayload(
-      imc.CameraZoom /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.CameraZoom message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -14719,7 +14676,7 @@ class CameraZoomSerializer
 class SetThrusterActuationSerializer extends imc
     .ImcSerializer<imc.SetThrusterActuation, imc.SetThrusterActuationBuilder> {
   @override
-  ByteData serialize(imc.SetThrusterActuation /*!*/ message) {
+  ByteData serialize(imc.SetThrusterActuation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14738,7 +14695,7 @@ class SetThrusterActuationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetThrusterActuation /*!*/ message, ByteData byteData, int offset) {
+      imc.SetThrusterActuation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -14822,7 +14779,7 @@ class SetThrusterActuationSerializer extends imc
 class SetServoPositionSerializer extends imc
     .ImcSerializer<imc.SetServoPosition, imc.SetServoPositionBuilder> {
   @override
-  ByteData serialize(imc.SetServoPosition /*!*/ message) {
+  ByteData serialize(imc.SetServoPosition message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14841,7 +14798,7 @@ class SetServoPositionSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetServoPosition /*!*/ message, ByteData byteData, int offset) {
+      imc.SetServoPosition message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -14925,7 +14882,7 @@ class SetServoPositionSerializer extends imc
 class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     imc.SetControlSurfaceDeflection, imc.SetControlSurfaceDeflectionBuilder> {
   @override
-  ByteData serialize(imc.SetControlSurfaceDeflection /*!*/ message) {
+  ByteData serialize(imc.SetControlSurfaceDeflection message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -14943,8 +14900,8 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
   }
 
   @override
-  int serializePayload(imc.SetControlSurfaceDeflection /*!*/ message,
-      ByteData byteData, int offset) {
+  int serializePayload(
+      imc.SetControlSurfaceDeflection message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -15029,7 +14986,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
 class RemoteActionsRequestSerializer extends imc
     .ImcSerializer<imc.RemoteActionsRequest, imc.RemoteActionsRequestBuilder> {
   @override
-  ByteData serialize(imc.RemoteActionsRequest /*!*/ message) {
+  ByteData serialize(imc.RemoteActionsRequest message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15048,7 +15005,7 @@ class RemoteActionsRequestSerializer extends imc
 
   @override
   int serializePayload(
-      imc.RemoteActionsRequest /*!*/ message, ByteData byteData, int offset) {
+      imc.RemoteActionsRequest message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -15141,7 +15098,7 @@ class RemoteActionsRequestSerializer extends imc
 class RemoteActionsSerializer
     extends imc.ImcSerializer<imc.RemoteActions, imc.RemoteActionsBuilder> {
   @override
-  ByteData serialize(imc.RemoteActions /*!*/ message) {
+  ByteData serialize(imc.RemoteActions message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15160,7 +15117,7 @@ class RemoteActionsSerializer
 
   @override
   int serializePayload(
-      imc.RemoteActions /*!*/ message, ByteData byteData, int offset) {
+      imc.RemoteActions message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field actions
@@ -15247,7 +15204,7 @@ class RemoteActionsSerializer
 class ButtonEventSerializer
     extends imc.ImcSerializer<imc.ButtonEvent, imc.ButtonEventBuilder> {
   @override
-  ByteData serialize(imc.ButtonEvent /*!*/ message) {
+  ByteData serialize(imc.ButtonEvent message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15265,8 +15222,7 @@ class ButtonEventSerializer
   }
 
   @override
-  int serializePayload(
-      imc.ButtonEvent /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.ButtonEvent message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field button
@@ -15350,7 +15306,7 @@ class ButtonEventSerializer
 class LcdControlSerializer
     extends imc.ImcSerializer<imc.LcdControl, imc.LcdControlBuilder> {
   @override
-  ByteData serialize(imc.LcdControl /*!*/ message) {
+  ByteData serialize(imc.LcdControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15368,8 +15324,7 @@ class LcdControlSerializer
   }
 
   @override
-  int serializePayload(
-      imc.LcdControl /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LcdControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -15462,7 +15417,7 @@ class LcdControlSerializer
 class PowerOperationSerializer
     extends imc.ImcSerializer<imc.PowerOperation, imc.PowerOperationBuilder> {
   @override
-  ByteData serialize(imc.PowerOperation /*!*/ message) {
+  ByteData serialize(imc.PowerOperation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15481,7 +15436,7 @@ class PowerOperationSerializer
 
   @override
   int serializePayload(
-      imc.PowerOperation /*!*/ message, ByteData byteData, int offset) {
+      imc.PowerOperation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -15571,7 +15526,7 @@ class PowerOperationSerializer
 class PowerChannelControlSerializer extends imc
     .ImcSerializer<imc.PowerChannelControl, imc.PowerChannelControlBuilder> {
   @override
-  ByteData serialize(imc.PowerChannelControl /*!*/ message) {
+  ByteData serialize(imc.PowerChannelControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15590,7 +15545,7 @@ class PowerChannelControlSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PowerChannelControl /*!*/ message, ByteData byteData, int offset) {
+      imc.PowerChannelControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -15689,7 +15644,7 @@ class PowerChannelControlSerializer extends imc
 class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
     imc.QueryPowerChannelState, imc.QueryPowerChannelStateBuilder> {
   @override
-  ByteData serialize(imc.QueryPowerChannelState /*!*/ message) {
+  ByteData serialize(imc.QueryPowerChannelState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15708,7 +15663,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.QueryPowerChannelState /*!*/ message, ByteData byteData, int offset) {
+      imc.QueryPowerChannelState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -15778,7 +15733,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
 class PowerChannelStateSerializer extends imc
     .ImcSerializer<imc.PowerChannelState, imc.PowerChannelStateBuilder> {
   @override
-  ByteData serialize(imc.PowerChannelState /*!*/ message) {
+  ByteData serialize(imc.PowerChannelState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15797,7 +15752,7 @@ class PowerChannelStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PowerChannelState /*!*/ message, ByteData byteData, int offset) {
+      imc.PowerChannelState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -15891,7 +15846,7 @@ class PowerChannelStateSerializer extends imc
 class LedBrightnessSerializer
     extends imc.ImcSerializer<imc.LedBrightness, imc.LedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.LedBrightness /*!*/ message) {
+  ByteData serialize(imc.LedBrightness message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -15910,7 +15865,7 @@ class LedBrightnessSerializer
 
   @override
   int serializePayload(
-      imc.LedBrightness /*!*/ message, ByteData byteData, int offset) {
+      imc.LedBrightness message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -16003,7 +15958,7 @@ class LedBrightnessSerializer
 class QueryLedBrightnessSerializer extends imc
     .ImcSerializer<imc.QueryLedBrightness, imc.QueryLedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.QueryLedBrightness /*!*/ message) {
+  ByteData serialize(imc.QueryLedBrightness message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16022,7 +15977,7 @@ class QueryLedBrightnessSerializer extends imc
 
   @override
   int serializePayload(
-      imc.QueryLedBrightness /*!*/ message, ByteData byteData, int offset) {
+      imc.QueryLedBrightness message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -16109,7 +16064,7 @@ class QueryLedBrightnessSerializer extends imc
 class SetLedBrightnessSerializer extends imc
     .ImcSerializer<imc.SetLedBrightness, imc.SetLedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.SetLedBrightness /*!*/ message) {
+  ByteData serialize(imc.SetLedBrightness message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16128,7 +16083,7 @@ class SetLedBrightnessSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetLedBrightness /*!*/ message, ByteData byteData, int offset) {
+      imc.SetLedBrightness message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -16221,7 +16176,7 @@ class SetLedBrightnessSerializer extends imc
 class SetPWMSerializer
     extends imc.ImcSerializer<imc.SetPWM, imc.SetPWMBuilder> {
   @override
-  ByteData serialize(imc.SetPWM /*!*/ message) {
+  ByteData serialize(imc.SetPWM message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16239,8 +16194,7 @@ class SetPWMSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SetPWM /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SetPWM message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -16329,7 +16283,7 @@ class SetPWMSerializer
 ///
 class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
   @override
-  ByteData serialize(imc.PWM /*!*/ message) {
+  ByteData serialize(imc.PWM message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16347,7 +16301,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
   }
 
   @override
-  int serializePayload(imc.PWM /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.PWM message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -16437,7 +16391,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
 class EstimatedStateSerializer
     extends imc.ImcSerializer<imc.EstimatedState, imc.EstimatedStateBuilder> {
   @override
-  ByteData serialize(imc.EstimatedState /*!*/ message) {
+  ByteData serialize(imc.EstimatedState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16456,7 +16410,7 @@ class EstimatedStateSerializer
 
   @override
   int serializePayload(
-      imc.EstimatedState /*!*/ message, ByteData byteData, int offset) {
+      imc.EstimatedState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -16648,7 +16602,7 @@ class EstimatedStateSerializer
 class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     imc.EstimatedStreamVelocity, imc.EstimatedStreamVelocityBuilder> {
   @override
-  ByteData serialize(imc.EstimatedStreamVelocity /*!*/ message) {
+  ByteData serialize(imc.EstimatedStreamVelocity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16666,8 +16620,8 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
   }
 
   @override
-  int serializePayload(imc.EstimatedStreamVelocity /*!*/ message,
-      ByteData byteData, int offset) {
+  int serializePayload(
+      imc.EstimatedStreamVelocity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -16757,7 +16711,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
 class IndicatedSpeedSerializer
     extends imc.ImcSerializer<imc.IndicatedSpeed, imc.IndicatedSpeedBuilder> {
   @override
-  ByteData serialize(imc.IndicatedSpeed /*!*/ message) {
+  ByteData serialize(imc.IndicatedSpeed message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16776,7 +16730,7 @@ class IndicatedSpeedSerializer
 
   @override
   int serializePayload(
-      imc.IndicatedSpeed /*!*/ message, ByteData byteData, int offset) {
+      imc.IndicatedSpeed message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -16854,7 +16808,7 @@ class IndicatedSpeedSerializer
 class TrueSpeedSerializer
     extends imc.ImcSerializer<imc.TrueSpeed, imc.TrueSpeedBuilder> {
   @override
-  ByteData serialize(imc.TrueSpeed /*!*/ message) {
+  ByteData serialize(imc.TrueSpeed message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16872,8 +16826,7 @@ class TrueSpeedSerializer
   }
 
   @override
-  int serializePayload(
-      imc.TrueSpeed /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.TrueSpeed message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -16951,7 +16904,7 @@ class TrueSpeedSerializer
 class NavigationUncertaintySerializer extends imc.ImcSerializer<
     imc.NavigationUncertainty, imc.NavigationUncertaintyBuilder> {
   @override
-  ByteData serialize(imc.NavigationUncertainty /*!*/ message) {
+  ByteData serialize(imc.NavigationUncertainty message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -16970,7 +16923,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.NavigationUncertainty /*!*/ message, ByteData byteData, int offset) {
+      imc.NavigationUncertainty message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -17126,7 +17079,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
 class NavigationDataSerializer
     extends imc.ImcSerializer<imc.NavigationData, imc.NavigationDataBuilder> {
   @override
-  ByteData serialize(imc.NavigationData /*!*/ message) {
+  ByteData serialize(imc.NavigationData message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17145,7 +17098,7 @@ class NavigationDataSerializer
 
   @override
   int serializePayload(
-      imc.NavigationData /*!*/ message, ByteData byteData, int offset) {
+      imc.NavigationData message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field biasPsi
@@ -17271,7 +17224,7 @@ class NavigationDataSerializer
 class GpsFixRejectionSerializer
     extends imc.ImcSerializer<imc.GpsFixRejection, imc.GpsFixRejectionBuilder> {
   @override
-  ByteData serialize(imc.GpsFixRejection /*!*/ message) {
+  ByteData serialize(imc.GpsFixRejection message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17290,7 +17243,7 @@ class GpsFixRejectionSerializer
 
   @override
   int serializePayload(
-      imc.GpsFixRejection /*!*/ message, ByteData byteData, int offset) {
+      imc.GpsFixRejection message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field utcTime
@@ -17375,7 +17328,7 @@ class GpsFixRejectionSerializer
 class LblRangeAcceptanceSerializer extends imc
     .ImcSerializer<imc.LblRangeAcceptance, imc.LblRangeAcceptanceBuilder> {
   @override
-  ByteData serialize(imc.LblRangeAcceptance /*!*/ message) {
+  ByteData serialize(imc.LblRangeAcceptance message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17394,7 +17347,7 @@ class LblRangeAcceptanceSerializer extends imc
 
   @override
   int serializePayload(
-      imc.LblRangeAcceptance /*!*/ message, ByteData byteData, int offset) {
+      imc.LblRangeAcceptance message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -17485,7 +17438,7 @@ class LblRangeAcceptanceSerializer extends imc
 class DvlRejectionSerializer
     extends imc.ImcSerializer<imc.DvlRejection, imc.DvlRejectionBuilder> {
   @override
-  ByteData serialize(imc.DvlRejection /*!*/ message) {
+  ByteData serialize(imc.DvlRejection message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17504,7 +17457,7 @@ class DvlRejectionSerializer
 
   @override
   int serializePayload(
-      imc.DvlRejection /*!*/ message, ByteData byteData, int offset) {
+      imc.DvlRejection message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -17600,7 +17553,7 @@ class DvlRejectionSerializer
 class LblEstimateSerializer
     extends imc.ImcSerializer<imc.LblEstimate, imc.LblEstimateBuilder> {
   @override
-  ByteData serialize(imc.LblEstimate /*!*/ message) {
+  ByteData serialize(imc.LblEstimate message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17618,8 +17571,7 @@ class LblEstimateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.LblEstimate /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LblEstimate message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field beacon
@@ -17758,7 +17710,7 @@ class LblEstimateSerializer
 class AlignmentStateSerializer
     extends imc.ImcSerializer<imc.AlignmentState, imc.AlignmentStateBuilder> {
   @override
-  ByteData serialize(imc.AlignmentState /*!*/ message) {
+  ByteData serialize(imc.AlignmentState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17777,7 +17729,7 @@ class AlignmentStateSerializer
 
   @override
   int serializePayload(
-      imc.AlignmentState /*!*/ message, ByteData byteData, int offset) {
+      imc.AlignmentState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -17855,7 +17807,7 @@ class AlignmentStateSerializer
 class GroupStreamVelocitySerializer extends imc
     .ImcSerializer<imc.GroupStreamVelocity, imc.GroupStreamVelocityBuilder> {
   @override
-  ByteData serialize(imc.GroupStreamVelocity /*!*/ message) {
+  ByteData serialize(imc.GroupStreamVelocity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17874,7 +17826,7 @@ class GroupStreamVelocitySerializer extends imc
 
   @override
   int serializePayload(
-      imc.GroupStreamVelocity /*!*/ message, ByteData byteData, int offset) {
+      imc.GroupStreamVelocity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -17964,7 +17916,7 @@ class GroupStreamVelocitySerializer extends imc
 class AirflowSerializer
     extends imc.ImcSerializer<imc.Airflow, imc.AirflowBuilder> {
   @override
-  ByteData serialize(imc.Airflow /*!*/ message) {
+  ByteData serialize(imc.Airflow message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -17982,8 +17934,7 @@ class AirflowSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Airflow /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Airflow message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field va
@@ -18073,7 +18024,7 @@ class AirflowSerializer
 class DesiredHeadingSerializer
     extends imc.ImcSerializer<imc.DesiredHeading, imc.DesiredHeadingBuilder> {
   @override
-  ByteData serialize(imc.DesiredHeading /*!*/ message) {
+  ByteData serialize(imc.DesiredHeading message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18092,7 +18043,7 @@ class DesiredHeadingSerializer
 
   @override
   int serializePayload(
-      imc.DesiredHeading /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredHeading message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -18170,7 +18121,7 @@ class DesiredHeadingSerializer
 class DesiredZSerializer
     extends imc.ImcSerializer<imc.DesiredZ, imc.DesiredZBuilder> {
   @override
-  ByteData serialize(imc.DesiredZ /*!*/ message) {
+  ByteData serialize(imc.DesiredZ message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18188,8 +18139,7 @@ class DesiredZSerializer
   }
 
   @override
-  int serializePayload(
-      imc.DesiredZ /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DesiredZ message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -18273,7 +18223,7 @@ class DesiredZSerializer
 class DesiredSpeedSerializer
     extends imc.ImcSerializer<imc.DesiredSpeed, imc.DesiredSpeedBuilder> {
   @override
-  ByteData serialize(imc.DesiredSpeed /*!*/ message) {
+  ByteData serialize(imc.DesiredSpeed message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18292,7 +18242,7 @@ class DesiredSpeedSerializer
 
   @override
   int serializePayload(
-      imc.DesiredSpeed /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredSpeed message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -18376,7 +18326,7 @@ class DesiredSpeedSerializer
 class DesiredRollSerializer
     extends imc.ImcSerializer<imc.DesiredRoll, imc.DesiredRollBuilder> {
   @override
-  ByteData serialize(imc.DesiredRoll /*!*/ message) {
+  ByteData serialize(imc.DesiredRoll message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18394,8 +18344,7 @@ class DesiredRollSerializer
   }
 
   @override
-  int serializePayload(
-      imc.DesiredRoll /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DesiredRoll message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -18473,7 +18422,7 @@ class DesiredRollSerializer
 class DesiredPitchSerializer
     extends imc.ImcSerializer<imc.DesiredPitch, imc.DesiredPitchBuilder> {
   @override
-  ByteData serialize(imc.DesiredPitch /*!*/ message) {
+  ByteData serialize(imc.DesiredPitch message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18492,7 +18441,7 @@ class DesiredPitchSerializer
 
   @override
   int serializePayload(
-      imc.DesiredPitch /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredPitch message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -18570,7 +18519,7 @@ class DesiredPitchSerializer
 class DesiredVerticalRateSerializer extends imc
     .ImcSerializer<imc.DesiredVerticalRate, imc.DesiredVerticalRateBuilder> {
   @override
-  ByteData serialize(imc.DesiredVerticalRate /*!*/ message) {
+  ByteData serialize(imc.DesiredVerticalRate message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18589,7 +18538,7 @@ class DesiredVerticalRateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DesiredVerticalRate /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredVerticalRate message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -18667,7 +18616,7 @@ class DesiredVerticalRateSerializer extends imc
 class DesiredPathSerializer
     extends imc.ImcSerializer<imc.DesiredPath, imc.DesiredPathBuilder> {
   @override
-  ByteData serialize(imc.DesiredPath /*!*/ message) {
+  ByteData serialize(imc.DesiredPath message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18685,8 +18634,7 @@ class DesiredPathSerializer
   }
 
   @override
-  int serializePayload(
-      imc.DesiredPath /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DesiredPath message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field pathRef
@@ -18836,7 +18784,7 @@ class DesiredPathSerializer
 class DesiredControlSerializer
     extends imc.ImcSerializer<imc.DesiredControl, imc.DesiredControlBuilder> {
   @override
-  ByteData serialize(imc.DesiredControl /*!*/ message) {
+  ByteData serialize(imc.DesiredControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18855,7 +18803,7 @@ class DesiredControlSerializer
 
   @override
   int serializePayload(
-      imc.DesiredControl /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -18970,7 +18918,7 @@ class DesiredControlSerializer
 class DesiredHeadingRateSerializer extends imc
     .ImcSerializer<imc.DesiredHeadingRate, imc.DesiredHeadingRateBuilder> {
   @override
-  ByteData serialize(imc.DesiredHeadingRate /*!*/ message) {
+  ByteData serialize(imc.DesiredHeadingRate message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -18989,7 +18937,7 @@ class DesiredHeadingRateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DesiredHeadingRate /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredHeadingRate message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -19067,7 +19015,7 @@ class DesiredHeadingRateSerializer extends imc
 class DesiredVelocitySerializer
     extends imc.ImcSerializer<imc.DesiredVelocity, imc.DesiredVelocityBuilder> {
   @override
-  ByteData serialize(imc.DesiredVelocity /*!*/ message) {
+  ByteData serialize(imc.DesiredVelocity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19086,7 +19034,7 @@ class DesiredVelocitySerializer
 
   @override
   int serializePayload(
-      imc.DesiredVelocity /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredVelocity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field u
@@ -19201,7 +19149,7 @@ class DesiredVelocitySerializer
 class PathControlStateSerializer extends imc
     .ImcSerializer<imc.PathControlState, imc.PathControlStateBuilder> {
   @override
-  ByteData serialize(imc.PathControlState /*!*/ message) {
+  ByteData serialize(imc.PathControlState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19220,7 +19168,7 @@ class PathControlStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PathControlState /*!*/ message, ByteData byteData, int offset) {
+      imc.PathControlState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field pathRef
@@ -19407,7 +19355,7 @@ class PathControlStateSerializer extends imc
 class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     imc.AllocatedControlTorques, imc.AllocatedControlTorquesBuilder> {
   @override
-  ByteData serialize(imc.AllocatedControlTorques /*!*/ message) {
+  ByteData serialize(imc.AllocatedControlTorques message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19425,8 +19373,8 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
   }
 
   @override
-  int serializePayload(imc.AllocatedControlTorques /*!*/ message,
-      ByteData byteData, int offset) {
+  int serializePayload(
+      imc.AllocatedControlTorques message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field k
@@ -19516,7 +19464,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
 class ControlParcelSerializer
     extends imc.ImcSerializer<imc.ControlParcel, imc.ControlParcelBuilder> {
   @override
-  ByteData serialize(imc.ControlParcel /*!*/ message) {
+  ByteData serialize(imc.ControlParcel message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19535,7 +19483,7 @@ class ControlParcelSerializer
 
   @override
   int serializePayload(
-      imc.ControlParcel /*!*/ message, ByteData byteData, int offset) {
+      imc.ControlParcel message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field p
@@ -19630,7 +19578,7 @@ class ControlParcelSerializer
 ///
 class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
   @override
-  ByteData serialize(imc.Brake /*!*/ message) {
+  ByteData serialize(imc.Brake message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19648,7 +19596,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
   }
 
   @override
-  int serializePayload(imc.Brake /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Brake message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -19726,7 +19674,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
 class DesiredLinearStateSerializer extends imc
     .ImcSerializer<imc.DesiredLinearState, imc.DesiredLinearStateBuilder> {
   @override
-  ByteData serialize(imc.DesiredLinearState /*!*/ message) {
+  ByteData serialize(imc.DesiredLinearState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19745,7 +19693,7 @@ class DesiredLinearStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DesiredLinearState /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredLinearState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -19878,7 +19826,7 @@ class DesiredLinearStateSerializer extends imc
 class DesiredThrottleSerializer
     extends imc.ImcSerializer<imc.DesiredThrottle, imc.DesiredThrottleBuilder> {
   @override
-  ByteData serialize(imc.DesiredThrottle /*!*/ message) {
+  ByteData serialize(imc.DesiredThrottle message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19897,7 +19845,7 @@ class DesiredThrottleSerializer
 
   @override
   int serializePayload(
-      imc.DesiredThrottle /*!*/ message, ByteData byteData, int offset) {
+      imc.DesiredThrottle message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -19974,7 +19922,7 @@ class DesiredThrottleSerializer
 ///
 class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
   @override
-  ByteData serialize(imc.Goto /*!*/ message) {
+  ByteData serialize(imc.Goto message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -19992,7 +19940,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
   }
 
   @override
-  int serializePayload(imc.Goto /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Goto message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -20138,7 +20086,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
 ///
 class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
   @override
-  ByteData serialize(imc.PopUp /*!*/ message) {
+  ByteData serialize(imc.PopUp message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -20156,7 +20104,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
   }
 
   @override
-  int serializePayload(imc.PopUp /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.PopUp message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -20303,7 +20251,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
 class TeleoperationSerializer
     extends imc.ImcSerializer<imc.Teleoperation, imc.TeleoperationBuilder> {
   @override
-  ByteData serialize(imc.Teleoperation /*!*/ message) {
+  ByteData serialize(imc.Teleoperation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -20322,7 +20270,7 @@ class TeleoperationSerializer
 
   @override
   int serializePayload(
-      imc.Teleoperation /*!*/ message, ByteData byteData, int offset) {
+      imc.Teleoperation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field custom
@@ -20409,7 +20357,7 @@ class TeleoperationSerializer
 class LoiterSerializer
     extends imc.ImcSerializer<imc.Loiter, imc.LoiterBuilder> {
   @override
-  ByteData serialize(imc.Loiter /*!*/ message) {
+  ByteData serialize(imc.Loiter message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -20427,8 +20375,7 @@ class LoiterSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Loiter /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Loiter message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -20593,7 +20540,7 @@ class LoiterSerializer
 class IdleManeuverSerializer
     extends imc.ImcSerializer<imc.IdleManeuver, imc.IdleManeuverBuilder> {
   @override
-  ByteData serialize(imc.IdleManeuver /*!*/ message) {
+  ByteData serialize(imc.IdleManeuver message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -20612,7 +20559,7 @@ class IdleManeuverSerializer
 
   @override
   int serializePayload(
-      imc.IdleManeuver /*!*/ message, ByteData byteData, int offset) {
+      imc.IdleManeuver message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field duration
@@ -20705,7 +20652,7 @@ class IdleManeuverSerializer
 class LowLevelControlSerializer
     extends imc.ImcSerializer<imc.LowLevelControl, imc.LowLevelControlBuilder> {
   @override
-  ByteData serialize(imc.LowLevelControl /*!*/ message) {
+  ByteData serialize(imc.LowLevelControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -20724,7 +20671,7 @@ class LowLevelControlSerializer
 
   @override
   int serializePayload(
-      imc.LowLevelControl /*!*/ message, ByteData byteData, int offset) {
+      imc.LowLevelControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field control
@@ -20853,7 +20800,7 @@ class LowLevelControlSerializer
 ///
 class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
   @override
-  ByteData serialize(imc.Rows /*!*/ message) {
+  ByteData serialize(imc.Rows message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -20871,7 +20818,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
   }
 
   @override
-  int serializePayload(imc.Rows /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Rows message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -21048,7 +20995,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
 class FollowPathSerializer
     extends imc.ImcSerializer<imc.FollowPath, imc.FollowPathBuilder> {
   @override
-  ByteData serialize(imc.FollowPath /*!*/ message) {
+  ByteData serialize(imc.FollowPath message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -21066,8 +21013,7 @@ class FollowPathSerializer
   }
 
   @override
-  int serializePayload(
-      imc.FollowPath /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.FollowPath message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -21244,7 +21190,7 @@ class FollowPathSerializer
 class PathPointSerializer
     extends imc.ImcSerializer<imc.PathPoint, imc.PathPointBuilder> {
   @override
-  ByteData serialize(imc.PathPoint /*!*/ message) {
+  ByteData serialize(imc.PathPoint message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -21262,8 +21208,7 @@ class PathPointSerializer
   }
 
   @override
-  int serializePayload(
-      imc.PathPoint /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.PathPoint message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -21352,7 +21297,7 @@ class PathPointSerializer
 ///
 class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
   @override
-  ByteData serialize(imc.YoYo /*!*/ message) {
+  ByteData serialize(imc.YoYo message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -21370,7 +21315,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
   }
 
   @override
-  int serializePayload(imc.YoYo /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.YoYo message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -21511,7 +21456,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
 class TeleoperationDoneSerializer extends imc
     .ImcSerializer<imc.TeleoperationDone, imc.TeleoperationDoneBuilder> {
   @override
-  ByteData serialize(imc.TeleoperationDone /*!*/ message) {
+  ByteData serialize(imc.TeleoperationDone message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -21530,7 +21475,7 @@ class TeleoperationDoneSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TeleoperationDone /*!*/ message, ByteData byteData, int offset) {
+      imc.TeleoperationDone message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -21600,7 +21545,7 @@ class TeleoperationDoneSerializer extends imc
 class StationKeepingSerializer
     extends imc.ImcSerializer<imc.StationKeeping, imc.StationKeepingBuilder> {
   @override
-  ByteData serialize(imc.StationKeeping /*!*/ message) {
+  ByteData serialize(imc.StationKeeping message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -21619,7 +21564,7 @@ class StationKeepingSerializer
 
   @override
   int serializePayload(
-      imc.StationKeeping /*!*/ message, ByteData byteData, int offset) {
+      imc.StationKeeping message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -21754,7 +21699,7 @@ class StationKeepingSerializer
 class ElevatorSerializer
     extends imc.ImcSerializer<imc.Elevator, imc.ElevatorBuilder> {
   @override
-  ByteData serialize(imc.Elevator /*!*/ message) {
+  ByteData serialize(imc.Elevator message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -21772,8 +21717,7 @@ class ElevatorSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Elevator /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Elevator message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -21926,7 +21870,7 @@ class ElevatorSerializer
 class FollowTrajectorySerializer extends imc
     .ImcSerializer<imc.FollowTrajectory, imc.FollowTrajectoryBuilder> {
   @override
-  ByteData serialize(imc.FollowTrajectory /*!*/ message) {
+  ByteData serialize(imc.FollowTrajectory message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -21945,7 +21889,7 @@ class FollowTrajectorySerializer extends imc
 
   @override
   int serializePayload(
-      imc.FollowTrajectory /*!*/ message, ByteData byteData, int offset) {
+      imc.FollowTrajectory message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -22122,7 +22066,7 @@ class FollowTrajectorySerializer extends imc
 class TrajectoryPointSerializer
     extends imc.ImcSerializer<imc.TrajectoryPoint, imc.TrajectoryPointBuilder> {
   @override
-  ByteData serialize(imc.TrajectoryPoint /*!*/ message) {
+  ByteData serialize(imc.TrajectoryPoint message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -22141,7 +22085,7 @@ class TrajectoryPointSerializer
 
   @override
   int serializePayload(
-      imc.TrajectoryPoint /*!*/ message, ByteData byteData, int offset) {
+      imc.TrajectoryPoint message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field x
@@ -22237,7 +22181,7 @@ class TrajectoryPointSerializer
 class CustomManeuverSerializer
     extends imc.ImcSerializer<imc.CustomManeuver, imc.CustomManeuverBuilder> {
   @override
-  ByteData serialize(imc.CustomManeuver /*!*/ message) {
+  ByteData serialize(imc.CustomManeuver message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -22256,7 +22200,7 @@ class CustomManeuverSerializer
 
   @override
   int serializePayload(
-      imc.CustomManeuver /*!*/ message, ByteData byteData, int offset) {
+      imc.CustomManeuver message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -22364,7 +22308,7 @@ class CustomManeuverSerializer
 class VehicleFormationSerializer extends imc
     .ImcSerializer<imc.VehicleFormation, imc.VehicleFormationBuilder> {
   @override
-  ByteData serialize(imc.VehicleFormation /*!*/ message) {
+  ByteData serialize(imc.VehicleFormation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -22383,7 +22327,7 @@ class VehicleFormationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.VehicleFormation /*!*/ message, ByteData byteData, int offset) {
+      imc.VehicleFormation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -22610,7 +22554,7 @@ class VehicleFormationSerializer extends imc
 class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     imc.VehicleFormationParticipant, imc.VehicleFormationParticipantBuilder> {
   @override
-  ByteData serialize(imc.VehicleFormationParticipant /*!*/ message) {
+  ByteData serialize(imc.VehicleFormationParticipant message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -22628,8 +22572,8 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
   }
 
   @override
-  int serializePayload(imc.VehicleFormationParticipant /*!*/ message,
-      ByteData byteData, int offset) {
+  int serializePayload(
+      imc.VehicleFormationParticipant message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field vid
@@ -22726,7 +22670,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
 class StopManeuverSerializer
     extends imc.ImcSerializer<imc.StopManeuver, imc.StopManeuverBuilder> {
   @override
-  ByteData serialize(imc.StopManeuver /*!*/ message) {
+  ByteData serialize(imc.StopManeuver message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -22745,7 +22689,7 @@ class StopManeuverSerializer
 
   @override
   int serializePayload(
-      imc.StopManeuver /*!*/ message, ByteData byteData, int offset) {
+      imc.StopManeuver message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -22815,7 +22759,7 @@ class StopManeuverSerializer
 class RegisterManeuverSerializer extends imc
     .ImcSerializer<imc.RegisterManeuver, imc.RegisterManeuverBuilder> {
   @override
-  ByteData serialize(imc.RegisterManeuver /*!*/ message) {
+  ByteData serialize(imc.RegisterManeuver message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -22834,7 +22778,7 @@ class RegisterManeuverSerializer extends imc
 
   @override
   int serializePayload(
-      imc.RegisterManeuver /*!*/ message, ByteData byteData, int offset) {
+      imc.RegisterManeuver message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field mid
@@ -22912,7 +22856,7 @@ class RegisterManeuverSerializer extends imc
 class ManeuverControlStateSerializer extends imc
     .ImcSerializer<imc.ManeuverControlState, imc.ManeuverControlStateBuilder> {
   @override
-  ByteData serialize(imc.ManeuverControlState /*!*/ message) {
+  ByteData serialize(imc.ManeuverControlState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -22931,7 +22875,7 @@ class ManeuverControlStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.ManeuverControlState /*!*/ message, ByteData byteData, int offset) {
+      imc.ManeuverControlState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -23031,7 +22975,7 @@ class ManeuverControlStateSerializer extends imc
 class FollowSystemSerializer
     extends imc.ImcSerializer<imc.FollowSystem, imc.FollowSystemBuilder> {
   @override
-  ByteData serialize(imc.FollowSystem /*!*/ message) {
+  ByteData serialize(imc.FollowSystem message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -23050,7 +22994,7 @@ class FollowSystemSerializer
 
   @override
   int serializePayload(
-      imc.FollowSystem /*!*/ message, ByteData byteData, int offset) {
+      imc.FollowSystem message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field system
@@ -23170,7 +23114,7 @@ class FollowSystemSerializer
 class CommsRelaySerializer
     extends imc.ImcSerializer<imc.CommsRelay, imc.CommsRelayBuilder> {
   @override
-  ByteData serialize(imc.CommsRelay /*!*/ message) {
+  ByteData serialize(imc.CommsRelay message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -23188,8 +23132,7 @@ class CommsRelaySerializer
   }
 
   @override
-  int serializePayload(
-      imc.CommsRelay /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.CommsRelay message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -23309,7 +23252,7 @@ class CommsRelaySerializer
 class CoverAreaSerializer
     extends imc.ImcSerializer<imc.CoverArea, imc.CoverAreaBuilder> {
   @override
-  ByteData serialize(imc.CoverArea /*!*/ message) {
+  ByteData serialize(imc.CoverArea message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -23327,8 +23270,7 @@ class CoverAreaSerializer
   }
 
   @override
-  int serializePayload(
-      imc.CoverArea /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.CoverArea message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -23499,7 +23441,7 @@ class CoverAreaSerializer
 class PolygonVertexSerializer
     extends imc.ImcSerializer<imc.PolygonVertex, imc.PolygonVertexBuilder> {
   @override
-  ByteData serialize(imc.PolygonVertex /*!*/ message) {
+  ByteData serialize(imc.PolygonVertex message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -23518,7 +23460,7 @@ class PolygonVertexSerializer
 
   @override
   int serializePayload(
-      imc.PolygonVertex /*!*/ message, ByteData byteData, int offset) {
+      imc.PolygonVertex message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -23602,7 +23544,7 @@ class PolygonVertexSerializer
 class CompassCalibrationSerializer extends imc
     .ImcSerializer<imc.CompassCalibration, imc.CompassCalibrationBuilder> {
   @override
-  ByteData serialize(imc.CompassCalibration /*!*/ message) {
+  ByteData serialize(imc.CompassCalibration message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -23621,7 +23563,7 @@ class CompassCalibrationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.CompassCalibration /*!*/ message, ByteData byteData, int offset) {
+      imc.CompassCalibration message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -23781,7 +23723,7 @@ class CompassCalibrationSerializer extends imc
 class FormationParametersSerializer extends imc
     .ImcSerializer<imc.FormationParameters, imc.FormationParametersBuilder> {
   @override
-  ByteData serialize(imc.FormationParameters /*!*/ message) {
+  ByteData serialize(imc.FormationParameters message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -23800,7 +23742,7 @@ class FormationParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.FormationParameters /*!*/ message, ByteData byteData, int offset) {
+      imc.FormationParameters message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field formationName
@@ -23959,7 +23901,7 @@ class FormationParametersSerializer extends imc
 class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     imc.FormationPlanExecution, imc.FormationPlanExecutionBuilder> {
   @override
-  ByteData serialize(imc.FormationPlanExecution /*!*/ message) {
+  ByteData serialize(imc.FormationPlanExecution message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -23978,7 +23920,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.FormationPlanExecution /*!*/ message, ByteData byteData, int offset) {
+      imc.FormationPlanExecution message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field groupName
@@ -24179,7 +24121,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
 class FollowReferenceSerializer
     extends imc.ImcSerializer<imc.FollowReference, imc.FollowReferenceBuilder> {
   @override
-  ByteData serialize(imc.FollowReference /*!*/ message) {
+  ByteData serialize(imc.FollowReference message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -24198,7 +24140,7 @@ class FollowReferenceSerializer
 
   @override
   int serializePayload(
-      imc.FollowReference /*!*/ message, ByteData byteData, int offset) {
+      imc.FollowReference message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field controlSrc
@@ -24300,7 +24242,7 @@ class FollowReferenceSerializer
 class ReferenceSerializer
     extends imc.ImcSerializer<imc.Reference, imc.ReferenceBuilder> {
   @override
-  ByteData serialize(imc.Reference /*!*/ message) {
+  ByteData serialize(imc.Reference message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -24318,8 +24260,7 @@ class ReferenceSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Reference /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Reference message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field flags
@@ -24489,7 +24430,7 @@ class ReferenceSerializer
 class FollowRefStateSerializer
     extends imc.ImcSerializer<imc.FollowRefState, imc.FollowRefStateBuilder> {
   @override
-  ByteData serialize(imc.FollowRefState /*!*/ message) {
+  ByteData serialize(imc.FollowRefState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -24508,7 +24449,7 @@ class FollowRefStateSerializer
 
   @override
   int serializePayload(
-      imc.FollowRefState /*!*/ message, ByteData byteData, int offset) {
+      imc.FollowRefState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field controlSrc
@@ -24642,7 +24583,7 @@ class FollowRefStateSerializer
 class FormationMonitorSerializer extends imc
     .ImcSerializer<imc.FormationMonitor, imc.FormationMonitorBuilder> {
   @override
-  ByteData serialize(imc.FormationMonitor /*!*/ message) {
+  ByteData serialize(imc.FormationMonitor message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -24661,7 +24602,7 @@ class FormationMonitorSerializer extends imc
 
   @override
   int serializePayload(
-      imc.FormationMonitor /*!*/ message, ByteData byteData, int offset) {
+      imc.FormationMonitor message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field axCmd
@@ -24889,7 +24830,7 @@ class FormationMonitorSerializer extends imc
 class RelativeStateSerializer
     extends imc.ImcSerializer<imc.RelativeState, imc.RelativeStateBuilder> {
   @override
-  ByteData serialize(imc.RelativeState /*!*/ message) {
+  ByteData serialize(imc.RelativeState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -24908,7 +24849,7 @@ class RelativeStateSerializer
 
   @override
   int serializePayload(
-      imc.RelativeState /*!*/ message, ByteData byteData, int offset) {
+      imc.RelativeState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sId
@@ -25121,7 +25062,7 @@ class RelativeStateSerializer
 class DislodgeSerializer
     extends imc.ImcSerializer<imc.Dislodge, imc.DislodgeBuilder> {
   @override
-  ByteData serialize(imc.Dislodge /*!*/ message) {
+  ByteData serialize(imc.Dislodge message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -25139,8 +25080,7 @@ class DislodgeSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Dislodge /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Dislodge message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -25246,7 +25186,7 @@ class DislodgeSerializer
 class FormationSerializer
     extends imc.ImcSerializer<imc.Formation, imc.FormationBuilder> {
   @override
-  ByteData serialize(imc.Formation /*!*/ message) {
+  ByteData serialize(imc.Formation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -25264,8 +25204,7 @@ class FormationSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Formation /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Formation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field formationName
@@ -25553,7 +25492,7 @@ class FormationSerializer
 class LaunchSerializer
     extends imc.ImcSerializer<imc.Launch, imc.LaunchBuilder> {
   @override
-  ByteData serialize(imc.Launch /*!*/ message) {
+  ByteData serialize(imc.Launch message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -25571,8 +25510,7 @@ class LaunchSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Launch /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Launch message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -25700,7 +25638,7 @@ class LaunchSerializer
 ///
 class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
   @override
-  ByteData serialize(imc.Drop /*!*/ message) {
+  ByteData serialize(imc.Drop message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -25718,7 +25656,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
   }
 
   @override
-  int serializePayload(imc.Drop /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Drop message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -25847,7 +25785,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
 class ScheduledGotoSerializer
     extends imc.ImcSerializer<imc.ScheduledGoto, imc.ScheduledGotoBuilder> {
   @override
-  ByteData serialize(imc.ScheduledGoto /*!*/ message) {
+  ByteData serialize(imc.ScheduledGoto message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -25866,7 +25804,7 @@ class ScheduledGotoSerializer
 
   @override
   int serializePayload(
-      imc.ScheduledGoto /*!*/ message, ByteData byteData, int offset) {
+      imc.ScheduledGoto message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field arrivalTime
@@ -25987,7 +25925,7 @@ class ScheduledGotoSerializer
 class RowsCoverageSerializer
     extends imc.ImcSerializer<imc.RowsCoverage, imc.RowsCoverageBuilder> {
   @override
-  ByteData serialize(imc.RowsCoverage /*!*/ message) {
+  ByteData serialize(imc.RowsCoverage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -26006,7 +25944,7 @@ class RowsCoverageSerializer
 
   @override
   int serializePayload(
-      imc.RowsCoverage /*!*/ message, ByteData byteData, int offset) {
+      imc.RowsCoverage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -26184,7 +26122,7 @@ class RowsCoverageSerializer
 class SampleSerializer
     extends imc.ImcSerializer<imc.Sample, imc.SampleBuilder> {
   @override
-  ByteData serialize(imc.Sample /*!*/ message) {
+  ByteData serialize(imc.Sample message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -26202,8 +26140,7 @@ class SampleSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Sample /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Sample message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -26350,7 +26287,7 @@ class SampleSerializer
 class ImageTrackingSerializer
     extends imc.ImcSerializer<imc.ImageTracking, imc.ImageTrackingBuilder> {
   @override
-  ByteData serialize(imc.ImageTracking /*!*/ message) {
+  ByteData serialize(imc.ImageTracking message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -26369,7 +26306,7 @@ class ImageTrackingSerializer
 
   @override
   int serializePayload(
-      imc.ImageTracking /*!*/ message, ByteData byteData, int offset) {
+      imc.ImageTracking message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -26439,7 +26376,7 @@ class ImageTrackingSerializer
 class TakeoffSerializer
     extends imc.ImcSerializer<imc.Takeoff, imc.TakeoffBuilder> {
   @override
-  ByteData serialize(imc.Takeoff /*!*/ message) {
+  ByteData serialize(imc.Takeoff message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -26457,8 +26394,7 @@ class TakeoffSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Takeoff /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Takeoff message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -26586,7 +26522,7 @@ class TakeoffSerializer
 ///
 class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
   @override
-  ByteData serialize(imc.Land /*!*/ message) {
+  ByteData serialize(imc.Land message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -26604,7 +26540,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
   }
 
   @override
-  int serializePayload(imc.Land /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Land message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -26751,7 +26687,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
 class AutonomousSectionSerializer extends imc
     .ImcSerializer<imc.AutonomousSection, imc.AutonomousSectionBuilder> {
   @override
-  ByteData serialize(imc.AutonomousSection /*!*/ message) {
+  ByteData serialize(imc.AutonomousSection message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -26770,7 +26706,7 @@ class AutonomousSectionSerializer extends imc
 
   @override
   int serializePayload(
-      imc.AutonomousSection /*!*/ message, ByteData byteData, int offset) {
+      imc.AutonomousSection message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -26969,7 +26905,7 @@ class AutonomousSectionSerializer extends imc
 class FollowPointSerializer
     extends imc.ImcSerializer<imc.FollowPoint, imc.FollowPointBuilder> {
   @override
-  ByteData serialize(imc.FollowPoint /*!*/ message) {
+  ByteData serialize(imc.FollowPoint message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -26987,8 +26923,7 @@ class FollowPointSerializer
   }
 
   @override
-  int serializePayload(
-      imc.FollowPoint /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.FollowPoint message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field target
@@ -27126,7 +27061,7 @@ class FollowPointSerializer
 class AlignmentSerializer
     extends imc.ImcSerializer<imc.Alignment, imc.AlignmentBuilder> {
   @override
-  ByteData serialize(imc.Alignment /*!*/ message) {
+  ByteData serialize(imc.Alignment message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -27144,8 +27079,7 @@ class AlignmentSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Alignment /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Alignment message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -27262,7 +27196,7 @@ class AlignmentSerializer
 class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     imc.StationKeepingExtended, imc.StationKeepingExtendedBuilder> {
   @override
-  ByteData serialize(imc.StationKeepingExtended /*!*/ message) {
+  ByteData serialize(imc.StationKeepingExtended message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -27281,7 +27215,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.StationKeepingExtended /*!*/ message, ByteData byteData, int offset) {
+      imc.StationKeepingExtended message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -27435,7 +27369,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
 class ManeuverDoneSerializer
     extends imc.ImcSerializer<imc.ManeuverDone, imc.ManeuverDoneBuilder> {
   @override
-  ByteData serialize(imc.ManeuverDone /*!*/ message) {
+  ByteData serialize(imc.ManeuverDone message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -27454,7 +27388,7 @@ class ManeuverDoneSerializer
 
   @override
   int serializePayload(
-      imc.ManeuverDone /*!*/ message, ByteData byteData, int offset) {
+      imc.ManeuverDone message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -27524,7 +27458,7 @@ class ManeuverDoneSerializer
 class MagnetometerSerializer
     extends imc.ImcSerializer<imc.Magnetometer, imc.MagnetometerBuilder> {
   @override
-  ByteData serialize(imc.Magnetometer /*!*/ message) {
+  ByteData serialize(imc.Magnetometer message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -27543,7 +27477,7 @@ class MagnetometerSerializer
 
   @override
   int serializePayload(
-      imc.Magnetometer /*!*/ message, ByteData byteData, int offset) {
+      imc.Magnetometer message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -27691,7 +27625,7 @@ class MagnetometerSerializer
 class VehicleStateSerializer
     extends imc.ImcSerializer<imc.VehicleState, imc.VehicleStateBuilder> {
   @override
-  ByteData serialize(imc.VehicleState /*!*/ message) {
+  ByteData serialize(imc.VehicleState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -27710,7 +27644,7 @@ class VehicleStateSerializer
 
   @override
   int serializePayload(
-      imc.VehicleState /*!*/ message, ByteData byteData, int offset) {
+      imc.VehicleState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field opMode
@@ -27862,7 +27796,7 @@ class VehicleStateSerializer
 class VehicleCommandSerializer
     extends imc.ImcSerializer<imc.VehicleCommand, imc.VehicleCommandBuilder> {
   @override
-  ByteData serialize(imc.VehicleCommand /*!*/ message) {
+  ByteData serialize(imc.VehicleCommand message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -27881,7 +27815,7 @@ class VehicleCommandSerializer
 
   @override
   int serializePayload(
-      imc.VehicleCommand /*!*/ message, ByteData byteData, int offset) {
+      imc.VehicleCommand message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -28030,7 +27964,7 @@ class VehicleCommandSerializer
 class MonitorEntityStateSerializer extends imc
     .ImcSerializer<imc.MonitorEntityState, imc.MonitorEntityStateBuilder> {
   @override
-  ByteData serialize(imc.MonitorEntityState /*!*/ message) {
+  ByteData serialize(imc.MonitorEntityState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28049,7 +27983,7 @@ class MonitorEntityStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.MonitorEntityState /*!*/ message, ByteData byteData, int offset) {
+      imc.MonitorEntityState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field command
@@ -28143,7 +28077,7 @@ class MonitorEntityStateSerializer extends imc
 class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     imc.EntityMonitoringState, imc.EntityMonitoringStateBuilder> {
   @override
-  ByteData serialize(imc.EntityMonitoringState /*!*/ message) {
+  ByteData serialize(imc.EntityMonitoringState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28162,7 +28096,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.EntityMonitoringState /*!*/ message, ByteData byteData, int offset) {
+      imc.EntityMonitoringState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field mcount
@@ -28318,7 +28252,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
 class OperationalLimitsSerializer extends imc
     .ImcSerializer<imc.OperationalLimits, imc.OperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.OperationalLimits /*!*/ message) {
+  ByteData serialize(imc.OperationalLimits message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28337,7 +28271,7 @@ class OperationalLimitsSerializer extends imc
 
   @override
   int serializePayload(
-      imc.OperationalLimits /*!*/ message, ByteData byteData, int offset) {
+      imc.OperationalLimits message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field mask
@@ -28481,7 +28415,7 @@ class OperationalLimitsSerializer extends imc
 class GetOperationalLimitsSerializer extends imc
     .ImcSerializer<imc.GetOperationalLimits, imc.GetOperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.GetOperationalLimits /*!*/ message) {
+  ByteData serialize(imc.GetOperationalLimits message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28500,7 +28434,7 @@ class GetOperationalLimitsSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GetOperationalLimits /*!*/ message, ByteData byteData, int offset) {
+      imc.GetOperationalLimits message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -28570,7 +28504,7 @@ class GetOperationalLimitsSerializer extends imc
 class CalibrationSerializer
     extends imc.ImcSerializer<imc.Calibration, imc.CalibrationBuilder> {
   @override
-  ByteData serialize(imc.Calibration /*!*/ message) {
+  ByteData serialize(imc.Calibration message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28588,8 +28522,7 @@ class CalibrationSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Calibration /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Calibration message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field duration
@@ -28667,7 +28600,7 @@ class CalibrationSerializer
 class ControlLoopsSerializer
     extends imc.ImcSerializer<imc.ControlLoops, imc.ControlLoopsBuilder> {
   @override
-  ByteData serialize(imc.ControlLoops /*!*/ message) {
+  ByteData serialize(imc.ControlLoops message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28686,7 +28619,7 @@ class ControlLoopsSerializer
 
   @override
   int serializePayload(
-      imc.ControlLoops /*!*/ message, ByteData byteData, int offset) {
+      imc.ControlLoops message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field enable
@@ -28777,7 +28710,7 @@ class ControlLoopsSerializer
 class VehicleMediumSerializer
     extends imc.ImcSerializer<imc.VehicleMedium, imc.VehicleMediumBuilder> {
   @override
-  ByteData serialize(imc.VehicleMedium /*!*/ message) {
+  ByteData serialize(imc.VehicleMedium message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28796,7 +28729,7 @@ class VehicleMediumSerializer
 
   @override
   int serializePayload(
-      imc.VehicleMedium /*!*/ message, ByteData byteData, int offset) {
+      imc.VehicleMedium message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field medium
@@ -28874,7 +28807,7 @@ class VehicleMediumSerializer
 class CollisionSerializer
     extends imc.ImcSerializer<imc.Collision, imc.CollisionBuilder> {
   @override
-  ByteData serialize(imc.Collision /*!*/ message) {
+  ByteData serialize(imc.Collision message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28892,8 +28825,7 @@ class CollisionSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Collision /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Collision message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -28977,7 +28909,7 @@ class CollisionSerializer
 class FormStateSerializer
     extends imc.ImcSerializer<imc.FormState, imc.FormStateBuilder> {
   @override
-  ByteData serialize(imc.FormState /*!*/ message) {
+  ByteData serialize(imc.FormState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -28995,8 +28927,7 @@ class FormStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.FormState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.FormState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field posSimErr
@@ -29106,7 +29037,7 @@ class FormStateSerializer
 class AutopilotModeSerializer
     extends imc.ImcSerializer<imc.AutopilotMode, imc.AutopilotModeBuilder> {
   @override
-  ByteData serialize(imc.AutopilotMode /*!*/ message) {
+  ByteData serialize(imc.AutopilotMode message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -29125,7 +29056,7 @@ class AutopilotModeSerializer
 
   @override
   int serializePayload(
-      imc.AutopilotMode /*!*/ message, ByteData byteData, int offset) {
+      imc.AutopilotMode message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field autonomy
@@ -29219,7 +29150,7 @@ class AutopilotModeSerializer
 class FormationStateSerializer
     extends imc.ImcSerializer<imc.FormationState, imc.FormationStateBuilder> {
   @override
-  ByteData serialize(imc.FormationState /*!*/ message) {
+  ByteData serialize(imc.FormationState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -29238,7 +29169,7 @@ class FormationStateSerializer
 
   @override
   int serializePayload(
-      imc.FormationState /*!*/ message, ByteData byteData, int offset) {
+      imc.FormationState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -29361,7 +29292,7 @@ class FormationStateSerializer
 class ReportControlSerializer
     extends imc.ImcSerializer<imc.ReportControl, imc.ReportControlBuilder> {
   @override
-  ByteData serialize(imc.ReportControl /*!*/ message) {
+  ByteData serialize(imc.ReportControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -29380,7 +29311,7 @@ class ReportControlSerializer
 
   @override
   int serializePayload(
-      imc.ReportControl /*!*/ message, ByteData byteData, int offset) {
+      imc.ReportControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -29486,7 +29417,7 @@ class ReportControlSerializer
 class StateReportSerializer
     extends imc.ImcSerializer<imc.StateReport, imc.StateReportBuilder> {
   @override
-  ByteData serialize(imc.StateReport /*!*/ message) {
+  ByteData serialize(imc.StateReport message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -29504,8 +29435,7 @@ class StateReportSerializer
   }
 
   @override
-  int serializePayload(
-      imc.StateReport /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.StateReport message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field stime
@@ -29637,7 +29567,7 @@ class StateReportSerializer
 class TransmissionRequestSerializer extends imc
     .ImcSerializer<imc.TransmissionRequest, imc.TransmissionRequestBuilder> {
   @override
-  ByteData serialize(imc.TransmissionRequest /*!*/ message) {
+  ByteData serialize(imc.TransmissionRequest message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -29656,7 +29586,7 @@ class TransmissionRequestSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TransmissionRequest /*!*/ message, ByteData byteData, int offset) {
+      imc.TransmissionRequest message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -29840,7 +29770,7 @@ class TransmissionRequestSerializer extends imc
 class TransmissionStatusSerializer extends imc
     .ImcSerializer<imc.TransmissionStatus, imc.TransmissionStatusBuilder> {
   @override
-  ByteData serialize(imc.TransmissionStatus /*!*/ message) {
+  ByteData serialize(imc.TransmissionStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -29859,7 +29789,7 @@ class TransmissionStatusSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TransmissionStatus /*!*/ message, ByteData byteData, int offset) {
+      imc.TransmissionStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -29965,7 +29895,7 @@ class TransmissionStatusSerializer extends imc
 class SmsRequestSerializer
     extends imc.ImcSerializer<imc.SmsRequest, imc.SmsRequestBuilder> {
   @override
-  ByteData serialize(imc.SmsRequest /*!*/ message) {
+  ByteData serialize(imc.SmsRequest message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -29983,8 +29913,7 @@ class SmsRequestSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SmsRequest /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsRequest message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -30098,7 +30027,7 @@ class SmsRequestSerializer
 class SmsStatusSerializer
     extends imc.ImcSerializer<imc.SmsStatus, imc.SmsStatusBuilder> {
   @override
-  ByteData serialize(imc.SmsStatus /*!*/ message) {
+  ByteData serialize(imc.SmsStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -30116,8 +30045,7 @@ class SmsStatusSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SmsStatus /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -30216,7 +30144,7 @@ class SmsStatusSerializer
 class VtolStateSerializer
     extends imc.ImcSerializer<imc.VtolState, imc.VtolStateBuilder> {
   @override
-  ByteData serialize(imc.VtolState /*!*/ message) {
+  ByteData serialize(imc.VtolState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -30234,8 +30162,7 @@ class VtolStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.VtolState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.VtolState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -30313,7 +30240,7 @@ class VtolStateSerializer
 class ArmingStateSerializer
     extends imc.ImcSerializer<imc.ArmingState, imc.ArmingStateBuilder> {
   @override
-  ByteData serialize(imc.ArmingState /*!*/ message) {
+  ByteData serialize(imc.ArmingState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -30331,8 +30258,7 @@ class ArmingStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.ArmingState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.ArmingState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -30410,7 +30336,7 @@ class ArmingStateSerializer
 class TCPRequestSerializer
     extends imc.ImcSerializer<imc.TCPRequest, imc.TCPRequestBuilder> {
   @override
-  ByteData serialize(imc.TCPRequest /*!*/ message) {
+  ByteData serialize(imc.TCPRequest message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -30428,8 +30354,7 @@ class TCPRequestSerializer
   }
 
   @override
-  int serializePayload(
-      imc.TCPRequest /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.TCPRequest message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -30565,7 +30490,7 @@ class TCPRequestSerializer
 class TCPStatusSerializer
     extends imc.ImcSerializer<imc.TCPStatus, imc.TCPStatusBuilder> {
   @override
-  ByteData serialize(imc.TCPStatus /*!*/ message) {
+  ByteData serialize(imc.TCPStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -30583,8 +30508,7 @@ class TCPStatusSerializer
   }
 
   @override
-  int serializePayload(
-      imc.TCPStatus /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.TCPStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reqId
@@ -30682,7 +30606,7 @@ class TCPStatusSerializer
 ///
 class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
   @override
-  ByteData serialize(imc.Abort /*!*/ message) {
+  ByteData serialize(imc.Abort message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -30700,7 +30624,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
   }
 
   @override
-  int serializePayload(imc.Abort /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Abort message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -30770,7 +30694,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
 class PlanSpecificationSerializer extends imc
     .ImcSerializer<imc.PlanSpecification, imc.PlanSpecificationBuilder> {
   @override
-  ByteData serialize(imc.PlanSpecification /*!*/ message) {
+  ByteData serialize(imc.PlanSpecification message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -30789,7 +30713,7 @@ class PlanSpecificationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PlanSpecification /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanSpecification message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field planId
@@ -31165,7 +31089,7 @@ class PlanSpecificationSerializer extends imc
 class PlanManeuverSerializer
     extends imc.ImcSerializer<imc.PlanManeuver, imc.PlanManeuverBuilder> {
   @override
-  ByteData serialize(imc.PlanManeuver /*!*/ message) {
+  ByteData serialize(imc.PlanManeuver message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -31184,7 +31108,7 @@ class PlanManeuverSerializer
 
   @override
   int serializePayload(
-      imc.PlanManeuver /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanManeuver message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field maneuverId
@@ -31406,7 +31330,7 @@ class PlanManeuverSerializer
 class PlanTransitionSerializer
     extends imc.ImcSerializer<imc.PlanTransition, imc.PlanTransitionBuilder> {
   @override
-  ByteData serialize(imc.PlanTransition /*!*/ message) {
+  ByteData serialize(imc.PlanTransition message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -31425,7 +31349,7 @@ class PlanTransitionSerializer
 
   @override
   int serializePayload(
-      imc.PlanTransition /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanTransition message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sourceMan
@@ -31590,7 +31514,7 @@ class PlanTransitionSerializer
 class EmergencyControlSerializer extends imc
     .ImcSerializer<imc.EmergencyControl, imc.EmergencyControlBuilder> {
   @override
-  ByteData serialize(imc.EmergencyControl /*!*/ message) {
+  ByteData serialize(imc.EmergencyControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -31609,7 +31533,7 @@ class EmergencyControlSerializer extends imc
 
   @override
   int serializePayload(
-      imc.EmergencyControl /*!*/ message, ByteData byteData, int offset) {
+      imc.EmergencyControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field command
@@ -31725,7 +31649,7 @@ class EmergencyControlSerializer extends imc
 class EmergencyControlStateSerializer extends imc.ImcSerializer<
     imc.EmergencyControlState, imc.EmergencyControlStateBuilder> {
   @override
-  ByteData serialize(imc.EmergencyControlState /*!*/ message) {
+  ByteData serialize(imc.EmergencyControlState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -31744,7 +31668,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.EmergencyControlState /*!*/ message, ByteData byteData, int offset) {
+      imc.EmergencyControlState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -31844,7 +31768,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
 class PlanDBSerializer
     extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> {
   @override
-  ByteData serialize(imc.PlanDB /*!*/ message) {
+  ByteData serialize(imc.PlanDB message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -31862,8 +31786,7 @@ class PlanDBSerializer
   }
 
   @override
-  int serializePayload(
-      imc.PlanDB /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.PlanDB message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -32020,7 +31943,7 @@ class PlanDBSerializer
 class PlanDBStateSerializer
     extends imc.ImcSerializer<imc.PlanDBState, imc.PlanDBStateBuilder> {
   @override
-  ByteData serialize(imc.PlanDBState /*!*/ message) {
+  ByteData serialize(imc.PlanDBState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -32038,8 +31961,7 @@ class PlanDBStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.PlanDBState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.PlanDBState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field planCount
@@ -32211,7 +32133,7 @@ class PlanDBStateSerializer
 class PlanDBInformationSerializer extends imc
     .ImcSerializer<imc.PlanDBInformation, imc.PlanDBInformationBuilder> {
   @override
-  ByteData serialize(imc.PlanDBInformation /*!*/ message) {
+  ByteData serialize(imc.PlanDBInformation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -32230,7 +32152,7 @@ class PlanDBInformationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PlanDBInformation /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanDBInformation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field planId
@@ -32363,7 +32285,7 @@ class PlanDBInformationSerializer extends imc
 class PlanControlSerializer
     extends imc.ImcSerializer<imc.PlanControl, imc.PlanControlBuilder> {
   @override
-  ByteData serialize(imc.PlanControl /*!*/ message) {
+  ByteData serialize(imc.PlanControl message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -32381,8 +32303,7 @@ class PlanControlSerializer
   }
 
   @override
-  int serializePayload(
-      imc.PlanControl /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.PlanControl message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -32546,7 +32467,7 @@ class PlanControlSerializer
 class PlanControlStateSerializer extends imc
     .ImcSerializer<imc.PlanControlState, imc.PlanControlStateBuilder> {
   @override
-  ByteData serialize(imc.PlanControlState /*!*/ message) {
+  ByteData serialize(imc.PlanControlState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -32565,7 +32486,7 @@ class PlanControlStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PlanControlState /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanControlState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -32705,7 +32626,7 @@ class PlanControlStateSerializer extends imc
 class PlanVariableSerializer
     extends imc.ImcSerializer<imc.PlanVariable, imc.PlanVariableBuilder> {
   @override
-  ByteData serialize(imc.PlanVariable /*!*/ message) {
+  ByteData serialize(imc.PlanVariable message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -32724,7 +32645,7 @@ class PlanVariableSerializer
 
   @override
   int serializePayload(
-      imc.PlanVariable /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanVariable message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -32838,7 +32759,7 @@ class PlanVariableSerializer
 class PlanGenerationSerializer
     extends imc.ImcSerializer<imc.PlanGeneration, imc.PlanGenerationBuilder> {
   @override
-  ByteData serialize(imc.PlanGeneration /*!*/ message) {
+  ByteData serialize(imc.PlanGeneration message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -32857,7 +32778,7 @@ class PlanGenerationSerializer
 
   @override
   int serializePayload(
-      imc.PlanGeneration /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanGeneration message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field cmd
@@ -32971,7 +32892,7 @@ class PlanGenerationSerializer
 class LeaderStateSerializer
     extends imc.ImcSerializer<imc.LeaderState, imc.LeaderStateBuilder> {
   @override
-  ByteData serialize(imc.LeaderState /*!*/ message) {
+  ByteData serialize(imc.LeaderState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -32989,8 +32910,7 @@ class LeaderStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.LeaderState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.LeaderState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field groupName
@@ -33191,7 +33111,7 @@ class LeaderStateSerializer
 class PlanStatisticsSerializer
     extends imc.ImcSerializer<imc.PlanStatistics, imc.PlanStatisticsBuilder> {
   @override
-  ByteData serialize(imc.PlanStatistics /*!*/ message) {
+  ByteData serialize(imc.PlanStatistics message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -33210,7 +33130,7 @@ class PlanStatisticsSerializer
 
   @override
   int serializePayload(
-      imc.PlanStatistics /*!*/ message, ByteData byteData, int offset) {
+      imc.PlanStatistics message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field planId
@@ -33370,7 +33290,7 @@ class PlanStatisticsSerializer
 class ReportedStateSerializer
     extends imc.ImcSerializer<imc.ReportedState, imc.ReportedStateBuilder> {
   @override
-  ByteData serialize(imc.ReportedState /*!*/ message) {
+  ByteData serialize(imc.ReportedState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -33389,7 +33309,7 @@ class ReportedStateSerializer
 
   @override
   int serializePayload(
-      imc.ReportedState /*!*/ message, ByteData byteData, int offset) {
+      imc.ReportedState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -33524,7 +33444,7 @@ class ReportedStateSerializer
 class RemoteSensorInfoSerializer extends imc
     .ImcSerializer<imc.RemoteSensorInfo, imc.RemoteSensorInfoBuilder> {
   @override
-  ByteData serialize(imc.RemoteSensorInfo /*!*/ message) {
+  ByteData serialize(imc.RemoteSensorInfo message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -33543,7 +33463,7 @@ class RemoteSensorInfoSerializer extends imc
 
   @override
   int serializePayload(
-      imc.RemoteSensorInfo /*!*/ message, ByteData byteData, int offset) {
+      imc.RemoteSensorInfo message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -33683,7 +33603,7 @@ class RemoteSensorInfoSerializer extends imc
 ///
 class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
   @override
-  ByteData serialize(imc.Map /*!*/ message) {
+  ByteData serialize(imc.Map message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -33701,7 +33621,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
   }
 
   @override
-  int serializePayload(imc.Map /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Map message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -33836,7 +33756,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
 class MapFeatureSerializer
     extends imc.ImcSerializer<imc.MapFeature, imc.MapFeatureBuilder> {
   @override
-  ByteData serialize(imc.MapFeature /*!*/ message) {
+  ByteData serialize(imc.MapFeature message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -33854,8 +33774,7 @@ class MapFeatureSerializer
   }
 
   @override
-  int serializePayload(
-      imc.MapFeature /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.MapFeature message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field id
@@ -34015,7 +33934,7 @@ class MapFeatureSerializer
 class MapPointSerializer
     extends imc.ImcSerializer<imc.MapPoint, imc.MapPointBuilder> {
   @override
-  ByteData serialize(imc.MapPoint /*!*/ message) {
+  ByteData serialize(imc.MapPoint message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -34033,8 +33952,7 @@ class MapPointSerializer
   }
 
   @override
-  int serializePayload(
-      imc.MapPoint /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.MapPoint message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -34124,7 +34042,7 @@ class MapPointSerializer
 class CcuEventSerializer
     extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBuilder> {
   @override
-  ByteData serialize(imc.CcuEvent /*!*/ message) {
+  ByteData serialize(imc.CcuEvent message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -34142,8 +34060,7 @@ class CcuEventSerializer
   }
 
   @override
-  int serializePayload(
-      imc.CcuEvent /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.CcuEvent message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -34273,7 +34190,7 @@ class CcuEventSerializer
 class VehicleLinksSerializer
     extends imc.ImcSerializer<imc.VehicleLinks, imc.VehicleLinksBuilder> {
   @override
-  ByteData serialize(imc.VehicleLinks /*!*/ message) {
+  ByteData serialize(imc.VehicleLinks message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -34292,7 +34209,7 @@ class VehicleLinksSerializer
 
   @override
   int serializePayload(
-      imc.VehicleLinks /*!*/ message, ByteData byteData, int offset) {
+      imc.VehicleLinks message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field localname
@@ -34427,7 +34344,7 @@ class VehicleLinksSerializer
 class TrexObservationSerializer
     extends imc.ImcSerializer<imc.TrexObservation, imc.TrexObservationBuilder> {
   @override
-  ByteData serialize(imc.TrexObservation /*!*/ message) {
+  ByteData serialize(imc.TrexObservation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -34446,7 +34363,7 @@ class TrexObservationSerializer
 
   @override
   int serializePayload(
-      imc.TrexObservation /*!*/ message, ByteData byteData, int offset) {
+      imc.TrexObservation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeline
@@ -34563,7 +34480,7 @@ class TrexObservationSerializer
 class TrexCommandSerializer
     extends imc.ImcSerializer<imc.TrexCommand, imc.TrexCommandBuilder> {
   @override
-  ByteData serialize(imc.TrexCommand /*!*/ message) {
+  ByteData serialize(imc.TrexCommand message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -34581,8 +34498,7 @@ class TrexCommandSerializer
   }
 
   @override
-  int serializePayload(
-      imc.TrexCommand /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.TrexCommand message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field command
@@ -34690,7 +34606,7 @@ class TrexCommandSerializer
 class TrexOperationSerializer
     extends imc.ImcSerializer<imc.TrexOperation, imc.TrexOperationBuilder> {
   @override
-  ByteData serialize(imc.TrexOperation /*!*/ message) {
+  ByteData serialize(imc.TrexOperation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -34709,7 +34625,7 @@ class TrexOperationSerializer
 
   @override
   int serializePayload(
-      imc.TrexOperation /*!*/ message, ByteData byteData, int offset) {
+      imc.TrexOperation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -34839,7 +34755,7 @@ class TrexOperationSerializer
 class TrexAttributeSerializer
     extends imc.ImcSerializer<imc.TrexAttribute, imc.TrexAttributeBuilder> {
   @override
-  ByteData serialize(imc.TrexAttribute /*!*/ message) {
+  ByteData serialize(imc.TrexAttribute message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -34858,7 +34774,7 @@ class TrexAttributeSerializer
 
   @override
   int serializePayload(
-      imc.TrexAttribute /*!*/ message, ByteData byteData, int offset) {
+      imc.TrexAttribute message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -34982,7 +34898,7 @@ class TrexAttributeSerializer
 class TrexTokenSerializer
     extends imc.ImcSerializer<imc.TrexToken, imc.TrexTokenBuilder> {
   @override
-  ByteData serialize(imc.TrexToken /*!*/ message) {
+  ByteData serialize(imc.TrexToken message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35000,8 +34916,7 @@ class TrexTokenSerializer
   }
 
   @override
-  int serializePayload(
-      imc.TrexToken /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.TrexToken message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeline
@@ -35151,7 +35066,7 @@ class TrexTokenSerializer
 class TrexPlanSerializer
     extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBuilder> {
   @override
-  ByteData serialize(imc.TrexPlan /*!*/ message) {
+  ByteData serialize(imc.TrexPlan message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35169,8 +35084,7 @@ class TrexPlanSerializer
   }
 
   @override
-  int serializePayload(
-      imc.TrexPlan /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.TrexPlan message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field reactor
@@ -35304,7 +35218,7 @@ class TrexPlanSerializer
 ///
 class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
   @override
-  ByteData serialize(imc.Event /*!*/ message) {
+  ByteData serialize(imc.Event message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35322,7 +35236,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
   }
 
   @override
-  int serializePayload(imc.Event /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Event message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field topic
@@ -35424,7 +35338,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
 class CompressedImageSerializer
     extends imc.ImcSerializer<imc.CompressedImage, imc.CompressedImageBuilder> {
   @override
-  ByteData serialize(imc.CompressedImage /*!*/ message) {
+  ByteData serialize(imc.CompressedImage message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35443,7 +35357,7 @@ class CompressedImageSerializer
 
   @override
   int serializePayload(
-      imc.CompressedImage /*!*/ message, ByteData byteData, int offset) {
+      imc.CompressedImage message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field frameid
@@ -35534,7 +35448,7 @@ class CompressedImageSerializer
 class ImageTxSettingsSerializer
     extends imc.ImcSerializer<imc.ImageTxSettings, imc.ImageTxSettingsBuilder> {
   @override
-  ByteData serialize(imc.ImageTxSettings /*!*/ message) {
+  ByteData serialize(imc.ImageTxSettings message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35553,7 +35467,7 @@ class ImageTxSettingsSerializer
 
   @override
   int serializePayload(
-      imc.ImageTxSettings /*!*/ message, ByteData byteData, int offset) {
+      imc.ImageTxSettings message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field fps
@@ -35649,7 +35563,7 @@ class ImageTxSettingsSerializer
 class RemoteStateSerializer
     extends imc.ImcSerializer<imc.RemoteState, imc.RemoteStateBuilder> {
   @override
-  ByteData serialize(imc.RemoteState /*!*/ message) {
+  ByteData serialize(imc.RemoteState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35667,8 +35581,7 @@ class RemoteStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.RemoteState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.RemoteState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -35770,7 +35683,7 @@ class RemoteStateSerializer
 class TargetSerializer
     extends imc.ImcSerializer<imc.Target, imc.TargetBuilder> {
   @override
-  ByteData serialize(imc.Target /*!*/ message) {
+  ByteData serialize(imc.Target message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35788,8 +35701,7 @@ class TargetSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Target /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Target message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field label
@@ -35912,7 +35824,7 @@ class TargetSerializer
 class EntityParameterSerializer
     extends imc.ImcSerializer<imc.EntityParameter, imc.EntityParameterBuilder> {
   @override
-  ByteData serialize(imc.EntityParameter /*!*/ message) {
+  ByteData serialize(imc.EntityParameter message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -35931,7 +35843,7 @@ class EntityParameterSerializer
 
   @override
   int serializePayload(
-      imc.EntityParameter /*!*/ message, ByteData byteData, int offset) {
+      imc.EntityParameter message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -36033,7 +35945,7 @@ class EntityParameterSerializer
 class EntityParametersSerializer extends imc
     .ImcSerializer<imc.EntityParameters, imc.EntityParametersBuilder> {
   @override
-  ByteData serialize(imc.EntityParameters /*!*/ message) {
+  ByteData serialize(imc.EntityParameters message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36052,7 +35964,7 @@ class EntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.EntityParameters /*!*/ message, ByteData byteData, int offset) {
+      imc.EntityParameters message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -36187,7 +36099,7 @@ class EntityParametersSerializer extends imc
 class QueryEntityParametersSerializer extends imc.ImcSerializer<
     imc.QueryEntityParameters, imc.QueryEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityParameters /*!*/ message) {
+  ByteData serialize(imc.QueryEntityParameters message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36206,7 +36118,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.QueryEntityParameters /*!*/ message, ByteData byteData, int offset) {
+      imc.QueryEntityParameters message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -36323,7 +36235,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
 class SetEntityParametersSerializer extends imc
     .ImcSerializer<imc.SetEntityParameters, imc.SetEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.SetEntityParameters /*!*/ message) {
+  ByteData serialize(imc.SetEntityParameters message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36342,7 +36254,7 @@ class SetEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetEntityParameters /*!*/ message, ByteData byteData, int offset) {
+      imc.SetEntityParameters message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -36477,7 +36389,7 @@ class SetEntityParametersSerializer extends imc
 class SaveEntityParametersSerializer extends imc
     .ImcSerializer<imc.SaveEntityParameters, imc.SaveEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.SaveEntityParameters /*!*/ message) {
+  ByteData serialize(imc.SaveEntityParameters message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36496,7 +36408,7 @@ class SaveEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SaveEntityParameters /*!*/ message, ByteData byteData, int offset) {
+      imc.SaveEntityParameters message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -36583,7 +36495,7 @@ class SaveEntityParametersSerializer extends imc
 class CreateSessionSerializer
     extends imc.ImcSerializer<imc.CreateSession, imc.CreateSessionBuilder> {
   @override
-  ByteData serialize(imc.CreateSession /*!*/ message) {
+  ByteData serialize(imc.CreateSession message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36602,7 +36514,7 @@ class CreateSessionSerializer
 
   @override
   int serializePayload(
-      imc.CreateSession /*!*/ message, ByteData byteData, int offset) {
+      imc.CreateSession message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timeout
@@ -36680,7 +36592,7 @@ class CreateSessionSerializer
 class CloseSessionSerializer
     extends imc.ImcSerializer<imc.CloseSession, imc.CloseSessionBuilder> {
   @override
-  ByteData serialize(imc.CloseSession /*!*/ message) {
+  ByteData serialize(imc.CloseSession message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36699,7 +36611,7 @@ class CloseSessionSerializer
 
   @override
   int serializePayload(
-      imc.CloseSession /*!*/ message, ByteData byteData, int offset) {
+      imc.CloseSession message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sessid
@@ -36777,7 +36689,7 @@ class CloseSessionSerializer
 class SessionSubscriptionSerializer extends imc
     .ImcSerializer<imc.SessionSubscription, imc.SessionSubscriptionBuilder> {
   @override
-  ByteData serialize(imc.SessionSubscription /*!*/ message) {
+  ByteData serialize(imc.SessionSubscription message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36796,7 +36708,7 @@ class SessionSubscriptionSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SessionSubscription /*!*/ message, ByteData byteData, int offset) {
+      imc.SessionSubscription message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sessid
@@ -36889,7 +36801,7 @@ class SessionSubscriptionSerializer extends imc
 class SessionKeepAliveSerializer extends imc
     .ImcSerializer<imc.SessionKeepAlive, imc.SessionKeepAliveBuilder> {
   @override
-  ByteData serialize(imc.SessionKeepAlive /*!*/ message) {
+  ByteData serialize(imc.SessionKeepAlive message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -36908,7 +36820,7 @@ class SessionKeepAliveSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SessionKeepAlive /*!*/ message, ByteData byteData, int offset) {
+      imc.SessionKeepAlive message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sessid
@@ -36986,7 +36898,7 @@ class SessionKeepAliveSerializer extends imc
 class SessionStatusSerializer
     extends imc.ImcSerializer<imc.SessionStatus, imc.SessionStatusBuilder> {
   @override
-  ByteData serialize(imc.SessionStatus /*!*/ message) {
+  ByteData serialize(imc.SessionStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37005,7 +36917,7 @@ class SessionStatusSerializer
 
   @override
   int serializePayload(
-      imc.SessionStatus /*!*/ message, ByteData byteData, int offset) {
+      imc.SessionStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sessid
@@ -37089,7 +37001,7 @@ class SessionStatusSerializer
 class PushEntityParametersSerializer extends imc
     .ImcSerializer<imc.PushEntityParameters, imc.PushEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.PushEntityParameters /*!*/ message) {
+  ByteData serialize(imc.PushEntityParameters message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37108,7 +37020,7 @@ class PushEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PushEntityParameters /*!*/ message, ByteData byteData, int offset) {
+      imc.PushEntityParameters message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -37195,7 +37107,7 @@ class PushEntityParametersSerializer extends imc
 class PopEntityParametersSerializer extends imc
     .ImcSerializer<imc.PopEntityParameters, imc.PopEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.PopEntityParameters /*!*/ message) {
+  ByteData serialize(imc.PopEntityParameters message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37214,7 +37126,7 @@ class PopEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PopEntityParameters /*!*/ message, ByteData byteData, int offset) {
+      imc.PopEntityParameters message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -37301,7 +37213,7 @@ class PopEntityParametersSerializer extends imc
 class IoEventSerializer
     extends imc.ImcSerializer<imc.IoEvent, imc.IoEventBuilder> {
   @override
-  ByteData serialize(imc.IoEvent /*!*/ message) {
+  ByteData serialize(imc.IoEvent message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37319,8 +37231,7 @@ class IoEventSerializer
   }
 
   @override
-  int serializePayload(
-      imc.IoEvent /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.IoEvent message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -37413,7 +37324,7 @@ class IoEventSerializer
 class UamTxFrameSerializer
     extends imc.ImcSerializer<imc.UamTxFrame, imc.UamTxFrameBuilder> {
   @override
-  ByteData serialize(imc.UamTxFrame /*!*/ message) {
+  ByteData serialize(imc.UamTxFrame message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37431,8 +37342,7 @@ class UamTxFrameSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UamTxFrame /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamTxFrame message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field seq
@@ -37544,7 +37454,7 @@ class UamTxFrameSerializer
 class UamRxFrameSerializer
     extends imc.ImcSerializer<imc.UamRxFrame, imc.UamRxFrameBuilder> {
   @override
-  ByteData serialize(imc.UamRxFrame /*!*/ message) {
+  ByteData serialize(imc.UamRxFrame message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37562,8 +37472,7 @@ class UamRxFrameSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UamRxFrame /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamRxFrame message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field sysSrc
@@ -37684,7 +37593,7 @@ class UamRxFrameSerializer
 class UamTxStatusSerializer
     extends imc.ImcSerializer<imc.UamTxStatus, imc.UamTxStatusBuilder> {
   @override
-  ByteData serialize(imc.UamTxStatus /*!*/ message) {
+  ByteData serialize(imc.UamTxStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37702,8 +37611,7 @@ class UamTxStatusSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UamTxStatus /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamTxStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field seq
@@ -37802,7 +37710,7 @@ class UamTxStatusSerializer
 class UamRxRangeSerializer
     extends imc.ImcSerializer<imc.UamRxRange, imc.UamRxRangeBuilder> {
   @override
-  ByteData serialize(imc.UamRxRange /*!*/ message) {
+  ByteData serialize(imc.UamRxRange message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37820,8 +37728,7 @@ class UamRxRangeSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UamRxRange /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamRxRange message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field seq
@@ -37920,7 +37827,7 @@ class UamRxRangeSerializer
 class UamTxRangeSerializer
     extends imc.ImcSerializer<imc.UamTxRange, imc.UamTxRangeBuilder> {
   @override
-  ByteData serialize(imc.UamTxRange /*!*/ message) {
+  ByteData serialize(imc.UamTxRange message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -37938,8 +37845,7 @@ class UamTxRangeSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UamTxRange /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamTxRange message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field seq
@@ -38038,7 +37944,7 @@ class UamTxRangeSerializer
 class FormCtrlParamSerializer
     extends imc.ImcSerializer<imc.FormCtrlParam, imc.FormCtrlParamBuilder> {
   @override
-  ByteData serialize(imc.FormCtrlParam /*!*/ message) {
+  ByteData serialize(imc.FormCtrlParam message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -38057,7 +37963,7 @@ class FormCtrlParamSerializer
 
   @override
   int serializePayload(
-      imc.FormCtrlParam /*!*/ message, ByteData byteData, int offset) {
+      imc.FormCtrlParam message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field action
@@ -38165,7 +38071,7 @@ class FormCtrlParamSerializer
 class FormationEvalSerializer
     extends imc.ImcSerializer<imc.FormationEval, imc.FormationEvalBuilder> {
   @override
-  ByteData serialize(imc.FormationEval /*!*/ message) {
+  ByteData serialize(imc.FormationEval message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -38184,7 +38090,7 @@ class FormationEvalSerializer
 
   @override
   int serializePayload(
-      imc.FormationEval /*!*/ message, ByteData byteData, int offset) {
+      imc.FormationEval message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field errMean
@@ -38274,7 +38180,7 @@ class FormationEvalSerializer
 class FormationControlParamsSerializer extends imc.ImcSerializer<
     imc.FormationControlParams, imc.FormationControlParamsBuilder> {
   @override
-  ByteData serialize(imc.FormationControlParams /*!*/ message) {
+  ByteData serialize(imc.FormationControlParams message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -38293,7 +38199,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.FormationControlParams /*!*/ message, ByteData byteData, int offset) {
+      imc.FormationControlParams message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field action
@@ -38432,7 +38338,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
 class FormationEvaluationSerializer extends imc
     .ImcSerializer<imc.FormationEvaluation, imc.FormationEvaluationBuilder> {
   @override
-  ByteData serialize(imc.FormationEvaluation /*!*/ message) {
+  ByteData serialize(imc.FormationEvaluation message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -38451,7 +38357,7 @@ class FormationEvaluationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.FormationEvaluation /*!*/ message, ByteData byteData, int offset) {
+      imc.FormationEvaluation message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -38605,7 +38511,7 @@ class FormationEvaluationSerializer extends imc
 class SoiWaypointSerializer
     extends imc.ImcSerializer<imc.SoiWaypoint, imc.SoiWaypointBuilder> {
   @override
-  ByteData serialize(imc.SoiWaypoint /*!*/ message) {
+  ByteData serialize(imc.SoiWaypoint message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -38623,8 +38529,7 @@ class SoiWaypointSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SoiWaypoint /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoiWaypoint message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field lat
@@ -38720,7 +38625,7 @@ class SoiWaypointSerializer
 class SoiPlanSerializer
     extends imc.ImcSerializer<imc.SoiPlan, imc.SoiPlanBuilder> {
   @override
-  ByteData serialize(imc.SoiPlan /*!*/ message) {
+  ByteData serialize(imc.SoiPlan message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -38738,8 +38643,7 @@ class SoiPlanSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SoiPlan /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoiPlan message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field planId
@@ -38865,7 +38769,7 @@ class SoiPlanSerializer
 class SoiCommandSerializer
     extends imc.ImcSerializer<imc.SoiCommand, imc.SoiCommandBuilder> {
   @override
-  ByteData serialize(imc.SoiCommand /*!*/ message) {
+  ByteData serialize(imc.SoiCommand message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -38883,8 +38787,7 @@ class SoiCommandSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SoiCommand /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoiCommand message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field type
@@ -39035,7 +38938,7 @@ class SoiCommandSerializer
 class SoiStateSerializer
     extends imc.ImcSerializer<imc.SoiState, imc.SoiStateBuilder> {
   @override
-  ByteData serialize(imc.SoiState /*!*/ message) {
+  ByteData serialize(imc.SoiState message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39053,8 +38956,7 @@ class SoiStateSerializer
   }
 
   @override
-  int serializePayload(
-      imc.SoiState /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoiState message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field state
@@ -39150,7 +39052,7 @@ class SoiStateSerializer
 class MessagePartSerializer
     extends imc.ImcSerializer<imc.MessagePart, imc.MessagePartBuilder> {
   @override
-  ByteData serialize(imc.MessagePart /*!*/ message) {
+  ByteData serialize(imc.MessagePart message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39168,8 +39070,7 @@ class MessagePartSerializer
   }
 
   @override
-  int serializePayload(
-      imc.MessagePart /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.MessagePart message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field uid
@@ -39272,7 +39173,7 @@ class MessagePartSerializer
 class NeptusBlobSerializer
     extends imc.ImcSerializer<imc.NeptusBlob, imc.NeptusBlobBuilder> {
   @override
-  ByteData serialize(imc.NeptusBlob /*!*/ message) {
+  ByteData serialize(imc.NeptusBlob message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39290,8 +39191,7 @@ class NeptusBlobSerializer
   }
 
   @override
-  int serializePayload(
-      imc.NeptusBlob /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.NeptusBlob message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field contentType
@@ -39391,7 +39291,7 @@ class NeptusBlobSerializer
 class AbortedSerializer
     extends imc.ImcSerializer<imc.Aborted, imc.AbortedBuilder> {
   @override
-  ByteData serialize(imc.Aborted /*!*/ message) {
+  ByteData serialize(imc.Aborted message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39409,8 +39309,7 @@ class AbortedSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Aborted /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Aborted message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -39480,7 +39379,7 @@ class AbortedSerializer
 class UsblAnglesSerializer
     extends imc.ImcSerializer<imc.UsblAngles, imc.UsblAnglesBuilder> {
   @override
-  ByteData serialize(imc.UsblAngles /*!*/ message) {
+  ByteData serialize(imc.UsblAngles message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39498,8 +39397,7 @@ class UsblAnglesSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UsblAngles /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblAngles message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field target
@@ -39589,7 +39487,7 @@ class UsblAnglesSerializer
 class UsblPositionSerializer
     extends imc.ImcSerializer<imc.UsblPosition, imc.UsblPositionBuilder> {
   @override
-  ByteData serialize(imc.UsblPosition /*!*/ message) {
+  ByteData serialize(imc.UsblPosition message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39608,7 +39506,7 @@ class UsblPositionSerializer
 
   @override
   int serializePayload(
-      imc.UsblPosition /*!*/ message, ByteData byteData, int offset) {
+      imc.UsblPosition message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field target
@@ -39704,7 +39602,7 @@ class UsblPositionSerializer
 class UsblFixSerializer
     extends imc.ImcSerializer<imc.UsblFix, imc.UsblFixBuilder> {
   @override
-  ByteData serialize(imc.UsblFix /*!*/ message) {
+  ByteData serialize(imc.UsblFix message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39722,8 +39620,7 @@ class UsblFixSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UsblFix /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblFix message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field target
@@ -39825,7 +39722,7 @@ class UsblFixSerializer
 class ParametersXmlSerializer
     extends imc.ImcSerializer<imc.ParametersXml, imc.ParametersXmlBuilder> {
   @override
-  ByteData serialize(imc.ParametersXml /*!*/ message) {
+  ByteData serialize(imc.ParametersXml message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39844,7 +39741,7 @@ class ParametersXmlSerializer
 
   @override
   int serializePayload(
-      imc.ParametersXml /*!*/ message, ByteData byteData, int offset) {
+      imc.ParametersXml message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field locale
@@ -39944,7 +39841,7 @@ class ParametersXmlSerializer
 class GetParametersXmlSerializer extends imc
     .ImcSerializer<imc.GetParametersXml, imc.GetParametersXmlBuilder> {
   @override
-  ByteData serialize(imc.GetParametersXml /*!*/ message) {
+  ByteData serialize(imc.GetParametersXml message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -39963,7 +39860,7 @@ class GetParametersXmlSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GetParametersXml /*!*/ message, ByteData byteData, int offset) {
+      imc.GetParametersXml message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     return byteOffset - offset;
@@ -40033,7 +39930,7 @@ class GetParametersXmlSerializer extends imc
 class SetImageCoordsSerializer
     extends imc.ImcSerializer<imc.SetImageCoords, imc.SetImageCoordsBuilder> {
   @override
-  ByteData serialize(imc.SetImageCoords /*!*/ message) {
+  ByteData serialize(imc.SetImageCoords message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40052,7 +39949,7 @@ class SetImageCoordsSerializer
 
   @override
   int serializePayload(
-      imc.SetImageCoords /*!*/ message, ByteData byteData, int offset) {
+      imc.SetImageCoords message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field camId
@@ -40142,7 +40039,7 @@ class SetImageCoordsSerializer
 class GetImageCoordsSerializer
     extends imc.ImcSerializer<imc.GetImageCoords, imc.GetImageCoordsBuilder> {
   @override
-  ByteData serialize(imc.GetImageCoords /*!*/ message) {
+  ByteData serialize(imc.GetImageCoords message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40161,7 +40058,7 @@ class GetImageCoordsSerializer
 
   @override
   int serializePayload(
-      imc.GetImageCoords /*!*/ message, ByteData byteData, int offset) {
+      imc.GetImageCoords message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field camId
@@ -40251,7 +40148,7 @@ class GetImageCoordsSerializer
 class GetWorldCoordinatesSerializer extends imc
     .ImcSerializer<imc.GetWorldCoordinates, imc.GetWorldCoordinatesBuilder> {
   @override
-  ByteData serialize(imc.GetWorldCoordinates /*!*/ message) {
+  ByteData serialize(imc.GetWorldCoordinates message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40270,7 +40167,7 @@ class GetWorldCoordinatesSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GetWorldCoordinates /*!*/ message, ByteData byteData, int offset) {
+      imc.GetWorldCoordinates message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field tracking
@@ -40378,7 +40275,7 @@ class GetWorldCoordinatesSerializer extends imc
 class UsblAnglesExtendedSerializer extends imc
     .ImcSerializer<imc.UsblAnglesExtended, imc.UsblAnglesExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblAnglesExtended /*!*/ message) {
+  ByteData serialize(imc.UsblAnglesExtended message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40397,7 +40294,7 @@ class UsblAnglesExtendedSerializer extends imc
 
   @override
   int serializePayload(
-      imc.UsblAnglesExtended /*!*/ message, ByteData byteData, int offset) {
+      imc.UsblAnglesExtended message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field target
@@ -40532,7 +40429,7 @@ class UsblAnglesExtendedSerializer extends imc
 class UsblPositionExtendedSerializer extends imc
     .ImcSerializer<imc.UsblPositionExtended, imc.UsblPositionExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblPositionExtended /*!*/ message) {
+  ByteData serialize(imc.UsblPositionExtended message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40551,7 +40448,7 @@ class UsblPositionExtendedSerializer extends imc
 
   @override
   int serializePayload(
-      imc.UsblPositionExtended /*!*/ message, ByteData byteData, int offset) {
+      imc.UsblPositionExtended message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field target
@@ -40698,7 +40595,7 @@ class UsblPositionExtendedSerializer extends imc
 class UsblFixExtendedSerializer
     extends imc.ImcSerializer<imc.UsblFixExtended, imc.UsblFixExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblFixExtended /*!*/ message) {
+  ByteData serialize(imc.UsblFixExtended message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40717,7 +40614,7 @@ class UsblFixExtendedSerializer
 
   @override
   int serializePayload(
-      imc.UsblFixExtended /*!*/ message, ByteData byteData, int offset) {
+      imc.UsblFixExtended message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field target
@@ -40834,7 +40731,7 @@ class UsblFixExtendedSerializer
 class UsblModemSerializer
     extends imc.ImcSerializer<imc.UsblModem, imc.UsblModemBuilder> {
   @override
-  ByteData serialize(imc.UsblModem /*!*/ message) {
+  ByteData serialize(imc.UsblModem message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40852,8 +40749,7 @@ class UsblModemSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UsblModem /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblModem message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field name
@@ -40964,7 +40860,7 @@ class UsblModemSerializer
 class UsblConfigSerializer
     extends imc.ImcSerializer<imc.UsblConfig, imc.UsblConfigBuilder> {
   @override
-  ByteData serialize(imc.UsblConfig /*!*/ message) {
+  ByteData serialize(imc.UsblConfig message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -40982,8 +40878,7 @@ class UsblConfigSerializer
   }
 
   @override
-  int serializePayload(
-      imc.UsblConfig /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblConfig message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
@@ -41109,7 +41004,7 @@ class UsblConfigSerializer
 class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     imc.DissolvedOrganicMatter, imc.DissolvedOrganicMatterBuilder> {
   @override
-  ByteData serialize(imc.DissolvedOrganicMatter /*!*/ message) {
+  ByteData serialize(imc.DissolvedOrganicMatter message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -41128,7 +41023,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.DissolvedOrganicMatter /*!*/ message, ByteData byteData, int offset) {
+      imc.DissolvedOrganicMatter message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -41213,7 +41108,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
 class OpticalBackscatterSerializer extends imc
     .ImcSerializer<imc.OpticalBackscatter, imc.OpticalBackscatterBuilder> {
   @override
-  ByteData serialize(imc.OpticalBackscatter /*!*/ message) {
+  ByteData serialize(imc.OpticalBackscatter message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -41232,7 +41127,7 @@ class OpticalBackscatterSerializer extends imc
 
   @override
   int serializePayload(
-      imc.OpticalBackscatter /*!*/ message, ByteData byteData, int offset) {
+      imc.OpticalBackscatter message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -41310,7 +41205,7 @@ class OpticalBackscatterSerializer extends imc
 class TachographSerializer
     extends imc.ImcSerializer<imc.Tachograph, imc.TachographBuilder> {
   @override
-  ByteData serialize(imc.Tachograph /*!*/ message) {
+  ByteData serialize(imc.Tachograph message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -41328,8 +41223,7 @@ class TachographSerializer
   }
 
   @override
-  int serializePayload(
-      imc.Tachograph /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.Tachograph message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field timestampLastService
@@ -41500,7 +41394,7 @@ class TachographSerializer
 class ApmStatusSerializer
     extends imc.ImcSerializer<imc.ApmStatus, imc.ApmStatusBuilder> {
   @override
-  ByteData serialize(imc.ApmStatus /*!*/ message) {
+  ByteData serialize(imc.ApmStatus message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -41518,8 +41412,7 @@ class ApmStatusSerializer
   }
 
   @override
-  int serializePayload(
-      imc.ApmStatus /*!*/ message, ByteData byteData, int offset) {
+  int serializePayload(imc.ApmStatus message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field severity
@@ -41612,7 +41505,7 @@ class ApmStatusSerializer
 class SadcReadingsSerializer
     extends imc.ImcSerializer<imc.SadcReadings, imc.SadcReadingsBuilder> {
   @override
-  ByteData serialize(imc.SadcReadings /*!*/ message) {
+  ByteData serialize(imc.SadcReadings message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -41631,7 +41524,7 @@ class SadcReadingsSerializer
 
   @override
   int serializePayload(
-      imc.SadcReadings /*!*/ message, ByteData byteData, int offset) {
+      imc.SadcReadings message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field channel
@@ -41721,7 +41614,7 @@ class SadcReadingsSerializer
 class DmsDetectionSerializer
     extends imc.ImcSerializer<imc.DmsDetection, imc.DmsDetectionBuilder> {
   @override
-  ByteData serialize(imc.DmsDetection /*!*/ message) {
+  ByteData serialize(imc.DmsDetection message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -41740,7 +41633,7 @@ class DmsDetectionSerializer
 
   @override
   int serializePayload(
-      imc.DmsDetection /*!*/ message, ByteData byteData, int offset) {
+      imc.DmsDetection message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field ch01
@@ -41908,7 +41801,7 @@ class DmsDetectionSerializer
 class TotalMagIntensitySerializer extends imc
     .ImcSerializer<imc.TotalMagIntensity, imc.TotalMagIntensityBuilder> {
   @override
-  ByteData serialize(imc.TotalMagIntensity /*!*/ message) {
+  ByteData serialize(imc.TotalMagIntensity message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -41927,7 +41820,7 @@ class TotalMagIntensitySerializer extends imc
 
   @override
   int serializePayload(
-      imc.TotalMagIntensity /*!*/ message, ByteData byteData, int offset) {
+      imc.TotalMagIntensity message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field value
@@ -42005,7 +41898,7 @@ class TotalMagIntensitySerializer extends imc
 class HomePositionSerializer
     extends imc.ImcSerializer<imc.HomePosition, imc.HomePositionBuilder> {
   @override
-  ByteData serialize(imc.HomePosition /*!*/ message) {
+  ByteData serialize(imc.HomePosition message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -42024,7 +41917,7 @@ class HomePositionSerializer
 
   @override
   int serializePayload(
-      imc.HomePosition /*!*/ message, ByteData byteData, int offset) {
+      imc.HomePosition message, ByteData byteData, int offset) {
     var byteOffset = offset;
 
     // field op
