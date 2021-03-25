@@ -231,7 +231,7 @@ void _writeMessageClass(String name, String abbrev, String msgId,
       '''abstract class $abbrev extends $extentionClass implements Built<$abbrev, ${abbrev}Builder> {
   static const static_id = $msgId;
   $abbrev._();
-  factory $abbrev([void Function(${abbrev}Builder b) updates]) = _\$$abbrev;
+  factory $abbrev([void Function(${abbrev}Builder b)? updates]) = _\$$abbrev;
 
   @override
   int get msgId => static_id;
@@ -250,7 +250,7 @@ void _writeMessageImmutable(
   sink.write('/// $name immutable class\n///\n');
   var msgStringImmutableClass = '''class _\$$abbrev extends $abbrev {
   @override
-  final DateTime timestamp;
+  final DateTime? timestamp;
   @override
   final int src;
   @override
@@ -275,12 +275,12 @@ void _writeMessageImmutable(
     var dartType = typesData[1];
 
     var fStr =
-        '''\n  @override\n  final $dartType ${_convertToFieldName(abbrev)};''';
+        '''\n  @override\n  final $dartType? ${_convertToFieldName(abbrev)};''';
     sink.write('$fStr');
   });
 
   var msgStringImmutableClass2 = '''\n
-  factory _\$$abbrev([void Function(${abbrev}Builder b) updates]) =>
+  factory _\$$abbrev([void Function(${abbrev}Builder b)? updates]) =>
       (${abbrev}Builder()..update(updates)).build();
 
   _\$$abbrev._(
@@ -361,7 +361,8 @@ void _writeMessageImmutable(
         // To account for de/serialize floating point conversions
         fStr =
             ''' &&\n        (${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}
-            || ${_convertToFieldName(abbrev)} - other.${_convertToFieldName(abbrev)} <= 1E-7)''';
+            || (${_convertToFieldName(abbrev)} != null && other.${_convertToFieldName(abbrev)} != null
+            && (${_convertToFieldName(abbrev)}! - other.${_convertToFieldName(abbrev)}! <= 1E-7)))''';
         break;
       case 'uint8_t':
       case 'uint16_t':
@@ -429,7 +430,7 @@ void _writeMessageImmutable(
       if (unit.startsWith('rad')) {
         unitConv = '\${';
         unitConv +=
-            "${_convertToFieldName(abbrev)} != null ? ' [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]' : ''";
+            "${_convertToFieldName(abbrev)} != null ? ' [\${${_convertToFieldName(abbrev)}! * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]' : ''";
         unitConv += '}';
       }
     }
@@ -453,13 +454,13 @@ void _writeMessageBuilder(
   sink.write('/// $name builder class\n///\n');
   var msgStringImmutableBuilder =
       '''class ${abbrev}Builder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder> {
-  _\$$abbrev _\$v;
+  _\$$abbrev? _\$v;
 
-  DateTime _timestamp = DateTime.now();
+  DateTime? _timestamp = DateTime.now();
   @override
-  DateTime get timestamp => _\$this._timestamp;
+  DateTime? get timestamp => _\$this._timestamp;
   @override
-  set timestamp(DateTime timestamp) => _\$this._timestamp = timestamp;
+  set timestamp(DateTime? timestamp) => _\$this._timestamp = timestamp;
 
   int _src = ImcId.nullId;
   @override
@@ -500,9 +501,9 @@ void _writeMessageBuilder(
     var dartType = typesData[1];
     var initVal = typesData[2] == null ? '' : ' = ${typesData[2]}';
 
-    var fStr = '''\n  $dartType _${_convertToFieldName(abbrev)}$initVal;
-  $dartType get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
-  set ${_convertToFieldName(abbrev)}($dartType ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
+    var fStr = '''\n  $dartType? _${_convertToFieldName(abbrev)}$initVal;
+  $dartType? get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
+  set ${_convertToFieldName(abbrev)}($dartType? ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -513,15 +514,15 @@ void _writeMessageBuilder(
   }
 
   @override
-  ${abbrev}Builder newInstance([ImcBuilderHeaderPart headerFrom]) => ${abbrev}Builder()..copyFromHeader(headerFrom);
+  ${abbrev}Builder newInstance([ImcBuilderHeaderPart? headerFrom]) => ${abbrev}Builder()..copyFromHeader(headerFrom);
 
   ${abbrev}Builder get _\$this {
     if (_\$v != null) {
-      _timestamp = _\$v.timestamp;
-      _src = _\$v.src;
-      _srcEnt = _\$v.srcEnt;
-      _dst = _\$v.dst;
-      _dstEnt = _\$v.dstEnt;\n''';
+      _timestamp = _\$v!.timestamp;
+      _src = _\$v!.src;
+      _srcEnt = _\$v!.srcEnt;
+      _dst = _\$v!.dst;
+      _dstEnt = _\$v!.dstEnt;\n''';
   sink.write('$msgStringImmutableBuilder1');
 
   m.findElements('field').forEach((f) {
@@ -532,7 +533,7 @@ void _writeMessageBuilder(
     }
 
     var fStr =
-        '''      _${_convertToFieldName(abbrev)} = _\$v.${_convertToFieldName(abbrev)};\n''';
+        '''      _${_convertToFieldName(abbrev)} = _\$v!.${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -551,7 +552,7 @@ void _writeMessageBuilder(
   }
 
   @override
-  void update(void Function(${abbrev}Builder b) updates) {
+  void update(void Function(${abbrev}Builder b)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -602,11 +603,16 @@ void _writeMessageSerializer(
   sink.write('\n/// $name serializer class\n///\n');
 
   var serClassStart = '''class ${abbrev}Serializer
-    extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
+    extends imc.ImcSerializer<imc.$abbrev?, imc.${abbrev}Builder> {
   @override
-  ByteData serialize(imc.$abbrev message) {
+  ByteData serialize(imc.$abbrev? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -778,7 +784,7 @@ void _writeMessageSerializer(
   }
 
   @override
-  imc.$abbrev deserialize(Uint8List data, [int offset = 0]) {
+  imc.$abbrev? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1037,7 +1043,7 @@ void _writeMessageField(
       unitsStr = unit == null ? '' : ", units: '$unit'";
   }
   var str = '''  @ImcField('$name', '$abbrev', $typeImc$unitsStr)
-  $dartType get ${_convertToFieldName(abbrev)};
+  $dartType? get ${_convertToFieldName(abbrev)};
 ''';
 
   sinks[_idxMsg].write('\n');
