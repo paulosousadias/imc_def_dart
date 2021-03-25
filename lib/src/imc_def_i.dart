@@ -31,7 +31,7 @@ class _$EntityState extends EntityState {
       (EntityStateBuilder()..update(updates)).build();
 
   _$EntityState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -216,7 +216,7 @@ class _$QueryEntityState extends QueryEntityState {
       (QueryEntityStateBuilder()..update(updates)).build();
 
   _$QueryEntityState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -380,7 +380,7 @@ class _$EntityInfo extends EntityInfo {
       (EntityInfoBuilder()..update(updates)).build();
 
   _$EntityInfo._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -592,7 +592,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
       (QueryEntityInfoBuilder()..update(updates)).build();
 
   _$QueryEntityInfo._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -760,7 +760,7 @@ class _$EntityList extends EntityList {
       (EntityListBuilder()..update(updates)).build();
 
   _$EntityList._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -936,7 +936,7 @@ class _$CpuUsage extends CpuUsage {
       (CpuUsageBuilder()..update(updates)).build();
 
   _$CpuUsage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -1104,7 +1104,7 @@ class _$TransportBindings extends TransportBindings {
       (TransportBindingsBuilder()..update(updates)).build();
 
   _$TransportBindings._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -1283,7 +1283,7 @@ class _$RestartSystem extends RestartSystem {
       (RestartSystemBuilder()..update(updates)).build();
 
   _$RestartSystem._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -1449,7 +1449,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
       (DevCalibrationControlBuilder()..update(updates)).build();
 
   _$DevCalibrationControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -1626,7 +1626,7 @@ class _$DevCalibrationState extends DevCalibrationState {
       (DevCalibrationStateBuilder()..update(updates)).build();
 
   _$DevCalibrationState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -1832,7 +1832,7 @@ class _$EntityActivationState extends EntityActivationState {
       (EntityActivationStateBuilder()..update(updates)).build();
 
   _$EntityActivationState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -2011,7 +2011,7 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
       (QueryEntityActivationStateBuilder()..update(updates)).build();
 
   _$QueryEntityActivationState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -2207,7 +2207,7 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
       (VehicleOperationalLimitsBuilder()..update(updates)).build();
 
   _$VehicleOperationalLimits._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -2571,7 +2571,7 @@ class _$MsgList extends MsgList {
       (MsgListBuilder()..update(updates)).build();
 
   _$MsgList._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -2770,7 +2770,7 @@ class _$SimulatedState extends SimulatedState {
       (SimulatedStateBuilder()..update(updates)).build();
 
   _$SimulatedState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -3128,7 +3128,7 @@ class _$LeakSimulation extends LeakSimulation {
       (LeakSimulationBuilder()..update(updates)).build();
 
   _$LeakSimulation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -3308,7 +3308,7 @@ class _$UASimulation extends UASimulation {
       (UASimulationBuilder()..update(updates)).build();
 
   _$UASimulation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -3500,7 +3500,7 @@ class _$DynamicsSimParam extends DynamicsSimParam {
       (DynamicsSimParamBuilder()..update(updates)).build();
 
   _$DynamicsSimParam._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -3693,7 +3693,7 @@ class _$StorageUsage extends StorageUsage {
       (StorageUsageBuilder()..update(updates)).build();
 
   _$StorageUsage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -3873,7 +3873,7 @@ class _$CacheControl extends CacheControl {
       (CacheControlBuilder()..update(updates)).build();
 
   _$CacheControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -4062,7 +4062,7 @@ class _$LoggingControl extends LoggingControl {
       (LoggingControlBuilder()..update(updates)).build();
 
   _$LoggingControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -4244,7 +4244,7 @@ class _$LogBookEntry extends LogBookEntry {
       (LogBookEntryBuilder()..update(updates)).build();
 
   _$LogBookEntry._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -4446,7 +4446,7 @@ class _$LogBookControl extends LogBookControl {
       (LogBookControlBuilder()..update(updates)).build();
 
   _$LogBookControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -4635,7 +4635,7 @@ class _$ReplayControl extends ReplayControl {
       (ReplayControlBuilder()..update(updates)).build();
 
   _$ReplayControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -4815,7 +4815,7 @@ class _$ClockControl extends ClockControl {
       (ClockControlBuilder()..update(updates)).build();
 
   _$ClockControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -5006,7 +5006,7 @@ class _$HistoricCTD extends HistoricCTD {
       (HistoricCTDBuilder()..update(updates)).build();
 
   _$HistoricCTD._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -5204,7 +5204,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
       (HistoricTelemetryBuilder()..update(updates)).build();
 
   _$HistoricTelemetry._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -5431,7 +5431,7 @@ class _$HistoricSonarData extends HistoricSonarData {
       (HistoricSonarDataBuilder()..update(updates)).build();
 
   _$HistoricSonarData._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -5670,7 +5670,7 @@ class _$HistoricEvent extends HistoricEvent {
       (HistoricEventBuilder()..update(updates)).build();
 
   _$HistoricEvent._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -5855,7 +5855,7 @@ class _$VerticalProfile extends VerticalProfile {
       (VerticalProfileBuilder()..update(updates)).build();
 
   _$VerticalProfile._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -6072,7 +6072,7 @@ class _$ProfileSample extends ProfileSample {
       (ProfileSampleBuilder()..update(updates)).build();
 
   _$ProfileSample._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -6245,7 +6245,7 @@ class _$Heartbeat extends Heartbeat {
       (HeartbeatBuilder()..update(updates)).build();
 
   _$Heartbeat._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -6411,7 +6411,7 @@ class _$Announce extends Announce {
       (AnnounceBuilder()..update(updates)).build();
 
   _$Announce._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -6649,7 +6649,7 @@ class _$AnnounceService extends AnnounceService {
       (AnnounceServiceBuilder()..update(updates)).build();
 
   _$AnnounceService._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -6827,7 +6827,7 @@ class _$RSSI extends RSSI {
       (RSSIBuilder()..update(updates)).build();
 
   _$RSSI._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -6992,7 +6992,7 @@ class _$VSWR extends VSWR {
       (VSWRBuilder()..update(updates)).build();
 
   _$VSWR._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -7157,7 +7157,7 @@ class _$LinkLevel extends LinkLevel {
       (LinkLevelBuilder()..update(updates)).build();
 
   _$LinkLevel._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -7326,7 +7326,7 @@ class _$Sms extends Sms {
       (SmsBuilder()..update(updates)).build();
 
   _$Sms._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -7519,7 +7519,7 @@ class _$SmsTx extends SmsTx {
       (SmsTxBuilder()..update(updates)).build();
 
   _$SmsTx._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -7719,7 +7719,7 @@ class _$SmsRx extends SmsRx {
       (SmsRxBuilder()..update(updates)).build();
 
   _$SmsRx._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -7899,7 +7899,7 @@ class _$SmsState extends SmsState {
       (SmsStateBuilder()..update(updates)).build();
 
   _$SmsState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -8088,7 +8088,7 @@ class _$TextMessage extends TextMessage {
       (TextMessageBuilder()..update(updates)).build();
 
   _$TextMessage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -8272,7 +8272,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
       (IridiumMsgRxBuilder()..update(updates)).build();
 
   _$IridiumMsgRx._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -8491,7 +8491,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
       (IridiumMsgTxBuilder()..update(updates)).build();
 
   _$IridiumMsgTx._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -8694,7 +8694,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
       (IridiumTxStatusBuilder()..update(updates)).build();
 
   _$IridiumTxStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -8885,7 +8885,7 @@ class _$GroupMembershipState extends GroupMembershipState {
       (GroupMembershipStateBuilder()..update(updates)).build();
 
   _$GroupMembershipState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -9070,7 +9070,7 @@ class _$SystemGroup extends SystemGroup {
       (SystemGroupBuilder()..update(updates)).build();
 
   _$SystemGroup._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -9259,7 +9259,7 @@ class _$LinkLatency extends LinkLatency {
       (LinkLatencyBuilder()..update(updates)).build();
 
   _$LinkLatency._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -9437,7 +9437,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
       (ExtendedRSSIBuilder()..update(updates)).build();
 
   _$ExtendedRSSI._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -9619,7 +9619,7 @@ class _$HistoricData extends HistoricData {
       (HistoricDataBuilder()..update(updates)).build();
 
   _$HistoricData._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -9824,7 +9824,7 @@ class _$CompressedHistory extends CompressedHistory {
       (CompressedHistoryBuilder()..update(updates)).build();
 
   _$CompressedHistory._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -10037,7 +10037,7 @@ class _$HistoricSample extends HistoricSample {
       (HistoricSampleBuilder()..update(updates)).build();
 
   _$HistoricSample._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -10277,7 +10277,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
       (HistoricDataQueryBuilder()..update(updates)).build();
 
   _$HistoricDataQuery._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -10484,7 +10484,7 @@ class _$RemoteCommand extends RemoteCommand {
       (RemoteCommandBuilder()..update(updates)).build();
 
   _$RemoteCommand._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -10690,7 +10690,7 @@ class _$CommSystemsQuery extends CommSystemsQuery {
       (CommSystemsQueryBuilder()..update(updates)).build();
 
   _$CommSystemsQuery._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -10909,7 +10909,7 @@ class _$TelemetryMsg extends TelemetryMsg {
       (TelemetryMsgBuilder()..update(updates)).build();
 
   _$TelemetryMsg._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -11171,7 +11171,7 @@ class _$LblRange extends LblRange {
       (LblRangeBuilder()..update(updates)).build();
 
   _$LblRange._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -11359,7 +11359,7 @@ class _$LblBeacon extends LblBeacon {
       (LblBeaconBuilder()..update(updates)).build();
 
   _$LblBeacon._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -11597,7 +11597,7 @@ class _$LblConfig extends LblConfig {
       (LblConfigBuilder()..update(updates)).build();
 
   _$LblConfig._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -11774,7 +11774,7 @@ class _$AcousticMessage extends AcousticMessage {
       (AcousticMessageBuilder()..update(updates)).build();
 
   _$AcousticMessage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -11961,7 +11961,7 @@ class _$SimAcousticMessage extends SimAcousticMessage {
       (SimAcousticMessageBuilder()..update(updates)).build();
 
   _$SimAcousticMessage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -12252,7 +12252,7 @@ class _$AcousticOperation extends AcousticOperation {
       (AcousticOperationBuilder()..update(updates)).build();
 
   _$AcousticOperation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -12451,7 +12451,7 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
       (AcousticSystemsQueryBuilder()..update(updates)).build();
 
   _$AcousticSystemsQuery._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -12611,7 +12611,7 @@ class _$AcousticSystems extends AcousticSystems {
       (AcousticSystemsBuilder()..update(updates)).build();
 
   _$AcousticSystems._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -12781,7 +12781,7 @@ class _$AcousticLink extends AcousticLink {
       (AcousticLinkBuilder()..update(updates)).build();
 
   _$AcousticLink._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -12979,7 +12979,7 @@ class _$AcousticRequest extends AcousticRequest {
       (AcousticRequestBuilder()..update(updates)).build();
 
   _$AcousticRequest._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -13210,7 +13210,7 @@ class _$AcousticStatus extends AcousticStatus {
       (AcousticStatusBuilder()..update(updates)).build();
 
   _$AcousticStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -13421,7 +13421,7 @@ class _$Rpm extends Rpm {
       (RpmBuilder()..update(updates)).build();
 
   _$Rpm._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -13586,7 +13586,7 @@ class _$Voltage extends Voltage {
       (VoltageBuilder()..update(updates)).build();
 
   _$Voltage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -13751,7 +13751,7 @@ class _$Current extends Current {
       (CurrentBuilder()..update(updates)).build();
 
   _$Current._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -13946,7 +13946,7 @@ class _$GpsFix extends GpsFix {
       (GpsFixBuilder()..update(updates)).build();
 
   _$GpsFix._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -14287,7 +14287,7 @@ class _$EulerAngles extends EulerAngles {
       (EulerAnglesBuilder()..update(updates)).build();
 
   _$EulerAngles._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -14512,7 +14512,7 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
       (EulerAnglesDeltaBuilder()..update(updates)).build();
 
   _$EulerAnglesDelta._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -14735,7 +14735,7 @@ class _$AngularVelocity extends AngularVelocity {
       (AngularVelocityBuilder()..update(updates)).build();
 
   _$AngularVelocity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -14943,7 +14943,7 @@ class _$Acceleration extends Acceleration {
       (AccelerationBuilder()..update(updates)).build();
 
   _$Acceleration._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -15147,7 +15147,7 @@ class _$MagneticField extends MagneticField {
       (MagneticFieldBuilder()..update(updates)).build();
 
   _$MagneticField._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -15351,7 +15351,7 @@ class _$GroundVelocity extends GroundVelocity {
       (GroundVelocityBuilder()..update(updates)).build();
 
   _$GroundVelocity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -15556,7 +15556,7 @@ class _$WaterVelocity extends WaterVelocity {
       (WaterVelocityBuilder()..update(updates)).build();
 
   _$WaterVelocity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -15761,7 +15761,7 @@ class _$VelocityDelta extends VelocityDelta {
       (VelocityDeltaBuilder()..update(updates)).build();
 
   _$VelocityDelta._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -15965,7 +15965,7 @@ class _$Distance extends Distance {
       (DistanceBuilder()..update(updates)).build();
 
   _$Distance._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -16164,7 +16164,7 @@ class _$Temperature extends Temperature {
       (TemperatureBuilder()..update(updates)).build();
 
   _$Temperature._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -16329,7 +16329,7 @@ class _$Pressure extends Pressure {
       (PressureBuilder()..update(updates)).build();
 
   _$Pressure._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -16494,7 +16494,7 @@ class _$Depth extends Depth {
       (DepthBuilder()..update(updates)).build();
 
   _$Depth._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -16659,7 +16659,7 @@ class _$DepthOffset extends DepthOffset {
       (DepthOffsetBuilder()..update(updates)).build();
 
   _$DepthOffset._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -16824,7 +16824,7 @@ class _$SoundSpeed extends SoundSpeed {
       (SoundSpeedBuilder()..update(updates)).build();
 
   _$SoundSpeed._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -16989,7 +16989,7 @@ class _$WaterDensity extends WaterDensity {
       (WaterDensityBuilder()..update(updates)).build();
 
   _$WaterDensity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -17154,7 +17154,7 @@ class _$Conductivity extends Conductivity {
       (ConductivityBuilder()..update(updates)).build();
 
   _$Conductivity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -17319,7 +17319,7 @@ class _$Salinity extends Salinity {
       (SalinityBuilder()..update(updates)).build();
 
   _$Salinity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -17488,7 +17488,7 @@ class _$WindSpeed extends WindSpeed {
       (WindSpeedBuilder()..update(updates)).build();
 
   _$WindSpeed._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -17678,7 +17678,7 @@ class _$RelativeHumidity extends RelativeHumidity {
       (RelativeHumidityBuilder()..update(updates)).build();
 
   _$RelativeHumidity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -17845,7 +17845,7 @@ class _$DevDataText extends DevDataText {
       (DevDataTextBuilder()..update(updates)).build();
 
   _$DevDataText._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -18010,7 +18010,7 @@ class _$DevDataBinary extends DevDataBinary {
       (DevDataBinaryBuilder()..update(updates)).build();
 
   _$DevDataBinary._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -18175,7 +18175,7 @@ class _$Force extends Force {
       (ForceBuilder()..update(updates)).build();
 
   _$Force._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -18354,7 +18354,7 @@ class _$SonarData extends SonarData {
       (SonarDataBuilder()..update(updates)).build();
 
   _$SonarData._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -18597,7 +18597,7 @@ class _$Pulse extends Pulse {
       (PulseBuilder()..update(updates)).build();
 
   _$Pulse._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -18752,7 +18752,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
       (PulseDetectionControlBuilder()..update(updates)).build();
 
   _$PulseDetectionControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -18926,7 +18926,7 @@ class _$FuelLevel extends FuelLevel {
       (FuelLevelBuilder()..update(updates)).build();
 
   _$FuelLevel._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -19142,7 +19142,7 @@ class _$GpsNavData extends GpsNavData {
       (GpsNavDataBuilder()..update(updates)).build();
 
   _$GpsNavData._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -19469,7 +19469,7 @@ class _$ServoPosition extends ServoPosition {
       (ServoPositionBuilder()..update(updates)).build();
 
   _$ServoPosition._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -19656,7 +19656,7 @@ class _$DeviceState extends DeviceState {
       (DeviceStateBuilder()..update(updates)).build();
 
   _$DeviceState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -19883,7 +19883,7 @@ class _$BeamConfig extends BeamConfig {
       (BeamConfigBuilder()..update(updates)).build();
 
   _$BeamConfig._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -20062,7 +20062,7 @@ class _$DataSanity extends DataSanity {
       (DataSanityBuilder()..update(updates)).build();
 
   _$DataSanity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -20227,7 +20227,7 @@ class _$RhodamineDye extends RhodamineDye {
       (RhodamineDyeBuilder()..update(updates)).build();
 
   _$RhodamineDye._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -20392,7 +20392,7 @@ class _$CrudeOil extends CrudeOil {
       (CrudeOilBuilder()..update(updates)).build();
 
   _$CrudeOil._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -20557,7 +20557,7 @@ class _$FineOil extends FineOil {
       (FineOilBuilder()..update(updates)).build();
 
   _$FineOil._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -20722,7 +20722,7 @@ class _$Turbidity extends Turbidity {
       (TurbidityBuilder()..update(updates)).build();
 
   _$Turbidity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -20887,7 +20887,7 @@ class _$Chlorophyll extends Chlorophyll {
       (ChlorophyllBuilder()..update(updates)).build();
 
   _$Chlorophyll._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -21052,7 +21052,7 @@ class _$Fluorescein extends Fluorescein {
       (FluoresceinBuilder()..update(updates)).build();
 
   _$Fluorescein._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -21217,7 +21217,7 @@ class _$Phycocyanin extends Phycocyanin {
       (PhycocyaninBuilder()..update(updates)).build();
 
   _$Phycocyanin._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -21382,7 +21382,7 @@ class _$Phycoerythrin extends Phycoerythrin {
       (PhycoerythrinBuilder()..update(updates)).build();
 
   _$Phycoerythrin._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -21575,7 +21575,7 @@ class _$GpsFixRtk extends GpsFixRtk {
       (GpsFixRtkBuilder()..update(updates)).build();
 
   _$GpsFixRtk._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -21903,7 +21903,7 @@ class _$ExternalNavData extends ExternalNavData {
       (ExternalNavDataBuilder()..update(updates)).build();
 
   _$ExternalNavData._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -22081,7 +22081,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
       (DissolvedOxygenBuilder()..update(updates)).build();
 
   _$DissolvedOxygen._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -22247,7 +22247,7 @@ class _$AirSaturation extends AirSaturation {
       (AirSaturationBuilder()..update(updates)).build();
 
   _$AirSaturation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -22412,7 +22412,7 @@ class _$Throttle extends Throttle {
       (ThrottleBuilder()..update(updates)).build();
 
   _$Throttle._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -22577,7 +22577,7 @@ class _$PH extends PH {
       (PHBuilder()..update(updates)).build();
 
   _$PH._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -22742,7 +22742,7 @@ class _$Redox extends Redox {
       (RedoxBuilder()..update(updates)).build();
 
   _$Redox._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -22911,7 +22911,7 @@ class _$CameraZoom extends CameraZoom {
       (CameraZoomBuilder()..update(updates)).build();
 
   _$CameraZoom._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -23101,7 +23101,7 @@ class _$SetThrusterActuation extends SetThrusterActuation {
       (SetThrusterActuationBuilder()..update(updates)).build();
 
   _$SetThrusterActuation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -23285,7 +23285,7 @@ class _$SetServoPosition extends SetServoPosition {
       (SetServoPositionBuilder()..update(updates)).build();
 
   _$SetServoPosition._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -23467,7 +23467,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
       (SetControlSurfaceDeflectionBuilder()..update(updates)).build();
 
   _$SetControlSurfaceDeflection._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -23654,7 +23654,7 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
       (RemoteActionsRequestBuilder()..update(updates)).build();
 
   _$RemoteActionsRequest._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -23835,7 +23835,7 @@ class _$RemoteActions extends RemoteActions {
       (RemoteActionsBuilder()..update(updates)).build();
 
   _$RemoteActions._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -24002,7 +24002,7 @@ class _$ButtonEvent extends ButtonEvent {
       (ButtonEventBuilder()..update(updates)).build();
 
   _$ButtonEvent._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -24180,7 +24180,7 @@ class _$LcdControl extends LcdControl {
       (LcdControlBuilder()..update(updates)).build();
 
   _$LcdControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -24360,7 +24360,7 @@ class _$PowerOperation extends PowerOperation {
       (PowerOperationBuilder()..update(updates)).build();
 
   _$PowerOperation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -24553,7 +24553,7 @@ class _$PowerChannelControl extends PowerChannelControl {
       (PowerChannelControlBuilder()..update(updates)).build();
 
   _$PowerChannelControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -24743,7 +24743,7 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
       (QueryPowerChannelStateBuilder()..update(updates)).build();
 
   _$QueryPowerChannelState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -24906,7 +24906,7 @@ class _$PowerChannelState extends PowerChannelState {
       (PowerChannelStateBuilder()..update(updates)).build();
 
   _$PowerChannelState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -25087,7 +25087,7 @@ class _$LedBrightness extends LedBrightness {
       (LedBrightnessBuilder()..update(updates)).build();
 
   _$LedBrightness._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -25264,7 +25264,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
       (QueryLedBrightnessBuilder()..update(updates)).build();
 
   _$QueryLedBrightness._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -25435,7 +25435,7 @@ class _$SetLedBrightness extends SetLedBrightness {
       (SetLedBrightnessBuilder()..update(updates)).build();
 
   _$SetLedBrightness._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -25617,7 +25617,7 @@ class _$SetPWM extends SetPWM {
       (SetPWMBuilder()..update(updates)).build();
 
   _$SetPWM._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -25808,7 +25808,7 @@ class _$PWM extends PWM {
       (PWMBuilder()..update(updates)).build();
 
   _$PWM._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -26033,7 +26033,7 @@ class _$EstimatedState extends EstimatedState {
       (EstimatedStateBuilder()..update(updates)).build();
 
   _$EstimatedState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -26412,7 +26412,7 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
       (EstimatedStreamVelocityBuilder()..update(updates)).build();
 
   _$EstimatedStreamVelocity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -26605,7 +26605,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
       (IndicatedSpeedBuilder()..update(updates)).build();
 
   _$IndicatedSpeed._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -26770,7 +26770,7 @@ class _$TrueSpeed extends TrueSpeed {
       (TrueSpeedBuilder()..update(updates)).build();
 
   _$TrueSpeed._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -26962,7 +26962,7 @@ class _$NavigationUncertainty extends NavigationUncertainty {
       (NavigationUncertaintyBuilder()..update(updates)).build();
 
   _$NavigationUncertainty._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -27303,7 +27303,7 @@ class _$NavigationData extends NavigationData {
       (NavigationDataBuilder()..update(updates)).build();
 
   _$NavigationData._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -27571,7 +27571,7 @@ class _$GpsFixRejection extends GpsFixRejection {
       (GpsFixRejectionBuilder()..update(updates)).build();
 
   _$GpsFixRejection._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -27753,7 +27753,7 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
       (LblRangeAcceptanceBuilder()..update(updates)).build();
 
   _$LblRangeAcceptance._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -27950,7 +27950,7 @@ class _$DvlRejection extends DvlRejection {
       (DvlRejectionBuilder()..update(updates)).build();
 
   _$DvlRejection._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -28158,7 +28158,7 @@ class _$LblEstimate extends LblEstimate {
       (LblEstimateBuilder()..update(updates)).build();
 
   _$LblEstimate._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -28380,7 +28380,7 @@ class _$AlignmentState extends AlignmentState {
       (AlignmentStateBuilder()..update(updates)).build();
 
   _$AlignmentState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -28550,7 +28550,7 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
       (GroupStreamVelocityBuilder()..update(updates)).build();
 
   _$GroupStreamVelocity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -28746,7 +28746,7 @@ class _$Airflow extends Airflow {
       (AirflowBuilder()..update(updates)).build();
 
   _$Airflow._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -28935,7 +28935,7 @@ class _$DesiredHeading extends DesiredHeading {
       (DesiredHeadingBuilder()..update(updates)).build();
 
   _$DesiredHeading._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -29103,7 +29103,7 @@ class _$DesiredZ extends DesiredZ {
       (DesiredZBuilder()..update(updates)).build();
 
   _$DesiredZ._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -29281,7 +29281,7 @@ class _$DesiredSpeed extends DesiredSpeed {
       (DesiredSpeedBuilder()..update(updates)).build();
 
   _$DesiredSpeed._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -29457,7 +29457,7 @@ class _$DesiredRoll extends DesiredRoll {
       (DesiredRollBuilder()..update(updates)).build();
 
   _$DesiredRoll._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -29623,7 +29623,7 @@ class _$DesiredPitch extends DesiredPitch {
       (DesiredPitchBuilder()..update(updates)).build();
 
   _$DesiredPitch._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -29790,7 +29790,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
       (DesiredVerticalRateBuilder()..update(updates)).build();
 
   _$DesiredVerticalRate._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -29984,7 +29984,7 @@ class _$DesiredPath extends DesiredPath {
       (DesiredPathBuilder()..update(updates)).build();
 
   _$DesiredPath._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -30305,7 +30305,7 @@ class _$DesiredControl extends DesiredControl {
       (DesiredControlBuilder()..update(updates)).build();
 
   _$DesiredControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -30539,7 +30539,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
       (DesiredHeadingRateBuilder()..update(updates)).build();
 
   _$DesiredHeadingRate._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -30721,7 +30721,7 @@ class _$DesiredVelocity extends DesiredVelocity {
       (DesiredVelocityBuilder()..update(updates)).build();
 
   _$DesiredVelocity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -30992,7 +30992,7 @@ class _$PathControlState extends PathControlState {
       (PathControlStateBuilder()..update(updates)).build();
 
   _$PathControlState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -31362,7 +31362,7 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
       (AllocatedControlTorquesBuilder()..update(updates)).build();
 
   _$AllocatedControlTorques._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -31561,7 +31561,7 @@ class _$ControlParcel extends ControlParcel {
       (ControlParcelBuilder()..update(updates)).build();
 
   _$ControlParcel._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -31759,7 +31759,7 @@ class _$Brake extends Brake {
       (BrakeBuilder()..update(updates)).build();
 
   _$Brake._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -31943,7 +31943,7 @@ class _$DesiredLinearState extends DesiredLinearState {
       (DesiredLinearStateBuilder()..update(updates)).build();
 
   _$DesiredLinearState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -32217,7 +32217,7 @@ class _$DesiredThrottle extends DesiredThrottle {
       (DesiredThrottleBuilder()..update(updates)).build();
 
   _$DesiredThrottle._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -32403,7 +32403,7 @@ class _$Goto extends Goto {
       (GotoBuilder()..update(updates)).build();
 
   _$Goto._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -32709,7 +32709,7 @@ class _$PopUp extends PopUp {
       (PopUpBuilder()..update(updates)).build();
 
   _$PopUp._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -32992,7 +32992,7 @@ class _$Teleoperation extends Teleoperation {
       (TeleoperationBuilder()..update(updates)).build();
 
   _$Teleoperation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -33183,7 +33183,7 @@ class _$Loiter extends Loiter {
       (LoiterBuilder()..update(updates)).build();
 
   _$Loiter._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -33500,7 +33500,7 @@ class _$IdleManeuver extends IdleManeuver {
       (IdleManeuverBuilder()..update(updates)).build();
 
   _$IdleManeuver._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -33681,7 +33681,7 @@ class _$LowLevelControl extends LowLevelControl {
       (LowLevelControlBuilder()..update(updates)).build();
 
   _$LowLevelControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -33899,7 +33899,7 @@ class _$Rows extends Rows {
       (RowsBuilder()..update(updates)).build();
 
   _$Rows._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -34250,7 +34250,7 @@ class _$FollowPath extends FollowPath {
       (FollowPathBuilder()..update(updates)).build();
 
   _$FollowPath._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -34515,7 +34515,7 @@ class _$PathPoint extends PathPoint {
       (PathPointBuilder()..update(updates)).build();
 
   _$PathPoint._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -34720,7 +34720,7 @@ class _$YoYo extends YoYo {
       (YoYoBuilder()..update(updates)).build();
 
   _$YoYo._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -34991,7 +34991,7 @@ class _$TeleoperationDone extends TeleoperationDone {
       (TeleoperationDoneBuilder()..update(updates)).build();
 
   _$TeleoperationDone._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -35164,7 +35164,7 @@ class _$StationKeeping extends StationKeeping {
       (StationKeepingBuilder()..update(updates)).build();
 
   _$StationKeeping._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -35447,7 +35447,7 @@ class _$Elevator extends Elevator {
       (ElevatorBuilder()..update(updates)).build();
 
   _$Elevator._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -35760,7 +35760,7 @@ class _$FollowTrajectory extends FollowTrajectory {
       (FollowTrajectoryBuilder()..update(updates)).build();
 
   _$FollowTrajectory._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -36030,7 +36030,7 @@ class _$TrajectoryPoint extends TrajectoryPoint {
       (TrajectoryPointBuilder()..update(updates)).build();
 
   _$TrajectoryPoint._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -36233,7 +36233,7 @@ class _$CustomManeuver extends CustomManeuver {
       (CustomManeuverBuilder()..update(updates)).build();
 
   _$CustomManeuver._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -36439,7 +36439,7 @@ class _$VehicleFormation extends VehicleFormation {
       (VehicleFormationBuilder()..update(updates)).build();
 
   _$VehicleFormation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -36721,7 +36721,7 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
       (VehicleFormationParticipantBuilder()..update(updates)).build();
 
   _$VehicleFormationParticipant._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -36923,7 +36923,7 @@ class _$StopManeuver extends StopManeuver {
       (StopManeuverBuilder()..update(updates)).build();
 
   _$StopManeuver._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -37078,7 +37078,7 @@ class _$RegisterManeuver extends RegisterManeuver {
       (RegisterManeuverBuilder()..update(updates)).build();
 
   _$RegisterManeuver._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -37250,7 +37250,7 @@ class _$ManeuverControlState extends ManeuverControlState {
       (ManeuverControlStateBuilder()..update(updates)).build();
 
   _$ManeuverControlState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -37456,7 +37456,7 @@ class _$FollowSystem extends FollowSystem {
       (FollowSystemBuilder()..update(updates)).build();
 
   _$FollowSystem._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -37714,7 +37714,7 @@ class _$CommsRelay extends CommsRelay {
       (CommsRelayBuilder()..update(updates)).build();
 
   _$CommsRelay._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -37976,7 +37976,7 @@ class _$CoverArea extends CoverArea {
       (CoverAreaBuilder()..update(updates)).build();
 
   _$CoverArea._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -38224,7 +38224,7 @@ class _$PolygonVertex extends PolygonVertex {
       (PolygonVertexBuilder()..update(updates)).build();
 
   _$PolygonVertex._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -38427,7 +38427,7 @@ class _$CompassCalibration extends CompassCalibration {
       (CompassCalibrationBuilder()..update(updates)).build();
 
   _$CompassCalibration._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -38746,7 +38746,7 @@ class _$FormationParameters extends FormationParameters {
       (FormationParametersBuilder()..update(updates)).build();
 
   _$FormationParameters._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -38981,7 +38981,7 @@ class _$FormationPlanExecution extends FormationPlanExecution {
       (FormationPlanExecutionBuilder()..update(updates)).build();
 
   _$FormationPlanExecution._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -39317,7 +39317,7 @@ class _$FollowReference extends FollowReference {
       (FollowReferenceBuilder()..update(updates)).build();
 
   _$FollowReference._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -39542,7 +39542,7 @@ class _$Reference extends Reference {
       (ReferenceBuilder()..update(updates)).build();
 
   _$Reference._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -39772,7 +39772,7 @@ class _$FollowRefState extends FollowRefState {
       (FollowRefStateBuilder()..update(updates)).build();
 
   _$FollowRefState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -40021,7 +40021,7 @@ class _$FormationMonitor extends FormationMonitor {
       (FormationMonitorBuilder()..update(updates)).build();
 
   _$FormationMonitor._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -40422,7 +40422,7 @@ class _$RelativeState extends RelativeState {
       (RelativeStateBuilder()..update(updates)).build();
 
   _$RelativeState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -40812,7 +40812,7 @@ class _$Dislodge extends Dislodge {
       (DislodgeBuilder()..update(updates)).build();
 
   _$Dislodge._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -41051,7 +41051,7 @@ class _$Formation extends Formation {
       (FormationBuilder()..update(updates)).build();
 
   _$Formation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -41457,7 +41457,7 @@ class _$Launch extends Launch {
       (LaunchBuilder()..update(updates)).build();
 
   _$Launch._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -41717,7 +41717,7 @@ class _$Drop extends Drop {
       (DropBuilder()..update(updates)).build();
 
   _$Drop._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -41977,7 +41977,7 @@ class _$ScheduledGoto extends ScheduledGoto {
       (ScheduledGotoBuilder()..update(updates)).build();
 
   _$ScheduledGoto._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -42255,7 +42255,7 @@ class _$RowsCoverage extends RowsCoverage {
       (RowsCoverageBuilder()..update(updates)).build();
 
   _$RowsCoverage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -42612,7 +42612,7 @@ class _$Sample extends Sample {
       (SampleBuilder()..update(updates)).build();
 
   _$Sample._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -42892,7 +42892,7 @@ class _$ImageTracking extends ImageTracking {
       (ImageTrackingBuilder()..update(updates)).build();
 
   _$ImageTracking._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -43060,7 +43060,7 @@ class _$Takeoff extends Takeoff {
       (TakeoffBuilder()..update(updates)).build();
 
   _$Takeoff._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -43328,7 +43328,7 @@ class _$Land extends Land {
       (LandBuilder()..update(updates)).build();
 
   _$Land._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -43635,7 +43635,7 @@ class _$AutonomousSection extends AutonomousSection {
       (AutonomousSectionBuilder()..update(updates)).build();
 
   _$AutonomousSection._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -43936,7 +43936,7 @@ class _$FollowPoint extends FollowPoint {
       (FollowPointBuilder()..update(updates)).build();
 
   _$FollowPoint._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -44192,7 +44192,7 @@ class _$Alignment extends Alignment {
       (AlignmentBuilder()..update(updates)).build();
 
   _$Alignment._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -44439,7 +44439,7 @@ class _$StationKeepingExtended extends StationKeepingExtended {
       (StationKeepingExtendedBuilder()..update(updates)).build();
 
   _$StationKeepingExtended._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -44738,7 +44738,7 @@ class _$ManeuverDone extends ManeuverDone {
       (ManeuverDoneBuilder()..update(updates)).build();
 
   _$ManeuverDone._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -44912,7 +44912,7 @@ class _$Magnetometer extends Magnetometer {
       (MagnetometerBuilder()..update(updates)).build();
 
   _$Magnetometer._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -45215,7 +45215,7 @@ class _$VehicleState extends VehicleState {
       (VehicleStateBuilder()..update(updates)).build();
 
   _$VehicleState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -45500,7 +45500,7 @@ class _$VehicleCommand extends VehicleCommand {
       (VehicleCommandBuilder()..update(updates)).build();
 
   _$VehicleCommand._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -45725,7 +45725,7 @@ class _$MonitorEntityState extends MonitorEntityState {
       (MonitorEntityStateBuilder()..update(updates)).build();
 
   _$MonitorEntityState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -45920,7 +45920,7 @@ class _$EntityMonitoringState extends EntityMonitoringState {
       (EntityMonitoringStateBuilder()..update(updates)).build();
 
   _$EntityMonitoringState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -46194,7 +46194,7 @@ class _$OperationalLimits extends OperationalLimits {
       (OperationalLimitsBuilder()..update(updates)).build();
 
   _$OperationalLimits._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -46495,7 +46495,7 @@ class _$GetOperationalLimits extends GetOperationalLimits {
       (GetOperationalLimitsBuilder()..update(updates)).build();
 
   _$GetOperationalLimits._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -46654,7 +46654,7 @@ class _$Calibration extends Calibration {
       (CalibrationBuilder()..update(updates)).build();
 
   _$Calibration._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -46823,7 +46823,7 @@ class _$ControlLoops extends ControlLoops {
       (ControlLoopsBuilder()..update(updates)).build();
 
   _$ControlLoops._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -47010,7 +47010,7 @@ class _$VehicleMedium extends VehicleMedium {
       (VehicleMediumBuilder()..update(updates)).build();
 
   _$VehicleMedium._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -47177,7 +47177,7 @@ class _$Collision extends Collision {
       (CollisionBuilder()..update(updates)).build();
 
   _$Collision._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -47363,7 +47363,7 @@ class _$FormState extends FormState {
       (FormStateBuilder()..update(updates)).build();
 
   _$FormState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -47590,7 +47590,7 @@ class _$AutopilotMode extends AutopilotMode {
       (AutopilotModeBuilder()..update(updates)).build();
 
   _$AutopilotMode._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -47781,7 +47781,7 @@ class _$FormationState extends FormationState {
       (FormationStateBuilder()..update(updates)).build();
 
   _$FormationState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -48034,7 +48034,7 @@ class _$ReportControl extends ReportControl {
       (ReportControlBuilder()..update(updates)).build();
 
   _$ReportControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -48252,7 +48252,7 @@ class _$StateReport extends StateReport {
       (StateReportBuilder()..update(updates)).build();
 
   _$StateReport._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -48539,7 +48539,7 @@ class _$TransmissionRequest extends TransmissionRequest {
       (TransmissionRequestBuilder()..update(updates)).build();
 
   _$TransmissionRequest._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -48812,7 +48812,7 @@ class _$TransmissionStatus extends TransmissionStatus {
       (TransmissionStatusBuilder()..update(updates)).build();
 
   _$TransmissionStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -49019,7 +49019,7 @@ class _$SmsRequest extends SmsRequest {
       (SmsRequestBuilder()..update(updates)).build();
 
   _$SmsRequest._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -49221,7 +49221,7 @@ class _$SmsStatus extends SmsStatus {
       (SmsStatusBuilder()..update(updates)).build();
 
   _$SmsStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -49408,7 +49408,7 @@ class _$VtolState extends VtolState {
       (VtolStateBuilder()..update(updates)).build();
 
   _$VtolState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -49573,7 +49573,7 @@ class _$ArmingState extends ArmingState {
       (ArmingStateBuilder()..update(updates)).build();
 
   _$ArmingState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -49744,7 +49744,7 @@ class _$TCPRequest extends TCPRequest {
       (TCPRequestBuilder()..update(updates)).build();
 
   _$TCPRequest._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -49946,7 +49946,7 @@ class _$TCPStatus extends TCPStatus {
       (TCPStatusBuilder()..update(updates)).build();
 
   _$TCPStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -50130,7 +50130,7 @@ class _$Abort extends Abort {
       (AbortBuilder()..update(updates)).build();
 
   _$Abort._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -50301,7 +50301,7 @@ class _$PlanSpecification extends PlanSpecification {
       (PlanSpecificationBuilder()..update(updates)).build();
 
   _$PlanSpecification._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -50572,7 +50572,7 @@ class _$PlanManeuver extends PlanManeuver {
       (PlanManeuverBuilder()..update(updates)).build();
 
   _$PlanManeuver._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -50778,7 +50778,7 @@ class _$PlanTransition extends PlanTransition {
       (PlanTransitionBuilder()..update(updates)).build();
 
   _$PlanTransition._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -50979,7 +50979,7 @@ class _$EmergencyControl extends EmergencyControl {
       (EmergencyControlBuilder()..update(updates)).build();
 
   _$EmergencyControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -51162,7 +51162,7 @@ class _$EmergencyControlState extends EmergencyControlState {
       (EmergencyControlStateBuilder()..update(updates)).build();
 
   _$EmergencyControlState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -51364,7 +51364,7 @@ class _$PlanDB extends PlanDB {
       (PlanDBBuilder()..update(updates)).build();
 
   _$PlanDB._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -51598,7 +51598,7 @@ class _$PlanDBState extends PlanDBState {
       (PlanDBStateBuilder()..update(updates)).build();
 
   _$PlanDBState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -51844,7 +51844,7 @@ class _$PlanDBInformation extends PlanDBInformation {
       (PlanDBInformationBuilder()..update(updates)).build();
 
   _$PlanDBInformation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -52082,7 +52082,7 @@ class _$PlanControl extends PlanControl {
       (PlanControlBuilder()..update(updates)).build();
 
   _$PlanControl._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -52330,7 +52330,7 @@ class _$PlanControlState extends PlanControlState {
       (PlanControlStateBuilder()..update(updates)).build();
 
   _$PlanControlState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -52584,7 +52584,7 @@ class _$PlanVariable extends PlanVariable {
       (PlanVariableBuilder()..update(updates)).build();
 
   _$PlanVariable._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -52788,7 +52788,7 @@ class _$PlanGeneration extends PlanGeneration {
       (PlanGenerationBuilder()..update(updates)).build();
 
   _$PlanGeneration._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -53024,7 +53024,7 @@ class _$LeaderState extends LeaderState {
       (LeaderStateBuilder()..update(updates)).build();
 
   _$LeaderState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -53410,7 +53410,7 @@ class _$PlanStatistics extends PlanStatistics {
       (PlanStatisticsBuilder()..update(updates)).build();
 
   _$PlanStatistics._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -53660,7 +53660,7 @@ class _$ReportedState extends ReportedState {
       (ReportedStateBuilder()..update(updates)).build();
 
   _$ReportedState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -53937,7 +53937,7 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
       (RemoteSensorInfoBuilder()..update(updates)).build();
 
   _$RemoteSensorInfo._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -54177,7 +54177,7 @@ class _$Map extends Map {
       (MapBuilder()..update(updates)).build();
 
   _$Map._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -54363,7 +54363,7 @@ class _$MapFeature extends MapFeature {
       (MapFeatureBuilder()..update(updates)).build();
 
   _$MapFeature._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -54590,7 +54590,7 @@ class _$MapPoint extends MapPoint {
       (MapPointBuilder()..update(updates)).build();
 
   _$MapPoint._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -54783,7 +54783,7 @@ class _$CcuEvent extends CcuEvent {
       (CcuEventBuilder()..update(updates)).build();
 
   _$CcuEvent._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -54972,7 +54972,7 @@ class _$VehicleLinks extends VehicleLinks {
       (VehicleLinksBuilder()..update(updates)).build();
 
   _$VehicleLinks._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -55153,7 +55153,7 @@ class _$TrexObservation extends TrexObservation {
       (TrexObservationBuilder()..update(updates)).build();
 
   _$TrexObservation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -55345,7 +55345,7 @@ class _$TrexCommand extends TrexCommand {
       (TrexCommandBuilder()..update(updates)).build();
 
   _$TrexCommand._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -55536,7 +55536,7 @@ class _$TrexOperation extends TrexOperation {
       (TrexOperationBuilder()..update(updates)).build();
 
   _$TrexOperation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -55729,7 +55729,7 @@ class _$TrexAttribute extends TrexAttribute {
       (TrexAttributeBuilder()..update(updates)).build();
 
   _$TrexAttribute._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -55932,7 +55932,7 @@ class _$TrexToken extends TrexToken {
       (TrexTokenBuilder()..update(updates)).build();
 
   _$TrexToken._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -56122,7 +56122,7 @@ class _$TrexPlan extends TrexPlan {
       (TrexPlanBuilder()..update(updates)).build();
 
   _$TrexPlan._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -56300,7 +56300,7 @@ class _$Event extends Event {
       (EventBuilder()..update(updates)).build();
 
   _$Event._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -56479,7 +56479,7 @@ class _$CompressedImage extends CompressedImage {
       (CompressedImageBuilder()..update(updates)).build();
 
   _$CompressedImage._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -56663,7 +56663,7 @@ class _$ImageTxSettings extends ImageTxSettings {
       (ImageTxSettingsBuilder()..update(updates)).build();
 
   _$ImageTxSettings._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -56870,7 +56870,7 @@ class _$RemoteState extends RemoteState {
       (RemoteStateBuilder()..update(updates)).build();
 
   _$RemoteState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -57096,7 +57096,7 @@ class _$Target extends Target {
       (TargetBuilder()..update(updates)).build();
 
   _$Target._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -57335,7 +57335,7 @@ class _$EntityParameter extends EntityParameter {
       (EntityParameterBuilder()..update(updates)).build();
 
   _$EntityParameter._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -57515,7 +57515,7 @@ class _$EntityParameters extends EntityParameters {
       (EntityParametersBuilder()..update(updates)).build();
 
   _$EntityParameters._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -57698,7 +57698,7 @@ class _$QueryEntityParameters extends QueryEntityParameters {
       (QueryEntityParametersBuilder()..update(updates)).build();
 
   _$QueryEntityParameters._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -57893,7 +57893,7 @@ class _$SetEntityParameters extends SetEntityParameters {
       (SetEntityParametersBuilder()..update(updates)).build();
 
   _$SetEntityParameters._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -58075,7 +58075,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
       (SaveEntityParametersBuilder()..update(updates)).build();
 
   _$SaveEntityParameters._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -58245,7 +58245,7 @@ class _$CreateSession extends CreateSession {
       (CreateSessionBuilder()..update(updates)).build();
 
   _$CreateSession._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -58410,7 +58410,7 @@ class _$CloseSession extends CloseSession {
       (CloseSessionBuilder()..update(updates)).build();
 
   _$CloseSession._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -58578,7 +58578,7 @@ class _$SessionSubscription extends SessionSubscription {
       (SessionSubscriptionBuilder()..update(updates)).build();
 
   _$SessionSubscription._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -58760,7 +58760,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
       (SessionKeepAliveBuilder()..update(updates)).build();
 
   _$SessionKeepAlive._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -58929,7 +58929,7 @@ class _$SessionStatus extends SessionStatus {
       (SessionStatusBuilder()..update(updates)).build();
 
   _$SessionStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -59106,7 +59106,7 @@ class _$PushEntityParameters extends PushEntityParameters {
       (PushEntityParametersBuilder()..update(updates)).build();
 
   _$PushEntityParameters._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -59277,7 +59277,7 @@ class _$PopEntityParameters extends PopEntityParameters {
       (PopEntityParametersBuilder()..update(updates)).build();
 
   _$PopEntityParameters._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -59449,7 +59449,7 @@ class _$IoEvent extends IoEvent {
       (IoEventBuilder()..update(updates)).build();
 
   _$IoEvent._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -59631,7 +59631,7 @@ class _$UamTxFrame extends UamTxFrame {
       (UamTxFrameBuilder()..update(updates)).build();
 
   _$UamTxFrame._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -59835,7 +59835,7 @@ class _$UamRxFrame extends UamRxFrame {
       (UamRxFrameBuilder()..update(updates)).build();
 
   _$UamRxFrame._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -60037,7 +60037,7 @@ class _$UamTxStatus extends UamTxStatus {
       (UamTxStatusBuilder()..update(updates)).build();
 
   _$UamTxStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -60228,7 +60228,7 @@ class _$UamRxRange extends UamRxRange {
       (UamRxRangeBuilder()..update(updates)).build();
 
   _$UamRxRange._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -60419,7 +60419,7 @@ class _$UamTxRange extends UamTxRange {
       (UamTxRangeBuilder()..update(updates)).build();
 
   _$UamTxRange._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -60616,7 +60616,7 @@ class _$FormCtrlParam extends FormCtrlParam {
       (FormCtrlParamBuilder()..update(updates)).build();
 
   _$FormCtrlParam._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -60843,7 +60843,7 @@ class _$FormationEval extends FormationEval {
       (FormationEvalBuilder()..update(updates)).build();
 
   _$FormationEval._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -61053,7 +61053,7 @@ class _$FormationControlParams extends FormationControlParams {
       (FormationControlParamsBuilder()..update(updates)).build();
 
   _$FormationControlParams._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -61363,7 +61363,7 @@ class _$FormationEvaluation extends FormationEvaluation {
       (FormationEvaluationBuilder()..update(updates)).build();
 
   _$FormationEvaluation._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -61622,7 +61622,7 @@ class _$SoiWaypoint extends SoiWaypoint {
       (SoiWaypointBuilder()..update(updates)).build();
 
   _$SoiWaypoint._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -61822,7 +61822,7 @@ class _$SoiPlan extends SoiPlan {
       (SoiPlanBuilder()..update(updates)).build();
 
   _$SoiPlan._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -62006,7 +62006,7 @@ class _$SoiCommand extends SoiCommand {
       (SoiCommandBuilder()..update(updates)).build();
 
   _$SoiCommand._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -62223,7 +62223,7 @@ class _$SoiState extends SoiState {
       (SoiStateBuilder()..update(updates)).build();
 
   _$SoiState._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -62427,7 +62427,7 @@ class _$MessagePart extends MessagePart {
       (MessagePartBuilder()..update(updates)).build();
 
   _$MessagePart._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -62627,7 +62627,7 @@ class _$NeptusBlob extends NeptusBlob {
       (NeptusBlobBuilder()..update(updates)).build();
 
   _$NeptusBlob._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -62800,7 +62800,7 @@ class _$Aborted extends Aborted {
       (AbortedBuilder()..update(updates)).build();
 
   _$Aborted._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -62958,7 +62958,7 @@ class _$UsblAngles extends UsblAngles {
       (UsblAnglesBuilder()..update(updates)).build();
 
   _$UsblAngles._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -63153,7 +63153,7 @@ class _$UsblPosition extends UsblPosition {
       (UsblPositionBuilder()..update(updates)).build();
 
   _$UsblPosition._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -63359,7 +63359,7 @@ class _$UsblFix extends UsblFix {
       (UsblFixBuilder()..update(updates)).build();
 
   _$UsblFix._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -63574,7 +63574,7 @@ class _$ParametersXml extends ParametersXml {
       (ParametersXmlBuilder()..update(updates)).build();
 
   _$ParametersXml._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -63748,7 +63748,7 @@ class _$GetParametersXml extends GetParametersXml {
       (GetParametersXmlBuilder()..update(updates)).build();
 
   _$GetParametersXml._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -63908,7 +63908,7 @@ class _$SetImageCoords extends SetImageCoords {
       (SetImageCoordsBuilder()..update(updates)).build();
 
   _$SetImageCoords._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -64099,7 +64099,7 @@ class _$GetImageCoords extends GetImageCoords {
       (GetImageCoordsBuilder()..update(updates)).build();
 
   _$GetImageCoords._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -64297,7 +64297,7 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
       (GetWorldCoordinatesBuilder()..update(updates)).build();
 
   _$GetWorldCoordinates._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -64543,7 +64543,7 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
       (UsblAnglesExtendedBuilder()..update(updates)).build();
 
   _$UsblAnglesExtended._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -64835,7 +64835,7 @@ class _$UsblPositionExtended extends UsblPositionExtended {
       (UsblPositionExtendedBuilder()..update(updates)).build();
 
   _$UsblPositionExtended._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -65135,7 +65135,7 @@ class _$UsblFixExtended extends UsblFixExtended {
       (UsblFixExtendedBuilder()..update(updates)).build();
 
   _$UsblFixExtended._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -65368,7 +65368,7 @@ class _$UsblModem extends UsblModem {
       (UsblModemBuilder()..update(updates)).build();
 
   _$UsblModem._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -65583,7 +65583,7 @@ class _$UsblConfig extends UsblConfig {
       (UsblConfigBuilder()..update(updates)).build();
 
   _$UsblConfig._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -65762,7 +65762,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
       (DissolvedOrganicMatterBuilder()..update(updates)).build();
 
   _$DissolvedOrganicMatter._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -65945,7 +65945,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
       (OpticalBackscatterBuilder()..update(updates)).build();
 
   _$OpticalBackscatter._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -66143,7 +66143,7 @@ class _$Tachograph extends Tachograph {
       (TachographBuilder()..update(updates)).build();
 
   _$Tachograph._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -66499,7 +66499,7 @@ class _$ApmStatus extends ApmStatus {
       (ApmStatusBuilder()..update(updates)).build();
 
   _$ApmStatus._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -66679,7 +66679,7 @@ class _$SadcReadings extends SadcReadings {
       (SadcReadingsBuilder()..update(updates)).build();
 
   _$SadcReadings._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -66896,7 +66896,7 @@ class _$DmsDetection extends DmsDetection {
       (DmsDetectionBuilder()..update(updates)).build();
 
   _$DmsDetection._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -67227,7 +67227,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
       (TotalMagIntensityBuilder()..update(updates)).build();
 
   _$TotalMagIntensity._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -67405,7 +67405,7 @@ class _$HomePosition extends HomePosition {
       (HomePositionBuilder()..update(updates)).build();
 
   _$HomePosition._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,

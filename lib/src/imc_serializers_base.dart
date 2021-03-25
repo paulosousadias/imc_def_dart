@@ -356,8 +356,14 @@ int serializeHeader(ImcMessage message, ByteData byteData) {
   byteOffset += 2;
   byteData.setUint16(byteOffset, 0, endian_ser); // Temp size
   byteOffset += 2;
+  if (message.timestamp == null) {
+    // This should not be null, but may happened due to the constructor default value
+    print('Timestamp null found for message ${message.abbrev}');
+  }
   byteData.setFloat64(
-      byteOffset, message.timestamp.millisecondsSinceEpoch / 1E3, endian_ser);
+      byteOffset,
+      (message.timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+      endian_ser);
   byteOffset += 8;
   byteData.setUint16(byteOffset, message.src, endian_ser);
   byteOffset += 2;

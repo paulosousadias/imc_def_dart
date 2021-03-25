@@ -284,7 +284,7 @@ void _writeMessageImmutable(
       (${abbrev}Builder()..update(updates)).build();
 
   _\$$abbrev._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
