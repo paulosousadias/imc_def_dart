@@ -454,31 +454,31 @@ void _writeMessageBuilder(
       '''class ${abbrev}Builder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder> {
   _\$$abbrev _\$v;
 
-  DateTime _timestamp;
+  DateTime _timestamp = DateTime.now();
   @override
   DateTime get timestamp => _\$this._timestamp;
   @override
   set timestamp(DateTime timestamp) => _\$this._timestamp = timestamp;
 
-  int _src;
+  int _src = ImcId.nullId;
   @override
   int get src => _\$this._src;
   @override
   set src(int src) => _\$this._src = src;
 
-  int _srcEnt;
+  int _srcEnt = ImcEntityId.nullId;
   @override
   int get srcEnt => _\$this._srcEnt;
   @override
   set srcEnt(int srcEnt) => _\$this._srcEnt = srcEnt;
 
-  int _dst;
+  int _dst = ImcId.nullId;
   @override
   int get dst => _\$this._dst;
   @override
   set dst(int dst) => _\$this._dst = dst;
 
-  int _dstEnt;
+  int _dstEnt = ImcEntityId.nullId;
   @override
   int get dstEnt => _\$this._dstEnt;
   @override
@@ -497,8 +497,9 @@ void _writeMessageBuilder(
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
+    var initVal = typesData[2] == null ? '' : ' = ${typesData[2]}';
 
-    var fStr = '''\n  $dartType _${_convertToFieldName(abbrev)};
+    var fStr = '''\n  $dartType _${_convertToFieldName(abbrev)}$initVal;
   $dartType get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
   set ${_convertToFieldName(abbrev)}($dartType ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');

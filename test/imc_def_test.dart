@@ -557,4 +557,20 @@ void main() {
 
     expect(msg.src, msg2.src);
   });
+
+  test('messagelist msg test', () {
+    var msgA = imc.Abort((b) => b..src = 0x4002);
+    imc.MsgList msg = (imc.MsgListBuilder()
+          ..src = 0x4001
+          ..timestamp = DateTime.utc(1970)
+          ..msgs.add(msgA))
+        .build();
+    var serializer = imc.MsgListSerializer();
+    var data = serializer.serialize(msg);
+    var msgR = serializer.deserialize(data.buffer.asUint8List());
+    var dataR = serializer.serialize(msgR);
+    print(msg);
+    print(msgR);
+    expect(data.toString(), dataR.toString());
+  });
 }
