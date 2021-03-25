@@ -602,7 +602,7 @@ void _writeMessageSerializer(
   var serClassStart = '''class ${abbrev}Serializer
     extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
   @override
-  ByteData serialize(imc.$abbrev message) {
+  ByteData serialize(imc.$abbrev/*!*/ message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
     byteOffset = imc.serializeHeader(message, byteData);
@@ -621,7 +621,7 @@ void _writeMessageSerializer(
 
   @override
   int serializePayload(
-      imc.$abbrev message, ByteData byteData, int offset) {
+      imc.$abbrev/*!*/ message, ByteData byteData, int offset) {
     var byteOffset = offset;
 \n''';
   sink.write('$serClassStart');
@@ -751,7 +751,7 @@ void _writeMessageSerializer(
         fStr += '      for (var i = 0; i < message.$fieldName.length; i++) {\n';
         fStr += '        var id = message.$fieldName[i]?.msgId;\n';
         fStr +=
-            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();\n';
+            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId.toString()]?.call();\n';
         fStr += '        if (id != null && pMsgSerializer != null) {\n';
         fStr +=
             '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
@@ -793,7 +793,12 @@ void _writeMessageSerializer(
     }
 
     var builder = imc.${abbrev}Builder();
-    var payloadSize = imc.deserializeHeader(builder, byteData, endianness, offset);
+    var payloadSize =
+      imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -803,7 +808,13 @@ void _writeMessageSerializer(
     }
 
     // Payload
-    var payloadSizeRead = deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+        deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -932,13 +943,18 @@ void _writeMessageSerializer(
         fStr += '    if (${fieldName}SId == imc.ImcId.nullId) {\n';
         fStr += '      builder.$fieldName = null;\n';
         fStr += '    } else {\n';
+        fStr += '      var pMsgBuilder = imc\n';
         fStr +=
-            '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+            '          .messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '          ?.call()\n';
+        fStr += '          ?.newInstance(builder);\n';
+        fStr += '      var pMsgSerializer = imc\n';
         fStr +=
-            '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
+            '          .messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '          ?.call();\n';
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
-        fStr +=
-            '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
+        fStr += '        var mPSize = pMsgSerializer.deserializePayload(\n';
+        fStr += '            pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
         fStr += '        builder.$fieldName = pMsgBuilder.build();\n';
         fStr += '      }\n';
@@ -954,14 +970,19 @@ void _writeMessageSerializer(
             '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '      if (${fieldName}SId != imc.ImcId.nullId) {\n';
+        fStr += '        var pMsgBuilder = imc\n';
         fStr +=
-            '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+            '            .messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '          ?.call()?.newInstance(builder);\n';
+        fStr += '        var pMsgSerializer = imc\n';
         fStr +=
-            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
+            '            .messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '            ?.call();\n';
         fStr +=
             '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
+        fStr += '          var mPSize = pMsgSerializer.deserializePayload(\n';
         fStr +=
-            '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
+            '              pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
         fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
         fStr += '        }\n';
