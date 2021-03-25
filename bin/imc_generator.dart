@@ -1461,7 +1461,7 @@ void main(List<String> args) async {
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
 
-  var syncValue = syncElm.getAttribute('value') /*!*/;
+  var syncValue = syncElm.getAttribute('value') /*?*/;
   if (syncValue == null || syncValue.isEmpty) {
     print('The XML of IMC is missing the sync value!');
     exit(1);
