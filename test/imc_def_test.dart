@@ -33,8 +33,13 @@ void main() {
     var globalSW = Stopwatch();
     globalSW.start();
     imc.messagesBuilders.values.forEach((b) {
-      var msg = b().build() as imc.ImcMessage;
-      print(msg?.toString());
+      var msg;
+      try {
+        msg = b().build() as imc.ImcMessage;
+        print(msg.toString());
+      } catch (e) {
+        print(e);
+      }
       expect(msg != null, true);
     });
     globalSW.stop();
