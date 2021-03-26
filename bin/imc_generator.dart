@@ -561,10 +561,10 @@ void _writeMessageBuilder(
     final _\$result = _\$v ??
         _\$$abbrev._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId''';
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt''';
   sink.write('$msgStringImmutableBuilder2');
 
   m.findElements('field').forEach((f) {

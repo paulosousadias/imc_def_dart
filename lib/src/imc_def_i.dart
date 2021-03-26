@@ -187,10 +187,10 @@ class EntityStateBuilder extends Object
     final _$result = _$v ??
         _$EntityState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? EntityStateEnumState(0),
             flags: flags ?? EntityStateBitfieldFlags(0),
             description: description ?? '');
@@ -346,10 +346,10 @@ class QueryEntityStateBuilder extends Object
     final _$result = _$v ??
         _$QueryEntityState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -564,10 +564,10 @@ class EntityInfoBuilder extends Object
     final _$result = _$v ??
         _$EntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             label: label ?? '',
             component: component ?? '',
@@ -737,10 +737,10 @@ class QueryEntityInfoBuilder extends Object
     final _$result = _$v ??
         _$QueryEntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0);
     replace(_$result);
     return _$result;
@@ -916,10 +916,10 @@ class EntityListBuilder extends Object
     final _$result = _$v ??
         _$EntityList._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? EntityListEnumOp(0),
             list: list ?? '');
     replace(_$result);
@@ -1084,10 +1084,10 @@ class CpuUsageBuilder extends Object
     final _$result = _$v ??
         _$CpuUsage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -1267,10 +1267,10 @@ class TransportBindingsBuilder extends Object
     final _$result = _$v ??
         _$TransportBindings._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             consumer: consumer ?? '',
             messageId: messageId ?? 0);
     replace(_$result);
@@ -1435,10 +1435,10 @@ class RestartSystemBuilder extends Object
     final _$result = _$v ??
         _$RestartSystem._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? RestartSystemEnumType(0));
     replace(_$result);
     return _$result;
@@ -1609,10 +1609,10 @@ class DevCalibrationControlBuilder extends Object
     final _$result = _$v ??
         _$DevCalibrationControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? DevCalibrationControlEnumOp(0));
     replace(_$result);
     return _$result;
@@ -1821,10 +1821,10 @@ class DevCalibrationStateBuilder extends Object
     final _$result = _$v ??
         _$DevCalibrationState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             totalSteps: totalSteps ?? 0,
             stepNumber: stepNumber ?? 0,
             step: step ?? '',
@@ -2010,10 +2010,10 @@ class EntityActivationStateBuilder extends Object
     final _$result = _$v ??
         _$EntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? EntityActivationStateEnumState(0),
             error: error ?? '');
     replace(_$result);
@@ -2173,10 +2173,10 @@ class QueryEntityActivationStateBuilder extends Object
     final _$result = _$v ??
         _$QueryEntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -2602,10 +2602,10 @@ class VehicleOperationalLimitsBuilder extends Object
     final _$result = _$v ??
         _$VehicleOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? VehicleOperationalLimitsEnumOp(0),
             speedMin: speedMin ?? 0,
             speedMax: speedMax ?? 0,
@@ -2786,10 +2786,10 @@ class MsgListBuilder extends Object
     final _$result = _$v ??
         _$MsgList._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             msgs: msgs ?? <ImcMessage>[]);
     replace(_$result);
     return _$result;
@@ -3193,10 +3193,10 @@ class SimulatedStateBuilder extends Object
     final _$result = _$v ??
         _$SimulatedState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             height: height ?? 0,
@@ -3389,10 +3389,10 @@ class LeakSimulationBuilder extends Object
     final _$result = _$v ??
         _$LeakSimulation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? LeakSimulationEnumOp(0),
             entities: entities ?? '');
     replace(_$result);
@@ -3581,10 +3581,10 @@ class UASimulationBuilder extends Object
     final _$result = _$v ??
         _$UASimulation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? UASimulationEnumType(0),
             speed: speed ?? 0,
             data: data ?? <int>[]);
@@ -3783,10 +3783,10 @@ class DynamicsSimParamBuilder extends Object
     final _$result = _$v ??
         _$DynamicsSimParam._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? DynamicsSimParamEnumOp(0),
             tas2accPgain: tas2accPgain ?? 0,
             bank2pPgain: bank2pPgain ?? 0);
@@ -3964,10 +3964,10 @@ class StorageUsageBuilder extends Object
     final _$result = _$v ??
         _$StorageUsage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             available: available ?? 0,
             value: value ?? 0);
     replace(_$result);
@@ -4156,10 +4156,10 @@ class CacheControlBuilder extends Object
     final _$result = _$v ??
         _$CacheControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? CacheControlEnumOp(0),
             snapshot: snapshot ?? '',
             message: message);
@@ -4337,10 +4337,10 @@ class LoggingControlBuilder extends Object
     final _$result = _$v ??
         _$LoggingControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? LoggingControlEnumOp(0),
             name: name ?? '');
     replace(_$result);
@@ -4546,10 +4546,10 @@ class LogBookEntryBuilder extends Object
     final _$result = _$v ??
         _$LogBookEntry._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? LogBookEntryEnumType(0),
             htime: htime ?? 0,
             context: context ?? '',
@@ -4743,10 +4743,10 @@ class LogBookControlBuilder extends Object
     final _$result = _$v ??
         _$LogBookControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             command: command ?? LogBookControlEnumCommand(0),
             htime: htime ?? 0,
             msg: msg ?? <LogBookEntry>[]);
@@ -4924,10 +4924,10 @@ class ReplayControlBuilder extends Object
     final _$result = _$v ??
         _$ReplayControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? ReplayControlEnumOp(0),
             file: file ?? '');
     replace(_$result);
@@ -5119,10 +5119,10 @@ class ClockControlBuilder extends Object
     final _$result = _$v ??
         _$ClockControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? ClockControlEnumOp(0),
             clock: clock ?? 0,
             tz: tz ?? 0);
@@ -5321,10 +5321,10 @@ class HistoricCTDBuilder extends Object
     final _$result = _$v ??
         _$HistoricCTD._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             conductivity: conductivity ?? 0,
             temperature: temperature ?? 0,
             depth: depth ?? 0);
@@ -5549,10 +5549,10 @@ class HistoricTelemetryBuilder extends Object
     final _$result = _$v ??
         _$HistoricTelemetry._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             altitude: altitude ?? 0,
             roll: roll ?? 0,
             pitch: pitch ?? 0,
@@ -5813,10 +5813,10 @@ class HistoricSonarDataBuilder extends Object
     final _$result = _$v ??
         _$HistoricSonarData._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             altitude: altitude ?? 0,
             width: width ?? 0,
             length: length ?? 0,
@@ -5998,10 +5998,10 @@ class HistoricEventBuilder extends Object
     final _$result = _$v ??
         _$HistoricEvent._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             text: text ?? '',
             type: type ?? HistoricEventEnumType(0));
     replace(_$result);
@@ -6227,10 +6227,10 @@ class VerticalProfileBuilder extends Object
     final _$result = _$v ??
         _$VerticalProfile._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             parameter: parameter ?? VerticalProfileEnumParameter(0),
             numSamples: numSamples ?? 0,
             samples: samples ?? <ProfileSample>[],
@@ -6411,10 +6411,10 @@ class ProfileSampleBuilder extends Object
     final _$result = _$v ??
         _$ProfileSample._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             depth: depth ?? 0,
             avg: avg ?? 0);
     replace(_$result);
@@ -6566,10 +6566,10 @@ class HeartbeatBuilder extends Object
     final _$result = _$v ??
         _$Heartbeat._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -6819,10 +6819,10 @@ class AnnounceBuilder extends Object
     final _$result = _$v ??
         _$Announce._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sysName: sysName ?? '',
             sysType: sysType ?? SystemTypeEnum(0),
             owner: owner ?? 0,
@@ -7008,10 +7008,10 @@ class AnnounceServiceBuilder extends Object
     final _$result = _$v ??
         _$AnnounceService._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             service: service ?? '',
             serviceType: serviceType ?? AnnounceServiceBitfieldServiceType(0));
     replace(_$result);
@@ -7179,10 +7179,10 @@ class RSSIBuilder extends Object
     final _$result = _$v ??
         _$RSSI._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -7349,10 +7349,10 @@ class VSWRBuilder extends Object
     final _$result = _$v ??
         _$VSWR._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -7519,10 +7519,10 @@ class LinkLevelBuilder extends Object
     final _$result = _$v ??
         _$LinkLevel._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -7710,10 +7710,10 @@ class SmsBuilder extends Object
     final _$result = _$v ??
         _$Sms._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             number: number ?? '',
             timeout: timeout ?? 0,
             contents: contents ?? '');
@@ -7917,10 +7917,10 @@ class SmsTxBuilder extends Object
     final _$result = _$v ??
         _$SmsTx._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             seq: seq ?? 0,
             destination: destination ?? '',
             timeout: timeout ?? 0,
@@ -8099,10 +8099,10 @@ class SmsRxBuilder extends Object
     final _$result = _$v ??
         _$SmsRx._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             source: source ?? '',
             data: data ?? <int>[]);
     replace(_$result);
@@ -8291,10 +8291,10 @@ class SmsStateBuilder extends Object
     final _$result = _$v ??
         _$SmsState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             seq: seq ?? 0,
             state: state ?? SmsStateEnumState(0),
             error: error ?? '');
@@ -8472,10 +8472,10 @@ class TextMessageBuilder extends Object
     final _$result = _$v ??
         _$TextMessage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             origin: origin ?? '',
             text: text ?? '');
     replace(_$result);
@@ -8703,10 +8703,10 @@ class IridiumMsgRxBuilder extends Object
     final _$result = _$v ??
         _$IridiumMsgRx._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             origin: origin ?? '',
             htime: htime ?? 0,
             lat: lat ?? 0,
@@ -8912,10 +8912,10 @@ class IridiumMsgTxBuilder extends Object
     final _$result = _$v ??
         _$IridiumMsgTx._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             ttl: ttl ?? 0,
             destination: destination ?? '',
@@ -9108,10 +9108,10 @@ class IridiumTxStatusBuilder extends Object
     final _$result = _$v ??
         _$IridiumTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             status: status ?? IridiumTxStatusEnumStatus(0),
             text: text ?? '');
@@ -9295,10 +9295,10 @@ class GroupMembershipStateBuilder extends Object
     final _$result = _$v ??
         _$GroupMembershipState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             groupName: groupName ?? '',
             links: links ?? 0);
     replace(_$result);
@@ -9487,10 +9487,10 @@ class SystemGroupBuilder extends Object
     final _$result = _$v ??
         _$SystemGroup._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             groupName: groupName ?? '',
             action: action ?? SystemGroupEnumAction(0),
             groupList: groupList ?? '');
@@ -9671,10 +9671,10 @@ class LinkLatencyBuilder extends Object
     final _$result = _$v ??
         _$LinkLatency._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0,
             sysSrc: sysSrc ?? 0);
     replace(_$result);
@@ -9854,10 +9854,10 @@ class ExtendedRSSIBuilder extends Object
     final _$result = _$v ??
         _$ExtendedRSSI._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0,
             units: units ?? RSSIUnitsEnum(0));
     replace(_$result);
@@ -10069,10 +10069,10 @@ class HistoricDataBuilder extends Object
     final _$result = _$v ??
         _$HistoricData._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             baseLat: baseLat ?? 0,
             baseLon: baseLon ?? 0,
             baseTime: baseTime ?? 0,
@@ -10290,10 +10290,10 @@ class CompressedHistoryBuilder extends Object
     final _$result = _$v ??
         _$CompressedHistory._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             baseLat: baseLat ?? 0,
             baseLon: baseLon ?? 0,
             baseTime: baseTime ?? 0,
@@ -10536,10 +10536,10 @@ class HistoricSampleBuilder extends Object
     final _$result = _$v ??
         _$HistoricSample._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sysId: sysId ?? 0,
             priority: priority ?? 0,
             x: x ?? 0,
@@ -10751,10 +10751,10 @@ class HistoricDataQueryBuilder extends Object
     final _$result = _$v ??
         _$HistoricDataQuery._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             type: type ?? HistoricDataQueryEnumType(0),
             maxSize: maxSize ?? 0,
@@ -10963,10 +10963,10 @@ class RemoteCommandBuilder extends Object
     final _$result = _$v ??
         _$RemoteCommand._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             originalSource: originalSource ?? 0,
             destination: destination ?? 0,
             timeout: timeout ?? 0,
@@ -11177,10 +11177,10 @@ class CommSystemsQueryBuilder extends Object
     final _$result = _$v ??
         _$CommSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? CommSystemsQueryBitfieldType(0),
             commInterface:
                 commInterface ?? CommSystemsQueryBitfieldCommInterface(0),
@@ -11453,10 +11453,10 @@ class TelemetryMsgBuilder extends Object
     final _$result = _$v ??
         _$TelemetryMsg._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? TelemetryMsgEnumType(0),
             reqId: reqId ?? 0,
             ttl: ttl ?? 0,
@@ -11643,10 +11643,10 @@ class LblRangeBuilder extends Object
     final _$result = _$v ??
         _$LblRange._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             range: range ?? 0);
     replace(_$result);
@@ -11899,10 +11899,10 @@ class LblBeaconBuilder extends Object
     final _$result = _$v ??
         _$LblBeacon._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             beacon: beacon ?? '',
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -12084,10 +12084,10 @@ class LblConfigBuilder extends Object
     final _$result = _$v ??
         _$LblConfig._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? LblConfigEnumOp(0),
             beacons: beacons ?? <LblBeacon>[]);
     replace(_$result);
@@ -12254,10 +12254,10 @@ class AcousticMessageBuilder extends Object
     final _$result = _$v ??
         _$AcousticMessage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             message: message);
     replace(_$result);
     return _$result;
@@ -12568,10 +12568,10 @@ class SimAcousticMessageBuilder extends Object
     final _$result = _$v ??
         _$SimAcousticMessage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             depth: depth ?? 0,
@@ -12790,10 +12790,10 @@ class AcousticOperationBuilder extends Object
     final _$result = _$v ??
         _$AcousticOperation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? AcousticOperationEnumOp(0),
             system: system ?? '',
             range: range ?? 0,
@@ -12953,10 +12953,10 @@ class AcousticSystemsQueryBuilder extends Object
     final _$result = _$v ??
         _$AcousticSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -13121,10 +13121,10 @@ class AcousticSystemsBuilder extends Object
     final _$result = _$v ??
         _$AcousticSystems._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             list: list ?? '');
     replace(_$result);
     return _$result;
@@ -13315,10 +13315,10 @@ class AcousticLinkBuilder extends Object
     final _$result = _$v ??
         _$AcousticLink._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             peer: peer ?? '',
             rssi: rssi ?? 0,
             integrity: integrity ?? 0);
@@ -13556,10 +13556,10 @@ class AcousticRequestBuilder extends Object
     final _$result = _$v ??
         _$AcousticRequest._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             destination: destination ?? '',
             timeout: timeout ?? 0,
@@ -13783,10 +13783,10 @@ class AcousticStatusBuilder extends Object
     final _$result = _$v ??
         _$AcousticStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             type: type ?? AcousticStatusEnumType(0),
             status: status ?? AcousticStatusEnumStatus(0),
@@ -13954,10 +13954,10 @@ class RpmBuilder extends Object
     final _$result = _$v ??
         _$Rpm._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -14124,10 +14124,10 @@ class VoltageBuilder extends Object
     final _$result = _$v ??
         _$Voltage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -14294,10 +14294,10 @@ class CurrentBuilder extends Object
     final _$result = _$v ??
         _$Current._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -14672,10 +14672,10 @@ class GpsFixBuilder extends Object
     final _$result = _$v ??
         _$GpsFix._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             validity: validity ?? GpsFixBitfieldValidity(0),
             type: type ?? GpsFixEnumType(0),
             utcYear: utcYear ?? 0,
@@ -14925,10 +14925,10 @@ class EulerAnglesBuilder extends Object
     final _$result = _$v ??
         _$EulerAngles._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             time: time ?? 0,
             phi: phi ?? 0,
             theta: theta ?? 0,
@@ -15163,10 +15163,10 @@ class EulerAnglesDeltaBuilder extends Object
     final _$result = _$v ??
         _$EulerAnglesDelta._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             time: time ?? 0,
             x: x ?? 0,
             y: y ?? 0,
@@ -15383,10 +15383,10 @@ class AngularVelocityBuilder extends Object
     final _$result = _$v ??
         _$AngularVelocity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             time: time ?? 0,
             x: x ?? 0,
             y: y ?? 0,
@@ -15597,10 +15597,10 @@ class AccelerationBuilder extends Object
     final _$result = _$v ??
         _$Acceleration._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             time: time ?? 0,
             x: x ?? 0,
             y: y ?? 0,
@@ -15811,10 +15811,10 @@ class MagneticFieldBuilder extends Object
     final _$result = _$v ??
         _$MagneticField._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             time: time ?? 0,
             x: x ?? 0,
             y: y ?? 0,
@@ -16023,10 +16023,10 @@ class GroundVelocityBuilder extends Object
     final _$result = _$v ??
         _$GroundVelocity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             validity: validity ?? GroundVelocityBitfieldValidity(0),
             x: x ?? 0,
             y: y ?? 0,
@@ -16235,10 +16235,10 @@ class WaterVelocityBuilder extends Object
     final _$result = _$v ??
         _$WaterVelocity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             validity: validity ?? WaterVelocityBitfieldValidity(0),
             x: x ?? 0,
             y: y ?? 0,
@@ -16449,10 +16449,10 @@ class VelocityDeltaBuilder extends Object
     final _$result = _$v ??
         _$VelocityDelta._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             time: time ?? 0,
             x: x ?? 0,
             y: y ?? 0,
@@ -16661,10 +16661,10 @@ class DistanceBuilder extends Object
     final _$result = _$v ??
         _$Distance._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             validity: validity ?? DistanceEnumValidity(0),
             location: location ?? <DeviceState>[],
             beamConfig: beamConfig ?? <BeamConfig>[],
@@ -16834,10 +16834,10 @@ class TemperatureBuilder extends Object
     final _$result = _$v ??
         _$Temperature._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -17004,10 +17004,10 @@ class PressureBuilder extends Object
     final _$result = _$v ??
         _$Pressure._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -17174,10 +17174,10 @@ class DepthBuilder extends Object
     final _$result = _$v ??
         _$Depth._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -17344,10 +17344,10 @@ class DepthOffsetBuilder extends Object
     final _$result = _$v ??
         _$DepthOffset._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -17514,10 +17514,10 @@ class SoundSpeedBuilder extends Object
     final _$result = _$v ??
         _$SoundSpeed._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -17684,10 +17684,10 @@ class WaterDensityBuilder extends Object
     final _$result = _$v ??
         _$WaterDensity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -17854,10 +17854,10 @@ class ConductivityBuilder extends Object
     final _$result = _$v ??
         _$Conductivity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -18024,10 +18024,10 @@ class SalinityBuilder extends Object
     final _$result = _$v ??
         _$Salinity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -18225,10 +18225,10 @@ class WindSpeedBuilder extends Object
     final _$result = _$v ??
         _$WindSpeed._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             direction: direction ?? 0,
             speed: speed ?? 0,
             turbulence: turbulence ?? 0);
@@ -18400,10 +18400,10 @@ class RelativeHumidityBuilder extends Object
     final _$result = _$v ??
         _$RelativeHumidity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -18567,10 +18567,10 @@ class DevDataTextBuilder extends Object
     final _$result = _$v ??
         _$DevDataText._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? '');
     replace(_$result);
     return _$result;
@@ -18734,10 +18734,10 @@ class DevDataBinaryBuilder extends Object
     final _$result = _$v ??
         _$DevDataBinary._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? <int>[]);
     replace(_$result);
     return _$result;
@@ -18904,10 +18904,10 @@ class ForceBuilder extends Object
     final _$result = _$v ??
         _$Force._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -19165,10 +19165,10 @@ class SonarDataBuilder extends Object
     final _$result = _$v ??
         _$SonarData._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? SonarDataEnumType(0),
             frequency: frequency ?? 0,
             minRange: minRange ?? 0,
@@ -19326,10 +19326,10 @@ class PulseBuilder extends Object
     final _$result = _$v ??
         _$Pulse._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -19499,10 +19499,10 @@ class PulseDetectionControlBuilder extends Object
     final _$result = _$v ??
         _$PulseDetectionControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? PulseDetectionControlEnumOp(0));
     replace(_$result);
     return _$result;
@@ -19696,10 +19696,10 @@ class FuelLevelBuilder extends Object
     final _$result = _$v ??
         _$FuelLevel._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0,
             confidence: confidence ?? 0,
             opmodes: opmodes ?? '');
@@ -20098,10 +20098,10 @@ class GpsNavDataBuilder extends Object
     final _$result = _$v ??
         _$GpsNavData._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             itow: itow ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -20295,10 +20295,10 @@ class ServoPositionBuilder extends Object
     final _$result = _$v ??
         _$ServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             value: value ?? 0);
     replace(_$result);
@@ -20540,10 +20540,10 @@ class DeviceStateBuilder extends Object
     final _$result = _$v ??
         _$DeviceState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0,
@@ -20732,10 +20732,10 @@ class BeamConfigBuilder extends Object
     final _$result = _$v ??
         _$BeamConfig._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             beamWidth: beamWidth ?? 0,
             beamHeight: beamHeight ?? 0);
     replace(_$result);
@@ -20900,10 +20900,10 @@ class DataSanityBuilder extends Object
     final _$result = _$v ??
         _$DataSanity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sane: sane ?? DataSanityEnumSane(0));
     replace(_$result);
     return _$result;
@@ -21070,10 +21070,10 @@ class RhodamineDyeBuilder extends Object
     final _$result = _$v ??
         _$RhodamineDye._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -21240,10 +21240,10 @@ class CrudeOilBuilder extends Object
     final _$result = _$v ??
         _$CrudeOil._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -21410,10 +21410,10 @@ class FineOilBuilder extends Object
     final _$result = _$v ??
         _$FineOil._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -21580,10 +21580,10 @@ class TurbidityBuilder extends Object
     final _$result = _$v ??
         _$Turbidity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -21750,10 +21750,10 @@ class ChlorophyllBuilder extends Object
     final _$result = _$v ??
         _$Chlorophyll._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -21920,10 +21920,10 @@ class FluoresceinBuilder extends Object
     final _$result = _$v ??
         _$Fluorescein._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -22090,10 +22090,10 @@ class PhycocyaninBuilder extends Object
     final _$result = _$v ??
         _$Phycocyanin._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -22260,10 +22260,10 @@ class PhycoerythrinBuilder extends Object
     final _$result = _$v ??
         _$Phycoerythrin._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -22636,10 +22636,10 @@ class GpsFixRtkBuilder extends Object
     final _$result = _$v ??
         _$GpsFixRtk._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             validity: validity ?? GpsFixRtkBitfieldValidity(0),
             type: type ?? GpsFixRtkEnumType(0),
             tow: tow ?? 0,
@@ -22831,10 +22831,10 @@ class ExternalNavDataBuilder extends Object
     final _$result = _$v ??
         _$ExternalNavData._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state,
             type: type ?? ExternalNavDataEnumType(0));
     replace(_$result);
@@ -23004,10 +23004,10 @@ class DissolvedOxygenBuilder extends Object
     final _$result = _$v ??
         _$DissolvedOxygen._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -23174,10 +23174,10 @@ class AirSaturationBuilder extends Object
     final _$result = _$v ??
         _$AirSaturation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -23344,10 +23344,10 @@ class ThrottleBuilder extends Object
     final _$result = _$v ??
         _$Throttle._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -23514,10 +23514,10 @@ class PHBuilder extends Object
     final _$result = _$v ??
         _$PH._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -23684,10 +23684,10 @@ class RedoxBuilder extends Object
     final _$result = _$v ??
         _$Redox._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -23875,10 +23875,10 @@ class CameraZoomBuilder extends Object
     final _$result = _$v ??
         _$CameraZoom._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             zoom: zoom ?? 0,
             action: action ?? CameraZoomEnumAction(0));
@@ -24065,10 +24065,10 @@ class SetThrusterActuationBuilder extends Object
     final _$result = _$v ??
         _$SetThrusterActuation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             value: value ?? 0);
     replace(_$result);
@@ -24252,10 +24252,10 @@ class SetServoPositionBuilder extends Object
     final _$result = _$v ??
         _$SetServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             value: value ?? 0);
     replace(_$result);
@@ -24444,10 +24444,10 @@ class SetControlSurfaceDeflectionBuilder extends Object
     final _$result = _$v ??
         _$SetControlSurfaceDeflection._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             angle: angle ?? 0);
     replace(_$result);
@@ -24630,10 +24630,10 @@ class RemoteActionsRequestBuilder extends Object
     final _$result = _$v ??
         _$RemoteActionsRequest._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? RemoteActionsRequestEnumOp(0),
             actions: actions ?? '');
     replace(_$result);
@@ -24798,10 +24798,10 @@ class RemoteActionsBuilder extends Object
     final _$result = _$v ??
         _$RemoteActions._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             actions: actions ?? '');
     replace(_$result);
     return _$result;
@@ -24977,10 +24977,10 @@ class ButtonEventBuilder extends Object
     final _$result = _$v ??
         _$ButtonEvent._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             button: button ?? 0,
             value: value ?? 0);
     replace(_$result);
@@ -25157,10 +25157,10 @@ class LcdControlBuilder extends Object
     final _$result = _$v ??
         _$LcdControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? LcdControlEnumOp(0),
             text: text ?? '');
     replace(_$result);
@@ -25355,10 +25355,10 @@ class PowerOperationBuilder extends Object
     final _$result = _$v ??
         _$PowerOperation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? PowerOperationEnumOp(0),
             timeRemain: timeRemain ?? 0,
             schedTime: schedTime ?? 0);
@@ -25557,10 +25557,10 @@ class PowerChannelControlBuilder extends Object
     final _$result = _$v ??
         _$PowerChannelControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             op: op ?? PowerChannelControlEnumOp(0),
             schedTime: schedTime ?? 0);
@@ -25720,10 +25720,10 @@ class QueryPowerChannelStateBuilder extends Object
     final _$result = _$v ??
         _$QueryPowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -25902,10 +25902,10 @@ class PowerChannelStateBuilder extends Object
     final _$result = _$v ??
         _$PowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             state: state ?? PowerChannelStateEnumState(0));
     replace(_$result);
@@ -26082,10 +26082,10 @@ class LedBrightnessBuilder extends Object
     final _$result = _$v ??
         _$LedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             value: value ?? 0);
     replace(_$result);
@@ -26254,10 +26254,10 @@ class QueryLedBrightnessBuilder extends Object
     final _$result = _$v ??
         _$QueryLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '');
     replace(_$result);
     return _$result;
@@ -26436,10 +26436,10 @@ class SetLedBrightnessBuilder extends Object
     final _$result = _$v ??
         _$SetLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             value: value ?? 0);
     replace(_$result);
@@ -26628,10 +26628,10 @@ class SetPWMBuilder extends Object
     final _$result = _$v ??
         _$SetPWM._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             period: period ?? 0,
             dutyCycle: dutyCycle ?? 0);
@@ -26821,10 +26821,10 @@ class PWMBuilder extends Object
     final _$result = _$v ??
         _$PWM._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             period: period ?? 0,
             dutyCycle: dutyCycle ?? 0);
@@ -27250,10 +27250,10 @@ class EstimatedStateBuilder extends Object
     final _$result = _$v ??
         _$EstimatedState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             height: height ?? 0,
@@ -27470,10 +27470,10 @@ class EstimatedStreamVelocityBuilder extends Object
     final _$result = _$v ??
         _$EstimatedStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0);
@@ -27642,10 +27642,10 @@ class IndicatedSpeedBuilder extends Object
     final _$result = _$v ??
         _$IndicatedSpeed._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -27812,10 +27812,10 @@ class TrueSpeedBuilder extends Object
     final _$result = _$v ??
         _$TrueSpeed._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -28190,10 +28190,10 @@ class NavigationUncertaintyBuilder extends Object
     final _$result = _$v ??
         _$NavigationUncertainty._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0,
@@ -28504,10 +28504,10 @@ class NavigationDataBuilder extends Object
     final _$result = _$v ??
         _$NavigationData._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             biasPsi: biasPsi ?? 0,
             biasR: biasR ?? 0,
             cog: cog ?? 0,
@@ -28696,10 +28696,10 @@ class GpsFixRejectionBuilder extends Object
     final _$result = _$v ??
         _$GpsFixRejection._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             utcTime: utcTime ?? 0,
             reason: reason ?? GpsFixRejectionEnumReason(0));
     replace(_$result);
@@ -28897,10 +28897,10 @@ class LblRangeAcceptanceBuilder extends Object
     final _$result = _$v ??
         _$LblRangeAcceptance._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? 0,
             range: range ?? 0,
             acceptance: acceptance ?? LblRangeAcceptanceEnumAcceptance(0));
@@ -29110,10 +29110,10 @@ class DvlRejectionBuilder extends Object
     final _$result = _$v ??
         _$DvlRejection._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? DvlRejectionBitfieldType(0),
             reason: reason ?? DvlRejectionEnumReason(0),
             value: value ?? 0,
@@ -29355,10 +29355,10 @@ class LblEstimateBuilder extends Object
     final _$result = _$v ??
         _$LblEstimate._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             beacon: beacon,
             x: x ?? 0,
             y: y ?? 0,
@@ -29527,10 +29527,10 @@ class AlignmentStateBuilder extends Object
     final _$result = _$v ??
         _$AlignmentState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? AlignmentStateEnumState(0));
     replace(_$result);
     return _$result;
@@ -29727,10 +29727,10 @@ class GroupStreamVelocityBuilder extends Object
     final _$result = _$v ??
         _$GroupStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0);
@@ -29927,10 +29927,10 @@ class AirflowBuilder extends Object
     final _$result = _$v ??
         _$Airflow._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             va: va ?? 0,
             aoa: aoa ?? 0,
             ssa: ssa ?? 0);
@@ -30100,10 +30100,10 @@ class DesiredHeadingBuilder extends Object
     final _$result = _$v ??
         _$DesiredHeading._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -30282,10 +30282,10 @@ class DesiredZBuilder extends Object
     final _$result = _$v ??
         _$DesiredZ._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0,
             zUnits: zUnits ?? ZUnitsEnum(0));
     replace(_$result);
@@ -30465,10 +30465,10 @@ class DesiredSpeedBuilder extends Object
     final _$result = _$v ??
         _$DesiredSpeed._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0,
             speedUnits: speedUnits ?? SpeedUnitsEnum(0));
     replace(_$result);
@@ -30637,10 +30637,10 @@ class DesiredRollBuilder extends Object
     final _$result = _$v ??
         _$DesiredRoll._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -30808,10 +30808,10 @@ class DesiredPitchBuilder extends Object
     final _$result = _$v ??
         _$DesiredPitch._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -30984,10 +30984,10 @@ class DesiredVerticalRateBuilder extends Object
     final _$result = _$v ??
         _$DesiredVerticalRate._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -31338,10 +31338,10 @@ class DesiredPathBuilder extends Object
     final _$result = _$v ??
         _$DesiredPath._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             pathRef: pathRef ?? 0,
             startLat: startLat ?? 0,
             startLon: startLon ?? 0,
@@ -31599,10 +31599,10 @@ class DesiredControlBuilder extends Object
     final _$result = _$v ??
         _$DesiredControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0,
@@ -31780,10 +31780,10 @@ class DesiredHeadingRateBuilder extends Object
     final _$result = _$v ??
         _$DesiredHeadingRate._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -32031,10 +32031,10 @@ class DesiredVelocityBuilder extends Object
     final _$result = _$v ??
         _$DesiredVelocity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             u: u ?? 0,
             v: v ?? 0,
             w: w ?? 0,
@@ -32450,10 +32450,10 @@ class PathControlStateBuilder extends Object
     final _$result = _$v ??
         _$PathControlState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             pathRef: pathRef ?? 0,
             startLat: startLat ?? 0,
             startLon: startLon ?? 0,
@@ -32669,10 +32669,10 @@ class AllocatedControlTorquesBuilder extends Object
     final _$result = _$v ??
         _$AllocatedControlTorques._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             k: k ?? 0,
             m: m ?? 0,
             n: n ?? 0);
@@ -32880,10 +32880,10 @@ class ControlParcelBuilder extends Object
     final _$result = _$v ??
         _$ControlParcel._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             p: p ?? 0,
             i: i ?? 0,
             d: d ?? 0,
@@ -33050,10 +33050,10 @@ class BrakeBuilder extends Object
     final _$result = _$v ??
         _$Brake._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? BrakeEnumOp(0));
     replace(_$result);
     return _$result;
@@ -33348,10 +33348,10 @@ class DesiredLinearStateBuilder extends Object
     final _$result = _$v ??
         _$DesiredLinearState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0,
@@ -33529,10 +33529,10 @@ class DesiredThrottleBuilder extends Object
     final _$result = _$v ??
         _$DesiredThrottle._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -33852,10 +33852,10 @@ class GotoBuilder extends Object
     final _$result = _$v ??
         _$Goto._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -34176,10 +34176,10 @@ class PopUpBuilder extends Object
     final _$result = _$v ??
         _$PopUp._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -34353,10 +34353,10 @@ class TeleoperationBuilder extends Object
     final _$result = _$v ??
         _$Teleoperation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             custom: custom ?? '');
     replace(_$result);
     return _$result;
@@ -34715,10 +34715,10 @@ class LoiterBuilder extends Object
     final _$result = _$v ??
         _$Loiter._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -34907,10 +34907,10 @@ class IdleManeuverBuilder extends Object
     final _$result = _$v ??
         _$IdleManeuver._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             duration: duration ?? 0,
             custom: custom ?? '');
     replace(_$result);
@@ -35101,10 +35101,10 @@ class LowLevelControlBuilder extends Object
     final _$result = _$v ??
         _$LowLevelControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             control: control,
             duration: duration ?? 0,
             custom: custom ?? '');
@@ -35477,10 +35477,10 @@ class RowsBuilder extends Object
     final _$result = _$v ??
         _$Rows._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -35774,10 +35774,10 @@ class FollowPathBuilder extends Object
     final _$result = _$v ??
         _$FollowPath._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -35976,10 +35976,10 @@ class PathPointBuilder extends Object
     final _$result = _$v ??
         _$PathPoint._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0);
@@ -36282,10 +36282,10 @@ class YoYoBuilder extends Object
     final _$result = _$v ??
         _$YoYo._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -36449,10 +36449,10 @@ class TeleoperationDoneBuilder extends Object
     final _$result = _$v ??
         _$TeleoperationDone._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -36733,10 +36733,10 @@ class StationKeepingBuilder extends Object
     final _$result = _$v ??
         _$StationKeeping._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             z: z ?? 0,
@@ -37073,10 +37073,10 @@ class ElevatorBuilder extends Object
     final _$result = _$v ??
         _$Elevator._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             flags: flags ?? ElevatorBitfieldFlags(0),
             lat: lat ?? 0,
@@ -37369,10 +37369,10 @@ class FollowTrajectoryBuilder extends Object
     final _$result = _$v ??
         _$FollowTrajectory._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -37588,10 +37588,10 @@ class TrajectoryPointBuilder extends Object
     final _$result = _$v ??
         _$TrajectoryPoint._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             x: x ?? 0,
             y: y ?? 0,
             z: z ?? 0,
@@ -37782,10 +37782,10 @@ class CustomManeuverBuilder extends Object
     final _$result = _$v ??
         _$CustomManeuver._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             name: name ?? '',
             custom: custom ?? '');
@@ -38089,10 +38089,10 @@ class VehicleFormationBuilder extends Object
     final _$result = _$v ??
         _$VehicleFormation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             z: z ?? 0,
@@ -38320,10 +38320,10 @@ class VehicleFormationParticipantBuilder extends Object
     final _$result = _$v ??
         _$VehicleFormationParticipant._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             vid: vid ?? 0,
             offX: offX ?? 0,
             offY: offY ?? 0,
@@ -38477,10 +38477,10 @@ class StopManeuverBuilder extends Object
     final _$result = _$v ??
         _$StopManeuver._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -38646,10 +38646,10 @@ class RegisterManeuverBuilder extends Object
     final _$result = _$v ??
         _$RegisterManeuver._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             mid: mid ?? 0);
     replace(_$result);
     return _$result;
@@ -38843,10 +38843,10 @@ class ManeuverControlStateBuilder extends Object
     final _$result = _$v ??
         _$ManeuverControlState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? ManeuverControlStateEnumState(0),
             eta: eta ?? 0,
             info: info ?? '');
@@ -39108,10 +39108,10 @@ class FollowSystemBuilder extends Object
     final _$result = _$v ??
         _$FollowSystem._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             system: system ?? 0,
             duration: duration ?? 0,
             speed: speed ?? 0,
@@ -39387,10 +39387,10 @@ class CommsRelayBuilder extends Object
     final _$result = _$v ??
         _$CommsRelay._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             speed: speed ?? 0,
@@ -39663,10 +39663,10 @@ class CoverAreaBuilder extends Object
     final _$result = _$v ??
         _$CoverArea._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             z: z ?? 0,
@@ -39855,10 +39855,10 @@ class PolygonVertexBuilder extends Object
     final _$result = _$v ??
         _$PolygonVertex._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0);
     replace(_$result);
@@ -40209,10 +40209,10 @@ class CompassCalibrationBuilder extends Object
     final _$result = _$v ??
         _$CompassCalibration._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -40438,10 +40438,10 @@ class FormationParametersBuilder extends Object
     final _$result = _$v ??
         _$FormationParameters._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             formationName: formationName ?? '',
             referenceFrame:
                 referenceFrame ?? FormationParametersEnumReferenceFrame(0),
@@ -40815,10 +40815,10 @@ class FormationPlanExecutionBuilder extends Object
     final _$result = _$v ??
         _$FormationPlanExecution._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             groupName: groupName ?? '',
             formationName: formationName ?? '',
             planId: planId ?? '',
@@ -41059,10 +41059,10 @@ class FollowReferenceBuilder extends Object
     final _$result = _$v ??
         _$FollowReference._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             controlSrc: controlSrc ?? 0,
             controlEnt: controlEnt ?? 0,
             timeout: timeout ?? 0,
@@ -41303,10 +41303,10 @@ class ReferenceBuilder extends Object
     final _$result = _$v ??
         _$Reference._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             flags: flags ?? ReferenceBitfieldFlags(0),
             speed: speed,
             z: z,
@@ -41529,10 +41529,10 @@ class FollowRefStateBuilder extends Object
     final _$result = _$v ??
         _$FollowRefState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             controlSrc: controlSrc ?? 0,
             controlEnt: controlEnt ?? 0,
             reference: reference,
@@ -41965,10 +41965,10 @@ class FormationMonitorBuilder extends Object
     final _$result = _$v ??
         _$FormationMonitor._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             axCmd: axCmd ?? 0,
             ayCmd: ayCmd ?? 0,
             azCmd: azCmd ?? 0,
@@ -42451,10 +42451,10 @@ class RelativeStateBuilder extends Object
     final _$result = _$v ??
         _$RelativeState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sId: sId ?? '',
             dist: dist ?? 0,
             err: err ?? 0,
@@ -42681,10 +42681,10 @@ class DislodgeBuilder extends Object
     final _$result = _$v ??
         _$Dislodge._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             rpm: rpm ?? 0,
             direction: direction ?? DislodgeEnumDirection(0),
@@ -43116,10 +43116,10 @@ class FormationBuilder extends Object
     final _$result = _$v ??
         _$Formation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             formationName: formationName ?? '',
             type: type ?? FormationEnumType(0),
             op: op ?? FormationEnumOp(0),
@@ -43405,10 +43405,10 @@ class LaunchBuilder extends Object
     final _$result = _$v ??
         _$Launch._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -43681,10 +43681,10 @@ class DropBuilder extends Object
     final _$result = _$v ??
         _$Drop._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -43961,10 +43961,10 @@ class ScheduledGotoBuilder extends Object
     final _$result = _$v ??
         _$ScheduledGoto._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             arrivalTime: arrivalTime ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -44343,10 +44343,10 @@ class RowsCoverageBuilder extends Object
     final _$result = _$v ??
         _$RowsCoverage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             z: z ?? 0,
@@ -44669,10 +44669,10 @@ class SampleBuilder extends Object
     final _$result = _$v ??
         _$Sample._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -44833,10 +44833,10 @@ class ImageTrackingBuilder extends Object
     final _$result = _$v ??
         _$ImageTracking._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -45105,10 +45105,10 @@ class TakeoffBuilder extends Object
     final _$result = _$v ??
         _$Takeoff._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             z: z ?? 0,
@@ -45433,10 +45433,10 @@ class LandBuilder extends Object
     final _$result = _$v ??
         _$Land._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             z: z ?? 0,
@@ -45767,10 +45767,10 @@ class AutonomousSectionBuilder extends Object
     final _$result = _$v ??
         _$AutonomousSection._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             speed: speed ?? 0,
@@ -46046,10 +46046,10 @@ class FollowPointBuilder extends Object
     final _$result = _$v ??
         _$FollowPoint._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             target: target ?? '',
             maxSpeed: maxSpeed ?? 0,
             speedUnits: speedUnits ?? SpeedUnitsEnum(0),
@@ -46295,10 +46295,10 @@ class AlignmentBuilder extends Object
     final _$result = _$v ??
         _$Alignment._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -46636,10 +46636,10 @@ class StationKeepingExtendedBuilder extends Object
     final _$result = _$v ??
         _$StationKeepingExtended._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             z: z ?? 0,
@@ -46801,10 +46801,10 @@ class ManeuverDoneBuilder extends Object
     final _$result = _$v ??
         _$ManeuverDone._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -47119,10 +47119,10 @@ class MagnetometerBuilder extends Object
     final _$result = _$v ??
         _$Magnetometer._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -47423,10 +47423,10 @@ class VehicleStateBuilder extends Object
     final _$result = _$v ??
         _$VehicleState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             opMode: opMode ?? VehicleStateEnumOpMode(0),
             errorCount: errorCount ?? 0,
             errorEnts: errorEnts ?? '',
@@ -47663,10 +47663,10 @@ class VehicleCommandBuilder extends Object
     final _$result = _$v ??
         _$VehicleCommand._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? VehicleCommandEnumType(0),
             requestId: requestId ?? 0,
             command: command ?? VehicleCommandEnumCommand(0),
@@ -47852,10 +47852,10 @@ class MonitorEntityStateBuilder extends Object
     final _$result = _$v ??
         _$MonitorEntityState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             command: command ?? MonitorEntityStateEnumCommand(0),
             entities: entities ?? '');
     replace(_$result);
@@ -48121,10 +48121,10 @@ class EntityMonitoringStateBuilder extends Object
     final _$result = _$v ??
         _$EntityMonitoringState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             mcount: mcount ?? 0,
             mnames: mnames ?? '',
             ecount: ecount ?? 0,
@@ -48481,10 +48481,10 @@ class OperationalLimitsBuilder extends Object
     final _$result = _$v ??
         _$OperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             mask: mask ?? OpLimitsMaskBitfield(0),
             maxDepth: maxDepth ?? 0,
             minAltitude: minAltitude ?? 0,
@@ -48652,10 +48652,10 @@ class GetOperationalLimitsBuilder extends Object
     final _$result = _$v ??
         _$GetOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -48818,10 +48818,10 @@ class CalibrationBuilder extends Object
     final _$result = _$v ??
         _$Calibration._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             duration: duration ?? 0);
     replace(_$result);
     return _$result;
@@ -49009,10 +49009,10 @@ class ControlLoopsBuilder extends Object
     final _$result = _$v ??
         _$ControlLoops._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             enable: enable ?? ControlLoopsEnumEnable(0),
             mask: mask ?? CLoopsMaskBitfield(0),
             scopeRef: scopeRef ?? 0);
@@ -49178,10 +49178,10 @@ class VehicleMediumBuilder extends Object
     final _$result = _$v ??
         _$VehicleMedium._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             medium: medium ?? VehicleMediumEnumMedium(0));
     replace(_$result);
     return _$result;
@@ -49360,10 +49360,10 @@ class CollisionBuilder extends Object
     final _$result = _$v ??
         _$Collision._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0,
             type: type ?? CollisionBitfieldType(0));
     replace(_$result);
@@ -49603,10 +49603,10 @@ class FormStateBuilder extends Object
     final _$result = _$v ??
         _$FormState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             posSimErr: posSimErr ?? 0,
             converg: converg ?? 0,
             turbulence: turbulence ?? 0,
@@ -49788,10 +49788,10 @@ class AutopilotModeBuilder extends Object
     final _$result = _$v ??
         _$AutopilotMode._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             autonomy: autonomy ?? AutopilotModeEnumAutonomy(0),
             mode: mode ?? '');
     replace(_$result);
@@ -50057,10 +50057,10 @@ class FormationStateBuilder extends Object
     final _$result = _$v ??
         _$FormationState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? FormationStateEnumType(0),
             op: op ?? FormationStateEnumOp(0),
             posSimErr: posSimErr ?? 0,
@@ -50272,10 +50272,10 @@ class ReportControlBuilder extends Object
     final _$result = _$v ??
         _$ReportControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? ReportControlEnumOp(0),
             commInterface:
                 commInterface ?? ReportControlBitfieldCommInterface(0),
@@ -50567,10 +50567,10 @@ class StateReportBuilder extends Object
     final _$result = _$v ??
         _$StateReport._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             stime: stime ?? 0,
             latitude: latitude ?? 0,
             longitude: longitude ?? 0,
@@ -50862,10 +50862,10 @@ class TransmissionRequestBuilder extends Object
     final _$result = _$v ??
         _$TransmissionRequest._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             commMean: commMean ?? TransmissionRequestEnumCommMean(0),
             destination: destination ?? '',
@@ -51082,10 +51082,10 @@ class TransmissionStatusBuilder extends Object
     final _$result = _$v ??
         _$TransmissionStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             status: status ?? TransmissionStatusEnumStatus(0),
             range: range ?? 0,
@@ -51293,10 +51293,10 @@ class SmsRequestBuilder extends Object
     final _$result = _$v ??
         _$SmsRequest._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             destination: destination ?? '',
             timeout: timeout ?? 0,
@@ -51487,10 +51487,10 @@ class SmsStatusBuilder extends Object
     final _$result = _$v ??
         _$SmsStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             status: status ?? SmsStatusEnumStatus(0),
             info: info ?? '');
@@ -51656,10 +51656,10 @@ class VtolStateBuilder extends Object
     final _$result = _$v ??
         _$VtolState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? VtolStateEnumState(0));
     replace(_$result);
     return _$result;
@@ -51823,10 +51823,10 @@ class ArmingStateBuilder extends Object
     final _$result = _$v ??
         _$ArmingState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? ArmingStateEnumState(0));
     replace(_$result);
     return _$result;
@@ -52031,10 +52031,10 @@ class TCPRequestBuilder extends Object
     final _$result = _$v ??
         _$TCPRequest._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             destination: destination ?? '',
             timeout: timeout ?? 0,
@@ -52225,10 +52225,10 @@ class TCPStatusBuilder extends Object
     final _$result = _$v ??
         _$TCPStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reqId: reqId ?? 0,
             status: status ?? TCPStatusEnumStatus(0),
             info: info ?? '');
@@ -52381,10 +52381,10 @@ class AbortBuilder extends Object
     final _$result = _$v ??
         _$Abort._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -52657,10 +52657,10 @@ class PlanSpecificationBuilder extends Object
     final _$result = _$v ??
         _$PlanSpecification._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             planId: planId ?? '',
             description: description ?? '',
             vnamespace: vnamespace ?? '',
@@ -52872,10 +52872,10 @@ class PlanManeuverBuilder extends Object
     final _$result = _$v ??
         _$PlanManeuver._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             maneuverId: maneuverId ?? '',
             data: data,
             startActions: startActions ?? <ImcMessage>[],
@@ -53080,10 +53080,10 @@ class PlanTransitionBuilder extends Object
     final _$result = _$v ??
         _$PlanTransition._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sourceMan: sourceMan ?? '',
             destMan: destMan ?? '',
             conditions: conditions ?? '',
@@ -53266,10 +53266,10 @@ class EmergencyControlBuilder extends Object
     final _$result = _$v ??
         _$EmergencyControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             command: command ?? EmergencyControlEnumCommand(0),
             plan: plan);
     replace(_$result);
@@ -53465,10 +53465,10 @@ class EmergencyControlStateBuilder extends Object
     final _$result = _$v ??
         _$EmergencyControlState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? EmergencyControlStateEnumState(0),
             planId: planId ?? '',
             commLevel: commLevel ?? 0);
@@ -53698,10 +53698,10 @@ class PlanDBBuilder extends Object
     final _$result = _$v ??
         _$PlanDB._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? PlanDBEnumType(0),
             op: op ?? PlanDBEnumOp(0),
             requestId: requestId ?? 0,
@@ -53950,10 +53950,10 @@ class PlanDBStateBuilder extends Object
     final _$result = _$v ??
         _$PlanDBState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             planCount: planCount ?? 0,
             planSize: planSize ?? 0,
             changeTime: changeTime ?? 0,
@@ -54194,10 +54194,10 @@ class PlanDBInformationBuilder extends Object
     final _$result = _$v ??
         _$PlanDBInformation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             planId: planId ?? '',
             planSize: planSize ?? 0,
             changeTime: changeTime ?? 0,
@@ -54442,10 +54442,10 @@ class PlanControlBuilder extends Object
     final _$result = _$v ??
         _$PlanControl._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? PlanControlEnumType(0),
             op: op ?? PlanControlEnumOp(0),
             requestId: requestId ?? 0,
@@ -54713,10 +54713,10 @@ class PlanControlStateBuilder extends Object
     final _$result = _$v ??
         _$PlanControlState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? PlanControlStateEnumState(0),
             planId: planId ?? '',
             planEta: planEta ?? 0,
@@ -54925,10 +54925,10 @@ class PlanVariableBuilder extends Object
     final _$result = _$v ??
         _$PlanVariable._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             value: value ?? '',
             type: type ?? PlanVariableEnumType(0),
@@ -55133,10 +55133,10 @@ class PlanGenerationBuilder extends Object
     final _$result = _$v ??
         _$PlanGeneration._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             cmd: cmd ?? PlanGenerationEnumCmd(0),
             op: op ?? PlanGenerationEnumOp(0),
             planId: planId ?? '',
@@ -55563,10 +55563,10 @@ class LeaderStateBuilder extends Object
     final _$result = _$v ??
         _$LeaderState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             groupName: groupName ?? '',
             op: op ?? LeaderStateEnumOp(0),
             lat: lat ?? 0,
@@ -55827,10 +55827,10 @@ class PlanStatisticsBuilder extends Object
     final _$result = _$v ??
         _$PlanStatistics._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             planId: planId ?? '',
             type: type ?? PlanStatisticsEnumType(0),
             properties: properties ?? PlanStatisticsBitfieldProperties(0),
@@ -56129,10 +56129,10 @@ class ReportedStateBuilder extends Object
     final _$result = _$v ??
         _$ReportedState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             depth: depth ?? 0,
@@ -56398,10 +56398,10 @@ class RemoteSensorInfoBuilder extends Object
     final _$result = _$v ??
         _$RemoteSensorInfo._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? '',
             sensorClass: sensorClass ?? '',
             lat: lat ?? 0,
@@ -56583,10 +56583,10 @@ class MapBuilder extends Object
     final _$result = _$v ??
         _$Map._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? '',
             features: features ?? <MapFeature>[]);
     replace(_$result);
@@ -56816,10 +56816,10 @@ class MapFeatureBuilder extends Object
     final _$result = _$v ??
         _$MapFeature._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             id: id ?? '',
             featureType: featureType ?? MapFeatureEnumFeatureType(0),
             rgbRed: rgbRed ?? 0,
@@ -57021,10 +57021,10 @@ class MapPointBuilder extends Object
     final _$result = _$v ??
         _$MapPoint._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             alt: alt ?? 0);
@@ -57214,10 +57214,10 @@ class CcuEventBuilder extends Object
     final _$result = _$v ??
         _$CcuEvent._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? CcuEventEnumType(0),
             id: id ?? '',
             arg: arg);
@@ -57395,10 +57395,10 @@ class VehicleLinksBuilder extends Object
     final _$result = _$v ??
         _$VehicleLinks._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             localname: localname ?? '',
             links: links ?? <Announce>[]);
     replace(_$result);
@@ -57589,10 +57589,10 @@ class TrexObservationBuilder extends Object
     final _$result = _$v ??
         _$TrexObservation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeline: timeline ?? '',
             predicate: predicate ?? '',
             attributes: attributes ?? '');
@@ -57782,10 +57782,10 @@ class TrexCommandBuilder extends Object
     final _$result = _$v ??
         _$TrexCommand._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             command: command ?? TrexCommandEnumCommand(0),
             goalId: goalId ?? '',
             goalXml: goalXml ?? '');
@@ -57975,10 +57975,10 @@ class TrexOperationBuilder extends Object
     final _$result = _$v ??
         _$TrexOperation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? TrexOperationEnumOp(0),
             goalId: goalId ?? '',
             token: token);
@@ -58183,10 +58183,10 @@ class TrexAttributeBuilder extends Object
     final _$result = _$v ??
         _$TrexAttribute._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             attrType: attrType ?? TrexAttributeEnumAttrType(0),
             min: min ?? '',
@@ -58378,10 +58378,10 @@ class TrexTokenBuilder extends Object
     final _$result = _$v ??
         _$TrexToken._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeline: timeline ?? '',
             predicate: predicate ?? '',
             attributes: attributes ?? <TrexAttribute>[]);
@@ -58559,10 +58559,10 @@ class TrexPlanBuilder extends Object
     final _$result = _$v ??
         _$TrexPlan._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             reactor: reactor ?? '',
             tokens: tokens ?? <TrexToken>[]);
     replace(_$result);
@@ -58739,10 +58739,10 @@ class EventBuilder extends Object
     final _$result = _$v ??
         _$Event._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             topic: topic ?? '',
             data: data ?? '');
     replace(_$result);
@@ -58921,10 +58921,10 @@ class CompressedImageBuilder extends Object
     final _$result = _$v ??
         _$CompressedImage._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             frameid: frameid ?? 0,
             data: data ?? <int>[]);
     replace(_$result);
@@ -59129,10 +59129,10 @@ class ImageTxSettingsBuilder extends Object
     final _$result = _$v ??
         _$ImageTxSettings._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             fps: fps ?? 0,
             quality: quality ?? 0,
             reps: reps ?? 0,
@@ -59364,10 +59364,10 @@ class RemoteStateBuilder extends Object
     final _$result = _$v ??
         _$RemoteState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             depth: depth ?? 0,
@@ -59625,10 +59625,10 @@ class TargetBuilder extends Object
     final _$result = _$v ??
         _$Target._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             label: label ?? '',
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -59812,10 +59812,10 @@ class EntityParameterBuilder extends Object
     final _$result = _$v ??
         _$EntityParameter._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             value: value ?? '');
     replace(_$result);
@@ -59995,10 +59995,10 @@ class EntityParametersBuilder extends Object
     final _$result = _$v ??
         _$EntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             params: params ?? <EntityParameter>[]);
     replace(_$result);
@@ -60194,10 +60194,10 @@ class QueryEntityParametersBuilder extends Object
     final _$result = _$v ??
         _$QueryEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             visibility: visibility ?? '',
             scope: scope ?? '');
@@ -60381,10 +60381,10 @@ class SetEntityParametersBuilder extends Object
     final _$result = _$v ??
         _$SetEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             params: params ?? <EntityParameter>[]);
     replace(_$result);
@@ -60555,10 +60555,10 @@ class SaveEntityParametersBuilder extends Object
     final _$result = _$v ??
         _$SaveEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '');
     replace(_$result);
     return _$result;
@@ -60722,10 +60722,10 @@ class CreateSessionBuilder extends Object
     final _$result = _$v ??
         _$CreateSession._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timeout: timeout ?? 0);
     replace(_$result);
     return _$result;
@@ -60889,10 +60889,10 @@ class CloseSessionBuilder extends Object
     final _$result = _$v ??
         _$CloseSession._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sessid: sessid ?? 0);
     replace(_$result);
     return _$result;
@@ -61074,10 +61074,10 @@ class SessionSubscriptionBuilder extends Object
     final _$result = _$v ??
         _$SessionSubscription._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sessid: sessid ?? 0,
             messages: messages ?? '');
     replace(_$result);
@@ -61245,10 +61245,10 @@ class SessionKeepAliveBuilder extends Object
     final _$result = _$v ??
         _$SessionKeepAlive._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sessid: sessid ?? 0);
     replace(_$result);
     return _$result;
@@ -61424,10 +61424,10 @@ class SessionStatusBuilder extends Object
     final _$result = _$v ??
         _$SessionStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sessid: sessid ?? 0,
             status: status ?? SessionStatusEnumStatus(0));
     replace(_$result);
@@ -61598,10 +61598,10 @@ class PushEntityParametersBuilder extends Object
     final _$result = _$v ??
         _$PushEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '');
     replace(_$result);
     return _$result;
@@ -61771,10 +61771,10 @@ class PopEntityParametersBuilder extends Object
     final _$result = _$v ??
         _$PopEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '');
     replace(_$result);
     return _$result;
@@ -61950,10 +61950,10 @@ class IoEventBuilder extends Object
     final _$result = _$v ??
         _$IoEvent._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? IoEventEnumType(0),
             error: error ?? '');
     replace(_$result);
@@ -62156,10 +62156,10 @@ class UamTxFrameBuilder extends Object
     final _$result = _$v ??
         _$UamTxFrame._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             seq: seq ?? 0,
             sysDst: sysDst ?? '',
             flags: flags ?? UamTxFrameBitfieldFlags(0),
@@ -62364,10 +62364,10 @@ class UamRxFrameBuilder extends Object
     final _$result = _$v ??
         _$UamRxFrame._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             sysSrc: sysSrc ?? '',
             sysDst: sysDst ?? '',
             flags: flags ?? UamRxFrameBitfieldFlags(0),
@@ -62558,10 +62558,10 @@ class UamTxStatusBuilder extends Object
     final _$result = _$v ??
         _$UamTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             seq: seq ?? 0,
             value: value ?? UamTxStatusEnumValue(0),
             error: error ?? '');
@@ -62754,10 +62754,10 @@ class UamRxRangeBuilder extends Object
     final _$result = _$v ??
         _$UamRxRange._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             seq: seq ?? 0,
             sys: sys ?? '',
             value: value ?? 0);
@@ -62950,10 +62950,10 @@ class UamTxRangeBuilder extends Object
     final _$result = _$v ??
         _$UamTxRange._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             seq: seq ?? 0,
             sysDst: sysDst ?? '',
             timeout: timeout ?? 0);
@@ -63195,10 +63195,10 @@ class FormCtrlParamBuilder extends Object
     final _$result = _$v ??
         _$FormCtrlParam._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             action: action ?? FormCtrlParamEnumAction(0),
             lonGain: lonGain ?? 0,
             latGain: latGain ?? 0,
@@ -63400,10 +63400,10 @@ class FormationEvalBuilder extends Object
     final _$result = _$v ??
         _$FormationEval._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             errMean: errMean ?? 0,
             distMinAbs: distMinAbs ?? 0,
             distMinMean: distMinMean ?? 0);
@@ -63743,10 +63743,10 @@ class FormationControlParamsBuilder extends Object
     final _$result = _$v ??
         _$FormationControlParams._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             action: action ?? FormationControlParamsEnumAction(0),
             lonGain: lonGain ?? 0,
             latGain: latGain ?? 0,
@@ -64032,10 +64032,10 @@ class FormationEvaluationBuilder extends Object
     final _$result = _$v ??
         _$FormationEvaluation._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? FormationEvaluationEnumType(0),
             op: op ?? FormationEvaluationEnumOp(0),
             errMean: errMean ?? 0,
@@ -64250,10 +64250,10 @@ class SoiWaypointBuilder extends Object
     final _$result = _$v ??
         _$SoiWaypoint._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             lat: lat ?? 0,
             lon: lon ?? 0,
             eta: eta ?? 0,
@@ -64432,10 +64432,10 @@ class SoiPlanBuilder extends Object
     final _$result = _$v ??
         _$SoiPlan._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             planId: planId ?? 0,
             waypoints: waypoints ?? <SoiWaypoint>[]);
     replace(_$result);
@@ -64652,10 +64652,10 @@ class SoiCommandBuilder extends Object
     final _$result = _$v ??
         _$SoiCommand._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             type: type ?? SoiCommandEnumType(0),
             command: command ?? SoiCommandEnumCommand(0),
             settings: settings ?? '',
@@ -64861,10 +64861,10 @@ class SoiStateBuilder extends Object
     final _$result = _$v ??
         _$SoiState._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             state: state ?? SoiStateEnumState(0),
             planId: planId ?? 0,
             wptId: wptId ?? 0,
@@ -65069,10 +65069,10 @@ class MessagePartBuilder extends Object
     final _$result = _$v ??
         _$MessagePart._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             uid: uid ?? 0,
             fragNumber: fragNumber ?? 0,
             numFrags: numFrags ?? 0,
@@ -65251,10 +65251,10 @@ class NeptusBlobBuilder extends Object
     final _$result = _$v ??
         _$NeptusBlob._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             contentType: contentType ?? '',
             content: content ?? <int>[]);
     replace(_$result);
@@ -65406,10 +65406,10 @@ class AbortedBuilder extends Object
     final _$result = _$v ??
         _$Aborted._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -65604,10 +65604,10 @@ class UsblAnglesBuilder extends Object
     final _$result = _$v ??
         _$UsblAngles._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             target: target ?? 0,
             bearing: bearing ?? 0,
             elevation: elevation ?? 0);
@@ -65814,10 +65814,10 @@ class UsblPositionBuilder extends Object
     final _$result = _$v ??
         _$UsblPosition._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             target: target ?? 0,
             x: x ?? 0,
             y: y ?? 0,
@@ -66045,10 +66045,10 @@ class UsblFixBuilder extends Object
     final _$result = _$v ??
         _$UsblFix._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             target: target ?? 0,
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -66228,10 +66228,10 @@ class ParametersXmlBuilder extends Object
     final _$result = _$v ??
         _$ParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             locale: locale ?? '',
             config: config ?? <int>[]);
     replace(_$result);
@@ -66386,10 +66386,10 @@ class GetParametersXmlBuilder extends Object
     final _$result = _$v ??
         _$GetParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId);
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt);
     replace(_$result);
     return _$result;
   }
@@ -66576,10 +66576,10 @@ class SetImageCoordsBuilder extends Object
     final _$result = _$v ??
         _$SetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             camId: camId ?? 0,
             x: x ?? 0,
             y: y ?? 0);
@@ -66769,10 +66769,10 @@ class GetImageCoordsBuilder extends Object
     final _$result = _$v ??
         _$GetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             camId: camId ?? 0,
             x: x ?? 0,
             y: y ?? 0);
@@ -67019,10 +67019,10 @@ class GetWorldCoordinatesBuilder extends Object
     final _$result = _$v ??
         _$GetWorldCoordinates._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             tracking: tracking ?? BooleanEnum(0),
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -67330,10 +67330,10 @@ class UsblAnglesExtendedBuilder extends Object
     final _$result = _$v ??
         _$UsblAnglesExtended._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             target: target ?? '',
             lbearing: lbearing ?? 0,
             lelevation: lelevation ?? 0,
@@ -67664,10 +67664,10 @@ class UsblPositionExtendedBuilder extends Object
     final _$result = _$v ??
         _$UsblPositionExtended._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             target: target ?? '',
             x: x ?? 0,
             y: y ?? 0,
@@ -67919,10 +67919,10 @@ class UsblFixExtendedBuilder extends Object
     final _$result = _$v ??
         _$UsblFixExtended._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             target: target ?? '',
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -68152,10 +68152,10 @@ class UsblModemBuilder extends Object
     final _$result = _$v ??
         _$UsblModem._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             name: name ?? '',
             lat: lat ?? 0,
             lon: lon ?? 0,
@@ -68335,10 +68335,10 @@ class UsblConfigBuilder extends Object
     final _$result = _$v ??
         _$UsblConfig._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? UsblConfigEnumOp(0),
             modems: modems ?? <UsblModem>[]);
     replace(_$result);
@@ -68525,10 +68525,10 @@ class DissolvedOrganicMatterBuilder extends Object
     final _$result = _$v ??
         _$DissolvedOrganicMatter._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0,
             type: type ?? DissolvedOrganicMatterEnumType(0));
     replace(_$result);
@@ -68700,10 +68700,10 @@ class OpticalBackscatterBuilder extends Object
     final _$result = _$v ??
         _$OpticalBackscatter._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -69129,10 +69129,10 @@ class TachographBuilder extends Object
     final _$result = _$v ??
         _$Tachograph._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             timestampLastService: timestampLastService ?? 0,
             timeNextService: timeNextService ?? 0,
             timeMotorNextService: timeMotorNextService ?? 0,
@@ -69323,10 +69323,10 @@ class ApmStatusBuilder extends Object
     final _$result = _$v ??
         _$ApmStatus._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             severity: severity ?? ApmStatusEnumSeverity(0),
             text: text ?? '');
     replace(_$result);
@@ -69515,10 +69515,10 @@ class SadcReadingsBuilder extends Object
     final _$result = _$v ??
         _$SadcReadings._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             channel: channel ?? 0,
             value: value ?? 0,
             gain: gain ?? SadcReadingsEnumGain(0));
@@ -69910,10 +69910,10 @@ class DmsDetectionBuilder extends Object
     final _$result = _$v ??
         _$DmsDetection._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             ch01: ch01 ?? 0,
             ch02: ch02 ?? 0,
             ch03: ch03 ?? 0,
@@ -70099,10 +70099,10 @@ class TotalMagIntensityBuilder extends Object
     final _$result = _$v ??
         _$TotalMagIntensity._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             value: value ?? 0);
     replace(_$result);
     return _$result;
@@ -70345,10 +70345,10 @@ class HomePositionBuilder extends Object
     final _$result = _$v ??
         _$HomePosition._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId,
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
             op: op ?? HomePositionEnumOp(0),
             lat: lat ?? 0,
             lon: lon ?? 0,
