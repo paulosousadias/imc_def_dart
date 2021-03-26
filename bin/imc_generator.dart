@@ -506,10 +506,12 @@ void _writeMessageBuilder(
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
     var initVal = typesData[2] == null ? '' : ' = ${typesData[2]}';
+    var isNullMarker = '${typesData[2] == null ? '?' : ''}';
 
-    var fStr = '''\n  $dartType? _${_convertToFieldName(abbrev)}$initVal;
-  $dartType? get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
-  set ${_convertToFieldName(abbrev)}($dartType? ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
+    var fStr =
+        '''\n  $dartType$isNullMarker _${_convertToFieldName(abbrev)}$initVal;
+  $dartType$isNullMarker get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
+  set ${_convertToFieldName(abbrev)}($dartType$isNullMarker ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -579,13 +581,8 @@ void _writeMessageBuilder(
           'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
     }
 
-    var unit = f.getAttribute('unit');
-    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
-
-    var ifNullVal = typesData[2] == null ? '' : ' ?? ${typesData[2]}';
-
     var fStr =
-        ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}$ifNullVal''';
+        ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
 
@@ -1001,7 +998,7 @@ void _writeMessageSerializer(
         fStr +=
             '              pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
-        fStr += '          builder.$fieldName!.add(pMsgBuilder.build());\n';
+        fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
         fStr += '        }\n';
         fStr += '      }\n';
         fStr += '    }\n';

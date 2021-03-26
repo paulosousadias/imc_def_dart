@@ -2365,7 +2365,7 @@ class MsgListSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.msgs!.add(pMsgBuilder.build());
+          builder.msgs.add(pMsgBuilder.build());
         }
       }
     }
@@ -3614,7 +3614,7 @@ class LogBookControlSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.msg!.add(pMsgBuilder.build());
+          builder.msg.add(pMsgBuilder.build());
         }
       }
     }
@@ -4526,7 +4526,7 @@ class VerticalProfileSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.samples!.add(pMsgBuilder.build());
+          builder.samples.add(pMsgBuilder.build());
         }
       }
     }
@@ -7017,7 +7017,7 @@ class HistoricDataSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.data!.add(pMsgBuilder.build());
+          builder.data.add(pMsgBuilder.build());
         }
       }
     }
@@ -8346,7 +8346,7 @@ class LblConfigSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.beacons!.add(pMsgBuilder.build());
+          builder.beacons.add(pMsgBuilder.build());
         }
       }
     }
@@ -11168,7 +11168,7 @@ class DistanceSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.location!.add(pMsgBuilder.build());
+          builder.location.add(pMsgBuilder.build());
         }
       }
     }
@@ -11191,7 +11191,7 @@ class DistanceSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.beamConfig!.add(pMsgBuilder.build());
+          builder.beamConfig.add(pMsgBuilder.build());
         }
       }
     }
@@ -12755,7 +12755,7 @@ class SonarDataSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.beamConfig!.add(pMsgBuilder.build());
+          builder.beamConfig.add(pMsgBuilder.build());
         }
       }
     }
@@ -22395,7 +22395,7 @@ class FollowPathSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.points!.add(pMsgBuilder.build());
+          builder.points.add(pMsgBuilder.build());
         }
       }
     }
@@ -23312,7 +23312,7 @@ class FollowTrajectorySerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.points!.add(pMsgBuilder.build());
+          builder.points.add(pMsgBuilder.build());
         }
       }
     }
@@ -23791,7 +23791,7 @@ class VehicleFormationSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.points!.add(pMsgBuilder.build());
+          builder.points.add(pMsgBuilder.build());
         }
       }
     }
@@ -23816,7 +23816,7 @@ class VehicleFormationSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.participants!.add(pMsgBuilder.build());
+          builder.participants.add(pMsgBuilder.build());
         }
       }
     }
@@ -24754,7 +24754,7 @@ class CoverAreaSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.polygon!.add(pMsgBuilder.build());
+          builder.polygon.add(pMsgBuilder.build());
         }
       }
     }
@@ -25234,7 +25234,7 @@ class FormationParametersSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.participants!.add(pMsgBuilder.build());
+          builder.participants.add(pMsgBuilder.build());
         }
       }
     }
@@ -26206,7 +26206,7 @@ class FormationMonitorSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.relState!.add(pMsgBuilder.build());
+          builder.relState.add(pMsgBuilder.build());
         }
       }
     }
@@ -26843,7 +26843,7 @@ class FormationSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.participants!.add(pMsgBuilder.build());
+          builder.participants.add(pMsgBuilder.build());
         }
       }
     }
@@ -28345,7 +28345,7 @@ class AutonomousSectionSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.areaLimits!.add(pMsgBuilder.build());
+          builder.areaLimits.add(pMsgBuilder.build());
         }
       }
     }
@@ -32653,7 +32653,7 @@ class PlanSpecificationSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.variables!.add(pMsgBuilder.build());
+          builder.variables.add(pMsgBuilder.build());
         }
       }
     }
@@ -32685,7 +32685,7 @@ class PlanSpecificationSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.maneuvers!.add(pMsgBuilder.build());
+          builder.maneuvers.add(pMsgBuilder.build());
         }
       }
     }
@@ -32710,7 +32710,7 @@ class PlanSpecificationSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.transitions!.add(pMsgBuilder.build());
+          builder.transitions.add(pMsgBuilder.build());
         }
       }
     }
@@ -32735,7 +32735,7 @@ class PlanSpecificationSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.startActions!.add(pMsgBuilder.build());
+          builder.startActions.add(pMsgBuilder.build());
         }
       }
     }
@@ -32758,7 +32758,7 @@ class PlanSpecificationSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.endActions!.add(pMsgBuilder.build());
+          builder.endActions.add(pMsgBuilder.build());
         }
       }
     }
@@ -32981,7 +32981,7 @@ class PlanManeuverSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.startActions!.add(pMsgBuilder.build());
+          builder.startActions.add(pMsgBuilder.build());
         }
       }
     }
@@ -33004,7 +33004,7 @@ class PlanManeuverSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.endActions!.add(pMsgBuilder.build());
+          builder.endActions.add(pMsgBuilder.build());
         }
       }
     }
@@ -33194,7 +33194,7 @@ class PlanTransitionSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.actions!.add(pMsgBuilder.build());
+          builder.actions.add(pMsgBuilder.build());
         }
       }
     }
@@ -33843,7 +33843,7 @@ class PlanDBStateSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.plansInfo!.add(pMsgBuilder.build());
+          builder.plansInfo.add(pMsgBuilder.build());
         }
       }
     }
@@ -35539,7 +35539,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.features!.add(pMsgBuilder.build());
+          builder.features.add(pMsgBuilder.build());
         }
       }
     }
@@ -35723,7 +35723,7 @@ class MapFeatureSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.feature!.add(pMsgBuilder.build());
+          builder.feature.add(pMsgBuilder.build());
         }
       }
     }
@@ -36153,7 +36153,7 @@ class VehicleLinksSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.links!.add(pMsgBuilder.build());
+          builder.links.add(pMsgBuilder.build());
         }
       }
     }
@@ -36910,7 +36910,7 @@ class TrexTokenSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.attributes!.add(pMsgBuilder.build());
+          builder.attributes.add(pMsgBuilder.build());
         }
       }
     }
@@ -37069,7 +37069,7 @@ class TrexPlanSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.tokens!.add(pMsgBuilder.build());
+          builder.tokens.add(pMsgBuilder.build());
         }
       }
     }
@@ -38000,7 +38000,7 @@ class EntityParametersSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.params!.add(pMsgBuilder.build());
+          builder.params.add(pMsgBuilder.build());
         }
       }
     }
@@ -38303,7 +38303,7 @@ class SetEntityParametersSerializer extends imc
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.params!.add(pMsgBuilder.build());
+          builder.params.add(pMsgBuilder.build());
         }
       }
     }
@@ -40828,7 +40828,7 @@ class SoiPlanSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.waypoints!.add(pMsgBuilder.build());
+          builder.waypoints.add(pMsgBuilder.build());
         }
       }
     }
@@ -43195,7 +43195,7 @@ class UsblConfigSerializer
           var mPSize = pMsgSerializer.deserializePayload(
               pMsgBuilder, byteData, endianness, byteOffset);
           byteOffset += mPSize;
-          builder.modems!.add(pMsgBuilder.build());
+          builder.modems.add(pMsgBuilder.build());
         }
       }
     }

@@ -568,7 +568,7 @@ void main() {
     imc.MsgList msg = (imc.MsgListBuilder()
           ..src = 0x4001
           ..timestamp = DateTime.utc(1970)
-          ..msgs!.add(msgA))
+          ..msgs.add(msgA))
         .build();
     var serializer = imc.MsgListSerializer();
     var data = serializer.serialize(msg);
