@@ -68,8 +68,8 @@ abstract class QueryEntityState extends ImcMessage
     implements Built<QueryEntityState, QueryEntityStateBuilder> {
   static const static_id = 2;
   QueryEntityState._();
-  factory QueryEntityState([void Function(QueryEntityStateBuilder b)? updates]) =
-      _$QueryEntityState;
+  factory QueryEntityState(
+      [void Function(QueryEntityStateBuilder b)? updates]) = _$QueryEntityState;
 
   @override
   int get msgId => static_id;
@@ -595,8 +595,8 @@ abstract class DynamicsSimParam extends ImcMessage
     implements Built<DynamicsSimParam, DynamicsSimParamBuilder> {
   static const static_id = 53;
   DynamicsSimParam._();
-  factory DynamicsSimParam([void Function(DynamicsSimParamBuilder b)? updates]) =
-      _$DynamicsSimParam;
+  factory DynamicsSimParam(
+      [void Function(DynamicsSimParamBuilder b)? updates]) = _$DynamicsSimParam;
 
   @override
   int get msgId => static_id;
@@ -1636,8 +1636,8 @@ abstract class CommSystemsQuery extends ImcMessage
     implements Built<CommSystemsQuery, CommSystemsQueryBuilder> {
   static const static_id = 189;
   CommSystemsQuery._();
-  factory CommSystemsQuery([void Function(CommSystemsQueryBuilder b)? updates]) =
-      _$CommSystemsQuery;
+  factory CommSystemsQuery(
+      [void Function(CommSystemsQueryBuilder b)? updates]) = _$CommSystemsQuery;
 
   @override
   int get msgId => static_id;
@@ -2259,8 +2259,8 @@ abstract class EulerAnglesDelta extends ImcMessage
     implements Built<EulerAnglesDelta, EulerAnglesDeltaBuilder> {
   static const static_id = 255;
   EulerAnglesDelta._();
-  factory EulerAnglesDelta([void Function(EulerAnglesDeltaBuilder b)? updates]) =
-      _$EulerAnglesDelta;
+  factory EulerAnglesDelta(
+      [void Function(EulerAnglesDeltaBuilder b)? updates]) = _$EulerAnglesDelta;
 
   @override
   int get msgId => static_id;
@@ -2709,8 +2709,8 @@ abstract class RelativeHumidity extends ImcMessage
     implements Built<RelativeHumidity, RelativeHumidityBuilder> {
   static const static_id = 272;
   RelativeHumidity._();
-  factory RelativeHumidity([void Function(RelativeHumidityBuilder b)? updates]) =
-      _$RelativeHumidity;
+  factory RelativeHumidity(
+      [void Function(RelativeHumidityBuilder b)? updates]) = _$RelativeHumidity;
 
   @override
   int get msgId => static_id;
@@ -3588,8 +3588,8 @@ abstract class SetServoPosition extends ImcMessage
     implements Built<SetServoPosition, SetServoPositionBuilder> {
   static const static_id = 302;
   SetServoPosition._();
-  factory SetServoPosition([void Function(SetServoPositionBuilder b)? updates]) =
-      _$SetServoPosition;
+  factory SetServoPosition(
+      [void Function(SetServoPositionBuilder b)? updates]) = _$SetServoPosition;
 
   @override
   int get msgId => static_id;
@@ -3885,8 +3885,8 @@ abstract class SetLedBrightness extends ImcMessage
     implements Built<SetLedBrightness, SetLedBrightnessBuilder> {
   static const static_id = 314;
   SetLedBrightness._();
-  factory SetLedBrightness([void Function(SetLedBrightnessBuilder b)? updates]) =
-      _$SetLedBrightness;
+  factory SetLedBrightness(
+      [void Function(SetLedBrightnessBuilder b)? updates]) = _$SetLedBrightness;
 
   @override
   int get msgId => static_id;
@@ -4868,8 +4868,8 @@ abstract class PathControlState extends ImcMessage
     implements Built<PathControlState, PathControlStateBuilder> {
   static const static_id = 410;
   PathControlState._();
-  factory PathControlState([void Function(PathControlStateBuilder b)? updates]) =
-      _$PathControlState;
+  factory PathControlState(
+      [void Function(PathControlStateBuilder b)? updates]) = _$PathControlState;
 
   @override
   int get msgId => static_id;
@@ -5800,8 +5800,8 @@ abstract class FollowTrajectory extends Maneuver
     implements Built<FollowTrajectory, FollowTrajectoryBuilder> {
   static const static_id = 463;
   FollowTrajectory._();
-  factory FollowTrajectory([void Function(FollowTrajectoryBuilder b)? updates]) =
-      _$FollowTrajectory;
+  factory FollowTrajectory(
+      [void Function(FollowTrajectoryBuilder b)? updates]) = _$FollowTrajectory;
 
   @override
   int get msgId => static_id;
@@ -5924,8 +5924,8 @@ abstract class VehicleFormation extends Maneuver
     implements Built<VehicleFormation, VehicleFormationBuilder> {
   static const static_id = 466;
   VehicleFormation._();
-  factory VehicleFormation([void Function(VehicleFormationBuilder b)? updates]) =
-      _$VehicleFormation;
+  factory VehicleFormation(
+      [void Function(VehicleFormationBuilder b)? updates]) = _$VehicleFormation;
 
   @override
   int get msgId => static_id;
@@ -6036,8 +6036,8 @@ abstract class RegisterManeuver extends ImcMessage
     implements Built<RegisterManeuver, RegisterManeuverBuilder> {
   static const static_id = 469;
   RegisterManeuver._();
-  factory RegisterManeuver([void Function(RegisterManeuverBuilder b)? updates]) =
-      _$RegisterManeuver;
+  factory RegisterManeuver(
+      [void Function(RegisterManeuverBuilder b)? updates]) = _$RegisterManeuver;
 
   @override
   int get msgId => static_id;
@@ -6586,8 +6586,8 @@ abstract class FormationMonitor extends ImcMessage
     implements Built<FormationMonitor, FormationMonitorBuilder> {
   static const static_id = 481;
   FormationMonitor._();
-  factory FormationMonitor([void Function(FormationMonitorBuilder b)? updates]) =
-      _$FormationMonitor;
+  factory FormationMonitor(
+      [void Function(FormationMonitorBuilder b)? updates]) = _$FormationMonitor;
 
   @override
   int get msgId => static_id;
@@ -8689,8 +8689,8 @@ abstract class EmergencyControl extends ImcMessage
     implements Built<EmergencyControl, EmergencyControlBuilder> {
   static const static_id = 554;
   EmergencyControl._();
-  factory EmergencyControl([void Function(EmergencyControlBuilder b)? updates]) =
-      _$EmergencyControl;
+  factory EmergencyControl(
+      [void Function(EmergencyControlBuilder b)? updates]) = _$EmergencyControl;
 
   @override
   int get msgId => static_id;
@@ -8929,8 +8929,8 @@ abstract class PlanControlState extends ImcMessage
     implements Built<PlanControlState, PlanControlStateBuilder> {
   static const static_id = 560;
   PlanControlState._();
-  factory PlanControlState([void Function(PlanControlStateBuilder b)? updates]) =
-      _$PlanControlState;
+  factory PlanControlState(
+      [void Function(PlanControlStateBuilder b)? updates]) = _$PlanControlState;
 
   @override
   int get msgId => static_id;
@@ -9256,8 +9256,8 @@ abstract class RemoteSensorInfo extends ImcMessage
     implements Built<RemoteSensorInfo, RemoteSensorInfoBuilder> {
   static const static_id = 601;
   RemoteSensorInfo._();
-  factory RemoteSensorInfo([void Function(RemoteSensorInfoBuilder b)? updates]) =
-      _$RemoteSensorInfo;
+  factory RemoteSensorInfo(
+      [void Function(RemoteSensorInfoBuilder b)? updates]) = _$RemoteSensorInfo;
 
   @override
   int get msgId => static_id;
@@ -9758,8 +9758,8 @@ abstract class EntityParameters extends ImcMessage
     implements Built<EntityParameters, EntityParametersBuilder> {
   static const static_id = 802;
   EntityParameters._();
-  factory EntityParameters([void Function(EntityParametersBuilder b)? updates]) =
-      _$EntityParameters;
+  factory EntityParameters(
+      [void Function(EntityParametersBuilder b)? updates]) = _$EntityParameters;
 
   @override
   int get msgId => static_id;
@@ -9918,8 +9918,8 @@ abstract class SessionKeepAlive extends ImcMessage
     implements Built<SessionKeepAlive, SessionKeepAliveBuilder> {
   static const static_id = 809;
   SessionKeepAlive._();
-  factory SessionKeepAlive([void Function(SessionKeepAliveBuilder b)? updates]) =
-      _$SessionKeepAlive;
+  factory SessionKeepAlive(
+      [void Function(SessionKeepAliveBuilder b)? updates]) = _$SessionKeepAlive;
 
   @override
   int get msgId => static_id;
@@ -10627,8 +10627,8 @@ abstract class GetParametersXml extends ImcMessage
     implements Built<GetParametersXml, GetParametersXmlBuilder> {
   static const static_id = 894;
   GetParametersXml._();
-  factory GetParametersXml([void Function(GetParametersXmlBuilder b)? updates]) =
-      _$GetParametersXml;
+  factory GetParametersXml(
+      [void Function(GetParametersXmlBuilder b)? updates]) = _$GetParametersXml;
 
   @override
   int get msgId => static_id;

@@ -629,7 +629,9 @@ void _writeMessageSerializer(
 
   @override
   int serializePayload(
-      imc.$abbrev message, ByteData byteData, int offset) {
+      imc.$abbrev? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 \n''';
   sink.write('$serClassStart');
@@ -663,65 +665,68 @@ void _writeMessageSerializer(
     switch (type) {
       case 'uint8_t':
         fStr =
-            '''    byteData.setUint8(byteOffset, message.$fieldName$enumLike);\n''';
+            '''    byteData.setUint8(byteOffset, message.$fieldName!$enumLike);\n''';
         fStr += '    byteOffset += 1;\n';
         break;
       case 'uint16_t':
         fStr =
-            '''    byteData.setUint16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setUint16(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case 'uint32_t':
         fStr =
-            '''    byteData.setUint32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setUint32(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case 'uint64_t':
         fStr =
-            '''    byteData.setUint64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setUint64(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case 'int8_t':
         fStr =
-            '''    byteData.setInt8(byteOffset, message.$fieldName$enumLike);\n''';
+            '''    byteData.setInt8(byteOffset, message.$fieldName!$enumLike);\n''';
         fStr += '    byteOffset += 1;\n';
         break;
       case 'int16_t':
         fStr =
-            '''    byteData.setInt16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setInt16(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case 'int32_t':
         fStr =
-            '''    byteData.setInt32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setInt32(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case 'int64_t':
         fStr =
-            '''    byteData.setInt64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setInt64(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case 'fp32_t':
         fStr =
-            '''    byteData.setFloat32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setFloat32(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case 'fp64_t':
         fStr =
-            '''    byteData.setFloat64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setFloat64(byteOffset, message.$fieldName!$enumLike, imc.endian_ser);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case 'rawdata':
-        fStr = '''    var ${fieldName}SSize = message.$fieldName.length;\n''';
+        fStr =
+            '''    var ${fieldName}SSize = message.$fieldName?.length ?? 0;\n''';
         fStr +=
             '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
+        fStr += '    if (${fieldName}SSize > 0) {\n';
         fStr +=
-            '    message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+            '      message.$fieldName!.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+        fStr += '    }\n';
         break;
       case 'plaintext':
         fStr =
-            '    var ${fieldName}Encoded = utf8.encode(message.$fieldName);\n';
+            '    var ${fieldName}Encoded = utf8.encode(message.$fieldName!);\n';
         fStr += '''    var ${fieldName}SSize = ${fieldName}Encoded.length;\n''';
         fStr +=
             '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
@@ -735,7 +740,7 @@ void _writeMessageSerializer(
             '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
-        fStr += '      var id = message.$fieldName.msgId;\n';
+        fStr += '      var id = message.$fieldName!.msgId;\n';
         fStr +=
             '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '      if (pMsgSerializer != null) {\n';
@@ -749,15 +754,16 @@ void _writeMessageSerializer(
         break;
       case 'message-list':
         fStr =
-            '    if (message.$fieldName == null || message.$fieldName.isEmpty) {\n';
+            '    if (message.$fieldName == null || message.$fieldName!.isEmpty) {\n';
         fStr += '      byteData.setUint16(byteOffset, 0, imc.endian_ser);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
         fStr += '      var msgsCounter = 0;\n';
         fStr += '      var bufCounterPos = byteOffset;\n';
         fStr += '      byteOffset += 2;\n';
-        fStr += '      for (var i = 0; i < message.$fieldName.length; i++) {\n';
-        fStr += '        var id = message.$fieldName[i]?.msgId;\n';
+        fStr +=
+            '      for (var i = 0; i < message.$fieldName!.length; i++) {\n';
+        fStr += '        var id = message.$fieldName![i]?.msgId;\n';
         fStr +=
             '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId.toString()]?.call();\n';
         fStr += '        if (id != null && pMsgSerializer != null) {\n';
@@ -765,7 +771,7 @@ void _writeMessageSerializer(
             '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
         fStr += '          byteOffset += 2;\n';
         fStr +=
-            '          var mPSize = pMsgSerializer.serializePayload(message.$fieldName[i], byteData, byteOffset);\n';
+            '          var mPSize = pMsgSerializer.serializePayload(message.$fieldName![i], byteData, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
         fStr += '          msgsCounter++;\n';
         fStr += '        }\n';
@@ -992,7 +998,7 @@ void _writeMessageSerializer(
         fStr +=
             '              pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
-        fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
+        fStr += '          builder.$fieldName!.add(pMsgBuilder.build());\n';
         fStr += '        }\n';
         fStr += '      }\n';
         fStr += '    }\n';

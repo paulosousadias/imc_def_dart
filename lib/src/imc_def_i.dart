@@ -1574,7 +1574,8 @@ class DevCalibrationControlBuilder extends Object
   }
 
   @override
-  DevCalibrationControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+  DevCalibrationControlBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
       DevCalibrationControlBuilder()..copyFromHeader(headerFrom);
 
   DevCalibrationControlBuilder get _$this {
@@ -1771,7 +1772,8 @@ class DevCalibrationStateBuilder extends Object
   String? get step => _$this._step;
   set step(String? step) => _$this._step = step;
 
-  DevCalibrationStateBitfieldFlags? _flags = DevCalibrationStateBitfieldFlags(0);
+  DevCalibrationStateBitfieldFlags? _flags =
+      DevCalibrationStateBitfieldFlags(0);
   DevCalibrationStateBitfieldFlags? get flags => _$this._flags;
   set flags(DevCalibrationStateBitfieldFlags? flags) => _$this._flags = flags;
 
@@ -1972,7 +1974,8 @@ class EntityActivationStateBuilder extends Object
   }
 
   @override
-  EntityActivationStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+  EntityActivationStateBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
       EntityActivationStateBuilder()..copyFromHeader(headerFrom);
 
   EntityActivationStateBuilder get _$this {
@@ -2279,26 +2282,74 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (speedMin == other.speedMin || speedMin! - other.speedMin! <= 1E-7) &&
-        (speedMax == other.speedMax || speedMax! - other.speedMax! <= 1E-7) &&
-        (longAccel == other.longAccel || longAccel! - other.longAccel! <= 1E-7) &&
-        (altMaxMsl == other.altMaxMsl || altMaxMsl! - other.altMaxMsl! <= 1E-7) &&
+        (speedMin == other.speedMin ||
+            (speedMin != null &&
+                other.speedMin != null &&
+                (speedMin! - other.speedMin! <= 1E-7))) &&
+        (speedMax == other.speedMax ||
+            (speedMax != null &&
+                other.speedMax != null &&
+                (speedMax! - other.speedMax! <= 1E-7))) &&
+        (longAccel == other.longAccel ||
+            (longAccel != null &&
+                other.longAccel != null &&
+                (longAccel! - other.longAccel! <= 1E-7))) &&
+        (altMaxMsl == other.altMaxMsl ||
+            (altMaxMsl != null &&
+                other.altMaxMsl != null &&
+                (altMaxMsl! - other.altMaxMsl! <= 1E-7))) &&
         (diveFractionMax == other.diveFractionMax ||
-            diveFractionMax! - other.diveFractionMax! <= 1E-7) &&
+            (diveFractionMax != null &&
+                other.diveFractionMax != null &&
+                (diveFractionMax! - other.diveFractionMax! <= 1E-7))) &&
         (climbFractionMax == other.climbFractionMax ||
-            climbFractionMax! - other.climbFractionMax! <= 1E-7) &&
-        (bankMax == other.bankMax || bankMax! - other.bankMax! <= 1E-7) &&
-        (pMax == other.pMax || pMax! - other.pMax! <= 1E-7) &&
-        (pitchMin == other.pitchMin || pitchMin! - other.pitchMin! <= 1E-7) &&
-        (pitchMax == other.pitchMax || pitchMax! - other.pitchMax! <= 1E-7) &&
-        (qMax == other.qMax || qMax! - other.qMax! <= 1E-7) &&
-        (gMin == other.gMin || gMin! - other.gMin! <= 1E-7) &&
-        (gMax == other.gMax || gMax! - other.gMax! <= 1E-7) &&
-        (gLatMax == other.gLatMax || gLatMax! - other.gLatMax! <= 1E-7) &&
-        (rpmMin == other.rpmMin || rpmMin! - other.rpmMin! <= 1E-7) &&
-        (rpmMax == other.rpmMax || rpmMax! - other.rpmMax! <= 1E-7) &&
+            (climbFractionMax != null &&
+                other.climbFractionMax != null &&
+                (climbFractionMax! - other.climbFractionMax! <= 1E-7))) &&
+        (bankMax == other.bankMax ||
+            (bankMax != null &&
+                other.bankMax != null &&
+                (bankMax! - other.bankMax! <= 1E-7))) &&
+        (pMax == other.pMax ||
+            (pMax != null &&
+                other.pMax != null &&
+                (pMax! - other.pMax! <= 1E-7))) &&
+        (pitchMin == other.pitchMin ||
+            (pitchMin != null &&
+                other.pitchMin != null &&
+                (pitchMin! - other.pitchMin! <= 1E-7))) &&
+        (pitchMax == other.pitchMax ||
+            (pitchMax != null &&
+                other.pitchMax != null &&
+                (pitchMax! - other.pitchMax! <= 1E-7))) &&
+        (qMax == other.qMax ||
+            (qMax != null &&
+                other.qMax != null &&
+                (qMax! - other.qMax! <= 1E-7))) &&
+        (gMin == other.gMin ||
+            (gMin != null &&
+                other.gMin != null &&
+                (gMin! - other.gMin! <= 1E-7))) &&
+        (gMax == other.gMax ||
+            (gMax != null &&
+                other.gMax != null &&
+                (gMax! - other.gMax! <= 1E-7))) &&
+        (gLatMax == other.gLatMax ||
+            (gLatMax != null &&
+                other.gLatMax != null &&
+                (gLatMax! - other.gLatMax! <= 1E-7))) &&
+        (rpmMin == other.rpmMin ||
+            (rpmMin != null &&
+                other.rpmMin != null &&
+                (rpmMin! - other.rpmMin! <= 1E-7))) &&
+        (rpmMax == other.rpmMax ||
+            (rpmMax != null &&
+                other.rpmMax != null &&
+                (rpmMax! - other.rpmMax! <= 1E-7))) &&
         (rpmRateMax == other.rpmRateMax ||
-            rpmRateMax! - other.rpmRateMax! <= 1E-7);
+            (rpmRateMax != null &&
+                other.rpmRateMax != null &&
+                (rpmRateMax! - other.rpmRateMax! <= 1E-7)));
   }
 
   @override
@@ -2841,24 +2892,58 @@ class _$SimulatedState extends SimulatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (height == other.height || height! - other.height! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7) &&
-        (u == other.u || u! - other.u! <= 1E-7) &&
-        (v == other.v || v! - other.v! <= 1E-7) &&
-        (w == other.w || w! - other.w! <= 1E-7) &&
-        (p == other.p || p! - other.p! <= 1E-7) &&
-        (q == other.q || q! - other.q! <= 1E-7) &&
-        (r == other.r || r! - other.r! <= 1E-7) &&
-        (svx == other.svx || svx! - other.svx! <= 1E-7) &&
-        (svy == other.svy || svy! - other.svy! <= 1E-7) &&
-        (svz == other.svz || svz! - other.svz! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (height == other.height ||
+            (height != null &&
+                other.height != null &&
+                (height! - other.height! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null &&
+                other.psi != null &&
+                (psi! - other.psi! <= 1E-7))) &&
+        (u == other.u ||
+            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
+        (v == other.v ||
+            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
+        (w == other.w ||
+            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
+        (p == other.p ||
+            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
+        (q == other.q ||
+            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
+        (r == other.r ||
+            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
+        (svx == other.svx ||
+            (svx != null &&
+                other.svx != null &&
+                (svx! - other.svx! <= 1E-7))) &&
+        (svy == other.svy ||
+            (svy != null &&
+                other.svy != null &&
+                (svy! - other.svy! <= 1E-7))) &&
+        (svz == other.svz ||
+            (svz != null && other.svz != null && (svz! - other.svz! <= 1E-7)));
   }
 
   @override
@@ -3563,9 +3648,13 @@ class _$DynamicsSimParam extends DynamicsSimParam {
         dstEnt == other.dstEnt &&
         op == other.op &&
         (tas2accPgain == other.tas2accPgain ||
-            tas2accPgain! - other.tas2accPgain! <= 1E-7) &&
+            (tas2accPgain != null &&
+                other.tas2accPgain != null &&
+                (tas2accPgain! - other.tas2accPgain! <= 1E-7))) &&
         (bank2pPgain == other.bank2pPgain ||
-            bank2pPgain! - other.bank2pPgain! <= 1E-7);
+            (bank2pPgain != null &&
+                other.bank2pPgain != null &&
+                (bank2pPgain! - other.bank2pPgain! <= 1E-7)));
   }
 
   @override
@@ -4314,7 +4403,10 @@ class _$LogBookEntry extends LogBookEntry {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         type == other.type &&
-        (htime == other.htime || htime! - other.htime! <= 1E-7) &&
+        (htime == other.htime ||
+            (htime != null &&
+                other.htime != null &&
+                (htime! - other.htime! <= 1E-7))) &&
         context == other.context &&
         text == other.text;
   }
@@ -4519,7 +4611,10 @@ class _$LogBookControl extends LogBookControl {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         command == other.command &&
-        (htime == other.htime || htime! - other.htime! <= 1E-7) &&
+        (htime == other.htime ||
+            (htime != null &&
+                other.htime != null &&
+                (htime! - other.htime! <= 1E-7))) &&
         DeepCollectionEquality().equals(msg, other.msg);
   }
 
@@ -4892,7 +4987,10 @@ class _$ClockControl extends ClockControl {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (clock == other.clock || clock! - other.clock! <= 1E-7) &&
+        (clock == other.clock ||
+            (clock != null &&
+                other.clock != null &&
+                (clock! - other.clock! <= 1E-7))) &&
         tz == other.tz;
   }
 
@@ -5085,10 +5183,17 @@ class _$HistoricCTD extends HistoricCTD {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         (conductivity == other.conductivity ||
-            conductivity! - other.conductivity! <= 1E-7) &&
+            (conductivity != null &&
+                other.conductivity != null &&
+                (conductivity! - other.conductivity! <= 1E-7))) &&
         (temperature == other.temperature ||
-            temperature! - other.temperature! <= 1E-7) &&
-        (depth == other.depth || depth! - other.depth! <= 1E-7);
+            (temperature != null &&
+                other.temperature != null &&
+                (temperature! - other.temperature! <= 1E-7))) &&
+        (depth == other.depth ||
+            (depth != null &&
+                other.depth != null &&
+                (depth! - other.depth! <= 1E-7)));
   }
 
   @override
@@ -5288,7 +5393,10 @@ class _$HistoricTelemetry extends HistoricTelemetry {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (altitude == other.altitude || altitude! - other.altitude! <= 1E-7) &&
+        (altitude == other.altitude ||
+            (altitude != null &&
+                other.altitude != null &&
+                (altitude! - other.altitude! <= 1E-7))) &&
         roll == other.roll &&
         pitch == other.pitch &&
         yaw == other.yaw &&
@@ -5521,10 +5629,22 @@ class _$HistoricSonarData extends HistoricSonarData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (altitude == other.altitude || altitude! - other.altitude! <= 1E-7) &&
-        (width == other.width || width! - other.width! <= 1E-7) &&
-        (length == other.length || length! - other.length! <= 1E-7) &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
+        (altitude == other.altitude ||
+            (altitude != null &&
+                other.altitude != null &&
+                (altitude! - other.altitude! <= 1E-7))) &&
+        (width == other.width ||
+            (width != null &&
+                other.width != null &&
+                (width! - other.width! <= 1E-7))) &&
+        (length == other.length ||
+            (length != null &&
+                other.length != null &&
+                (length! - other.length! <= 1E-7))) &&
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
         pxl == other.pxl &&
         encoding == other.encoding &&
         ListEquality().equals(sonarData, other.sonarData);
@@ -5950,8 +6070,12 @@ class _$VerticalProfile extends VerticalProfile {
         parameter == other.parameter &&
         numSamples == other.numSamples &&
         DeepCollectionEquality().equals(samples, other.samples) &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null && other.lon != null && (lon! - other.lon! <= 1E-7)));
   }
 
   @override
@@ -6166,7 +6290,8 @@ class _$ProfileSample extends ProfileSample {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         depth == other.depth &&
-        (avg == other.avg || avg! - other.avg! <= 1E-7);
+        (avg == other.avg ||
+            (avg != null && other.avg != null && (avg! - other.avg! <= 1E-7)));
   }
 
   @override
@@ -6516,9 +6641,18 @@ class _$Announce extends Announce {
         sysName == other.sysName &&
         sysType == other.sysType &&
         owner == other.owner &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (height == other.height || height! - other.height! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (height == other.height ||
+            (height != null &&
+                other.height != null &&
+                (height! - other.height! <= 1E-7))) &&
         services == other.services;
   }
 
@@ -6930,7 +7064,10 @@ class _$RSSI extends RSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -7097,7 +7234,10 @@ class _$VSWR extends VSWR {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -7264,7 +7404,10 @@ class _$LinkLevel extends LinkLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -8398,9 +8541,18 @@ class _$IridiumMsgRx extends IridiumMsgRx {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         origin == other.origin &&
-        (htime == other.htime || htime! - other.htime! <= 1E-7) &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
+        (htime == other.htime ||
+            (htime != null &&
+                other.htime != null &&
+                (htime! - other.htime! <= 1E-7))) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
         ListEquality().equals(data, other.data);
   }
 
@@ -9395,7 +9547,10 @@ class _$LinkLatency extends LinkLatency {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
         sysSrc == other.sysSrc;
   }
 
@@ -9575,7 +9730,10 @@ class _$ExtendedRSSI extends ExtendedRSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
         units == other.units;
   }
 
@@ -9761,9 +9919,18 @@ class _$HistoricData extends HistoricData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (baseLat == other.baseLat || baseLat! - other.baseLat! <= 1E-7) &&
-        (baseLon == other.baseLon || baseLon! - other.baseLon! <= 1E-7) &&
-        (baseTime == other.baseTime || baseTime! - other.baseTime! <= 1E-7) &&
+        (baseLat == other.baseLat ||
+            (baseLat != null &&
+                other.baseLat != null &&
+                (baseLat! - other.baseLat! <= 1E-7))) &&
+        (baseLon == other.baseLon ||
+            (baseLon != null &&
+                other.baseLon != null &&
+                (baseLon! - other.baseLon! <= 1E-7))) &&
+        (baseTime == other.baseTime ||
+            (baseTime != null &&
+                other.baseTime != null &&
+                (baseTime! - other.baseTime! <= 1E-7))) &&
         DeepCollectionEquality().equals(data, other.data);
   }
 
@@ -9972,9 +10139,18 @@ class _$CompressedHistory extends CompressedHistory {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (baseLat == other.baseLat || baseLat! - other.baseLat! <= 1E-7) &&
-        (baseLon == other.baseLon || baseLon! - other.baseLon! <= 1E-7) &&
-        (baseTime == other.baseTime || baseTime! - other.baseTime! <= 1E-7) &&
+        (baseLat == other.baseLat ||
+            (baseLat != null &&
+                other.baseLat != null &&
+                (baseLat! - other.baseLat! <= 1E-7))) &&
+        (baseLon == other.baseLon ||
+            (baseLon != null &&
+                other.baseLon != null &&
+                (baseLon! - other.baseLon! <= 1E-7))) &&
+        (baseTime == other.baseTime ||
+            (baseTime != null &&
+                other.baseTime != null &&
+                (baseTime! - other.baseTime! <= 1E-7))) &&
         ListEquality().equals(data, other.data);
   }
 
@@ -10644,7 +10820,10 @@ class _$RemoteCommand extends RemoteCommand {
         dstEnt == other.dstEnt &&
         originalSource == other.originalSource &&
         destination == other.destination &&
-        (timeout == other.timeout || timeout! - other.timeout! <= 1E-7) &&
+        (timeout == other.timeout ||
+            (timeout != null &&
+                other.timeout != null &&
+                (timeout! - other.timeout! <= 1E-7))) &&
         cmd == other.cmd;
   }
 
@@ -11341,7 +11520,10 @@ class _$LblRange extends LblRange {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (range == other.range || range! - other.range! <= 1E-7);
+        (range == other.range ||
+            (range != null &&
+                other.range != null &&
+                (range! - other.range! <= 1E-7)));
   }
 
   @override
@@ -11536,9 +11718,18 @@ class _$LblBeacon extends LblBeacon {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         beacon == other.beacon &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (depth == other.depth || depth! - other.depth! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (depth == other.depth ||
+            (depth != null &&
+                other.depth != null &&
+                (depth! - other.depth! <= 1E-7))) &&
         queryChannel == other.queryChannel &&
         replyChannel == other.replyChannel &&
         transponderDelay == other.transponderDelay;
@@ -12151,11 +12342,23 @@ class _$SimAcousticMessage extends SimAcousticMessage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (depth == other.depth || depth! - other.depth! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (depth == other.depth ||
+            (depth != null &&
+                other.depth != null &&
+                (depth! - other.depth! <= 1E-7))) &&
         sentence == other.sentence &&
-        (txtime == other.txtime || txtime! - other.txtime! <= 1E-7) &&
+        (txtime == other.txtime ||
+            (txtime != null &&
+                other.txtime != null &&
+                (txtime! - other.txtime! <= 1E-7))) &&
         modemType == other.modemType &&
         sysSrc == other.sysSrc &&
         seq == other.seq &&
@@ -12444,7 +12647,10 @@ class _$AcousticOperation extends AcousticOperation {
         dstEnt == other.dstEnt &&
         op == other.op &&
         system == other.system &&
-        (range == other.range || range! - other.range! <= 1E-7) &&
+        (range == other.range ||
+            (range != null &&
+                other.range != null &&
+                (range! - other.range! <= 1E-7))) &&
         msg == other.msg;
   }
 
@@ -12977,7 +13183,10 @@ class _$AcousticLink extends AcousticLink {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         peer == other.peer &&
-        (rssi == other.rssi || rssi! - other.rssi! <= 1E-7) &&
+        (rssi == other.rssi ||
+            (rssi != null &&
+                other.rssi != null &&
+                (rssi! - other.rssi! <= 1E-7))) &&
         integrity == other.integrity;
   }
 
@@ -13181,8 +13390,14 @@ class _$AcousticRequest extends AcousticRequest {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         destination == other.destination &&
-        (timeout == other.timeout || timeout! - other.timeout! <= 1E-7) &&
-        (range == other.range || range! - other.range! <= 1E-7) &&
+        (timeout == other.timeout ||
+            (timeout != null &&
+                other.timeout != null &&
+                (timeout! - other.timeout! <= 1E-7))) &&
+        (range == other.range ||
+            (range != null &&
+                other.range != null &&
+                (range! - other.range! <= 1E-7))) &&
         type == other.type &&
         msg == other.msg;
   }
@@ -13417,7 +13632,10 @@ class _$AcousticStatus extends AcousticStatus {
         type == other.type &&
         status == other.status &&
         info == other.info &&
-        (range == other.range || range! - other.range! <= 1E-7);
+        (range == other.range ||
+            (range != null &&
+                other.range != null &&
+                (range! - other.range! <= 1E-7)));
   }
 
   @override
@@ -13791,7 +14009,10 @@ class _$Voltage extends Voltage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -13958,7 +14179,10 @@ class _$Current extends Current {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -14175,17 +14399,47 @@ class _$GpsFix extends GpsFix {
         utcYear == other.utcYear &&
         utcMonth == other.utcMonth &&
         utcDay == other.utcDay &&
-        (utcTime == other.utcTime || utcTime! - other.utcTime! <= 1E-7) &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (height == other.height || height! - other.height! <= 1E-7) &&
+        (utcTime == other.utcTime ||
+            (utcTime != null &&
+                other.utcTime != null &&
+                (utcTime! - other.utcTime! <= 1E-7))) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (height == other.height ||
+            (height != null &&
+                other.height != null &&
+                (height! - other.height! <= 1E-7))) &&
         satellites == other.satellites &&
-        (cog == other.cog || cog! - other.cog! <= 1E-7) &&
-        (sog == other.sog || sog! - other.sog! <= 1E-7) &&
-        (hdop == other.hdop || hdop! - other.hdop! <= 1E-7) &&
-        (vdop == other.vdop || vdop! - other.vdop! <= 1E-7) &&
-        (hacc == other.hacc || hacc! - other.hacc! <= 1E-7) &&
-        (vacc == other.vacc || vacc! - other.vacc! <= 1E-7);
+        (cog == other.cog ||
+            (cog != null &&
+                other.cog != null &&
+                (cog! - other.cog! <= 1E-7))) &&
+        (sog == other.sog ||
+            (sog != null &&
+                other.sog != null &&
+                (sog! - other.sog! <= 1E-7))) &&
+        (hdop == other.hdop ||
+            (hdop != null &&
+                other.hdop != null &&
+                (hdop! - other.hdop! <= 1E-7))) &&
+        (vdop == other.vdop ||
+            (vdop != null &&
+                other.vdop != null &&
+                (vdop! - other.vdop! <= 1E-7))) &&
+        (hacc == other.hacc ||
+            (hacc != null &&
+                other.hacc != null &&
+                (hacc! - other.hacc! <= 1E-7))) &&
+        (vacc == other.vacc ||
+            (vacc != null &&
+                other.vacc != null &&
+                (vacc! - other.vacc! <= 1E-7)));
   }
 
   @override
@@ -14500,12 +14754,26 @@ class _$EulerAngles extends EulerAngles {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time || time! - other.time! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7) &&
+        (time == other.time ||
+            (time != null &&
+                other.time != null &&
+                (time! - other.time! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null &&
+                other.psi != null &&
+                (psi! - other.psi! <= 1E-7))) &&
         (psiMagnetic == other.psiMagnetic ||
-            psiMagnetic! - other.psiMagnetic! <= 1E-7);
+            (psiMagnetic != null &&
+                other.psiMagnetic != null &&
+                (psiMagnetic! - other.psiMagnetic! <= 1E-7)));
   }
 
   @override
@@ -14730,11 +14998,20 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time || time! - other.time! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (timestep == other.timestep || timestep! - other.timestep! <= 1E-7);
+        (time == other.time ||
+            (time != null &&
+                other.time != null &&
+                (time! - other.time! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (timestep == other.timestep ||
+            (timestep != null &&
+                other.timestep != null &&
+                (timestep! - other.timestep! <= 1E-7)));
   }
 
   @override
@@ -14955,10 +15232,16 @@ class _$AngularVelocity extends AngularVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time || time! - other.time! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (time == other.time ||
+            (time != null &&
+                other.time != null &&
+                (time! - other.time! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -15167,10 +15450,16 @@ class _$Acceleration extends Acceleration {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time || time! - other.time! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (time == other.time ||
+            (time != null &&
+                other.time != null &&
+                (time! - other.time! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -15375,10 +15664,16 @@ class _$MagneticField extends MagneticField {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time || time! - other.time! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (time == other.time ||
+            (time != null &&
+                other.time != null &&
+                (time! - other.time! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -15584,9 +15879,12 @@ class _$GroundVelocity extends GroundVelocity {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         validity == other.validity &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -15793,9 +16091,12 @@ class _$WaterVelocity extends WaterVelocity {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         validity == other.validity &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -16001,10 +16302,16 @@ class _$VelocityDelta extends VelocityDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time || time! - other.time! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (time == other.time ||
+            (time != null &&
+                other.time != null &&
+                (time! - other.time! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -16212,7 +16519,10 @@ class _$Distance extends Distance {
         validity == other.validity &&
         DeepCollectionEquality().equals(location, other.location) &&
         DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -16409,7 +16719,10 @@ class _$Temperature extends Temperature {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -16576,7 +16889,10 @@ class _$Pressure extends Pressure {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -16743,7 +17059,10 @@ class _$Depth extends Depth {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -16910,7 +17229,10 @@ class _$DepthOffset extends DepthOffset {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -17077,7 +17399,10 @@ class _$SoundSpeed extends SoundSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -17244,7 +17569,10 @@ class _$WaterDensity extends WaterDensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -17411,7 +17739,10 @@ class _$Conductivity extends Conductivity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -17578,7 +17909,10 @@ class _$Salinity extends Salinity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -17751,10 +18085,18 @@ class _$WindSpeed extends WindSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (direction == other.direction || direction! - other.direction! <= 1E-7) &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (direction == other.direction ||
+            (direction != null &&
+                other.direction != null &&
+                (direction! - other.direction! <= 1E-7))) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         (turbulence == other.turbulence ||
-            turbulence! - other.turbulence! <= 1E-7);
+            (turbulence != null &&
+                other.turbulence != null &&
+                (turbulence! - other.turbulence! <= 1E-7)));
   }
 
   @override
@@ -17942,7 +18284,10 @@ class _$RelativeHumidity extends RelativeHumidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -18444,7 +18789,10 @@ class _$Force extends Force {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -18638,7 +18986,9 @@ class _$SonarData extends SonarData {
         maxRange == other.maxRange &&
         bitsPerPoint == other.bitsPerPoint &&
         (scaleFactor == other.scaleFactor ||
-            scaleFactor! - other.scaleFactor! <= 1E-7) &&
+            (scaleFactor != null &&
+                other.scaleFactor != null &&
+                (scaleFactor! - other.scaleFactor! <= 1E-7))) &&
         DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
         ListEquality().equals(data, other.data);
   }
@@ -19114,7 +19464,8 @@ class PulseDetectionControlBuilder extends Object
   }
 
   @override
-  PulseDetectionControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+  PulseDetectionControlBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
       PulseDetectionControlBuilder()..copyFromHeader(headerFrom);
 
   PulseDetectionControlBuilder get _$this {
@@ -19209,9 +19560,14 @@ class _$FuelLevel extends FuelLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
         (confidence == other.confidence ||
-            confidence! - other.confidence! <= 1E-7) &&
+            (confidence != null &&
+                other.confidence != null &&
+                (confidence! - other.confidence! <= 1E-7))) &&
         opmodes == other.opmodes;
   }
 
@@ -19440,20 +19796,62 @@ class _$GpsNavData extends GpsNavData {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         itow == other.itow &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (heightEll == other.heightEll || heightEll! - other.heightEll! <= 1E-7) &&
-        (heightSea == other.heightSea || heightSea! - other.heightSea! <= 1E-7) &&
-        (hacc == other.hacc || hacc! - other.hacc! <= 1E-7) &&
-        (vacc == other.vacc || vacc! - other.vacc! <= 1E-7) &&
-        (velN == other.velN || velN! - other.velN! <= 1E-7) &&
-        (velE == other.velE || velE! - other.velE! <= 1E-7) &&
-        (velD == other.velD || velD! - other.velD! <= 1E-7) &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
-        (gspeed == other.gspeed || gspeed! - other.gspeed! <= 1E-7) &&
-        (heading == other.heading || heading! - other.heading! <= 1E-7) &&
-        (sacc == other.sacc || sacc! - other.sacc! <= 1E-7) &&
-        (cacc == other.cacc || cacc! - other.cacc! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (heightEll == other.heightEll ||
+            (heightEll != null &&
+                other.heightEll != null &&
+                (heightEll! - other.heightEll! <= 1E-7))) &&
+        (heightSea == other.heightSea ||
+            (heightSea != null &&
+                other.heightSea != null &&
+                (heightSea! - other.heightSea! <= 1E-7))) &&
+        (hacc == other.hacc ||
+            (hacc != null &&
+                other.hacc != null &&
+                (hacc! - other.hacc! <= 1E-7))) &&
+        (vacc == other.vacc ||
+            (vacc != null &&
+                other.vacc != null &&
+                (vacc! - other.vacc! <= 1E-7))) &&
+        (velN == other.velN ||
+            (velN != null &&
+                other.velN != null &&
+                (velN! - other.velN! <= 1E-7))) &&
+        (velE == other.velE ||
+            (velE != null &&
+                other.velE != null &&
+                (velE! - other.velE! <= 1E-7))) &&
+        (velD == other.velD ||
+            (velD != null &&
+                other.velD != null &&
+                (velD! - other.velD! <= 1E-7))) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
+        (gspeed == other.gspeed ||
+            (gspeed != null &&
+                other.gspeed != null &&
+                (gspeed! - other.gspeed! <= 1E-7))) &&
+        (heading == other.heading ||
+            (heading != null &&
+                other.heading != null &&
+                (heading! - other.heading! <= 1E-7))) &&
+        (sacc == other.sacc ||
+            (sacc != null &&
+                other.sacc != null &&
+                (sacc! - other.sacc! <= 1E-7))) &&
+        (cacc == other.cacc ||
+            (cacc != null &&
+                other.cacc != null &&
+                (cacc! - other.cacc! <= 1E-7)));
   }
 
   @override
@@ -19773,7 +20171,10 @@ class _$ServoPosition extends ServoPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -19965,12 +20366,22 @@ class _$DeviceState extends DeviceState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null && other.psi != null && (psi! - other.psi! <= 1E-7)));
   }
 
   @override
@@ -20192,9 +20603,14 @@ class _$BeamConfig extends BeamConfig {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (beamWidth == other.beamWidth || beamWidth! - other.beamWidth! <= 1E-7) &&
+        (beamWidth == other.beamWidth ||
+            (beamWidth != null &&
+                other.beamWidth != null &&
+                (beamWidth! - other.beamWidth! <= 1E-7))) &&
         (beamHeight == other.beamHeight ||
-            beamHeight! - other.beamHeight! <= 1E-7);
+            (beamHeight != null &&
+                other.beamHeight != null &&
+                (beamHeight! - other.beamHeight! <= 1E-7)));
   }
 
   @override
@@ -20539,7 +20955,10 @@ class _$RhodamineDye extends RhodamineDye {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -20706,7 +21125,10 @@ class _$CrudeOil extends CrudeOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -20873,7 +21295,10 @@ class _$FineOil extends FineOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -21040,7 +21465,10 @@ class _$Turbidity extends Turbidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -21207,7 +21635,10 @@ class _$Chlorophyll extends Chlorophyll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -21374,7 +21805,10 @@ class _$Fluorescein extends Fluorescein {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -21541,7 +21975,10 @@ class _$Phycocyanin extends Phycocyanin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -21708,7 +22145,10 @@ class _$Phycoerythrin extends Phycoerythrin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -21920,19 +22360,36 @@ class _$GpsFixRtk extends GpsFixRtk {
         validity == other.validity &&
         type == other.type &&
         tow == other.tow &&
-        (baseLat == other.baseLat || baseLat! - other.baseLat! <= 1E-7) &&
-        (baseLon == other.baseLon || baseLon! - other.baseLon! <= 1E-7) &&
+        (baseLat == other.baseLat ||
+            (baseLat != null &&
+                other.baseLat != null &&
+                (baseLat! - other.baseLat! <= 1E-7))) &&
+        (baseLon == other.baseLon ||
+            (baseLon != null &&
+                other.baseLon != null &&
+                (baseLon! - other.baseLon! <= 1E-7))) &&
         (baseHeight == other.baseHeight ||
-            baseHeight! - other.baseHeight! <= 1E-7) &&
-        (n == other.n || n! - other.n! <= 1E-7) &&
-        (e == other.e || e! - other.e! <= 1E-7) &&
-        (d == other.d || d! - other.d! <= 1E-7) &&
-        (vN == other.vN || vN! - other.vN! <= 1E-7) &&
-        (vE == other.vE || vE! - other.vE! <= 1E-7) &&
-        (vD == other.vD || vD! - other.vD! <= 1E-7) &&
+            (baseHeight != null &&
+                other.baseHeight != null &&
+                (baseHeight! - other.baseHeight! <= 1E-7))) &&
+        (n == other.n ||
+            (n != null && other.n != null && (n! - other.n! <= 1E-7))) &&
+        (e == other.e ||
+            (e != null && other.e != null && (e! - other.e! <= 1E-7))) &&
+        (d == other.d ||
+            (d != null && other.d != null && (d! - other.d! <= 1E-7))) &&
+        (vN == other.vN ||
+            (vN != null && other.vN != null && (vN! - other.vN! <= 1E-7))) &&
+        (vE == other.vE ||
+            (vE != null && other.vE != null && (vE! - other.vE! <= 1E-7))) &&
+        (vD == other.vD ||
+            (vD != null && other.vD != null && (vD! - other.vD! <= 1E-7))) &&
         satellites == other.satellites &&
         iarHyp == other.iarHyp &&
-        (iarRatio == other.iarRatio || iarRatio! - other.iarRatio! <= 1E-7);
+        (iarRatio == other.iarRatio ||
+            (iarRatio != null &&
+                other.iarRatio != null &&
+                (iarRatio! - other.iarRatio! <= 1E-7)));
   }
 
   @override
@@ -22431,7 +22888,10 @@ class _$DissolvedOxygen extends DissolvedOxygen {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -22599,7 +23059,10 @@ class _$AirSaturation extends AirSaturation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -22766,7 +23229,10 @@ class _$Throttle extends Throttle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -22933,7 +23399,10 @@ class _$PH extends PH {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -23100,7 +23569,10 @@ class _$Redox extends Redox {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -23467,7 +23939,10 @@ class _$SetThrusterActuation extends SetThrusterActuation {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -23652,7 +24127,10 @@ class _$SetServoPosition extends SetServoPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -23837,7 +24315,10 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (angle == other.angle || angle! - other.angle! <= 1E-7);
+        (angle == other.angle ||
+            (angle != null &&
+                other.angle != null &&
+                (angle! - other.angle! <= 1E-7)));
   }
 
   @override
@@ -24740,8 +25221,13 @@ class _$PowerOperation extends PowerOperation {
         dstEnt == other.dstEnt &&
         op == other.op &&
         (timeRemain == other.timeRemain ||
-            timeRemain! - other.timeRemain! <= 1E-7) &&
-        (schedTime == other.schedTime || schedTime! - other.schedTime! <= 1E-7);
+            (timeRemain != null &&
+                other.timeRemain != null &&
+                (timeRemain! - other.timeRemain! <= 1E-7))) &&
+        (schedTime == other.schedTime ||
+            (schedTime != null &&
+                other.schedTime != null &&
+                (schedTime! - other.schedTime! <= 1E-7)));
   }
 
   @override
@@ -24937,7 +25423,10 @@ class _$PowerChannelControl extends PowerChannelControl {
         dstEnt == other.dstEnt &&
         name == other.name &&
         op == other.op &&
-        (schedTime == other.schedTime || schedTime! - other.schedTime! <= 1E-7);
+        (schedTime == other.schedTime ||
+            (schedTime != null &&
+                other.schedTime != null &&
+                (schedTime! - other.schedTime! <= 1E-7)));
   }
 
   @override
@@ -26446,26 +26935,60 @@ class _$EstimatedState extends EstimatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (height == other.height || height! - other.height! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7) &&
-        (u == other.u || u! - other.u! <= 1E-7) &&
-        (v == other.v || v! - other.v! <= 1E-7) &&
-        (w == other.w || w! - other.w! <= 1E-7) &&
-        (vx == other.vx || vx! - other.vx! <= 1E-7) &&
-        (vy == other.vy || vy! - other.vy! <= 1E-7) &&
-        (vz == other.vz || vz! - other.vz! <= 1E-7) &&
-        (p == other.p || p! - other.p! <= 1E-7) &&
-        (q == other.q || q! - other.q! <= 1E-7) &&
-        (r == other.r || r! - other.r! <= 1E-7) &&
-        (depth == other.depth || depth! - other.depth! <= 1E-7) &&
-        (alt == other.alt || alt! - other.alt! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (height == other.height ||
+            (height != null &&
+                other.height != null &&
+                (height! - other.height! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null &&
+                other.psi != null &&
+                (psi! - other.psi! <= 1E-7))) &&
+        (u == other.u ||
+            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
+        (v == other.v ||
+            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
+        (w == other.w ||
+            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
+        (vx == other.vx ||
+            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
+        (vy == other.vy ||
+            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
+        (vz == other.vz ||
+            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
+        (p == other.p ||
+            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
+        (q == other.q ||
+            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
+        (r == other.r ||
+            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
+        (depth == other.depth ||
+            (depth != null &&
+                other.depth != null &&
+                (depth! - other.depth! <= 1E-7))) &&
+        (alt == other.alt ||
+            (alt != null && other.alt != null && (alt! - other.alt! <= 1E-7)));
   }
 
   @override
@@ -26810,9 +27333,12 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -27001,7 +27527,10 @@ class _$IndicatedSpeed extends IndicatedSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -27168,7 +27697,10 @@ class _$TrueSpeed extends TrueSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -27377,20 +27909,44 @@ class _$NavigationUncertainty extends NavigationUncertainty {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7) &&
-        (p == other.p || p! - other.p! <= 1E-7) &&
-        (q == other.q || q! - other.q! <= 1E-7) &&
-        (r == other.r || r! - other.r! <= 1E-7) &&
-        (u == other.u || u! - other.u! <= 1E-7) &&
-        (v == other.v || v! - other.v! <= 1E-7) &&
-        (w == other.w || w! - other.w! <= 1E-7) &&
-        (biasPsi == other.biasPsi || biasPsi! - other.biasPsi! <= 1E-7) &&
-        (biasR == other.biasR || biasR! - other.biasR! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null &&
+                other.psi != null &&
+                (psi! - other.psi! <= 1E-7))) &&
+        (p == other.p ||
+            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
+        (q == other.q ||
+            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
+        (r == other.r ||
+            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
+        (u == other.u ||
+            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
+        (v == other.v ||
+            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
+        (w == other.w ||
+            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
+        (biasPsi == other.biasPsi ||
+            (biasPsi != null &&
+                other.biasPsi != null &&
+                (biasPsi! - other.biasPsi! <= 1E-7))) &&
+        (biasR == other.biasR ||
+            (biasR != null &&
+                other.biasR != null &&
+                (biasR! - other.biasR! <= 1E-7)));
   }
 
   @override
@@ -27586,7 +28142,8 @@ class NavigationUncertaintyBuilder extends Object
   }
 
   @override
-  NavigationUncertaintyBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+  NavigationUncertaintyBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
       NavigationUncertaintyBuilder()..copyFromHeader(headerFrom);
 
   NavigationUncertaintyBuilder get _$this {
@@ -27725,17 +28282,42 @@ class _$NavigationData extends NavigationData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (biasPsi == other.biasPsi || biasPsi! - other.biasPsi! <= 1E-7) &&
-        (biasR == other.biasR || biasR! - other.biasR! <= 1E-7) &&
-        (cog == other.cog || cog! - other.cog! <= 1E-7) &&
-        (cyaw == other.cyaw || cyaw! - other.cyaw! <= 1E-7) &&
+        (biasPsi == other.biasPsi ||
+            (biasPsi != null &&
+                other.biasPsi != null &&
+                (biasPsi! - other.biasPsi! <= 1E-7))) &&
+        (biasR == other.biasR ||
+            (biasR != null &&
+                other.biasR != null &&
+                (biasR! - other.biasR! <= 1E-7))) &&
+        (cog == other.cog ||
+            (cog != null &&
+                other.cog != null &&
+                (cog! - other.cog! <= 1E-7))) &&
+        (cyaw == other.cyaw ||
+            (cyaw != null &&
+                other.cyaw != null &&
+                (cyaw! - other.cyaw! <= 1E-7))) &&
         (lblRejLevel == other.lblRejLevel ||
-            lblRejLevel! - other.lblRejLevel! <= 1E-7) &&
+            (lblRejLevel != null &&
+                other.lblRejLevel != null &&
+                (lblRejLevel! - other.lblRejLevel! <= 1E-7))) &&
         (gpsRejLevel == other.gpsRejLevel ||
-            gpsRejLevel! - other.gpsRejLevel! <= 1E-7) &&
-        (customX == other.customX || customX! - other.customX! <= 1E-7) &&
-        (customY == other.customY || customY! - other.customY! <= 1E-7) &&
-        (customZ == other.customZ || customZ! - other.customZ! <= 1E-7);
+            (gpsRejLevel != null &&
+                other.gpsRejLevel != null &&
+                (gpsRejLevel! - other.gpsRejLevel! <= 1E-7))) &&
+        (customX == other.customX ||
+            (customX != null &&
+                other.customX != null &&
+                (customX! - other.customX! <= 1E-7))) &&
+        (customY == other.customY ||
+            (customY != null &&
+                other.customY != null &&
+                (customY! - other.customY! <= 1E-7))) &&
+        (customZ == other.customZ ||
+            (customZ != null &&
+                other.customZ != null &&
+                (customZ! - other.customZ! <= 1E-7)));
   }
 
   @override
@@ -27989,7 +28571,10 @@ class _$GpsFixRejection extends GpsFixRejection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (utcTime == other.utcTime || utcTime! - other.utcTime! <= 1E-7) &&
+        (utcTime == other.utcTime ||
+            (utcTime != null &&
+                other.utcTime != null &&
+                (utcTime! - other.utcTime! <= 1E-7))) &&
         reason == other.reason;
   }
 
@@ -28177,7 +28762,10 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (range == other.range || range! - other.range! <= 1E-7) &&
+        (range == other.range ||
+            (range != null &&
+                other.range != null &&
+                (range! - other.range! <= 1E-7))) &&
         acceptance == other.acceptance;
   }
 
@@ -28377,8 +28965,14 @@ class _$DvlRejection extends DvlRejection {
         dstEnt == other.dstEnt &&
         type == other.type &&
         reason == other.reason &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
-        (timestep == other.timestep || timestep! - other.timestep! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
+        (timestep == other.timestep ||
+            (timestep != null &&
+                other.timestep != null &&
+                (timestep! - other.timestep! <= 1E-7)));
   }
 
   @override
@@ -28590,11 +29184,22 @@ class _$LblEstimate extends LblEstimate {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         beacon == other.beacon &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (varX == other.varX || varX! - other.varX! <= 1E-7) &&
-        (varY == other.varY || varY! - other.varY! <= 1E-7) &&
-        (distance == other.distance || distance! - other.distance! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (varX == other.varX ||
+            (varX != null &&
+                other.varX != null &&
+                (varX! - other.varX! <= 1E-7))) &&
+        (varY == other.varY ||
+            (varY != null &&
+                other.varY != null &&
+                (varY! - other.varY! <= 1E-7))) &&
+        (distance == other.distance ||
+            (distance != null &&
+                other.distance != null &&
+                (distance! - other.distance! <= 1E-7)));
   }
 
   @override
@@ -28986,9 +29591,12 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -29182,9 +29790,14 @@ class _$Airflow extends Airflow {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (va == other.va || va! - other.va! <= 1E-7) &&
-        (aoa == other.aoa || aoa! - other.aoa! <= 1E-7) &&
-        (ssa == other.ssa || ssa! - other.ssa! <= 1E-7);
+        (va == other.va ||
+            (va != null && other.va != null && (va! - other.va! <= 1E-7))) &&
+        (aoa == other.aoa ||
+            (aoa != null &&
+                other.aoa != null &&
+                (aoa! - other.aoa! <= 1E-7))) &&
+        (ssa == other.ssa ||
+            (ssa != null && other.ssa != null && (ssa! - other.ssa! <= 1E-7)));
   }
 
   @override
@@ -29371,7 +29984,10 @@ class _$DesiredHeading extends DesiredHeading {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -29542,7 +30158,10 @@ class _$DesiredZ extends DesiredZ {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
         zUnits == other.zUnits;
   }
 
@@ -29722,7 +30341,10 @@ class _$DesiredSpeed extends DesiredSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
         speedUnits == other.speedUnits;
   }
 
@@ -29899,7 +30521,10 @@ class _$DesiredRoll extends DesiredRoll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -30067,7 +30692,10 @@ class _$DesiredPitch extends DesiredPitch {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -30238,7 +30866,10 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -30445,17 +31076,41 @@ class _$DesiredPath extends DesiredPath {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         pathRef == other.pathRef &&
-        (startLat == other.startLat || startLat! - other.startLat! <= 1E-7) &&
-        (startLon == other.startLon || startLon! - other.startLon! <= 1E-7) &&
-        (startZ == other.startZ || startZ! - other.startZ! <= 1E-7) &&
+        (startLat == other.startLat ||
+            (startLat != null &&
+                other.startLat != null &&
+                (startLat! - other.startLat! <= 1E-7))) &&
+        (startLon == other.startLon ||
+            (startLon != null &&
+                other.startLon != null &&
+                (startLon! - other.startLon! <= 1E-7))) &&
+        (startZ == other.startZ ||
+            (startZ != null &&
+                other.startZ != null &&
+                (startZ! - other.startZ! <= 1E-7))) &&
         startZUnits == other.startZUnits &&
-        (endLat == other.endLat || endLat! - other.endLat! <= 1E-7) &&
-        (endLon == other.endLon || endLon! - other.endLon! <= 1E-7) &&
-        (endZ == other.endZ || endZ! - other.endZ! <= 1E-7) &&
+        (endLat == other.endLat ||
+            (endLat != null &&
+                other.endLat != null &&
+                (endLat! - other.endLat! <= 1E-7))) &&
+        (endLon == other.endLon ||
+            (endLon != null &&
+                other.endLon != null &&
+                (endLon! - other.endLon! <= 1E-7))) &&
+        (endZ == other.endZ ||
+            (endZ != null &&
+                other.endZ != null &&
+                (endZ! - other.endZ! <= 1E-7))) &&
         endZUnits == other.endZUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (lradius == other.lradius || lradius! - other.lradius! <= 1E-7) &&
+        (lradius == other.lradius ||
+            (lradius != null &&
+                other.lradius != null &&
+                (lradius! - other.lradius! <= 1E-7))) &&
         flags == other.flags;
   }
 
@@ -30768,12 +31423,18 @@ class _$DesiredControl extends DesiredControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (k == other.k || k! - other.k! <= 1E-7) &&
-        (m == other.m || m! - other.m! <= 1E-7) &&
-        (n == other.n || n! - other.n! <= 1E-7) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (k == other.k ||
+            (k != null && other.k != null && (k! - other.k! <= 1E-7))) &&
+        (m == other.m ||
+            (m != null && other.m != null && (m! - other.m! <= 1E-7))) &&
+        (n == other.n ||
+            (n != null && other.n != null && (n! - other.n! <= 1E-7))) &&
         flags == other.flags;
   }
 
@@ -31002,7 +31663,10 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -31190,12 +31854,18 @@ class _$DesiredVelocity extends DesiredVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (u == other.u || u! - other.u! <= 1E-7) &&
-        (v == other.v || v! - other.v! <= 1E-7) &&
-        (w == other.w || w! - other.w! <= 1E-7) &&
-        (p == other.p || p! - other.p! <= 1E-7) &&
-        (q == other.q || q! - other.q! <= 1E-7) &&
-        (r == other.r || r! - other.r! <= 1E-7) &&
+        (u == other.u ||
+            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
+        (v == other.v ||
+            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
+        (w == other.w ||
+            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
+        (p == other.p ||
+            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
+        (q == other.q ||
+            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
+        (r == other.r ||
+            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
         flags == other.flags;
   }
 
@@ -31479,24 +32149,53 @@ class _$PathControlState extends PathControlState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         pathRef == other.pathRef &&
-        (startLat == other.startLat || startLat! - other.startLat! <= 1E-7) &&
-        (startLon == other.startLon || startLon! - other.startLon! <= 1E-7) &&
-        (startZ == other.startZ || startZ! - other.startZ! <= 1E-7) &&
+        (startLat == other.startLat ||
+            (startLat != null &&
+                other.startLat != null &&
+                (startLat! - other.startLat! <= 1E-7))) &&
+        (startLon == other.startLon ||
+            (startLon != null &&
+                other.startLon != null &&
+                (startLon! - other.startLon! <= 1E-7))) &&
+        (startZ == other.startZ ||
+            (startZ != null &&
+                other.startZ != null &&
+                (startZ! - other.startZ! <= 1E-7))) &&
         startZUnits == other.startZUnits &&
-        (endLat == other.endLat || endLat! - other.endLat! <= 1E-7) &&
-        (endLon == other.endLon || endLon! - other.endLon! <= 1E-7) &&
-        (endZ == other.endZ || endZ! - other.endZ! <= 1E-7) &&
+        (endLat == other.endLat ||
+            (endLat != null &&
+                other.endLat != null &&
+                (endLat! - other.endLat! <= 1E-7))) &&
+        (endLon == other.endLon ||
+            (endLon != null &&
+                other.endLon != null &&
+                (endLon! - other.endLon! <= 1E-7))) &&
+        (endZ == other.endZ ||
+            (endZ != null &&
+                other.endZ != null &&
+                (endZ! - other.endZ! <= 1E-7))) &&
         endZUnits == other.endZUnits &&
-        (lradius == other.lradius || lradius! - other.lradius! <= 1E-7) &&
+        (lradius == other.lradius ||
+            (lradius != null &&
+                other.lradius != null &&
+                (lradius! - other.lradius! <= 1E-7))) &&
         flags == other.flags &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (vx == other.vx || vx! - other.vx! <= 1E-7) &&
-        (vy == other.vy || vy! - other.vy! <= 1E-7) &&
-        (vz == other.vz || vz! - other.vz! <= 1E-7) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (vx == other.vx ||
+            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
+        (vy == other.vy ||
+            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
+        (vz == other.vz ||
+            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
         (courseError == other.courseError ||
-            courseError! - other.courseError! <= 1E-7) &&
+            (courseError != null &&
+                other.courseError != null &&
+                (courseError! - other.courseError! <= 1E-7))) &&
         eta == other.eta;
   }
 
@@ -31833,9 +32532,12 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (k == other.k || k! - other.k! <= 1E-7) &&
-        (m == other.m || m! - other.m! <= 1E-7) &&
-        (n == other.n || n! - other.n! <= 1E-7);
+        (k == other.k ||
+            (k != null && other.k != null && (k! - other.k! <= 1E-7))) &&
+        (m == other.m ||
+            (m != null && other.m != null && (m! - other.m! <= 1E-7))) &&
+        (n == other.n ||
+            (n != null && other.n != null && (n! - other.n! <= 1E-7)));
   }
 
   @override
@@ -32033,10 +32735,14 @@ class _$ControlParcel extends ControlParcel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (p == other.p || p! - other.p! <= 1E-7) &&
-        (i == other.i || i! - other.i! <= 1E-7) &&
-        (d == other.d || d! - other.d! <= 1E-7) &&
-        (a == other.a || a! - other.a! <= 1E-7);
+        (p == other.p ||
+            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
+        (i == other.i ||
+            (i != null && other.i != null && (i! - other.i! <= 1E-7))) &&
+        (d == other.d ||
+            (d != null && other.d != null && (d! - other.d! <= 1E-7))) &&
+        (a == other.a ||
+            (a != null && other.a != null && (a! - other.a! <= 1E-7)));
   }
 
   @override
@@ -32429,15 +33135,24 @@ class _$DesiredLinearState extends DesiredLinearState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (vx == other.vx || vx! - other.vx! <= 1E-7) &&
-        (vy == other.vy || vy! - other.vy! <= 1E-7) &&
-        (vz == other.vz || vz! - other.vz! <= 1E-7) &&
-        (ax == other.ax || ax! - other.ax! <= 1E-7) &&
-        (ay == other.ay || ay! - other.ay! <= 1E-7) &&
-        (az == other.az || az! - other.az! <= 1E-7) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (vx == other.vx ||
+            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
+        (vy == other.vy ||
+            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
+        (vz == other.vz ||
+            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
+        (ax == other.ax ||
+            (ax != null && other.ax != null && (ax! - other.ax! <= 1E-7))) &&
+        (ay == other.ay ||
+            (ay != null && other.ay != null && (ay! - other.ay! <= 1E-7))) &&
+        (az == other.az ||
+            (az != null && other.az != null && (az! - other.az! <= 1E-7))) &&
         flags == other.flags;
   }
 
@@ -32698,7 +33413,10 @@ class _$DesiredThrottle extends DesiredThrottle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -32897,15 +33615,34 @@ class _$Goto extends Goto {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (roll == other.roll || roll! - other.roll! <= 1E-7) &&
-        (pitch == other.pitch || pitch! - other.pitch! <= 1E-7) &&
-        (yaw == other.yaw || yaw! - other.yaw! <= 1E-7) &&
+        (roll == other.roll ||
+            (roll != null &&
+                other.roll != null &&
+                (roll! - other.roll! <= 1E-7))) &&
+        (pitch == other.pitch ||
+            (pitch != null &&
+                other.pitch != null &&
+                (pitch! - other.pitch! <= 1E-7))) &&
+        (yaw == other.yaw ||
+            (yaw != null &&
+                other.yaw != null &&
+                (yaw! - other.yaw! <= 1E-7))) &&
         custom == other.custom;
   }
 
@@ -33211,14 +33948,27 @@ class _$PopUp extends PopUp {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         duration == other.duration &&
-        (radius == other.radius || radius! - other.radius! <= 1E-7) &&
+        (radius == other.radius ||
+            (radius != null &&
+                other.radius != null &&
+                (radius! - other.radius! <= 1E-7))) &&
         flags == other.flags &&
         custom == other.custom;
   }
@@ -33698,17 +34448,36 @@ class _$Loiter extends Loiter {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
         duration == other.duration &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         type == other.type &&
-        (radius == other.radius || radius! - other.radius! <= 1E-7) &&
-        (length == other.length || length! - other.length! <= 1E-7) &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
+        (radius == other.radius ||
+            (radius != null &&
+                other.radius != null &&
+                (radius! - other.radius! <= 1E-7))) &&
+        (length == other.length ||
+            (length != null &&
+                other.length != null &&
+                (length! - other.length! <= 1E-7))) &&
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -33885,7 +34654,8 @@ class LoiterBuilder extends Object
 
   LoiterEnumDirection? _direction = LoiterEnumDirection(0);
   LoiterEnumDirection? get direction => _$this._direction;
-  set direction(LoiterEnumDirection? direction) => _$this._direction = direction;
+  set direction(LoiterEnumDirection? direction) =>
+      _$this._direction = direction;
 
   String? _custom = '';
   String? get custom => _$this._custom;
@@ -34434,18 +35204,42 @@ class _$Rows extends Rows {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
         (crossAngle == other.crossAngle ||
-            crossAngle! - other.crossAngle! <= 1E-7) &&
-        (width == other.width || width! - other.width! <= 1E-7) &&
-        (length == other.length || length! - other.length! <= 1E-7) &&
-        (hstep == other.hstep || hstep! - other.hstep! <= 1E-7) &&
+            (crossAngle != null &&
+                other.crossAngle != null &&
+                (crossAngle! - other.crossAngle! <= 1E-7))) &&
+        (width == other.width ||
+            (width != null &&
+                other.width != null &&
+                (width! - other.width! <= 1E-7))) &&
+        (length == other.length ||
+            (length != null &&
+                other.length != null &&
+                (length! - other.length! <= 1E-7))) &&
+        (hstep == other.hstep ||
+            (hstep != null &&
+                other.hstep != null &&
+                (hstep! - other.hstep! <= 1E-7))) &&
         coff == other.coff &&
         alternation == other.alternation &&
         flags == other.flags &&
@@ -34778,11 +35572,21 @@ class _$FollowPath extends FollowPath {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
@@ -35039,9 +35843,12 @@ class _$PathPoint extends PathPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -35254,13 +36061,29 @@ class _$YoYo extends YoYo {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (amplitude == other.amplitude || amplitude! - other.amplitude! <= 1E-7) &&
-        (pitch == other.pitch || pitch! - other.pitch! <= 1E-7) &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (amplitude == other.amplitude ||
+            (amplitude != null &&
+                other.amplitude != null &&
+                (amplitude! - other.amplitude! <= 1E-7))) &&
+        (pitch == other.pitch ||
+            (pitch != null &&
+                other.pitch != null &&
+                (pitch! - other.pitch! <= 1E-7))) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -35704,13 +36527,26 @@ class _$StationKeeping extends StationKeeping {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (radius == other.radius || radius! - other.radius! <= 1E-7) &&
+        (radius == other.radius ||
+            (radius != null &&
+                other.radius != null &&
+                (radius! - other.radius! <= 1E-7))) &&
         duration == other.duration &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -35995,14 +36831,32 @@ class _$Elevator extends Elevator {
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
         flags == other.flags &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (startZ == other.startZ || startZ! - other.startZ! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (startZ == other.startZ ||
+            (startZ != null &&
+                other.startZ != null &&
+                (startZ! - other.startZ! <= 1E-7))) &&
         startZUnits == other.startZUnits &&
-        (endZ == other.endZ || endZ! - other.endZ! <= 1E-7) &&
+        (endZ == other.endZ ||
+            (endZ != null &&
+                other.endZ != null &&
+                (endZ! - other.endZ! <= 1E-7))) &&
         endZUnits == other.endZUnits &&
-        (radius == other.radius || radius! - other.radius! <= 1E-7) &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (radius == other.radius ||
+            (radius != null &&
+                other.radius != null &&
+                (radius! - other.radius! <= 1E-7))) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -36312,11 +37166,21 @@ class _$FollowTrajectory extends FollowTrajectory {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
@@ -36578,10 +37442,14 @@ class _$TrajectoryPoint extends TrajectoryPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (t == other.t || t! - other.t! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (t == other.t ||
+            (t != null && other.t != null && (t! - other.t! <= 1E-7)));
   }
 
   @override
@@ -37000,15 +37868,28 @@ class _$VehicleFormation extends VehicleFormation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         DeepCollectionEquality().equals(participants, other.participants) &&
-        (startTime == other.startTime || startTime! - other.startTime! <= 1E-7) &&
+        (startTime == other.startTime ||
+            (startTime != null &&
+                other.startTime != null &&
+                (startTime! - other.startTime! <= 1E-7))) &&
         custom == other.custom;
   }
 
@@ -37285,9 +38166,18 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         vid == other.vid &&
-        (offX == other.offX || offX! - other.offX! <= 1E-7) &&
-        (offY == other.offY || offY! - other.offY! <= 1E-7) &&
-        (offZ == other.offZ || offZ! - other.offZ! <= 1E-7);
+        (offX == other.offX ||
+            (offX != null &&
+                other.offX != null &&
+                (offX! - other.offX! <= 1E-7))) &&
+        (offY == other.offY ||
+            (offY != null &&
+                other.offY != null &&
+                (offY! - other.offY! <= 1E-7))) &&
+        (offZ == other.offZ ||
+            (offZ != null &&
+                other.offZ != null &&
+                (offZ! - other.offZ! <= 1E-7)));
   }
 
   @override
@@ -38033,11 +38923,17 @@ class _$FollowSystem extends FollowSystem {
         dstEnt == other.dstEnt &&
         system == other.system &&
         duration == other.duration &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits;
   }
 
@@ -38295,15 +39191,26 @@ class _$CommsRelay extends CommsRelay {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         duration == other.duration &&
         sysA == other.sysA &&
         sysB == other.sysB &&
         (moveThreshold == other.moveThreshold ||
-            moveThreshold! - other.moveThreshold! <= 1E-7);
+            (moveThreshold != null &&
+                other.moveThreshold != null &&
+                (moveThreshold! - other.moveThreshold! <= 1E-7)));
   }
 
   @override
@@ -38563,11 +39470,21 @@ class _$CoverArea extends CoverArea {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(polygon, other.polygon) &&
         custom == other.custom;
@@ -38811,8 +39728,12 @@ class _$PolygonVertex extends PolygonVertex {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null && other.lon != null && (lon! - other.lon! <= 1E-7)));
   }
 
   @override
@@ -39030,16 +39951,35 @@ class _$CompassCalibration extends CompassCalibration {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (pitch == other.pitch || pitch! - other.pitch! <= 1E-7) &&
-        (amplitude == other.amplitude || amplitude! - other.amplitude! <= 1E-7) &&
+        (pitch == other.pitch ||
+            (pitch != null &&
+                other.pitch != null &&
+                (pitch! - other.pitch! <= 1E-7))) &&
+        (amplitude == other.amplitude ||
+            (amplitude != null &&
+                other.amplitude != null &&
+                (amplitude! - other.amplitude! <= 1E-7))) &&
         duration == other.duration &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (radius == other.radius || radius! - other.radius! <= 1E-7) &&
+        (radius == other.radius ||
+            (radius != null &&
+                other.radius != null &&
+                (radius! - other.radius! <= 1E-7))) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -39604,19 +40544,32 @@ class _$FormationPlanExecution extends FormationPlanExecution {
         planId == other.planId &&
         description == other.description &&
         (leaderSpeed == other.leaderSpeed ||
-            leaderSpeed! - other.leaderSpeed! <= 1E-7) &&
+            (leaderSpeed != null &&
+                other.leaderSpeed != null &&
+                (leaderSpeed! - other.leaderSpeed! <= 1E-7))) &&
         (leaderBankLim == other.leaderBankLim ||
-            leaderBankLim! - other.leaderBankLim! <= 1E-7) &&
+            (leaderBankLim != null &&
+                other.leaderBankLim != null &&
+                (leaderBankLim! - other.leaderBankLim! <= 1E-7))) &&
         (posSimErrLim == other.posSimErrLim ||
-            posSimErrLim! - other.posSimErrLim! <= 1E-7) &&
+            (posSimErrLim != null &&
+                other.posSimErrLim != null &&
+                (posSimErrLim! - other.posSimErrLim! <= 1E-7))) &&
         (posSimErrWrn == other.posSimErrWrn ||
-            posSimErrWrn! - other.posSimErrWrn! <= 1E-7) &&
+            (posSimErrWrn != null &&
+                other.posSimErrWrn != null &&
+                (posSimErrWrn! - other.posSimErrWrn! <= 1E-7))) &&
         posSimErrTimeout == other.posSimErrTimeout &&
         (convergMax == other.convergMax ||
-            convergMax! - other.convergMax! <= 1E-7) &&
+            (convergMax != null &&
+                other.convergMax != null &&
+                (convergMax! - other.convergMax! <= 1E-7))) &&
         convergTimeout == other.convergTimeout &&
         commsTimeout == other.commsTimeout &&
-        (turbLim == other.turbLim || turbLim! - other.turbLim! <= 1E-7) &&
+        (turbLim == other.turbLim ||
+            (turbLim != null &&
+                other.turbLim != null &&
+                (turbLim! - other.turbLim! <= 1E-7))) &&
         custom == other.custom;
   }
 
@@ -39945,11 +40898,18 @@ class _$FollowReference extends FollowReference {
         dstEnt == other.dstEnt &&
         controlSrc == other.controlSrc &&
         controlEnt == other.controlEnt &&
-        (timeout == other.timeout || timeout! - other.timeout! <= 1E-7) &&
+        (timeout == other.timeout ||
+            (timeout != null &&
+                other.timeout != null &&
+                (timeout! - other.timeout! <= 1E-7))) &&
         (loiterRadius == other.loiterRadius ||
-            loiterRadius! - other.loiterRadius! <= 1E-7) &&
+            (loiterRadius != null &&
+                other.loiterRadius != null &&
+                (loiterRadius! - other.loiterRadius! <= 1E-7))) &&
         (altitudeInterval == other.altitudeInterval ||
-            altitudeInterval! - other.altitudeInterval! <= 1E-7);
+            (altitudeInterval != null &&
+                other.altitudeInterval != null &&
+                (altitudeInterval! - other.altitudeInterval! <= 1E-7)));
   }
 
   @override
@@ -40176,9 +41136,18 @@ class _$Reference extends Reference {
         flags == other.flags &&
         speed == other.speed &&
         z == other.z &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (radius == other.radius || radius! - other.radius! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (radius == other.radius ||
+            (radius != null &&
+                other.radius != null &&
+                (radius! - other.radius! <= 1E-7)));
   }
 
   @override
@@ -40675,24 +41644,78 @@ class _$FormationMonitor extends FormationMonitor {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (axCmd == other.axCmd || axCmd! - other.axCmd! <= 1E-7) &&
-        (ayCmd == other.ayCmd || ayCmd! - other.ayCmd! <= 1E-7) &&
-        (azCmd == other.azCmd || azCmd! - other.azCmd! <= 1E-7) &&
-        (axDes == other.axDes || axDes! - other.axDes! <= 1E-7) &&
-        (ayDes == other.ayDes || ayDes! - other.ayDes! <= 1E-7) &&
-        (azDes == other.azDes || azDes! - other.azDes! <= 1E-7) &&
-        (virtErrX == other.virtErrX || virtErrX! - other.virtErrX! <= 1E-7) &&
-        (virtErrY == other.virtErrY || virtErrY! - other.virtErrY! <= 1E-7) &&
-        (virtErrZ == other.virtErrZ || virtErrZ! - other.virtErrZ! <= 1E-7) &&
-        (surfFdbkX == other.surfFdbkX || surfFdbkX! - other.surfFdbkX! <= 1E-7) &&
-        (surfFdbkY == other.surfFdbkY || surfFdbkY! - other.surfFdbkY! <= 1E-7) &&
-        (surfFdbkZ == other.surfFdbkZ || surfFdbkZ! - other.surfFdbkZ! <= 1E-7) &&
-        (surfUnknX == other.surfUnknX || surfUnknX! - other.surfUnknX! <= 1E-7) &&
-        (surfUnknY == other.surfUnknY || surfUnknY! - other.surfUnknY! <= 1E-7) &&
-        (surfUnknZ == other.surfUnknZ || surfUnknZ! - other.surfUnknZ! <= 1E-7) &&
-        (ssX == other.ssX || ssX! - other.ssX! <= 1E-7) &&
-        (ssY == other.ssY || ssY! - other.ssY! <= 1E-7) &&
-        (ssZ == other.ssZ || ssZ! - other.ssZ! <= 1E-7) &&
+        (axCmd == other.axCmd ||
+            (axCmd != null &&
+                other.axCmd != null &&
+                (axCmd! - other.axCmd! <= 1E-7))) &&
+        (ayCmd == other.ayCmd ||
+            (ayCmd != null &&
+                other.ayCmd != null &&
+                (ayCmd! - other.ayCmd! <= 1E-7))) &&
+        (azCmd == other.azCmd ||
+            (azCmd != null &&
+                other.azCmd != null &&
+                (azCmd! - other.azCmd! <= 1E-7))) &&
+        (axDes == other.axDes ||
+            (axDes != null &&
+                other.axDes != null &&
+                (axDes! - other.axDes! <= 1E-7))) &&
+        (ayDes == other.ayDes ||
+            (ayDes != null &&
+                other.ayDes != null &&
+                (ayDes! - other.ayDes! <= 1E-7))) &&
+        (azDes == other.azDes ||
+            (azDes != null &&
+                other.azDes != null &&
+                (azDes! - other.azDes! <= 1E-7))) &&
+        (virtErrX == other.virtErrX ||
+            (virtErrX != null &&
+                other.virtErrX != null &&
+                (virtErrX! - other.virtErrX! <= 1E-7))) &&
+        (virtErrY == other.virtErrY ||
+            (virtErrY != null &&
+                other.virtErrY != null &&
+                (virtErrY! - other.virtErrY! <= 1E-7))) &&
+        (virtErrZ == other.virtErrZ ||
+            (virtErrZ != null &&
+                other.virtErrZ != null &&
+                (virtErrZ! - other.virtErrZ! <= 1E-7))) &&
+        (surfFdbkX == other.surfFdbkX ||
+            (surfFdbkX != null &&
+                other.surfFdbkX != null &&
+                (surfFdbkX! - other.surfFdbkX! <= 1E-7))) &&
+        (surfFdbkY == other.surfFdbkY ||
+            (surfFdbkY != null &&
+                other.surfFdbkY != null &&
+                (surfFdbkY! - other.surfFdbkY! <= 1E-7))) &&
+        (surfFdbkZ == other.surfFdbkZ ||
+            (surfFdbkZ != null &&
+                other.surfFdbkZ != null &&
+                (surfFdbkZ! - other.surfFdbkZ! <= 1E-7))) &&
+        (surfUnknX == other.surfUnknX ||
+            (surfUnknX != null &&
+                other.surfUnknX != null &&
+                (surfUnknX! - other.surfUnknX! <= 1E-7))) &&
+        (surfUnknY == other.surfUnknY ||
+            (surfUnknY != null &&
+                other.surfUnknY != null &&
+                (surfUnknY! - other.surfUnknY! <= 1E-7))) &&
+        (surfUnknZ == other.surfUnknZ ||
+            (surfUnknZ != null &&
+                other.surfUnknZ != null &&
+                (surfUnknZ! - other.surfUnknZ! <= 1E-7))) &&
+        (ssX == other.ssX ||
+            (ssX != null &&
+                other.ssX != null &&
+                (ssX! - other.ssX! <= 1E-7))) &&
+        (ssY == other.ssY ||
+            (ssY != null &&
+                other.ssY != null &&
+                (ssY! - other.ssY! <= 1E-7))) &&
+        (ssZ == other.ssZ ||
+            (ssZ != null &&
+                other.ssZ != null &&
+                (ssZ! - other.ssZ! <= 1E-7))) &&
         DeepCollectionEquality().equals(relState, other.relState);
   }
 
@@ -41079,27 +42102,90 @@ class _$RelativeState extends RelativeState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         sId == other.sId &&
-        (dist == other.dist || dist! - other.dist! <= 1E-7) &&
-        (err == other.err || err! - other.err! <= 1E-7) &&
-        (ctrlImp == other.ctrlImp || ctrlImp! - other.ctrlImp! <= 1E-7) &&
-        (relDirX == other.relDirX || relDirX! - other.relDirX! <= 1E-7) &&
-        (relDirY == other.relDirY || relDirY! - other.relDirY! <= 1E-7) &&
-        (relDirZ == other.relDirZ || relDirZ! - other.relDirZ! <= 1E-7) &&
-        (errX == other.errX || errX! - other.errX! <= 1E-7) &&
-        (errY == other.errY || errY! - other.errY! <= 1E-7) &&
-        (errZ == other.errZ || errZ! - other.errZ! <= 1E-7) &&
-        (rfErrX == other.rfErrX || rfErrX! - other.rfErrX! <= 1E-7) &&
-        (rfErrY == other.rfErrY || rfErrY! - other.rfErrY! <= 1E-7) &&
-        (rfErrZ == other.rfErrZ || rfErrZ! - other.rfErrZ! <= 1E-7) &&
-        (rfErrVx == other.rfErrVx || rfErrVx! - other.rfErrVx! <= 1E-7) &&
-        (rfErrVy == other.rfErrVy || rfErrVy! - other.rfErrVy! <= 1E-7) &&
-        (rfErrVz == other.rfErrVz || rfErrVz! - other.rfErrVz! <= 1E-7) &&
-        (ssX == other.ssX || ssX! - other.ssX! <= 1E-7) &&
-        (ssY == other.ssY || ssY! - other.ssY! <= 1E-7) &&
-        (ssZ == other.ssZ || ssZ! - other.ssZ! <= 1E-7) &&
-        (virtErrX == other.virtErrX || virtErrX! - other.virtErrX! <= 1E-7) &&
-        (virtErrY == other.virtErrY || virtErrY! - other.virtErrY! <= 1E-7) &&
-        (virtErrZ == other.virtErrZ || virtErrZ! - other.virtErrZ! <= 1E-7);
+        (dist == other.dist ||
+            (dist != null &&
+                other.dist != null &&
+                (dist! - other.dist! <= 1E-7))) &&
+        (err == other.err ||
+            (err != null &&
+                other.err != null &&
+                (err! - other.err! <= 1E-7))) &&
+        (ctrlImp == other.ctrlImp ||
+            (ctrlImp != null &&
+                other.ctrlImp != null &&
+                (ctrlImp! - other.ctrlImp! <= 1E-7))) &&
+        (relDirX == other.relDirX ||
+            (relDirX != null &&
+                other.relDirX != null &&
+                (relDirX! - other.relDirX! <= 1E-7))) &&
+        (relDirY == other.relDirY ||
+            (relDirY != null &&
+                other.relDirY != null &&
+                (relDirY! - other.relDirY! <= 1E-7))) &&
+        (relDirZ == other.relDirZ ||
+            (relDirZ != null &&
+                other.relDirZ != null &&
+                (relDirZ! - other.relDirZ! <= 1E-7))) &&
+        (errX == other.errX ||
+            (errX != null &&
+                other.errX != null &&
+                (errX! - other.errX! <= 1E-7))) &&
+        (errY == other.errY ||
+            (errY != null &&
+                other.errY != null &&
+                (errY! - other.errY! <= 1E-7))) &&
+        (errZ == other.errZ ||
+            (errZ != null &&
+                other.errZ != null &&
+                (errZ! - other.errZ! <= 1E-7))) &&
+        (rfErrX == other.rfErrX ||
+            (rfErrX != null &&
+                other.rfErrX != null &&
+                (rfErrX! - other.rfErrX! <= 1E-7))) &&
+        (rfErrY == other.rfErrY ||
+            (rfErrY != null &&
+                other.rfErrY != null &&
+                (rfErrY! - other.rfErrY! <= 1E-7))) &&
+        (rfErrZ == other.rfErrZ ||
+            (rfErrZ != null &&
+                other.rfErrZ != null &&
+                (rfErrZ! - other.rfErrZ! <= 1E-7))) &&
+        (rfErrVx == other.rfErrVx ||
+            (rfErrVx != null &&
+                other.rfErrVx != null &&
+                (rfErrVx! - other.rfErrVx! <= 1E-7))) &&
+        (rfErrVy == other.rfErrVy ||
+            (rfErrVy != null &&
+                other.rfErrVy != null &&
+                (rfErrVy! - other.rfErrVy! <= 1E-7))) &&
+        (rfErrVz == other.rfErrVz ||
+            (rfErrVz != null &&
+                other.rfErrVz != null &&
+                (rfErrVz! - other.rfErrVz! <= 1E-7))) &&
+        (ssX == other.ssX ||
+            (ssX != null &&
+                other.ssX != null &&
+                (ssX! - other.ssX! <= 1E-7))) &&
+        (ssY == other.ssY ||
+            (ssY != null &&
+                other.ssY != null &&
+                (ssY! - other.ssY! <= 1E-7))) &&
+        (ssZ == other.ssZ ||
+            (ssZ != null &&
+                other.ssZ != null &&
+                (ssZ! - other.ssZ! <= 1E-7))) &&
+        (virtErrX == other.virtErrX ||
+            (virtErrX != null &&
+                other.virtErrX != null &&
+                (virtErrX! - other.virtErrX! <= 1E-7))) &&
+        (virtErrY == other.virtErrY ||
+            (virtErrY != null &&
+                other.virtErrY != null &&
+                (virtErrY! - other.virtErrY! <= 1E-7))) &&
+        (virtErrZ == other.virtErrZ ||
+            (virtErrZ != null &&
+                other.virtErrZ != null &&
+                (virtErrZ! - other.virtErrZ! <= 1E-7)));
   }
 
   @override
@@ -41451,7 +42537,10 @@ class _$Dislodge extends Dislodge {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (rpm == other.rpm || rpm! - other.rpm! <= 1E-7) &&
+        (rpm == other.rpm ||
+            (rpm != null &&
+                other.rpm != null &&
+                (rpm! - other.rpm! <= 1E-7))) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -41719,25 +42808,44 @@ class _$Formation extends Formation {
         referenceFrame == other.referenceFrame &&
         DeepCollectionEquality().equals(participants, other.participants) &&
         (leaderBankLim == other.leaderBankLim ||
-            leaderBankLim! - other.leaderBankLim! <= 1E-7) &&
+            (leaderBankLim != null &&
+                other.leaderBankLim != null &&
+                (leaderBankLim! - other.leaderBankLim! <= 1E-7))) &&
         (leaderSpeedMin == other.leaderSpeedMin ||
-            leaderSpeedMin! - other.leaderSpeedMin! <= 1E-7) &&
+            (leaderSpeedMin != null &&
+                other.leaderSpeedMin != null &&
+                (leaderSpeedMin! - other.leaderSpeedMin! <= 1E-7))) &&
         (leaderSpeedMax == other.leaderSpeedMax ||
-            leaderSpeedMax! - other.leaderSpeedMax! <= 1E-7) &&
+            (leaderSpeedMax != null &&
+                other.leaderSpeedMax != null &&
+                (leaderSpeedMax! - other.leaderSpeedMax! <= 1E-7))) &&
         (leaderAltMin == other.leaderAltMin ||
-            leaderAltMin! - other.leaderAltMin! <= 1E-7) &&
+            (leaderAltMin != null &&
+                other.leaderAltMin != null &&
+                (leaderAltMin! - other.leaderAltMin! <= 1E-7))) &&
         (leaderAltMax == other.leaderAltMax ||
-            leaderAltMax! - other.leaderAltMax! <= 1E-7) &&
+            (leaderAltMax != null &&
+                other.leaderAltMax != null &&
+                (leaderAltMax! - other.leaderAltMax! <= 1E-7))) &&
         (posSimErrLim == other.posSimErrLim ||
-            posSimErrLim! - other.posSimErrLim! <= 1E-7) &&
+            (posSimErrLim != null &&
+                other.posSimErrLim != null &&
+                (posSimErrLim! - other.posSimErrLim! <= 1E-7))) &&
         (posSimErrWrn == other.posSimErrWrn ||
-            posSimErrWrn! - other.posSimErrWrn! <= 1E-7) &&
+            (posSimErrWrn != null &&
+                other.posSimErrWrn != null &&
+                (posSimErrWrn! - other.posSimErrWrn! <= 1E-7))) &&
         posSimErrTimeout == other.posSimErrTimeout &&
         (convergMax == other.convergMax ||
-            convergMax! - other.convergMax! <= 1E-7) &&
+            (convergMax != null &&
+                other.convergMax != null &&
+                (convergMax! - other.convergMax! <= 1E-7))) &&
         convergTimeout == other.convergTimeout &&
         commsTimeout == other.commsTimeout &&
-        (turbLim == other.turbLim || turbLim! - other.turbLim! <= 1E-7) &&
+        (turbLim == other.turbLim ||
+            (turbLim != null &&
+                other.turbLim != null &&
+                (turbLim! - other.turbLim! <= 1E-7))) &&
         custom == other.custom;
   }
 
@@ -42105,11 +43213,21 @@ class _$Launch extends Launch {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -42371,11 +43489,21 @@ class _$Drop extends Drop {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -42637,12 +43765,24 @@ class _$ScheduledGoto extends ScheduledGoto {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         (arrivalTime == other.arrivalTime ||
-            arrivalTime! - other.arrivalTime! <= 1E-7) &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+            (arrivalTime != null &&
+                other.arrivalTime != null &&
+                (arrivalTime! - other.arrivalTime! <= 1E-7))) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (travelZ == other.travelZ || travelZ! - other.travelZ! <= 1E-7) &&
+        (travelZ == other.travelZ ||
+            (travelZ != null &&
+                other.travelZ != null &&
+                (travelZ! - other.travelZ! <= 1E-7))) &&
         travelZUnits == other.travelZUnits &&
         delayed == other.delayed;
   }
@@ -42928,20 +44068,43 @@ class _$RowsCoverage extends RowsCoverage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
         (crossAngle == other.crossAngle ||
-            crossAngle! - other.crossAngle! <= 1E-7) &&
-        (width == other.width || width! - other.width! <= 1E-7) &&
-        (length == other.length || length! - other.length! <= 1E-7) &&
+            (crossAngle != null &&
+                other.crossAngle != null &&
+                (crossAngle! - other.crossAngle! <= 1E-7))) &&
+        (width == other.width ||
+            (width != null &&
+                other.width != null &&
+                (width! - other.width! <= 1E-7))) &&
+        (length == other.length ||
+            (length != null &&
+                other.length != null &&
+                (length! - other.length! <= 1E-7))) &&
         coff == other.coff &&
         (angAperture == other.angAperture ||
-            angAperture! - other.angAperture! <= 1E-7) &&
+            (angAperture != null &&
+                other.angAperture != null &&
+                (angAperture! - other.angAperture! <= 1E-7))) &&
         range == other.range &&
         overlap == other.overlap &&
         flags == other.flags &&
@@ -43281,11 +44444,21 @@ class _$Sample extends Sample {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         syringe0 == other.syringe0 &&
         syringe1 == other.syringe1 &&
@@ -43735,14 +44908,26 @@ class _$Takeoff extends Takeoff {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         (takeoffPitch == other.takeoffPitch ||
-            takeoffPitch! - other.takeoffPitch! <= 1E-7) &&
+            (takeoffPitch != null &&
+                other.takeoffPitch != null &&
+                (takeoffPitch! - other.takeoffPitch! <= 1E-7))) &&
         custom == other.custom;
   }
 
@@ -44012,17 +45197,35 @@ class _$Land extends Land {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (abortZ == other.abortZ || abortZ! - other.abortZ! <= 1E-7) &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
+        (abortZ == other.abortZ ||
+            (abortZ != null &&
+                other.abortZ != null &&
+                (abortZ! - other.abortZ! <= 1E-7))) &&
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
         glideSlope == other.glideSlope &&
         (glideSlopeAlt == other.glideSlopeAlt ||
-            glideSlopeAlt! - other.glideSlopeAlt! <= 1E-7) &&
+            (glideSlopeAlt != null &&
+                other.glideSlopeAlt != null &&
+                (glideSlopeAlt! - other.glideSlopeAlt! <= 1E-7))) &&
         custom == other.custom;
   }
 
@@ -44328,14 +45531,32 @@ class _$AutonomousSection extends AutonomousSection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         limits == other.limits &&
-        (maxDepth == other.maxDepth || maxDepth! - other.maxDepth! <= 1E-7) &&
-        (minAlt == other.minAlt || minAlt! - other.minAlt! <= 1E-7) &&
-        (timeLimit == other.timeLimit || timeLimit! - other.timeLimit! <= 1E-7) &&
+        (maxDepth == other.maxDepth ||
+            (maxDepth != null &&
+                other.maxDepth != null &&
+                (maxDepth! - other.maxDepth! <= 1E-7))) &&
+        (minAlt == other.minAlt ||
+            (minAlt != null &&
+                other.minAlt != null &&
+                (minAlt! - other.minAlt! <= 1E-7))) &&
+        (timeLimit == other.timeLimit ||
+            (timeLimit != null &&
+                other.timeLimit != null &&
+                (timeLimit! - other.timeLimit! <= 1E-7))) &&
         DeepCollectionEquality().equals(areaLimits, other.areaLimits) &&
         controller == other.controller &&
         custom == other.custom;
@@ -44467,7 +45688,8 @@ class AutonomousSectionBuilder extends Object
 
   AutonomousSectionBitfieldLimits? _limits = AutonomousSectionBitfieldLimits(0);
   AutonomousSectionBitfieldLimits? get limits => _$this._limits;
-  set limits(AutonomousSectionBitfieldLimits? limits) => _$this._limits = limits;
+  set limits(AutonomousSectionBitfieldLimits? limits) =>
+      _$this._limits = limits;
 
   double? _maxDepth = 0;
   double? get maxDepth => _$this._maxDepth;
@@ -44632,11 +45854,21 @@ class _$FollowPoint extends FollowPoint {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (maxSpeed == other.maxSpeed || maxSpeed! - other.maxSpeed! <= 1E-7) &&
+        (maxSpeed == other.maxSpeed ||
+            (maxSpeed != null &&
+                other.maxSpeed != null &&
+                (maxSpeed! - other.maxSpeed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
         custom == other.custom;
   }
@@ -44892,9 +46124,18 @@ class _$Alignment extends Alignment {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -45150,13 +46391,26 @@ class _$StationKeepingExtended extends StationKeepingExtended {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (radius == other.radius || radius! - other.radius! <= 1E-7) &&
+        (radius == other.radius ||
+            (radius != null &&
+                other.radius != null &&
+                (radius! - other.radius! <= 1E-7))) &&
         duration == other.duration &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
         popupPeriod == other.popupPeriod &&
         popupDuration == other.popupDuration &&
@@ -45316,12 +46570,14 @@ class StationKeepingExtendedBuilder extends Object
 
   int? _popupDuration = 0;
   int? get popupDuration => _$this._popupDuration;
-  set popupDuration(int? popupDuration) => _$this._popupDuration = popupDuration;
+  set popupDuration(int? popupDuration) =>
+      _$this._popupDuration = popupDuration;
 
   StationKeepingExtendedBitfieldFlags? _flags =
       StationKeepingExtendedBitfieldFlags(0);
   StationKeepingExtendedBitfieldFlags? get flags => _$this._flags;
-  set flags(StationKeepingExtendedBitfieldFlags? flags) => _$this._flags = flags;
+  set flags(StationKeepingExtendedBitfieldFlags? flags) =>
+      _$this._flags = flags;
 
   String? _custom = '';
   String? get custom => _$this._custom;
@@ -45630,14 +46886,30 @@ class _$Magnetometer extends Magnetometer {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
-        (width == other.width || width! - other.width! <= 1E-7) &&
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
+        (width == other.width ||
+            (width != null &&
+                other.width != null &&
+                (width! - other.width! <= 1E-7))) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -45944,13 +47216,17 @@ class _$VehicleState extends VehicleState {
         errorEnts == other.errorEnts &&
         maneuverType == other.maneuverType &&
         (maneuverStime == other.maneuverStime ||
-            maneuverStime! - other.maneuverStime! <= 1E-7) &&
+            (maneuverStime != null &&
+                other.maneuverStime != null &&
+                (maneuverStime! - other.maneuverStime! <= 1E-7))) &&
         maneuverEta == other.maneuverEta &&
         controlLoops == other.controlLoops &&
         flags == other.flags &&
         lastError == other.lastError &&
         (lastErrorTime == other.lastErrorTime ||
-            lastErrorTime! - other.lastErrorTime! <= 1E-7);
+            (lastErrorTime != null &&
+                other.lastErrorTime != null &&
+                (lastErrorTime! - other.lastErrorTime! <= 1E-7)));
   }
 
   @override
@@ -46664,7 +47940,9 @@ class _$EntityMonitoringState extends EntityMonitoringState {
         cnames == other.cnames &&
         lastError == other.lastError &&
         (lastErrorTime == other.lastErrorTime ||
-            lastErrorTime! - other.lastErrorTime! <= 1E-7);
+            (lastErrorTime != null &&
+                other.lastErrorTime != null &&
+                (lastErrorTime! - other.lastErrorTime! <= 1E-7)));
   }
 
   @override
@@ -46801,7 +48079,8 @@ class EntityMonitoringStateBuilder extends Object
   }
 
   @override
-  EntityMonitoringStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+  EntityMonitoringStateBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
       EntityMonitoringStateBuilder()..copyFromHeader(headerFrom);
 
   EntityMonitoringStateBuilder get _$this {
@@ -46941,20 +48220,50 @@ class _$OperationalLimits extends OperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         mask == other.mask &&
-        (maxDepth == other.maxDepth || maxDepth! - other.maxDepth! <= 1E-7) &&
+        (maxDepth == other.maxDepth ||
+            (maxDepth != null &&
+                other.maxDepth != null &&
+                (maxDepth! - other.maxDepth! <= 1E-7))) &&
         (minAltitude == other.minAltitude ||
-            minAltitude! - other.minAltitude! <= 1E-7) &&
+            (minAltitude != null &&
+                other.minAltitude != null &&
+                (minAltitude! - other.minAltitude! <= 1E-7))) &&
         (maxAltitude == other.maxAltitude ||
-            maxAltitude! - other.maxAltitude! <= 1E-7) &&
-        (minSpeed == other.minSpeed || minSpeed! - other.minSpeed! <= 1E-7) &&
-        (maxSpeed == other.maxSpeed || maxSpeed! - other.maxSpeed! <= 1E-7) &&
-        (maxVrate == other.maxVrate || maxVrate! - other.maxVrate! <= 1E-7) &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
+            (maxAltitude != null &&
+                other.maxAltitude != null &&
+                (maxAltitude! - other.maxAltitude! <= 1E-7))) &&
+        (minSpeed == other.minSpeed ||
+            (minSpeed != null &&
+                other.minSpeed != null &&
+                (minSpeed! - other.minSpeed! <= 1E-7))) &&
+        (maxSpeed == other.maxSpeed ||
+            (maxSpeed != null &&
+                other.maxSpeed != null &&
+                (maxSpeed! - other.maxSpeed! <= 1E-7))) &&
+        (maxVrate == other.maxVrate ||
+            (maxVrate != null &&
+                other.maxVrate != null &&
+                (maxVrate! - other.maxVrate! <= 1E-7))) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
         (orientation == other.orientation ||
-            orientation! - other.orientation! <= 1E-7) &&
-        (width == other.width || width! - other.width! <= 1E-7) &&
-        (length == other.length || length! - other.length! <= 1E-7);
+            (orientation != null &&
+                other.orientation != null &&
+                (orientation! - other.orientation! <= 1E-7))) &&
+        (width == other.width ||
+            (width != null &&
+                other.width != null &&
+                (width! - other.width! <= 1E-7))) &&
+        (length == other.length ||
+            (length != null &&
+                other.length != null &&
+                (length! - other.length! <= 1E-7)));
   }
 
   @override
@@ -47927,7 +49236,10 @@ class _$Collision extends Collision {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
         type == other.type;
   }
 
@@ -48119,10 +49431,18 @@ class _$FormState extends FormState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (posSimErr == other.posSimErr || posSimErr! - other.posSimErr! <= 1E-7) &&
-        (converg == other.converg || converg! - other.converg! <= 1E-7) &&
+        (posSimErr == other.posSimErr ||
+            (posSimErr != null &&
+                other.posSimErr != null &&
+                (posSimErr! - other.posSimErr! <= 1E-7))) &&
+        (converg == other.converg ||
+            (converg != null &&
+                other.converg != null &&
+                (converg! - other.converg! <= 1E-7))) &&
         (turbulence == other.turbulence ||
-            turbulence! - other.turbulence! <= 1E-7) &&
+            (turbulence != null &&
+                other.turbulence != null &&
+                (turbulence! - other.turbulence! <= 1E-7))) &&
         posSimMon == other.posSimMon &&
         commMon == other.commMon &&
         convergMon == other.convergMon;
@@ -48547,10 +49867,18 @@ class _$FormationState extends FormationState {
         dstEnt == other.dstEnt &&
         type == other.type &&
         op == other.op &&
-        (posSimErr == other.posSimErr || posSimErr! - other.posSimErr! <= 1E-7) &&
-        (converg == other.converg || converg! - other.converg! <= 1E-7) &&
+        (posSimErr == other.posSimErr ||
+            (posSimErr != null &&
+                other.posSimErr != null &&
+                (posSimErr! - other.posSimErr! <= 1E-7))) &&
+        (converg == other.converg ||
+            (converg != null &&
+                other.converg != null &&
+                (converg! - other.converg! <= 1E-7))) &&
         (turbulence == other.turbulence ||
-            turbulence! - other.turbulence! <= 1E-7) &&
+            (turbulence != null &&
+                other.turbulence != null &&
+                (turbulence! - other.turbulence! <= 1E-7))) &&
         posSimMon == other.posSimMon &&
         commMon == other.commMon &&
         convergMon == other.convergMon;
@@ -48887,7 +50215,8 @@ class ReportControlBuilder extends Object
 
   ReportControlBitfieldCommInterface? _commInterface =
       ReportControlBitfieldCommInterface(0);
-  ReportControlBitfieldCommInterface? get commInterface => _$this._commInterface;
+  ReportControlBitfieldCommInterface? get commInterface =>
+      _$this._commInterface;
   set commInterface(ReportControlBitfieldCommInterface? commInterface) =>
       _$this._commInterface = commInterface;
 
@@ -49030,8 +50359,14 @@ class _$StateReport extends StateReport {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         stime == other.stime &&
-        (latitude == other.latitude || latitude! - other.latitude! <= 1E-7) &&
-        (longitude == other.longitude || longitude! - other.longitude! <= 1E-7) &&
+        (latitude == other.latitude ||
+            (latitude != null &&
+                other.latitude != null &&
+                (latitude! - other.latitude! <= 1E-7))) &&
+        (longitude == other.longitude ||
+            (longitude != null &&
+                other.longitude != null &&
+                (longitude! - other.longitude! <= 1E-7))) &&
         altitude == other.altitude &&
         depth == other.depth &&
         heading == other.heading &&
@@ -49326,8 +50661,14 @@ class _$TransmissionRequest extends TransmissionRequest {
         reqId == other.reqId &&
         commMean == other.commMean &&
         destination == other.destination &&
-        (deadline == other.deadline || deadline! - other.deadline! <= 1E-7) &&
-        (range == other.range || range! - other.range! <= 1E-7) &&
+        (deadline == other.deadline ||
+            (deadline != null &&
+                other.deadline != null &&
+                (deadline! - other.deadline! <= 1E-7))) &&
+        (range == other.range ||
+            (range != null &&
+                other.range != null &&
+                (range! - other.range! <= 1E-7))) &&
         dataMode == other.dataMode &&
         msgData == other.msgData &&
         txtData == other.txtData &&
@@ -49598,7 +50939,10 @@ class _$TransmissionStatus extends TransmissionStatus {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         status == other.status &&
-        (range == other.range || range! - other.range! <= 1E-7) &&
+        (range == other.range ||
+            (range != null &&
+                other.range != null &&
+                (range! - other.range! <= 1E-7))) &&
         info == other.info;
   }
 
@@ -49807,7 +51151,10 @@ class _$SmsRequest extends SmsRequest {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         destination == other.destination &&
-        (timeout == other.timeout || timeout! - other.timeout! <= 1E-7) &&
+        (timeout == other.timeout ||
+            (timeout != null &&
+                other.timeout != null &&
+                (timeout! - other.timeout! <= 1E-7))) &&
         smsText == other.smsText;
   }
 
@@ -50542,7 +51889,10 @@ class _$TCPRequest extends TCPRequest {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         destination == other.destination &&
-        (timeout == other.timeout || timeout! - other.timeout! <= 1E-7) &&
+        (timeout == other.timeout ||
+            (timeout != null &&
+                other.timeout != null &&
+                (timeout! - other.timeout! <= 1E-7))) &&
         msgData == other.msgData;
   }
 
@@ -51867,7 +53217,8 @@ class EmergencyControlBuilder extends Object
 
   EmergencyControlEnumCommand? _command = EmergencyControlEnumCommand(0);
   EmergencyControlEnumCommand? get command => _$this._command;
-  set command(EmergencyControlEnumCommand? command) => _$this._command = command;
+  set command(EmergencyControlEnumCommand? command) =>
+      _$this._command = command;
 
   PlanSpecification? _plan;
   PlanSpecification? get plan => _$this._plan;
@@ -52077,7 +53428,8 @@ class EmergencyControlStateBuilder extends Object
   }
 
   @override
-  EmergencyControlStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+  EmergencyControlStateBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
       EmergencyControlStateBuilder()..copyFromHeader(headerFrom);
 
   EmergencyControlStateBuilder get _$this {
@@ -52427,7 +53779,9 @@ class _$PlanDBState extends PlanDBState {
         planCount == other.planCount &&
         planSize == other.planSize &&
         (changeTime == other.changeTime ||
-            changeTime! - other.changeTime! <= 1E-7) &&
+            (changeTime != null &&
+                other.changeTime != null &&
+                (changeTime! - other.changeTime! <= 1E-7))) &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
         ListEquality().equals(md5, other.md5) &&
@@ -52678,7 +54032,9 @@ class _$PlanDBInformation extends PlanDBInformation {
         planId == other.planId &&
         planSize == other.planSize &&
         (changeTime == other.changeTime ||
-            changeTime! - other.changeTime! <= 1E-7) &&
+            (changeTime != null &&
+                other.changeTime != null &&
+                (changeTime! - other.changeTime! <= 1E-7))) &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
         ListEquality().equals(md5, other.md5);
@@ -53174,7 +54530,9 @@ class _$PlanControlState extends PlanControlState {
         planId == other.planId &&
         planEta == other.planEta &&
         (planProgress == other.planProgress ||
-            planProgress! - other.planProgress! <= 1E-7) &&
+            (planProgress != null &&
+                other.planProgress != null &&
+                (planProgress! - other.planProgress! <= 1E-7))) &&
         manId == other.manId &&
         manType == other.manType &&
         manEta == other.manEta &&
@@ -53892,24 +55250,58 @@ class _$LeaderState extends LeaderState {
         dstEnt == other.dstEnt &&
         groupName == other.groupName &&
         op == other.op &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (height == other.height || height! - other.height! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7) &&
-        (vx == other.vx || vx! - other.vx! <= 1E-7) &&
-        (vy == other.vy || vy! - other.vy! <= 1E-7) &&
-        (vz == other.vz || vz! - other.vz! <= 1E-7) &&
-        (p == other.p || p! - other.p! <= 1E-7) &&
-        (q == other.q || q! - other.q! <= 1E-7) &&
-        (r == other.r || r! - other.r! <= 1E-7) &&
-        (svx == other.svx || svx! - other.svx! <= 1E-7) &&
-        (svy == other.svy || svy! - other.svy! <= 1E-7) &&
-        (svz == other.svz || svz! - other.svz! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (height == other.height ||
+            (height != null &&
+                other.height != null &&
+                (height! - other.height! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null &&
+                other.psi != null &&
+                (psi! - other.psi! <= 1E-7))) &&
+        (vx == other.vx ||
+            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
+        (vy == other.vy ||
+            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
+        (vz == other.vz ||
+            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
+        (p == other.p ||
+            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
+        (q == other.q ||
+            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
+        (r == other.r ||
+            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
+        (svx == other.svx ||
+            (svx != null &&
+                other.svx != null &&
+                (svx! - other.svx! <= 1E-7))) &&
+        (svy == other.svy ||
+            (svy != null &&
+                other.svy != null &&
+                (svy! - other.svy! <= 1E-7))) &&
+        (svz == other.svz ||
+            (svz != null && other.svz != null && (svz! - other.svz! <= 1E-7)));
   }
 
   @override
@@ -54520,13 +55912,34 @@ class _$ReportedState extends ReportedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (depth == other.depth || depth! - other.depth! <= 1E-7) &&
-        (roll == other.roll || roll! - other.roll! <= 1E-7) &&
-        (pitch == other.pitch || pitch! - other.pitch! <= 1E-7) &&
-        (yaw == other.yaw || yaw! - other.yaw! <= 1E-7) &&
-        (rcpTime == other.rcpTime || rcpTime! - other.rcpTime! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (depth == other.depth ||
+            (depth != null &&
+                other.depth != null &&
+                (depth! - other.depth! <= 1E-7))) &&
+        (roll == other.roll ||
+            (roll != null &&
+                other.roll != null &&
+                (roll! - other.roll! <= 1E-7))) &&
+        (pitch == other.pitch ||
+            (pitch != null &&
+                other.pitch != null &&
+                (pitch! - other.pitch! <= 1E-7))) &&
+        (yaw == other.yaw ||
+            (yaw != null &&
+                other.yaw != null &&
+                (yaw! - other.yaw! <= 1E-7))) &&
+        (rcpTime == other.rcpTime ||
+            (rcpTime != null &&
+                other.rcpTime != null &&
+                (rcpTime! - other.rcpTime! <= 1E-7))) &&
         sid == other.sid &&
         sType == other.sType;
   }
@@ -54801,10 +56214,22 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
         dstEnt == other.dstEnt &&
         id == other.id &&
         sensorClass == other.sensorClass &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (alt == other.alt || alt! - other.alt! <= 1E-7) &&
-        (heading == other.heading || heading! - other.heading! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (alt == other.alt ||
+            (alt != null &&
+                other.alt != null &&
+                (alt! - other.alt! <= 1E-7))) &&
+        (heading == other.heading ||
+            (heading != null &&
+                other.heading != null &&
+                (heading! - other.heading! <= 1E-7))) &&
         data == other.data;
   }
 
@@ -55457,9 +56882,16 @@ class _$MapPoint extends MapPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (alt == other.alt || alt! - other.alt! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (alt == other.alt ||
+            (alt != null && other.alt != null && (alt! - other.alt! <= 1E-7)));
   }
 
   @override
@@ -57767,11 +59199,21 @@ class _$RemoteState extends RemoteState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
         depth == other.depth &&
-        (speed == other.speed || speed! - other.speed! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7);
+        (speed == other.speed ||
+            (speed != null &&
+                other.speed != null &&
+                (speed! - other.speed! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null && other.psi != null && (psi! - other.psi! <= 1E-7)));
   }
 
   @override
@@ -58000,12 +59442,23 @@ class _$Target extends Target {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         label == other.label &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (cog == other.cog || cog! - other.cog! <= 1E-7) &&
-        (sog == other.sog || sog! - other.sog! <= 1E-7);
+        (cog == other.cog ||
+            (cog != null &&
+                other.cog != null &&
+                (cog! - other.cog! <= 1E-7))) &&
+        (sog == other.sog ||
+            (sog != null && other.sog != null && (sog! - other.sog! <= 1E-7)));
   }
 
   @override
@@ -58704,7 +60157,8 @@ class QueryEntityParametersBuilder extends Object
   }
 
   @override
-  QueryEntityParametersBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+  QueryEntityParametersBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
       QueryEntityParametersBuilder()..copyFromHeader(headerFrom);
 
   QueryEntityParametersBuilder get _$this {
@@ -61169,7 +62623,10 @@ class _$UamRxRange extends UamRxRange {
         dstEnt == other.dstEnt &&
         seq == other.seq &&
         sys == other.sys &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -61362,7 +62819,10 @@ class _$UamTxRange extends UamTxRange {
         dstEnt == other.dstEnt &&
         seq == other.seq &&
         sysDst == other.sysDst &&
-        (timeout == other.timeout || timeout! - other.timeout! <= 1E-7);
+        (timeout == other.timeout ||
+            (timeout != null &&
+                other.timeout != null &&
+                (timeout! - other.timeout! <= 1E-7)));
   }
 
   @override
@@ -61563,12 +63023,23 @@ class _$FormCtrlParam extends FormCtrlParam {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         action == other.action &&
-        (lonGain == other.lonGain || lonGain! - other.lonGain! <= 1E-7) &&
-        (latGain == other.latGain || latGain! - other.latGain! <= 1E-7) &&
+        (lonGain == other.lonGain ||
+            (lonGain != null &&
+                other.lonGain != null &&
+                (lonGain! - other.lonGain! <= 1E-7))) &&
+        (latGain == other.latGain ||
+            (latGain != null &&
+                other.latGain != null &&
+                (latGain! - other.latGain! <= 1E-7))) &&
         bondThick == other.bondThick &&
-        (leadGain == other.leadGain || leadGain! - other.leadGain! <= 1E-7) &&
+        (leadGain == other.leadGain ||
+            (leadGain != null &&
+                other.leadGain != null &&
+                (leadGain! - other.leadGain! <= 1E-7))) &&
         (deconflGain == other.deconflGain ||
-            deconflGain! - other.deconflGain! <= 1E-7);
+            (deconflGain != null &&
+                other.deconflGain != null &&
+                (deconflGain! - other.deconflGain! <= 1E-7)));
   }
 
   @override
@@ -61790,11 +63261,18 @@ class _$FormationEval extends FormationEval {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (errMean == other.errMean || errMean! - other.errMean! <= 1E-7) &&
+        (errMean == other.errMean ||
+            (errMean != null &&
+                other.errMean != null &&
+                (errMean! - other.errMean! <= 1E-7))) &&
         (distMinAbs == other.distMinAbs ||
-            distMinAbs! - other.distMinAbs! <= 1E-7) &&
+            (distMinAbs != null &&
+                other.distMinAbs != null &&
+                (distMinAbs! - other.distMinAbs! <= 1E-7))) &&
         (distMinMean == other.distMinMean ||
-            distMinMean! - other.distMinMean! <= 1E-7);
+            (distMinMean != null &&
+                other.distMinMean != null &&
+                (distMinMean! - other.distMinMean! <= 1E-7)));
   }
 
   @override
@@ -62013,20 +63491,46 @@ class _$FormationControlParams extends FormationControlParams {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         action == other.action &&
-        (lonGain == other.lonGain || lonGain! - other.lonGain! <= 1E-7) &&
-        (latGain == other.latGain || latGain! - other.latGain! <= 1E-7) &&
-        (bondThick == other.bondThick || bondThick! - other.bondThick! <= 1E-7) &&
-        (leadGain == other.leadGain || leadGain! - other.leadGain! <= 1E-7) &&
+        (lonGain == other.lonGain ||
+            (lonGain != null &&
+                other.lonGain != null &&
+                (lonGain! - other.lonGain! <= 1E-7))) &&
+        (latGain == other.latGain ||
+            (latGain != null &&
+                other.latGain != null &&
+                (latGain! - other.latGain! <= 1E-7))) &&
+        (bondThick == other.bondThick ||
+            (bondThick != null &&
+                other.bondThick != null &&
+                (bondThick! - other.bondThick! <= 1E-7))) &&
+        (leadGain == other.leadGain ||
+            (leadGain != null &&
+                other.leadGain != null &&
+                (leadGain! - other.leadGain! <= 1E-7))) &&
         (deconflGain == other.deconflGain ||
-            deconflGain! - other.deconflGain! <= 1E-7) &&
+            (deconflGain != null &&
+                other.deconflGain != null &&
+                (deconflGain! - other.deconflGain! <= 1E-7))) &&
         (accelSwitchGain == other.accelSwitchGain ||
-            accelSwitchGain! - other.accelSwitchGain! <= 1E-7) &&
-        (safeDist == other.safeDist || safeDist! - other.safeDist! <= 1E-7) &&
+            (accelSwitchGain != null &&
+                other.accelSwitchGain != null &&
+                (accelSwitchGain! - other.accelSwitchGain! <= 1E-7))) &&
+        (safeDist == other.safeDist ||
+            (safeDist != null &&
+                other.safeDist != null &&
+                (safeDist! - other.safeDist! <= 1E-7))) &&
         (deconflictOffset == other.deconflictOffset ||
-            deconflictOffset! - other.deconflictOffset! <= 1E-7) &&
+            (deconflictOffset != null &&
+                other.deconflictOffset != null &&
+                (deconflictOffset! - other.deconflictOffset! <= 1E-7))) &&
         (accelSafeMargin == other.accelSafeMargin ||
-            accelSafeMargin! - other.accelSafeMargin! <= 1E-7) &&
-        (accelLimX == other.accelLimX || accelLimX! - other.accelLimX! <= 1E-7);
+            (accelSafeMargin != null &&
+                other.accelSafeMargin != null &&
+                (accelSafeMargin! - other.accelSafeMargin! <= 1E-7))) &&
+        (accelLimX == other.accelLimX ||
+            (accelLimX != null &&
+                other.accelLimX != null &&
+                (accelLimX! - other.accelLimX! <= 1E-7)));
   }
 
   @override
@@ -62330,14 +63834,26 @@ class _$FormationEvaluation extends FormationEvaluation {
         dstEnt == other.dstEnt &&
         type == other.type &&
         op == other.op &&
-        (errMean == other.errMean || errMean! - other.errMean! <= 1E-7) &&
+        (errMean == other.errMean ||
+            (errMean != null &&
+                other.errMean != null &&
+                (errMean! - other.errMean! <= 1E-7))) &&
         (distMinAbs == other.distMinAbs ||
-            distMinAbs! - other.distMinAbs! <= 1E-7) &&
+            (distMinAbs != null &&
+                other.distMinAbs != null &&
+                (distMinAbs! - other.distMinAbs! <= 1E-7))) &&
         (distMinMean == other.distMinMean ||
-            distMinMean! - other.distMinMean! <= 1E-7) &&
+            (distMinMean != null &&
+                other.distMinMean != null &&
+                (distMinMean! - other.distMinMean! <= 1E-7))) &&
         (rollRateMean == other.rollRateMean ||
-            rollRateMean! - other.rollRateMean! <= 1E-7) &&
-        (time == other.time || time! - other.time! <= 1E-7) &&
+            (rollRateMean != null &&
+                other.rollRateMean != null &&
+                (rollRateMean! - other.rollRateMean! <= 1E-7))) &&
+        (time == other.time ||
+            (time != null &&
+                other.time != null &&
+                (time! - other.time! <= 1E-7))) &&
         controlParams == other.controlParams;
   }
 
@@ -62587,8 +64103,14 @@ class _$SoiWaypoint extends SoiWaypoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
         eta == other.eta &&
         duration == other.duration;
   }
@@ -63945,8 +65467,14 @@ class _$UsblAngles extends UsblAngles {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
-        (elevation == other.elevation || elevation! - other.elevation! <= 1E-7);
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
+        (elevation == other.elevation ||
+            (elevation != null &&
+                other.elevation != null &&
+                (elevation! - other.elevation! <= 1E-7)));
   }
 
   @override
@@ -64143,9 +65671,12 @@ class _$UsblPosition extends UsblPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -64354,10 +65885,17 @@ class _$UsblFix extends UsblFix {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -65307,11 +66845,20 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         tracking == other.tracking &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
   }
 
   @override
@@ -65560,15 +67107,38 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lbearing == other.lbearing || lbearing! - other.lbearing! <= 1E-7) &&
+        (lbearing == other.lbearing ||
+            (lbearing != null &&
+                other.lbearing != null &&
+                (lbearing! - other.lbearing! <= 1E-7))) &&
         (lelevation == other.lelevation ||
-            lelevation! - other.lelevation! <= 1E-7) &&
-        (bearing == other.bearing || bearing! - other.bearing! <= 1E-7) &&
-        (elevation == other.elevation || elevation! - other.elevation! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7) &&
-        (accuracy == other.accuracy || accuracy! - other.accuracy! <= 1E-7);
+            (lelevation != null &&
+                other.lelevation != null &&
+                (lelevation! - other.lelevation! <= 1E-7))) &&
+        (bearing == other.bearing ||
+            (bearing != null &&
+                other.bearing != null &&
+                (bearing! - other.bearing! <= 1E-7))) &&
+        (elevation == other.elevation ||
+            (elevation != null &&
+                other.elevation != null &&
+                (elevation! - other.elevation! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null &&
+                other.psi != null &&
+                (psi! - other.psi! <= 1E-7))) &&
+        (accuracy == other.accuracy ||
+            (accuracy != null &&
+                other.accuracy != null &&
+                (accuracy! - other.accuracy! <= 1E-7)));
   }
 
   @override
@@ -65857,16 +67427,34 @@ class _$UsblPositionExtended extends UsblPositionExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (x == other.x || x! - other.x! <= 1E-7) &&
-        (y == other.y || y! - other.y! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (n == other.n || n! - other.n! <= 1E-7) &&
-        (e == other.e || e! - other.e! <= 1E-7) &&
-        (d == other.d || d! - other.d! <= 1E-7) &&
-        (phi == other.phi || phi! - other.phi! <= 1E-7) &&
-        (theta == other.theta || theta! - other.theta! <= 1E-7) &&
-        (psi == other.psi || psi! - other.psi! <= 1E-7) &&
-        (accuracy == other.accuracy || accuracy! - other.accuracy! <= 1E-7);
+        (x == other.x ||
+            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
+        (y == other.y ||
+            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (n == other.n ||
+            (n != null && other.n != null && (n! - other.n! <= 1E-7))) &&
+        (e == other.e ||
+            (e != null && other.e != null && (e! - other.e! <= 1E-7))) &&
+        (d == other.d ||
+            (d != null && other.d != null && (d! - other.d! <= 1E-7))) &&
+        (phi == other.phi ||
+            (phi != null &&
+                other.phi != null &&
+                (phi! - other.phi! <= 1E-7))) &&
+        (theta == other.theta ||
+            (theta != null &&
+                other.theta != null &&
+                (theta! - other.theta! <= 1E-7))) &&
+        (psi == other.psi ||
+            (psi != null &&
+                other.psi != null &&
+                (psi! - other.psi! <= 1E-7))) &&
+        (accuracy == other.accuracy ||
+            (accuracy != null &&
+                other.accuracy != null &&
+                (accuracy! - other.accuracy! <= 1E-7)));
   }
 
   @override
@@ -66158,11 +67746,21 @@ class _$UsblFixExtended extends UsblFixExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
         zUnits == other.zUnits &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
-        (accuracy == other.accuracy || accuracy! - other.accuracy! <= 1E-7);
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (accuracy == other.accuracy ||
+            (accuracy != null &&
+                other.accuracy != null &&
+                (accuracy! - other.accuracy! <= 1E-7)));
   }
 
   @override
@@ -66394,9 +67992,16 @@ class _$UsblModem extends UsblModem {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         name == other.name &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (z == other.z || z! - other.z! <= 1E-7) &&
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (z == other.z ||
+            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
         zUnits == other.zUnits;
   }
 
@@ -66792,7 +68397,10 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7) &&
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7))) &&
         type == other.type;
   }
 
@@ -66976,7 +68584,10 @@ class _$OpticalBackscatter extends OpticalBackscatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -67190,34 +68801,65 @@ class _$Tachograph extends Tachograph {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         (timestampLastService == other.timestampLastService ||
-            timestampLastService! - other.timestampLastService! <= 1E-7) &&
+            (timestampLastService != null &&
+                other.timestampLastService != null &&
+                (timestampLastService! - other.timestampLastService! <=
+                    1E-7))) &&
         (timeNextService == other.timeNextService ||
-            timeNextService! - other.timeNextService! <= 1E-7) &&
+            (timeNextService != null &&
+                other.timeNextService != null &&
+                (timeNextService! - other.timeNextService! <= 1E-7))) &&
         (timeMotorNextService == other.timeMotorNextService ||
-            timeMotorNextService! - other.timeMotorNextService! <= 1E-7) &&
+            (timeMotorNextService != null &&
+                other.timeMotorNextService != null &&
+                (timeMotorNextService! - other.timeMotorNextService! <=
+                    1E-7))) &&
         (timeIdleGround == other.timeIdleGround ||
-            timeIdleGround! - other.timeIdleGround! <= 1E-7) &&
+            (timeIdleGround != null &&
+                other.timeIdleGround != null &&
+                (timeIdleGround! - other.timeIdleGround! <= 1E-7))) &&
         (timeIdleAir == other.timeIdleAir ||
-            timeIdleAir! - other.timeIdleAir! <= 1E-7) &&
+            (timeIdleAir != null &&
+                other.timeIdleAir != null &&
+                (timeIdleAir! - other.timeIdleAir! <= 1E-7))) &&
         (timeIdleWater == other.timeIdleWater ||
-            timeIdleWater! - other.timeIdleWater! <= 1E-7) &&
+            (timeIdleWater != null &&
+                other.timeIdleWater != null &&
+                (timeIdleWater! - other.timeIdleWater! <= 1E-7))) &&
         (timeIdleUnderwater == other.timeIdleUnderwater ||
-            timeIdleUnderwater! - other.timeIdleUnderwater! <= 1E-7) &&
+            (timeIdleUnderwater != null &&
+                other.timeIdleUnderwater != null &&
+                (timeIdleUnderwater! - other.timeIdleUnderwater! <= 1E-7))) &&
         (timeIdleUnknown == other.timeIdleUnknown ||
-            timeIdleUnknown! - other.timeIdleUnknown! <= 1E-7) &&
+            (timeIdleUnknown != null &&
+                other.timeIdleUnknown != null &&
+                (timeIdleUnknown! - other.timeIdleUnknown! <= 1E-7))) &&
         (timeMotorGround == other.timeMotorGround ||
-            timeMotorGround! - other.timeMotorGround! <= 1E-7) &&
+            (timeMotorGround != null &&
+                other.timeMotorGround != null &&
+                (timeMotorGround! - other.timeMotorGround! <= 1E-7))) &&
         (timeMotorAir == other.timeMotorAir ||
-            timeMotorAir! - other.timeMotorAir! <= 1E-7) &&
+            (timeMotorAir != null &&
+                other.timeMotorAir != null &&
+                (timeMotorAir! - other.timeMotorAir! <= 1E-7))) &&
         (timeMotorWater == other.timeMotorWater ||
-            timeMotorWater! - other.timeMotorWater! <= 1E-7) &&
+            (timeMotorWater != null &&
+                other.timeMotorWater != null &&
+                (timeMotorWater! - other.timeMotorWater! <= 1E-7))) &&
         (timeMotorUnderwater == other.timeMotorUnderwater ||
-            timeMotorUnderwater! - other.timeMotorUnderwater! <= 1E-7) &&
+            (timeMotorUnderwater != null &&
+                other.timeMotorUnderwater != null &&
+                (timeMotorUnderwater! - other.timeMotorUnderwater! <= 1E-7))) &&
         (timeMotorUnknown == other.timeMotorUnknown ||
-            timeMotorUnknown! - other.timeMotorUnknown! <= 1E-7) &&
+            (timeMotorUnknown != null &&
+                other.timeMotorUnknown != null &&
+                (timeMotorUnknown! - other.timeMotorUnknown! <= 1E-7))) &&
         rpmMin == other.rpmMin &&
         rpmMax == other.rpmMax &&
-        (depthMax == other.depthMax || depthMax! - other.depthMax! <= 1E-7);
+        (depthMax == other.depthMax ||
+            (depthMax != null &&
+                other.depthMax != null &&
+                (depthMax! - other.depthMax! <= 1E-7)));
   }
 
   @override
@@ -67975,22 +69617,70 @@ class _$DmsDetection extends DmsDetection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (ch01 == other.ch01 || ch01! - other.ch01! <= 1E-7) &&
-        (ch02 == other.ch02 || ch02! - other.ch02! <= 1E-7) &&
-        (ch03 == other.ch03 || ch03! - other.ch03! <= 1E-7) &&
-        (ch04 == other.ch04 || ch04! - other.ch04! <= 1E-7) &&
-        (ch05 == other.ch05 || ch05! - other.ch05! <= 1E-7) &&
-        (ch06 == other.ch06 || ch06! - other.ch06! <= 1E-7) &&
-        (ch07 == other.ch07 || ch07! - other.ch07! <= 1E-7) &&
-        (ch08 == other.ch08 || ch08! - other.ch08! <= 1E-7) &&
-        (ch09 == other.ch09 || ch09! - other.ch09! <= 1E-7) &&
-        (ch10 == other.ch10 || ch10! - other.ch10! <= 1E-7) &&
-        (ch11 == other.ch11 || ch11! - other.ch11! <= 1E-7) &&
-        (ch12 == other.ch12 || ch12! - other.ch12! <= 1E-7) &&
-        (ch13 == other.ch13 || ch13! - other.ch13! <= 1E-7) &&
-        (ch14 == other.ch14 || ch14! - other.ch14! <= 1E-7) &&
-        (ch15 == other.ch15 || ch15! - other.ch15! <= 1E-7) &&
-        (ch16 == other.ch16 || ch16! - other.ch16! <= 1E-7);
+        (ch01 == other.ch01 ||
+            (ch01 != null &&
+                other.ch01 != null &&
+                (ch01! - other.ch01! <= 1E-7))) &&
+        (ch02 == other.ch02 ||
+            (ch02 != null &&
+                other.ch02 != null &&
+                (ch02! - other.ch02! <= 1E-7))) &&
+        (ch03 == other.ch03 ||
+            (ch03 != null &&
+                other.ch03 != null &&
+                (ch03! - other.ch03! <= 1E-7))) &&
+        (ch04 == other.ch04 ||
+            (ch04 != null &&
+                other.ch04 != null &&
+                (ch04! - other.ch04! <= 1E-7))) &&
+        (ch05 == other.ch05 ||
+            (ch05 != null &&
+                other.ch05 != null &&
+                (ch05! - other.ch05! <= 1E-7))) &&
+        (ch06 == other.ch06 ||
+            (ch06 != null &&
+                other.ch06 != null &&
+                (ch06! - other.ch06! <= 1E-7))) &&
+        (ch07 == other.ch07 ||
+            (ch07 != null &&
+                other.ch07 != null &&
+                (ch07! - other.ch07! <= 1E-7))) &&
+        (ch08 == other.ch08 ||
+            (ch08 != null &&
+                other.ch08 != null &&
+                (ch08! - other.ch08! <= 1E-7))) &&
+        (ch09 == other.ch09 ||
+            (ch09 != null &&
+                other.ch09 != null &&
+                (ch09! - other.ch09! <= 1E-7))) &&
+        (ch10 == other.ch10 ||
+            (ch10 != null &&
+                other.ch10 != null &&
+                (ch10! - other.ch10! <= 1E-7))) &&
+        (ch11 == other.ch11 ||
+            (ch11 != null &&
+                other.ch11 != null &&
+                (ch11! - other.ch11! <= 1E-7))) &&
+        (ch12 == other.ch12 ||
+            (ch12 != null &&
+                other.ch12 != null &&
+                (ch12! - other.ch12! <= 1E-7))) &&
+        (ch13 == other.ch13 ||
+            (ch13 != null &&
+                other.ch13 != null &&
+                (ch13! - other.ch13! <= 1E-7))) &&
+        (ch14 == other.ch14 ||
+            (ch14 != null &&
+                other.ch14 != null &&
+                (ch14! - other.ch14! <= 1E-7))) &&
+        (ch15 == other.ch15 ||
+            (ch15 != null &&
+                other.ch15 != null &&
+                (ch15! - other.ch15! <= 1E-7))) &&
+        (ch16 == other.ch16 ||
+            (ch16 != null &&
+                other.ch16 != null &&
+                (ch16! - other.ch16! <= 1E-7)));
   }
 
   @override
@@ -68293,7 +69983,10 @@ class _$TotalMagIntensity extends TotalMagIntensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value || value! - other.value! <= 1E-7);
+        (value == other.value ||
+            (value != null &&
+                other.value != null &&
+                (value! - other.value! <= 1E-7)));
   }
 
   @override
@@ -68477,11 +70170,24 @@ class _$HomePosition extends HomePosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (lat == other.lat || lat! - other.lat! <= 1E-7) &&
-        (lon == other.lon || lon! - other.lon! <= 1E-7) &&
-        (height == other.height || height! - other.height! <= 1E-7) &&
-        (depth == other.depth || depth! - other.depth! <= 1E-7) &&
-        (alt == other.alt || alt! - other.alt! <= 1E-7);
+        (lat == other.lat ||
+            (lat != null &&
+                other.lat != null &&
+                (lat! - other.lat! <= 1E-7))) &&
+        (lon == other.lon ||
+            (lon != null &&
+                other.lon != null &&
+                (lon! - other.lon! <= 1E-7))) &&
+        (height == other.height ||
+            (height != null &&
+                other.height != null &&
+                (height! - other.height! <= 1E-7))) &&
+        (depth == other.depth ||
+            (depth != null &&
+                other.depth != null &&
+                (depth! - other.depth! <= 1E-7))) &&
+        (alt == other.alt ||
+            (alt != null && other.alt != null && (alt! - other.alt! <= 1E-7)));
   }
 
   @override
