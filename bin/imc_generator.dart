@@ -760,10 +760,12 @@ void _writeMessageSerializer(
         fStr += '      byteOffset += 2;\n';
         fStr +=
             '      for (var i = 0; i < message.$fieldName!.length; i++) {\n';
-        fStr += '        var id = message.$fieldName![i]?.msgId;\n';
+        fStr += '        var id = message.$fieldName![i].msgId;\n';
+        fStr += '        var pMsgSerializer = imc.messagesSerializers[\n';
         fStr +=
-            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId.toString()]?.call();\n';
-        fStr += '        if (id != null && pMsgSerializer != null) {\n';
+            '                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '            ?.call();\n';
+        fStr += '        if (pMsgSerializer != null) {\n';
         fStr +=
             '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
         fStr += '          byteOffset += 2;\n';
@@ -958,7 +960,7 @@ void _writeMessageSerializer(
         fStr +=
             '          .messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
         fStr += '          ?.call()\n';
-        fStr += '          ?.newInstance(builder);\n';
+        fStr += '          .newInstance(builder);\n';
         fStr += '      var pMsgSerializer = imc\n';
         fStr +=
             '          .messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
@@ -984,7 +986,8 @@ void _writeMessageSerializer(
         fStr += '        var pMsgBuilder = imc\n';
         fStr +=
             '            .messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
-        fStr += '          ?.call()?.newInstance(builder);\n';
+        fStr += '          ?.call()\n';
+        fStr += '          .newInstance(builder);\n';
         fStr += '        var pMsgSerializer = imc\n';
         fStr +=
             '            .messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';

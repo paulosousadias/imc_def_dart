@@ -2272,12 +2272,11 @@ class MsgListSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.msgs!.length; i++) {
-        var id = message.msgs![i]?.msgId;
+        var id = message.msgs![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -2358,7 +2357,7 @@ class MsgListSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -3191,7 +3190,7 @@ class CacheControlSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -3515,12 +3514,11 @@ class LogBookControlSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.msg!.length; i++) {
-        var id = message.msg![i]?.msgId;
+        var id = message.msg![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -3608,7 +3606,7 @@ class LogBookControlSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -4422,12 +4420,11 @@ class VerticalProfileSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.samples!.length; i++) {
-        var id = message.samples![i]?.msgId;
+        var id = message.samples![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -4521,7 +4518,7 @@ class VerticalProfileSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -6918,12 +6915,11 @@ class HistoricDataSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.data!.length; i++) {
-        var id = message.data![i]?.msgId;
+        var id = message.data![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -7013,7 +7009,7 @@ class HistoricDataSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -7316,7 +7312,7 @@ class HistoricSampleSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -7469,7 +7465,7 @@ class HistoricDataQuerySerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -7622,7 +7618,7 @@ class RemoteCommandSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -8255,12 +8251,11 @@ class LblConfigSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.beacons!.length; i++) {
-        var id = message.beacons![i]?.msgId;
+        var id = message.beacons![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -8344,7 +8339,7 @@ class LblConfigSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -8480,7 +8475,7 @@ class AcousticMessageSerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -8852,7 +8847,7 @@ class AcousticOperationSerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -9360,7 +9355,7 @@ class AcousticRequestSerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -11051,12 +11046,11 @@ class DistanceSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.location!.length; i++) {
-        var id = message.location![i]?.msgId;
+        var id = message.location![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -11076,12 +11070,11 @@ class DistanceSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.beamConfig!.length; i++) {
-        var id = message.beamConfig![i]?.msgId;
+        var id = message.beamConfig![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -11168,7 +11161,7 @@ class DistanceSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[locationSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[locationSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -11191,7 +11184,7 @@ class DistanceSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -12645,12 +12638,11 @@ class SonarDataSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.beamConfig!.length; i++) {
-        var id = message.beamConfig![i]?.msgId;
+        var id = message.beamConfig![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -12756,7 +12748,7 @@ class SonarDataSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -14885,7 +14877,7 @@ class ExternalNavDataSerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[stateSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[stateSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -18721,7 +18713,7 @@ class LblEstimateSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -21992,7 +21984,7 @@ class LowLevelControlSerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[controlSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[controlSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -22284,12 +22276,11 @@ class FollowPathSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.points!.length; i++) {
-        var id = message.points![i]?.msgId;
+        var id = message.points![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -22397,7 +22388,7 @@ class FollowPathSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -23202,12 +23193,11 @@ class FollowTrajectorySerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.points!.length; i++) {
-        var id = message.points![i]?.msgId;
+        var id = message.points![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -23315,7 +23305,7 @@ class FollowTrajectorySerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -23658,12 +23648,11 @@ class VehicleFormationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.points!.length; i++) {
-        var id = message.points![i]?.msgId;
+        var id = message.points![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -23683,12 +23672,11 @@ class VehicleFormationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.participants!.length; i++) {
-        var id = message.participants![i]?.msgId;
+        var id = message.participants![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -23796,7 +23784,7 @@ class VehicleFormationSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -23820,7 +23808,7 @@ class VehicleFormationSerializer extends imc
                 imc.idsToMessages[participantsSId] ??
                     imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[participantsSId] ??
                     imc.ImcId.nullId.toString()]
@@ -24650,12 +24638,11 @@ class CoverAreaSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.polygon!.length; i++) {
-        var id = message.polygon![i]?.msgId;
+        var id = message.polygon![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -24760,7 +24747,7 @@ class CoverAreaSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -25134,12 +25121,11 @@ class FormationParametersSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.participants!.length; i++) {
-        var id = message.participants![i]?.msgId;
+        var id = message.participants![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -25240,7 +25226,7 @@ class FormationParametersSerializer extends imc
                 imc.idsToMessages[participantsSId] ??
                     imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[participantsSId] ??
                     imc.ImcId.nullId.toString()]
@@ -25772,7 +25758,7 @@ class ReferenceSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[speedSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[speedSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -25792,7 +25778,7 @@ class ReferenceSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[zSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[zSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -25954,7 +25940,7 @@ class FollowRefStateSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -26074,12 +26060,11 @@ class FormationMonitorSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.relState!.length; i++) {
-        var id = message.relState![i]?.msgId;
+        var id = message.relState![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -26214,7 +26199,7 @@ class FormationMonitorSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -26676,12 +26661,11 @@ class FormationSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.participants!.length; i++) {
-        var id = message.participants![i]?.msgId;
+        var id = message.participants![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -26851,7 +26835,7 @@ class FormationSerializer
                 imc.idsToMessages[participantsSId] ??
                     imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[participantsSId] ??
                     imc.ImcId.nullId.toString()]
@@ -28232,12 +28216,11 @@ class AutonomousSectionSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.areaLimits!.length; i++) {
-        var id = message.areaLimits![i]?.msgId;
+        var id = message.areaLimits![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -28355,7 +28338,7 @@ class AutonomousSectionSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -29471,7 +29454,7 @@ class VehicleCommandSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -31374,7 +31357,7 @@ class TransmissionRequestSerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -32154,7 +32137,7 @@ class TCPRequestSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -32449,12 +32432,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.variables!.length; i++) {
-        var id = message.variables![i]?.msgId;
+        var id = message.variables![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32480,12 +32462,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.maneuvers!.length; i++) {
-        var id = message.maneuvers![i]?.msgId;
+        var id = message.maneuvers![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32505,12 +32486,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.transitions!.length; i++) {
-        var id = message.transitions![i]?.msgId;
+        var id = message.transitions![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32530,12 +32510,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.startActions!.length; i++) {
-        var id = message.startActions![i]?.msgId;
+        var id = message.startActions![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32555,12 +32534,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.endActions!.length; i++) {
-        var id = message.endActions![i]?.msgId;
+        var id = message.endActions![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32668,7 +32646,7 @@ class PlanSpecificationSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -32700,7 +32678,7 @@ class PlanSpecificationSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -32724,7 +32702,7 @@ class PlanSpecificationSerializer extends imc
                 imc.idsToMessages[transitionsSId] ??
                     imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[transitionsSId] ??
                     imc.ImcId.nullId.toString()]
@@ -32749,7 +32727,7 @@ class PlanSpecificationSerializer extends imc
                 imc.idsToMessages[startActionsSId] ??
                     imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[startActionsSId] ??
                     imc.ImcId.nullId.toString()]
@@ -32773,7 +32751,7 @@ class PlanSpecificationSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -32856,12 +32834,11 @@ class PlanManeuverSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.startActions!.length; i++) {
-        var id = message.startActions![i]?.msgId;
+        var id = message.startActions![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32881,12 +32858,11 @@ class PlanManeuverSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.endActions!.length; i++) {
-        var id = message.endActions![i]?.msgId;
+        var id = message.endActions![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32974,7 +32950,7 @@ class PlanManeuverSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -32997,7 +32973,7 @@ class PlanManeuverSerializer
                 imc.idsToMessages[startActionsSId] ??
                     imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[startActionsSId] ??
                     imc.ImcId.nullId.toString()]
@@ -33021,7 +32997,7 @@ class PlanManeuverSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -33099,12 +33075,11 @@ class PlanTransitionSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.actions!.length; i++) {
-        var id = message.actions![i]?.msgId;
+        var id = message.actions![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -33212,7 +33187,7 @@ class PlanTransitionSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -33355,7 +33330,7 @@ class EmergencyControlSerializer extends imc
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -33654,7 +33629,7 @@ class PlanDBSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -33747,12 +33722,11 @@ class PlanDBStateSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.plansInfo!.length; i++) {
-        var id = message.plansInfo![i]?.msgId;
+        var id = message.plansInfo![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -33862,7 +33836,7 @@ class PlanDBStateSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -34205,7 +34179,7 @@ class PlanControlSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -35464,12 +35438,11 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.features!.length; i++) {
-        var id = message.features![i]?.msgId;
+        var id = message.features![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -35559,7 +35532,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -35636,12 +35609,11 @@ class MapFeatureSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.feature!.length; i++) {
-        var id = message.feature![i]?.msgId;
+        var id = message.feature![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -35744,7 +35716,7 @@ class MapFeatureSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[featureSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[featureSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -36015,7 +35987,7 @@ class CcuEventSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -36080,12 +36052,11 @@ class VehicleLinksSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.links!.length; i++) {
-        var id = message.links![i]?.msgId;
+        var id = message.links![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -36175,7 +36146,7 @@ class VehicleLinksSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[linksSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[linksSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -36609,7 +36580,7 @@ class TrexOperationSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -36829,12 +36800,11 @@ class TrexTokenSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.attributes!.length; i++) {
-        var id = message.attributes![i]?.msgId;
+        var id = message.attributes![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -36933,7 +36903,7 @@ class TrexTokenSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -36998,12 +36968,11 @@ class TrexPlanSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.tokens!.length; i++) {
-        var id = message.tokens![i]?.msgId;
+        var id = message.tokens![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -37093,7 +37062,7 @@ class TrexPlanSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -37930,12 +37899,11 @@ class EntityParametersSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.params!.length; i++) {
-        var id = message.params![i]?.msgId;
+        var id = message.params![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -38025,7 +37993,7 @@ class EntityParametersSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -38234,12 +38202,11 @@ class SetEntityParametersSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.params!.length; i++) {
-        var id = message.params![i]?.msgId;
+        var id = message.params![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -38329,7 +38296,7 @@ class SetEntityParametersSerializer extends imc
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -40582,7 +40549,7 @@ class FormationEvaluationSerializer extends imc
               imc.idsToMessages[controlParamsSId] ??
                   imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[controlParamsSId] ??
                   imc.ImcId.nullId.toString()]
@@ -40766,12 +40733,11 @@ class SoiPlanSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.waypoints!.length; i++) {
-        var id = message.waypoints![i]?.msgId;
+        var id = message.waypoints![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -40855,7 +40821,7 @@ class SoiPlanSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
@@ -41023,7 +40989,7 @@ class SoiCommandSerializer
       var pMsgBuilder = imc.messagesBuilders[
               imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
               imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
@@ -43134,12 +43100,11 @@ class UsblConfigSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.modems!.length; i++) {
-        var id = message.modems![i]?.msgId;
+        var id = message.modems![i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ??
-                    imc.ImcId.nullId.toString()]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -43223,7 +43188,7 @@ class UsblConfigSerializer
         var pMsgBuilder = imc.messagesBuilders[
                 imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
                 imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
