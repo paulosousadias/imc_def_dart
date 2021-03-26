@@ -21,11 +21,11 @@ class _$EntityState extends EntityState {
   final int dstEnt;
 
   @override
-  final EntityStateEnumState? state;
+  final EntityStateEnumState state;
   @override
-  final EntityStateBitfieldFlags? flags;
+  final EntityStateBitfieldFlags flags;
   @override
-  final String? description;
+  final String description;
 
   factory _$EntityState([void Function(EntityStateBuilder b)? updates]) =>
       (EntityStateBuilder()..update(updates)).build();
@@ -36,9 +36,9 @@ class _$EntityState extends EntityState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state,
-      this.flags,
-      this.description})
+      required this.state,
+      required this.flags,
+      required this.description})
       : super._();
 
   @override
@@ -75,9 +75,9 @@ class _$EntityState extends EntityState {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                state?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        description?.hashCode ?? null.hashCode));
+                state.hashCode),
+            flags.hashCode),
+        description.hashCode));
   }
 
   @override
@@ -362,15 +362,15 @@ class _$EntityInfo extends EntityInfo {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? label;
+  final String label;
   @override
-  final String? component;
+  final String component;
   @override
-  final int? actTime;
+  final int actTime;
   @override
-  final int? deactTime;
+  final int deactTime;
 
   factory _$EntityInfo([void Function(EntityInfoBuilder b)? updates]) =>
       (EntityInfoBuilder()..update(updates)).build();
@@ -381,11 +381,11 @@ class _$EntityInfo extends EntityInfo {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.label,
-      this.component,
-      this.actTime,
-      this.deactTime})
+      required this.id,
+      required this.label,
+      required this.component,
+      required this.actTime,
+      required this.deactTime})
       : super._();
 
   @override
@@ -430,11 +430,11 @@ class _$EntityInfo extends EntityInfo {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        id?.hashCode ?? null.hashCode),
-                    label?.hashCode ?? null.hashCode),
-                component?.hashCode ?? null.hashCode),
-            actTime?.hashCode ?? null.hashCode),
-        deactTime?.hashCode ?? null.hashCode));
+                        id.hashCode),
+                    label.hashCode),
+                component.hashCode),
+            actTime.hashCode),
+        deactTime.hashCode));
   }
 
   @override
@@ -582,7 +582,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
 
   factory _$QueryEntityInfo(
           [void Function(QueryEntityInfoBuilder b)? updates]) =>
@@ -594,7 +594,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id})
+      required this.id})
       : super._();
 
   @override
@@ -627,7 +627,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        id?.hashCode ?? null.hashCode));
+        id.hashCode));
   }
 
   @override
@@ -748,9 +748,9 @@ class _$EntityList extends EntityList {
   final int dstEnt;
 
   @override
-  final EntityListEnumOp? op;
+  final EntityListEnumOp op;
   @override
-  final String? list;
+  final String list;
 
   factory _$EntityList([void Function(EntityListBuilder b)? updates]) =>
       (EntityListBuilder()..update(updates)).build();
@@ -761,8 +761,8 @@ class _$EntityList extends EntityList {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.list})
+      required this.op,
+      required this.list})
       : super._();
 
   @override
@@ -797,8 +797,8 @@ class _$EntityList extends EntityList {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        list?.hashCode ?? null.hashCode));
+            op.hashCode),
+        list.hashCode));
   }
 
   @override
@@ -925,7 +925,7 @@ class _$CpuUsage extends CpuUsage {
   final int dstEnt;
 
   @override
-  final int? value;
+  final int value;
 
   factory _$CpuUsage([void Function(CpuUsageBuilder b)? updates]) =>
       (CpuUsageBuilder()..update(updates)).build();
@@ -936,7 +936,7 @@ class _$CpuUsage extends CpuUsage {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -969,7 +969,7 @@ class _$CpuUsage extends CpuUsage {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -1089,9 +1089,9 @@ class _$TransportBindings extends TransportBindings {
   final int dstEnt;
 
   @override
-  final String? consumer;
+  final String consumer;
   @override
-  final int? messageId;
+  final int messageId;
 
   factory _$TransportBindings(
           [void Function(TransportBindingsBuilder b)? updates]) =>
@@ -1103,8 +1103,8 @@ class _$TransportBindings extends TransportBindings {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.consumer,
-      this.messageId})
+      required this.consumer,
+      required this.messageId})
       : super._();
 
   @override
@@ -1141,8 +1141,8 @@ class _$TransportBindings extends TransportBindings {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            consumer?.hashCode ?? null.hashCode),
-        messageId?.hashCode ?? null.hashCode));
+            consumer.hashCode),
+        messageId.hashCode));
   }
 
   @override
@@ -1270,7 +1270,7 @@ class _$RestartSystem extends RestartSystem {
   final int dstEnt;
 
   @override
-  final RestartSystemEnumType? type;
+  final RestartSystemEnumType type;
 
   factory _$RestartSystem([void Function(RestartSystemBuilder b)? updates]) =>
       (RestartSystemBuilder()..update(updates)).build();
@@ -1281,7 +1281,7 @@ class _$RestartSystem extends RestartSystem {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type})
+      required this.type})
       : super._();
 
   @override
@@ -1314,7 +1314,7 @@ class _$RestartSystem extends RestartSystem {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        type?.hashCode ?? null.hashCode));
+        type.hashCode));
   }
 
   @override
@@ -1434,7 +1434,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
   final int dstEnt;
 
   @override
-  final DevCalibrationControlEnumOp? op;
+  final DevCalibrationControlEnumOp op;
 
   factory _$DevCalibrationControl(
           [void Function(DevCalibrationControlBuilder b)? updates]) =>
@@ -1446,7 +1446,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op})
+      required this.op})
       : super._();
 
   @override
@@ -1481,7 +1481,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        op?.hashCode ?? null.hashCode));
+        op.hashCode));
   }
 
   @override
@@ -1605,13 +1605,13 @@ class _$DevCalibrationState extends DevCalibrationState {
   final int dstEnt;
 
   @override
-  final int? totalSteps;
+  final int totalSteps;
   @override
-  final int? stepNumber;
+  final int stepNumber;
   @override
-  final String? step;
+  final String step;
   @override
-  final DevCalibrationStateBitfieldFlags? flags;
+  final DevCalibrationStateBitfieldFlags flags;
 
   factory _$DevCalibrationState(
           [void Function(DevCalibrationStateBuilder b)? updates]) =>
@@ -1623,10 +1623,10 @@ class _$DevCalibrationState extends DevCalibrationState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.totalSteps,
-      this.stepNumber,
-      this.step,
-      this.flags})
+      required this.totalSteps,
+      required this.stepNumber,
+      required this.step,
+      required this.flags})
       : super._();
 
   @override
@@ -1669,10 +1669,10 @@ class _$DevCalibrationState extends DevCalibrationState {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    totalSteps?.hashCode ?? null.hashCode),
-                stepNumber?.hashCode ?? null.hashCode),
-            step?.hashCode ?? null.hashCode),
-        flags?.hashCode ?? null.hashCode));
+                    totalSteps.hashCode),
+                stepNumber.hashCode),
+            step.hashCode),
+        flags.hashCode));
   }
 
   @override
@@ -1817,9 +1817,9 @@ class _$EntityActivationState extends EntityActivationState {
   final int dstEnt;
 
   @override
-  final EntityActivationStateEnumState? state;
+  final EntityActivationStateEnumState state;
   @override
-  final String? error;
+  final String error;
 
   factory _$EntityActivationState(
           [void Function(EntityActivationStateBuilder b)? updates]) =>
@@ -1831,8 +1831,8 @@ class _$EntityActivationState extends EntityActivationState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state,
-      this.error})
+      required this.state,
+      required this.error})
       : super._();
 
   @override
@@ -1869,8 +1869,8 @@ class _$EntityActivationState extends EntityActivationState {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            state?.hashCode ?? null.hashCode),
-        error?.hashCode ?? null.hashCode));
+            state.hashCode),
+        error.hashCode));
   }
 
   @override
@@ -2157,41 +2157,41 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
   final int dstEnt;
 
   @override
-  final VehicleOperationalLimitsEnumOp? op;
+  final VehicleOperationalLimitsEnumOp op;
   @override
-  final double? speedMin;
+  final double speedMin;
   @override
-  final double? speedMax;
+  final double speedMax;
   @override
-  final double? longAccel;
+  final double longAccel;
   @override
-  final double? altMaxMsl;
+  final double altMaxMsl;
   @override
-  final double? diveFractionMax;
+  final double diveFractionMax;
   @override
-  final double? climbFractionMax;
+  final double climbFractionMax;
   @override
-  final double? bankMax;
+  final double bankMax;
   @override
-  final double? pMax;
+  final double pMax;
   @override
-  final double? pitchMin;
+  final double pitchMin;
   @override
-  final double? pitchMax;
+  final double pitchMax;
   @override
-  final double? qMax;
+  final double qMax;
   @override
-  final double? gMin;
+  final double gMin;
   @override
-  final double? gMax;
+  final double gMax;
   @override
-  final double? gLatMax;
+  final double gLatMax;
   @override
-  final double? rpmMin;
+  final double rpmMin;
   @override
-  final double? rpmMax;
+  final double rpmMax;
   @override
-  final double? rpmRateMax;
+  final double rpmRateMax;
 
   factory _$VehicleOperationalLimits(
           [void Function(VehicleOperationalLimitsBuilder b)? updates]) =>
@@ -2203,24 +2203,24 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.speedMin,
-      this.speedMax,
-      this.longAccel,
-      this.altMaxMsl,
-      this.diveFractionMax,
-      this.climbFractionMax,
-      this.bankMax,
-      this.pMax,
-      this.pitchMin,
-      this.pitchMax,
-      this.qMax,
-      this.gMin,
-      this.gMax,
-      this.gLatMax,
-      this.rpmMin,
-      this.rpmMax,
-      this.rpmRateMax})
+      required this.op,
+      required this.speedMin,
+      required this.speedMax,
+      required this.longAccel,
+      required this.altMaxMsl,
+      required this.diveFractionMax,
+      required this.climbFractionMax,
+      required this.bankMax,
+      required this.pMax,
+      required this.pitchMin,
+      required this.pitchMax,
+      required this.qMax,
+      required this.gMin,
+      required this.gMax,
+      required this.gLatMax,
+      required this.rpmMin,
+      required this.rpmMax,
+      required this.rpmRateMax})
       : super._();
 
   @override
@@ -2242,74 +2242,26 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (speedMin == other.speedMin ||
-            (speedMin != null &&
-                other.speedMin != null &&
-                (speedMin! - other.speedMin! <= 1E-7))) &&
-        (speedMax == other.speedMax ||
-            (speedMax != null &&
-                other.speedMax != null &&
-                (speedMax! - other.speedMax! <= 1E-7))) &&
-        (longAccel == other.longAccel ||
-            (longAccel != null &&
-                other.longAccel != null &&
-                (longAccel! - other.longAccel! <= 1E-7))) &&
-        (altMaxMsl == other.altMaxMsl ||
-            (altMaxMsl != null &&
-                other.altMaxMsl != null &&
-                (altMaxMsl! - other.altMaxMsl! <= 1E-7))) &&
+        (speedMin == other.speedMin || speedMin - other.speedMin <= 1E-7) &&
+        (speedMax == other.speedMax || speedMax - other.speedMax <= 1E-7) &&
+        (longAccel == other.longAccel || longAccel - other.longAccel <= 1E-7) &&
+        (altMaxMsl == other.altMaxMsl || altMaxMsl - other.altMaxMsl <= 1E-7) &&
         (diveFractionMax == other.diveFractionMax ||
-            (diveFractionMax != null &&
-                other.diveFractionMax != null &&
-                (diveFractionMax! - other.diveFractionMax! <= 1E-7))) &&
+            diveFractionMax - other.diveFractionMax <= 1E-7) &&
         (climbFractionMax == other.climbFractionMax ||
-            (climbFractionMax != null &&
-                other.climbFractionMax != null &&
-                (climbFractionMax! - other.climbFractionMax! <= 1E-7))) &&
-        (bankMax == other.bankMax ||
-            (bankMax != null &&
-                other.bankMax != null &&
-                (bankMax! - other.bankMax! <= 1E-7))) &&
-        (pMax == other.pMax ||
-            (pMax != null &&
-                other.pMax != null &&
-                (pMax! - other.pMax! <= 1E-7))) &&
-        (pitchMin == other.pitchMin ||
-            (pitchMin != null &&
-                other.pitchMin != null &&
-                (pitchMin! - other.pitchMin! <= 1E-7))) &&
-        (pitchMax == other.pitchMax ||
-            (pitchMax != null &&
-                other.pitchMax != null &&
-                (pitchMax! - other.pitchMax! <= 1E-7))) &&
-        (qMax == other.qMax ||
-            (qMax != null &&
-                other.qMax != null &&
-                (qMax! - other.qMax! <= 1E-7))) &&
-        (gMin == other.gMin ||
-            (gMin != null &&
-                other.gMin != null &&
-                (gMin! - other.gMin! <= 1E-7))) &&
-        (gMax == other.gMax ||
-            (gMax != null &&
-                other.gMax != null &&
-                (gMax! - other.gMax! <= 1E-7))) &&
-        (gLatMax == other.gLatMax ||
-            (gLatMax != null &&
-                other.gLatMax != null &&
-                (gLatMax! - other.gLatMax! <= 1E-7))) &&
-        (rpmMin == other.rpmMin ||
-            (rpmMin != null &&
-                other.rpmMin != null &&
-                (rpmMin! - other.rpmMin! <= 1E-7))) &&
-        (rpmMax == other.rpmMax ||
-            (rpmMax != null &&
-                other.rpmMax != null &&
-                (rpmMax! - other.rpmMax! <= 1E-7))) &&
+            climbFractionMax - other.climbFractionMax <= 1E-7) &&
+        (bankMax == other.bankMax || bankMax - other.bankMax <= 1E-7) &&
+        (pMax == other.pMax || pMax - other.pMax <= 1E-7) &&
+        (pitchMin == other.pitchMin || pitchMin - other.pitchMin <= 1E-7) &&
+        (pitchMax == other.pitchMax || pitchMax - other.pitchMax <= 1E-7) &&
+        (qMax == other.qMax || qMax - other.qMax <= 1E-7) &&
+        (gMin == other.gMin || gMin - other.gMin <= 1E-7) &&
+        (gMax == other.gMax || gMax - other.gMax <= 1E-7) &&
+        (gLatMax == other.gLatMax || gLatMax - other.gLatMax <= 1E-7) &&
+        (rpmMin == other.rpmMin || rpmMin - other.rpmMin <= 1E-7) &&
+        (rpmMax == other.rpmMax || rpmMax - other.rpmMax <= 1E-7) &&
         (rpmRateMax == other.rpmRateMax ||
-            (rpmRateMax != null &&
-                other.rpmRateMax != null &&
-                (rpmRateMax! - other.rpmRateMax! <= 1E-7)));
+            rpmRateMax - other.rpmRateMax <= 1E-7);
   }
 
   @override
@@ -2334,24 +2286,24 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
                                                                         $jc(
                                                                             $jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode),
                                                                                 dstEnt.hashCode),
-                                                                            op?.hashCode ?? null.hashCode),
-                                                                        speedMin?.hashCode ?? null.hashCode),
-                                                                    speedMax?.hashCode ?? null.hashCode),
-                                                                longAccel?.hashCode ?? null.hashCode),
-                                                            altMaxMsl?.hashCode ?? null.hashCode),
-                                                        diveFractionMax?.hashCode ?? null.hashCode),
-                                                    climbFractionMax?.hashCode ?? null.hashCode),
-                                                bankMax?.hashCode ?? null.hashCode),
-                                            pMax?.hashCode ?? null.hashCode),
-                                        pitchMin?.hashCode ?? null.hashCode),
-                                    pitchMax?.hashCode ?? null.hashCode),
-                                qMax?.hashCode ?? null.hashCode),
-                            gMin?.hashCode ?? null.hashCode),
-                        gMax?.hashCode ?? null.hashCode),
-                    gLatMax?.hashCode ?? null.hashCode),
-                rpmMin?.hashCode ?? null.hashCode),
-            rpmMax?.hashCode ?? null.hashCode),
-        rpmRateMax?.hashCode ?? null.hashCode));
+                                                                            op.hashCode),
+                                                                        speedMin.hashCode),
+                                                                    speedMax.hashCode),
+                                                                longAccel.hashCode),
+                                                            altMaxMsl.hashCode),
+                                                        diveFractionMax.hashCode),
+                                                    climbFractionMax.hashCode),
+                                                bankMax.hashCode),
+                                            pMax.hashCode),
+                                        pitchMin.hashCode),
+                                    pitchMax.hashCode),
+                                qMax.hashCode),
+                            gMin.hashCode),
+                        gMax.hashCode),
+                    gLatMax.hashCode),
+                rpmMin.hashCode),
+            rpmMax.hashCode),
+        rpmRateMax.hashCode));
   }
 
   @override
@@ -2369,16 +2321,14 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           ..add('altMaxMsl', '$altMaxMsl (m)')
           ..add('diveFractionMax', '$diveFractionMax')
           ..add('climbFractionMax', '$climbFractionMax')
-          ..add('bankMax',
-              '$bankMax (rad)${bankMax != null ? ' [${bankMax! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('pMax',
-              '$pMax (rad/s)${pMax != null ? ' [${pMax! * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add(
+              'bankMax', '$bankMax (rad) [${bankMax * 180.0 / math.pi} (deg)]')
+          ..add('pMax', '$pMax (rad/s) [${pMax * 180.0 / math.pi} (deg/s)]')
           ..add('pitchMin',
-              '$pitchMin (rad)${pitchMin != null ? ' [${pitchMin! * 180.0 / math.pi} (deg)]' : ''}')
+              '$pitchMin (rad) [${pitchMin * 180.0 / math.pi} (deg)]')
           ..add('pitchMax',
-              '$pitchMax (rad)${pitchMax != null ? ' [${pitchMax! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('qMax',
-              '$qMax (rad/s)${qMax != null ? ' [${qMax! * 180.0 / math.pi} (deg/s)]' : ''}')
+              '$pitchMax (rad) [${pitchMax * 180.0 / math.pi} (deg)]')
+          ..add('qMax', '$qMax (rad/s) [${qMax * 180.0 / math.pi} (deg/s)]')
           ..add('gMin', '$gMin (g)')
           ..add('gMax', '$gMax (g)')
           ..add('gLatMax', '$gLatMax (g)')
@@ -2601,7 +2551,7 @@ class _$MsgList extends MsgList {
   final int dstEnt;
 
   @override
-  final List<ImcMessage>? msgs;
+  final List<ImcMessage> msgs;
 
   factory _$MsgList([void Function(MsgListBuilder b)? updates]) =>
       (MsgListBuilder()..update(updates)).build();
@@ -2612,7 +2562,7 @@ class _$MsgList extends MsgList {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.msgs})
+      required this.msgs})
       : super._();
 
   @override
@@ -2645,7 +2595,7 @@ class _$MsgList extends MsgList {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        msgs?.hashCode ?? null.hashCode));
+        msgs.hashCode));
   }
 
   @override
@@ -2765,41 +2715,41 @@ class _$SimulatedState extends SimulatedState {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? height;
+  final double height;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
   @override
-  final double? u;
+  final double u;
   @override
-  final double? v;
+  final double v;
   @override
-  final double? w;
+  final double w;
   @override
-  final double? p;
+  final double p;
   @override
-  final double? q;
+  final double q;
   @override
-  final double? r;
+  final double r;
   @override
-  final double? svx;
+  final double svx;
   @override
-  final double? svy;
+  final double svy;
   @override
-  final double? svz;
+  final double svz;
 
   factory _$SimulatedState([void Function(SimulatedStateBuilder b)? updates]) =>
       (SimulatedStateBuilder()..update(updates)).build();
@@ -2810,24 +2760,24 @@ class _$SimulatedState extends SimulatedState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.height,
-      this.x,
-      this.y,
-      this.z,
-      this.phi,
-      this.theta,
-      this.psi,
-      this.u,
-      this.v,
-      this.w,
-      this.p,
-      this.q,
-      this.r,
-      this.svx,
-      this.svy,
-      this.svz})
+      required this.lat,
+      required this.lon,
+      required this.height,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.phi,
+      required this.theta,
+      required this.psi,
+      required this.u,
+      required this.v,
+      required this.w,
+      required this.p,
+      required this.q,
+      required this.r,
+      required this.svx,
+      required this.svy,
+      required this.svz})
       : super._();
 
   @override
@@ -2846,58 +2796,24 @@ class _$SimulatedState extends SimulatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (height == other.height ||
-            (height != null &&
-                other.height != null &&
-                (height! - other.height! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null &&
-                other.psi != null &&
-                (psi! - other.psi! <= 1E-7))) &&
-        (u == other.u ||
-            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
-        (v == other.v ||
-            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
-        (w == other.w ||
-            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
-        (p == other.p ||
-            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
-        (q == other.q ||
-            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
-        (r == other.r ||
-            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
-        (svx == other.svx ||
-            (svx != null &&
-                other.svx != null &&
-                (svx! - other.svx! <= 1E-7))) &&
-        (svy == other.svy ||
-            (svy != null &&
-                other.svy != null &&
-                (svy! - other.svy! <= 1E-7))) &&
-        (svz == other.svz ||
-            (svz != null && other.svz != null && (svz! - other.svz! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (svx == other.svx || svx - other.svx <= 1E-7) &&
+        (svy == other.svy || svy - other.svy <= 1E-7) &&
+        (svz == other.svz || svz - other.svz <= 1E-7);
   }
 
   @override
@@ -2922,24 +2838,24 @@ class _$SimulatedState extends SimulatedState {
                                                                         $jc(
                                                                             $jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode),
                                                                                 dstEnt.hashCode),
-                                                                            lat?.hashCode ?? null.hashCode),
-                                                                        lon?.hashCode ?? null.hashCode),
-                                                                    height?.hashCode ?? null.hashCode),
-                                                                x?.hashCode ?? null.hashCode),
-                                                            y?.hashCode ?? null.hashCode),
-                                                        z?.hashCode ?? null.hashCode),
-                                                    phi?.hashCode ?? null.hashCode),
-                                                theta?.hashCode ?? null.hashCode),
-                                            psi?.hashCode ?? null.hashCode),
-                                        u?.hashCode ?? null.hashCode),
-                                    v?.hashCode ?? null.hashCode),
-                                w?.hashCode ?? null.hashCode),
-                            p?.hashCode ?? null.hashCode),
-                        q?.hashCode ?? null.hashCode),
-                    r?.hashCode ?? null.hashCode),
-                svx?.hashCode ?? null.hashCode),
-            svy?.hashCode ?? null.hashCode),
-        svz?.hashCode ?? null.hashCode));
+                                                                            lat.hashCode),
+                                                                        lon.hashCode),
+                                                                    height.hashCode),
+                                                                x.hashCode),
+                                                            y.hashCode),
+                                                        z.hashCode),
+                                                    phi.hashCode),
+                                                theta.hashCode),
+                                            psi.hashCode),
+                                        u.hashCode),
+                                    v.hashCode),
+                                w.hashCode),
+                            p.hashCode),
+                        q.hashCode),
+                    r.hashCode),
+                svx.hashCode),
+            svy.hashCode),
+        svz.hashCode));
   }
 
   @override
@@ -2950,29 +2866,21 @@ class _$SimulatedState extends SimulatedState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
-          ..add('p',
-              '$p (rad/s)${p != null ? ' [${p! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q',
-              '$q (rad/s)${q != null ? ' [${q! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r',
-              '$r (rad/s)${r != null ? ' [${r! * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('p', '$p (rad/s) [${p * 180.0 / math.pi} (deg/s)]')
+          ..add('q', '$q (rad/s) [${q * 180.0 / math.pi} (deg/s)]')
+          ..add('r', '$r (rad/s) [${r * 180.0 / math.pi} (deg/s)]')
           ..add('svx', '$svx (m/s)')
           ..add('svy', '$svy (m/s)')
           ..add('svz', '$svz (m/s)'))
@@ -3186,9 +3094,9 @@ class _$LeakSimulation extends LeakSimulation {
   final int dstEnt;
 
   @override
-  final LeakSimulationEnumOp? op;
+  final LeakSimulationEnumOp op;
   @override
-  final String? entities;
+  final String entities;
 
   factory _$LeakSimulation([void Function(LeakSimulationBuilder b)? updates]) =>
       (LeakSimulationBuilder()..update(updates)).build();
@@ -3199,8 +3107,8 @@ class _$LeakSimulation extends LeakSimulation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.entities})
+      required this.op,
+      required this.entities})
       : super._();
 
   @override
@@ -3235,8 +3143,8 @@ class _$LeakSimulation extends LeakSimulation {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        entities?.hashCode ?? null.hashCode));
+            op.hashCode),
+        entities.hashCode));
   }
 
   @override
@@ -3363,11 +3271,11 @@ class _$UASimulation extends UASimulation {
   final int dstEnt;
 
   @override
-  final UASimulationEnumType? type;
+  final UASimulationEnumType type;
   @override
-  final int? speed;
+  final int speed;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$UASimulation([void Function(UASimulationBuilder b)? updates]) =>
       (UASimulationBuilder()..update(updates)).build();
@@ -3378,9 +3286,9 @@ class _$UASimulation extends UASimulation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.speed,
-      this.data})
+      required this.type,
+      required this.speed,
+      required this.data})
       : super._();
 
   @override
@@ -3417,9 +3325,9 @@ class _$UASimulation extends UASimulation {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                type?.hashCode ?? null.hashCode),
-            speed?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                type.hashCode),
+            speed.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -3553,11 +3461,11 @@ class _$DynamicsSimParam extends DynamicsSimParam {
   final int dstEnt;
 
   @override
-  final DynamicsSimParamEnumOp? op;
+  final DynamicsSimParamEnumOp op;
   @override
-  final double? tas2accPgain;
+  final double tas2accPgain;
   @override
-  final double? bank2pPgain;
+  final double bank2pPgain;
 
   factory _$DynamicsSimParam(
           [void Function(DynamicsSimParamBuilder b)? updates]) =>
@@ -3569,9 +3477,9 @@ class _$DynamicsSimParam extends DynamicsSimParam {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.tas2accPgain,
-      this.bank2pPgain})
+      required this.op,
+      required this.tas2accPgain,
+      required this.bank2pPgain})
       : super._();
 
   @override
@@ -3593,13 +3501,9 @@ class _$DynamicsSimParam extends DynamicsSimParam {
         dstEnt == other.dstEnt &&
         op == other.op &&
         (tas2accPgain == other.tas2accPgain ||
-            (tas2accPgain != null &&
-                other.tas2accPgain != null &&
-                (tas2accPgain! - other.tas2accPgain! <= 1E-7))) &&
+            tas2accPgain - other.tas2accPgain <= 1E-7) &&
         (bank2pPgain == other.bank2pPgain ||
-            (bank2pPgain != null &&
-                other.bank2pPgain != null &&
-                (bank2pPgain! - other.bank2pPgain! <= 1E-7)));
+            bank2pPgain - other.bank2pPgain <= 1E-7);
   }
 
   @override
@@ -3615,9 +3519,9 @@ class _$DynamicsSimParam extends DynamicsSimParam {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                op?.hashCode ?? null.hashCode),
-            tas2accPgain?.hashCode ?? null.hashCode),
-        bank2pPgain?.hashCode ?? null.hashCode));
+                op.hashCode),
+            tas2accPgain.hashCode),
+        bank2pPgain.hashCode));
   }
 
   @override
@@ -3752,9 +3656,9 @@ class _$StorageUsage extends StorageUsage {
   final int dstEnt;
 
   @override
-  final int? available;
+  final int available;
   @override
-  final int? value;
+  final int value;
 
   factory _$StorageUsage([void Function(StorageUsageBuilder b)? updates]) =>
       (StorageUsageBuilder()..update(updates)).build();
@@ -3765,8 +3669,8 @@ class _$StorageUsage extends StorageUsage {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.available,
-      this.value})
+      required this.available,
+      required this.value})
       : super._();
 
   @override
@@ -3801,8 +3705,8 @@ class _$StorageUsage extends StorageUsage {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            available?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            available.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -3929,9 +3833,9 @@ class _$CacheControl extends CacheControl {
   final int dstEnt;
 
   @override
-  final CacheControlEnumOp? op;
+  final CacheControlEnumOp op;
   @override
-  final String? snapshot;
+  final String snapshot;
   @override
   final ImcMessage? message;
 
@@ -3944,8 +3848,8 @@ class _$CacheControl extends CacheControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.snapshot,
+      required this.op,
+      required this.snapshot,
       this.message})
       : super._();
 
@@ -3983,8 +3887,8 @@ class _$CacheControl extends CacheControl {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                op?.hashCode ?? null.hashCode),
-            snapshot?.hashCode ?? null.hashCode),
+                op.hashCode),
+            snapshot.hashCode),
         message?.hashCode ?? null.hashCode));
   }
 
@@ -4119,9 +4023,9 @@ class _$LoggingControl extends LoggingControl {
   final int dstEnt;
 
   @override
-  final LoggingControlEnumOp? op;
+  final LoggingControlEnumOp op;
   @override
-  final String? name;
+  final String name;
 
   factory _$LoggingControl([void Function(LoggingControlBuilder b)? updates]) =>
       (LoggingControlBuilder()..update(updates)).build();
@@ -4132,8 +4036,8 @@ class _$LoggingControl extends LoggingControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.name})
+      required this.op,
+      required this.name})
       : super._();
 
   @override
@@ -4168,8 +4072,8 @@ class _$LoggingControl extends LoggingControl {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        name?.hashCode ?? null.hashCode));
+            op.hashCode),
+        name.hashCode));
   }
 
   @override
@@ -4296,13 +4200,13 @@ class _$LogBookEntry extends LogBookEntry {
   final int dstEnt;
 
   @override
-  final LogBookEntryEnumType? type;
+  final LogBookEntryEnumType type;
   @override
-  final double? htime;
+  final double htime;
   @override
-  final String? context;
+  final String context;
   @override
-  final String? text;
+  final String text;
 
   factory _$LogBookEntry([void Function(LogBookEntryBuilder b)? updates]) =>
       (LogBookEntryBuilder()..update(updates)).build();
@@ -4313,10 +4217,10 @@ class _$LogBookEntry extends LogBookEntry {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.htime,
-      this.context,
-      this.text})
+      required this.type,
+      required this.htime,
+      required this.context,
+      required this.text})
       : super._();
 
   @override
@@ -4336,10 +4240,7 @@ class _$LogBookEntry extends LogBookEntry {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         type == other.type &&
-        (htime == other.htime ||
-            (htime != null &&
-                other.htime != null &&
-                (htime! - other.htime! <= 1E-7))) &&
+        (htime == other.htime || htime - other.htime <= 1E-7) &&
         context == other.context &&
         text == other.text;
   }
@@ -4360,10 +4261,10 @@ class _$LogBookEntry extends LogBookEntry {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    type?.hashCode ?? null.hashCode),
-                htime?.hashCode ?? null.hashCode),
-            context?.hashCode ?? null.hashCode),
-        text?.hashCode ?? null.hashCode));
+                    type.hashCode),
+                htime.hashCode),
+            context.hashCode),
+        text.hashCode));
   }
 
   @override
@@ -4504,11 +4405,11 @@ class _$LogBookControl extends LogBookControl {
   final int dstEnt;
 
   @override
-  final LogBookControlEnumCommand? command;
+  final LogBookControlEnumCommand command;
   @override
-  final double? htime;
+  final double htime;
   @override
-  final List<LogBookEntry>? msg;
+  final List<LogBookEntry> msg;
 
   factory _$LogBookControl([void Function(LogBookControlBuilder b)? updates]) =>
       (LogBookControlBuilder()..update(updates)).build();
@@ -4519,9 +4420,9 @@ class _$LogBookControl extends LogBookControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.command,
-      this.htime,
-      this.msg})
+      required this.command,
+      required this.htime,
+      required this.msg})
       : super._();
 
   @override
@@ -4541,10 +4442,7 @@ class _$LogBookControl extends LogBookControl {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         command == other.command &&
-        (htime == other.htime ||
-            (htime != null &&
-                other.htime != null &&
-                (htime! - other.htime! <= 1E-7))) &&
+        (htime == other.htime || htime - other.htime <= 1E-7) &&
         DeepCollectionEquality().equals(msg, other.msg);
   }
 
@@ -4561,9 +4459,9 @@ class _$LogBookControl extends LogBookControl {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                command?.hashCode ?? null.hashCode),
-            htime?.hashCode ?? null.hashCode),
-        msg?.hashCode ?? null.hashCode));
+                command.hashCode),
+            htime.hashCode),
+        msg.hashCode));
   }
 
   @override
@@ -4697,9 +4595,9 @@ class _$ReplayControl extends ReplayControl {
   final int dstEnt;
 
   @override
-  final ReplayControlEnumOp? op;
+  final ReplayControlEnumOp op;
   @override
-  final String? file;
+  final String file;
 
   factory _$ReplayControl([void Function(ReplayControlBuilder b)? updates]) =>
       (ReplayControlBuilder()..update(updates)).build();
@@ -4710,8 +4608,8 @@ class _$ReplayControl extends ReplayControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.file})
+      required this.op,
+      required this.file})
       : super._();
 
   @override
@@ -4746,8 +4644,8 @@ class _$ReplayControl extends ReplayControl {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        file?.hashCode ?? null.hashCode));
+            op.hashCode),
+        file.hashCode));
   }
 
   @override
@@ -4874,11 +4772,11 @@ class _$ClockControl extends ClockControl {
   final int dstEnt;
 
   @override
-  final ClockControlEnumOp? op;
+  final ClockControlEnumOp op;
   @override
-  final double? clock;
+  final double clock;
   @override
-  final int? tz;
+  final int tz;
 
   factory _$ClockControl([void Function(ClockControlBuilder b)? updates]) =>
       (ClockControlBuilder()..update(updates)).build();
@@ -4889,9 +4787,9 @@ class _$ClockControl extends ClockControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.clock,
-      this.tz})
+      required this.op,
+      required this.clock,
+      required this.tz})
       : super._();
 
   @override
@@ -4911,10 +4809,7 @@ class _$ClockControl extends ClockControl {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (clock == other.clock ||
-            (clock != null &&
-                other.clock != null &&
-                (clock! - other.clock! <= 1E-7))) &&
+        (clock == other.clock || clock - other.clock <= 1E-7) &&
         tz == other.tz;
   }
 
@@ -4931,9 +4826,9 @@ class _$ClockControl extends ClockControl {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                op?.hashCode ?? null.hashCode),
-            clock?.hashCode ?? null.hashCode),
-        tz?.hashCode ?? null.hashCode));
+                op.hashCode),
+            clock.hashCode),
+        tz.hashCode));
   }
 
   @override
@@ -5067,11 +4962,11 @@ class _$HistoricCTD extends HistoricCTD {
   final int dstEnt;
 
   @override
-  final double? conductivity;
+  final double conductivity;
   @override
-  final double? temperature;
+  final double temperature;
   @override
-  final double? depth;
+  final double depth;
 
   factory _$HistoricCTD([void Function(HistoricCTDBuilder b)? updates]) =>
       (HistoricCTDBuilder()..update(updates)).build();
@@ -5082,9 +4977,9 @@ class _$HistoricCTD extends HistoricCTD {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.conductivity,
-      this.temperature,
-      this.depth})
+      required this.conductivity,
+      required this.temperature,
+      required this.depth})
       : super._();
 
   @override
@@ -5104,17 +4999,10 @@ class _$HistoricCTD extends HistoricCTD {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         (conductivity == other.conductivity ||
-            (conductivity != null &&
-                other.conductivity != null &&
-                (conductivity! - other.conductivity! <= 1E-7))) &&
+            conductivity - other.conductivity <= 1E-7) &&
         (temperature == other.temperature ||
-            (temperature != null &&
-                other.temperature != null &&
-                (temperature! - other.temperature! <= 1E-7))) &&
-        (depth == other.depth ||
-            (depth != null &&
-                other.depth != null &&
-                (depth! - other.depth! <= 1E-7)));
+            temperature - other.temperature <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7);
   }
 
   @override
@@ -5130,9 +5018,9 @@ class _$HistoricCTD extends HistoricCTD {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                conductivity?.hashCode ?? null.hashCode),
-            temperature?.hashCode ?? null.hashCode),
-        depth?.hashCode ?? null.hashCode));
+                conductivity.hashCode),
+            temperature.hashCode),
+        depth.hashCode));
   }
 
   @override
@@ -5266,15 +5154,15 @@ class _$HistoricTelemetry extends HistoricTelemetry {
   final int dstEnt;
 
   @override
-  final double? altitude;
+  final double altitude;
   @override
-  final int? roll;
+  final int roll;
   @override
-  final int? pitch;
+  final int pitch;
   @override
-  final int? yaw;
+  final int yaw;
   @override
-  final int? speed;
+  final int speed;
 
   factory _$HistoricTelemetry(
           [void Function(HistoricTelemetryBuilder b)? updates]) =>
@@ -5286,11 +5174,11 @@ class _$HistoricTelemetry extends HistoricTelemetry {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.altitude,
-      this.roll,
-      this.pitch,
-      this.yaw,
-      this.speed})
+      required this.altitude,
+      required this.roll,
+      required this.pitch,
+      required this.yaw,
+      required this.speed})
       : super._();
 
   @override
@@ -5311,10 +5199,7 @@ class _$HistoricTelemetry extends HistoricTelemetry {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (altitude == other.altitude ||
-            (altitude != null &&
-                other.altitude != null &&
-                (altitude! - other.altitude! <= 1E-7))) &&
+        (altitude == other.altitude || altitude - other.altitude <= 1E-7) &&
         roll == other.roll &&
         pitch == other.pitch &&
         yaw == other.yaw &&
@@ -5340,11 +5225,11 @@ class _$HistoricTelemetry extends HistoricTelemetry {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        altitude?.hashCode ?? null.hashCode),
-                    roll?.hashCode ?? null.hashCode),
-                pitch?.hashCode ?? null.hashCode),
-            yaw?.hashCode ?? null.hashCode),
-        speed?.hashCode ?? null.hashCode));
+                        altitude.hashCode),
+                    roll.hashCode),
+                pitch.hashCode),
+            yaw.hashCode),
+        speed.hashCode));
   }
 
   @override
@@ -5493,19 +5378,19 @@ class _$HistoricSonarData extends HistoricSonarData {
   final int dstEnt;
 
   @override
-  final double? altitude;
+  final double altitude;
   @override
-  final double? width;
+  final double width;
   @override
-  final double? length;
+  final double length;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final int? pxl;
+  final int pxl;
   @override
-  final HistoricSonarDataEnumEncoding? encoding;
+  final HistoricSonarDataEnumEncoding encoding;
   @override
-  final List<int>? sonarData;
+  final List<int> sonarData;
 
   factory _$HistoricSonarData(
           [void Function(HistoricSonarDataBuilder b)? updates]) =>
@@ -5517,13 +5402,13 @@ class _$HistoricSonarData extends HistoricSonarData {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.altitude,
-      this.width,
-      this.length,
-      this.bearing,
-      this.pxl,
-      this.encoding,
-      this.sonarData})
+      required this.altitude,
+      required this.width,
+      required this.length,
+      required this.bearing,
+      required this.pxl,
+      required this.encoding,
+      required this.sonarData})
       : super._();
 
   @override
@@ -5544,22 +5429,10 @@ class _$HistoricSonarData extends HistoricSonarData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (altitude == other.altitude ||
-            (altitude != null &&
-                other.altitude != null &&
-                (altitude! - other.altitude! <= 1E-7))) &&
-        (width == other.width ||
-            (width != null &&
-                other.width != null &&
-                (width! - other.width! <= 1E-7))) &&
-        (length == other.length ||
-            (length != null &&
-                other.length != null &&
-                (length! - other.length! <= 1E-7))) &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
+        (altitude == other.altitude || altitude - other.altitude <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         pxl == other.pxl &&
         encoding == other.encoding &&
         ListEquality().equals(sonarData, other.sonarData);
@@ -5586,13 +5459,13 @@ class _$HistoricSonarData extends HistoricSonarData {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                altitude?.hashCode ?? null.hashCode),
-                            width?.hashCode ?? null.hashCode),
-                        length?.hashCode ?? null.hashCode),
-                    bearing?.hashCode ?? null.hashCode),
-                pxl?.hashCode ?? null.hashCode),
-            encoding?.hashCode ?? null.hashCode),
-        sonarData?.hashCode ?? null.hashCode));
+                                altitude.hashCode),
+                            width.hashCode),
+                        length.hashCode),
+                    bearing.hashCode),
+                pxl.hashCode),
+            encoding.hashCode),
+        sonarData.hashCode));
   }
 
   @override
@@ -5756,9 +5629,9 @@ class _$HistoricEvent extends HistoricEvent {
   final int dstEnt;
 
   @override
-  final String? text;
+  final String text;
   @override
-  final HistoricEventEnumType? type;
+  final HistoricEventEnumType type;
 
   factory _$HistoricEvent([void Function(HistoricEventBuilder b)? updates]) =>
       (HistoricEventBuilder()..update(updates)).build();
@@ -5769,8 +5642,8 @@ class _$HistoricEvent extends HistoricEvent {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.text,
-      this.type})
+      required this.text,
+      required this.type})
       : super._();
 
   @override
@@ -5805,8 +5678,8 @@ class _$HistoricEvent extends HistoricEvent {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            text?.hashCode ?? null.hashCode),
-        type?.hashCode ?? null.hashCode));
+            text.hashCode),
+        type.hashCode));
   }
 
   @override
@@ -5933,15 +5806,15 @@ class _$VerticalProfile extends VerticalProfile {
   final int dstEnt;
 
   @override
-  final VerticalProfileEnumParameter? parameter;
+  final VerticalProfileEnumParameter parameter;
   @override
-  final int? numSamples;
+  final int numSamples;
   @override
-  final List<ProfileSample>? samples;
+  final List<ProfileSample> samples;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
 
   factory _$VerticalProfile(
           [void Function(VerticalProfileBuilder b)? updates]) =>
@@ -5953,11 +5826,11 @@ class _$VerticalProfile extends VerticalProfile {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.parameter,
-      this.numSamples,
-      this.samples,
-      this.lat,
-      this.lon})
+      required this.parameter,
+      required this.numSamples,
+      required this.samples,
+      required this.lat,
+      required this.lon})
       : super._();
 
   @override
@@ -5979,12 +5852,8 @@ class _$VerticalProfile extends VerticalProfile {
         parameter == other.parameter &&
         numSamples == other.numSamples &&
         DeepCollectionEquality().equals(samples, other.samples) &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null && other.lon != null && (lon! - other.lon! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7);
   }
 
   @override
@@ -6006,11 +5875,11 @@ class _$VerticalProfile extends VerticalProfile {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        parameter?.hashCode ?? null.hashCode),
-                    numSamples?.hashCode ?? null.hashCode),
-                samples?.hashCode ?? null.hashCode),
-            lat?.hashCode ?? null.hashCode),
-        lon?.hashCode ?? null.hashCode));
+                        parameter.hashCode),
+                    numSamples.hashCode),
+                samples.hashCode),
+            lat.hashCode),
+        lon.hashCode));
   }
 
   @override
@@ -6024,10 +5893,8 @@ class _$VerticalProfile extends VerticalProfile {
           ..add('parameter', '$parameter (Enumerated)')
           ..add('numSamples', '$numSamples')
           ..add('samples', '$samples')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -6162,9 +6029,9 @@ class _$ProfileSample extends ProfileSample {
   final int dstEnt;
 
   @override
-  final int? depth;
+  final int depth;
   @override
-  final double? avg;
+  final double avg;
 
   factory _$ProfileSample([void Function(ProfileSampleBuilder b)? updates]) =>
       (ProfileSampleBuilder()..update(updates)).build();
@@ -6175,8 +6042,8 @@ class _$ProfileSample extends ProfileSample {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.depth,
-      this.avg})
+      required this.depth,
+      required this.avg})
       : super._();
 
   @override
@@ -6196,8 +6063,7 @@ class _$ProfileSample extends ProfileSample {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         depth == other.depth &&
-        (avg == other.avg ||
-            (avg != null && other.avg != null && (avg! - other.avg! <= 1E-7)));
+        (avg == other.avg || avg - other.avg <= 1E-7);
   }
 
   @override
@@ -6212,8 +6078,8 @@ class _$ProfileSample extends ProfileSample {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            depth?.hashCode ?? null.hashCode),
-        avg?.hashCode ?? null.hashCode));
+            depth.hashCode),
+        avg.hashCode));
   }
 
   @override
@@ -6488,19 +6354,19 @@ class _$Announce extends Announce {
   final int dstEnt;
 
   @override
-  final String? sysName;
+  final String sysName;
   @override
-  final SystemTypeEnum? sysType;
+  final SystemTypeEnum sysType;
   @override
-  final int? owner;
+  final int owner;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? height;
+  final double height;
   @override
-  final String? services;
+  final String services;
 
   factory _$Announce([void Function(AnnounceBuilder b)? updates]) =>
       (AnnounceBuilder()..update(updates)).build();
@@ -6511,13 +6377,13 @@ class _$Announce extends Announce {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sysName,
-      this.sysType,
-      this.owner,
-      this.lat,
-      this.lon,
-      this.height,
-      this.services})
+      required this.sysName,
+      required this.sysType,
+      required this.owner,
+      required this.lat,
+      required this.lon,
+      required this.height,
+      required this.services})
       : super._();
 
   @override
@@ -6539,18 +6405,9 @@ class _$Announce extends Announce {
         sysName == other.sysName &&
         sysType == other.sysType &&
         owner == other.owner &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (height == other.height ||
-            (height != null &&
-                other.height != null &&
-                (height! - other.height! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
         services == other.services;
   }
 
@@ -6575,13 +6432,13 @@ class _$Announce extends Announce {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                sysName?.hashCode ?? null.hashCode),
-                            sysType?.hashCode ?? null.hashCode),
-                        owner?.hashCode ?? null.hashCode),
-                    lat?.hashCode ?? null.hashCode),
-                lon?.hashCode ?? null.hashCode),
-            height?.hashCode ?? null.hashCode),
-        services?.hashCode ?? null.hashCode));
+                                sysName.hashCode),
+                            sysType.hashCode),
+                        owner.hashCode),
+                    lat.hashCode),
+                lon.hashCode),
+            height.hashCode),
+        services.hashCode));
   }
 
   @override
@@ -6595,10 +6452,8 @@ class _$Announce extends Announce {
           ..add('sysName', '$sysName')
           ..add('sysType', '$sysType (Enumerated)')
           ..add('owner', '$owner')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
           ..add('services', '$services'))
         .toString();
@@ -6745,9 +6600,9 @@ class _$AnnounceService extends AnnounceService {
   final int dstEnt;
 
   @override
-  final String? service;
+  final String service;
   @override
-  final AnnounceServiceBitfieldServiceType? serviceType;
+  final AnnounceServiceBitfieldServiceType serviceType;
 
   factory _$AnnounceService(
           [void Function(AnnounceServiceBuilder b)? updates]) =>
@@ -6759,8 +6614,8 @@ class _$AnnounceService extends AnnounceService {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.service,
-      this.serviceType})
+      required this.service,
+      required this.serviceType})
       : super._();
 
   @override
@@ -6795,8 +6650,8 @@ class _$AnnounceService extends AnnounceService {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            service?.hashCode ?? null.hashCode),
-        serviceType?.hashCode ?? null.hashCode));
+            service.hashCode),
+        serviceType.hashCode));
   }
 
   @override
@@ -6926,7 +6781,7 @@ class _$RSSI extends RSSI {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$RSSI([void Function(RSSIBuilder b)? updates]) =>
       (RSSIBuilder()..update(updates)).build();
@@ -6937,7 +6792,7 @@ class _$RSSI extends RSSI {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -6956,10 +6811,7 @@ class _$RSSI extends RSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -6973,7 +6825,7 @@ class _$RSSI extends RSSI {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -7093,7 +6945,7 @@ class _$VSWR extends VSWR {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$VSWR([void Function(VSWRBuilder b)? updates]) =>
       (VSWRBuilder()..update(updates)).build();
@@ -7104,7 +6956,7 @@ class _$VSWR extends VSWR {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -7123,10 +6975,7 @@ class _$VSWR extends VSWR {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -7140,7 +6989,7 @@ class _$VSWR extends VSWR {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -7260,7 +7109,7 @@ class _$LinkLevel extends LinkLevel {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$LinkLevel([void Function(LinkLevelBuilder b)? updates]) =>
       (LinkLevelBuilder()..update(updates)).build();
@@ -7271,7 +7120,7 @@ class _$LinkLevel extends LinkLevel {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -7290,10 +7139,7 @@ class _$LinkLevel extends LinkLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -7307,7 +7153,7 @@ class _$LinkLevel extends LinkLevel {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -7427,11 +7273,11 @@ class _$Sms extends Sms {
   final int dstEnt;
 
   @override
-  final String? number;
+  final String number;
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final String? contents;
+  final String contents;
 
   factory _$Sms([void Function(SmsBuilder b)? updates]) =>
       (SmsBuilder()..update(updates)).build();
@@ -7442,9 +7288,9 @@ class _$Sms extends Sms {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.number,
-      this.timeout,
-      this.contents})
+      required this.number,
+      required this.timeout,
+      required this.contents})
       : super._();
 
   @override
@@ -7481,9 +7327,9 @@ class _$Sms extends Sms {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                number?.hashCode ?? null.hashCode),
-            timeout?.hashCode ?? null.hashCode),
-        contents?.hashCode ?? null.hashCode));
+                number.hashCode),
+            timeout.hashCode),
+        contents.hashCode));
   }
 
   @override
@@ -7617,13 +7463,13 @@ class _$SmsTx extends SmsTx {
   final int dstEnt;
 
   @override
-  final int? seq;
+  final int seq;
   @override
-  final String? destination;
+  final String destination;
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$SmsTx([void Function(SmsTxBuilder b)? updates]) =>
       (SmsTxBuilder()..update(updates)).build();
@@ -7634,10 +7480,10 @@ class _$SmsTx extends SmsTx {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.seq,
-      this.destination,
-      this.timeout,
-      this.data})
+      required this.seq,
+      required this.destination,
+      required this.timeout,
+      required this.data})
       : super._();
 
   @override
@@ -7678,10 +7524,10 @@ class _$SmsTx extends SmsTx {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    seq?.hashCode ?? null.hashCode),
-                destination?.hashCode ?? null.hashCode),
-            timeout?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                    seq.hashCode),
+                destination.hashCode),
+            timeout.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -7822,9 +7668,9 @@ class _$SmsRx extends SmsRx {
   final int dstEnt;
 
   @override
-  final String? source;
+  final String source;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$SmsRx([void Function(SmsRxBuilder b)? updates]) =>
       (SmsRxBuilder()..update(updates)).build();
@@ -7835,8 +7681,8 @@ class _$SmsRx extends SmsRx {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.source,
-      this.data})
+      required this.source,
+      required this.data})
       : super._();
 
   @override
@@ -7871,8 +7717,8 @@ class _$SmsRx extends SmsRx {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            source?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+            source.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -7999,11 +7845,11 @@ class _$SmsState extends SmsState {
   final int dstEnt;
 
   @override
-  final int? seq;
+  final int seq;
   @override
-  final SmsStateEnumState? state;
+  final SmsStateEnumState state;
   @override
-  final String? error;
+  final String error;
 
   factory _$SmsState([void Function(SmsStateBuilder b)? updates]) =>
       (SmsStateBuilder()..update(updates)).build();
@@ -8014,9 +7860,9 @@ class _$SmsState extends SmsState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.seq,
-      this.state,
-      this.error})
+      required this.seq,
+      required this.state,
+      required this.error})
       : super._();
 
   @override
@@ -8053,9 +7899,9 @@ class _$SmsState extends SmsState {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                seq?.hashCode ?? null.hashCode),
-            state?.hashCode ?? null.hashCode),
-        error?.hashCode ?? null.hashCode));
+                seq.hashCode),
+            state.hashCode),
+        error.hashCode));
   }
 
   @override
@@ -8189,9 +8035,9 @@ class _$TextMessage extends TextMessage {
   final int dstEnt;
 
   @override
-  final String? origin;
+  final String origin;
   @override
-  final String? text;
+  final String text;
 
   factory _$TextMessage([void Function(TextMessageBuilder b)? updates]) =>
       (TextMessageBuilder()..update(updates)).build();
@@ -8202,8 +8048,8 @@ class _$TextMessage extends TextMessage {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.origin,
-      this.text})
+      required this.origin,
+      required this.text})
       : super._();
 
   @override
@@ -8238,8 +8084,8 @@ class _$TextMessage extends TextMessage {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            origin?.hashCode ?? null.hashCode),
-        text?.hashCode ?? null.hashCode));
+            origin.hashCode),
+        text.hashCode));
   }
 
   @override
@@ -8366,15 +8212,15 @@ class _$IridiumMsgRx extends IridiumMsgRx {
   final int dstEnt;
 
   @override
-  final String? origin;
+  final String origin;
   @override
-  final double? htime;
+  final double htime;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$IridiumMsgRx([void Function(IridiumMsgRxBuilder b)? updates]) =>
       (IridiumMsgRxBuilder()..update(updates)).build();
@@ -8385,11 +8231,11 @@ class _$IridiumMsgRx extends IridiumMsgRx {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.origin,
-      this.htime,
-      this.lat,
-      this.lon,
-      this.data})
+      required this.origin,
+      required this.htime,
+      required this.lat,
+      required this.lon,
+      required this.data})
       : super._();
 
   @override
@@ -8409,18 +8255,9 @@ class _$IridiumMsgRx extends IridiumMsgRx {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         origin == other.origin &&
-        (htime == other.htime ||
-            (htime != null &&
-                other.htime != null &&
-                (htime! - other.htime! <= 1E-7))) &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
+        (htime == other.htime || htime - other.htime <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         ListEquality().equals(data, other.data);
   }
 
@@ -8443,11 +8280,11 @@ class _$IridiumMsgRx extends IridiumMsgRx {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        origin?.hashCode ?? null.hashCode),
-                    htime?.hashCode ?? null.hashCode),
-                lat?.hashCode ?? null.hashCode),
-            lon?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                        origin.hashCode),
+                    htime.hashCode),
+                lat.hashCode),
+            lon.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -8460,10 +8297,8 @@ class _$IridiumMsgRx extends IridiumMsgRx {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('origin', '$origin')
           ..add('htime', '$htime (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('data', '$data'))
         .toString();
   }
@@ -8597,13 +8432,13 @@ class _$IridiumMsgTx extends IridiumMsgTx {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final int? ttl;
+  final int ttl;
   @override
-  final String? destination;
+  final String destination;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$IridiumMsgTx([void Function(IridiumMsgTxBuilder b)? updates]) =>
       (IridiumMsgTxBuilder()..update(updates)).build();
@@ -8614,10 +8449,10 @@ class _$IridiumMsgTx extends IridiumMsgTx {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.ttl,
-      this.destination,
-      this.data})
+      required this.reqId,
+      required this.ttl,
+      required this.destination,
+      required this.data})
       : super._();
 
   @override
@@ -8658,10 +8493,10 @@ class _$IridiumMsgTx extends IridiumMsgTx {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    reqId?.hashCode ?? null.hashCode),
-                ttl?.hashCode ?? null.hashCode),
-            destination?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                    reqId.hashCode),
+                ttl.hashCode),
+            destination.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -8802,11 +8637,11 @@ class _$IridiumTxStatus extends IridiumTxStatus {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final IridiumTxStatusEnumStatus? status;
+  final IridiumTxStatusEnumStatus status;
   @override
-  final String? text;
+  final String text;
 
   factory _$IridiumTxStatus(
           [void Function(IridiumTxStatusBuilder b)? updates]) =>
@@ -8818,9 +8653,9 @@ class _$IridiumTxStatus extends IridiumTxStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.status,
-      this.text})
+      required this.reqId,
+      required this.status,
+      required this.text})
       : super._();
 
   @override
@@ -8857,9 +8692,9 @@ class _$IridiumTxStatus extends IridiumTxStatus {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                reqId?.hashCode ?? null.hashCode),
-            status?.hashCode ?? null.hashCode),
-        text?.hashCode ?? null.hashCode));
+                reqId.hashCode),
+            status.hashCode),
+        text.hashCode));
   }
 
   @override
@@ -8994,9 +8829,9 @@ class _$GroupMembershipState extends GroupMembershipState {
   final int dstEnt;
 
   @override
-  final String? groupName;
+  final String groupName;
   @override
-  final int? links;
+  final int links;
 
   factory _$GroupMembershipState(
           [void Function(GroupMembershipStateBuilder b)? updates]) =>
@@ -9008,8 +8843,8 @@ class _$GroupMembershipState extends GroupMembershipState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.groupName,
-      this.links})
+      required this.groupName,
+      required this.links})
       : super._();
 
   @override
@@ -9046,8 +8881,8 @@ class _$GroupMembershipState extends GroupMembershipState {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            groupName?.hashCode ?? null.hashCode),
-        links?.hashCode ?? null.hashCode));
+            groupName.hashCode),
+        links.hashCode));
   }
 
   @override
@@ -9177,11 +9012,11 @@ class _$SystemGroup extends SystemGroup {
   final int dstEnt;
 
   @override
-  final String? groupName;
+  final String groupName;
   @override
-  final SystemGroupEnumAction? action;
+  final SystemGroupEnumAction action;
   @override
-  final String? groupList;
+  final String groupList;
 
   factory _$SystemGroup([void Function(SystemGroupBuilder b)? updates]) =>
       (SystemGroupBuilder()..update(updates)).build();
@@ -9192,9 +9027,9 @@ class _$SystemGroup extends SystemGroup {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.groupName,
-      this.action,
-      this.groupList})
+      required this.groupName,
+      required this.action,
+      required this.groupList})
       : super._();
 
   @override
@@ -9231,9 +9066,9 @@ class _$SystemGroup extends SystemGroup {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                groupName?.hashCode ?? null.hashCode),
-            action?.hashCode ?? null.hashCode),
-        groupList?.hashCode ?? null.hashCode));
+                groupName.hashCode),
+            action.hashCode),
+        groupList.hashCode));
   }
 
   @override
@@ -9367,9 +9202,9 @@ class _$LinkLatency extends LinkLatency {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
   @override
-  final int? sysSrc;
+  final int sysSrc;
 
   factory _$LinkLatency([void Function(LinkLatencyBuilder b)? updates]) =>
       (LinkLatencyBuilder()..update(updates)).build();
@@ -9380,8 +9215,8 @@ class _$LinkLatency extends LinkLatency {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value,
-      this.sysSrc})
+      required this.value,
+      required this.sysSrc})
       : super._();
 
   @override
@@ -9400,10 +9235,7 @@ class _$LinkLatency extends LinkLatency {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         sysSrc == other.sysSrc;
   }
 
@@ -9419,8 +9251,8 @@ class _$LinkLatency extends LinkLatency {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            value?.hashCode ?? null.hashCode),
-        sysSrc?.hashCode ?? null.hashCode));
+            value.hashCode),
+        sysSrc.hashCode));
   }
 
   @override
@@ -9547,9 +9379,9 @@ class _$ExtendedRSSI extends ExtendedRSSI {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
   @override
-  final RSSIUnitsEnum? units;
+  final RSSIUnitsEnum units;
 
   factory _$ExtendedRSSI([void Function(ExtendedRSSIBuilder b)? updates]) =>
       (ExtendedRSSIBuilder()..update(updates)).build();
@@ -9560,8 +9392,8 @@ class _$ExtendedRSSI extends ExtendedRSSI {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value,
-      this.units})
+      required this.value,
+      required this.units})
       : super._();
 
   @override
@@ -9580,10 +9412,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         units == other.units;
   }
 
@@ -9599,8 +9428,8 @@ class _$ExtendedRSSI extends ExtendedRSSI {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            value?.hashCode ?? null.hashCode),
-        units?.hashCode ?? null.hashCode));
+            value.hashCode),
+        units.hashCode));
   }
 
   @override
@@ -9727,13 +9556,13 @@ class _$HistoricData extends HistoricData {
   final int dstEnt;
 
   @override
-  final double? baseLat;
+  final double baseLat;
   @override
-  final double? baseLon;
+  final double baseLon;
   @override
-  final double? baseTime;
+  final double baseTime;
   @override
-  final List<RemoteData>? data;
+  final List<RemoteData> data;
 
   factory _$HistoricData([void Function(HistoricDataBuilder b)? updates]) =>
       (HistoricDataBuilder()..update(updates)).build();
@@ -9744,10 +9573,10 @@ class _$HistoricData extends HistoricData {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.baseLat,
-      this.baseLon,
-      this.baseTime,
-      this.data})
+      required this.baseLat,
+      required this.baseLon,
+      required this.baseTime,
+      required this.data})
       : super._();
 
   @override
@@ -9766,18 +9595,9 @@ class _$HistoricData extends HistoricData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (baseLat == other.baseLat ||
-            (baseLat != null &&
-                other.baseLat != null &&
-                (baseLat! - other.baseLat! <= 1E-7))) &&
-        (baseLon == other.baseLon ||
-            (baseLon != null &&
-                other.baseLon != null &&
-                (baseLon! - other.baseLon! <= 1E-7))) &&
-        (baseTime == other.baseTime ||
-            (baseTime != null &&
-                other.baseTime != null &&
-                (baseTime! - other.baseTime! <= 1E-7))) &&
+        (baseLat == other.baseLat || baseLat - other.baseLat <= 1E-7) &&
+        (baseLon == other.baseLon || baseLon - other.baseLon <= 1E-7) &&
+        (baseTime == other.baseTime || baseTime - other.baseTime <= 1E-7) &&
         DeepCollectionEquality().equals(data, other.data);
   }
 
@@ -9797,10 +9617,10 @@ class _$HistoricData extends HistoricData {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    baseLat?.hashCode ?? null.hashCode),
-                baseLon?.hashCode ?? null.hashCode),
-            baseTime?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                    baseLat.hashCode),
+                baseLon.hashCode),
+            baseTime.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -9941,13 +9761,13 @@ class _$CompressedHistory extends CompressedHistory {
   final int dstEnt;
 
   @override
-  final double? baseLat;
+  final double baseLat;
   @override
-  final double? baseLon;
+  final double baseLon;
   @override
-  final double? baseTime;
+  final double baseTime;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$CompressedHistory(
           [void Function(CompressedHistoryBuilder b)? updates]) =>
@@ -9959,10 +9779,10 @@ class _$CompressedHistory extends CompressedHistory {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.baseLat,
-      this.baseLon,
-      this.baseTime,
-      this.data})
+      required this.baseLat,
+      required this.baseLon,
+      required this.baseTime,
+      required this.data})
       : super._();
 
   @override
@@ -9983,18 +9803,9 @@ class _$CompressedHistory extends CompressedHistory {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (baseLat == other.baseLat ||
-            (baseLat != null &&
-                other.baseLat != null &&
-                (baseLat! - other.baseLat! <= 1E-7))) &&
-        (baseLon == other.baseLon ||
-            (baseLon != null &&
-                other.baseLon != null &&
-                (baseLon! - other.baseLon! <= 1E-7))) &&
-        (baseTime == other.baseTime ||
-            (baseTime != null &&
-                other.baseTime != null &&
-                (baseTime! - other.baseTime! <= 1E-7))) &&
+        (baseLat == other.baseLat || baseLat - other.baseLat <= 1E-7) &&
+        (baseLon == other.baseLon || baseLon - other.baseLon <= 1E-7) &&
+        (baseTime == other.baseTime || baseTime - other.baseTime <= 1E-7) &&
         ListEquality().equals(data, other.data);
   }
 
@@ -10014,10 +9825,10 @@ class _$CompressedHistory extends CompressedHistory {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    baseLat?.hashCode ?? null.hashCode),
-                baseLon?.hashCode ?? null.hashCode),
-            baseTime?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                    baseLat.hashCode),
+                baseLon.hashCode),
+            baseTime.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -10159,17 +9970,17 @@ class _$HistoricSample extends HistoricSample {
   final int dstEnt;
 
   @override
-  final int? sysId;
+  final int sysId;
   @override
-  final int? priority;
+  final int priority;
   @override
-  final int? x;
+  final int x;
   @override
-  final int? y;
+  final int y;
   @override
-  final int? z;
+  final int z;
   @override
-  final int? t;
+  final int t;
   @override
   final ImcMessage? sample;
 
@@ -10182,12 +9993,12 @@ class _$HistoricSample extends HistoricSample {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sysId,
-      this.priority,
-      this.x,
-      this.y,
-      this.z,
-      this.t,
+      required this.sysId,
+      required this.priority,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.t,
       this.sample})
       : super._();
 
@@ -10237,12 +10048,12 @@ class _$HistoricSample extends HistoricSample {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                sysId?.hashCode ?? null.hashCode),
-                            priority?.hashCode ?? null.hashCode),
-                        x?.hashCode ?? null.hashCode),
-                    y?.hashCode ?? null.hashCode),
-                z?.hashCode ?? null.hashCode),
-            t?.hashCode ?? null.hashCode),
+                                sysId.hashCode),
+                            priority.hashCode),
+                        x.hashCode),
+                    y.hashCode),
+                z.hashCode),
+            t.hashCode),
         sample?.hashCode ?? null.hashCode));
   }
 
@@ -10405,11 +10216,11 @@ class _$HistoricDataQuery extends HistoricDataQuery {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final HistoricDataQueryEnumType? type;
+  final HistoricDataQueryEnumType type;
   @override
-  final int? maxSize;
+  final int maxSize;
   @override
   final HistoricData? data;
 
@@ -10423,9 +10234,9 @@ class _$HistoricDataQuery extends HistoricDataQuery {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.type,
-      this.maxSize,
+      required this.reqId,
+      required this.type,
+      required this.maxSize,
       this.data})
       : super._();
 
@@ -10469,9 +10280,9 @@ class _$HistoricDataQuery extends HistoricDataQuery {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    reqId?.hashCode ?? null.hashCode),
-                type?.hashCode ?? null.hashCode),
-            maxSize?.hashCode ?? null.hashCode),
+                    reqId.hashCode),
+                type.hashCode),
+            maxSize.hashCode),
         data?.hashCode ?? null.hashCode));
   }
 
@@ -10614,11 +10425,11 @@ class _$RemoteCommand extends RemoteCommand {
   final int dstEnt;
 
   @override
-  final int? originalSource;
+  final int originalSource;
   @override
-  final int? destination;
+  final int destination;
   @override
-  final double? timeout;
+  final double timeout;
   @override
   final ImcMessage? cmd;
 
@@ -10631,9 +10442,9 @@ class _$RemoteCommand extends RemoteCommand {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.originalSource,
-      this.destination,
-      this.timeout,
+      required this.originalSource,
+      required this.destination,
+      required this.timeout,
       this.cmd})
       : super._();
 
@@ -10655,10 +10466,7 @@ class _$RemoteCommand extends RemoteCommand {
         dstEnt == other.dstEnt &&
         originalSource == other.originalSource &&
         destination == other.destination &&
-        (timeout == other.timeout ||
-            (timeout != null &&
-                other.timeout != null &&
-                (timeout! - other.timeout! <= 1E-7))) &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
         cmd == other.cmd;
   }
 
@@ -10678,9 +10486,9 @@ class _$RemoteCommand extends RemoteCommand {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    originalSource?.hashCode ?? null.hashCode),
-                destination?.hashCode ?? null.hashCode),
-            timeout?.hashCode ?? null.hashCode),
+                    originalSource.hashCode),
+                destination.hashCode),
+            timeout.hashCode),
         cmd?.hashCode ?? null.hashCode));
   }
 
@@ -10823,13 +10631,13 @@ class _$CommSystemsQuery extends CommSystemsQuery {
   final int dstEnt;
 
   @override
-  final CommSystemsQueryBitfieldType? type;
+  final CommSystemsQueryBitfieldType type;
   @override
-  final CommSystemsQueryBitfieldCommInterface? commInterface;
+  final CommSystemsQueryBitfieldCommInterface commInterface;
   @override
-  final CommSystemsQueryEnumModel? model;
+  final CommSystemsQueryEnumModel model;
   @override
-  final String? list;
+  final String list;
 
   factory _$CommSystemsQuery(
           [void Function(CommSystemsQueryBuilder b)? updates]) =>
@@ -10841,10 +10649,10 @@ class _$CommSystemsQuery extends CommSystemsQuery {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.commInterface,
-      this.model,
-      this.list})
+      required this.type,
+      required this.commInterface,
+      required this.model,
+      required this.list})
       : super._();
 
   @override
@@ -10886,10 +10694,10 @@ class _$CommSystemsQuery extends CommSystemsQuery {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    type?.hashCode ?? null.hashCode),
-                commInterface?.hashCode ?? null.hashCode),
-            model?.hashCode ?? null.hashCode),
-        list?.hashCode ?? null.hashCode));
+                    type.hashCode),
+                commInterface.hashCode),
+            model.hashCode),
+        list.hashCode));
   }
 
   @override
@@ -11035,23 +10843,23 @@ class _$TelemetryMsg extends TelemetryMsg {
   final int dstEnt;
 
   @override
-  final TelemetryMsgEnumType? type;
+  final TelemetryMsgEnumType type;
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final int? ttl;
+  final int ttl;
   @override
-  final TelemetryMsgEnumCode? code;
+  final TelemetryMsgEnumCode code;
   @override
-  final String? destination;
+  final String destination;
   @override
-  final String? source;
+  final String source;
   @override
-  final TelemetryMsgBitfieldAcknowledge? acknowledge;
+  final TelemetryMsgBitfieldAcknowledge acknowledge;
   @override
-  final TelemetryMsgEnumStatus? status;
+  final TelemetryMsgEnumStatus status;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$TelemetryMsg([void Function(TelemetryMsgBuilder b)? updates]) =>
       (TelemetryMsgBuilder()..update(updates)).build();
@@ -11062,15 +10870,15 @@ class _$TelemetryMsg extends TelemetryMsg {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.reqId,
-      this.ttl,
-      this.code,
-      this.destination,
-      this.source,
-      this.acknowledge,
-      this.status,
-      this.data})
+      required this.type,
+      required this.reqId,
+      required this.ttl,
+      required this.code,
+      required this.destination,
+      required this.source,
+      required this.acknowledge,
+      required this.status,
+      required this.data})
       : super._();
 
   @override
@@ -11124,15 +10932,15 @@ class _$TelemetryMsg extends TelemetryMsg {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        type?.hashCode ?? null.hashCode),
-                                    reqId?.hashCode ?? null.hashCode),
-                                ttl?.hashCode ?? null.hashCode),
-                            code?.hashCode ?? null.hashCode),
-                        destination?.hashCode ?? null.hashCode),
-                    source?.hashCode ?? null.hashCode),
-                acknowledge?.hashCode ?? null.hashCode),
-            status?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                                        type.hashCode),
+                                    reqId.hashCode),
+                                ttl.hashCode),
+                            code.hashCode),
+                        destination.hashCode),
+                    source.hashCode),
+                acknowledge.hashCode),
+            status.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -11310,9 +11118,9 @@ class _$LblRange extends LblRange {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final double? range;
+  final double range;
 
   factory _$LblRange([void Function(LblRangeBuilder b)? updates]) =>
       (LblRangeBuilder()..update(updates)).build();
@@ -11323,8 +11131,8 @@ class _$LblRange extends LblRange {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.range})
+      required this.id,
+      required this.range})
       : super._();
 
   @override
@@ -11344,10 +11152,7 @@ class _$LblRange extends LblRange {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (range == other.range ||
-            (range != null &&
-                other.range != null &&
-                (range! - other.range! <= 1E-7)));
+        (range == other.range || range - other.range <= 1E-7);
   }
 
   @override
@@ -11362,8 +11167,8 @@ class _$LblRange extends LblRange {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            id?.hashCode ?? null.hashCode),
-        range?.hashCode ?? null.hashCode));
+            id.hashCode),
+        range.hashCode));
   }
 
   @override
@@ -11490,19 +11295,19 @@ class _$LblBeacon extends LblBeacon {
   final int dstEnt;
 
   @override
-  final String? beacon;
+  final String beacon;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? depth;
+  final double depth;
   @override
-  final int? queryChannel;
+  final int queryChannel;
   @override
-  final int? replyChannel;
+  final int replyChannel;
   @override
-  final int? transponderDelay;
+  final int transponderDelay;
 
   factory _$LblBeacon([void Function(LblBeaconBuilder b)? updates]) =>
       (LblBeaconBuilder()..update(updates)).build();
@@ -11513,13 +11318,13 @@ class _$LblBeacon extends LblBeacon {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.beacon,
-      this.lat,
-      this.lon,
-      this.depth,
-      this.queryChannel,
-      this.replyChannel,
-      this.transponderDelay})
+      required this.beacon,
+      required this.lat,
+      required this.lon,
+      required this.depth,
+      required this.queryChannel,
+      required this.replyChannel,
+      required this.transponderDelay})
       : super._();
 
   @override
@@ -11539,18 +11344,9 @@ class _$LblBeacon extends LblBeacon {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         beacon == other.beacon &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (depth == other.depth ||
-            (depth != null &&
-                other.depth != null &&
-                (depth! - other.depth! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
         queryChannel == other.queryChannel &&
         replyChannel == other.replyChannel &&
         transponderDelay == other.transponderDelay;
@@ -11577,13 +11373,13 @@ class _$LblBeacon extends LblBeacon {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                beacon?.hashCode ?? null.hashCode),
-                            lat?.hashCode ?? null.hashCode),
-                        lon?.hashCode ?? null.hashCode),
-                    depth?.hashCode ?? null.hashCode),
-                queryChannel?.hashCode ?? null.hashCode),
-            replyChannel?.hashCode ?? null.hashCode),
-        transponderDelay?.hashCode ?? null.hashCode));
+                                beacon.hashCode),
+                            lat.hashCode),
+                        lon.hashCode),
+                    depth.hashCode),
+                queryChannel.hashCode),
+            replyChannel.hashCode),
+        transponderDelay.hashCode));
   }
 
   @override
@@ -11595,10 +11391,8 @@ class _$LblBeacon extends LblBeacon {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('beacon', '$beacon')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('depth', '$depth (m)')
           ..add('queryChannel', '$queryChannel')
           ..add('replyChannel', '$replyChannel')
@@ -11748,9 +11542,9 @@ class _$LblConfig extends LblConfig {
   final int dstEnt;
 
   @override
-  final LblConfigEnumOp? op;
+  final LblConfigEnumOp op;
   @override
-  final List<LblBeacon>? beacons;
+  final List<LblBeacon> beacons;
 
   factory _$LblConfig([void Function(LblConfigBuilder b)? updates]) =>
       (LblConfigBuilder()..update(updates)).build();
@@ -11761,8 +11555,8 @@ class _$LblConfig extends LblConfig {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.beacons})
+      required this.op,
+      required this.beacons})
       : super._();
 
   @override
@@ -11797,8 +11591,8 @@ class _$LblConfig extends LblConfig {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        beacons?.hashCode ?? null.hashCode));
+            op.hashCode),
+        beacons.hashCode));
   }
 
   @override
@@ -12091,27 +11885,27 @@ class _$SimAcousticMessage extends SimAcousticMessage {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? depth;
+  final double depth;
   @override
-  final String? sentence;
+  final String sentence;
   @override
-  final double? txtime;
+  final double txtime;
   @override
-  final String? modemType;
+  final String modemType;
   @override
-  final String? sysSrc;
+  final String sysSrc;
   @override
-  final int? seq;
+  final int seq;
   @override
-  final String? sysDst;
+  final String sysDst;
   @override
-  final SimAcousticMessageBitfieldFlags? flags;
+  final SimAcousticMessageBitfieldFlags flags;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$SimAcousticMessage(
           [void Function(SimAcousticMessageBuilder b)? updates]) =>
@@ -12123,17 +11917,17 @@ class _$SimAcousticMessage extends SimAcousticMessage {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.depth,
-      this.sentence,
-      this.txtime,
-      this.modemType,
-      this.sysSrc,
-      this.seq,
-      this.sysDst,
-      this.flags,
-      this.data})
+      required this.lat,
+      required this.lon,
+      required this.depth,
+      required this.sentence,
+      required this.txtime,
+      required this.modemType,
+      required this.sysSrc,
+      required this.seq,
+      required this.sysDst,
+      required this.flags,
+      required this.data})
       : super._();
 
   @override
@@ -12154,23 +11948,11 @@ class _$SimAcousticMessage extends SimAcousticMessage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (depth == other.depth ||
-            (depth != null &&
-                other.depth != null &&
-                (depth! - other.depth! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
         sentence == other.sentence &&
-        (txtime == other.txtime ||
-            (txtime != null &&
-                other.txtime != null &&
-                (txtime! - other.txtime! <= 1E-7))) &&
+        (txtime == other.txtime || txtime - other.txtime <= 1E-7) &&
         modemType == other.modemType &&
         sysSrc == other.sysSrc &&
         seq == other.seq &&
@@ -12205,17 +11987,17 @@ class _$SimAcousticMessage extends SimAcousticMessage {
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                lat?.hashCode ?? null.hashCode),
-                                            lon?.hashCode ?? null.hashCode),
-                                        depth?.hashCode ?? null.hashCode),
-                                    sentence?.hashCode ?? null.hashCode),
-                                txtime?.hashCode ?? null.hashCode),
-                            modemType?.hashCode ?? null.hashCode),
-                        sysSrc?.hashCode ?? null.hashCode),
-                    seq?.hashCode ?? null.hashCode),
-                sysDst?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                                                lat.hashCode),
+                                            lon.hashCode),
+                                        depth.hashCode),
+                                    sentence.hashCode),
+                                txtime.hashCode),
+                            modemType.hashCode),
+                        sysSrc.hashCode),
+                    seq.hashCode),
+                sysDst.hashCode),
+            flags.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -12406,11 +12188,11 @@ class _$AcousticOperation extends AcousticOperation {
   final int dstEnt;
 
   @override
-  final AcousticOperationEnumOp? op;
+  final AcousticOperationEnumOp op;
   @override
-  final String? system;
+  final String system;
   @override
-  final double? range;
+  final double range;
   @override
   final ImcMessage? msg;
 
@@ -12424,9 +12206,9 @@ class _$AcousticOperation extends AcousticOperation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.system,
-      this.range,
+      required this.op,
+      required this.system,
+      required this.range,
       this.msg})
       : super._();
 
@@ -12450,10 +12232,7 @@ class _$AcousticOperation extends AcousticOperation {
         dstEnt == other.dstEnt &&
         op == other.op &&
         system == other.system &&
-        (range == other.range ||
-            (range != null &&
-                other.range != null &&
-                (range! - other.range! <= 1E-7))) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         msg == other.msg;
   }
 
@@ -12473,9 +12252,9 @@ class _$AcousticOperation extends AcousticOperation {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    op?.hashCode ?? null.hashCode),
-                system?.hashCode ?? null.hashCode),
-            range?.hashCode ?? null.hashCode),
+                    op.hashCode),
+                system.hashCode),
+            range.hashCode),
         msg?.hashCode ?? null.hashCode));
   }
 
@@ -12772,7 +12551,7 @@ class _$AcousticSystems extends AcousticSystems {
   final int dstEnt;
 
   @override
-  final String? list;
+  final String list;
 
   factory _$AcousticSystems(
           [void Function(AcousticSystemsBuilder b)? updates]) =>
@@ -12784,7 +12563,7 @@ class _$AcousticSystems extends AcousticSystems {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.list})
+      required this.list})
       : super._();
 
   @override
@@ -12817,7 +12596,7 @@ class _$AcousticSystems extends AcousticSystems {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        list?.hashCode ?? null.hashCode));
+        list.hashCode));
   }
 
   @override
@@ -12938,11 +12717,11 @@ class _$AcousticLink extends AcousticLink {
   final int dstEnt;
 
   @override
-  final String? peer;
+  final String peer;
   @override
-  final double? rssi;
+  final double rssi;
   @override
-  final int? integrity;
+  final int integrity;
 
   factory _$AcousticLink([void Function(AcousticLinkBuilder b)? updates]) =>
       (AcousticLinkBuilder()..update(updates)).build();
@@ -12953,9 +12732,9 @@ class _$AcousticLink extends AcousticLink {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.peer,
-      this.rssi,
-      this.integrity})
+      required this.peer,
+      required this.rssi,
+      required this.integrity})
       : super._();
 
   @override
@@ -12975,10 +12754,7 @@ class _$AcousticLink extends AcousticLink {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         peer == other.peer &&
-        (rssi == other.rssi ||
-            (rssi != null &&
-                other.rssi != null &&
-                (rssi! - other.rssi! <= 1E-7))) &&
+        (rssi == other.rssi || rssi - other.rssi <= 1E-7) &&
         integrity == other.integrity;
   }
 
@@ -12995,9 +12771,9 @@ class _$AcousticLink extends AcousticLink {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                peer?.hashCode ?? null.hashCode),
-            rssi?.hashCode ?? null.hashCode),
-        integrity?.hashCode ?? null.hashCode));
+                peer.hashCode),
+            rssi.hashCode),
+        integrity.hashCode));
   }
 
   @override
@@ -13131,15 +12907,15 @@ class _$AcousticRequest extends AcousticRequest {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final String? destination;
+  final String destination;
   @override
-  final double? timeout;
+  final double timeout;
   @override
-  final double? range;
+  final double range;
   @override
-  final AcousticRequestEnumType? type;
+  final AcousticRequestEnumType type;
   @override
   final ImcMessage? msg;
 
@@ -13153,11 +12929,11 @@ class _$AcousticRequest extends AcousticRequest {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.destination,
-      this.timeout,
-      this.range,
-      this.type,
+      required this.reqId,
+      required this.destination,
+      required this.timeout,
+      required this.range,
+      required this.type,
       this.msg})
       : super._();
 
@@ -13179,14 +12955,8 @@ class _$AcousticRequest extends AcousticRequest {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         destination == other.destination &&
-        (timeout == other.timeout ||
-            (timeout != null &&
-                other.timeout != null &&
-                (timeout! - other.timeout! <= 1E-7))) &&
-        (range == other.range ||
-            (range != null &&
-                other.range != null &&
-                (range! - other.range! <= 1E-7))) &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         type == other.type &&
         msg == other.msg;
   }
@@ -13211,11 +12981,11 @@ class _$AcousticRequest extends AcousticRequest {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            reqId?.hashCode ?? null.hashCode),
-                        destination?.hashCode ?? null.hashCode),
-                    timeout?.hashCode ?? null.hashCode),
-                range?.hashCode ?? null.hashCode),
-            type?.hashCode ?? null.hashCode),
+                            reqId.hashCode),
+                        destination.hashCode),
+                    timeout.hashCode),
+                range.hashCode),
+            type.hashCode),
         msg?.hashCode ?? null.hashCode));
   }
 
@@ -13372,15 +13142,15 @@ class _$AcousticStatus extends AcousticStatus {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final AcousticStatusEnumType? type;
+  final AcousticStatusEnumType type;
   @override
-  final AcousticStatusEnumStatus? status;
+  final AcousticStatusEnumStatus status;
   @override
-  final String? info;
+  final String info;
   @override
-  final double? range;
+  final double range;
 
   factory _$AcousticStatus([void Function(AcousticStatusBuilder b)? updates]) =>
       (AcousticStatusBuilder()..update(updates)).build();
@@ -13391,11 +13161,11 @@ class _$AcousticStatus extends AcousticStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.type,
-      this.status,
-      this.info,
-      this.range})
+      required this.reqId,
+      required this.type,
+      required this.status,
+      required this.info,
+      required this.range})
       : super._();
 
   @override
@@ -13418,10 +13188,7 @@ class _$AcousticStatus extends AcousticStatus {
         type == other.type &&
         status == other.status &&
         info == other.info &&
-        (range == other.range ||
-            (range != null &&
-                other.range != null &&
-                (range! - other.range! <= 1E-7)));
+        (range == other.range || range - other.range <= 1E-7);
   }
 
   @override
@@ -13443,11 +13210,11 @@ class _$AcousticStatus extends AcousticStatus {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        reqId?.hashCode ?? null.hashCode),
-                    type?.hashCode ?? null.hashCode),
-                status?.hashCode ?? null.hashCode),
-            info?.hashCode ?? null.hashCode),
-        range?.hashCode ?? null.hashCode));
+                        reqId.hashCode),
+                    type.hashCode),
+                status.hashCode),
+            info.hashCode),
+        range.hashCode));
   }
 
   @override
@@ -13595,7 +13362,7 @@ class _$Rpm extends Rpm {
   final int dstEnt;
 
   @override
-  final int? value;
+  final int value;
 
   factory _$Rpm([void Function(RpmBuilder b)? updates]) =>
       (RpmBuilder()..update(updates)).build();
@@ -13606,7 +13373,7 @@ class _$Rpm extends Rpm {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -13639,7 +13406,7 @@ class _$Rpm extends Rpm {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -13759,7 +13526,7 @@ class _$Voltage extends Voltage {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Voltage([void Function(VoltageBuilder b)? updates]) =>
       (VoltageBuilder()..update(updates)).build();
@@ -13770,7 +13537,7 @@ class _$Voltage extends Voltage {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -13789,10 +13556,7 @@ class _$Voltage extends Voltage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -13806,7 +13570,7 @@ class _$Voltage extends Voltage {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -13926,7 +13690,7 @@ class _$Current extends Current {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Current([void Function(CurrentBuilder b)? updates]) =>
       (CurrentBuilder()..update(updates)).build();
@@ -13937,7 +13701,7 @@ class _$Current extends Current {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -13956,10 +13720,7 @@ class _$Current extends Current {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -13973,7 +13734,7 @@ class _$Current extends Current {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -14093,37 +13854,37 @@ class _$GpsFix extends GpsFix {
   final int dstEnt;
 
   @override
-  final GpsFixBitfieldValidity? validity;
+  final GpsFixBitfieldValidity validity;
   @override
-  final GpsFixEnumType? type;
+  final GpsFixEnumType type;
   @override
-  final int? utcYear;
+  final int utcYear;
   @override
-  final int? utcMonth;
+  final int utcMonth;
   @override
-  final int? utcDay;
+  final int utcDay;
   @override
-  final double? utcTime;
+  final double utcTime;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? height;
+  final double height;
   @override
-  final int? satellites;
+  final int satellites;
   @override
-  final double? cog;
+  final double cog;
   @override
-  final double? sog;
+  final double sog;
   @override
-  final double? hdop;
+  final double hdop;
   @override
-  final double? vdop;
+  final double vdop;
   @override
-  final double? hacc;
+  final double hacc;
   @override
-  final double? vacc;
+  final double vacc;
 
   factory _$GpsFix([void Function(GpsFixBuilder b)? updates]) =>
       (GpsFixBuilder()..update(updates)).build();
@@ -14134,22 +13895,22 @@ class _$GpsFix extends GpsFix {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.validity,
-      this.type,
-      this.utcYear,
-      this.utcMonth,
-      this.utcDay,
-      this.utcTime,
-      this.lat,
-      this.lon,
-      this.height,
-      this.satellites,
-      this.cog,
-      this.sog,
-      this.hdop,
-      this.vdop,
-      this.hacc,
-      this.vacc})
+      required this.validity,
+      required this.type,
+      required this.utcYear,
+      required this.utcMonth,
+      required this.utcDay,
+      required this.utcTime,
+      required this.lat,
+      required this.lon,
+      required this.height,
+      required this.satellites,
+      required this.cog,
+      required this.sog,
+      required this.hdop,
+      required this.vdop,
+      required this.hacc,
+      required this.vacc})
       : super._();
 
   @override
@@ -14173,47 +13934,17 @@ class _$GpsFix extends GpsFix {
         utcYear == other.utcYear &&
         utcMonth == other.utcMonth &&
         utcDay == other.utcDay &&
-        (utcTime == other.utcTime ||
-            (utcTime != null &&
-                other.utcTime != null &&
-                (utcTime! - other.utcTime! <= 1E-7))) &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (height == other.height ||
-            (height != null &&
-                other.height != null &&
-                (height! - other.height! <= 1E-7))) &&
+        (utcTime == other.utcTime || utcTime - other.utcTime <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
         satellites == other.satellites &&
-        (cog == other.cog ||
-            (cog != null &&
-                other.cog != null &&
-                (cog! - other.cog! <= 1E-7))) &&
-        (sog == other.sog ||
-            (sog != null &&
-                other.sog != null &&
-                (sog! - other.sog! <= 1E-7))) &&
-        (hdop == other.hdop ||
-            (hdop != null &&
-                other.hdop != null &&
-                (hdop! - other.hdop! <= 1E-7))) &&
-        (vdop == other.vdop ||
-            (vdop != null &&
-                other.vdop != null &&
-                (vdop! - other.vdop! <= 1E-7))) &&
-        (hacc == other.hacc ||
-            (hacc != null &&
-                other.hacc != null &&
-                (hacc! - other.hacc! <= 1E-7))) &&
-        (vacc == other.vacc ||
-            (vacc != null &&
-                other.vacc != null &&
-                (vacc! - other.vacc! <= 1E-7)));
+        (cog == other.cog || cog - other.cog <= 1E-7) &&
+        (sog == other.sog || sog - other.sog <= 1E-7) &&
+        (hdop == other.hdop || hdop - other.hdop <= 1E-7) &&
+        (vdop == other.vdop || vdop - other.vdop <= 1E-7) &&
+        (hacc == other.hacc || hacc - other.hacc <= 1E-7) &&
+        (vacc == other.vacc || vacc - other.vacc <= 1E-7);
   }
 
   @override
@@ -14236,45 +13967,26 @@ class _$GpsFix extends GpsFix {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(
-                                                                                $jc(
-                                                                                    $jc(
-                                                                                        0,
-                                                                                        timestamp?.hashCode ??
-                                                                                            null
-                                                                                                .hashCode),
-                                                                                    src
-                                                                                        .hashCode),
-                                                                                srcEnt
-                                                                                    .hashCode),
-                                                                            dst
-                                                                                .hashCode),
-                                                                        dstEnt
-                                                                            .hashCode),
-                                                                    validity?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
-                                                                type?.hashCode ??
-                                                                    null
-                                                                        .hashCode),
-                                                            utcYear?.hashCode ??
-                                                                null.hashCode),
-                                                        utcMonth?.hashCode ??
-                                                            null.hashCode),
-                                                    utcDay?.hashCode ??
-                                                        null.hashCode),
-                                                utcTime?.hashCode ??
-                                                    null.hashCode),
-                                            lat?.hashCode ?? null.hashCode),
-                                        lon?.hashCode ?? null.hashCode),
-                                    height?.hashCode ?? null.hashCode),
-                                satellites?.hashCode ?? null.hashCode),
-                            cog?.hashCode ?? null.hashCode),
-                        sog?.hashCode ?? null.hashCode),
-                    hdop?.hashCode ?? null.hashCode),
-                vdop?.hashCode ?? null.hashCode),
-            hacc?.hashCode ?? null.hashCode),
-        vacc?.hashCode ?? null.hashCode));
+                                                                            $jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode),
+                                                                                srcEnt.hashCode),
+                                                                            dst.hashCode),
+                                                                        dstEnt.hashCode),
+                                                                    validity.hashCode),
+                                                                type.hashCode),
+                                                            utcYear.hashCode),
+                                                        utcMonth.hashCode),
+                                                    utcDay.hashCode),
+                                                utcTime.hashCode),
+                                            lat.hashCode),
+                                        lon.hashCode),
+                                    height.hashCode),
+                                satellites.hashCode),
+                            cog.hashCode),
+                        sog.hashCode),
+                    hdop.hashCode),
+                vdop.hashCode),
+            hacc.hashCode),
+        vacc.hashCode));
   }
 
   @override
@@ -14291,14 +14003,11 @@ class _$GpsFix extends GpsFix {
           ..add('utcMonth', '$utcMonth')
           ..add('utcDay', '$utcDay')
           ..add('utcTime', '$utcTime (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
           ..add('satellites', '$satellites')
-          ..add('cog',
-              '$cog (rad)${cog != null ? ' [${cog! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('cog', '$cog (rad) [${cog * 180.0 / math.pi} (deg)]')
           ..add('sog', '$sog (m/s)')
           ..add('hdop', '$hdop')
           ..add('vdop', '$vdop')
@@ -14502,15 +14211,15 @@ class _$EulerAngles extends EulerAngles {
   final int dstEnt;
 
   @override
-  final double? time;
+  final double time;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
   @override
-  final double? psiMagnetic;
+  final double psiMagnetic;
 
   factory _$EulerAngles([void Function(EulerAnglesBuilder b)? updates]) =>
       (EulerAnglesBuilder()..update(updates)).build();
@@ -14521,11 +14230,11 @@ class _$EulerAngles extends EulerAngles {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.time,
-      this.phi,
-      this.theta,
-      this.psi,
-      this.psiMagnetic})
+      required this.time,
+      required this.phi,
+      required this.theta,
+      required this.psi,
+      required this.psiMagnetic})
       : super._();
 
   @override
@@ -14544,26 +14253,12 @@ class _$EulerAngles extends EulerAngles {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time ||
-            (time != null &&
-                other.time != null &&
-                (time! - other.time! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null &&
-                other.psi != null &&
-                (psi! - other.psi! <= 1E-7))) &&
+        (time == other.time || time - other.time <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
         (psiMagnetic == other.psiMagnetic ||
-            (psiMagnetic != null &&
-                other.psiMagnetic != null &&
-                (psiMagnetic! - other.psiMagnetic! <= 1E-7)));
+            psiMagnetic - other.psiMagnetic <= 1E-7);
   }
 
   @override
@@ -14585,11 +14280,11 @@ class _$EulerAngles extends EulerAngles {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        time?.hashCode ?? null.hashCode),
-                    phi?.hashCode ?? null.hashCode),
-                theta?.hashCode ?? null.hashCode),
-            psi?.hashCode ?? null.hashCode),
-        psiMagnetic?.hashCode ?? null.hashCode));
+                        time.hashCode),
+                    phi.hashCode),
+                theta.hashCode),
+            psi.hashCode),
+        psiMagnetic.hashCode));
   }
 
   @override
@@ -14601,14 +14296,11 @@ class _$EulerAngles extends EulerAngles {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('time', '$time (s)')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]')
           ..add('psiMagnetic',
-              '$psiMagnetic (rad)${psiMagnetic != null ? ' [${psiMagnetic! * 180.0 / math.pi} (deg)]' : ''}'))
+              '$psiMagnetic (rad) [${psiMagnetic * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -14741,15 +14433,15 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
   final int dstEnt;
 
   @override
-  final double? time;
+  final double time;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? timestep;
+  final double timestep;
 
   factory _$EulerAnglesDelta(
           [void Function(EulerAnglesDeltaBuilder b)? updates]) =>
@@ -14761,11 +14453,11 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.time,
-      this.x,
-      this.y,
-      this.z,
-      this.timestep})
+      required this.time,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.timestep})
       : super._();
 
   @override
@@ -14785,20 +14477,11 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time ||
-            (time != null &&
-                other.time != null &&
-                (time! - other.time! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (timestep == other.timestep ||
-            (timestep != null &&
-                other.timestep != null &&
-                (timestep! - other.timestep! <= 1E-7)));
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (timestep == other.timestep || timestep - other.timestep <= 1E-7);
   }
 
   @override
@@ -14820,11 +14503,11 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        time?.hashCode ?? null.hashCode),
-                    x?.hashCode ?? null.hashCode),
-                y?.hashCode ?? null.hashCode),
-            z?.hashCode ?? null.hashCode),
-        timestep?.hashCode ?? null.hashCode));
+                        time.hashCode),
+                    x.hashCode),
+                y.hashCode),
+            z.hashCode),
+        timestep.hashCode));
   }
 
   @override
@@ -14836,12 +14519,9 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('time', '$time (s)')
-          ..add('x',
-              '$x (rad)${x != null ? ' [${x! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('y',
-              '$y (rad)${y != null ? ' [${y! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('z',
-              '$z (rad)${z != null ? ' [${z! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('x', '$x (rad) [${x * 180.0 / math.pi} (deg)]')
+          ..add('y', '$y (rad) [${y * 180.0 / math.pi} (deg)]')
+          ..add('z', '$z (rad) [${z * 180.0 / math.pi} (deg)]')
           ..add('timestep', '$timestep (s)'))
         .toString();
   }
@@ -14976,13 +14656,13 @@ class _$AngularVelocity extends AngularVelocity {
   final int dstEnt;
 
   @override
-  final double? time;
+  final double time;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$AngularVelocity(
           [void Function(AngularVelocityBuilder b)? updates]) =>
@@ -14994,10 +14674,10 @@ class _$AngularVelocity extends AngularVelocity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.time,
-      this.x,
-      this.y,
-      this.z})
+      required this.time,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -15016,16 +14696,10 @@ class _$AngularVelocity extends AngularVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time ||
-            (time != null &&
-                other.time != null &&
-                (time! - other.time! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -15044,10 +14718,10 @@ class _$AngularVelocity extends AngularVelocity {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    time?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                    time.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -15059,12 +14733,9 @@ class _$AngularVelocity extends AngularVelocity {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('time', '$time (s)')
-          ..add('x',
-              '$x (rad/s)${x != null ? ' [${x! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('y',
-              '$y (rad/s)${y != null ? ' [${y! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('z',
-              '$z (rad/s)${z != null ? ' [${z! * 180.0 / math.pi} (deg/s)]' : ''}'))
+          ..add('x', '$x (rad/s) [${x * 180.0 / math.pi} (deg/s)]')
+          ..add('y', '$y (rad/s) [${y * 180.0 / math.pi} (deg/s)]')
+          ..add('z', '$z (rad/s) [${z * 180.0 / math.pi} (deg/s)]'))
         .toString();
   }
 }
@@ -15192,13 +14863,13 @@ class _$Acceleration extends Acceleration {
   final int dstEnt;
 
   @override
-  final double? time;
+  final double time;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$Acceleration([void Function(AccelerationBuilder b)? updates]) =>
       (AccelerationBuilder()..update(updates)).build();
@@ -15209,10 +14880,10 @@ class _$Acceleration extends Acceleration {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.time,
-      this.x,
-      this.y,
-      this.z})
+      required this.time,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -15231,16 +14902,10 @@ class _$Acceleration extends Acceleration {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time ||
-            (time != null &&
-                other.time != null &&
-                (time! - other.time! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -15259,10 +14924,10 @@ class _$Acceleration extends Acceleration {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    time?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                    time.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -15403,13 +15068,13 @@ class _$MagneticField extends MagneticField {
   final int dstEnt;
 
   @override
-  final double? time;
+  final double time;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$MagneticField([void Function(MagneticFieldBuilder b)? updates]) =>
       (MagneticFieldBuilder()..update(updates)).build();
@@ -15420,10 +15085,10 @@ class _$MagneticField extends MagneticField {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.time,
-      this.x,
-      this.y,
-      this.z})
+      required this.time,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -15442,16 +15107,10 @@ class _$MagneticField extends MagneticField {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time ||
-            (time != null &&
-                other.time != null &&
-                (time! - other.time! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -15470,10 +15129,10 @@ class _$MagneticField extends MagneticField {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    time?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                    time.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -15614,13 +15273,13 @@ class _$GroundVelocity extends GroundVelocity {
   final int dstEnt;
 
   @override
-  final GroundVelocityBitfieldValidity? validity;
+  final GroundVelocityBitfieldValidity validity;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$GroundVelocity([void Function(GroundVelocityBuilder b)? updates]) =>
       (GroundVelocityBuilder()..update(updates)).build();
@@ -15631,10 +15290,10 @@ class _$GroundVelocity extends GroundVelocity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.validity,
-      this.x,
-      this.y,
-      this.z})
+      required this.validity,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -15654,12 +15313,9 @@ class _$GroundVelocity extends GroundVelocity {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         validity == other.validity &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -15678,10 +15334,10 @@ class _$GroundVelocity extends GroundVelocity {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    validity?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                    validity.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -15823,13 +15479,13 @@ class _$WaterVelocity extends WaterVelocity {
   final int dstEnt;
 
   @override
-  final WaterVelocityBitfieldValidity? validity;
+  final WaterVelocityBitfieldValidity validity;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$WaterVelocity([void Function(WaterVelocityBuilder b)? updates]) =>
       (WaterVelocityBuilder()..update(updates)).build();
@@ -15840,10 +15496,10 @@ class _$WaterVelocity extends WaterVelocity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.validity,
-      this.x,
-      this.y,
-      this.z})
+      required this.validity,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -15863,12 +15519,9 @@ class _$WaterVelocity extends WaterVelocity {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         validity == other.validity &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -15887,10 +15540,10 @@ class _$WaterVelocity extends WaterVelocity {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    validity?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                    validity.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -16032,13 +15685,13 @@ class _$VelocityDelta extends VelocityDelta {
   final int dstEnt;
 
   @override
-  final double? time;
+  final double time;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$VelocityDelta([void Function(VelocityDeltaBuilder b)? updates]) =>
       (VelocityDeltaBuilder()..update(updates)).build();
@@ -16049,10 +15702,10 @@ class _$VelocityDelta extends VelocityDelta {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.time,
-      this.x,
-      this.y,
-      this.z})
+      required this.time,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -16071,16 +15724,10 @@ class _$VelocityDelta extends VelocityDelta {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (time == other.time ||
-            (time != null &&
-                other.time != null &&
-                (time! - other.time! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (time == other.time || time - other.time <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -16099,10 +15746,10 @@ class _$VelocityDelta extends VelocityDelta {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    time?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                    time.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -16243,13 +15890,13 @@ class _$Distance extends Distance {
   final int dstEnt;
 
   @override
-  final DistanceEnumValidity? validity;
+  final DistanceEnumValidity validity;
   @override
-  final List<DeviceState>? location;
+  final List<DeviceState> location;
   @override
-  final List<BeamConfig>? beamConfig;
+  final List<BeamConfig> beamConfig;
   @override
-  final double? value;
+  final double value;
 
   factory _$Distance([void Function(DistanceBuilder b)? updates]) =>
       (DistanceBuilder()..update(updates)).build();
@@ -16260,10 +15907,10 @@ class _$Distance extends Distance {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.validity,
-      this.location,
-      this.beamConfig,
-      this.value})
+      required this.validity,
+      required this.location,
+      required this.beamConfig,
+      required this.value})
       : super._();
 
   @override
@@ -16285,10 +15932,7 @@ class _$Distance extends Distance {
         validity == other.validity &&
         DeepCollectionEquality().equals(location, other.location) &&
         DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -16307,10 +15951,10 @@ class _$Distance extends Distance {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    validity?.hashCode ?? null.hashCode),
-                location?.hashCode ?? null.hashCode),
-            beamConfig?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+                    validity.hashCode),
+                location.hashCode),
+            beamConfig.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -16452,7 +16096,7 @@ class _$Temperature extends Temperature {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Temperature([void Function(TemperatureBuilder b)? updates]) =>
       (TemperatureBuilder()..update(updates)).build();
@@ -16463,7 +16107,7 @@ class _$Temperature extends Temperature {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -16482,10 +16126,7 @@ class _$Temperature extends Temperature {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -16499,7 +16140,7 @@ class _$Temperature extends Temperature {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -16619,7 +16260,7 @@ class _$Pressure extends Pressure {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Pressure([void Function(PressureBuilder b)? updates]) =>
       (PressureBuilder()..update(updates)).build();
@@ -16630,7 +16271,7 @@ class _$Pressure extends Pressure {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -16649,10 +16290,7 @@ class _$Pressure extends Pressure {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -16666,7 +16304,7 @@ class _$Pressure extends Pressure {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -16786,7 +16424,7 @@ class _$Depth extends Depth {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Depth([void Function(DepthBuilder b)? updates]) =>
       (DepthBuilder()..update(updates)).build();
@@ -16797,7 +16435,7 @@ class _$Depth extends Depth {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -16816,10 +16454,7 @@ class _$Depth extends Depth {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -16833,7 +16468,7 @@ class _$Depth extends Depth {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -16953,7 +16588,7 @@ class _$DepthOffset extends DepthOffset {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DepthOffset([void Function(DepthOffsetBuilder b)? updates]) =>
       (DepthOffsetBuilder()..update(updates)).build();
@@ -16964,7 +16599,7 @@ class _$DepthOffset extends DepthOffset {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -16983,10 +16618,7 @@ class _$DepthOffset extends DepthOffset {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -17000,7 +16632,7 @@ class _$DepthOffset extends DepthOffset {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -17120,7 +16752,7 @@ class _$SoundSpeed extends SoundSpeed {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$SoundSpeed([void Function(SoundSpeedBuilder b)? updates]) =>
       (SoundSpeedBuilder()..update(updates)).build();
@@ -17131,7 +16763,7 @@ class _$SoundSpeed extends SoundSpeed {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -17150,10 +16782,7 @@ class _$SoundSpeed extends SoundSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -17167,7 +16796,7 @@ class _$SoundSpeed extends SoundSpeed {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -17287,7 +16916,7 @@ class _$WaterDensity extends WaterDensity {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$WaterDensity([void Function(WaterDensityBuilder b)? updates]) =>
       (WaterDensityBuilder()..update(updates)).build();
@@ -17298,7 +16927,7 @@ class _$WaterDensity extends WaterDensity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -17317,10 +16946,7 @@ class _$WaterDensity extends WaterDensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -17334,7 +16960,7 @@ class _$WaterDensity extends WaterDensity {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -17454,7 +17080,7 @@ class _$Conductivity extends Conductivity {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Conductivity([void Function(ConductivityBuilder b)? updates]) =>
       (ConductivityBuilder()..update(updates)).build();
@@ -17465,7 +17091,7 @@ class _$Conductivity extends Conductivity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -17484,10 +17110,7 @@ class _$Conductivity extends Conductivity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -17501,7 +17124,7 @@ class _$Conductivity extends Conductivity {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -17621,7 +17244,7 @@ class _$Salinity extends Salinity {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Salinity([void Function(SalinityBuilder b)? updates]) =>
       (SalinityBuilder()..update(updates)).build();
@@ -17632,7 +17255,7 @@ class _$Salinity extends Salinity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -17651,10 +17274,7 @@ class _$Salinity extends Salinity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -17668,7 +17288,7 @@ class _$Salinity extends Salinity {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -17788,11 +17408,11 @@ class _$WindSpeed extends WindSpeed {
   final int dstEnt;
 
   @override
-  final double? direction;
+  final double direction;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final double? turbulence;
+  final double turbulence;
 
   factory _$WindSpeed([void Function(WindSpeedBuilder b)? updates]) =>
       (WindSpeedBuilder()..update(updates)).build();
@@ -17803,9 +17423,9 @@ class _$WindSpeed extends WindSpeed {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.direction,
-      this.speed,
-      this.turbulence})
+      required this.direction,
+      required this.speed,
+      required this.turbulence})
       : super._();
 
   @override
@@ -17824,18 +17444,10 @@ class _$WindSpeed extends WindSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (direction == other.direction ||
-            (direction != null &&
-                other.direction != null &&
-                (direction! - other.direction! <= 1E-7))) &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (direction == other.direction || direction - other.direction <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         (turbulence == other.turbulence ||
-            (turbulence != null &&
-                other.turbulence != null &&
-                (turbulence! - other.turbulence! <= 1E-7)));
+            turbulence - other.turbulence <= 1E-7);
   }
 
   @override
@@ -17851,9 +17463,9 @@ class _$WindSpeed extends WindSpeed {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                direction?.hashCode ?? null.hashCode),
-            speed?.hashCode ?? null.hashCode),
-        turbulence?.hashCode ?? null.hashCode));
+                direction.hashCode),
+            speed.hashCode),
+        turbulence.hashCode));
   }
 
   @override
@@ -17865,7 +17477,7 @@ class _$WindSpeed extends WindSpeed {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('direction',
-              '$direction (rad)${direction != null ? ' [${direction! * 180.0 / math.pi} (deg)]' : ''}')
+              '$direction (rad) [${direction * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed (m/s)')
           ..add('turbulence', '$turbulence (m/s)'))
         .toString();
@@ -17988,7 +17600,7 @@ class _$RelativeHumidity extends RelativeHumidity {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$RelativeHumidity(
           [void Function(RelativeHumidityBuilder b)? updates]) =>
@@ -18000,7 +17612,7 @@ class _$RelativeHumidity extends RelativeHumidity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -18020,10 +17632,7 @@ class _$RelativeHumidity extends RelativeHumidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -18037,7 +17646,7 @@ class _$RelativeHumidity extends RelativeHumidity {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -18158,7 +17767,7 @@ class _$DevDataText extends DevDataText {
   final int dstEnt;
 
   @override
-  final String? value;
+  final String value;
 
   factory _$DevDataText([void Function(DevDataTextBuilder b)? updates]) =>
       (DevDataTextBuilder()..update(updates)).build();
@@ -18169,7 +17778,7 @@ class _$DevDataText extends DevDataText {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -18202,7 +17811,7 @@ class _$DevDataText extends DevDataText {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -18322,7 +17931,7 @@ class _$DevDataBinary extends DevDataBinary {
   final int dstEnt;
 
   @override
-  final List<int>? value;
+  final List<int> value;
 
   factory _$DevDataBinary([void Function(DevDataBinaryBuilder b)? updates]) =>
       (DevDataBinaryBuilder()..update(updates)).build();
@@ -18333,7 +17942,7 @@ class _$DevDataBinary extends DevDataBinary {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -18366,7 +17975,7 @@ class _$DevDataBinary extends DevDataBinary {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -18486,7 +18095,7 @@ class _$Force extends Force {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Force([void Function(ForceBuilder b)? updates]) =>
       (ForceBuilder()..update(updates)).build();
@@ -18497,7 +18106,7 @@ class _$Force extends Force {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -18516,10 +18125,7 @@ class _$Force extends Force {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -18533,7 +18139,7 @@ class _$Force extends Force {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -18653,21 +18259,21 @@ class _$SonarData extends SonarData {
   final int dstEnt;
 
   @override
-  final SonarDataEnumType? type;
+  final SonarDataEnumType type;
   @override
-  final int? frequency;
+  final int frequency;
   @override
-  final int? minRange;
+  final int minRange;
   @override
-  final int? maxRange;
+  final int maxRange;
   @override
-  final int? bitsPerPoint;
+  final int bitsPerPoint;
   @override
-  final double? scaleFactor;
+  final double scaleFactor;
   @override
-  final List<BeamConfig>? beamConfig;
+  final List<BeamConfig> beamConfig;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$SonarData([void Function(SonarDataBuilder b)? updates]) =>
       (SonarDataBuilder()..update(updates)).build();
@@ -18678,14 +18284,14 @@ class _$SonarData extends SonarData {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.frequency,
-      this.minRange,
-      this.maxRange,
-      this.bitsPerPoint,
-      this.scaleFactor,
-      this.beamConfig,
-      this.data})
+      required this.type,
+      required this.frequency,
+      required this.minRange,
+      required this.maxRange,
+      required this.bitsPerPoint,
+      required this.scaleFactor,
+      required this.beamConfig,
+      required this.data})
       : super._();
 
   @override
@@ -18710,9 +18316,7 @@ class _$SonarData extends SonarData {
         maxRange == other.maxRange &&
         bitsPerPoint == other.bitsPerPoint &&
         (scaleFactor == other.scaleFactor ||
-            (scaleFactor != null &&
-                other.scaleFactor != null &&
-                (scaleFactor! - other.scaleFactor! <= 1E-7))) &&
+            scaleFactor - other.scaleFactor <= 1E-7) &&
         DeepCollectionEquality().equals(beamConfig, other.beamConfig) &&
         ListEquality().equals(data, other.data);
   }
@@ -18739,14 +18343,14 @@ class _$SonarData extends SonarData {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    type?.hashCode ?? null.hashCode),
-                                frequency?.hashCode ?? null.hashCode),
-                            minRange?.hashCode ?? null.hashCode),
-                        maxRange?.hashCode ?? null.hashCode),
-                    bitsPerPoint?.hashCode ?? null.hashCode),
-                scaleFactor?.hashCode ?? null.hashCode),
-            beamConfig?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                                    type.hashCode),
+                                frequency.hashCode),
+                            minRange.hashCode),
+                        maxRange.hashCode),
+                    bitsPerPoint.hashCode),
+                scaleFactor.hashCode),
+            beamConfig.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -19064,7 +18668,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
   final int dstEnt;
 
   @override
-  final PulseDetectionControlEnumOp? op;
+  final PulseDetectionControlEnumOp op;
 
   factory _$PulseDetectionControl(
           [void Function(PulseDetectionControlBuilder b)? updates]) =>
@@ -19076,7 +18680,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op})
+      required this.op})
       : super._();
 
   @override
@@ -19111,7 +18715,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        op?.hashCode ?? null.hashCode));
+        op.hashCode));
   }
 
   @override
@@ -19235,11 +18839,11 @@ class _$FuelLevel extends FuelLevel {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
   @override
-  final double? confidence;
+  final double confidence;
   @override
-  final String? opmodes;
+  final String opmodes;
 
   factory _$FuelLevel([void Function(FuelLevelBuilder b)? updates]) =>
       (FuelLevelBuilder()..update(updates)).build();
@@ -19250,9 +18854,9 @@ class _$FuelLevel extends FuelLevel {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value,
-      this.confidence,
-      this.opmodes})
+      required this.value,
+      required this.confidence,
+      required this.opmodes})
       : super._();
 
   @override
@@ -19271,14 +18875,9 @@ class _$FuelLevel extends FuelLevel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         (confidence == other.confidence ||
-            (confidence != null &&
-                other.confidence != null &&
-                (confidence! - other.confidence! <= 1E-7))) &&
+            confidence - other.confidence <= 1E-7) &&
         opmodes == other.opmodes;
   }
 
@@ -19295,9 +18894,9 @@ class _$FuelLevel extends FuelLevel {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                value?.hashCode ?? null.hashCode),
-            confidence?.hashCode ?? null.hashCode),
-        opmodes?.hashCode ?? null.hashCode));
+                value.hashCode),
+            confidence.hashCode),
+        opmodes.hashCode));
   }
 
   @override
@@ -19431,35 +19030,35 @@ class _$GpsNavData extends GpsNavData {
   final int dstEnt;
 
   @override
-  final int? itow;
+  final int itow;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? heightEll;
+  final double heightEll;
   @override
-  final double? heightSea;
+  final double heightSea;
   @override
-  final double? hacc;
+  final double hacc;
   @override
-  final double? vacc;
+  final double vacc;
   @override
-  final double? velN;
+  final double velN;
   @override
-  final double? velE;
+  final double velE;
   @override
-  final double? velD;
+  final double velD;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final double? gspeed;
+  final double gspeed;
   @override
-  final double? heading;
+  final double heading;
   @override
-  final double? sacc;
+  final double sacc;
   @override
-  final double? cacc;
+  final double cacc;
 
   factory _$GpsNavData([void Function(GpsNavDataBuilder b)? updates]) =>
       (GpsNavDataBuilder()..update(updates)).build();
@@ -19470,21 +19069,21 @@ class _$GpsNavData extends GpsNavData {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.itow,
-      this.lat,
-      this.lon,
-      this.heightEll,
-      this.heightSea,
-      this.hacc,
-      this.vacc,
-      this.velN,
-      this.velE,
-      this.velD,
-      this.speed,
-      this.gspeed,
-      this.heading,
-      this.sacc,
-      this.cacc})
+      required this.itow,
+      required this.lat,
+      required this.lon,
+      required this.heightEll,
+      required this.heightSea,
+      required this.hacc,
+      required this.vacc,
+      required this.velN,
+      required this.velE,
+      required this.velD,
+      required this.speed,
+      required this.gspeed,
+      required this.heading,
+      required this.sacc,
+      required this.cacc})
       : super._();
 
   @override
@@ -19504,62 +19103,20 @@ class _$GpsNavData extends GpsNavData {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         itow == other.itow &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (heightEll == other.heightEll ||
-            (heightEll != null &&
-                other.heightEll != null &&
-                (heightEll! - other.heightEll! <= 1E-7))) &&
-        (heightSea == other.heightSea ||
-            (heightSea != null &&
-                other.heightSea != null &&
-                (heightSea! - other.heightSea! <= 1E-7))) &&
-        (hacc == other.hacc ||
-            (hacc != null &&
-                other.hacc != null &&
-                (hacc! - other.hacc! <= 1E-7))) &&
-        (vacc == other.vacc ||
-            (vacc != null &&
-                other.vacc != null &&
-                (vacc! - other.vacc! <= 1E-7))) &&
-        (velN == other.velN ||
-            (velN != null &&
-                other.velN != null &&
-                (velN! - other.velN! <= 1E-7))) &&
-        (velE == other.velE ||
-            (velE != null &&
-                other.velE != null &&
-                (velE! - other.velE! <= 1E-7))) &&
-        (velD == other.velD ||
-            (velD != null &&
-                other.velD != null &&
-                (velD! - other.velD! <= 1E-7))) &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
-        (gspeed == other.gspeed ||
-            (gspeed != null &&
-                other.gspeed != null &&
-                (gspeed! - other.gspeed! <= 1E-7))) &&
-        (heading == other.heading ||
-            (heading != null &&
-                other.heading != null &&
-                (heading! - other.heading! <= 1E-7))) &&
-        (sacc == other.sacc ||
-            (sacc != null &&
-                other.sacc != null &&
-                (sacc! - other.sacc! <= 1E-7))) &&
-        (cacc == other.cacc ||
-            (cacc != null &&
-                other.cacc != null &&
-                (cacc! - other.cacc! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (heightEll == other.heightEll || heightEll - other.heightEll <= 1E-7) &&
+        (heightSea == other.heightSea || heightSea - other.heightSea <= 1E-7) &&
+        (hacc == other.hacc || hacc - other.hacc <= 1E-7) &&
+        (vacc == other.vacc || vacc - other.vacc <= 1E-7) &&
+        (velN == other.velN || velN - other.velN <= 1E-7) &&
+        (velE == other.velE || velE - other.velE <= 1E-7) &&
+        (velD == other.velD || velD - other.velD <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
+        (gspeed == other.gspeed || gspeed - other.gspeed <= 1E-7) &&
+        (heading == other.heading || heading - other.heading <= 1E-7) &&
+        (sacc == other.sacc || sacc - other.sacc <= 1E-7) &&
+        (cacc == other.cacc || cacc - other.cacc <= 1E-7);
   }
 
   @override
@@ -19582,41 +19139,26 @@ class _$GpsNavData extends GpsNavData {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(
-                                                                                $jc(
-                                                                                    0,
-                                                                                    timestamp?.hashCode ??
-                                                                                        null
-                                                                                            .hashCode),
-                                                                                src
-                                                                                    .hashCode),
-                                                                            srcEnt
-                                                                                .hashCode),
-                                                                        dst
-                                                                            .hashCode),
-                                                                    dstEnt
-                                                                        .hashCode),
-                                                                itow?.hashCode ??
-                                                                    null
-                                                                        .hashCode),
-                                                            lat?.hashCode ??
-                                                                null.hashCode),
-                                                        lon?.hashCode ??
-                                                            null.hashCode),
-                                                    heightEll?.hashCode ??
-                                                        null.hashCode),
-                                                heightSea?.hashCode ??
-                                                    null.hashCode),
-                                            hacc?.hashCode ?? null.hashCode),
-                                        vacc?.hashCode ?? null.hashCode),
-                                    velN?.hashCode ?? null.hashCode),
-                                velE?.hashCode ?? null.hashCode),
-                            velD?.hashCode ?? null.hashCode),
-                        speed?.hashCode ?? null.hashCode),
-                    gspeed?.hashCode ?? null.hashCode),
-                heading?.hashCode ?? null.hashCode),
-            sacc?.hashCode ?? null.hashCode),
-        cacc?.hashCode ?? null.hashCode));
+                                                                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                                                                src.hashCode),
+                                                                            srcEnt.hashCode),
+                                                                        dst.hashCode),
+                                                                    dstEnt.hashCode),
+                                                                itow.hashCode),
+                                                            lat.hashCode),
+                                                        lon.hashCode),
+                                                    heightEll.hashCode),
+                                                heightSea.hashCode),
+                                            hacc.hashCode),
+                                        vacc.hashCode),
+                                    velN.hashCode),
+                                velE.hashCode),
+                            velD.hashCode),
+                        speed.hashCode),
+                    gspeed.hashCode),
+                heading.hashCode),
+            sacc.hashCode),
+        cacc.hashCode));
   }
 
   @override
@@ -19628,10 +19170,8 @@ class _$GpsNavData extends GpsNavData {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('itow', '$itow (ms)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('heightEll', '$heightEll (m)')
           ..add('heightSea', '$heightSea (m)')
           ..add('hacc', '$hacc (m)')
@@ -19641,11 +19181,10 @@ class _$GpsNavData extends GpsNavData {
           ..add('velD', '$velD (m/s)')
           ..add('speed', '$speed (m/s)')
           ..add('gspeed', '$gspeed (m/s)')
-          ..add('heading',
-              '$heading (rad)${heading != null ? ' [${heading! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'heading', '$heading (rad) [${heading * 180.0 / math.pi} (deg)]')
           ..add('sacc', '$sacc (m/s)')
-          ..add('cacc',
-              '$cacc (rad)${cacc != null ? ' [${cacc! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('cacc', '$cacc (rad) [${cacc * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -19838,9 +19377,9 @@ class _$ServoPosition extends ServoPosition {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final double? value;
+  final double value;
 
   factory _$ServoPosition([void Function(ServoPositionBuilder b)? updates]) =>
       (ServoPositionBuilder()..update(updates)).build();
@@ -19851,8 +19390,8 @@ class _$ServoPosition extends ServoPosition {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.value})
+      required this.id,
+      required this.value})
       : super._();
 
   @override
@@ -19872,10 +19411,7 @@ class _$ServoPosition extends ServoPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -19890,8 +19426,8 @@ class _$ServoPosition extends ServoPosition {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            id?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            id.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -19903,8 +19439,7 @@ class _$ServoPosition extends ServoPosition {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
-          ..add('value',
-              '$value (rad)${value != null ? ' [${value! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -20019,17 +19554,17 @@ class _$DeviceState extends DeviceState {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
 
   factory _$DeviceState([void Function(DeviceStateBuilder b)? updates]) =>
       (DeviceStateBuilder()..update(updates)).build();
@@ -20040,12 +19575,12 @@ class _$DeviceState extends DeviceState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z,
-      this.phi,
-      this.theta,
-      this.psi})
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.phi,
+      required this.theta,
+      required this.psi})
       : super._();
 
   @override
@@ -20064,22 +19599,12 @@ class _$DeviceState extends DeviceState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null && other.psi != null && (psi! - other.psi! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7);
   }
 
   @override
@@ -20102,12 +19627,12 @@ class _$DeviceState extends DeviceState {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            x?.hashCode ?? null.hashCode),
-                        y?.hashCode ?? null.hashCode),
-                    z?.hashCode ?? null.hashCode),
-                phi?.hashCode ?? null.hashCode),
-            theta?.hashCode ?? null.hashCode),
-        psi?.hashCode ?? null.hashCode));
+                            x.hashCode),
+                        y.hashCode),
+                    z.hashCode),
+                phi.hashCode),
+            theta.hashCode),
+        psi.hashCode));
   }
 
   @override
@@ -20121,12 +19646,9 @@ class _$DeviceState extends DeviceState {
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -20265,9 +19787,9 @@ class _$BeamConfig extends BeamConfig {
   final int dstEnt;
 
   @override
-  final double? beamWidth;
+  final double beamWidth;
   @override
-  final double? beamHeight;
+  final double beamHeight;
 
   factory _$BeamConfig([void Function(BeamConfigBuilder b)? updates]) =>
       (BeamConfigBuilder()..update(updates)).build();
@@ -20278,8 +19800,8 @@ class _$BeamConfig extends BeamConfig {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.beamWidth,
-      this.beamHeight})
+      required this.beamWidth,
+      required this.beamHeight})
       : super._();
 
   @override
@@ -20298,14 +19820,9 @@ class _$BeamConfig extends BeamConfig {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (beamWidth == other.beamWidth ||
-            (beamWidth != null &&
-                other.beamWidth != null &&
-                (beamWidth! - other.beamWidth! <= 1E-7))) &&
+        (beamWidth == other.beamWidth || beamWidth - other.beamWidth <= 1E-7) &&
         (beamHeight == other.beamHeight ||
-            (beamHeight != null &&
-                other.beamHeight != null &&
-                (beamHeight! - other.beamHeight! <= 1E-7)));
+            beamHeight - other.beamHeight <= 1E-7);
   }
 
   @override
@@ -20320,8 +19837,8 @@ class _$BeamConfig extends BeamConfig {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            beamWidth?.hashCode ?? null.hashCode),
-        beamHeight?.hashCode ?? null.hashCode));
+            beamWidth.hashCode),
+        beamHeight.hashCode));
   }
 
   @override
@@ -20333,9 +19850,9 @@ class _$BeamConfig extends BeamConfig {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('beamWidth',
-              '$beamWidth (rad)${beamWidth != null ? ' [${beamWidth! * 180.0 / math.pi} (deg)]' : ''}')
+              '$beamWidth (rad) [${beamWidth * 180.0 / math.pi} (deg)]')
           ..add('beamHeight',
-              '$beamHeight (rad)${beamHeight != null ? ' [${beamHeight! * 180.0 / math.pi} (deg)]' : ''}'))
+              '$beamHeight (rad) [${beamHeight * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -20450,7 +19967,7 @@ class _$DataSanity extends DataSanity {
   final int dstEnt;
 
   @override
-  final DataSanityEnumSane? sane;
+  final DataSanityEnumSane sane;
 
   factory _$DataSanity([void Function(DataSanityBuilder b)? updates]) =>
       (DataSanityBuilder()..update(updates)).build();
@@ -20461,7 +19978,7 @@ class _$DataSanity extends DataSanity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sane})
+      required this.sane})
       : super._();
 
   @override
@@ -20494,7 +20011,7 @@ class _$DataSanity extends DataSanity {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        sane?.hashCode ?? null.hashCode));
+        sane.hashCode));
   }
 
   @override
@@ -20614,7 +20131,7 @@ class _$RhodamineDye extends RhodamineDye {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$RhodamineDye([void Function(RhodamineDyeBuilder b)? updates]) =>
       (RhodamineDyeBuilder()..update(updates)).build();
@@ -20625,7 +20142,7 @@ class _$RhodamineDye extends RhodamineDye {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -20644,10 +20161,7 @@ class _$RhodamineDye extends RhodamineDye {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -20661,7 +20175,7 @@ class _$RhodamineDye extends RhodamineDye {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -20781,7 +20295,7 @@ class _$CrudeOil extends CrudeOil {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$CrudeOil([void Function(CrudeOilBuilder b)? updates]) =>
       (CrudeOilBuilder()..update(updates)).build();
@@ -20792,7 +20306,7 @@ class _$CrudeOil extends CrudeOil {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -20811,10 +20325,7 @@ class _$CrudeOil extends CrudeOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -20828,7 +20339,7 @@ class _$CrudeOil extends CrudeOil {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -20948,7 +20459,7 @@ class _$FineOil extends FineOil {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$FineOil([void Function(FineOilBuilder b)? updates]) =>
       (FineOilBuilder()..update(updates)).build();
@@ -20959,7 +20470,7 @@ class _$FineOil extends FineOil {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -20978,10 +20489,7 @@ class _$FineOil extends FineOil {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -20995,7 +20503,7 @@ class _$FineOil extends FineOil {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -21115,7 +20623,7 @@ class _$Turbidity extends Turbidity {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Turbidity([void Function(TurbidityBuilder b)? updates]) =>
       (TurbidityBuilder()..update(updates)).build();
@@ -21126,7 +20634,7 @@ class _$Turbidity extends Turbidity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -21145,10 +20653,7 @@ class _$Turbidity extends Turbidity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -21162,7 +20667,7 @@ class _$Turbidity extends Turbidity {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -21282,7 +20787,7 @@ class _$Chlorophyll extends Chlorophyll {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Chlorophyll([void Function(ChlorophyllBuilder b)? updates]) =>
       (ChlorophyllBuilder()..update(updates)).build();
@@ -21293,7 +20798,7 @@ class _$Chlorophyll extends Chlorophyll {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -21312,10 +20817,7 @@ class _$Chlorophyll extends Chlorophyll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -21329,7 +20831,7 @@ class _$Chlorophyll extends Chlorophyll {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -21449,7 +20951,7 @@ class _$Fluorescein extends Fluorescein {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Fluorescein([void Function(FluoresceinBuilder b)? updates]) =>
       (FluoresceinBuilder()..update(updates)).build();
@@ -21460,7 +20962,7 @@ class _$Fluorescein extends Fluorescein {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -21479,10 +20981,7 @@ class _$Fluorescein extends Fluorescein {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -21496,7 +20995,7 @@ class _$Fluorescein extends Fluorescein {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -21616,7 +21115,7 @@ class _$Phycocyanin extends Phycocyanin {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Phycocyanin([void Function(PhycocyaninBuilder b)? updates]) =>
       (PhycocyaninBuilder()..update(updates)).build();
@@ -21627,7 +21126,7 @@ class _$Phycocyanin extends Phycocyanin {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -21646,10 +21145,7 @@ class _$Phycocyanin extends Phycocyanin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -21663,7 +21159,7 @@ class _$Phycocyanin extends Phycocyanin {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -21783,7 +21279,7 @@ class _$Phycoerythrin extends Phycoerythrin {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Phycoerythrin([void Function(PhycoerythrinBuilder b)? updates]) =>
       (PhycoerythrinBuilder()..update(updates)).build();
@@ -21794,7 +21290,7 @@ class _$Phycoerythrin extends Phycoerythrin {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -21813,10 +21309,7 @@ class _$Phycoerythrin extends Phycoerythrin {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -21830,7 +21323,7 @@ class _$Phycoerythrin extends Phycoerythrin {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -21950,35 +21443,35 @@ class _$GpsFixRtk extends GpsFixRtk {
   final int dstEnt;
 
   @override
-  final GpsFixRtkBitfieldValidity? validity;
+  final GpsFixRtkBitfieldValidity validity;
   @override
-  final GpsFixRtkEnumType? type;
+  final GpsFixRtkEnumType type;
   @override
-  final int? tow;
+  final int tow;
   @override
-  final double? baseLat;
+  final double baseLat;
   @override
-  final double? baseLon;
+  final double baseLon;
   @override
-  final double? baseHeight;
+  final double baseHeight;
   @override
-  final double? n;
+  final double n;
   @override
-  final double? e;
+  final double e;
   @override
-  final double? d;
+  final double d;
   @override
-  final double? vN;
+  final double vN;
   @override
-  final double? vE;
+  final double vE;
   @override
-  final double? vD;
+  final double vD;
   @override
-  final int? satellites;
+  final int satellites;
   @override
-  final int? iarHyp;
+  final int iarHyp;
   @override
-  final double? iarRatio;
+  final double iarRatio;
 
   factory _$GpsFixRtk([void Function(GpsFixRtkBuilder b)? updates]) =>
       (GpsFixRtkBuilder()..update(updates)).build();
@@ -21989,21 +21482,21 @@ class _$GpsFixRtk extends GpsFixRtk {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.validity,
-      this.type,
-      this.tow,
-      this.baseLat,
-      this.baseLon,
-      this.baseHeight,
-      this.n,
-      this.e,
-      this.d,
-      this.vN,
-      this.vE,
-      this.vD,
-      this.satellites,
-      this.iarHyp,
-      this.iarRatio})
+      required this.validity,
+      required this.type,
+      required this.tow,
+      required this.baseLat,
+      required this.baseLon,
+      required this.baseHeight,
+      required this.n,
+      required this.e,
+      required this.d,
+      required this.vN,
+      required this.vE,
+      required this.vD,
+      required this.satellites,
+      required this.iarHyp,
+      required this.iarRatio})
       : super._();
 
   @override
@@ -22025,36 +21518,19 @@ class _$GpsFixRtk extends GpsFixRtk {
         validity == other.validity &&
         type == other.type &&
         tow == other.tow &&
-        (baseLat == other.baseLat ||
-            (baseLat != null &&
-                other.baseLat != null &&
-                (baseLat! - other.baseLat! <= 1E-7))) &&
-        (baseLon == other.baseLon ||
-            (baseLon != null &&
-                other.baseLon != null &&
-                (baseLon! - other.baseLon! <= 1E-7))) &&
+        (baseLat == other.baseLat || baseLat - other.baseLat <= 1E-7) &&
+        (baseLon == other.baseLon || baseLon - other.baseLon <= 1E-7) &&
         (baseHeight == other.baseHeight ||
-            (baseHeight != null &&
-                other.baseHeight != null &&
-                (baseHeight! - other.baseHeight! <= 1E-7))) &&
-        (n == other.n ||
-            (n != null && other.n != null && (n! - other.n! <= 1E-7))) &&
-        (e == other.e ||
-            (e != null && other.e != null && (e! - other.e! <= 1E-7))) &&
-        (d == other.d ||
-            (d != null && other.d != null && (d! - other.d! <= 1E-7))) &&
-        (vN == other.vN ||
-            (vN != null && other.vN != null && (vN! - other.vN! <= 1E-7))) &&
-        (vE == other.vE ||
-            (vE != null && other.vE != null && (vE! - other.vE! <= 1E-7))) &&
-        (vD == other.vD ||
-            (vD != null && other.vD != null && (vD! - other.vD! <= 1E-7))) &&
+            baseHeight - other.baseHeight <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7) &&
+        (e == other.e || e - other.e <= 1E-7) &&
+        (d == other.d || d - other.d <= 1E-7) &&
+        (vN == other.vN || vN - other.vN <= 1E-7) &&
+        (vE == other.vE || vE - other.vE <= 1E-7) &&
+        (vD == other.vD || vD - other.vD <= 1E-7) &&
         satellites == other.satellites &&
         iarHyp == other.iarHyp &&
-        (iarRatio == other.iarRatio ||
-            (iarRatio != null &&
-                other.iarRatio != null &&
-                (iarRatio! - other.iarRatio! <= 1E-7)));
+        (iarRatio == other.iarRatio || iarRatio - other.iarRatio <= 1E-7);
   }
 
   @override
@@ -22077,42 +21553,26 @@ class _$GpsFixRtk extends GpsFixRtk {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(
-                                                                                $jc(
-                                                                                    0,
-                                                                                    timestamp?.hashCode ??
-                                                                                        null
-                                                                                            .hashCode),
-                                                                                src
-                                                                                    .hashCode),
-                                                                            srcEnt
-                                                                                .hashCode),
-                                                                        dst
-                                                                            .hashCode),
-                                                                    dstEnt
-                                                                        .hashCode),
-                                                                validity?.hashCode ??
-                                                                    null
-                                                                        .hashCode),
-                                                            type?.hashCode ??
-                                                                null.hashCode),
-                                                        tow?.hashCode ??
-                                                            null.hashCode),
-                                                    baseLat?.hashCode ??
-                                                        null.hashCode),
-                                                baseLon?.hashCode ??
-                                                    null.hashCode),
-                                            baseHeight?.hashCode ??
-                                                null.hashCode),
-                                        n?.hashCode ?? null.hashCode),
-                                    e?.hashCode ?? null.hashCode),
-                                d?.hashCode ?? null.hashCode),
-                            vN?.hashCode ?? null.hashCode),
-                        vE?.hashCode ?? null.hashCode),
-                    vD?.hashCode ?? null.hashCode),
-                satellites?.hashCode ?? null.hashCode),
-            iarHyp?.hashCode ?? null.hashCode),
-        iarRatio?.hashCode ?? null.hashCode));
+                                                                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                                                                src.hashCode),
+                                                                            srcEnt.hashCode),
+                                                                        dst.hashCode),
+                                                                    dstEnt.hashCode),
+                                                                validity.hashCode),
+                                                            type.hashCode),
+                                                        tow.hashCode),
+                                                    baseLat.hashCode),
+                                                baseLon.hashCode),
+                                            baseHeight.hashCode),
+                                        n.hashCode),
+                                    e.hashCode),
+                                d.hashCode),
+                            vN.hashCode),
+                        vE.hashCode),
+                    vD.hashCode),
+                satellites.hashCode),
+            iarHyp.hashCode),
+        iarRatio.hashCode));
   }
 
   @override
@@ -22126,10 +21586,10 @@ class _$GpsFixRtk extends GpsFixRtk {
           ..add('validity', '$validity (Bitfield)')
           ..add('type', '$type (Enumerated)')
           ..add('tow', '$tow')
-          ..add('baseLat',
-              '$baseLat (rad)${baseLat != null ? ' [${baseLat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('baseLon',
-              '$baseLon (rad)${baseLon != null ? ' [${baseLon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'baseLat', '$baseLat (rad) [${baseLat * 180.0 / math.pi} (deg)]')
+          ..add(
+              'baseLon', '$baseLon (rad) [${baseLon * 180.0 / math.pi} (deg)]')
           ..add('baseHeight', '$baseHeight (m)')
           ..add('n', '$n (m)')
           ..add('e', '$e (m)')
@@ -22335,7 +21795,7 @@ class _$ExternalNavData extends ExternalNavData {
   @override
   final EstimatedState? state;
   @override
-  final ExternalNavDataEnumType? type;
+  final ExternalNavDataEnumType type;
 
   factory _$ExternalNavData(
           [void Function(ExternalNavDataBuilder b)? updates]) =>
@@ -22348,7 +21808,7 @@ class _$ExternalNavData extends ExternalNavData {
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
       this.state,
-      this.type})
+      required this.type})
       : super._();
 
   @override
@@ -22384,7 +21844,7 @@ class _$ExternalNavData extends ExternalNavData {
                     dst.hashCode),
                 dstEnt.hashCode),
             state?.hashCode ?? null.hashCode),
-        type?.hashCode ?? null.hashCode));
+        type.hashCode));
   }
 
   @override
@@ -22512,7 +21972,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DissolvedOxygen(
           [void Function(DissolvedOxygenBuilder b)? updates]) =>
@@ -22524,7 +21984,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -22543,10 +22003,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -22560,7 +22017,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -22681,7 +22138,7 @@ class _$AirSaturation extends AirSaturation {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$AirSaturation([void Function(AirSaturationBuilder b)? updates]) =>
       (AirSaturationBuilder()..update(updates)).build();
@@ -22692,7 +22149,7 @@ class _$AirSaturation extends AirSaturation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -22711,10 +22168,7 @@ class _$AirSaturation extends AirSaturation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -22728,7 +22182,7 @@ class _$AirSaturation extends AirSaturation {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -22848,7 +22302,7 @@ class _$Throttle extends Throttle {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Throttle([void Function(ThrottleBuilder b)? updates]) =>
       (ThrottleBuilder()..update(updates)).build();
@@ -22859,7 +22313,7 @@ class _$Throttle extends Throttle {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -22878,10 +22332,7 @@ class _$Throttle extends Throttle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -22895,7 +22346,7 @@ class _$Throttle extends Throttle {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -23015,7 +22466,7 @@ class _$PH extends PH {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$PH([void Function(PHBuilder b)? updates]) =>
       (PHBuilder()..update(updates)).build();
@@ -23026,7 +22477,7 @@ class _$PH extends PH {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -23045,10 +22496,7 @@ class _$PH extends PH {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -23062,7 +22510,7 @@ class _$PH extends PH {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -23182,7 +22630,7 @@ class _$Redox extends Redox {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$Redox([void Function(RedoxBuilder b)? updates]) =>
       (RedoxBuilder()..update(updates)).build();
@@ -23193,7 +22641,7 @@ class _$Redox extends Redox {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -23212,10 +22660,7 @@ class _$Redox extends Redox {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -23229,7 +22674,7 @@ class _$Redox extends Redox {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -23349,11 +22794,11 @@ class _$CameraZoom extends CameraZoom {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final int? zoom;
+  final int zoom;
   @override
-  final CameraZoomEnumAction? action;
+  final CameraZoomEnumAction action;
 
   factory _$CameraZoom([void Function(CameraZoomBuilder b)? updates]) =>
       (CameraZoomBuilder()..update(updates)).build();
@@ -23364,9 +22809,9 @@ class _$CameraZoom extends CameraZoom {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.zoom,
-      this.action})
+      required this.id,
+      required this.zoom,
+      required this.action})
       : super._();
 
   @override
@@ -23403,9 +22848,9 @@ class _$CameraZoom extends CameraZoom {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                id?.hashCode ?? null.hashCode),
-            zoom?.hashCode ?? null.hashCode),
-        action?.hashCode ?? null.hashCode));
+                id.hashCode),
+            zoom.hashCode),
+        action.hashCode));
   }
 
   @override
@@ -23539,9 +22984,9 @@ class _$SetThrusterActuation extends SetThrusterActuation {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final double? value;
+  final double value;
 
   factory _$SetThrusterActuation(
           [void Function(SetThrusterActuationBuilder b)? updates]) =>
@@ -23553,8 +22998,8 @@ class _$SetThrusterActuation extends SetThrusterActuation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.value})
+      required this.id,
+      required this.value})
       : super._();
 
   @override
@@ -23576,10 +23021,7 @@ class _$SetThrusterActuation extends SetThrusterActuation {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -23594,8 +23036,8 @@ class _$SetThrusterActuation extends SetThrusterActuation {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            id?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            id.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -23725,9 +23167,9 @@ class _$SetServoPosition extends SetServoPosition {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final double? value;
+  final double value;
 
   factory _$SetServoPosition(
           [void Function(SetServoPositionBuilder b)? updates]) =>
@@ -23739,8 +23181,8 @@ class _$SetServoPosition extends SetServoPosition {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.value})
+      required this.id,
+      required this.value})
       : super._();
 
   @override
@@ -23761,10 +23203,7 @@ class _$SetServoPosition extends SetServoPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -23779,8 +23218,8 @@ class _$SetServoPosition extends SetServoPosition {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            id?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            id.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -23792,8 +23231,7 @@ class _$SetServoPosition extends SetServoPosition {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
-          ..add('value',
-              '$value (rad)${value != null ? ' [${value! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -23909,9 +23347,9 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final double? angle;
+  final double angle;
 
   factory _$SetControlSurfaceDeflection(
           [void Function(SetControlSurfaceDeflectionBuilder b)? updates]) =>
@@ -23923,8 +23361,8 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.angle})
+      required this.id,
+      required this.angle})
       : super._();
 
   @override
@@ -23946,10 +23384,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (angle == other.angle ||
-            (angle != null &&
-                other.angle != null &&
-                (angle! - other.angle! <= 1E-7)));
+        (angle == other.angle || angle - other.angle <= 1E-7);
   }
 
   @override
@@ -23964,8 +23399,8 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            id?.hashCode ?? null.hashCode),
-        angle?.hashCode ?? null.hashCode));
+            id.hashCode),
+        angle.hashCode));
   }
 
   @override
@@ -23977,8 +23412,7 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
-          ..add('angle',
-              '$angle (rad)${angle != null ? ' [${angle! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('angle', '$angle (rad) [${angle * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -24098,9 +23532,9 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
   final int dstEnt;
 
   @override
-  final RemoteActionsRequestEnumOp? op;
+  final RemoteActionsRequestEnumOp op;
   @override
-  final String? actions;
+  final String actions;
 
   factory _$RemoteActionsRequest(
           [void Function(RemoteActionsRequestBuilder b)? updates]) =>
@@ -24112,8 +23546,8 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.actions})
+      required this.op,
+      required this.actions})
       : super._();
 
   @override
@@ -24150,8 +23584,8 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        actions?.hashCode ?? null.hashCode));
+            op.hashCode),
+        actions.hashCode));
   }
 
   @override
@@ -24281,7 +23715,7 @@ class _$RemoteActions extends RemoteActions {
   final int dstEnt;
 
   @override
-  final String? actions;
+  final String actions;
 
   factory _$RemoteActions([void Function(RemoteActionsBuilder b)? updates]) =>
       (RemoteActionsBuilder()..update(updates)).build();
@@ -24292,7 +23726,7 @@ class _$RemoteActions extends RemoteActions {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.actions})
+      required this.actions})
       : super._();
 
   @override
@@ -24325,7 +23759,7 @@ class _$RemoteActions extends RemoteActions {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        actions?.hashCode ?? null.hashCode));
+        actions.hashCode));
   }
 
   @override
@@ -24445,9 +23879,9 @@ class _$ButtonEvent extends ButtonEvent {
   final int dstEnt;
 
   @override
-  final int? button;
+  final int button;
   @override
-  final int? value;
+  final int value;
 
   factory _$ButtonEvent([void Function(ButtonEventBuilder b)? updates]) =>
       (ButtonEventBuilder()..update(updates)).build();
@@ -24458,8 +23892,8 @@ class _$ButtonEvent extends ButtonEvent {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.button,
-      this.value})
+      required this.button,
+      required this.value})
       : super._();
 
   @override
@@ -24494,8 +23928,8 @@ class _$ButtonEvent extends ButtonEvent {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            button?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            button.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -24622,9 +24056,9 @@ class _$LcdControl extends LcdControl {
   final int dstEnt;
 
   @override
-  final LcdControlEnumOp? op;
+  final LcdControlEnumOp op;
   @override
-  final String? text;
+  final String text;
 
   factory _$LcdControl([void Function(LcdControlBuilder b)? updates]) =>
       (LcdControlBuilder()..update(updates)).build();
@@ -24635,8 +24069,8 @@ class _$LcdControl extends LcdControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.text})
+      required this.op,
+      required this.text})
       : super._();
 
   @override
@@ -24671,8 +24105,8 @@ class _$LcdControl extends LcdControl {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        text?.hashCode ?? null.hashCode));
+            op.hashCode),
+        text.hashCode));
   }
 
   @override
@@ -24799,11 +24233,11 @@ class _$PowerOperation extends PowerOperation {
   final int dstEnt;
 
   @override
-  final PowerOperationEnumOp? op;
+  final PowerOperationEnumOp op;
   @override
-  final double? timeRemain;
+  final double timeRemain;
   @override
-  final double? schedTime;
+  final double schedTime;
 
   factory _$PowerOperation([void Function(PowerOperationBuilder b)? updates]) =>
       (PowerOperationBuilder()..update(updates)).build();
@@ -24814,9 +24248,9 @@ class _$PowerOperation extends PowerOperation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.timeRemain,
-      this.schedTime})
+      required this.op,
+      required this.timeRemain,
+      required this.schedTime})
       : super._();
 
   @override
@@ -24837,13 +24271,8 @@ class _$PowerOperation extends PowerOperation {
         dstEnt == other.dstEnt &&
         op == other.op &&
         (timeRemain == other.timeRemain ||
-            (timeRemain != null &&
-                other.timeRemain != null &&
-                (timeRemain! - other.timeRemain! <= 1E-7))) &&
-        (schedTime == other.schedTime ||
-            (schedTime != null &&
-                other.schedTime != null &&
-                (schedTime! - other.schedTime! <= 1E-7)));
+            timeRemain - other.timeRemain <= 1E-7) &&
+        (schedTime == other.schedTime || schedTime - other.schedTime <= 1E-7);
   }
 
   @override
@@ -24859,9 +24288,9 @@ class _$PowerOperation extends PowerOperation {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                op?.hashCode ?? null.hashCode),
-            timeRemain?.hashCode ?? null.hashCode),
-        schedTime?.hashCode ?? null.hashCode));
+                op.hashCode),
+            timeRemain.hashCode),
+        schedTime.hashCode));
   }
 
   @override
@@ -24995,11 +24424,11 @@ class _$PowerChannelControl extends PowerChannelControl {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final PowerChannelControlEnumOp? op;
+  final PowerChannelControlEnumOp op;
   @override
-  final double? schedTime;
+  final double schedTime;
 
   factory _$PowerChannelControl(
           [void Function(PowerChannelControlBuilder b)? updates]) =>
@@ -25011,9 +24440,9 @@ class _$PowerChannelControl extends PowerChannelControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.op,
-      this.schedTime})
+      required this.name,
+      required this.op,
+      required this.schedTime})
       : super._();
 
   @override
@@ -25036,10 +24465,7 @@ class _$PowerChannelControl extends PowerChannelControl {
         dstEnt == other.dstEnt &&
         name == other.name &&
         op == other.op &&
-        (schedTime == other.schedTime ||
-            (schedTime != null &&
-                other.schedTime != null &&
-                (schedTime! - other.schedTime! <= 1E-7)));
+        (schedTime == other.schedTime || schedTime - other.schedTime <= 1E-7);
   }
 
   @override
@@ -25055,9 +24481,9 @@ class _$PowerChannelControl extends PowerChannelControl {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                name?.hashCode ?? null.hashCode),
-            op?.hashCode ?? null.hashCode),
-        schedTime?.hashCode ?? null.hashCode));
+                name.hashCode),
+            op.hashCode),
+        schedTime.hashCode));
   }
 
   @override
@@ -25349,9 +24775,9 @@ class _$PowerChannelState extends PowerChannelState {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final PowerChannelStateEnumState? state;
+  final PowerChannelStateEnumState state;
 
   factory _$PowerChannelState(
           [void Function(PowerChannelStateBuilder b)? updates]) =>
@@ -25363,8 +24789,8 @@ class _$PowerChannelState extends PowerChannelState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.state})
+      required this.name,
+      required this.state})
       : super._();
 
   @override
@@ -25401,8 +24827,8 @@ class _$PowerChannelState extends PowerChannelState {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            name?.hashCode ?? null.hashCode),
-        state?.hashCode ?? null.hashCode));
+            name.hashCode),
+        state.hashCode));
   }
 
   @override
@@ -25530,9 +24956,9 @@ class _$LedBrightness extends LedBrightness {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final int? value;
+  final int value;
 
   factory _$LedBrightness([void Function(LedBrightnessBuilder b)? updates]) =>
       (LedBrightnessBuilder()..update(updates)).build();
@@ -25543,8 +24969,8 @@ class _$LedBrightness extends LedBrightness {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.value})
+      required this.name,
+      required this.value})
       : super._();
 
   @override
@@ -25579,8 +25005,8 @@ class _$LedBrightness extends LedBrightness {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            name?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            name.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -25707,7 +25133,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
 
   factory _$QueryLedBrightness(
           [void Function(QueryLedBrightnessBuilder b)? updates]) =>
@@ -25719,7 +25145,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name})
+      required this.name})
       : super._();
 
   @override
@@ -25754,7 +25180,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        name?.hashCode ?? null.hashCode));
+        name.hashCode));
   }
 
   @override
@@ -25875,9 +25301,9 @@ class _$SetLedBrightness extends SetLedBrightness {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final int? value;
+  final int value;
 
   factory _$SetLedBrightness(
           [void Function(SetLedBrightnessBuilder b)? updates]) =>
@@ -25889,8 +25315,8 @@ class _$SetLedBrightness extends SetLedBrightness {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.value})
+      required this.name,
+      required this.value})
       : super._();
 
   @override
@@ -25926,8 +25352,8 @@ class _$SetLedBrightness extends SetLedBrightness {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            name?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            name.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -26055,11 +25481,11 @@ class _$SetPWM extends SetPWM {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final int? period;
+  final int period;
   @override
-  final int? dutyCycle;
+  final int dutyCycle;
 
   factory _$SetPWM([void Function(SetPWMBuilder b)? updates]) =>
       (SetPWMBuilder()..update(updates)).build();
@@ -26070,9 +25496,9 @@ class _$SetPWM extends SetPWM {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.period,
-      this.dutyCycle})
+      required this.id,
+      required this.period,
+      required this.dutyCycle})
       : super._();
 
   @override
@@ -26109,9 +25535,9 @@ class _$SetPWM extends SetPWM {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                id?.hashCode ?? null.hashCode),
-            period?.hashCode ?? null.hashCode),
-        dutyCycle?.hashCode ?? null.hashCode));
+                id.hashCode),
+            period.hashCode),
+        dutyCycle.hashCode));
   }
 
   @override
@@ -26245,11 +25671,11 @@ class _$PWM extends PWM {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final int? period;
+  final int period;
   @override
-  final int? dutyCycle;
+  final int dutyCycle;
 
   factory _$PWM([void Function(PWMBuilder b)? updates]) =>
       (PWMBuilder()..update(updates)).build();
@@ -26260,9 +25686,9 @@ class _$PWM extends PWM {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.period,
-      this.dutyCycle})
+      required this.id,
+      required this.period,
+      required this.dutyCycle})
       : super._();
 
   @override
@@ -26299,9 +25725,9 @@ class _$PWM extends PWM {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                id?.hashCode ?? null.hashCode),
-            period?.hashCode ?? null.hashCode),
-        dutyCycle?.hashCode ?? null.hashCode));
+                id.hashCode),
+            period.hashCode),
+        dutyCycle.hashCode));
   }
 
   @override
@@ -26435,45 +25861,45 @@ class _$EstimatedState extends EstimatedState {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? height;
+  final double height;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
   @override
-  final double? u;
+  final double u;
   @override
-  final double? v;
+  final double v;
   @override
-  final double? w;
+  final double w;
   @override
-  final double? vx;
+  final double vx;
   @override
-  final double? vy;
+  final double vy;
   @override
-  final double? vz;
+  final double vz;
   @override
-  final double? p;
+  final double p;
   @override
-  final double? q;
+  final double q;
   @override
-  final double? r;
+  final double r;
   @override
-  final double? depth;
+  final double depth;
   @override
-  final double? alt;
+  final double alt;
 
   factory _$EstimatedState([void Function(EstimatedStateBuilder b)? updates]) =>
       (EstimatedStateBuilder()..update(updates)).build();
@@ -26484,26 +25910,26 @@ class _$EstimatedState extends EstimatedState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.height,
-      this.x,
-      this.y,
-      this.z,
-      this.phi,
-      this.theta,
-      this.psi,
-      this.u,
-      this.v,
-      this.w,
-      this.vx,
-      this.vy,
-      this.vz,
-      this.p,
-      this.q,
-      this.r,
-      this.depth,
-      this.alt})
+      required this.lat,
+      required this.lon,
+      required this.height,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.phi,
+      required this.theta,
+      required this.psi,
+      required this.u,
+      required this.v,
+      required this.w,
+      required this.vx,
+      required this.vy,
+      required this.vz,
+      required this.p,
+      required this.q,
+      required this.r,
+      required this.depth,
+      required this.alt})
       : super._();
 
   @override
@@ -26522,60 +25948,26 @@ class _$EstimatedState extends EstimatedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (height == other.height ||
-            (height != null &&
-                other.height != null &&
-                (height! - other.height! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null &&
-                other.psi != null &&
-                (psi! - other.psi! <= 1E-7))) &&
-        (u == other.u ||
-            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
-        (v == other.v ||
-            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
-        (w == other.w ||
-            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
-        (vx == other.vx ||
-            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
-        (vy == other.vy ||
-            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
-        (vz == other.vz ||
-            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
-        (p == other.p ||
-            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
-        (q == other.q ||
-            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
-        (r == other.r ||
-            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
-        (depth == other.depth ||
-            (depth != null &&
-                other.depth != null &&
-                (depth! - other.depth! <= 1E-7))) &&
-        (alt == other.alt ||
-            (alt != null && other.alt != null && (alt! - other.alt! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7);
   }
 
   @override
@@ -26598,26 +25990,26 @@ class _$EstimatedState extends EstimatedState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), lat?.hashCode ?? null.hashCode),
-                                                                                lon?.hashCode ?? null.hashCode),
-                                                                            height?.hashCode ?? null.hashCode),
-                                                                        x?.hashCode ?? null.hashCode),
-                                                                    y?.hashCode ?? null.hashCode),
-                                                                z?.hashCode ?? null.hashCode),
-                                                            phi?.hashCode ?? null.hashCode),
-                                                        theta?.hashCode ?? null.hashCode),
-                                                    psi?.hashCode ?? null.hashCode),
-                                                u?.hashCode ?? null.hashCode),
-                                            v?.hashCode ?? null.hashCode),
-                                        w?.hashCode ?? null.hashCode),
-                                    vx?.hashCode ?? null.hashCode),
-                                vy?.hashCode ?? null.hashCode),
-                            vz?.hashCode ?? null.hashCode),
-                        p?.hashCode ?? null.hashCode),
-                    q?.hashCode ?? null.hashCode),
-                r?.hashCode ?? null.hashCode),
-            depth?.hashCode ?? null.hashCode),
-        alt?.hashCode ?? null.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), lat.hashCode),
+                                                                                lon.hashCode),
+                                                                            height.hashCode),
+                                                                        x.hashCode),
+                                                                    y.hashCode),
+                                                                z.hashCode),
+                                                            phi.hashCode),
+                                                        theta.hashCode),
+                                                    psi.hashCode),
+                                                u.hashCode),
+                                            v.hashCode),
+                                        w.hashCode),
+                                    vx.hashCode),
+                                vy.hashCode),
+                            vz.hashCode),
+                        p.hashCode),
+                    q.hashCode),
+                r.hashCode),
+            depth.hashCode),
+        alt.hashCode));
   }
 
   @override
@@ -26628,32 +26020,24 @@ class _$EstimatedState extends EstimatedState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('p',
-              '$p (rad/s)${p != null ? ' [${p! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q',
-              '$q (rad/s)${q != null ? ' [${q! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r',
-              '$r (rad/s)${r != null ? ' [${r! * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('p', '$p (rad/s) [${p * 180.0 / math.pi} (deg/s)]')
+          ..add('q', '$q (rad/s) [${q * 180.0 / math.pi} (deg/s)]')
+          ..add('r', '$r (rad/s) [${r * 180.0 / math.pi} (deg/s)]')
           ..add('depth', '$depth (m)')
           ..add('alt', '$alt (m)'))
         .toString();
@@ -26878,11 +26262,11 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$EstimatedStreamVelocity(
           [void Function(EstimatedStreamVelocityBuilder b)? updates]) =>
@@ -26894,9 +26278,9 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z})
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -26917,12 +26301,9 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -26938,9 +26319,9 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -27078,7 +26459,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$IndicatedSpeed([void Function(IndicatedSpeedBuilder b)? updates]) =>
       (IndicatedSpeedBuilder()..update(updates)).build();
@@ -27089,7 +26470,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -27108,10 +26489,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -27125,7 +26503,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -27245,7 +26623,7 @@ class _$TrueSpeed extends TrueSpeed {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$TrueSpeed([void Function(TrueSpeedBuilder b)? updates]) =>
       (TrueSpeedBuilder()..update(updates)).build();
@@ -27256,7 +26634,7 @@ class _$TrueSpeed extends TrueSpeed {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -27275,10 +26653,7 @@ class _$TrueSpeed extends TrueSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -27292,7 +26667,7 @@ class _$TrueSpeed extends TrueSpeed {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -27412,33 +26787,33 @@ class _$NavigationUncertainty extends NavigationUncertainty {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
   @override
-  final double? p;
+  final double p;
   @override
-  final double? q;
+  final double q;
   @override
-  final double? r;
+  final double r;
   @override
-  final double? u;
+  final double u;
   @override
-  final double? v;
+  final double v;
   @override
-  final double? w;
+  final double w;
   @override
-  final double? biasPsi;
+  final double biasPsi;
   @override
-  final double? biasR;
+  final double biasR;
 
   factory _$NavigationUncertainty(
           [void Function(NavigationUncertaintyBuilder b)? updates]) =>
@@ -27450,20 +26825,20 @@ class _$NavigationUncertainty extends NavigationUncertainty {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z,
-      this.phi,
-      this.theta,
-      this.psi,
-      this.p,
-      this.q,
-      this.r,
-      this.u,
-      this.v,
-      this.w,
-      this.biasPsi,
-      this.biasR})
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.phi,
+      required this.theta,
+      required this.psi,
+      required this.p,
+      required this.q,
+      required this.r,
+      required this.u,
+      required this.v,
+      required this.w,
+      required this.biasPsi,
+      required this.biasR})
       : super._();
 
   @override
@@ -27484,44 +26859,20 @@ class _$NavigationUncertainty extends NavigationUncertainty {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null &&
-                other.psi != null &&
-                (psi! - other.psi! <= 1E-7))) &&
-        (p == other.p ||
-            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
-        (q == other.q ||
-            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
-        (r == other.r ||
-            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
-        (u == other.u ||
-            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
-        (v == other.v ||
-            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
-        (w == other.w ||
-            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
-        (biasPsi == other.biasPsi ||
-            (biasPsi != null &&
-                other.biasPsi != null &&
-                (biasPsi! - other.biasPsi! <= 1E-7))) &&
-        (biasR == other.biasR ||
-            (biasR != null &&
-                other.biasR != null &&
-                (biasR! - other.biasR! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (biasPsi == other.biasPsi || biasPsi - other.biasPsi <= 1E-7) &&
+        (biasR == other.biasR || biasR - other.biasR <= 1E-7);
   }
 
   @override
@@ -27544,36 +26895,26 @@ class _$NavigationUncertainty extends NavigationUncertainty {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(
-                                                                                0,
-                                                                                timestamp?.hashCode ??
-                                                                                    null
-                                                                                        .hashCode),
-                                                                            src
-                                                                                .hashCode),
-                                                                        srcEnt
-                                                                            .hashCode),
-                                                                    dst
-                                                                        .hashCode),
-                                                                dstEnt
-                                                                    .hashCode),
-                                                            x?.hashCode ??
-                                                                null.hashCode),
-                                                        y?.hashCode ??
-                                                            null.hashCode),
-                                                    z?.hashCode ??
-                                                        null.hashCode),
-                                                phi?.hashCode ?? null.hashCode),
-                                            theta?.hashCode ?? null.hashCode),
-                                        psi?.hashCode ?? null.hashCode),
-                                    p?.hashCode ?? null.hashCode),
-                                q?.hashCode ?? null.hashCode),
-                            r?.hashCode ?? null.hashCode),
-                        u?.hashCode ?? null.hashCode),
-                    v?.hashCode ?? null.hashCode),
-                w?.hashCode ?? null.hashCode),
-            biasPsi?.hashCode ?? null.hashCode),
-        biasR?.hashCode ?? null.hashCode));
+                                                                            $jc(0,
+                                                                                timestamp?.hashCode ?? null.hashCode),
+                                                                            src.hashCode),
+                                                                        srcEnt.hashCode),
+                                                                    dst.hashCode),
+                                                                dstEnt.hashCode),
+                                                            x.hashCode),
+                                                        y.hashCode),
+                                                    z.hashCode),
+                                                phi.hashCode),
+                                            theta.hashCode),
+                                        psi.hashCode),
+                                    p.hashCode),
+                                q.hashCode),
+                            r.hashCode),
+                        u.hashCode),
+                    v.hashCode),
+                w.hashCode),
+            biasPsi.hashCode),
+        biasR.hashCode));
   }
 
   @override
@@ -27587,25 +26928,18 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('p',
-              '$p (rad/s)${p != null ? ' [${p! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q',
-              '$q (rad/s)${q != null ? ' [${q! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r',
-              '$r (rad/s)${r != null ? ' [${r! * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]')
+          ..add('p', '$p (rad/s) [${p * 180.0 / math.pi} (deg/s)]')
+          ..add('q', '$q (rad/s) [${q * 180.0 / math.pi} (deg/s)]')
+          ..add('r', '$r (rad/s) [${r * 180.0 / math.pi} (deg/s)]')
           ..add('u', '$u (m/s)')
           ..add('v', '$v (m/s)')
           ..add('w', '$w (m/s)')
-          ..add('biasPsi',
-              '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('biasR',
-              '$biasR (rad/s)${biasR != null ? ' [${biasR! * 180.0 / math.pi} (deg/s)]' : ''}'))
+          ..add(
+              'biasPsi', '$biasPsi (rad) [${biasPsi * 180.0 / math.pi} (deg)]')
+          ..add('biasR', '$biasR (rad/s) [${biasR * 180.0 / math.pi} (deg/s)]'))
         .toString();
   }
 }
@@ -27796,23 +27130,23 @@ class _$NavigationData extends NavigationData {
   final int dstEnt;
 
   @override
-  final double? biasPsi;
+  final double biasPsi;
   @override
-  final double? biasR;
+  final double biasR;
   @override
-  final double? cog;
+  final double cog;
   @override
-  final double? cyaw;
+  final double cyaw;
   @override
-  final double? lblRejLevel;
+  final double lblRejLevel;
   @override
-  final double? gpsRejLevel;
+  final double gpsRejLevel;
   @override
-  final double? customX;
+  final double customX;
   @override
-  final double? customY;
+  final double customY;
   @override
-  final double? customZ;
+  final double customZ;
 
   factory _$NavigationData([void Function(NavigationDataBuilder b)? updates]) =>
       (NavigationDataBuilder()..update(updates)).build();
@@ -27823,15 +27157,15 @@ class _$NavigationData extends NavigationData {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.biasPsi,
-      this.biasR,
-      this.cog,
-      this.cyaw,
-      this.lblRejLevel,
-      this.gpsRejLevel,
-      this.customX,
-      this.customY,
-      this.customZ})
+      required this.biasPsi,
+      required this.biasR,
+      required this.cog,
+      required this.cyaw,
+      required this.lblRejLevel,
+      required this.gpsRejLevel,
+      required this.customX,
+      required this.customY,
+      required this.customZ})
       : super._();
 
   @override
@@ -27850,42 +27184,17 @@ class _$NavigationData extends NavigationData {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (biasPsi == other.biasPsi ||
-            (biasPsi != null &&
-                other.biasPsi != null &&
-                (biasPsi! - other.biasPsi! <= 1E-7))) &&
-        (biasR == other.biasR ||
-            (biasR != null &&
-                other.biasR != null &&
-                (biasR! - other.biasR! <= 1E-7))) &&
-        (cog == other.cog ||
-            (cog != null &&
-                other.cog != null &&
-                (cog! - other.cog! <= 1E-7))) &&
-        (cyaw == other.cyaw ||
-            (cyaw != null &&
-                other.cyaw != null &&
-                (cyaw! - other.cyaw! <= 1E-7))) &&
+        (biasPsi == other.biasPsi || biasPsi - other.biasPsi <= 1E-7) &&
+        (biasR == other.biasR || biasR - other.biasR <= 1E-7) &&
+        (cog == other.cog || cog - other.cog <= 1E-7) &&
+        (cyaw == other.cyaw || cyaw - other.cyaw <= 1E-7) &&
         (lblRejLevel == other.lblRejLevel ||
-            (lblRejLevel != null &&
-                other.lblRejLevel != null &&
-                (lblRejLevel! - other.lblRejLevel! <= 1E-7))) &&
+            lblRejLevel - other.lblRejLevel <= 1E-7) &&
         (gpsRejLevel == other.gpsRejLevel ||
-            (gpsRejLevel != null &&
-                other.gpsRejLevel != null &&
-                (gpsRejLevel! - other.gpsRejLevel! <= 1E-7))) &&
-        (customX == other.customX ||
-            (customX != null &&
-                other.customX != null &&
-                (customX! - other.customX! <= 1E-7))) &&
-        (customY == other.customY ||
-            (customY != null &&
-                other.customY != null &&
-                (customY! - other.customY! <= 1E-7))) &&
-        (customZ == other.customZ ||
-            (customZ != null &&
-                other.customZ != null &&
-                (customZ! - other.customZ! <= 1E-7)));
+            gpsRejLevel - other.gpsRejLevel <= 1E-7) &&
+        (customX == other.customX || customX - other.customX <= 1E-7) &&
+        (customY == other.customY || customY - other.customY <= 1E-7) &&
+        (customZ == other.customZ || customZ - other.customZ <= 1E-7);
   }
 
   @override
@@ -27912,15 +27221,15 @@ class _$NavigationData extends NavigationData {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        biasPsi?.hashCode ?? null.hashCode),
-                                    biasR?.hashCode ?? null.hashCode),
-                                cog?.hashCode ?? null.hashCode),
-                            cyaw?.hashCode ?? null.hashCode),
-                        lblRejLevel?.hashCode ?? null.hashCode),
-                    gpsRejLevel?.hashCode ?? null.hashCode),
-                customX?.hashCode ?? null.hashCode),
-            customY?.hashCode ?? null.hashCode),
-        customZ?.hashCode ?? null.hashCode));
+                                        biasPsi.hashCode),
+                                    biasR.hashCode),
+                                cog.hashCode),
+                            cyaw.hashCode),
+                        lblRejLevel.hashCode),
+                    gpsRejLevel.hashCode),
+                customX.hashCode),
+            customY.hashCode),
+        customZ.hashCode));
   }
 
   @override
@@ -27931,14 +27240,11 @@ class _$NavigationData extends NavigationData {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('biasPsi',
-              '$biasPsi (rad)${biasPsi != null ? ' [${biasPsi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('biasR',
-              '$biasR (rad/s)${biasR != null ? ' [${biasR! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('cog',
-              '$cog (rad)${cog != null ? ' [${cog! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('cyaw',
-              '$cyaw (rad)${cyaw != null ? ' [${cyaw! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'biasPsi', '$biasPsi (rad) [${biasPsi * 180.0 / math.pi} (deg)]')
+          ..add('biasR', '$biasR (rad/s) [${biasR * 180.0 / math.pi} (deg/s)]')
+          ..add('cog', '$cog (rad) [${cog * 180.0 / math.pi} (deg)]')
+          ..add('cyaw', '$cyaw (rad) [${cyaw * 180.0 / math.pi} (deg)]')
           ..add('lblRejLevel', '$lblRejLevel')
           ..add('gpsRejLevel', '$gpsRejLevel')
           ..add('customX', '$customX')
@@ -28100,9 +27406,9 @@ class _$GpsFixRejection extends GpsFixRejection {
   final int dstEnt;
 
   @override
-  final double? utcTime;
+  final double utcTime;
   @override
-  final GpsFixRejectionEnumReason? reason;
+  final GpsFixRejectionEnumReason reason;
 
   factory _$GpsFixRejection(
           [void Function(GpsFixRejectionBuilder b)? updates]) =>
@@ -28114,8 +27420,8 @@ class _$GpsFixRejection extends GpsFixRejection {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.utcTime,
-      this.reason})
+      required this.utcTime,
+      required this.reason})
       : super._();
 
   @override
@@ -28134,10 +27440,7 @@ class _$GpsFixRejection extends GpsFixRejection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (utcTime == other.utcTime ||
-            (utcTime != null &&
-                other.utcTime != null &&
-                (utcTime! - other.utcTime! <= 1E-7))) &&
+        (utcTime == other.utcTime || utcTime - other.utcTime <= 1E-7) &&
         reason == other.reason;
   }
 
@@ -28153,8 +27456,8 @@ class _$GpsFixRejection extends GpsFixRejection {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            utcTime?.hashCode ?? null.hashCode),
-        reason?.hashCode ?? null.hashCode));
+            utcTime.hashCode),
+        reason.hashCode));
   }
 
   @override
@@ -28282,11 +27585,11 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
   final int dstEnt;
 
   @override
-  final int? id;
+  final int id;
   @override
-  final double? range;
+  final double range;
   @override
-  final LblRangeAcceptanceEnumAcceptance? acceptance;
+  final LblRangeAcceptanceEnumAcceptance acceptance;
 
   factory _$LblRangeAcceptance(
           [void Function(LblRangeAcceptanceBuilder b)? updates]) =>
@@ -28298,9 +27601,9 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.range,
-      this.acceptance})
+      required this.id,
+      required this.range,
+      required this.acceptance})
       : super._();
 
   @override
@@ -28322,10 +27625,7 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         id == other.id &&
-        (range == other.range ||
-            (range != null &&
-                other.range != null &&
-                (range! - other.range! <= 1E-7))) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         acceptance == other.acceptance;
   }
 
@@ -28342,9 +27642,9 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                id?.hashCode ?? null.hashCode),
-            range?.hashCode ?? null.hashCode),
-        acceptance?.hashCode ?? null.hashCode));
+                id.hashCode),
+            range.hashCode),
+        acceptance.hashCode));
   }
 
   @override
@@ -28481,13 +27781,13 @@ class _$DvlRejection extends DvlRejection {
   final int dstEnt;
 
   @override
-  final DvlRejectionBitfieldType? type;
+  final DvlRejectionBitfieldType type;
   @override
-  final DvlRejectionEnumReason? reason;
+  final DvlRejectionEnumReason reason;
   @override
-  final double? value;
+  final double value;
   @override
-  final double? timestep;
+  final double timestep;
 
   factory _$DvlRejection([void Function(DvlRejectionBuilder b)? updates]) =>
       (DvlRejectionBuilder()..update(updates)).build();
@@ -28498,10 +27798,10 @@ class _$DvlRejection extends DvlRejection {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.reason,
-      this.value,
-      this.timestep})
+      required this.type,
+      required this.reason,
+      required this.value,
+      required this.timestep})
       : super._();
 
   @override
@@ -28522,14 +27822,8 @@ class _$DvlRejection extends DvlRejection {
         dstEnt == other.dstEnt &&
         type == other.type &&
         reason == other.reason &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
-        (timestep == other.timestep ||
-            (timestep != null &&
-                other.timestep != null &&
-                (timestep! - other.timestep! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7) &&
+        (timestep == other.timestep || timestep - other.timestep <= 1E-7);
   }
 
   @override
@@ -28548,10 +27842,10 @@ class _$DvlRejection extends DvlRejection {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    type?.hashCode ?? null.hashCode),
-                reason?.hashCode ?? null.hashCode),
-            value?.hashCode ?? null.hashCode),
-        timestep?.hashCode ?? null.hashCode));
+                    type.hashCode),
+                reason.hashCode),
+            value.hashCode),
+        timestep.hashCode));
   }
 
   @override
@@ -28694,15 +27988,15 @@ class _$LblEstimate extends LblEstimate {
   @override
   final LblBeacon? beacon;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? varX;
+  final double varX;
   @override
-  final double? varY;
+  final double varY;
   @override
-  final double? distance;
+  final double distance;
 
   factory _$LblEstimate([void Function(LblEstimateBuilder b)? updates]) =>
       (LblEstimateBuilder()..update(updates)).build();
@@ -28714,11 +28008,11 @@ class _$LblEstimate extends LblEstimate {
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
       this.beacon,
-      this.x,
-      this.y,
-      this.varX,
-      this.varY,
-      this.distance})
+      required this.x,
+      required this.y,
+      required this.varX,
+      required this.varY,
+      required this.distance})
       : super._();
 
   @override
@@ -28738,22 +28032,11 @@ class _$LblEstimate extends LblEstimate {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         beacon == other.beacon &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (varX == other.varX ||
-            (varX != null &&
-                other.varX != null &&
-                (varX! - other.varX! <= 1E-7))) &&
-        (varY == other.varY ||
-            (varY != null &&
-                other.varY != null &&
-                (varY! - other.varY! <= 1E-7))) &&
-        (distance == other.distance ||
-            (distance != null &&
-                other.distance != null &&
-                (distance! - other.distance! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (varX == other.varX || varX - other.varX <= 1E-7) &&
+        (varY == other.varY || varY - other.varY <= 1E-7) &&
+        (distance == other.distance || distance - other.distance <= 1E-7);
   }
 
   @override
@@ -28777,11 +28060,11 @@ class _$LblEstimate extends LblEstimate {
                                     dst.hashCode),
                                 dstEnt.hashCode),
                             beacon?.hashCode ?? null.hashCode),
-                        x?.hashCode ?? null.hashCode),
-                    y?.hashCode ?? null.hashCode),
-                varX?.hashCode ?? null.hashCode),
-            varY?.hashCode ?? null.hashCode),
-        distance?.hashCode ?? null.hashCode));
+                        x.hashCode),
+                    y.hashCode),
+                varX.hashCode),
+            varY.hashCode),
+        distance.hashCode));
   }
 
   @override
@@ -28936,7 +28219,7 @@ class _$AlignmentState extends AlignmentState {
   final int dstEnt;
 
   @override
-  final AlignmentStateEnumState? state;
+  final AlignmentStateEnumState state;
 
   factory _$AlignmentState([void Function(AlignmentStateBuilder b)? updates]) =>
       (AlignmentStateBuilder()..update(updates)).build();
@@ -28947,7 +28230,7 @@ class _$AlignmentState extends AlignmentState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state})
+      required this.state})
       : super._();
 
   @override
@@ -28980,7 +28263,7 @@ class _$AlignmentState extends AlignmentState {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        state?.hashCode ?? null.hashCode));
+        state.hashCode));
   }
 
   @override
@@ -29100,11 +28383,11 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$GroupStreamVelocity(
           [void Function(GroupStreamVelocityBuilder b)? updates]) =>
@@ -29116,9 +28399,9 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z})
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -29139,12 +28422,9 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -29160,9 +28440,9 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -29299,11 +28579,11 @@ class _$Airflow extends Airflow {
   final int dstEnt;
 
   @override
-  final double? va;
+  final double va;
   @override
-  final double? aoa;
+  final double aoa;
   @override
-  final double? ssa;
+  final double ssa;
 
   factory _$Airflow([void Function(AirflowBuilder b)? updates]) =>
       (AirflowBuilder()..update(updates)).build();
@@ -29314,9 +28594,9 @@ class _$Airflow extends Airflow {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.va,
-      this.aoa,
-      this.ssa})
+      required this.va,
+      required this.aoa,
+      required this.ssa})
       : super._();
 
   @override
@@ -29335,14 +28615,9 @@ class _$Airflow extends Airflow {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (va == other.va ||
-            (va != null && other.va != null && (va! - other.va! <= 1E-7))) &&
-        (aoa == other.aoa ||
-            (aoa != null &&
-                other.aoa != null &&
-                (aoa! - other.aoa! <= 1E-7))) &&
-        (ssa == other.ssa ||
-            (ssa != null && other.ssa != null && (ssa! - other.ssa! <= 1E-7)));
+        (va == other.va || va - other.va <= 1E-7) &&
+        (aoa == other.aoa || aoa - other.aoa <= 1E-7) &&
+        (ssa == other.ssa || ssa - other.ssa <= 1E-7);
   }
 
   @override
@@ -29358,9 +28633,9 @@ class _$Airflow extends Airflow {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                va?.hashCode ?? null.hashCode),
-            aoa?.hashCode ?? null.hashCode),
-        ssa?.hashCode ?? null.hashCode));
+                va.hashCode),
+            aoa.hashCode),
+        ssa.hashCode));
   }
 
   @override
@@ -29372,10 +28647,8 @@ class _$Airflow extends Airflow {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('va', '$va (m/s)')
-          ..add('aoa',
-              '$aoa (rad)${aoa != null ? ' [${aoa! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('ssa',
-              '$ssa (rad)${ssa != null ? ' [${ssa! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('aoa', '$aoa (rad) [${aoa * 180.0 / math.pi} (deg)]')
+          ..add('ssa', '$ssa (rad) [${ssa * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -29496,7 +28769,7 @@ class _$DesiredHeading extends DesiredHeading {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DesiredHeading([void Function(DesiredHeadingBuilder b)? updates]) =>
       (DesiredHeadingBuilder()..update(updates)).build();
@@ -29507,7 +28780,7 @@ class _$DesiredHeading extends DesiredHeading {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -29526,10 +28799,7 @@ class _$DesiredHeading extends DesiredHeading {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -29543,7 +28813,7 @@ class _$DesiredHeading extends DesiredHeading {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -29554,8 +28824,7 @@ class _$DesiredHeading extends DesiredHeading {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('value',
-              '$value (rad)${value != null ? ' [${value! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -29664,9 +28933,9 @@ class _$DesiredZ extends DesiredZ {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
 
   factory _$DesiredZ([void Function(DesiredZBuilder b)? updates]) =>
       (DesiredZBuilder()..update(updates)).build();
@@ -29677,8 +28946,8 @@ class _$DesiredZ extends DesiredZ {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value,
-      this.zUnits})
+      required this.value,
+      required this.zUnits})
       : super._();
 
   @override
@@ -29697,10 +28966,7 @@ class _$DesiredZ extends DesiredZ {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         zUnits == other.zUnits;
   }
 
@@ -29716,8 +28982,8 @@ class _$DesiredZ extends DesiredZ {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            value?.hashCode ?? null.hashCode),
-        zUnits?.hashCode ?? null.hashCode));
+            value.hashCode),
+        zUnits.hashCode));
   }
 
   @override
@@ -29844,9 +29110,9 @@ class _$DesiredSpeed extends DesiredSpeed {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
 
   factory _$DesiredSpeed([void Function(DesiredSpeedBuilder b)? updates]) =>
       (DesiredSpeedBuilder()..update(updates)).build();
@@ -29857,8 +29123,8 @@ class _$DesiredSpeed extends DesiredSpeed {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value,
-      this.speedUnits})
+      required this.value,
+      required this.speedUnits})
       : super._();
 
   @override
@@ -29877,10 +29143,7 @@ class _$DesiredSpeed extends DesiredSpeed {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         speedUnits == other.speedUnits;
   }
 
@@ -29896,8 +29159,8 @@ class _$DesiredSpeed extends DesiredSpeed {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            value?.hashCode ?? null.hashCode),
-        speedUnits?.hashCode ?? null.hashCode));
+            value.hashCode),
+        speedUnits.hashCode));
   }
 
   @override
@@ -30024,7 +29287,7 @@ class _$DesiredRoll extends DesiredRoll {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DesiredRoll([void Function(DesiredRollBuilder b)? updates]) =>
       (DesiredRollBuilder()..update(updates)).build();
@@ -30035,7 +29298,7 @@ class _$DesiredRoll extends DesiredRoll {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -30054,10 +29317,7 @@ class _$DesiredRoll extends DesiredRoll {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -30071,7 +29331,7 @@ class _$DesiredRoll extends DesiredRoll {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -30082,8 +29342,7 @@ class _$DesiredRoll extends DesiredRoll {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('value',
-              '$value (rad)${value != null ? ' [${value! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -30192,7 +29451,7 @@ class _$DesiredPitch extends DesiredPitch {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DesiredPitch([void Function(DesiredPitchBuilder b)? updates]) =>
       (DesiredPitchBuilder()..update(updates)).build();
@@ -30203,7 +29462,7 @@ class _$DesiredPitch extends DesiredPitch {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -30222,10 +29481,7 @@ class _$DesiredPitch extends DesiredPitch {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -30239,7 +29495,7 @@ class _$DesiredPitch extends DesiredPitch {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -30250,8 +29506,7 @@ class _$DesiredPitch extends DesiredPitch {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('value',
-              '$value (rad)${value != null ? ' [${value! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -30360,7 +29615,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DesiredVerticalRate(
           [void Function(DesiredVerticalRateBuilder b)? updates]) =>
@@ -30372,7 +29627,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -30393,10 +29648,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -30410,7 +29662,7 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -30533,31 +29785,31 @@ class _$DesiredPath extends DesiredPath {
   final int dstEnt;
 
   @override
-  final int? pathRef;
+  final int pathRef;
   @override
-  final double? startLat;
+  final double startLat;
   @override
-  final double? startLon;
+  final double startLon;
   @override
-  final double? startZ;
+  final double startZ;
   @override
-  final ZUnitsEnum? startZUnits;
+  final ZUnitsEnum startZUnits;
   @override
-  final double? endLat;
+  final double endLat;
   @override
-  final double? endLon;
+  final double endLon;
   @override
-  final double? endZ;
+  final double endZ;
   @override
-  final ZUnitsEnum? endZUnits;
+  final ZUnitsEnum endZUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? lradius;
+  final double lradius;
   @override
-  final DesiredPathBitfieldFlags? flags;
+  final DesiredPathBitfieldFlags flags;
 
   factory _$DesiredPath([void Function(DesiredPathBuilder b)? updates]) =>
       (DesiredPathBuilder()..update(updates)).build();
@@ -30568,19 +29820,19 @@ class _$DesiredPath extends DesiredPath {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.pathRef,
-      this.startLat,
-      this.startLon,
-      this.startZ,
-      this.startZUnits,
-      this.endLat,
-      this.endLon,
-      this.endZ,
-      this.endZUnits,
-      this.speed,
-      this.speedUnits,
-      this.lradius,
-      this.flags})
+      required this.pathRef,
+      required this.startLat,
+      required this.startLon,
+      required this.startZ,
+      required this.startZUnits,
+      required this.endLat,
+      required this.endLon,
+      required this.endZ,
+      required this.endZUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.lradius,
+      required this.flags})
       : super._();
 
   @override
@@ -30600,41 +29852,17 @@ class _$DesiredPath extends DesiredPath {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         pathRef == other.pathRef &&
-        (startLat == other.startLat ||
-            (startLat != null &&
-                other.startLat != null &&
-                (startLat! - other.startLat! <= 1E-7))) &&
-        (startLon == other.startLon ||
-            (startLon != null &&
-                other.startLon != null &&
-                (startLon! - other.startLon! <= 1E-7))) &&
-        (startZ == other.startZ ||
-            (startZ != null &&
-                other.startZ != null &&
-                (startZ! - other.startZ! <= 1E-7))) &&
+        (startLat == other.startLat || startLat - other.startLat <= 1E-7) &&
+        (startLon == other.startLon || startLon - other.startLon <= 1E-7) &&
+        (startZ == other.startZ || startZ - other.startZ <= 1E-7) &&
         startZUnits == other.startZUnits &&
-        (endLat == other.endLat ||
-            (endLat != null &&
-                other.endLat != null &&
-                (endLat! - other.endLat! <= 1E-7))) &&
-        (endLon == other.endLon ||
-            (endLon != null &&
-                other.endLon != null &&
-                (endLon! - other.endLon! <= 1E-7))) &&
-        (endZ == other.endZ ||
-            (endZ != null &&
-                other.endZ != null &&
-                (endZ! - other.endZ! <= 1E-7))) &&
+        (endLat == other.endLat || endLat - other.endLat <= 1E-7) &&
+        (endLon == other.endLon || endLon - other.endLon <= 1E-7) &&
+        (endZ == other.endZ || endZ - other.endZ <= 1E-7) &&
         endZUnits == other.endZUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (lradius == other.lradius ||
-            (lradius != null &&
-                other.lradius != null &&
-                (lradius! - other.lradius! <= 1E-7))) &&
+        (lradius == other.lradius || lradius - other.lradius <= 1E-7) &&
         flags == other.flags;
   }
 
@@ -30660,30 +29888,24 @@ class _$DesiredPath extends DesiredPath {
                                                                         $jc(
                                                                             0,
                                                                             timestamp?.hashCode ??
-                                                                                null
-                                                                                    .hashCode),
-                                                                        src
-                                                                            .hashCode),
-                                                                    srcEnt
-                                                                        .hashCode),
+                                                                                null.hashCode),
+                                                                        src.hashCode),
+                                                                    srcEnt.hashCode),
                                                                 dst.hashCode),
                                                             dstEnt.hashCode),
-                                                        pathRef?.hashCode ??
-                                                            null.hashCode),
-                                                    startLat?.hashCode ??
-                                                        null.hashCode),
-                                                startLon?.hashCode ??
-                                                    null.hashCode),
-                                            startZ?.hashCode ?? null.hashCode),
-                                        startZUnits?.hashCode ?? null.hashCode),
-                                    endLat?.hashCode ?? null.hashCode),
-                                endLon?.hashCode ?? null.hashCode),
-                            endZ?.hashCode ?? null.hashCode),
-                        endZUnits?.hashCode ?? null.hashCode),
-                    speed?.hashCode ?? null.hashCode),
-                speedUnits?.hashCode ?? null.hashCode),
-            lradius?.hashCode ?? null.hashCode),
-        flags?.hashCode ?? null.hashCode));
+                                                        pathRef.hashCode),
+                                                    startLat.hashCode),
+                                                startLon.hashCode),
+                                            startZ.hashCode),
+                                        startZUnits.hashCode),
+                                    endLat.hashCode),
+                                endLon.hashCode),
+                            endZ.hashCode),
+                        endZUnits.hashCode),
+                    speed.hashCode),
+                speedUnits.hashCode),
+            lradius.hashCode),
+        flags.hashCode));
   }
 
   @override
@@ -30696,15 +29918,13 @@ class _$DesiredPath extends DesiredPath {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('pathRef', '$pathRef')
           ..add('startLat',
-              '$startLat (rad)${startLat != null ? ' [${startLat! * 180.0 / math.pi} (deg)]' : ''}')
+              '$startLat (rad) [${startLat * 180.0 / math.pi} (deg)]')
           ..add('startLon',
-              '$startLon (rad)${startLon != null ? ' [${startLon! * 180.0 / math.pi} (deg)]' : ''}')
+              '$startLon (rad) [${startLon * 180.0 / math.pi} (deg)]')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
-          ..add('endLat',
-              '$endLat (rad)${endLat != null ? ' [${endLat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('endLon',
-              '$endLon (rad)${endLon != null ? ' [${endLon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLat', '$endLat (rad) [${endLat * 180.0 / math.pi} (deg)]')
+          ..add('endLon', '$endLon (rad) [${endLon * 180.0 / math.pi} (deg)]')
           ..add('endZ', '$endZ (m)')
           ..add('endZUnits', '$endZUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -30891,19 +30111,19 @@ class _$DesiredControl extends DesiredControl {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? k;
+  final double k;
   @override
-  final double? m;
+  final double m;
   @override
-  final double? n;
+  final double n;
   @override
-  final DesiredControlBitfieldFlags? flags;
+  final DesiredControlBitfieldFlags flags;
 
   factory _$DesiredControl([void Function(DesiredControlBuilder b)? updates]) =>
       (DesiredControlBuilder()..update(updates)).build();
@@ -30914,13 +30134,13 @@ class _$DesiredControl extends DesiredControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z,
-      this.k,
-      this.m,
-      this.n,
-      this.flags})
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.k,
+      required this.m,
+      required this.n,
+      required this.flags})
       : super._();
 
   @override
@@ -30939,18 +30159,12 @@ class _$DesiredControl extends DesiredControl {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (k == other.k ||
-            (k != null && other.k != null && (k! - other.k! <= 1E-7))) &&
-        (m == other.m ||
-            (m != null && other.m != null && (m! - other.m! <= 1E-7))) &&
-        (n == other.n ||
-            (n != null && other.n != null && (n! - other.n! <= 1E-7))) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (k == other.k || k - other.k <= 1E-7) &&
+        (m == other.m || m - other.m <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7) &&
         flags == other.flags;
   }
 
@@ -30975,13 +30189,13 @@ class _$DesiredControl extends DesiredControl {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                x?.hashCode ?? null.hashCode),
-                            y?.hashCode ?? null.hashCode),
-                        z?.hashCode ?? null.hashCode),
-                    k?.hashCode ?? null.hashCode),
-                m?.hashCode ?? null.hashCode),
-            n?.hashCode ?? null.hashCode),
-        flags?.hashCode ?? null.hashCode));
+                                x.hashCode),
+                            y.hashCode),
+                        z.hashCode),
+                    k.hashCode),
+                m.hashCode),
+            n.hashCode),
+        flags.hashCode));
   }
 
   @override
@@ -31143,7 +30357,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DesiredHeadingRate(
           [void Function(DesiredHeadingRateBuilder b)? updates]) =>
@@ -31155,7 +30369,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -31176,10 +30390,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -31193,7 +30404,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -31204,8 +30415,7 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('value',
-              '$value (rad/s)${value != null ? ' [${value! * 180.0 / math.pi} (deg/s)]' : ''}'))
+          ..add('value', '$value (rad/s) [${value * 180.0 / math.pi} (deg/s)]'))
         .toString();
   }
 }
@@ -31315,19 +30525,19 @@ class _$DesiredVelocity extends DesiredVelocity {
   final int dstEnt;
 
   @override
-  final double? u;
+  final double u;
   @override
-  final double? v;
+  final double v;
   @override
-  final double? w;
+  final double w;
   @override
-  final double? p;
+  final double p;
   @override
-  final double? q;
+  final double q;
   @override
-  final double? r;
+  final double r;
   @override
-  final DesiredVelocityBitfieldFlags? flags;
+  final DesiredVelocityBitfieldFlags flags;
 
   factory _$DesiredVelocity(
           [void Function(DesiredVelocityBuilder b)? updates]) =>
@@ -31339,13 +30549,13 @@ class _$DesiredVelocity extends DesiredVelocity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.u,
-      this.v,
-      this.w,
-      this.p,
-      this.q,
-      this.r,
-      this.flags})
+      required this.u,
+      required this.v,
+      required this.w,
+      required this.p,
+      required this.q,
+      required this.r,
+      required this.flags})
       : super._();
 
   @override
@@ -31364,18 +30574,12 @@ class _$DesiredVelocity extends DesiredVelocity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (u == other.u ||
-            (u != null && other.u != null && (u! - other.u! <= 1E-7))) &&
-        (v == other.v ||
-            (v != null && other.v != null && (v! - other.v! <= 1E-7))) &&
-        (w == other.w ||
-            (w != null && other.w != null && (w! - other.w! <= 1E-7))) &&
-        (p == other.p ||
-            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
-        (q == other.q ||
-            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
-        (r == other.r ||
-            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
+        (u == other.u || u - other.u <= 1E-7) &&
+        (v == other.v || v - other.v <= 1E-7) &&
+        (w == other.w || w - other.w <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
         flags == other.flags;
   }
 
@@ -31400,13 +30604,13 @@ class _$DesiredVelocity extends DesiredVelocity {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                u?.hashCode ?? null.hashCode),
-                            v?.hashCode ?? null.hashCode),
-                        w?.hashCode ?? null.hashCode),
-                    p?.hashCode ?? null.hashCode),
-                q?.hashCode ?? null.hashCode),
-            r?.hashCode ?? null.hashCode),
-        flags?.hashCode ?? null.hashCode));
+                                u.hashCode),
+                            v.hashCode),
+                        w.hashCode),
+                    p.hashCode),
+                q.hashCode),
+            r.hashCode),
+        flags.hashCode));
   }
 
   @override
@@ -31569,43 +30773,43 @@ class _$PathControlState extends PathControlState {
   final int dstEnt;
 
   @override
-  final int? pathRef;
+  final int pathRef;
   @override
-  final double? startLat;
+  final double startLat;
   @override
-  final double? startLon;
+  final double startLon;
   @override
-  final double? startZ;
+  final double startZ;
   @override
-  final ZUnitsEnum? startZUnits;
+  final ZUnitsEnum startZUnits;
   @override
-  final double? endLat;
+  final double endLat;
   @override
-  final double? endLon;
+  final double endLon;
   @override
-  final double? endZ;
+  final double endZ;
   @override
-  final ZUnitsEnum? endZUnits;
+  final ZUnitsEnum endZUnits;
   @override
-  final double? lradius;
+  final double lradius;
   @override
-  final PathControlStateBitfieldFlags? flags;
+  final PathControlStateBitfieldFlags flags;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? vx;
+  final double vx;
   @override
-  final double? vy;
+  final double vy;
   @override
-  final double? vz;
+  final double vz;
   @override
-  final double? courseError;
+  final double courseError;
   @override
-  final int? eta;
+  final int eta;
 
   factory _$PathControlState(
           [void Function(PathControlStateBuilder b)? updates]) =>
@@ -31617,25 +30821,25 @@ class _$PathControlState extends PathControlState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.pathRef,
-      this.startLat,
-      this.startLon,
-      this.startZ,
-      this.startZUnits,
-      this.endLat,
-      this.endLon,
-      this.endZ,
-      this.endZUnits,
-      this.lradius,
-      this.flags,
-      this.x,
-      this.y,
-      this.z,
-      this.vx,
-      this.vy,
-      this.vz,
-      this.courseError,
-      this.eta})
+      required this.pathRef,
+      required this.startLat,
+      required this.startLon,
+      required this.startZ,
+      required this.startZUnits,
+      required this.endLat,
+      required this.endLon,
+      required this.endZ,
+      required this.endZUnits,
+      required this.lradius,
+      required this.flags,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.vx,
+      required this.vy,
+      required this.vz,
+      required this.courseError,
+      required this.eta})
       : super._();
 
   @override
@@ -31656,53 +30860,24 @@ class _$PathControlState extends PathControlState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         pathRef == other.pathRef &&
-        (startLat == other.startLat ||
-            (startLat != null &&
-                other.startLat != null &&
-                (startLat! - other.startLat! <= 1E-7))) &&
-        (startLon == other.startLon ||
-            (startLon != null &&
-                other.startLon != null &&
-                (startLon! - other.startLon! <= 1E-7))) &&
-        (startZ == other.startZ ||
-            (startZ != null &&
-                other.startZ != null &&
-                (startZ! - other.startZ! <= 1E-7))) &&
+        (startLat == other.startLat || startLat - other.startLat <= 1E-7) &&
+        (startLon == other.startLon || startLon - other.startLon <= 1E-7) &&
+        (startZ == other.startZ || startZ - other.startZ <= 1E-7) &&
         startZUnits == other.startZUnits &&
-        (endLat == other.endLat ||
-            (endLat != null &&
-                other.endLat != null &&
-                (endLat! - other.endLat! <= 1E-7))) &&
-        (endLon == other.endLon ||
-            (endLon != null &&
-                other.endLon != null &&
-                (endLon! - other.endLon! <= 1E-7))) &&
-        (endZ == other.endZ ||
-            (endZ != null &&
-                other.endZ != null &&
-                (endZ! - other.endZ! <= 1E-7))) &&
+        (endLat == other.endLat || endLat - other.endLat <= 1E-7) &&
+        (endLon == other.endLon || endLon - other.endLon <= 1E-7) &&
+        (endZ == other.endZ || endZ - other.endZ <= 1E-7) &&
         endZUnits == other.endZUnits &&
-        (lradius == other.lradius ||
-            (lradius != null &&
-                other.lradius != null &&
-                (lradius! - other.lradius! <= 1E-7))) &&
+        (lradius == other.lradius || lradius - other.lradius <= 1E-7) &&
         flags == other.flags &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (vx == other.vx ||
-            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
-        (vy == other.vy ||
-            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
-        (vz == other.vz ||
-            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
         (courseError == other.courseError ||
-            (courseError != null &&
-                other.courseError != null &&
-                (courseError! - other.courseError! <= 1E-7))) &&
+            courseError - other.courseError <= 1E-7) &&
         eta == other.eta;
   }
 
@@ -31727,25 +30902,25 @@ class _$PathControlState extends PathControlState {
                                                                     $jc(
                                                                         $jc(
                                                                             $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode),
-                                                                                pathRef?.hashCode ?? null.hashCode),
-                                                                            startLat?.hashCode ?? null.hashCode),
-                                                                        startLon?.hashCode ?? null.hashCode),
-                                                                    startZ?.hashCode ?? null.hashCode),
-                                                                startZUnits?.hashCode ?? null.hashCode),
-                                                            endLat?.hashCode ?? null.hashCode),
-                                                        endLon?.hashCode ?? null.hashCode),
-                                                    endZ?.hashCode ?? null.hashCode),
-                                                endZUnits?.hashCode ?? null.hashCode),
-                                            lradius?.hashCode ?? null.hashCode),
-                                        flags?.hashCode ?? null.hashCode),
-                                    x?.hashCode ?? null.hashCode),
-                                y?.hashCode ?? null.hashCode),
-                            z?.hashCode ?? null.hashCode),
-                        vx?.hashCode ?? null.hashCode),
-                    vy?.hashCode ?? null.hashCode),
-                vz?.hashCode ?? null.hashCode),
-            courseError?.hashCode ?? null.hashCode),
-        eta?.hashCode ?? null.hashCode));
+                                                                                pathRef.hashCode),
+                                                                            startLat.hashCode),
+                                                                        startLon.hashCode),
+                                                                    startZ.hashCode),
+                                                                startZUnits.hashCode),
+                                                            endLat.hashCode),
+                                                        endLon.hashCode),
+                                                    endZ.hashCode),
+                                                endZUnits.hashCode),
+                                            lradius.hashCode),
+                                        flags.hashCode),
+                                    x.hashCode),
+                                y.hashCode),
+                            z.hashCode),
+                        vx.hashCode),
+                    vy.hashCode),
+                vz.hashCode),
+            courseError.hashCode),
+        eta.hashCode));
   }
 
   @override
@@ -31758,15 +30933,13 @@ class _$PathControlState extends PathControlState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('pathRef', '$pathRef')
           ..add('startLat',
-              '$startLat (rad)${startLat != null ? ' [${startLat! * 180.0 / math.pi} (deg)]' : ''}')
+              '$startLat (rad) [${startLat * 180.0 / math.pi} (deg)]')
           ..add('startLon',
-              '$startLon (rad)${startLon != null ? ' [${startLon! * 180.0 / math.pi} (deg)]' : ''}')
+              '$startLon (rad) [${startLon * 180.0 / math.pi} (deg)]')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
-          ..add('endLat',
-              '$endLat (rad)${endLat != null ? ' [${endLat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('endLon',
-              '$endLon (rad)${endLon != null ? ' [${endLon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('endLat', '$endLat (rad) [${endLat * 180.0 / math.pi} (deg)]')
+          ..add('endLon', '$endLon (rad) [${endLon * 180.0 / math.pi} (deg)]')
           ..add('endZ', '$endZ (m)')
           ..add('endZUnits', '$endZUnits (Enumerated)')
           ..add('lradius', '$lradius (m)')
@@ -31778,7 +30951,7 @@ class _$PathControlState extends PathControlState {
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
           ..add('courseError',
-              '$courseError (rad)${courseError != null ? ' [${courseError! * 180.0 / math.pi} (deg)]' : ''}')
+              '$courseError (rad) [${courseError * 180.0 / math.pi} (deg)]')
           ..add('eta', '$eta (s)'))
         .toString();
   }
@@ -31997,11 +31170,11 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
   final int dstEnt;
 
   @override
-  final double? k;
+  final double k;
   @override
-  final double? m;
+  final double m;
   @override
-  final double? n;
+  final double n;
 
   factory _$AllocatedControlTorques(
           [void Function(AllocatedControlTorquesBuilder b)? updates]) =>
@@ -32013,9 +31186,9 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.k,
-      this.m,
-      this.n})
+      required this.k,
+      required this.m,
+      required this.n})
       : super._();
 
   @override
@@ -32036,12 +31209,9 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (k == other.k ||
-            (k != null && other.k != null && (k! - other.k! <= 1E-7))) &&
-        (m == other.m ||
-            (m != null && other.m != null && (m! - other.m! <= 1E-7))) &&
-        (n == other.n ||
-            (n != null && other.n != null && (n! - other.n! <= 1E-7)));
+        (k == other.k || k - other.k <= 1E-7) &&
+        (m == other.m || m - other.m <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7);
   }
 
   @override
@@ -32057,9 +31227,9 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                k?.hashCode ?? null.hashCode),
-            m?.hashCode ?? null.hashCode),
-        n?.hashCode ?? null.hashCode));
+                k.hashCode),
+            m.hashCode),
+        n.hashCode));
   }
 
   @override
@@ -32197,13 +31367,13 @@ class _$ControlParcel extends ControlParcel {
   final int dstEnt;
 
   @override
-  final double? p;
+  final double p;
   @override
-  final double? i;
+  final double i;
   @override
-  final double? d;
+  final double d;
   @override
-  final double? a;
+  final double a;
 
   factory _$ControlParcel([void Function(ControlParcelBuilder b)? updates]) =>
       (ControlParcelBuilder()..update(updates)).build();
@@ -32214,10 +31384,10 @@ class _$ControlParcel extends ControlParcel {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.p,
-      this.i,
-      this.d,
-      this.a})
+      required this.p,
+      required this.i,
+      required this.d,
+      required this.a})
       : super._();
 
   @override
@@ -32236,14 +31406,10 @@ class _$ControlParcel extends ControlParcel {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (p == other.p ||
-            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
-        (i == other.i ||
-            (i != null && other.i != null && (i! - other.i! <= 1E-7))) &&
-        (d == other.d ||
-            (d != null && other.d != null && (d! - other.d! <= 1E-7))) &&
-        (a == other.a ||
-            (a != null && other.a != null && (a! - other.a! <= 1E-7)));
+        (p == other.p || p - other.p <= 1E-7) &&
+        (i == other.i || i - other.i <= 1E-7) &&
+        (d == other.d || d - other.d <= 1E-7) &&
+        (a == other.a || a - other.a <= 1E-7);
   }
 
   @override
@@ -32262,10 +31428,10 @@ class _$ControlParcel extends ControlParcel {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    p?.hashCode ?? null.hashCode),
-                i?.hashCode ?? null.hashCode),
-            d?.hashCode ?? null.hashCode),
-        a?.hashCode ?? null.hashCode));
+                    p.hashCode),
+                i.hashCode),
+            d.hashCode),
+        a.hashCode));
   }
 
   @override
@@ -32406,7 +31572,7 @@ class _$Brake extends Brake {
   final int dstEnt;
 
   @override
-  final BrakeEnumOp? op;
+  final BrakeEnumOp op;
 
   factory _$Brake([void Function(BrakeBuilder b)? updates]) =>
       (BrakeBuilder()..update(updates)).build();
@@ -32417,7 +31583,7 @@ class _$Brake extends Brake {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op})
+      required this.op})
       : super._();
 
   @override
@@ -32450,7 +31616,7 @@ class _$Brake extends Brake {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        op?.hashCode ?? null.hashCode));
+        op.hashCode));
   }
 
   @override
@@ -32570,25 +31736,25 @@ class _$DesiredLinearState extends DesiredLinearState {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? vx;
+  final double vx;
   @override
-  final double? vy;
+  final double vy;
   @override
-  final double? vz;
+  final double vz;
   @override
-  final double? ax;
+  final double ax;
   @override
-  final double? ay;
+  final double ay;
   @override
-  final double? az;
+  final double az;
   @override
-  final DesiredLinearStateBitfieldFlags? flags;
+  final DesiredLinearStateBitfieldFlags flags;
 
   factory _$DesiredLinearState(
           [void Function(DesiredLinearStateBuilder b)? updates]) =>
@@ -32600,16 +31766,16 @@ class _$DesiredLinearState extends DesiredLinearState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z,
-      this.vx,
-      this.vy,
-      this.vz,
-      this.ax,
-      this.ay,
-      this.az,
-      this.flags})
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.vx,
+      required this.vy,
+      required this.vz,
+      required this.ax,
+      required this.ay,
+      required this.az,
+      required this.flags})
       : super._();
 
   @override
@@ -32630,24 +31796,15 @@ class _$DesiredLinearState extends DesiredLinearState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (vx == other.vx ||
-            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
-        (vy == other.vy ||
-            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
-        (vz == other.vz ||
-            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
-        (ax == other.ax ||
-            (ax != null && other.ax != null && (ax! - other.ax! <= 1E-7))) &&
-        (ay == other.ay ||
-            (ay != null && other.ay != null && (ay! - other.ay! <= 1E-7))) &&
-        (az == other.az ||
-            (az != null && other.az != null && (az! - other.az! <= 1E-7))) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
+        (ax == other.ax || ax - other.ax <= 1E-7) &&
+        (ay == other.ay || ay - other.ay <= 1E-7) &&
+        (az == other.az || az - other.az <= 1E-7) &&
         flags == other.flags;
   }
 
@@ -32676,16 +31833,16 @@ class _$DesiredLinearState extends DesiredLinearState {
                                                         srcEnt.hashCode),
                                                     dst.hashCode),
                                                 dstEnt.hashCode),
-                                            x?.hashCode ?? null.hashCode),
-                                        y?.hashCode ?? null.hashCode),
-                                    z?.hashCode ?? null.hashCode),
-                                vx?.hashCode ?? null.hashCode),
-                            vy?.hashCode ?? null.hashCode),
-                        vz?.hashCode ?? null.hashCode),
-                    ax?.hashCode ?? null.hashCode),
-                ay?.hashCode ?? null.hashCode),
-            az?.hashCode ?? null.hashCode),
-        flags?.hashCode ?? null.hashCode));
+                                            x.hashCode),
+                                        y.hashCode),
+                                    z.hashCode),
+                                vx.hashCode),
+                            vy.hashCode),
+                        vz.hashCode),
+                    ax.hashCode),
+                ay.hashCode),
+            az.hashCode),
+        flags.hashCode));
   }
 
   @override
@@ -32869,7 +32026,7 @@ class _$DesiredThrottle extends DesiredThrottle {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$DesiredThrottle(
           [void Function(DesiredThrottleBuilder b)? updates]) =>
@@ -32881,7 +32038,7 @@ class _$DesiredThrottle extends DesiredThrottle {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -32900,10 +32057,7 @@ class _$DesiredThrottle extends DesiredThrottle {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -32917,7 +32071,7 @@ class _$DesiredThrottle extends DesiredThrottle {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -33038,27 +32192,27 @@ class _$Goto extends Goto {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? roll;
+  final double roll;
   @override
-  final double? pitch;
+  final double pitch;
   @override
-  final double? yaw;
+  final double yaw;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Goto([void Function(GotoBuilder b)? updates]) =>
       (GotoBuilder()..update(updates)).build();
@@ -33069,17 +32223,17 @@ class _$Goto extends Goto {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.roll,
-      this.pitch,
-      this.yaw,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.roll,
+      required this.pitch,
+      required this.yaw,
+      required this.custom})
       : super._();
 
   @override
@@ -33099,34 +32253,15 @@ class _$Goto extends Goto {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (roll == other.roll ||
-            (roll != null &&
-                other.roll != null &&
-                (roll! - other.roll! <= 1E-7))) &&
-        (pitch == other.pitch ||
-            (pitch != null &&
-                other.pitch != null &&
-                (pitch! - other.pitch! <= 1E-7))) &&
-        (yaw == other.yaw ||
-            (yaw != null &&
-                other.yaw != null &&
-                (yaw! - other.yaw! <= 1E-7))) &&
+        (roll == other.roll || roll - other.roll <= 1E-7) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (yaw == other.yaw || yaw - other.yaw <= 1E-7) &&
         custom == other.custom;
   }
 
@@ -33151,24 +32286,22 @@ class _$Goto extends Goto {
                                                                     0,
                                                                     timestamp
                                                                             ?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
+                                                                        null.hashCode),
                                                                 src.hashCode),
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                timeout?.hashCode ??
-                                                    null.hashCode),
-                                            lat?.hashCode ?? null.hashCode),
-                                        lon?.hashCode ?? null.hashCode),
-                                    z?.hashCode ?? null.hashCode),
-                                zUnits?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    roll?.hashCode ?? null.hashCode),
-                pitch?.hashCode ?? null.hashCode),
-            yaw?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                timeout.hashCode),
+                                            lat.hashCode),
+                                        lon.hashCode),
+                                    z.hashCode),
+                                zUnits.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    roll.hashCode),
+                pitch.hashCode),
+            yaw.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -33180,20 +32313,15 @@ class _$Goto extends Goto {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('roll',
-              '$roll (rad)${roll != null ? ' [${roll! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('pitch',
-              '$pitch (rad)${pitch != null ? ' [${pitch! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('yaw',
-              '$yaw (rad)${yaw != null ? ' [${yaw! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('roll', '$roll (rad) [${roll * 180.0 / math.pi} (deg)]')
+          ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
+          ..add('yaw', '$yaw (rad) [${yaw * 180.0 / math.pi} (deg)]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -33363,27 +32491,27 @@ class _$PopUp extends PopUp {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final double? radius;
+  final double radius;
   @override
-  final PopUpBitfieldFlags? flags;
+  final PopUpBitfieldFlags flags;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$PopUp([void Function(PopUpBuilder b)? updates]) =>
       (PopUpBuilder()..update(updates)).build();
@@ -33394,17 +32522,17 @@ class _$PopUp extends PopUp {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.duration,
-      this.radius,
-      this.flags,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.duration,
+      required this.radius,
+      required this.flags,
+      required this.custom})
       : super._();
 
   @override
@@ -33424,27 +32552,14 @@ class _$PopUp extends PopUp {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         duration == other.duration &&
-        (radius == other.radius ||
-            (radius != null &&
-                other.radius != null &&
-                (radius! - other.radius! <= 1E-7))) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         flags == other.flags &&
         custom == other.custom;
   }
@@ -33470,24 +32585,22 @@ class _$PopUp extends PopUp {
                                                                     0,
                                                                     timestamp
                                                                             ?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
+                                                                        null.hashCode),
                                                                 src.hashCode),
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                timeout?.hashCode ??
-                                                    null.hashCode),
-                                            lat?.hashCode ?? null.hashCode),
-                                        lon?.hashCode ?? null.hashCode),
-                                    z?.hashCode ?? null.hashCode),
-                                zUnits?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    duration?.hashCode ?? null.hashCode),
-                radius?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                timeout.hashCode),
+                                            lat.hashCode),
+                                        lon.hashCode),
+                                    z.hashCode),
+                                zUnits.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    duration.hashCode),
+                radius.hashCode),
+            flags.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -33499,10 +32612,8 @@ class _$PopUp extends PopUp {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -33679,7 +32790,7 @@ class _$Teleoperation extends Teleoperation {
   final int dstEnt;
 
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Teleoperation([void Function(TeleoperationBuilder b)? updates]) =>
       (TeleoperationBuilder()..update(updates)).build();
@@ -33690,7 +32801,7 @@ class _$Teleoperation extends Teleoperation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.custom})
+      required this.custom})
       : super._();
 
   @override
@@ -33723,7 +32834,7 @@ class _$Teleoperation extends Teleoperation {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        custom?.hashCode ?? null.hashCode));
+        custom.hashCode));
   }
 
   @override
@@ -33843,33 +32954,33 @@ class _$Loiter extends Loiter {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final LoiterEnumType? type;
+  final LoiterEnumType type;
   @override
-  final double? radius;
+  final double radius;
   @override
-  final double? length;
+  final double length;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final LoiterEnumDirection? direction;
+  final LoiterEnumDirection direction;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Loiter([void Function(LoiterBuilder b)? updates]) =>
       (LoiterBuilder()..update(updates)).build();
@@ -33880,20 +32991,20 @@ class _$Loiter extends Loiter {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.duration,
-      this.speed,
-      this.speedUnits,
-      this.type,
-      this.radius,
-      this.length,
-      this.bearing,
-      this.direction,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.duration,
+      required this.speed,
+      required this.speedUnits,
+      required this.type,
+      required this.radius,
+      required this.length,
+      required this.bearing,
+      required this.direction,
+      required this.custom})
       : super._();
 
   @override
@@ -33913,36 +33024,17 @@ class _$Loiter extends Loiter {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
         duration == other.duration &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         type == other.type &&
-        (radius == other.radius ||
-            (radius != null &&
-                other.radius != null &&
-                (radius! - other.radius! <= 1E-7))) &&
-        (length == other.length ||
-            (length != null &&
-                other.length != null &&
-                (length! - other.length! <= 1E-7))) &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -33967,36 +33059,26 @@ class _$Loiter extends Loiter {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(
-                                                                                0,
-                                                                                timestamp?.hashCode ??
-                                                                                    null
-                                                                                        .hashCode),
-                                                                            src
-                                                                                .hashCode),
-                                                                        srcEnt
-                                                                            .hashCode),
-                                                                    dst
-                                                                        .hashCode),
-                                                                dstEnt
-                                                                    .hashCode),
-                                                            timeout?.hashCode ??
-                                                                null.hashCode),
-                                                        lat?.hashCode ??
-                                                            null.hashCode),
-                                                    lon?.hashCode ??
-                                                        null.hashCode),
-                                                z?.hashCode ?? null.hashCode),
-                                            zUnits?.hashCode ?? null.hashCode),
-                                        duration?.hashCode ?? null.hashCode),
-                                    speed?.hashCode ?? null.hashCode),
-                                speedUnits?.hashCode ?? null.hashCode),
-                            type?.hashCode ?? null.hashCode),
-                        radius?.hashCode ?? null.hashCode),
-                    length?.hashCode ?? null.hashCode),
-                bearing?.hashCode ?? null.hashCode),
-            direction?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                                            $jc(0,
+                                                                                timestamp?.hashCode ?? null.hashCode),
+                                                                            src.hashCode),
+                                                                        srcEnt.hashCode),
+                                                                    dst.hashCode),
+                                                                dstEnt.hashCode),
+                                                            timeout.hashCode),
+                                                        lat.hashCode),
+                                                    lon.hashCode),
+                                                z.hashCode),
+                                            zUnits.hashCode),
+                                        duration.hashCode),
+                                    speed.hashCode),
+                                speedUnits.hashCode),
+                            type.hashCode),
+                        radius.hashCode),
+                    length.hashCode),
+                bearing.hashCode),
+            direction.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -34008,10 +33090,8 @@ class _$Loiter extends Loiter {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('duration', '$duration (s)')
@@ -34020,8 +33100,8 @@ class _$Loiter extends Loiter {
           ..add('type', '$type (Enumerated)')
           ..add('radius', '$radius (m)')
           ..add('length', '$length (m)')
-          ..add('bearing',
-              '$bearing (rad)${bearing != null ? ' [${bearing! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('direction', '$direction (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
         .toString();
@@ -34211,9 +33291,9 @@ class _$IdleManeuver extends IdleManeuver {
   final int dstEnt;
 
   @override
-  final int? duration;
+  final int duration;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$IdleManeuver([void Function(IdleManeuverBuilder b)? updates]) =>
       (IdleManeuverBuilder()..update(updates)).build();
@@ -34224,8 +33304,8 @@ class _$IdleManeuver extends IdleManeuver {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.duration,
-      this.custom})
+      required this.duration,
+      required this.custom})
       : super._();
 
   @override
@@ -34260,8 +33340,8 @@ class _$IdleManeuver extends IdleManeuver {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            duration?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+            duration.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -34390,9 +33470,9 @@ class _$LowLevelControl extends LowLevelControl {
   @override
   final ControlCommand? control;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$LowLevelControl(
           [void Function(LowLevelControlBuilder b)? updates]) =>
@@ -34405,8 +33485,8 @@ class _$LowLevelControl extends LowLevelControl {
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
       this.control,
-      this.duration,
-      this.custom})
+      required this.duration,
+      required this.custom})
       : super._();
 
   @override
@@ -34444,8 +33524,8 @@ class _$LowLevelControl extends LowLevelControl {
                         dst.hashCode),
                     dstEnt.hashCode),
                 control?.hashCode ?? null.hashCode),
-            duration?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+            duration.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -34580,37 +33660,37 @@ class _$Rows extends Rows {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final double? crossAngle;
+  final double crossAngle;
   @override
-  final double? width;
+  final double width;
   @override
-  final double? length;
+  final double length;
   @override
-  final double? hstep;
+  final double hstep;
   @override
-  final int? coff;
+  final int coff;
   @override
-  final int? alternation;
+  final int alternation;
   @override
-  final RowsBitfieldFlags? flags;
+  final RowsBitfieldFlags flags;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Rows([void Function(RowsBuilder b)? updates]) =>
       (RowsBuilder()..update(updates)).build();
@@ -34621,22 +33701,22 @@ class _$Rows extends Rows {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.bearing,
-      this.crossAngle,
-      this.width,
-      this.length,
-      this.hstep,
-      this.coff,
-      this.alternation,
-      this.flags,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.bearing,
+      required this.crossAngle,
+      required this.width,
+      required this.length,
+      required this.hstep,
+      required this.coff,
+      required this.alternation,
+      required this.flags,
+      required this.custom})
       : super._();
 
   @override
@@ -34656,42 +33736,18 @@ class _$Rows extends Rows {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         (crossAngle == other.crossAngle ||
-            (crossAngle != null &&
-                other.crossAngle != null &&
-                (crossAngle! - other.crossAngle! <= 1E-7))) &&
-        (width == other.width ||
-            (width != null &&
-                other.width != null &&
-                (width! - other.width! <= 1E-7))) &&
-        (length == other.length ||
-            (length != null &&
-                other.length != null &&
-                (length! - other.length! <= 1E-7))) &&
-        (hstep == other.hstep ||
-            (hstep != null &&
-                other.hstep != null &&
-                (hstep! - other.hstep! <= 1E-7))) &&
+            crossAngle - other.crossAngle <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
+        (hstep == other.hstep || hstep - other.hstep <= 1E-7) &&
         coff == other.coff &&
         alternation == other.alternation &&
         flags == other.flags &&
@@ -34722,22 +33778,22 @@ class _$Rows extends Rows {
                                                                                 srcEnt.hashCode),
                                                                             dst.hashCode),
                                                                         dstEnt.hashCode),
-                                                                    timeout?.hashCode ?? null.hashCode),
-                                                                lat?.hashCode ?? null.hashCode),
-                                                            lon?.hashCode ?? null.hashCode),
-                                                        z?.hashCode ?? null.hashCode),
-                                                    zUnits?.hashCode ?? null.hashCode),
-                                                speed?.hashCode ?? null.hashCode),
-                                            speedUnits?.hashCode ?? null.hashCode),
-                                        bearing?.hashCode ?? null.hashCode),
-                                    crossAngle?.hashCode ?? null.hashCode),
-                                width?.hashCode ?? null.hashCode),
-                            length?.hashCode ?? null.hashCode),
-                        hstep?.hashCode ?? null.hashCode),
-                    coff?.hashCode ?? null.hashCode),
-                alternation?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                                    timeout.hashCode),
+                                                                lat.hashCode),
+                                                            lon.hashCode),
+                                                        z.hashCode),
+                                                    zUnits.hashCode),
+                                                speed.hashCode),
+                                            speedUnits.hashCode),
+                                        bearing.hashCode),
+                                    crossAngle.hashCode),
+                                width.hashCode),
+                            length.hashCode),
+                        hstep.hashCode),
+                    coff.hashCode),
+                alternation.hashCode),
+            flags.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -34749,18 +33805,16 @@ class _$Rows extends Rows {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing',
-              '$bearing (rad)${bearing != null ? ' [${bearing! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('crossAngle',
-              '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle! * 180.0 / math.pi} (deg)]' : ''}')
+              '$crossAngle (rad) [${crossAngle * 180.0 / math.pi} (deg)]')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)')
           ..add('hstep', '$hstep (m)')
@@ -34966,23 +34020,23 @@ class _$FollowPath extends FollowPath {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final List<PathPoint>? points;
+  final List<PathPoint> points;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$FollowPath([void Function(FollowPathBuilder b)? updates]) =>
       (FollowPathBuilder()..update(updates)).build();
@@ -34993,15 +34047,15 @@ class _$FollowPath extends FollowPath {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.points,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.points,
+      required this.custom})
       : super._();
 
   @override
@@ -35021,21 +34075,11 @@ class _$FollowPath extends FollowPath {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
@@ -35065,15 +34109,15 @@ class _$FollowPath extends FollowPath {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        timeout?.hashCode ?? null.hashCode),
-                                    lat?.hashCode ?? null.hashCode),
-                                lon?.hashCode ?? null.hashCode),
-                            z?.hashCode ?? null.hashCode),
-                        zUnits?.hashCode ?? null.hashCode),
-                    speed?.hashCode ?? null.hashCode),
-                speedUnits?.hashCode ?? null.hashCode),
-            points?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                        timeout.hashCode),
+                                    lat.hashCode),
+                                lon.hashCode),
+                            z.hashCode),
+                        zUnits.hashCode),
+                    speed.hashCode),
+                speedUnits.hashCode),
+            points.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -35085,10 +34129,8 @@ class _$FollowPath extends FollowPath {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -35251,11 +34293,11 @@ class _$PathPoint extends PathPoint {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$PathPoint([void Function(PathPointBuilder b)? updates]) =>
       (PathPointBuilder()..update(updates)).build();
@@ -35266,9 +34308,9 @@ class _$PathPoint extends PathPoint {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z})
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -35287,12 +34329,9 @@ class _$PathPoint extends PathPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -35308,9 +34347,9 @@ class _$PathPoint extends PathPoint {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -35444,25 +34483,25 @@ class _$YoYo extends YoYo {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? amplitude;
+  final double amplitude;
   @override
-  final double? pitch;
+  final double pitch;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$YoYo([void Function(YoYoBuilder b)? updates]) =>
       (YoYoBuilder()..update(updates)).build();
@@ -35473,16 +34512,16 @@ class _$YoYo extends YoYo {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.amplitude,
-      this.pitch,
-      this.speed,
-      this.speedUnits,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.amplitude,
+      required this.pitch,
+      required this.speed,
+      required this.speedUnits,
+      required this.custom})
       : super._();
 
   @override
@@ -35502,29 +34541,13 @@ class _$YoYo extends YoYo {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (amplitude == other.amplitude ||
-            (amplitude != null &&
-                other.amplitude != null &&
-                (amplitude! - other.amplitude! <= 1E-7))) &&
-        (pitch == other.pitch ||
-            (pitch != null &&
-                other.pitch != null &&
-                (pitch! - other.pitch! <= 1E-7))) &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (amplitude == other.amplitude || amplitude - other.amplitude <= 1E-7) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -35554,16 +34577,16 @@ class _$YoYo extends YoYo {
                                                         srcEnt.hashCode),
                                                     dst.hashCode),
                                                 dstEnt.hashCode),
-                                            timeout?.hashCode ?? null.hashCode),
-                                        lat?.hashCode ?? null.hashCode),
-                                    lon?.hashCode ?? null.hashCode),
-                                z?.hashCode ?? null.hashCode),
-                            zUnits?.hashCode ?? null.hashCode),
-                        amplitude?.hashCode ?? null.hashCode),
-                    pitch?.hashCode ?? null.hashCode),
-                speed?.hashCode ?? null.hashCode),
-            speedUnits?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                            timeout.hashCode),
+                                        lat.hashCode),
+                                    lon.hashCode),
+                                z.hashCode),
+                            zUnits.hashCode),
+                        amplitude.hashCode),
+                    pitch.hashCode),
+                speed.hashCode),
+            speedUnits.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -35575,15 +34598,12 @@ class _$YoYo extends YoYo {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('amplitude', '$amplitude (m)')
-          ..add('pitch',
-              '$pitch (rad)${pitch != null ? ' [${pitch! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -35901,23 +34921,23 @@ class _$StationKeeping extends StationKeeping {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? radius;
+  final double radius;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$StationKeeping([void Function(StationKeepingBuilder b)? updates]) =>
       (StationKeepingBuilder()..update(updates)).build();
@@ -35928,15 +34948,15 @@ class _$StationKeeping extends StationKeeping {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.radius,
-      this.duration,
-      this.speed,
-      this.speedUnits,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.radius,
+      required this.duration,
+      required this.speed,
+      required this.speedUnits,
+      required this.custom})
       : super._();
 
   @override
@@ -35955,26 +34975,13 @@ class _$StationKeeping extends StationKeeping {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (radius == other.radius ||
-            (radius != null &&
-                other.radius != null &&
-                (radius! - other.radius! <= 1E-7))) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         duration == other.duration &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -36003,15 +35010,15 @@ class _$StationKeeping extends StationKeeping {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        lat?.hashCode ?? null.hashCode),
-                                    lon?.hashCode ?? null.hashCode),
-                                z?.hashCode ?? null.hashCode),
-                            zUnits?.hashCode ?? null.hashCode),
-                        radius?.hashCode ?? null.hashCode),
-                    duration?.hashCode ?? null.hashCode),
-                speed?.hashCode ?? null.hashCode),
-            speedUnits?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                        lat.hashCode),
+                                    lon.hashCode),
+                                z.hashCode),
+                            zUnits.hashCode),
+                        radius.hashCode),
+                    duration.hashCode),
+                speed.hashCode),
+            speedUnits.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -36022,10 +35029,8 @@ class _$StationKeeping extends StationKeeping {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('radius', '$radius (m)')
@@ -36189,29 +35194,29 @@ class _$Elevator extends Elevator {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final ElevatorBitfieldFlags? flags;
+  final ElevatorBitfieldFlags flags;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? startZ;
+  final double startZ;
   @override
-  final ZUnitsEnum? startZUnits;
+  final ZUnitsEnum startZUnits;
   @override
-  final double? endZ;
+  final double endZ;
   @override
-  final ZUnitsEnum? endZUnits;
+  final ZUnitsEnum endZUnits;
   @override
-  final double? radius;
+  final double radius;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Elevator([void Function(ElevatorBuilder b)? updates]) =>
       (ElevatorBuilder()..update(updates)).build();
@@ -36222,18 +35227,18 @@ class _$Elevator extends Elevator {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.flags,
-      this.lat,
-      this.lon,
-      this.startZ,
-      this.startZUnits,
-      this.endZ,
-      this.endZUnits,
-      this.radius,
-      this.speed,
-      this.speedUnits,
-      this.custom})
+      required this.timeout,
+      required this.flags,
+      required this.lat,
+      required this.lon,
+      required this.startZ,
+      required this.startZUnits,
+      required this.endZ,
+      required this.endZUnits,
+      required this.radius,
+      required this.speed,
+      required this.speedUnits,
+      required this.custom})
       : super._();
 
   @override
@@ -36254,32 +35259,14 @@ class _$Elevator extends Elevator {
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
         flags == other.flags &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (startZ == other.startZ ||
-            (startZ != null &&
-                other.startZ != null &&
-                (startZ! - other.startZ! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (startZ == other.startZ || startZ - other.startZ <= 1E-7) &&
         startZUnits == other.startZUnits &&
-        (endZ == other.endZ ||
-            (endZ != null &&
-                other.endZ != null &&
-                (endZ! - other.endZ! <= 1E-7))) &&
+        (endZ == other.endZ || endZ - other.endZ <= 1E-7) &&
         endZUnits == other.endZUnits &&
-        (radius == other.radius ||
-            (radius != null &&
-                other.radius != null &&
-                (radius! - other.radius! <= 1E-7))) &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -36305,28 +35292,23 @@ class _$Elevator extends Elevator {
                                                                     $jc(
                                                                         0,
                                                                         timestamp?.hashCode ??
-                                                                            null
-                                                                                .hashCode),
-                                                                    src
-                                                                        .hashCode),
-                                                                srcEnt
-                                                                    .hashCode),
+                                                                            null.hashCode),
+                                                                    src.hashCode),
+                                                                srcEnt.hashCode),
                                                             dst.hashCode),
                                                         dstEnt.hashCode),
-                                                    timeout?.hashCode ??
-                                                        null.hashCode),
-                                                flags?.hashCode ??
-                                                    null.hashCode),
-                                            lat?.hashCode ?? null.hashCode),
-                                        lon?.hashCode ?? null.hashCode),
-                                    startZ?.hashCode ?? null.hashCode),
-                                startZUnits?.hashCode ?? null.hashCode),
-                            endZ?.hashCode ?? null.hashCode),
-                        endZUnits?.hashCode ?? null.hashCode),
-                    radius?.hashCode ?? null.hashCode),
-                speed?.hashCode ?? null.hashCode),
-            speedUnits?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                    timeout.hashCode),
+                                                flags.hashCode),
+                                            lat.hashCode),
+                                        lon.hashCode),
+                                    startZ.hashCode),
+                                startZUnits.hashCode),
+                            endZ.hashCode),
+                        endZUnits.hashCode),
+                    radius.hashCode),
+                speed.hashCode),
+            speedUnits.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -36339,10 +35321,8 @@ class _$Elevator extends Elevator {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
           ..add('flags', '$flags (Bitfield)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('startZ', '$startZ (m)')
           ..add('startZUnits', '$startZUnits (Enumerated)')
           ..add('endZ', '$endZ (m)')
@@ -36525,23 +35505,23 @@ class _$FollowTrajectory extends FollowTrajectory {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final List<TrajectoryPoint>? points;
+  final List<TrajectoryPoint> points;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$FollowTrajectory(
           [void Function(FollowTrajectoryBuilder b)? updates]) =>
@@ -36553,15 +35533,15 @@ class _$FollowTrajectory extends FollowTrajectory {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.points,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.points,
+      required this.custom})
       : super._();
 
   @override
@@ -36582,21 +35562,11 @@ class _$FollowTrajectory extends FollowTrajectory {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         custom == other.custom;
@@ -36626,15 +35596,15 @@ class _$FollowTrajectory extends FollowTrajectory {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        timeout?.hashCode ?? null.hashCode),
-                                    lat?.hashCode ?? null.hashCode),
-                                lon?.hashCode ?? null.hashCode),
-                            z?.hashCode ?? null.hashCode),
-                        zUnits?.hashCode ?? null.hashCode),
-                    speed?.hashCode ?? null.hashCode),
-                speedUnits?.hashCode ?? null.hashCode),
-            points?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                        timeout.hashCode),
+                                    lat.hashCode),
+                                lon.hashCode),
+                            z.hashCode),
+                        zUnits.hashCode),
+                    speed.hashCode),
+                speedUnits.hashCode),
+            points.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -36646,10 +35616,8 @@ class _$FollowTrajectory extends FollowTrajectory {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -36813,13 +35781,13 @@ class _$TrajectoryPoint extends TrajectoryPoint {
   final int dstEnt;
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? t;
+  final double t;
 
   factory _$TrajectoryPoint(
           [void Function(TrajectoryPointBuilder b)? updates]) =>
@@ -36831,10 +35799,10 @@ class _$TrajectoryPoint extends TrajectoryPoint {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.x,
-      this.y,
-      this.z,
-      this.t})
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.t})
       : super._();
 
   @override
@@ -36853,14 +35821,10 @@ class _$TrajectoryPoint extends TrajectoryPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (t == other.t ||
-            (t != null && other.t != null && (t! - other.t! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (t == other.t || t - other.t <= 1E-7);
   }
 
   @override
@@ -36879,10 +35843,10 @@ class _$TrajectoryPoint extends TrajectoryPoint {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    x?.hashCode ?? null.hashCode),
-                y?.hashCode ?? null.hashCode),
-            z?.hashCode ?? null.hashCode),
-        t?.hashCode ?? null.hashCode));
+                    x.hashCode),
+                y.hashCode),
+            z.hashCode),
+        t.hashCode));
   }
 
   @override
@@ -37024,11 +35988,11 @@ class _$CustomManeuver extends CustomManeuver {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final String? name;
+  final String name;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$CustomManeuver([void Function(CustomManeuverBuilder b)? updates]) =>
       (CustomManeuverBuilder()..update(updates)).build();
@@ -37039,9 +36003,9 @@ class _$CustomManeuver extends CustomManeuver {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.name,
-      this.custom})
+      required this.timeout,
+      required this.name,
+      required this.custom})
       : super._();
 
   @override
@@ -37078,9 +36042,9 @@ class _$CustomManeuver extends CustomManeuver {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                timeout?.hashCode ?? null.hashCode),
-            name?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                timeout.hashCode),
+            name.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -37214,25 +36178,25 @@ class _$VehicleFormation extends VehicleFormation {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final List<TrajectoryPoint>? points;
+  final List<TrajectoryPoint> points;
   @override
-  final List<VehicleFormationParticipant>? participants;
+  final List<VehicleFormationParticipant> participants;
   @override
-  final double? startTime;
+  final double startTime;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$VehicleFormation(
           [void Function(VehicleFormationBuilder b)? updates]) =>
@@ -37244,16 +36208,16 @@ class _$VehicleFormation extends VehicleFormation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.points,
-      this.participants,
-      this.startTime,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.points,
+      required this.participants,
+      required this.startTime,
+      required this.custom})
       : super._();
 
   @override
@@ -37273,28 +36237,15 @@ class _$VehicleFormation extends VehicleFormation {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(points, other.points) &&
         DeepCollectionEquality().equals(participants, other.participants) &&
-        (startTime == other.startTime ||
-            (startTime != null &&
-                other.startTime != null &&
-                (startTime! - other.startTime! <= 1E-7))) &&
+        (startTime == other.startTime || startTime - other.startTime <= 1E-7) &&
         custom == other.custom;
   }
 
@@ -37323,16 +36274,16 @@ class _$VehicleFormation extends VehicleFormation {
                                                         srcEnt.hashCode),
                                                     dst.hashCode),
                                                 dstEnt.hashCode),
-                                            lat?.hashCode ?? null.hashCode),
-                                        lon?.hashCode ?? null.hashCode),
-                                    z?.hashCode ?? null.hashCode),
-                                zUnits?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    points?.hashCode ?? null.hashCode),
-                participants?.hashCode ?? null.hashCode),
-            startTime?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                            lat.hashCode),
+                                        lon.hashCode),
+                                    z.hashCode),
+                                zUnits.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    points.hashCode),
+                participants.hashCode),
+            startTime.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -37343,10 +36294,8 @@ class _$VehicleFormation extends VehicleFormation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -37520,13 +36469,13 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
   final int dstEnt;
 
   @override
-  final int? vid;
+  final int vid;
   @override
-  final double? offX;
+  final double offX;
   @override
-  final double? offY;
+  final double offY;
   @override
-  final double? offZ;
+  final double offZ;
 
   factory _$VehicleFormationParticipant(
           [void Function(VehicleFormationParticipantBuilder b)? updates]) =>
@@ -37538,10 +36487,10 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.vid,
-      this.offX,
-      this.offY,
-      this.offZ})
+      required this.vid,
+      required this.offX,
+      required this.offY,
+      required this.offZ})
       : super._();
 
   @override
@@ -37563,18 +36512,9 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         vid == other.vid &&
-        (offX == other.offX ||
-            (offX != null &&
-                other.offX != null &&
-                (offX! - other.offX! <= 1E-7))) &&
-        (offY == other.offY ||
-            (offY != null &&
-                other.offY != null &&
-                (offY! - other.offY! <= 1E-7))) &&
-        (offZ == other.offZ ||
-            (offZ != null &&
-                other.offZ != null &&
-                (offZ! - other.offZ! <= 1E-7)));
+        (offX == other.offX || offX - other.offX <= 1E-7) &&
+        (offY == other.offY || offY - other.offY <= 1E-7) &&
+        (offZ == other.offZ || offZ - other.offZ <= 1E-7);
   }
 
   @override
@@ -37593,10 +36533,10 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    vid?.hashCode ?? null.hashCode),
-                offX?.hashCode ?? null.hashCode),
-            offY?.hashCode ?? null.hashCode),
-        offZ?.hashCode ?? null.hashCode));
+                    vid.hashCode),
+                offX.hashCode),
+            offY.hashCode),
+        offZ.hashCode));
   }
 
   @override
@@ -37890,7 +36830,7 @@ class _$RegisterManeuver extends RegisterManeuver {
   final int dstEnt;
 
   @override
-  final int? mid;
+  final int mid;
 
   factory _$RegisterManeuver(
           [void Function(RegisterManeuverBuilder b)? updates]) =>
@@ -37902,7 +36842,7 @@ class _$RegisterManeuver extends RegisterManeuver {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.mid})
+      required this.mid})
       : super._();
 
   @override
@@ -37936,7 +36876,7 @@ class _$RegisterManeuver extends RegisterManeuver {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        mid?.hashCode ?? null.hashCode));
+        mid.hashCode));
   }
 
   @override
@@ -38057,11 +36997,11 @@ class _$ManeuverControlState extends ManeuverControlState {
   final int dstEnt;
 
   @override
-  final ManeuverControlStateEnumState? state;
+  final ManeuverControlStateEnumState state;
   @override
-  final int? eta;
+  final int eta;
   @override
-  final String? info;
+  final String info;
 
   factory _$ManeuverControlState(
           [void Function(ManeuverControlStateBuilder b)? updates]) =>
@@ -38073,9 +37013,9 @@ class _$ManeuverControlState extends ManeuverControlState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state,
-      this.eta,
-      this.info})
+      required this.state,
+      required this.eta,
+      required this.info})
       : super._();
 
   @override
@@ -38114,9 +37054,9 @@ class _$ManeuverControlState extends ManeuverControlState {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                state?.hashCode ?? null.hashCode),
-            eta?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+                state.hashCode),
+            eta.hashCode),
+        info.hashCode));
   }
 
   @override
@@ -38253,21 +37193,21 @@ class _$FollowSystem extends FollowSystem {
   final int dstEnt;
 
   @override
-  final int? system;
+  final int system;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
 
   factory _$FollowSystem([void Function(FollowSystemBuilder b)? updates]) =>
       (FollowSystemBuilder()..update(updates)).build();
@@ -38278,14 +37218,14 @@ class _$FollowSystem extends FollowSystem {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.system,
-      this.duration,
-      this.speed,
-      this.speedUnits,
-      this.x,
-      this.y,
-      this.z,
-      this.zUnits})
+      required this.system,
+      required this.duration,
+      required this.speed,
+      required this.speedUnits,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.zUnits})
       : super._();
 
   @override
@@ -38306,17 +37246,11 @@ class _$FollowSystem extends FollowSystem {
         dstEnt == other.dstEnt &&
         system == other.system &&
         duration == other.duration &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits;
   }
 
@@ -38342,14 +37276,14 @@ class _$FollowSystem extends FollowSystem {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    system?.hashCode ?? null.hashCode),
-                                duration?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    x?.hashCode ?? null.hashCode),
-                y?.hashCode ?? null.hashCode),
-            z?.hashCode ?? null.hashCode),
-        zUnits?.hashCode ?? null.hashCode));
+                                    system.hashCode),
+                                duration.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    x.hashCode),
+                y.hashCode),
+            z.hashCode),
+        zUnits.hashCode));
   }
 
   @override
@@ -38518,21 +37452,21 @@ class _$CommsRelay extends CommsRelay {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final int? sysA;
+  final int sysA;
   @override
-  final int? sysB;
+  final int sysB;
   @override
-  final double? moveThreshold;
+  final double moveThreshold;
 
   factory _$CommsRelay([void Function(CommsRelayBuilder b)? updates]) =>
       (CommsRelayBuilder()..update(updates)).build();
@@ -38543,14 +37477,14 @@ class _$CommsRelay extends CommsRelay {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.speed,
-      this.speedUnits,
-      this.duration,
-      this.sysA,
-      this.sysB,
-      this.moveThreshold})
+      required this.lat,
+      required this.lon,
+      required this.speed,
+      required this.speedUnits,
+      required this.duration,
+      required this.sysA,
+      required this.sysB,
+      required this.moveThreshold})
       : super._();
 
   @override
@@ -38569,26 +37503,15 @@ class _$CommsRelay extends CommsRelay {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         duration == other.duration &&
         sysA == other.sysA &&
         sysB == other.sysB &&
         (moveThreshold == other.moveThreshold ||
-            (moveThreshold != null &&
-                other.moveThreshold != null &&
-                (moveThreshold! - other.moveThreshold! <= 1E-7)));
+            moveThreshold - other.moveThreshold <= 1E-7);
   }
 
   @override
@@ -38613,14 +37536,14 @@ class _$CommsRelay extends CommsRelay {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    lat?.hashCode ?? null.hashCode),
-                                lon?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    duration?.hashCode ?? null.hashCode),
-                sysA?.hashCode ?? null.hashCode),
-            sysB?.hashCode ?? null.hashCode),
-        moveThreshold?.hashCode ?? null.hashCode));
+                                    lat.hashCode),
+                                lon.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    duration.hashCode),
+                sysA.hashCode),
+            sysB.hashCode),
+        moveThreshold.hashCode));
   }
 
   @override
@@ -38631,10 +37554,8 @@ class _$CommsRelay extends CommsRelay {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('duration', '$duration (s)')
@@ -38792,21 +37713,21 @@ class _$CoverArea extends CoverArea {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final List<PolygonVertex>? polygon;
+  final List<PolygonVertex> polygon;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$CoverArea([void Function(CoverAreaBuilder b)? updates]) =>
       (CoverAreaBuilder()..update(updates)).build();
@@ -38817,14 +37738,14 @@ class _$CoverArea extends CoverArea {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.polygon,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.polygon,
+      required this.custom})
       : super._();
 
   @override
@@ -38843,21 +37764,11 @@ class _$CoverArea extends CoverArea {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         DeepCollectionEquality().equals(polygon, other.polygon) &&
         custom == other.custom;
@@ -38885,14 +37796,14 @@ class _$CoverArea extends CoverArea {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    lat?.hashCode ?? null.hashCode),
-                                lon?.hashCode ?? null.hashCode),
-                            z?.hashCode ?? null.hashCode),
-                        zUnits?.hashCode ?? null.hashCode),
-                    speed?.hashCode ?? null.hashCode),
-                speedUnits?.hashCode ?? null.hashCode),
-            polygon?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                    lat.hashCode),
+                                lon.hashCode),
+                            z.hashCode),
+                        zUnits.hashCode),
+                    speed.hashCode),
+                speedUnits.hashCode),
+            polygon.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -38903,10 +37814,8 @@ class _$CoverArea extends CoverArea {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -39063,9 +37972,9 @@ class _$PolygonVertex extends PolygonVertex {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
 
   factory _$PolygonVertex([void Function(PolygonVertexBuilder b)? updates]) =>
       (PolygonVertexBuilder()..update(updates)).build();
@@ -39076,8 +37985,8 @@ class _$PolygonVertex extends PolygonVertex {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon})
+      required this.lat,
+      required this.lon})
       : super._();
 
   @override
@@ -39096,12 +38005,8 @@ class _$PolygonVertex extends PolygonVertex {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null && other.lon != null && (lon! - other.lon! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7);
   }
 
   @override
@@ -39116,8 +38021,8 @@ class _$PolygonVertex extends PolygonVertex {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            lat?.hashCode ?? null.hashCode),
-        lon?.hashCode ?? null.hashCode));
+            lat.hashCode),
+        lon.hashCode));
   }
 
   @override
@@ -39128,10 +38033,8 @@ class _$PolygonVertex extends PolygonVertex {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -39246,31 +38149,31 @@ class _$CompassCalibration extends CompassCalibration {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? pitch;
+  final double pitch;
   @override
-  final double? amplitude;
+  final double amplitude;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? radius;
+  final double radius;
   @override
-  final CompassCalibrationEnumDirection? direction;
+  final CompassCalibrationEnumDirection direction;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$CompassCalibration(
           [void Function(CompassCalibrationBuilder b)? updates]) =>
@@ -39282,19 +38185,19 @@ class _$CompassCalibration extends CompassCalibration {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.pitch,
-      this.amplitude,
-      this.duration,
-      this.speed,
-      this.speedUnits,
-      this.radius,
-      this.direction,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.pitch,
+      required this.amplitude,
+      required this.duration,
+      required this.speed,
+      required this.speedUnits,
+      required this.radius,
+      required this.direction,
+      required this.custom})
       : super._();
 
   @override
@@ -39316,35 +38219,16 @@ class _$CompassCalibration extends CompassCalibration {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (pitch == other.pitch ||
-            (pitch != null &&
-                other.pitch != null &&
-                (pitch! - other.pitch! <= 1E-7))) &&
-        (amplitude == other.amplitude ||
-            (amplitude != null &&
-                other.amplitude != null &&
-                (amplitude! - other.amplitude! <= 1E-7))) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (amplitude == other.amplitude || amplitude - other.amplitude <= 1E-7) &&
         duration == other.duration &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (radius == other.radius ||
-            (radius != null &&
-                other.radius != null &&
-                (radius! - other.radius! <= 1E-7))) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -39371,29 +38255,24 @@ class _$CompassCalibration extends CompassCalibration {
                                                                         $jc(
                                                                             0,
                                                                             timestamp?.hashCode ??
-                                                                                null
-                                                                                    .hashCode),
-                                                                        src
-                                                                            .hashCode),
-                                                                    srcEnt
-                                                                        .hashCode),
+                                                                                null.hashCode),
+                                                                        src.hashCode),
+                                                                    srcEnt.hashCode),
                                                                 dst.hashCode),
                                                             dstEnt.hashCode),
-                                                        timeout?.hashCode ??
-                                                            null.hashCode),
-                                                    lat?.hashCode ??
-                                                        null.hashCode),
-                                                lon?.hashCode ?? null.hashCode),
-                                            z?.hashCode ?? null.hashCode),
-                                        zUnits?.hashCode ?? null.hashCode),
-                                    pitch?.hashCode ?? null.hashCode),
-                                amplitude?.hashCode ?? null.hashCode),
-                            duration?.hashCode ?? null.hashCode),
-                        speed?.hashCode ?? null.hashCode),
-                    speedUnits?.hashCode ?? null.hashCode),
-                radius?.hashCode ?? null.hashCode),
-            direction?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                        timeout.hashCode),
+                                                    lat.hashCode),
+                                                lon.hashCode),
+                                            z.hashCode),
+                                        zUnits.hashCode),
+                                    pitch.hashCode),
+                                amplitude.hashCode),
+                            duration.hashCode),
+                        speed.hashCode),
+                    speedUnits.hashCode),
+                radius.hashCode),
+            direction.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -39405,14 +38284,11 @@ class _$CompassCalibration extends CompassCalibration {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
-          ..add('pitch',
-              '$pitch (rad)${pitch != null ? ' [${pitch! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
           ..add('amplitude', '$amplitude (m)')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
@@ -39603,13 +38479,13 @@ class _$FormationParameters extends FormationParameters {
   final int dstEnt;
 
   @override
-  final String? formationName;
+  final String formationName;
   @override
-  final FormationParametersEnumReferenceFrame? referenceFrame;
+  final FormationParametersEnumReferenceFrame referenceFrame;
   @override
-  final List<VehicleFormationParticipant>? participants;
+  final List<VehicleFormationParticipant> participants;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$FormationParameters(
           [void Function(FormationParametersBuilder b)? updates]) =>
@@ -39621,10 +38497,10 @@ class _$FormationParameters extends FormationParameters {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.formationName,
-      this.referenceFrame,
-      this.participants,
-      this.custom})
+      required this.formationName,
+      required this.referenceFrame,
+      required this.participants,
+      required this.custom})
       : super._();
 
   @override
@@ -39667,10 +38543,10 @@ class _$FormationParameters extends FormationParameters {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    formationName?.hashCode ?? null.hashCode),
-                referenceFrame?.hashCode ?? null.hashCode),
-            participants?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                    formationName.hashCode),
+                referenceFrame.hashCode),
+            participants.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -39821,33 +38697,33 @@ class _$FormationPlanExecution extends FormationPlanExecution {
   final int dstEnt;
 
   @override
-  final String? groupName;
+  final String groupName;
   @override
-  final String? formationName;
+  final String formationName;
   @override
-  final String? planId;
+  final String planId;
   @override
-  final String? description;
+  final String description;
   @override
-  final double? leaderSpeed;
+  final double leaderSpeed;
   @override
-  final double? leaderBankLim;
+  final double leaderBankLim;
   @override
-  final double? posSimErrLim;
+  final double posSimErrLim;
   @override
-  final double? posSimErrWrn;
+  final double posSimErrWrn;
   @override
-  final int? posSimErrTimeout;
+  final int posSimErrTimeout;
   @override
-  final double? convergMax;
+  final double convergMax;
   @override
-  final int? convergTimeout;
+  final int convergTimeout;
   @override
-  final int? commsTimeout;
+  final int commsTimeout;
   @override
-  final double? turbLim;
+  final double turbLim;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$FormationPlanExecution(
           [void Function(FormationPlanExecutionBuilder b)? updates]) =>
@@ -39859,20 +38735,20 @@ class _$FormationPlanExecution extends FormationPlanExecution {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.groupName,
-      this.formationName,
-      this.planId,
-      this.description,
-      this.leaderSpeed,
-      this.leaderBankLim,
-      this.posSimErrLim,
-      this.posSimErrWrn,
-      this.posSimErrTimeout,
-      this.convergMax,
-      this.convergTimeout,
-      this.commsTimeout,
-      this.turbLim,
-      this.custom})
+      required this.groupName,
+      required this.formationName,
+      required this.planId,
+      required this.description,
+      required this.leaderSpeed,
+      required this.leaderBankLim,
+      required this.posSimErrLim,
+      required this.posSimErrWrn,
+      required this.posSimErrTimeout,
+      required this.convergMax,
+      required this.convergTimeout,
+      required this.commsTimeout,
+      required this.turbLim,
+      required this.custom})
       : super._();
 
   @override
@@ -39898,32 +38774,19 @@ class _$FormationPlanExecution extends FormationPlanExecution {
         planId == other.planId &&
         description == other.description &&
         (leaderSpeed == other.leaderSpeed ||
-            (leaderSpeed != null &&
-                other.leaderSpeed != null &&
-                (leaderSpeed! - other.leaderSpeed! <= 1E-7))) &&
+            leaderSpeed - other.leaderSpeed <= 1E-7) &&
         (leaderBankLim == other.leaderBankLim ||
-            (leaderBankLim != null &&
-                other.leaderBankLim != null &&
-                (leaderBankLim! - other.leaderBankLim! <= 1E-7))) &&
+            leaderBankLim - other.leaderBankLim <= 1E-7) &&
         (posSimErrLim == other.posSimErrLim ||
-            (posSimErrLim != null &&
-                other.posSimErrLim != null &&
-                (posSimErrLim! - other.posSimErrLim! <= 1E-7))) &&
+            posSimErrLim - other.posSimErrLim <= 1E-7) &&
         (posSimErrWrn == other.posSimErrWrn ||
-            (posSimErrWrn != null &&
-                other.posSimErrWrn != null &&
-                (posSimErrWrn! - other.posSimErrWrn! <= 1E-7))) &&
+            posSimErrWrn - other.posSimErrWrn <= 1E-7) &&
         posSimErrTimeout == other.posSimErrTimeout &&
         (convergMax == other.convergMax ||
-            (convergMax != null &&
-                other.convergMax != null &&
-                (convergMax! - other.convergMax! <= 1E-7))) &&
+            convergMax - other.convergMax <= 1E-7) &&
         convergTimeout == other.convergTimeout &&
         commsTimeout == other.commsTimeout &&
-        (turbLim == other.turbLim ||
-            (turbLim != null &&
-                other.turbLim != null &&
-                (turbLim! - other.turbLim! <= 1E-7))) &&
+        (turbLim == other.turbLim || turbLim - other.turbLim <= 1E-7) &&
         custom == other.custom;
   }
 
@@ -39947,41 +38810,26 @@ class _$FormationPlanExecution extends FormationPlanExecution {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(
-                                                                                0,
-                                                                                timestamp?.hashCode ??
-                                                                                    null
-                                                                                        .hashCode),
-                                                                            src
-                                                                                .hashCode),
-                                                                        srcEnt
-                                                                            .hashCode),
-                                                                    dst
-                                                                        .hashCode),
-                                                                dstEnt
-                                                                    .hashCode),
-                                                            groupName
-                                                                    ?.hashCode ??
-                                                                null.hashCode),
-                                                        formationName
-                                                                ?.hashCode ??
-                                                            null.hashCode),
-                                                    planId?.hashCode ??
-                                                        null.hashCode),
-                                                description?.hashCode ??
-                                                    null.hashCode),
-                                            leaderSpeed?.hashCode ??
-                                                null.hashCode),
-                                        leaderBankLim?.hashCode ??
-                                            null.hashCode),
-                                    posSimErrLim?.hashCode ?? null.hashCode),
-                                posSimErrWrn?.hashCode ?? null.hashCode),
-                            posSimErrTimeout?.hashCode ?? null.hashCode),
-                        convergMax?.hashCode ?? null.hashCode),
-                    convergTimeout?.hashCode ?? null.hashCode),
-                commsTimeout?.hashCode ?? null.hashCode),
-            turbLim?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                                            $jc(0,
+                                                                                timestamp?.hashCode ?? null.hashCode),
+                                                                            src.hashCode),
+                                                                        srcEnt.hashCode),
+                                                                    dst.hashCode),
+                                                                dstEnt.hashCode),
+                                                            groupName.hashCode),
+                                                        formationName.hashCode),
+                                                    planId.hashCode),
+                                                description.hashCode),
+                                            leaderSpeed.hashCode),
+                                        leaderBankLim.hashCode),
+                                    posSimErrLim.hashCode),
+                                posSimErrWrn.hashCode),
+                            posSimErrTimeout.hashCode),
+                        convergMax.hashCode),
+                    convergTimeout.hashCode),
+                commsTimeout.hashCode),
+            turbLim.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -40200,15 +39048,15 @@ class _$FollowReference extends FollowReference {
   final int dstEnt;
 
   @override
-  final int? controlSrc;
+  final int controlSrc;
   @override
-  final int? controlEnt;
+  final int controlEnt;
   @override
-  final double? timeout;
+  final double timeout;
   @override
-  final double? loiterRadius;
+  final double loiterRadius;
   @override
-  final double? altitudeInterval;
+  final double altitudeInterval;
 
   factory _$FollowReference(
           [void Function(FollowReferenceBuilder b)? updates]) =>
@@ -40220,11 +39068,11 @@ class _$FollowReference extends FollowReference {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.controlSrc,
-      this.controlEnt,
-      this.timeout,
-      this.loiterRadius,
-      this.altitudeInterval})
+      required this.controlSrc,
+      required this.controlEnt,
+      required this.timeout,
+      required this.loiterRadius,
+      required this.altitudeInterval})
       : super._();
 
   @override
@@ -40245,18 +39093,11 @@ class _$FollowReference extends FollowReference {
         dstEnt == other.dstEnt &&
         controlSrc == other.controlSrc &&
         controlEnt == other.controlEnt &&
-        (timeout == other.timeout ||
-            (timeout != null &&
-                other.timeout != null &&
-                (timeout! - other.timeout! <= 1E-7))) &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
         (loiterRadius == other.loiterRadius ||
-            (loiterRadius != null &&
-                other.loiterRadius != null &&
-                (loiterRadius! - other.loiterRadius! <= 1E-7))) &&
+            loiterRadius - other.loiterRadius <= 1E-7) &&
         (altitudeInterval == other.altitudeInterval ||
-            (altitudeInterval != null &&
-                other.altitudeInterval != null &&
-                (altitudeInterval! - other.altitudeInterval! <= 1E-7)));
+            altitudeInterval - other.altitudeInterval <= 1E-7);
   }
 
   @override
@@ -40278,11 +39119,11 @@ class _$FollowReference extends FollowReference {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        controlSrc?.hashCode ?? null.hashCode),
-                    controlEnt?.hashCode ?? null.hashCode),
-                timeout?.hashCode ?? null.hashCode),
-            loiterRadius?.hashCode ?? null.hashCode),
-        altitudeInterval?.hashCode ?? null.hashCode));
+                        controlSrc.hashCode),
+                    controlEnt.hashCode),
+                timeout.hashCode),
+            loiterRadius.hashCode),
+        altitudeInterval.hashCode));
   }
 
   @override
@@ -40432,17 +39273,17 @@ class _$Reference extends Reference {
   final int dstEnt;
 
   @override
-  final ReferenceBitfieldFlags? flags;
+  final ReferenceBitfieldFlags flags;
   @override
   final DesiredSpeed? speed;
   @override
   final DesiredZ? z;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? radius;
+  final double radius;
 
   factory _$Reference([void Function(ReferenceBuilder b)? updates]) =>
       (ReferenceBuilder()..update(updates)).build();
@@ -40453,12 +39294,12 @@ class _$Reference extends Reference {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.flags,
+      required this.flags,
       this.speed,
       this.z,
-      this.lat,
-      this.lon,
-      this.radius})
+      required this.lat,
+      required this.lon,
+      required this.radius})
       : super._();
 
   @override
@@ -40480,18 +39321,9 @@ class _$Reference extends Reference {
         flags == other.flags &&
         speed == other.speed &&
         z == other.z &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (radius == other.radius ||
-            (radius != null &&
-                other.radius != null &&
-                (radius! - other.radius! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (radius == other.radius || radius - other.radius <= 1E-7);
   }
 
   @override
@@ -40514,12 +39346,12 @@ class _$Reference extends Reference {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            flags?.hashCode ?? null.hashCode),
+                            flags.hashCode),
                         speed?.hashCode ?? null.hashCode),
                     z?.hashCode ?? null.hashCode),
-                lat?.hashCode ?? null.hashCode),
-            lon?.hashCode ?? null.hashCode),
-        radius?.hashCode ?? null.hashCode));
+                lat.hashCode),
+            lon.hashCode),
+        radius.hashCode));
   }
 
   @override
@@ -40674,15 +39506,15 @@ class _$FollowRefState extends FollowRefState {
   final int dstEnt;
 
   @override
-  final int? controlSrc;
+  final int controlSrc;
   @override
-  final int? controlEnt;
+  final int controlEnt;
   @override
   final Reference? reference;
   @override
-  final FollowRefStateEnumState? state;
+  final FollowRefStateEnumState state;
   @override
-  final FollowRefStateBitfieldProximity? proximity;
+  final FollowRefStateBitfieldProximity proximity;
 
   factory _$FollowRefState([void Function(FollowRefStateBuilder b)? updates]) =>
       (FollowRefStateBuilder()..update(updates)).build();
@@ -40693,11 +39525,11 @@ class _$FollowRefState extends FollowRefState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.controlSrc,
-      this.controlEnt,
+      required this.controlSrc,
+      required this.controlEnt,
       this.reference,
-      this.state,
-      this.proximity})
+      required this.state,
+      required this.proximity})
       : super._();
 
   @override
@@ -40742,11 +39574,11 @@ class _$FollowRefState extends FollowRefState {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        controlSrc?.hashCode ?? null.hashCode),
-                    controlEnt?.hashCode ?? null.hashCode),
+                        controlSrc.hashCode),
+                    controlEnt.hashCode),
                 reference?.hashCode ?? null.hashCode),
-            state?.hashCode ?? null.hashCode),
-        proximity?.hashCode ?? null.hashCode));
+            state.hashCode),
+        proximity.hashCode));
   }
 
   @override
@@ -40896,43 +39728,43 @@ class _$FormationMonitor extends FormationMonitor {
   final int dstEnt;
 
   @override
-  final double? axCmd;
+  final double axCmd;
   @override
-  final double? ayCmd;
+  final double ayCmd;
   @override
-  final double? azCmd;
+  final double azCmd;
   @override
-  final double? axDes;
+  final double axDes;
   @override
-  final double? ayDes;
+  final double ayDes;
   @override
-  final double? azDes;
+  final double azDes;
   @override
-  final double? virtErrX;
+  final double virtErrX;
   @override
-  final double? virtErrY;
+  final double virtErrY;
   @override
-  final double? virtErrZ;
+  final double virtErrZ;
   @override
-  final double? surfFdbkX;
+  final double surfFdbkX;
   @override
-  final double? surfFdbkY;
+  final double surfFdbkY;
   @override
-  final double? surfFdbkZ;
+  final double surfFdbkZ;
   @override
-  final double? surfUnknX;
+  final double surfUnknX;
   @override
-  final double? surfUnknY;
+  final double surfUnknY;
   @override
-  final double? surfUnknZ;
+  final double surfUnknZ;
   @override
-  final double? ssX;
+  final double ssX;
   @override
-  final double? ssY;
+  final double ssY;
   @override
-  final double? ssZ;
+  final double ssZ;
   @override
-  final List<RelativeState>? relState;
+  final List<RelativeState> relState;
 
   factory _$FormationMonitor(
           [void Function(FormationMonitorBuilder b)? updates]) =>
@@ -40944,25 +39776,25 @@ class _$FormationMonitor extends FormationMonitor {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.axCmd,
-      this.ayCmd,
-      this.azCmd,
-      this.axDes,
-      this.ayDes,
-      this.azDes,
-      this.virtErrX,
-      this.virtErrY,
-      this.virtErrZ,
-      this.surfFdbkX,
-      this.surfFdbkY,
-      this.surfFdbkZ,
-      this.surfUnknX,
-      this.surfUnknY,
-      this.surfUnknZ,
-      this.ssX,
-      this.ssY,
-      this.ssZ,
-      this.relState})
+      required this.axCmd,
+      required this.ayCmd,
+      required this.azCmd,
+      required this.axDes,
+      required this.ayDes,
+      required this.azDes,
+      required this.virtErrX,
+      required this.virtErrY,
+      required this.virtErrZ,
+      required this.surfFdbkX,
+      required this.surfFdbkY,
+      required this.surfFdbkZ,
+      required this.surfUnknX,
+      required this.surfUnknY,
+      required this.surfUnknZ,
+      required this.ssX,
+      required this.ssY,
+      required this.ssZ,
+      required this.relState})
       : super._();
 
   @override
@@ -40982,78 +39814,24 @@ class _$FormationMonitor extends FormationMonitor {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (axCmd == other.axCmd ||
-            (axCmd != null &&
-                other.axCmd != null &&
-                (axCmd! - other.axCmd! <= 1E-7))) &&
-        (ayCmd == other.ayCmd ||
-            (ayCmd != null &&
-                other.ayCmd != null &&
-                (ayCmd! - other.ayCmd! <= 1E-7))) &&
-        (azCmd == other.azCmd ||
-            (azCmd != null &&
-                other.azCmd != null &&
-                (azCmd! - other.azCmd! <= 1E-7))) &&
-        (axDes == other.axDes ||
-            (axDes != null &&
-                other.axDes != null &&
-                (axDes! - other.axDes! <= 1E-7))) &&
-        (ayDes == other.ayDes ||
-            (ayDes != null &&
-                other.ayDes != null &&
-                (ayDes! - other.ayDes! <= 1E-7))) &&
-        (azDes == other.azDes ||
-            (azDes != null &&
-                other.azDes != null &&
-                (azDes! - other.azDes! <= 1E-7))) &&
-        (virtErrX == other.virtErrX ||
-            (virtErrX != null &&
-                other.virtErrX != null &&
-                (virtErrX! - other.virtErrX! <= 1E-7))) &&
-        (virtErrY == other.virtErrY ||
-            (virtErrY != null &&
-                other.virtErrY != null &&
-                (virtErrY! - other.virtErrY! <= 1E-7))) &&
-        (virtErrZ == other.virtErrZ ||
-            (virtErrZ != null &&
-                other.virtErrZ != null &&
-                (virtErrZ! - other.virtErrZ! <= 1E-7))) &&
-        (surfFdbkX == other.surfFdbkX ||
-            (surfFdbkX != null &&
-                other.surfFdbkX != null &&
-                (surfFdbkX! - other.surfFdbkX! <= 1E-7))) &&
-        (surfFdbkY == other.surfFdbkY ||
-            (surfFdbkY != null &&
-                other.surfFdbkY != null &&
-                (surfFdbkY! - other.surfFdbkY! <= 1E-7))) &&
-        (surfFdbkZ == other.surfFdbkZ ||
-            (surfFdbkZ != null &&
-                other.surfFdbkZ != null &&
-                (surfFdbkZ! - other.surfFdbkZ! <= 1E-7))) &&
-        (surfUnknX == other.surfUnknX ||
-            (surfUnknX != null &&
-                other.surfUnknX != null &&
-                (surfUnknX! - other.surfUnknX! <= 1E-7))) &&
-        (surfUnknY == other.surfUnknY ||
-            (surfUnknY != null &&
-                other.surfUnknY != null &&
-                (surfUnknY! - other.surfUnknY! <= 1E-7))) &&
-        (surfUnknZ == other.surfUnknZ ||
-            (surfUnknZ != null &&
-                other.surfUnknZ != null &&
-                (surfUnknZ! - other.surfUnknZ! <= 1E-7))) &&
-        (ssX == other.ssX ||
-            (ssX != null &&
-                other.ssX != null &&
-                (ssX! - other.ssX! <= 1E-7))) &&
-        (ssY == other.ssY ||
-            (ssY != null &&
-                other.ssY != null &&
-                (ssY! - other.ssY! <= 1E-7))) &&
-        (ssZ == other.ssZ ||
-            (ssZ != null &&
-                other.ssZ != null &&
-                (ssZ! - other.ssZ! <= 1E-7))) &&
+        (axCmd == other.axCmd || axCmd - other.axCmd <= 1E-7) &&
+        (ayCmd == other.ayCmd || ayCmd - other.ayCmd <= 1E-7) &&
+        (azCmd == other.azCmd || azCmd - other.azCmd <= 1E-7) &&
+        (axDes == other.axDes || axDes - other.axDes <= 1E-7) &&
+        (ayDes == other.ayDes || ayDes - other.ayDes <= 1E-7) &&
+        (azDes == other.azDes || azDes - other.azDes <= 1E-7) &&
+        (virtErrX == other.virtErrX || virtErrX - other.virtErrX <= 1E-7) &&
+        (virtErrY == other.virtErrY || virtErrY - other.virtErrY <= 1E-7) &&
+        (virtErrZ == other.virtErrZ || virtErrZ - other.virtErrZ <= 1E-7) &&
+        (surfFdbkX == other.surfFdbkX || surfFdbkX - other.surfFdbkX <= 1E-7) &&
+        (surfFdbkY == other.surfFdbkY || surfFdbkY - other.surfFdbkY <= 1E-7) &&
+        (surfFdbkZ == other.surfFdbkZ || surfFdbkZ - other.surfFdbkZ <= 1E-7) &&
+        (surfUnknX == other.surfUnknX || surfUnknX - other.surfUnknX <= 1E-7) &&
+        (surfUnknY == other.surfUnknY || surfUnknY - other.surfUnknY <= 1E-7) &&
+        (surfUnknZ == other.surfUnknZ || surfUnknZ - other.surfUnknZ <= 1E-7) &&
+        (ssX == other.ssX || ssX - other.ssX <= 1E-7) &&
+        (ssY == other.ssY || ssY - other.ssY <= 1E-7) &&
+        (ssZ == other.ssZ || ssZ - other.ssZ <= 1E-7) &&
         DeepCollectionEquality().equals(relState, other.relState);
   }
 
@@ -41078,25 +39856,25 @@ class _$FormationMonitor extends FormationMonitor {
                                                                     $jc(
                                                                         $jc(
                                                                             $jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode),
-                                                                                axCmd?.hashCode ?? null.hashCode),
-                                                                            ayCmd?.hashCode ?? null.hashCode),
-                                                                        azCmd?.hashCode ?? null.hashCode),
-                                                                    axDes?.hashCode ?? null.hashCode),
-                                                                ayDes?.hashCode ?? null.hashCode),
-                                                            azDes?.hashCode ?? null.hashCode),
-                                                        virtErrX?.hashCode ?? null.hashCode),
-                                                    virtErrY?.hashCode ?? null.hashCode),
-                                                virtErrZ?.hashCode ?? null.hashCode),
-                                            surfFdbkX?.hashCode ?? null.hashCode),
-                                        surfFdbkY?.hashCode ?? null.hashCode),
-                                    surfFdbkZ?.hashCode ?? null.hashCode),
-                                surfUnknX?.hashCode ?? null.hashCode),
-                            surfUnknY?.hashCode ?? null.hashCode),
-                        surfUnknZ?.hashCode ?? null.hashCode),
-                    ssX?.hashCode ?? null.hashCode),
-                ssY?.hashCode ?? null.hashCode),
-            ssZ?.hashCode ?? null.hashCode),
-        relState?.hashCode ?? null.hashCode));
+                                                                                axCmd.hashCode),
+                                                                            ayCmd.hashCode),
+                                                                        azCmd.hashCode),
+                                                                    axDes.hashCode),
+                                                                ayDes.hashCode),
+                                                            azDes.hashCode),
+                                                        virtErrX.hashCode),
+                                                    virtErrY.hashCode),
+                                                virtErrZ.hashCode),
+                                            surfFdbkX.hashCode),
+                                        surfFdbkY.hashCode),
+                                    surfFdbkZ.hashCode),
+                                surfUnknX.hashCode),
+                            surfUnknY.hashCode),
+                        surfUnknZ.hashCode),
+                    ssX.hashCode),
+                ssY.hashCode),
+            ssZ.hashCode),
+        relState.hashCode));
   }
 
   @override
@@ -41343,49 +40121,49 @@ class _$RelativeState extends RelativeState {
   final int dstEnt;
 
   @override
-  final String? sId;
+  final String sId;
   @override
-  final double? dist;
+  final double dist;
   @override
-  final double? err;
+  final double err;
   @override
-  final double? ctrlImp;
+  final double ctrlImp;
   @override
-  final double? relDirX;
+  final double relDirX;
   @override
-  final double? relDirY;
+  final double relDirY;
   @override
-  final double? relDirZ;
+  final double relDirZ;
   @override
-  final double? errX;
+  final double errX;
   @override
-  final double? errY;
+  final double errY;
   @override
-  final double? errZ;
+  final double errZ;
   @override
-  final double? rfErrX;
+  final double rfErrX;
   @override
-  final double? rfErrY;
+  final double rfErrY;
   @override
-  final double? rfErrZ;
+  final double rfErrZ;
   @override
-  final double? rfErrVx;
+  final double rfErrVx;
   @override
-  final double? rfErrVy;
+  final double rfErrVy;
   @override
-  final double? rfErrVz;
+  final double rfErrVz;
   @override
-  final double? ssX;
+  final double ssX;
   @override
-  final double? ssY;
+  final double ssY;
   @override
-  final double? ssZ;
+  final double ssZ;
   @override
-  final double? virtErrX;
+  final double virtErrX;
   @override
-  final double? virtErrY;
+  final double virtErrY;
   @override
-  final double? virtErrZ;
+  final double virtErrZ;
 
   factory _$RelativeState([void Function(RelativeStateBuilder b)? updates]) =>
       (RelativeStateBuilder()..update(updates)).build();
@@ -41396,28 +40174,28 @@ class _$RelativeState extends RelativeState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sId,
-      this.dist,
-      this.err,
-      this.ctrlImp,
-      this.relDirX,
-      this.relDirY,
-      this.relDirZ,
-      this.errX,
-      this.errY,
-      this.errZ,
-      this.rfErrX,
-      this.rfErrY,
-      this.rfErrZ,
-      this.rfErrVx,
-      this.rfErrVy,
-      this.rfErrVz,
-      this.ssX,
-      this.ssY,
-      this.ssZ,
-      this.virtErrX,
-      this.virtErrY,
-      this.virtErrZ})
+      required this.sId,
+      required this.dist,
+      required this.err,
+      required this.ctrlImp,
+      required this.relDirX,
+      required this.relDirY,
+      required this.relDirZ,
+      required this.errX,
+      required this.errY,
+      required this.errZ,
+      required this.rfErrX,
+      required this.rfErrY,
+      required this.rfErrZ,
+      required this.rfErrVx,
+      required this.rfErrVy,
+      required this.rfErrVz,
+      required this.ssX,
+      required this.ssY,
+      required this.ssZ,
+      required this.virtErrX,
+      required this.virtErrY,
+      required this.virtErrZ})
       : super._();
 
   @override
@@ -41437,90 +40215,27 @@ class _$RelativeState extends RelativeState {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         sId == other.sId &&
-        (dist == other.dist ||
-            (dist != null &&
-                other.dist != null &&
-                (dist! - other.dist! <= 1E-7))) &&
-        (err == other.err ||
-            (err != null &&
-                other.err != null &&
-                (err! - other.err! <= 1E-7))) &&
-        (ctrlImp == other.ctrlImp ||
-            (ctrlImp != null &&
-                other.ctrlImp != null &&
-                (ctrlImp! - other.ctrlImp! <= 1E-7))) &&
-        (relDirX == other.relDirX ||
-            (relDirX != null &&
-                other.relDirX != null &&
-                (relDirX! - other.relDirX! <= 1E-7))) &&
-        (relDirY == other.relDirY ||
-            (relDirY != null &&
-                other.relDirY != null &&
-                (relDirY! - other.relDirY! <= 1E-7))) &&
-        (relDirZ == other.relDirZ ||
-            (relDirZ != null &&
-                other.relDirZ != null &&
-                (relDirZ! - other.relDirZ! <= 1E-7))) &&
-        (errX == other.errX ||
-            (errX != null &&
-                other.errX != null &&
-                (errX! - other.errX! <= 1E-7))) &&
-        (errY == other.errY ||
-            (errY != null &&
-                other.errY != null &&
-                (errY! - other.errY! <= 1E-7))) &&
-        (errZ == other.errZ ||
-            (errZ != null &&
-                other.errZ != null &&
-                (errZ! - other.errZ! <= 1E-7))) &&
-        (rfErrX == other.rfErrX ||
-            (rfErrX != null &&
-                other.rfErrX != null &&
-                (rfErrX! - other.rfErrX! <= 1E-7))) &&
-        (rfErrY == other.rfErrY ||
-            (rfErrY != null &&
-                other.rfErrY != null &&
-                (rfErrY! - other.rfErrY! <= 1E-7))) &&
-        (rfErrZ == other.rfErrZ ||
-            (rfErrZ != null &&
-                other.rfErrZ != null &&
-                (rfErrZ! - other.rfErrZ! <= 1E-7))) &&
-        (rfErrVx == other.rfErrVx ||
-            (rfErrVx != null &&
-                other.rfErrVx != null &&
-                (rfErrVx! - other.rfErrVx! <= 1E-7))) &&
-        (rfErrVy == other.rfErrVy ||
-            (rfErrVy != null &&
-                other.rfErrVy != null &&
-                (rfErrVy! - other.rfErrVy! <= 1E-7))) &&
-        (rfErrVz == other.rfErrVz ||
-            (rfErrVz != null &&
-                other.rfErrVz != null &&
-                (rfErrVz! - other.rfErrVz! <= 1E-7))) &&
-        (ssX == other.ssX ||
-            (ssX != null &&
-                other.ssX != null &&
-                (ssX! - other.ssX! <= 1E-7))) &&
-        (ssY == other.ssY ||
-            (ssY != null &&
-                other.ssY != null &&
-                (ssY! - other.ssY! <= 1E-7))) &&
-        (ssZ == other.ssZ ||
-            (ssZ != null &&
-                other.ssZ != null &&
-                (ssZ! - other.ssZ! <= 1E-7))) &&
-        (virtErrX == other.virtErrX ||
-            (virtErrX != null &&
-                other.virtErrX != null &&
-                (virtErrX! - other.virtErrX! <= 1E-7))) &&
-        (virtErrY == other.virtErrY ||
-            (virtErrY != null &&
-                other.virtErrY != null &&
-                (virtErrY! - other.virtErrY! <= 1E-7))) &&
-        (virtErrZ == other.virtErrZ ||
-            (virtErrZ != null &&
-                other.virtErrZ != null &&
-                (virtErrZ! - other.virtErrZ! <= 1E-7)));
+        (dist == other.dist || dist - other.dist <= 1E-7) &&
+        (err == other.err || err - other.err <= 1E-7) &&
+        (ctrlImp == other.ctrlImp || ctrlImp - other.ctrlImp <= 1E-7) &&
+        (relDirX == other.relDirX || relDirX - other.relDirX <= 1E-7) &&
+        (relDirY == other.relDirY || relDirY - other.relDirY <= 1E-7) &&
+        (relDirZ == other.relDirZ || relDirZ - other.relDirZ <= 1E-7) &&
+        (errX == other.errX || errX - other.errX <= 1E-7) &&
+        (errY == other.errY || errY - other.errY <= 1E-7) &&
+        (errZ == other.errZ || errZ - other.errZ <= 1E-7) &&
+        (rfErrX == other.rfErrX || rfErrX - other.rfErrX <= 1E-7) &&
+        (rfErrY == other.rfErrY || rfErrY - other.rfErrY <= 1E-7) &&
+        (rfErrZ == other.rfErrZ || rfErrZ - other.rfErrZ <= 1E-7) &&
+        (rfErrVx == other.rfErrVx || rfErrVx - other.rfErrVx <= 1E-7) &&
+        (rfErrVy == other.rfErrVy || rfErrVy - other.rfErrVy <= 1E-7) &&
+        (rfErrVz == other.rfErrVz || rfErrVz - other.rfErrVz <= 1E-7) &&
+        (ssX == other.ssX || ssX - other.ssX <= 1E-7) &&
+        (ssY == other.ssY || ssY - other.ssY <= 1E-7) &&
+        (ssZ == other.ssZ || ssZ - other.ssZ <= 1E-7) &&
+        (virtErrX == other.virtErrX || virtErrX - other.virtErrX <= 1E-7) &&
+        (virtErrY == other.virtErrY || virtErrY - other.virtErrY <= 1E-7) &&
+        (virtErrZ == other.virtErrZ || virtErrZ - other.virtErrZ <= 1E-7);
   }
 
   @override
@@ -41543,26 +40258,26 @@ class _$RelativeState extends RelativeState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), sId?.hashCode ?? null.hashCode), dist?.hashCode ?? null.hashCode), err?.hashCode ?? null.hashCode),
-                                                                                ctrlImp?.hashCode ?? null.hashCode),
-                                                                            relDirX?.hashCode ?? null.hashCode),
-                                                                        relDirY?.hashCode ?? null.hashCode),
-                                                                    relDirZ?.hashCode ?? null.hashCode),
-                                                                errX?.hashCode ?? null.hashCode),
-                                                            errY?.hashCode ?? null.hashCode),
-                                                        errZ?.hashCode ?? null.hashCode),
-                                                    rfErrX?.hashCode ?? null.hashCode),
-                                                rfErrY?.hashCode ?? null.hashCode),
-                                            rfErrZ?.hashCode ?? null.hashCode),
-                                        rfErrVx?.hashCode ?? null.hashCode),
-                                    rfErrVy?.hashCode ?? null.hashCode),
-                                rfErrVz?.hashCode ?? null.hashCode),
-                            ssX?.hashCode ?? null.hashCode),
-                        ssY?.hashCode ?? null.hashCode),
-                    ssZ?.hashCode ?? null.hashCode),
-                virtErrX?.hashCode ?? null.hashCode),
-            virtErrY?.hashCode ?? null.hashCode),
-        virtErrZ?.hashCode ?? null.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), sId.hashCode), dist.hashCode), err.hashCode),
+                                                                                ctrlImp.hashCode),
+                                                                            relDirX.hashCode),
+                                                                        relDirY.hashCode),
+                                                                    relDirZ.hashCode),
+                                                                errX.hashCode),
+                                                            errY.hashCode),
+                                                        errZ.hashCode),
+                                                    rfErrX.hashCode),
+                                                rfErrY.hashCode),
+                                            rfErrZ.hashCode),
+                                        rfErrVx.hashCode),
+                                    rfErrVy.hashCode),
+                                rfErrVz.hashCode),
+                            ssX.hashCode),
+                        ssY.hashCode),
+                    ssZ.hashCode),
+                virtErrX.hashCode),
+            virtErrY.hashCode),
+        virtErrZ.hashCode));
   }
 
   @override
@@ -41829,13 +40544,13 @@ class _$Dislodge extends Dislodge {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? rpm;
+  final double rpm;
   @override
-  final DislodgeEnumDirection? direction;
+  final DislodgeEnumDirection direction;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Dislodge([void Function(DislodgeBuilder b)? updates]) =>
       (DislodgeBuilder()..update(updates)).build();
@@ -41846,10 +40561,10 @@ class _$Dislodge extends Dislodge {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.rpm,
-      this.direction,
-      this.custom})
+      required this.timeout,
+      required this.rpm,
+      required this.direction,
+      required this.custom})
       : super._();
 
   @override
@@ -41869,10 +40584,7 @@ class _$Dislodge extends Dislodge {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (rpm == other.rpm ||
-            (rpm != null &&
-                other.rpm != null &&
-                (rpm! - other.rpm! <= 1E-7))) &&
+        (rpm == other.rpm || rpm - other.rpm <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -41893,10 +40605,10 @@ class _$Dislodge extends Dislodge {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    timeout?.hashCode ?? null.hashCode),
-                rpm?.hashCode ?? null.hashCode),
-            direction?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                    timeout.hashCode),
+                rpm.hashCode),
+            direction.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -42038,47 +40750,47 @@ class _$Formation extends Formation {
   final int dstEnt;
 
   @override
-  final String? formationName;
+  final String formationName;
   @override
-  final FormationEnumType? type;
+  final FormationEnumType type;
   @override
-  final FormationEnumOp? op;
+  final FormationEnumOp op;
   @override
-  final String? groupName;
+  final String groupName;
   @override
-  final String? planId;
+  final String planId;
   @override
-  final String? description;
+  final String description;
   @override
-  final FormationEnumReferenceFrame? referenceFrame;
+  final FormationEnumReferenceFrame referenceFrame;
   @override
-  final List<VehicleFormationParticipant>? participants;
+  final List<VehicleFormationParticipant> participants;
   @override
-  final double? leaderBankLim;
+  final double leaderBankLim;
   @override
-  final double? leaderSpeedMin;
+  final double leaderSpeedMin;
   @override
-  final double? leaderSpeedMax;
+  final double leaderSpeedMax;
   @override
-  final double? leaderAltMin;
+  final double leaderAltMin;
   @override
-  final double? leaderAltMax;
+  final double leaderAltMax;
   @override
-  final double? posSimErrLim;
+  final double posSimErrLim;
   @override
-  final double? posSimErrWrn;
+  final double posSimErrWrn;
   @override
-  final int? posSimErrTimeout;
+  final int posSimErrTimeout;
   @override
-  final double? convergMax;
+  final double convergMax;
   @override
-  final int? convergTimeout;
+  final int convergTimeout;
   @override
-  final int? commsTimeout;
+  final int commsTimeout;
   @override
-  final double? turbLim;
+  final double turbLim;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Formation([void Function(FormationBuilder b)? updates]) =>
       (FormationBuilder()..update(updates)).build();
@@ -42089,27 +40801,27 @@ class _$Formation extends Formation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.formationName,
-      this.type,
-      this.op,
-      this.groupName,
-      this.planId,
-      this.description,
-      this.referenceFrame,
-      this.participants,
-      this.leaderBankLim,
-      this.leaderSpeedMin,
-      this.leaderSpeedMax,
-      this.leaderAltMin,
-      this.leaderAltMax,
-      this.posSimErrLim,
-      this.posSimErrWrn,
-      this.posSimErrTimeout,
-      this.convergMax,
-      this.convergTimeout,
-      this.commsTimeout,
-      this.turbLim,
-      this.custom})
+      required this.formationName,
+      required this.type,
+      required this.op,
+      required this.groupName,
+      required this.planId,
+      required this.description,
+      required this.referenceFrame,
+      required this.participants,
+      required this.leaderBankLim,
+      required this.leaderSpeedMin,
+      required this.leaderSpeedMax,
+      required this.leaderAltMin,
+      required this.leaderAltMax,
+      required this.posSimErrLim,
+      required this.posSimErrWrn,
+      required this.posSimErrTimeout,
+      required this.convergMax,
+      required this.convergTimeout,
+      required this.commsTimeout,
+      required this.turbLim,
+      required this.custom})
       : super._();
 
   @override
@@ -42137,44 +40849,25 @@ class _$Formation extends Formation {
         referenceFrame == other.referenceFrame &&
         DeepCollectionEquality().equals(participants, other.participants) &&
         (leaderBankLim == other.leaderBankLim ||
-            (leaderBankLim != null &&
-                other.leaderBankLim != null &&
-                (leaderBankLim! - other.leaderBankLim! <= 1E-7))) &&
+            leaderBankLim - other.leaderBankLim <= 1E-7) &&
         (leaderSpeedMin == other.leaderSpeedMin ||
-            (leaderSpeedMin != null &&
-                other.leaderSpeedMin != null &&
-                (leaderSpeedMin! - other.leaderSpeedMin! <= 1E-7))) &&
+            leaderSpeedMin - other.leaderSpeedMin <= 1E-7) &&
         (leaderSpeedMax == other.leaderSpeedMax ||
-            (leaderSpeedMax != null &&
-                other.leaderSpeedMax != null &&
-                (leaderSpeedMax! - other.leaderSpeedMax! <= 1E-7))) &&
+            leaderSpeedMax - other.leaderSpeedMax <= 1E-7) &&
         (leaderAltMin == other.leaderAltMin ||
-            (leaderAltMin != null &&
-                other.leaderAltMin != null &&
-                (leaderAltMin! - other.leaderAltMin! <= 1E-7))) &&
+            leaderAltMin - other.leaderAltMin <= 1E-7) &&
         (leaderAltMax == other.leaderAltMax ||
-            (leaderAltMax != null &&
-                other.leaderAltMax != null &&
-                (leaderAltMax! - other.leaderAltMax! <= 1E-7))) &&
+            leaderAltMax - other.leaderAltMax <= 1E-7) &&
         (posSimErrLim == other.posSimErrLim ||
-            (posSimErrLim != null &&
-                other.posSimErrLim != null &&
-                (posSimErrLim! - other.posSimErrLim! <= 1E-7))) &&
+            posSimErrLim - other.posSimErrLim <= 1E-7) &&
         (posSimErrWrn == other.posSimErrWrn ||
-            (posSimErrWrn != null &&
-                other.posSimErrWrn != null &&
-                (posSimErrWrn! - other.posSimErrWrn! <= 1E-7))) &&
+            posSimErrWrn - other.posSimErrWrn <= 1E-7) &&
         posSimErrTimeout == other.posSimErrTimeout &&
         (convergMax == other.convergMax ||
-            (convergMax != null &&
-                other.convergMax != null &&
-                (convergMax! - other.convergMax! <= 1E-7))) &&
+            convergMax - other.convergMax <= 1E-7) &&
         convergTimeout == other.convergTimeout &&
         commsTimeout == other.commsTimeout &&
-        (turbLim == other.turbLim ||
-            (turbLim != null &&
-                other.turbLim != null &&
-                (turbLim! - other.turbLim! <= 1E-7))) &&
+        (turbLim == other.turbLim || turbLim - other.turbLim <= 1E-7) &&
         custom == other.custom;
   }
 
@@ -42198,26 +40891,26 @@ class _$Formation extends Formation {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), formationName?.hashCode ?? null.hashCode), type?.hashCode ?? null.hashCode),
-                                                                                op?.hashCode ?? null.hashCode),
-                                                                            groupName?.hashCode ?? null.hashCode),
-                                                                        planId?.hashCode ?? null.hashCode),
-                                                                    description?.hashCode ?? null.hashCode),
-                                                                referenceFrame?.hashCode ?? null.hashCode),
-                                                            participants?.hashCode ?? null.hashCode),
-                                                        leaderBankLim?.hashCode ?? null.hashCode),
-                                                    leaderSpeedMin?.hashCode ?? null.hashCode),
-                                                leaderSpeedMax?.hashCode ?? null.hashCode),
-                                            leaderAltMin?.hashCode ?? null.hashCode),
-                                        leaderAltMax?.hashCode ?? null.hashCode),
-                                    posSimErrLim?.hashCode ?? null.hashCode),
-                                posSimErrWrn?.hashCode ?? null.hashCode),
-                            posSimErrTimeout?.hashCode ?? null.hashCode),
-                        convergMax?.hashCode ?? null.hashCode),
-                    convergTimeout?.hashCode ?? null.hashCode),
-                commsTimeout?.hashCode ?? null.hashCode),
-            turbLim?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), formationName.hashCode), type.hashCode),
+                                                                                op.hashCode),
+                                                                            groupName.hashCode),
+                                                                        planId.hashCode),
+                                                                    description.hashCode),
+                                                                referenceFrame.hashCode),
+                                                            participants.hashCode),
+                                                        leaderBankLim.hashCode),
+                                                    leaderSpeedMin.hashCode),
+                                                leaderSpeedMax.hashCode),
+                                            leaderAltMin.hashCode),
+                                        leaderAltMax.hashCode),
+                                    posSimErrLim.hashCode),
+                                posSimErrWrn.hashCode),
+                            posSimErrTimeout.hashCode),
+                        convergMax.hashCode),
+                    convergTimeout.hashCode),
+                commsTimeout.hashCode),
+            turbLim.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -42237,7 +40930,7 @@ class _$Formation extends Formation {
           ..add('referenceFrame', '$referenceFrame (Enumerated)')
           ..add('participants', '$participants')
           ..add('leaderBankLim',
-              '$leaderBankLim (rad)${leaderBankLim != null ? ' [${leaderBankLim! * 180.0 / math.pi} (deg)]' : ''}')
+              '$leaderBankLim (rad) [${leaderBankLim * 180.0 / math.pi} (deg)]')
           ..add('leaderSpeedMin', '$leaderSpeedMin (m/s)')
           ..add('leaderSpeedMax', '$leaderSpeedMax (m/s)')
           ..add('leaderAltMin', '$leaderAltMin (m)')
@@ -42487,21 +41180,21 @@ class _$Launch extends Launch {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Launch([void Function(LaunchBuilder b)? updates]) =>
       (LaunchBuilder()..update(updates)).build();
@@ -42512,14 +41205,14 @@ class _$Launch extends Launch {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.custom})
       : super._();
 
   @override
@@ -42539,21 +41232,11 @@ class _$Launch extends Launch {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -42580,14 +41263,14 @@ class _$Launch extends Launch {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    timeout?.hashCode ?? null.hashCode),
-                                lat?.hashCode ?? null.hashCode),
-                            lon?.hashCode ?? null.hashCode),
-                        z?.hashCode ?? null.hashCode),
-                    zUnits?.hashCode ?? null.hashCode),
-                speed?.hashCode ?? null.hashCode),
-            speedUnits?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                    timeout.hashCode),
+                                lat.hashCode),
+                            lon.hashCode),
+                        z.hashCode),
+                    zUnits.hashCode),
+                speed.hashCode),
+            speedUnits.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -42599,10 +41282,8 @@ class _$Launch extends Launch {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -42758,21 +41439,21 @@ class _$Drop extends Drop {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Drop([void Function(DropBuilder b)? updates]) =>
       (DropBuilder()..update(updates)).build();
@@ -42783,14 +41464,14 @@ class _$Drop extends Drop {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.custom})
       : super._();
 
   @override
@@ -42810,21 +41491,11 @@ class _$Drop extends Drop {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -42851,14 +41522,14 @@ class _$Drop extends Drop {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    timeout?.hashCode ?? null.hashCode),
-                                lat?.hashCode ?? null.hashCode),
-                            lon?.hashCode ?? null.hashCode),
-                        z?.hashCode ?? null.hashCode),
-                    zUnits?.hashCode ?? null.hashCode),
-                speed?.hashCode ?? null.hashCode),
-            speedUnits?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                    timeout.hashCode),
+                                lat.hashCode),
+                            lon.hashCode),
+                        z.hashCode),
+                    zUnits.hashCode),
+                speed.hashCode),
+            speedUnits.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -42870,10 +41541,8 @@ class _$Drop extends Drop {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -43029,21 +41698,21 @@ class _$ScheduledGoto extends ScheduledGoto {
   final int dstEnt;
 
   @override
-  final double? arrivalTime;
+  final double arrivalTime;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? travelZ;
+  final double travelZ;
   @override
-  final ZUnitsEnum? travelZUnits;
+  final ZUnitsEnum travelZUnits;
   @override
-  final ScheduledGotoEnumDelayed? delayed;
+  final ScheduledGotoEnumDelayed delayed;
 
   factory _$ScheduledGoto([void Function(ScheduledGotoBuilder b)? updates]) =>
       (ScheduledGotoBuilder()..update(updates)).build();
@@ -43054,14 +41723,14 @@ class _$ScheduledGoto extends ScheduledGoto {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.arrivalTime,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.travelZ,
-      this.travelZUnits,
-      this.delayed})
+      required this.arrivalTime,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.travelZ,
+      required this.travelZUnits,
+      required this.delayed})
       : super._();
 
   @override
@@ -43081,24 +41750,12 @@ class _$ScheduledGoto extends ScheduledGoto {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         (arrivalTime == other.arrivalTime ||
-            (arrivalTime != null &&
-                other.arrivalTime != null &&
-                (arrivalTime! - other.arrivalTime! <= 1E-7))) &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+            arrivalTime - other.arrivalTime <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (travelZ == other.travelZ ||
-            (travelZ != null &&
-                other.travelZ != null &&
-                (travelZ! - other.travelZ! <= 1E-7))) &&
+        (travelZ == other.travelZ || travelZ - other.travelZ <= 1E-7) &&
         travelZUnits == other.travelZUnits &&
         delayed == other.delayed;
   }
@@ -43125,14 +41782,14 @@ class _$ScheduledGoto extends ScheduledGoto {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    arrivalTime?.hashCode ?? null.hashCode),
-                                lat?.hashCode ?? null.hashCode),
-                            lon?.hashCode ?? null.hashCode),
-                        z?.hashCode ?? null.hashCode),
-                    zUnits?.hashCode ?? null.hashCode),
-                travelZ?.hashCode ?? null.hashCode),
-            travelZUnits?.hashCode ?? null.hashCode),
-        delayed?.hashCode ?? null.hashCode));
+                                    arrivalTime.hashCode),
+                                lat.hashCode),
+                            lon.hashCode),
+                        z.hashCode),
+                    zUnits.hashCode),
+                travelZ.hashCode),
+            travelZUnits.hashCode),
+        delayed.hashCode));
   }
 
   @override
@@ -43144,10 +41801,8 @@ class _$ScheduledGoto extends ScheduledGoto {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('arrivalTime', '$arrivalTime (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('travelZ', '$travelZ (m)')
@@ -43304,37 +41959,37 @@ class _$RowsCoverage extends RowsCoverage {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final double? crossAngle;
+  final double crossAngle;
   @override
-  final double? width;
+  final double width;
   @override
-  final double? length;
+  final double length;
   @override
-  final int? coff;
+  final int coff;
   @override
-  final double? angAperture;
+  final double angAperture;
   @override
-  final int? range;
+  final int range;
   @override
-  final int? overlap;
+  final int overlap;
   @override
-  final RowsCoverageBitfieldFlags? flags;
+  final RowsCoverageBitfieldFlags flags;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$RowsCoverage([void Function(RowsCoverageBuilder b)? updates]) =>
       (RowsCoverageBuilder()..update(updates)).build();
@@ -43345,22 +42000,22 @@ class _$RowsCoverage extends RowsCoverage {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.bearing,
-      this.crossAngle,
-      this.width,
-      this.length,
-      this.coff,
-      this.angAperture,
-      this.range,
-      this.overlap,
-      this.flags,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.bearing,
+      required this.crossAngle,
+      required this.width,
+      required this.length,
+      required this.coff,
+      required this.angAperture,
+      required this.range,
+      required this.overlap,
+      required this.flags,
+      required this.custom})
       : super._();
 
   @override
@@ -43379,43 +42034,20 @@ class _$RowsCoverage extends RowsCoverage {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         (crossAngle == other.crossAngle ||
-            (crossAngle != null &&
-                other.crossAngle != null &&
-                (crossAngle! - other.crossAngle! <= 1E-7))) &&
-        (width == other.width ||
-            (width != null &&
-                other.width != null &&
-                (width! - other.width! <= 1E-7))) &&
-        (length == other.length ||
-            (length != null &&
-                other.length != null &&
-                (length! - other.length! <= 1E-7))) &&
+            crossAngle - other.crossAngle <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7) &&
         coff == other.coff &&
         (angAperture == other.angAperture ||
-            (angAperture != null &&
-                other.angAperture != null &&
-                (angAperture! - other.angAperture! <= 1E-7))) &&
+            angAperture - other.angAperture <= 1E-7) &&
         range == other.range &&
         overlap == other.overlap &&
         flags == other.flags &&
@@ -43446,22 +42078,22 @@ class _$RowsCoverage extends RowsCoverage {
                                                                                 srcEnt.hashCode),
                                                                             dst.hashCode),
                                                                         dstEnt.hashCode),
-                                                                    lat?.hashCode ?? null.hashCode),
-                                                                lon?.hashCode ?? null.hashCode),
-                                                            z?.hashCode ?? null.hashCode),
-                                                        zUnits?.hashCode ?? null.hashCode),
-                                                    speed?.hashCode ?? null.hashCode),
-                                                speedUnits?.hashCode ?? null.hashCode),
-                                            bearing?.hashCode ?? null.hashCode),
-                                        crossAngle?.hashCode ?? null.hashCode),
-                                    width?.hashCode ?? null.hashCode),
-                                length?.hashCode ?? null.hashCode),
-                            coff?.hashCode ?? null.hashCode),
-                        angAperture?.hashCode ?? null.hashCode),
-                    range?.hashCode ?? null.hashCode),
-                overlap?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                                    lat.hashCode),
+                                                                lon.hashCode),
+                                                            z.hashCode),
+                                                        zUnits.hashCode),
+                                                    speed.hashCode),
+                                                speedUnits.hashCode),
+                                            bearing.hashCode),
+                                        crossAngle.hashCode),
+                                    width.hashCode),
+                                length.hashCode),
+                            coff.hashCode),
+                        angAperture.hashCode),
+                    range.hashCode),
+                overlap.hashCode),
+            flags.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -43472,23 +42104,21 @@ class _$RowsCoverage extends RowsCoverage {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing',
-              '$bearing (rad)${bearing != null ? ' [${bearing! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('crossAngle',
-              '$crossAngle (rad)${crossAngle != null ? ' [${crossAngle! * 180.0 / math.pi} (deg)]' : ''}')
+              '$crossAngle (rad) [${crossAngle * 180.0 / math.pi} (deg)]')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)')
           ..add('coff', '$coff (m)')
           ..add('angAperture',
-              '$angAperture (rad)${angAperture != null ? ' [${angAperture! * 180.0 / math.pi} (deg)]' : ''}')
+              '$angAperture (rad) [${angAperture * 180.0 / math.pi} (deg)]')
           ..add('range', '$range (m)')
           ..add('overlap', '$overlap (%)')
           ..add('flags', '$flags (Bitfield)')
@@ -43691,27 +42321,27 @@ class _$Sample extends Sample {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final BooleanEnum? syringe0;
+  final BooleanEnum syringe0;
   @override
-  final BooleanEnum? syringe1;
+  final BooleanEnum syringe1;
   @override
-  final BooleanEnum? syringe2;
+  final BooleanEnum syringe2;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Sample([void Function(SampleBuilder b)? updates]) =>
       (SampleBuilder()..update(updates)).build();
@@ -43722,17 +42352,17 @@ class _$Sample extends Sample {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.syringe0,
-      this.syringe1,
-      this.syringe2,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.syringe0,
+      required this.syringe1,
+      required this.syringe2,
+      required this.custom})
       : super._();
 
   @override
@@ -43752,21 +42382,11 @@ class _$Sample extends Sample {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         syringe0 == other.syringe0 &&
         syringe1 == other.syringe1 &&
@@ -43795,24 +42415,22 @@ class _$Sample extends Sample {
                                                                     0,
                                                                     timestamp
                                                                             ?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
+                                                                        null.hashCode),
                                                                 src.hashCode),
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                timeout?.hashCode ??
-                                                    null.hashCode),
-                                            lat?.hashCode ?? null.hashCode),
-                                        lon?.hashCode ?? null.hashCode),
-                                    z?.hashCode ?? null.hashCode),
-                                zUnits?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    syringe0?.hashCode ?? null.hashCode),
-                syringe1?.hashCode ?? null.hashCode),
-            syringe2?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                timeout.hashCode),
+                                            lat.hashCode),
+                                        lon.hashCode),
+                                    z.hashCode),
+                                zUnits.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    syringe0.hashCode),
+                syringe1.hashCode),
+            syringe2.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -43824,10 +42442,8 @@ class _$Sample extends Sample {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
@@ -44152,21 +42768,21 @@ class _$Takeoff extends Takeoff {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? takeoffPitch;
+  final double takeoffPitch;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Takeoff([void Function(TakeoffBuilder b)? updates]) =>
       (TakeoffBuilder()..update(updates)).build();
@@ -44177,14 +42793,14 @@ class _$Takeoff extends Takeoff {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.takeoffPitch,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.takeoffPitch,
+      required this.custom})
       : super._();
 
   @override
@@ -44203,26 +42819,14 @@ class _$Takeoff extends Takeoff {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         (takeoffPitch == other.takeoffPitch ||
-            (takeoffPitch != null &&
-                other.takeoffPitch != null &&
-                (takeoffPitch! - other.takeoffPitch! <= 1E-7))) &&
+            takeoffPitch - other.takeoffPitch <= 1E-7) &&
         custom == other.custom;
   }
 
@@ -44248,14 +42852,14 @@ class _$Takeoff extends Takeoff {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    lat?.hashCode ?? null.hashCode),
-                                lon?.hashCode ?? null.hashCode),
-                            z?.hashCode ?? null.hashCode),
-                        zUnits?.hashCode ?? null.hashCode),
-                    speed?.hashCode ?? null.hashCode),
-                speedUnits?.hashCode ?? null.hashCode),
-            takeoffPitch?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                    lat.hashCode),
+                                lon.hashCode),
+                            z.hashCode),
+                        zUnits.hashCode),
+                    speed.hashCode),
+                speedUnits.hashCode),
+            takeoffPitch.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -44266,16 +42870,14 @@ class _$Takeoff extends Takeoff {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('takeoffPitch',
-              '$takeoffPitch (rad)${takeoffPitch != null ? ' [${takeoffPitch! * 180.0 / math.pi} (deg)]' : ''}')
+              '$takeoffPitch (rad) [${takeoffPitch * 180.0 / math.pi} (deg)]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -44427,27 +43029,27 @@ class _$Land extends Land {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? abortZ;
+  final double abortZ;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final int? glideSlope;
+  final int glideSlope;
   @override
-  final double? glideSlopeAlt;
+  final double glideSlopeAlt;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Land([void Function(LandBuilder b)? updates]) =>
       (LandBuilder()..update(updates)).build();
@@ -44458,17 +43060,17 @@ class _$Land extends Land {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.abortZ,
-      this.bearing,
-      this.glideSlope,
-      this.glideSlopeAlt,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.abortZ,
+      required this.bearing,
+      required this.glideSlope,
+      required this.glideSlopeAlt,
+      required this.custom})
       : super._();
 
   @override
@@ -44487,35 +43089,17 @@ class _$Land extends Land {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (abortZ == other.abortZ ||
-            (abortZ != null &&
-                other.abortZ != null &&
-                (abortZ! - other.abortZ! <= 1E-7))) &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
+        (abortZ == other.abortZ || abortZ - other.abortZ <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
         glideSlope == other.glideSlope &&
         (glideSlopeAlt == other.glideSlopeAlt ||
-            (glideSlopeAlt != null &&
-                other.glideSlopeAlt != null &&
-                (glideSlopeAlt! - other.glideSlopeAlt! <= 1E-7))) &&
+            glideSlopeAlt - other.glideSlopeAlt <= 1E-7) &&
         custom == other.custom;
   }
 
@@ -44545,17 +43129,17 @@ class _$Land extends Land {
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                lat?.hashCode ?? null.hashCode),
-                                            lon?.hashCode ?? null.hashCode),
-                                        z?.hashCode ?? null.hashCode),
-                                    zUnits?.hashCode ?? null.hashCode),
-                                speed?.hashCode ?? null.hashCode),
-                            speedUnits?.hashCode ?? null.hashCode),
-                        abortZ?.hashCode ?? null.hashCode),
-                    bearing?.hashCode ?? null.hashCode),
-                glideSlope?.hashCode ?? null.hashCode),
-            glideSlopeAlt?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                lat.hashCode),
+                                            lon.hashCode),
+                                        z.hashCode),
+                                    zUnits.hashCode),
+                                speed.hashCode),
+                            speedUnits.hashCode),
+                        abortZ.hashCode),
+                    bearing.hashCode),
+                glideSlope.hashCode),
+            glideSlopeAlt.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -44566,17 +43150,15 @@ class _$Land extends Land {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('abortZ', '$abortZ (m)')
-          ..add('bearing',
-              '$bearing (rad)${bearing != null ? ' [${bearing! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('glideSlope', '$glideSlope (%)')
           ..add('glideSlopeAlt', '$glideSlopeAlt (m)')
           ..add('custom', '$custom (TupleList)'))
@@ -44749,27 +43331,27 @@ class _$AutonomousSection extends AutonomousSection {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final AutonomousSectionBitfieldLimits? limits;
+  final AutonomousSectionBitfieldLimits limits;
   @override
-  final double? maxDepth;
+  final double maxDepth;
   @override
-  final double? minAlt;
+  final double minAlt;
   @override
-  final double? timeLimit;
+  final double timeLimit;
   @override
-  final List<PolygonVertex>? areaLimits;
+  final List<PolygonVertex> areaLimits;
   @override
-  final String? controller;
+  final String controller;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$AutonomousSection(
           [void Function(AutonomousSectionBuilder b)? updates]) =>
@@ -44781,17 +43363,17 @@ class _$AutonomousSection extends AutonomousSection {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.speed,
-      this.speedUnits,
-      this.limits,
-      this.maxDepth,
-      this.minAlt,
-      this.timeLimit,
-      this.areaLimits,
-      this.controller,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.speed,
+      required this.speedUnits,
+      required this.limits,
+      required this.maxDepth,
+      required this.minAlt,
+      required this.timeLimit,
+      required this.areaLimits,
+      required this.controller,
+      required this.custom})
       : super._();
 
   @override
@@ -44812,32 +43394,14 @@ class _$AutonomousSection extends AutonomousSection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         limits == other.limits &&
-        (maxDepth == other.maxDepth ||
-            (maxDepth != null &&
-                other.maxDepth != null &&
-                (maxDepth! - other.maxDepth! <= 1E-7))) &&
-        (minAlt == other.minAlt ||
-            (minAlt != null &&
-                other.minAlt != null &&
-                (minAlt! - other.minAlt! <= 1E-7))) &&
-        (timeLimit == other.timeLimit ||
-            (timeLimit != null &&
-                other.timeLimit != null &&
-                (timeLimit! - other.timeLimit! <= 1E-7))) &&
+        (maxDepth == other.maxDepth || maxDepth - other.maxDepth <= 1E-7) &&
+        (minAlt == other.minAlt || minAlt - other.minAlt <= 1E-7) &&
+        (timeLimit == other.timeLimit || timeLimit - other.timeLimit <= 1E-7) &&
         DeepCollectionEquality().equals(areaLimits, other.areaLimits) &&
         controller == other.controller &&
         custom == other.custom;
@@ -44869,17 +43433,17 @@ class _$AutonomousSection extends AutonomousSection {
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                lat?.hashCode ?? null.hashCode),
-                                            lon?.hashCode ?? null.hashCode),
-                                        speed?.hashCode ?? null.hashCode),
-                                    speedUnits?.hashCode ?? null.hashCode),
-                                limits?.hashCode ?? null.hashCode),
-                            maxDepth?.hashCode ?? null.hashCode),
-                        minAlt?.hashCode ?? null.hashCode),
-                    timeLimit?.hashCode ?? null.hashCode),
-                areaLimits?.hashCode ?? null.hashCode),
-            controller?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                lat.hashCode),
+                                            lon.hashCode),
+                                        speed.hashCode),
+                                    speedUnits.hashCode),
+                                limits.hashCode),
+                            maxDepth.hashCode),
+                        minAlt.hashCode),
+                    timeLimit.hashCode),
+                areaLimits.hashCode),
+            controller.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -44890,10 +43454,8 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('limits', '$limits (Bitfield)')
@@ -45074,21 +43636,21 @@ class _$FollowPoint extends FollowPoint {
   final int dstEnt;
 
   @override
-  final String? target;
+  final String target;
   @override
-  final double? maxSpeed;
+  final double maxSpeed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$FollowPoint([void Function(FollowPointBuilder b)? updates]) =>
       (FollowPointBuilder()..update(updates)).build();
@@ -45099,14 +43661,14 @@ class _$FollowPoint extends FollowPoint {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.target,
-      this.maxSpeed,
-      this.speedUnits,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.custom})
+      required this.target,
+      required this.maxSpeed,
+      required this.speedUnits,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.custom})
       : super._();
 
   @override
@@ -45126,21 +43688,11 @@ class _$FollowPoint extends FollowPoint {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (maxSpeed == other.maxSpeed ||
-            (maxSpeed != null &&
-                other.maxSpeed != null &&
-                (maxSpeed! - other.maxSpeed! <= 1E-7))) &&
+        (maxSpeed == other.maxSpeed || maxSpeed - other.maxSpeed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
         custom == other.custom;
   }
@@ -45167,14 +43719,14 @@ class _$FollowPoint extends FollowPoint {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    target?.hashCode ?? null.hashCode),
-                                maxSpeed?.hashCode ?? null.hashCode),
-                            speedUnits?.hashCode ?? null.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                z?.hashCode ?? null.hashCode),
-            zUnits?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                    target.hashCode),
+                                maxSpeed.hashCode),
+                            speedUnits.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                z.hashCode),
+            zUnits.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -45188,10 +43740,8 @@ class _$FollowPoint extends FollowPoint {
           ..add('target', '$target')
           ..add('maxSpeed', '$maxSpeed (m/s)')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -45345,17 +43895,17 @@ class _$Alignment extends Alignment {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Alignment([void Function(AlignmentBuilder b)? updates]) =>
       (AlignmentBuilder()..update(updates)).build();
@@ -45366,12 +43916,12 @@ class _$Alignment extends Alignment {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.speed,
-      this.speedUnits,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.speed,
+      required this.speedUnits,
+      required this.custom})
       : super._();
 
   @override
@@ -45391,18 +43941,9 @@ class _$Alignment extends Alignment {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         custom == other.custom;
   }
@@ -45427,12 +43968,12 @@ class _$Alignment extends Alignment {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            timeout?.hashCode ?? null.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                speed?.hashCode ?? null.hashCode),
-            speedUnits?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                            timeout.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                speed.hashCode),
+            speedUnits.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -45444,10 +43985,8 @@ class _$Alignment extends Alignment {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -45589,29 +44128,29 @@ class _$StationKeepingExtended extends StationKeepingExtended {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? radius;
+  final double radius;
   @override
-  final int? duration;
+  final int duration;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final int? popupPeriod;
+  final int popupPeriod;
   @override
-  final int? popupDuration;
+  final int popupDuration;
   @override
-  final StationKeepingExtendedBitfieldFlags? flags;
+  final StationKeepingExtendedBitfieldFlags flags;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$StationKeepingExtended(
           [void Function(StationKeepingExtendedBuilder b)? updates]) =>
@@ -45623,18 +44162,18 @@ class _$StationKeepingExtended extends StationKeepingExtended {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.radius,
-      this.duration,
-      this.speed,
-      this.speedUnits,
-      this.popupPeriod,
-      this.popupDuration,
-      this.flags,
-      this.custom})
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.radius,
+      required this.duration,
+      required this.speed,
+      required this.speedUnits,
+      required this.popupPeriod,
+      required this.popupDuration,
+      required this.flags,
+      required this.custom})
       : super._();
 
   @override
@@ -45655,26 +44194,13 @@ class _$StationKeepingExtended extends StationKeepingExtended {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (radius == other.radius ||
-            (radius != null &&
-                other.radius != null &&
-                (radius! - other.radius! <= 1E-7))) &&
+        (radius == other.radius || radius - other.radius <= 1E-7) &&
         duration == other.duration &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
         popupPeriod == other.popupPeriod &&
         popupDuration == other.popupDuration &&
@@ -45703,27 +44229,23 @@ class _$StationKeepingExtended extends StationKeepingExtended {
                                                                     $jc(
                                                                         0,
                                                                         timestamp?.hashCode ??
-                                                                            null
-                                                                                .hashCode),
-                                                                    src
-                                                                        .hashCode),
-                                                                srcEnt
-                                                                    .hashCode),
+                                                                            null.hashCode),
+                                                                    src.hashCode),
+                                                                srcEnt.hashCode),
                                                             dst.hashCode),
                                                         dstEnt.hashCode),
-                                                    lat?.hashCode ??
-                                                        null.hashCode),
-                                                lon?.hashCode ?? null.hashCode),
-                                            z?.hashCode ?? null.hashCode),
-                                        zUnits?.hashCode ?? null.hashCode),
-                                    radius?.hashCode ?? null.hashCode),
-                                duration?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    popupPeriod?.hashCode ?? null.hashCode),
-                popupDuration?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                    lat.hashCode),
+                                                lon.hashCode),
+                                            z.hashCode),
+                                        zUnits.hashCode),
+                                    radius.hashCode),
+                                duration.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    popupPeriod.hashCode),
+                popupDuration.hashCode),
+            flags.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -45734,10 +44256,8 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('radius', '$radius (m)')
@@ -46077,27 +44597,27 @@ class _$Magnetometer extends Magnetometer {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final SpeedUnitsEnum? speedUnits;
+  final SpeedUnitsEnum speedUnits;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final double? width;
+  final double width;
   @override
-  final MagnetometerEnumDirection? direction;
+  final MagnetometerEnumDirection direction;
   @override
-  final String? custom;
+  final String custom;
 
   factory _$Magnetometer([void Function(MagnetometerBuilder b)? updates]) =>
       (MagnetometerBuilder()..update(updates)).build();
@@ -46108,17 +44628,17 @@ class _$Magnetometer extends Magnetometer {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.speed,
-      this.speedUnits,
-      this.bearing,
-      this.width,
-      this.direction,
-      this.custom})
+      required this.timeout,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.speed,
+      required this.speedUnits,
+      required this.bearing,
+      required this.width,
+      required this.direction,
+      required this.custom})
       : super._();
 
   @override
@@ -46138,30 +44658,14 @@ class _$Magnetometer extends Magnetometer {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         timeout == other.timeout &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
         speedUnits == other.speedUnits &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
-        (width == other.width ||
-            (width != null &&
-                other.width != null &&
-                (width! - other.width! <= 1E-7))) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
         direction == other.direction &&
         custom == other.custom;
   }
@@ -46187,24 +44691,22 @@ class _$Magnetometer extends Magnetometer {
                                                                     0,
                                                                     timestamp
                                                                             ?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
+                                                                        null.hashCode),
                                                                 src.hashCode),
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                timeout?.hashCode ??
-                                                    null.hashCode),
-                                            lat?.hashCode ?? null.hashCode),
-                                        lon?.hashCode ?? null.hashCode),
-                                    z?.hashCode ?? null.hashCode),
-                                zUnits?.hashCode ?? null.hashCode),
-                            speed?.hashCode ?? null.hashCode),
-                        speedUnits?.hashCode ?? null.hashCode),
-                    bearing?.hashCode ?? null.hashCode),
-                width?.hashCode ?? null.hashCode),
-            direction?.hashCode ?? null.hashCode),
-        custom?.hashCode ?? null.hashCode));
+                                                timeout.hashCode),
+                                            lat.hashCode),
+                                        lon.hashCode),
+                                    z.hashCode),
+                                zUnits.hashCode),
+                            speed.hashCode),
+                        speedUnits.hashCode),
+                    bearing.hashCode),
+                width.hashCode),
+            direction.hashCode),
+        custom.hashCode));
   }
 
   @override
@@ -46216,16 +44718,14 @@ class _$Magnetometer extends Magnetometer {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('speed', '$speed')
           ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('bearing',
-              '$bearing (rad)${bearing != null ? ' [${bearing! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('width', '$width (m)')
           ..add('direction', '$direction (Enumerated)')
           ..add('custom', '$custom (TupleList)'))
@@ -46398,25 +44898,25 @@ class _$VehicleState extends VehicleState {
   final int dstEnt;
 
   @override
-  final VehicleStateEnumOpMode? opMode;
+  final VehicleStateEnumOpMode opMode;
   @override
-  final int? errorCount;
+  final int errorCount;
   @override
-  final String? errorEnts;
+  final String errorEnts;
   @override
-  final int? maneuverType;
+  final int maneuverType;
   @override
-  final double? maneuverStime;
+  final double maneuverStime;
   @override
-  final int? maneuverEta;
+  final int maneuverEta;
   @override
-  final CLoopsMaskBitfield? controlLoops;
+  final CLoopsMaskBitfield controlLoops;
   @override
-  final VehicleStateBitfieldFlags? flags;
+  final VehicleStateBitfieldFlags flags;
   @override
-  final String? lastError;
+  final String lastError;
   @override
-  final double? lastErrorTime;
+  final double lastErrorTime;
 
   factory _$VehicleState([void Function(VehicleStateBuilder b)? updates]) =>
       (VehicleStateBuilder()..update(updates)).build();
@@ -46427,16 +44927,16 @@ class _$VehicleState extends VehicleState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.opMode,
-      this.errorCount,
-      this.errorEnts,
-      this.maneuverType,
-      this.maneuverStime,
-      this.maneuverEta,
-      this.controlLoops,
-      this.flags,
-      this.lastError,
-      this.lastErrorTime})
+      required this.opMode,
+      required this.errorCount,
+      required this.errorEnts,
+      required this.maneuverType,
+      required this.maneuverStime,
+      required this.maneuverEta,
+      required this.controlLoops,
+      required this.flags,
+      required this.lastError,
+      required this.lastErrorTime})
       : super._();
 
   @override
@@ -46460,17 +44960,13 @@ class _$VehicleState extends VehicleState {
         errorEnts == other.errorEnts &&
         maneuverType == other.maneuverType &&
         (maneuverStime == other.maneuverStime ||
-            (maneuverStime != null &&
-                other.maneuverStime != null &&
-                (maneuverStime! - other.maneuverStime! <= 1E-7))) &&
+            maneuverStime - other.maneuverStime <= 1E-7) &&
         maneuverEta == other.maneuverEta &&
         controlLoops == other.controlLoops &&
         flags == other.flags &&
         lastError == other.lastError &&
         (lastErrorTime == other.lastErrorTime ||
-            (lastErrorTime != null &&
-                other.lastErrorTime != null &&
-                (lastErrorTime! - other.lastErrorTime! <= 1E-7)));
+            lastErrorTime - other.lastErrorTime <= 1E-7);
   }
 
   @override
@@ -46498,16 +44994,16 @@ class _$VehicleState extends VehicleState {
                                                         srcEnt.hashCode),
                                                     dst.hashCode),
                                                 dstEnt.hashCode),
-                                            opMode?.hashCode ?? null.hashCode),
-                                        errorCount?.hashCode ?? null.hashCode),
-                                    errorEnts?.hashCode ?? null.hashCode),
-                                maneuverType?.hashCode ?? null.hashCode),
-                            maneuverStime?.hashCode ?? null.hashCode),
-                        maneuverEta?.hashCode ?? null.hashCode),
-                    controlLoops?.hashCode ?? null.hashCode),
-                flags?.hashCode ?? null.hashCode),
-            lastError?.hashCode ?? null.hashCode),
-        lastErrorTime?.hashCode ?? null.hashCode));
+                                            opMode.hashCode),
+                                        errorCount.hashCode),
+                                    errorEnts.hashCode),
+                                maneuverType.hashCode),
+                            maneuverStime.hashCode),
+                        maneuverEta.hashCode),
+                    controlLoops.hashCode),
+                flags.hashCode),
+            lastError.hashCode),
+        lastErrorTime.hashCode));
   }
 
   @override
@@ -46693,17 +45189,17 @@ class _$VehicleCommand extends VehicleCommand {
   final int dstEnt;
 
   @override
-  final VehicleCommandEnumType? type;
+  final VehicleCommandEnumType type;
   @override
-  final int? requestId;
+  final int requestId;
   @override
-  final VehicleCommandEnumCommand? command;
+  final VehicleCommandEnumCommand command;
   @override
   final Maneuver? maneuver;
   @override
-  final int? calibTime;
+  final int calibTime;
   @override
-  final String? info;
+  final String info;
 
   factory _$VehicleCommand([void Function(VehicleCommandBuilder b)? updates]) =>
       (VehicleCommandBuilder()..update(updates)).build();
@@ -46714,12 +45210,12 @@ class _$VehicleCommand extends VehicleCommand {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.requestId,
-      this.command,
+      required this.type,
+      required this.requestId,
+      required this.command,
       this.maneuver,
-      this.calibTime,
-      this.info})
+      required this.calibTime,
+      required this.info})
       : super._();
 
   @override
@@ -46766,12 +45262,12 @@ class _$VehicleCommand extends VehicleCommand {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            type?.hashCode ?? null.hashCode),
-                        requestId?.hashCode ?? null.hashCode),
-                    command?.hashCode ?? null.hashCode),
+                            type.hashCode),
+                        requestId.hashCode),
+                    command.hashCode),
                 maneuver?.hashCode ?? null.hashCode),
-            calibTime?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+            calibTime.hashCode),
+        info.hashCode));
   }
 
   @override
@@ -46926,9 +45422,9 @@ class _$MonitorEntityState extends MonitorEntityState {
   final int dstEnt;
 
   @override
-  final MonitorEntityStateEnumCommand? command;
+  final MonitorEntityStateEnumCommand command;
   @override
-  final String? entities;
+  final String entities;
 
   factory _$MonitorEntityState(
           [void Function(MonitorEntityStateBuilder b)? updates]) =>
@@ -46940,8 +45436,8 @@ class _$MonitorEntityState extends MonitorEntityState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.command,
-      this.entities})
+      required this.command,
+      required this.entities})
       : super._();
 
   @override
@@ -46978,8 +45474,8 @@ class _$MonitorEntityState extends MonitorEntityState {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            command?.hashCode ?? null.hashCode),
-        entities?.hashCode ?? null.hashCode));
+            command.hashCode),
+        entities.hashCode));
   }
 
   @override
@@ -47108,21 +45604,21 @@ class _$EntityMonitoringState extends EntityMonitoringState {
   final int dstEnt;
 
   @override
-  final int? mcount;
+  final int mcount;
   @override
-  final String? mnames;
+  final String mnames;
   @override
-  final int? ecount;
+  final int ecount;
   @override
-  final String? enames;
+  final String enames;
   @override
-  final int? ccount;
+  final int ccount;
   @override
-  final String? cnames;
+  final String cnames;
   @override
-  final String? lastError;
+  final String lastError;
   @override
-  final double? lastErrorTime;
+  final double lastErrorTime;
 
   factory _$EntityMonitoringState(
           [void Function(EntityMonitoringStateBuilder b)? updates]) =>
@@ -47134,14 +45630,14 @@ class _$EntityMonitoringState extends EntityMonitoringState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.mcount,
-      this.mnames,
-      this.ecount,
-      this.enames,
-      this.ccount,
-      this.cnames,
-      this.lastError,
-      this.lastErrorTime})
+      required this.mcount,
+      required this.mnames,
+      required this.ecount,
+      required this.enames,
+      required this.ccount,
+      required this.cnames,
+      required this.lastError,
+      required this.lastErrorTime})
       : super._();
 
   @override
@@ -47170,9 +45666,7 @@ class _$EntityMonitoringState extends EntityMonitoringState {
         cnames == other.cnames &&
         lastError == other.lastError &&
         (lastErrorTime == other.lastErrorTime ||
-            (lastErrorTime != null &&
-                other.lastErrorTime != null &&
-                (lastErrorTime! - other.lastErrorTime! <= 1E-7)));
+            lastErrorTime - other.lastErrorTime <= 1E-7);
   }
 
   @override
@@ -47197,14 +45691,14 @@ class _$EntityMonitoringState extends EntityMonitoringState {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    mcount?.hashCode ?? null.hashCode),
-                                mnames?.hashCode ?? null.hashCode),
-                            ecount?.hashCode ?? null.hashCode),
-                        enames?.hashCode ?? null.hashCode),
-                    ccount?.hashCode ?? null.hashCode),
-                cnames?.hashCode ?? null.hashCode),
-            lastError?.hashCode ?? null.hashCode),
-        lastErrorTime?.hashCode ?? null.hashCode));
+                                    mcount.hashCode),
+                                mnames.hashCode),
+                            ecount.hashCode),
+                        enames.hashCode),
+                    ccount.hashCode),
+                cnames.hashCode),
+            lastError.hashCode),
+        lastErrorTime.hashCode));
   }
 
   @override
@@ -47378,29 +45872,29 @@ class _$OperationalLimits extends OperationalLimits {
   final int dstEnt;
 
   @override
-  final OpLimitsMaskBitfield? mask;
+  final OpLimitsMaskBitfield mask;
   @override
-  final double? maxDepth;
+  final double maxDepth;
   @override
-  final double? minAltitude;
+  final double minAltitude;
   @override
-  final double? maxAltitude;
+  final double maxAltitude;
   @override
-  final double? minSpeed;
+  final double minSpeed;
   @override
-  final double? maxSpeed;
+  final double maxSpeed;
   @override
-  final double? maxVrate;
+  final double maxVrate;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? orientation;
+  final double orientation;
   @override
-  final double? width;
+  final double width;
   @override
-  final double? length;
+  final double length;
 
   factory _$OperationalLimits(
           [void Function(OperationalLimitsBuilder b)? updates]) =>
@@ -47412,18 +45906,18 @@ class _$OperationalLimits extends OperationalLimits {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.mask,
-      this.maxDepth,
-      this.minAltitude,
-      this.maxAltitude,
-      this.minSpeed,
-      this.maxSpeed,
-      this.maxVrate,
-      this.lat,
-      this.lon,
-      this.orientation,
-      this.width,
-      this.length})
+      required this.mask,
+      required this.maxDepth,
+      required this.minAltitude,
+      required this.maxAltitude,
+      required this.minSpeed,
+      required this.maxSpeed,
+      required this.maxVrate,
+      required this.lat,
+      required this.lon,
+      required this.orientation,
+      required this.width,
+      required this.length})
       : super._();
 
   @override
@@ -47445,50 +45939,20 @@ class _$OperationalLimits extends OperationalLimits {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         mask == other.mask &&
-        (maxDepth == other.maxDepth ||
-            (maxDepth != null &&
-                other.maxDepth != null &&
-                (maxDepth! - other.maxDepth! <= 1E-7))) &&
+        (maxDepth == other.maxDepth || maxDepth - other.maxDepth <= 1E-7) &&
         (minAltitude == other.minAltitude ||
-            (minAltitude != null &&
-                other.minAltitude != null &&
-                (minAltitude! - other.minAltitude! <= 1E-7))) &&
+            minAltitude - other.minAltitude <= 1E-7) &&
         (maxAltitude == other.maxAltitude ||
-            (maxAltitude != null &&
-                other.maxAltitude != null &&
-                (maxAltitude! - other.maxAltitude! <= 1E-7))) &&
-        (minSpeed == other.minSpeed ||
-            (minSpeed != null &&
-                other.minSpeed != null &&
-                (minSpeed! - other.minSpeed! <= 1E-7))) &&
-        (maxSpeed == other.maxSpeed ||
-            (maxSpeed != null &&
-                other.maxSpeed != null &&
-                (maxSpeed! - other.maxSpeed! <= 1E-7))) &&
-        (maxVrate == other.maxVrate ||
-            (maxVrate != null &&
-                other.maxVrate != null &&
-                (maxVrate! - other.maxVrate! <= 1E-7))) &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
+            maxAltitude - other.maxAltitude <= 1E-7) &&
+        (minSpeed == other.minSpeed || minSpeed - other.minSpeed <= 1E-7) &&
+        (maxSpeed == other.maxSpeed || maxSpeed - other.maxSpeed <= 1E-7) &&
+        (maxVrate == other.maxVrate || maxVrate - other.maxVrate <= 1E-7) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         (orientation == other.orientation ||
-            (orientation != null &&
-                other.orientation != null &&
-                (orientation! - other.orientation! <= 1E-7))) &&
-        (width == other.width ||
-            (width != null &&
-                other.width != null &&
-                (width! - other.width! <= 1E-7))) &&
-        (length == other.length ||
-            (length != null &&
-                other.length != null &&
-                (length! - other.length! <= 1E-7)));
+            orientation - other.orientation <= 1E-7) &&
+        (width == other.width || width - other.width <= 1E-7) &&
+        (length == other.length || length - other.length <= 1E-7);
   }
 
   @override
@@ -47512,29 +45976,23 @@ class _$OperationalLimits extends OperationalLimits {
                                                                     $jc(
                                                                         0,
                                                                         timestamp?.hashCode ??
-                                                                            null
-                                                                                .hashCode),
-                                                                    src
-                                                                        .hashCode),
-                                                                srcEnt
-                                                                    .hashCode),
+                                                                            null.hashCode),
+                                                                    src.hashCode),
+                                                                srcEnt.hashCode),
                                                             dst.hashCode),
                                                         dstEnt.hashCode),
-                                                    mask?.hashCode ??
-                                                        null.hashCode),
-                                                maxDepth?.hashCode ??
-                                                    null.hashCode),
-                                            minAltitude?.hashCode ??
-                                                null.hashCode),
-                                        maxAltitude?.hashCode ?? null.hashCode),
-                                    minSpeed?.hashCode ?? null.hashCode),
-                                maxSpeed?.hashCode ?? null.hashCode),
-                            maxVrate?.hashCode ?? null.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                orientation?.hashCode ?? null.hashCode),
-            width?.hashCode ?? null.hashCode),
-        length?.hashCode ?? null.hashCode));
+                                                    mask.hashCode),
+                                                maxDepth.hashCode),
+                                            minAltitude.hashCode),
+                                        maxAltitude.hashCode),
+                                    minSpeed.hashCode),
+                                maxSpeed.hashCode),
+                            maxVrate.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                orientation.hashCode),
+            width.hashCode),
+        length.hashCode));
   }
 
   @override
@@ -47552,12 +46010,10 @@ class _$OperationalLimits extends OperationalLimits {
           ..add('minSpeed', '$minSpeed (m/s)')
           ..add('maxSpeed', '$maxSpeed (m/s)')
           ..add('maxVrate', '$maxVrate (m/s)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('orientation',
-              '$orientation (rad)${orientation != null ? ' [${orientation! * 180.0 / math.pi} (deg)]' : ''}')
+              '$orientation (rad) [${orientation * 180.0 / math.pi} (deg)]')
           ..add('width', '$width (m)')
           ..add('length', '$length (m)'))
         .toString();
@@ -47889,7 +46345,7 @@ class _$Calibration extends Calibration {
   final int dstEnt;
 
   @override
-  final int? duration;
+  final int duration;
 
   factory _$Calibration([void Function(CalibrationBuilder b)? updates]) =>
       (CalibrationBuilder()..update(updates)).build();
@@ -47900,7 +46356,7 @@ class _$Calibration extends Calibration {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.duration})
+      required this.duration})
       : super._();
 
   @override
@@ -47933,7 +46389,7 @@ class _$Calibration extends Calibration {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        duration?.hashCode ?? null.hashCode));
+        duration.hashCode));
   }
 
   @override
@@ -48053,11 +46509,11 @@ class _$ControlLoops extends ControlLoops {
   final int dstEnt;
 
   @override
-  final ControlLoopsEnumEnable? enable;
+  final ControlLoopsEnumEnable enable;
   @override
-  final CLoopsMaskBitfield? mask;
+  final CLoopsMaskBitfield mask;
   @override
-  final int? scopeRef;
+  final int scopeRef;
 
   factory _$ControlLoops([void Function(ControlLoopsBuilder b)? updates]) =>
       (ControlLoopsBuilder()..update(updates)).build();
@@ -48068,9 +46524,9 @@ class _$ControlLoops extends ControlLoops {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.enable,
-      this.mask,
-      this.scopeRef})
+      required this.enable,
+      required this.mask,
+      required this.scopeRef})
       : super._();
 
   @override
@@ -48107,9 +46563,9 @@ class _$ControlLoops extends ControlLoops {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                enable?.hashCode ?? null.hashCode),
-            mask?.hashCode ?? null.hashCode),
-        scopeRef?.hashCode ?? null.hashCode));
+                enable.hashCode),
+            mask.hashCode),
+        scopeRef.hashCode));
   }
 
   @override
@@ -48243,7 +46699,7 @@ class _$VehicleMedium extends VehicleMedium {
   final int dstEnt;
 
   @override
-  final VehicleMediumEnumMedium? medium;
+  final VehicleMediumEnumMedium medium;
 
   factory _$VehicleMedium([void Function(VehicleMediumBuilder b)? updates]) =>
       (VehicleMediumBuilder()..update(updates)).build();
@@ -48254,7 +46710,7 @@ class _$VehicleMedium extends VehicleMedium {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.medium})
+      required this.medium})
       : super._();
 
   @override
@@ -48287,7 +46743,7 @@ class _$VehicleMedium extends VehicleMedium {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        medium?.hashCode ?? null.hashCode));
+        medium.hashCode));
   }
 
   @override
@@ -48407,9 +46863,9 @@ class _$Collision extends Collision {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
   @override
-  final CollisionBitfieldType? type;
+  final CollisionBitfieldType type;
 
   factory _$Collision([void Function(CollisionBuilder b)? updates]) =>
       (CollisionBuilder()..update(updates)).build();
@@ -48420,8 +46876,8 @@ class _$Collision extends Collision {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value,
-      this.type})
+      required this.value,
+      required this.type})
       : super._();
 
   @override
@@ -48440,10 +46896,7 @@ class _$Collision extends Collision {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         type == other.type;
   }
 
@@ -48459,8 +46912,8 @@ class _$Collision extends Collision {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            value?.hashCode ?? null.hashCode),
-        type?.hashCode ?? null.hashCode));
+            value.hashCode),
+        type.hashCode));
   }
 
   @override
@@ -48587,17 +47040,17 @@ class _$FormState extends FormState {
   final int dstEnt;
 
   @override
-  final double? posSimErr;
+  final double posSimErr;
   @override
-  final double? converg;
+  final double converg;
   @override
-  final double? turbulence;
+  final double turbulence;
   @override
-  final FormStateEnumPosSimMon? posSimMon;
+  final FormStateEnumPosSimMon posSimMon;
   @override
-  final FormStateEnumCommMon? commMon;
+  final FormStateEnumCommMon commMon;
   @override
-  final FormStateEnumConvergMon? convergMon;
+  final FormStateEnumConvergMon convergMon;
 
   factory _$FormState([void Function(FormStateBuilder b)? updates]) =>
       (FormStateBuilder()..update(updates)).build();
@@ -48608,12 +47061,12 @@ class _$FormState extends FormState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.posSimErr,
-      this.converg,
-      this.turbulence,
-      this.posSimMon,
-      this.commMon,
-      this.convergMon})
+      required this.posSimErr,
+      required this.converg,
+      required this.turbulence,
+      required this.posSimMon,
+      required this.commMon,
+      required this.convergMon})
       : super._();
 
   @override
@@ -48632,18 +47085,10 @@ class _$FormState extends FormState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (posSimErr == other.posSimErr ||
-            (posSimErr != null &&
-                other.posSimErr != null &&
-                (posSimErr! - other.posSimErr! <= 1E-7))) &&
-        (converg == other.converg ||
-            (converg != null &&
-                other.converg != null &&
-                (converg! - other.converg! <= 1E-7))) &&
+        (posSimErr == other.posSimErr || posSimErr - other.posSimErr <= 1E-7) &&
+        (converg == other.converg || converg - other.converg <= 1E-7) &&
         (turbulence == other.turbulence ||
-            (turbulence != null &&
-                other.turbulence != null &&
-                (turbulence! - other.turbulence! <= 1E-7))) &&
+            turbulence - other.turbulence <= 1E-7) &&
         posSimMon == other.posSimMon &&
         commMon == other.commMon &&
         convergMon == other.convergMon;
@@ -48669,12 +47114,12 @@ class _$FormState extends FormState {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            posSimErr?.hashCode ?? null.hashCode),
-                        converg?.hashCode ?? null.hashCode),
-                    turbulence?.hashCode ?? null.hashCode),
-                posSimMon?.hashCode ?? null.hashCode),
-            commMon?.hashCode ?? null.hashCode),
-        convergMon?.hashCode ?? null.hashCode));
+                            posSimErr.hashCode),
+                        converg.hashCode),
+                    turbulence.hashCode),
+                posSimMon.hashCode),
+            commMon.hashCode),
+        convergMon.hashCode));
   }
 
   @override
@@ -48831,9 +47276,9 @@ class _$AutopilotMode extends AutopilotMode {
   final int dstEnt;
 
   @override
-  final AutopilotModeEnumAutonomy? autonomy;
+  final AutopilotModeEnumAutonomy autonomy;
   @override
-  final String? mode;
+  final String mode;
 
   factory _$AutopilotMode([void Function(AutopilotModeBuilder b)? updates]) =>
       (AutopilotModeBuilder()..update(updates)).build();
@@ -48844,8 +47289,8 @@ class _$AutopilotMode extends AutopilotMode {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.autonomy,
-      this.mode})
+      required this.autonomy,
+      required this.mode})
       : super._();
 
   @override
@@ -48880,8 +47325,8 @@ class _$AutopilotMode extends AutopilotMode {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            autonomy?.hashCode ?? null.hashCode),
-        mode?.hashCode ?? null.hashCode));
+            autonomy.hashCode),
+        mode.hashCode));
   }
 
   @override
@@ -49009,21 +47454,21 @@ class _$FormationState extends FormationState {
   final int dstEnt;
 
   @override
-  final FormationStateEnumType? type;
+  final FormationStateEnumType type;
   @override
-  final FormationStateEnumOp? op;
+  final FormationStateEnumOp op;
   @override
-  final double? posSimErr;
+  final double posSimErr;
   @override
-  final double? converg;
+  final double converg;
   @override
-  final double? turbulence;
+  final double turbulence;
   @override
-  final FormationStateEnumPosSimMon? posSimMon;
+  final FormationStateEnumPosSimMon posSimMon;
   @override
-  final FormationStateEnumCommMon? commMon;
+  final FormationStateEnumCommMon commMon;
   @override
-  final FormationStateEnumConvergMon? convergMon;
+  final FormationStateEnumConvergMon convergMon;
 
   factory _$FormationState([void Function(FormationStateBuilder b)? updates]) =>
       (FormationStateBuilder()..update(updates)).build();
@@ -49034,14 +47479,14 @@ class _$FormationState extends FormationState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.op,
-      this.posSimErr,
-      this.converg,
-      this.turbulence,
-      this.posSimMon,
-      this.commMon,
-      this.convergMon})
+      required this.type,
+      required this.op,
+      required this.posSimErr,
+      required this.converg,
+      required this.turbulence,
+      required this.posSimMon,
+      required this.commMon,
+      required this.convergMon})
       : super._();
 
   @override
@@ -49062,18 +47507,10 @@ class _$FormationState extends FormationState {
         dstEnt == other.dstEnt &&
         type == other.type &&
         op == other.op &&
-        (posSimErr == other.posSimErr ||
-            (posSimErr != null &&
-                other.posSimErr != null &&
-                (posSimErr! - other.posSimErr! <= 1E-7))) &&
-        (converg == other.converg ||
-            (converg != null &&
-                other.converg != null &&
-                (converg! - other.converg! <= 1E-7))) &&
+        (posSimErr == other.posSimErr || posSimErr - other.posSimErr <= 1E-7) &&
+        (converg == other.converg || converg - other.converg <= 1E-7) &&
         (turbulence == other.turbulence ||
-            (turbulence != null &&
-                other.turbulence != null &&
-                (turbulence! - other.turbulence! <= 1E-7))) &&
+            turbulence - other.turbulence <= 1E-7) &&
         posSimMon == other.posSimMon &&
         commMon == other.commMon &&
         convergMon == other.convergMon;
@@ -49101,14 +47538,14 @@ class _$FormationState extends FormationState {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    type?.hashCode ?? null.hashCode),
-                                op?.hashCode ?? null.hashCode),
-                            posSimErr?.hashCode ?? null.hashCode),
-                        converg?.hashCode ?? null.hashCode),
-                    turbulence?.hashCode ?? null.hashCode),
-                posSimMon?.hashCode ?? null.hashCode),
-            commMon?.hashCode ?? null.hashCode),
-        convergMon?.hashCode ?? null.hashCode));
+                                    type.hashCode),
+                                op.hashCode),
+                            posSimErr.hashCode),
+                        converg.hashCode),
+                    turbulence.hashCode),
+                posSimMon.hashCode),
+            commMon.hashCode),
+        convergMon.hashCode));
   }
 
   @override
@@ -49279,13 +47716,13 @@ class _$ReportControl extends ReportControl {
   final int dstEnt;
 
   @override
-  final ReportControlEnumOp? op;
+  final ReportControlEnumOp op;
   @override
-  final ReportControlBitfieldCommInterface? commInterface;
+  final ReportControlBitfieldCommInterface commInterface;
   @override
-  final int? period;
+  final int period;
   @override
-  final String? sysDst;
+  final String sysDst;
 
   factory _$ReportControl([void Function(ReportControlBuilder b)? updates]) =>
       (ReportControlBuilder()..update(updates)).build();
@@ -49296,10 +47733,10 @@ class _$ReportControl extends ReportControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.commInterface,
-      this.period,
-      this.sysDst})
+      required this.op,
+      required this.commInterface,
+      required this.period,
+      required this.sysDst})
       : super._();
 
   @override
@@ -49340,10 +47777,10 @@ class _$ReportControl extends ReportControl {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    op?.hashCode ?? null.hashCode),
-                commInterface?.hashCode ?? null.hashCode),
-            period?.hashCode ?? null.hashCode),
-        sysDst?.hashCode ?? null.hashCode));
+                    op.hashCode),
+                commInterface.hashCode),
+            period.hashCode),
+        sysDst.hashCode));
   }
 
   @override
@@ -49488,25 +47925,25 @@ class _$StateReport extends StateReport {
   final int dstEnt;
 
   @override
-  final int? stime;
+  final int stime;
   @override
-  final double? latitude;
+  final double latitude;
   @override
-  final double? longitude;
+  final double longitude;
   @override
-  final int? altitude;
+  final int altitude;
   @override
-  final int? depth;
+  final int depth;
   @override
-  final int? heading;
+  final int heading;
   @override
-  final int? speed;
+  final int speed;
   @override
-  final int? fuel;
+  final int fuel;
   @override
-  final int? execState;
+  final int execState;
   @override
-  final int? planChecksum;
+  final int planChecksum;
 
   factory _$StateReport([void Function(StateReportBuilder b)? updates]) =>
       (StateReportBuilder()..update(updates)).build();
@@ -49517,16 +47954,16 @@ class _$StateReport extends StateReport {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.stime,
-      this.latitude,
-      this.longitude,
-      this.altitude,
-      this.depth,
-      this.heading,
-      this.speed,
-      this.fuel,
-      this.execState,
-      this.planChecksum})
+      required this.stime,
+      required this.latitude,
+      required this.longitude,
+      required this.altitude,
+      required this.depth,
+      required this.heading,
+      required this.speed,
+      required this.fuel,
+      required this.execState,
+      required this.planChecksum})
       : super._();
 
   @override
@@ -49546,14 +47983,8 @@ class _$StateReport extends StateReport {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         stime == other.stime &&
-        (latitude == other.latitude ||
-            (latitude != null &&
-                other.latitude != null &&
-                (latitude! - other.latitude! <= 1E-7))) &&
-        (longitude == other.longitude ||
-            (longitude != null &&
-                other.longitude != null &&
-                (longitude! - other.longitude! <= 1E-7))) &&
+        (latitude == other.latitude || latitude - other.latitude <= 1E-7) &&
+        (longitude == other.longitude || longitude - other.longitude <= 1E-7) &&
         altitude == other.altitude &&
         depth == other.depth &&
         heading == other.heading &&
@@ -49588,16 +48019,16 @@ class _$StateReport extends StateReport {
                                                         srcEnt.hashCode),
                                                     dst.hashCode),
                                                 dstEnt.hashCode),
-                                            stime?.hashCode ?? null.hashCode),
-                                        latitude?.hashCode ?? null.hashCode),
-                                    longitude?.hashCode ?? null.hashCode),
-                                altitude?.hashCode ?? null.hashCode),
-                            depth?.hashCode ?? null.hashCode),
-                        heading?.hashCode ?? null.hashCode),
-                    speed?.hashCode ?? null.hashCode),
-                fuel?.hashCode ?? null.hashCode),
-            execState?.hashCode ?? null.hashCode),
-        planChecksum?.hashCode ?? null.hashCode));
+                                            stime.hashCode),
+                                        latitude.hashCode),
+                                    longitude.hashCode),
+                                altitude.hashCode),
+                            depth.hashCode),
+                        heading.hashCode),
+                    speed.hashCode),
+                fuel.hashCode),
+            execState.hashCode),
+        planChecksum.hashCode));
   }
 
   @override
@@ -49780,23 +48211,23 @@ class _$TransmissionRequest extends TransmissionRequest {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final TransmissionRequestEnumCommMean? commMean;
+  final TransmissionRequestEnumCommMean commMean;
   @override
-  final String? destination;
+  final String destination;
   @override
-  final double? deadline;
+  final double deadline;
   @override
-  final double? range;
+  final double range;
   @override
-  final TransmissionRequestEnumDataMode? dataMode;
+  final TransmissionRequestEnumDataMode dataMode;
   @override
   final ImcMessage? msgData;
   @override
-  final String? txtData;
+  final String txtData;
   @override
-  final List<int>? rawData;
+  final List<int> rawData;
 
   factory _$TransmissionRequest(
           [void Function(TransmissionRequestBuilder b)? updates]) =>
@@ -49808,15 +48239,15 @@ class _$TransmissionRequest extends TransmissionRequest {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.commMean,
-      this.destination,
-      this.deadline,
-      this.range,
-      this.dataMode,
+      required this.reqId,
+      required this.commMean,
+      required this.destination,
+      required this.deadline,
+      required this.range,
+      required this.dataMode,
       this.msgData,
-      this.txtData,
-      this.rawData})
+      required this.txtData,
+      required this.rawData})
       : super._();
 
   @override
@@ -49840,14 +48271,8 @@ class _$TransmissionRequest extends TransmissionRequest {
         reqId == other.reqId &&
         commMean == other.commMean &&
         destination == other.destination &&
-        (deadline == other.deadline ||
-            (deadline != null &&
-                other.deadline != null &&
-                (deadline! - other.deadline! <= 1E-7))) &&
-        (range == other.range ||
-            (range != null &&
-                other.range != null &&
-                (range! - other.range! <= 1E-7))) &&
+        (deadline == other.deadline || deadline - other.deadline <= 1E-7) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         dataMode == other.dataMode &&
         msgData == other.msgData &&
         txtData == other.txtData &&
@@ -49878,15 +48303,15 @@ class _$TransmissionRequest extends TransmissionRequest {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        reqId?.hashCode ?? null.hashCode),
-                                    commMean?.hashCode ?? null.hashCode),
-                                destination?.hashCode ?? null.hashCode),
-                            deadline?.hashCode ?? null.hashCode),
-                        range?.hashCode ?? null.hashCode),
-                    dataMode?.hashCode ?? null.hashCode),
+                                        reqId.hashCode),
+                                    commMean.hashCode),
+                                destination.hashCode),
+                            deadline.hashCode),
+                        range.hashCode),
+                    dataMode.hashCode),
                 msgData?.hashCode ?? null.hashCode),
-            txtData?.hashCode ?? null.hashCode),
-        rawData?.hashCode ?? null.hashCode));
+            txtData.hashCode),
+        rawData.hashCode));
   }
 
   @override
@@ -50069,13 +48494,13 @@ class _$TransmissionStatus extends TransmissionStatus {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final TransmissionStatusEnumStatus? status;
+  final TransmissionStatusEnumStatus status;
   @override
-  final double? range;
+  final double range;
   @override
-  final String? info;
+  final String info;
 
   factory _$TransmissionStatus(
           [void Function(TransmissionStatusBuilder b)? updates]) =>
@@ -50087,10 +48512,10 @@ class _$TransmissionStatus extends TransmissionStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.status,
-      this.range,
-      this.info})
+      required this.reqId,
+      required this.status,
+      required this.range,
+      required this.info})
       : super._();
 
   @override
@@ -50113,10 +48538,7 @@ class _$TransmissionStatus extends TransmissionStatus {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         status == other.status &&
-        (range == other.range ||
-            (range != null &&
-                other.range != null &&
-                (range! - other.range! <= 1E-7))) &&
+        (range == other.range || range - other.range <= 1E-7) &&
         info == other.info;
   }
 
@@ -50136,10 +48558,10 @@ class _$TransmissionStatus extends TransmissionStatus {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    reqId?.hashCode ?? null.hashCode),
-                status?.hashCode ?? null.hashCode),
-            range?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+                    reqId.hashCode),
+                status.hashCode),
+            range.hashCode),
+        info.hashCode));
   }
 
   @override
@@ -50281,13 +48703,13 @@ class _$SmsRequest extends SmsRequest {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final String? destination;
+  final String destination;
   @override
-  final double? timeout;
+  final double timeout;
   @override
-  final String? smsText;
+  final String smsText;
 
   factory _$SmsRequest([void Function(SmsRequestBuilder b)? updates]) =>
       (SmsRequestBuilder()..update(updates)).build();
@@ -50298,10 +48720,10 @@ class _$SmsRequest extends SmsRequest {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.destination,
-      this.timeout,
-      this.smsText})
+      required this.reqId,
+      required this.destination,
+      required this.timeout,
+      required this.smsText})
       : super._();
 
   @override
@@ -50322,10 +48744,7 @@ class _$SmsRequest extends SmsRequest {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         destination == other.destination &&
-        (timeout == other.timeout ||
-            (timeout != null &&
-                other.timeout != null &&
-                (timeout! - other.timeout! <= 1E-7))) &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
         smsText == other.smsText;
   }
 
@@ -50345,10 +48764,10 @@ class _$SmsRequest extends SmsRequest {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    reqId?.hashCode ?? null.hashCode),
-                destination?.hashCode ?? null.hashCode),
-            timeout?.hashCode ?? null.hashCode),
-        smsText?.hashCode ?? null.hashCode));
+                    reqId.hashCode),
+                destination.hashCode),
+            timeout.hashCode),
+        smsText.hashCode));
   }
 
   @override
@@ -50489,11 +48908,11 @@ class _$SmsStatus extends SmsStatus {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final SmsStatusEnumStatus? status;
+  final SmsStatusEnumStatus status;
   @override
-  final String? info;
+  final String info;
 
   factory _$SmsStatus([void Function(SmsStatusBuilder b)? updates]) =>
       (SmsStatusBuilder()..update(updates)).build();
@@ -50504,9 +48923,9 @@ class _$SmsStatus extends SmsStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.status,
-      this.info})
+      required this.reqId,
+      required this.status,
+      required this.info})
       : super._();
 
   @override
@@ -50543,9 +48962,9 @@ class _$SmsStatus extends SmsStatus {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                reqId?.hashCode ?? null.hashCode),
-            status?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+                reqId.hashCode),
+            status.hashCode),
+        info.hashCode));
   }
 
   @override
@@ -50679,7 +49098,7 @@ class _$VtolState extends VtolState {
   final int dstEnt;
 
   @override
-  final VtolStateEnumState? state;
+  final VtolStateEnumState state;
 
   factory _$VtolState([void Function(VtolStateBuilder b)? updates]) =>
       (VtolStateBuilder()..update(updates)).build();
@@ -50690,7 +49109,7 @@ class _$VtolState extends VtolState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state})
+      required this.state})
       : super._();
 
   @override
@@ -50723,7 +49142,7 @@ class _$VtolState extends VtolState {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        state?.hashCode ?? null.hashCode));
+        state.hashCode));
   }
 
   @override
@@ -50843,7 +49262,7 @@ class _$ArmingState extends ArmingState {
   final int dstEnt;
 
   @override
-  final ArmingStateEnumState? state;
+  final ArmingStateEnumState state;
 
   factory _$ArmingState([void Function(ArmingStateBuilder b)? updates]) =>
       (ArmingStateBuilder()..update(updates)).build();
@@ -50854,7 +49273,7 @@ class _$ArmingState extends ArmingState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state})
+      required this.state})
       : super._();
 
   @override
@@ -50887,7 +49306,7 @@ class _$ArmingState extends ArmingState {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        state?.hashCode ?? null.hashCode));
+        state.hashCode));
   }
 
   @override
@@ -51007,11 +49426,11 @@ class _$TCPRequest extends TCPRequest {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final String? destination;
+  final String destination;
   @override
-  final double? timeout;
+  final double timeout;
   @override
   final ImcMessage? msgData;
 
@@ -51024,9 +49443,9 @@ class _$TCPRequest extends TCPRequest {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.destination,
-      this.timeout,
+      required this.reqId,
+      required this.destination,
+      required this.timeout,
       this.msgData})
       : super._();
 
@@ -51048,10 +49467,7 @@ class _$TCPRequest extends TCPRequest {
         dstEnt == other.dstEnt &&
         reqId == other.reqId &&
         destination == other.destination &&
-        (timeout == other.timeout ||
-            (timeout != null &&
-                other.timeout != null &&
-                (timeout! - other.timeout! <= 1E-7))) &&
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7) &&
         msgData == other.msgData;
   }
 
@@ -51071,9 +49487,9 @@ class _$TCPRequest extends TCPRequest {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    reqId?.hashCode ?? null.hashCode),
-                destination?.hashCode ?? null.hashCode),
-            timeout?.hashCode ?? null.hashCode),
+                    reqId.hashCode),
+                destination.hashCode),
+            timeout.hashCode),
         msgData?.hashCode ?? null.hashCode));
   }
 
@@ -51215,11 +49631,11 @@ class _$TCPStatus extends TCPStatus {
   final int dstEnt;
 
   @override
-  final int? reqId;
+  final int reqId;
   @override
-  final TCPStatusEnumStatus? status;
+  final TCPStatusEnumStatus status;
   @override
-  final String? info;
+  final String info;
 
   factory _$TCPStatus([void Function(TCPStatusBuilder b)? updates]) =>
       (TCPStatusBuilder()..update(updates)).build();
@@ -51230,9 +49646,9 @@ class _$TCPStatus extends TCPStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reqId,
-      this.status,
-      this.info})
+      required this.reqId,
+      required this.status,
+      required this.info})
       : super._();
 
   @override
@@ -51269,9 +49685,9 @@ class _$TCPStatus extends TCPStatus {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                reqId?.hashCode ?? null.hashCode),
-            status?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+                reqId.hashCode),
+            status.hashCode),
+        info.hashCode));
   }
 
   @override
@@ -51553,23 +49969,23 @@ class _$PlanSpecification extends PlanSpecification {
   final int dstEnt;
 
   @override
-  final String? planId;
+  final String planId;
   @override
-  final String? description;
+  final String description;
   @override
-  final String? vnamespace;
+  final String vnamespace;
   @override
-  final List<PlanVariable>? variables;
+  final List<PlanVariable> variables;
   @override
-  final String? startManId;
+  final String startManId;
   @override
-  final List<PlanManeuver>? maneuvers;
+  final List<PlanManeuver> maneuvers;
   @override
-  final List<PlanTransition>? transitions;
+  final List<PlanTransition> transitions;
   @override
-  final List<ImcMessage>? startActions;
+  final List<ImcMessage> startActions;
   @override
-  final List<ImcMessage>? endActions;
+  final List<ImcMessage> endActions;
 
   factory _$PlanSpecification(
           [void Function(PlanSpecificationBuilder b)? updates]) =>
@@ -51581,15 +49997,15 @@ class _$PlanSpecification extends PlanSpecification {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.planId,
-      this.description,
-      this.vnamespace,
-      this.variables,
-      this.startManId,
-      this.maneuvers,
-      this.transitions,
-      this.startActions,
-      this.endActions})
+      required this.planId,
+      required this.description,
+      required this.vnamespace,
+      required this.variables,
+      required this.startManId,
+      required this.maneuvers,
+      required this.transitions,
+      required this.startActions,
+      required this.endActions})
       : super._();
 
   @override
@@ -51645,15 +50061,15 @@ class _$PlanSpecification extends PlanSpecification {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        planId?.hashCode ?? null.hashCode),
-                                    description?.hashCode ?? null.hashCode),
-                                vnamespace?.hashCode ?? null.hashCode),
-                            variables?.hashCode ?? null.hashCode),
-                        startManId?.hashCode ?? null.hashCode),
-                    maneuvers?.hashCode ?? null.hashCode),
-                transitions?.hashCode ?? null.hashCode),
-            startActions?.hashCode ?? null.hashCode),
-        endActions?.hashCode ?? null.hashCode));
+                                        planId.hashCode),
+                                    description.hashCode),
+                                vnamespace.hashCode),
+                            variables.hashCode),
+                        startManId.hashCode),
+                    maneuvers.hashCode),
+                transitions.hashCode),
+            startActions.hashCode),
+        endActions.hashCode));
   }
 
   @override
@@ -51833,13 +50249,13 @@ class _$PlanManeuver extends PlanManeuver {
   final int dstEnt;
 
   @override
-  final String? maneuverId;
+  final String maneuverId;
   @override
   final Maneuver? data;
   @override
-  final List<ImcMessage>? startActions;
+  final List<ImcMessage> startActions;
   @override
-  final List<ImcMessage>? endActions;
+  final List<ImcMessage> endActions;
 
   factory _$PlanManeuver([void Function(PlanManeuverBuilder b)? updates]) =>
       (PlanManeuverBuilder()..update(updates)).build();
@@ -51850,10 +50266,10 @@ class _$PlanManeuver extends PlanManeuver {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.maneuverId,
+      required this.maneuverId,
       this.data,
-      this.startActions,
-      this.endActions})
+      required this.startActions,
+      required this.endActions})
       : super._();
 
   @override
@@ -51894,10 +50310,10 @@ class _$PlanManeuver extends PlanManeuver {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    maneuverId?.hashCode ?? null.hashCode),
+                    maneuverId.hashCode),
                 data?.hashCode ?? null.hashCode),
-            startActions?.hashCode ?? null.hashCode),
-        endActions?.hashCode ?? null.hashCode));
+            startActions.hashCode),
+        endActions.hashCode));
   }
 
   @override
@@ -52040,13 +50456,13 @@ class _$PlanTransition extends PlanTransition {
   final int dstEnt;
 
   @override
-  final String? sourceMan;
+  final String sourceMan;
   @override
-  final String? destMan;
+  final String destMan;
   @override
-  final String? conditions;
+  final String conditions;
   @override
-  final List<ImcMessage>? actions;
+  final List<ImcMessage> actions;
 
   factory _$PlanTransition([void Function(PlanTransitionBuilder b)? updates]) =>
       (PlanTransitionBuilder()..update(updates)).build();
@@ -52057,10 +50473,10 @@ class _$PlanTransition extends PlanTransition {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sourceMan,
-      this.destMan,
-      this.conditions,
-      this.actions})
+      required this.sourceMan,
+      required this.destMan,
+      required this.conditions,
+      required this.actions})
       : super._();
 
   @override
@@ -52101,10 +50517,10 @@ class _$PlanTransition extends PlanTransition {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    sourceMan?.hashCode ?? null.hashCode),
-                destMan?.hashCode ?? null.hashCode),
-            conditions?.hashCode ?? null.hashCode),
-        actions?.hashCode ?? null.hashCode));
+                    sourceMan.hashCode),
+                destMan.hashCode),
+            conditions.hashCode),
+        actions.hashCode));
   }
 
   @override
@@ -52245,7 +50661,7 @@ class _$EmergencyControl extends EmergencyControl {
   final int dstEnt;
 
   @override
-  final EmergencyControlEnumCommand? command;
+  final EmergencyControlEnumCommand command;
   @override
   final PlanSpecification? plan;
 
@@ -52259,7 +50675,7 @@ class _$EmergencyControl extends EmergencyControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.command,
+      required this.command,
       this.plan})
       : super._();
 
@@ -52296,7 +50712,7 @@ class _$EmergencyControl extends EmergencyControl {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            command?.hashCode ?? null.hashCode),
+            command.hashCode),
         plan?.hashCode ?? null.hashCode));
   }
 
@@ -52426,11 +50842,11 @@ class _$EmergencyControlState extends EmergencyControlState {
   final int dstEnt;
 
   @override
-  final EmergencyControlStateEnumState? state;
+  final EmergencyControlStateEnumState state;
   @override
-  final String? planId;
+  final String planId;
   @override
-  final int? commLevel;
+  final int commLevel;
 
   factory _$EmergencyControlState(
           [void Function(EmergencyControlStateBuilder b)? updates]) =>
@@ -52442,9 +50858,9 @@ class _$EmergencyControlState extends EmergencyControlState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state,
-      this.planId,
-      this.commLevel})
+      required this.state,
+      required this.planId,
+      required this.commLevel})
       : super._();
 
   @override
@@ -52483,9 +50899,9 @@ class _$EmergencyControlState extends EmergencyControlState {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                state?.hashCode ?? null.hashCode),
-            planId?.hashCode ?? null.hashCode),
-        commLevel?.hashCode ?? null.hashCode));
+                state.hashCode),
+            planId.hashCode),
+        commLevel.hashCode));
   }
 
   @override
@@ -52623,17 +51039,17 @@ class _$PlanDB extends PlanDB {
   final int dstEnt;
 
   @override
-  final PlanDBEnumType? type;
+  final PlanDBEnumType type;
   @override
-  final PlanDBEnumOp? op;
+  final PlanDBEnumOp op;
   @override
-  final int? requestId;
+  final int requestId;
   @override
-  final String? planId;
+  final String planId;
   @override
   final ImcMessage? arg;
   @override
-  final String? info;
+  final String info;
 
   factory _$PlanDB([void Function(PlanDBBuilder b)? updates]) =>
       (PlanDBBuilder()..update(updates)).build();
@@ -52644,12 +51060,12 @@ class _$PlanDB extends PlanDB {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.op,
-      this.requestId,
-      this.planId,
+      required this.type,
+      required this.op,
+      required this.requestId,
+      required this.planId,
       this.arg,
-      this.info})
+      required this.info})
       : super._();
 
   @override
@@ -52696,12 +51112,12 @@ class _$PlanDB extends PlanDB {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            type?.hashCode ?? null.hashCode),
-                        op?.hashCode ?? null.hashCode),
-                    requestId?.hashCode ?? null.hashCode),
-                planId?.hashCode ?? null.hashCode),
+                            type.hashCode),
+                        op.hashCode),
+                    requestId.hashCode),
+                planId.hashCode),
             arg?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+        info.hashCode));
   }
 
   @override
@@ -52856,19 +51272,19 @@ class _$PlanDBState extends PlanDBState {
   final int dstEnt;
 
   @override
-  final int? planCount;
+  final int planCount;
   @override
-  final int? planSize;
+  final int planSize;
   @override
-  final double? changeTime;
+  final double changeTime;
   @override
-  final int? changeSid;
+  final int changeSid;
   @override
-  final String? changeSname;
+  final String changeSname;
   @override
-  final List<int>? md5;
+  final List<int> md5;
   @override
-  final List<PlanDBInformation>? plansInfo;
+  final List<PlanDBInformation> plansInfo;
 
   factory _$PlanDBState([void Function(PlanDBStateBuilder b)? updates]) =>
       (PlanDBStateBuilder()..update(updates)).build();
@@ -52879,13 +51295,13 @@ class _$PlanDBState extends PlanDBState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.planCount,
-      this.planSize,
-      this.changeTime,
-      this.changeSid,
-      this.changeSname,
-      this.md5,
-      this.plansInfo})
+      required this.planCount,
+      required this.planSize,
+      required this.changeTime,
+      required this.changeSid,
+      required this.changeSname,
+      required this.md5,
+      required this.plansInfo})
       : super._();
 
   @override
@@ -52907,9 +51323,7 @@ class _$PlanDBState extends PlanDBState {
         planCount == other.planCount &&
         planSize == other.planSize &&
         (changeTime == other.changeTime ||
-            (changeTime != null &&
-                other.changeTime != null &&
-                (changeTime! - other.changeTime! <= 1E-7))) &&
+            changeTime - other.changeTime <= 1E-7) &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
         ListEquality().equals(md5, other.md5) &&
@@ -52937,13 +51351,13 @@ class _$PlanDBState extends PlanDBState {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                planCount?.hashCode ?? null.hashCode),
-                            planSize?.hashCode ?? null.hashCode),
-                        changeTime?.hashCode ?? null.hashCode),
-                    changeSid?.hashCode ?? null.hashCode),
-                changeSname?.hashCode ?? null.hashCode),
-            md5?.hashCode ?? null.hashCode),
-        plansInfo?.hashCode ?? null.hashCode));
+                                planCount.hashCode),
+                            planSize.hashCode),
+                        changeTime.hashCode),
+                    changeSid.hashCode),
+                changeSname.hashCode),
+            md5.hashCode),
+        plansInfo.hashCode));
   }
 
   @override
@@ -53106,17 +51520,17 @@ class _$PlanDBInformation extends PlanDBInformation {
   final int dstEnt;
 
   @override
-  final String? planId;
+  final String planId;
   @override
-  final int? planSize;
+  final int planSize;
   @override
-  final double? changeTime;
+  final double changeTime;
   @override
-  final int? changeSid;
+  final int changeSid;
   @override
-  final String? changeSname;
+  final String changeSname;
   @override
-  final List<int>? md5;
+  final List<int> md5;
 
   factory _$PlanDBInformation(
           [void Function(PlanDBInformationBuilder b)? updates]) =>
@@ -53128,12 +51542,12 @@ class _$PlanDBInformation extends PlanDBInformation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.planId,
-      this.planSize,
-      this.changeTime,
-      this.changeSid,
-      this.changeSname,
-      this.md5})
+      required this.planId,
+      required this.planSize,
+      required this.changeTime,
+      required this.changeSid,
+      required this.changeSname,
+      required this.md5})
       : super._();
 
   @override
@@ -53157,9 +51571,7 @@ class _$PlanDBInformation extends PlanDBInformation {
         planId == other.planId &&
         planSize == other.planSize &&
         (changeTime == other.changeTime ||
-            (changeTime != null &&
-                other.changeTime != null &&
-                (changeTime! - other.changeTime! <= 1E-7))) &&
+            changeTime - other.changeTime <= 1E-7) &&
         changeSid == other.changeSid &&
         changeSname == other.changeSname &&
         ListEquality().equals(md5, other.md5);
@@ -53185,12 +51597,12 @@ class _$PlanDBInformation extends PlanDBInformation {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            planId?.hashCode ?? null.hashCode),
-                        planSize?.hashCode ?? null.hashCode),
-                    changeTime?.hashCode ?? null.hashCode),
-                changeSid?.hashCode ?? null.hashCode),
-            changeSname?.hashCode ?? null.hashCode),
-        md5?.hashCode ?? null.hashCode));
+                            planId.hashCode),
+                        planSize.hashCode),
+                    changeTime.hashCode),
+                changeSid.hashCode),
+            changeSname.hashCode),
+        md5.hashCode));
   }
 
   @override
@@ -53346,19 +51758,19 @@ class _$PlanControl extends PlanControl {
   final int dstEnt;
 
   @override
-  final PlanControlEnumType? type;
+  final PlanControlEnumType type;
   @override
-  final PlanControlEnumOp? op;
+  final PlanControlEnumOp op;
   @override
-  final int? requestId;
+  final int requestId;
   @override
-  final String? planId;
+  final String planId;
   @override
-  final PlanControlBitfieldFlags? flags;
+  final PlanControlBitfieldFlags flags;
   @override
   final ImcMessage? arg;
   @override
-  final String? info;
+  final String info;
 
   factory _$PlanControl([void Function(PlanControlBuilder b)? updates]) =>
       (PlanControlBuilder()..update(updates)).build();
@@ -53369,13 +51781,13 @@ class _$PlanControl extends PlanControl {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.op,
-      this.requestId,
-      this.planId,
-      this.flags,
+      required this.type,
+      required this.op,
+      required this.requestId,
+      required this.planId,
+      required this.flags,
       this.arg,
-      this.info})
+      required this.info})
       : super._();
 
   @override
@@ -53424,13 +51836,13 @@ class _$PlanControl extends PlanControl {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                type?.hashCode ?? null.hashCode),
-                            op?.hashCode ?? null.hashCode),
-                        requestId?.hashCode ?? null.hashCode),
-                    planId?.hashCode ?? null.hashCode),
-                flags?.hashCode ?? null.hashCode),
+                                type.hashCode),
+                            op.hashCode),
+                        requestId.hashCode),
+                    planId.hashCode),
+                flags.hashCode),
             arg?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+        info.hashCode));
   }
 
   @override
@@ -53592,21 +52004,21 @@ class _$PlanControlState extends PlanControlState {
   final int dstEnt;
 
   @override
-  final PlanControlStateEnumState? state;
+  final PlanControlStateEnumState state;
   @override
-  final String? planId;
+  final String planId;
   @override
-  final int? planEta;
+  final int planEta;
   @override
-  final double? planProgress;
+  final double planProgress;
   @override
-  final String? manId;
+  final String manId;
   @override
-  final int? manType;
+  final int manType;
   @override
-  final int? manEta;
+  final int manEta;
   @override
-  final PlanControlStateEnumLastOutcome? lastOutcome;
+  final PlanControlStateEnumLastOutcome lastOutcome;
 
   factory _$PlanControlState(
           [void Function(PlanControlStateBuilder b)? updates]) =>
@@ -53618,14 +52030,14 @@ class _$PlanControlState extends PlanControlState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state,
-      this.planId,
-      this.planEta,
-      this.planProgress,
-      this.manId,
-      this.manType,
-      this.manEta,
-      this.lastOutcome})
+      required this.state,
+      required this.planId,
+      required this.planEta,
+      required this.planProgress,
+      required this.manId,
+      required this.manType,
+      required this.manEta,
+      required this.lastOutcome})
       : super._();
 
   @override
@@ -53649,9 +52061,7 @@ class _$PlanControlState extends PlanControlState {
         planId == other.planId &&
         planEta == other.planEta &&
         (planProgress == other.planProgress ||
-            (planProgress != null &&
-                other.planProgress != null &&
-                (planProgress! - other.planProgress! <= 1E-7))) &&
+            planProgress - other.planProgress <= 1E-7) &&
         manId == other.manId &&
         manType == other.manType &&
         manEta == other.manEta &&
@@ -53680,14 +52090,14 @@ class _$PlanControlState extends PlanControlState {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    state?.hashCode ?? null.hashCode),
-                                planId?.hashCode ?? null.hashCode),
-                            planEta?.hashCode ?? null.hashCode),
-                        planProgress?.hashCode ?? null.hashCode),
-                    manId?.hashCode ?? null.hashCode),
-                manType?.hashCode ?? null.hashCode),
-            manEta?.hashCode ?? null.hashCode),
-        lastOutcome?.hashCode ?? null.hashCode));
+                                    state.hashCode),
+                                planId.hashCode),
+                            planEta.hashCode),
+                        planProgress.hashCode),
+                    manId.hashCode),
+                manType.hashCode),
+            manEta.hashCode),
+        lastOutcome.hashCode));
   }
 
   @override
@@ -53859,13 +52269,13 @@ class _$PlanVariable extends PlanVariable {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final String? value;
+  final String value;
   @override
-  final PlanVariableEnumType? type;
+  final PlanVariableEnumType type;
   @override
-  final PlanVariableEnumAccess? access;
+  final PlanVariableEnumAccess access;
 
   factory _$PlanVariable([void Function(PlanVariableBuilder b)? updates]) =>
       (PlanVariableBuilder()..update(updates)).build();
@@ -53876,10 +52286,10 @@ class _$PlanVariable extends PlanVariable {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.value,
-      this.type,
-      this.access})
+      required this.name,
+      required this.value,
+      required this.type,
+      required this.access})
       : super._();
 
   @override
@@ -53920,10 +52330,10 @@ class _$PlanVariable extends PlanVariable {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    name?.hashCode ?? null.hashCode),
-                value?.hashCode ?? null.hashCode),
-            type?.hashCode ?? null.hashCode),
-        access?.hashCode ?? null.hashCode));
+                    name.hashCode),
+                value.hashCode),
+            type.hashCode),
+        access.hashCode));
   }
 
   @override
@@ -54064,13 +52474,13 @@ class _$PlanGeneration extends PlanGeneration {
   final int dstEnt;
 
   @override
-  final PlanGenerationEnumCmd? cmd;
+  final PlanGenerationEnumCmd cmd;
   @override
-  final PlanGenerationEnumOp? op;
+  final PlanGenerationEnumOp op;
   @override
-  final String? planId;
+  final String planId;
   @override
-  final String? params;
+  final String params;
 
   factory _$PlanGeneration([void Function(PlanGenerationBuilder b)? updates]) =>
       (PlanGenerationBuilder()..update(updates)).build();
@@ -54081,10 +52491,10 @@ class _$PlanGeneration extends PlanGeneration {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.cmd,
-      this.op,
-      this.planId,
-      this.params})
+      required this.cmd,
+      required this.op,
+      required this.planId,
+      required this.params})
       : super._();
 
   @override
@@ -54125,10 +52535,10 @@ class _$PlanGeneration extends PlanGeneration {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    cmd?.hashCode ?? null.hashCode),
-                op?.hashCode ?? null.hashCode),
-            planId?.hashCode ?? null.hashCode),
-        params?.hashCode ?? null.hashCode));
+                    cmd.hashCode),
+                op.hashCode),
+            planId.hashCode),
+        params.hashCode));
   }
 
   @override
@@ -54269,45 +52679,45 @@ class _$LeaderState extends LeaderState {
   final int dstEnt;
 
   @override
-  final String? groupName;
+  final String groupName;
   @override
-  final LeaderStateEnumOp? op;
+  final LeaderStateEnumOp op;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? height;
+  final double height;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
   @override
-  final double? vx;
+  final double vx;
   @override
-  final double? vy;
+  final double vy;
   @override
-  final double? vz;
+  final double vz;
   @override
-  final double? p;
+  final double p;
   @override
-  final double? q;
+  final double q;
   @override
-  final double? r;
+  final double r;
   @override
-  final double? svx;
+  final double svx;
   @override
-  final double? svy;
+  final double svy;
   @override
-  final double? svz;
+  final double svz;
 
   factory _$LeaderState([void Function(LeaderStateBuilder b)? updates]) =>
       (LeaderStateBuilder()..update(updates)).build();
@@ -54318,26 +52728,26 @@ class _$LeaderState extends LeaderState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.groupName,
-      this.op,
-      this.lat,
-      this.lon,
-      this.height,
-      this.x,
-      this.y,
-      this.z,
-      this.phi,
-      this.theta,
-      this.psi,
-      this.vx,
-      this.vy,
-      this.vz,
-      this.p,
-      this.q,
-      this.r,
-      this.svx,
-      this.svy,
-      this.svz})
+      required this.groupName,
+      required this.op,
+      required this.lat,
+      required this.lon,
+      required this.height,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.phi,
+      required this.theta,
+      required this.psi,
+      required this.vx,
+      required this.vy,
+      required this.vz,
+      required this.p,
+      required this.q,
+      required this.r,
+      required this.svx,
+      required this.svy,
+      required this.svz})
       : super._();
 
   @override
@@ -54358,58 +52768,24 @@ class _$LeaderState extends LeaderState {
         dstEnt == other.dstEnt &&
         groupName == other.groupName &&
         op == other.op &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (height == other.height ||
-            (height != null &&
-                other.height != null &&
-                (height! - other.height! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null &&
-                other.psi != null &&
-                (psi! - other.psi! <= 1E-7))) &&
-        (vx == other.vx ||
-            (vx != null && other.vx != null && (vx! - other.vx! <= 1E-7))) &&
-        (vy == other.vy ||
-            (vy != null && other.vy != null && (vy! - other.vy! <= 1E-7))) &&
-        (vz == other.vz ||
-            (vz != null && other.vz != null && (vz! - other.vz! <= 1E-7))) &&
-        (p == other.p ||
-            (p != null && other.p != null && (p! - other.p! <= 1E-7))) &&
-        (q == other.q ||
-            (q != null && other.q != null && (q! - other.q! <= 1E-7))) &&
-        (r == other.r ||
-            (r != null && other.r != null && (r! - other.r! <= 1E-7))) &&
-        (svx == other.svx ||
-            (svx != null &&
-                other.svx != null &&
-                (svx! - other.svx! <= 1E-7))) &&
-        (svy == other.svy ||
-            (svy != null &&
-                other.svy != null &&
-                (svy! - other.svy! <= 1E-7))) &&
-        (svz == other.svz ||
-            (svz != null && other.svz != null && (svz! - other.svz! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (vx == other.vx || vx - other.vx <= 1E-7) &&
+        (vy == other.vy || vy - other.vy <= 1E-7) &&
+        (vz == other.vz || vz - other.vz <= 1E-7) &&
+        (p == other.p || p - other.p <= 1E-7) &&
+        (q == other.q || q - other.q <= 1E-7) &&
+        (r == other.r || r - other.r <= 1E-7) &&
+        (svx == other.svx || svx - other.svx <= 1E-7) &&
+        (svy == other.svy || svy - other.svy <= 1E-7) &&
+        (svz == other.svz || svz - other.svz <= 1E-7);
   }
 
   @override
@@ -54432,26 +52808,26 @@ class _$LeaderState extends LeaderState {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), groupName?.hashCode ?? null.hashCode),
-                                                                                op?.hashCode ?? null.hashCode),
-                                                                            lat?.hashCode ?? null.hashCode),
-                                                                        lon?.hashCode ?? null.hashCode),
-                                                                    height?.hashCode ?? null.hashCode),
-                                                                x?.hashCode ?? null.hashCode),
-                                                            y?.hashCode ?? null.hashCode),
-                                                        z?.hashCode ?? null.hashCode),
-                                                    phi?.hashCode ?? null.hashCode),
-                                                theta?.hashCode ?? null.hashCode),
-                                            psi?.hashCode ?? null.hashCode),
-                                        vx?.hashCode ?? null.hashCode),
-                                    vy?.hashCode ?? null.hashCode),
-                                vz?.hashCode ?? null.hashCode),
-                            p?.hashCode ?? null.hashCode),
-                        q?.hashCode ?? null.hashCode),
-                    r?.hashCode ?? null.hashCode),
-                svx?.hashCode ?? null.hashCode),
-            svy?.hashCode ?? null.hashCode),
-        svz?.hashCode ?? null.hashCode));
+                                                                            $jc($jc($jc($jc($jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode), srcEnt.hashCode), dst.hashCode), dstEnt.hashCode), groupName.hashCode),
+                                                                                op.hashCode),
+                                                                            lat.hashCode),
+                                                                        lon.hashCode),
+                                                                    height.hashCode),
+                                                                x.hashCode),
+                                                            y.hashCode),
+                                                        z.hashCode),
+                                                    phi.hashCode),
+                                                theta.hashCode),
+                                            psi.hashCode),
+                                        vx.hashCode),
+                                    vy.hashCode),
+                                vz.hashCode),
+                            p.hashCode),
+                        q.hashCode),
+                    r.hashCode),
+                svx.hashCode),
+            svy.hashCode),
+        svz.hashCode));
   }
 
   @override
@@ -54464,29 +52840,21 @@ class _$LeaderState extends LeaderState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('groupName', '$groupName')
           ..add('op', '$op (Enumerated)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]')
           ..add('vx', '$vx (m/s)')
           ..add('vy', '$vy (m/s)')
           ..add('vz', '$vz (m/s)')
-          ..add('p',
-              '$p (rad/s)${p != null ? ' [${p! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('q',
-              '$q (rad/s)${q != null ? ' [${q! * 180.0 / math.pi} (deg/s)]' : ''}')
-          ..add('r',
-              '$r (rad/s)${r != null ? ' [${r! * 180.0 / math.pi} (deg/s)]' : ''}')
+          ..add('p', '$p (rad/s) [${p * 180.0 / math.pi} (deg/s)]')
+          ..add('q', '$q (rad/s) [${q * 180.0 / math.pi} (deg/s)]')
+          ..add('r', '$r (rad/s) [${r * 180.0 / math.pi} (deg/s)]')
           ..add('svx', '$svx (m/s)')
           ..add('svy', '$svy (m/s)')
           ..add('svz', '$svz (m/s)'))
@@ -54712,19 +53080,19 @@ class _$PlanStatistics extends PlanStatistics {
   final int dstEnt;
 
   @override
-  final String? planId;
+  final String planId;
   @override
-  final PlanStatisticsEnumType? type;
+  final PlanStatisticsEnumType type;
   @override
-  final PlanStatisticsBitfieldProperties? properties;
+  final PlanStatisticsBitfieldProperties properties;
   @override
-  final String? durations;
+  final String durations;
   @override
-  final String? distances;
+  final String distances;
   @override
-  final String? actions;
+  final String actions;
   @override
-  final String? fuel;
+  final String fuel;
 
   factory _$PlanStatistics([void Function(PlanStatisticsBuilder b)? updates]) =>
       (PlanStatisticsBuilder()..update(updates)).build();
@@ -54735,13 +53103,13 @@ class _$PlanStatistics extends PlanStatistics {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.planId,
-      this.type,
-      this.properties,
-      this.durations,
-      this.distances,
-      this.actions,
-      this.fuel})
+      required this.planId,
+      required this.type,
+      required this.properties,
+      required this.durations,
+      required this.distances,
+      required this.actions,
+      required this.fuel})
       : super._();
 
   @override
@@ -54790,13 +53158,13 @@ class _$PlanStatistics extends PlanStatistics {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                planId?.hashCode ?? null.hashCode),
-                            type?.hashCode ?? null.hashCode),
-                        properties?.hashCode ?? null.hashCode),
-                    durations?.hashCode ?? null.hashCode),
-                distances?.hashCode ?? null.hashCode),
-            actions?.hashCode ?? null.hashCode),
-        fuel?.hashCode ?? null.hashCode));
+                                planId.hashCode),
+                            type.hashCode),
+                        properties.hashCode),
+                    durations.hashCode),
+                distances.hashCode),
+            actions.hashCode),
+        fuel.hashCode));
   }
 
   @override
@@ -54960,23 +53328,23 @@ class _$ReportedState extends ReportedState {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? depth;
+  final double depth;
   @override
-  final double? roll;
+  final double roll;
   @override
-  final double? pitch;
+  final double pitch;
   @override
-  final double? yaw;
+  final double yaw;
   @override
-  final double? rcpTime;
+  final double rcpTime;
   @override
-  final String? sid;
+  final String sid;
   @override
-  final ReportedStateEnumSType? sType;
+  final ReportedStateEnumSType sType;
 
   factory _$ReportedState([void Function(ReportedStateBuilder b)? updates]) =>
       (ReportedStateBuilder()..update(updates)).build();
@@ -54987,15 +53355,15 @@ class _$ReportedState extends ReportedState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.depth,
-      this.roll,
-      this.pitch,
-      this.yaw,
-      this.rcpTime,
-      this.sid,
-      this.sType})
+      required this.lat,
+      required this.lon,
+      required this.depth,
+      required this.roll,
+      required this.pitch,
+      required this.yaw,
+      required this.rcpTime,
+      required this.sid,
+      required this.sType})
       : super._();
 
   @override
@@ -55014,34 +53382,13 @@ class _$ReportedState extends ReportedState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (depth == other.depth ||
-            (depth != null &&
-                other.depth != null &&
-                (depth! - other.depth! <= 1E-7))) &&
-        (roll == other.roll ||
-            (roll != null &&
-                other.roll != null &&
-                (roll! - other.roll! <= 1E-7))) &&
-        (pitch == other.pitch ||
-            (pitch != null &&
-                other.pitch != null &&
-                (pitch! - other.pitch! <= 1E-7))) &&
-        (yaw == other.yaw ||
-            (yaw != null &&
-                other.yaw != null &&
-                (yaw! - other.yaw! <= 1E-7))) &&
-        (rcpTime == other.rcpTime ||
-            (rcpTime != null &&
-                other.rcpTime != null &&
-                (rcpTime! - other.rcpTime! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (roll == other.roll || roll - other.roll <= 1E-7) &&
+        (pitch == other.pitch || pitch - other.pitch <= 1E-7) &&
+        (yaw == other.yaw || yaw - other.yaw <= 1E-7) &&
+        (rcpTime == other.rcpTime || rcpTime - other.rcpTime <= 1E-7) &&
         sid == other.sid &&
         sType == other.sType;
   }
@@ -55070,15 +53417,15 @@ class _$ReportedState extends ReportedState {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        lat?.hashCode ?? null.hashCode),
-                                    lon?.hashCode ?? null.hashCode),
-                                depth?.hashCode ?? null.hashCode),
-                            roll?.hashCode ?? null.hashCode),
-                        pitch?.hashCode ?? null.hashCode),
-                    yaw?.hashCode ?? null.hashCode),
-                rcpTime?.hashCode ?? null.hashCode),
-            sid?.hashCode ?? null.hashCode),
-        sType?.hashCode ?? null.hashCode));
+                                        lat.hashCode),
+                                    lon.hashCode),
+                                depth.hashCode),
+                            roll.hashCode),
+                        pitch.hashCode),
+                    yaw.hashCode),
+                rcpTime.hashCode),
+            sid.hashCode),
+        sType.hashCode));
   }
 
   @override
@@ -55089,17 +53436,12 @@ class _$ReportedState extends ReportedState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('depth', '$depth (m)')
-          ..add('roll',
-              '$roll (rad)${roll != null ? ' [${roll! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('pitch',
-              '$pitch (rad)${pitch != null ? ' [${pitch! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('yaw',
-              '$yaw (rad)${yaw != null ? ' [${yaw! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('roll', '$roll (rad) [${roll * 180.0 / math.pi} (deg)]')
+          ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
+          ..add('yaw', '$yaw (rad) [${yaw * 180.0 / math.pi} (deg)]')
           ..add('rcpTime', '$rcpTime (s)')
           ..add('sid', '$sid')
           ..add('sType', '$sType (Enumerated)'))
@@ -55259,19 +53601,19 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
   final int dstEnt;
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? sensorClass;
+  final String sensorClass;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? alt;
+  final double alt;
   @override
-  final double? heading;
+  final double heading;
   @override
-  final String? data;
+  final String data;
 
   factory _$RemoteSensorInfo(
           [void Function(RemoteSensorInfoBuilder b)? updates]) =>
@@ -55283,13 +53625,13 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.sensorClass,
-      this.lat,
-      this.lon,
-      this.alt,
-      this.heading,
-      this.data})
+      required this.id,
+      required this.sensorClass,
+      required this.lat,
+      required this.lon,
+      required this.alt,
+      required this.heading,
+      required this.data})
       : super._();
 
   @override
@@ -55311,22 +53653,10 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
         dstEnt == other.dstEnt &&
         id == other.id &&
         sensorClass == other.sensorClass &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (alt == other.alt ||
-            (alt != null &&
-                other.alt != null &&
-                (alt! - other.alt! <= 1E-7))) &&
-        (heading == other.heading ||
-            (heading != null &&
-                other.heading != null &&
-                (heading! - other.heading! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7) &&
+        (heading == other.heading || heading - other.heading <= 1E-7) &&
         data == other.data;
   }
 
@@ -55351,13 +53681,13 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                id?.hashCode ?? null.hashCode),
-                            sensorClass?.hashCode ?? null.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                alt?.hashCode ?? null.hashCode),
-            heading?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                                id.hashCode),
+                            sensorClass.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                alt.hashCode),
+            heading.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -55370,13 +53700,11 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
           ..add('sensorClass', '$sensorClass')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('alt', '$alt (m)')
-          ..add('heading',
-              '$heading (rad)${heading != null ? ' [${heading! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'heading', '$heading (rad) [${heading * 180.0 / math.pi} (deg)]')
           ..add('data', '$data (TupleList)'))
         .toString();
   }
@@ -55523,9 +53851,9 @@ class _$Map extends Map {
   final int dstEnt;
 
   @override
-  final String? id;
+  final String id;
   @override
-  final List<MapFeature>? features;
+  final List<MapFeature> features;
 
   factory _$Map([void Function(MapBuilder b)? updates]) =>
       (MapBuilder()..update(updates)).build();
@@ -55536,8 +53864,8 @@ class _$Map extends Map {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.features})
+      required this.id,
+      required this.features})
       : super._();
 
   @override
@@ -55572,8 +53900,8 @@ class _$Map extends Map {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            id?.hashCode ?? null.hashCode),
-        features?.hashCode ?? null.hashCode));
+            id.hashCode),
+        features.hashCode));
   }
 
   @override
@@ -55700,17 +54028,17 @@ class _$MapFeature extends MapFeature {
   final int dstEnt;
 
   @override
-  final String? id;
+  final String id;
   @override
-  final MapFeatureEnumFeatureType? featureType;
+  final MapFeatureEnumFeatureType featureType;
   @override
-  final int? rgbRed;
+  final int rgbRed;
   @override
-  final int? rgbGreen;
+  final int rgbGreen;
   @override
-  final int? rgbBlue;
+  final int rgbBlue;
   @override
-  final List<MapPoint>? feature;
+  final List<MapPoint> feature;
 
   factory _$MapFeature([void Function(MapFeatureBuilder b)? updates]) =>
       (MapFeatureBuilder()..update(updates)).build();
@@ -55721,12 +54049,12 @@ class _$MapFeature extends MapFeature {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.id,
-      this.featureType,
-      this.rgbRed,
-      this.rgbGreen,
-      this.rgbBlue,
-      this.feature})
+      required this.id,
+      required this.featureType,
+      required this.rgbRed,
+      required this.rgbGreen,
+      required this.rgbBlue,
+      required this.feature})
       : super._();
 
   @override
@@ -55773,12 +54101,12 @@ class _$MapFeature extends MapFeature {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            id?.hashCode ?? null.hashCode),
-                        featureType?.hashCode ?? null.hashCode),
-                    rgbRed?.hashCode ?? null.hashCode),
-                rgbGreen?.hashCode ?? null.hashCode),
-            rgbBlue?.hashCode ?? null.hashCode),
-        feature?.hashCode ?? null.hashCode));
+                            id.hashCode),
+                        featureType.hashCode),
+                    rgbRed.hashCode),
+                rgbGreen.hashCode),
+            rgbBlue.hashCode),
+        feature.hashCode));
   }
 
   @override
@@ -55934,11 +54262,11 @@ class _$MapPoint extends MapPoint {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? alt;
+  final double alt;
 
   factory _$MapPoint([void Function(MapPointBuilder b)? updates]) =>
       (MapPointBuilder()..update(updates)).build();
@@ -55949,9 +54277,9 @@ class _$MapPoint extends MapPoint {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.alt})
+      required this.lat,
+      required this.lon,
+      required this.alt})
       : super._();
 
   @override
@@ -55970,16 +54298,9 @@ class _$MapPoint extends MapPoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (alt == other.alt ||
-            (alt != null && other.alt != null && (alt! - other.alt! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7);
   }
 
   @override
@@ -55995,9 +54316,9 @@ class _$MapPoint extends MapPoint {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                lat?.hashCode ?? null.hashCode),
-            lon?.hashCode ?? null.hashCode),
-        alt?.hashCode ?? null.hashCode));
+                lat.hashCode),
+            lon.hashCode),
+        alt.hashCode));
   }
 
   @override
@@ -56008,10 +54329,8 @@ class _$MapPoint extends MapPoint {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('alt', '$alt (m)'))
         .toString();
   }
@@ -56133,9 +54452,9 @@ class _$CcuEvent extends CcuEvent {
   final int dstEnt;
 
   @override
-  final CcuEventEnumType? type;
+  final CcuEventEnumType type;
   @override
-  final String? id;
+  final String id;
   @override
   final ImcMessage? arg;
 
@@ -56148,8 +54467,8 @@ class _$CcuEvent extends CcuEvent {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.id,
+      required this.type,
+      required this.id,
       this.arg})
       : super._();
 
@@ -56187,8 +54506,8 @@ class _$CcuEvent extends CcuEvent {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                type?.hashCode ?? null.hashCode),
-            id?.hashCode ?? null.hashCode),
+                type.hashCode),
+            id.hashCode),
         arg?.hashCode ?? null.hashCode));
   }
 
@@ -56323,9 +54642,9 @@ class _$VehicleLinks extends VehicleLinks {
   final int dstEnt;
 
   @override
-  final String? localname;
+  final String localname;
   @override
-  final List<Announce>? links;
+  final List<Announce> links;
 
   factory _$VehicleLinks([void Function(VehicleLinksBuilder b)? updates]) =>
       (VehicleLinksBuilder()..update(updates)).build();
@@ -56336,8 +54655,8 @@ class _$VehicleLinks extends VehicleLinks {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.localname,
-      this.links})
+      required this.localname,
+      required this.links})
       : super._();
 
   @override
@@ -56372,8 +54691,8 @@ class _$VehicleLinks extends VehicleLinks {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            localname?.hashCode ?? null.hashCode),
-        links?.hashCode ?? null.hashCode));
+            localname.hashCode),
+        links.hashCode));
   }
 
   @override
@@ -56500,11 +54819,11 @@ class _$TrexObservation extends TrexObservation {
   final int dstEnt;
 
   @override
-  final String? timeline;
+  final String timeline;
   @override
-  final String? predicate;
+  final String predicate;
   @override
-  final String? attributes;
+  final String attributes;
 
   factory _$TrexObservation(
           [void Function(TrexObservationBuilder b)? updates]) =>
@@ -56516,9 +54835,9 @@ class _$TrexObservation extends TrexObservation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeline,
-      this.predicate,
-      this.attributes})
+      required this.timeline,
+      required this.predicate,
+      required this.attributes})
       : super._();
 
   @override
@@ -56555,9 +54874,9 @@ class _$TrexObservation extends TrexObservation {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                timeline?.hashCode ?? null.hashCode),
-            predicate?.hashCode ?? null.hashCode),
-        attributes?.hashCode ?? null.hashCode));
+                timeline.hashCode),
+            predicate.hashCode),
+        attributes.hashCode));
   }
 
   @override
@@ -56692,11 +55011,11 @@ class _$TrexCommand extends TrexCommand {
   final int dstEnt;
 
   @override
-  final TrexCommandEnumCommand? command;
+  final TrexCommandEnumCommand command;
   @override
-  final String? goalId;
+  final String goalId;
   @override
-  final String? goalXml;
+  final String goalXml;
 
   factory _$TrexCommand([void Function(TrexCommandBuilder b)? updates]) =>
       (TrexCommandBuilder()..update(updates)).build();
@@ -56707,9 +55026,9 @@ class _$TrexCommand extends TrexCommand {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.command,
-      this.goalId,
-      this.goalXml})
+      required this.command,
+      required this.goalId,
+      required this.goalXml})
       : super._();
 
   @override
@@ -56746,9 +55065,9 @@ class _$TrexCommand extends TrexCommand {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                command?.hashCode ?? null.hashCode),
-            goalId?.hashCode ?? null.hashCode),
-        goalXml?.hashCode ?? null.hashCode));
+                command.hashCode),
+            goalId.hashCode),
+        goalXml.hashCode));
   }
 
   @override
@@ -56882,9 +55201,9 @@ class _$TrexOperation extends TrexOperation {
   final int dstEnt;
 
   @override
-  final TrexOperationEnumOp? op;
+  final TrexOperationEnumOp op;
   @override
-  final String? goalId;
+  final String goalId;
   @override
   final TrexToken? token;
 
@@ -56897,8 +55216,8 @@ class _$TrexOperation extends TrexOperation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.goalId,
+      required this.op,
+      required this.goalId,
       this.token})
       : super._();
 
@@ -56936,8 +55255,8 @@ class _$TrexOperation extends TrexOperation {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                op?.hashCode ?? null.hashCode),
-            goalId?.hashCode ?? null.hashCode),
+                op.hashCode),
+            goalId.hashCode),
         token?.hashCode ?? null.hashCode));
   }
 
@@ -57072,13 +55391,13 @@ class _$TrexAttribute extends TrexAttribute {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final TrexAttributeEnumAttrType? attrType;
+  final TrexAttributeEnumAttrType attrType;
   @override
-  final String? min;
+  final String min;
   @override
-  final String? max;
+  final String max;
 
   factory _$TrexAttribute([void Function(TrexAttributeBuilder b)? updates]) =>
       (TrexAttributeBuilder()..update(updates)).build();
@@ -57089,10 +55408,10 @@ class _$TrexAttribute extends TrexAttribute {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.attrType,
-      this.min,
-      this.max})
+      required this.name,
+      required this.attrType,
+      required this.min,
+      required this.max})
       : super._();
 
   @override
@@ -57133,10 +55452,10 @@ class _$TrexAttribute extends TrexAttribute {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    name?.hashCode ?? null.hashCode),
-                attrType?.hashCode ?? null.hashCode),
-            min?.hashCode ?? null.hashCode),
-        max?.hashCode ?? null.hashCode));
+                    name.hashCode),
+                attrType.hashCode),
+            min.hashCode),
+        max.hashCode));
   }
 
   @override
@@ -57278,11 +55597,11 @@ class _$TrexToken extends TrexToken {
   final int dstEnt;
 
   @override
-  final String? timeline;
+  final String timeline;
   @override
-  final String? predicate;
+  final String predicate;
   @override
-  final List<TrexAttribute>? attributes;
+  final List<TrexAttribute> attributes;
 
   factory _$TrexToken([void Function(TrexTokenBuilder b)? updates]) =>
       (TrexTokenBuilder()..update(updates)).build();
@@ -57293,9 +55612,9 @@ class _$TrexToken extends TrexToken {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeline,
-      this.predicate,
-      this.attributes})
+      required this.timeline,
+      required this.predicate,
+      required this.attributes})
       : super._();
 
   @override
@@ -57332,9 +55651,9 @@ class _$TrexToken extends TrexToken {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                timeline?.hashCode ?? null.hashCode),
-            predicate?.hashCode ?? null.hashCode),
-        attributes?.hashCode ?? null.hashCode));
+                timeline.hashCode),
+            predicate.hashCode),
+        attributes.hashCode));
   }
 
   @override
@@ -57469,9 +55788,9 @@ class _$TrexPlan extends TrexPlan {
   final int dstEnt;
 
   @override
-  final String? reactor;
+  final String reactor;
   @override
-  final List<TrexToken>? tokens;
+  final List<TrexToken> tokens;
 
   factory _$TrexPlan([void Function(TrexPlanBuilder b)? updates]) =>
       (TrexPlanBuilder()..update(updates)).build();
@@ -57482,8 +55801,8 @@ class _$TrexPlan extends TrexPlan {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.reactor,
-      this.tokens})
+      required this.reactor,
+      required this.tokens})
       : super._();
 
   @override
@@ -57518,8 +55837,8 @@ class _$TrexPlan extends TrexPlan {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            reactor?.hashCode ?? null.hashCode),
-        tokens?.hashCode ?? null.hashCode));
+            reactor.hashCode),
+        tokens.hashCode));
   }
 
   @override
@@ -57646,9 +55965,9 @@ class _$Event extends Event {
   final int dstEnt;
 
   @override
-  final String? topic;
+  final String topic;
   @override
-  final String? data;
+  final String data;
 
   factory _$Event([void Function(EventBuilder b)? updates]) =>
       (EventBuilder()..update(updates)).build();
@@ -57659,8 +55978,8 @@ class _$Event extends Event {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.topic,
-      this.data})
+      required this.topic,
+      required this.data})
       : super._();
 
   @override
@@ -57695,8 +56014,8 @@ class _$Event extends Event {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            topic?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+            topic.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -57823,9 +56142,9 @@ class _$CompressedImage extends CompressedImage {
   final int dstEnt;
 
   @override
-  final int? frameid;
+  final int frameid;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$CompressedImage(
           [void Function(CompressedImageBuilder b)? updates]) =>
@@ -57837,8 +56156,8 @@ class _$CompressedImage extends CompressedImage {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.frameid,
-      this.data})
+      required this.frameid,
+      required this.data})
       : super._();
 
   @override
@@ -57873,8 +56192,8 @@ class _$CompressedImage extends CompressedImage {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            frameid?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+            frameid.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -58002,13 +56321,13 @@ class _$ImageTxSettings extends ImageTxSettings {
   final int dstEnt;
 
   @override
-  final int? fps;
+  final int fps;
   @override
-  final int? quality;
+  final int quality;
   @override
-  final int? reps;
+  final int reps;
   @override
-  final int? tsize;
+  final int tsize;
 
   factory _$ImageTxSettings(
           [void Function(ImageTxSettingsBuilder b)? updates]) =>
@@ -58020,10 +56339,10 @@ class _$ImageTxSettings extends ImageTxSettings {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.fps,
-      this.quality,
-      this.reps,
-      this.tsize})
+      required this.fps,
+      required this.quality,
+      required this.reps,
+      required this.tsize})
       : super._();
 
   @override
@@ -58064,10 +56383,10 @@ class _$ImageTxSettings extends ImageTxSettings {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    fps?.hashCode ?? null.hashCode),
-                quality?.hashCode ?? null.hashCode),
-            reps?.hashCode ?? null.hashCode),
-        tsize?.hashCode ?? null.hashCode));
+                    fps.hashCode),
+                quality.hashCode),
+            reps.hashCode),
+        tsize.hashCode));
   }
 
   @override
@@ -58209,15 +56528,15 @@ class _$RemoteState extends RemoteState {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final int? depth;
+  final int depth;
   @override
-  final double? speed;
+  final double speed;
   @override
-  final double? psi;
+  final double psi;
 
   factory _$RemoteState([void Function(RemoteStateBuilder b)? updates]) =>
       (RemoteStateBuilder()..update(updates)).build();
@@ -58228,11 +56547,11 @@ class _$RemoteState extends RemoteState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.depth,
-      this.speed,
-      this.psi})
+      required this.lat,
+      required this.lon,
+      required this.depth,
+      required this.speed,
+      required this.psi})
       : super._();
 
   @override
@@ -58251,21 +56570,11 @@ class _$RemoteState extends RemoteState {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         depth == other.depth &&
-        (speed == other.speed ||
-            (speed != null &&
-                other.speed != null &&
-                (speed! - other.speed! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null && other.psi != null && (psi! - other.psi! <= 1E-7)));
+        (speed == other.speed || speed - other.speed <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7);
   }
 
   @override
@@ -58287,11 +56596,11 @@ class _$RemoteState extends RemoteState {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                depth?.hashCode ?? null.hashCode),
-            speed?.hashCode ?? null.hashCode),
-        psi?.hashCode ?? null.hashCode));
+                        lat.hashCode),
+                    lon.hashCode),
+                depth.hashCode),
+            speed.hashCode),
+        psi.hashCode));
   }
 
   @override
@@ -58302,14 +56611,11 @@ class _$RemoteState extends RemoteState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('depth', '$depth (m)')
           ..add('speed', '$speed (m/s)')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}'))
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -58442,19 +56748,19 @@ class _$Target extends Target {
   final int dstEnt;
 
   @override
-  final String? label;
+  final String label;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? cog;
+  final double cog;
   @override
-  final double? sog;
+  final double sog;
 
   factory _$Target([void Function(TargetBuilder b)? updates]) =>
       (TargetBuilder()..update(updates)).build();
@@ -58465,13 +56771,13 @@ class _$Target extends Target {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.label,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits,
-      this.cog,
-      this.sog})
+      required this.label,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits,
+      required this.cog,
+      required this.sog})
       : super._();
 
   @override
@@ -58491,23 +56797,12 @@ class _$Target extends Target {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         label == other.label &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits &&
-        (cog == other.cog ||
-            (cog != null &&
-                other.cog != null &&
-                (cog! - other.cog! <= 1E-7))) &&
-        (sog == other.sog ||
-            (sog != null && other.sog != null && (sog! - other.sog! <= 1E-7)));
+        (cog == other.cog || cog - other.cog <= 1E-7) &&
+        (sog == other.sog || sog - other.sog <= 1E-7);
   }
 
   @override
@@ -58531,13 +56826,13 @@ class _$Target extends Target {
                                             srcEnt.hashCode),
                                         dst.hashCode),
                                     dstEnt.hashCode),
-                                label?.hashCode ?? null.hashCode),
-                            lat?.hashCode ?? null.hashCode),
-                        lon?.hashCode ?? null.hashCode),
-                    z?.hashCode ?? null.hashCode),
-                zUnits?.hashCode ?? null.hashCode),
-            cog?.hashCode ?? null.hashCode),
-        sog?.hashCode ?? null.hashCode));
+                                label.hashCode),
+                            lat.hashCode),
+                        lon.hashCode),
+                    z.hashCode),
+                zUnits.hashCode),
+            cog.hashCode),
+        sog.hashCode));
   }
 
   @override
@@ -58549,14 +56844,11 @@ class _$Target extends Target {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('label', '$label')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)')
-          ..add('cog',
-              '$cog (rad)${cog != null ? ' [${cog! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('cog', '$cog (rad) [${cog * 180.0 / math.pi} (deg)]')
           ..add('sog', '$sog (m/s)'))
         .toString();
   }
@@ -58702,9 +56994,9 @@ class _$EntityParameter extends EntityParameter {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final String? value;
+  final String value;
 
   factory _$EntityParameter(
           [void Function(EntityParameterBuilder b)? updates]) =>
@@ -58716,8 +57008,8 @@ class _$EntityParameter extends EntityParameter {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.value})
+      required this.name,
+      required this.value})
       : super._();
 
   @override
@@ -58752,8 +57044,8 @@ class _$EntityParameter extends EntityParameter {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            name?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+            name.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -58881,9 +57173,9 @@ class _$EntityParameters extends EntityParameters {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final List<EntityParameter>? params;
+  final List<EntityParameter> params;
 
   factory _$EntityParameters(
           [void Function(EntityParametersBuilder b)? updates]) =>
@@ -58895,8 +57187,8 @@ class _$EntityParameters extends EntityParameters {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.params})
+      required this.name,
+      required this.params})
       : super._();
 
   @override
@@ -58932,8 +57224,8 @@ class _$EntityParameters extends EntityParameters {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            name?.hashCode ?? null.hashCode),
-        params?.hashCode ?? null.hashCode));
+            name.hashCode),
+        params.hashCode));
   }
 
   @override
@@ -59061,11 +57353,11 @@ class _$QueryEntityParameters extends QueryEntityParameters {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final String? visibility;
+  final String visibility;
   @override
-  final String? scope;
+  final String scope;
 
   factory _$QueryEntityParameters(
           [void Function(QueryEntityParametersBuilder b)? updates]) =>
@@ -59077,9 +57369,9 @@ class _$QueryEntityParameters extends QueryEntityParameters {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.visibility,
-      this.scope})
+      required this.name,
+      required this.visibility,
+      required this.scope})
       : super._();
 
   @override
@@ -59118,9 +57410,9 @@ class _$QueryEntityParameters extends QueryEntityParameters {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                name?.hashCode ?? null.hashCode),
-            visibility?.hashCode ?? null.hashCode),
-        scope?.hashCode ?? null.hashCode));
+                name.hashCode),
+            visibility.hashCode),
+        scope.hashCode));
   }
 
   @override
@@ -59258,9 +57550,9 @@ class _$SetEntityParameters extends SetEntityParameters {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final List<EntityParameter>? params;
+  final List<EntityParameter> params;
 
   factory _$SetEntityParameters(
           [void Function(SetEntityParametersBuilder b)? updates]) =>
@@ -59272,8 +57564,8 @@ class _$SetEntityParameters extends SetEntityParameters {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.params})
+      required this.name,
+      required this.params})
       : super._();
 
   @override
@@ -59310,8 +57602,8 @@ class _$SetEntityParameters extends SetEntityParameters {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            name?.hashCode ?? null.hashCode),
-        params?.hashCode ?? null.hashCode));
+            name.hashCode),
+        params.hashCode));
   }
 
   @override
@@ -59441,7 +57733,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
 
   factory _$SaveEntityParameters(
           [void Function(SaveEntityParametersBuilder b)? updates]) =>
@@ -59453,7 +57745,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name})
+      required this.name})
       : super._();
 
   @override
@@ -59488,7 +57780,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        name?.hashCode ?? null.hashCode));
+        name.hashCode));
   }
 
   @override
@@ -59611,7 +57903,7 @@ class _$CreateSession extends CreateSession {
   final int dstEnt;
 
   @override
-  final int? timeout;
+  final int timeout;
 
   factory _$CreateSession([void Function(CreateSessionBuilder b)? updates]) =>
       (CreateSessionBuilder()..update(updates)).build();
@@ -59622,7 +57914,7 @@ class _$CreateSession extends CreateSession {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timeout})
+      required this.timeout})
       : super._();
 
   @override
@@ -59655,7 +57947,7 @@ class _$CreateSession extends CreateSession {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        timeout?.hashCode ?? null.hashCode));
+        timeout.hashCode));
   }
 
   @override
@@ -59775,7 +58067,7 @@ class _$CloseSession extends CloseSession {
   final int dstEnt;
 
   @override
-  final int? sessid;
+  final int sessid;
 
   factory _$CloseSession([void Function(CloseSessionBuilder b)? updates]) =>
       (CloseSessionBuilder()..update(updates)).build();
@@ -59786,7 +58078,7 @@ class _$CloseSession extends CloseSession {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sessid})
+      required this.sessid})
       : super._();
 
   @override
@@ -59819,7 +58111,7 @@ class _$CloseSession extends CloseSession {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        sessid?.hashCode ?? null.hashCode));
+        sessid.hashCode));
   }
 
   @override
@@ -59939,9 +58231,9 @@ class _$SessionSubscription extends SessionSubscription {
   final int dstEnt;
 
   @override
-  final int? sessid;
+  final int sessid;
   @override
-  final String? messages;
+  final String messages;
 
   factory _$SessionSubscription(
           [void Function(SessionSubscriptionBuilder b)? updates]) =>
@@ -59953,8 +58245,8 @@ class _$SessionSubscription extends SessionSubscription {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sessid,
-      this.messages})
+      required this.sessid,
+      required this.messages})
       : super._();
 
   @override
@@ -59991,8 +58283,8 @@ class _$SessionSubscription extends SessionSubscription {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            sessid?.hashCode ?? null.hashCode),
-        messages?.hashCode ?? null.hashCode));
+            sessid.hashCode),
+        messages.hashCode));
   }
 
   @override
@@ -60122,7 +58414,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
   final int dstEnt;
 
   @override
-  final int? sessid;
+  final int sessid;
 
   factory _$SessionKeepAlive(
           [void Function(SessionKeepAliveBuilder b)? updates]) =>
@@ -60134,7 +58426,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sessid})
+      required this.sessid})
       : super._();
 
   @override
@@ -60168,7 +58460,7 @@ class _$SessionKeepAlive extends SessionKeepAlive {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        sessid?.hashCode ?? null.hashCode));
+        sessid.hashCode));
   }
 
   @override
@@ -60289,9 +58581,9 @@ class _$SessionStatus extends SessionStatus {
   final int dstEnt;
 
   @override
-  final int? sessid;
+  final int sessid;
   @override
-  final SessionStatusEnumStatus? status;
+  final SessionStatusEnumStatus status;
 
   factory _$SessionStatus([void Function(SessionStatusBuilder b)? updates]) =>
       (SessionStatusBuilder()..update(updates)).build();
@@ -60302,8 +58594,8 @@ class _$SessionStatus extends SessionStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sessid,
-      this.status})
+      required this.sessid,
+      required this.status})
       : super._();
 
   @override
@@ -60338,8 +58630,8 @@ class _$SessionStatus extends SessionStatus {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            sessid?.hashCode ?? null.hashCode),
-        status?.hashCode ?? null.hashCode));
+            sessid.hashCode),
+        status.hashCode));
   }
 
   @override
@@ -60466,7 +58758,7 @@ class _$PushEntityParameters extends PushEntityParameters {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
 
   factory _$PushEntityParameters(
           [void Function(PushEntityParametersBuilder b)? updates]) =>
@@ -60478,7 +58770,7 @@ class _$PushEntityParameters extends PushEntityParameters {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name})
+      required this.name})
       : super._();
 
   @override
@@ -60513,7 +58805,7 @@ class _$PushEntityParameters extends PushEntityParameters {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        name?.hashCode ?? null.hashCode));
+        name.hashCode));
   }
 
   @override
@@ -60636,7 +58928,7 @@ class _$PopEntityParameters extends PopEntityParameters {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
 
   factory _$PopEntityParameters(
           [void Function(PopEntityParametersBuilder b)? updates]) =>
@@ -60648,7 +58940,7 @@ class _$PopEntityParameters extends PopEntityParameters {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name})
+      required this.name})
       : super._();
 
   @override
@@ -60683,7 +58975,7 @@ class _$PopEntityParameters extends PopEntityParameters {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        name?.hashCode ?? null.hashCode));
+        name.hashCode));
   }
 
   @override
@@ -60806,9 +59098,9 @@ class _$IoEvent extends IoEvent {
   final int dstEnt;
 
   @override
-  final IoEventEnumType? type;
+  final IoEventEnumType type;
   @override
-  final String? error;
+  final String error;
 
   factory _$IoEvent([void Function(IoEventBuilder b)? updates]) =>
       (IoEventBuilder()..update(updates)).build();
@@ -60819,8 +59111,8 @@ class _$IoEvent extends IoEvent {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.error})
+      required this.type,
+      required this.error})
       : super._();
 
   @override
@@ -60855,8 +59147,8 @@ class _$IoEvent extends IoEvent {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            type?.hashCode ?? null.hashCode),
-        error?.hashCode ?? null.hashCode));
+            type.hashCode),
+        error.hashCode));
   }
 
   @override
@@ -60983,13 +59275,13 @@ class _$UamTxFrame extends UamTxFrame {
   final int dstEnt;
 
   @override
-  final int? seq;
+  final int seq;
   @override
-  final String? sysDst;
+  final String sysDst;
   @override
-  final UamTxFrameBitfieldFlags? flags;
+  final UamTxFrameBitfieldFlags flags;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$UamTxFrame([void Function(UamTxFrameBuilder b)? updates]) =>
       (UamTxFrameBuilder()..update(updates)).build();
@@ -61000,10 +59292,10 @@ class _$UamTxFrame extends UamTxFrame {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.seq,
-      this.sysDst,
-      this.flags,
-      this.data})
+      required this.seq,
+      required this.sysDst,
+      required this.flags,
+      required this.data})
       : super._();
 
   @override
@@ -61044,10 +59336,10 @@ class _$UamTxFrame extends UamTxFrame {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    seq?.hashCode ?? null.hashCode),
-                sysDst?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                    seq.hashCode),
+                sysDst.hashCode),
+            flags.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -61188,13 +59480,13 @@ class _$UamRxFrame extends UamRxFrame {
   final int dstEnt;
 
   @override
-  final String? sysSrc;
+  final String sysSrc;
   @override
-  final String? sysDst;
+  final String sysDst;
   @override
-  final UamRxFrameBitfieldFlags? flags;
+  final UamRxFrameBitfieldFlags flags;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$UamRxFrame([void Function(UamRxFrameBuilder b)? updates]) =>
       (UamRxFrameBuilder()..update(updates)).build();
@@ -61205,10 +59497,10 @@ class _$UamRxFrame extends UamRxFrame {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.sysSrc,
-      this.sysDst,
-      this.flags,
-      this.data})
+      required this.sysSrc,
+      required this.sysDst,
+      required this.flags,
+      required this.data})
       : super._();
 
   @override
@@ -61249,10 +59541,10 @@ class _$UamRxFrame extends UamRxFrame {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    sysSrc?.hashCode ?? null.hashCode),
-                sysDst?.hashCode ?? null.hashCode),
-            flags?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                    sysSrc.hashCode),
+                sysDst.hashCode),
+            flags.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -61393,11 +59685,11 @@ class _$UamTxStatus extends UamTxStatus {
   final int dstEnt;
 
   @override
-  final int? seq;
+  final int seq;
   @override
-  final UamTxStatusEnumValue? value;
+  final UamTxStatusEnumValue value;
   @override
-  final String? error;
+  final String error;
 
   factory _$UamTxStatus([void Function(UamTxStatusBuilder b)? updates]) =>
       (UamTxStatusBuilder()..update(updates)).build();
@@ -61408,9 +59700,9 @@ class _$UamTxStatus extends UamTxStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.seq,
-      this.value,
-      this.error})
+      required this.seq,
+      required this.value,
+      required this.error})
       : super._();
 
   @override
@@ -61447,9 +59739,9 @@ class _$UamTxStatus extends UamTxStatus {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                seq?.hashCode ?? null.hashCode),
-            value?.hashCode ?? null.hashCode),
-        error?.hashCode ?? null.hashCode));
+                seq.hashCode),
+            value.hashCode),
+        error.hashCode));
   }
 
   @override
@@ -61583,11 +59875,11 @@ class _$UamRxRange extends UamRxRange {
   final int dstEnt;
 
   @override
-  final int? seq;
+  final int seq;
   @override
-  final String? sys;
+  final String sys;
   @override
-  final double? value;
+  final double value;
 
   factory _$UamRxRange([void Function(UamRxRangeBuilder b)? updates]) =>
       (UamRxRangeBuilder()..update(updates)).build();
@@ -61598,9 +59890,9 @@ class _$UamRxRange extends UamRxRange {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.seq,
-      this.sys,
-      this.value})
+      required this.seq,
+      required this.sys,
+      required this.value})
       : super._();
 
   @override
@@ -61621,10 +59913,7 @@ class _$UamRxRange extends UamRxRange {
         dstEnt == other.dstEnt &&
         seq == other.seq &&
         sys == other.sys &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -61640,9 +59929,9 @@ class _$UamRxRange extends UamRxRange {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                seq?.hashCode ?? null.hashCode),
-            sys?.hashCode ?? null.hashCode),
-        value?.hashCode ?? null.hashCode));
+                seq.hashCode),
+            sys.hashCode),
+        value.hashCode));
   }
 
   @override
@@ -61776,11 +60065,11 @@ class _$UamTxRange extends UamTxRange {
   final int dstEnt;
 
   @override
-  final int? seq;
+  final int seq;
   @override
-  final String? sysDst;
+  final String sysDst;
   @override
-  final double? timeout;
+  final double timeout;
 
   factory _$UamTxRange([void Function(UamTxRangeBuilder b)? updates]) =>
       (UamTxRangeBuilder()..update(updates)).build();
@@ -61791,9 +60080,9 @@ class _$UamTxRange extends UamTxRange {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.seq,
-      this.sysDst,
-      this.timeout})
+      required this.seq,
+      required this.sysDst,
+      required this.timeout})
       : super._();
 
   @override
@@ -61814,10 +60103,7 @@ class _$UamTxRange extends UamTxRange {
         dstEnt == other.dstEnt &&
         seq == other.seq &&
         sysDst == other.sysDst &&
-        (timeout == other.timeout ||
-            (timeout != null &&
-                other.timeout != null &&
-                (timeout! - other.timeout! <= 1E-7)));
+        (timeout == other.timeout || timeout - other.timeout <= 1E-7);
   }
 
   @override
@@ -61833,9 +60119,9 @@ class _$UamTxRange extends UamTxRange {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                seq?.hashCode ?? null.hashCode),
-            sysDst?.hashCode ?? null.hashCode),
-        timeout?.hashCode ?? null.hashCode));
+                seq.hashCode),
+            sysDst.hashCode),
+        timeout.hashCode));
   }
 
   @override
@@ -61969,17 +60255,17 @@ class _$FormCtrlParam extends FormCtrlParam {
   final int dstEnt;
 
   @override
-  final FormCtrlParamEnumAction? action;
+  final FormCtrlParamEnumAction action;
   @override
-  final double? lonGain;
+  final double lonGain;
   @override
-  final double? latGain;
+  final double latGain;
   @override
-  final int? bondThick;
+  final int bondThick;
   @override
-  final double? leadGain;
+  final double leadGain;
   @override
-  final double? deconflGain;
+  final double deconflGain;
 
   factory _$FormCtrlParam([void Function(FormCtrlParamBuilder b)? updates]) =>
       (FormCtrlParamBuilder()..update(updates)).build();
@@ -61990,12 +60276,12 @@ class _$FormCtrlParam extends FormCtrlParam {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.action,
-      this.lonGain,
-      this.latGain,
-      this.bondThick,
-      this.leadGain,
-      this.deconflGain})
+      required this.action,
+      required this.lonGain,
+      required this.latGain,
+      required this.bondThick,
+      required this.leadGain,
+      required this.deconflGain})
       : super._();
 
   @override
@@ -62015,23 +60301,12 @@ class _$FormCtrlParam extends FormCtrlParam {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         action == other.action &&
-        (lonGain == other.lonGain ||
-            (lonGain != null &&
-                other.lonGain != null &&
-                (lonGain! - other.lonGain! <= 1E-7))) &&
-        (latGain == other.latGain ||
-            (latGain != null &&
-                other.latGain != null &&
-                (latGain! - other.latGain! <= 1E-7))) &&
+        (lonGain == other.lonGain || lonGain - other.lonGain <= 1E-7) &&
+        (latGain == other.latGain || latGain - other.latGain <= 1E-7) &&
         bondThick == other.bondThick &&
-        (leadGain == other.leadGain ||
-            (leadGain != null &&
-                other.leadGain != null &&
-                (leadGain! - other.leadGain! <= 1E-7))) &&
+        (leadGain == other.leadGain || leadGain - other.leadGain <= 1E-7) &&
         (deconflGain == other.deconflGain ||
-            (deconflGain != null &&
-                other.deconflGain != null &&
-                (deconflGain! - other.deconflGain! <= 1E-7)));
+            deconflGain - other.deconflGain <= 1E-7);
   }
 
   @override
@@ -62054,12 +60329,12 @@ class _$FormCtrlParam extends FormCtrlParam {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            action?.hashCode ?? null.hashCode),
-                        lonGain?.hashCode ?? null.hashCode),
-                    latGain?.hashCode ?? null.hashCode),
-                bondThick?.hashCode ?? null.hashCode),
-            leadGain?.hashCode ?? null.hashCode),
-        deconflGain?.hashCode ?? null.hashCode));
+                            action.hashCode),
+                        lonGain.hashCode),
+                    latGain.hashCode),
+                bondThick.hashCode),
+            leadGain.hashCode),
+        deconflGain.hashCode));
   }
 
   @override
@@ -62214,11 +60489,11 @@ class _$FormationEval extends FormationEval {
   final int dstEnt;
 
   @override
-  final double? errMean;
+  final double errMean;
   @override
-  final double? distMinAbs;
+  final double distMinAbs;
   @override
-  final double? distMinMean;
+  final double distMinMean;
 
   factory _$FormationEval([void Function(FormationEvalBuilder b)? updates]) =>
       (FormationEvalBuilder()..update(updates)).build();
@@ -62229,9 +60504,9 @@ class _$FormationEval extends FormationEval {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.errMean,
-      this.distMinAbs,
-      this.distMinMean})
+      required this.errMean,
+      required this.distMinAbs,
+      required this.distMinMean})
       : super._();
 
   @override
@@ -62250,18 +60525,11 @@ class _$FormationEval extends FormationEval {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (errMean == other.errMean ||
-            (errMean != null &&
-                other.errMean != null &&
-                (errMean! - other.errMean! <= 1E-7))) &&
+        (errMean == other.errMean || errMean - other.errMean <= 1E-7) &&
         (distMinAbs == other.distMinAbs ||
-            (distMinAbs != null &&
-                other.distMinAbs != null &&
-                (distMinAbs! - other.distMinAbs! <= 1E-7))) &&
+            distMinAbs - other.distMinAbs <= 1E-7) &&
         (distMinMean == other.distMinMean ||
-            (distMinMean != null &&
-                other.distMinMean != null &&
-                (distMinMean! - other.distMinMean! <= 1E-7)));
+            distMinMean - other.distMinMean <= 1E-7);
   }
 
   @override
@@ -62277,9 +60545,9 @@ class _$FormationEval extends FormationEval {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                errMean?.hashCode ?? null.hashCode),
-            distMinAbs?.hashCode ?? null.hashCode),
-        distMinMean?.hashCode ?? null.hashCode));
+                errMean.hashCode),
+            distMinAbs.hashCode),
+        distMinMean.hashCode));
   }
 
   @override
@@ -62413,27 +60681,27 @@ class _$FormationControlParams extends FormationControlParams {
   final int dstEnt;
 
   @override
-  final FormationControlParamsEnumAction? action;
+  final FormationControlParamsEnumAction action;
   @override
-  final double? lonGain;
+  final double lonGain;
   @override
-  final double? latGain;
+  final double latGain;
   @override
-  final double? bondThick;
+  final double bondThick;
   @override
-  final double? leadGain;
+  final double leadGain;
   @override
-  final double? deconflGain;
+  final double deconflGain;
   @override
-  final double? accelSwitchGain;
+  final double accelSwitchGain;
   @override
-  final double? safeDist;
+  final double safeDist;
   @override
-  final double? deconflictOffset;
+  final double deconflictOffset;
   @override
-  final double? accelSafeMargin;
+  final double accelSafeMargin;
   @override
-  final double? accelLimX;
+  final double accelLimX;
 
   factory _$FormationControlParams(
           [void Function(FormationControlParamsBuilder b)? updates]) =>
@@ -62445,17 +60713,17 @@ class _$FormationControlParams extends FormationControlParams {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.action,
-      this.lonGain,
-      this.latGain,
-      this.bondThick,
-      this.leadGain,
-      this.deconflGain,
-      this.accelSwitchGain,
-      this.safeDist,
-      this.deconflictOffset,
-      this.accelSafeMargin,
-      this.accelLimX})
+      required this.action,
+      required this.lonGain,
+      required this.latGain,
+      required this.bondThick,
+      required this.leadGain,
+      required this.deconflGain,
+      required this.accelSwitchGain,
+      required this.safeDist,
+      required this.deconflictOffset,
+      required this.accelSafeMargin,
+      required this.accelLimX})
       : super._();
 
   @override
@@ -62477,46 +60745,20 @@ class _$FormationControlParams extends FormationControlParams {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         action == other.action &&
-        (lonGain == other.lonGain ||
-            (lonGain != null &&
-                other.lonGain != null &&
-                (lonGain! - other.lonGain! <= 1E-7))) &&
-        (latGain == other.latGain ||
-            (latGain != null &&
-                other.latGain != null &&
-                (latGain! - other.latGain! <= 1E-7))) &&
-        (bondThick == other.bondThick ||
-            (bondThick != null &&
-                other.bondThick != null &&
-                (bondThick! - other.bondThick! <= 1E-7))) &&
-        (leadGain == other.leadGain ||
-            (leadGain != null &&
-                other.leadGain != null &&
-                (leadGain! - other.leadGain! <= 1E-7))) &&
+        (lonGain == other.lonGain || lonGain - other.lonGain <= 1E-7) &&
+        (latGain == other.latGain || latGain - other.latGain <= 1E-7) &&
+        (bondThick == other.bondThick || bondThick - other.bondThick <= 1E-7) &&
+        (leadGain == other.leadGain || leadGain - other.leadGain <= 1E-7) &&
         (deconflGain == other.deconflGain ||
-            (deconflGain != null &&
-                other.deconflGain != null &&
-                (deconflGain! - other.deconflGain! <= 1E-7))) &&
+            deconflGain - other.deconflGain <= 1E-7) &&
         (accelSwitchGain == other.accelSwitchGain ||
-            (accelSwitchGain != null &&
-                other.accelSwitchGain != null &&
-                (accelSwitchGain! - other.accelSwitchGain! <= 1E-7))) &&
-        (safeDist == other.safeDist ||
-            (safeDist != null &&
-                other.safeDist != null &&
-                (safeDist! - other.safeDist! <= 1E-7))) &&
+            accelSwitchGain - other.accelSwitchGain <= 1E-7) &&
+        (safeDist == other.safeDist || safeDist - other.safeDist <= 1E-7) &&
         (deconflictOffset == other.deconflictOffset ||
-            (deconflictOffset != null &&
-                other.deconflictOffset != null &&
-                (deconflictOffset! - other.deconflictOffset! <= 1E-7))) &&
+            deconflictOffset - other.deconflictOffset <= 1E-7) &&
         (accelSafeMargin == other.accelSafeMargin ||
-            (accelSafeMargin != null &&
-                other.accelSafeMargin != null &&
-                (accelSafeMargin! - other.accelSafeMargin! <= 1E-7))) &&
-        (accelLimX == other.accelLimX ||
-            (accelLimX != null &&
-                other.accelLimX != null &&
-                (accelLimX! - other.accelLimX! <= 1E-7)));
+            accelSafeMargin - other.accelSafeMargin <= 1E-7) &&
+        (accelLimX == other.accelLimX || accelLimX - other.accelLimX <= 1E-7);
   }
 
   @override
@@ -62540,24 +60782,22 @@ class _$FormationControlParams extends FormationControlParams {
                                                                     0,
                                                                     timestamp
                                                                             ?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
+                                                                        null.hashCode),
                                                                 src.hashCode),
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                action?.hashCode ??
-                                                    null.hashCode),
-                                            lonGain?.hashCode ?? null.hashCode),
-                                        latGain?.hashCode ?? null.hashCode),
-                                    bondThick?.hashCode ?? null.hashCode),
-                                leadGain?.hashCode ?? null.hashCode),
-                            deconflGain?.hashCode ?? null.hashCode),
-                        accelSwitchGain?.hashCode ?? null.hashCode),
-                    safeDist?.hashCode ?? null.hashCode),
-                deconflictOffset?.hashCode ?? null.hashCode),
-            accelSafeMargin?.hashCode ?? null.hashCode),
-        accelLimX?.hashCode ?? null.hashCode));
+                                                action.hashCode),
+                                            lonGain.hashCode),
+                                        latGain.hashCode),
+                                    bondThick.hashCode),
+                                leadGain.hashCode),
+                            deconflGain.hashCode),
+                        accelSwitchGain.hashCode),
+                    safeDist.hashCode),
+                deconflictOffset.hashCode),
+            accelSafeMargin.hashCode),
+        accelLimX.hashCode));
   }
 
   @override
@@ -62756,19 +60996,19 @@ class _$FormationEvaluation extends FormationEvaluation {
   final int dstEnt;
 
   @override
-  final FormationEvaluationEnumType? type;
+  final FormationEvaluationEnumType type;
   @override
-  final FormationEvaluationEnumOp? op;
+  final FormationEvaluationEnumOp op;
   @override
-  final double? errMean;
+  final double errMean;
   @override
-  final double? distMinAbs;
+  final double distMinAbs;
   @override
-  final double? distMinMean;
+  final double distMinMean;
   @override
-  final double? rollRateMean;
+  final double rollRateMean;
   @override
-  final double? time;
+  final double time;
   @override
   final FormationControlParams? controlParams;
 
@@ -62782,13 +61022,13 @@ class _$FormationEvaluation extends FormationEvaluation {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.op,
-      this.errMean,
-      this.distMinAbs,
-      this.distMinMean,
-      this.rollRateMean,
-      this.time,
+      required this.type,
+      required this.op,
+      required this.errMean,
+      required this.distMinAbs,
+      required this.distMinMean,
+      required this.rollRateMean,
+      required this.time,
       this.controlParams})
       : super._();
 
@@ -62812,26 +61052,14 @@ class _$FormationEvaluation extends FormationEvaluation {
         dstEnt == other.dstEnt &&
         type == other.type &&
         op == other.op &&
-        (errMean == other.errMean ||
-            (errMean != null &&
-                other.errMean != null &&
-                (errMean! - other.errMean! <= 1E-7))) &&
+        (errMean == other.errMean || errMean - other.errMean <= 1E-7) &&
         (distMinAbs == other.distMinAbs ||
-            (distMinAbs != null &&
-                other.distMinAbs != null &&
-                (distMinAbs! - other.distMinAbs! <= 1E-7))) &&
+            distMinAbs - other.distMinAbs <= 1E-7) &&
         (distMinMean == other.distMinMean ||
-            (distMinMean != null &&
-                other.distMinMean != null &&
-                (distMinMean! - other.distMinMean! <= 1E-7))) &&
+            distMinMean - other.distMinMean <= 1E-7) &&
         (rollRateMean == other.rollRateMean ||
-            (rollRateMean != null &&
-                other.rollRateMean != null &&
-                (rollRateMean! - other.rollRateMean! <= 1E-7))) &&
-        (time == other.time ||
-            (time != null &&
-                other.time != null &&
-                (time! - other.time! <= 1E-7))) &&
+            rollRateMean - other.rollRateMean <= 1E-7) &&
+        (time == other.time || time - other.time <= 1E-7) &&
         controlParams == other.controlParams;
   }
 
@@ -62857,13 +61085,13 @@ class _$FormationEvaluation extends FormationEvaluation {
                                                 srcEnt.hashCode),
                                             dst.hashCode),
                                         dstEnt.hashCode),
-                                    type?.hashCode ?? null.hashCode),
-                                op?.hashCode ?? null.hashCode),
-                            errMean?.hashCode ?? null.hashCode),
-                        distMinAbs?.hashCode ?? null.hashCode),
-                    distMinMean?.hashCode ?? null.hashCode),
-                rollRateMean?.hashCode ?? null.hashCode),
-            time?.hashCode ?? null.hashCode),
+                                    type.hashCode),
+                                op.hashCode),
+                            errMean.hashCode),
+                        distMinAbs.hashCode),
+                    distMinMean.hashCode),
+                rollRateMean.hashCode),
+            time.hashCode),
         controlParams?.hashCode ?? null.hashCode));
   }
 
@@ -63037,13 +61265,13 @@ class _$SoiWaypoint extends SoiWaypoint {
   final int dstEnt;
 
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final int? eta;
+  final int eta;
   @override
-  final int? duration;
+  final int duration;
 
   factory _$SoiWaypoint([void Function(SoiWaypointBuilder b)? updates]) =>
       (SoiWaypointBuilder()..update(updates)).build();
@@ -63054,10 +61282,10 @@ class _$SoiWaypoint extends SoiWaypoint {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.lat,
-      this.lon,
-      this.eta,
-      this.duration})
+      required this.lat,
+      required this.lon,
+      required this.eta,
+      required this.duration})
       : super._();
 
   @override
@@ -63076,14 +61304,8 @@ class _$SoiWaypoint extends SoiWaypoint {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         eta == other.eta &&
         duration == other.duration;
   }
@@ -63104,10 +61326,10 @@ class _$SoiWaypoint extends SoiWaypoint {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    lat?.hashCode ?? null.hashCode),
-                lon?.hashCode ?? null.hashCode),
-            eta?.hashCode ?? null.hashCode),
-        duration?.hashCode ?? null.hashCode));
+                    lat.hashCode),
+                lon.hashCode),
+            eta.hashCode),
+        duration.hashCode));
   }
 
   @override
@@ -63248,9 +61470,9 @@ class _$SoiPlan extends SoiPlan {
   final int dstEnt;
 
   @override
-  final int? planId;
+  final int planId;
   @override
-  final List<SoiWaypoint>? waypoints;
+  final List<SoiWaypoint> waypoints;
 
   factory _$SoiPlan([void Function(SoiPlanBuilder b)? updates]) =>
       (SoiPlanBuilder()..update(updates)).build();
@@ -63261,8 +61483,8 @@ class _$SoiPlan extends SoiPlan {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.planId,
-      this.waypoints})
+      required this.planId,
+      required this.waypoints})
       : super._();
 
   @override
@@ -63297,8 +61519,8 @@ class _$SoiPlan extends SoiPlan {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            planId?.hashCode ?? null.hashCode),
-        waypoints?.hashCode ?? null.hashCode));
+            planId.hashCode),
+        waypoints.hashCode));
   }
 
   @override
@@ -63425,15 +61647,15 @@ class _$SoiCommand extends SoiCommand {
   final int dstEnt;
 
   @override
-  final SoiCommandEnumType? type;
+  final SoiCommandEnumType type;
   @override
-  final SoiCommandEnumCommand? command;
+  final SoiCommandEnumCommand command;
   @override
-  final String? settings;
+  final String settings;
   @override
   final SoiPlan? plan;
   @override
-  final String? info;
+  final String info;
 
   factory _$SoiCommand([void Function(SoiCommandBuilder b)? updates]) =>
       (SoiCommandBuilder()..update(updates)).build();
@@ -63444,11 +61666,11 @@ class _$SoiCommand extends SoiCommand {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.type,
-      this.command,
-      this.settings,
+      required this.type,
+      required this.command,
+      required this.settings,
       this.plan,
-      this.info})
+      required this.info})
       : super._();
 
   @override
@@ -63493,11 +61715,11 @@ class _$SoiCommand extends SoiCommand {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        type?.hashCode ?? null.hashCode),
-                    command?.hashCode ?? null.hashCode),
-                settings?.hashCode ?? null.hashCode),
+                        type.hashCode),
+                    command.hashCode),
+                settings.hashCode),
             plan?.hashCode ?? null.hashCode),
-        info?.hashCode ?? null.hashCode));
+        info.hashCode));
   }
 
   @override
@@ -63645,13 +61867,13 @@ class _$SoiState extends SoiState {
   final int dstEnt;
 
   @override
-  final SoiStateEnumState? state;
+  final SoiStateEnumState state;
   @override
-  final int? planId;
+  final int planId;
   @override
-  final int? wptId;
+  final int wptId;
   @override
-  final int? settingsChk;
+  final int settingsChk;
 
   factory _$SoiState([void Function(SoiStateBuilder b)? updates]) =>
       (SoiStateBuilder()..update(updates)).build();
@@ -63662,10 +61884,10 @@ class _$SoiState extends SoiState {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.state,
-      this.planId,
-      this.wptId,
-      this.settingsChk})
+      required this.state,
+      required this.planId,
+      required this.wptId,
+      required this.settingsChk})
       : super._();
 
   @override
@@ -63706,10 +61928,10 @@ class _$SoiState extends SoiState {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    state?.hashCode ?? null.hashCode),
-                planId?.hashCode ?? null.hashCode),
-            wptId?.hashCode ?? null.hashCode),
-        settingsChk?.hashCode ?? null.hashCode));
+                    state.hashCode),
+                planId.hashCode),
+            wptId.hashCode),
+        settingsChk.hashCode));
   }
 
   @override
@@ -63850,13 +62072,13 @@ class _$MessagePart extends MessagePart {
   final int dstEnt;
 
   @override
-  final int? uid;
+  final int uid;
   @override
-  final int? fragNumber;
+  final int fragNumber;
   @override
-  final int? numFrags;
+  final int numFrags;
   @override
-  final List<int>? data;
+  final List<int> data;
 
   factory _$MessagePart([void Function(MessagePartBuilder b)? updates]) =>
       (MessagePartBuilder()..update(updates)).build();
@@ -63867,10 +62089,10 @@ class _$MessagePart extends MessagePart {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.uid,
-      this.fragNumber,
-      this.numFrags,
-      this.data})
+      required this.uid,
+      required this.fragNumber,
+      required this.numFrags,
+      required this.data})
       : super._();
 
   @override
@@ -63911,10 +62133,10 @@ class _$MessagePart extends MessagePart {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    uid?.hashCode ?? null.hashCode),
-                fragNumber?.hashCode ?? null.hashCode),
-            numFrags?.hashCode ?? null.hashCode),
-        data?.hashCode ?? null.hashCode));
+                    uid.hashCode),
+                fragNumber.hashCode),
+            numFrags.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -64055,9 +62277,9 @@ class _$NeptusBlob extends NeptusBlob {
   final int dstEnt;
 
   @override
-  final String? contentType;
+  final String contentType;
   @override
-  final List<int>? content;
+  final List<int> content;
 
   factory _$NeptusBlob([void Function(NeptusBlobBuilder b)? updates]) =>
       (NeptusBlobBuilder()..update(updates)).build();
@@ -64068,8 +62290,8 @@ class _$NeptusBlob extends NeptusBlob {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.contentType,
-      this.content})
+      required this.contentType,
+      required this.content})
       : super._();
 
   @override
@@ -64104,8 +62326,8 @@ class _$NeptusBlob extends NeptusBlob {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            contentType?.hashCode ?? null.hashCode),
-        content?.hashCode ?? null.hashCode));
+            contentType.hashCode),
+        content.hashCode));
   }
 
   @override
@@ -64380,11 +62602,11 @@ class _$UsblAngles extends UsblAngles {
   final int dstEnt;
 
   @override
-  final int? target;
+  final int target;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final double? elevation;
+  final double elevation;
 
   factory _$UsblAngles([void Function(UsblAnglesBuilder b)? updates]) =>
       (UsblAnglesBuilder()..update(updates)).build();
@@ -64395,9 +62617,9 @@ class _$UsblAngles extends UsblAngles {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.target,
-      this.bearing,
-      this.elevation})
+      required this.target,
+      required this.bearing,
+      required this.elevation})
       : super._();
 
   @override
@@ -64417,14 +62639,8 @@ class _$UsblAngles extends UsblAngles {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
-        (elevation == other.elevation ||
-            (elevation != null &&
-                other.elevation != null &&
-                (elevation! - other.elevation! <= 1E-7)));
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (elevation == other.elevation || elevation - other.elevation <= 1E-7);
   }
 
   @override
@@ -64440,9 +62656,9 @@ class _$UsblAngles extends UsblAngles {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                target?.hashCode ?? null.hashCode),
-            bearing?.hashCode ?? null.hashCode),
-        elevation?.hashCode ?? null.hashCode));
+                target.hashCode),
+            bearing.hashCode),
+        elevation.hashCode));
   }
 
   @override
@@ -64454,10 +62670,10 @@ class _$UsblAngles extends UsblAngles {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('target', '$target')
-          ..add('bearing',
-              '$bearing (rad)${bearing != null ? ' [${bearing! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add(
+              'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('elevation',
-              '$elevation (rad)${elevation != null ? ' [${elevation! * 180.0 / math.pi} (deg)]' : ''}'))
+              '$elevation (rad) [${elevation * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -64578,13 +62794,13 @@ class _$UsblPosition extends UsblPosition {
   final int dstEnt;
 
   @override
-  final int? target;
+  final int target;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$UsblPosition([void Function(UsblPositionBuilder b)? updates]) =>
       (UsblPositionBuilder()..update(updates)).build();
@@ -64595,10 +62811,10 @@ class _$UsblPosition extends UsblPosition {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.target,
-      this.x,
-      this.y,
-      this.z})
+      required this.target,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -64618,12 +62834,9 @@ class _$UsblPosition extends UsblPosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -64642,10 +62855,10 @@ class _$UsblPosition extends UsblPosition {
                                 srcEnt.hashCode),
                             dst.hashCode),
                         dstEnt.hashCode),
-                    target?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                    target.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -64786,15 +62999,15 @@ class _$UsblFix extends UsblFix {
   final int dstEnt;
 
   @override
-  final int? target;
+  final int target;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? z;
+  final double z;
 
   factory _$UsblFix([void Function(UsblFixBuilder b)? updates]) =>
       (UsblFixBuilder()..update(updates)).build();
@@ -64805,11 +63018,11 @@ class _$UsblFix extends UsblFix {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.target,
-      this.lat,
-      this.lon,
-      this.zUnits,
-      this.z})
+      required this.target,
+      required this.lat,
+      required this.lon,
+      required this.zUnits,
+      required this.z})
       : super._();
 
   @override
@@ -64829,17 +63042,10 @@ class _$UsblFix extends UsblFix {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         zUnits == other.zUnits &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -64861,11 +63067,11 @@ class _$UsblFix extends UsblFix {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        target?.hashCode ?? null.hashCode),
-                    lat?.hashCode ?? null.hashCode),
-                lon?.hashCode ?? null.hashCode),
-            zUnits?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                        target.hashCode),
+                    lat.hashCode),
+                lon.hashCode),
+            zUnits.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -64877,10 +63083,8 @@ class _$UsblFix extends UsblFix {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('target', '$target')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('z', '$z (m)'))
         .toString();
@@ -65015,9 +63219,9 @@ class _$ParametersXml extends ParametersXml {
   final int dstEnt;
 
   @override
-  final String? locale;
+  final String locale;
   @override
-  final List<int>? config;
+  final List<int> config;
 
   factory _$ParametersXml([void Function(ParametersXmlBuilder b)? updates]) =>
       (ParametersXmlBuilder()..update(updates)).build();
@@ -65028,8 +63232,8 @@ class _$ParametersXml extends ParametersXml {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.locale,
-      this.config})
+      required this.locale,
+      required this.config})
       : super._();
 
   @override
@@ -65064,8 +63268,8 @@ class _$ParametersXml extends ParametersXml {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            locale?.hashCode ?? null.hashCode),
-        config?.hashCode ?? null.hashCode));
+            locale.hashCode),
+        config.hashCode));
   }
 
   @override
@@ -65343,11 +63547,11 @@ class _$SetImageCoords extends SetImageCoords {
   final int dstEnt;
 
   @override
-  final int? camId;
+  final int camId;
   @override
-  final int? x;
+  final int x;
   @override
-  final int? y;
+  final int y;
 
   factory _$SetImageCoords([void Function(SetImageCoordsBuilder b)? updates]) =>
       (SetImageCoordsBuilder()..update(updates)).build();
@@ -65358,9 +63562,9 @@ class _$SetImageCoords extends SetImageCoords {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.camId,
-      this.x,
-      this.y})
+      required this.camId,
+      required this.x,
+      required this.y})
       : super._();
 
   @override
@@ -65397,9 +63601,9 @@ class _$SetImageCoords extends SetImageCoords {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                camId?.hashCode ?? null.hashCode),
-            x?.hashCode ?? null.hashCode),
-        y?.hashCode ?? null.hashCode));
+                camId.hashCode),
+            x.hashCode),
+        y.hashCode));
   }
 
   @override
@@ -65533,11 +63737,11 @@ class _$GetImageCoords extends GetImageCoords {
   final int dstEnt;
 
   @override
-  final int? camId;
+  final int camId;
   @override
-  final int? x;
+  final int x;
   @override
-  final int? y;
+  final int y;
 
   factory _$GetImageCoords([void Function(GetImageCoordsBuilder b)? updates]) =>
       (GetImageCoordsBuilder()..update(updates)).build();
@@ -65548,9 +63752,9 @@ class _$GetImageCoords extends GetImageCoords {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.camId,
-      this.x,
-      this.y})
+      required this.camId,
+      required this.x,
+      required this.y})
       : super._();
 
   @override
@@ -65587,9 +63791,9 @@ class _$GetImageCoords extends GetImageCoords {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                camId?.hashCode ?? null.hashCode),
-            x?.hashCode ?? null.hashCode),
-        y?.hashCode ?? null.hashCode));
+                camId.hashCode),
+            x.hashCode),
+        y.hashCode));
   }
 
   @override
@@ -65723,17 +63927,17 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
   final int dstEnt;
 
   @override
-  final BooleanEnum? tracking;
+  final BooleanEnum tracking;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
 
   factory _$GetWorldCoordinates(
           [void Function(GetWorldCoordinatesBuilder b)? updates]) =>
@@ -65745,12 +63949,12 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.tracking,
-      this.lat,
-      this.lon,
-      this.x,
-      this.y,
-      this.z})
+      required this.tracking,
+      required this.lat,
+      required this.lon,
+      required this.x,
+      required this.y,
+      required this.z})
       : super._();
 
   @override
@@ -65772,20 +63976,11 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         tracking == other.tracking &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7);
   }
 
   @override
@@ -65808,12 +64003,12 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            tracking?.hashCode ?? null.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                x?.hashCode ?? null.hashCode),
-            y?.hashCode ?? null.hashCode),
-        z?.hashCode ?? null.hashCode));
+                            tracking.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                x.hashCode),
+            y.hashCode),
+        z.hashCode));
   }
 
   @override
@@ -65825,10 +64020,8 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('tracking', '$tracking (Enumerated)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)'))
@@ -65973,23 +64166,23 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
   final int dstEnt;
 
   @override
-  final String? target;
+  final String target;
   @override
-  final double? lbearing;
+  final double lbearing;
   @override
-  final double? lelevation;
+  final double lelevation;
   @override
-  final double? bearing;
+  final double bearing;
   @override
-  final double? elevation;
+  final double elevation;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
   @override
-  final double? accuracy;
+  final double accuracy;
 
   factory _$UsblAnglesExtended(
           [void Function(UsblAnglesExtendedBuilder b)? updates]) =>
@@ -66001,15 +64194,15 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.target,
-      this.lbearing,
-      this.lelevation,
-      this.bearing,
-      this.elevation,
-      this.phi,
-      this.theta,
-      this.psi,
-      this.accuracy})
+      required this.target,
+      required this.lbearing,
+      required this.lelevation,
+      required this.bearing,
+      required this.elevation,
+      required this.phi,
+      required this.theta,
+      required this.psi,
+      required this.accuracy})
       : super._();
 
   @override
@@ -66031,38 +64224,15 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lbearing == other.lbearing ||
-            (lbearing != null &&
-                other.lbearing != null &&
-                (lbearing! - other.lbearing! <= 1E-7))) &&
+        (lbearing == other.lbearing || lbearing - other.lbearing <= 1E-7) &&
         (lelevation == other.lelevation ||
-            (lelevation != null &&
-                other.lelevation != null &&
-                (lelevation! - other.lelevation! <= 1E-7))) &&
-        (bearing == other.bearing ||
-            (bearing != null &&
-                other.bearing != null &&
-                (bearing! - other.bearing! <= 1E-7))) &&
-        (elevation == other.elevation ||
-            (elevation != null &&
-                other.elevation != null &&
-                (elevation! - other.elevation! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null &&
-                other.psi != null &&
-                (psi! - other.psi! <= 1E-7))) &&
-        (accuracy == other.accuracy ||
-            (accuracy != null &&
-                other.accuracy != null &&
-                (accuracy! - other.accuracy! <= 1E-7)));
+            lelevation - other.lelevation <= 1E-7) &&
+        (bearing == other.bearing || bearing - other.bearing <= 1E-7) &&
+        (elevation == other.elevation || elevation - other.elevation <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (accuracy == other.accuracy || accuracy - other.accuracy <= 1E-7);
   }
 
   @override
@@ -66089,15 +64259,15 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
                                                     srcEnt.hashCode),
                                                 dst.hashCode),
                                             dstEnt.hashCode),
-                                        target?.hashCode ?? null.hashCode),
-                                    lbearing?.hashCode ?? null.hashCode),
-                                lelevation?.hashCode ?? null.hashCode),
-                            bearing?.hashCode ?? null.hashCode),
-                        elevation?.hashCode ?? null.hashCode),
-                    phi?.hashCode ?? null.hashCode),
-                theta?.hashCode ?? null.hashCode),
-            psi?.hashCode ?? null.hashCode),
-        accuracy?.hashCode ?? null.hashCode));
+                                        target.hashCode),
+                                    lbearing.hashCode),
+                                lelevation.hashCode),
+                            bearing.hashCode),
+                        elevation.hashCode),
+                    phi.hashCode),
+                theta.hashCode),
+            psi.hashCode),
+        accuracy.hashCode));
   }
 
   @override
@@ -66110,21 +64280,18 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('target', '$target')
           ..add('lbearing',
-              '$lbearing (rad)${lbearing != null ? ' [${lbearing! * 180.0 / math.pi} (deg)]' : ''}')
+              '$lbearing (rad) [${lbearing * 180.0 / math.pi} (deg)]')
           ..add('lelevation',
-              '$lelevation (rad)${lelevation != null ? ' [${lelevation! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('bearing',
-              '$bearing (rad)${bearing != null ? ' [${bearing! * 180.0 / math.pi} (deg)]' : ''}')
+              '$lelevation (rad) [${lelevation * 180.0 / math.pi} (deg)]')
+          ..add(
+              'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('elevation',
-              '$elevation (rad)${elevation != null ? ' [${elevation! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}')
+              '$elevation (rad) [${elevation * 180.0 / math.pi} (deg)]')
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]')
           ..add('accuracy',
-              '$accuracy (rad)${accuracy != null ? ' [${accuracy! * 180.0 / math.pi} (deg)]' : ''}'))
+              '$accuracy (rad) [${accuracy * 180.0 / math.pi} (deg)]'))
         .toString();
   }
 }
@@ -66282,27 +64449,27 @@ class _$UsblPositionExtended extends UsblPositionExtended {
   final int dstEnt;
 
   @override
-  final String? target;
+  final String target;
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? n;
+  final double n;
   @override
-  final double? e;
+  final double e;
   @override
-  final double? d;
+  final double d;
   @override
-  final double? phi;
+  final double phi;
   @override
-  final double? theta;
+  final double theta;
   @override
-  final double? psi;
+  final double psi;
   @override
-  final double? accuracy;
+  final double accuracy;
 
   factory _$UsblPositionExtended(
           [void Function(UsblPositionExtendedBuilder b)? updates]) =>
@@ -66314,17 +64481,17 @@ class _$UsblPositionExtended extends UsblPositionExtended {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.target,
-      this.x,
-      this.y,
-      this.z,
-      this.n,
-      this.e,
-      this.d,
-      this.phi,
-      this.theta,
-      this.psi,
-      this.accuracy})
+      required this.target,
+      required this.x,
+      required this.y,
+      required this.z,
+      required this.n,
+      required this.e,
+      required this.d,
+      required this.phi,
+      required this.theta,
+      required this.psi,
+      required this.accuracy})
       : super._();
 
   @override
@@ -66346,34 +64513,16 @@ class _$UsblPositionExtended extends UsblPositionExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (x == other.x ||
-            (x != null && other.x != null && (x! - other.x! <= 1E-7))) &&
-        (y == other.y ||
-            (y != null && other.y != null && (y! - other.y! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (n == other.n ||
-            (n != null && other.n != null && (n! - other.n! <= 1E-7))) &&
-        (e == other.e ||
-            (e != null && other.e != null && (e! - other.e! <= 1E-7))) &&
-        (d == other.d ||
-            (d != null && other.d != null && (d! - other.d! <= 1E-7))) &&
-        (phi == other.phi ||
-            (phi != null &&
-                other.phi != null &&
-                (phi! - other.phi! <= 1E-7))) &&
-        (theta == other.theta ||
-            (theta != null &&
-                other.theta != null &&
-                (theta! - other.theta! <= 1E-7))) &&
-        (psi == other.psi ||
-            (psi != null &&
-                other.psi != null &&
-                (psi! - other.psi! <= 1E-7))) &&
-        (accuracy == other.accuracy ||
-            (accuracy != null &&
-                other.accuracy != null &&
-                (accuracy! - other.accuracy! <= 1E-7)));
+        (x == other.x || x - other.x <= 1E-7) &&
+        (y == other.y || y - other.y <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
+        (n == other.n || n - other.n <= 1E-7) &&
+        (e == other.e || e - other.e <= 1E-7) &&
+        (d == other.d || d - other.d <= 1E-7) &&
+        (phi == other.phi || phi - other.phi <= 1E-7) &&
+        (theta == other.theta || theta - other.theta <= 1E-7) &&
+        (psi == other.psi || psi - other.psi <= 1E-7) &&
+        (accuracy == other.accuracy || accuracy - other.accuracy <= 1E-7);
   }
 
   @override
@@ -66397,24 +64546,22 @@ class _$UsblPositionExtended extends UsblPositionExtended {
                                                                     0,
                                                                     timestamp
                                                                             ?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
+                                                                        null.hashCode),
                                                                 src.hashCode),
                                                             srcEnt.hashCode),
                                                         dst.hashCode),
                                                     dstEnt.hashCode),
-                                                target?.hashCode ??
-                                                    null.hashCode),
-                                            x?.hashCode ?? null.hashCode),
-                                        y?.hashCode ?? null.hashCode),
-                                    z?.hashCode ?? null.hashCode),
-                                n?.hashCode ?? null.hashCode),
-                            e?.hashCode ?? null.hashCode),
-                        d?.hashCode ?? null.hashCode),
-                    phi?.hashCode ?? null.hashCode),
-                theta?.hashCode ?? null.hashCode),
-            psi?.hashCode ?? null.hashCode),
-        accuracy?.hashCode ?? null.hashCode));
+                                                target.hashCode),
+                                            x.hashCode),
+                                        y.hashCode),
+                                    z.hashCode),
+                                n.hashCode),
+                            e.hashCode),
+                        d.hashCode),
+                    phi.hashCode),
+                theta.hashCode),
+            psi.hashCode),
+        accuracy.hashCode));
   }
 
   @override
@@ -66432,12 +64579,9 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           ..add('n', '$n (m)')
           ..add('e', '$e (m)')
           ..add('d', '$d (m)')
-          ..add('phi',
-              '$phi (rad)${phi != null ? ' [${phi! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('theta',
-              '$theta (rad)${theta != null ? ' [${theta! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('psi',
-              '$psi (rad)${psi != null ? ' [${psi! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('phi', '$phi (rad) [${phi * 180.0 / math.pi} (deg)]')
+          ..add('theta', '$theta (rad) [${theta * 180.0 / math.pi} (deg)]')
+          ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]')
           ..add('accuracy', '$accuracy (m)'))
         .toString();
   }
@@ -66610,17 +64754,17 @@ class _$UsblFixExtended extends UsblFixExtended {
   final int dstEnt;
 
   @override
-  final String? target;
+  final String target;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
   @override
-  final double? z;
+  final double z;
   @override
-  final double? accuracy;
+  final double accuracy;
 
   factory _$UsblFixExtended(
           [void Function(UsblFixExtendedBuilder b)? updates]) =>
@@ -66632,12 +64776,12 @@ class _$UsblFixExtended extends UsblFixExtended {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.target,
-      this.lat,
-      this.lon,
-      this.zUnits,
-      this.z,
-      this.accuracy})
+      required this.target,
+      required this.lat,
+      required this.lon,
+      required this.zUnits,
+      required this.z,
+      required this.accuracy})
       : super._();
 
   @override
@@ -66657,21 +64801,11 @@ class _$UsblFixExtended extends UsblFixExtended {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         target == other.target &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
         zUnits == other.zUnits &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
-        (accuracy == other.accuracy ||
-            (accuracy != null &&
-                other.accuracy != null &&
-                (accuracy! - other.accuracy! <= 1E-7)));
+        (z == other.z || z - other.z <= 1E-7) &&
+        (accuracy == other.accuracy || accuracy - other.accuracy <= 1E-7);
   }
 
   @override
@@ -66694,12 +64828,12 @@ class _$UsblFixExtended extends UsblFixExtended {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            target?.hashCode ?? null.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                zUnits?.hashCode ?? null.hashCode),
-            z?.hashCode ?? null.hashCode),
-        accuracy?.hashCode ?? null.hashCode));
+                            target.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                zUnits.hashCode),
+            z.hashCode),
+        accuracy.hashCode));
   }
 
   @override
@@ -66711,10 +64845,8 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('target', '$target')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('zUnits', '$zUnits (Enumerated)')
           ..add('z', '$z (m)')
           ..add('accuracy', '$accuracy (m)'))
@@ -66857,15 +64989,15 @@ class _$UsblModem extends UsblModem {
   final int dstEnt;
 
   @override
-  final String? name;
+  final String name;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? z;
+  final double z;
   @override
-  final ZUnitsEnum? zUnits;
+  final ZUnitsEnum zUnits;
 
   factory _$UsblModem([void Function(UsblModemBuilder b)? updates]) =>
       (UsblModemBuilder()..update(updates)).build();
@@ -66876,11 +65008,11 @@ class _$UsblModem extends UsblModem {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.name,
-      this.lat,
-      this.lon,
-      this.z,
-      this.zUnits})
+      required this.name,
+      required this.lat,
+      required this.lon,
+      required this.z,
+      required this.zUnits})
       : super._();
 
   @override
@@ -66900,16 +65032,9 @@ class _$UsblModem extends UsblModem {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         name == other.name &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (z == other.z ||
-            (z != null && other.z != null && (z! - other.z! <= 1E-7))) &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (z == other.z || z - other.z <= 1E-7) &&
         zUnits == other.zUnits;
   }
 
@@ -66932,11 +65057,11 @@ class _$UsblModem extends UsblModem {
                                     srcEnt.hashCode),
                                 dst.hashCode),
                             dstEnt.hashCode),
-                        name?.hashCode ?? null.hashCode),
-                    lat?.hashCode ?? null.hashCode),
-                lon?.hashCode ?? null.hashCode),
-            z?.hashCode ?? null.hashCode),
-        zUnits?.hashCode ?? null.hashCode));
+                        name.hashCode),
+                    lat.hashCode),
+                lon.hashCode),
+            z.hashCode),
+        zUnits.hashCode));
   }
 
   @override
@@ -66948,10 +65073,8 @@ class _$UsblModem extends UsblModem {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('name', '$name')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
           ..add('zUnits', '$zUnits (Enumerated)'))
         .toString();
@@ -67086,9 +65209,9 @@ class _$UsblConfig extends UsblConfig {
   final int dstEnt;
 
   @override
-  final UsblConfigEnumOp? op;
+  final UsblConfigEnumOp op;
   @override
-  final List<UsblModem>? modems;
+  final List<UsblModem> modems;
 
   factory _$UsblConfig([void Function(UsblConfigBuilder b)? updates]) =>
       (UsblConfigBuilder()..update(updates)).build();
@@ -67099,8 +65222,8 @@ class _$UsblConfig extends UsblConfig {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.modems})
+      required this.op,
+      required this.modems})
       : super._();
 
   @override
@@ -67135,8 +65258,8 @@ class _$UsblConfig extends UsblConfig {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            op?.hashCode ?? null.hashCode),
-        modems?.hashCode ?? null.hashCode));
+            op.hashCode),
+        modems.hashCode));
   }
 
   @override
@@ -67263,9 +65386,9 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
   @override
-  final DissolvedOrganicMatterEnumType? type;
+  final DissolvedOrganicMatterEnumType type;
 
   factory _$DissolvedOrganicMatter(
           [void Function(DissolvedOrganicMatterBuilder b)? updates]) =>
@@ -67277,8 +65400,8 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value,
-      this.type})
+      required this.value,
+      required this.type})
       : super._();
 
   @override
@@ -67299,10 +65422,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7))) &&
+        (value == other.value || value - other.value <= 1E-7) &&
         type == other.type;
   }
 
@@ -67318,8 +65438,8 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            value?.hashCode ?? null.hashCode),
-        type?.hashCode ?? null.hashCode));
+            value.hashCode),
+        type.hashCode));
   }
 
   @override
@@ -67450,7 +65570,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$OpticalBackscatter(
           [void Function(OpticalBackscatterBuilder b)? updates]) =>
@@ -67462,7 +65582,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -67483,10 +65603,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -67500,7 +65617,7 @@ class _$OpticalBackscatter extends OpticalBackscatter {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -67621,37 +65738,37 @@ class _$Tachograph extends Tachograph {
   final int dstEnt;
 
   @override
-  final double? timestampLastService;
+  final double timestampLastService;
   @override
-  final double? timeNextService;
+  final double timeNextService;
   @override
-  final double? timeMotorNextService;
+  final double timeMotorNextService;
   @override
-  final double? timeIdleGround;
+  final double timeIdleGround;
   @override
-  final double? timeIdleAir;
+  final double timeIdleAir;
   @override
-  final double? timeIdleWater;
+  final double timeIdleWater;
   @override
-  final double? timeIdleUnderwater;
+  final double timeIdleUnderwater;
   @override
-  final double? timeIdleUnknown;
+  final double timeIdleUnknown;
   @override
-  final double? timeMotorGround;
+  final double timeMotorGround;
   @override
-  final double? timeMotorAir;
+  final double timeMotorAir;
   @override
-  final double? timeMotorWater;
+  final double timeMotorWater;
   @override
-  final double? timeMotorUnderwater;
+  final double timeMotorUnderwater;
   @override
-  final double? timeMotorUnknown;
+  final double timeMotorUnknown;
   @override
-  final int? rpmMin;
+  final int rpmMin;
   @override
-  final int? rpmMax;
+  final int rpmMax;
   @override
-  final double? depthMax;
+  final double depthMax;
 
   factory _$Tachograph([void Function(TachographBuilder b)? updates]) =>
       (TachographBuilder()..update(updates)).build();
@@ -67662,22 +65779,22 @@ class _$Tachograph extends Tachograph {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.timestampLastService,
-      this.timeNextService,
-      this.timeMotorNextService,
-      this.timeIdleGround,
-      this.timeIdleAir,
-      this.timeIdleWater,
-      this.timeIdleUnderwater,
-      this.timeIdleUnknown,
-      this.timeMotorGround,
-      this.timeMotorAir,
-      this.timeMotorWater,
-      this.timeMotorUnderwater,
-      this.timeMotorUnknown,
-      this.rpmMin,
-      this.rpmMax,
-      this.depthMax})
+      required this.timestampLastService,
+      required this.timeNextService,
+      required this.timeMotorNextService,
+      required this.timeIdleGround,
+      required this.timeIdleAir,
+      required this.timeIdleWater,
+      required this.timeIdleUnderwater,
+      required this.timeIdleUnknown,
+      required this.timeMotorGround,
+      required this.timeMotorAir,
+      required this.timeMotorWater,
+      required this.timeMotorUnderwater,
+      required this.timeMotorUnknown,
+      required this.rpmMin,
+      required this.rpmMax,
+      required this.depthMax})
       : super._();
 
   @override
@@ -67697,65 +65814,34 @@ class _$Tachograph extends Tachograph {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         (timestampLastService == other.timestampLastService ||
-            (timestampLastService != null &&
-                other.timestampLastService != null &&
-                (timestampLastService! - other.timestampLastService! <=
-                    1E-7))) &&
+            timestampLastService - other.timestampLastService <= 1E-7) &&
         (timeNextService == other.timeNextService ||
-            (timeNextService != null &&
-                other.timeNextService != null &&
-                (timeNextService! - other.timeNextService! <= 1E-7))) &&
+            timeNextService - other.timeNextService <= 1E-7) &&
         (timeMotorNextService == other.timeMotorNextService ||
-            (timeMotorNextService != null &&
-                other.timeMotorNextService != null &&
-                (timeMotorNextService! - other.timeMotorNextService! <=
-                    1E-7))) &&
+            timeMotorNextService - other.timeMotorNextService <= 1E-7) &&
         (timeIdleGround == other.timeIdleGround ||
-            (timeIdleGround != null &&
-                other.timeIdleGround != null &&
-                (timeIdleGround! - other.timeIdleGround! <= 1E-7))) &&
+            timeIdleGround - other.timeIdleGround <= 1E-7) &&
         (timeIdleAir == other.timeIdleAir ||
-            (timeIdleAir != null &&
-                other.timeIdleAir != null &&
-                (timeIdleAir! - other.timeIdleAir! <= 1E-7))) &&
+            timeIdleAir - other.timeIdleAir <= 1E-7) &&
         (timeIdleWater == other.timeIdleWater ||
-            (timeIdleWater != null &&
-                other.timeIdleWater != null &&
-                (timeIdleWater! - other.timeIdleWater! <= 1E-7))) &&
+            timeIdleWater - other.timeIdleWater <= 1E-7) &&
         (timeIdleUnderwater == other.timeIdleUnderwater ||
-            (timeIdleUnderwater != null &&
-                other.timeIdleUnderwater != null &&
-                (timeIdleUnderwater! - other.timeIdleUnderwater! <= 1E-7))) &&
+            timeIdleUnderwater - other.timeIdleUnderwater <= 1E-7) &&
         (timeIdleUnknown == other.timeIdleUnknown ||
-            (timeIdleUnknown != null &&
-                other.timeIdleUnknown != null &&
-                (timeIdleUnknown! - other.timeIdleUnknown! <= 1E-7))) &&
+            timeIdleUnknown - other.timeIdleUnknown <= 1E-7) &&
         (timeMotorGround == other.timeMotorGround ||
-            (timeMotorGround != null &&
-                other.timeMotorGround != null &&
-                (timeMotorGround! - other.timeMotorGround! <= 1E-7))) &&
+            timeMotorGround - other.timeMotorGround <= 1E-7) &&
         (timeMotorAir == other.timeMotorAir ||
-            (timeMotorAir != null &&
-                other.timeMotorAir != null &&
-                (timeMotorAir! - other.timeMotorAir! <= 1E-7))) &&
+            timeMotorAir - other.timeMotorAir <= 1E-7) &&
         (timeMotorWater == other.timeMotorWater ||
-            (timeMotorWater != null &&
-                other.timeMotorWater != null &&
-                (timeMotorWater! - other.timeMotorWater! <= 1E-7))) &&
+            timeMotorWater - other.timeMotorWater <= 1E-7) &&
         (timeMotorUnderwater == other.timeMotorUnderwater ||
-            (timeMotorUnderwater != null &&
-                other.timeMotorUnderwater != null &&
-                (timeMotorUnderwater! - other.timeMotorUnderwater! <= 1E-7))) &&
+            timeMotorUnderwater - other.timeMotorUnderwater <= 1E-7) &&
         (timeMotorUnknown == other.timeMotorUnknown ||
-            (timeMotorUnknown != null &&
-                other.timeMotorUnknown != null &&
-                (timeMotorUnknown! - other.timeMotorUnknown! <= 1E-7))) &&
+            timeMotorUnknown - other.timeMotorUnknown <= 1E-7) &&
         rpmMin == other.rpmMin &&
         rpmMax == other.rpmMax &&
-        (depthMax == other.depthMax ||
-            (depthMax != null &&
-                other.depthMax != null &&
-                (depthMax! - other.depthMax! <= 1E-7)));
+        (depthMax == other.depthMax || depthMax - other.depthMax <= 1E-7);
   }
 
   @override
@@ -67778,51 +65864,26 @@ class _$Tachograph extends Tachograph {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(
-                                                                                $jc(
-                                                                                    $jc(
-                                                                                        0,
-                                                                                        timestamp?.hashCode ??
-                                                                                            null
-                                                                                                .hashCode),
-                                                                                    src
-                                                                                        .hashCode),
-                                                                                srcEnt
-                                                                                    .hashCode),
-                                                                            dst
-                                                                                .hashCode),
-                                                                        dstEnt
-                                                                            .hashCode),
-                                                                    timestampLastService
-                                                                            ?.hashCode ??
-                                                                        null
-                                                                            .hashCode),
-                                                                timeNextService
-                                                                        ?.hashCode ??
-                                                                    null
-                                                                        .hashCode),
-                                                            timeMotorNextService
-                                                                    ?.hashCode ??
-                                                                null.hashCode),
-                                                        timeIdleGround
-                                                                ?.hashCode ??
-                                                            null.hashCode),
-                                                    timeIdleAir?.hashCode ??
-                                                        null.hashCode),
-                                                timeIdleWater?.hashCode ??
-                                                    null.hashCode),
-                                            timeIdleUnderwater?.hashCode ??
-                                                null.hashCode),
-                                        timeIdleUnknown?.hashCode ??
-                                            null.hashCode),
-                                    timeMotorGround?.hashCode ?? null.hashCode),
-                                timeMotorAir?.hashCode ?? null.hashCode),
-                            timeMotorWater?.hashCode ?? null.hashCode),
-                        timeMotorUnderwater?.hashCode ?? null.hashCode),
-                    timeMotorUnknown?.hashCode ?? null.hashCode),
-                rpmMin?.hashCode ?? null.hashCode),
-            rpmMax?.hashCode ?? null.hashCode),
-        depthMax?.hashCode ?? null.hashCode));
+                                                                            $jc($jc($jc(0, timestamp?.hashCode ?? null.hashCode), src.hashCode),
+                                                                                srcEnt.hashCode),
+                                                                            dst.hashCode),
+                                                                        dstEnt.hashCode),
+                                                                    timestampLastService.hashCode),
+                                                                timeNextService.hashCode),
+                                                            timeMotorNextService.hashCode),
+                                                        timeIdleGround.hashCode),
+                                                    timeIdleAir.hashCode),
+                                                timeIdleWater.hashCode),
+                                            timeIdleUnderwater.hashCode),
+                                        timeIdleUnknown.hashCode),
+                                    timeMotorGround.hashCode),
+                                timeMotorAir.hashCode),
+                            timeMotorWater.hashCode),
+                        timeMotorUnderwater.hashCode),
+                    timeMotorUnknown.hashCode),
+                rpmMin.hashCode),
+            rpmMax.hashCode),
+        depthMax.hashCode));
   }
 
   @override
@@ -68058,9 +66119,9 @@ class _$ApmStatus extends ApmStatus {
   final int dstEnt;
 
   @override
-  final ApmStatusEnumSeverity? severity;
+  final ApmStatusEnumSeverity severity;
   @override
-  final String? text;
+  final String text;
 
   factory _$ApmStatus([void Function(ApmStatusBuilder b)? updates]) =>
       (ApmStatusBuilder()..update(updates)).build();
@@ -68071,8 +66132,8 @@ class _$ApmStatus extends ApmStatus {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.severity,
-      this.text})
+      required this.severity,
+      required this.text})
       : super._();
 
   @override
@@ -68107,8 +66168,8 @@ class _$ApmStatus extends ApmStatus {
                         srcEnt.hashCode),
                     dst.hashCode),
                 dstEnt.hashCode),
-            severity?.hashCode ?? null.hashCode),
-        text?.hashCode ?? null.hashCode));
+            severity.hashCode),
+        text.hashCode));
   }
 
   @override
@@ -68235,11 +66296,11 @@ class _$SadcReadings extends SadcReadings {
   final int dstEnt;
 
   @override
-  final int? channel;
+  final int channel;
   @override
-  final int? value;
+  final int value;
   @override
-  final SadcReadingsEnumGain? gain;
+  final SadcReadingsEnumGain gain;
 
   factory _$SadcReadings([void Function(SadcReadingsBuilder b)? updates]) =>
       (SadcReadingsBuilder()..update(updates)).build();
@@ -68250,9 +66311,9 @@ class _$SadcReadings extends SadcReadings {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.channel,
-      this.value,
-      this.gain})
+      required this.channel,
+      required this.value,
+      required this.gain})
       : super._();
 
   @override
@@ -68289,9 +66350,9 @@ class _$SadcReadings extends SadcReadings {
                             srcEnt.hashCode),
                         dst.hashCode),
                     dstEnt.hashCode),
-                channel?.hashCode ?? null.hashCode),
-            value?.hashCode ?? null.hashCode),
-        gain?.hashCode ?? null.hashCode));
+                channel.hashCode),
+            value.hashCode),
+        gain.hashCode));
   }
 
   @override
@@ -68425,37 +66486,37 @@ class _$DmsDetection extends DmsDetection {
   final int dstEnt;
 
   @override
-  final double? ch01;
+  final double ch01;
   @override
-  final double? ch02;
+  final double ch02;
   @override
-  final double? ch03;
+  final double ch03;
   @override
-  final double? ch04;
+  final double ch04;
   @override
-  final double? ch05;
+  final double ch05;
   @override
-  final double? ch06;
+  final double ch06;
   @override
-  final double? ch07;
+  final double ch07;
   @override
-  final double? ch08;
+  final double ch08;
   @override
-  final double? ch09;
+  final double ch09;
   @override
-  final double? ch10;
+  final double ch10;
   @override
-  final double? ch11;
+  final double ch11;
   @override
-  final double? ch12;
+  final double ch12;
   @override
-  final double? ch13;
+  final double ch13;
   @override
-  final double? ch14;
+  final double ch14;
   @override
-  final double? ch15;
+  final double ch15;
   @override
-  final double? ch16;
+  final double ch16;
 
   factory _$DmsDetection([void Function(DmsDetectionBuilder b)? updates]) =>
       (DmsDetectionBuilder()..update(updates)).build();
@@ -68466,22 +66527,22 @@ class _$DmsDetection extends DmsDetection {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.ch01,
-      this.ch02,
-      this.ch03,
-      this.ch04,
-      this.ch05,
-      this.ch06,
-      this.ch07,
-      this.ch08,
-      this.ch09,
-      this.ch10,
-      this.ch11,
-      this.ch12,
-      this.ch13,
-      this.ch14,
-      this.ch15,
-      this.ch16})
+      required this.ch01,
+      required this.ch02,
+      required this.ch03,
+      required this.ch04,
+      required this.ch05,
+      required this.ch06,
+      required this.ch07,
+      required this.ch08,
+      required this.ch09,
+      required this.ch10,
+      required this.ch11,
+      required this.ch12,
+      required this.ch13,
+      required this.ch14,
+      required this.ch15,
+      required this.ch16})
       : super._();
 
   @override
@@ -68500,70 +66561,22 @@ class _$DmsDetection extends DmsDetection {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (ch01 == other.ch01 ||
-            (ch01 != null &&
-                other.ch01 != null &&
-                (ch01! - other.ch01! <= 1E-7))) &&
-        (ch02 == other.ch02 ||
-            (ch02 != null &&
-                other.ch02 != null &&
-                (ch02! - other.ch02! <= 1E-7))) &&
-        (ch03 == other.ch03 ||
-            (ch03 != null &&
-                other.ch03 != null &&
-                (ch03! - other.ch03! <= 1E-7))) &&
-        (ch04 == other.ch04 ||
-            (ch04 != null &&
-                other.ch04 != null &&
-                (ch04! - other.ch04! <= 1E-7))) &&
-        (ch05 == other.ch05 ||
-            (ch05 != null &&
-                other.ch05 != null &&
-                (ch05! - other.ch05! <= 1E-7))) &&
-        (ch06 == other.ch06 ||
-            (ch06 != null &&
-                other.ch06 != null &&
-                (ch06! - other.ch06! <= 1E-7))) &&
-        (ch07 == other.ch07 ||
-            (ch07 != null &&
-                other.ch07 != null &&
-                (ch07! - other.ch07! <= 1E-7))) &&
-        (ch08 == other.ch08 ||
-            (ch08 != null &&
-                other.ch08 != null &&
-                (ch08! - other.ch08! <= 1E-7))) &&
-        (ch09 == other.ch09 ||
-            (ch09 != null &&
-                other.ch09 != null &&
-                (ch09! - other.ch09! <= 1E-7))) &&
-        (ch10 == other.ch10 ||
-            (ch10 != null &&
-                other.ch10 != null &&
-                (ch10! - other.ch10! <= 1E-7))) &&
-        (ch11 == other.ch11 ||
-            (ch11 != null &&
-                other.ch11 != null &&
-                (ch11! - other.ch11! <= 1E-7))) &&
-        (ch12 == other.ch12 ||
-            (ch12 != null &&
-                other.ch12 != null &&
-                (ch12! - other.ch12! <= 1E-7))) &&
-        (ch13 == other.ch13 ||
-            (ch13 != null &&
-                other.ch13 != null &&
-                (ch13! - other.ch13! <= 1E-7))) &&
-        (ch14 == other.ch14 ||
-            (ch14 != null &&
-                other.ch14 != null &&
-                (ch14! - other.ch14! <= 1E-7))) &&
-        (ch15 == other.ch15 ||
-            (ch15 != null &&
-                other.ch15 != null &&
-                (ch15! - other.ch15! <= 1E-7))) &&
-        (ch16 == other.ch16 ||
-            (ch16 != null &&
-                other.ch16 != null &&
-                (ch16! - other.ch16! <= 1E-7)));
+        (ch01 == other.ch01 || ch01 - other.ch01 <= 1E-7) &&
+        (ch02 == other.ch02 || ch02 - other.ch02 <= 1E-7) &&
+        (ch03 == other.ch03 || ch03 - other.ch03 <= 1E-7) &&
+        (ch04 == other.ch04 || ch04 - other.ch04 <= 1E-7) &&
+        (ch05 == other.ch05 || ch05 - other.ch05 <= 1E-7) &&
+        (ch06 == other.ch06 || ch06 - other.ch06 <= 1E-7) &&
+        (ch07 == other.ch07 || ch07 - other.ch07 <= 1E-7) &&
+        (ch08 == other.ch08 || ch08 - other.ch08 <= 1E-7) &&
+        (ch09 == other.ch09 || ch09 - other.ch09 <= 1E-7) &&
+        (ch10 == other.ch10 || ch10 - other.ch10 <= 1E-7) &&
+        (ch11 == other.ch11 || ch11 - other.ch11 <= 1E-7) &&
+        (ch12 == other.ch12 || ch12 - other.ch12 <= 1E-7) &&
+        (ch13 == other.ch13 || ch13 - other.ch13 <= 1E-7) &&
+        (ch14 == other.ch14 || ch14 - other.ch14 <= 1E-7) &&
+        (ch15 == other.ch15 || ch15 - other.ch15 <= 1E-7) &&
+        (ch16 == other.ch16 || ch16 - other.ch16 <= 1E-7);
   }
 
   @override
@@ -68590,22 +66603,22 @@ class _$DmsDetection extends DmsDetection {
                                                                                 srcEnt.hashCode),
                                                                             dst.hashCode),
                                                                         dstEnt.hashCode),
-                                                                    ch01?.hashCode ?? null.hashCode),
-                                                                ch02?.hashCode ?? null.hashCode),
-                                                            ch03?.hashCode ?? null.hashCode),
-                                                        ch04?.hashCode ?? null.hashCode),
-                                                    ch05?.hashCode ?? null.hashCode),
-                                                ch06?.hashCode ?? null.hashCode),
-                                            ch07?.hashCode ?? null.hashCode),
-                                        ch08?.hashCode ?? null.hashCode),
-                                    ch09?.hashCode ?? null.hashCode),
-                                ch10?.hashCode ?? null.hashCode),
-                            ch11?.hashCode ?? null.hashCode),
-                        ch12?.hashCode ?? null.hashCode),
-                    ch13?.hashCode ?? null.hashCode),
-                ch14?.hashCode ?? null.hashCode),
-            ch15?.hashCode ?? null.hashCode),
-        ch16?.hashCode ?? null.hashCode));
+                                                                    ch01.hashCode),
+                                                                ch02.hashCode),
+                                                            ch03.hashCode),
+                                                        ch04.hashCode),
+                                                    ch05.hashCode),
+                                                ch06.hashCode),
+                                            ch07.hashCode),
+                                        ch08.hashCode),
+                                    ch09.hashCode),
+                                ch10.hashCode),
+                            ch11.hashCode),
+                        ch12.hashCode),
+                    ch13.hashCode),
+                ch14.hashCode),
+            ch15.hashCode),
+        ch16.hashCode));
   }
 
   @override
@@ -68830,7 +66843,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
   final int dstEnt;
 
   @override
-  final double? value;
+  final double value;
 
   factory _$TotalMagIntensity(
           [void Function(TotalMagIntensityBuilder b)? updates]) =>
@@ -68842,7 +66855,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.value})
+      required this.value})
       : super._();
 
   @override
@@ -68863,10 +66876,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt &&
-        (value == other.value ||
-            (value != null &&
-                other.value != null &&
-                (value! - other.value! <= 1E-7)));
+        (value == other.value || value - other.value <= 1E-7);
   }
 
   @override
@@ -68880,7 +66890,7 @@ class _$TotalMagIntensity extends TotalMagIntensity {
                     srcEnt.hashCode),
                 dst.hashCode),
             dstEnt.hashCode),
-        value?.hashCode ?? null.hashCode));
+        value.hashCode));
   }
 
   @override
@@ -69001,17 +67011,17 @@ class _$HomePosition extends HomePosition {
   final int dstEnt;
 
   @override
-  final HomePositionEnumOp? op;
+  final HomePositionEnumOp op;
   @override
-  final double? lat;
+  final double lat;
   @override
-  final double? lon;
+  final double lon;
   @override
-  final double? height;
+  final double height;
   @override
-  final double? depth;
+  final double depth;
   @override
-  final double? alt;
+  final double alt;
 
   factory _$HomePosition([void Function(HomePositionBuilder b)? updates]) =>
       (HomePositionBuilder()..update(updates)).build();
@@ -69022,12 +67032,12 @@ class _$HomePosition extends HomePosition {
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId,
-      this.op,
-      this.lat,
-      this.lon,
-      this.height,
-      this.depth,
-      this.alt})
+      required this.op,
+      required this.lat,
+      required this.lon,
+      required this.height,
+      required this.depth,
+      required this.alt})
       : super._();
 
   @override
@@ -69047,24 +67057,11 @@ class _$HomePosition extends HomePosition {
         dst == other.dst &&
         dstEnt == other.dstEnt &&
         op == other.op &&
-        (lat == other.lat ||
-            (lat != null &&
-                other.lat != null &&
-                (lat! - other.lat! <= 1E-7))) &&
-        (lon == other.lon ||
-            (lon != null &&
-                other.lon != null &&
-                (lon! - other.lon! <= 1E-7))) &&
-        (height == other.height ||
-            (height != null &&
-                other.height != null &&
-                (height! - other.height! <= 1E-7))) &&
-        (depth == other.depth ||
-            (depth != null &&
-                other.depth != null &&
-                (depth! - other.depth! <= 1E-7))) &&
-        (alt == other.alt ||
-            (alt != null && other.alt != null && (alt! - other.alt! <= 1E-7)));
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7);
   }
 
   @override
@@ -69087,12 +67084,12 @@ class _$HomePosition extends HomePosition {
                                         srcEnt.hashCode),
                                     dst.hashCode),
                                 dstEnt.hashCode),
-                            op?.hashCode ?? null.hashCode),
-                        lat?.hashCode ?? null.hashCode),
-                    lon?.hashCode ?? null.hashCode),
-                height?.hashCode ?? null.hashCode),
-            depth?.hashCode ?? null.hashCode),
-        alt?.hashCode ?? null.hashCode));
+                            op.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                height.hashCode),
+            depth.hashCode),
+        alt.hashCode));
   }
 
   @override
@@ -69104,10 +67101,8 @@ class _$HomePosition extends HomePosition {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated)')
-          ..add('lat',
-              '$lat (rad)${lat != null ? ' [${lat! * 180.0 / math.pi} (deg)]' : ''}')
-          ..add('lon',
-              '$lon (rad)${lon != null ? ' [${lon! * 180.0 / math.pi} (deg)]' : ''}')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
           ..add('depth', '$depth (m)')
           ..add('alt', '$alt (m)'))

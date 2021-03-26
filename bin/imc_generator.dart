@@ -275,7 +275,7 @@ void _writeMessageImmutable(
     var dartType = typesData[1];
 
     var fStr =
-        '''\n  @override\n  final $dartType? ${_convertToFieldName(abbrev)};''';
+        '''\n  @override\n  final $dartType${typesData[2] == null ? '?' : ''} ${_convertToFieldName(abbrev)};''';
     sink.write('$fStr');
   });
 
@@ -293,11 +293,16 @@ void _writeMessageImmutable(
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
-    if (abbrev == null || abbrev.isEmpty) {
+    var type = f.getAttribute('type');
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
       throw Exception(
-          'Field ${f.name} of $name message is missing a proper abbrev');
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
     }
-    var fStr = ''',\n      this.${_convertToFieldName(abbrev)}''';
+    var unit = f.getAttribute('unit');
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+
+    var fStr =
+        ''',\n      ${typesData[2] == null ? '' : 'required '}this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
 
@@ -343,6 +348,9 @@ void _writeMessageImmutable(
           'Field ${f.name} of $name message is missing a proper abbrev and/or type');
     }
 
+    var unit = f.getAttribute('unit');
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+
     var fStr = '';
     switch (type) {
       case 'message-list': // List<M extends IMCMessage>
@@ -361,8 +369,7 @@ void _writeMessageImmutable(
         // To account for de/serialize floating point conversions
         fStr =
             ''' &&\n        (${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}
-            || (${_convertToFieldName(abbrev)} != null && other.${_convertToFieldName(abbrev)} != null
-            && (${_convertToFieldName(abbrev)}! - other.${_convertToFieldName(abbrev)}! <= 1E-7)))''';
+            || ${_convertToFieldName(abbrev)} - other.${_convertToFieldName(abbrev)} <= 1E-7)''';
         break;
       case 'uint8_t':
       case 'uint16_t':
@@ -381,8 +388,8 @@ void _writeMessageImmutable(
     }
     sink.write('$fStr');
 
-    hashElements
-        .add('${_convertToFieldName(abbrev)}?.hashCode ?? null.hashCode');
+    hashElements.add(
+        '${_convertToFieldName(abbrev)}${typesData[2] == null ? '?' : ''}.hashCode${typesData[2] == null ? ' ?? null.hashCode' : ''}');
   });
 
   var hashStr = '';
@@ -428,12 +435,11 @@ void _writeMessageImmutable(
     var unitConv = '';
     if (unit != null && unit.isNotEmpty) {
       if (unit.startsWith('rad')) {
-        unitConv = '\${';
-        unitConv +=
-            "${_convertToFieldName(abbrev)} != null ? ' [\${${_convertToFieldName(abbrev)}! * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]' : ''";
-        unitConv += '}';
+        unitConv =
+            ' [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]';
       }
     }
+
     var fStr =
         '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)}${unit != null ? ' ($unit)' : ''}$unitConv')''';
     sink.write('$fStr');
@@ -1049,7 +1055,7 @@ void _writeMessageField(
       unitsStr = unit == null ? '' : ", units: '$unit'";
   }
   var str = '''  @ImcField('$name', '$abbrev', $typeImc$unitsStr)
-  $dartType? get ${_convertToFieldName(abbrev)};
+  $dartType${typesData[2] == null ? '?' : ''} get ${_convertToFieldName(abbrev)};
 ''';
 
   sinks[_idxMsg].write('\n');
