@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.0-nullsafety.1] - 26 Mar 2021
+
+* Pre-release of null safety migration, thus contains **breaking changes**.
+
 ## [1.0.1] - 24 Mar 2021
 
 * Updated dependencies: built_value: ^8.0.4, xml: ^5.0.2, crypto: ^3.0.0, yaml: ^3.1.0, collection: ^1.15.0.
