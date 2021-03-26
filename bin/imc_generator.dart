@@ -327,10 +327,10 @@ void _writeMessageImmutable(
   hashElements.addAll([
     '0',
     'timestamp?.hashCode ?? null.hashCode',
-    'src?.hashCode ?? null.hashCode',
-    'srcEnt?.hashCode ?? null.hashCode',
-    'dst?.hashCode ?? null.hashCode',
-    'dstEnt?.hashCode ?? null.hashCode',
+    'src.hashCode',
+    'srcEnt.hashCode',
+    'dst.hashCode',
+    'dstEnt.hashCode',
   ]);
 
   // Writting rest elements to oerator ==
@@ -411,10 +411,10 @@ void _writeMessageImmutable(
   String toString() {
     return (newBuiltValueToStringHelper('$abbrev')
           ..add('timestamp', timestamp)
-          ..add('src', "0x\${src?.toRadixString(16)} (\${src ?? '-'})")
-          ..add('srcEnt', "0x\${srcEnt?.toRadixString(16)} (\${srcEnt ?? '-'})")
-          ..add('dst', "0x\${dst?.toRadixString(16)} (\${dst ?? '-'})")
-          ..add('dstEnt', "0x\${dstEnt?.toRadixString(16)} (\${dstEnt ?? '-'})")''';
+          ..add('src', '0x\${src.toRadixString(16)} (\$src)')
+          ..add('srcEnt', '0x\${srcEnt.toRadixString(16)} (\$srcEnt)')
+          ..add('dst', '0x\${dst.toRadixString(16)} (\$dst)')
+          ..add('dstEnt', '0x\${dstEnt.toRadixString(16)} (\$dstEnt)')''';
   sink.write('$msgStringImmutableClass5');
 
   m.findElements('field').forEach((f) {
@@ -545,9 +545,6 @@ void _writeMessageBuilder(
 
   @override
   void replace($abbrev other) {
-    if (other == null) {
-      throw ArgumentError.notNull('other');
-    }
     _\$v = other as _\$$abbrev;
   }
 
