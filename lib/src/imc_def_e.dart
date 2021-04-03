@@ -298,6 +298,8 @@ class CLoopsMaskBitfield extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static CLoopsMaskBitfield empty() => CLoopsMaskBitfield(0);
+
   static CLoopsMaskBitfield fromBits(List<CLoopsMaskBitfield> bits) =>
       (bits.length < 2)
           ? CLoopsMaskBitfield(bits.isEmpty ? 0 : bits[0].value)
@@ -355,6 +357,8 @@ class OpLimitsMaskBitfield extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static OpLimitsMaskBitfield empty() => OpLimitsMaskBitfield(0);
 
   static OpLimitsMaskBitfield fromBits(List<OpLimitsMaskBitfield> bits) =>
       (bits.length < 2)

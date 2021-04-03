@@ -1287,6 +1287,9 @@ void _writeEnumLikeWorker(
     return ret ?? super.toPrettyString();
   }
 
+  static $eName empty() =>
+      $eName(0);
+
   static $eName fromBits(
           List<$eName> bits) =>
       (bits.length < 2)

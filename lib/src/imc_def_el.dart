@@ -75,6 +75,8 @@ class EntityStateBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static EntityStateBitfieldFlags empty() => EntityStateBitfieldFlags(0);
+
   static EntityStateBitfieldFlags fromBits(
           List<EntityStateBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -237,6 +239,9 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static DevCalibrationStateBitfieldFlags empty() =>
+      DevCalibrationStateBitfieldFlags(0);
 
   static DevCalibrationStateBitfieldFlags fromBits(
           List<DevCalibrationStateBitfieldFlags> bits) =>
@@ -818,6 +823,9 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static AnnounceServiceBitfieldServiceType empty() =>
+      AnnounceServiceBitfieldServiceType(0);
+
   static AnnounceServiceBitfieldServiceType fromBits(
           List<AnnounceServiceBitfieldServiceType> bits) =>
       (bits.length < 2)
@@ -1019,6 +1027,9 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static CommSystemsQueryBitfieldType empty() =>
+      CommSystemsQueryBitfieldType(0);
+
   static CommSystemsQueryBitfieldType fromBits(
           List<CommSystemsQueryBitfieldType> bits) =>
       (bits.length < 2)
@@ -1083,6 +1094,9 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static CommSystemsQueryBitfieldCommInterface empty() =>
+      CommSystemsQueryBitfieldCommInterface(0);
 
   static CommSystemsQueryBitfieldCommInterface fromBits(
           List<CommSystemsQueryBitfieldCommInterface> bits) =>
@@ -1243,6 +1257,9 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static TelemetryMsgBitfieldAcknowledge empty() =>
+      TelemetryMsgBitfieldAcknowledge(0);
+
   static TelemetryMsgBitfieldAcknowledge fromBits(
           List<TelemetryMsgBitfieldAcknowledge> bits) =>
       (bits.length < 2)
@@ -1370,6 +1387,9 @@ class SimAcousticMessageBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static SimAcousticMessageBitfieldFlags empty() =>
+      SimAcousticMessageBitfieldFlags(0);
 
   static SimAcousticMessageBitfieldFlags fromBits(
           List<SimAcousticMessageBitfieldFlags> bits) =>
@@ -1691,6 +1711,8 @@ class GpsFixBitfieldValidity extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static GpsFixBitfieldValidity empty() => GpsFixBitfieldValidity(0);
+
   static GpsFixBitfieldValidity fromBits(List<GpsFixBitfieldValidity> bits) =>
       (bits.length < 2)
           ? GpsFixBitfieldValidity(bits.isEmpty ? 0 : bits[0].value)
@@ -1784,6 +1806,9 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static GroundVelocityBitfieldValidity empty() =>
+      GroundVelocityBitfieldValidity(0);
+
   static GroundVelocityBitfieldValidity fromBits(
           List<GroundVelocityBitfieldValidity> bits) =>
       (bits.length < 2)
@@ -1834,6 +1859,9 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static WaterVelocityBitfieldValidity empty() =>
+      WaterVelocityBitfieldValidity(0);
 
   static WaterVelocityBitfieldValidity fromBits(
           List<WaterVelocityBitfieldValidity> bits) =>
@@ -2008,6 +2036,8 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static GpsFixRtkBitfieldValidity empty() => GpsFixRtkBitfieldValidity(0);
 
   static GpsFixRtkBitfieldValidity fromBits(
           List<GpsFixRtkBitfieldValidity> bits) =>
@@ -2466,6 +2496,8 @@ class DvlRejectionBitfieldType extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static DvlRejectionBitfieldType empty() => DvlRejectionBitfieldType(0);
+
   static DvlRejectionBitfieldType fromBits(
           List<DvlRejectionBitfieldType> bits) =>
       (bits.length < 2)
@@ -2648,6 +2680,8 @@ class DesiredPathBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static DesiredPathBitfieldFlags empty() => DesiredPathBitfieldFlags(0);
+
   static DesiredPathBitfieldFlags fromBits(
           List<DesiredPathBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -2717,6 +2751,8 @@ class DesiredControlBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static DesiredControlBitfieldFlags empty() => DesiredControlBitfieldFlags(0);
 
   static DesiredControlBitfieldFlags fromBits(
           List<DesiredControlBitfieldFlags> bits) =>
@@ -2788,6 +2824,9 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static DesiredVelocityBitfieldFlags empty() =>
+      DesiredVelocityBitfieldFlags(0);
+
   static DesiredVelocityBitfieldFlags fromBits(
           List<DesiredVelocityBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -2854,6 +2893,9 @@ class PathControlStateBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static PathControlStateBitfieldFlags empty() =>
+      PathControlStateBitfieldFlags(0);
 
   static PathControlStateBitfieldFlags fromBits(
           List<PathControlStateBitfieldFlags> bits) =>
@@ -2973,6 +3015,9 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static DesiredLinearStateBitfieldFlags empty() =>
+      DesiredLinearStateBitfieldFlags(0);
+
   static DesiredLinearStateBitfieldFlags fromBits(
           List<DesiredLinearStateBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -3031,6 +3076,8 @@ class PopUpBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static PopUpBitfieldFlags empty() => PopUpBitfieldFlags(0);
 
   static PopUpBitfieldFlags fromBits(List<PopUpBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -3142,6 +3189,8 @@ class RowsBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static RowsBitfieldFlags empty() => RowsBitfieldFlags(0);
+
   static RowsBitfieldFlags fromBits(List<RowsBitfieldFlags> bits) =>
       (bits.length < 2)
           ? RowsBitfieldFlags(bits.isEmpty ? 0 : bits[0].value)
@@ -3184,6 +3233,8 @@ class ElevatorBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static ElevatorBitfieldFlags empty() => ElevatorBitfieldFlags(0);
 
   static ElevatorBitfieldFlags fromBits(List<ElevatorBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -3348,6 +3399,8 @@ class ReferenceBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static ReferenceBitfieldFlags empty() => ReferenceBitfieldFlags(0);
+
   static ReferenceBitfieldFlags fromBits(List<ReferenceBitfieldFlags> bits) =>
       (bits.length < 2)
           ? ReferenceBitfieldFlags(bits.isEmpty ? 0 : bits[0].value)
@@ -3438,6 +3491,9 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static FollowRefStateBitfieldProximity empty() =>
+      FollowRefStateBitfieldProximity(0);
 
   static FollowRefStateBitfieldProximity fromBits(
           List<FollowRefStateBitfieldProximity> bits) =>
@@ -3656,6 +3712,8 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static RowsCoverageBitfieldFlags empty() => RowsCoverageBitfieldFlags(0);
+
   static RowsCoverageBitfieldFlags fromBits(
           List<RowsCoverageBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -3708,6 +3766,9 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static AutonomousSectionBitfieldLimits empty() =>
+      AutonomousSectionBitfieldLimits(0);
+
   static AutonomousSectionBitfieldLimits fromBits(
           List<AutonomousSectionBitfieldLimits> bits) =>
       (bits.length < 2)
@@ -3751,6 +3812,9 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static StationKeepingExtendedBitfieldFlags empty() =>
+      StationKeepingExtendedBitfieldFlags(0);
 
   static StationKeepingExtendedBitfieldFlags fromBits(
           List<StationKeepingExtendedBitfieldFlags> bits) =>
@@ -3869,6 +3933,8 @@ class VehicleStateBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static VehicleStateBitfieldFlags empty() => VehicleStateBitfieldFlags(0);
 
   static VehicleStateBitfieldFlags fromBits(
           List<VehicleStateBitfieldFlags> bits) =>
@@ -4105,6 +4171,8 @@ class CollisionBitfieldType extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static CollisionBitfieldType empty() => CollisionBitfieldType(0);
 
   static CollisionBitfieldType fromBits(List<CollisionBitfieldType> bits) =>
       (bits.length < 2)
@@ -4489,6 +4557,9 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static ReportControlBitfieldCommInterface empty() =>
+      ReportControlBitfieldCommInterface(0);
 
   static ReportControlBitfieldCommInterface fromBits(
           List<ReportControlBitfieldCommInterface> bits) =>
@@ -5075,6 +5146,8 @@ class PlanControlBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static PlanControlBitfieldFlags empty() => PlanControlBitfieldFlags(0);
+
   static PlanControlBitfieldFlags fromBits(
           List<PlanControlBitfieldFlags> bits) =>
       (bits.length < 2)
@@ -5394,6 +5467,9 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static PlanStatisticsBitfieldProperties empty() =>
+      PlanStatisticsBitfieldProperties(0);
 
   static PlanStatisticsBitfieldProperties fromBits(
           List<PlanStatisticsBitfieldProperties> bits) =>
@@ -5735,6 +5811,8 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
     return ret ?? super.toPrettyString();
   }
 
+  static UamTxFrameBitfieldFlags empty() => UamTxFrameBitfieldFlags(0);
+
   static UamTxFrameBitfieldFlags fromBits(List<UamTxFrameBitfieldFlags> bits) =>
       (bits.length < 2)
           ? UamTxFrameBitfieldFlags(bits.isEmpty ? 0 : bits[0].value)
@@ -5778,6 +5856,8 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
     }
     return ret ?? super.toPrettyString();
   }
+
+  static UamRxFrameBitfieldFlags empty() => UamRxFrameBitfieldFlags(0);
 
   static UamRxFrameBitfieldFlags fromBits(List<UamRxFrameBitfieldFlags> bits) =>
       (bits.length < 2)
