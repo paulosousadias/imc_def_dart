@@ -1258,7 +1258,8 @@ void _writeEnumLikeWorker(
 
   var body2 = '''\n  static List<$eName> get values => <$eName>[$eList];
 
-  static core.Map<$eName, String> get names => <$eName, String>{$eNameList};
+  static core.Map<$eName, String> get names =>
+      <$eName, String>{$eNameList};
 
   const $eName(int value) : super(value);
 ''';
