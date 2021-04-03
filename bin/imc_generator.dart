@@ -1261,10 +1261,10 @@ void _writeEnumLikeWorker(
   });
 
   var body2 = '''\n  static List<$eName> get values =>
-      <$eName>[$eList];
+      <$eName>[${vLst.length > 1 ? eList : eList.substring(1).trim()}];
 
   static core.Map<$eName, String> get names =>
-      <$eName, String>{$eNameList};
+      <$eName, String>{$eNameList${vLst.length <= 1 ? '\n      ' : ''}};
 
   const $eName(int value) : super(value);
 ''';
