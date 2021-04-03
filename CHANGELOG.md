@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.0-nullsafety.2] - ?? Apr 2021
+
+* **Breaking change**: On Bitfield#fromBits you must not use null but [] if you whant an empty one.
+* 
 ## [2.0.0-nullsafety.1] - 26 Mar 2021
 
 * Pre-release of null safety migration, thus contains **breaking changes**.
