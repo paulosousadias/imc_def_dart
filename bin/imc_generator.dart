@@ -153,7 +153,9 @@ void _writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
             for (var i = 0; i < level; i++) {
               sink.write('  ');
             }
-            sink.write('/// ${tx.trim()}\n');
+            var txTrim = tx.trim();
+            txTrim = txTrim.isEmpty ? txTrim : ' $txTrim';
+            sink.write('///$txTrim\n');
           }));
 }
 
