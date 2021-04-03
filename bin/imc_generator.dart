@@ -819,7 +819,8 @@ void _writeMessageSerializer(
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
-    var readCrc = imc.getCrcFooter(byteData, offset + imc.header_size + payloadSize, endianness);
+    var readCrc = imc.getCrcFooter(
+        byteData, offset + imc.header_size + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
