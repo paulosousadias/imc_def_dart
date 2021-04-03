@@ -395,9 +395,9 @@ void _writeMessageImmutable(
   var hashStr = '';
   for (var i = 0; i < hashElements.length; i++) {
     if (i == 0) {
-      hashStr = '\$jc(${hashElements[i]}, \n        ${hashElements[++i]})';
+      hashStr = '\$jc(${hashElements[i]},\n        ${hashElements[++i]})';
     } else {
-      hashStr = '\$jc($hashStr, \n        ${hashElements[i]})';
+      hashStr = '\$jc($hashStr,\n        ${hashElements[i]})';
     }
   }
   hashStr = '\$jf($hashStr)';
