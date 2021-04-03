@@ -1336,9 +1336,10 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   msgElm.findElements('message-groups').forEach((mg) {
     mg.findElements('message-group').forEach((m) {
       sink.write("\n  '${m.getAttribute('abbrev')}': [");
-      m.findElements('message-type').forEach(
-          (mt) => sink.write("\n      '${mt.getAttribute('abbrev')}',"));
-      sink.write('''\n    ],''');
+      m
+          .findElements('message-type')
+          .forEach((mt) => sink.write("\n    '${mt.getAttribute('abbrev')}',"));
+      sink.write('''\n  ],''');
     });
   });
   sink.write('''\n};\n''');
