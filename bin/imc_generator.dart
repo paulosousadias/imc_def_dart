@@ -458,8 +458,9 @@ void _writeMessageImmutable(
 void _writeMessageBuilder(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('/// $name builder class\n///\n');
-  var msgStringImmutableBuilder =
-      '''class ${abbrev}Builder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder> {
+  var msgStringImmutableBuilder = '''class ${abbrev}Builder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder> {
   _\$$abbrev? _\$v;
 
   DateTime? _timestamp = DateTime.now();
@@ -522,7 +523,8 @@ void _writeMessageBuilder(
   }
 
   @override
-  ${abbrev}Builder newInstance([ImcBuilderHeaderPart? headerFrom]) => ${abbrev}Builder()..copyFromHeader(headerFrom);
+  ${abbrev}Builder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      ${abbrev}Builder()..copyFromHeader(headerFrom);
 
   ${abbrev}Builder get _\$this {
     if (_\$v != null) {
@@ -807,7 +809,7 @@ void _writeMessageSerializer(
 
     var builder = imc.${abbrev}Builder();
     var payloadSize =
-      imc.deserializeHeader(builder, byteData, endianness, offset);
+        imc.deserializeHeader(builder, byteData, endianness, offset);
     if (payloadSize == null) {
       return null;
     }
@@ -824,7 +826,7 @@ void _writeMessageSerializer(
     var payloadSizeRead;
     try {
       payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+          deserializePayload(builder, byteData, endianness, byteOffset);
     } catch (_) {
       return null;
     }
@@ -1256,7 +1258,8 @@ void _writeEnumLikeWorker(
     sink.write(bodyV);
   });
 
-  var body2 = '''\n  static List<$eName> get values => <$eName>[$eList];
+  var body2 = '''\n  static List<$eName> get values =>
+      <$eName>[$eList];
 
   static core.Map<$eName, String> get names =>
       <$eName, String>{$eNameList};
