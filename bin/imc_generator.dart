@@ -173,8 +173,7 @@ void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
 
   sink.write('/// $name message group class\n///\n');
   _writeDescription(sink, g);
-  var msgStringClass = '''abstract class $abbrev extends ImcMessage {
-}\n\n''';
+  var msgStringClass = '''abstract class $abbrev extends ImcMessage {}\n\n''';
   sink.write('$msgStringClass');
 
   g.findElements('message-type').forEach((t) {
@@ -229,11 +228,12 @@ void _writeMessageClass(String name, String abbrev, String msgId,
 
   var extentionClass = _messagesGroups[abbrev] ?? 'ImcMessage';
 
-  var msgStringClass =
-      '''abstract class $abbrev extends $extentionClass implements Built<$abbrev, ${abbrev}Builder> {
+  var msgStringClass = '''abstract class $abbrev extends $extentionClass
+    implements Built<$abbrev, ${abbrev}Builder> {
   static const static_id = $msgId;
   $abbrev._();
-  factory $abbrev([void Function(${abbrev}Builder b)? updates]) = _\$$abbrev;
+  factory $abbrev([void Function(${abbrev}Builder b)? updates]) =
+      _\$$abbrev;
 
   @override
   int get msgId => static_id;
