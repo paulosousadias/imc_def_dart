@@ -659,11 +659,16 @@ final messagesIdsSerializers = <int, ImcSerializerBuilder>{
 /// Entity State serializer class
 ///
 class EntityStateSerializer
-    extends imc.ImcSerializer<imc.EntityState, imc.EntityStateBuilder> {
+    extends imc.ImcSerializer<imc.EntityState?, imc.EntityStateBuilder> {
   @override
-  ByteData serialize(imc.EntityState message) {
+  ByteData serialize(imc.EntityState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -679,7 +684,10 @@ class EntityStateSerializer
   }
 
   @override
-  int serializePayload(imc.EntityState message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.EntityState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -699,7 +707,7 @@ class EntityStateSerializer
   }
 
   @override
-  imc.EntityState deserialize(Uint8List data, [int offset = 0]) {
+  imc.EntityState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -718,6 +726,10 @@ class EntityStateSerializer
     var builder = imc.EntityStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -728,8 +740,13 @@ class EntityStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -767,11 +784,16 @@ class EntityStateSerializer
 /// Query Entity State serializer class
 ///
 class QueryEntityStateSerializer extends imc
-    .ImcSerializer<imc.QueryEntityState, imc.QueryEntityStateBuilder> {
+    .ImcSerializer<imc.QueryEntityState?, imc.QueryEntityStateBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityState message) {
+  ByteData serialize(imc.QueryEntityState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -788,14 +810,16 @@ class QueryEntityStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.QueryEntityState message, ByteData byteData, int offset) {
+      imc.QueryEntityState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.QueryEntityState deserialize(Uint8List data, [int offset = 0]) {
+  imc.QueryEntityState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -814,6 +838,10 @@ class QueryEntityStateSerializer extends imc
     var builder = imc.QueryEntityStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -824,8 +852,13 @@ class QueryEntityStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -847,11 +880,16 @@ class QueryEntityStateSerializer extends imc
 /// Entity Information serializer class
 ///
 class EntityInfoSerializer
-    extends imc.ImcSerializer<imc.EntityInfo, imc.EntityInfoBuilder> {
+    extends imc.ImcSerializer<imc.EntityInfo?, imc.EntityInfoBuilder> {
   @override
-  ByteData serialize(imc.EntityInfo message) {
+  ByteData serialize(imc.EntityInfo? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -867,7 +905,9 @@ class EntityInfoSerializer
   }
 
   @override
-  int serializePayload(imc.EntityInfo message, ByteData byteData, int offset) {
+  int serializePayload(imc.EntityInfo? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -896,7 +936,7 @@ class EntityInfoSerializer
   }
 
   @override
-  imc.EntityInfo deserialize(Uint8List data, [int offset = 0]) {
+  imc.EntityInfo? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -915,6 +955,10 @@ class EntityInfoSerializer
     var builder = imc.EntityInfoBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -925,8 +969,13 @@ class EntityInfoSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -975,12 +1024,17 @@ class EntityInfoSerializer
 
 /// Query Entity Information serializer class
 ///
-class QueryEntityInfoSerializer
-    extends imc.ImcSerializer<imc.QueryEntityInfo, imc.QueryEntityInfoBuilder> {
+class QueryEntityInfoSerializer extends imc
+    .ImcSerializer<imc.QueryEntityInfo?, imc.QueryEntityInfoBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityInfo message) {
+  ByteData serialize(imc.QueryEntityInfo? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -997,7 +1051,9 @@ class QueryEntityInfoSerializer
 
   @override
   int serializePayload(
-      imc.QueryEntityInfo message, ByteData byteData, int offset) {
+      imc.QueryEntityInfo? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -1008,7 +1064,7 @@ class QueryEntityInfoSerializer
   }
 
   @override
-  imc.QueryEntityInfo deserialize(Uint8List data, [int offset = 0]) {
+  imc.QueryEntityInfo? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1027,6 +1083,10 @@ class QueryEntityInfoSerializer
     var builder = imc.QueryEntityInfoBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1037,8 +1097,13 @@ class QueryEntityInfoSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1064,11 +1129,16 @@ class QueryEntityInfoSerializer
 /// Entity List serializer class
 ///
 class EntityListSerializer
-    extends imc.ImcSerializer<imc.EntityList, imc.EntityListBuilder> {
+    extends imc.ImcSerializer<imc.EntityList?, imc.EntityListBuilder> {
   @override
-  ByteData serialize(imc.EntityList message) {
+  ByteData serialize(imc.EntityList? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1084,7 +1154,9 @@ class EntityListSerializer
   }
 
   @override
-  int serializePayload(imc.EntityList message, ByteData byteData, int offset) {
+  int serializePayload(imc.EntityList? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -1101,7 +1173,7 @@ class EntityListSerializer
   }
 
   @override
-  imc.EntityList deserialize(Uint8List data, [int offset = 0]) {
+  imc.EntityList? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1120,6 +1192,10 @@ class EntityListSerializer
     var builder = imc.EntityListBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1130,8 +1206,13 @@ class EntityListSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1166,11 +1247,16 @@ class EntityListSerializer
 /// CPU Usage serializer class
 ///
 class CpuUsageSerializer
-    extends imc.ImcSerializer<imc.CpuUsage, imc.CpuUsageBuilder> {
+    extends imc.ImcSerializer<imc.CpuUsage?, imc.CpuUsageBuilder> {
   @override
-  ByteData serialize(imc.CpuUsage message) {
+  ByteData serialize(imc.CpuUsage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1186,7 +1272,9 @@ class CpuUsageSerializer
   }
 
   @override
-  int serializePayload(imc.CpuUsage message, ByteData byteData, int offset) {
+  int serializePayload(imc.CpuUsage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -1197,7 +1285,7 @@ class CpuUsageSerializer
   }
 
   @override
-  imc.CpuUsage deserialize(Uint8List data, [int offset = 0]) {
+  imc.CpuUsage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1216,6 +1304,10 @@ class CpuUsageSerializer
     var builder = imc.CpuUsageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1226,8 +1318,13 @@ class CpuUsageSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1253,11 +1350,16 @@ class CpuUsageSerializer
 /// Transport Bindings serializer class
 ///
 class TransportBindingsSerializer extends imc
-    .ImcSerializer<imc.TransportBindings, imc.TransportBindingsBuilder> {
+    .ImcSerializer<imc.TransportBindings?, imc.TransportBindingsBuilder> {
   @override
-  ByteData serialize(imc.TransportBindings message) {
+  ByteData serialize(imc.TransportBindings? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1274,7 +1376,9 @@ class TransportBindingsSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TransportBindings message, ByteData byteData, int offset) {
+      imc.TransportBindings? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field consumer
@@ -1291,7 +1395,7 @@ class TransportBindingsSerializer extends imc
   }
 
   @override
-  imc.TransportBindings deserialize(Uint8List data, [int offset = 0]) {
+  imc.TransportBindings? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1310,6 +1414,10 @@ class TransportBindingsSerializer extends imc
     var builder = imc.TransportBindingsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1320,8 +1428,13 @@ class TransportBindingsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1356,11 +1469,16 @@ class TransportBindingsSerializer extends imc
 /// Restart System serializer class
 ///
 class RestartSystemSerializer
-    extends imc.ImcSerializer<imc.RestartSystem, imc.RestartSystemBuilder> {
+    extends imc.ImcSerializer<imc.RestartSystem?, imc.RestartSystemBuilder> {
   @override
-  ByteData serialize(imc.RestartSystem message) {
+  ByteData serialize(imc.RestartSystem? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1377,7 +1495,9 @@ class RestartSystemSerializer
 
   @override
   int serializePayload(
-      imc.RestartSystem message, ByteData byteData, int offset) {
+      imc.RestartSystem? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -1388,7 +1508,7 @@ class RestartSystemSerializer
   }
 
   @override
-  imc.RestartSystem deserialize(Uint8List data, [int offset = 0]) {
+  imc.RestartSystem? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1407,6 +1527,10 @@ class RestartSystemSerializer
     var builder = imc.RestartSystemBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1417,8 +1541,13 @@ class RestartSystemSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1444,11 +1573,16 @@ class RestartSystemSerializer
 /// Device Calibration Control serializer class
 ///
 class DevCalibrationControlSerializer extends imc.ImcSerializer<
-    imc.DevCalibrationControl, imc.DevCalibrationControlBuilder> {
+    imc.DevCalibrationControl?, imc.DevCalibrationControlBuilder> {
   @override
-  ByteData serialize(imc.DevCalibrationControl message) {
+  ByteData serialize(imc.DevCalibrationControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1465,7 +1599,9 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.DevCalibrationControl message, ByteData byteData, int offset) {
+      imc.DevCalibrationControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -1476,7 +1612,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.DevCalibrationControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.DevCalibrationControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1495,6 +1631,10 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
     var builder = imc.DevCalibrationControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1505,8 +1645,13 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1532,11 +1677,16 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
 /// Device Calibration State serializer class
 ///
 class DevCalibrationStateSerializer extends imc
-    .ImcSerializer<imc.DevCalibrationState, imc.DevCalibrationStateBuilder> {
+    .ImcSerializer<imc.DevCalibrationState?, imc.DevCalibrationStateBuilder> {
   @override
-  ByteData serialize(imc.DevCalibrationState message) {
+  ByteData serialize(imc.DevCalibrationState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1553,7 +1703,9 @@ class DevCalibrationStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DevCalibrationState message, ByteData byteData, int offset) {
+      imc.DevCalibrationState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field totalSteps
@@ -1576,7 +1728,7 @@ class DevCalibrationStateSerializer extends imc
   }
 
   @override
-  imc.DevCalibrationState deserialize(Uint8List data, [int offset = 0]) {
+  imc.DevCalibrationState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1595,6 +1747,10 @@ class DevCalibrationStateSerializer extends imc
     var builder = imc.DevCalibrationStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1605,8 +1761,13 @@ class DevCalibrationStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1648,11 +1809,16 @@ class DevCalibrationStateSerializer extends imc
 /// Entity Activation State serializer class
 ///
 class EntityActivationStateSerializer extends imc.ImcSerializer<
-    imc.EntityActivationState, imc.EntityActivationStateBuilder> {
+    imc.EntityActivationState?, imc.EntityActivationStateBuilder> {
   @override
-  ByteData serialize(imc.EntityActivationState message) {
+  ByteData serialize(imc.EntityActivationState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1669,7 +1835,9 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.EntityActivationState message, ByteData byteData, int offset) {
+      imc.EntityActivationState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -1686,7 +1854,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.EntityActivationState deserialize(Uint8List data, [int offset = 0]) {
+  imc.EntityActivationState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1705,6 +1873,10 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
     var builder = imc.EntityActivationStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1715,8 +1887,13 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1752,11 +1929,16 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
 /// Query Entity Activation State serializer class
 ///
 class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
-    imc.QueryEntityActivationState, imc.QueryEntityActivationStateBuilder> {
+    imc.QueryEntityActivationState?, imc.QueryEntityActivationStateBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityActivationState message) {
+  ByteData serialize(imc.QueryEntityActivationState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1773,14 +1955,17 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.QueryEntityActivationState message, ByteData byteData, int offset) {
+      imc.QueryEntityActivationState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.QueryEntityActivationState deserialize(Uint8List data, [int offset = 0]) {
+  imc.QueryEntityActivationState? deserialize(Uint8List data,
+      [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1799,6 +1984,10 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
     var builder = imc.QueryEntityActivationStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1809,8 +1998,13 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -1832,11 +2026,16 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
 /// Vehicle Operational Limits serializer class
 ///
 class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
-    imc.VehicleOperationalLimits, imc.VehicleOperationalLimitsBuilder> {
+    imc.VehicleOperationalLimits?, imc.VehicleOperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.VehicleOperationalLimits message) {
+  ByteData serialize(imc.VehicleOperationalLimits? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -1853,7 +2052,9 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.VehicleOperationalLimits message, ByteData byteData, int offset) {
+      imc.VehicleOperationalLimits? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -1915,7 +2116,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.VehicleOperationalLimits deserialize(Uint8List data, [int offset = 0]) {
+  imc.VehicleOperationalLimits? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -1934,6 +2135,10 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     var builder = imc.VehicleOperationalLimitsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -1944,8 +2149,13 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2023,11 +2233,16 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
 /// Message List serializer class
 ///
 class MsgListSerializer
-    extends imc.ImcSerializer<imc.MsgList, imc.MsgListBuilder> {
+    extends imc.ImcSerializer<imc.MsgList?, imc.MsgListBuilder> {
   @override
-  ByteData serialize(imc.MsgList message) {
+  ByteData serialize(imc.MsgList? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2043,11 +2258,13 @@ class MsgListSerializer
   }
 
   @override
-  int serializePayload(imc.MsgList message, ByteData byteData, int offset) {
+  int serializePayload(imc.MsgList? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field msgs
-    if (message.msgs == null || message.msgs.isEmpty) {
+    if (message.msgs.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -2055,11 +2272,11 @@ class MsgListSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.msgs.length; i++) {
-        var id = message.msgs[i]?.msgId;
+        var id = message.msgs[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -2075,7 +2292,7 @@ class MsgListSerializer
   }
 
   @override
-  imc.MsgList deserialize(Uint8List data, [int offset = 0]) {
+  imc.MsgList? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2094,6 +2311,10 @@ class MsgListSerializer
     var builder = imc.MsgListBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2104,8 +2325,13 @@ class MsgListSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2128,12 +2354,12 @@ class MsgListSerializer
       var msgsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (msgsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
-        var pMsgSerializer = imc
-            .messagesSerializers[imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId]
+            .newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[
+                imc.idsToMessages[msgsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -2151,11 +2377,16 @@ class MsgListSerializer
 /// Simulated State serializer class
 ///
 class SimulatedStateSerializer
-    extends imc.ImcSerializer<imc.SimulatedState, imc.SimulatedStateBuilder> {
+    extends imc.ImcSerializer<imc.SimulatedState?, imc.SimulatedStateBuilder> {
   @override
-  ByteData serialize(imc.SimulatedState message) {
+  ByteData serialize(imc.SimulatedState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2172,7 +2403,9 @@ class SimulatedStateSerializer
 
   @override
   int serializePayload(
-      imc.SimulatedState message, ByteData byteData, int offset) {
+      imc.SimulatedState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -2234,7 +2467,7 @@ class SimulatedStateSerializer
   }
 
   @override
-  imc.SimulatedState deserialize(Uint8List data, [int offset = 0]) {
+  imc.SimulatedState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2253,6 +2486,10 @@ class SimulatedStateSerializer
     var builder = imc.SimulatedStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2263,8 +2500,13 @@ class SimulatedStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2341,11 +2583,16 @@ class SimulatedStateSerializer
 /// Leak Simulation serializer class
 ///
 class LeakSimulationSerializer
-    extends imc.ImcSerializer<imc.LeakSimulation, imc.LeakSimulationBuilder> {
+    extends imc.ImcSerializer<imc.LeakSimulation?, imc.LeakSimulationBuilder> {
   @override
-  ByteData serialize(imc.LeakSimulation message) {
+  ByteData serialize(imc.LeakSimulation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2362,7 +2609,9 @@ class LeakSimulationSerializer
 
   @override
   int serializePayload(
-      imc.LeakSimulation message, ByteData byteData, int offset) {
+      imc.LeakSimulation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -2379,7 +2628,7 @@ class LeakSimulationSerializer
   }
 
   @override
-  imc.LeakSimulation deserialize(Uint8List data, [int offset = 0]) {
+  imc.LeakSimulation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2398,6 +2647,10 @@ class LeakSimulationSerializer
     var builder = imc.LeakSimulationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2408,8 +2661,13 @@ class LeakSimulationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2444,11 +2702,16 @@ class LeakSimulationSerializer
 /// Underwater Acoustics Simulation serializer class
 ///
 class UASimulationSerializer
-    extends imc.ImcSerializer<imc.UASimulation, imc.UASimulationBuilder> {
+    extends imc.ImcSerializer<imc.UASimulation?, imc.UASimulationBuilder> {
   @override
-  ByteData serialize(imc.UASimulation message) {
+  ByteData serialize(imc.UASimulation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2465,7 +2728,9 @@ class UASimulationSerializer
 
   @override
   int serializePayload(
-      imc.UASimulation message, ByteData byteData, int offset) {
+      imc.UASimulation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -2478,13 +2743,15 @@ class UASimulationSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.UASimulation deserialize(Uint8List data, [int offset = 0]) {
+  imc.UASimulation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2503,6 +2770,10 @@ class UASimulationSerializer
     var builder = imc.UASimulationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2513,8 +2784,13 @@ class UASimulationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2551,11 +2827,16 @@ class UASimulationSerializer
 /// Dynamics Simulation Parameters serializer class
 ///
 class DynamicsSimParamSerializer extends imc
-    .ImcSerializer<imc.DynamicsSimParam, imc.DynamicsSimParamBuilder> {
+    .ImcSerializer<imc.DynamicsSimParam?, imc.DynamicsSimParamBuilder> {
   @override
-  ByteData serialize(imc.DynamicsSimParam message) {
+  ByteData serialize(imc.DynamicsSimParam? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2572,7 +2853,9 @@ class DynamicsSimParamSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DynamicsSimParam message, ByteData byteData, int offset) {
+      imc.DynamicsSimParam? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -2589,7 +2872,7 @@ class DynamicsSimParamSerializer extends imc
   }
 
   @override
-  imc.DynamicsSimParam deserialize(Uint8List data, [int offset = 0]) {
+  imc.DynamicsSimParam? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2608,6 +2891,10 @@ class DynamicsSimParamSerializer extends imc
     var builder = imc.DynamicsSimParamBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2618,8 +2905,13 @@ class DynamicsSimParamSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2651,11 +2943,16 @@ class DynamicsSimParamSerializer extends imc
 /// Storage Usage serializer class
 ///
 class StorageUsageSerializer
-    extends imc.ImcSerializer<imc.StorageUsage, imc.StorageUsageBuilder> {
+    extends imc.ImcSerializer<imc.StorageUsage?, imc.StorageUsageBuilder> {
   @override
-  ByteData serialize(imc.StorageUsage message) {
+  ByteData serialize(imc.StorageUsage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2672,7 +2969,9 @@ class StorageUsageSerializer
 
   @override
   int serializePayload(
-      imc.StorageUsage message, ByteData byteData, int offset) {
+      imc.StorageUsage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field available
@@ -2686,7 +2985,7 @@ class StorageUsageSerializer
   }
 
   @override
-  imc.StorageUsage deserialize(Uint8List data, [int offset = 0]) {
+  imc.StorageUsage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2705,6 +3004,10 @@ class StorageUsageSerializer
     var builder = imc.StorageUsageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2715,8 +3018,13 @@ class StorageUsageSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2745,11 +3053,16 @@ class StorageUsageSerializer
 /// Cache Control serializer class
 ///
 class CacheControlSerializer
-    extends imc.ImcSerializer<imc.CacheControl, imc.CacheControlBuilder> {
+    extends imc.ImcSerializer<imc.CacheControl?, imc.CacheControlBuilder> {
   @override
-  ByteData serialize(imc.CacheControl message) {
+  ByteData serialize(imc.CacheControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2766,7 +3079,9 @@ class CacheControlSerializer
 
   @override
   int serializePayload(
-      imc.CacheControl message, ByteData byteData, int offset) {
+      imc.CacheControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -2783,7 +3098,7 @@ class CacheControlSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.message.msgId;
+      var id = message.message!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -2800,7 +3115,7 @@ class CacheControlSerializer
   }
 
   @override
-  imc.CacheControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.CacheControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2819,6 +3134,10 @@ class CacheControlSerializer
     var builder = imc.CacheControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2829,8 +3148,13 @@ class CacheControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2863,12 +3187,12 @@ class CacheControlSerializer
     if (messageSId == imc.ImcId.nullId) {
       builder.message = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -2885,11 +3209,16 @@ class CacheControlSerializer
 /// Logging Control serializer class
 ///
 class LoggingControlSerializer
-    extends imc.ImcSerializer<imc.LoggingControl, imc.LoggingControlBuilder> {
+    extends imc.ImcSerializer<imc.LoggingControl?, imc.LoggingControlBuilder> {
   @override
-  ByteData serialize(imc.LoggingControl message) {
+  ByteData serialize(imc.LoggingControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -2906,7 +3235,9 @@ class LoggingControlSerializer
 
   @override
   int serializePayload(
-      imc.LoggingControl message, ByteData byteData, int offset) {
+      imc.LoggingControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -2923,7 +3254,7 @@ class LoggingControlSerializer
   }
 
   @override
-  imc.LoggingControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.LoggingControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -2942,6 +3273,10 @@ class LoggingControlSerializer
     var builder = imc.LoggingControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -2952,8 +3287,13 @@ class LoggingControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -2988,11 +3328,16 @@ class LoggingControlSerializer
 /// Log Book Entry serializer class
 ///
 class LogBookEntrySerializer
-    extends imc.ImcSerializer<imc.LogBookEntry, imc.LogBookEntryBuilder> {
+    extends imc.ImcSerializer<imc.LogBookEntry?, imc.LogBookEntryBuilder> {
   @override
-  ByteData serialize(imc.LogBookEntry message) {
+  ByteData serialize(imc.LogBookEntry? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3009,7 +3354,9 @@ class LogBookEntrySerializer
 
   @override
   int serializePayload(
-      imc.LogBookEntry message, ByteData byteData, int offset) {
+      imc.LogBookEntry? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -3035,7 +3382,7 @@ class LogBookEntrySerializer
   }
 
   @override
-  imc.LogBookEntry deserialize(Uint8List data, [int offset = 0]) {
+  imc.LogBookEntry? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3054,6 +3401,10 @@ class LogBookEntrySerializer
     var builder = imc.LogBookEntryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3064,8 +3415,13 @@ class LogBookEntrySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3112,11 +3468,16 @@ class LogBookEntrySerializer
 /// Log Book Control serializer class
 ///
 class LogBookControlSerializer
-    extends imc.ImcSerializer<imc.LogBookControl, imc.LogBookControlBuilder> {
+    extends imc.ImcSerializer<imc.LogBookControl?, imc.LogBookControlBuilder> {
   @override
-  ByteData serialize(imc.LogBookControl message) {
+  ByteData serialize(imc.LogBookControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3133,7 +3494,9 @@ class LogBookControlSerializer
 
   @override
   int serializePayload(
-      imc.LogBookControl message, ByteData byteData, int offset) {
+      imc.LogBookControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field command
@@ -3143,7 +3506,7 @@ class LogBookControlSerializer
     byteData.setFloat64(byteOffset, message.htime, imc.endian_ser);
     byteOffset += 8;
     // field msg
-    if (message.msg == null || message.msg.isEmpty) {
+    if (message.msg.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -3151,11 +3514,11 @@ class LogBookControlSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.msg.length; i++) {
-        var id = message.msg[i]?.msgId;
+        var id = message.msg[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -3171,7 +3534,7 @@ class LogBookControlSerializer
   }
 
   @override
-  imc.LogBookControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.LogBookControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3190,6 +3553,10 @@ class LogBookControlSerializer
     var builder = imc.LogBookControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3200,8 +3567,13 @@ class LogBookControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3231,12 +3603,12 @@ class LogBookControlSerializer
       var msgSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (msgSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
-        var pMsgSerializer = imc
-            .messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]
+            .newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[
+                imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -3254,11 +3626,16 @@ class LogBookControlSerializer
 /// Replay Control serializer class
 ///
 class ReplayControlSerializer
-    extends imc.ImcSerializer<imc.ReplayControl, imc.ReplayControlBuilder> {
+    extends imc.ImcSerializer<imc.ReplayControl?, imc.ReplayControlBuilder> {
   @override
-  ByteData serialize(imc.ReplayControl message) {
+  ByteData serialize(imc.ReplayControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3275,7 +3652,9 @@ class ReplayControlSerializer
 
   @override
   int serializePayload(
-      imc.ReplayControl message, ByteData byteData, int offset) {
+      imc.ReplayControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -3292,7 +3671,7 @@ class ReplayControlSerializer
   }
 
   @override
-  imc.ReplayControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.ReplayControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3311,6 +3690,10 @@ class ReplayControlSerializer
     var builder = imc.ReplayControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3321,8 +3704,13 @@ class ReplayControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3357,11 +3745,16 @@ class ReplayControlSerializer
 /// Clock Control serializer class
 ///
 class ClockControlSerializer
-    extends imc.ImcSerializer<imc.ClockControl, imc.ClockControlBuilder> {
+    extends imc.ImcSerializer<imc.ClockControl?, imc.ClockControlBuilder> {
   @override
-  ByteData serialize(imc.ClockControl message) {
+  ByteData serialize(imc.ClockControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3378,7 +3771,9 @@ class ClockControlSerializer
 
   @override
   int serializePayload(
-      imc.ClockControl message, ByteData byteData, int offset) {
+      imc.ClockControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -3395,7 +3790,7 @@ class ClockControlSerializer
   }
 
   @override
-  imc.ClockControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.ClockControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3414,6 +3809,10 @@ class ClockControlSerializer
     var builder = imc.ClockControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3424,8 +3823,13 @@ class ClockControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3457,11 +3861,16 @@ class ClockControlSerializer
 /// Historic CTD serializer class
 ///
 class HistoricCTDSerializer
-    extends imc.ImcSerializer<imc.HistoricCTD, imc.HistoricCTDBuilder> {
+    extends imc.ImcSerializer<imc.HistoricCTD?, imc.HistoricCTDBuilder> {
   @override
-  ByteData serialize(imc.HistoricCTD message) {
+  ByteData serialize(imc.HistoricCTD? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3477,7 +3886,10 @@ class HistoricCTDSerializer
   }
 
   @override
-  int serializePayload(imc.HistoricCTD message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.HistoricCTD? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field conductivity
@@ -3494,7 +3906,7 @@ class HistoricCTDSerializer
   }
 
   @override
-  imc.HistoricCTD deserialize(Uint8List data, [int offset = 0]) {
+  imc.HistoricCTD? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3513,6 +3925,10 @@ class HistoricCTDSerializer
     var builder = imc.HistoricCTDBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3523,8 +3939,13 @@ class HistoricCTDSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3556,11 +3977,16 @@ class HistoricCTDSerializer
 /// Historic Telemetry serializer class
 ///
 class HistoricTelemetrySerializer extends imc
-    .ImcSerializer<imc.HistoricTelemetry, imc.HistoricTelemetryBuilder> {
+    .ImcSerializer<imc.HistoricTelemetry?, imc.HistoricTelemetryBuilder> {
   @override
-  ByteData serialize(imc.HistoricTelemetry message) {
+  ByteData serialize(imc.HistoricTelemetry? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3577,7 +4003,9 @@ class HistoricTelemetrySerializer extends imc
 
   @override
   int serializePayload(
-      imc.HistoricTelemetry message, ByteData byteData, int offset) {
+      imc.HistoricTelemetry? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field altitude
@@ -3600,7 +4028,7 @@ class HistoricTelemetrySerializer extends imc
   }
 
   @override
-  imc.HistoricTelemetry deserialize(Uint8List data, [int offset = 0]) {
+  imc.HistoricTelemetry? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3619,6 +4047,10 @@ class HistoricTelemetrySerializer extends imc
     var builder = imc.HistoricTelemetryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3629,8 +4061,13 @@ class HistoricTelemetrySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3668,11 +4105,16 @@ class HistoricTelemetrySerializer extends imc
 /// Historic Sonar Data serializer class
 ///
 class HistoricSonarDataSerializer extends imc
-    .ImcSerializer<imc.HistoricSonarData, imc.HistoricSonarDataBuilder> {
+    .ImcSerializer<imc.HistoricSonarData?, imc.HistoricSonarDataBuilder> {
   @override
-  ByteData serialize(imc.HistoricSonarData message) {
+  ByteData serialize(imc.HistoricSonarData? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3689,7 +4131,9 @@ class HistoricSonarDataSerializer extends imc
 
   @override
   int serializePayload(
-      imc.HistoricSonarData message, ByteData byteData, int offset) {
+      imc.HistoricSonarData? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field altitude
@@ -3714,13 +4158,15 @@ class HistoricSonarDataSerializer extends imc
     var sonarDataSSize = message.sonarData.length;
     byteData.setUint16(byteOffset, sonarDataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.sonarData.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (sonarDataSSize > 0) {
+      message.sonarData.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.HistoricSonarData deserialize(Uint8List data, [int offset = 0]) {
+  imc.HistoricSonarData? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3739,6 +4185,10 @@ class HistoricSonarDataSerializer extends imc
     var builder = imc.HistoricSonarDataBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3749,8 +4199,13 @@ class HistoricSonarDataSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3800,11 +4255,16 @@ class HistoricSonarDataSerializer extends imc
 /// Historic Event serializer class
 ///
 class HistoricEventSerializer
-    extends imc.ImcSerializer<imc.HistoricEvent, imc.HistoricEventBuilder> {
+    extends imc.ImcSerializer<imc.HistoricEvent?, imc.HistoricEventBuilder> {
   @override
-  ByteData serialize(imc.HistoricEvent message) {
+  ByteData serialize(imc.HistoricEvent? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3821,7 +4281,9 @@ class HistoricEventSerializer
 
   @override
   int serializePayload(
-      imc.HistoricEvent message, ByteData byteData, int offset) {
+      imc.HistoricEvent? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field text
@@ -3838,7 +4300,7 @@ class HistoricEventSerializer
   }
 
   @override
-  imc.HistoricEvent deserialize(Uint8List data, [int offset = 0]) {
+  imc.HistoricEvent? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3857,6 +4319,10 @@ class HistoricEventSerializer
     var builder = imc.HistoricEventBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3867,8 +4333,13 @@ class HistoricEventSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -3902,12 +4373,17 @@ class HistoricEventSerializer
 
 /// Vertical Profile serializer class
 ///
-class VerticalProfileSerializer
-    extends imc.ImcSerializer<imc.VerticalProfile, imc.VerticalProfileBuilder> {
+class VerticalProfileSerializer extends imc
+    .ImcSerializer<imc.VerticalProfile?, imc.VerticalProfileBuilder> {
   @override
-  ByteData serialize(imc.VerticalProfile message) {
+  ByteData serialize(imc.VerticalProfile? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -3924,7 +4400,9 @@ class VerticalProfileSerializer
 
   @override
   int serializePayload(
-      imc.VerticalProfile message, ByteData byteData, int offset) {
+      imc.VerticalProfile? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field parameter
@@ -3934,7 +4412,7 @@ class VerticalProfileSerializer
     byteData.setUint8(byteOffset, message.numSamples);
     byteOffset += 1;
     // field samples
-    if (message.samples == null || message.samples.isEmpty) {
+    if (message.samples.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -3942,11 +4420,11 @@ class VerticalProfileSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.samples.length; i++) {
-        var id = message.samples[i]?.msgId;
+        var id = message.samples[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -3968,7 +4446,7 @@ class VerticalProfileSerializer
   }
 
   @override
-  imc.VerticalProfile deserialize(Uint8List data, [int offset = 0]) {
+  imc.VerticalProfile? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -3987,6 +4465,10 @@ class VerticalProfileSerializer
     var builder = imc.VerticalProfileBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -3997,8 +4479,13 @@ class VerticalProfileSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4028,12 +4515,12 @@ class VerticalProfileSerializer
       var samplesSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (samplesSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[samplesSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -4057,11 +4544,16 @@ class VerticalProfileSerializer
 /// Profile Sample serializer class
 ///
 class ProfileSampleSerializer
-    extends imc.ImcSerializer<imc.ProfileSample, imc.ProfileSampleBuilder> {
+    extends imc.ImcSerializer<imc.ProfileSample?, imc.ProfileSampleBuilder> {
   @override
-  ByteData serialize(imc.ProfileSample message) {
+  ByteData serialize(imc.ProfileSample? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4078,7 +4570,9 @@ class ProfileSampleSerializer
 
   @override
   int serializePayload(
-      imc.ProfileSample message, ByteData byteData, int offset) {
+      imc.ProfileSample? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field depth
@@ -4092,7 +4586,7 @@ class ProfileSampleSerializer
   }
 
   @override
-  imc.ProfileSample deserialize(Uint8List data, [int offset = 0]) {
+  imc.ProfileSample? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4111,6 +4605,10 @@ class ProfileSampleSerializer
     var builder = imc.ProfileSampleBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4121,8 +4619,13 @@ class ProfileSampleSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4151,11 +4654,16 @@ class ProfileSampleSerializer
 /// Heartbeat serializer class
 ///
 class HeartbeatSerializer
-    extends imc.ImcSerializer<imc.Heartbeat, imc.HeartbeatBuilder> {
+    extends imc.ImcSerializer<imc.Heartbeat?, imc.HeartbeatBuilder> {
   @override
-  ByteData serialize(imc.Heartbeat message) {
+  ByteData serialize(imc.Heartbeat? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4171,14 +4679,16 @@ class HeartbeatSerializer
   }
 
   @override
-  int serializePayload(imc.Heartbeat message, ByteData byteData, int offset) {
+  int serializePayload(imc.Heartbeat? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.Heartbeat deserialize(Uint8List data, [int offset = 0]) {
+  imc.Heartbeat? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4197,6 +4707,10 @@ class HeartbeatSerializer
     var builder = imc.HeartbeatBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4207,8 +4721,13 @@ class HeartbeatSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4230,11 +4749,16 @@ class HeartbeatSerializer
 /// Announce serializer class
 ///
 class AnnounceSerializer
-    extends imc.ImcSerializer<imc.Announce, imc.AnnounceBuilder> {
+    extends imc.ImcSerializer<imc.Announce?, imc.AnnounceBuilder> {
   @override
-  ByteData serialize(imc.Announce message) {
+  ByteData serialize(imc.Announce? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4250,7 +4774,9 @@ class AnnounceSerializer
   }
 
   @override
-  int serializePayload(imc.Announce message, ByteData byteData, int offset) {
+  int serializePayload(imc.Announce? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sysName
@@ -4285,7 +4811,7 @@ class AnnounceSerializer
   }
 
   @override
-  imc.Announce deserialize(Uint8List data, [int offset = 0]) {
+  imc.Announce? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4304,6 +4830,10 @@ class AnnounceSerializer
     var builder = imc.AnnounceBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4314,8 +4844,13 @@ class AnnounceSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4370,12 +4905,17 @@ class AnnounceSerializer
 
 /// Announce Service serializer class
 ///
-class AnnounceServiceSerializer
-    extends imc.ImcSerializer<imc.AnnounceService, imc.AnnounceServiceBuilder> {
+class AnnounceServiceSerializer extends imc
+    .ImcSerializer<imc.AnnounceService?, imc.AnnounceServiceBuilder> {
   @override
-  ByteData serialize(imc.AnnounceService message) {
+  ByteData serialize(imc.AnnounceService? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4392,7 +4932,9 @@ class AnnounceServiceSerializer
 
   @override
   int serializePayload(
-      imc.AnnounceService message, ByteData byteData, int offset) {
+      imc.AnnounceService? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field service
@@ -4409,7 +4951,7 @@ class AnnounceServiceSerializer
   }
 
   @override
-  imc.AnnounceService deserialize(Uint8List data, [int offset = 0]) {
+  imc.AnnounceService? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4428,6 +4970,10 @@ class AnnounceServiceSerializer
     var builder = imc.AnnounceServiceBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4438,8 +4984,13 @@ class AnnounceServiceSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4474,11 +5025,16 @@ class AnnounceServiceSerializer
 
 /// Receive Signal Strength Information serializer class
 ///
-class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
+class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
   @override
-  ByteData serialize(imc.RSSI message) {
+  ByteData serialize(imc.RSSI? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4494,7 +5050,9 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
   }
 
   @override
-  int serializePayload(imc.RSSI message, ByteData byteData, int offset) {
+  int serializePayload(imc.RSSI? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -4505,7 +5063,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
   }
 
   @override
-  imc.RSSI deserialize(Uint8List data, [int offset = 0]) {
+  imc.RSSI? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4524,6 +5082,10 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
     var builder = imc.RSSIBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4534,8 +5096,13 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4560,11 +5127,16 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI, imc.RSSIBuilder> {
 
 /// Voltage Standing Wave Ratio serializer class
 ///
-class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
+class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
   @override
-  ByteData serialize(imc.VSWR message) {
+  ByteData serialize(imc.VSWR? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4580,7 +5152,9 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
   }
 
   @override
-  int serializePayload(imc.VSWR message, ByteData byteData, int offset) {
+  int serializePayload(imc.VSWR? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -4591,7 +5165,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
   }
 
   @override
-  imc.VSWR deserialize(Uint8List data, [int offset = 0]) {
+  imc.VSWR? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4610,6 +5184,10 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
     var builder = imc.VSWRBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4620,8 +5198,13 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4647,11 +5230,16 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR, imc.VSWRBuilder> {
 /// Link Level serializer class
 ///
 class LinkLevelSerializer
-    extends imc.ImcSerializer<imc.LinkLevel, imc.LinkLevelBuilder> {
+    extends imc.ImcSerializer<imc.LinkLevel?, imc.LinkLevelBuilder> {
   @override
-  ByteData serialize(imc.LinkLevel message) {
+  ByteData serialize(imc.LinkLevel? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4667,7 +5255,9 @@ class LinkLevelSerializer
   }
 
   @override
-  int serializePayload(imc.LinkLevel message, ByteData byteData, int offset) {
+  int serializePayload(imc.LinkLevel? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -4678,7 +5268,7 @@ class LinkLevelSerializer
   }
 
   @override
-  imc.LinkLevel deserialize(Uint8List data, [int offset = 0]) {
+  imc.LinkLevel? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4697,6 +5287,10 @@ class LinkLevelSerializer
     var builder = imc.LinkLevelBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4707,8 +5301,13 @@ class LinkLevelSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4733,11 +5332,16 @@ class LinkLevelSerializer
 
 /// SMS serializer class
 ///
-class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
+class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
   @override
-  ByteData serialize(imc.Sms message) {
+  ByteData serialize(imc.Sms? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4753,7 +5357,9 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
   }
 
   @override
-  int serializePayload(imc.Sms message, ByteData byteData, int offset) {
+  int serializePayload(imc.Sms? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field number
@@ -4776,7 +5382,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
   }
 
   @override
-  imc.Sms deserialize(Uint8List data, [int offset = 0]) {
+  imc.Sms? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4795,6 +5401,10 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
     var builder = imc.SmsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4805,8 +5415,13 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4849,11 +5464,16 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms, imc.SmsBuilder> {
 
 /// SMS Transmit serializer class
 ///
-class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
+class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
   @override
-  ByteData serialize(imc.SmsTx message) {
+  ByteData serialize(imc.SmsTx? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4869,7 +5489,9 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
   }
 
   @override
-  int serializePayload(imc.SmsTx message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsTx? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field seq
@@ -4888,13 +5510,15 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.SmsTx deserialize(Uint8List data, [int offset = 0]) {
+  imc.SmsTx? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -4913,6 +5537,10 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
     var builder = imc.SmsTxBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -4923,8 +5551,13 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -4969,11 +5602,16 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx, imc.SmsTxBuilder> {
 
 /// SMS Receive serializer class
 ///
-class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
+class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
   @override
-  ByteData serialize(imc.SmsRx message) {
+  ByteData serialize(imc.SmsRx? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -4989,7 +5627,9 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
   }
 
   @override
-  int serializePayload(imc.SmsRx message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsRx? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field source
@@ -5002,13 +5642,15 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.SmsRx deserialize(Uint8List data, [int offset = 0]) {
+  imc.SmsRx? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5027,6 +5669,10 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
     var builder = imc.SmsRxBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5037,8 +5683,13 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5078,11 +5729,16 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx, imc.SmsRxBuilder> {
 /// SMS State serializer class
 ///
 class SmsStateSerializer
-    extends imc.ImcSerializer<imc.SmsState, imc.SmsStateBuilder> {
+    extends imc.ImcSerializer<imc.SmsState?, imc.SmsStateBuilder> {
   @override
-  ByteData serialize(imc.SmsState message) {
+  ByteData serialize(imc.SmsState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5098,7 +5754,9 @@ class SmsStateSerializer
   }
 
   @override
-  int serializePayload(imc.SmsState message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field seq
@@ -5118,7 +5776,7 @@ class SmsStateSerializer
   }
 
   @override
-  imc.SmsState deserialize(Uint8List data, [int offset = 0]) {
+  imc.SmsState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5137,6 +5795,10 @@ class SmsStateSerializer
     var builder = imc.SmsStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5147,8 +5809,13 @@ class SmsStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5186,11 +5853,16 @@ class SmsStateSerializer
 /// Text Message serializer class
 ///
 class TextMessageSerializer
-    extends imc.ImcSerializer<imc.TextMessage, imc.TextMessageBuilder> {
+    extends imc.ImcSerializer<imc.TextMessage?, imc.TextMessageBuilder> {
   @override
-  ByteData serialize(imc.TextMessage message) {
+  ByteData serialize(imc.TextMessage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5206,7 +5878,10 @@ class TextMessageSerializer
   }
 
   @override
-  int serializePayload(imc.TextMessage message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.TextMessage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field origin
@@ -5226,7 +5901,7 @@ class TextMessageSerializer
   }
 
   @override
-  imc.TextMessage deserialize(Uint8List data, [int offset = 0]) {
+  imc.TextMessage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5245,6 +5920,10 @@ class TextMessageSerializer
     var builder = imc.TextMessageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5255,8 +5934,13 @@ class TextMessageSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5297,11 +5981,16 @@ class TextMessageSerializer
 /// Received Iridium Message serializer class
 ///
 class IridiumMsgRxSerializer
-    extends imc.ImcSerializer<imc.IridiumMsgRx, imc.IridiumMsgRxBuilder> {
+    extends imc.ImcSerializer<imc.IridiumMsgRx?, imc.IridiumMsgRxBuilder> {
   @override
-  ByteData serialize(imc.IridiumMsgRx message) {
+  ByteData serialize(imc.IridiumMsgRx? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5318,7 +6007,9 @@ class IridiumMsgRxSerializer
 
   @override
   int serializePayload(
-      imc.IridiumMsgRx message, ByteData byteData, int offset) {
+      imc.IridiumMsgRx? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field origin
@@ -5340,13 +6031,15 @@ class IridiumMsgRxSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.IridiumMsgRx deserialize(Uint8List data, [int offset = 0]) {
+  imc.IridiumMsgRx? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5365,6 +6058,10 @@ class IridiumMsgRxSerializer
     var builder = imc.IridiumMsgRxBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5375,8 +6072,13 @@ class IridiumMsgRxSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5425,11 +6127,16 @@ class IridiumMsgRxSerializer
 /// Transmit Iridium Message serializer class
 ///
 class IridiumMsgTxSerializer
-    extends imc.ImcSerializer<imc.IridiumMsgTx, imc.IridiumMsgTxBuilder> {
+    extends imc.ImcSerializer<imc.IridiumMsgTx?, imc.IridiumMsgTxBuilder> {
   @override
-  ByteData serialize(imc.IridiumMsgTx message) {
+  ByteData serialize(imc.IridiumMsgTx? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5446,7 +6153,9 @@ class IridiumMsgTxSerializer
 
   @override
   int serializePayload(
-      imc.IridiumMsgTx message, ByteData byteData, int offset) {
+      imc.IridiumMsgTx? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -5465,13 +6174,15 @@ class IridiumMsgTxSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.IridiumMsgTx deserialize(Uint8List data, [int offset = 0]) {
+  imc.IridiumMsgTx? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5490,6 +6201,10 @@ class IridiumMsgTxSerializer
     var builder = imc.IridiumMsgTxBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5500,8 +6215,13 @@ class IridiumMsgTxSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5546,12 +6266,17 @@ class IridiumMsgTxSerializer
 
 /// Iridium Transmission Status serializer class
 ///
-class IridiumTxStatusSerializer
-    extends imc.ImcSerializer<imc.IridiumTxStatus, imc.IridiumTxStatusBuilder> {
+class IridiumTxStatusSerializer extends imc
+    .ImcSerializer<imc.IridiumTxStatus?, imc.IridiumTxStatusBuilder> {
   @override
-  ByteData serialize(imc.IridiumTxStatus message) {
+  ByteData serialize(imc.IridiumTxStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5568,7 +6293,9 @@ class IridiumTxStatusSerializer
 
   @override
   int serializePayload(
-      imc.IridiumTxStatus message, ByteData byteData, int offset) {
+      imc.IridiumTxStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -5588,7 +6315,7 @@ class IridiumTxStatusSerializer
   }
 
   @override
-  imc.IridiumTxStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.IridiumTxStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5607,6 +6334,10 @@ class IridiumTxStatusSerializer
     var builder = imc.IridiumTxStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5617,8 +6348,13 @@ class IridiumTxStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5657,11 +6393,16 @@ class IridiumTxStatusSerializer
 /// Group Membership State serializer class
 ///
 class GroupMembershipStateSerializer extends imc
-    .ImcSerializer<imc.GroupMembershipState, imc.GroupMembershipStateBuilder> {
+    .ImcSerializer<imc.GroupMembershipState?, imc.GroupMembershipStateBuilder> {
   @override
-  ByteData serialize(imc.GroupMembershipState message) {
+  ByteData serialize(imc.GroupMembershipState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5678,7 +6419,9 @@ class GroupMembershipStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GroupMembershipState message, ByteData byteData, int offset) {
+      imc.GroupMembershipState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field groupName
@@ -5695,7 +6438,7 @@ class GroupMembershipStateSerializer extends imc
   }
 
   @override
-  imc.GroupMembershipState deserialize(Uint8List data, [int offset = 0]) {
+  imc.GroupMembershipState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5714,6 +6457,10 @@ class GroupMembershipStateSerializer extends imc
     var builder = imc.GroupMembershipStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5724,8 +6471,13 @@ class GroupMembershipStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5760,11 +6512,16 @@ class GroupMembershipStateSerializer extends imc
 /// System Group serializer class
 ///
 class SystemGroupSerializer
-    extends imc.ImcSerializer<imc.SystemGroup, imc.SystemGroupBuilder> {
+    extends imc.ImcSerializer<imc.SystemGroup?, imc.SystemGroupBuilder> {
   @override
-  ByteData serialize(imc.SystemGroup message) {
+  ByteData serialize(imc.SystemGroup? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5780,7 +6537,10 @@ class SystemGroupSerializer
   }
 
   @override
-  int serializePayload(imc.SystemGroup message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.SystemGroup? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field groupName
@@ -5803,7 +6563,7 @@ class SystemGroupSerializer
   }
 
   @override
-  imc.SystemGroup deserialize(Uint8List data, [int offset = 0]) {
+  imc.SystemGroup? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5822,6 +6582,10 @@ class SystemGroupSerializer
     var builder = imc.SystemGroupBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5832,8 +6596,13 @@ class SystemGroupSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5877,11 +6646,16 @@ class SystemGroupSerializer
 /// Link Latency serializer class
 ///
 class LinkLatencySerializer
-    extends imc.ImcSerializer<imc.LinkLatency, imc.LinkLatencyBuilder> {
+    extends imc.ImcSerializer<imc.LinkLatency?, imc.LinkLatencyBuilder> {
   @override
-  ByteData serialize(imc.LinkLatency message) {
+  ByteData serialize(imc.LinkLatency? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5897,7 +6671,10 @@ class LinkLatencySerializer
   }
 
   @override
-  int serializePayload(imc.LinkLatency message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.LinkLatency? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -5911,7 +6688,7 @@ class LinkLatencySerializer
   }
 
   @override
-  imc.LinkLatency deserialize(Uint8List data, [int offset = 0]) {
+  imc.LinkLatency? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -5930,6 +6707,10 @@ class LinkLatencySerializer
     var builder = imc.LinkLatencyBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -5940,8 +6721,13 @@ class LinkLatencySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -5970,11 +6756,16 @@ class LinkLatencySerializer
 /// Extended Receive Signal Strength Information serializer class
 ///
 class ExtendedRSSISerializer
-    extends imc.ImcSerializer<imc.ExtendedRSSI, imc.ExtendedRSSIBuilder> {
+    extends imc.ImcSerializer<imc.ExtendedRSSI?, imc.ExtendedRSSIBuilder> {
   @override
-  ByteData serialize(imc.ExtendedRSSI message) {
+  ByteData serialize(imc.ExtendedRSSI? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -5991,7 +6782,9 @@ class ExtendedRSSISerializer
 
   @override
   int serializePayload(
-      imc.ExtendedRSSI message, ByteData byteData, int offset) {
+      imc.ExtendedRSSI? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -6005,7 +6798,7 @@ class ExtendedRSSISerializer
   }
 
   @override
-  imc.ExtendedRSSI deserialize(Uint8List data, [int offset = 0]) {
+  imc.ExtendedRSSI? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6024,6 +6817,10 @@ class ExtendedRSSISerializer
     var builder = imc.ExtendedRSSIBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6034,8 +6831,13 @@ class ExtendedRSSISerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -6064,11 +6866,16 @@ class ExtendedRSSISerializer
 /// Historic Data Series serializer class
 ///
 class HistoricDataSerializer
-    extends imc.ImcSerializer<imc.HistoricData, imc.HistoricDataBuilder> {
+    extends imc.ImcSerializer<imc.HistoricData?, imc.HistoricDataBuilder> {
   @override
-  ByteData serialize(imc.HistoricData message) {
+  ByteData serialize(imc.HistoricData? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -6085,7 +6892,9 @@ class HistoricDataSerializer
 
   @override
   int serializePayload(
-      imc.HistoricData message, ByteData byteData, int offset) {
+      imc.HistoricData? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field baseLat
@@ -6098,7 +6907,7 @@ class HistoricDataSerializer
     byteData.setFloat32(byteOffset, message.baseTime, imc.endian_ser);
     byteOffset += 4;
     // field data
-    if (message.data == null || message.data.isEmpty) {
+    if (message.data.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -6106,11 +6915,11 @@ class HistoricDataSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.data.length; i++) {
-        var id = message.data[i]?.msgId;
+        var id = message.data[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -6126,7 +6935,7 @@ class HistoricDataSerializer
   }
 
   @override
-  imc.HistoricData deserialize(Uint8List data, [int offset = 0]) {
+  imc.HistoricData? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6145,6 +6954,10 @@ class HistoricDataSerializer
     var builder = imc.HistoricDataBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6155,8 +6968,13 @@ class HistoricDataSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -6188,12 +7006,12 @@ class HistoricDataSerializer
       var dataSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (dataSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
-        var pMsgSerializer = imc
-            .messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]
+            .newInstance(builder);
+        var pMsgSerializer = imc.messagesSerializers[
+                imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -6211,11 +7029,16 @@ class HistoricDataSerializer
 /// Compressed Historic Data Series serializer class
 ///
 class CompressedHistorySerializer extends imc
-    .ImcSerializer<imc.CompressedHistory, imc.CompressedHistoryBuilder> {
+    .ImcSerializer<imc.CompressedHistory?, imc.CompressedHistoryBuilder> {
   @override
-  ByteData serialize(imc.CompressedHistory message) {
+  ByteData serialize(imc.CompressedHistory? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -6232,7 +7055,9 @@ class CompressedHistorySerializer extends imc
 
   @override
   int serializePayload(
-      imc.CompressedHistory message, ByteData byteData, int offset) {
+      imc.CompressedHistory? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field baseLat
@@ -6248,13 +7073,15 @@ class CompressedHistorySerializer extends imc
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.CompressedHistory deserialize(Uint8List data, [int offset = 0]) {
+  imc.CompressedHistory? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6273,6 +7100,10 @@ class CompressedHistorySerializer extends imc
     var builder = imc.CompressedHistoryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6283,8 +7114,13 @@ class CompressedHistorySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -6324,11 +7160,16 @@ class CompressedHistorySerializer extends imc
 /// Historic Data Sample serializer class
 ///
 class HistoricSampleSerializer
-    extends imc.ImcSerializer<imc.HistoricSample, imc.HistoricSampleBuilder> {
+    extends imc.ImcSerializer<imc.HistoricSample?, imc.HistoricSampleBuilder> {
   @override
-  ByteData serialize(imc.HistoricSample message) {
+  ByteData serialize(imc.HistoricSample? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -6345,7 +7186,9 @@ class HistoricSampleSerializer
 
   @override
   int serializePayload(
-      imc.HistoricSample message, ByteData byteData, int offset) {
+      imc.HistoricSample? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sysId
@@ -6371,7 +7214,7 @@ class HistoricSampleSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.sample.msgId;
+      var id = message.sample!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -6388,7 +7231,7 @@ class HistoricSampleSerializer
   }
 
   @override
-  imc.HistoricSample deserialize(Uint8List data, [int offset = 0]) {
+  imc.HistoricSample? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6407,6 +7250,10 @@ class HistoricSampleSerializer
     var builder = imc.HistoricSampleBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6417,8 +7264,13 @@ class HistoricSampleSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -6457,12 +7309,12 @@ class HistoricSampleSerializer
     if (sampleSId == imc.ImcId.nullId) {
       builder.sample = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[sampleSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -6479,11 +7331,16 @@ class HistoricSampleSerializer
 /// Historic Data Query serializer class
 ///
 class HistoricDataQuerySerializer extends imc
-    .ImcSerializer<imc.HistoricDataQuery, imc.HistoricDataQueryBuilder> {
+    .ImcSerializer<imc.HistoricDataQuery?, imc.HistoricDataQueryBuilder> {
   @override
-  ByteData serialize(imc.HistoricDataQuery message) {
+  ByteData serialize(imc.HistoricDataQuery? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -6500,7 +7357,9 @@ class HistoricDataQuerySerializer extends imc
 
   @override
   int serializePayload(
-      imc.HistoricDataQuery message, ByteData byteData, int offset) {
+      imc.HistoricDataQuery? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -6517,7 +7376,7 @@ class HistoricDataQuerySerializer extends imc
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.data.msgId;
+      var id = message.data!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -6534,7 +7393,7 @@ class HistoricDataQuerySerializer extends imc
   }
 
   @override
-  imc.HistoricDataQuery deserialize(Uint8List data, [int offset = 0]) {
+  imc.HistoricDataQuery? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6553,6 +7412,10 @@ class HistoricDataQuerySerializer extends imc
     var builder = imc.HistoricDataQueryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6563,8 +7426,13 @@ class HistoricDataQuerySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -6594,12 +7462,12 @@ class HistoricDataQuerySerializer extends imc
     if (dataSId == imc.ImcId.nullId) {
       builder.data = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -6616,11 +7484,16 @@ class HistoricDataQuerySerializer extends imc
 /// Remote Command serializer class
 ///
 class RemoteCommandSerializer
-    extends imc.ImcSerializer<imc.RemoteCommand, imc.RemoteCommandBuilder> {
+    extends imc.ImcSerializer<imc.RemoteCommand?, imc.RemoteCommandBuilder> {
   @override
-  ByteData serialize(imc.RemoteCommand message) {
+  ByteData serialize(imc.RemoteCommand? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -6637,7 +7510,9 @@ class RemoteCommandSerializer
 
   @override
   int serializePayload(
-      imc.RemoteCommand message, ByteData byteData, int offset) {
+      imc.RemoteCommand? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field originalSource
@@ -6654,7 +7529,7 @@ class RemoteCommandSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.cmd.msgId;
+      var id = message.cmd!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -6671,7 +7546,7 @@ class RemoteCommandSerializer
   }
 
   @override
-  imc.RemoteCommand deserialize(Uint8List data, [int offset = 0]) {
+  imc.RemoteCommand? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6690,6 +7565,10 @@ class RemoteCommandSerializer
     var builder = imc.RemoteCommandBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6700,8 +7579,13 @@ class RemoteCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -6731,12 +7615,12 @@ class RemoteCommandSerializer
     if (cmdSId == imc.ImcId.nullId) {
       builder.cmd = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[cmdSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -6753,11 +7637,16 @@ class RemoteCommandSerializer
 /// Communication Systems Query serializer class
 ///
 class CommSystemsQuerySerializer extends imc
-    .ImcSerializer<imc.CommSystemsQuery, imc.CommSystemsQueryBuilder> {
+    .ImcSerializer<imc.CommSystemsQuery?, imc.CommSystemsQueryBuilder> {
   @override
-  ByteData serialize(imc.CommSystemsQuery message) {
+  ByteData serialize(imc.CommSystemsQuery? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -6774,7 +7663,9 @@ class CommSystemsQuerySerializer extends imc
 
   @override
   int serializePayload(
-      imc.CommSystemsQuery message, ByteData byteData, int offset) {
+      imc.CommSystemsQuery? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -6797,7 +7688,7 @@ class CommSystemsQuerySerializer extends imc
   }
 
   @override
-  imc.CommSystemsQuery deserialize(Uint8List data, [int offset = 0]) {
+  imc.CommSystemsQuery? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6816,6 +7707,10 @@ class CommSystemsQuerySerializer extends imc
     var builder = imc.CommSystemsQueryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6826,8 +7721,13 @@ class CommSystemsQuerySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -6871,11 +7771,16 @@ class CommSystemsQuerySerializer extends imc
 /// Telemetry Message serializer class
 ///
 class TelemetryMsgSerializer
-    extends imc.ImcSerializer<imc.TelemetryMsg, imc.TelemetryMsgBuilder> {
+    extends imc.ImcSerializer<imc.TelemetryMsg?, imc.TelemetryMsgBuilder> {
   @override
-  ByteData serialize(imc.TelemetryMsg message) {
+  ByteData serialize(imc.TelemetryMsg? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -6892,7 +7797,9 @@ class TelemetryMsgSerializer
 
   @override
   int serializePayload(
-      imc.TelemetryMsg message, ByteData byteData, int offset) {
+      imc.TelemetryMsg? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -6929,13 +7836,15 @@ class TelemetryMsgSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.TelemetryMsg deserialize(Uint8List data, [int offset = 0]) {
+  imc.TelemetryMsg? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -6954,6 +7863,10 @@ class TelemetryMsgSerializer
     var builder = imc.TelemetryMsgBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -6964,8 +7877,13 @@ class TelemetryMsgSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7033,11 +7951,16 @@ class TelemetryMsgSerializer
 /// LBL Range serializer class
 ///
 class LblRangeSerializer
-    extends imc.ImcSerializer<imc.LblRange, imc.LblRangeBuilder> {
+    extends imc.ImcSerializer<imc.LblRange?, imc.LblRangeBuilder> {
   @override
-  ByteData serialize(imc.LblRange message) {
+  ByteData serialize(imc.LblRange? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7053,7 +7976,9 @@ class LblRangeSerializer
   }
 
   @override
-  int serializePayload(imc.LblRange message, ByteData byteData, int offset) {
+  int serializePayload(imc.LblRange? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -7067,7 +7992,7 @@ class LblRangeSerializer
   }
 
   @override
-  imc.LblRange deserialize(Uint8List data, [int offset = 0]) {
+  imc.LblRange? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7086,6 +8011,10 @@ class LblRangeSerializer
     var builder = imc.LblRangeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7096,8 +8025,13 @@ class LblRangeSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7126,11 +8060,16 @@ class LblRangeSerializer
 /// LBL Beacon Configuration serializer class
 ///
 class LblBeaconSerializer
-    extends imc.ImcSerializer<imc.LblBeacon, imc.LblBeaconBuilder> {
+    extends imc.ImcSerializer<imc.LblBeacon?, imc.LblBeaconBuilder> {
   @override
-  ByteData serialize(imc.LblBeacon message) {
+  ByteData serialize(imc.LblBeacon? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7146,7 +8085,9 @@ class LblBeaconSerializer
   }
 
   @override
-  int serializePayload(imc.LblBeacon message, ByteData byteData, int offset) {
+  int serializePayload(imc.LblBeacon? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field beacon
@@ -7178,7 +8119,7 @@ class LblBeaconSerializer
   }
 
   @override
-  imc.LblBeacon deserialize(Uint8List data, [int offset = 0]) {
+  imc.LblBeacon? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7197,6 +8138,10 @@ class LblBeaconSerializer
     var builder = imc.LblBeaconBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7207,8 +8152,13 @@ class LblBeaconSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7258,11 +8208,16 @@ class LblBeaconSerializer
 /// LBL Configuration serializer class
 ///
 class LblConfigSerializer
-    extends imc.ImcSerializer<imc.LblConfig, imc.LblConfigBuilder> {
+    extends imc.ImcSerializer<imc.LblConfig?, imc.LblConfigBuilder> {
   @override
-  ByteData serialize(imc.LblConfig message) {
+  ByteData serialize(imc.LblConfig? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7278,14 +8233,16 @@ class LblConfigSerializer
   }
 
   @override
-  int serializePayload(imc.LblConfig message, ByteData byteData, int offset) {
+  int serializePayload(imc.LblConfig? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field beacons
-    if (message.beacons == null || message.beacons.isEmpty) {
+    if (message.beacons.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -7293,11 +8250,11 @@ class LblConfigSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.beacons.length; i++) {
-        var id = message.beacons[i]?.msgId;
+        var id = message.beacons[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -7313,7 +8270,7 @@ class LblConfigSerializer
   }
 
   @override
-  imc.LblConfig deserialize(Uint8List data, [int offset = 0]) {
+  imc.LblConfig? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7332,6 +8289,10 @@ class LblConfigSerializer
     var builder = imc.LblConfigBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7342,8 +8303,13 @@ class LblConfigSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7369,12 +8335,12 @@ class LblConfigSerializer
       var beaconsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (beaconsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[beaconsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -7391,12 +8357,17 @@ class LblConfigSerializer
 
 /// Acoustic Message serializer class
 ///
-class AcousticMessageSerializer
-    extends imc.ImcSerializer<imc.AcousticMessage, imc.AcousticMessageBuilder> {
+class AcousticMessageSerializer extends imc
+    .ImcSerializer<imc.AcousticMessage?, imc.AcousticMessageBuilder> {
   @override
-  ByteData serialize(imc.AcousticMessage message) {
+  ByteData serialize(imc.AcousticMessage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7413,7 +8384,9 @@ class AcousticMessageSerializer
 
   @override
   int serializePayload(
-      imc.AcousticMessage message, ByteData byteData, int offset) {
+      imc.AcousticMessage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field message
@@ -7421,7 +8394,7 @@ class AcousticMessageSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.message.msgId;
+      var id = message.message!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -7438,7 +8411,7 @@ class AcousticMessageSerializer
   }
 
   @override
-  imc.AcousticMessage deserialize(Uint8List data, [int offset = 0]) {
+  imc.AcousticMessage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7457,6 +8430,10 @@ class AcousticMessageSerializer
     var builder = imc.AcousticMessageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7467,8 +8444,13 @@ class AcousticMessageSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7489,12 +8471,12 @@ class AcousticMessageSerializer
     if (messageSId == imc.ImcId.nullId) {
       builder.message = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[messageSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[messageSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -7511,11 +8493,16 @@ class AcousticMessageSerializer
 /// Simulated Acoustic Message serializer class
 ///
 class SimAcousticMessageSerializer extends imc
-    .ImcSerializer<imc.SimAcousticMessage, imc.SimAcousticMessageBuilder> {
+    .ImcSerializer<imc.SimAcousticMessage?, imc.SimAcousticMessageBuilder> {
   @override
-  ByteData serialize(imc.SimAcousticMessage message) {
+  ByteData serialize(imc.SimAcousticMessage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7532,7 +8519,9 @@ class SimAcousticMessageSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SimAcousticMessage message, ByteData byteData, int offset) {
+      imc.SimAcousticMessage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -7581,13 +8570,15 @@ class SimAcousticMessageSerializer extends imc
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.SimAcousticMessage deserialize(Uint8List data, [int offset = 0]) {
+  imc.SimAcousticMessage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7606,6 +8597,10 @@ class SimAcousticMessageSerializer extends imc
     var builder = imc.SimAcousticMessageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7616,8 +8611,13 @@ class SimAcousticMessageSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7703,11 +8703,16 @@ class SimAcousticMessageSerializer extends imc
 /// Acoustic Operation serializer class
 ///
 class AcousticOperationSerializer extends imc
-    .ImcSerializer<imc.AcousticOperation, imc.AcousticOperationBuilder> {
+    .ImcSerializer<imc.AcousticOperation?, imc.AcousticOperationBuilder> {
   @override
-  ByteData serialize(imc.AcousticOperation message) {
+  ByteData serialize(imc.AcousticOperation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7724,7 +8729,9 @@ class AcousticOperationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.AcousticOperation message, ByteData byteData, int offset) {
+      imc.AcousticOperation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -7744,7 +8751,7 @@ class AcousticOperationSerializer extends imc
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.msg.msgId;
+      var id = message.msg!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -7761,7 +8768,7 @@ class AcousticOperationSerializer extends imc
   }
 
   @override
-  imc.AcousticOperation deserialize(Uint8List data, [int offset = 0]) {
+  imc.AcousticOperation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7780,6 +8787,10 @@ class AcousticOperationSerializer extends imc
     var builder = imc.AcousticOperationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7790,8 +8801,13 @@ class AcousticOperationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7827,12 +8843,12 @@ class AcousticOperationSerializer extends imc
     if (msgSId == imc.ImcId.nullId) {
       builder.msg = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -7849,11 +8865,16 @@ class AcousticOperationSerializer extends imc
 /// Acoustic Systems Query serializer class
 ///
 class AcousticSystemsQuerySerializer extends imc
-    .ImcSerializer<imc.AcousticSystemsQuery, imc.AcousticSystemsQueryBuilder> {
+    .ImcSerializer<imc.AcousticSystemsQuery?, imc.AcousticSystemsQueryBuilder> {
   @override
-  ByteData serialize(imc.AcousticSystemsQuery message) {
+  ByteData serialize(imc.AcousticSystemsQuery? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7870,14 +8891,16 @@ class AcousticSystemsQuerySerializer extends imc
 
   @override
   int serializePayload(
-      imc.AcousticSystemsQuery message, ByteData byteData, int offset) {
+      imc.AcousticSystemsQuery? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.AcousticSystemsQuery deserialize(Uint8List data, [int offset = 0]) {
+  imc.AcousticSystemsQuery? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7896,6 +8919,10 @@ class AcousticSystemsQuerySerializer extends imc
     var builder = imc.AcousticSystemsQueryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7906,8 +8933,13 @@ class AcousticSystemsQuerySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -7928,12 +8960,17 @@ class AcousticSystemsQuerySerializer extends imc
 
 /// Acoustic Systems serializer class
 ///
-class AcousticSystemsSerializer
-    extends imc.ImcSerializer<imc.AcousticSystems, imc.AcousticSystemsBuilder> {
+class AcousticSystemsSerializer extends imc
+    .ImcSerializer<imc.AcousticSystems?, imc.AcousticSystemsBuilder> {
   @override
-  ByteData serialize(imc.AcousticSystems message) {
+  ByteData serialize(imc.AcousticSystems? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -7950,7 +8987,9 @@ class AcousticSystemsSerializer
 
   @override
   int serializePayload(
-      imc.AcousticSystems message, ByteData byteData, int offset) {
+      imc.AcousticSystems? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field list
@@ -7964,7 +9003,7 @@ class AcousticSystemsSerializer
   }
 
   @override
-  imc.AcousticSystems deserialize(Uint8List data, [int offset = 0]) {
+  imc.AcousticSystems? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -7983,6 +9022,10 @@ class AcousticSystemsSerializer
     var builder = imc.AcousticSystemsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -7993,8 +9036,13 @@ class AcousticSystemsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8026,11 +9074,16 @@ class AcousticSystemsSerializer
 /// Acoustic Link Quality serializer class
 ///
 class AcousticLinkSerializer
-    extends imc.ImcSerializer<imc.AcousticLink, imc.AcousticLinkBuilder> {
+    extends imc.ImcSerializer<imc.AcousticLink?, imc.AcousticLinkBuilder> {
   @override
-  ByteData serialize(imc.AcousticLink message) {
+  ByteData serialize(imc.AcousticLink? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8047,7 +9100,9 @@ class AcousticLinkSerializer
 
   @override
   int serializePayload(
-      imc.AcousticLink message, ByteData byteData, int offset) {
+      imc.AcousticLink? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field peer
@@ -8067,7 +9122,7 @@ class AcousticLinkSerializer
   }
 
   @override
-  imc.AcousticLink deserialize(Uint8List data, [int offset = 0]) {
+  imc.AcousticLink? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8086,6 +9141,10 @@ class AcousticLinkSerializer
     var builder = imc.AcousticLinkBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8096,8 +9155,13 @@ class AcousticLinkSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8134,12 +9198,17 @@ class AcousticLinkSerializer
 
 /// Acoustic Transmission Request serializer class
 ///
-class AcousticRequestSerializer
-    extends imc.ImcSerializer<imc.AcousticRequest, imc.AcousticRequestBuilder> {
+class AcousticRequestSerializer extends imc
+    .ImcSerializer<imc.AcousticRequest?, imc.AcousticRequestBuilder> {
   @override
-  ByteData serialize(imc.AcousticRequest message) {
+  ByteData serialize(imc.AcousticRequest? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8156,7 +9225,9 @@ class AcousticRequestSerializer
 
   @override
   int serializePayload(
-      imc.AcousticRequest message, ByteData byteData, int offset) {
+      imc.AcousticRequest? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -8182,7 +9253,7 @@ class AcousticRequestSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.msg.msgId;
+      var id = message.msg!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -8199,7 +9270,7 @@ class AcousticRequestSerializer
   }
 
   @override
-  imc.AcousticRequest deserialize(Uint8List data, [int offset = 0]) {
+  imc.AcousticRequest? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8218,6 +9289,10 @@ class AcousticRequestSerializer
     var builder = imc.AcousticRequestBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8228,8 +9303,13 @@ class AcousticRequestSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8271,12 +9351,12 @@ class AcousticRequestSerializer
     if (msgSId == imc.ImcId.nullId) {
       builder.msg = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[msgSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[msgSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -8293,11 +9373,16 @@ class AcousticRequestSerializer
 /// Acoustic Transmission Status serializer class
 ///
 class AcousticStatusSerializer
-    extends imc.ImcSerializer<imc.AcousticStatus, imc.AcousticStatusBuilder> {
+    extends imc.ImcSerializer<imc.AcousticStatus?, imc.AcousticStatusBuilder> {
   @override
-  ByteData serialize(imc.AcousticStatus message) {
+  ByteData serialize(imc.AcousticStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8314,7 +9399,9 @@ class AcousticStatusSerializer
 
   @override
   int serializePayload(
-      imc.AcousticStatus message, ByteData byteData, int offset) {
+      imc.AcousticStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -8340,7 +9427,7 @@ class AcousticStatusSerializer
   }
 
   @override
-  imc.AcousticStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.AcousticStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8359,6 +9446,10 @@ class AcousticStatusSerializer
     var builder = imc.AcousticStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8369,8 +9460,13 @@ class AcousticStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8414,11 +9510,16 @@ class AcousticStatusSerializer
 
 /// Revolutions Per Minute serializer class
 ///
-class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
+class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
   @override
-  ByteData serialize(imc.Rpm message) {
+  ByteData serialize(imc.Rpm? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8434,7 +9535,9 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
   }
 
   @override
-  int serializePayload(imc.Rpm message, ByteData byteData, int offset) {
+  int serializePayload(imc.Rpm? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -8445,7 +9548,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
   }
 
   @override
-  imc.Rpm deserialize(Uint8List data, [int offset = 0]) {
+  imc.Rpm? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8464,6 +9567,10 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
     var builder = imc.RpmBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8474,8 +9581,13 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8501,11 +9613,16 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm, imc.RpmBuilder> {
 /// Voltage serializer class
 ///
 class VoltageSerializer
-    extends imc.ImcSerializer<imc.Voltage, imc.VoltageBuilder> {
+    extends imc.ImcSerializer<imc.Voltage?, imc.VoltageBuilder> {
   @override
-  ByteData serialize(imc.Voltage message) {
+  ByteData serialize(imc.Voltage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8521,7 +9638,9 @@ class VoltageSerializer
   }
 
   @override
-  int serializePayload(imc.Voltage message, ByteData byteData, int offset) {
+  int serializePayload(imc.Voltage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -8532,7 +9651,7 @@ class VoltageSerializer
   }
 
   @override
-  imc.Voltage deserialize(Uint8List data, [int offset = 0]) {
+  imc.Voltage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8551,6 +9670,10 @@ class VoltageSerializer
     var builder = imc.VoltageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8561,8 +9684,13 @@ class VoltageSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8588,11 +9716,16 @@ class VoltageSerializer
 /// Current serializer class
 ///
 class CurrentSerializer
-    extends imc.ImcSerializer<imc.Current, imc.CurrentBuilder> {
+    extends imc.ImcSerializer<imc.Current?, imc.CurrentBuilder> {
   @override
-  ByteData serialize(imc.Current message) {
+  ByteData serialize(imc.Current? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8608,7 +9741,9 @@ class CurrentSerializer
   }
 
   @override
-  int serializePayload(imc.Current message, ByteData byteData, int offset) {
+  int serializePayload(imc.Current? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -8619,7 +9754,7 @@ class CurrentSerializer
   }
 
   @override
-  imc.Current deserialize(Uint8List data, [int offset = 0]) {
+  imc.Current? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8638,6 +9773,10 @@ class CurrentSerializer
     var builder = imc.CurrentBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8648,8 +9787,13 @@ class CurrentSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8675,11 +9819,16 @@ class CurrentSerializer
 /// GPS Fix serializer class
 ///
 class GpsFixSerializer
-    extends imc.ImcSerializer<imc.GpsFix, imc.GpsFixBuilder> {
+    extends imc.ImcSerializer<imc.GpsFix?, imc.GpsFixBuilder> {
   @override
-  ByteData serialize(imc.GpsFix message) {
+  ByteData serialize(imc.GpsFix? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8695,7 +9844,9 @@ class GpsFixSerializer
   }
 
   @override
-  int serializePayload(imc.GpsFix message, ByteData byteData, int offset) {
+  int serializePayload(imc.GpsFix? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field validity
@@ -8751,7 +9902,7 @@ class GpsFixSerializer
   }
 
   @override
-  imc.GpsFix deserialize(Uint8List data, [int offset = 0]) {
+  imc.GpsFix? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8770,6 +9921,10 @@ class GpsFixSerializer
     var builder = imc.GpsFixBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8780,8 +9935,13 @@ class GpsFixSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8853,11 +10013,16 @@ class GpsFixSerializer
 /// Euler Angles serializer class
 ///
 class EulerAnglesSerializer
-    extends imc.ImcSerializer<imc.EulerAngles, imc.EulerAnglesBuilder> {
+    extends imc.ImcSerializer<imc.EulerAngles?, imc.EulerAnglesBuilder> {
   @override
-  ByteData serialize(imc.EulerAngles message) {
+  ByteData serialize(imc.EulerAngles? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8873,7 +10038,10 @@ class EulerAnglesSerializer
   }
 
   @override
-  int serializePayload(imc.EulerAngles message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.EulerAngles? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field time
@@ -8896,7 +10064,7 @@ class EulerAnglesSerializer
   }
 
   @override
-  imc.EulerAngles deserialize(Uint8List data, [int offset = 0]) {
+  imc.EulerAngles? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -8915,6 +10083,10 @@ class EulerAnglesSerializer
     var builder = imc.EulerAnglesBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -8925,8 +10097,13 @@ class EulerAnglesSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -8964,11 +10141,16 @@ class EulerAnglesSerializer
 /// Euler Angles Delta serializer class
 ///
 class EulerAnglesDeltaSerializer extends imc
-    .ImcSerializer<imc.EulerAnglesDelta, imc.EulerAnglesDeltaBuilder> {
+    .ImcSerializer<imc.EulerAnglesDelta?, imc.EulerAnglesDeltaBuilder> {
   @override
-  ByteData serialize(imc.EulerAnglesDelta message) {
+  ByteData serialize(imc.EulerAnglesDelta? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -8985,7 +10167,9 @@ class EulerAnglesDeltaSerializer extends imc
 
   @override
   int serializePayload(
-      imc.EulerAnglesDelta message, ByteData byteData, int offset) {
+      imc.EulerAnglesDelta? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field time
@@ -9008,7 +10192,7 @@ class EulerAnglesDeltaSerializer extends imc
   }
 
   @override
-  imc.EulerAnglesDelta deserialize(Uint8List data, [int offset = 0]) {
+  imc.EulerAnglesDelta? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9027,6 +10211,10 @@ class EulerAnglesDeltaSerializer extends imc
     var builder = imc.EulerAnglesDeltaBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9037,8 +10225,13 @@ class EulerAnglesDeltaSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9075,12 +10268,17 @@ class EulerAnglesDeltaSerializer extends imc
 
 /// Angular Velocity serializer class
 ///
-class AngularVelocitySerializer
-    extends imc.ImcSerializer<imc.AngularVelocity, imc.AngularVelocityBuilder> {
+class AngularVelocitySerializer extends imc
+    .ImcSerializer<imc.AngularVelocity?, imc.AngularVelocityBuilder> {
   @override
-  ByteData serialize(imc.AngularVelocity message) {
+  ByteData serialize(imc.AngularVelocity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9097,7 +10295,9 @@ class AngularVelocitySerializer
 
   @override
   int serializePayload(
-      imc.AngularVelocity message, ByteData byteData, int offset) {
+      imc.AngularVelocity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field time
@@ -9117,7 +10317,7 @@ class AngularVelocitySerializer
   }
 
   @override
-  imc.AngularVelocity deserialize(Uint8List data, [int offset = 0]) {
+  imc.AngularVelocity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9136,6 +10336,10 @@ class AngularVelocitySerializer
     var builder = imc.AngularVelocityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9146,8 +10350,13 @@ class AngularVelocitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9182,11 +10391,16 @@ class AngularVelocitySerializer
 /// Acceleration serializer class
 ///
 class AccelerationSerializer
-    extends imc.ImcSerializer<imc.Acceleration, imc.AccelerationBuilder> {
+    extends imc.ImcSerializer<imc.Acceleration?, imc.AccelerationBuilder> {
   @override
-  ByteData serialize(imc.Acceleration message) {
+  ByteData serialize(imc.Acceleration? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9203,7 +10417,9 @@ class AccelerationSerializer
 
   @override
   int serializePayload(
-      imc.Acceleration message, ByteData byteData, int offset) {
+      imc.Acceleration? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field time
@@ -9223,7 +10439,7 @@ class AccelerationSerializer
   }
 
   @override
-  imc.Acceleration deserialize(Uint8List data, [int offset = 0]) {
+  imc.Acceleration? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9242,6 +10458,10 @@ class AccelerationSerializer
     var builder = imc.AccelerationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9252,8 +10472,13 @@ class AccelerationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9288,11 +10513,16 @@ class AccelerationSerializer
 /// Magnetic Field serializer class
 ///
 class MagneticFieldSerializer
-    extends imc.ImcSerializer<imc.MagneticField, imc.MagneticFieldBuilder> {
+    extends imc.ImcSerializer<imc.MagneticField?, imc.MagneticFieldBuilder> {
   @override
-  ByteData serialize(imc.MagneticField message) {
+  ByteData serialize(imc.MagneticField? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9309,7 +10539,9 @@ class MagneticFieldSerializer
 
   @override
   int serializePayload(
-      imc.MagneticField message, ByteData byteData, int offset) {
+      imc.MagneticField? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field time
@@ -9329,7 +10561,7 @@ class MagneticFieldSerializer
   }
 
   @override
-  imc.MagneticField deserialize(Uint8List data, [int offset = 0]) {
+  imc.MagneticField? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9348,6 +10580,10 @@ class MagneticFieldSerializer
     var builder = imc.MagneticFieldBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9358,8 +10594,13 @@ class MagneticFieldSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9394,11 +10635,16 @@ class MagneticFieldSerializer
 /// Ground Velocity serializer class
 ///
 class GroundVelocitySerializer
-    extends imc.ImcSerializer<imc.GroundVelocity, imc.GroundVelocityBuilder> {
+    extends imc.ImcSerializer<imc.GroundVelocity?, imc.GroundVelocityBuilder> {
   @override
-  ByteData serialize(imc.GroundVelocity message) {
+  ByteData serialize(imc.GroundVelocity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9415,7 +10661,9 @@ class GroundVelocitySerializer
 
   @override
   int serializePayload(
-      imc.GroundVelocity message, ByteData byteData, int offset) {
+      imc.GroundVelocity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field validity
@@ -9435,7 +10683,7 @@ class GroundVelocitySerializer
   }
 
   @override
-  imc.GroundVelocity deserialize(Uint8List data, [int offset = 0]) {
+  imc.GroundVelocity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9454,6 +10702,10 @@ class GroundVelocitySerializer
     var builder = imc.GroundVelocityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9464,8 +10716,13 @@ class GroundVelocitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9501,11 +10758,16 @@ class GroundVelocitySerializer
 /// Water Velocity serializer class
 ///
 class WaterVelocitySerializer
-    extends imc.ImcSerializer<imc.WaterVelocity, imc.WaterVelocityBuilder> {
+    extends imc.ImcSerializer<imc.WaterVelocity?, imc.WaterVelocityBuilder> {
   @override
-  ByteData serialize(imc.WaterVelocity message) {
+  ByteData serialize(imc.WaterVelocity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9522,7 +10784,9 @@ class WaterVelocitySerializer
 
   @override
   int serializePayload(
-      imc.WaterVelocity message, ByteData byteData, int offset) {
+      imc.WaterVelocity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field validity
@@ -9542,7 +10806,7 @@ class WaterVelocitySerializer
   }
 
   @override
-  imc.WaterVelocity deserialize(Uint8List data, [int offset = 0]) {
+  imc.WaterVelocity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9561,6 +10825,10 @@ class WaterVelocitySerializer
     var builder = imc.WaterVelocityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9571,8 +10839,13 @@ class WaterVelocitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9608,11 +10881,16 @@ class WaterVelocitySerializer
 /// Velocity Delta serializer class
 ///
 class VelocityDeltaSerializer
-    extends imc.ImcSerializer<imc.VelocityDelta, imc.VelocityDeltaBuilder> {
+    extends imc.ImcSerializer<imc.VelocityDelta?, imc.VelocityDeltaBuilder> {
   @override
-  ByteData serialize(imc.VelocityDelta message) {
+  ByteData serialize(imc.VelocityDelta? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9629,7 +10907,9 @@ class VelocityDeltaSerializer
 
   @override
   int serializePayload(
-      imc.VelocityDelta message, ByteData byteData, int offset) {
+      imc.VelocityDelta? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field time
@@ -9649,7 +10929,7 @@ class VelocityDeltaSerializer
   }
 
   @override
-  imc.VelocityDelta deserialize(Uint8List data, [int offset = 0]) {
+  imc.VelocityDelta? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9668,6 +10948,10 @@ class VelocityDeltaSerializer
     var builder = imc.VelocityDeltaBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9678,8 +10962,13 @@ class VelocityDeltaSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9714,11 +11003,16 @@ class VelocityDeltaSerializer
 /// Distance serializer class
 ///
 class DistanceSerializer
-    extends imc.ImcSerializer<imc.Distance, imc.DistanceBuilder> {
+    extends imc.ImcSerializer<imc.Distance?, imc.DistanceBuilder> {
   @override
-  ByteData serialize(imc.Distance message) {
+  ByteData serialize(imc.Distance? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9734,14 +11028,16 @@ class DistanceSerializer
   }
 
   @override
-  int serializePayload(imc.Distance message, ByteData byteData, int offset) {
+  int serializePayload(imc.Distance? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field validity
     byteData.setUint8(byteOffset, message.validity.value);
     byteOffset += 1;
     // field location
-    if (message.location == null || message.location.isEmpty) {
+    if (message.location.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -9749,11 +11045,11 @@ class DistanceSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.location.length; i++) {
-        var id = message.location[i]?.msgId;
+        var id = message.location[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -9765,7 +11061,7 @@ class DistanceSerializer
       }
     }
     // field beamConfig
-    if (message.beamConfig == null || message.beamConfig.isEmpty) {
+    if (message.beamConfig.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -9773,11 +11069,11 @@ class DistanceSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.beamConfig.length; i++) {
-        var id = message.beamConfig[i]?.msgId;
+        var id = message.beamConfig[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -9796,7 +11092,7 @@ class DistanceSerializer
   }
 
   @override
-  imc.Distance deserialize(Uint8List data, [int offset = 0]) {
+  imc.Distance? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9815,6 +11111,10 @@ class DistanceSerializer
     var builder = imc.DistanceBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9825,8 +11125,13 @@ class DistanceSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9853,11 +11158,11 @@ class DistanceSerializer
       byteOffset += 2;
       if (locationSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[locationSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[locationSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[locationSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[locationSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -9876,11 +11181,11 @@ class DistanceSerializer
       byteOffset += 2;
       if (beamConfigSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -9901,11 +11206,16 @@ class DistanceSerializer
 /// Temperature serializer class
 ///
 class TemperatureSerializer
-    extends imc.ImcSerializer<imc.Temperature, imc.TemperatureBuilder> {
+    extends imc.ImcSerializer<imc.Temperature?, imc.TemperatureBuilder> {
   @override
-  ByteData serialize(imc.Temperature message) {
+  ByteData serialize(imc.Temperature? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -9921,7 +11231,10 @@ class TemperatureSerializer
   }
 
   @override
-  int serializePayload(imc.Temperature message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.Temperature? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -9932,7 +11245,7 @@ class TemperatureSerializer
   }
 
   @override
-  imc.Temperature deserialize(Uint8List data, [int offset = 0]) {
+  imc.Temperature? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -9951,6 +11264,10 @@ class TemperatureSerializer
     var builder = imc.TemperatureBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -9961,8 +11278,13 @@ class TemperatureSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -9988,11 +11310,16 @@ class TemperatureSerializer
 /// Pressure serializer class
 ///
 class PressureSerializer
-    extends imc.ImcSerializer<imc.Pressure, imc.PressureBuilder> {
+    extends imc.ImcSerializer<imc.Pressure?, imc.PressureBuilder> {
   @override
-  ByteData serialize(imc.Pressure message) {
+  ByteData serialize(imc.Pressure? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10008,7 +11335,9 @@ class PressureSerializer
   }
 
   @override
-  int serializePayload(imc.Pressure message, ByteData byteData, int offset) {
+  int serializePayload(imc.Pressure? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10019,7 +11348,7 @@ class PressureSerializer
   }
 
   @override
-  imc.Pressure deserialize(Uint8List data, [int offset = 0]) {
+  imc.Pressure? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10038,6 +11367,10 @@ class PressureSerializer
     var builder = imc.PressureBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10048,8 +11381,13 @@ class PressureSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10074,11 +11412,16 @@ class PressureSerializer
 
 /// Depth serializer class
 ///
-class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
+class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
   @override
-  ByteData serialize(imc.Depth message) {
+  ByteData serialize(imc.Depth? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10094,7 +11437,9 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
   }
 
   @override
-  int serializePayload(imc.Depth message, ByteData byteData, int offset) {
+  int serializePayload(imc.Depth? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10105,7 +11450,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
   }
 
   @override
-  imc.Depth deserialize(Uint8List data, [int offset = 0]) {
+  imc.Depth? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10124,6 +11469,10 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
     var builder = imc.DepthBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10134,8 +11483,13 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10161,11 +11515,16 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth, imc.DepthBuilder> {
 /// Depth Offset serializer class
 ///
 class DepthOffsetSerializer
-    extends imc.ImcSerializer<imc.DepthOffset, imc.DepthOffsetBuilder> {
+    extends imc.ImcSerializer<imc.DepthOffset?, imc.DepthOffsetBuilder> {
   @override
-  ByteData serialize(imc.DepthOffset message) {
+  ByteData serialize(imc.DepthOffset? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10181,7 +11540,10 @@ class DepthOffsetSerializer
   }
 
   @override
-  int serializePayload(imc.DepthOffset message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.DepthOffset? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10192,7 +11554,7 @@ class DepthOffsetSerializer
   }
 
   @override
-  imc.DepthOffset deserialize(Uint8List data, [int offset = 0]) {
+  imc.DepthOffset? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10211,6 +11573,10 @@ class DepthOffsetSerializer
     var builder = imc.DepthOffsetBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10221,8 +11587,13 @@ class DepthOffsetSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10248,11 +11619,16 @@ class DepthOffsetSerializer
 /// Sound Speed serializer class
 ///
 class SoundSpeedSerializer
-    extends imc.ImcSerializer<imc.SoundSpeed, imc.SoundSpeedBuilder> {
+    extends imc.ImcSerializer<imc.SoundSpeed?, imc.SoundSpeedBuilder> {
   @override
-  ByteData serialize(imc.SoundSpeed message) {
+  ByteData serialize(imc.SoundSpeed? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10268,7 +11644,9 @@ class SoundSpeedSerializer
   }
 
   @override
-  int serializePayload(imc.SoundSpeed message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoundSpeed? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10279,7 +11657,7 @@ class SoundSpeedSerializer
   }
 
   @override
-  imc.SoundSpeed deserialize(Uint8List data, [int offset = 0]) {
+  imc.SoundSpeed? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10298,6 +11676,10 @@ class SoundSpeedSerializer
     var builder = imc.SoundSpeedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10308,8 +11690,13 @@ class SoundSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10335,11 +11722,16 @@ class SoundSpeedSerializer
 /// Water Density serializer class
 ///
 class WaterDensitySerializer
-    extends imc.ImcSerializer<imc.WaterDensity, imc.WaterDensityBuilder> {
+    extends imc.ImcSerializer<imc.WaterDensity?, imc.WaterDensityBuilder> {
   @override
-  ByteData serialize(imc.WaterDensity message) {
+  ByteData serialize(imc.WaterDensity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10356,7 +11748,9 @@ class WaterDensitySerializer
 
   @override
   int serializePayload(
-      imc.WaterDensity message, ByteData byteData, int offset) {
+      imc.WaterDensity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10367,7 +11761,7 @@ class WaterDensitySerializer
   }
 
   @override
-  imc.WaterDensity deserialize(Uint8List data, [int offset = 0]) {
+  imc.WaterDensity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10386,6 +11780,10 @@ class WaterDensitySerializer
     var builder = imc.WaterDensityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10396,8 +11794,13 @@ class WaterDensitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10423,11 +11826,16 @@ class WaterDensitySerializer
 /// Conductivity serializer class
 ///
 class ConductivitySerializer
-    extends imc.ImcSerializer<imc.Conductivity, imc.ConductivityBuilder> {
+    extends imc.ImcSerializer<imc.Conductivity?, imc.ConductivityBuilder> {
   @override
-  ByteData serialize(imc.Conductivity message) {
+  ByteData serialize(imc.Conductivity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10444,7 +11852,9 @@ class ConductivitySerializer
 
   @override
   int serializePayload(
-      imc.Conductivity message, ByteData byteData, int offset) {
+      imc.Conductivity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10455,7 +11865,7 @@ class ConductivitySerializer
   }
 
   @override
-  imc.Conductivity deserialize(Uint8List data, [int offset = 0]) {
+  imc.Conductivity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10474,6 +11884,10 @@ class ConductivitySerializer
     var builder = imc.ConductivityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10484,8 +11898,13 @@ class ConductivitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10511,11 +11930,16 @@ class ConductivitySerializer
 /// Salinity serializer class
 ///
 class SalinitySerializer
-    extends imc.ImcSerializer<imc.Salinity, imc.SalinityBuilder> {
+    extends imc.ImcSerializer<imc.Salinity?, imc.SalinityBuilder> {
   @override
-  ByteData serialize(imc.Salinity message) {
+  ByteData serialize(imc.Salinity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10531,7 +11955,9 @@ class SalinitySerializer
   }
 
   @override
-  int serializePayload(imc.Salinity message, ByteData byteData, int offset) {
+  int serializePayload(imc.Salinity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10542,7 +11968,7 @@ class SalinitySerializer
   }
 
   @override
-  imc.Salinity deserialize(Uint8List data, [int offset = 0]) {
+  imc.Salinity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10561,6 +11987,10 @@ class SalinitySerializer
     var builder = imc.SalinityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10571,8 +12001,13 @@ class SalinitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10598,11 +12033,16 @@ class SalinitySerializer
 /// Wind Speed serializer class
 ///
 class WindSpeedSerializer
-    extends imc.ImcSerializer<imc.WindSpeed, imc.WindSpeedBuilder> {
+    extends imc.ImcSerializer<imc.WindSpeed?, imc.WindSpeedBuilder> {
   @override
-  ByteData serialize(imc.WindSpeed message) {
+  ByteData serialize(imc.WindSpeed? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10618,7 +12058,9 @@ class WindSpeedSerializer
   }
 
   @override
-  int serializePayload(imc.WindSpeed message, ByteData byteData, int offset) {
+  int serializePayload(imc.WindSpeed? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field direction
@@ -10635,7 +12077,7 @@ class WindSpeedSerializer
   }
 
   @override
-  imc.WindSpeed deserialize(Uint8List data, [int offset = 0]) {
+  imc.WindSpeed? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10654,6 +12096,10 @@ class WindSpeedSerializer
     var builder = imc.WindSpeedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10664,8 +12110,13 @@ class WindSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10697,11 +12148,16 @@ class WindSpeedSerializer
 /// Relative Humidity serializer class
 ///
 class RelativeHumiditySerializer extends imc
-    .ImcSerializer<imc.RelativeHumidity, imc.RelativeHumidityBuilder> {
+    .ImcSerializer<imc.RelativeHumidity?, imc.RelativeHumidityBuilder> {
   @override
-  ByteData serialize(imc.RelativeHumidity message) {
+  ByteData serialize(imc.RelativeHumidity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10718,7 +12174,9 @@ class RelativeHumiditySerializer extends imc
 
   @override
   int serializePayload(
-      imc.RelativeHumidity message, ByteData byteData, int offset) {
+      imc.RelativeHumidity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10729,7 +12187,7 @@ class RelativeHumiditySerializer extends imc
   }
 
   @override
-  imc.RelativeHumidity deserialize(Uint8List data, [int offset = 0]) {
+  imc.RelativeHumidity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10748,6 +12206,10 @@ class RelativeHumiditySerializer extends imc
     var builder = imc.RelativeHumidityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10758,8 +12220,13 @@ class RelativeHumiditySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10785,11 +12252,16 @@ class RelativeHumiditySerializer extends imc
 /// Device Data (Text) serializer class
 ///
 class DevDataTextSerializer
-    extends imc.ImcSerializer<imc.DevDataText, imc.DevDataTextBuilder> {
+    extends imc.ImcSerializer<imc.DevDataText?, imc.DevDataTextBuilder> {
   @override
-  ByteData serialize(imc.DevDataText message) {
+  ByteData serialize(imc.DevDataText? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10805,7 +12277,10 @@ class DevDataTextSerializer
   }
 
   @override
-  int serializePayload(imc.DevDataText message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.DevDataText? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -10819,7 +12294,7 @@ class DevDataTextSerializer
   }
 
   @override
-  imc.DevDataText deserialize(Uint8List data, [int offset = 0]) {
+  imc.DevDataText? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10838,6 +12313,10 @@ class DevDataTextSerializer
     var builder = imc.DevDataTextBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10848,8 +12327,13 @@ class DevDataTextSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10881,11 +12365,16 @@ class DevDataTextSerializer
 /// Device Data (Binary) serializer class
 ///
 class DevDataBinarySerializer
-    extends imc.ImcSerializer<imc.DevDataBinary, imc.DevDataBinaryBuilder> {
+    extends imc.ImcSerializer<imc.DevDataBinary?, imc.DevDataBinaryBuilder> {
   @override
-  ByteData serialize(imc.DevDataBinary message) {
+  ByteData serialize(imc.DevDataBinary? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10902,20 +12391,24 @@ class DevDataBinarySerializer
 
   @override
   int serializePayload(
-      imc.DevDataBinary message, ByteData byteData, int offset) {
+      imc.DevDataBinary? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
     var valueSSize = message.value.length;
     byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
     byteOffset += 2;
-    message.value.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (valueSSize > 0) {
+      message.value.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.DevDataBinary deserialize(Uint8List data, [int offset = 0]) {
+  imc.DevDataBinary? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -10934,6 +12427,10 @@ class DevDataBinarySerializer
     var builder = imc.DevDataBinaryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -10944,8 +12441,13 @@ class DevDataBinarySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -10975,11 +12477,16 @@ class DevDataBinarySerializer
 
 /// Force serializer class
 ///
-class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
+class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
   @override
-  ByteData serialize(imc.Force message) {
+  ByteData serialize(imc.Force? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -10995,7 +12502,9 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
   }
 
   @override
-  int serializePayload(imc.Force message, ByteData byteData, int offset) {
+  int serializePayload(imc.Force? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -11006,7 +12515,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
   }
 
   @override
-  imc.Force deserialize(Uint8List data, [int offset = 0]) {
+  imc.Force? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11025,6 +12534,10 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
     var builder = imc.ForceBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11035,8 +12548,13 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11062,11 +12580,16 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force, imc.ForceBuilder> {
 /// Sonar Data serializer class
 ///
 class SonarDataSerializer
-    extends imc.ImcSerializer<imc.SonarData, imc.SonarDataBuilder> {
+    extends imc.ImcSerializer<imc.SonarData?, imc.SonarDataBuilder> {
   @override
-  ByteData serialize(imc.SonarData message) {
+  ByteData serialize(imc.SonarData? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11082,7 +12605,9 @@ class SonarDataSerializer
   }
 
   @override
-  int serializePayload(imc.SonarData message, ByteData byteData, int offset) {
+  int serializePayload(imc.SonarData? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -11104,7 +12629,7 @@ class SonarDataSerializer
     byteData.setFloat32(byteOffset, message.scaleFactor, imc.endian_ser);
     byteOffset += 4;
     // field beamConfig
-    if (message.beamConfig == null || message.beamConfig.isEmpty) {
+    if (message.beamConfig.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -11112,11 +12637,11 @@ class SonarDataSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.beamConfig.length; i++) {
-        var id = message.beamConfig[i]?.msgId;
+        var id = message.beamConfig[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -11131,13 +12656,15 @@ class SonarDataSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.SonarData deserialize(Uint8List data, [int offset = 0]) {
+  imc.SonarData? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11156,6 +12683,10 @@ class SonarDataSerializer
     var builder = imc.SonarDataBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11166,8 +12697,13 @@ class SonarDataSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11209,11 +12745,11 @@ class SonarDataSerializer
       byteOffset += 2;
       if (beamConfigSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[beamConfigSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -11238,11 +12774,16 @@ class SonarDataSerializer
 
 /// Pulse serializer class
 ///
-class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
+class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
   @override
-  ByteData serialize(imc.Pulse message) {
+  ByteData serialize(imc.Pulse? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11258,14 +12799,16 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
   }
 
   @override
-  int serializePayload(imc.Pulse message, ByteData byteData, int offset) {
+  int serializePayload(imc.Pulse? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.Pulse deserialize(Uint8List data, [int offset = 0]) {
+  imc.Pulse? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11284,6 +12827,10 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
     var builder = imc.PulseBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11294,8 +12841,13 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11317,11 +12869,16 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse, imc.PulseBuilder> {
 /// Pulse Detection Control serializer class
 ///
 class PulseDetectionControlSerializer extends imc.ImcSerializer<
-    imc.PulseDetectionControl, imc.PulseDetectionControlBuilder> {
+    imc.PulseDetectionControl?, imc.PulseDetectionControlBuilder> {
   @override
-  ByteData serialize(imc.PulseDetectionControl message) {
+  ByteData serialize(imc.PulseDetectionControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11338,7 +12895,9 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.PulseDetectionControl message, ByteData byteData, int offset) {
+      imc.PulseDetectionControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -11349,7 +12908,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.PulseDetectionControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.PulseDetectionControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11368,6 +12927,10 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
     var builder = imc.PulseDetectionControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11378,8 +12941,13 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11405,11 +12973,16 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
 /// Fuel Level serializer class
 ///
 class FuelLevelSerializer
-    extends imc.ImcSerializer<imc.FuelLevel, imc.FuelLevelBuilder> {
+    extends imc.ImcSerializer<imc.FuelLevel?, imc.FuelLevelBuilder> {
   @override
-  ByteData serialize(imc.FuelLevel message) {
+  ByteData serialize(imc.FuelLevel? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11425,7 +12998,9 @@ class FuelLevelSerializer
   }
 
   @override
-  int serializePayload(imc.FuelLevel message, ByteData byteData, int offset) {
+  int serializePayload(imc.FuelLevel? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -11445,7 +13020,7 @@ class FuelLevelSerializer
   }
 
   @override
-  imc.FuelLevel deserialize(Uint8List data, [int offset = 0]) {
+  imc.FuelLevel? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11464,6 +13039,10 @@ class FuelLevelSerializer
     var builder = imc.FuelLevelBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11474,8 +13053,13 @@ class FuelLevelSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11513,11 +13097,16 @@ class FuelLevelSerializer
 /// GPS Navigation Data serializer class
 ///
 class GpsNavDataSerializer
-    extends imc.ImcSerializer<imc.GpsNavData, imc.GpsNavDataBuilder> {
+    extends imc.ImcSerializer<imc.GpsNavData?, imc.GpsNavDataBuilder> {
   @override
-  ByteData serialize(imc.GpsNavData message) {
+  ByteData serialize(imc.GpsNavData? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11533,7 +13122,9 @@ class GpsNavDataSerializer
   }
 
   @override
-  int serializePayload(imc.GpsNavData message, ByteData byteData, int offset) {
+  int serializePayload(imc.GpsNavData? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field itow
@@ -11586,7 +13177,7 @@ class GpsNavDataSerializer
   }
 
   @override
-  imc.GpsNavData deserialize(Uint8List data, [int offset = 0]) {
+  imc.GpsNavData? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11605,6 +13196,10 @@ class GpsNavDataSerializer
     var builder = imc.GpsNavDataBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11615,8 +13210,13 @@ class GpsNavDataSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11684,11 +13284,16 @@ class GpsNavDataSerializer
 /// Servo Position serializer class
 ///
 class ServoPositionSerializer
-    extends imc.ImcSerializer<imc.ServoPosition, imc.ServoPositionBuilder> {
+    extends imc.ImcSerializer<imc.ServoPosition?, imc.ServoPositionBuilder> {
   @override
-  ByteData serialize(imc.ServoPosition message) {
+  ByteData serialize(imc.ServoPosition? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11705,7 +13310,9 @@ class ServoPositionSerializer
 
   @override
   int serializePayload(
-      imc.ServoPosition message, ByteData byteData, int offset) {
+      imc.ServoPosition? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -11719,7 +13326,7 @@ class ServoPositionSerializer
   }
 
   @override
-  imc.ServoPosition deserialize(Uint8List data, [int offset = 0]) {
+  imc.ServoPosition? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11738,6 +13345,10 @@ class ServoPositionSerializer
     var builder = imc.ServoPositionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11748,8 +13359,13 @@ class ServoPositionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11778,11 +13394,16 @@ class ServoPositionSerializer
 /// Device State serializer class
 ///
 class DeviceStateSerializer
-    extends imc.ImcSerializer<imc.DeviceState, imc.DeviceStateBuilder> {
+    extends imc.ImcSerializer<imc.DeviceState?, imc.DeviceStateBuilder> {
   @override
-  ByteData serialize(imc.DeviceState message) {
+  ByteData serialize(imc.DeviceState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11798,7 +13419,10 @@ class DeviceStateSerializer
   }
 
   @override
-  int serializePayload(imc.DeviceState message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.DeviceState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -11824,7 +13448,7 @@ class DeviceStateSerializer
   }
 
   @override
-  imc.DeviceState deserialize(Uint8List data, [int offset = 0]) {
+  imc.DeviceState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11843,6 +13467,10 @@ class DeviceStateSerializer
     var builder = imc.DeviceStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11853,8 +13481,13 @@ class DeviceStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11895,11 +13528,16 @@ class DeviceStateSerializer
 /// Beam Configuration serializer class
 ///
 class BeamConfigSerializer
-    extends imc.ImcSerializer<imc.BeamConfig, imc.BeamConfigBuilder> {
+    extends imc.ImcSerializer<imc.BeamConfig?, imc.BeamConfigBuilder> {
   @override
-  ByteData serialize(imc.BeamConfig message) {
+  ByteData serialize(imc.BeamConfig? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -11915,7 +13553,9 @@ class BeamConfigSerializer
   }
 
   @override
-  int serializePayload(imc.BeamConfig message, ByteData byteData, int offset) {
+  int serializePayload(imc.BeamConfig? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field beamWidth
@@ -11929,7 +13569,7 @@ class BeamConfigSerializer
   }
 
   @override
-  imc.BeamConfig deserialize(Uint8List data, [int offset = 0]) {
+  imc.BeamConfig? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -11948,6 +13588,10 @@ class BeamConfigSerializer
     var builder = imc.BeamConfigBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -11958,8 +13602,13 @@ class BeamConfigSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -11988,11 +13637,16 @@ class BeamConfigSerializer
 /// Data Sanity serializer class
 ///
 class DataSanitySerializer
-    extends imc.ImcSerializer<imc.DataSanity, imc.DataSanityBuilder> {
+    extends imc.ImcSerializer<imc.DataSanity?, imc.DataSanityBuilder> {
   @override
-  ByteData serialize(imc.DataSanity message) {
+  ByteData serialize(imc.DataSanity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12008,7 +13662,9 @@ class DataSanitySerializer
   }
 
   @override
-  int serializePayload(imc.DataSanity message, ByteData byteData, int offset) {
+  int serializePayload(imc.DataSanity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sane
@@ -12019,7 +13675,7 @@ class DataSanitySerializer
   }
 
   @override
-  imc.DataSanity deserialize(Uint8List data, [int offset = 0]) {
+  imc.DataSanity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12038,6 +13694,10 @@ class DataSanitySerializer
     var builder = imc.DataSanityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12048,8 +13708,13 @@ class DataSanitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12075,11 +13740,16 @@ class DataSanitySerializer
 /// Rhodamine Dye serializer class
 ///
 class RhodamineDyeSerializer
-    extends imc.ImcSerializer<imc.RhodamineDye, imc.RhodamineDyeBuilder> {
+    extends imc.ImcSerializer<imc.RhodamineDye?, imc.RhodamineDyeBuilder> {
   @override
-  ByteData serialize(imc.RhodamineDye message) {
+  ByteData serialize(imc.RhodamineDye? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12096,7 +13766,9 @@ class RhodamineDyeSerializer
 
   @override
   int serializePayload(
-      imc.RhodamineDye message, ByteData byteData, int offset) {
+      imc.RhodamineDye? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12107,7 +13779,7 @@ class RhodamineDyeSerializer
   }
 
   @override
-  imc.RhodamineDye deserialize(Uint8List data, [int offset = 0]) {
+  imc.RhodamineDye? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12126,6 +13798,10 @@ class RhodamineDyeSerializer
     var builder = imc.RhodamineDyeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12136,8 +13812,13 @@ class RhodamineDyeSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12163,11 +13844,16 @@ class RhodamineDyeSerializer
 /// Crude Oil serializer class
 ///
 class CrudeOilSerializer
-    extends imc.ImcSerializer<imc.CrudeOil, imc.CrudeOilBuilder> {
+    extends imc.ImcSerializer<imc.CrudeOil?, imc.CrudeOilBuilder> {
   @override
-  ByteData serialize(imc.CrudeOil message) {
+  ByteData serialize(imc.CrudeOil? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12183,7 +13869,9 @@ class CrudeOilSerializer
   }
 
   @override
-  int serializePayload(imc.CrudeOil message, ByteData byteData, int offset) {
+  int serializePayload(imc.CrudeOil? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12194,7 +13882,7 @@ class CrudeOilSerializer
   }
 
   @override
-  imc.CrudeOil deserialize(Uint8List data, [int offset = 0]) {
+  imc.CrudeOil? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12213,6 +13901,10 @@ class CrudeOilSerializer
     var builder = imc.CrudeOilBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12223,8 +13915,13 @@ class CrudeOilSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12250,11 +13947,16 @@ class CrudeOilSerializer
 /// Fine Oil serializer class
 ///
 class FineOilSerializer
-    extends imc.ImcSerializer<imc.FineOil, imc.FineOilBuilder> {
+    extends imc.ImcSerializer<imc.FineOil?, imc.FineOilBuilder> {
   @override
-  ByteData serialize(imc.FineOil message) {
+  ByteData serialize(imc.FineOil? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12270,7 +13972,9 @@ class FineOilSerializer
   }
 
   @override
-  int serializePayload(imc.FineOil message, ByteData byteData, int offset) {
+  int serializePayload(imc.FineOil? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12281,7 +13985,7 @@ class FineOilSerializer
   }
 
   @override
-  imc.FineOil deserialize(Uint8List data, [int offset = 0]) {
+  imc.FineOil? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12300,6 +14004,10 @@ class FineOilSerializer
     var builder = imc.FineOilBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12310,8 +14018,13 @@ class FineOilSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12337,11 +14050,16 @@ class FineOilSerializer
 /// Turbidity serializer class
 ///
 class TurbiditySerializer
-    extends imc.ImcSerializer<imc.Turbidity, imc.TurbidityBuilder> {
+    extends imc.ImcSerializer<imc.Turbidity?, imc.TurbidityBuilder> {
   @override
-  ByteData serialize(imc.Turbidity message) {
+  ByteData serialize(imc.Turbidity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12357,7 +14075,9 @@ class TurbiditySerializer
   }
 
   @override
-  int serializePayload(imc.Turbidity message, ByteData byteData, int offset) {
+  int serializePayload(imc.Turbidity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12368,7 +14088,7 @@ class TurbiditySerializer
   }
 
   @override
-  imc.Turbidity deserialize(Uint8List data, [int offset = 0]) {
+  imc.Turbidity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12387,6 +14107,10 @@ class TurbiditySerializer
     var builder = imc.TurbidityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12397,8 +14121,13 @@ class TurbiditySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12424,11 +14153,16 @@ class TurbiditySerializer
 /// Chlorophyll serializer class
 ///
 class ChlorophyllSerializer
-    extends imc.ImcSerializer<imc.Chlorophyll, imc.ChlorophyllBuilder> {
+    extends imc.ImcSerializer<imc.Chlorophyll?, imc.ChlorophyllBuilder> {
   @override
-  ByteData serialize(imc.Chlorophyll message) {
+  ByteData serialize(imc.Chlorophyll? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12444,7 +14178,10 @@ class ChlorophyllSerializer
   }
 
   @override
-  int serializePayload(imc.Chlorophyll message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.Chlorophyll? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12455,7 +14192,7 @@ class ChlorophyllSerializer
   }
 
   @override
-  imc.Chlorophyll deserialize(Uint8List data, [int offset = 0]) {
+  imc.Chlorophyll? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12474,6 +14211,10 @@ class ChlorophyllSerializer
     var builder = imc.ChlorophyllBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12484,8 +14225,13 @@ class ChlorophyllSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12511,11 +14257,16 @@ class ChlorophyllSerializer
 /// Fluorescein serializer class
 ///
 class FluoresceinSerializer
-    extends imc.ImcSerializer<imc.Fluorescein, imc.FluoresceinBuilder> {
+    extends imc.ImcSerializer<imc.Fluorescein?, imc.FluoresceinBuilder> {
   @override
-  ByteData serialize(imc.Fluorescein message) {
+  ByteData serialize(imc.Fluorescein? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12531,7 +14282,10 @@ class FluoresceinSerializer
   }
 
   @override
-  int serializePayload(imc.Fluorescein message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.Fluorescein? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12542,7 +14296,7 @@ class FluoresceinSerializer
   }
 
   @override
-  imc.Fluorescein deserialize(Uint8List data, [int offset = 0]) {
+  imc.Fluorescein? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12561,6 +14315,10 @@ class FluoresceinSerializer
     var builder = imc.FluoresceinBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12571,8 +14329,13 @@ class FluoresceinSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12598,11 +14361,16 @@ class FluoresceinSerializer
 /// Phycocyanin serializer class
 ///
 class PhycocyaninSerializer
-    extends imc.ImcSerializer<imc.Phycocyanin, imc.PhycocyaninBuilder> {
+    extends imc.ImcSerializer<imc.Phycocyanin?, imc.PhycocyaninBuilder> {
   @override
-  ByteData serialize(imc.Phycocyanin message) {
+  ByteData serialize(imc.Phycocyanin? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12618,7 +14386,10 @@ class PhycocyaninSerializer
   }
 
   @override
-  int serializePayload(imc.Phycocyanin message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.Phycocyanin? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12629,7 +14400,7 @@ class PhycocyaninSerializer
   }
 
   @override
-  imc.Phycocyanin deserialize(Uint8List data, [int offset = 0]) {
+  imc.Phycocyanin? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12648,6 +14419,10 @@ class PhycocyaninSerializer
     var builder = imc.PhycocyaninBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12658,8 +14433,13 @@ class PhycocyaninSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12685,11 +14465,16 @@ class PhycocyaninSerializer
 /// Phycoerythrin serializer class
 ///
 class PhycoerythrinSerializer
-    extends imc.ImcSerializer<imc.Phycoerythrin, imc.PhycoerythrinBuilder> {
+    extends imc.ImcSerializer<imc.Phycoerythrin?, imc.PhycoerythrinBuilder> {
   @override
-  ByteData serialize(imc.Phycoerythrin message) {
+  ByteData serialize(imc.Phycoerythrin? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12706,7 +14491,9 @@ class PhycoerythrinSerializer
 
   @override
   int serializePayload(
-      imc.Phycoerythrin message, ByteData byteData, int offset) {
+      imc.Phycoerythrin? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -12717,7 +14504,7 @@ class PhycoerythrinSerializer
   }
 
   @override
-  imc.Phycoerythrin deserialize(Uint8List data, [int offset = 0]) {
+  imc.Phycoerythrin? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12736,6 +14523,10 @@ class PhycoerythrinSerializer
     var builder = imc.PhycoerythrinBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12746,8 +14537,13 @@ class PhycoerythrinSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12773,11 +14569,16 @@ class PhycoerythrinSerializer
 /// GPS Fix RTK serializer class
 ///
 class GpsFixRtkSerializer
-    extends imc.ImcSerializer<imc.GpsFixRtk, imc.GpsFixRtkBuilder> {
+    extends imc.ImcSerializer<imc.GpsFixRtk?, imc.GpsFixRtkBuilder> {
   @override
-  ByteData serialize(imc.GpsFixRtk message) {
+  ByteData serialize(imc.GpsFixRtk? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12793,7 +14594,9 @@ class GpsFixRtkSerializer
   }
 
   @override
-  int serializePayload(imc.GpsFixRtk message, ByteData byteData, int offset) {
+  int serializePayload(imc.GpsFixRtk? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field validity
@@ -12846,7 +14649,7 @@ class GpsFixRtkSerializer
   }
 
   @override
-  imc.GpsFixRtk deserialize(Uint8List data, [int offset = 0]) {
+  imc.GpsFixRtk? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -12865,6 +14668,10 @@ class GpsFixRtkSerializer
     var builder = imc.GpsFixRtkBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -12875,8 +14682,13 @@ class GpsFixRtkSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -12944,12 +14756,17 @@ class GpsFixRtkSerializer
 
 /// External Navigation Data serializer class
 ///
-class ExternalNavDataSerializer
-    extends imc.ImcSerializer<imc.ExternalNavData, imc.ExternalNavDataBuilder> {
+class ExternalNavDataSerializer extends imc
+    .ImcSerializer<imc.ExternalNavData?, imc.ExternalNavDataBuilder> {
   @override
-  ByteData serialize(imc.ExternalNavData message) {
+  ByteData serialize(imc.ExternalNavData? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -12966,7 +14783,9 @@ class ExternalNavDataSerializer
 
   @override
   int serializePayload(
-      imc.ExternalNavData message, ByteData byteData, int offset) {
+      imc.ExternalNavData? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -12974,7 +14793,7 @@ class ExternalNavDataSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.state.msgId;
+      var id = message.state!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -12994,7 +14813,7 @@ class ExternalNavDataSerializer
   }
 
   @override
-  imc.ExternalNavData deserialize(Uint8List data, [int offset = 0]) {
+  imc.ExternalNavData? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13013,6 +14832,10 @@ class ExternalNavDataSerializer
     var builder = imc.ExternalNavDataBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13023,8 +14846,13 @@ class ExternalNavDataSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13045,12 +14873,12 @@ class ExternalNavDataSerializer
     if (stateSId == imc.ImcId.nullId) {
       builder.state = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[stateSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[stateSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[stateSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -13069,12 +14897,17 @@ class ExternalNavDataSerializer
 
 /// Dissolved Oxygen serializer class
 ///
-class DissolvedOxygenSerializer
-    extends imc.ImcSerializer<imc.DissolvedOxygen, imc.DissolvedOxygenBuilder> {
+class DissolvedOxygenSerializer extends imc
+    .ImcSerializer<imc.DissolvedOxygen?, imc.DissolvedOxygenBuilder> {
   @override
-  ByteData serialize(imc.DissolvedOxygen message) {
+  ByteData serialize(imc.DissolvedOxygen? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13091,7 +14924,9 @@ class DissolvedOxygenSerializer
 
   @override
   int serializePayload(
-      imc.DissolvedOxygen message, ByteData byteData, int offset) {
+      imc.DissolvedOxygen? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -13102,7 +14937,7 @@ class DissolvedOxygenSerializer
   }
 
   @override
-  imc.DissolvedOxygen deserialize(Uint8List data, [int offset = 0]) {
+  imc.DissolvedOxygen? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13121,6 +14956,10 @@ class DissolvedOxygenSerializer
     var builder = imc.DissolvedOxygenBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13131,8 +14970,13 @@ class DissolvedOxygenSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13158,11 +15002,16 @@ class DissolvedOxygenSerializer
 /// Air Saturation serializer class
 ///
 class AirSaturationSerializer
-    extends imc.ImcSerializer<imc.AirSaturation, imc.AirSaturationBuilder> {
+    extends imc.ImcSerializer<imc.AirSaturation?, imc.AirSaturationBuilder> {
   @override
-  ByteData serialize(imc.AirSaturation message) {
+  ByteData serialize(imc.AirSaturation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13179,7 +15028,9 @@ class AirSaturationSerializer
 
   @override
   int serializePayload(
-      imc.AirSaturation message, ByteData byteData, int offset) {
+      imc.AirSaturation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -13190,7 +15041,7 @@ class AirSaturationSerializer
   }
 
   @override
-  imc.AirSaturation deserialize(Uint8List data, [int offset = 0]) {
+  imc.AirSaturation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13209,6 +15060,10 @@ class AirSaturationSerializer
     var builder = imc.AirSaturationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13219,8 +15074,13 @@ class AirSaturationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13246,11 +15106,16 @@ class AirSaturationSerializer
 /// Throttle serializer class
 ///
 class ThrottleSerializer
-    extends imc.ImcSerializer<imc.Throttle, imc.ThrottleBuilder> {
+    extends imc.ImcSerializer<imc.Throttle?, imc.ThrottleBuilder> {
   @override
-  ByteData serialize(imc.Throttle message) {
+  ByteData serialize(imc.Throttle? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13266,7 +15131,9 @@ class ThrottleSerializer
   }
 
   @override
-  int serializePayload(imc.Throttle message, ByteData byteData, int offset) {
+  int serializePayload(imc.Throttle? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -13277,7 +15144,7 @@ class ThrottleSerializer
   }
 
   @override
-  imc.Throttle deserialize(Uint8List data, [int offset = 0]) {
+  imc.Throttle? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13296,6 +15163,10 @@ class ThrottleSerializer
     var builder = imc.ThrottleBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13306,8 +15177,13 @@ class ThrottleSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13332,11 +15208,16 @@ class ThrottleSerializer
 
 /// pH serializer class
 ///
-class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
+class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
   @override
-  ByteData serialize(imc.PH message) {
+  ByteData serialize(imc.PH? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13352,7 +15233,9 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
   }
 
   @override
-  int serializePayload(imc.PH message, ByteData byteData, int offset) {
+  int serializePayload(imc.PH? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -13363,7 +15246,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
   }
 
   @override
-  imc.PH deserialize(Uint8List data, [int offset = 0]) {
+  imc.PH? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13382,6 +15265,10 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
     var builder = imc.PHBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13392,8 +15279,13 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13418,11 +15310,16 @@ class PHSerializer extends imc.ImcSerializer<imc.PH, imc.PHBuilder> {
 
 /// Redox Potential serializer class
 ///
-class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
+class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
   @override
-  ByteData serialize(imc.Redox message) {
+  ByteData serialize(imc.Redox? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13438,7 +15335,9 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
   }
 
   @override
-  int serializePayload(imc.Redox message, ByteData byteData, int offset) {
+  int serializePayload(imc.Redox? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -13449,7 +15348,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
   }
 
   @override
-  imc.Redox deserialize(Uint8List data, [int offset = 0]) {
+  imc.Redox? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13468,6 +15367,10 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
     var builder = imc.RedoxBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13478,8 +15381,13 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13505,11 +15413,16 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox, imc.RedoxBuilder> {
 /// Camera Zoom serializer class
 ///
 class CameraZoomSerializer
-    extends imc.ImcSerializer<imc.CameraZoom, imc.CameraZoomBuilder> {
+    extends imc.ImcSerializer<imc.CameraZoom?, imc.CameraZoomBuilder> {
   @override
-  ByteData serialize(imc.CameraZoom message) {
+  ByteData serialize(imc.CameraZoom? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13525,7 +15438,9 @@ class CameraZoomSerializer
   }
 
   @override
-  int serializePayload(imc.CameraZoom message, ByteData byteData, int offset) {
+  int serializePayload(imc.CameraZoom? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -13542,7 +15457,7 @@ class CameraZoomSerializer
   }
 
   @override
-  imc.CameraZoom deserialize(Uint8List data, [int offset = 0]) {
+  imc.CameraZoom? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13561,6 +15476,10 @@ class CameraZoomSerializer
     var builder = imc.CameraZoomBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13571,8 +15490,13 @@ class CameraZoomSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13604,11 +15528,16 @@ class CameraZoomSerializer
 /// Set Thruster Actuation serializer class
 ///
 class SetThrusterActuationSerializer extends imc
-    .ImcSerializer<imc.SetThrusterActuation, imc.SetThrusterActuationBuilder> {
+    .ImcSerializer<imc.SetThrusterActuation?, imc.SetThrusterActuationBuilder> {
   @override
-  ByteData serialize(imc.SetThrusterActuation message) {
+  ByteData serialize(imc.SetThrusterActuation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13625,7 +15554,9 @@ class SetThrusterActuationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetThrusterActuation message, ByteData byteData, int offset) {
+      imc.SetThrusterActuation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -13639,7 +15570,7 @@ class SetThrusterActuationSerializer extends imc
   }
 
   @override
-  imc.SetThrusterActuation deserialize(Uint8List data, [int offset = 0]) {
+  imc.SetThrusterActuation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13658,6 +15589,10 @@ class SetThrusterActuationSerializer extends imc
     var builder = imc.SetThrusterActuationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13668,8 +15603,13 @@ class SetThrusterActuationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13698,11 +15638,16 @@ class SetThrusterActuationSerializer extends imc
 /// Set Servo Position serializer class
 ///
 class SetServoPositionSerializer extends imc
-    .ImcSerializer<imc.SetServoPosition, imc.SetServoPositionBuilder> {
+    .ImcSerializer<imc.SetServoPosition?, imc.SetServoPositionBuilder> {
   @override
-  ByteData serialize(imc.SetServoPosition message) {
+  ByteData serialize(imc.SetServoPosition? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13719,7 +15664,9 @@ class SetServoPositionSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetServoPosition message, ByteData byteData, int offset) {
+      imc.SetServoPosition? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -13733,7 +15680,7 @@ class SetServoPositionSerializer extends imc
   }
 
   @override
-  imc.SetServoPosition deserialize(Uint8List data, [int offset = 0]) {
+  imc.SetServoPosition? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13752,6 +15699,10 @@ class SetServoPositionSerializer extends imc
     var builder = imc.SetServoPositionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13762,8 +15713,13 @@ class SetServoPositionSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13792,11 +15748,16 @@ class SetServoPositionSerializer extends imc
 /// Set Control Surface Deflection serializer class
 ///
 class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
-    imc.SetControlSurfaceDeflection, imc.SetControlSurfaceDeflectionBuilder> {
+    imc.SetControlSurfaceDeflection?, imc.SetControlSurfaceDeflectionBuilder> {
   @override
-  ByteData serialize(imc.SetControlSurfaceDeflection message) {
+  ByteData serialize(imc.SetControlSurfaceDeflection? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13813,7 +15774,9 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.SetControlSurfaceDeflection message, ByteData byteData, int offset) {
+      imc.SetControlSurfaceDeflection? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -13827,7 +15790,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.SetControlSurfaceDeflection deserialize(Uint8List data,
+  imc.SetControlSurfaceDeflection? deserialize(Uint8List data,
       [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
@@ -13847,6 +15810,10 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     var builder = imc.SetControlSurfaceDeflectionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13857,8 +15824,13 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13887,11 +15859,16 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
 /// Remote Actions Request serializer class
 ///
 class RemoteActionsRequestSerializer extends imc
-    .ImcSerializer<imc.RemoteActionsRequest, imc.RemoteActionsRequestBuilder> {
+    .ImcSerializer<imc.RemoteActionsRequest?, imc.RemoteActionsRequestBuilder> {
   @override
-  ByteData serialize(imc.RemoteActionsRequest message) {
+  ByteData serialize(imc.RemoteActionsRequest? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -13908,7 +15885,9 @@ class RemoteActionsRequestSerializer extends imc
 
   @override
   int serializePayload(
-      imc.RemoteActionsRequest message, ByteData byteData, int offset) {
+      imc.RemoteActionsRequest? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -13925,7 +15904,7 @@ class RemoteActionsRequestSerializer extends imc
   }
 
   @override
-  imc.RemoteActionsRequest deserialize(Uint8List data, [int offset = 0]) {
+  imc.RemoteActionsRequest? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -13944,6 +15923,10 @@ class RemoteActionsRequestSerializer extends imc
     var builder = imc.RemoteActionsRequestBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -13954,8 +15937,13 @@ class RemoteActionsRequestSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -13990,11 +15978,16 @@ class RemoteActionsRequestSerializer extends imc
 /// Remote Actions serializer class
 ///
 class RemoteActionsSerializer
-    extends imc.ImcSerializer<imc.RemoteActions, imc.RemoteActionsBuilder> {
+    extends imc.ImcSerializer<imc.RemoteActions?, imc.RemoteActionsBuilder> {
   @override
-  ByteData serialize(imc.RemoteActions message) {
+  ByteData serialize(imc.RemoteActions? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14011,7 +16004,9 @@ class RemoteActionsSerializer
 
   @override
   int serializePayload(
-      imc.RemoteActions message, ByteData byteData, int offset) {
+      imc.RemoteActions? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field actions
@@ -14025,7 +16020,7 @@ class RemoteActionsSerializer
   }
 
   @override
-  imc.RemoteActions deserialize(Uint8List data, [int offset = 0]) {
+  imc.RemoteActions? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14044,6 +16039,10 @@ class RemoteActionsSerializer
     var builder = imc.RemoteActionsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14054,8 +16053,13 @@ class RemoteActionsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14087,11 +16091,16 @@ class RemoteActionsSerializer
 /// Button Event serializer class
 ///
 class ButtonEventSerializer
-    extends imc.ImcSerializer<imc.ButtonEvent, imc.ButtonEventBuilder> {
+    extends imc.ImcSerializer<imc.ButtonEvent?, imc.ButtonEventBuilder> {
   @override
-  ByteData serialize(imc.ButtonEvent message) {
+  ByteData serialize(imc.ButtonEvent? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14107,7 +16116,10 @@ class ButtonEventSerializer
   }
 
   @override
-  int serializePayload(imc.ButtonEvent message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.ButtonEvent? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field button
@@ -14121,7 +16133,7 @@ class ButtonEventSerializer
   }
 
   @override
-  imc.ButtonEvent deserialize(Uint8List data, [int offset = 0]) {
+  imc.ButtonEvent? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14140,6 +16152,10 @@ class ButtonEventSerializer
     var builder = imc.ButtonEventBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14150,8 +16166,13 @@ class ButtonEventSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14180,11 +16201,16 @@ class ButtonEventSerializer
 /// LCD Control serializer class
 ///
 class LcdControlSerializer
-    extends imc.ImcSerializer<imc.LcdControl, imc.LcdControlBuilder> {
+    extends imc.ImcSerializer<imc.LcdControl?, imc.LcdControlBuilder> {
   @override
-  ByteData serialize(imc.LcdControl message) {
+  ByteData serialize(imc.LcdControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14200,7 +16226,9 @@ class LcdControlSerializer
   }
 
   @override
-  int serializePayload(imc.LcdControl message, ByteData byteData, int offset) {
+  int serializePayload(imc.LcdControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -14217,7 +16245,7 @@ class LcdControlSerializer
   }
 
   @override
-  imc.LcdControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.LcdControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14236,6 +16264,10 @@ class LcdControlSerializer
     var builder = imc.LcdControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14246,8 +16278,13 @@ class LcdControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14282,11 +16319,16 @@ class LcdControlSerializer
 /// Power Operation serializer class
 ///
 class PowerOperationSerializer
-    extends imc.ImcSerializer<imc.PowerOperation, imc.PowerOperationBuilder> {
+    extends imc.ImcSerializer<imc.PowerOperation?, imc.PowerOperationBuilder> {
   @override
-  ByteData serialize(imc.PowerOperation message) {
+  ByteData serialize(imc.PowerOperation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14303,7 +16345,9 @@ class PowerOperationSerializer
 
   @override
   int serializePayload(
-      imc.PowerOperation message, ByteData byteData, int offset) {
+      imc.PowerOperation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -14320,7 +16364,7 @@ class PowerOperationSerializer
   }
 
   @override
-  imc.PowerOperation deserialize(Uint8List data, [int offset = 0]) {
+  imc.PowerOperation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14339,6 +16383,10 @@ class PowerOperationSerializer
     var builder = imc.PowerOperationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14349,8 +16397,13 @@ class PowerOperationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14382,11 +16435,16 @@ class PowerOperationSerializer
 /// Power Channel Control serializer class
 ///
 class PowerChannelControlSerializer extends imc
-    .ImcSerializer<imc.PowerChannelControl, imc.PowerChannelControlBuilder> {
+    .ImcSerializer<imc.PowerChannelControl?, imc.PowerChannelControlBuilder> {
   @override
-  ByteData serialize(imc.PowerChannelControl message) {
+  ByteData serialize(imc.PowerChannelControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14403,7 +16461,9 @@ class PowerChannelControlSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PowerChannelControl message, ByteData byteData, int offset) {
+      imc.PowerChannelControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -14423,7 +16483,7 @@ class PowerChannelControlSerializer extends imc
   }
 
   @override
-  imc.PowerChannelControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.PowerChannelControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14442,6 +16502,10 @@ class PowerChannelControlSerializer extends imc
     var builder = imc.PowerChannelControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14452,8 +16516,13 @@ class PowerChannelControlSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14491,11 +16560,16 @@ class PowerChannelControlSerializer extends imc
 /// Query Power Channel State serializer class
 ///
 class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
-    imc.QueryPowerChannelState, imc.QueryPowerChannelStateBuilder> {
+    imc.QueryPowerChannelState?, imc.QueryPowerChannelStateBuilder> {
   @override
-  ByteData serialize(imc.QueryPowerChannelState message) {
+  ByteData serialize(imc.QueryPowerChannelState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14512,14 +16586,16 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.QueryPowerChannelState message, ByteData byteData, int offset) {
+      imc.QueryPowerChannelState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.QueryPowerChannelState deserialize(Uint8List data, [int offset = 0]) {
+  imc.QueryPowerChannelState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14538,6 +16614,10 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
     var builder = imc.QueryPowerChannelStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14548,8 +16628,13 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14571,11 +16656,16 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
 /// Power Channel State serializer class
 ///
 class PowerChannelStateSerializer extends imc
-    .ImcSerializer<imc.PowerChannelState, imc.PowerChannelStateBuilder> {
+    .ImcSerializer<imc.PowerChannelState?, imc.PowerChannelStateBuilder> {
   @override
-  ByteData serialize(imc.PowerChannelState message) {
+  ByteData serialize(imc.PowerChannelState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14592,7 +16682,9 @@ class PowerChannelStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PowerChannelState message, ByteData byteData, int offset) {
+      imc.PowerChannelState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -14609,7 +16701,7 @@ class PowerChannelStateSerializer extends imc
   }
 
   @override
-  imc.PowerChannelState deserialize(Uint8List data, [int offset = 0]) {
+  imc.PowerChannelState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14628,6 +16720,10 @@ class PowerChannelStateSerializer extends imc
     var builder = imc.PowerChannelStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14638,8 +16734,13 @@ class PowerChannelStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14675,11 +16776,16 @@ class PowerChannelStateSerializer extends imc
 /// LED Brightness serializer class
 ///
 class LedBrightnessSerializer
-    extends imc.ImcSerializer<imc.LedBrightness, imc.LedBrightnessBuilder> {
+    extends imc.ImcSerializer<imc.LedBrightness?, imc.LedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.LedBrightness message) {
+  ByteData serialize(imc.LedBrightness? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14696,7 +16802,9 @@ class LedBrightnessSerializer
 
   @override
   int serializePayload(
-      imc.LedBrightness message, ByteData byteData, int offset) {
+      imc.LedBrightness? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -14713,7 +16821,7 @@ class LedBrightnessSerializer
   }
 
   @override
-  imc.LedBrightness deserialize(Uint8List data, [int offset = 0]) {
+  imc.LedBrightness? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14732,6 +16840,10 @@ class LedBrightnessSerializer
     var builder = imc.LedBrightnessBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14742,8 +16854,13 @@ class LedBrightnessSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14778,11 +16895,16 @@ class LedBrightnessSerializer
 /// Query LED Brightness serializer class
 ///
 class QueryLedBrightnessSerializer extends imc
-    .ImcSerializer<imc.QueryLedBrightness, imc.QueryLedBrightnessBuilder> {
+    .ImcSerializer<imc.QueryLedBrightness?, imc.QueryLedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.QueryLedBrightness message) {
+  ByteData serialize(imc.QueryLedBrightness? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14799,7 +16921,9 @@ class QueryLedBrightnessSerializer extends imc
 
   @override
   int serializePayload(
-      imc.QueryLedBrightness message, ByteData byteData, int offset) {
+      imc.QueryLedBrightness? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -14813,7 +16937,7 @@ class QueryLedBrightnessSerializer extends imc
   }
 
   @override
-  imc.QueryLedBrightness deserialize(Uint8List data, [int offset = 0]) {
+  imc.QueryLedBrightness? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14832,6 +16956,10 @@ class QueryLedBrightnessSerializer extends imc
     var builder = imc.QueryLedBrightnessBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14842,8 +16970,13 @@ class QueryLedBrightnessSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14875,11 +17008,16 @@ class QueryLedBrightnessSerializer extends imc
 /// Set LED Brightness serializer class
 ///
 class SetLedBrightnessSerializer extends imc
-    .ImcSerializer<imc.SetLedBrightness, imc.SetLedBrightnessBuilder> {
+    .ImcSerializer<imc.SetLedBrightness?, imc.SetLedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.SetLedBrightness message) {
+  ByteData serialize(imc.SetLedBrightness? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14896,7 +17034,9 @@ class SetLedBrightnessSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetLedBrightness message, ByteData byteData, int offset) {
+      imc.SetLedBrightness? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -14913,7 +17053,7 @@ class SetLedBrightnessSerializer extends imc
   }
 
   @override
-  imc.SetLedBrightness deserialize(Uint8List data, [int offset = 0]) {
+  imc.SetLedBrightness? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -14932,6 +17072,10 @@ class SetLedBrightnessSerializer extends imc
     var builder = imc.SetLedBrightnessBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -14942,8 +17086,13 @@ class SetLedBrightnessSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -14978,11 +17127,16 @@ class SetLedBrightnessSerializer extends imc
 /// Set PWM serializer class
 ///
 class SetPWMSerializer
-    extends imc.ImcSerializer<imc.SetPWM, imc.SetPWMBuilder> {
+    extends imc.ImcSerializer<imc.SetPWM?, imc.SetPWMBuilder> {
   @override
-  ByteData serialize(imc.SetPWM message) {
+  ByteData serialize(imc.SetPWM? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -14998,7 +17152,9 @@ class SetPWMSerializer
   }
 
   @override
-  int serializePayload(imc.SetPWM message, ByteData byteData, int offset) {
+  int serializePayload(imc.SetPWM? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -15015,7 +17171,7 @@ class SetPWMSerializer
   }
 
   @override
-  imc.SetPWM deserialize(Uint8List data, [int offset = 0]) {
+  imc.SetPWM? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15034,6 +17190,10 @@ class SetPWMSerializer
     var builder = imc.SetPWMBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15044,8 +17204,13 @@ class SetPWMSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15076,11 +17241,16 @@ class SetPWMSerializer
 
 /// PWM serializer class
 ///
-class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
+class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
   @override
-  ByteData serialize(imc.PWM message) {
+  ByteData serialize(imc.PWM? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15096,7 +17266,9 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
   }
 
   @override
-  int serializePayload(imc.PWM message, ByteData byteData, int offset) {
+  int serializePayload(imc.PWM? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -15113,7 +17285,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
   }
 
   @override
-  imc.PWM deserialize(Uint8List data, [int offset = 0]) {
+  imc.PWM? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15132,6 +17304,10 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
     var builder = imc.PWMBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15142,8 +17318,13 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15175,11 +17356,16 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM, imc.PWMBuilder> {
 /// Estimated State serializer class
 ///
 class EstimatedStateSerializer
-    extends imc.ImcSerializer<imc.EstimatedState, imc.EstimatedStateBuilder> {
+    extends imc.ImcSerializer<imc.EstimatedState?, imc.EstimatedStateBuilder> {
   @override
-  ByteData serialize(imc.EstimatedState message) {
+  ByteData serialize(imc.EstimatedState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15196,7 +17382,9 @@ class EstimatedStateSerializer
 
   @override
   int serializePayload(
-      imc.EstimatedState message, ByteData byteData, int offset) {
+      imc.EstimatedState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -15264,7 +17452,7 @@ class EstimatedStateSerializer
   }
 
   @override
-  imc.EstimatedState deserialize(Uint8List data, [int offset = 0]) {
+  imc.EstimatedState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15283,6 +17471,10 @@ class EstimatedStateSerializer
     var builder = imc.EstimatedStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15293,8 +17485,13 @@ class EstimatedStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15377,11 +17574,16 @@ class EstimatedStateSerializer
 /// Estimated Stream Velocity serializer class
 ///
 class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
-    imc.EstimatedStreamVelocity, imc.EstimatedStreamVelocityBuilder> {
+    imc.EstimatedStreamVelocity?, imc.EstimatedStreamVelocityBuilder> {
   @override
-  ByteData serialize(imc.EstimatedStreamVelocity message) {
+  ByteData serialize(imc.EstimatedStreamVelocity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15398,7 +17600,9 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.EstimatedStreamVelocity message, ByteData byteData, int offset) {
+      imc.EstimatedStreamVelocity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -15415,7 +17619,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.EstimatedStreamVelocity deserialize(Uint8List data, [int offset = 0]) {
+  imc.EstimatedStreamVelocity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15434,6 +17638,10 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     var builder = imc.EstimatedStreamVelocityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15444,8 +17652,13 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15477,11 +17690,16 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
 /// Indicated Speed serializer class
 ///
 class IndicatedSpeedSerializer
-    extends imc.ImcSerializer<imc.IndicatedSpeed, imc.IndicatedSpeedBuilder> {
+    extends imc.ImcSerializer<imc.IndicatedSpeed?, imc.IndicatedSpeedBuilder> {
   @override
-  ByteData serialize(imc.IndicatedSpeed message) {
+  ByteData serialize(imc.IndicatedSpeed? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15498,7 +17716,9 @@ class IndicatedSpeedSerializer
 
   @override
   int serializePayload(
-      imc.IndicatedSpeed message, ByteData byteData, int offset) {
+      imc.IndicatedSpeed? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -15509,7 +17729,7 @@ class IndicatedSpeedSerializer
   }
 
   @override
-  imc.IndicatedSpeed deserialize(Uint8List data, [int offset = 0]) {
+  imc.IndicatedSpeed? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15528,6 +17748,10 @@ class IndicatedSpeedSerializer
     var builder = imc.IndicatedSpeedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15538,8 +17762,13 @@ class IndicatedSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15565,11 +17794,16 @@ class IndicatedSpeedSerializer
 /// True Speed serializer class
 ///
 class TrueSpeedSerializer
-    extends imc.ImcSerializer<imc.TrueSpeed, imc.TrueSpeedBuilder> {
+    extends imc.ImcSerializer<imc.TrueSpeed?, imc.TrueSpeedBuilder> {
   @override
-  ByteData serialize(imc.TrueSpeed message) {
+  ByteData serialize(imc.TrueSpeed? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15585,7 +17819,9 @@ class TrueSpeedSerializer
   }
 
   @override
-  int serializePayload(imc.TrueSpeed message, ByteData byteData, int offset) {
+  int serializePayload(imc.TrueSpeed? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -15596,7 +17832,7 @@ class TrueSpeedSerializer
   }
 
   @override
-  imc.TrueSpeed deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrueSpeed? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15615,6 +17851,10 @@ class TrueSpeedSerializer
     var builder = imc.TrueSpeedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15625,8 +17865,13 @@ class TrueSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15652,11 +17897,16 @@ class TrueSpeedSerializer
 /// Navigation Uncertainty serializer class
 ///
 class NavigationUncertaintySerializer extends imc.ImcSerializer<
-    imc.NavigationUncertainty, imc.NavigationUncertaintyBuilder> {
+    imc.NavigationUncertainty?, imc.NavigationUncertaintyBuilder> {
   @override
-  ByteData serialize(imc.NavigationUncertainty message) {
+  ByteData serialize(imc.NavigationUncertainty? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15673,7 +17923,9 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.NavigationUncertainty message, ByteData byteData, int offset) {
+      imc.NavigationUncertainty? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -15723,7 +17975,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.NavigationUncertainty deserialize(Uint8List data, [int offset = 0]) {
+  imc.NavigationUncertainty? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15742,6 +17994,10 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
     var builder = imc.NavigationUncertaintyBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15752,8 +18008,13 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15818,11 +18079,16 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
 /// Navigation Data serializer class
 ///
 class NavigationDataSerializer
-    extends imc.ImcSerializer<imc.NavigationData, imc.NavigationDataBuilder> {
+    extends imc.ImcSerializer<imc.NavigationData?, imc.NavigationDataBuilder> {
   @override
-  ByteData serialize(imc.NavigationData message) {
+  ByteData serialize(imc.NavigationData? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15839,7 +18105,9 @@ class NavigationDataSerializer
 
   @override
   int serializePayload(
-      imc.NavigationData message, ByteData byteData, int offset) {
+      imc.NavigationData? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field biasPsi
@@ -15874,7 +18142,7 @@ class NavigationDataSerializer
   }
 
   @override
-  imc.NavigationData deserialize(Uint8List data, [int offset = 0]) {
+  imc.NavigationData? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -15893,6 +18161,10 @@ class NavigationDataSerializer
     var builder = imc.NavigationDataBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -15903,8 +18175,13 @@ class NavigationDataSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -15953,12 +18230,17 @@ class NavigationDataSerializer
 
 /// GPS Fix Rejection serializer class
 ///
-class GpsFixRejectionSerializer
-    extends imc.ImcSerializer<imc.GpsFixRejection, imc.GpsFixRejectionBuilder> {
+class GpsFixRejectionSerializer extends imc
+    .ImcSerializer<imc.GpsFixRejection?, imc.GpsFixRejectionBuilder> {
   @override
-  ByteData serialize(imc.GpsFixRejection message) {
+  ByteData serialize(imc.GpsFixRejection? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -15975,7 +18257,9 @@ class GpsFixRejectionSerializer
 
   @override
   int serializePayload(
-      imc.GpsFixRejection message, ByteData byteData, int offset) {
+      imc.GpsFixRejection? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field utcTime
@@ -15989,7 +18273,7 @@ class GpsFixRejectionSerializer
   }
 
   @override
-  imc.GpsFixRejection deserialize(Uint8List data, [int offset = 0]) {
+  imc.GpsFixRejection? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16008,6 +18292,10 @@ class GpsFixRejectionSerializer
     var builder = imc.GpsFixRejectionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16018,8 +18306,13 @@ class GpsFixRejectionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16049,11 +18342,16 @@ class GpsFixRejectionSerializer
 /// LBL Range Acceptance serializer class
 ///
 class LblRangeAcceptanceSerializer extends imc
-    .ImcSerializer<imc.LblRangeAcceptance, imc.LblRangeAcceptanceBuilder> {
+    .ImcSerializer<imc.LblRangeAcceptance?, imc.LblRangeAcceptanceBuilder> {
   @override
-  ByteData serialize(imc.LblRangeAcceptance message) {
+  ByteData serialize(imc.LblRangeAcceptance? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16070,7 +18368,9 @@ class LblRangeAcceptanceSerializer extends imc
 
   @override
   int serializePayload(
-      imc.LblRangeAcceptance message, ByteData byteData, int offset) {
+      imc.LblRangeAcceptance? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -16087,7 +18387,7 @@ class LblRangeAcceptanceSerializer extends imc
   }
 
   @override
-  imc.LblRangeAcceptance deserialize(Uint8List data, [int offset = 0]) {
+  imc.LblRangeAcceptance? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16106,6 +18406,10 @@ class LblRangeAcceptanceSerializer extends imc
     var builder = imc.LblRangeAcceptanceBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16116,8 +18420,13 @@ class LblRangeAcceptanceSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16150,11 +18459,16 @@ class LblRangeAcceptanceSerializer extends imc
 /// DVL Rejection serializer class
 ///
 class DvlRejectionSerializer
-    extends imc.ImcSerializer<imc.DvlRejection, imc.DvlRejectionBuilder> {
+    extends imc.ImcSerializer<imc.DvlRejection?, imc.DvlRejectionBuilder> {
   @override
-  ByteData serialize(imc.DvlRejection message) {
+  ByteData serialize(imc.DvlRejection? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16171,7 +18485,9 @@ class DvlRejectionSerializer
 
   @override
   int serializePayload(
-      imc.DvlRejection message, ByteData byteData, int offset) {
+      imc.DvlRejection? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -16191,7 +18507,7 @@ class DvlRejectionSerializer
   }
 
   @override
-  imc.DvlRejection deserialize(Uint8List data, [int offset = 0]) {
+  imc.DvlRejection? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16210,6 +18526,10 @@ class DvlRejectionSerializer
     var builder = imc.DvlRejectionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16220,8 +18540,13 @@ class DvlRejectionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16256,11 +18581,16 @@ class DvlRejectionSerializer
 /// LBL Beacon Position Estimate serializer class
 ///
 class LblEstimateSerializer
-    extends imc.ImcSerializer<imc.LblEstimate, imc.LblEstimateBuilder> {
+    extends imc.ImcSerializer<imc.LblEstimate?, imc.LblEstimateBuilder> {
   @override
-  ByteData serialize(imc.LblEstimate message) {
+  ByteData serialize(imc.LblEstimate? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16276,7 +18606,10 @@ class LblEstimateSerializer
   }
 
   @override
-  int serializePayload(imc.LblEstimate message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.LblEstimate? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field beacon
@@ -16284,7 +18617,7 @@ class LblEstimateSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.beacon.msgId;
+      var id = message.beacon!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -16316,7 +18649,7 @@ class LblEstimateSerializer
   }
 
   @override
-  imc.LblEstimate deserialize(Uint8List data, [int offset = 0]) {
+  imc.LblEstimate? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16335,6 +18668,10 @@ class LblEstimateSerializer
     var builder = imc.LblEstimateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16345,8 +18682,13 @@ class LblEstimateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16367,12 +18709,12 @@ class LblEstimateSerializer
     if (beaconSId == imc.ImcId.nullId) {
       builder.beacon = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[beaconSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -16404,11 +18746,16 @@ class LblEstimateSerializer
 /// Alignment State serializer class
 ///
 class AlignmentStateSerializer
-    extends imc.ImcSerializer<imc.AlignmentState, imc.AlignmentStateBuilder> {
+    extends imc.ImcSerializer<imc.AlignmentState?, imc.AlignmentStateBuilder> {
   @override
-  ByteData serialize(imc.AlignmentState message) {
+  ByteData serialize(imc.AlignmentState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16425,7 +18772,9 @@ class AlignmentStateSerializer
 
   @override
   int serializePayload(
-      imc.AlignmentState message, ByteData byteData, int offset) {
+      imc.AlignmentState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -16436,7 +18785,7 @@ class AlignmentStateSerializer
   }
 
   @override
-  imc.AlignmentState deserialize(Uint8List data, [int offset = 0]) {
+  imc.AlignmentState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16455,6 +18804,10 @@ class AlignmentStateSerializer
     var builder = imc.AlignmentStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16465,8 +18818,13 @@ class AlignmentStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16492,11 +18850,16 @@ class AlignmentStateSerializer
 /// GroupStreamVelocity serializer class
 ///
 class GroupStreamVelocitySerializer extends imc
-    .ImcSerializer<imc.GroupStreamVelocity, imc.GroupStreamVelocityBuilder> {
+    .ImcSerializer<imc.GroupStreamVelocity?, imc.GroupStreamVelocityBuilder> {
   @override
-  ByteData serialize(imc.GroupStreamVelocity message) {
+  ByteData serialize(imc.GroupStreamVelocity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16513,7 +18876,9 @@ class GroupStreamVelocitySerializer extends imc
 
   @override
   int serializePayload(
-      imc.GroupStreamVelocity message, ByteData byteData, int offset) {
+      imc.GroupStreamVelocity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -16530,7 +18895,7 @@ class GroupStreamVelocitySerializer extends imc
   }
 
   @override
-  imc.GroupStreamVelocity deserialize(Uint8List data, [int offset = 0]) {
+  imc.GroupStreamVelocity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16549,6 +18914,10 @@ class GroupStreamVelocitySerializer extends imc
     var builder = imc.GroupStreamVelocityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16559,8 +18928,13 @@ class GroupStreamVelocitySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16592,11 +18966,16 @@ class GroupStreamVelocitySerializer extends imc
 /// Airflow serializer class
 ///
 class AirflowSerializer
-    extends imc.ImcSerializer<imc.Airflow, imc.AirflowBuilder> {
+    extends imc.ImcSerializer<imc.Airflow?, imc.AirflowBuilder> {
   @override
-  ByteData serialize(imc.Airflow message) {
+  ByteData serialize(imc.Airflow? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16612,7 +18991,9 @@ class AirflowSerializer
   }
 
   @override
-  int serializePayload(imc.Airflow message, ByteData byteData, int offset) {
+  int serializePayload(imc.Airflow? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field va
@@ -16629,7 +19010,7 @@ class AirflowSerializer
   }
 
   @override
-  imc.Airflow deserialize(Uint8List data, [int offset = 0]) {
+  imc.Airflow? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16648,6 +19029,10 @@ class AirflowSerializer
     var builder = imc.AirflowBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16658,8 +19043,13 @@ class AirflowSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16691,11 +19081,16 @@ class AirflowSerializer
 /// Desired Heading serializer class
 ///
 class DesiredHeadingSerializer
-    extends imc.ImcSerializer<imc.DesiredHeading, imc.DesiredHeadingBuilder> {
+    extends imc.ImcSerializer<imc.DesiredHeading?, imc.DesiredHeadingBuilder> {
   @override
-  ByteData serialize(imc.DesiredHeading message) {
+  ByteData serialize(imc.DesiredHeading? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16712,7 +19107,9 @@ class DesiredHeadingSerializer
 
   @override
   int serializePayload(
-      imc.DesiredHeading message, ByteData byteData, int offset) {
+      imc.DesiredHeading? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -16723,7 +19120,7 @@ class DesiredHeadingSerializer
   }
 
   @override
-  imc.DesiredHeading deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredHeading? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16742,6 +19139,10 @@ class DesiredHeadingSerializer
     var builder = imc.DesiredHeadingBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16752,8 +19153,13 @@ class DesiredHeadingSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16779,11 +19185,16 @@ class DesiredHeadingSerializer
 /// Desired Z serializer class
 ///
 class DesiredZSerializer
-    extends imc.ImcSerializer<imc.DesiredZ, imc.DesiredZBuilder> {
+    extends imc.ImcSerializer<imc.DesiredZ?, imc.DesiredZBuilder> {
   @override
-  ByteData serialize(imc.DesiredZ message) {
+  ByteData serialize(imc.DesiredZ? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16799,7 +19210,9 @@ class DesiredZSerializer
   }
 
   @override
-  int serializePayload(imc.DesiredZ message, ByteData byteData, int offset) {
+  int serializePayload(imc.DesiredZ? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -16813,7 +19226,7 @@ class DesiredZSerializer
   }
 
   @override
-  imc.DesiredZ deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredZ? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16832,6 +19245,10 @@ class DesiredZSerializer
     var builder = imc.DesiredZBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16842,8 +19259,13 @@ class DesiredZSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16872,11 +19294,16 @@ class DesiredZSerializer
 /// Desired Speed serializer class
 ///
 class DesiredSpeedSerializer
-    extends imc.ImcSerializer<imc.DesiredSpeed, imc.DesiredSpeedBuilder> {
+    extends imc.ImcSerializer<imc.DesiredSpeed?, imc.DesiredSpeedBuilder> {
   @override
-  ByteData serialize(imc.DesiredSpeed message) {
+  ByteData serialize(imc.DesiredSpeed? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16893,7 +19320,9 @@ class DesiredSpeedSerializer
 
   @override
   int serializePayload(
-      imc.DesiredSpeed message, ByteData byteData, int offset) {
+      imc.DesiredSpeed? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -16907,7 +19336,7 @@ class DesiredSpeedSerializer
   }
 
   @override
-  imc.DesiredSpeed deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredSpeed? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -16926,6 +19355,10 @@ class DesiredSpeedSerializer
     var builder = imc.DesiredSpeedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -16936,8 +19369,13 @@ class DesiredSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -16966,11 +19404,16 @@ class DesiredSpeedSerializer
 /// Desired Roll serializer class
 ///
 class DesiredRollSerializer
-    extends imc.ImcSerializer<imc.DesiredRoll, imc.DesiredRollBuilder> {
+    extends imc.ImcSerializer<imc.DesiredRoll?, imc.DesiredRollBuilder> {
   @override
-  ByteData serialize(imc.DesiredRoll message) {
+  ByteData serialize(imc.DesiredRoll? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -16986,7 +19429,10 @@ class DesiredRollSerializer
   }
 
   @override
-  int serializePayload(imc.DesiredRoll message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.DesiredRoll? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -16997,7 +19443,7 @@ class DesiredRollSerializer
   }
 
   @override
-  imc.DesiredRoll deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredRoll? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17016,6 +19462,10 @@ class DesiredRollSerializer
     var builder = imc.DesiredRollBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17026,8 +19476,13 @@ class DesiredRollSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17053,11 +19508,16 @@ class DesiredRollSerializer
 /// Desired Pitch serializer class
 ///
 class DesiredPitchSerializer
-    extends imc.ImcSerializer<imc.DesiredPitch, imc.DesiredPitchBuilder> {
+    extends imc.ImcSerializer<imc.DesiredPitch?, imc.DesiredPitchBuilder> {
   @override
-  ByteData serialize(imc.DesiredPitch message) {
+  ByteData serialize(imc.DesiredPitch? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17074,7 +19534,9 @@ class DesiredPitchSerializer
 
   @override
   int serializePayload(
-      imc.DesiredPitch message, ByteData byteData, int offset) {
+      imc.DesiredPitch? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -17085,7 +19547,7 @@ class DesiredPitchSerializer
   }
 
   @override
-  imc.DesiredPitch deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredPitch? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17104,6 +19566,10 @@ class DesiredPitchSerializer
     var builder = imc.DesiredPitchBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17114,8 +19580,13 @@ class DesiredPitchSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17141,11 +19612,16 @@ class DesiredPitchSerializer
 /// Desired Vertical Rate serializer class
 ///
 class DesiredVerticalRateSerializer extends imc
-    .ImcSerializer<imc.DesiredVerticalRate, imc.DesiredVerticalRateBuilder> {
+    .ImcSerializer<imc.DesiredVerticalRate?, imc.DesiredVerticalRateBuilder> {
   @override
-  ByteData serialize(imc.DesiredVerticalRate message) {
+  ByteData serialize(imc.DesiredVerticalRate? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17162,7 +19638,9 @@ class DesiredVerticalRateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DesiredVerticalRate message, ByteData byteData, int offset) {
+      imc.DesiredVerticalRate? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -17173,7 +19651,7 @@ class DesiredVerticalRateSerializer extends imc
   }
 
   @override
-  imc.DesiredVerticalRate deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredVerticalRate? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17192,6 +19670,10 @@ class DesiredVerticalRateSerializer extends imc
     var builder = imc.DesiredVerticalRateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17202,8 +19684,13 @@ class DesiredVerticalRateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17229,11 +19716,16 @@ class DesiredVerticalRateSerializer extends imc
 /// Desired Path serializer class
 ///
 class DesiredPathSerializer
-    extends imc.ImcSerializer<imc.DesiredPath, imc.DesiredPathBuilder> {
+    extends imc.ImcSerializer<imc.DesiredPath?, imc.DesiredPathBuilder> {
   @override
-  ByteData serialize(imc.DesiredPath message) {
+  ByteData serialize(imc.DesiredPath? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17249,7 +19741,10 @@ class DesiredPathSerializer
   }
 
   @override
-  int serializePayload(imc.DesiredPath message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.DesiredPath? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field pathRef
@@ -17296,7 +19791,7 @@ class DesiredPathSerializer
   }
 
   @override
-  imc.DesiredPath deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredPath? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17315,6 +19810,10 @@ class DesiredPathSerializer
     var builder = imc.DesiredPathBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17325,8 +19824,13 @@ class DesiredPathSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17388,11 +19892,16 @@ class DesiredPathSerializer
 /// Desired Control serializer class
 ///
 class DesiredControlSerializer
-    extends imc.ImcSerializer<imc.DesiredControl, imc.DesiredControlBuilder> {
+    extends imc.ImcSerializer<imc.DesiredControl?, imc.DesiredControlBuilder> {
   @override
-  ByteData serialize(imc.DesiredControl message) {
+  ByteData serialize(imc.DesiredControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17409,7 +19918,9 @@ class DesiredControlSerializer
 
   @override
   int serializePayload(
-      imc.DesiredControl message, ByteData byteData, int offset) {
+      imc.DesiredControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -17438,7 +19949,7 @@ class DesiredControlSerializer
   }
 
   @override
-  imc.DesiredControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17457,6 +19968,10 @@ class DesiredControlSerializer
     var builder = imc.DesiredControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17467,8 +19982,13 @@ class DesiredControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17513,11 +20033,16 @@ class DesiredControlSerializer
 /// Desired Heading Rate serializer class
 ///
 class DesiredHeadingRateSerializer extends imc
-    .ImcSerializer<imc.DesiredHeadingRate, imc.DesiredHeadingRateBuilder> {
+    .ImcSerializer<imc.DesiredHeadingRate?, imc.DesiredHeadingRateBuilder> {
   @override
-  ByteData serialize(imc.DesiredHeadingRate message) {
+  ByteData serialize(imc.DesiredHeadingRate? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17534,7 +20059,9 @@ class DesiredHeadingRateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DesiredHeadingRate message, ByteData byteData, int offset) {
+      imc.DesiredHeadingRate? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -17545,7 +20072,7 @@ class DesiredHeadingRateSerializer extends imc
   }
 
   @override
-  imc.DesiredHeadingRate deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredHeadingRate? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17564,6 +20091,10 @@ class DesiredHeadingRateSerializer extends imc
     var builder = imc.DesiredHeadingRateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17574,8 +20105,13 @@ class DesiredHeadingRateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17600,12 +20136,17 @@ class DesiredHeadingRateSerializer extends imc
 
 /// Desired Velocity serializer class
 ///
-class DesiredVelocitySerializer
-    extends imc.ImcSerializer<imc.DesiredVelocity, imc.DesiredVelocityBuilder> {
+class DesiredVelocitySerializer extends imc
+    .ImcSerializer<imc.DesiredVelocity?, imc.DesiredVelocityBuilder> {
   @override
-  ByteData serialize(imc.DesiredVelocity message) {
+  ByteData serialize(imc.DesiredVelocity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17622,7 +20163,9 @@ class DesiredVelocitySerializer
 
   @override
   int serializePayload(
-      imc.DesiredVelocity message, ByteData byteData, int offset) {
+      imc.DesiredVelocity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field u
@@ -17651,7 +20194,7 @@ class DesiredVelocitySerializer
   }
 
   @override
-  imc.DesiredVelocity deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredVelocity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17670,6 +20213,10 @@ class DesiredVelocitySerializer
     var builder = imc.DesiredVelocityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17680,8 +20227,13 @@ class DesiredVelocitySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17726,11 +20278,16 @@ class DesiredVelocitySerializer
 /// Path Control State serializer class
 ///
 class PathControlStateSerializer extends imc
-    .ImcSerializer<imc.PathControlState, imc.PathControlStateBuilder> {
+    .ImcSerializer<imc.PathControlState?, imc.PathControlStateBuilder> {
   @override
-  ByteData serialize(imc.PathControlState message) {
+  ByteData serialize(imc.PathControlState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17747,7 +20304,9 @@ class PathControlStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PathControlState message, ByteData byteData, int offset) {
+      imc.PathControlState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field pathRef
@@ -17812,7 +20371,7 @@ class PathControlStateSerializer extends imc
   }
 
   @override
-  imc.PathControlState deserialize(Uint8List data, [int offset = 0]) {
+  imc.PathControlState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17831,6 +20390,10 @@ class PathControlStateSerializer extends imc
     var builder = imc.PathControlStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17841,8 +20404,13 @@ class PathControlStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -17923,11 +20491,16 @@ class PathControlStateSerializer extends imc
 /// Allocated Control Torques serializer class
 ///
 class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
-    imc.AllocatedControlTorques, imc.AllocatedControlTorquesBuilder> {
+    imc.AllocatedControlTorques?, imc.AllocatedControlTorquesBuilder> {
   @override
-  ByteData serialize(imc.AllocatedControlTorques message) {
+  ByteData serialize(imc.AllocatedControlTorques? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -17944,7 +20517,9 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.AllocatedControlTorques message, ByteData byteData, int offset) {
+      imc.AllocatedControlTorques? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field k
@@ -17961,7 +20536,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.AllocatedControlTorques deserialize(Uint8List data, [int offset = 0]) {
+  imc.AllocatedControlTorques? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -17980,6 +20555,10 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     var builder = imc.AllocatedControlTorquesBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -17990,8 +20569,13 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18023,11 +20607,16 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
 /// Control Parcel serializer class
 ///
 class ControlParcelSerializer
-    extends imc.ImcSerializer<imc.ControlParcel, imc.ControlParcelBuilder> {
+    extends imc.ImcSerializer<imc.ControlParcel?, imc.ControlParcelBuilder> {
   @override
-  ByteData serialize(imc.ControlParcel message) {
+  ByteData serialize(imc.ControlParcel? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18044,7 +20633,9 @@ class ControlParcelSerializer
 
   @override
   int serializePayload(
-      imc.ControlParcel message, ByteData byteData, int offset) {
+      imc.ControlParcel? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field p
@@ -18064,7 +20655,7 @@ class ControlParcelSerializer
   }
 
   @override
-  imc.ControlParcel deserialize(Uint8List data, [int offset = 0]) {
+  imc.ControlParcel? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18083,6 +20674,10 @@ class ControlParcelSerializer
     var builder = imc.ControlParcelBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18093,8 +20688,13 @@ class ControlParcelSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18128,11 +20728,16 @@ class ControlParcelSerializer
 
 /// Brake serializer class
 ///
-class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
+class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
   @override
-  ByteData serialize(imc.Brake message) {
+  ByteData serialize(imc.Brake? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18148,7 +20753,9 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
   }
 
   @override
-  int serializePayload(imc.Brake message, ByteData byteData, int offset) {
+  int serializePayload(imc.Brake? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -18159,7 +20766,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
   }
 
   @override
-  imc.Brake deserialize(Uint8List data, [int offset = 0]) {
+  imc.Brake? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18178,6 +20785,10 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
     var builder = imc.BrakeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18188,8 +20799,13 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18215,11 +20831,16 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake, imc.BrakeBuilder> {
 /// Desired Linear State serializer class
 ///
 class DesiredLinearStateSerializer extends imc
-    .ImcSerializer<imc.DesiredLinearState, imc.DesiredLinearStateBuilder> {
+    .ImcSerializer<imc.DesiredLinearState?, imc.DesiredLinearStateBuilder> {
   @override
-  ByteData serialize(imc.DesiredLinearState message) {
+  ByteData serialize(imc.DesiredLinearState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18236,7 +20857,9 @@ class DesiredLinearStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.DesiredLinearState message, ByteData byteData, int offset) {
+      imc.DesiredLinearState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -18274,7 +20897,7 @@ class DesiredLinearStateSerializer extends imc
   }
 
   @override
-  imc.DesiredLinearState deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredLinearState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18293,6 +20916,10 @@ class DesiredLinearStateSerializer extends imc
     var builder = imc.DesiredLinearStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18303,8 +20930,13 @@ class DesiredLinearStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18357,12 +20989,17 @@ class DesiredLinearStateSerializer extends imc
 
 /// Desired Throttle serializer class
 ///
-class DesiredThrottleSerializer
-    extends imc.ImcSerializer<imc.DesiredThrottle, imc.DesiredThrottleBuilder> {
+class DesiredThrottleSerializer extends imc
+    .ImcSerializer<imc.DesiredThrottle?, imc.DesiredThrottleBuilder> {
   @override
-  ByteData serialize(imc.DesiredThrottle message) {
+  ByteData serialize(imc.DesiredThrottle? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18379,7 +21016,9 @@ class DesiredThrottleSerializer
 
   @override
   int serializePayload(
-      imc.DesiredThrottle message, ByteData byteData, int offset) {
+      imc.DesiredThrottle? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -18390,7 +21029,7 @@ class DesiredThrottleSerializer
   }
 
   @override
-  imc.DesiredThrottle deserialize(Uint8List data, [int offset = 0]) {
+  imc.DesiredThrottle? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18409,6 +21048,10 @@ class DesiredThrottleSerializer
     var builder = imc.DesiredThrottleBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18419,8 +21062,13 @@ class DesiredThrottleSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18445,11 +21093,16 @@ class DesiredThrottleSerializer
 
 /// Goto Maneuver serializer class
 ///
-class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
+class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
   @override
-  ByteData serialize(imc.Goto message) {
+  ByteData serialize(imc.Goto? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18465,7 +21118,9 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
   }
 
   @override
-  int serializePayload(imc.Goto message, ByteData byteData, int offset) {
+  int serializePayload(imc.Goto? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -18509,7 +21164,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
   }
 
   @override
-  imc.Goto deserialize(Uint8List data, [int offset = 0]) {
+  imc.Goto? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18528,6 +21183,10 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
     var builder = imc.GotoBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18538,8 +21197,13 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18600,11 +21264,16 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto, imc.GotoBuilder> {
 
 /// PopUp Maneuver serializer class
 ///
-class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
+class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
   @override
-  ByteData serialize(imc.PopUp message) {
+  ByteData serialize(imc.PopUp? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18620,7 +21289,9 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
   }
 
   @override
-  int serializePayload(imc.PopUp message, ByteData byteData, int offset) {
+  int serializePayload(imc.PopUp? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -18664,7 +21335,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
   }
 
   @override
-  imc.PopUp deserialize(Uint8List data, [int offset = 0]) {
+  imc.PopUp? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18683,6 +21354,10 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
     var builder = imc.PopUpBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18693,8 +21368,13 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18756,11 +21436,16 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp, imc.PopUpBuilder> {
 /// Teleoperation Maneuver serializer class
 ///
 class TeleoperationSerializer
-    extends imc.ImcSerializer<imc.Teleoperation, imc.TeleoperationBuilder> {
+    extends imc.ImcSerializer<imc.Teleoperation?, imc.TeleoperationBuilder> {
   @override
-  ByteData serialize(imc.Teleoperation message) {
+  ByteData serialize(imc.Teleoperation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18777,7 +21462,9 @@ class TeleoperationSerializer
 
   @override
   int serializePayload(
-      imc.Teleoperation message, ByteData byteData, int offset) {
+      imc.Teleoperation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field custom
@@ -18791,7 +21478,7 @@ class TeleoperationSerializer
   }
 
   @override
-  imc.Teleoperation deserialize(Uint8List data, [int offset = 0]) {
+  imc.Teleoperation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18810,6 +21497,10 @@ class TeleoperationSerializer
     var builder = imc.TeleoperationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18820,8 +21511,13 @@ class TeleoperationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -18853,11 +21549,16 @@ class TeleoperationSerializer
 /// Loiter Maneuver serializer class
 ///
 class LoiterSerializer
-    extends imc.ImcSerializer<imc.Loiter, imc.LoiterBuilder> {
+    extends imc.ImcSerializer<imc.Loiter?, imc.LoiterBuilder> {
   @override
-  ByteData serialize(imc.Loiter message) {
+  ByteData serialize(imc.Loiter? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -18873,7 +21574,9 @@ class LoiterSerializer
   }
 
   @override
-  int serializePayload(imc.Loiter message, ByteData byteData, int offset) {
+  int serializePayload(imc.Loiter? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -18926,7 +21629,7 @@ class LoiterSerializer
   }
 
   @override
-  imc.Loiter deserialize(Uint8List data, [int offset = 0]) {
+  imc.Loiter? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -18945,6 +21648,10 @@ class LoiterSerializer
     var builder = imc.LoiterBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -18955,8 +21662,13 @@ class LoiterSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19027,11 +21739,16 @@ class LoiterSerializer
 /// Idle Maneuver serializer class
 ///
 class IdleManeuverSerializer
-    extends imc.ImcSerializer<imc.IdleManeuver, imc.IdleManeuverBuilder> {
+    extends imc.ImcSerializer<imc.IdleManeuver?, imc.IdleManeuverBuilder> {
   @override
-  ByteData serialize(imc.IdleManeuver message) {
+  ByteData serialize(imc.IdleManeuver? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19048,7 +21765,9 @@ class IdleManeuverSerializer
 
   @override
   int serializePayload(
-      imc.IdleManeuver message, ByteData byteData, int offset) {
+      imc.IdleManeuver? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field duration
@@ -19065,7 +21784,7 @@ class IdleManeuverSerializer
   }
 
   @override
-  imc.IdleManeuver deserialize(Uint8List data, [int offset = 0]) {
+  imc.IdleManeuver? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -19084,6 +21803,10 @@ class IdleManeuverSerializer
     var builder = imc.IdleManeuverBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -19094,8 +21817,13 @@ class IdleManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19129,12 +21857,17 @@ class IdleManeuverSerializer
 
 /// Low Level Control Maneuver serializer class
 ///
-class LowLevelControlSerializer
-    extends imc.ImcSerializer<imc.LowLevelControl, imc.LowLevelControlBuilder> {
+class LowLevelControlSerializer extends imc
+    .ImcSerializer<imc.LowLevelControl?, imc.LowLevelControlBuilder> {
   @override
-  ByteData serialize(imc.LowLevelControl message) {
+  ByteData serialize(imc.LowLevelControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19151,7 +21884,9 @@ class LowLevelControlSerializer
 
   @override
   int serializePayload(
-      imc.LowLevelControl message, ByteData byteData, int offset) {
+      imc.LowLevelControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field control
@@ -19159,7 +21894,7 @@ class LowLevelControlSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.control.msgId;
+      var id = message.control!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -19185,7 +21920,7 @@ class LowLevelControlSerializer
   }
 
   @override
-  imc.LowLevelControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.LowLevelControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -19204,6 +21939,10 @@ class LowLevelControlSerializer
     var builder = imc.LowLevelControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -19214,8 +21953,13 @@ class LowLevelControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19236,12 +21980,12 @@ class LowLevelControlSerializer
     if (controlSId == imc.ImcId.nullId) {
       builder.control = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[controlSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[controlSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[controlSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[controlSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -19269,11 +22013,16 @@ class LowLevelControlSerializer
 
 /// Rows Maneuver serializer class
 ///
-class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
+class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
   @override
-  ByteData serialize(imc.Rows message) {
+  ByteData serialize(imc.Rows? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19289,7 +22038,9 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
   }
 
   @override
-  int serializePayload(imc.Rows message, ByteData byteData, int offset) {
+  int serializePayload(imc.Rows? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -19348,7 +22099,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
   }
 
   @override
-  imc.Rows deserialize(Uint8List data, [int offset = 0]) {
+  imc.Rows? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -19367,6 +22118,10 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
     var builder = imc.RowsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -19377,8 +22132,13 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19455,11 +22215,16 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows, imc.RowsBuilder> {
 /// Follow Path Maneuver serializer class
 ///
 class FollowPathSerializer
-    extends imc.ImcSerializer<imc.FollowPath, imc.FollowPathBuilder> {
+    extends imc.ImcSerializer<imc.FollowPath?, imc.FollowPathBuilder> {
   @override
-  ByteData serialize(imc.FollowPath message) {
+  ByteData serialize(imc.FollowPath? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19475,7 +22240,9 @@ class FollowPathSerializer
   }
 
   @override
-  int serializePayload(imc.FollowPath message, ByteData byteData, int offset) {
+  int serializePayload(imc.FollowPath? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -19500,7 +22267,7 @@ class FollowPathSerializer
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field points
-    if (message.points == null || message.points.isEmpty) {
+    if (message.points.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -19508,11 +22275,11 @@ class FollowPathSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.points.length; i++) {
-        var id = message.points[i]?.msgId;
+        var id = message.points[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -19534,7 +22301,7 @@ class FollowPathSerializer
   }
 
   @override
-  imc.FollowPath deserialize(Uint8List data, [int offset = 0]) {
+  imc.FollowPath? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -19553,6 +22320,10 @@ class FollowPathSerializer
     var builder = imc.FollowPathBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -19563,8 +22334,13 @@ class FollowPathSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19608,12 +22384,12 @@ class FollowPathSerializer
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -19640,11 +22416,16 @@ class FollowPathSerializer
 /// Path Point serializer class
 ///
 class PathPointSerializer
-    extends imc.ImcSerializer<imc.PathPoint, imc.PathPointBuilder> {
+    extends imc.ImcSerializer<imc.PathPoint?, imc.PathPointBuilder> {
   @override
-  ByteData serialize(imc.PathPoint message) {
+  ByteData serialize(imc.PathPoint? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19660,7 +22441,9 @@ class PathPointSerializer
   }
 
   @override
-  int serializePayload(imc.PathPoint message, ByteData byteData, int offset) {
+  int serializePayload(imc.PathPoint? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -19677,7 +22460,7 @@ class PathPointSerializer
   }
 
   @override
-  imc.PathPoint deserialize(Uint8List data, [int offset = 0]) {
+  imc.PathPoint? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -19696,6 +22479,10 @@ class PathPointSerializer
     var builder = imc.PathPointBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -19706,8 +22493,13 @@ class PathPointSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19738,11 +22530,16 @@ class PathPointSerializer
 
 /// Yo-Yo Maneuver serializer class
 ///
-class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
+class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
   @override
-  ByteData serialize(imc.YoYo message) {
+  ByteData serialize(imc.YoYo? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19758,7 +22555,9 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
   }
 
   @override
-  int serializePayload(imc.YoYo message, ByteData byteData, int offset) {
+  int serializePayload(imc.YoYo? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -19799,7 +22598,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
   }
 
   @override
-  imc.YoYo deserialize(Uint8List data, [int offset = 0]) {
+  imc.YoYo? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -19818,6 +22617,10 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
     var builder = imc.YoYoBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -19828,8 +22631,13 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19888,11 +22696,16 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo, imc.YoYoBuilder> {
 /// Teleoperation Done serializer class
 ///
 class TeleoperationDoneSerializer extends imc
-    .ImcSerializer<imc.TeleoperationDone, imc.TeleoperationDoneBuilder> {
+    .ImcSerializer<imc.TeleoperationDone?, imc.TeleoperationDoneBuilder> {
   @override
-  ByteData serialize(imc.TeleoperationDone message) {
+  ByteData serialize(imc.TeleoperationDone? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19909,14 +22722,16 @@ class TeleoperationDoneSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TeleoperationDone message, ByteData byteData, int offset) {
+      imc.TeleoperationDone? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.TeleoperationDone deserialize(Uint8List data, [int offset = 0]) {
+  imc.TeleoperationDone? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -19935,6 +22750,10 @@ class TeleoperationDoneSerializer extends imc
     var builder = imc.TeleoperationDoneBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -19945,8 +22764,13 @@ class TeleoperationDoneSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -19968,11 +22792,16 @@ class TeleoperationDoneSerializer extends imc
 /// Station Keeping serializer class
 ///
 class StationKeepingSerializer
-    extends imc.ImcSerializer<imc.StationKeeping, imc.StationKeepingBuilder> {
+    extends imc.ImcSerializer<imc.StationKeeping?, imc.StationKeepingBuilder> {
   @override
-  ByteData serialize(imc.StationKeeping message) {
+  ByteData serialize(imc.StationKeeping? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -19989,7 +22818,9 @@ class StationKeepingSerializer
 
   @override
   int serializePayload(
-      imc.StationKeeping message, ByteData byteData, int offset) {
+      imc.StationKeeping? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -20027,7 +22858,7 @@ class StationKeepingSerializer
   }
 
   @override
-  imc.StationKeeping deserialize(Uint8List data, [int offset = 0]) {
+  imc.StationKeeping? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -20046,6 +22877,10 @@ class StationKeepingSerializer
     var builder = imc.StationKeepingBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -20056,8 +22891,13 @@ class StationKeepingSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -20113,11 +22953,16 @@ class StationKeepingSerializer
 /// Elevator Maneuver serializer class
 ///
 class ElevatorSerializer
-    extends imc.ImcSerializer<imc.Elevator, imc.ElevatorBuilder> {
+    extends imc.ImcSerializer<imc.Elevator?, imc.ElevatorBuilder> {
   @override
-  ByteData serialize(imc.Elevator message) {
+  ByteData serialize(imc.Elevator? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -20133,7 +22978,9 @@ class ElevatorSerializer
   }
 
   @override
-  int serializePayload(imc.Elevator message, ByteData byteData, int offset) {
+  int serializePayload(imc.Elevator? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -20180,7 +23027,7 @@ class ElevatorSerializer
   }
 
   @override
-  imc.Elevator deserialize(Uint8List data, [int offset = 0]) {
+  imc.Elevator? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -20199,6 +23046,10 @@ class ElevatorSerializer
     var builder = imc.ElevatorBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -20209,8 +23060,13 @@ class ElevatorSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -20275,11 +23131,16 @@ class ElevatorSerializer
 /// Follow Trajectory serializer class
 ///
 class FollowTrajectorySerializer extends imc
-    .ImcSerializer<imc.FollowTrajectory, imc.FollowTrajectoryBuilder> {
+    .ImcSerializer<imc.FollowTrajectory?, imc.FollowTrajectoryBuilder> {
   @override
-  ByteData serialize(imc.FollowTrajectory message) {
+  ByteData serialize(imc.FollowTrajectory? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -20296,7 +23157,9 @@ class FollowTrajectorySerializer extends imc
 
   @override
   int serializePayload(
-      imc.FollowTrajectory message, ByteData byteData, int offset) {
+      imc.FollowTrajectory? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -20321,7 +23184,7 @@ class FollowTrajectorySerializer extends imc
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field points
-    if (message.points == null || message.points.isEmpty) {
+    if (message.points.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -20329,11 +23192,11 @@ class FollowTrajectorySerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.points.length; i++) {
-        var id = message.points[i]?.msgId;
+        var id = message.points[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -20355,7 +23218,7 @@ class FollowTrajectorySerializer extends imc
   }
 
   @override
-  imc.FollowTrajectory deserialize(Uint8List data, [int offset = 0]) {
+  imc.FollowTrajectory? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -20374,6 +23237,10 @@ class FollowTrajectorySerializer extends imc
     var builder = imc.FollowTrajectoryBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -20384,8 +23251,13 @@ class FollowTrajectorySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -20429,12 +23301,12 @@ class FollowTrajectorySerializer extends imc
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -20460,12 +23332,17 @@ class FollowTrajectorySerializer extends imc
 
 /// Trajectory Point serializer class
 ///
-class TrajectoryPointSerializer
-    extends imc.ImcSerializer<imc.TrajectoryPoint, imc.TrajectoryPointBuilder> {
+class TrajectoryPointSerializer extends imc
+    .ImcSerializer<imc.TrajectoryPoint?, imc.TrajectoryPointBuilder> {
   @override
-  ByteData serialize(imc.TrajectoryPoint message) {
+  ByteData serialize(imc.TrajectoryPoint? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -20482,7 +23359,9 @@ class TrajectoryPointSerializer
 
   @override
   int serializePayload(
-      imc.TrajectoryPoint message, ByteData byteData, int offset) {
+      imc.TrajectoryPoint? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field x
@@ -20502,7 +23381,7 @@ class TrajectoryPointSerializer
   }
 
   @override
-  imc.TrajectoryPoint deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrajectoryPoint? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -20521,6 +23400,10 @@ class TrajectoryPointSerializer
     var builder = imc.TrajectoryPointBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -20531,8 +23414,13 @@ class TrajectoryPointSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -20567,11 +23455,16 @@ class TrajectoryPointSerializer
 /// Custom Maneuver serializer class
 ///
 class CustomManeuverSerializer
-    extends imc.ImcSerializer<imc.CustomManeuver, imc.CustomManeuverBuilder> {
+    extends imc.ImcSerializer<imc.CustomManeuver?, imc.CustomManeuverBuilder> {
   @override
-  ByteData serialize(imc.CustomManeuver message) {
+  ByteData serialize(imc.CustomManeuver? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -20588,7 +23481,9 @@ class CustomManeuverSerializer
 
   @override
   int serializePayload(
-      imc.CustomManeuver message, ByteData byteData, int offset) {
+      imc.CustomManeuver? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -20611,7 +23506,7 @@ class CustomManeuverSerializer
   }
 
   @override
-  imc.CustomManeuver deserialize(Uint8List data, [int offset = 0]) {
+  imc.CustomManeuver? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -20630,6 +23525,10 @@ class CustomManeuverSerializer
     var builder = imc.CustomManeuverBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -20640,8 +23539,13 @@ class CustomManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -20685,11 +23589,16 @@ class CustomManeuverSerializer
 /// Vehicle Formation serializer class
 ///
 class VehicleFormationSerializer extends imc
-    .ImcSerializer<imc.VehicleFormation, imc.VehicleFormationBuilder> {
+    .ImcSerializer<imc.VehicleFormation?, imc.VehicleFormationBuilder> {
   @override
-  ByteData serialize(imc.VehicleFormation message) {
+  ByteData serialize(imc.VehicleFormation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -20706,7 +23615,9 @@ class VehicleFormationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.VehicleFormation message, ByteData byteData, int offset) {
+      imc.VehicleFormation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -20728,7 +23639,7 @@ class VehicleFormationSerializer extends imc
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field points
-    if (message.points == null || message.points.isEmpty) {
+    if (message.points.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -20736,11 +23647,11 @@ class VehicleFormationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.points.length; i++) {
-        var id = message.points[i]?.msgId;
+        var id = message.points[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -20752,7 +23663,7 @@ class VehicleFormationSerializer extends imc
       }
     }
     // field participants
-    if (message.participants == null || message.participants.isEmpty) {
+    if (message.participants.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -20760,11 +23671,11 @@ class VehicleFormationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.participants.length; i++) {
-        var id = message.participants[i]?.msgId;
+        var id = message.participants[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -20789,7 +23700,7 @@ class VehicleFormationSerializer extends imc
   }
 
   @override
-  imc.VehicleFormation deserialize(Uint8List data, [int offset = 0]) {
+  imc.VehicleFormation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -20808,6 +23719,10 @@ class VehicleFormationSerializer extends imc
     var builder = imc.VehicleFormationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -20818,8 +23733,13 @@ class VehicleFormationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -20860,12 +23780,12 @@ class VehicleFormationSerializer extends imc
       var pointsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (pointsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[pointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -20884,11 +23804,13 @@ class VehicleFormationSerializer extends imc
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[participantsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[participantsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -20918,11 +23840,16 @@ class VehicleFormationSerializer extends imc
 /// Vehicle Formation Participant serializer class
 ///
 class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
-    imc.VehicleFormationParticipant, imc.VehicleFormationParticipantBuilder> {
+    imc.VehicleFormationParticipant?, imc.VehicleFormationParticipantBuilder> {
   @override
-  ByteData serialize(imc.VehicleFormationParticipant message) {
+  ByteData serialize(imc.VehicleFormationParticipant? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -20939,7 +23866,9 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.VehicleFormationParticipant message, ByteData byteData, int offset) {
+      imc.VehicleFormationParticipant? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field vid
@@ -20959,7 +23888,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.VehicleFormationParticipant deserialize(Uint8List data,
+  imc.VehicleFormationParticipant? deserialize(Uint8List data,
       [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
@@ -20979,6 +23908,10 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     var builder = imc.VehicleFormationParticipantBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -20989,8 +23922,13 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21025,11 +23963,16 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
 /// Stop Maneuver serializer class
 ///
 class StopManeuverSerializer
-    extends imc.ImcSerializer<imc.StopManeuver, imc.StopManeuverBuilder> {
+    extends imc.ImcSerializer<imc.StopManeuver?, imc.StopManeuverBuilder> {
   @override
-  ByteData serialize(imc.StopManeuver message) {
+  ByteData serialize(imc.StopManeuver? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21046,14 +23989,16 @@ class StopManeuverSerializer
 
   @override
   int serializePayload(
-      imc.StopManeuver message, ByteData byteData, int offset) {
+      imc.StopManeuver? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.StopManeuver deserialize(Uint8List data, [int offset = 0]) {
+  imc.StopManeuver? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21072,6 +24017,10 @@ class StopManeuverSerializer
     var builder = imc.StopManeuverBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21082,8 +24031,13 @@ class StopManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21105,11 +24059,16 @@ class StopManeuverSerializer
 /// Register Maneuver serializer class
 ///
 class RegisterManeuverSerializer extends imc
-    .ImcSerializer<imc.RegisterManeuver, imc.RegisterManeuverBuilder> {
+    .ImcSerializer<imc.RegisterManeuver?, imc.RegisterManeuverBuilder> {
   @override
-  ByteData serialize(imc.RegisterManeuver message) {
+  ByteData serialize(imc.RegisterManeuver? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21126,7 +24085,9 @@ class RegisterManeuverSerializer extends imc
 
   @override
   int serializePayload(
-      imc.RegisterManeuver message, ByteData byteData, int offset) {
+      imc.RegisterManeuver? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field mid
@@ -21137,7 +24098,7 @@ class RegisterManeuverSerializer extends imc
   }
 
   @override
-  imc.RegisterManeuver deserialize(Uint8List data, [int offset = 0]) {
+  imc.RegisterManeuver? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21156,6 +24117,10 @@ class RegisterManeuverSerializer extends imc
     var builder = imc.RegisterManeuverBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21166,8 +24131,13 @@ class RegisterManeuverSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21193,11 +24163,16 @@ class RegisterManeuverSerializer extends imc
 /// Maneuver Control State serializer class
 ///
 class ManeuverControlStateSerializer extends imc
-    .ImcSerializer<imc.ManeuverControlState, imc.ManeuverControlStateBuilder> {
+    .ImcSerializer<imc.ManeuverControlState?, imc.ManeuverControlStateBuilder> {
   @override
-  ByteData serialize(imc.ManeuverControlState message) {
+  ByteData serialize(imc.ManeuverControlState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21214,7 +24189,9 @@ class ManeuverControlStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.ManeuverControlState message, ByteData byteData, int offset) {
+      imc.ManeuverControlState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -21234,7 +24211,7 @@ class ManeuverControlStateSerializer extends imc
   }
 
   @override
-  imc.ManeuverControlState deserialize(Uint8List data, [int offset = 0]) {
+  imc.ManeuverControlState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21253,6 +24230,10 @@ class ManeuverControlStateSerializer extends imc
     var builder = imc.ManeuverControlStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21263,8 +24244,13 @@ class ManeuverControlStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21303,11 +24289,16 @@ class ManeuverControlStateSerializer extends imc
 /// Follow System serializer class
 ///
 class FollowSystemSerializer
-    extends imc.ImcSerializer<imc.FollowSystem, imc.FollowSystemBuilder> {
+    extends imc.ImcSerializer<imc.FollowSystem?, imc.FollowSystemBuilder> {
   @override
-  ByteData serialize(imc.FollowSystem message) {
+  ByteData serialize(imc.FollowSystem? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21324,7 +24315,9 @@ class FollowSystemSerializer
 
   @override
   int serializePayload(
-      imc.FollowSystem message, ByteData byteData, int offset) {
+      imc.FollowSystem? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field system
@@ -21356,7 +24349,7 @@ class FollowSystemSerializer
   }
 
   @override
-  imc.FollowSystem deserialize(Uint8List data, [int offset = 0]) {
+  imc.FollowSystem? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21375,6 +24368,10 @@ class FollowSystemSerializer
     var builder = imc.FollowSystemBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21385,8 +24382,13 @@ class FollowSystemSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21433,11 +24435,16 @@ class FollowSystemSerializer
 /// Communications Relay serializer class
 ///
 class CommsRelaySerializer
-    extends imc.ImcSerializer<imc.CommsRelay, imc.CommsRelayBuilder> {
+    extends imc.ImcSerializer<imc.CommsRelay?, imc.CommsRelayBuilder> {
   @override
-  ByteData serialize(imc.CommsRelay message) {
+  ByteData serialize(imc.CommsRelay? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21453,7 +24460,9 @@ class CommsRelaySerializer
   }
 
   @override
-  int serializePayload(imc.CommsRelay message, ByteData byteData, int offset) {
+  int serializePayload(imc.CommsRelay? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -21485,7 +24494,7 @@ class CommsRelaySerializer
   }
 
   @override
-  imc.CommsRelay deserialize(Uint8List data, [int offset = 0]) {
+  imc.CommsRelay? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21504,6 +24513,10 @@ class CommsRelaySerializer
     var builder = imc.CommsRelayBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21514,8 +24527,13 @@ class CommsRelaySerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21562,11 +24580,16 @@ class CommsRelaySerializer
 /// Cover Area serializer class
 ///
 class CoverAreaSerializer
-    extends imc.ImcSerializer<imc.CoverArea, imc.CoverAreaBuilder> {
+    extends imc.ImcSerializer<imc.CoverArea?, imc.CoverAreaBuilder> {
   @override
-  ByteData serialize(imc.CoverArea message) {
+  ByteData serialize(imc.CoverArea? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21582,7 +24605,9 @@ class CoverAreaSerializer
   }
 
   @override
-  int serializePayload(imc.CoverArea message, ByteData byteData, int offset) {
+  int serializePayload(imc.CoverArea? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -21604,7 +24629,7 @@ class CoverAreaSerializer
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field polygon
-    if (message.polygon == null || message.polygon.isEmpty) {
+    if (message.polygon.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -21612,11 +24637,11 @@ class CoverAreaSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.polygon.length; i++) {
-        var id = message.polygon[i]?.msgId;
+        var id = message.polygon[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -21638,7 +24663,7 @@ class CoverAreaSerializer
   }
 
   @override
-  imc.CoverArea deserialize(Uint8List data, [int offset = 0]) {
+  imc.CoverArea? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21657,6 +24682,10 @@ class CoverAreaSerializer
     var builder = imc.CoverAreaBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21667,8 +24696,13 @@ class CoverAreaSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21709,12 +24743,12 @@ class CoverAreaSerializer
       var polygonSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (polygonSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[polygonSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -21741,11 +24775,16 @@ class CoverAreaSerializer
 /// Polygon Vertex serializer class
 ///
 class PolygonVertexSerializer
-    extends imc.ImcSerializer<imc.PolygonVertex, imc.PolygonVertexBuilder> {
+    extends imc.ImcSerializer<imc.PolygonVertex?, imc.PolygonVertexBuilder> {
   @override
-  ByteData serialize(imc.PolygonVertex message) {
+  ByteData serialize(imc.PolygonVertex? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21762,7 +24801,9 @@ class PolygonVertexSerializer
 
   @override
   int serializePayload(
-      imc.PolygonVertex message, ByteData byteData, int offset) {
+      imc.PolygonVertex? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -21776,7 +24817,7 @@ class PolygonVertexSerializer
   }
 
   @override
-  imc.PolygonVertex deserialize(Uint8List data, [int offset = 0]) {
+  imc.PolygonVertex? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21795,6 +24836,10 @@ class PolygonVertexSerializer
     var builder = imc.PolygonVertexBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21805,8 +24850,13 @@ class PolygonVertexSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -21835,11 +24885,16 @@ class PolygonVertexSerializer
 /// Compass Calibration Maneuver serializer class
 ///
 class CompassCalibrationSerializer extends imc
-    .ImcSerializer<imc.CompassCalibration, imc.CompassCalibrationBuilder> {
+    .ImcSerializer<imc.CompassCalibration?, imc.CompassCalibrationBuilder> {
   @override
-  ByteData serialize(imc.CompassCalibration message) {
+  ByteData serialize(imc.CompassCalibration? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -21856,7 +24911,9 @@ class CompassCalibrationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.CompassCalibration message, ByteData byteData, int offset) {
+      imc.CompassCalibration? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -21906,7 +24963,7 @@ class CompassCalibrationSerializer extends imc
   }
 
   @override
-  imc.CompassCalibration deserialize(Uint8List data, [int offset = 0]) {
+  imc.CompassCalibration? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -21925,6 +24982,10 @@ class CompassCalibrationSerializer extends imc
     var builder = imc.CompassCalibrationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -21935,8 +24996,13 @@ class CompassCalibrationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -22005,11 +25071,16 @@ class CompassCalibrationSerializer extends imc
 /// Formation Parameters serializer class
 ///
 class FormationParametersSerializer extends imc
-    .ImcSerializer<imc.FormationParameters, imc.FormationParametersBuilder> {
+    .ImcSerializer<imc.FormationParameters?, imc.FormationParametersBuilder> {
   @override
-  ByteData serialize(imc.FormationParameters message) {
+  ByteData serialize(imc.FormationParameters? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -22026,7 +25097,9 @@ class FormationParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.FormationParameters message, ByteData byteData, int offset) {
+      imc.FormationParameters? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field formationName
@@ -22039,7 +25112,7 @@ class FormationParametersSerializer extends imc
     byteData.setUint8(byteOffset, message.referenceFrame.value);
     byteOffset += 1;
     // field participants
-    if (message.participants == null || message.participants.isEmpty) {
+    if (message.participants.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -22047,11 +25120,11 @@ class FormationParametersSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.participants.length; i++) {
-        var id = message.participants[i]?.msgId;
+        var id = message.participants[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -22073,7 +25146,7 @@ class FormationParametersSerializer extends imc
   }
 
   @override
-  imc.FormationParameters deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormationParameters? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -22092,6 +25165,10 @@ class FormationParametersSerializer extends imc
     var builder = imc.FormationParametersBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -22102,8 +25179,13 @@ class FormationParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -22140,11 +25222,13 @@ class FormationParametersSerializer extends imc
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[participantsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[participantsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -22171,11 +25255,16 @@ class FormationParametersSerializer extends imc
 /// Formation Plan Execution serializer class
 ///
 class FormationPlanExecutionSerializer extends imc.ImcSerializer<
-    imc.FormationPlanExecution, imc.FormationPlanExecutionBuilder> {
+    imc.FormationPlanExecution?, imc.FormationPlanExecutionBuilder> {
   @override
-  ByteData serialize(imc.FormationPlanExecution message) {
+  ByteData serialize(imc.FormationPlanExecution? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -22192,7 +25281,9 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.FormationPlanExecution message, ByteData byteData, int offset) {
+      imc.FormationPlanExecution? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field groupName
@@ -22257,7 +25348,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.FormationPlanExecution deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormationPlanExecution? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -22276,6 +25367,10 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     var builder = imc.FormationPlanExecutionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -22286,8 +25381,13 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -22381,12 +25481,17 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
 
 /// Follow Reference Maneuver serializer class
 ///
-class FollowReferenceSerializer
-    extends imc.ImcSerializer<imc.FollowReference, imc.FollowReferenceBuilder> {
+class FollowReferenceSerializer extends imc
+    .ImcSerializer<imc.FollowReference?, imc.FollowReferenceBuilder> {
   @override
-  ByteData serialize(imc.FollowReference message) {
+  ByteData serialize(imc.FollowReference? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -22403,7 +25508,9 @@ class FollowReferenceSerializer
 
   @override
   int serializePayload(
-      imc.FollowReference message, ByteData byteData, int offset) {
+      imc.FollowReference? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field controlSrc
@@ -22426,7 +25533,7 @@ class FollowReferenceSerializer
   }
 
   @override
-  imc.FollowReference deserialize(Uint8List data, [int offset = 0]) {
+  imc.FollowReference? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -22445,6 +25552,10 @@ class FollowReferenceSerializer
     var builder = imc.FollowReferenceBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -22455,8 +25566,13 @@ class FollowReferenceSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -22494,11 +25610,16 @@ class FollowReferenceSerializer
 /// Reference To Follow serializer class
 ///
 class ReferenceSerializer
-    extends imc.ImcSerializer<imc.Reference, imc.ReferenceBuilder> {
+    extends imc.ImcSerializer<imc.Reference?, imc.ReferenceBuilder> {
   @override
-  ByteData serialize(imc.Reference message) {
+  ByteData serialize(imc.Reference? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -22514,7 +25635,9 @@ class ReferenceSerializer
   }
 
   @override
-  int serializePayload(imc.Reference message, ByteData byteData, int offset) {
+  int serializePayload(imc.Reference? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field flags
@@ -22525,7 +25648,7 @@ class ReferenceSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.speed.msgId;
+      var id = message.speed!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -22542,7 +25665,7 @@ class ReferenceSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.z.msgId;
+      var id = message.z!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -22568,7 +25691,7 @@ class ReferenceSerializer
   }
 
   @override
-  imc.Reference deserialize(Uint8List data, [int offset = 0]) {
+  imc.Reference? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -22587,6 +25710,10 @@ class ReferenceSerializer
     var builder = imc.ReferenceBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -22597,8 +25724,13 @@ class ReferenceSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -22622,12 +25754,12 @@ class ReferenceSerializer
     if (speedSId == imc.ImcId.nullId) {
       builder.speed = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[speedSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[speedSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[speedSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -22642,12 +25774,12 @@ class ReferenceSerializer
     if (zSId == imc.ImcId.nullId) {
       builder.z = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[zSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[zSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[zSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[zSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -22673,11 +25805,16 @@ class ReferenceSerializer
 /// Follow Reference State serializer class
 ///
 class FollowRefStateSerializer
-    extends imc.ImcSerializer<imc.FollowRefState, imc.FollowRefStateBuilder> {
+    extends imc.ImcSerializer<imc.FollowRefState?, imc.FollowRefStateBuilder> {
   @override
-  ByteData serialize(imc.FollowRefState message) {
+  ByteData serialize(imc.FollowRefState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -22694,7 +25831,9 @@ class FollowRefStateSerializer
 
   @override
   int serializePayload(
-      imc.FollowRefState message, ByteData byteData, int offset) {
+      imc.FollowRefState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field controlSrc
@@ -22708,7 +25847,7 @@ class FollowRefStateSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.reference.msgId;
+      var id = message.reference!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -22731,7 +25870,7 @@ class FollowRefStateSerializer
   }
 
   @override
-  imc.FollowRefState deserialize(Uint8List data, [int offset = 0]) {
+  imc.FollowRefState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -22750,6 +25889,10 @@ class FollowRefStateSerializer
     var builder = imc.FollowRefStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -22760,8 +25903,13 @@ class FollowRefStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -22788,12 +25936,12 @@ class FollowRefStateSerializer
     if (referenceSId == imc.ImcId.nullId) {
       builder.reference = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[referenceSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -22817,11 +25965,16 @@ class FollowRefStateSerializer
 /// Formation Monitoring Data serializer class
 ///
 class FormationMonitorSerializer extends imc
-    .ImcSerializer<imc.FormationMonitor, imc.FormationMonitorBuilder> {
+    .ImcSerializer<imc.FormationMonitor?, imc.FormationMonitorBuilder> {
   @override
-  ByteData serialize(imc.FormationMonitor message) {
+  ByteData serialize(imc.FormationMonitor? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -22838,7 +25991,9 @@ class FormationMonitorSerializer extends imc
 
   @override
   int serializePayload(
-      imc.FormationMonitor message, ByteData byteData, int offset) {
+      imc.FormationMonitor? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field axCmd
@@ -22896,7 +26051,7 @@ class FormationMonitorSerializer extends imc
     byteData.setFloat32(byteOffset, message.ssZ, imc.endian_ser);
     byteOffset += 4;
     // field relState
-    if (message.relState == null || message.relState.isEmpty) {
+    if (message.relState.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -22904,11 +26059,11 @@ class FormationMonitorSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.relState.length; i++) {
-        var id = message.relState[i]?.msgId;
+        var id = message.relState[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -22924,7 +26079,7 @@ class FormationMonitorSerializer extends imc
   }
 
   @override
-  imc.FormationMonitor deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormationMonitor? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -22943,6 +26098,10 @@ class FormationMonitorSerializer extends imc
     var builder = imc.FormationMonitorBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -22953,8 +26112,13 @@ class FormationMonitorSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -23032,11 +26196,11 @@ class FormationMonitorSerializer extends imc
       byteOffset += 2;
       if (relStateSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[relStateSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -23054,11 +26218,16 @@ class FormationMonitorSerializer extends imc
 /// Relative State serializer class
 ///
 class RelativeStateSerializer
-    extends imc.ImcSerializer<imc.RelativeState, imc.RelativeStateBuilder> {
+    extends imc.ImcSerializer<imc.RelativeState?, imc.RelativeStateBuilder> {
   @override
-  ByteData serialize(imc.RelativeState message) {
+  ByteData serialize(imc.RelativeState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -23075,7 +26244,9 @@ class RelativeStateSerializer
 
   @override
   int serializePayload(
-      imc.RelativeState message, ByteData byteData, int offset) {
+      imc.RelativeState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sId
@@ -23152,7 +26323,7 @@ class RelativeStateSerializer
   }
 
   @override
-  imc.RelativeState deserialize(Uint8List data, [int offset = 0]) {
+  imc.RelativeState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -23171,6 +26342,10 @@ class RelativeStateSerializer
     var builder = imc.RelativeStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -23181,8 +26356,13 @@ class RelativeStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -23277,11 +26457,16 @@ class RelativeStateSerializer
 /// Dislodge Maneuver serializer class
 ///
 class DislodgeSerializer
-    extends imc.ImcSerializer<imc.Dislodge, imc.DislodgeBuilder> {
+    extends imc.ImcSerializer<imc.Dislodge?, imc.DislodgeBuilder> {
   @override
-  ByteData serialize(imc.Dislodge message) {
+  ByteData serialize(imc.Dislodge? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -23297,7 +26482,9 @@ class DislodgeSerializer
   }
 
   @override
-  int serializePayload(imc.Dislodge message, ByteData byteData, int offset) {
+  int serializePayload(imc.Dislodge? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -23320,7 +26507,7 @@ class DislodgeSerializer
   }
 
   @override
-  imc.Dislodge deserialize(Uint8List data, [int offset = 0]) {
+  imc.Dislodge? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -23339,6 +26526,10 @@ class DislodgeSerializer
     var builder = imc.DislodgeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -23349,8 +26540,13 @@ class DislodgeSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -23392,11 +26588,16 @@ class DislodgeSerializer
 /// Formation serializer class
 ///
 class FormationSerializer
-    extends imc.ImcSerializer<imc.Formation, imc.FormationBuilder> {
+    extends imc.ImcSerializer<imc.Formation?, imc.FormationBuilder> {
   @override
-  ByteData serialize(imc.Formation message) {
+  ByteData serialize(imc.Formation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -23412,7 +26613,9 @@ class FormationSerializer
   }
 
   @override
-  int serializePayload(imc.Formation message, ByteData byteData, int offset) {
+  int serializePayload(imc.Formation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field formationName
@@ -23449,7 +26652,7 @@ class FormationSerializer
     byteData.setUint8(byteOffset, message.referenceFrame.value);
     byteOffset += 1;
     // field participants
-    if (message.participants == null || message.participants.isEmpty) {
+    if (message.participants.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -23457,11 +26660,11 @@ class FormationSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.participants.length; i++) {
-        var id = message.participants[i]?.msgId;
+        var id = message.participants[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -23519,7 +26722,7 @@ class FormationSerializer
   }
 
   @override
-  imc.Formation deserialize(Uint8List data, [int offset = 0]) {
+  imc.Formation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -23538,6 +26741,10 @@ class FormationSerializer
     var builder = imc.FormationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -23548,8 +26755,13 @@ class FormationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -23619,11 +26831,13 @@ class FormationSerializer
       byteOffset += 2;
       if (participantsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[participantsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[participantsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[participantsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -23686,11 +26900,16 @@ class FormationSerializer
 /// Launch Maneuver serializer class
 ///
 class LaunchSerializer
-    extends imc.ImcSerializer<imc.Launch, imc.LaunchBuilder> {
+    extends imc.ImcSerializer<imc.Launch?, imc.LaunchBuilder> {
   @override
-  ByteData serialize(imc.Launch message) {
+  ByteData serialize(imc.Launch? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -23706,7 +26925,9 @@ class LaunchSerializer
   }
 
   @override
-  int serializePayload(imc.Launch message, ByteData byteData, int offset) {
+  int serializePayload(imc.Launch? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -23741,7 +26962,7 @@ class LaunchSerializer
   }
 
   @override
-  imc.Launch deserialize(Uint8List data, [int offset = 0]) {
+  imc.Launch? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -23760,6 +26981,10 @@ class LaunchSerializer
     var builder = imc.LaunchBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -23770,8 +26995,13 @@ class LaunchSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -23823,11 +27053,16 @@ class LaunchSerializer
 
 /// Drop Maneuver serializer class
 ///
-class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
+class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
   @override
-  ByteData serialize(imc.Drop message) {
+  ByteData serialize(imc.Drop? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -23843,7 +27078,9 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
   }
 
   @override
-  int serializePayload(imc.Drop message, ByteData byteData, int offset) {
+  int serializePayload(imc.Drop? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -23878,7 +27115,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
   }
 
   @override
-  imc.Drop deserialize(Uint8List data, [int offset = 0]) {
+  imc.Drop? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -23897,6 +27134,10 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
     var builder = imc.DropBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -23907,8 +27148,13 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -23961,11 +27207,16 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop, imc.DropBuilder> {
 /// Scheduled Goto serializer class
 ///
 class ScheduledGotoSerializer
-    extends imc.ImcSerializer<imc.ScheduledGoto, imc.ScheduledGotoBuilder> {
+    extends imc.ImcSerializer<imc.ScheduledGoto?, imc.ScheduledGotoBuilder> {
   @override
-  ByteData serialize(imc.ScheduledGoto message) {
+  ByteData serialize(imc.ScheduledGoto? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -23982,7 +27233,9 @@ class ScheduledGotoSerializer
 
   @override
   int serializePayload(
-      imc.ScheduledGoto message, ByteData byteData, int offset) {
+      imc.ScheduledGoto? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field arrivalTime
@@ -24014,7 +27267,7 @@ class ScheduledGotoSerializer
   }
 
   @override
-  imc.ScheduledGoto deserialize(Uint8List data, [int offset = 0]) {
+  imc.ScheduledGoto? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -24033,6 +27286,10 @@ class ScheduledGotoSerializer
     var builder = imc.ScheduledGotoBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -24043,8 +27300,13 @@ class ScheduledGotoSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -24092,11 +27354,16 @@ class ScheduledGotoSerializer
 /// Rows Coverage serializer class
 ///
 class RowsCoverageSerializer
-    extends imc.ImcSerializer<imc.RowsCoverage, imc.RowsCoverageBuilder> {
+    extends imc.ImcSerializer<imc.RowsCoverage?, imc.RowsCoverageBuilder> {
   @override
-  ByteData serialize(imc.RowsCoverage message) {
+  ByteData serialize(imc.RowsCoverage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -24113,7 +27380,9 @@ class RowsCoverageSerializer
 
   @override
   int serializePayload(
-      imc.RowsCoverage message, ByteData byteData, int offset) {
+      imc.RowsCoverage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -24172,7 +27441,7 @@ class RowsCoverageSerializer
   }
 
   @override
-  imc.RowsCoverage deserialize(Uint8List data, [int offset = 0]) {
+  imc.RowsCoverage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -24191,6 +27460,10 @@ class RowsCoverageSerializer
     var builder = imc.RowsCoverageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -24201,8 +27474,13 @@ class RowsCoverageSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -24280,11 +27558,16 @@ class RowsCoverageSerializer
 /// Sample Maneuver serializer class
 ///
 class SampleSerializer
-    extends imc.ImcSerializer<imc.Sample, imc.SampleBuilder> {
+    extends imc.ImcSerializer<imc.Sample?, imc.SampleBuilder> {
   @override
-  ByteData serialize(imc.Sample message) {
+  ByteData serialize(imc.Sample? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -24300,7 +27583,9 @@ class SampleSerializer
   }
 
   @override
-  int serializePayload(imc.Sample message, ByteData byteData, int offset) {
+  int serializePayload(imc.Sample? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -24344,7 +27629,7 @@ class SampleSerializer
   }
 
   @override
-  imc.Sample deserialize(Uint8List data, [int offset = 0]) {
+  imc.Sample? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -24363,6 +27648,10 @@ class SampleSerializer
     var builder = imc.SampleBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -24373,8 +27662,13 @@ class SampleSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -24436,11 +27730,16 @@ class SampleSerializer
 /// Image Tracking serializer class
 ///
 class ImageTrackingSerializer
-    extends imc.ImcSerializer<imc.ImageTracking, imc.ImageTrackingBuilder> {
+    extends imc.ImcSerializer<imc.ImageTracking?, imc.ImageTrackingBuilder> {
   @override
-  ByteData serialize(imc.ImageTracking message) {
+  ByteData serialize(imc.ImageTracking? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -24457,14 +27756,16 @@ class ImageTrackingSerializer
 
   @override
   int serializePayload(
-      imc.ImageTracking message, ByteData byteData, int offset) {
+      imc.ImageTracking? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.ImageTracking deserialize(Uint8List data, [int offset = 0]) {
+  imc.ImageTracking? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -24483,6 +27784,10 @@ class ImageTrackingSerializer
     var builder = imc.ImageTrackingBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -24493,8 +27798,13 @@ class ImageTrackingSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -24516,11 +27826,16 @@ class ImageTrackingSerializer
 /// Takeoff Maneuver serializer class
 ///
 class TakeoffSerializer
-    extends imc.ImcSerializer<imc.Takeoff, imc.TakeoffBuilder> {
+    extends imc.ImcSerializer<imc.Takeoff?, imc.TakeoffBuilder> {
   @override
-  ByteData serialize(imc.Takeoff message) {
+  ByteData serialize(imc.Takeoff? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -24536,7 +27851,9 @@ class TakeoffSerializer
   }
 
   @override
-  int serializePayload(imc.Takeoff message, ByteData byteData, int offset) {
+  int serializePayload(imc.Takeoff? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -24571,7 +27888,7 @@ class TakeoffSerializer
   }
 
   @override
-  imc.Takeoff deserialize(Uint8List data, [int offset = 0]) {
+  imc.Takeoff? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -24590,6 +27907,10 @@ class TakeoffSerializer
     var builder = imc.TakeoffBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -24600,8 +27921,13 @@ class TakeoffSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -24653,11 +27979,16 @@ class TakeoffSerializer
 
 /// Land Maneuver serializer class
 ///
-class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
+class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
   @override
-  ByteData serialize(imc.Land message) {
+  ByteData serialize(imc.Land? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -24673,7 +28004,9 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
   }
 
   @override
-  int serializePayload(imc.Land message, ByteData byteData, int offset) {
+  int serializePayload(imc.Land? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -24717,7 +28050,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
   }
 
   @override
-  imc.Land deserialize(Uint8List data, [int offset = 0]) {
+  imc.Land? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -24736,6 +28069,10 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
     var builder = imc.LandBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -24746,8 +28083,13 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -24809,11 +28151,16 @@ class LandSerializer extends imc.ImcSerializer<imc.Land, imc.LandBuilder> {
 /// Autonomous Section serializer class
 ///
 class AutonomousSectionSerializer extends imc
-    .ImcSerializer<imc.AutonomousSection, imc.AutonomousSectionBuilder> {
+    .ImcSerializer<imc.AutonomousSection?, imc.AutonomousSectionBuilder> {
   @override
-  ByteData serialize(imc.AutonomousSection message) {
+  ByteData serialize(imc.AutonomousSection? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -24830,7 +28177,9 @@ class AutonomousSectionSerializer extends imc
 
   @override
   int serializePayload(
-      imc.AutonomousSection message, ByteData byteData, int offset) {
+      imc.AutonomousSection? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -24858,7 +28207,7 @@ class AutonomousSectionSerializer extends imc
     byteData.setFloat64(byteOffset, message.timeLimit, imc.endian_ser);
     byteOffset += 8;
     // field areaLimits
-    if (message.areaLimits == null || message.areaLimits.isEmpty) {
+    if (message.areaLimits.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -24866,11 +28215,11 @@ class AutonomousSectionSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.areaLimits.length; i++) {
-        var id = message.areaLimits[i]?.msgId;
+        var id = message.areaLimits[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -24898,7 +28247,7 @@ class AutonomousSectionSerializer extends imc
   }
 
   @override
-  imc.AutonomousSection deserialize(Uint8List data, [int offset = 0]) {
+  imc.AutonomousSection? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -24917,6 +28266,10 @@ class AutonomousSectionSerializer extends imc
     var builder = imc.AutonomousSectionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -24927,8 +28280,13 @@ class AutonomousSectionSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -24977,11 +28335,11 @@ class AutonomousSectionSerializer extends imc
       byteOffset += 2;
       if (areaLimitsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[areaLimitsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -25017,11 +28375,16 @@ class AutonomousSectionSerializer extends imc
 /// Follow Point Maneuver serializer class
 ///
 class FollowPointSerializer
-    extends imc.ImcSerializer<imc.FollowPoint, imc.FollowPointBuilder> {
+    extends imc.ImcSerializer<imc.FollowPoint?, imc.FollowPointBuilder> {
   @override
-  ByteData serialize(imc.FollowPoint message) {
+  ByteData serialize(imc.FollowPoint? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -25037,7 +28400,10 @@ class FollowPointSerializer
   }
 
   @override
-  int serializePayload(imc.FollowPoint message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.FollowPoint? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field target
@@ -25075,7 +28441,7 @@ class FollowPointSerializer
   }
 
   @override
-  imc.FollowPoint deserialize(Uint8List data, [int offset = 0]) {
+  imc.FollowPoint? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -25094,6 +28460,10 @@ class FollowPointSerializer
     var builder = imc.FollowPointBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -25104,8 +28474,13 @@ class FollowPointSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -25164,11 +28539,16 @@ class FollowPointSerializer
 /// Alignment Maneuver serializer class
 ///
 class AlignmentSerializer
-    extends imc.ImcSerializer<imc.Alignment, imc.AlignmentBuilder> {
+    extends imc.ImcSerializer<imc.Alignment?, imc.AlignmentBuilder> {
   @override
-  ByteData serialize(imc.Alignment message) {
+  ByteData serialize(imc.Alignment? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -25184,7 +28564,9 @@ class AlignmentSerializer
   }
 
   @override
-  int serializePayload(imc.Alignment message, ByteData byteData, int offset) {
+  int serializePayload(imc.Alignment? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -25213,7 +28595,7 @@ class AlignmentSerializer
   }
 
   @override
-  imc.Alignment deserialize(Uint8List data, [int offset = 0]) {
+  imc.Alignment? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -25232,6 +28614,10 @@ class AlignmentSerializer
     var builder = imc.AlignmentBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -25242,8 +28628,13 @@ class AlignmentSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -25290,11 +28681,16 @@ class AlignmentSerializer
 /// Station Keeping Extended serializer class
 ///
 class StationKeepingExtendedSerializer extends imc.ImcSerializer<
-    imc.StationKeepingExtended, imc.StationKeepingExtendedBuilder> {
+    imc.StationKeepingExtended?, imc.StationKeepingExtendedBuilder> {
   @override
-  ByteData serialize(imc.StationKeepingExtended message) {
+  ByteData serialize(imc.StationKeepingExtended? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -25311,7 +28707,9 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.StationKeepingExtended message, ByteData byteData, int offset) {
+      imc.StationKeepingExtended? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -25358,7 +28756,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.StationKeepingExtended deserialize(Uint8List data, [int offset = 0]) {
+  imc.StationKeepingExtended? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -25377,6 +28775,10 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     var builder = imc.StationKeepingExtendedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -25387,8 +28789,13 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -25454,11 +28861,16 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
 /// Maneuver Done serializer class
 ///
 class ManeuverDoneSerializer
-    extends imc.ImcSerializer<imc.ManeuverDone, imc.ManeuverDoneBuilder> {
+    extends imc.ImcSerializer<imc.ManeuverDone?, imc.ManeuverDoneBuilder> {
   @override
-  ByteData serialize(imc.ManeuverDone message) {
+  ByteData serialize(imc.ManeuverDone? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -25475,14 +28887,16 @@ class ManeuverDoneSerializer
 
   @override
   int serializePayload(
-      imc.ManeuverDone message, ByteData byteData, int offset) {
+      imc.ManeuverDone? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.ManeuverDone deserialize(Uint8List data, [int offset = 0]) {
+  imc.ManeuverDone? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -25501,6 +28915,10 @@ class ManeuverDoneSerializer
     var builder = imc.ManeuverDoneBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -25511,8 +28929,13 @@ class ManeuverDoneSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -25534,11 +28957,16 @@ class ManeuverDoneSerializer
 /// Magnetometer Maneuver serializer class
 ///
 class MagnetometerSerializer
-    extends imc.ImcSerializer<imc.Magnetometer, imc.MagnetometerBuilder> {
+    extends imc.ImcSerializer<imc.Magnetometer?, imc.MagnetometerBuilder> {
   @override
-  ByteData serialize(imc.Magnetometer message) {
+  ByteData serialize(imc.Magnetometer? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -25555,7 +28983,9 @@ class MagnetometerSerializer
 
   @override
   int serializePayload(
-      imc.Magnetometer message, ByteData byteData, int offset) {
+      imc.Magnetometer? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -25599,7 +29029,7 @@ class MagnetometerSerializer
   }
 
   @override
-  imc.Magnetometer deserialize(Uint8List data, [int offset = 0]) {
+  imc.Magnetometer? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -25618,6 +29048,10 @@ class MagnetometerSerializer
     var builder = imc.MagnetometerBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -25628,8 +29062,13 @@ class MagnetometerSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -25692,11 +29131,16 @@ class MagnetometerSerializer
 /// Vehicle State serializer class
 ///
 class VehicleStateSerializer
-    extends imc.ImcSerializer<imc.VehicleState, imc.VehicleStateBuilder> {
+    extends imc.ImcSerializer<imc.VehicleState?, imc.VehicleStateBuilder> {
   @override
-  ByteData serialize(imc.VehicleState message) {
+  ByteData serialize(imc.VehicleState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -25713,7 +29157,9 @@ class VehicleStateSerializer
 
   @override
   int serializePayload(
-      imc.VehicleState message, ByteData byteData, int offset) {
+      imc.VehicleState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field opMode
@@ -25757,7 +29203,7 @@ class VehicleStateSerializer
   }
 
   @override
-  imc.VehicleState deserialize(Uint8List data, [int offset = 0]) {
+  imc.VehicleState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -25776,6 +29222,10 @@ class VehicleStateSerializer
     var builder = imc.VehicleStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -25786,8 +29236,13 @@ class VehicleStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -25854,11 +29309,16 @@ class VehicleStateSerializer
 /// Vehicle Command serializer class
 ///
 class VehicleCommandSerializer
-    extends imc.ImcSerializer<imc.VehicleCommand, imc.VehicleCommandBuilder> {
+    extends imc.ImcSerializer<imc.VehicleCommand?, imc.VehicleCommandBuilder> {
   @override
-  ByteData serialize(imc.VehicleCommand message) {
+  ByteData serialize(imc.VehicleCommand? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -25875,7 +29335,9 @@ class VehicleCommandSerializer
 
   @override
   int serializePayload(
-      imc.VehicleCommand message, ByteData byteData, int offset) {
+      imc.VehicleCommand? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -25892,7 +29354,7 @@ class VehicleCommandSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.maneuver.msgId;
+      var id = message.maneuver!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -25918,7 +29380,7 @@ class VehicleCommandSerializer
   }
 
   @override
-  imc.VehicleCommand deserialize(Uint8List data, [int offset = 0]) {
+  imc.VehicleCommand? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -25937,6 +29399,10 @@ class VehicleCommandSerializer
     var builder = imc.VehicleCommandBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -25947,8 +29413,13 @@ class VehicleCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -25979,12 +29450,12 @@ class VehicleCommandSerializer
     if (maneuverSId == imc.ImcId.nullId) {
       builder.maneuver = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[maneuverSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -26013,11 +29484,16 @@ class VehicleCommandSerializer
 /// Monitor Entity State serializer class
 ///
 class MonitorEntityStateSerializer extends imc
-    .ImcSerializer<imc.MonitorEntityState, imc.MonitorEntityStateBuilder> {
+    .ImcSerializer<imc.MonitorEntityState?, imc.MonitorEntityStateBuilder> {
   @override
-  ByteData serialize(imc.MonitorEntityState message) {
+  ByteData serialize(imc.MonitorEntityState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26034,7 +29510,9 @@ class MonitorEntityStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.MonitorEntityState message, ByteData byteData, int offset) {
+      imc.MonitorEntityState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field command
@@ -26051,7 +29529,7 @@ class MonitorEntityStateSerializer extends imc
   }
 
   @override
-  imc.MonitorEntityState deserialize(Uint8List data, [int offset = 0]) {
+  imc.MonitorEntityState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26070,6 +29548,10 @@ class MonitorEntityStateSerializer extends imc
     var builder = imc.MonitorEntityStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26080,8 +29562,13 @@ class MonitorEntityStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26117,11 +29604,16 @@ class MonitorEntityStateSerializer extends imc
 /// Entity Monitoring State serializer class
 ///
 class EntityMonitoringStateSerializer extends imc.ImcSerializer<
-    imc.EntityMonitoringState, imc.EntityMonitoringStateBuilder> {
+    imc.EntityMonitoringState?, imc.EntityMonitoringStateBuilder> {
   @override
-  ByteData serialize(imc.EntityMonitoringState message) {
+  ByteData serialize(imc.EntityMonitoringState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26138,7 +29630,9 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.EntityMonitoringState message, ByteData byteData, int offset) {
+      imc.EntityMonitoringState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field mcount
@@ -26182,7 +29676,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.EntityMonitoringState deserialize(Uint8List data, [int offset = 0]) {
+  imc.EntityMonitoringState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26201,6 +29695,10 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     var builder = imc.EntityMonitoringStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26211,8 +29709,13 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26283,11 +29786,16 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
 /// Operational Limits serializer class
 ///
 class OperationalLimitsSerializer extends imc
-    .ImcSerializer<imc.OperationalLimits, imc.OperationalLimitsBuilder> {
+    .ImcSerializer<imc.OperationalLimits?, imc.OperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.OperationalLimits message) {
+  ByteData serialize(imc.OperationalLimits? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26304,7 +29812,9 @@ class OperationalLimitsSerializer extends imc
 
   @override
   int serializePayload(
-      imc.OperationalLimits message, ByteData byteData, int offset) {
+      imc.OperationalLimits? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field mask
@@ -26348,7 +29858,7 @@ class OperationalLimitsSerializer extends imc
   }
 
   @override
-  imc.OperationalLimits deserialize(Uint8List data, [int offset = 0]) {
+  imc.OperationalLimits? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26367,6 +29877,10 @@ class OperationalLimitsSerializer extends imc
     var builder = imc.OperationalLimitsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26377,8 +29891,13 @@ class OperationalLimitsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26437,11 +29956,16 @@ class OperationalLimitsSerializer extends imc
 /// Get Operational Limits serializer class
 ///
 class GetOperationalLimitsSerializer extends imc
-    .ImcSerializer<imc.GetOperationalLimits, imc.GetOperationalLimitsBuilder> {
+    .ImcSerializer<imc.GetOperationalLimits?, imc.GetOperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.GetOperationalLimits message) {
+  ByteData serialize(imc.GetOperationalLimits? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26458,14 +29982,16 @@ class GetOperationalLimitsSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GetOperationalLimits message, ByteData byteData, int offset) {
+      imc.GetOperationalLimits? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.GetOperationalLimits deserialize(Uint8List data, [int offset = 0]) {
+  imc.GetOperationalLimits? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26484,6 +30010,10 @@ class GetOperationalLimitsSerializer extends imc
     var builder = imc.GetOperationalLimitsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26494,8 +30024,13 @@ class GetOperationalLimitsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26517,11 +30052,16 @@ class GetOperationalLimitsSerializer extends imc
 /// Calibration serializer class
 ///
 class CalibrationSerializer
-    extends imc.ImcSerializer<imc.Calibration, imc.CalibrationBuilder> {
+    extends imc.ImcSerializer<imc.Calibration?, imc.CalibrationBuilder> {
   @override
-  ByteData serialize(imc.Calibration message) {
+  ByteData serialize(imc.Calibration? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26537,7 +30077,10 @@ class CalibrationSerializer
   }
 
   @override
-  int serializePayload(imc.Calibration message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.Calibration? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field duration
@@ -26548,7 +30091,7 @@ class CalibrationSerializer
   }
 
   @override
-  imc.Calibration deserialize(Uint8List data, [int offset = 0]) {
+  imc.Calibration? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26567,6 +30110,10 @@ class CalibrationSerializer
     var builder = imc.CalibrationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26577,8 +30124,13 @@ class CalibrationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26604,11 +30156,16 @@ class CalibrationSerializer
 /// Control Loops serializer class
 ///
 class ControlLoopsSerializer
-    extends imc.ImcSerializer<imc.ControlLoops, imc.ControlLoopsBuilder> {
+    extends imc.ImcSerializer<imc.ControlLoops?, imc.ControlLoopsBuilder> {
   @override
-  ByteData serialize(imc.ControlLoops message) {
+  ByteData serialize(imc.ControlLoops? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26625,7 +30182,9 @@ class ControlLoopsSerializer
 
   @override
   int serializePayload(
-      imc.ControlLoops message, ByteData byteData, int offset) {
+      imc.ControlLoops? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field enable
@@ -26642,7 +30201,7 @@ class ControlLoopsSerializer
   }
 
   @override
-  imc.ControlLoops deserialize(Uint8List data, [int offset = 0]) {
+  imc.ControlLoops? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26661,6 +30220,10 @@ class ControlLoopsSerializer
     var builder = imc.ControlLoopsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26671,8 +30234,13 @@ class ControlLoopsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26705,11 +30273,16 @@ class ControlLoopsSerializer
 /// Vehicle Medium serializer class
 ///
 class VehicleMediumSerializer
-    extends imc.ImcSerializer<imc.VehicleMedium, imc.VehicleMediumBuilder> {
+    extends imc.ImcSerializer<imc.VehicleMedium?, imc.VehicleMediumBuilder> {
   @override
-  ByteData serialize(imc.VehicleMedium message) {
+  ByteData serialize(imc.VehicleMedium? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26726,7 +30299,9 @@ class VehicleMediumSerializer
 
   @override
   int serializePayload(
-      imc.VehicleMedium message, ByteData byteData, int offset) {
+      imc.VehicleMedium? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field medium
@@ -26737,7 +30312,7 @@ class VehicleMediumSerializer
   }
 
   @override
-  imc.VehicleMedium deserialize(Uint8List data, [int offset = 0]) {
+  imc.VehicleMedium? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26756,6 +30331,10 @@ class VehicleMediumSerializer
     var builder = imc.VehicleMediumBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26766,8 +30345,13 @@ class VehicleMediumSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26793,11 +30377,16 @@ class VehicleMediumSerializer
 /// Collision serializer class
 ///
 class CollisionSerializer
-    extends imc.ImcSerializer<imc.Collision, imc.CollisionBuilder> {
+    extends imc.ImcSerializer<imc.Collision?, imc.CollisionBuilder> {
   @override
-  ByteData serialize(imc.Collision message) {
+  ByteData serialize(imc.Collision? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26813,7 +30402,9 @@ class CollisionSerializer
   }
 
   @override
-  int serializePayload(imc.Collision message, ByteData byteData, int offset) {
+  int serializePayload(imc.Collision? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -26827,7 +30418,7 @@ class CollisionSerializer
   }
 
   @override
-  imc.Collision deserialize(Uint8List data, [int offset = 0]) {
+  imc.Collision? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26846,6 +30437,10 @@ class CollisionSerializer
     var builder = imc.CollisionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26856,8 +30451,13 @@ class CollisionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -26886,11 +30486,16 @@ class CollisionSerializer
 /// Formation Tracking State serializer class
 ///
 class FormStateSerializer
-    extends imc.ImcSerializer<imc.FormState, imc.FormStateBuilder> {
+    extends imc.ImcSerializer<imc.FormState?, imc.FormStateBuilder> {
   @override
-  ByteData serialize(imc.FormState message) {
+  ByteData serialize(imc.FormState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -26906,7 +30511,9 @@ class FormStateSerializer
   }
 
   @override
-  int serializePayload(imc.FormState message, ByteData byteData, int offset) {
+  int serializePayload(imc.FormState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field posSimErr
@@ -26932,7 +30539,7 @@ class FormStateSerializer
   }
 
   @override
-  imc.FormState deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -26951,6 +30558,10 @@ class FormStateSerializer
     var builder = imc.FormStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -26961,8 +30572,13 @@ class FormStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27005,11 +30621,16 @@ class FormStateSerializer
 /// Autopilot Mode serializer class
 ///
 class AutopilotModeSerializer
-    extends imc.ImcSerializer<imc.AutopilotMode, imc.AutopilotModeBuilder> {
+    extends imc.ImcSerializer<imc.AutopilotMode?, imc.AutopilotModeBuilder> {
   @override
-  ByteData serialize(imc.AutopilotMode message) {
+  ByteData serialize(imc.AutopilotMode? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27026,7 +30647,9 @@ class AutopilotModeSerializer
 
   @override
   int serializePayload(
-      imc.AutopilotMode message, ByteData byteData, int offset) {
+      imc.AutopilotMode? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field autonomy
@@ -27043,7 +30666,7 @@ class AutopilotModeSerializer
   }
 
   @override
-  imc.AutopilotMode deserialize(Uint8List data, [int offset = 0]) {
+  imc.AutopilotMode? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27062,6 +30685,10 @@ class AutopilotModeSerializer
     var builder = imc.AutopilotModeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -27072,8 +30699,13 @@ class AutopilotModeSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27109,11 +30741,16 @@ class AutopilotModeSerializer
 /// Formation Tracking State serializer class
 ///
 class FormationStateSerializer
-    extends imc.ImcSerializer<imc.FormationState, imc.FormationStateBuilder> {
+    extends imc.ImcSerializer<imc.FormationState?, imc.FormationStateBuilder> {
   @override
-  ByteData serialize(imc.FormationState message) {
+  ByteData serialize(imc.FormationState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27130,7 +30767,9 @@ class FormationStateSerializer
 
   @override
   int serializePayload(
-      imc.FormationState message, ByteData byteData, int offset) {
+      imc.FormationState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -27162,7 +30801,7 @@ class FormationStateSerializer
   }
 
   @override
-  imc.FormationState deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormationState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27181,6 +30820,10 @@ class FormationStateSerializer
     var builder = imc.FormationStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -27191,8 +30834,13 @@ class FormationStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27242,11 +30890,16 @@ class FormationStateSerializer
 /// Report Control serializer class
 ///
 class ReportControlSerializer
-    extends imc.ImcSerializer<imc.ReportControl, imc.ReportControlBuilder> {
+    extends imc.ImcSerializer<imc.ReportControl?, imc.ReportControlBuilder> {
   @override
-  ByteData serialize(imc.ReportControl message) {
+  ByteData serialize(imc.ReportControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27263,7 +30916,9 @@ class ReportControlSerializer
 
   @override
   int serializePayload(
-      imc.ReportControl message, ByteData byteData, int offset) {
+      imc.ReportControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -27286,7 +30941,7 @@ class ReportControlSerializer
   }
 
   @override
-  imc.ReportControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.ReportControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27305,6 +30960,10 @@ class ReportControlSerializer
     var builder = imc.ReportControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -27315,8 +30974,13 @@ class ReportControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27358,11 +31022,16 @@ class ReportControlSerializer
 /// State Report serializer class
 ///
 class StateReportSerializer
-    extends imc.ImcSerializer<imc.StateReport, imc.StateReportBuilder> {
+    extends imc.ImcSerializer<imc.StateReport?, imc.StateReportBuilder> {
   @override
-  ByteData serialize(imc.StateReport message) {
+  ByteData serialize(imc.StateReport? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27378,7 +31047,10 @@ class StateReportSerializer
   }
 
   @override
-  int serializePayload(imc.StateReport message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.StateReport? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field stime
@@ -27416,7 +31088,7 @@ class StateReportSerializer
   }
 
   @override
-  imc.StateReport deserialize(Uint8List data, [int offset = 0]) {
+  imc.StateReport? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27435,6 +31107,10 @@ class StateReportSerializer
     var builder = imc.StateReportBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -27445,8 +31121,13 @@ class StateReportSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27499,11 +31180,16 @@ class StateReportSerializer
 /// Transmission Request serializer class
 ///
 class TransmissionRequestSerializer extends imc
-    .ImcSerializer<imc.TransmissionRequest, imc.TransmissionRequestBuilder> {
+    .ImcSerializer<imc.TransmissionRequest?, imc.TransmissionRequestBuilder> {
   @override
-  ByteData serialize(imc.TransmissionRequest message) {
+  ByteData serialize(imc.TransmissionRequest? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27520,7 +31206,9 @@ class TransmissionRequestSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TransmissionRequest message, ByteData byteData, int offset) {
+      imc.TransmissionRequest? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -27549,7 +31237,7 @@ class TransmissionRequestSerializer extends imc
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.msgData.msgId;
+      var id = message.msgData!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -27571,13 +31259,15 @@ class TransmissionRequestSerializer extends imc
     var rawDataSSize = message.rawData.length;
     byteData.setUint16(byteOffset, rawDataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.rawData.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (rawDataSSize > 0) {
+      message.rawData.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.TransmissionRequest deserialize(Uint8List data, [int offset = 0]) {
+  imc.TransmissionRequest? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27596,6 +31286,10 @@ class TransmissionRequestSerializer extends imc
     var builder = imc.TransmissionRequestBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -27606,8 +31300,13 @@ class TransmissionRequestSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27654,12 +31353,12 @@ class TransmissionRequestSerializer extends imc
     if (msgDataSId == imc.ImcId.nullId) {
       builder.msgData = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -27693,11 +31392,16 @@ class TransmissionRequestSerializer extends imc
 /// Transmission Status serializer class
 ///
 class TransmissionStatusSerializer extends imc
-    .ImcSerializer<imc.TransmissionStatus, imc.TransmissionStatusBuilder> {
+    .ImcSerializer<imc.TransmissionStatus?, imc.TransmissionStatusBuilder> {
   @override
-  ByteData serialize(imc.TransmissionStatus message) {
+  ByteData serialize(imc.TransmissionStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27714,7 +31418,9 @@ class TransmissionStatusSerializer extends imc
 
   @override
   int serializePayload(
-      imc.TransmissionStatus message, ByteData byteData, int offset) {
+      imc.TransmissionStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -27737,7 +31443,7 @@ class TransmissionStatusSerializer extends imc
   }
 
   @override
-  imc.TransmissionStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.TransmissionStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27756,6 +31462,10 @@ class TransmissionStatusSerializer extends imc
     var builder = imc.TransmissionStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -27766,8 +31476,13 @@ class TransmissionStatusSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27809,11 +31524,16 @@ class TransmissionStatusSerializer extends imc
 /// SMS Transmission Request serializer class
 ///
 class SmsRequestSerializer
-    extends imc.ImcSerializer<imc.SmsRequest, imc.SmsRequestBuilder> {
+    extends imc.ImcSerializer<imc.SmsRequest?, imc.SmsRequestBuilder> {
   @override
-  ByteData serialize(imc.SmsRequest message) {
+  ByteData serialize(imc.SmsRequest? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27829,7 +31549,9 @@ class SmsRequestSerializer
   }
 
   @override
-  int serializePayload(imc.SmsRequest message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsRequest? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -27855,7 +31577,7 @@ class SmsRequestSerializer
   }
 
   @override
-  imc.SmsRequest deserialize(Uint8List data, [int offset = 0]) {
+  imc.SmsRequest? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27874,6 +31596,10 @@ class SmsRequestSerializer
     var builder = imc.SmsRequestBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -27884,8 +31610,13 @@ class SmsRequestSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -27932,11 +31663,16 @@ class SmsRequestSerializer
 /// SMS Transmission Status serializer class
 ///
 class SmsStatusSerializer
-    extends imc.ImcSerializer<imc.SmsStatus, imc.SmsStatusBuilder> {
+    extends imc.ImcSerializer<imc.SmsStatus?, imc.SmsStatusBuilder> {
   @override
-  ByteData serialize(imc.SmsStatus message) {
+  ByteData serialize(imc.SmsStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -27952,7 +31688,9 @@ class SmsStatusSerializer
   }
 
   @override
-  int serializePayload(imc.SmsStatus message, ByteData byteData, int offset) {
+  int serializePayload(imc.SmsStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -27972,7 +31710,7 @@ class SmsStatusSerializer
   }
 
   @override
-  imc.SmsStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.SmsStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -27991,6 +31729,10 @@ class SmsStatusSerializer
     var builder = imc.SmsStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -28001,8 +31743,13 @@ class SmsStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -28040,11 +31787,16 @@ class SmsStatusSerializer
 /// VTOL State serializer class
 ///
 class VtolStateSerializer
-    extends imc.ImcSerializer<imc.VtolState, imc.VtolStateBuilder> {
+    extends imc.ImcSerializer<imc.VtolState?, imc.VtolStateBuilder> {
   @override
-  ByteData serialize(imc.VtolState message) {
+  ByteData serialize(imc.VtolState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -28060,7 +31812,9 @@ class VtolStateSerializer
   }
 
   @override
-  int serializePayload(imc.VtolState message, ByteData byteData, int offset) {
+  int serializePayload(imc.VtolState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -28071,7 +31825,7 @@ class VtolStateSerializer
   }
 
   @override
-  imc.VtolState deserialize(Uint8List data, [int offset = 0]) {
+  imc.VtolState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -28090,6 +31844,10 @@ class VtolStateSerializer
     var builder = imc.VtolStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -28100,8 +31858,13 @@ class VtolStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -28127,11 +31890,16 @@ class VtolStateSerializer
 /// Arming State serializer class
 ///
 class ArmingStateSerializer
-    extends imc.ImcSerializer<imc.ArmingState, imc.ArmingStateBuilder> {
+    extends imc.ImcSerializer<imc.ArmingState?, imc.ArmingStateBuilder> {
   @override
-  ByteData serialize(imc.ArmingState message) {
+  ByteData serialize(imc.ArmingState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -28147,7 +31915,10 @@ class ArmingStateSerializer
   }
 
   @override
-  int serializePayload(imc.ArmingState message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.ArmingState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -28158,7 +31929,7 @@ class ArmingStateSerializer
   }
 
   @override
-  imc.ArmingState deserialize(Uint8List data, [int offset = 0]) {
+  imc.ArmingState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -28177,6 +31948,10 @@ class ArmingStateSerializer
     var builder = imc.ArmingStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -28187,8 +31962,13 @@ class ArmingStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -28214,11 +31994,16 @@ class ArmingStateSerializer
 /// TCP Transmission Request serializer class
 ///
 class TCPRequestSerializer
-    extends imc.ImcSerializer<imc.TCPRequest, imc.TCPRequestBuilder> {
+    extends imc.ImcSerializer<imc.TCPRequest?, imc.TCPRequestBuilder> {
   @override
-  ByteData serialize(imc.TCPRequest message) {
+  ByteData serialize(imc.TCPRequest? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -28234,7 +32019,9 @@ class TCPRequestSerializer
   }
 
   @override
-  int serializePayload(imc.TCPRequest message, ByteData byteData, int offset) {
+  int serializePayload(imc.TCPRequest? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -28254,7 +32041,7 @@ class TCPRequestSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.msgData.msgId;
+      var id = message.msgData!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -28271,7 +32058,7 @@ class TCPRequestSerializer
   }
 
   @override
-  imc.TCPRequest deserialize(Uint8List data, [int offset = 0]) {
+  imc.TCPRequest? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -28290,6 +32077,10 @@ class TCPRequestSerializer
     var builder = imc.TCPRequestBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -28300,8 +32091,13 @@ class TCPRequestSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -28337,12 +32133,12 @@ class TCPRequestSerializer
     if (msgDataSId == imc.ImcId.nullId) {
       builder.msgData = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[msgDataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -28359,11 +32155,16 @@ class TCPRequestSerializer
 /// TCP Transmission Status serializer class
 ///
 class TCPStatusSerializer
-    extends imc.ImcSerializer<imc.TCPStatus, imc.TCPStatusBuilder> {
+    extends imc.ImcSerializer<imc.TCPStatus?, imc.TCPStatusBuilder> {
   @override
-  ByteData serialize(imc.TCPStatus message) {
+  ByteData serialize(imc.TCPStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -28379,7 +32180,9 @@ class TCPStatusSerializer
   }
 
   @override
-  int serializePayload(imc.TCPStatus message, ByteData byteData, int offset) {
+  int serializePayload(imc.TCPStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reqId
@@ -28399,7 +32202,7 @@ class TCPStatusSerializer
   }
 
   @override
-  imc.TCPStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.TCPStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -28418,6 +32221,10 @@ class TCPStatusSerializer
     var builder = imc.TCPStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -28428,8 +32235,13 @@ class TCPStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -28466,11 +32278,16 @@ class TCPStatusSerializer
 
 /// Abort serializer class
 ///
-class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
+class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
   @override
-  ByteData serialize(imc.Abort message) {
+  ByteData serialize(imc.Abort? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -28486,14 +32303,16 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
   }
 
   @override
-  int serializePayload(imc.Abort message, ByteData byteData, int offset) {
+  int serializePayload(imc.Abort? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.Abort deserialize(Uint8List data, [int offset = 0]) {
+  imc.Abort? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -28512,6 +32331,10 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
     var builder = imc.AbortBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -28522,8 +32345,13 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -28545,11 +32373,16 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort, imc.AbortBuilder> {
 /// Plan Specification serializer class
 ///
 class PlanSpecificationSerializer extends imc
-    .ImcSerializer<imc.PlanSpecification, imc.PlanSpecificationBuilder> {
+    .ImcSerializer<imc.PlanSpecification?, imc.PlanSpecificationBuilder> {
   @override
-  ByteData serialize(imc.PlanSpecification message) {
+  ByteData serialize(imc.PlanSpecification? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -28566,7 +32399,9 @@ class PlanSpecificationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PlanSpecification message, ByteData byteData, int offset) {
+      imc.PlanSpecification? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field planId
@@ -28588,7 +32423,7 @@ class PlanSpecificationSerializer extends imc
     byteOffset += 2;
     vnamespaceEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field variables
-    if (message.variables == null || message.variables.isEmpty) {
+    if (message.variables.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -28596,11 +32431,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.variables.length; i++) {
-        var id = message.variables[i]?.msgId;
+        var id = message.variables[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -28618,7 +32453,7 @@ class PlanSpecificationSerializer extends imc
     byteOffset += 2;
     startManIdEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field maneuvers
-    if (message.maneuvers == null || message.maneuvers.isEmpty) {
+    if (message.maneuvers.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -28626,11 +32461,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.maneuvers.length; i++) {
-        var id = message.maneuvers[i]?.msgId;
+        var id = message.maneuvers[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -28642,7 +32477,7 @@ class PlanSpecificationSerializer extends imc
       }
     }
     // field transitions
-    if (message.transitions == null || message.transitions.isEmpty) {
+    if (message.transitions.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -28650,11 +32485,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.transitions.length; i++) {
-        var id = message.transitions[i]?.msgId;
+        var id = message.transitions[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -28666,7 +32501,7 @@ class PlanSpecificationSerializer extends imc
       }
     }
     // field startActions
-    if (message.startActions == null || message.startActions.isEmpty) {
+    if (message.startActions.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -28674,11 +32509,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.startActions.length; i++) {
-        var id = message.startActions[i]?.msgId;
+        var id = message.startActions[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -28690,7 +32525,7 @@ class PlanSpecificationSerializer extends imc
       }
     }
     // field endActions
-    if (message.endActions == null || message.endActions.isEmpty) {
+    if (message.endActions.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -28698,11 +32533,11 @@ class PlanSpecificationSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.endActions.length; i++) {
-        var id = message.endActions[i]?.msgId;
+        var id = message.endActions[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -28718,7 +32553,7 @@ class PlanSpecificationSerializer extends imc
   }
 
   @override
-  imc.PlanSpecification deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanSpecification? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -28737,6 +32572,10 @@ class PlanSpecificationSerializer extends imc
     var builder = imc.PlanSpecificationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -28747,8 +32586,13 @@ class PlanSpecificationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -28799,11 +32643,11 @@ class PlanSpecificationSerializer extends imc
       byteOffset += 2;
       if (variablesSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[variablesSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -28831,11 +32675,11 @@ class PlanSpecificationSerializer extends imc
       byteOffset += 2;
       if (maneuversSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[maneuversSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -28854,11 +32698,13 @@ class PlanSpecificationSerializer extends imc
       byteOffset += 2;
       if (transitionsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[transitionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[transitionsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[transitionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[transitionsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -28877,11 +32723,13 @@ class PlanSpecificationSerializer extends imc
       byteOffset += 2;
       if (startActionsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[startActionsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[startActionsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -28900,11 +32748,11 @@ class PlanSpecificationSerializer extends imc
       byteOffset += 2;
       if (endActionsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -28922,11 +32770,16 @@ class PlanSpecificationSerializer extends imc
 /// Plan Maneuver serializer class
 ///
 class PlanManeuverSerializer
-    extends imc.ImcSerializer<imc.PlanManeuver, imc.PlanManeuverBuilder> {
+    extends imc.ImcSerializer<imc.PlanManeuver?, imc.PlanManeuverBuilder> {
   @override
-  ByteData serialize(imc.PlanManeuver message) {
+  ByteData serialize(imc.PlanManeuver? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -28943,7 +32796,9 @@ class PlanManeuverSerializer
 
   @override
   int serializePayload(
-      imc.PlanManeuver message, ByteData byteData, int offset) {
+      imc.PlanManeuver? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field maneuverId
@@ -28957,7 +32812,7 @@ class PlanManeuverSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.data.msgId;
+      var id = message.data!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -28970,7 +32825,7 @@ class PlanManeuverSerializer
       }
     }
     // field startActions
-    if (message.startActions == null || message.startActions.isEmpty) {
+    if (message.startActions.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -28978,11 +32833,11 @@ class PlanManeuverSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.startActions.length; i++) {
-        var id = message.startActions[i]?.msgId;
+        var id = message.startActions[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -28994,7 +32849,7 @@ class PlanManeuverSerializer
       }
     }
     // field endActions
-    if (message.endActions == null || message.endActions.isEmpty) {
+    if (message.endActions.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -29002,11 +32857,11 @@ class PlanManeuverSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.endActions.length; i++) {
-        var id = message.endActions[i]?.msgId;
+        var id = message.endActions[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -29022,7 +32877,7 @@ class PlanManeuverSerializer
   }
 
   @override
-  imc.PlanManeuver deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanManeuver? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -29041,6 +32896,10 @@ class PlanManeuverSerializer
     var builder = imc.PlanManeuverBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -29051,8 +32910,13 @@ class PlanManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -29082,12 +32946,12 @@ class PlanManeuverSerializer
     if (dataSId == imc.ImcId.nullId) {
       builder.data = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[dataSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[dataSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -29105,11 +32969,13 @@ class PlanManeuverSerializer
       byteOffset += 2;
       if (startActionsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[startActionsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[startActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[startActionsSId] ??
+                    imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -29128,11 +32994,11 @@ class PlanManeuverSerializer
       byteOffset += 2;
       if (endActionsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[endActionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -29150,11 +33016,16 @@ class PlanManeuverSerializer
 /// Plan Transition serializer class
 ///
 class PlanTransitionSerializer
-    extends imc.ImcSerializer<imc.PlanTransition, imc.PlanTransitionBuilder> {
+    extends imc.ImcSerializer<imc.PlanTransition?, imc.PlanTransitionBuilder> {
   @override
-  ByteData serialize(imc.PlanTransition message) {
+  ByteData serialize(imc.PlanTransition? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -29171,7 +33042,9 @@ class PlanTransitionSerializer
 
   @override
   int serializePayload(
-      imc.PlanTransition message, ByteData byteData, int offset) {
+      imc.PlanTransition? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sourceMan
@@ -29193,7 +33066,7 @@ class PlanTransitionSerializer
     byteOffset += 2;
     conditionsEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field actions
-    if (message.actions == null || message.actions.isEmpty) {
+    if (message.actions.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -29201,11 +33074,11 @@ class PlanTransitionSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.actions.length; i++) {
-        var id = message.actions[i]?.msgId;
+        var id = message.actions[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -29221,7 +33094,7 @@ class PlanTransitionSerializer
   }
 
   @override
-  imc.PlanTransition deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanTransition? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -29240,6 +33113,10 @@ class PlanTransitionSerializer
     var builder = imc.PlanTransitionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -29250,8 +33127,13 @@ class PlanTransitionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -29301,12 +33183,12 @@ class PlanTransitionSerializer
       var actionsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (actionsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[actionsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -29324,11 +33206,16 @@ class PlanTransitionSerializer
 /// Emergency Control serializer class
 ///
 class EmergencyControlSerializer extends imc
-    .ImcSerializer<imc.EmergencyControl, imc.EmergencyControlBuilder> {
+    .ImcSerializer<imc.EmergencyControl?, imc.EmergencyControlBuilder> {
   @override
-  ByteData serialize(imc.EmergencyControl message) {
+  ByteData serialize(imc.EmergencyControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -29345,7 +33232,9 @@ class EmergencyControlSerializer extends imc
 
   @override
   int serializePayload(
-      imc.EmergencyControl message, ByteData byteData, int offset) {
+      imc.EmergencyControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field command
@@ -29356,7 +33245,7 @@ class EmergencyControlSerializer extends imc
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.plan.msgId;
+      var id = message.plan!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -29373,7 +33262,7 @@ class EmergencyControlSerializer extends imc
   }
 
   @override
-  imc.EmergencyControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.EmergencyControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -29392,6 +33281,10 @@ class EmergencyControlSerializer extends imc
     var builder = imc.EmergencyControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -29402,8 +33295,13 @@ class EmergencyControlSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -29428,12 +33326,12 @@ class EmergencyControlSerializer extends imc
     if (planSId == imc.ImcId.nullId) {
       builder.plan = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -29450,11 +33348,16 @@ class EmergencyControlSerializer extends imc
 /// Emergency Control State serializer class
 ///
 class EmergencyControlStateSerializer extends imc.ImcSerializer<
-    imc.EmergencyControlState, imc.EmergencyControlStateBuilder> {
+    imc.EmergencyControlState?, imc.EmergencyControlStateBuilder> {
   @override
-  ByteData serialize(imc.EmergencyControlState message) {
+  ByteData serialize(imc.EmergencyControlState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -29471,7 +33374,9 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.EmergencyControlState message, ByteData byteData, int offset) {
+      imc.EmergencyControlState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -29491,7 +33396,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.EmergencyControlState deserialize(Uint8List data, [int offset = 0]) {
+  imc.EmergencyControlState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -29510,6 +33415,10 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
     var builder = imc.EmergencyControlStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -29520,8 +33429,13 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -29560,11 +33474,16 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
 /// Plan DB serializer class
 ///
 class PlanDBSerializer
-    extends imc.ImcSerializer<imc.PlanDB, imc.PlanDBBuilder> {
+    extends imc.ImcSerializer<imc.PlanDB?, imc.PlanDBBuilder> {
   @override
-  ByteData serialize(imc.PlanDB message) {
+  ByteData serialize(imc.PlanDB? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -29580,7 +33499,9 @@ class PlanDBSerializer
   }
 
   @override
-  int serializePayload(imc.PlanDB message, ByteData byteData, int offset) {
+  int serializePayload(imc.PlanDB? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -29603,7 +33524,7 @@ class PlanDBSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.arg.msgId;
+      var id = message.arg!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -29626,7 +33547,7 @@ class PlanDBSerializer
   }
 
   @override
-  imc.PlanDB deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanDB? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -29645,6 +33566,10 @@ class PlanDBSerializer
     var builder = imc.PlanDBBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -29655,8 +33580,13 @@ class PlanDBSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -29695,12 +33625,12 @@ class PlanDBSerializer
     if (argSId == imc.ImcId.nullId) {
       builder.arg = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -29726,11 +33656,16 @@ class PlanDBSerializer
 /// Plan DB State serializer class
 ///
 class PlanDBStateSerializer
-    extends imc.ImcSerializer<imc.PlanDBState, imc.PlanDBStateBuilder> {
+    extends imc.ImcSerializer<imc.PlanDBState?, imc.PlanDBStateBuilder> {
   @override
-  ByteData serialize(imc.PlanDBState message) {
+  ByteData serialize(imc.PlanDBState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -29746,7 +33681,10 @@ class PlanDBStateSerializer
   }
 
   @override
-  int serializePayload(imc.PlanDBState message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.PlanDBState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field planCount
@@ -29771,9 +33709,11 @@ class PlanDBStateSerializer
     var md5SSize = message.md5.length;
     byteData.setUint16(byteOffset, md5SSize, imc.endian_ser);
     byteOffset += 2;
-    message.md5.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (md5SSize > 0) {
+      message.md5.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
     // field plansInfo
-    if (message.plansInfo == null || message.plansInfo.isEmpty) {
+    if (message.plansInfo.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -29781,11 +33721,11 @@ class PlanDBStateSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.plansInfo.length; i++) {
-        var id = message.plansInfo[i]?.msgId;
+        var id = message.plansInfo[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -29801,7 +33741,7 @@ class PlanDBStateSerializer
   }
 
   @override
-  imc.PlanDBState deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanDBState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -29820,6 +33760,10 @@ class PlanDBStateSerializer
     var builder = imc.PlanDBStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -29830,8 +33774,13 @@ class PlanDBStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -29884,11 +33833,11 @@ class PlanDBStateSerializer
       byteOffset += 2;
       if (plansInfoSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[plansInfoSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -29906,11 +33855,16 @@ class PlanDBStateSerializer
 /// Plan DB Information serializer class
 ///
 class PlanDBInformationSerializer extends imc
-    .ImcSerializer<imc.PlanDBInformation, imc.PlanDBInformationBuilder> {
+    .ImcSerializer<imc.PlanDBInformation?, imc.PlanDBInformationBuilder> {
   @override
-  ByteData serialize(imc.PlanDBInformation message) {
+  ByteData serialize(imc.PlanDBInformation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -29927,7 +33881,9 @@ class PlanDBInformationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PlanDBInformation message, ByteData byteData, int offset) {
+      imc.PlanDBInformation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field planId
@@ -29955,13 +33911,15 @@ class PlanDBInformationSerializer extends imc
     var md5SSize = message.md5.length;
     byteData.setUint16(byteOffset, md5SSize, imc.endian_ser);
     byteOffset += 2;
-    message.md5.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (md5SSize > 0) {
+      message.md5.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.PlanDBInformation deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanDBInformation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -29980,6 +33938,10 @@ class PlanDBInformationSerializer extends imc
     var builder = imc.PlanDBInformationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -29990,8 +33952,13 @@ class PlanDBInformationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -30049,11 +34016,16 @@ class PlanDBInformationSerializer extends imc
 /// Plan Control serializer class
 ///
 class PlanControlSerializer
-    extends imc.ImcSerializer<imc.PlanControl, imc.PlanControlBuilder> {
+    extends imc.ImcSerializer<imc.PlanControl?, imc.PlanControlBuilder> {
   @override
-  ByteData serialize(imc.PlanControl message) {
+  ByteData serialize(imc.PlanControl? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -30069,7 +34041,10 @@ class PlanControlSerializer
   }
 
   @override
-  int serializePayload(imc.PlanControl message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.PlanControl? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -30095,7 +34070,7 @@ class PlanControlSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.arg.msgId;
+      var id = message.arg!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -30118,7 +34093,7 @@ class PlanControlSerializer
   }
 
   @override
-  imc.PlanControl deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanControl? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -30137,6 +34112,10 @@ class PlanControlSerializer
     var builder = imc.PlanControlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -30147,8 +34126,13 @@ class PlanControlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -30191,12 +34175,12 @@ class PlanControlSerializer
     if (argSId == imc.ImcId.nullId) {
       builder.arg = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -30222,11 +34206,16 @@ class PlanControlSerializer
 /// Plan Control State serializer class
 ///
 class PlanControlStateSerializer extends imc
-    .ImcSerializer<imc.PlanControlState, imc.PlanControlStateBuilder> {
+    .ImcSerializer<imc.PlanControlState?, imc.PlanControlStateBuilder> {
   @override
-  ByteData serialize(imc.PlanControlState message) {
+  ByteData serialize(imc.PlanControlState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -30243,7 +34232,9 @@ class PlanControlStateSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PlanControlState message, ByteData byteData, int offset) {
+      imc.PlanControlState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -30281,7 +34272,7 @@ class PlanControlStateSerializer extends imc
   }
 
   @override
-  imc.PlanControlState deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanControlState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -30300,6 +34291,10 @@ class PlanControlStateSerializer extends imc
     var builder = imc.PlanControlStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -30310,8 +34305,13 @@ class PlanControlStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -30372,11 +34372,16 @@ class PlanControlStateSerializer extends imc
 /// Plan Variable serializer class
 ///
 class PlanVariableSerializer
-    extends imc.ImcSerializer<imc.PlanVariable, imc.PlanVariableBuilder> {
+    extends imc.ImcSerializer<imc.PlanVariable?, imc.PlanVariableBuilder> {
   @override
-  ByteData serialize(imc.PlanVariable message) {
+  ByteData serialize(imc.PlanVariable? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -30393,7 +34398,9 @@ class PlanVariableSerializer
 
   @override
   int serializePayload(
-      imc.PlanVariable message, ByteData byteData, int offset) {
+      imc.PlanVariable? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -30419,7 +34426,7 @@ class PlanVariableSerializer
   }
 
   @override
-  imc.PlanVariable deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanVariable? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -30438,6 +34445,10 @@ class PlanVariableSerializer
     var builder = imc.PlanVariableBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -30448,8 +34459,13 @@ class PlanVariableSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -30496,11 +34512,16 @@ class PlanVariableSerializer
 /// Plan Generation serializer class
 ///
 class PlanGenerationSerializer
-    extends imc.ImcSerializer<imc.PlanGeneration, imc.PlanGenerationBuilder> {
+    extends imc.ImcSerializer<imc.PlanGeneration?, imc.PlanGenerationBuilder> {
   @override
-  ByteData serialize(imc.PlanGeneration message) {
+  ByteData serialize(imc.PlanGeneration? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -30517,7 +34538,9 @@ class PlanGenerationSerializer
 
   @override
   int serializePayload(
-      imc.PlanGeneration message, ByteData byteData, int offset) {
+      imc.PlanGeneration? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field cmd
@@ -30543,7 +34566,7 @@ class PlanGenerationSerializer
   }
 
   @override
-  imc.PlanGeneration deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanGeneration? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -30562,6 +34585,10 @@ class PlanGenerationSerializer
     var builder = imc.PlanGenerationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -30572,8 +34599,13 @@ class PlanGenerationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -30620,11 +34652,16 @@ class PlanGenerationSerializer
 /// Leader State serializer class
 ///
 class LeaderStateSerializer
-    extends imc.ImcSerializer<imc.LeaderState, imc.LeaderStateBuilder> {
+    extends imc.ImcSerializer<imc.LeaderState?, imc.LeaderStateBuilder> {
   @override
-  ByteData serialize(imc.LeaderState message) {
+  ByteData serialize(imc.LeaderState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -30640,7 +34677,10 @@ class LeaderStateSerializer
   }
 
   @override
-  int serializePayload(imc.LeaderState message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.LeaderState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field groupName
@@ -30711,7 +34751,7 @@ class LeaderStateSerializer
   }
 
   @override
-  imc.LeaderState deserialize(Uint8List data, [int offset = 0]) {
+  imc.LeaderState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -30730,6 +34770,10 @@ class LeaderStateSerializer
     var builder = imc.LeaderStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -30740,8 +34784,13 @@ class LeaderStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -30830,11 +34879,16 @@ class LeaderStateSerializer
 /// Plan Statistics serializer class
 ///
 class PlanStatisticsSerializer
-    extends imc.ImcSerializer<imc.PlanStatistics, imc.PlanStatisticsBuilder> {
+    extends imc.ImcSerializer<imc.PlanStatistics?, imc.PlanStatisticsBuilder> {
   @override
-  ByteData serialize(imc.PlanStatistics message) {
+  ByteData serialize(imc.PlanStatistics? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -30851,7 +34905,9 @@ class PlanStatisticsSerializer
 
   @override
   int serializePayload(
-      imc.PlanStatistics message, ByteData byteData, int offset) {
+      imc.PlanStatistics? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field planId
@@ -30895,7 +34951,7 @@ class PlanStatisticsSerializer
   }
 
   @override
-  imc.PlanStatistics deserialize(Uint8List data, [int offset = 0]) {
+  imc.PlanStatistics? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -30914,6 +34970,10 @@ class PlanStatisticsSerializer
     var builder = imc.PlanStatisticsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -30924,8 +34984,13 @@ class PlanStatisticsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31000,11 +35065,16 @@ class PlanStatisticsSerializer
 /// Reported State serializer class
 ///
 class ReportedStateSerializer
-    extends imc.ImcSerializer<imc.ReportedState, imc.ReportedStateBuilder> {
+    extends imc.ImcSerializer<imc.ReportedState?, imc.ReportedStateBuilder> {
   @override
-  ByteData serialize(imc.ReportedState message) {
+  ByteData serialize(imc.ReportedState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -31021,7 +35091,9 @@ class ReportedStateSerializer
 
   @override
   int serializePayload(
-      imc.ReportedState message, ByteData byteData, int offset) {
+      imc.ReportedState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -31059,7 +35131,7 @@ class ReportedStateSerializer
   }
 
   @override
-  imc.ReportedState deserialize(Uint8List data, [int offset = 0]) {
+  imc.ReportedState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -31078,6 +35150,10 @@ class ReportedStateSerializer
     var builder = imc.ReportedStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -31088,8 +35164,13 @@ class ReportedStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31145,11 +35226,16 @@ class ReportedStateSerializer
 /// Remote Sensor Info serializer class
 ///
 class RemoteSensorInfoSerializer extends imc
-    .ImcSerializer<imc.RemoteSensorInfo, imc.RemoteSensorInfoBuilder> {
+    .ImcSerializer<imc.RemoteSensorInfo?, imc.RemoteSensorInfoBuilder> {
   @override
-  ByteData serialize(imc.RemoteSensorInfo message) {
+  ByteData serialize(imc.RemoteSensorInfo? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -31166,7 +35252,9 @@ class RemoteSensorInfoSerializer extends imc
 
   @override
   int serializePayload(
-      imc.RemoteSensorInfo message, ByteData byteData, int offset) {
+      imc.RemoteSensorInfo? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -31204,7 +35292,7 @@ class RemoteSensorInfoSerializer extends imc
   }
 
   @override
-  imc.RemoteSensorInfo deserialize(Uint8List data, [int offset = 0]) {
+  imc.RemoteSensorInfo? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -31223,6 +35311,10 @@ class RemoteSensorInfoSerializer extends imc
     var builder = imc.RemoteSensorInfoBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -31233,8 +35325,13 @@ class RemoteSensorInfoSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31295,11 +35392,16 @@ class RemoteSensorInfoSerializer extends imc
 
 /// Map serializer class
 ///
-class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
+class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
   @override
-  ByteData serialize(imc.Map message) {
+  ByteData serialize(imc.Map? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -31315,7 +35417,9 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
   }
 
   @override
-  int serializePayload(imc.Map message, ByteData byteData, int offset) {
+  int serializePayload(imc.Map? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -31325,7 +35429,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
     byteOffset += 2;
     idEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field features
-    if (message.features == null || message.features.isEmpty) {
+    if (message.features.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -31333,11 +35437,11 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.features.length; i++) {
-        var id = message.features[i]?.msgId;
+        var id = message.features[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -31353,7 +35457,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
   }
 
   @override
-  imc.Map deserialize(Uint8List data, [int offset = 0]) {
+  imc.Map? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -31372,6 +35476,10 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
     var builder = imc.MapBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -31382,8 +35490,13 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31416,11 +35529,11 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
       byteOffset += 2;
       if (featuresSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[featuresSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -31438,11 +35551,16 @@ class MapSerializer extends imc.ImcSerializer<imc.Map, imc.MapBuilder> {
 /// Map Feature serializer class
 ///
 class MapFeatureSerializer
-    extends imc.ImcSerializer<imc.MapFeature, imc.MapFeatureBuilder> {
+    extends imc.ImcSerializer<imc.MapFeature?, imc.MapFeatureBuilder> {
   @override
-  ByteData serialize(imc.MapFeature message) {
+  ByteData serialize(imc.MapFeature? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -31458,7 +35576,9 @@ class MapFeatureSerializer
   }
 
   @override
-  int serializePayload(imc.MapFeature message, ByteData byteData, int offset) {
+  int serializePayload(imc.MapFeature? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field id
@@ -31480,7 +35600,7 @@ class MapFeatureSerializer
     byteData.setUint8(byteOffset, message.rgbBlue);
     byteOffset += 1;
     // field feature
-    if (message.feature == null || message.feature.isEmpty) {
+    if (message.feature.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -31488,11 +35608,11 @@ class MapFeatureSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.feature.length; i++) {
-        var id = message.feature[i]?.msgId;
+        var id = message.feature[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -31508,7 +35628,7 @@ class MapFeatureSerializer
   }
 
   @override
-  imc.MapFeature deserialize(Uint8List data, [int offset = 0]) {
+  imc.MapFeature? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -31527,6 +35647,10 @@ class MapFeatureSerializer
     var builder = imc.MapFeatureBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -31537,8 +35661,13 @@ class MapFeatureSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31583,12 +35712,12 @@ class MapFeatureSerializer
       var featureSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (featureSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[featureSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[featureSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[featureSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[featureSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -31606,11 +35735,16 @@ class MapFeatureSerializer
 /// MapPoint serializer class
 ///
 class MapPointSerializer
-    extends imc.ImcSerializer<imc.MapPoint, imc.MapPointBuilder> {
+    extends imc.ImcSerializer<imc.MapPoint?, imc.MapPointBuilder> {
   @override
-  ByteData serialize(imc.MapPoint message) {
+  ByteData serialize(imc.MapPoint? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -31626,7 +35760,9 @@ class MapPointSerializer
   }
 
   @override
-  int serializePayload(imc.MapPoint message, ByteData byteData, int offset) {
+  int serializePayload(imc.MapPoint? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -31643,7 +35779,7 @@ class MapPointSerializer
   }
 
   @override
-  imc.MapPoint deserialize(Uint8List data, [int offset = 0]) {
+  imc.MapPoint? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -31662,6 +35798,10 @@ class MapPointSerializer
     var builder = imc.MapPointBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -31672,8 +35812,13 @@ class MapPointSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31705,11 +35850,16 @@ class MapPointSerializer
 /// CCU Event serializer class
 ///
 class CcuEventSerializer
-    extends imc.ImcSerializer<imc.CcuEvent, imc.CcuEventBuilder> {
+    extends imc.ImcSerializer<imc.CcuEvent?, imc.CcuEventBuilder> {
   @override
-  ByteData serialize(imc.CcuEvent message) {
+  ByteData serialize(imc.CcuEvent? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -31725,7 +35875,9 @@ class CcuEventSerializer
   }
 
   @override
-  int serializePayload(imc.CcuEvent message, ByteData byteData, int offset) {
+  int serializePayload(imc.CcuEvent? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -31742,7 +35894,7 @@ class CcuEventSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.arg.msgId;
+      var id = message.arg!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -31759,7 +35911,7 @@ class CcuEventSerializer
   }
 
   @override
-  imc.CcuEvent deserialize(Uint8List data, [int offset = 0]) {
+  imc.CcuEvent? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -31778,6 +35930,10 @@ class CcuEventSerializer
     var builder = imc.CcuEventBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -31788,8 +35944,13 @@ class CcuEventSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31822,12 +35983,12 @@ class CcuEventSerializer
     if (argSId == imc.ImcId.nullId) {
       builder.arg = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[argSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[argSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -31844,11 +36005,16 @@ class CcuEventSerializer
 /// Vehicle Links serializer class
 ///
 class VehicleLinksSerializer
-    extends imc.ImcSerializer<imc.VehicleLinks, imc.VehicleLinksBuilder> {
+    extends imc.ImcSerializer<imc.VehicleLinks?, imc.VehicleLinksBuilder> {
   @override
-  ByteData serialize(imc.VehicleLinks message) {
+  ByteData serialize(imc.VehicleLinks? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -31865,7 +36031,9 @@ class VehicleLinksSerializer
 
   @override
   int serializePayload(
-      imc.VehicleLinks message, ByteData byteData, int offset) {
+      imc.VehicleLinks? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field localname
@@ -31875,7 +36043,7 @@ class VehicleLinksSerializer
     byteOffset += 2;
     localnameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field links
-    if (message.links == null || message.links.isEmpty) {
+    if (message.links.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -31883,11 +36051,11 @@ class VehicleLinksSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.links.length; i++) {
-        var id = message.links[i]?.msgId;
+        var id = message.links[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -31903,7 +36071,7 @@ class VehicleLinksSerializer
   }
 
   @override
-  imc.VehicleLinks deserialize(Uint8List data, [int offset = 0]) {
+  imc.VehicleLinks? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -31922,6 +36090,10 @@ class VehicleLinksSerializer
     var builder = imc.VehicleLinksBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -31932,8 +36104,13 @@ class VehicleLinksSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -31965,12 +36142,12 @@ class VehicleLinksSerializer
       var linksSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (linksSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[linksSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[linksSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[linksSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[linksSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -31987,12 +36164,17 @@ class VehicleLinksSerializer
 
 /// TREX Observation serializer class
 ///
-class TrexObservationSerializer
-    extends imc.ImcSerializer<imc.TrexObservation, imc.TrexObservationBuilder> {
+class TrexObservationSerializer extends imc
+    .ImcSerializer<imc.TrexObservation?, imc.TrexObservationBuilder> {
   @override
-  ByteData serialize(imc.TrexObservation message) {
+  ByteData serialize(imc.TrexObservation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32009,7 +36191,9 @@ class TrexObservationSerializer
 
   @override
   int serializePayload(
-      imc.TrexObservation message, ByteData byteData, int offset) {
+      imc.TrexObservation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeline
@@ -32035,7 +36219,7 @@ class TrexObservationSerializer
   }
 
   @override
-  imc.TrexObservation deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrexObservation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32054,6 +36238,10 @@ class TrexObservationSerializer
     var builder = imc.TrexObservationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32064,8 +36252,13 @@ class TrexObservationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -32115,11 +36308,16 @@ class TrexObservationSerializer
 /// TREX Command serializer class
 ///
 class TrexCommandSerializer
-    extends imc.ImcSerializer<imc.TrexCommand, imc.TrexCommandBuilder> {
+    extends imc.ImcSerializer<imc.TrexCommand?, imc.TrexCommandBuilder> {
   @override
-  ByteData serialize(imc.TrexCommand message) {
+  ByteData serialize(imc.TrexCommand? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32135,7 +36333,10 @@ class TrexCommandSerializer
   }
 
   @override
-  int serializePayload(imc.TrexCommand message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.TrexCommand? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field command
@@ -32158,7 +36359,7 @@ class TrexCommandSerializer
   }
 
   @override
-  imc.TrexCommand deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrexCommand? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32177,6 +36378,10 @@ class TrexCommandSerializer
     var builder = imc.TrexCommandBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32187,8 +36392,13 @@ class TrexCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -32232,11 +36442,16 @@ class TrexCommandSerializer
 /// TREX Operation serializer class
 ///
 class TrexOperationSerializer
-    extends imc.ImcSerializer<imc.TrexOperation, imc.TrexOperationBuilder> {
+    extends imc.ImcSerializer<imc.TrexOperation?, imc.TrexOperationBuilder> {
   @override
-  ByteData serialize(imc.TrexOperation message) {
+  ByteData serialize(imc.TrexOperation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32253,7 +36468,9 @@ class TrexOperationSerializer
 
   @override
   int serializePayload(
-      imc.TrexOperation message, ByteData byteData, int offset) {
+      imc.TrexOperation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -32270,7 +36487,7 @@ class TrexOperationSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.token.msgId;
+      var id = message.token!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -32287,7 +36504,7 @@ class TrexOperationSerializer
   }
 
   @override
-  imc.TrexOperation deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrexOperation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32306,6 +36523,10 @@ class TrexOperationSerializer
     var builder = imc.TrexOperationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32316,8 +36537,13 @@ class TrexOperationSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -32350,12 +36576,12 @@ class TrexOperationSerializer
     if (tokenSId == imc.ImcId.nullId) {
       builder.token = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[tokenSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -32372,11 +36598,16 @@ class TrexOperationSerializer
 /// TREX Attribute serializer class
 ///
 class TrexAttributeSerializer
-    extends imc.ImcSerializer<imc.TrexAttribute, imc.TrexAttributeBuilder> {
+    extends imc.ImcSerializer<imc.TrexAttribute?, imc.TrexAttributeBuilder> {
   @override
-  ByteData serialize(imc.TrexAttribute message) {
+  ByteData serialize(imc.TrexAttribute? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32393,7 +36624,9 @@ class TrexAttributeSerializer
 
   @override
   int serializePayload(
-      imc.TrexAttribute message, ByteData byteData, int offset) {
+      imc.TrexAttribute? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -32422,7 +36655,7 @@ class TrexAttributeSerializer
   }
 
   @override
-  imc.TrexAttribute deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrexAttribute? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32441,6 +36674,10 @@ class TrexAttributeSerializer
     var builder = imc.TrexAttributeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32451,8 +36688,13 @@ class TrexAttributeSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -32506,11 +36748,16 @@ class TrexAttributeSerializer
 /// TREX Token serializer class
 ///
 class TrexTokenSerializer
-    extends imc.ImcSerializer<imc.TrexToken, imc.TrexTokenBuilder> {
+    extends imc.ImcSerializer<imc.TrexToken?, imc.TrexTokenBuilder> {
   @override
-  ByteData serialize(imc.TrexToken message) {
+  ByteData serialize(imc.TrexToken? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32526,7 +36773,9 @@ class TrexTokenSerializer
   }
 
   @override
-  int serializePayload(imc.TrexToken message, ByteData byteData, int offset) {
+  int serializePayload(imc.TrexToken? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeline
@@ -32542,7 +36791,7 @@ class TrexTokenSerializer
     byteOffset += 2;
     predicateEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field attributes
-    if (message.attributes == null || message.attributes.isEmpty) {
+    if (message.attributes.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -32550,11 +36799,11 @@ class TrexTokenSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.attributes.length; i++) {
-        var id = message.attributes[i]?.msgId;
+        var id = message.attributes[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32570,7 +36819,7 @@ class TrexTokenSerializer
   }
 
   @override
-  imc.TrexToken deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrexToken? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32589,6 +36838,10 @@ class TrexTokenSerializer
     var builder = imc.TrexTokenBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32599,8 +36852,13 @@ class TrexTokenSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -32642,11 +36900,11 @@ class TrexTokenSerializer
       byteOffset += 2;
       if (attributesSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[attributesSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -32664,11 +36922,16 @@ class TrexTokenSerializer
 /// TREX Plan serializer class
 ///
 class TrexPlanSerializer
-    extends imc.ImcSerializer<imc.TrexPlan, imc.TrexPlanBuilder> {
+    extends imc.ImcSerializer<imc.TrexPlan?, imc.TrexPlanBuilder> {
   @override
-  ByteData serialize(imc.TrexPlan message) {
+  ByteData serialize(imc.TrexPlan? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32684,7 +36947,9 @@ class TrexPlanSerializer
   }
 
   @override
-  int serializePayload(imc.TrexPlan message, ByteData byteData, int offset) {
+  int serializePayload(imc.TrexPlan? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field reactor
@@ -32694,7 +36959,7 @@ class TrexPlanSerializer
     byteOffset += 2;
     reactorEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field tokens
-    if (message.tokens == null || message.tokens.isEmpty) {
+    if (message.tokens.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -32702,11 +36967,11 @@ class TrexPlanSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.tokens.length; i++) {
-        var id = message.tokens[i]?.msgId;
+        var id = message.tokens[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -32722,7 +36987,7 @@ class TrexPlanSerializer
   }
 
   @override
-  imc.TrexPlan deserialize(Uint8List data, [int offset = 0]) {
+  imc.TrexPlan? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32741,6 +37006,10 @@ class TrexPlanSerializer
     var builder = imc.TrexPlanBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32751,8 +37020,13 @@ class TrexPlanSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -32784,12 +37058,12 @@ class TrexPlanSerializer
       var tokensSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (tokensSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[tokensSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -32806,11 +37080,16 @@ class TrexPlanSerializer
 
 /// Event serializer class
 ///
-class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
+class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
   @override
-  ByteData serialize(imc.Event message) {
+  ByteData serialize(imc.Event? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32826,7 +37105,9 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
   }
 
   @override
-  int serializePayload(imc.Event message, ByteData byteData, int offset) {
+  int serializePayload(imc.Event? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field topic
@@ -32846,7 +37127,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
   }
 
   @override
-  imc.Event deserialize(Uint8List data, [int offset = 0]) {
+  imc.Event? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32865,6 +37146,10 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
     var builder = imc.EventBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32875,8 +37160,13 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -32916,12 +37206,17 @@ class EventSerializer extends imc.ImcSerializer<imc.Event, imc.EventBuilder> {
 
 /// Compressed Image serializer class
 ///
-class CompressedImageSerializer
-    extends imc.ImcSerializer<imc.CompressedImage, imc.CompressedImageBuilder> {
+class CompressedImageSerializer extends imc
+    .ImcSerializer<imc.CompressedImage?, imc.CompressedImageBuilder> {
   @override
-  ByteData serialize(imc.CompressedImage message) {
+  ByteData serialize(imc.CompressedImage? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -32938,7 +37233,9 @@ class CompressedImageSerializer
 
   @override
   int serializePayload(
-      imc.CompressedImage message, ByteData byteData, int offset) {
+      imc.CompressedImage? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field frameid
@@ -32948,13 +37245,15 @@ class CompressedImageSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.CompressedImage deserialize(Uint8List data, [int offset = 0]) {
+  imc.CompressedImage? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -32973,6 +37272,10 @@ class CompressedImageSerializer
     var builder = imc.CompressedImageBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -32983,8 +37286,13 @@ class CompressedImageSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33017,12 +37325,17 @@ class CompressedImageSerializer
 
 /// Image Transmission Settings serializer class
 ///
-class ImageTxSettingsSerializer
-    extends imc.ImcSerializer<imc.ImageTxSettings, imc.ImageTxSettingsBuilder> {
+class ImageTxSettingsSerializer extends imc
+    .ImcSerializer<imc.ImageTxSettings?, imc.ImageTxSettingsBuilder> {
   @override
-  ByteData serialize(imc.ImageTxSettings message) {
+  ByteData serialize(imc.ImageTxSettings? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33039,7 +37352,9 @@ class ImageTxSettingsSerializer
 
   @override
   int serializePayload(
-      imc.ImageTxSettings message, ByteData byteData, int offset) {
+      imc.ImageTxSettings? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field fps
@@ -33059,7 +37374,7 @@ class ImageTxSettingsSerializer
   }
 
   @override
-  imc.ImageTxSettings deserialize(Uint8List data, [int offset = 0]) {
+  imc.ImageTxSettings? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33078,6 +37393,10 @@ class ImageTxSettingsSerializer
     var builder = imc.ImageTxSettingsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33088,8 +37407,13 @@ class ImageTxSettingsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33124,11 +37448,16 @@ class ImageTxSettingsSerializer
 /// Remote State serializer class
 ///
 class RemoteStateSerializer
-    extends imc.ImcSerializer<imc.RemoteState, imc.RemoteStateBuilder> {
+    extends imc.ImcSerializer<imc.RemoteState?, imc.RemoteStateBuilder> {
   @override
-  ByteData serialize(imc.RemoteState message) {
+  ByteData serialize(imc.RemoteState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33144,7 +37473,10 @@ class RemoteStateSerializer
   }
 
   @override
-  int serializePayload(imc.RemoteState message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.RemoteState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -33167,7 +37499,7 @@ class RemoteStateSerializer
   }
 
   @override
-  imc.RemoteState deserialize(Uint8List data, [int offset = 0]) {
+  imc.RemoteState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33186,6 +37518,10 @@ class RemoteStateSerializer
     var builder = imc.RemoteStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33196,8 +37532,13 @@ class RemoteStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33235,11 +37576,16 @@ class RemoteStateSerializer
 /// Target serializer class
 ///
 class TargetSerializer
-    extends imc.ImcSerializer<imc.Target, imc.TargetBuilder> {
+    extends imc.ImcSerializer<imc.Target?, imc.TargetBuilder> {
   @override
-  ByteData serialize(imc.Target message) {
+  ByteData serialize(imc.Target? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33255,7 +37601,9 @@ class TargetSerializer
   }
 
   @override
-  int serializePayload(imc.Target message, ByteData byteData, int offset) {
+  int serializePayload(imc.Target? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field label
@@ -33287,7 +37635,7 @@ class TargetSerializer
   }
 
   @override
-  imc.Target deserialize(Uint8List data, [int offset = 0]) {
+  imc.Target? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33306,6 +37654,10 @@ class TargetSerializer
     var builder = imc.TargetBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33316,8 +37668,13 @@ class TargetSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33366,12 +37723,17 @@ class TargetSerializer
 
 /// EntityParameter serializer class
 ///
-class EntityParameterSerializer
-    extends imc.ImcSerializer<imc.EntityParameter, imc.EntityParameterBuilder> {
+class EntityParameterSerializer extends imc
+    .ImcSerializer<imc.EntityParameter?, imc.EntityParameterBuilder> {
   @override
-  ByteData serialize(imc.EntityParameter message) {
+  ByteData serialize(imc.EntityParameter? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33388,7 +37750,9 @@ class EntityParameterSerializer
 
   @override
   int serializePayload(
-      imc.EntityParameter message, ByteData byteData, int offset) {
+      imc.EntityParameter? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -33408,7 +37772,7 @@ class EntityParameterSerializer
   }
 
   @override
-  imc.EntityParameter deserialize(Uint8List data, [int offset = 0]) {
+  imc.EntityParameter? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33427,6 +37791,10 @@ class EntityParameterSerializer
     var builder = imc.EntityParameterBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33437,8 +37805,13 @@ class EntityParameterSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33479,11 +37852,16 @@ class EntityParameterSerializer
 /// EntityParameters serializer class
 ///
 class EntityParametersSerializer extends imc
-    .ImcSerializer<imc.EntityParameters, imc.EntityParametersBuilder> {
+    .ImcSerializer<imc.EntityParameters?, imc.EntityParametersBuilder> {
   @override
-  ByteData serialize(imc.EntityParameters message) {
+  ByteData serialize(imc.EntityParameters? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33500,7 +37878,9 @@ class EntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.EntityParameters message, ByteData byteData, int offset) {
+      imc.EntityParameters? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -33510,7 +37890,7 @@ class EntityParametersSerializer extends imc
     byteOffset += 2;
     nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field params
-    if (message.params == null || message.params.isEmpty) {
+    if (message.params.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -33518,11 +37898,11 @@ class EntityParametersSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.params.length; i++) {
-        var id = message.params[i]?.msgId;
+        var id = message.params[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -33538,7 +37918,7 @@ class EntityParametersSerializer extends imc
   }
 
   @override
-  imc.EntityParameters deserialize(Uint8List data, [int offset = 0]) {
+  imc.EntityParameters? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33557,6 +37937,10 @@ class EntityParametersSerializer extends imc
     var builder = imc.EntityParametersBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33567,8 +37951,13 @@ class EntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33600,12 +37989,12 @@ class EntityParametersSerializer extends imc
       var paramsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (paramsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -33623,11 +38012,16 @@ class EntityParametersSerializer extends imc
 /// QueryEntityParameters serializer class
 ///
 class QueryEntityParametersSerializer extends imc.ImcSerializer<
-    imc.QueryEntityParameters, imc.QueryEntityParametersBuilder> {
+    imc.QueryEntityParameters?, imc.QueryEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityParameters message) {
+  ByteData serialize(imc.QueryEntityParameters? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33644,7 +38038,9 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.QueryEntityParameters message, ByteData byteData, int offset) {
+      imc.QueryEntityParameters? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -33670,7 +38066,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.QueryEntityParameters deserialize(Uint8List data, [int offset = 0]) {
+  imc.QueryEntityParameters? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33689,6 +38085,10 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     var builder = imc.QueryEntityParametersBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33699,8 +38099,13 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33750,11 +38155,16 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
 /// SetEntityParameters serializer class
 ///
 class SetEntityParametersSerializer extends imc
-    .ImcSerializer<imc.SetEntityParameters, imc.SetEntityParametersBuilder> {
+    .ImcSerializer<imc.SetEntityParameters?, imc.SetEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.SetEntityParameters message) {
+  ByteData serialize(imc.SetEntityParameters? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33771,7 +38181,9 @@ class SetEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SetEntityParameters message, ByteData byteData, int offset) {
+      imc.SetEntityParameters? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -33781,7 +38193,7 @@ class SetEntityParametersSerializer extends imc
     byteOffset += 2;
     nameEncoded.forEach((b) => byteData.setUint8(byteOffset++, b));
     // field params
-    if (message.params == null || message.params.isEmpty) {
+    if (message.params.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -33789,11 +38201,11 @@ class SetEntityParametersSerializer extends imc
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.params.length; i++) {
-        var id = message.params[i]?.msgId;
+        var id = message.params[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -33809,7 +38221,7 @@ class SetEntityParametersSerializer extends imc
   }
 
   @override
-  imc.SetEntityParameters deserialize(Uint8List data, [int offset = 0]) {
+  imc.SetEntityParameters? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33828,6 +38240,10 @@ class SetEntityParametersSerializer extends imc
     var builder = imc.SetEntityParametersBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33838,8 +38254,13 @@ class SetEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33871,12 +38292,12 @@ class SetEntityParametersSerializer extends imc
       var paramsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (paramsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[paramsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -33894,11 +38315,16 @@ class SetEntityParametersSerializer extends imc
 /// SaveEntityParameters serializer class
 ///
 class SaveEntityParametersSerializer extends imc
-    .ImcSerializer<imc.SaveEntityParameters, imc.SaveEntityParametersBuilder> {
+    .ImcSerializer<imc.SaveEntityParameters?, imc.SaveEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.SaveEntityParameters message) {
+  ByteData serialize(imc.SaveEntityParameters? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -33915,7 +38341,9 @@ class SaveEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SaveEntityParameters message, ByteData byteData, int offset) {
+      imc.SaveEntityParameters? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -33929,7 +38357,7 @@ class SaveEntityParametersSerializer extends imc
   }
 
   @override
-  imc.SaveEntityParameters deserialize(Uint8List data, [int offset = 0]) {
+  imc.SaveEntityParameters? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -33948,6 +38376,10 @@ class SaveEntityParametersSerializer extends imc
     var builder = imc.SaveEntityParametersBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -33958,8 +38390,13 @@ class SaveEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -33991,11 +38428,16 @@ class SaveEntityParametersSerializer extends imc
 /// Create Session serializer class
 ///
 class CreateSessionSerializer
-    extends imc.ImcSerializer<imc.CreateSession, imc.CreateSessionBuilder> {
+    extends imc.ImcSerializer<imc.CreateSession?, imc.CreateSessionBuilder> {
   @override
-  ByteData serialize(imc.CreateSession message) {
+  ByteData serialize(imc.CreateSession? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34012,7 +38454,9 @@ class CreateSessionSerializer
 
   @override
   int serializePayload(
-      imc.CreateSession message, ByteData byteData, int offset) {
+      imc.CreateSession? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timeout
@@ -34023,7 +38467,7 @@ class CreateSessionSerializer
   }
 
   @override
-  imc.CreateSession deserialize(Uint8List data, [int offset = 0]) {
+  imc.CreateSession? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34042,6 +38486,10 @@ class CreateSessionSerializer
     var builder = imc.CreateSessionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34052,8 +38500,13 @@ class CreateSessionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34079,11 +38532,16 @@ class CreateSessionSerializer
 /// Close Session serializer class
 ///
 class CloseSessionSerializer
-    extends imc.ImcSerializer<imc.CloseSession, imc.CloseSessionBuilder> {
+    extends imc.ImcSerializer<imc.CloseSession?, imc.CloseSessionBuilder> {
   @override
-  ByteData serialize(imc.CloseSession message) {
+  ByteData serialize(imc.CloseSession? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34100,7 +38558,9 @@ class CloseSessionSerializer
 
   @override
   int serializePayload(
-      imc.CloseSession message, ByteData byteData, int offset) {
+      imc.CloseSession? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sessid
@@ -34111,7 +38571,7 @@ class CloseSessionSerializer
   }
 
   @override
-  imc.CloseSession deserialize(Uint8List data, [int offset = 0]) {
+  imc.CloseSession? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34130,6 +38590,10 @@ class CloseSessionSerializer
     var builder = imc.CloseSessionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34140,8 +38604,13 @@ class CloseSessionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34167,11 +38636,16 @@ class CloseSessionSerializer
 /// Session Subscription serializer class
 ///
 class SessionSubscriptionSerializer extends imc
-    .ImcSerializer<imc.SessionSubscription, imc.SessionSubscriptionBuilder> {
+    .ImcSerializer<imc.SessionSubscription?, imc.SessionSubscriptionBuilder> {
   @override
-  ByteData serialize(imc.SessionSubscription message) {
+  ByteData serialize(imc.SessionSubscription? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34188,7 +38662,9 @@ class SessionSubscriptionSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SessionSubscription message, ByteData byteData, int offset) {
+      imc.SessionSubscription? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sessid
@@ -34205,7 +38681,7 @@ class SessionSubscriptionSerializer extends imc
   }
 
   @override
-  imc.SessionSubscription deserialize(Uint8List data, [int offset = 0]) {
+  imc.SessionSubscription? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34224,6 +38700,10 @@ class SessionSubscriptionSerializer extends imc
     var builder = imc.SessionSubscriptionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34234,8 +38714,13 @@ class SessionSubscriptionSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34270,11 +38755,16 @@ class SessionSubscriptionSerializer extends imc
 /// Session Keep-Alive serializer class
 ///
 class SessionKeepAliveSerializer extends imc
-    .ImcSerializer<imc.SessionKeepAlive, imc.SessionKeepAliveBuilder> {
+    .ImcSerializer<imc.SessionKeepAlive?, imc.SessionKeepAliveBuilder> {
   @override
-  ByteData serialize(imc.SessionKeepAlive message) {
+  ByteData serialize(imc.SessionKeepAlive? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34291,7 +38781,9 @@ class SessionKeepAliveSerializer extends imc
 
   @override
   int serializePayload(
-      imc.SessionKeepAlive message, ByteData byteData, int offset) {
+      imc.SessionKeepAlive? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sessid
@@ -34302,7 +38794,7 @@ class SessionKeepAliveSerializer extends imc
   }
 
   @override
-  imc.SessionKeepAlive deserialize(Uint8List data, [int offset = 0]) {
+  imc.SessionKeepAlive? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34321,6 +38813,10 @@ class SessionKeepAliveSerializer extends imc
     var builder = imc.SessionKeepAliveBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34331,8 +38827,13 @@ class SessionKeepAliveSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34358,11 +38859,16 @@ class SessionKeepAliveSerializer extends imc
 /// Session Status serializer class
 ///
 class SessionStatusSerializer
-    extends imc.ImcSerializer<imc.SessionStatus, imc.SessionStatusBuilder> {
+    extends imc.ImcSerializer<imc.SessionStatus?, imc.SessionStatusBuilder> {
   @override
-  ByteData serialize(imc.SessionStatus message) {
+  ByteData serialize(imc.SessionStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34379,7 +38885,9 @@ class SessionStatusSerializer
 
   @override
   int serializePayload(
-      imc.SessionStatus message, ByteData byteData, int offset) {
+      imc.SessionStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sessid
@@ -34393,7 +38901,7 @@ class SessionStatusSerializer
   }
 
   @override
-  imc.SessionStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.SessionStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34412,6 +38920,10 @@ class SessionStatusSerializer
     var builder = imc.SessionStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34422,8 +38934,13 @@ class SessionStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34452,11 +38969,16 @@ class SessionStatusSerializer
 /// Push Entity Parameters serializer class
 ///
 class PushEntityParametersSerializer extends imc
-    .ImcSerializer<imc.PushEntityParameters, imc.PushEntityParametersBuilder> {
+    .ImcSerializer<imc.PushEntityParameters?, imc.PushEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.PushEntityParameters message) {
+  ByteData serialize(imc.PushEntityParameters? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34473,7 +38995,9 @@ class PushEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PushEntityParameters message, ByteData byteData, int offset) {
+      imc.PushEntityParameters? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -34487,7 +39011,7 @@ class PushEntityParametersSerializer extends imc
   }
 
   @override
-  imc.PushEntityParameters deserialize(Uint8List data, [int offset = 0]) {
+  imc.PushEntityParameters? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34506,6 +39030,10 @@ class PushEntityParametersSerializer extends imc
     var builder = imc.PushEntityParametersBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34516,8 +39044,13 @@ class PushEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34549,11 +39082,16 @@ class PushEntityParametersSerializer extends imc
 /// Pop Entity Parameters serializer class
 ///
 class PopEntityParametersSerializer extends imc
-    .ImcSerializer<imc.PopEntityParameters, imc.PopEntityParametersBuilder> {
+    .ImcSerializer<imc.PopEntityParameters?, imc.PopEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.PopEntityParameters message) {
+  ByteData serialize(imc.PopEntityParameters? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34570,7 +39108,9 @@ class PopEntityParametersSerializer extends imc
 
   @override
   int serializePayload(
-      imc.PopEntityParameters message, ByteData byteData, int offset) {
+      imc.PopEntityParameters? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -34584,7 +39124,7 @@ class PopEntityParametersSerializer extends imc
   }
 
   @override
-  imc.PopEntityParameters deserialize(Uint8List data, [int offset = 0]) {
+  imc.PopEntityParameters? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34603,6 +39143,10 @@ class PopEntityParametersSerializer extends imc
     var builder = imc.PopEntityParametersBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34613,8 +39157,13 @@ class PopEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34646,11 +39195,16 @@ class PopEntityParametersSerializer extends imc
 /// I/O Event serializer class
 ///
 class IoEventSerializer
-    extends imc.ImcSerializer<imc.IoEvent, imc.IoEventBuilder> {
+    extends imc.ImcSerializer<imc.IoEvent?, imc.IoEventBuilder> {
   @override
-  ByteData serialize(imc.IoEvent message) {
+  ByteData serialize(imc.IoEvent? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34666,7 +39220,9 @@ class IoEventSerializer
   }
 
   @override
-  int serializePayload(imc.IoEvent message, ByteData byteData, int offset) {
+  int serializePayload(imc.IoEvent? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -34683,7 +39239,7 @@ class IoEventSerializer
   }
 
   @override
-  imc.IoEvent deserialize(Uint8List data, [int offset = 0]) {
+  imc.IoEvent? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34702,6 +39258,10 @@ class IoEventSerializer
     var builder = imc.IoEventBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34712,8 +39272,13 @@ class IoEventSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34748,11 +39313,16 @@ class IoEventSerializer
 /// UamTxFrame serializer class
 ///
 class UamTxFrameSerializer
-    extends imc.ImcSerializer<imc.UamTxFrame, imc.UamTxFrameBuilder> {
+    extends imc.ImcSerializer<imc.UamTxFrame?, imc.UamTxFrameBuilder> {
   @override
-  ByteData serialize(imc.UamTxFrame message) {
+  ByteData serialize(imc.UamTxFrame? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34768,7 +39338,9 @@ class UamTxFrameSerializer
   }
 
   @override
-  int serializePayload(imc.UamTxFrame message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamTxFrame? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field seq
@@ -34787,13 +39359,15 @@ class UamTxFrameSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.UamTxFrame deserialize(Uint8List data, [int offset = 0]) {
+  imc.UamTxFrame? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34812,6 +39386,10 @@ class UamTxFrameSerializer
     var builder = imc.UamTxFrameBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34822,8 +39400,13 @@ class UamTxFrameSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34869,11 +39452,16 @@ class UamTxFrameSerializer
 /// UamRxFrame serializer class
 ///
 class UamRxFrameSerializer
-    extends imc.ImcSerializer<imc.UamRxFrame, imc.UamRxFrameBuilder> {
+    extends imc.ImcSerializer<imc.UamRxFrame?, imc.UamRxFrameBuilder> {
   @override
-  ByteData serialize(imc.UamRxFrame message) {
+  ByteData serialize(imc.UamRxFrame? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -34889,7 +39477,9 @@ class UamRxFrameSerializer
   }
 
   @override
-  int serializePayload(imc.UamRxFrame message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamRxFrame? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field sysSrc
@@ -34911,13 +39501,15 @@ class UamRxFrameSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.UamRxFrame deserialize(Uint8List data, [int offset = 0]) {
+  imc.UamRxFrame? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -34936,6 +39528,10 @@ class UamRxFrameSerializer
     var builder = imc.UamRxFrameBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -34946,8 +39542,13 @@ class UamRxFrameSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -34999,11 +39600,16 @@ class UamRxFrameSerializer
 /// UamTxStatus serializer class
 ///
 class UamTxStatusSerializer
-    extends imc.ImcSerializer<imc.UamTxStatus, imc.UamTxStatusBuilder> {
+    extends imc.ImcSerializer<imc.UamTxStatus?, imc.UamTxStatusBuilder> {
   @override
-  ByteData serialize(imc.UamTxStatus message) {
+  ByteData serialize(imc.UamTxStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35019,7 +39625,10 @@ class UamTxStatusSerializer
   }
 
   @override
-  int serializePayload(imc.UamTxStatus message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.UamTxStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field seq
@@ -35039,7 +39648,7 @@ class UamTxStatusSerializer
   }
 
   @override
-  imc.UamTxStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.UamTxStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35058,6 +39667,10 @@ class UamTxStatusSerializer
     var builder = imc.UamTxStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35068,8 +39681,13 @@ class UamTxStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35107,11 +39725,16 @@ class UamTxStatusSerializer
 /// UamRxRange serializer class
 ///
 class UamRxRangeSerializer
-    extends imc.ImcSerializer<imc.UamRxRange, imc.UamRxRangeBuilder> {
+    extends imc.ImcSerializer<imc.UamRxRange?, imc.UamRxRangeBuilder> {
   @override
-  ByteData serialize(imc.UamRxRange message) {
+  ByteData serialize(imc.UamRxRange? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35127,7 +39750,9 @@ class UamRxRangeSerializer
   }
 
   @override
-  int serializePayload(imc.UamRxRange message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamRxRange? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field seq
@@ -35147,7 +39772,7 @@ class UamRxRangeSerializer
   }
 
   @override
-  imc.UamRxRange deserialize(Uint8List data, [int offset = 0]) {
+  imc.UamRxRange? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35166,6 +39791,10 @@ class UamRxRangeSerializer
     var builder = imc.UamRxRangeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35176,8 +39805,13 @@ class UamRxRangeSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35215,11 +39849,16 @@ class UamRxRangeSerializer
 /// UamTxRange serializer class
 ///
 class UamTxRangeSerializer
-    extends imc.ImcSerializer<imc.UamTxRange, imc.UamTxRangeBuilder> {
+    extends imc.ImcSerializer<imc.UamTxRange?, imc.UamTxRangeBuilder> {
   @override
-  ByteData serialize(imc.UamTxRange message) {
+  ByteData serialize(imc.UamTxRange? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35235,7 +39874,9 @@ class UamTxRangeSerializer
   }
 
   @override
-  int serializePayload(imc.UamTxRange message, ByteData byteData, int offset) {
+  int serializePayload(imc.UamTxRange? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field seq
@@ -35255,7 +39896,7 @@ class UamTxRangeSerializer
   }
 
   @override
-  imc.UamTxRange deserialize(Uint8List data, [int offset = 0]) {
+  imc.UamTxRange? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35274,6 +39915,10 @@ class UamTxRangeSerializer
     var builder = imc.UamTxRangeBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35284,8 +39929,13 @@ class UamTxRangeSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35323,11 +39973,16 @@ class UamTxRangeSerializer
 /// Formation Control Parameters serializer class
 ///
 class FormCtrlParamSerializer
-    extends imc.ImcSerializer<imc.FormCtrlParam, imc.FormCtrlParamBuilder> {
+    extends imc.ImcSerializer<imc.FormCtrlParam?, imc.FormCtrlParamBuilder> {
   @override
-  ByteData serialize(imc.FormCtrlParam message) {
+  ByteData serialize(imc.FormCtrlParam? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35344,7 +39999,9 @@ class FormCtrlParamSerializer
 
   @override
   int serializePayload(
-      imc.FormCtrlParam message, ByteData byteData, int offset) {
+      imc.FormCtrlParam? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field action
@@ -35370,7 +40027,7 @@ class FormCtrlParamSerializer
   }
 
   @override
-  imc.FormCtrlParam deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormCtrlParam? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35389,6 +40046,10 @@ class FormCtrlParamSerializer
     var builder = imc.FormCtrlParamBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35399,8 +40060,13 @@ class FormCtrlParamSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35441,11 +40107,16 @@ class FormCtrlParamSerializer
 /// Formation Evaluation Data serializer class
 ///
 class FormationEvalSerializer
-    extends imc.ImcSerializer<imc.FormationEval, imc.FormationEvalBuilder> {
+    extends imc.ImcSerializer<imc.FormationEval?, imc.FormationEvalBuilder> {
   @override
-  ByteData serialize(imc.FormationEval message) {
+  ByteData serialize(imc.FormationEval? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35462,7 +40133,9 @@ class FormationEvalSerializer
 
   @override
   int serializePayload(
-      imc.FormationEval message, ByteData byteData, int offset) {
+      imc.FormationEval? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field errMean
@@ -35479,7 +40152,7 @@ class FormationEvalSerializer
   }
 
   @override
-  imc.FormationEval deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormationEval? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35498,6 +40171,10 @@ class FormationEvalSerializer
     var builder = imc.FormationEvalBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35508,8 +40185,13 @@ class FormationEvalSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35541,11 +40223,16 @@ class FormationEvalSerializer
 /// Formation Control Parameters serializer class
 ///
 class FormationControlParamsSerializer extends imc.ImcSerializer<
-    imc.FormationControlParams, imc.FormationControlParamsBuilder> {
+    imc.FormationControlParams?, imc.FormationControlParamsBuilder> {
   @override
-  ByteData serialize(imc.FormationControlParams message) {
+  ByteData serialize(imc.FormationControlParams? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35562,7 +40249,9 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.FormationControlParams message, ByteData byteData, int offset) {
+      imc.FormationControlParams? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field action
@@ -35603,7 +40292,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.FormationControlParams deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormationControlParams? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35622,6 +40311,10 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
     var builder = imc.FormationControlParamsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35632,8 +40325,13 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35690,11 +40388,16 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
 /// Formation Evaluation Data serializer class
 ///
 class FormationEvaluationSerializer extends imc
-    .ImcSerializer<imc.FormationEvaluation, imc.FormationEvaluationBuilder> {
+    .ImcSerializer<imc.FormationEvaluation?, imc.FormationEvaluationBuilder> {
   @override
-  ByteData serialize(imc.FormationEvaluation message) {
+  ByteData serialize(imc.FormationEvaluation? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35711,7 +40414,9 @@ class FormationEvaluationSerializer extends imc
 
   @override
   int serializePayload(
-      imc.FormationEvaluation message, ByteData byteData, int offset) {
+      imc.FormationEvaluation? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -35740,7 +40445,7 @@ class FormationEvaluationSerializer extends imc
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.controlParams.msgId;
+      var id = message.controlParams!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -35757,7 +40462,7 @@ class FormationEvaluationSerializer extends imc
   }
 
   @override
-  imc.FormationEvaluation deserialize(Uint8List data, [int offset = 0]) {
+  imc.FormationEvaluation? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35776,6 +40481,10 @@ class FormationEvaluationSerializer extends imc
     var builder = imc.FormationEvaluationBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35786,8 +40495,13 @@ class FormationEvaluationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35831,11 +40545,13 @@ class FormationEvaluationSerializer extends imc
       builder.controlParams = null;
     } else {
       var pMsgBuilder = imc.messagesBuilders[
-              imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[controlParamsSId] ??
+                  imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
+          .newInstance(builder);
       var pMsgSerializer = imc.messagesSerializers[
-              imc.idsToMessages[controlParamsSId] ?? imc.ImcId.nullId]
+              imc.idsToMessages[controlParamsSId] ??
+                  imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -35852,11 +40568,16 @@ class FormationEvaluationSerializer extends imc
 /// SOI Waypoint serializer class
 ///
 class SoiWaypointSerializer
-    extends imc.ImcSerializer<imc.SoiWaypoint, imc.SoiWaypointBuilder> {
+    extends imc.ImcSerializer<imc.SoiWaypoint?, imc.SoiWaypointBuilder> {
   @override
-  ByteData serialize(imc.SoiWaypoint message) {
+  ByteData serialize(imc.SoiWaypoint? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35872,7 +40593,10 @@ class SoiWaypointSerializer
   }
 
   @override
-  int serializePayload(imc.SoiWaypoint message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.SoiWaypoint? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field lat
@@ -35892,7 +40616,7 @@ class SoiWaypointSerializer
   }
 
   @override
-  imc.SoiWaypoint deserialize(Uint8List data, [int offset = 0]) {
+  imc.SoiWaypoint? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -35911,6 +40635,10 @@ class SoiWaypointSerializer
     var builder = imc.SoiWaypointBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -35921,8 +40649,13 @@ class SoiWaypointSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -35957,11 +40690,16 @@ class SoiWaypointSerializer
 /// SOI Plan serializer class
 ///
 class SoiPlanSerializer
-    extends imc.ImcSerializer<imc.SoiPlan, imc.SoiPlanBuilder> {
+    extends imc.ImcSerializer<imc.SoiPlan?, imc.SoiPlanBuilder> {
   @override
-  ByteData serialize(imc.SoiPlan message) {
+  ByteData serialize(imc.SoiPlan? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -35977,14 +40715,16 @@ class SoiPlanSerializer
   }
 
   @override
-  int serializePayload(imc.SoiPlan message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoiPlan? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field planId
     byteData.setUint16(byteOffset, message.planId, imc.endian_ser);
     byteOffset += 2;
     // field waypoints
-    if (message.waypoints == null || message.waypoints.isEmpty) {
+    if (message.waypoints.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -35992,11 +40732,11 @@ class SoiPlanSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.waypoints.length; i++) {
-        var id = message.waypoints[i]?.msgId;
+        var id = message.waypoints[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -36012,7 +40752,7 @@ class SoiPlanSerializer
   }
 
   @override
-  imc.SoiPlan deserialize(Uint8List data, [int offset = 0]) {
+  imc.SoiPlan? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36031,6 +40771,10 @@ class SoiPlanSerializer
     var builder = imc.SoiPlanBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36041,8 +40785,13 @@ class SoiPlanSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36069,11 +40818,11 @@ class SoiPlanSerializer
       byteOffset += 2;
       if (waypointsSId != imc.ImcId.nullId) {
         var pMsgBuilder = imc.messagesBuilders[
-                imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[waypointsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -36091,11 +40840,16 @@ class SoiPlanSerializer
 /// SOI Command serializer class
 ///
 class SoiCommandSerializer
-    extends imc.ImcSerializer<imc.SoiCommand, imc.SoiCommandBuilder> {
+    extends imc.ImcSerializer<imc.SoiCommand?, imc.SoiCommandBuilder> {
   @override
-  ByteData serialize(imc.SoiCommand message) {
+  ByteData serialize(imc.SoiCommand? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36111,7 +40865,9 @@ class SoiCommandSerializer
   }
 
   @override
-  int serializePayload(imc.SoiCommand message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoiCommand? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field type
@@ -36131,7 +40887,7 @@ class SoiCommandSerializer
       byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
       byteOffset += 2;
     } else {
-      var id = message.plan.msgId;
+      var id = message.plan!.msgId;
       var pMsgSerializer = imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
@@ -36154,7 +40910,7 @@ class SoiCommandSerializer
   }
 
   @override
-  imc.SoiCommand deserialize(Uint8List data, [int offset = 0]) {
+  imc.SoiCommand? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36173,6 +40929,10 @@ class SoiCommandSerializer
     var builder = imc.SoiCommandBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36183,8 +40943,13 @@ class SoiCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36220,12 +40985,12 @@ class SoiCommandSerializer
     if (planSId == imc.ImcId.nullId) {
       builder.plan = null;
     } else {
-      var pMsgBuilder = imc
-          .messagesBuilders[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]
+      var pMsgBuilder = imc.messagesBuilders[
+              imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call()
-          ?.newInstance(builder);
-      var pMsgSerializer = imc
-          .messagesSerializers[imc.idsToMessages[planSId] ?? imc.ImcId.nullId]
+          .newInstance(builder);
+      var pMsgSerializer = imc.messagesSerializers[
+              imc.idsToMessages[planSId] ?? imc.ImcId.nullId.toString()]
           ?.call();
       if (pMsgBuilder != null && pMsgSerializer != null) {
         var mPSize = pMsgSerializer.deserializePayload(
@@ -36251,11 +41016,16 @@ class SoiCommandSerializer
 /// SOI State serializer class
 ///
 class SoiStateSerializer
-    extends imc.ImcSerializer<imc.SoiState, imc.SoiStateBuilder> {
+    extends imc.ImcSerializer<imc.SoiState?, imc.SoiStateBuilder> {
   @override
-  ByteData serialize(imc.SoiState message) {
+  ByteData serialize(imc.SoiState? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36271,7 +41041,9 @@ class SoiStateSerializer
   }
 
   @override
-  int serializePayload(imc.SoiState message, ByteData byteData, int offset) {
+  int serializePayload(imc.SoiState? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field state
@@ -36291,7 +41063,7 @@ class SoiStateSerializer
   }
 
   @override
-  imc.SoiState deserialize(Uint8List data, [int offset = 0]) {
+  imc.SoiState? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36310,6 +41082,10 @@ class SoiStateSerializer
     var builder = imc.SoiStateBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36320,8 +41096,13 @@ class SoiStateSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36356,11 +41137,16 @@ class SoiStateSerializer
 /// Message Fragment serializer class
 ///
 class MessagePartSerializer
-    extends imc.ImcSerializer<imc.MessagePart, imc.MessagePartBuilder> {
+    extends imc.ImcSerializer<imc.MessagePart?, imc.MessagePartBuilder> {
   @override
-  ByteData serialize(imc.MessagePart message) {
+  ByteData serialize(imc.MessagePart? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36376,7 +41162,10 @@ class MessagePartSerializer
   }
 
   @override
-  int serializePayload(imc.MessagePart message, ByteData byteData, int offset) {
+  int serializePayload(
+      imc.MessagePart? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field uid
@@ -36392,13 +41181,15 @@ class MessagePartSerializer
     var dataSSize = message.data.length;
     byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
     byteOffset += 2;
-    message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (dataSSize > 0) {
+      message.data.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.MessagePart deserialize(Uint8List data, [int offset = 0]) {
+  imc.MessagePart? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36417,6 +41208,10 @@ class MessagePartSerializer
     var builder = imc.MessagePartBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36427,8 +41222,13 @@ class MessagePartSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36468,11 +41268,16 @@ class MessagePartSerializer
 /// Neptus Blob serializer class
 ///
 class NeptusBlobSerializer
-    extends imc.ImcSerializer<imc.NeptusBlob, imc.NeptusBlobBuilder> {
+    extends imc.ImcSerializer<imc.NeptusBlob?, imc.NeptusBlobBuilder> {
   @override
-  ByteData serialize(imc.NeptusBlob message) {
+  ByteData serialize(imc.NeptusBlob? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36488,7 +41293,9 @@ class NeptusBlobSerializer
   }
 
   @override
-  int serializePayload(imc.NeptusBlob message, ByteData byteData, int offset) {
+  int serializePayload(imc.NeptusBlob? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field contentType
@@ -36501,13 +41308,15 @@ class NeptusBlobSerializer
     var contentSSize = message.content.length;
     byteData.setUint16(byteOffset, contentSSize, imc.endian_ser);
     byteOffset += 2;
-    message.content.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (contentSSize > 0) {
+      message.content.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.NeptusBlob deserialize(Uint8List data, [int offset = 0]) {
+  imc.NeptusBlob? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36526,6 +41335,10 @@ class NeptusBlobSerializer
     var builder = imc.NeptusBlobBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36536,8 +41349,13 @@ class NeptusBlobSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36577,11 +41395,16 @@ class NeptusBlobSerializer
 /// Aborted serializer class
 ///
 class AbortedSerializer
-    extends imc.ImcSerializer<imc.Aborted, imc.AbortedBuilder> {
+    extends imc.ImcSerializer<imc.Aborted?, imc.AbortedBuilder> {
   @override
-  ByteData serialize(imc.Aborted message) {
+  ByteData serialize(imc.Aborted? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36597,14 +41420,16 @@ class AbortedSerializer
   }
 
   @override
-  int serializePayload(imc.Aborted message, ByteData byteData, int offset) {
+  int serializePayload(imc.Aborted? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.Aborted deserialize(Uint8List data, [int offset = 0]) {
+  imc.Aborted? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36623,6 +41448,10 @@ class AbortedSerializer
     var builder = imc.AbortedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36633,8 +41462,13 @@ class AbortedSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36656,11 +41490,16 @@ class AbortedSerializer
 /// USBL Angles serializer class
 ///
 class UsblAnglesSerializer
-    extends imc.ImcSerializer<imc.UsblAngles, imc.UsblAnglesBuilder> {
+    extends imc.ImcSerializer<imc.UsblAngles?, imc.UsblAnglesBuilder> {
   @override
-  ByteData serialize(imc.UsblAngles message) {
+  ByteData serialize(imc.UsblAngles? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36676,7 +41515,9 @@ class UsblAnglesSerializer
   }
 
   @override
-  int serializePayload(imc.UsblAngles message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblAngles? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field target
@@ -36693,7 +41534,7 @@ class UsblAnglesSerializer
   }
 
   @override
-  imc.UsblAngles deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblAngles? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36712,6 +41553,10 @@ class UsblAnglesSerializer
     var builder = imc.UsblAnglesBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36722,8 +41567,13 @@ class UsblAnglesSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36755,11 +41605,16 @@ class UsblAnglesSerializer
 /// USBL Position serializer class
 ///
 class UsblPositionSerializer
-    extends imc.ImcSerializer<imc.UsblPosition, imc.UsblPositionBuilder> {
+    extends imc.ImcSerializer<imc.UsblPosition?, imc.UsblPositionBuilder> {
   @override
-  ByteData serialize(imc.UsblPosition message) {
+  ByteData serialize(imc.UsblPosition? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36776,7 +41631,9 @@ class UsblPositionSerializer
 
   @override
   int serializePayload(
-      imc.UsblPosition message, ByteData byteData, int offset) {
+      imc.UsblPosition? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field target
@@ -36796,7 +41653,7 @@ class UsblPositionSerializer
   }
 
   @override
-  imc.UsblPosition deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblPosition? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36815,6 +41672,10 @@ class UsblPositionSerializer
     var builder = imc.UsblPositionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36825,8 +41686,13 @@ class UsblPositionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36861,11 +41727,16 @@ class UsblPositionSerializer
 /// USBL Fix serializer class
 ///
 class UsblFixSerializer
-    extends imc.ImcSerializer<imc.UsblFix, imc.UsblFixBuilder> {
+    extends imc.ImcSerializer<imc.UsblFix?, imc.UsblFixBuilder> {
   @override
-  ByteData serialize(imc.UsblFix message) {
+  ByteData serialize(imc.UsblFix? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36881,7 +41752,9 @@ class UsblFixSerializer
   }
 
   @override
-  int serializePayload(imc.UsblFix message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblFix? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field target
@@ -36904,7 +41777,7 @@ class UsblFixSerializer
   }
 
   @override
-  imc.UsblFix deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblFix? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -36923,6 +41796,10 @@ class UsblFixSerializer
     var builder = imc.UsblFixBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -36933,8 +41810,13 @@ class UsblFixSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -36972,11 +41854,16 @@ class UsblFixSerializer
 /// Parameters XML serializer class
 ///
 class ParametersXmlSerializer
-    extends imc.ImcSerializer<imc.ParametersXml, imc.ParametersXmlBuilder> {
+    extends imc.ImcSerializer<imc.ParametersXml?, imc.ParametersXmlBuilder> {
   @override
-  ByteData serialize(imc.ParametersXml message) {
+  ByteData serialize(imc.ParametersXml? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -36993,7 +41880,9 @@ class ParametersXmlSerializer
 
   @override
   int serializePayload(
-      imc.ParametersXml message, ByteData byteData, int offset) {
+      imc.ParametersXml? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field locale
@@ -37006,13 +41895,15 @@ class ParametersXmlSerializer
     var configSSize = message.config.length;
     byteData.setUint16(byteOffset, configSSize, imc.endian_ser);
     byteOffset += 2;
-    message.config.forEach((b) => byteData.setUint8(byteOffset++, b));
+    if (configSSize > 0) {
+      message.config.forEach((b) => byteData.setUint8(byteOffset++, b));
+    }
 
     return byteOffset - offset;
   }
 
   @override
-  imc.ParametersXml deserialize(Uint8List data, [int offset = 0]) {
+  imc.ParametersXml? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37031,6 +41922,10 @@ class ParametersXmlSerializer
     var builder = imc.ParametersXmlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37041,8 +41936,13 @@ class ParametersXmlSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37082,11 +41982,16 @@ class ParametersXmlSerializer
 /// Get Parameters XML serializer class
 ///
 class GetParametersXmlSerializer extends imc
-    .ImcSerializer<imc.GetParametersXml, imc.GetParametersXmlBuilder> {
+    .ImcSerializer<imc.GetParametersXml?, imc.GetParametersXmlBuilder> {
   @override
-  ByteData serialize(imc.GetParametersXml message) {
+  ByteData serialize(imc.GetParametersXml? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37103,14 +42008,16 @@ class GetParametersXmlSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GetParametersXml message, ByteData byteData, int offset) {
+      imc.GetParametersXml? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     return byteOffset - offset;
   }
 
   @override
-  imc.GetParametersXml deserialize(Uint8List data, [int offset = 0]) {
+  imc.GetParametersXml? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37129,6 +42036,10 @@ class GetParametersXmlSerializer extends imc
     var builder = imc.GetParametersXmlBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37139,8 +42050,13 @@ class GetParametersXmlSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37162,11 +42078,16 @@ class GetParametersXmlSerializer extends imc
 /// Set Image Coordinates serializer class
 ///
 class SetImageCoordsSerializer
-    extends imc.ImcSerializer<imc.SetImageCoords, imc.SetImageCoordsBuilder> {
+    extends imc.ImcSerializer<imc.SetImageCoords?, imc.SetImageCoordsBuilder> {
   @override
-  ByteData serialize(imc.SetImageCoords message) {
+  ByteData serialize(imc.SetImageCoords? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37183,7 +42104,9 @@ class SetImageCoordsSerializer
 
   @override
   int serializePayload(
-      imc.SetImageCoords message, ByteData byteData, int offset) {
+      imc.SetImageCoords? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field camId
@@ -37200,7 +42123,7 @@ class SetImageCoordsSerializer
   }
 
   @override
-  imc.SetImageCoords deserialize(Uint8List data, [int offset = 0]) {
+  imc.SetImageCoords? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37219,6 +42142,10 @@ class SetImageCoordsSerializer
     var builder = imc.SetImageCoordsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37229,8 +42156,13 @@ class SetImageCoordsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37262,11 +42194,16 @@ class SetImageCoordsSerializer
 /// Get Image Coordinates serializer class
 ///
 class GetImageCoordsSerializer
-    extends imc.ImcSerializer<imc.GetImageCoords, imc.GetImageCoordsBuilder> {
+    extends imc.ImcSerializer<imc.GetImageCoords?, imc.GetImageCoordsBuilder> {
   @override
-  ByteData serialize(imc.GetImageCoords message) {
+  ByteData serialize(imc.GetImageCoords? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37283,7 +42220,9 @@ class GetImageCoordsSerializer
 
   @override
   int serializePayload(
-      imc.GetImageCoords message, ByteData byteData, int offset) {
+      imc.GetImageCoords? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field camId
@@ -37300,7 +42239,7 @@ class GetImageCoordsSerializer
   }
 
   @override
-  imc.GetImageCoords deserialize(Uint8List data, [int offset = 0]) {
+  imc.GetImageCoords? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37319,6 +42258,10 @@ class GetImageCoordsSerializer
     var builder = imc.GetImageCoordsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37329,8 +42272,13 @@ class GetImageCoordsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37362,11 +42310,16 @@ class GetImageCoordsSerializer
 /// Get World Coordinates serializer class
 ///
 class GetWorldCoordinatesSerializer extends imc
-    .ImcSerializer<imc.GetWorldCoordinates, imc.GetWorldCoordinatesBuilder> {
+    .ImcSerializer<imc.GetWorldCoordinates?, imc.GetWorldCoordinatesBuilder> {
   @override
-  ByteData serialize(imc.GetWorldCoordinates message) {
+  ByteData serialize(imc.GetWorldCoordinates? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37383,7 +42336,9 @@ class GetWorldCoordinatesSerializer extends imc
 
   @override
   int serializePayload(
-      imc.GetWorldCoordinates message, ByteData byteData, int offset) {
+      imc.GetWorldCoordinates? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field tracking
@@ -37409,7 +42364,7 @@ class GetWorldCoordinatesSerializer extends imc
   }
 
   @override
-  imc.GetWorldCoordinates deserialize(Uint8List data, [int offset = 0]) {
+  imc.GetWorldCoordinates? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37428,6 +42383,10 @@ class GetWorldCoordinatesSerializer extends imc
     var builder = imc.GetWorldCoordinatesBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37438,8 +42397,13 @@ class GetWorldCoordinatesSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37480,11 +42444,16 @@ class GetWorldCoordinatesSerializer extends imc
 /// USBL Angles Extended serializer class
 ///
 class UsblAnglesExtendedSerializer extends imc
-    .ImcSerializer<imc.UsblAnglesExtended, imc.UsblAnglesExtendedBuilder> {
+    .ImcSerializer<imc.UsblAnglesExtended?, imc.UsblAnglesExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblAnglesExtended message) {
+  ByteData serialize(imc.UsblAnglesExtended? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37501,7 +42470,9 @@ class UsblAnglesExtendedSerializer extends imc
 
   @override
   int serializePayload(
-      imc.UsblAnglesExtended message, ByteData byteData, int offset) {
+      imc.UsblAnglesExtended? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field target
@@ -37539,7 +42510,7 @@ class UsblAnglesExtendedSerializer extends imc
   }
 
   @override
-  imc.UsblAnglesExtended deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblAnglesExtended? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37558,6 +42529,10 @@ class UsblAnglesExtendedSerializer extends imc
     var builder = imc.UsblAnglesExtendedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37568,8 +42543,13 @@ class UsblAnglesExtendedSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37625,11 +42605,16 @@ class UsblAnglesExtendedSerializer extends imc
 /// USBL Position Extended serializer class
 ///
 class UsblPositionExtendedSerializer extends imc
-    .ImcSerializer<imc.UsblPositionExtended, imc.UsblPositionExtendedBuilder> {
+    .ImcSerializer<imc.UsblPositionExtended?, imc.UsblPositionExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblPositionExtended message) {
+  ByteData serialize(imc.UsblPositionExtended? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37646,7 +42631,9 @@ class UsblPositionExtendedSerializer extends imc
 
   @override
   int serializePayload(
-      imc.UsblPositionExtended message, ByteData byteData, int offset) {
+      imc.UsblPositionExtended? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field target
@@ -37690,7 +42677,7 @@ class UsblPositionExtendedSerializer extends imc
   }
 
   @override
-  imc.UsblPositionExtended deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblPositionExtended? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37709,6 +42696,10 @@ class UsblPositionExtendedSerializer extends imc
     var builder = imc.UsblPositionExtendedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37719,8 +42710,13 @@ class UsblPositionExtendedSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37781,12 +42777,17 @@ class UsblPositionExtendedSerializer extends imc
 
 /// USBL Fix Extended serializer class
 ///
-class UsblFixExtendedSerializer
-    extends imc.ImcSerializer<imc.UsblFixExtended, imc.UsblFixExtendedBuilder> {
+class UsblFixExtendedSerializer extends imc
+    .ImcSerializer<imc.UsblFixExtended?, imc.UsblFixExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblFixExtended message) {
+  ByteData serialize(imc.UsblFixExtended? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37803,7 +42804,9 @@ class UsblFixExtendedSerializer
 
   @override
   int serializePayload(
-      imc.UsblFixExtended message, ByteData byteData, int offset) {
+      imc.UsblFixExtended? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field target
@@ -37832,7 +42835,7 @@ class UsblFixExtendedSerializer
   }
 
   @override
-  imc.UsblFixExtended deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblFixExtended? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37851,6 +42854,10 @@ class UsblFixExtendedSerializer
     var builder = imc.UsblFixExtendedBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37861,8 +42868,13 @@ class UsblFixExtendedSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -37909,11 +42921,16 @@ class UsblFixExtendedSerializer
 /// USBL Modem Configuration serializer class
 ///
 class UsblModemSerializer
-    extends imc.ImcSerializer<imc.UsblModem, imc.UsblModemBuilder> {
+    extends imc.ImcSerializer<imc.UsblModem?, imc.UsblModemBuilder> {
   @override
-  ByteData serialize(imc.UsblModem message) {
+  ByteData serialize(imc.UsblModem? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -37929,7 +42946,9 @@ class UsblModemSerializer
   }
 
   @override
-  int serializePayload(imc.UsblModem message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblModem? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field name
@@ -37955,7 +42974,7 @@ class UsblModemSerializer
   }
 
   @override
-  imc.UsblModem deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblModem? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -37974,6 +42993,10 @@ class UsblModemSerializer
     var builder = imc.UsblModemBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -37984,8 +43007,13 @@ class UsblModemSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38029,11 +43057,16 @@ class UsblModemSerializer
 /// USBL Configuration serializer class
 ///
 class UsblConfigSerializer
-    extends imc.ImcSerializer<imc.UsblConfig, imc.UsblConfigBuilder> {
+    extends imc.ImcSerializer<imc.UsblConfig?, imc.UsblConfigBuilder> {
   @override
-  ByteData serialize(imc.UsblConfig message) {
+  ByteData serialize(imc.UsblConfig? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38049,14 +43082,16 @@ class UsblConfigSerializer
   }
 
   @override
-  int serializePayload(imc.UsblConfig message, ByteData byteData, int offset) {
+  int serializePayload(imc.UsblConfig? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field modems
-    if (message.modems == null || message.modems.isEmpty) {
+    if (message.modems.isEmpty) {
       byteData.setUint16(byteOffset, 0, imc.endian_ser);
       byteOffset += 2;
     } else {
@@ -38064,11 +43099,11 @@ class UsblConfigSerializer
       var bufCounterPos = byteOffset;
       byteOffset += 2;
       for (var i = 0; i < message.modems.length; i++) {
-        var id = message.modems[i]?.msgId;
+        var id = message.modems[i].msgId;
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
-        if (id != null && pMsgSerializer != null) {
+        if (pMsgSerializer != null) {
           byteData.setUint16(byteOffset, id, imc.endian_ser);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
@@ -38084,7 +43119,7 @@ class UsblConfigSerializer
   }
 
   @override
-  imc.UsblConfig deserialize(Uint8List data, [int offset = 0]) {
+  imc.UsblConfig? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38103,6 +43138,10 @@ class UsblConfigSerializer
     var builder = imc.UsblConfigBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38113,8 +43152,13 @@ class UsblConfigSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38140,12 +43184,12 @@ class UsblConfigSerializer
       var modemsSId = byteData.getUint16(byteOffset, endianness);
       byteOffset += 2;
       if (modemsSId != imc.ImcId.nullId) {
-        var pMsgBuilder = imc
-            .messagesBuilders[imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId]
+        var pMsgBuilder = imc.messagesBuilders[
+                imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId.toString()]
             ?.call()
-            ?.newInstance(builder);
+            .newInstance(builder);
         var pMsgSerializer = imc.messagesSerializers[
-                imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId]
+                imc.idsToMessages[modemsSId] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgBuilder != null && pMsgSerializer != null) {
           var mPSize = pMsgSerializer.deserializePayload(
@@ -38163,11 +43207,16 @@ class UsblConfigSerializer
 /// Dissolved Organic Matter serializer class
 ///
 class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
-    imc.DissolvedOrganicMatter, imc.DissolvedOrganicMatterBuilder> {
+    imc.DissolvedOrganicMatter?, imc.DissolvedOrganicMatterBuilder> {
   @override
-  ByteData serialize(imc.DissolvedOrganicMatter message) {
+  ByteData serialize(imc.DissolvedOrganicMatter? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38184,7 +43233,9 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
 
   @override
   int serializePayload(
-      imc.DissolvedOrganicMatter message, ByteData byteData, int offset) {
+      imc.DissolvedOrganicMatter? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -38198,7 +43249,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
   }
 
   @override
-  imc.DissolvedOrganicMatter deserialize(Uint8List data, [int offset = 0]) {
+  imc.DissolvedOrganicMatter? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38217,6 +43268,10 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     var builder = imc.DissolvedOrganicMatterBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38227,8 +43282,13 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38258,11 +43318,16 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
 /// Optical Backscattering Coefficient serializer class
 ///
 class OpticalBackscatterSerializer extends imc
-    .ImcSerializer<imc.OpticalBackscatter, imc.OpticalBackscatterBuilder> {
+    .ImcSerializer<imc.OpticalBackscatter?, imc.OpticalBackscatterBuilder> {
   @override
-  ByteData serialize(imc.OpticalBackscatter message) {
+  ByteData serialize(imc.OpticalBackscatter? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38279,7 +43344,9 @@ class OpticalBackscatterSerializer extends imc
 
   @override
   int serializePayload(
-      imc.OpticalBackscatter message, ByteData byteData, int offset) {
+      imc.OpticalBackscatter? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -38290,7 +43357,7 @@ class OpticalBackscatterSerializer extends imc
   }
 
   @override
-  imc.OpticalBackscatter deserialize(Uint8List data, [int offset = 0]) {
+  imc.OpticalBackscatter? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38309,6 +43376,10 @@ class OpticalBackscatterSerializer extends imc
     var builder = imc.OpticalBackscatterBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38319,8 +43390,13 @@ class OpticalBackscatterSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38346,11 +43422,16 @@ class OpticalBackscatterSerializer extends imc
 /// Tachograph serializer class
 ///
 class TachographSerializer
-    extends imc.ImcSerializer<imc.Tachograph, imc.TachographBuilder> {
+    extends imc.ImcSerializer<imc.Tachograph?, imc.TachographBuilder> {
   @override
-  ByteData serialize(imc.Tachograph message) {
+  ByteData serialize(imc.Tachograph? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38366,7 +43447,9 @@ class TachographSerializer
   }
 
   @override
-  int serializePayload(imc.Tachograph message, ByteData byteData, int offset) {
+  int serializePayload(imc.Tachograph? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field timestampLastService
@@ -38425,7 +43508,7 @@ class TachographSerializer
   }
 
   @override
-  imc.Tachograph deserialize(Uint8List data, [int offset = 0]) {
+  imc.Tachograph? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38444,6 +43527,10 @@ class TachographSerializer
     var builder = imc.TachographBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38454,8 +43541,13 @@ class TachographSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38526,11 +43618,16 @@ class TachographSerializer
 /// APM Status serializer class
 ///
 class ApmStatusSerializer
-    extends imc.ImcSerializer<imc.ApmStatus, imc.ApmStatusBuilder> {
+    extends imc.ImcSerializer<imc.ApmStatus?, imc.ApmStatusBuilder> {
   @override
-  ByteData serialize(imc.ApmStatus message) {
+  ByteData serialize(imc.ApmStatus? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38546,7 +43643,9 @@ class ApmStatusSerializer
   }
 
   @override
-  int serializePayload(imc.ApmStatus message, ByteData byteData, int offset) {
+  int serializePayload(imc.ApmStatus? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field severity
@@ -38563,7 +43662,7 @@ class ApmStatusSerializer
   }
 
   @override
-  imc.ApmStatus deserialize(Uint8List data, [int offset = 0]) {
+  imc.ApmStatus? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38582,6 +43681,10 @@ class ApmStatusSerializer
     var builder = imc.ApmStatusBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38592,8 +43695,13 @@ class ApmStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38628,11 +43736,16 @@ class ApmStatusSerializer
 /// SADC Readings serializer class
 ///
 class SadcReadingsSerializer
-    extends imc.ImcSerializer<imc.SadcReadings, imc.SadcReadingsBuilder> {
+    extends imc.ImcSerializer<imc.SadcReadings?, imc.SadcReadingsBuilder> {
   @override
-  ByteData serialize(imc.SadcReadings message) {
+  ByteData serialize(imc.SadcReadings? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38649,7 +43762,9 @@ class SadcReadingsSerializer
 
   @override
   int serializePayload(
-      imc.SadcReadings message, ByteData byteData, int offset) {
+      imc.SadcReadings? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field channel
@@ -38666,7 +43781,7 @@ class SadcReadingsSerializer
   }
 
   @override
-  imc.SadcReadings deserialize(Uint8List data, [int offset = 0]) {
+  imc.SadcReadings? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38685,6 +43800,10 @@ class SadcReadingsSerializer
     var builder = imc.SadcReadingsBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38695,8 +43814,13 @@ class SadcReadingsSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38728,11 +43852,16 @@ class SadcReadingsSerializer
 /// DMS Detection serializer class
 ///
 class DmsDetectionSerializer
-    extends imc.ImcSerializer<imc.DmsDetection, imc.DmsDetectionBuilder> {
+    extends imc.ImcSerializer<imc.DmsDetection?, imc.DmsDetectionBuilder> {
   @override
-  ByteData serialize(imc.DmsDetection message) {
+  ByteData serialize(imc.DmsDetection? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38749,7 +43878,9 @@ class DmsDetectionSerializer
 
   @override
   int serializePayload(
-      imc.DmsDetection message, ByteData byteData, int offset) {
+      imc.DmsDetection? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field ch01
@@ -38805,7 +43936,7 @@ class DmsDetectionSerializer
   }
 
   @override
-  imc.DmsDetection deserialize(Uint8List data, [int offset = 0]) {
+  imc.DmsDetection? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38824,6 +43955,10 @@ class DmsDetectionSerializer
     var builder = imc.DmsDetectionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38834,8 +43969,13 @@ class DmsDetectionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38906,11 +44046,16 @@ class DmsDetectionSerializer
 /// Total Magnetic Field Intensity serializer class
 ///
 class TotalMagIntensitySerializer extends imc
-    .ImcSerializer<imc.TotalMagIntensity, imc.TotalMagIntensityBuilder> {
+    .ImcSerializer<imc.TotalMagIntensity?, imc.TotalMagIntensityBuilder> {
   @override
-  ByteData serialize(imc.TotalMagIntensity message) {
+  ByteData serialize(imc.TotalMagIntensity? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -38927,7 +44072,9 @@ class TotalMagIntensitySerializer extends imc
 
   @override
   int serializePayload(
-      imc.TotalMagIntensity message, ByteData byteData, int offset) {
+      imc.TotalMagIntensity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field value
@@ -38938,7 +44085,7 @@ class TotalMagIntensitySerializer extends imc
   }
 
   @override
-  imc.TotalMagIntensity deserialize(Uint8List data, [int offset = 0]) {
+  imc.TotalMagIntensity? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -38957,6 +44104,10 @@ class TotalMagIntensitySerializer extends imc
     var builder = imc.TotalMagIntensityBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -38967,8 +44118,13 @@ class TotalMagIntensitySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -38994,11 +44150,16 @@ class TotalMagIntensitySerializer extends imc
 /// Home Position serializer class
 ///
 class HomePositionSerializer
-    extends imc.ImcSerializer<imc.HomePosition, imc.HomePositionBuilder> {
+    extends imc.ImcSerializer<imc.HomePosition?, imc.HomePositionBuilder> {
   @override
-  ByteData serialize(imc.HomePosition message) {
+  ByteData serialize(imc.HomePosition? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -39015,7 +44176,9 @@ class HomePositionSerializer
 
   @override
   int serializePayload(
-      imc.HomePosition message, ByteData byteData, int offset) {
+      imc.HomePosition? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 
     // field op
@@ -39041,7 +44204,7 @@ class HomePositionSerializer
   }
 
   @override
-  imc.HomePosition deserialize(Uint8List data, [int offset = 0]) {
+  imc.HomePosition? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -39060,6 +44223,10 @@ class HomePositionSerializer
     var builder = imc.HomePositionBuilder();
     var payloadSize =
         imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
@@ -39070,8 +44237,13 @@ class HomePositionSerializer
     }
 
     // Payload
-    var payloadSizeRead =
-        deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {

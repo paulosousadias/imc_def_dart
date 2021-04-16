@@ -153,7 +153,9 @@ void _writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
             for (var i = 0; i < level; i++) {
               sink.write('  ');
             }
-            sink.write('/// ${tx.trim()}\n');
+            var txTrim = tx.trim();
+            txTrim = txTrim.isEmpty ? txTrim : ' $txTrim';
+            sink.write('///$txTrim\n');
           }));
 }
 
@@ -164,14 +166,23 @@ void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
   var name = g.getAttribute('name');
   var abbrev = g.getAttribute('abbrev');
 
+  if (name == null || name.isEmpty || abbrev == null || abbrev.isEmpty) {
+    throw Exception(
+        'Message group ${g.name} is missing name and/or abbrev! Skipping!');
+  }
+
   sink.write('/// $name message group class\n///\n');
   _writeDescription(sink, g);
-  var msgStringClass = '''abstract class $abbrev extends ImcMessage {
-}\n\n''';
+  var msgStringClass = '''abstract class $abbrev extends ImcMessage {}\n\n''';
   sink.write('$msgStringClass');
 
   g.findElements('message-type').forEach((t) {
     var msg = t.getAttribute('abbrev');
+    if (msg == null || msg.isEmpty) {
+      throw Exception(
+          'Message group $name, the message type ${t.name} is missing valid abbrev!');
+    }
+
     _messagesGroups.putIfAbsent(msg, () => abbrev);
   });
 }
@@ -179,8 +190,22 @@ void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
 /// Writes each message related code
 void _writeMessageCode(xml.XmlElement m, List<IOSink> sinks) {
   var name = m.getAttribute('name');
+  if (name == null || name.isEmpty) {
+    throw Exception(
+        'Element name is ${name == null ? 'null' : 'empty'} for element ${m.name}! Skipping!');
+  }
+
   var abbrev = m.getAttribute('abbrev');
+  if (abbrev == null || abbrev.isEmpty) {
+    throw Exception(
+        'Element abbrev is ${abbrev == null ? 'null' : 'empty'} for element ${m.name}! Skipping!');
+  }
+
   var msgId = m.getAttribute('id');
+  if (msgId == null || msgId.isEmpty) {
+    throw Exception(
+        'Element msgId is ${msgId == null ? 'null' : 'empty'} for element ${m.name}! Skipping!');
+  }
 
   // Message class
   _writeMessageClass(name, abbrev, msgId, m, sinks);
@@ -203,11 +228,12 @@ void _writeMessageClass(String name, String abbrev, String msgId,
 
   var extentionClass = _messagesGroups[abbrev] ?? 'ImcMessage';
 
-  var msgStringClass =
-      '''abstract class $abbrev extends $extentionClass implements Built<$abbrev, ${abbrev}Builder> {
+  var msgStringClass = '''abstract class $abbrev extends $extentionClass
+    implements Built<$abbrev, ${abbrev}Builder> {
   static const static_id = $msgId;
   $abbrev._();
-  factory $abbrev([void Function(${abbrev}Builder b) updates]) = _\$$abbrev;
+  factory $abbrev([void Function(${abbrev}Builder b)? updates]) =
+      _\$$abbrev;
 
   @override
   int get msgId => static_id;
@@ -226,7 +252,7 @@ void _writeMessageImmutable(
   sink.write('/// $name immutable class\n///\n');
   var msgStringImmutableClass = '''class _\$$abbrev extends $abbrev {
   @override
-  final DateTime timestamp;
+  final DateTime? timestamp;
   @override
   final int src;
   @override
@@ -240,21 +266,27 @@ void _writeMessageImmutable(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
+    }
+
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
 
     var fStr =
-        '''\n  @override\n  final $dartType ${_convertToFieldName(abbrev)};''';
+        '''\n  @override\n  final $dartType${typesData[2] == null ? '?' : ''} ${_convertToFieldName(abbrev)};''';
     sink.write('$fStr');
   });
 
   var msgStringImmutableClass2 = '''\n
-  factory _\$$abbrev([void Function(${abbrev}Builder b) updates]) =>
+  factory _\$$abbrev([void Function(${abbrev}Builder b)? updates]) =>
       (${abbrev}Builder()..update(updates)).build();
 
   _\$$abbrev._(
-      {this.timestamp,
+      {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
@@ -263,7 +295,16 @@ void _writeMessageImmutable(
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
-    var fStr = ''',\n      this.${_convertToFieldName(abbrev)}''';
+    var type = f.getAttribute('type');
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
+    }
+    var unit = f.getAttribute('unit');
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+
+    var fStr =
+        ''',\n      ${typesData[2] == null ? '' : 'required '}this.${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
 
@@ -292,17 +333,26 @@ void _writeMessageImmutable(
   var hashElements = <String>[];
   hashElements.addAll([
     '0',
-    'timestamp?.hashCode',
-    'src?.hashCode',
-    'srcEnt?.hashCode',
-    'dst?.hashCode',
-    'dstEnt?.hashCode',
+    'timestamp?.hashCode ?? null.hashCode',
+    'src.hashCode',
+    'srcEnt.hashCode',
+    'dst.hashCode',
+    'dstEnt.hashCode',
   ]);
 
   // Writting rest elements to oerator ==
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
+    }
+
+    var unit = f.getAttribute('unit');
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+
     var fStr = '';
     switch (type) {
       case 'message-list': // List<M extends IMCMessage>
@@ -340,15 +390,16 @@ void _writeMessageImmutable(
     }
     sink.write('$fStr');
 
-    hashElements.add('${_convertToFieldName(abbrev)}?.hashCode');
+    hashElements.add(
+        '${_convertToFieldName(abbrev)}${typesData[2] == null ? '?' : ''}.hashCode${typesData[2] == null ? ' ?? null.hashCode' : ''}');
   });
 
   var hashStr = '';
   for (var i = 0; i < hashElements.length; i++) {
     if (i == 0) {
-      hashStr = '\$jc(${hashElements[i]}, \n        ${hashElements[++i]})';
+      hashStr = '\$jc(${hashElements[i]},\n        ${hashElements[++i]})';
     } else {
-      hashStr = '\$jc($hashStr, \n        ${hashElements[i]})';
+      hashStr = '\$jc($hashStr,\n        ${hashElements[i]})';
     }
   }
   hashStr = '\$jf($hashStr)';
@@ -369,24 +420,28 @@ void _writeMessageImmutable(
   String toString() {
     return (newBuiltValueToStringHelper('$abbrev')
           ..add('timestamp', timestamp)
-          ..add('src', "0x\${src?.toRadixString(16)} (\${src ?? '-'})")
-          ..add('srcEnt', "0x\${srcEnt?.toRadixString(16)} (\${srcEnt ?? '-'})")
-          ..add('dst', "0x\${dst?.toRadixString(16)} (\${dst ?? '-'})")
-          ..add('dstEnt', "0x\${dstEnt?.toRadixString(16)} (\${dstEnt ?? '-'})")''';
+          ..add('src', '0x\${src.toRadixString(16)} (\$src)')
+          ..add('srcEnt', '0x\${srcEnt.toRadixString(16)} (\$srcEnt)')
+          ..add('dst', '0x\${dst.toRadixString(16)} (\$dst)')
+          ..add('dstEnt', '0x\${dstEnt.toRadixString(16)} (\$dstEnt)')''';
   sink.write('$msgStringImmutableClass5');
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
+
+    if (abbrev == null || abbrev.isEmpty) {
+      throw Exception('Field ${f.name} is missing a proper abbrev and/or type');
+    }
+
     var unit = f.getAttribute('unit');
     var unitConv = '';
     if (unit != null && unit.isNotEmpty) {
       if (unit.startsWith('rad')) {
-        unitConv = '\${';
-        unitConv +=
-            "${_convertToFieldName(abbrev)} != null ? ' [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]' : ''";
-        unitConv += '}';
+        unitConv =
+            ' [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]';
       }
     }
+
     var fStr =
         '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)}${unit != null ? ' ($unit)' : ''}$unitConv')''';
     sink.write('$fStr');
@@ -405,35 +460,36 @@ void _writeMessageImmutable(
 void _writeMessageBuilder(
     String name, String abbrev, String msgId, xml.XmlElement m, IOSink sink) {
   sink.write('/// $name builder class\n///\n');
-  var msgStringImmutableBuilder =
-      '''class ${abbrev}Builder extends Object with ImcBuilderHeaderPart implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder> {
-  _\$$abbrev _\$v;
+  var msgStringImmutableBuilder = '''class ${abbrev}Builder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<$abbrev, ${abbrev}Builder> {
+  _\$$abbrev? _\$v;
 
-  DateTime _timestamp;
+  DateTime? _timestamp = DateTime.now();
   @override
-  DateTime get timestamp => _\$this._timestamp;
+  DateTime? get timestamp => _\$this._timestamp;
   @override
-  set timestamp(DateTime timestamp) => _\$this._timestamp = timestamp;
+  set timestamp(DateTime? timestamp) => _\$this._timestamp = timestamp;
 
-  int _src;
+  int _src = ImcId.nullId;
   @override
   int get src => _\$this._src;
   @override
   set src(int src) => _\$this._src = src;
 
-  int _srcEnt;
+  int _srcEnt = ImcEntityId.nullId;
   @override
   int get srcEnt => _\$this._srcEnt;
   @override
   set srcEnt(int srcEnt) => _\$this._srcEnt = srcEnt;
 
-  int _dst;
+  int _dst = ImcId.nullId;
   @override
   int get dst => _\$this._dst;
   @override
   set dst(int dst) => _\$this._dst = dst;
 
-  int _dstEnt;
+  int _dstEnt = ImcEntityId.nullId;
   @override
   int get dstEnt => _\$this._dstEnt;
   @override
@@ -443,13 +499,22 @@ void _writeMessageBuilder(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
+
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
+    var initVal = typesData[2] == null ? '' : ' = ${typesData[2]}';
+    var isNullMarker = '${typesData[2] == null ? '?' : ''}';
 
-    var fStr = '''\n  $dartType _${_convertToFieldName(abbrev)};
-  $dartType get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
-  set ${_convertToFieldName(abbrev)}($dartType ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
+    var fStr =
+        '''\n  $dartType$isNullMarker _${_convertToFieldName(abbrev)}$initVal;
+  $dartType$isNullMarker get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
+  set ${_convertToFieldName(abbrev)}($dartType$isNullMarker ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -460,22 +525,27 @@ void _writeMessageBuilder(
   }
 
   @override
-  ${abbrev}Builder newInstance([ImcBuilderHeaderPart headerFrom]) => ${abbrev}Builder()..copyFromHeader(headerFrom);
+  ${abbrev}Builder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      ${abbrev}Builder()..copyFromHeader(headerFrom);
 
   ${abbrev}Builder get _\$this {
     if (_\$v != null) {
-      _timestamp = _\$v.timestamp;
-      _src = _\$v.src;
-      _srcEnt = _\$v.srcEnt;
-      _dst = _\$v.dst;
-      _dstEnt = _\$v.dstEnt;\n''';
+      _timestamp = _\$v!.timestamp;
+      _src = _\$v!.src;
+      _srcEnt = _\$v!.srcEnt;
+      _dst = _\$v!.dst;
+      _dstEnt = _\$v!.dstEnt;\n''';
   sink.write('$msgStringImmutableBuilder1');
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
+    if (abbrev == null || abbrev.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev! Skipping!');
+    }
 
     var fStr =
-        '''      _${_convertToFieldName(abbrev)} = _\$v.${_convertToFieldName(abbrev)};\n''';
+        '''      _${_convertToFieldName(abbrev)} = _\$v!.${_convertToFieldName(abbrev)};\n''';
     sink.write('$fStr');
   });
 
@@ -487,14 +557,11 @@ void _writeMessageBuilder(
 
   @override
   void replace($abbrev other) {
-    if (other == null) {
-      throw ArgumentError.notNull('other');
-    }
     _\$v = other as _\$$abbrev;
   }
 
   @override
-  void update(void Function(${abbrev}Builder b) updates) {
+  void update(void Function(${abbrev}Builder b)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -503,22 +570,23 @@ void _writeMessageBuilder(
     final _\$result = _\$v ??
         _\$$abbrev._(
             timestamp: timestamp ?? DateTime.now(),
-            src: src ?? ImcId.nullId,
-            srcEnt: srcEnt ?? ImcEntityId.nullId,
-            dst: dst ?? ImcId.nullId,
-            dstEnt: dstEnt ?? ImcEntityId.nullId''';
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt''';
   sink.write('$msgStringImmutableBuilder2');
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
-    var unit = f.getAttribute('unit');
-    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
 
-    var ifNullVal = typesData[2] == null ? '' : ' ?? ${typesData[2]}';
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
 
     var fStr =
-        ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}$ifNullVal''';
+        ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}''';
     sink.write('$fStr');
   });
 
@@ -539,11 +607,16 @@ void _writeMessageSerializer(
   sink.write('\n/// $name serializer class\n///\n');
 
   var serClassStart = '''class ${abbrev}Serializer
-    extends imc.ImcSerializer<imc.$abbrev, imc.${abbrev}Builder> {
+    extends imc.ImcSerializer<imc.$abbrev?, imc.${abbrev}Builder> {
   @override
-  ByteData serialize(imc.$abbrev message) {
+  ByteData serialize(imc.$abbrev? message) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
     byteOffset = imc.serializeHeader(message, byteData);
     var headerSize = byteOffset;
 
@@ -560,7 +633,9 @@ void _writeMessageSerializer(
 
   @override
   int serializePayload(
-      imc.$abbrev message, ByteData byteData, int offset) {
+      imc.$abbrev? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
     var byteOffset = offset;
 \n''';
   sink.write('$serClassStart');
@@ -568,6 +643,12 @@ void _writeMessageSerializer(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
+
     var unit = f.getAttribute('unit');
     // var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     // var dartType = typesData[1];
@@ -641,8 +722,10 @@ void _writeMessageSerializer(
         fStr +=
             '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
+        fStr += '    if (${fieldName}SSize > 0) {\n';
         fStr +=
-            '    message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+            '      message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+        fStr += '    }\n';
         break;
       case 'plaintext':
         fStr =
@@ -660,7 +743,7 @@ void _writeMessageSerializer(
             '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
-        fStr += '      var id = message.$fieldName.msgId;\n';
+        fStr += '      var id = message.$fieldName!.msgId;\n';
         fStr +=
             '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '      if (pMsgSerializer != null) {\n';
@@ -673,8 +756,7 @@ void _writeMessageSerializer(
         fStr += '    }\n';
         break;
       case 'message-list':
-        fStr =
-            '    if (message.$fieldName == null || message.$fieldName.isEmpty) {\n';
+        fStr = '    if (message.$fieldName.isEmpty) {\n';
         fStr += '      byteData.setUint16(byteOffset, 0, imc.endian_ser);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
@@ -682,10 +764,12 @@ void _writeMessageSerializer(
         fStr += '      var bufCounterPos = byteOffset;\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '      for (var i = 0; i < message.$fieldName.length; i++) {\n';
-        fStr += '        var id = message.$fieldName[i]?.msgId;\n';
+        fStr += '        var id = message.$fieldName[i].msgId;\n';
+        fStr += '        var pMsgSerializer = imc.messagesSerializers[\n';
         fStr +=
-            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id ?? imc.ImcId.nullId] ?? imc.ImcId.nullId]?.call();\n';
-        fStr += '        if (id != null && pMsgSerializer != null) {\n';
+            '                imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '            ?.call();\n';
+        fStr += '        if (pMsgSerializer != null) {\n';
         fStr +=
             '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
         fStr += '          byteOffset += 2;\n';
@@ -709,7 +793,7 @@ void _writeMessageSerializer(
   }
 
   @override
-  imc.$abbrev deserialize(Uint8List data, [int offset = 0]) {
+  imc.$abbrev? deserialize(Uint8List data, [int offset = 0]) {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
@@ -726,17 +810,29 @@ void _writeMessageSerializer(
     }
 
     var builder = imc.${abbrev}Builder();
-    var payloadSize = imc.deserializeHeader(builder, byteData, endianness, offset);
+    var payloadSize =
+        imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
     byteOffset = offset + imc.header_size;
 
     var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
-    var readCrc = imc.getCrcFooter(byteData, offset + imc.header_size + payloadSize, endianness);
+    var readCrc = imc.getCrcFooter(
+        byteData, offset + imc.header_size + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
 
     // Payload
-    var payloadSizeRead = deserializePayload(builder, byteData, endianness, byteOffset);
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
     // End payload
 
     if (payloadSizeRead != payloadSize) {
@@ -756,6 +852,12 @@ void _writeMessageSerializer(
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
     var type = f.getAttribute('type');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of message $name is missing abbrev and/or type! Skipping!');
+    }
+
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
@@ -859,13 +961,18 @@ void _writeMessageSerializer(
         fStr += '    if (${fieldName}SId == imc.ImcId.nullId) {\n';
         fStr += '      builder.$fieldName = null;\n';
         fStr += '    } else {\n';
+        fStr += '      var pMsgBuilder = imc\n';
         fStr +=
-            '      var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+            '          .messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '          ?.call()\n';
+        fStr += '          .newInstance(builder);\n';
+        fStr += '      var pMsgSerializer = imc\n';
         fStr +=
-            '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
+            '          .messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '          ?.call();\n';
         fStr += '      if (pMsgBuilder != null && pMsgSerializer != null) {\n';
-        fStr +=
-            '        var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
+        fStr += '        var mPSize = pMsgSerializer.deserializePayload(\n';
+        fStr += '            pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
         fStr += '        builder.$fieldName = pMsgBuilder.build();\n';
         fStr += '      }\n';
@@ -881,14 +988,20 @@ void _writeMessageSerializer(
             '      var ${fieldName}SId = byteData.getUint16(byteOffset, endianness);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '      if (${fieldName}SId != imc.ImcId.nullId) {\n';
+        fStr += '        var pMsgBuilder = imc\n';
         fStr +=
-            '        var pMsgBuilder = imc.messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call()?.newInstance(builder);\n';
+            '            .messagesBuilders[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '          ?.call()\n';
+        fStr += '          .newInstance(builder);\n';
+        fStr += '        var pMsgSerializer = imc\n';
         fStr +=
-            '        var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId]?.call();\n';
+            '            .messagesSerializers[imc.idsToMessages[${fieldName}SId] ?? imc.ImcId.nullId.toString()]\n';
+        fStr += '            ?.call();\n';
         fStr +=
             '        if (pMsgBuilder != null && pMsgSerializer != null) {\n';
+        fStr += '          var mPSize = pMsgSerializer.deserializePayload(\n';
         fStr +=
-            '          var mPSize = pMsgSerializer.deserializePayload(pMsgBuilder, byteData, endianness, byteOffset);\n';
+            '              pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
         fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
         fStr += '        }\n';
@@ -914,6 +1027,17 @@ void _writeMessageField(
   var name = field.getAttribute('name');
   var abbrev = field.getAttribute('abbrev');
   var type = field.getAttribute('type');
+
+  if (name == null ||
+      name.isEmpty ||
+      abbrev == null ||
+      abbrev.isEmpty ||
+      type == null ||
+      type.isEmpty) {
+    throw Exception(
+        'Field ${field.name} is missing abbrev and/or type! Skipping!');
+  }
+
   var unit = field.getAttribute('unit');
 
   var typesData = getTypesForImcAndDart(abbrev, type, unit, field, message);
@@ -930,7 +1054,7 @@ void _writeMessageField(
       unitsStr = unit == null ? '' : ", units: '$unit'";
   }
   var str = '''  @ImcField('$name', '$abbrev', $typeImc$unitsStr)
-  $dartType get ${_convertToFieldName(abbrev)};
+  $dartType${typesData[2] == null ? '?' : ''} get ${_convertToFieldName(abbrev)};
 ''';
 
   sinks[_idxMsg].write('\n');
@@ -939,7 +1063,7 @@ void _writeMessageField(
 }
 
 /// Returns the field [imc related type, type for dart, null if no default value].
-List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
+List<String?> getTypesForImcAndDart(String abbrev, String type, String? unit,
     xml.XmlElement field, xml.XmlElement message) {
   var typeImc;
   var dartType;
@@ -1028,7 +1152,7 @@ List<String> getTypesForImcAndDart(String abbrev, String type, String unit,
 
 /// Gets the name of the type for the enum like class.
 String _getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
-    xml.XmlElement message, String unit) {
+    xml.XmlElement message, String? unit) {
   var eDef = field.getAttribute('enum-def');
   if (eDef != null) return '${eDef}Enum';
   eDef = field.getAttribute('bitfield-def');
@@ -1049,6 +1173,12 @@ String _getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
 
 /// Writes the global enum like code classes.
 void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
+  var abbrev = def.getAttribute('abbrev');
+  if (abbrev == null || abbrev.isEmpty) {
+    throw Exception(
+        'Global enum ${def.name} is missing a correct abbrev! Skipping!');
+  }
+
   var sufix;
   switch (unit) {
     case 'Enumerated':
@@ -1057,7 +1187,7 @@ void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
     default:
       sufix = unit;
   }
-  var eName = '${_convertToClassName(def.getAttribute('abbrev'))}$sufix';
+  var eName = '${_convertToClassName(abbrev)}$sufix';
 
   // So writting global enums like
   _writeEnumLikeWorker(eName, def, unit, sink);
@@ -1065,7 +1195,7 @@ void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
 
 /// Writes eath message field local enum like code classes.
 void _writeLocalEnumLike(String abbrev, xml.XmlElement field,
-    xml.XmlElement message, String unit, IOSink sink) {
+    xml.XmlElement message, String? unit, IOSink sink) {
   if (field.getAttribute('enum-def') != null ||
       field.getAttribute('bitfield-def') != null) return;
 
@@ -1076,7 +1206,7 @@ void _writeLocalEnumLike(String abbrev, xml.XmlElement field,
 
 /// A worker to be used for the enum like code creation.
 void _writeEnumLikeWorker(
-    String eName, xml.XmlElement field, String unit, IOSink sink) {
+    String eName, xml.XmlElement field, String? unit, IOSink sink) {
   var eList = '';
   var eNameList = '';
   var c = 0;
@@ -1084,11 +1214,16 @@ void _writeEnumLikeWorker(
   if (prefix.isNotEmpty) prefix += '_';
   var vLst = field.findElements('value');
   vLst.forEach((f) {
+    var eValueAbbrev = f.getAttribute('abbrev');
+    if (eValueAbbrev == null || eValueAbbrev.isEmpty) {
+      throw Exception(
+          'Enum value ${f.name} of enum $eName is missing abbrev! Skipping!');
+    }
+
     var commaSep = vLst.length > 1 ? ',' : '';
     if (++c % 1 == 0) eList += '\n        ';
     if (++c % 1 == 0) eNameList += '\n        ';
-    var ab = _accountForReservedName(
-        prefix + f.getAttribute('abbrev').toLowerCase());
+    var ab = _accountForReservedName(prefix + eValueAbbrev.toLowerCase());
     eList += '$ab$commaSep';
     eNameList += "$ab: '''${f.getAttribute('name')}'''$commaSep";
   });
@@ -1112,8 +1247,13 @@ void _writeEnumLikeWorker(
   sink.write(body);
 
   field.findElements('value').forEach((f) {
-    var vName = _accountForReservedName(
-        prefix + f.getAttribute('abbrev').toLowerCase());
+    var eValueAbbrev = f.getAttribute('abbrev');
+    if (eValueAbbrev == null || eValueAbbrev.isEmpty) {
+      throw Exception(
+          'Enum value ${f.name} of enum $eName is missing abbrev! Skipping!');
+    }
+
+    var vName = _accountForReservedName(prefix + eValueAbbrev.toLowerCase());
     var vVal = f.getAttribute('id');
     var bodyV = '''  static const $vName = $eName($vVal);
 ''';
@@ -1121,9 +1261,11 @@ void _writeEnumLikeWorker(
     sink.write(bodyV);
   });
 
-  var body2 = '''\n  static List<$eName> get values => <$eName>[$eList];
+  var body2 = '''\n  static List<$eName> get values =>
+      <$eName>[${vLst.length > 1 ? eList : eList.substring(1).trim()}];
 
-  static core.Map<$eName, String> get names => <$eName, String>{$eNameList};
+  static core.Map<$eName, String> get names =>
+      <$eName, String>{$eNameList${vLst.length <= 1 ? '\n      ' : ''}};
 
   const $eName(int value) : super(value);
 ''';
@@ -1152,10 +1294,13 @@ void _writeEnumLikeWorker(
     return ret ?? super.toPrettyString();
   }
 
+  static $eName empty() =>
+      $eName(0);
+
   static $eName fromBits(
           List<$eName> bits) =>
-      (bits == null || bits.length < 2)
-          ? $eName(bits == null || bits.isEmpty ? 0 : bits[0])
+      (bits.length < 2)
+          ? $eName(bits.isEmpty ? 0 : bits[0].value)
           : bits.reduce((b1, b2) => $eName(b1.value | b2.value));
 ''';
       break;
@@ -1197,9 +1342,10 @@ void _writeMsgList(xml.XmlElement msgElm, IOSink sink) {
   msgElm.findElements('message-groups').forEach((mg) {
     mg.findElements('message-group').forEach((m) {
       sink.write("\n  '${m.getAttribute('abbrev')}': [");
-      m.findElements('message-type').forEach(
-          (mt) => sink.write("\n      '${mt.getAttribute('abbrev')}',"));
-      sink.write('''\n    ],''');
+      m
+          .findElements('message-type')
+          .forEach((mt) => sink.write("\n    '${mt.getAttribute('abbrev')}',"));
+      sink.write('''\n  ],''');
     });
   });
   sink.write('''\n};\n''');
@@ -1273,7 +1419,7 @@ void main(List<String> args) async {
   var config = _getConfig();
   var localOrProductionMode =
       config.isEmpty || config['mode'] != null ? _Mode.local : _Mode.production;
-  String xmlFilePath;
+  String? xmlFilePath;
   String xmlGitHash;
   String packageName;
   switch (localOrProductionMode) {
@@ -1289,7 +1435,12 @@ void main(List<String> args) async {
   }
   if (packageName.isNotEmpty && !packageName.endsWith('/')) packageName += '/';
 
-  String imcXml;
+  if (xmlFilePath == null || xmlFilePath.isEmpty) {
+    print('The XML of IMC param "imc" must not be null or empty!');
+    exit(1);
+  }
+
+  late String imcXml;
   try {
     imcXml = await File(xmlFilePath).readAsString();
   } catch (e) {
@@ -1356,7 +1507,13 @@ void main(List<String> args) async {
   sinks[_idxMsg]
       .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
 
-  var sNmbr = int.parse(syncElm.getAttribute('value'));
+  var syncValue = syncElm.getAttribute('value');
+  if (syncValue == null || syncValue.isEmpty) {
+    print('The XML of IMC is missing the sync value!');
+    exit(1);
+  }
+
+  var sNmbr = int.parse(syncValue);
   var rSNmbr = ((sNmbr & 0xFF) << 8 | sNmbr >> 8);
   sinks[_idxMsg].write(
       'const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');

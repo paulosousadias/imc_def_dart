@@ -270,7 +270,7 @@ const crc_table = <int>[
 ];
 
 /// This is the interface for serializing the IMC messages
-abstract class ImcSerializer<M extends Message, B> {
+abstract class ImcSerializer<M extends Message?, B> {
   /// Call to serialize the all message, returns a [ByteData] with a serialized message
   ByteData serialize(M message);
 
@@ -295,14 +295,14 @@ abstract class ImcSerializer<M extends Message, B> {
 //       buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
 // }
 
-int getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
+int? getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
   var endianness = getEndianness(data, offset);
   if (endianness == null) return null;
   var msgId = data.getUint16(offset + 2, endianness);
   return msgId;
 }
 
-int deserializeHeader(
+int? deserializeHeader(
     ImcBuilderHeaderPart builder, ByteData byteData, Endian endianness,
     [int headerStartoffset = 0]) {
   try {
@@ -336,7 +336,7 @@ int deserializeHeader(
   }
 }
 
-Endian getEndianness(ByteData byteData, [int offset = 0]) {
+Endian? getEndianness(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
   if (syncBE == SYNC_NUMBER) return Endian.big;
   if (syncBE == SYNC_NUMBER_REVERSED) return Endian.little;
@@ -356,8 +356,14 @@ int serializeHeader(ImcMessage message, ByteData byteData) {
   byteOffset += 2;
   byteData.setUint16(byteOffset, 0, endian_ser); // Temp size
   byteOffset += 2;
+  if (message.timestamp == null) {
+    // This should not be null, but may happened due to the constructor default value
+    print('Timestamp null found for message ${message.abbrev}');
+  }
   byteData.setFloat64(
-      byteOffset, message.timestamp.millisecondsSinceEpoch / 1E3, endian_ser);
+      byteOffset,
+      (message.timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+      endian_ser);
   byteOffset += 8;
   byteData.setUint16(byteOffset, message.src, endian_ser);
   byteOffset += 2;

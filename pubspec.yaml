@@ -2,12 +2,12 @@ name: imc_def
 description: 'This package is a Dart package for IMC messages manipulation. 
 IMC is an open source message protocol specification from 
 UPorto-FEUP-LSTS (https://github.com/LSTS/imc).'
-version: 1.0.2-SNAPSHOT
+version: 2.0.0
 homepage: https://github.com/paulosousadias/imc_def_dart
 repository: https://github.com/paulosousadias/imc_def_dart
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 #  flutter: ">=1.12.0 <2.0.0"
 
 dependencies:
@@ -26,7 +26,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter  
 
-  pedantic: ^1.9.2
+  pedantic: ^1.11.0
 
 executables:
   imc_generator: 
