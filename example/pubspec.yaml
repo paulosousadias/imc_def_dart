@@ -1,7 +1,6 @@
 name: example
 description: An example.
 version: 1.0.0+1
-author: Paulo Sousa Dias <pdias@lsts.pt>
 homepage: https://github.com/paulosousadias
 
 publish_to: 'none'
