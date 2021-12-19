@@ -4,20 +4,20 @@
 
 import 'dart:typed_data';
 
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 import 'package:imc_def/imc_def.dart' as imc;
 
 String _byteDataToHexString(List<int> serData) {
   var bytesSerStr = '[';
-  serData.forEach((b) {
-    var bhs = '${b.toRadixString(16)}';
+  for (var b in serData) {
+    var bhs = b.toRadixString(16);
     var bds = '$b';
     while (bds.length < 3) {
       bds = '0$bds';
     }
     bytesSerStr += "0x${bhs.length == 1 ? '0' : ''}$bhs ($bds), ";
-  });
+  }
   bytesSerStr += ']';
   return bytesSerStr;
 }
@@ -32,8 +32,8 @@ void main() {
 
     var globalSW = Stopwatch();
     globalSW.start();
-    imc.messagesBuilders.values.forEach((b) {
-      var msg;
+    for (var b in imc.messagesBuilders.values) {
+      imc.ImcMessage? msg;
       try {
         msg = b().build() as imc.ImcMessage;
         print(msg.toString());
@@ -41,7 +41,7 @@ void main() {
         print(e);
       }
       expect(msg != null, true);
-    });
+    }
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
 
