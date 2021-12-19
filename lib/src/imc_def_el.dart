@@ -1467,6 +1467,11 @@ class AcousticOperationEnumOp extends EnumType {
   /// Request sending updated position to remote system so it can be ranged.
   static const aop_reverse_range = AcousticOperationEnumOp(17);
 
+  /// Send an abort through the acoustic channel to the system
+  /// specified in the field 'system', ignoring safety checks such
+  /// as "transducer not connected".
+  static const aop_forced_abort = AcousticOperationEnumOp(18);
+
   static List<AcousticOperationEnumOp> get values => <AcousticOperationEnumOp>[
         aop_abort,
         aop_abort_ip,
@@ -1486,6 +1491,7 @@ class AcousticOperationEnumOp extends EnumType {
         aop_msg_failure,
         aop_msg_short,
         aop_reverse_range,
+        aop_forced_abort,
       ];
 
   static core.Map<AcousticOperationEnumOp, String> get names =>
@@ -1508,6 +1514,7 @@ class AcousticOperationEnumOp extends EnumType {
         aop_msg_failure: '''Message Send -- Failure''',
         aop_msg_short: '''Send Short Message''',
         aop_reverse_range: '''Initiate Reverse Range''',
+        aop_forced_abort: '''Forced Abort''',
       };
 
   const AcousticOperationEnumOp(int value) : super(value);
@@ -2570,6 +2577,9 @@ class AlignmentStateEnumState extends EnumType {
   static const as_not_supported = AlignmentStateEnumState(2);
   static const as_aligning = AlignmentStateEnumState(3);
   static const as_wrong_medium = AlignmentStateEnumState(4);
+  static const as_coarse_alignment = AlignmentStateEnumState(5);
+  static const as_fine_alignment = AlignmentStateEnumState(6);
+  static const as_system_ready = AlignmentStateEnumState(7);
 
   static List<AlignmentStateEnumState> get values => <AlignmentStateEnumState>[
         as_not_aligned,
@@ -2577,6 +2587,9 @@ class AlignmentStateEnumState extends EnumType {
         as_not_supported,
         as_aligning,
         as_wrong_medium,
+        as_coarse_alignment,
+        as_fine_alignment,
+        as_system_ready,
       ];
 
   static core.Map<AlignmentStateEnumState, String> get names =>
@@ -2586,6 +2599,9 @@ class AlignmentStateEnumState extends EnumType {
         as_not_supported: '''Not Supported''',
         as_aligning: '''Aligning''',
         as_wrong_medium: '''Wrong Medium''',
+        as_coarse_alignment: '''Coarse Alignment''',
+        as_fine_alignment: '''Fine Alignment''',
+        as_system_ready: '''System Ready''',
       };
 
   const AlignmentStateEnumState(int value) : super(value);
@@ -5774,19 +5790,31 @@ class IoEventEnumType extends EnumType {
   }
 }
 
+/// Transmission flags.
 class UamTxFrameBitfieldFlags extends BitfieldType {
+  /// On modems that support it, this flag shall be used to request an
+  /// acknowledgment of reception from the receiving node.
   static const utf_ack = UamTxFrameBitfieldFlags(0x01);
+
+  /// On modems that support it, this flag shall be used to delay the
+  /// frame transmission until the modem needs to transmit control
+  /// data (e.g., acknowledgment of reception, etc).
   static const utf_delayed = UamTxFrameBitfieldFlags(0x02);
+
+  /// Ignore safety checks such as "transducer not connected".
+  static const utf_forced = UamTxFrameBitfieldFlags(0x04);
 
   static List<UamTxFrameBitfieldFlags> get values => <UamTxFrameBitfieldFlags>[
         utf_ack,
         utf_delayed,
+        utf_forced,
       ];
 
   static core.Map<UamTxFrameBitfieldFlags, String> get names =>
       <UamTxFrameBitfieldFlags, String>{
         utf_ack: '''Acknowledgement''',
         utf_delayed: '''Delayed''',
+        utf_forced: '''Forced''',
       };
 
   const UamTxFrameBitfieldFlags(int value) : super(value);
@@ -5820,8 +5848,13 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
               .reduce((b1, b2) => UamTxFrameBitfieldFlags(b1.value | b2.value));
 }
 
+/// Reception flags.
 class UamRxFrameBitfieldFlags extends BitfieldType {
+  /// The data frame was transmitted to an acoustic modem other than
+  /// the one the acoustic modem driver is controlling.
   static const urf_promiscuous = UamRxFrameBitfieldFlags(0x01);
+
+  /// The data frame was transmitted using the DELAYED flag.
   static const urf_delayed = UamRxFrameBitfieldFlags(0x02);
 
   static List<UamRxFrameBitfieldFlags> get values => <UamRxFrameBitfieldFlags>[
@@ -5866,16 +5899,41 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
               .reduce((b1, b2) => UamRxFrameBitfieldFlags(b1.value | b2.value));
 }
 
+/// Frame transmission status.
 class UamTxStatusEnumValue extends EnumType {
+  /// The frame transmission was completed.
   static const uts_done = UamTxStatusEnumValue(0);
+
+  /// The frame transmission failed. The reason for the failure is given in
+  /// the field 'error'.
   static const uts_failed = UamTxStatusEnumValue(1);
+
+  /// The frame transmission was canceled.
   static const uts_canceled = UamTxStatusEnumValue(2);
+
+  /// The acoustic modem driver is busy and could not honor the
+  /// frame transmission request at the moment.
   static const uts_busy = UamTxStatusEnumValue(3);
+
+  /// The canonical name of the destination node could not be
+  /// resolved.
   static const uts_inv_addr = UamTxStatusEnumValue(4);
+
+  /// The frame transmission is in progress.
   static const uts_ip = UamTxStatusEnumValue(5);
+
+  /// The frame transmission request is not valid for this acoustic
+  /// modem driver.
   static const uts_unsupported = UamTxStatusEnumValue(6);
+
+  /// The frame transmission request exceeds the MTU of the acoustic
+  /// modem.
   static const uts_inv_size = UamTxStatusEnumValue(7);
+
+  /// The message has been sent out.
   static const uts_sent = UamTxStatusEnumValue(8);
+
+  /// Message has been acknowledged by the destination.
   static const uts_delivered = UamTxStatusEnumValue(9);
 
   static List<UamTxStatusEnumValue> get values => <UamTxStatusEnumValue>[

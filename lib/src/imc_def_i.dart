@@ -88,8 +88,8 @@ class _$EntityState extends EntityState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('description', '$description'))
         .toString();
   }
@@ -809,7 +809,7 @@ class _$EntityList extends EntityList {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('list', '$list (TupleList)'))
         .toString();
   }
@@ -1325,7 +1325,7 @@ class _$RestartSystem extends RestartSystem {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)'))
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
 }
@@ -1492,7 +1492,7 @@ class _$DevCalibrationControl extends DevCalibrationControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)'))
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]'))
         .toString();
   }
 }
@@ -1686,7 +1686,7 @@ class _$DevCalibrationState extends DevCalibrationState {
           ..add('totalSteps', '$totalSteps')
           ..add('stepNumber', '$stepNumber')
           ..add('step', '$step')
-          ..add('flags', '$flags (Bitfield)'))
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
 }
@@ -1880,7 +1880,7 @@ class _$EntityActivationState extends EntityActivationState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)')
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('error', '$error'))
         .toString();
   }
@@ -2313,7 +2313,7 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('speedMin', '$speedMin (m/s)')
           ..add('speedMax', '$speedMax (m/s)')
           ..add('longAccel', '$longAccel (m/s/s)')
@@ -3154,7 +3154,7 @@ class _$LeakSimulation extends LeakSimulation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('entities', '$entities'))
         .toString();
   }
@@ -3337,7 +3337,7 @@ class _$UASimulation extends UASimulation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('speed', '$speed (bps)')
           ..add('data', '$data'))
         .toString();
@@ -3531,7 +3531,7 @@ class _$DynamicsSimParam extends DynamicsSimParam {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('tas2accPgain', '$tas2accPgain')
           ..add('bank2pPgain', '$bank2pPgain'))
         .toString();
@@ -3899,7 +3899,7 @@ class _$CacheControl extends CacheControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('snapshot', '$snapshot')
           ..add('message', '$message'))
         .toString();
@@ -4083,7 +4083,7 @@ class _$LoggingControl extends LoggingControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('name', '$name'))
         .toString();
   }
@@ -4274,7 +4274,7 @@ class _$LogBookEntry extends LogBookEntry {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('htime', '$htime (s)')
           ..add('context', '$context')
           ..add('text', '$text'))
@@ -4471,7 +4471,8 @@ class _$LogBookControl extends LogBookControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('command', '$command (Enumerated)')
+          ..add(
+              'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('htime', '$htime (s)')
           ..add('msg', '$msg'))
         .toString();
@@ -4655,7 +4656,7 @@ class _$ReplayControl extends ReplayControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('file', '$file'))
         .toString();
   }
@@ -4838,7 +4839,7 @@ class _$ClockControl extends ClockControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('clock', '$clock (s)')
           ..add('tz', '$tz'))
         .toString();
@@ -5480,7 +5481,8 @@ class _$HistoricSonarData extends HistoricSonarData {
           ..add('length', '$length (m)')
           ..add('bearing', '$bearing')
           ..add('pxl', '$pxl')
-          ..add('encoding', '$encoding (Enumerated)')
+          ..add('encoding',
+              '$encoding (Enumerated) [${encoding.toPrettyString()}]')
           ..add('sonarData', '$sonarData'))
         .toString();
   }
@@ -5690,7 +5692,7 @@ class _$HistoricEvent extends HistoricEvent {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('text', '$text')
-          ..add('type', '$type (Enumerated)'))
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
 }
@@ -5889,7 +5891,8 @@ class _$VerticalProfile extends VerticalProfile {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('parameter', '$parameter (Enumerated)')
+          ..add('parameter',
+              '$parameter (Enumerated) [${parameter.toPrettyString()}]')
           ..add('numSamples', '$numSamples')
           ..add('samples', '$samples')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
@@ -6449,7 +6452,8 @@ class _$Announce extends Announce {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('sysName', '$sysName')
-          ..add('sysType', '$sysType (Enumerated)')
+          ..add(
+              'sysType', '$sysType (Enumerated) [${sysType.toPrettyString()}]')
           ..add('owner', '$owner')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
@@ -6662,7 +6666,8 @@ class _$AnnounceService extends AnnounceService {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('service', '$service')
-          ..add('serviceType', '$serviceType (Bitfield)'))
+          ..add('serviceType',
+              '$serviceType (Bitfield) [${serviceType.toPrettyString()}]'))
         .toString();
   }
 }
@@ -7912,7 +7917,7 @@ class _$SmsState extends SmsState {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
-          ..add('state', '$state (Enumerated)')
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('error', '$error'))
         .toString();
   }
@@ -8705,7 +8710,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('status', '$status (Enumerated)')
+          ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
           ..add('text', '$text'))
         .toString();
   }
@@ -9079,7 +9084,7 @@ class _$SystemGroup extends SystemGroup {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('groupName', '$groupName')
-          ..add('action', '$action (Enumerated)')
+          ..add('action', '$action (Enumerated) [${action.toPrettyString()}]')
           ..add('groupList', '$groupList'))
         .toString();
   }
@@ -9440,7 +9445,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('value', '$value')
-          ..add('units', '$units (Enumerated)'))
+          ..add('units', '$units (Enumerated) [${units.toPrettyString()}]'))
         .toString();
   }
 }
@@ -10294,7 +10299,7 @@ class _$HistoricDataQuery extends HistoricDataQuery {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('maxSize', '$maxSize')
           ..add('data', '$data'))
         .toString();
@@ -10707,9 +10712,10 @@ class _$CommSystemsQuery extends CommSystemsQuery {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Bitfield)')
-          ..add('commInterface', '$commInterface (Bitfield)')
-          ..add('model', '$model (Enumerated)')
+          ..add('type', '$type (Bitfield) [${type.toPrettyString()}]')
+          ..add('commInterface',
+              '$commInterface (Bitfield) [${commInterface.toPrettyString()}]')
+          ..add('model', '$model (Enumerated) [${model.toPrettyString()}]')
           ..add('list', '$list (List)'))
         .toString();
   }
@@ -10949,14 +10955,15 @@ class _$TelemetryMsg extends TelemetryMsg {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('reqId', '$reqId')
           ..add('ttl', '$ttl (s)')
-          ..add('code', '$code (Enumerated)')
+          ..add('code', '$code (Enumerated) [${code.toPrettyString()}]')
           ..add('destination', '$destination')
           ..add('source', '$source')
-          ..add('acknowledge', '$acknowledge (Bitfield)')
-          ..add('status', '$status (Enumerated)')
+          ..add('acknowledge',
+              '$acknowledge (Bitfield) [${acknowledge.toPrettyString()}]')
+          ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
           ..add('data', '$data'))
         .toString();
   }
@@ -11601,7 +11608,7 @@ class _$LblConfig extends LblConfig {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('beacons', '$beacons'))
         .toString();
   }
@@ -12015,7 +12022,7 @@ class _$SimAcousticMessage extends SimAcousticMessage {
           ..add('sysSrc', '$sysSrc')
           ..add('seq', '$seq')
           ..add('sysDst', '$sysDst')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('data', '$data'))
         .toString();
   }
@@ -12264,7 +12271,7 @@ class _$AcousticOperation extends AcousticOperation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('system', '$system')
           ..add('range', '$range (m)')
           ..add('msg', '$msg'))
@@ -12999,7 +13006,7 @@ class _$AcousticRequest extends AcousticRequest {
           ..add('destination', '$destination')
           ..add('timeout', '$timeout (s)')
           ..add('range', '$range (m)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('msg', '$msg'))
         .toString();
   }
@@ -13224,8 +13231,8 @@ class _$AcousticStatus extends AcousticStatus {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('type', '$type (Enumerated)')
-          ..add('status', '$status (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
           ..add('info', '$info')
           ..add('range', '$range (m)'))
         .toString();
@@ -13995,8 +14002,9 @@ class _$GpsFix extends GpsFix {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('validity', '$validity (Bitfield)')
-          ..add('type', '$type (Enumerated)')
+          ..add(
+              'validity', '$validity (Bitfield) [${validity.toPrettyString()}]')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('utcYear', '$utcYear')
           ..add('utcMonth', '$utcMonth')
           ..add('utcDay', '$utcDay')
@@ -15346,7 +15354,8 @@ class _$GroundVelocity extends GroundVelocity {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('validity', '$validity (Bitfield)')
+          ..add(
+              'validity', '$validity (Bitfield) [${validity.toPrettyString()}]')
           ..add('x', '$x (m/s)')
           ..add('y', '$y (m/s)')
           ..add('z', '$z (m/s)'))
@@ -15552,7 +15561,8 @@ class _$WaterVelocity extends WaterVelocity {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('validity', '$validity (Bitfield)')
+          ..add(
+              'validity', '$validity (Bitfield) [${validity.toPrettyString()}]')
           ..add('x', '$x (m/s)')
           ..add('y', '$y (m/s)')
           ..add('z', '$z (m/s)'))
@@ -15963,7 +15973,8 @@ class _$Distance extends Distance {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('validity', '$validity (Enumerated)')
+          ..add('validity',
+              '$validity (Enumerated) [${validity.toPrettyString()}]')
           ..add('location', '$location')
           ..add('beamConfig', '$beamConfig')
           ..add('value', '$value (m)'))
@@ -17297,7 +17308,7 @@ class _$Salinity extends Salinity {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('value', '$value'))
+          ..add('value', '$value (PSU)'))
         .toString();
   }
 }
@@ -18359,7 +18370,7 @@ class _$SonarData extends SonarData {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('frequency', '$frequency (Hz)')
           ..add('minRange', '$minRange (m)')
           ..add('maxRange', '$maxRange (m)')
@@ -18724,7 +18735,7 @@ class _$PulseDetectionControl extends PulseDetectionControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)'))
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]'))
         .toString();
   }
 }
@@ -20020,7 +20031,7 @@ class _$DataSanity extends DataSanity {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('sane', '$sane (Enumerated)'))
+          ..add('sane', '$sane (Enumerated) [${sane.toPrettyString()}]'))
         .toString();
   }
 }
@@ -21581,8 +21592,9 @@ class _$GpsFixRtk extends GpsFixRtk {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('validity', '$validity (Bitfield)')
-          ..add('type', '$type (Enumerated)')
+          ..add(
+              'validity', '$validity (Bitfield) [${validity.toPrettyString()}]')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('tow', '$tow')
           ..add(
               'baseLat', '$baseLat (rad) [${baseLat * 180.0 / math.pi} (deg)]')
@@ -21854,7 +21866,7 @@ class _$ExternalNavData extends ExternalNavData {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('state', '$state')
-          ..add('type', '$type (Enumerated)'))
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
 }
@@ -22861,7 +22873,7 @@ class _$CameraZoom extends CameraZoom {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
           ..add('zoom', '$zoom')
-          ..add('action', '$action (Enumerated)'))
+          ..add('action', '$action (Enumerated) [${action.toPrettyString()}]'))
         .toString();
   }
 }
@@ -23594,7 +23606,7 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('actions', '$actions (TupleList)'))
         .toString();
   }
@@ -24115,7 +24127,7 @@ class _$LcdControl extends LcdControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('text', '$text'))
         .toString();
   }
@@ -24299,7 +24311,7 @@ class _$PowerOperation extends PowerOperation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('timeRemain', '$timeRemain (s)')
           ..add('schedTime', '$schedTime (s)'))
         .toString();
@@ -24493,7 +24505,7 @@ class _$PowerChannelControl extends PowerChannelControl {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('name', '$name')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('schedTime', '$schedTime (s)'))
         .toString();
   }
@@ -24838,7 +24850,7 @@ class _$PowerChannelState extends PowerChannelState {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('name', '$name')
-          ..add('state', '$state (Enumerated)'))
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
 }
@@ -27467,7 +27479,7 @@ class _$GpsFixRejection extends GpsFixRejection {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('utcTime', '$utcTime (s)')
-          ..add('reason', '$reason (Enumerated)'))
+          ..add('reason', '$reason (Enumerated) [${reason.toPrettyString()}]'))
         .toString();
   }
 }
@@ -27655,7 +27667,8 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
           ..add('range', '$range (m)')
-          ..add('acceptance', '$acceptance (Enumerated)'))
+          ..add('acceptance',
+              '$acceptance (Enumerated) [${acceptance.toPrettyString()}]'))
         .toString();
   }
 }
@@ -27854,8 +27867,8 @@ class _$DvlRejection extends DvlRejection {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Bitfield)')
-          ..add('reason', '$reason (Enumerated)')
+          ..add('type', '$type (Bitfield) [${type.toPrettyString()}]')
+          ..add('reason', '$reason (Enumerated) [${reason.toPrettyString()}]')
           ..add('value', '$value (m/s)')
           ..add('timestep', '$timestep (s)'))
         .toString();
@@ -28272,7 +28285,7 @@ class _$AlignmentState extends AlignmentState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)'))
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
 }
@@ -28993,7 +29006,7 @@ class _$DesiredZ extends DesiredZ {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('value', '$value (m)')
-          ..add('zUnits', '$zUnits (Enumerated)'))
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]'))
         .toString();
   }
 }
@@ -29170,7 +29183,8 @@ class _$DesiredSpeed extends DesiredSpeed {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('value', '$value')
-          ..add('speedUnits', '$speedUnits (Enumerated)'))
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]'))
         .toString();
   }
 }
@@ -29920,15 +29934,18 @@ class _$DesiredPath extends DesiredPath {
           ..add('startLon',
               '$startLon (rad) [${startLon * 180.0 / math.pi} (deg)]')
           ..add('startZ', '$startZ (m)')
-          ..add('startZUnits', '$startZUnits (Enumerated)')
+          ..add('startZUnits',
+              '$startZUnits (Enumerated) [${startZUnits.toPrettyString()}]')
           ..add('endLat', '$endLat (rad) [${endLat * 180.0 / math.pi} (deg)]')
           ..add('endLon', '$endLon (rad) [${endLon * 180.0 / math.pi} (deg)]')
           ..add('endZ', '$endZ (m)')
-          ..add('endZUnits', '$endZUnits (Enumerated)')
+          ..add('endZUnits',
+              '$endZUnits (Enumerated) [${endZUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('lradius', '$lradius (m)')
-          ..add('flags', '$flags (Bitfield)'))
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
 }
@@ -30210,7 +30227,7 @@ class _$DesiredControl extends DesiredControl {
           ..add('k', '$k (Nm)')
           ..add('m', '$m (Nm)')
           ..add('n', '$n (Nm)')
-          ..add('flags', '$flags (Bitfield)'))
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
 }
@@ -30625,7 +30642,7 @@ class _$DesiredVelocity extends DesiredVelocity {
           ..add('p', '$p (m/s)')
           ..add('q', '$q (m/s)')
           ..add('r', '$r (m/s)')
-          ..add('flags', '$flags (Bitfield)'))
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
 }
@@ -30935,13 +30952,15 @@ class _$PathControlState extends PathControlState {
           ..add('startLon',
               '$startLon (rad) [${startLon * 180.0 / math.pi} (deg)]')
           ..add('startZ', '$startZ (m)')
-          ..add('startZUnits', '$startZUnits (Enumerated)')
+          ..add('startZUnits',
+              '$startZUnits (Enumerated) [${startZUnits.toPrettyString()}]')
           ..add('endLat', '$endLat (rad) [${endLat * 180.0 / math.pi} (deg)]')
           ..add('endLon', '$endLon (rad) [${endLon * 180.0 / math.pi} (deg)]')
           ..add('endZ', '$endZ (m)')
-          ..add('endZUnits', '$endZUnits (Enumerated)')
+          ..add('endZUnits',
+              '$endZUnits (Enumerated) [${endZUnits.toPrettyString()}]')
           ..add('lradius', '$lradius (m)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
@@ -31625,7 +31644,7 @@ class _$Brake extends Brake {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)'))
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]'))
         .toString();
   }
 }
@@ -31860,7 +31879,7 @@ class _$DesiredLinearState extends DesiredLinearState {
           ..add('ax', '$ax (m/s/s)')
           ..add('ay', '$ay (m/s/s)')
           ..add('az', '$az (m/s/s)')
-          ..add('flags', '$flags (Bitfield)'))
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
 }
@@ -32314,9 +32333,10 @@ class _$Goto extends Goto {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('roll', '$roll (rad) [${roll * 180.0 / math.pi} (deg)]')
           ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
           ..add('yaw', '$yaw (rad) [${yaw * 180.0 / math.pi} (deg)]')
@@ -32613,12 +32633,13 @@ class _$PopUp extends PopUp {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('duration', '$duration (s)')
           ..add('radius', '$radius (m)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -33091,16 +33112,18 @@ class _$Loiter extends Loiter {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('type', '$type (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('radius', '$radius (m)')
           ..add('length', '$length (m)')
           ..add(
               'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
-          ..add('direction', '$direction (Enumerated)')
+          ..add('direction',
+              '$direction (Enumerated) [${direction.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -33805,9 +33828,10 @@ class _$Rows extends Rows {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add(
               'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('crossAngle',
@@ -33817,7 +33841,7 @@ class _$Rows extends Rows {
           ..add('hstep', '$hstep (m)')
           ..add('coff', '$coff (m)')
           ..add('alternation', '$alternation (%)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -34129,9 +34153,10 @@ class _$FollowPath extends FollowPath {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('points', '$points')
           ..add('custom', '$custom (TupleList)'))
         .toString();
@@ -34598,11 +34623,12 @@ class _$YoYo extends YoYo {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('amplitude', '$amplitude (m)')
           ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -35029,11 +35055,12 @@ class _$StationKeeping extends StationKeeping {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('radius', '$radius (m)')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -35317,16 +35344,19 @@ class _$Elevator extends Elevator {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('startZ', '$startZ (m)')
-          ..add('startZUnits', '$startZUnits (Enumerated)')
+          ..add('startZUnits',
+              '$startZUnits (Enumerated) [${startZUnits.toPrettyString()}]')
           ..add('endZ', '$endZ (m)')
-          ..add('endZUnits', '$endZUnits (Enumerated)')
+          ..add('endZUnits',
+              '$endZUnits (Enumerated) [${endZUnits.toPrettyString()}]')
           ..add('radius', '$radius (m)')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -35616,9 +35646,10 @@ class _$FollowTrajectory extends FollowTrajectory {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('points', '$points')
           ..add('custom', '$custom (TupleList)'))
         .toString();
@@ -36294,9 +36325,10 @@ class _$VehicleFormation extends VehicleFormation {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('points', '$points')
           ..add('participants', '$participants')
           ..add('startTime', '$startTime (s)')
@@ -37064,7 +37096,7 @@ class _$ManeuverControlState extends ManeuverControlState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)')
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('eta', '$eta (s)')
           ..add('info', '$info'))
         .toString();
@@ -37294,11 +37326,12 @@ class _$FollowSystem extends FollowSystem {
           ..add('system', '$system')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('x', '$x')
           ..add('y', '$y')
           ..add('z', '$z')
-          ..add('zUnits', '$zUnits (Enumerated)'))
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]'))
         .toString();
   }
 }
@@ -37554,7 +37587,8 @@ class _$CommsRelay extends CommsRelay {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('duration', '$duration (s)')
           ..add('sysA', '$sysA')
           ..add('sysB', '$sysB')
@@ -37814,9 +37848,10 @@ class _$CoverArea extends CoverArea {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('polygon', '$polygon')
           ..add('custom', '$custom (TupleList)'))
         .toString();
@@ -38284,14 +38319,16 @@ class _$CompassCalibration extends CompassCalibration {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
           ..add('amplitude', '$amplitude (m)')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('radius', '$radius (m)')
-          ..add('direction', '$direction (Enumerated)')
+          ..add('direction',
+              '$direction (Enumerated) [${direction.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -38555,7 +38592,8 @@ class _$FormationParameters extends FormationParameters {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('formationName', '$formationName')
-          ..add('referenceFrame', '$referenceFrame (Enumerated)')
+          ..add('referenceFrame',
+              '$referenceFrame (Enumerated) [${referenceFrame.toPrettyString()}]')
           ..add('participants', '$participants')
           ..add('custom', '$custom (TupleList)'))
         .toString();
@@ -39358,7 +39396,7 @@ class _$Reference extends Reference {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('speed', '$speed')
           ..add('z', '$z')
           ..add('lat', '$lat')
@@ -39588,8 +39626,9 @@ class _$FollowRefState extends FollowRefState {
           ..add('controlSrc', '$controlSrc')
           ..add('controlEnt', '$controlEnt')
           ..add('reference', '$reference')
-          ..add('state', '$state (Enumerated)')
-          ..add('proximity', '$proximity (Bitfield)'))
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
+          ..add('proximity',
+              '$proximity (Bitfield) [${proximity.toPrettyString()}]'))
         .toString();
   }
 }
@@ -40617,7 +40656,8 @@ class _$Dislodge extends Dislodge {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
           ..add('rpm', '$rpm')
-          ..add('direction', '$direction (Enumerated)')
+          ..add('direction',
+              '$direction (Enumerated) [${direction.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -40918,12 +40958,13 @@ class _$Formation extends Formation {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('formationName', '$formationName')
-          ..add('type', '$type (Enumerated)')
-          ..add('op', '$op (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('groupName', '$groupName')
           ..add('planId', '$planId')
           ..add('description', '$description')
-          ..add('referenceFrame', '$referenceFrame (Enumerated)')
+          ..add('referenceFrame',
+              '$referenceFrame (Enumerated) [${referenceFrame.toPrettyString()}]')
           ..add('participants', '$participants')
           ..add('leaderBankLim',
               '$leaderBankLim (rad) [${leaderBankLim * 180.0 / math.pi} (deg)]')
@@ -41281,9 +41322,10 @@ class _$Launch extends Launch {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -41540,9 +41582,10 @@ class _$Drop extends Drop {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -41800,10 +41843,12 @@ class _$ScheduledGoto extends ScheduledGoto {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('travelZ', '$travelZ (m)')
-          ..add('travelZUnits', '$travelZUnits (Enumerated)')
-          ..add('delayed', '$delayed (Enumerated)'))
+          ..add('travelZUnits',
+              '$travelZUnits (Enumerated) [${travelZUnits.toPrettyString()}]')
+          ..add(
+              'delayed', '$delayed (Enumerated) [${delayed.toPrettyString()}]'))
         .toString();
   }
 }
@@ -42103,9 +42148,10 @@ class _$RowsCoverage extends RowsCoverage {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add(
               'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('crossAngle',
@@ -42117,7 +42163,7 @@ class _$RowsCoverage extends RowsCoverage {
               '$angAperture (rad) [${angAperture * 180.0 / math.pi} (deg)]')
           ..add('range', '$range (m)')
           ..add('overlap', '$overlap (%)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -42441,12 +42487,16 @@ class _$Sample extends Sample {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('syringe0', '$syringe0 (Enumerated)')
-          ..add('syringe1', '$syringe1 (Enumerated)')
-          ..add('syringe2', '$syringe2 (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
+          ..add('syringe0',
+              '$syringe0 (Enumerated) [${syringe0.toPrettyString()}]')
+          ..add('syringe1',
+              '$syringe1 (Enumerated) [${syringe1.toPrettyString()}]')
+          ..add('syringe2',
+              '$syringe2 (Enumerated) [${syringe2.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -42869,9 +42919,10 @@ class _$Takeoff extends Takeoff {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('takeoffPitch',
               '$takeoffPitch (rad) [${takeoffPitch * 180.0 / math.pi} (deg)]')
           ..add('custom', '$custom (TupleList)'))
@@ -43149,9 +43200,10 @@ class _$Land extends Land {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('abortZ', '$abortZ (m)')
           ..add(
               'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
@@ -43453,8 +43505,9 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
-          ..add('limits', '$limits (Bitfield)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
+          ..add('limits', '$limits (Bitfield) [${limits.toPrettyString()}]')
           ..add('maxDepth', '$maxDepth (m)')
           ..add('minAlt', '$minAlt (m)')
           ..add('timeLimit', '$timeLimit (s)')
@@ -43734,11 +43787,12 @@ class _$FollowPoint extends FollowPoint {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('target', '$target')
           ..add('maxSpeed', '$maxSpeed (m/s)')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -43983,7 +44037,8 @@ class _$Alignment extends Alignment {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -44254,14 +44309,15 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('radius', '$radius (m)')
           ..add('duration', '$duration (s)')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add('popupPeriod', '$popupPeriod (s)')
           ..add('popupDuration', '$popupDuration (s)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -44714,13 +44770,15 @@ class _$Magnetometer extends Magnetometer {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('speed', '$speed')
-          ..add('speedUnits', '$speedUnits (Enumerated)')
+          ..add('speedUnits',
+              '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
           ..add(
               'bearing', '$bearing (rad) [${bearing * 180.0 / math.pi} (deg)]')
           ..add('width', '$width (m)')
-          ..add('direction', '$direction (Enumerated)')
+          ..add('direction',
+              '$direction (Enumerated) [${direction.toPrettyString()}]')
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -45007,14 +45065,15 @@ class _$VehicleState extends VehicleState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('opMode', '$opMode (Enumerated)')
+          ..add('opMode', '$opMode (Enumerated) [${opMode.toPrettyString()}]')
           ..add('errorCount', '$errorCount')
           ..add('errorEnts', '$errorEnts')
           ..add('maneuverType', '$maneuverType')
           ..add('maneuverStime', '$maneuverStime (s)')
           ..add('maneuverEta', '$maneuverEta (s)')
-          ..add('controlLoops', '$controlLoops (Bitfield)')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('controlLoops',
+              '$controlLoops (Bitfield) [${controlLoops.toPrettyString()}]')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('lastError', '$lastError')
           ..add('lastErrorTime', '$lastErrorTime (s)'))
         .toString();
@@ -45271,9 +45330,10 @@ class _$VehicleCommand extends VehicleCommand {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('requestId', '$requestId')
-          ..add('command', '$command (Enumerated)')
+          ..add(
+              'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('maneuver', '$maneuver')
           ..add('calibTime', '$calibTime (s)')
           ..add('info', '$info'))
@@ -45479,7 +45539,8 @@ class _$MonitorEntityState extends MonitorEntityState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('command', '$command (Enumerated)')
+          ..add(
+              'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('entities', '$entities'))
         .toString();
   }
@@ -45996,7 +46057,7 @@ class _$OperationalLimits extends OperationalLimits {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('mask', '$mask (Bitfield)')
+          ..add('mask', '$mask (Bitfield) [${mask.toPrettyString()}]')
           ..add('maxDepth', '$maxDepth (m)')
           ..add('minAltitude', '$minAltitude (m)')
           ..add('maxAltitude', '$maxAltitude (m)')
@@ -46569,8 +46630,8 @@ class _$ControlLoops extends ControlLoops {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('enable', '$enable (Enumerated)')
-          ..add('mask', '$mask (Bitfield)')
+          ..add('enable', '$enable (Enumerated) [${enable.toPrettyString()}]')
+          ..add('mask', '$mask (Bitfield) [${mask.toPrettyString()}]')
           ..add('scopeRef', '$scopeRef'))
         .toString();
   }
@@ -46747,7 +46808,7 @@ class _$VehicleMedium extends VehicleMedium {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('medium', '$medium (Enumerated)'))
+          ..add('medium', '$medium (Enumerated) [${medium.toPrettyString()}]'))
         .toString();
   }
 }
@@ -46918,7 +46979,7 @@ class _$Collision extends Collision {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('value', '$value (m/s/s)')
-          ..add('type', '$type (Bitfield)'))
+          ..add('type', '$type (Bitfield) [${type.toPrettyString()}]'))
         .toString();
   }
 }
@@ -47126,9 +47187,12 @@ class _$FormState extends FormState {
           ..add('posSimErr', '$posSimErr (m)')
           ..add('converg', '$converg (m)')
           ..add('turbulence', '$turbulence (m/s/s)')
-          ..add('posSimMon', '$posSimMon (Enumerated)')
-          ..add('commMon', '$commMon (Enumerated)')
-          ..add('convergMon', '$convergMon (Enumerated)'))
+          ..add('posSimMon',
+              '$posSimMon (Enumerated) [${posSimMon.toPrettyString()}]')
+          ..add(
+              'commMon', '$commMon (Enumerated) [${commMon.toPrettyString()}]')
+          ..add('convergMon',
+              '$convergMon (Enumerated) [${convergMon.toPrettyString()}]'))
         .toString();
   }
 }
@@ -47330,7 +47394,8 @@ class _$AutopilotMode extends AutopilotMode {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('autonomy', '$autonomy (Enumerated)')
+          ..add('autonomy',
+              '$autonomy (Enumerated) [${autonomy.toPrettyString()}]')
           ..add('mode', '$mode'))
         .toString();
   }
@@ -47549,14 +47614,17 @@ class _$FormationState extends FormationState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
-          ..add('op', '$op (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('posSimErr', '$posSimErr (m)')
           ..add('converg', '$converg (m)')
           ..add('turbulence', '$turbulence (m/s/s)')
-          ..add('posSimMon', '$posSimMon (Enumerated)')
-          ..add('commMon', '$commMon (Enumerated)')
-          ..add('convergMon', '$convergMon (Enumerated)'))
+          ..add('posSimMon',
+              '$posSimMon (Enumerated) [${posSimMon.toPrettyString()}]')
+          ..add(
+              'commMon', '$commMon (Enumerated) [${commMon.toPrettyString()}]')
+          ..add('convergMon',
+              '$convergMon (Enumerated) [${convergMon.toPrettyString()}]'))
         .toString();
   }
 }
@@ -47784,8 +47852,9 @@ class _$ReportControl extends ReportControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
-          ..add('commInterface', '$commInterface (Bitfield)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
+          ..add('commInterface',
+              '$commInterface (Bitfield) [${commInterface.toPrettyString()}]')
           ..add('period', '$period (s)')
           ..add('sysDst', '$sysDst'))
         .toString();
@@ -48314,11 +48383,13 @@ class _$TransmissionRequest extends TransmissionRequest {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('commMean', '$commMean (Enumerated)')
+          ..add('commMean',
+              '$commMean (Enumerated) [${commMean.toPrettyString()}]')
           ..add('destination', '$destination')
           ..add('deadline', '$deadline')
           ..add('range', '$range (m)')
-          ..add('dataMode', '$dataMode (Enumerated)')
+          ..add('dataMode',
+              '$dataMode (Enumerated) [${dataMode.toPrettyString()}]')
           ..add('msgData', '$msgData')
           ..add('txtData', '$txtData')
           ..add('rawData', '$rawData'))
@@ -48564,7 +48635,7 @@ class _$TransmissionStatus extends TransmissionStatus {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('status', '$status (Enumerated)')
+          ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
           ..add('range', '$range (m)')
           ..add('info', '$info'))
         .toString();
@@ -48967,7 +49038,7 @@ class _$SmsStatus extends SmsStatus {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('status', '$status (Enumerated)')
+          ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
           ..add('info', '$info'))
         .toString();
   }
@@ -49144,7 +49215,7 @@ class _$VtolState extends VtolState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)'))
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
 }
@@ -49308,7 +49379,7 @@ class _$ArmingState extends ArmingState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)'))
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
 }
@@ -49690,7 +49761,7 @@ class _$TCPStatus extends TCPStatus {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('status', '$status (Enumerated)')
+          ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
           ..add('info', '$info'))
         .toString();
   }
@@ -50715,7 +50786,8 @@ class _$EmergencyControl extends EmergencyControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('command', '$command (Enumerated)')
+          ..add(
+              'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('plan', '$plan'))
         .toString();
   }
@@ -50902,7 +50974,7 @@ class _$EmergencyControlState extends EmergencyControlState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)')
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('planId', '$planId')
           ..add('commLevel', '$commLevel (%)'))
         .toString();
@@ -51118,8 +51190,8 @@ class _$PlanDB extends PlanDB {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
-          ..add('op', '$op (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('requestId', '$requestId')
           ..add('planId', '$planId')
           ..add('arg', '$arg')
@@ -51843,11 +51915,11 @@ class _$PlanControl extends PlanControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
-          ..add('op', '$op (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('requestId', '$requestId')
           ..add('planId', '$planId')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('arg', '$arg')
           ..add('info', '$info'))
         .toString();
@@ -52098,14 +52170,15 @@ class _$PlanControlState extends PlanControlState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)')
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('planId', '$planId')
           ..add('planEta', '$planEta (s)')
           ..add('planProgress', '$planProgress (%)')
           ..add('manId', '$manId')
           ..add('manType', '$manType')
           ..add('manEta', '$manEta (s)')
-          ..add('lastOutcome', '$lastOutcome (Enumerated)'))
+          ..add('lastOutcome',
+              '$lastOutcome (Enumerated) [${lastOutcome.toPrettyString()}]'))
         .toString();
   }
 }
@@ -52336,8 +52409,8 @@ class _$PlanVariable extends PlanVariable {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('name', '$name')
           ..add('value', '$value')
-          ..add('type', '$type (Enumerated)')
-          ..add('access', '$access (Enumerated)'))
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('access', '$access (Enumerated) [${access.toPrettyString()}]'))
         .toString();
   }
 }
@@ -52539,8 +52612,8 @@ class _$PlanGeneration extends PlanGeneration {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('cmd', '$cmd (Enumerated)')
-          ..add('op', '$op (Enumerated)')
+          ..add('cmd', '$cmd (Enumerated) [${cmd.toPrettyString()}]')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('planId', '$planId')
           ..add('params', '$params (TupleList)'))
         .toString();
@@ -52829,7 +52902,7 @@ class _$LeaderState extends LeaderState {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('groupName', '$groupName')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
@@ -53166,8 +53239,9 @@ class _$PlanStatistics extends PlanStatistics {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('planId', '$planId')
-          ..add('type', '$type (Enumerated)')
-          ..add('properties', '$properties (Bitfield)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('properties',
+              '$properties (Bitfield) [${properties.toPrettyString()}]')
           ..add('durations', '$durations (TupleList)')
           ..add('distances', '$distances (TupleList)')
           ..add('actions', '$actions (TupleList)')
@@ -53434,7 +53508,7 @@ class _$ReportedState extends ReportedState {
           ..add('yaw', '$yaw (rad) [${yaw * 180.0 / math.pi} (deg)]')
           ..add('rcpTime', '$rcpTime (s)')
           ..add('sid', '$sid')
-          ..add('sType', '$sType (Enumerated)'))
+          ..add('sType', '$sType (Enumerated) [${sType.toPrettyString()}]'))
         .toString();
   }
 }
@@ -54108,7 +54182,8 @@ class _$MapFeature extends MapFeature {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
-          ..add('featureType', '$featureType (Enumerated)')
+          ..add('featureType',
+              '$featureType (Enumerated) [${featureType.toPrettyString()}]')
           ..add('rgbRed', '$rgbRed')
           ..add('rgbGreen', '$rgbGreen')
           ..add('rgbBlue', '$rgbBlue')
@@ -54509,7 +54584,7 @@ class _$CcuEvent extends CcuEvent {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('id', '$id')
           ..add('arg', '$arg'))
         .toString();
@@ -55068,7 +55143,8 @@ class _$TrexCommand extends TrexCommand {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('command', '$command (Enumerated)')
+          ..add(
+              'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('goalId', '$goalId')
           ..add('goalXml', '$goalXml'))
         .toString();
@@ -55258,7 +55334,7 @@ class _$TrexOperation extends TrexOperation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('goalId', '$goalId')
           ..add('token', '$token'))
         .toString();
@@ -55457,7 +55533,8 @@ class _$TrexAttribute extends TrexAttribute {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('name', '$name')
-          ..add('attrType', '$attrType (Enumerated)')
+          ..add('attrType',
+              '$attrType (Enumerated) [${attrType.toPrettyString()}]')
           ..add('min', '$min')
           ..add('max', '$max'))
         .toString();
@@ -56837,7 +56914,7 @@ class _$Target extends Target {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('cog', '$cog (rad) [${cog * 180.0 / math.pi} (deg)]')
           ..add('sog', '$sog (m/s)'))
         .toString();
@@ -58633,7 +58710,7 @@ class _$SessionStatus extends SessionStatus {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('sessid', '$sessid')
-          ..add('status', '$status (Enumerated)'))
+          ..add('status', '$status (Enumerated) [${status.toPrettyString()}]'))
         .toString();
   }
 }
@@ -59149,7 +59226,7 @@ class _$IoEvent extends IoEvent {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('error', '$error'))
         .toString();
   }
@@ -59342,7 +59419,7 @@ class _$UamTxFrame extends UamTxFrame {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
           ..add('sysDst', '$sysDst')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('data', '$data'))
         .toString();
   }
@@ -59547,7 +59624,7 @@ class _$UamRxFrame extends UamRxFrame {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('sysSrc', '$sysSrc')
           ..add('sysDst', '$sysDst')
-          ..add('flags', '$flags (Bitfield)')
+          ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('data', '$data'))
         .toString();
   }
@@ -59743,7 +59820,7 @@ class _$UamTxStatus extends UamTxStatus {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
-          ..add('value', '$value (Enumerated)')
+          ..add('value', '$value (Enumerated) [${value.toPrettyString()}]')
           ..add('error', '$error'))
         .toString();
   }
@@ -59934,7 +60011,7 @@ class _$UamRxRange extends UamRxRange {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
           ..add('sys', '$sys')
-          ..add('value', '$value'))
+          ..add('value', '$value (m)'))
         .toString();
   }
 }
@@ -60335,7 +60412,7 @@ class _$FormCtrlParam extends FormCtrlParam {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('action', '$action (Enumerated)')
+          ..add('action', '$action (Enumerated) [${action.toPrettyString()}]')
           ..add('lonGain', '$lonGain')
           ..add('latGain', '$latGain')
           ..add('bondThick', '$bondThick')
@@ -60798,7 +60875,7 @@ class _$FormationControlParams extends FormationControlParams {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('action', '$action (Enumerated)')
+          ..add('action', '$action (Enumerated) [${action.toPrettyString()}]')
           ..add('lonGain', '$lonGain')
           ..add('latGain', '$latGain')
           ..add('bondThick', '$bondThick')
@@ -61093,8 +61170,8 @@ class _$FormationEvaluation extends FormationEvaluation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
-          ..add('op', '$op (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('errMean', '$errMean')
           ..add('distMinAbs', '$distMinAbs')
           ..add('distMinMean', '$distMinMean')
@@ -61720,8 +61797,9 @@ class _$SoiCommand extends SoiCommand {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('type', '$type (Enumerated)')
-          ..add('command', '$command (Enumerated)')
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
+          ..add(
+              'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('settings', '$settings (TupleList)')
           ..add('plan', '$plan')
           ..add('info', '$info'))
@@ -61932,7 +62010,7 @@ class _$SoiState extends SoiState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('state', '$state (Enumerated)')
+          ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('planId', '$planId')
           ..add('wptId', '$wptId')
           ..add('settingsChk', '$settingsChk'))
@@ -63075,7 +63153,7 @@ class _$UsblFix extends UsblFix {
           ..add('target', '$target')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('z', '$z (m)'))
         .toString();
   }
@@ -64009,7 +64087,8 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('tracking', '$tracking (Enumerated)')
+          ..add('tracking',
+              '$tracking (Enumerated) [${tracking.toPrettyString()}]')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('x', '$x (m)')
@@ -64837,7 +64916,7 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('target', '$target')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
-          ..add('zUnits', '$zUnits (Enumerated)')
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
           ..add('z', '$z (m)')
           ..add('accuracy', '$accuracy (m)'))
         .toString();
@@ -65066,7 +65145,7 @@ class _$UsblModem extends UsblModem {
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
-          ..add('zUnits', '$zUnits (Enumerated)'))
+          ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]'))
         .toString();
   }
 }
@@ -65260,7 +65339,7 @@ class _$UsblConfig extends UsblConfig {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('modems', '$modems'))
         .toString();
   }
@@ -65441,7 +65520,7 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('value', '$value (PPB)')
-          ..add('type', '$type (Enumerated)'))
+          ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
 }
@@ -66170,7 +66249,8 @@ class _$ApmStatus extends ApmStatus {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('severity', '$severity (Enumerated)')
+          ..add('severity',
+              '$severity (Enumerated) [${severity.toPrettyString()}]')
           ..add('text', '$text'))
         .toString();
   }
@@ -66355,7 +66435,7 @@ class _$SadcReadings extends SadcReadings {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('channel', '$channel')
           ..add('value', '$value')
-          ..add('gain', '$gain (Enumerated)'))
+          ..add('gain', '$gain (Enumerated) [${gain.toPrettyString()}]'))
         .toString();
   }
 }
@@ -66818,6 +66898,239 @@ class DmsDetectionBuilder extends Object
   }
 }
 
+/// Home Position immutable class
+///
+class _$HomePosition extends HomePosition {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final HomePositionEnumOp op;
+  @override
+  final double lat;
+  @override
+  final double lon;
+  @override
+  final double height;
+  @override
+  final double depth;
+  @override
+  final double alt;
+
+  factory _$HomePosition([void Function(HomePositionBuilder b)? updates]) =>
+      (HomePositionBuilder()..update(updates)).build();
+
+  _$HomePosition._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.op,
+      required this.lat,
+      required this.lon,
+      required this.height,
+      required this.depth,
+      required this.alt})
+      : super._();
+
+  @override
+  HomePosition rebuild(void Function(HomePositionBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  HomePositionBuilder toBuilder() => HomePositionBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is HomePosition &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        op == other.op &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (height == other.height || height - other.height <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                0,
+                                                timestamp?.hashCode ??
+                                                    null.hashCode),
+                                            src.hashCode),
+                                        srcEnt.hashCode),
+                                    dst.hashCode),
+                                dstEnt.hashCode),
+                            op.hashCode),
+                        lat.hashCode),
+                    lon.hashCode),
+                height.hashCode),
+            depth.hashCode),
+        alt.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('HomePosition')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
+          ..add('height', '$height (m)')
+          ..add('depth', '$depth (m)')
+          ..add('alt', '$alt (m)'))
+        .toString();
+  }
+}
+
+/// Home Position builder class
+///
+class HomePositionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<HomePosition, HomePositionBuilder> {
+  _$HomePosition? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  HomePositionEnumOp _op = HomePositionEnumOp(0);
+  HomePositionEnumOp get op => _$this._op;
+  set op(HomePositionEnumOp op) => _$this._op = op;
+
+  double _lat = 0;
+  double get lat => _$this._lat;
+  set lat(double lat) => _$this._lat = lat;
+
+  double _lon = 0;
+  double get lon => _$this._lon;
+  set lon(double lon) => _$this._lon = lon;
+
+  double _height = 0;
+  double get height => _$this._height;
+  set height(double height) => _$this._height = height;
+
+  double _depth = 0;
+  double get depth => _$this._depth;
+  set depth(double depth) => _$this._depth = depth;
+
+  double _alt = 0;
+  double get alt => _$this._alt;
+  set alt(double alt) => _$this._alt = alt;
+
+  HomePositionBuilder();
+
+  HomePositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  HomePositionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      HomePositionBuilder()..copyFromHeader(headerFrom);
+
+  HomePositionBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _op = _$v!.op;
+      _lat = _$v!.lat;
+      _lon = _$v!.lon;
+      _height = _$v!.height;
+      _depth = _$v!.depth;
+      _alt = _$v!.alt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(HomePosition other) {
+    _$v = other as _$HomePosition;
+  }
+
+  @override
+  void update(void Function(HomePositionBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$HomePosition build() {
+    final _$result = _$v ??
+        _$HomePosition._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            op: op,
+            lat: lat,
+            lon: lon,
+            height: height,
+            depth: depth,
+            alt: alt);
+    replace(_$result);
+    return _$result;
+  }
+}
+
 /// Total Magnetic Field Intensity immutable class
 ///
 class _$TotalMagIntensity extends TotalMagIntensity {
@@ -66981,239 +67294,6 @@ class TotalMagIntensityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
-  }
-}
-
-/// Home Position immutable class
-///
-class _$HomePosition extends HomePosition {
-  @override
-  final DateTime? timestamp;
-  @override
-  final int src;
-  @override
-  final int srcEnt;
-  @override
-  final int dst;
-  @override
-  final int dstEnt;
-
-  @override
-  final HomePositionEnumOp op;
-  @override
-  final double lat;
-  @override
-  final double lon;
-  @override
-  final double height;
-  @override
-  final double depth;
-  @override
-  final double alt;
-
-  factory _$HomePosition([void Function(HomePositionBuilder b)? updates]) =>
-      (HomePositionBuilder()..update(updates)).build();
-
-  _$HomePosition._(
-      {this.timestamp, //Should be DateTime.now() but is not const
-      this.src = ImcId.nullId,
-      this.srcEnt = ImcEntityId.nullId,
-      this.dst = ImcId.nullId,
-      this.dstEnt = ImcEntityId.nullId,
-      required this.op,
-      required this.lat,
-      required this.lon,
-      required this.height,
-      required this.depth,
-      required this.alt})
-      : super._();
-
-  @override
-  HomePosition rebuild(void Function(HomePositionBuilder b) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  HomePositionBuilder toBuilder() => HomePositionBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is HomePosition &&
-        timestamp == other.timestamp &&
-        src == other.src &&
-        srcEnt == other.srcEnt &&
-        dst == other.dst &&
-        dstEnt == other.dstEnt &&
-        op == other.op &&
-        (lat == other.lat || lat - other.lat <= 1E-7) &&
-        (lon == other.lon || lon - other.lon <= 1E-7) &&
-        (height == other.height || height - other.height <= 1E-7) &&
-        (depth == other.depth || depth - other.depth <= 1E-7) &&
-        (alt == other.alt || alt - other.alt <= 1E-7);
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                0,
-                                                timestamp?.hashCode ??
-                                                    null.hashCode),
-                                            src.hashCode),
-                                        srcEnt.hashCode),
-                                    dst.hashCode),
-                                dstEnt.hashCode),
-                            op.hashCode),
-                        lat.hashCode),
-                    lon.hashCode),
-                height.hashCode),
-            depth.hashCode),
-        alt.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('HomePosition')
-          ..add('timestamp', timestamp)
-          ..add('src', '0x${src.toRadixString(16)} ($src)')
-          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
-          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
-          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('op', '$op (Enumerated)')
-          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
-          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
-          ..add('height', '$height (m)')
-          ..add('depth', '$depth (m)')
-          ..add('alt', '$alt (m)'))
-        .toString();
-  }
-}
-
-/// Home Position builder class
-///
-class HomePositionBuilder extends Object
-    with ImcBuilderHeaderPart
-    implements BuilderWithInstanciator<HomePosition, HomePositionBuilder> {
-  _$HomePosition? _$v;
-
-  DateTime? _timestamp = DateTime.now();
-  @override
-  DateTime? get timestamp => _$this._timestamp;
-  @override
-  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
-
-  int _src = ImcId.nullId;
-  @override
-  int get src => _$this._src;
-  @override
-  set src(int src) => _$this._src = src;
-
-  int _srcEnt = ImcEntityId.nullId;
-  @override
-  int get srcEnt => _$this._srcEnt;
-  @override
-  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
-
-  int _dst = ImcId.nullId;
-  @override
-  int get dst => _$this._dst;
-  @override
-  set dst(int dst) => _$this._dst = dst;
-
-  int _dstEnt = ImcEntityId.nullId;
-  @override
-  int get dstEnt => _$this._dstEnt;
-  @override
-  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
-
-  HomePositionEnumOp _op = HomePositionEnumOp(0);
-  HomePositionEnumOp get op => _$this._op;
-  set op(HomePositionEnumOp op) => _$this._op = op;
-
-  double _lat = 0;
-  double get lat => _$this._lat;
-  set lat(double lat) => _$this._lat = lat;
-
-  double _lon = 0;
-  double get lon => _$this._lon;
-  set lon(double lon) => _$this._lon = lon;
-
-  double _height = 0;
-  double get height => _$this._height;
-  set height(double height) => _$this._height = height;
-
-  double _depth = 0;
-  double get depth => _$this._depth;
-  set depth(double depth) => _$this._depth = depth;
-
-  double _alt = 0;
-  double get alt => _$this._alt;
-  set alt(double alt) => _$this._alt = alt;
-
-  HomePositionBuilder();
-
-  HomePositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
-    copyFromHeader(headerFrom);
-  }
-
-  @override
-  HomePositionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
-      HomePositionBuilder()..copyFromHeader(headerFrom);
-
-  HomePositionBuilder get _$this {
-    if (_$v != null) {
-      _timestamp = _$v!.timestamp;
-      _src = _$v!.src;
-      _srcEnt = _$v!.srcEnt;
-      _dst = _$v!.dst;
-      _dstEnt = _$v!.dstEnt;
-      _op = _$v!.op;
-      _lat = _$v!.lat;
-      _lon = _$v!.lon;
-      _height = _$v!.height;
-      _depth = _$v!.depth;
-      _alt = _$v!.alt;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(HomePosition other) {
-    _$v = other as _$HomePosition;
-  }
-
-  @override
-  void update(void Function(HomePositionBuilder b)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  _$HomePosition build() {
-    final _$result = _$v ??
-        _$HomePosition._(
-            timestamp: timestamp ?? DateTime.now(),
-            src: src,
-            srcEnt: srcEnt,
-            dst: dst,
-            dstEnt: dstEnt,
-            op: op,
-            lat: lat,
-            lon: lon,
-            height: height,
-            depth: depth,
-            alt: alt);
     replace(_$result);
     return _$result;
   }

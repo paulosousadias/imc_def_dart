@@ -331,8 +331,8 @@ final messagesSerializers = <String, ImcSerializerBuilder>{
   'ApmStatus': () => ApmStatusSerializer(),
   'SadcReadings': () => SadcReadingsSerializer(),
   'DmsDetection': () => DmsDetectionSerializer(),
-  'TotalMagIntensity': () => TotalMagIntensitySerializer(),
   'HomePosition': () => HomePositionSerializer(),
+  'TotalMagIntensity': () => TotalMagIntensitySerializer(),
 };
 
 final messagesIdsSerializers = <int, ImcSerializerBuilder>{
@@ -652,8 +652,8 @@ final messagesIdsSerializers = <int, ImcSerializerBuilder>{
   906: () => ApmStatusSerializer(),
   907: () => SadcReadingsSerializer(),
   908: () => DmsDetectionSerializer(),
-  2006: () => TotalMagIntensitySerializer(),
   909: () => HomePositionSerializer(),
+  2006: () => TotalMagIntensitySerializer(),
 };
 
 /// Entity State serializer class
@@ -44043,110 +44043,6 @@ class DmsDetectionSerializer
   }
 }
 
-/// Total Magnetic Field Intensity serializer class
-///
-class TotalMagIntensitySerializer extends imc
-    .ImcSerializer<imc.TotalMagIntensity?, imc.TotalMagIntensityBuilder> {
-  @override
-  ByteData serialize(imc.TotalMagIntensity? message) {
-    var byteOffset = 0;
-    var byteData = ByteData(0xFFFF);
-
-    if (message == null) {
-      return byteData.buffer.asByteData(0, byteOffset);
-    }
-
-    byteOffset = imc.serializeHeader(message, byteData);
-    var headerSize = byteOffset;
-
-    // Payload
-    var payloadSize = serializePayload(message, byteData, byteOffset);
-    // End payload
-
-    byteOffset = headerSize + payloadSize;
-    imc.writePayloadSize(byteData, payloadSize);
-    imc.calcAndAddFooter(byteData, 0, headerSize + payloadSize);
-    byteOffset += 2;
-    return byteData.buffer.asByteData(0, byteOffset);
-  }
-
-  @override
-  int serializePayload(
-      imc.TotalMagIntensity? message, ByteData byteData, int offset) {
-    if (message == null) return 0;
-
-    var byteOffset = offset;
-
-    // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
-    byteOffset += 8;
-
-    return byteOffset - offset;
-  }
-
-  @override
-  imc.TotalMagIntensity? deserialize(Uint8List data, [int offset = 0]) {
-    var byteOffset = offset;
-    var byteData = data.buffer.asByteData(offset);
-
-    var endianness = imc.getEndianness(byteData, byteOffset);
-    byteOffset += 2;
-    if (endianness == null) {
-      return null;
-    }
-
-    var msgId = byteData.getUint16(byteOffset, endianness);
-    byteOffset += 2;
-    if (msgId != imc.TotalMagIntensity.static_id) {
-      return null;
-    }
-
-    var builder = imc.TotalMagIntensityBuilder();
-    var payloadSize =
-        imc.deserializeHeader(builder, byteData, endianness, offset);
-    if (payloadSize == null) {
-      return null;
-    }
-
-    byteOffset = offset + imc.header_size;
-
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
-    var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
-    if (calcCrc != readCrc) {
-      return null;
-    }
-
-    // Payload
-    var payloadSizeRead;
-    try {
-      payloadSizeRead =
-          deserializePayload(builder, byteData, endianness, byteOffset);
-    } catch (_) {
-      return null;
-    }
-    // End payload
-
-    if (payloadSizeRead != payloadSize) {
-      return null;
-    }
-    byteOffset = offset + imc.header_size + payloadSize;
-    return builder.build();
-  }
-
-  @override
-  int deserializePayload(imc.TotalMagIntensityBuilder builder,
-      ByteData byteData, Endian endianness, int offset) {
-    var byteOffset = offset;
-
-    // field value
-    builder.value = byteData.getFloat64(byteOffset, endianness);
-    byteOffset += 8;
-
-    return byteOffset - offset;
-  }
-}
-
 /// Home Position serializer class
 ///
 class HomePositionSerializer
@@ -44276,6 +44172,110 @@ class HomePositionSerializer
     // field alt
     builder.alt = byteData.getFloat32(byteOffset, endianness);
     byteOffset += 4;
+
+    return byteOffset - offset;
+  }
+}
+
+/// Total Magnetic Field Intensity serializer class
+///
+class TotalMagIntensitySerializer extends imc
+    .ImcSerializer<imc.TotalMagIntensity?, imc.TotalMagIntensityBuilder> {
+  @override
+  ByteData serialize(imc.TotalMagIntensity? message) {
+    var byteOffset = 0;
+    var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
+    byteOffset = imc.serializeHeader(message, byteData);
+    var headerSize = byteOffset;
+
+    // Payload
+    var payloadSize = serializePayload(message, byteData, byteOffset);
+    // End payload
+
+    byteOffset = headerSize + payloadSize;
+    imc.writePayloadSize(byteData, payloadSize);
+    imc.calcAndAddFooter(byteData, 0, headerSize + payloadSize);
+    byteOffset += 2;
+    return byteData.buffer.asByteData(0, byteOffset);
+  }
+
+  @override
+  int serializePayload(
+      imc.TotalMagIntensity? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
+    var byteOffset = offset;
+
+    // field value
+    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteOffset += 8;
+
+    return byteOffset - offset;
+  }
+
+  @override
+  imc.TotalMagIntensity? deserialize(Uint8List data, [int offset = 0]) {
+    var byteOffset = offset;
+    var byteData = data.buffer.asByteData(offset);
+
+    var endianness = imc.getEndianness(byteData, byteOffset);
+    byteOffset += 2;
+    if (endianness == null) {
+      return null;
+    }
+
+    var msgId = byteData.getUint16(byteOffset, endianness);
+    byteOffset += 2;
+    if (msgId != imc.TotalMagIntensity.static_id) {
+      return null;
+    }
+
+    var builder = imc.TotalMagIntensityBuilder();
+    var payloadSize =
+        imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
+    byteOffset = offset + imc.header_size;
+
+    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var readCrc = imc.getCrcFooter(
+        byteData, offset + imc.header_size + payloadSize, endianness);
+    if (calcCrc != readCrc) {
+      return null;
+    }
+
+    // Payload
+    var payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
+    // End payload
+
+    if (payloadSizeRead != payloadSize) {
+      return null;
+    }
+    byteOffset = offset + imc.header_size + payloadSize;
+    return builder.build();
+  }
+
+  @override
+  int deserializePayload(imc.TotalMagIntensityBuilder builder,
+      ByteData byteData, Endian endianness, int offset) {
+    var byteOffset = offset;
+
+    // field value
+    builder.value = byteData.getFloat64(byteOffset, endianness);
+    byteOffset += 8;
 
     return byteOffset - offset;
   }

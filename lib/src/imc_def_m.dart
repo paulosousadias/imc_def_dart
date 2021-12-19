@@ -6,11 +6,11 @@
 
 part of 'imc_def_gen.dart';
 
-const String VERSION = '5.4.11';
+const String VERSION = '5.4.30';
 const int SYNC_NUMBER = 0xFE54;
 const int SYNC_NUMBER_REVERSED = 0x54FE;
-const String GIT_HASH_STRING = 'lsts@f19a343';
-const String MD5_SUM = '5563261871977bdb0b45e3d1e53b575b';
+const String GIT_HASH_STRING = 'lsts@8be592a';
+const String MD5_SUM = '0f425402b735f36a64d579da7bb4baf3';
 
 /// The base IMCMessage
 ///
@@ -2671,7 +2671,7 @@ abstract class Salinity extends ImcMessage
   String get abbrev => 'Salinity';
 
   /// The value of the salinity as measured by the sensor.
-  @ImcField('Measured Salinity', 'value', ImcType.typeFp32)
+  @ImcField('Measured Salinity', 'value', ImcType.typeFp32, units: 'PSU')
   double get value;
 }
 
@@ -2825,9 +2825,9 @@ abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
 /// +--------+------------------+-----+
 /// | Section| Flag Label       | Bit |
 /// +========+==================+=====+
-/// | H4.1   | Intensities flag | 0   |
+/// | H3.1   | Intensities flag | 0   |
 /// +--------+------------------+-----+
-/// | H4.2   | Angle step flag  | 1   |
+/// | H3.2   | Angle step flag  | 1   |
 /// +--------+------------------+-----+
 ///
 /// .. figure:: ../images/imc_multibeam.png
@@ -2840,8 +2840,8 @@ abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
 ///
 /// angle[i] = H2_start_angle + (32-bit sum of D1_angle_step[0] through D1_angle_step[i]) * H4_scaling_factor
 ///
-/// * If bit H4.1 is not set then sections H5 and D3 won't exist.
-/// * If bit H4.2 is not set then sections H4 and D1 won't exist. In case this bit is set, then the angle steps is read from field "Beam Width" from "Beam Configuration".
+/// * If bit H3.1 is not set then sections H5 and D3 won't exist.
+/// * If bit H3.2 is not set then sections H4 and D1 won't exist. In case this bit is set, then the angle steps is read from field "Beam Width" from "Beam Configuration".
 /// * The type *uintX_t* will depend on the number of bits per unit, and it should be a multiple of 8.
 /// * Furthermore, for now, 32 bits is the highest value of bits per unit supported.
 ///
@@ -9178,19 +9178,19 @@ abstract class PlanStatistics extends ImcMessage
   @ImcField('Properties', 'properties', ImcType.typeUInt8)
   PlanStatisticsBitfieldProperties get properties;
 
-  /// Maneuver and plan duration statistics in seconds, for example: “Total=1000,Goto1=20,Rows=980”
+  /// Maneuver and plan duration statistics in seconds, for example: Total=1000,Goto1=20,Rows=980
   @ImcField('Durations', 'durations', ImcType.typePlaintext, units: 'TupleList')
   String get durations;
 
-  /// Distances travelled in meters in each maneuver and/or total: “Total=2000,Rows=1800,Elevator=200”
+  /// Distances travelled in meters in each maneuver and/or total: Total=2000,Rows=1800,Elevator=200
   @ImcField('Distances', 'distances', ImcType.typePlaintext, units: 'TupleList')
   String get distances;
 
-  /// List of components active by plan actions during the plan and time active in seconds: “Sidescan=100,Camera Module=150”
+  /// List of components active by plan actions during the plan and time active in seconds: Sidescan=100,Camera Module=150
   @ImcField('Actions', 'actions', ImcType.typePlaintext, units: 'TupleList')
   String get actions;
 
-  /// Amount of fuel spent, in battery percentage, by different parcels (if applicable): “Total=35,Hotel=5,Payload=10,Motion=20,IMU=0”
+  /// Amount of fuel spent, in battery percentage, by different parcels (if applicable): Total=35,Hotel=5,Payload=10,Motion=20,IMU=0
   @ImcField('Fuel', 'fuel', ImcType.typePlaintext, units: 'TupleList')
   String get fuel;
 }
@@ -10015,6 +10015,8 @@ abstract class IoEvent extends ImcMessage
 
 /// UamTxFrame class
 ///
+/// This message shall be sent to acoustic modem drivers to request
+/// transmission of a data frame via the acoustic channel.
 abstract class UamTxFrame extends ImcMessage
     implements Built<UamTxFrame, UamTxFrameBuilder> {
   static const static_id = 814;
@@ -10027,21 +10029,32 @@ abstract class UamTxFrame extends ImcMessage
   @override
   String get abbrev => 'UamTxFrame';
 
+  /// A sequence identifier that should be incremented for each
+  /// request. This number will then be used to issue transmission
+  /// status updates via the message UamTxStatus.
   @ImcField('Sequence Id', 'seq', ImcType.typeUInt16)
   int get seq;
 
+  /// The canonical name of the destination system. If supported, the
+  /// special destination 'broadcast' shall be used to dispatch messages
+  /// to all nodes.
   @ImcField('Destination System', 'sys_dst', ImcType.typePlaintext)
   String get sysDst;
 
+  /// Transmission flags.
   @ImcField('Flags', 'flags', ImcType.typeUInt8)
   UamTxFrameBitfieldFlags get flags;
 
+  /// The actual data frame to transmit. The data size shall not exceed
+  /// the MTU of the acoustic modem.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
 }
 
 /// UamRxFrame class
 ///
+/// This message shall be dispatched by acoustic modem drivers each time
+/// a data frame is received over the acoustic channel.
 abstract class UamRxFrame extends ImcMessage
     implements Built<UamRxFrame, UamRxFrameBuilder> {
   static const static_id = 815;
@@ -10054,21 +10067,29 @@ abstract class UamRxFrame extends ImcMessage
   @override
   String get abbrev => 'UamRxFrame';
 
+  /// The canonical name of the node that transmitted the data frame. If
+  /// this name cannot be resolved the string 'unknown' shall be used.
   @ImcField('Source System', 'sys_src', ImcType.typePlaintext)
   String get sysSrc;
 
+  /// The canonical name of the destination node of the data frame. If
+  /// this name cannot be resolved the string 'unknown' shall be used.
   @ImcField('Destination System', 'sys_dst', ImcType.typePlaintext)
   String get sysDst;
 
+  /// Reception flags.
   @ImcField('Flags', 'flags', ImcType.typeUInt8)
   UamRxFrameBitfieldFlags get flags;
 
+  /// The actual received data frame.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
 }
 
 /// UamTxStatus class
 ///
+/// This message shall be used by acoustic modem drivers to send updates
+/// on the transmission status of data frames.
 abstract class UamTxStatus extends ImcMessage
     implements Built<UamTxStatus, UamTxStatusBuilder> {
   static const static_id = 816;
@@ -10081,18 +10102,23 @@ abstract class UamTxStatus extends ImcMessage
   @override
   String get abbrev => 'UamTxStatus';
 
+  /// The sequence identifier of the frame transmission request.
   @ImcField('Sequence Id', 'seq', ImcType.typeUInt16)
   int get seq;
 
+  /// Frame transmission status.
   @ImcField('Value', 'value', ImcType.typeUInt8)
   UamTxStatusEnumValue get value;
 
+  /// Where applicable this field shall contain a human-readable message
+  /// explaining the error.
   @ImcField('Error Message', 'error', ImcType.typePlaintext)
   String get error;
 }
 
 /// UamRxRange class
 ///
+/// Acoustic range measurement.
 abstract class UamRxRange extends ImcMessage
     implements Built<UamRxRange, UamRxRangeBuilder> {
   static const static_id = 817;
@@ -10105,13 +10131,16 @@ abstract class UamRxRange extends ImcMessage
   @override
   String get abbrev => 'UamRxRange';
 
+  /// The sequence identifier of the ranging request.
   @ImcField('Sequence Id', 'seq', ImcType.typeUInt16)
   int get seq;
 
+  /// The canonical name of the ranged system.
   @ImcField('System', 'sys', ImcType.typePlaintext)
   String get sys;
 
-  @ImcField('Value', 'value', ImcType.typeFp32)
+  /// The actual range. Negative values denote invalid measurements.
+  @ImcField('Value', 'value', ImcType.typeFp32, units: 'm')
   double get value;
 }
 
@@ -11214,26 +11243,6 @@ abstract class DmsDetection extends ImcMessage
   double get ch16;
 }
 
-/// Total Magnetic Field Intensity class
-///
-abstract class TotalMagIntensity extends ImcMessage
-    implements Built<TotalMagIntensity, TotalMagIntensityBuilder> {
-  static const static_id = 2006;
-  TotalMagIntensity._();
-  factory TotalMagIntensity(
-          [void Function(TotalMagIntensityBuilder b)? updates]) =
-      _$TotalMagIntensity;
-
-  @override
-  int get msgId => static_id;
-  @override
-  String get abbrev => 'TotalMagIntensity';
-
-  /// Total Magnetic Field Intensity (TMI)
-  @ImcField('Value', 'value', ImcType.typeFp64)
-  double get value;
-}
-
 /// Home Position class
 ///
 /// Vehicle Home Position.
@@ -11273,4 +11282,24 @@ abstract class HomePosition extends ImcMessage
   /// Altitude, in meters. Negative values denote invalid estimates.
   @ImcField('Altitude', 'alt', ImcType.typeFp32, units: 'm')
   double get alt;
+}
+
+/// Total Magnetic Field Intensity class
+///
+abstract class TotalMagIntensity extends ImcMessage
+    implements Built<TotalMagIntensity, TotalMagIntensityBuilder> {
+  static const static_id = 2006;
+  TotalMagIntensity._();
+  factory TotalMagIntensity(
+          [void Function(TotalMagIntensityBuilder b)? updates]) =
+      _$TotalMagIntensity;
+
+  @override
+  int get msgId => static_id;
+  @override
+  String get abbrev => 'TotalMagIntensity';
+
+  /// Total Magnetic Field Intensity (TMI)
+  @ImcField('Value', 'value', ImcType.typeFp64)
+  double get value;
 }
